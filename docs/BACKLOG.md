@@ -55,6 +55,12 @@ Pendências registradas durante o desenvolvimento. Prioridade: **P1** (próximo)
 
 ## Licenças
 
+- **P1 — Tela "Sobre e licenças" no app.** As atribuições precisam ser visíveis dentro do app, não só no
+  repositório. Mostrar, para cada fonte usada, o campo `attribution` e a licença gravados na tabela
+  `source`, com link para a URL de origem. Incluir os avisos de `DATA_LICENSES.md`: share-alike do
+  Theographic (CC BY-SA 4.0), uso não comercial do RWP, GPL declarada do KJV e crédito "© OpenStreetMap
+  contributors" se o ODbL se aplicar. Acesso a partir de Configurações, em pt-BR. Ao incluir uma fonte
+  nova no build, atualizar a tela e `DATA_LICENSES.md` no mesmo commit.
 - `theographic` é CC BY-SA 4.0: o banco distribuído herda o share-alike.
 - `sword-rwp` (Robertson): distribuição livre apenas não comercial — aprovado porque o app é comunitário
   e não comercial. **Se o app algum dia for comercializado, remover esta fonte.** O "About" do módulo

@@ -10,3 +10,11 @@ data/*.db
 app/assets/sensus.db
 app/dist/
 .expo/
+
+# banco SQLite em qualquer pasta, logs e rascunhos
+*.db
+*.sqlite
+*.sqlite3
+*.log
+scratch/
+tmp/
