@@ -11,14 +11,18 @@ import { config as loadEnv } from 'dotenv';
 import {
   buildPanel,
   buildProviderConfig,
+  CHAT_MAX_TOKENS,
   chatMessages,
+  checkMorphClaims,
   DEFAULT_PANEL_LIMITS,
   OpenAICompatibleProvider,
   parseCited,
   parseRef,
   Repo,
   serializePanel,
+  SUMMARY_MAX_TOKENS,
   summaryMessages,
+  tokenIndex,
   type CitedSegment,
   type PanelData,
   type SqlDriver,
@@ -71,12 +75,19 @@ function printReport(segments: CitedSegment[], validIds: ReadonlySet<string>): v
   const sourced = body.filter((s) => s.kind === 'source').length;
   const inference = body.filter((s) => s.kind === 'inference').length;
   const structure = body.filter((s) => s.kind === 'structure').length;
+  const conflicts = body.filter((s) => (s.morphConflicts?.length ?? 0) > 0);
 
   console.log('\n--- Validação de citações ---');
   console.log(
     `Trechos: ${body.length} (${sourced} com fonte, ${inference} inferências, ${structure} estrutura, ${uncited.length} sem citação)`,
   );
   console.log(`Citações: ${validCount} válidas (${distinct.size} distintas, de ${validIds.size} disponíveis), ${invalid.length} inválidas`);
+  console.log(`Conflitos morfológicos: ${conflicts.length} trecho(s)`);
+  for (const s of conflicts) {
+    for (const c of s.morphConflicts ?? []) {
+      console.log(`  - "${c.term}" não bate com a análise dos tokens citados (${c.expected}): ${s.text.slice(0, 100)}`);
+    }
+  }
   if (invalid.length > 0) {
     console.log('Inválidas:');
     for (const id of [...new Set(invalid)]) console.log(`  - ${id}`);
@@ -164,7 +175,7 @@ async function main(): Promise<void> {
       for await (const piece of provider.stream({
         messages,
         temperature: 0.2,
-        maxTokens: question ? 4000 : 8000,
+        maxTokens: question ? CHAT_MAX_TOKENS : SUMMARY_MAX_TOKENS,
       })) {
         answer += piece;
         process.stdout.write(piece);
@@ -176,7 +187,8 @@ async function main(): Promise<void> {
     }
     process.stdout.write('\n');
 
-    printReport(parseCited(answer, context.citeIds), context.citeIds);
+    const segments = checkMorphClaims(parseCited(answer, context.citeIds), tokenIndex(panel.layers.text.original));
+    printReport(segments, context.citeIds);
   } finally {
     db.close();
   }

@@ -105,8 +105,13 @@ export function createFixtureDb(): DatabaseSync {
 
   insert(db, 'token', [
     token(50002005, 1, 'Τοῦτο', 'G5124', 'TR,BYZ,NA', { lemma: 'οὗτος', morph: 'CASN', gloss_en: 'this' }),
-    token(50002005, 2, 'φρονεῖτε', 'G5426', 'TR,BYZ,NA', { lemma: 'φρονέω', morph: 'V-PAM-2P', gloss_en: 'be minded' }),
-    token(50002005, 3, 'ἐν', 'G1722', 'TR,BYZ,NA', { lemma: 'ἐν', gloss_en: 'in' }),
+    token(50002005, 2, 'φρονεῖτε', 'G5426', 'TR,BYZ,NA', {
+      lemma: 'φρονέω',
+      morph: 'V-PAM-2P',
+      morph_desc: 'Verb; Tense=Present; Voice=Active; Mood=Imperative; Person=2nd; Number=Plural',
+      gloss_en: 'be minded',
+    }),
+    token(50002005, 3, 'ἐν', 'G1722', 'TR,BYZ,NA', { lemma: 'ἐν', morph: 'PREP', morph_desc: 'Preposition', gloss_en: 'in' }),
     token(50002006, 4, 'Ὃς', 'G3739', 'TR,BYZ,NA', { lemma: 'ὅς', gloss_en: 'who' }),
     token(50002006, 5, 'ἐν', 'G1722', 'TR,BYZ', { lemma: 'ἐν', gloss_en: 'in', variant_note: 'NA omite' }),
     token(50002007, 6, 'Ἰησοῦς', 'G2424', 'TR,BYZ,NA', { lemma: 'Ἰησοῦς', gloss_en: 'Jesus' }),

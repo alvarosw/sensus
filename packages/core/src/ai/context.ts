@@ -2,6 +2,10 @@
 import type { Commentary, LexiconEntry, PanelData, Token } from '../types';
 import { formatReference } from '../refs';
 import { hasEdition, missingBaseEditions } from '../panel';
+import { isContentToken } from '../morph';
+import { variantSites } from '../variants';
+
+export { isContentToken } from '../morph';
 
 export interface SerializedContext {
   /** Texto estruturado, agrupado nas seis camadas. */
@@ -36,25 +40,6 @@ const BOOK_INTRO_CLIP = 700;
 /** Léxicos longos: entram só truncados e só para palavras de conteúdo. */
 const LONG_LEXICON_SOURCES: ReadonlySet<string> = new Set(['stepbible-tflsj']);
 
-/** Classes gramaticais de função (Robinson/STEPBible): artigos, conjunções, preposições, partículas, pronomes. */
-const FUNCTION_POS: ReadonlySet<string> = new Set([
-  'T',
-  'CONJ',
-  'PREP',
-  'PRT',
-  'INJ',
-  'P',
-  'R',
-  'D',
-  'C',
-  'I',
-  'K',
-  'X',
-  'S',
-  'F',
-  'Q',
-]);
-
 type Layer = 1 | 2 | 3 | 4 | 5 | 6;
 
 const LAYER_TITLES: Record<Layer, string> = {
@@ -80,7 +65,11 @@ interface Item {
   line: string;
   /** Incluído sempre, mesmo acima da fração da camada (ex.: léxico breve de cada palavra). */
   mandatory?: boolean;
+  /** Citações adicionais da mesma linha (ex.: leituras de uma variante, cada uma com seu token). */
+  cites?: string[];
 }
+
+const itemCites = (item: Item): string[] => [item.citeId, ...(item.cites ?? [])];
 
 const collapse = (s: string): string => s.replace(/\s+/g, ' ').trim();
 
@@ -102,24 +91,16 @@ export function clipBySentence(text: string, max: number): string {
   return `${out}…`;
 }
 
-function describeToken(t: Token): string {
+function describeToken(t: Token, withMorph = true): string {
   const parts = [t.surface];
   if (t.translit) parts.push(`translit. ${t.translit}`);
   if (t.lemma) parts.push(`lema ${t.lemma}`);
   if (t.strong) parts.push(`Strong ${t.strong}`);
-  if (t.morph) parts.push(`morfologia ${t.morph}${t.morph_desc ? ` (${t.morph_desc})` : ''}`);
+  if (withMorph && t.morph) parts.push(`morfologia ${t.morph}${t.morph_desc ? ` (${t.morph_desc})` : ''}`);
   if (t.gloss_en) parts.push(`glosa "${t.gloss_en}"`);
   return parts.join(' · ');
 }
 
-/** Palavra de conteúdo (substantivo, verbo, adjetivo, advérbio ou código desconhecido), não de função. */
-export function isContentToken(t: Token): boolean {
-  if (!t.morph) return true;
-  const pos = t.morph.split('-')[0] ?? '';
-  return !FUNCTION_POS.has(pos);
-}
-
-/** Classificação pela fonte: TFLSJ (LSJ completo) é longo; TBESG (breve) vale para toda palavra. */
 function isLongLexicon(l: LexiconEntry): boolean {
   return LONG_LEXICON_SOURCES.has(l.source_id);
 }
@@ -151,7 +132,7 @@ function buildItems(panel: PanelData): Item[] {
   };
 
   // Camada 1 — texto
-  const { translations, original, variants } = panel.layers.text;
+  const { translations, original } = panel.layers.text;
   for (const v of translations) {
     push({
       citeId: v.cite_id,
@@ -163,14 +144,14 @@ function buildItems(panel: PanelData): Item[] {
     });
   }
 
-  const variantIds = new Set(variants.map((t) => t.cite_id));
+  // Texto-base: palavras presentes no TR (hebraico: todas). Palavras de conteúdo mostram a morfologia
+  // completa na camada 4; aqui ficam só a forma e o lema.
   for (const t of original) {
-    if (variantIds.has(t.cite_id) && !hasEdition(t, 'TR')) continue; // listado na seção de variantes
+    if (t.corpus === 'gnt' && !hasEdition(t, 'TR')) continue; // aparece nas leituras de variante
     const notes: string[] = [];
-    if (variantIds.has(t.cite_id)) {
-      notes.push(`edições: ${t.editions}`);
-      const missing = missingBaseEditions(t);
-      if (missing.length > 0) notes.push(`ausente em ${missing.join(', ')}`);
+    const missing = missingBaseEditions(t);
+    if (t.corpus === 'gnt' && missing.length > 0) {
+      notes.push(`edições: ${t.editions}`, `ausente em ${missing.join(', ')}`);
       if (t.variant_note) notes.push(`nota: ${t.variant_note}`);
     }
     push({
@@ -179,21 +160,31 @@ function buildItems(panel: PanelData): Item[] {
       section: 'Texto original (base TR; hebraico completo)',
       sectionOrder: 2,
       priority: 1,
-      line: `[${t.cite_id}] ${titleOf(t.source_id)}: ${[describeToken(t), ...notes].join(' · ')}`,
+      line: `[${t.cite_id}] ${titleOf(t.source_id)}: ${[describeToken(t, !isContentToken(t)), ...notes].join(' · ')}`,
     });
   }
 
-  for (const t of variants) {
-    if (hasEdition(t, 'TR')) continue;
-    const notes = ['ausente no TR', `presente em: ${t.editions}`];
-    if (t.variant_note) notes.push(`nota: ${t.variant_note}`);
+  // Variantes: leituras lado a lado por posição, cada uma citando o(s) seu(s) token(s).
+  for (const site of variantSites(original)) {
+    const cites = [...site.trReading, ...site.naReading].map((t) => t.cite_id);
+    const fmt = (list: Token[]): string =>
+      list.length === 0
+        ? '(omitida: sem palavra correspondente)'
+        : list
+            .map(
+              (t) =>
+                `${t.surface} [${t.cite_id}] (morfologia ${t.morph ?? '-'}${t.morph_desc ? ` = ${t.morph_desc}` : ''})`,
+            )
+            .join(' + ');
     push({
-      citeId: t.cite_id,
+      citeId: cites[0] ?? '',
+      cites: cites.slice(1),
       layer: 1,
-      section: 'Variantes fora do TR',
+      section: 'Variantes textuais (leituras por posição)',
       sectionOrder: 3,
-      priority: 2,
-      line: `[${t.cite_id}] ${titleOf(t.source_id)}: ${t.surface} · ${notes.join(' · ')}`,
+      priority: 1,
+      mandatory: true,
+      line: `Variante em ${site.ref} — TR/BYZ: ${fmt(site.trReading)} | NA/SBL/WH: ${fmt(site.naReading)}`,
     });
   }
 
@@ -259,6 +250,21 @@ function buildItems(panel: PanelData): Item[] {
   }
 
   // Camada 4 — língua original
+  // Palavras de conteúdo com análise morfológica completa (código e descrição TEGMC), com a sua citação.
+  for (const t of original) {
+    if (!isContentToken(t) || !(t.corpus === 'hot' || hasEdition(t, 'TR'))) continue;
+    const morph = t.morph ? `morfologia ${t.morph}${t.morph_desc ? ` = ${t.morph_desc}` : ''}` : 'morfologia -';
+    push({
+      citeId: t.cite_id,
+      layer: 4,
+      section: 'Palavras de conteúdo (análise morfológica)',
+      sectionOrder: 0,
+      priority: 1,
+      mandatory: true,
+      line: `[${t.cite_id}] ${titleOf(t.source_id)}: ${t.surface} · lema ${t.lemma ?? '-'} · Strong ${t.strong ?? '-'} · ${morph}${t.gloss_en ? ` · glosa "${t.gloss_en}"` : ''}`,
+    });
+  }
+
   // Palavras de conteúdo: bases de Strong com ao menos uma ocorrência de conteúdo no trecho.
   const contentBases = new Set(
     original.filter(isContentToken).map((t) => t.strong_base).filter((b): b is string => !!b),
@@ -386,9 +392,13 @@ function selectWithin(items: Item[], allowance: number): { chosen: Item[]; used:
  * fora do orçamento recebem, em proporção às suas frações, a parcela que sobrou das outras.
  */
 function selectByLayer(items: Item[], budget: number): Item[] {
+  // Itens obrigatórios entram sempre; o restante do orçamento é dividido por camada.
+  const mandatory = items.filter((i) => i.mandatory);
+  const remaining = Math.max(0, budget - mandatory.reduce((sum, i) => sum + costOf(i), 0));
+  const optional = items.filter((i) => !i.mandatory);
   const layers: Layer[] = [1, 2, 3, 4, 5, 6];
-  const byLayer = new Map<Layer, Item[]>(layers.map((l) => [l, items.filter((i) => i.layer === l)] as const));
-  const allowance = new Map<Layer, number>(layers.map((l) => [l, budget * LAYER_SHARES[l]] as const));
+  const byLayer = new Map<Layer, Item[]>(layers.map((l) => [l, optional.filter((i) => i.layer === l)] as const));
+  const allowance = new Map<Layer, number>(layers.map((l) => [l, remaining * LAYER_SHARES[l]] as const));
 
   const first = new Map<Layer, ReturnType<typeof selectWithin>>();
   for (const l of layers) first.set(l, selectWithin(byLayer.get(l) ?? [], allowance.get(l) ?? 0));
@@ -398,7 +408,7 @@ function selectByLayer(items: Item[], budget: number): Item[] {
   const exhausted = layers.filter((l) => (first.get(l)?.chosen.length ?? 0) < (byLayer.get(l)?.length ?? 0));
   const exhaustedShare = exhausted.reduce((sum, l) => sum + LAYER_SHARES[l], 0);
 
-  const chosen: Item[] = [];
+  const chosen: Item[] = [...mandatory];
   for (const l of layers) {
     if (exhausted.includes(l) && spare > 0 && exhaustedShare > 0) {
       const extra = (spare * LAYER_SHARES[l]) / exhaustedShare;
@@ -468,14 +478,15 @@ export function serializePanel(panel: PanelData, budgetChars: number = DEFAULT_C
     budget -= text.length - budgetChars + 64;
     if (budget <= 0) break;
   }
+  // Orçamento muito pequeno para os obrigatórios: mantém só eles (acima do orçamento, sem perder o essencial).
   if (text.length > budgetChars) {
-    chosen = [];
-    text = render(panel, chosen, items, items.length);
+    chosen = selectByLayer(items, 0);
+    text = render(panel, chosen, items, items.length - chosen.length);
   }
 
   return {
     text,
-    citeIds: new Set(chosen.map((i) => i.citeId)),
+    citeIds: new Set(chosen.flatMap(itemCites)),
     omitted: items.length - chosen.length,
   };
 }

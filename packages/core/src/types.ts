@@ -230,4 +230,16 @@ export interface CitedSegment {
    * uncited = afirmação sem citação; structure = título, rótulo de seção ou aviso de ausência (não é fato).
    */
   kind: 'source' | 'inference' | 'uncited' | 'structure';
+  /**
+   * Afirmações gramaticais (modo, tempo, voz, caso, pessoa, número) que contradizem a análise de
+   * TODOS os tokens citados no trecho. Preenchido por checkMorphClaims (adicionado em v0.2).
+   */
+  morphConflicts?: MorphConflict[];
+}
+
+export interface MorphConflict {
+  /** Termo usado no texto da IA, ex.: "indicativo". */
+  term: string;
+  /** Valor(es) que a análise do token traz, em português, ex.: "imperativo". */
+  expected: string;
 }

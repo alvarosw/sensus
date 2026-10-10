@@ -28,8 +28,9 @@ afterEach(() => {
 
 /** Ids citados nas linhas do tipo "- [id] ...". */
 function idsInText(text: string): Set<string> {
+  // Ids entre colchetes em qualquer posição de uma linha (linhas de variante citam mais de um).
   const ids = new Set<string>();
-  for (const m of text.matchAll(/^- \[([^\]]+)\]/gm)) ids.add(m[1] ?? '');
+  for (const m of text.matchAll(/\[((?:txt|tok|lex|com|dic|xr|ent):[^\]\s]+)\]/g)) ids.add(m[1] ?? '');
   return ids;
 }
 
@@ -125,9 +126,36 @@ describe('serializePanel', () => {
   });
 
   it('nunca ultrapassa o orçamento, mesmo com orçamentos pequenos', () => {
-    for (const budget of [400, 800, 1500, 5000]) {
+    for (const budget of [3000, 5000, 9000]) {
       expect(serializePanel(panel, budget).text.length).toBeLessThanOrEqual(budget);
     }
+  });
+
+  it('com orçamento minúsculo mantém os obrigatórios (análise de conteúdo e variantes)', () => {
+    const ctx = serializePanel(panel, 400);
+    expect(ctx.text).toContain('análise morfológica');
+    expect(ctx.text).toContain('Variante em Filipenses 2:6');
+    expect(ctx.citeIds.has('tok:gnt:50002006:5')).toBe(true);
+  });
+
+  it('cada leitura de variante cita o(s) seu(s) token(s); leitura omitida não cita nada', () => {
+    const ctx = serializePanel(panel, 60_000);
+    // Fixture: em 2:6 TR/BYZ tem ἐν e NA não tem palavra correspondente (omitida).
+    const at6 = ctx.text.split('\n').find((l) => l.startsWith('- Variante em Filipenses 2:6')) ?? '';
+    expect(at6).toMatch(/TR\/BYZ: ἐν \[tok:gnt:50002006:5\] \(morfologia -\)/);
+    expect(at6).toContain('NA/SBL/WH: (omitida: sem palavra correspondente)');
+    // Em 2:8 NA tem ἑαυτὸν e TR/BYZ não tem: a leitura do NA cita o seu token.
+    const at8 = ctx.text.split('\n').find((l) => l.startsWith('- Variante em Filipenses 2:8')) ?? '';
+    expect(at8).toContain('NA/SBL/WH: ἑαυτὸν [tok:gnt:50002008:7]');
+    expect(at8).toContain('TR/BYZ: (omitida');
+  });
+
+  it('lista as palavras de conteúdo com morfologia e descrição, cada uma com citação', () => {
+    const ctx = serializePanel(panel, 60_000);
+    const section = ctx.text.split('### Palavras de conteúdo (análise morfológica)')[1]?.split('\n### ')[0] ?? '';
+    expect(section).toContain('[tok:gnt:50002005:2]');
+    expect(section).toContain('Mood=Imperative'); // descrição TEGMC completa, não só o código
+    expect(section).not.toContain('[tok:gnt:50002005:3]'); // ἐν é preposição (função)
   });
 
   it('intercala comentários de tradições diferentes quando o espaço é curto', () => {

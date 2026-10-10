@@ -105,3 +105,19 @@ describe('streaming', () => {
     expect(final[1]?.kind).toBe('uncited');
   });
 });
+
+describe('abreviações não encerram sentença', () => {
+  it('não quebra em "vv." nem em "cf.", "Dt." ou "p. ex."', () => {
+    expect(parseCited('A kenosis (vv. 6-11) é central. Outra frase.', VALID)).toHaveLength(2);
+    expect(parseCited('Veja cf. Dt. 6:4 e p. ex. ainda aqui.', VALID)).toHaveLength(1);
+    expect(parseCited('O hino (vv. 6-11) [[txt:blivre:50002005]].', VALID)[0]?.cites).toEqual(['txt:blivre:50002005']);
+  });
+
+  it('reconhece o id "xr:" de dois caracteres nas duas formas de citação', () => {
+    const xr = new Set(['xr:openbible:50002005:50001002-50001002']);
+    expect(parseCited('Veja [xr:openbible:50002005:50001002-50001002].', xr)[0]?.cites).toEqual([
+      'xr:openbible:50002005:50001002-50001002',
+    ]);
+    expect(parseCited('Veja [[xr:openbible:50002005:50001002-50001002]].', xr)[0]?.kind).toBe('source');
+  });
+});

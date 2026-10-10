@@ -33,8 +33,14 @@ const XREF_COLS = 'cite_id, source_id, from_vid, to_start_vid, to_end_vid, weigh
 const ENTITY_COLS = 'cite_id, source_id, type, name, description, lat, lon, data';
 
 export type DictionaryKind = 'dictionary' | 'topical';
-/** Verbete de dicionário ou índice temático, com o tipo da fonte. */
-export type DictionaryHit = DictionaryEntry & { kind: DictionaryKind };
+/**
+ * Verbete de dicionário ou índice temático, com o tipo da fonte.
+ * ref_span: menor amplitude (vid final - vid inicial) entre as referências do verbete que tocam o intervalo.
+ * total_refs: número total de referências do verbete (especificidade).
+ */
+export type DictionaryHit = DictionaryEntry & { kind: DictionaryKind; ref_span: number; total_refs: number };
+/** Entidade com o número total de versículos em que aparece (genericidade). */
+export type EntityHit = Entity & { total_refs: number };
 export type XRefWithTexts = XRef & { texts: VerseText[] };
 export interface Concordance {
   /** Total de versículos distintos com o strong_base no corpus original. */
@@ -291,11 +297,14 @@ export class Repo {
     const allowed = kinds.filter((k): k is DictionaryKind => k === 'dictionary' || k === 'topical');
     if (allowed.length === 0) return [];
     return this.all<DictionaryHit>(
-      `SELECT DISTINCT d.cite_id, d.source_id, d.headword, d.text, s.kind AS kind
+      `SELECT d.cite_id, d.source_id, d.headword, d.text, s.kind AS kind,
+              MIN(r.end_vid - r.start_vid) AS ref_span,
+              (SELECT COUNT(*) FROM entry_ref x WHERE x.entry_cite_id = d.cite_id) AS total_refs
        FROM entry_ref r
        JOIN dictionary_entry d ON d.cite_id = r.entry_cite_id
        JOIN source s ON s.id = d.source_id
        WHERE r.start_vid <= ? AND r.end_vid >= ? AND s.kind IN (${placeholders(allowed.length)})
+       GROUP BY d.cite_id, s.kind
        ORDER BY s.kind, d.headword, d.cite_id`,
       [range.end, range.start, ...allowed],
     );
@@ -338,10 +347,11 @@ export class Repo {
     );
   }
 
-  /** Pessoas, lugares e grupos ligados a versículos do intervalo. */
-  entities(range: VerseRange): Promise<Entity[]> {
-    return this.all<Entity>(
-      `SELECT DISTINCT e.cite_id, e.source_id, e.type, e.name, e.description, e.lat, e.lon, e.data
+  /** Pessoas, lugares e grupos ligados a versículos do intervalo, com o total de referências de cada um. */
+  entities(range: VerseRange): Promise<EntityHit[]> {
+    return this.all<EntityHit>(
+      `SELECT DISTINCT e.cite_id, e.source_id, e.type, e.name, e.description, e.lat, e.lon, e.data,
+              (SELECT COUNT(*) FROM entity_ref x WHERE x.entity_cite_id = e.cite_id) AS total_refs
        FROM entity_ref r JOIN entity e ON e.cite_id = r.entity_cite_id
        WHERE r.vid BETWEEN ? AND ?
        ORDER BY e.name, e.cite_id`,

@@ -2,7 +2,8 @@
 import type { CitedSegment } from '../types';
 
 const SENTINEL = '';
-const CITE_ID = '[a-z]{3}:[A-Za-z0-9:._-]+';
+// Prefixos do schema (pipeline/schema.sql): txt, tok, lex, com, dic, xr, ent (xr tem dois caracteres).
+const CITE_ID = '(?:txt|tok|lex|com|dic|xr|ent):[A-Za-z0-9:._-]+';
 
 // [[id]] ou [[id1, id2]] (qualquer conteúdo sem colchetes) e [id] ou [id1, id2] com prefixo de cite_id.
 const MARKER_RE = new RegExp(
@@ -12,6 +13,27 @@ const MARKER_RE = new RegExp(
 // Marcador já completo no início do trecho (usado para o corte em streaming).
 const COMPLETE_AT_START = new RegExp(`^(?:\\[\\[[^\\[\\]\\n]*\\]\\]|\\[${CITE_ID}(?:\\s*[,;]\\s*${CITE_ID})*\\])`);
 const TERMINAL = /[.!?…]/;
+
+/**
+ * Abreviações comuns (sem o ponto, minúsculas) após as quais o ponto não encerra a sentença:
+ * referências bíblicas (vv., cf., Dt.), capítulos, séculos, "p. ex.", "a.C.", "d.C.".
+ * Uma letra isolada também é abreviação ("a.C.", iniciais).
+ */
+const ABBREVIATIONS: ReadonlySet<string> = new Set([
+  'vv', 'v', 'cf', 'cap', 'caps', 'p', 'pp', 'ex', 'p.ex', 'séc', 'secs', 'sec', 'a.c', 'd.c', 'ref', 'refs',
+  'art', 'sr', 'sra', 'dr', 'ibid', 'op', 'cit', 'trad', 'ed', 'vol', 'aprox', 'pág', 'págs', 'ver', 'vs',
+  'gn', 'ex', 'lv', 'nm', 'dt', 'js', 'jz', 'rt', 'sm', 'rs', 'cr', 'ne', 'et', 'jó', 'sl', 'pv', 'ec', 'ct',
+  'is', 'jr', 'lm', 'ez', 'dn', 'os', 'jl', 'am', 'mq', 'na', 'hc', 'sf', 'ag', 'zc', 'ml',
+  'mt', 'mc', 'lc', 'jo', 'at', 'rm', 'co', 'fp', 'fl', 'cl', 'ts', 'tm', 'fm', 'hb', 'tg', 'pe', 'jd',
+  'ap', 'nº', 'n', 'etc',
+]);
+
+/** O ponto que acaba `buf` pertence a uma abreviação (ex.: "vv", "p.ex", ou uma letra isolada). */
+function endsWithAbbreviation(buf: string): boolean {
+  const word = /([\p{L}.]+)$/u.exec(buf)?.[1]?.toLowerCase().replace(/\.$/, '');
+  if (!word) return false;
+  return word.length === 1 || ABBREVIATIONS.has(word);
+}
 const INFERENCE_RE = /^\(\s*infer[êe]ncia\s*\)/i;
 
 /** Texto sem marcação de Markdown nem marcadores de lista/título no início. */
@@ -75,7 +97,12 @@ function splitSentences(flat: string, markers: string[][]): RawSentence[] {
     let state: 'none' | 'punct' | 'space' = 'none';
 
     const flush = (): void => {
-      const text = buf.split(SENTINEL).join('').replace(/\s+/g, ' ').trim();
+      const text = buf
+        .split(SENTINEL)
+        .join('')
+        .replace(/\s+/g, ' ')
+        .replace(/ ([.,;:!?…])/g, '$1')
+        .trim();
       if (text || ids.length > 0) out.push({ text, ids });
       buf = '';
       ids = [];
@@ -97,7 +124,8 @@ function splitSentences(flat: string, markers: string[][]): RawSentence[] {
       }
       // Ponto depois de número ("1. Texto", "2.") não encerra sentença.
       const numberPeriod = ch === '.' && /\d/.test(lastVisible);
-      if (TERMINAL.test(ch) && !numberPeriod) {
+      const abbreviationPeriod = ch === '.' && endsWithAbbreviation(buf);
+      if (TERMINAL.test(ch) && !numberPeriod && !abbreviationPeriod) {
         buf += ch;
         state = 'punct';
         lastVisible = ch;

@@ -1,6 +1,9 @@
 import { fetch as expoFetch } from 'expo/fetch';
 import {
+  CHAT_CONTEXT_PREFIX,
+  CHAT_MAX_TOKENS,
   createProvider,
+  SUMMARY_MAX_TOKENS,
   type ChatMessage,
   type FetchLike,
   type LLMProvider,
@@ -18,16 +21,22 @@ export function providerFor(config: ProviderConfig): LLMProvider & { listModels?
   return createProvider(config, streamingFetch);
 }
 
+/** Pergunta sobre a passagem (chatMessages) carrega a mensagem de contexto; o resumo não. */
+function isChatRequest(messages: readonly ChatMessage[]): boolean {
+  return messages.some((m) => m.role === 'system' && m.content.startsWith(CHAT_CONTEXT_PREFIX));
+}
+
 /**
  * Emite pedaços de texto (com marcadores [[cite_id]]) conforme chegam. Cancelável via signal.
- * maxTokens folgado: modelos com raciocínio gastam parte do limite antes de responder.
+ * Limite de saída: SUMMARY_MAX_TOKENS para o resumo e CHAT_MAX_TOKENS para perguntas (detectadas
+ * pelo contexto de chat); modelos com raciocínio gastam parte do limite antes de responder.
  */
 export async function streamChat(
   config: ProviderConfig,
   messages: ChatMessage[],
   onChunk: (chunk: string) => void,
   signal?: AbortSignal,
-  maxTokens = 8000,
+  maxTokens = isChatRequest(messages) ? CHAT_MAX_TOKENS : SUMMARY_MAX_TOKENS,
 ): Promise<void> {
   for await (const chunk of providerFor(config).stream({ messages, temperature: 0.2, maxTokens, signal })) {
     onChunk(chunk);

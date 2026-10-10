@@ -17,6 +17,13 @@ Pendências registradas durante o desenvolvimento. Prioridade: **P1** (próximo)
   Calvino: ~11 entradas truncadas no próprio módulo SWORD.
 - **P2 — ISBE** contém artefatos de conversão ("ø" no lugar de "°", ">" soltos).
 - **P2 — Smith**: poucos `entry_ref` resolvidos para Filipenses; revisar o parser de referências.
+- **P1 — Smith: "Phil." mapeado para Filipenses** quando é Filemom (ex.: Ápia, Arquipo em "Phil. 2").
+  Corrigir no `refparse.py` (desambiguar pelo número de capítulos: Filemom tem 1).
+- **P2 — Patrística**: o Commentaries-Database só dedica a compilação ao domínio público; o ingestor
+  mantém apenas citações verificadas literalmente em páginas ANF/NPNF (New Advent) — 12.429 de ~65 mil.
+  Ampliar a verificação para o CCEL.
+- **P2 — Gill** vem do módulo SWORD do SermonIndex (declarado domínio público na .conf, não verificado
+  de forma independente).
 - **P3 — Descrições em inglês** (entidades, dicionários): hoje traduzidas via link do Google Tradutor.
 - **P3 — Macula Greek/Hebrew** (árvores sintáticas, CC BY 4.0) para diagramação do argumento.
 
@@ -25,7 +32,12 @@ Pendências registradas durante o desenvolvimento. Prioridade: **P1** (próximo)
 - **P1 — Erros gramaticais da IA** (ex.: chamou φρονεῖτε de indicativo). Mitigação em andamento:
   variantes como pares de leituras com morfologia, regra de copiar `morph_desc`, e verificação
   determinística das afirmações morfológicas contra os tokens citados.
-- **P1 — Relevância do contexto histórico** (verbetes genéricos ou de outros livros entrando).
+- **P1 — Alinhamento de variantes**: os pares de leituras são agrupados por posição na sequência
+  amalgamada do TAGNT, o que pode parear palavras erradas (ex.: Fp 2:5 pareou "γὰρ" com "φρονεῖτε").
+  Alinhar por lacunas entre palavras comuns às edições.
+- **P2 — Citação de unidade literária** às vezes aponta para um versículo errado (ex.: unidade 2:1-30
+  citada com o id de 1:30).
+- Feito: relevância do contexto histórico (especificidade + correspondência com entidades/lemas).
 - **P2 — Consistência**: dois usuários podem receber resumos diferentes para o mesmo trecho.
   Avaliar cache local (não persistido como conteúdo) ou temperatura 0.
 - **P3 — Modelos com raciocínio** gastam tokens antes de responder; limites em `SUMMARY_MAX_TOKENS`.
@@ -40,5 +52,6 @@ Pendências registradas durante o desenvolvimento. Prioridade: **P1** (próximo)
 
 - `theographic` é CC BY-SA 4.0: o banco distribuído herda o share-alike.
 - `sword-rwp` (Robertson): distribuição livre apenas não comercial — aprovado porque o app é comunitário
-  e não comercial. **Se o app algum dia for comercializado, remover esta fonte.**
+  e não comercial. **Se o app algum dia for comercializado, remover esta fonte.** O "About" do módulo
+  menciona expiração de copyright dos volumes 5–6 em 2006/2007; revisar.
 - Créditos obrigatórios (CC BY): STEPBible/Tyndale House, OpenBible.info, Bíblia Livre.

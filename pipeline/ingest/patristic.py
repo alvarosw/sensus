@@ -77,6 +77,8 @@ EXCLUDED_CATEGORIES = {
 PD_HOSTS = {"newadvent.org", "ccel.org", "tertullian.org"}
 # Caminhos PD-host que NÃO são PD (ver topo do arquivo).
 EXCLUDED_PATHS = ("/pearse/morefathers/files/jerome_daniel",)
+# Páginas citadas sem nenhuma atribuição de tradução/edição: não há como provar PD.
+UNVERIFIED_PATHS = ("/ccel/cassian/conferences",)
 # Marca de edição PD exigida em páginas do New Advent antes de entrarem no corpus.
 NOTICE_RE = re.compile(r"Schaff|Ante-Nicene|Nicene and Post-Nicene|Christian Literature Publishing|"
                        r"Gifford|Pusey|Payne Smith")
@@ -228,6 +230,9 @@ def load_candidates(stats: Counter) -> list[dict]:
             if any(x in url for x in EXCLUDED_PATHS):
                 stats["excluído: tradução de Archer (Jerônimo, Daniel)"] += 1
                 continue
+            if any(x in url for x in UNVERIFIED_PATHS):
+                stats["excluído: página sem atribuição de tradução"] += 1
+                continue
             body = clean_quote(c.get("quote", ""))
             ws = words(body)
             if len(ws) < MIN_WORDS:
@@ -246,7 +251,7 @@ def load_corpus(stats: Counter, cited_urls: set[str]) -> list[str]:
         fetch(SITEMAP_URL, SITEMAP)
     na = sorted(set(NA_FATHERS_RE.findall(SITEMAP.read_text(encoding="utf-8"))))
     stats["páginas New Advent /fathers/ no sitemap"] = len(na)
-    cited = sorted(u for u in cited_urls if not any(x in u for x in EXCLUDED_PATHS))
+    cited = sorted(u for u in cited_urls if not any(x in u for x in EXCLUDED_PATHS + UNVERIFIED_PATHS))
     return sorted(set(na) | set(cited))
 
 

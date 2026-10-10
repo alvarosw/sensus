@@ -9,3 +9,7 @@ export * from './ai/presets';
 export * from './ai/context';
 export * from './ai/prompts';
 export * from './ai/citations';
+export * from './ai/morphcheck';
+export * from './morph';
+export * from './relevance';
+export * from './variants';

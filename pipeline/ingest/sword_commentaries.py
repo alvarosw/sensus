@@ -30,12 +30,24 @@ MODULES = [
     ("CalvinCommentaries", "CalvinCommentaries.zip", "reformed", "João Calvin (1509-1564)"),
     ("Clarke", "Clarke.zip", "methodist", "Adam Clarke (1762-1832)"),
     ("Wesley", "Wesley.zip", "methodist", "John Wesley (1703-1791)"),
+    ("RWP", "RWP.zip", "baptist", "A. T. Robertson (1863-1934)"),
 ]
+
+# Módulos com licença diferente de 'Public Domain', aprovados pelo responsável do projeto
+# (app comunitário e não comercial). O campo license é sempre o texto exato do .conf.
+APPROVED_LICENSES = {
+    "RWP": {
+        "license": "Copyrighted; Free non-commercial distribution",
+        "notes": ("Distribuição livre apenas não comercial; uso aprovado pelo responsável do projeto "
+                  "(app comunitário, não comercial). "),
+        "attribution": ("Vols. 5 e 6: (c) 1932 e 1933 Broadman Press, renovação 1960, usado com permissão "
+                        "(conforme About do módulo)."),
+    },
+}
 
 # Ignorados (reportados ao usuário):
 SKIPPED = {
-    "Gill": "não existe no repositório CrossWire (rawzip)",
-    "RWP": "licença 'Copyrighted; Free non-commercial distribution' (não é redistribuível livremente)",
+    "Gill": "não existe no repositório CrossWire (rawzip); ver ingest/gill.py",
     "Geneva": "conf sem DistributionLicense (notas da Bíblia de Genebra; licença não declarada)",
     "TSK": "fora do escopo deste ingestor (outro agente)",
 }
@@ -96,7 +108,9 @@ def ingest(name: str, zip_name: str, tradition: str, author: str) -> None:
     zip_path = download(zip_name, source_id)
     root = extract(zip_path)
     conf = read_conf(root, name)
-    if conf.get("distributionlicense") != "Public Domain":
+    approved = APPROVED_LICENSES.get(name, {})
+    expected_license = approved.get("license", "Public Domain")
+    if conf.get("distributionlicense") != expected_license:
         raise RuntimeError(f"{name}: licença inesperada: {conf.get('distributionlicense')!r}")
     reader = open_module(conf)
     about = conf_plain(conf.get("about", ""))
@@ -114,12 +128,14 @@ def ingest(name: str, zip_name: str, tradition: str, author: str) -> None:
             version=f"{conf['version']} (SwordVersionDate {conf.get('swordversiondate', '?')})",
             attribution=(
                 f"{conf.get('description', name)}, {author}. Módulo SWORD {name} v{conf['version']} "
-                f"(CrossWire Bible Society), Public Domain conforme o .conf do módulo."
+                f"(CrossWire Bible Society), {expected_license} conforme o .conf do módulo."
+                + (f" {approved['attribution']}" if approved.get("attribution") else "")
                 + (f" Fonte do texto: {text_source}." if text_source else "")
             ),
             tradition=tradition,
             notes=(
-                f"Módulo SWORD {name}; driver {conf['moddrv']}, BlockType={conf.get('blocktype')}, "
+                approved.get("notes", "")
+                + f"Módulo SWORD {name}; driver {conf['moddrv']}, BlockType={conf.get('blocktype')}, "
                 f"SourceType={conf.get('sourcetype')}. Versificação KJV. Notas de rodapé movidas para o "
                 "fim de cada verbete como 'Nota: ...'. Versículos com texto idêntico consecutivo fundidos. "
                 + (about[:400] if about else "")

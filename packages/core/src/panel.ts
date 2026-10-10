@@ -1,7 +1,8 @@
 // Painel hermenêutico: reúne as seis camadas de um intervalo a partir do banco.
 import type { PanelData, Source, Token, VerseRange, VerseText } from './types';
 import { formatReference, splitVid } from './refs';
-import { DEFAULT_TEXT_SOURCE, type Concordance, Repo } from './repo';
+import { DEFAULT_TEXT_SOURCE, type Concordance, Repo, type DictionaryHit } from './repo';
+import { buildRelevanceContext, rankDictionary, rankEntities } from './relevance';
 
 /** Edições-base do NT grego; uma palavra fora de alguma delas é uma variante textual. */
 export const BASE_EDITIONS = ['TR', 'BYZ', 'NA'] as const;
@@ -98,7 +99,20 @@ export async function buildPanel(repo: Repo, range: VerseRange, opts: PanelOptio
   const boundedBookIntro = bookIntro.slice(0, limits.bookIntro);
   // Verbetes de introdução do livro já aparecem na camada literária: não os repete no histórico.
   const introIds = new Set(boundedBookIntro.map((d) => d.cite_id));
-  const historicalDictionary = dictionary.filter((d) => !introIds.has(d.cite_id));
+  // Relevância: descarta verbetes/entidades improváveis para este trecho e ordena pelos mais específicos.
+  const relevance = buildRelevanceContext(
+    r,
+    startBook,
+    entities.map((e) => e.name),
+    tokens,
+  );
+  const historicalDictionary = rankDictionary(
+    dictionary.filter((d) => !introIds.has(d.cite_id)) as DictionaryHit[],
+    relevance,
+    limits.dictionary,
+  );
+  const rankedEntities = rankEntities(entities, limits.entities, { othersExist: historicalDictionary.length > 0 });
+  const rankedTopics = rankDictionary(topics as DictionaryHit[], relevance, limits.topics);
 
   // Fontes efetivamente referenciadas no painel.
   const referenced = new Set<string>();
@@ -113,8 +127,8 @@ export async function buildPanel(repo: Repo, range: VerseRange, opts: PanelOptio
   note(xrefs);
   note(xrefs.flatMap((x) => x.texts));
   note(historicalDictionary);
-  note(topics);
-  note(entities);
+  note(rankedTopics);
+  note(rankedEntities);
   note(commentaries);
   note(boundedBookIntro);
 
@@ -137,13 +151,13 @@ export async function buildPanel(repo: Repo, range: VerseRange, opts: PanelOptio
         unit,
       },
       historical: {
-        entities: entities.slice(0, limits.entities),
-        dictionary: historicalDictionary.slice(0, limits.dictionary),
+        entities: rankedEntities,
+        dictionary: historicalDictionary,
       },
       language: { lexicon, concordance },
       intertext: {
         xrefs,
-        topics: topics.slice(0, limits.topics),
+        topics: rankedTopics,
       },
       interpretation: {
         commentaries: commentaries.slice(0, limits.commentaries),
