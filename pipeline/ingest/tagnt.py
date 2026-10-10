@@ -188,6 +188,26 @@ def assign_positions(rows):
     return shifted
 
 
+def paragraph_starts(rows):
+    """Inícios de parágrafo: ({vid: nº de ¶}, total de ¶, ¶ no meio de versículo).
+
+    O ¶ vem colado à última palavra do parágrafo (coluna grega) e a palavra seguinte abre o novo,
+    então o parágrafo começa no vid dela. Um ¶ na última palavra do livro não gera início.
+    """
+    starts = collections.Counter()
+    marks = mid = 0
+    for a, b in zip(rows, rows[1:]):
+        if "¶" not in a["f"][1]:
+            continue
+        marks += 1
+        if a["canon"][0] != b["canon"][0]:
+            continue
+        starts[b["vid"]] += 1
+        if a["vid"] == b["vid"]:
+            mid += 1
+    return starts, marks, mid
+
+
 def split_strong_morph(s):
     """'G1199=N-DPM + G0846|G3165«G3450=P-1GS' -> [('G1199','N-DPM'), ('G3450','P-1GS')].
 
@@ -379,7 +399,12 @@ NOTES = (
     "caem no mesmo versículo KJV. "
     "morph_desc: TEGMC. variant_note: tipo do TAGNT (N/K/O, quando não NKO) e "
     "variantes de sentido/ortografia. Marcadores de layout (¶ ¬) removidos; grafias "
-    "normalizadas para NFC."
+    "normalizadas para NFC. "
+    "text_division (kind 'paragraph'): o ¶ da coluna grega fecha um parágrafo e a palavra seguinte o "
+    "abre; a divisão vai ao vid dessa palavra. Os ¶ no meio de um versículo abrem parágrafo nesse "
+    "versículo (granularidade do schema: vid). O README do TAGNT não define o ¶ nem diz de qual edição "
+    "ele vem; a marca é a do próprio layout da fonte (conferido: ¶ após Mt 4:25 e início em Mt 5:1, "
+    "o Sermão da Montanha). Títulos de seção não são emitidos. O ¶ isolado de Mt 11:17 não gera nada."
 )
 
 GRC_TR_NOTES = "derived from TAGNT: words marked as present in TR"
@@ -391,6 +416,7 @@ def main():
     tegmc = load_tegmc(DIR / "TEGMC.txt")
     rows = load_rows()
     shifted = assign_positions(rows)
+    starts, para_marks, para_mid = paragraph_starts(rows)
 
     # Lema por Strong, a partir das palavras principais (para variantes sintéticas).
     lemma_count = collections.defaultdict(collections.Counter)
@@ -463,6 +489,9 @@ def main():
                 else:
                     n_meaning += 1
 
+        for vid in sorted(starts):
+            w.row("text_division", vid=vid, kind="paragraph", title=None)
+
         for v in sorted(tr_words):
             words = [s for _, s in sorted(tr_words[v])]
             wt.row("verse_text", cite_id=cite_txt("grc-tr", v), vid=v, text=" ".join(words))
@@ -476,6 +505,9 @@ def main():
     print(
         f"TR tokens: antes={tr_before} depois={n_tr} "
         f"verses(tagnt)={len(verses)} verses(grc-tr)={len(tr_words)}"
+    )
+    print(
+        f"¶={para_marks} inícios de parágrafo={len(starts)} (no meio do versículo={para_mid})"
     )
 
 

@@ -53,6 +53,9 @@ LEMMA_RE = re.compile(r"\{(H\d{4}[A-Za-z]*)=([^=}]*)=")   # {H7225G=רֵאשִׁ
 ROOT_RE = re.compile(r"(H\d{4}[A-Za-z]*)")
 PUNCT_RE = re.compile(r"[׃׀\s]")                          # sof pasuq, paseq, espaços
 SECTION_MARKS = {"פ", "ס"}                                 # petucha / setuma
+# Marca de seção na coluna de notas (col. 11): '\H9017=פ=para' (petucha) e '\H9018=ס=section' (setuma).
+SECTION_RE = re.compile(r"=[פס]=(para|section)")
+SECTION_TITLE = {"para": "petuchah", "section": "setumah"}
 
 # Legenda das letras de edição (ver notes da source 'tahot').
 EDITION_NOTES = (
@@ -243,6 +246,9 @@ def parse_word(cols: list[str], stats: dict, codes: dict[str, str]) -> dict | No
     else:
         note = typ + (": " + "; ".join(variant_items) if variant_items else "")
 
+    sm = SECTION_RE.search(cols[11])
+    mark = SECTION_TITLE[sm.group(1)] if sm else None
+
     # Leitura do Leningrado para o texto do versículo (Qere/variantes V); None se não houver.
     lform = leningrad_form(variant_items) if base in ("Q", "V") else None
     surface = heb_surface(cols[1])
@@ -263,6 +269,7 @@ def parse_word(cols: list[str], stats: dict, codes: dict[str, str]) -> dict | No
         "strong": strong, "strong_base": strong_base, "lemma": lemma,
         "morph": morph, "morph_desc": morph_desc,
         "editions": editions, "variant_note": note, "alt_ref": alt_ref,
+        "mark": mark,
     }
 
 
@@ -294,6 +301,22 @@ def main():
           f"sem strong: {stats['no_strong']}; strong pela coluna de raízes: {stats['strong_fallback']}; "
           f"morfologia sem mapeamento TEHMC: {stats['morph_unmapped']}")
 
+    # Divisões: a marca de seção fecha o versículo em que está; o parágrafo começa na palavra seguinte
+    # na ordem hebraica (vid em versificação inglesa, como o resto do TAHOT). Se a mesma palavra
+    # seguinte recebe duas marcas, vale a primeira.
+    ordered = sorted((w for ws in by_vid.values() for w in ws), key=lambda w: (w["hkey"], w["anchor"], w["sub"]))
+    starts: dict[int, str] = {}
+    n_mid = 0
+    for a, b in zip(ordered, ordered[1:]):
+        if a["mark"] is None or a["hkey"] // 1_000_000 != b["hkey"] // 1_000_000:
+            continue
+        if a["vid"] == b["vid"]:
+            n_mid += 1
+        starts.setdefault(b["vid"], a["mark"])
+    n_pet = sum(1 for t in starts.values() if t == "petuchah")
+    print(f"divisões de parágrafo: {len(starts)} (petuchah={n_pet}, setumah={len(starts) - n_pet}; "
+          f"no meio do versículo={n_mid})")
+
     with StagingWriter("tahot") as wt, StagingWriter("hbo-wlc") as wv:
         wt.source(
             kind="tokens",
@@ -317,7 +340,11 @@ def main():
                 "unidas por ' + ', ou NULL se algum segmento não estiver no TEHMC. "
                 "vid: versificação inglesa (NRSV/KJV); v.0 = títulos dos salmos; alt_ref: versículo hebraico "
                 "quando difere. surface: forma com maqaf (־), sem marcas de segmento '/' e sem sof pasuq/setuma. "
-                "Usa TAHOT Gen-Deu, Jos-Est, Job-Sng e Isa-Mal, mais TEHMC para morph_desc."
+                "Usa TAHOT Gen-Deu, Jos-Est, Job-Sng e Isa-Mal, mais TEHMC para morph_desc. "
+                "text_division (kind 'paragraph', title 'petuchah' ou 'setumah'): marcas פ (petucha) e ס "
+                "(setuma) da coluna de notas do TAHOT (=פ=para, =ס=section); a seção começa na palavra "
+                "seguinte na ordem hebraica, no vid dela (versificação inglesa). Só a marca masorética, "
+                "não um título de seção."
             ),
         )
         wv.source(
@@ -339,6 +366,9 @@ def main():
                 "Títulos de salmos ficam em v.0."
             ),
         )
+
+        for vid, title in sorted(starts.items()):
+            wt.row("text_division", vid=vid, kind="paragraph", title=title)
 
         n_text = n_v0 = 0
         for v in sorted(by_vid):

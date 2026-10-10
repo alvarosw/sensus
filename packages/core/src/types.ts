@@ -158,7 +158,8 @@ export interface PanelData {
       bookIntro: DictionaryEntry[];
       /**
        * Unidade literária que contém o intervalo: do início da última divisão em/antes de start
-       * até o último versículo antes da próxima divisão (ou fim do livro). Adicionado em v0.2.
+       * até o último versículo antes da próxima divisão (ou fim do livro). As divisões são os parágrafos
+       * do original (tagnt no NT, tahot no AT) quando existem; senão, as da fonte de texto. Adicionado em v0.2.
        */
       unit?: VerseRange;
     };

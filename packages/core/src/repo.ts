@@ -22,6 +22,8 @@ export const DEFAULT_TEXT_SOURCE = 'blivre';
 
 const MAX_INTRO_VIDS = 200;
 const MAX_XREF_TARGET_VERSES = 12;
+/** Primeiro livro do NT na ordem protestante (1-39 são do AT). */
+const FIRST_NT_BOOK = 40;
 
 const VERSE_COLS = 'cite_id, source_id, vid, text';
 const TOKEN_COLS =
@@ -189,21 +191,39 @@ export class Repo {
   }
 
   /**
+   * Fonte das divisões que delimitam a unidade literária do livro: os parágrafos do original
+   * ('tagnt' no NT, 'tahot' no AT), se houver parágrafos para o livro; senão a fonte de texto dada.
+   * As divisões de tradução costumam ter um só parágrafo por capítulo, por isso o original tem prioridade.
+   */
+  private async unitDivisionSource(book: number, textSourceId: string): Promise<{ id: string; paragraphsOnly: boolean }> {
+    const preferred = book >= FIRST_NT_BOOK ? 'tagnt' : 'tahot';
+    const hit = await this.first<{ vid: number }>(
+      `SELECT vid FROM text_division WHERE source_id = ? AND kind = 'paragraph' AND vid >= ? AND vid < ? LIMIT 1`,
+      [preferred, book * 1_000_000, (book + 1) * 1_000_000],
+    );
+    return hit ? { id: preferred, paragraphsOnly: true } : { id: textSourceId, paragraphsOnly: false };
+  }
+
+  /**
    * Unidade literária que contém o intervalo (ver PanelData.layers.literary.unit).
-   * Início: última divisão em/antes de range.start (ou início do livro). Fim: último versículo
-   * antes da próxima divisão (ou último versículo do livro), e nunca antes de range.end.
+   * Divisões: parágrafos do original (ver unitDivisionSource), ou da fonte de texto na falta deles.
+   * Início: última divisão em/antes de range.start (ou início do livro). Fim: o versículo antes da
+   * primeira divisão depois de range.end (ou último versículo do livro), e nunca antes de range.end.
+   * Assim, uma seleção que cruza parágrafos gera uma unidade que os abrange todos.
    */
   async literaryUnit(sourceId: string, range: VerseRange): Promise<VerseRange> {
     const book = splitVid(range.start).book;
     const bookStart = book * 1_000_000;
     const bookEnd = (book + 1) * 1_000_000;
+    const div = await this.unitDivisionSource(book, sourceId);
+    const kindClause = div.paragraphsOnly ? " AND kind = 'paragraph'" : '';
     const lead = await this.first<{ vid: number }>(
-      `SELECT vid FROM text_division WHERE source_id = ? AND vid <= ? AND vid >= ? ORDER BY vid DESC LIMIT 1`,
-      [sourceId, range.start, bookStart],
+      `SELECT vid FROM text_division WHERE source_id = ?${kindClause} AND vid <= ? AND vid >= ? ORDER BY vid DESC LIMIT 1`,
+      [div.id, range.start, bookStart],
     );
     const next = await this.first<{ vid: number }>(
-      `SELECT vid FROM text_division WHERE source_id = ? AND vid > ? AND vid < ? ORDER BY vid LIMIT 1`,
-      [sourceId, range.end, bookEnd],
+      `SELECT vid FROM text_division WHERE source_id = ?${kindClause} AND vid > ? AND vid < ? ORDER BY vid LIMIT 1`,
+      [div.id, range.end, bookEnd],
     );
     const limit = next ? next.vid : bookEnd;
     const last = await this.first<{ vid: number | null }>(

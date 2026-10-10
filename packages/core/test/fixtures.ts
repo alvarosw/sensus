@@ -103,6 +103,18 @@ export function createFixtureDb(): DatabaseSync {
     { source_id: 'blivre', vid: 50003001, kind: 'paragraph', title: null },
   ]);
 
+  // Parágrafos do original (TAGNT), como em pipeline/ingest/tagnt.py: o ¶ abre a palavra seguinte.
+  insert(
+    db,
+    'text_division',
+    [50001003, 50001008, 50001021, 50002001, 50002012, 50002019, 50003001].map((vid) => ({
+      source_id: 'tagnt',
+      vid,
+      kind: 'paragraph',
+      title: null,
+    })),
+  );
+
   insert(db, 'token', [
     token(50002005, 1, 'Τοῦτο', 'G5124', 'TR,BYZ,NA', { lemma: 'οὗτος', morph: 'CASN', gloss_en: 'this' }),
     token(50002005, 2, 'φρονεῖτε', 'G5426', 'TR,BYZ,NA', {

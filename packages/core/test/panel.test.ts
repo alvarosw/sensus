@@ -44,18 +44,51 @@ describe('Repo', () => {
     ]);
   });
 
-  it('delimita a unidade literária: divisão anterior até o versículo antes da próxima', async () => {
+  it('delimita a unidade literária pelos parágrafos do original (tagnt)', async () => {
+    // Parágrafos na fixture: 1:3, 1:8, 1:21, 2:1, 2:12, 2:19, 3:1. O texto de teste vai até 2:9.
+    // 2:5-8 cai no parágrafo que começa em 2:1 e termina antes de 2:12.
+    expect(await repo.literaryUnit('blivre', RANGE)).toEqual({ start: 50002001, end: 50002009 });
+    // 1:30-2:1 cruza dois parágrafos (1:21 e 2:1): a unidade abrange os dois.
+    expect(await repo.literaryUnit('blivre', { start: 50001030, end: 50002001 })).toEqual({
+      start: 50001021,
+      end: 50002009,
+    });
+    // Sem parágrafos do original para o livro (Colossenses não está na fixture) nem divisões: livro inteiro até o versículo.
+    expect(await repo.literaryUnit('blivre', { start: 51001001, end: 51001001 })).toEqual({
+      start: 51000000,
+      end: 51001001,
+    });
+  });
+
+  it('usa as divisões da fonte de texto quando o original não tem parágrafos para o livro', async () => {
+    db.exec("DELETE FROM text_division WHERE source_id = 'tagnt'");
+    // Divisões de blivre: 2:5 (cabeçalho) até o versículo antes de 3:1.
     expect(await repo.literaryUnit('blivre', RANGE)).toEqual({ start: 50002005, end: 50002009 });
     // Divisão "Saudação" (1:1) até o versículo antes da divisão seguinte (2:5).
     expect(await repo.literaryUnit('blivre', { start: 50001002, end: 50001002 })).toEqual({
       start: 50001001,
       end: 50002004,
     });
-    // Sem divisão antes nem depois (outro livro): começa no início do livro e vai ao último versículo.
-    expect(await repo.literaryUnit('blivre', { start: 51001001, end: 51001001 })).toEqual({
-      start: 51000000,
-      end: 51001001,
-    });
+  });
+
+  it('no AT, usa os parágrafos do hebraico (tahot) quando existem', async () => {
+    db.prepare('INSERT INTO source (id, kind, title, lang, license, url, retrieved_at) VALUES (?, ?, ?, ?, ?, ?, ?)').run(
+      'tahot',
+      'tokens',
+      'TAHOT',
+      'hbo',
+      'CC-BY-4.0',
+      'https://example.test/tahot',
+      '2026-01-01T00:00:00Z',
+    );
+    db.exec(
+      "INSERT INTO text_division (source_id, vid, kind, title) VALUES ('tahot', 1001006, 'paragraph', 'petuchah'), ('tahot', 1001009, 'paragraph', 'setumah')",
+    );
+    db.exec(
+      "INSERT INTO verse_text (cite_id, source_id, vid, text) VALUES ('txt:blivre:1001007', 'blivre', 1001007, 'texto'), ('txt:blivre:1001008', 'blivre', 1001008, 'texto')",
+    );
+    // Gênesis 1:7 está no parágrafo que começa em 1:6 e termina antes de 1:9 (último versículo de texto: 1:8).
+    expect(await repo.literaryUnit('blivre', { start: 1001007, end: 1001007 })).toEqual({ start: 1001006, end: 1001008 });
   });
 
   it('inclui versículos da unidade nos vizinhos, além da janela de contexto', async () => {
@@ -162,7 +195,8 @@ describe('buildPanel', () => {
     expect(panel.layers.literary.before.map((v) => v.vid)).toEqual([50001002, 50002004]);
     expect(panel.layers.literary.after.map((v) => v.vid)).toEqual([50002009, 50003001]);
     expect(panel.layers.literary.divisions.map((d) => d.title)).toEqual(['Saudação', 'O exemplo de Cristo', null]);
-    expect(panel.layers.literary.unit).toEqual({ start: 50002005, end: 50002009 });
+    // Unidade pelos parágrafos do TAGNT: começa no parágrafo de 2:1, antes de 2:12.
+    expect(panel.layers.literary.unit).toEqual({ start: 50002001, end: 50002009 });
     expect(panel.layers.literary.bookIntro.map((d) => d.cite_id)).toEqual(['dic:easton:philippians-epistle-to-the']);
   });
 

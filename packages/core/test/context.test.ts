@@ -225,7 +225,7 @@ describe('léxico, unidade literária e títulos', () => {
 
   it('informa a unidade literária no início da camada 2', () => {
     const ctx = serializePanel(panel, 60_000);
-    expect(ctx.text).toContain('Unidade literária (divisão de texto que contém o trecho): Filipenses 2:5-9.');
+    expect(ctx.text).toContain('Unidade literária (divisão de texto que contém o trecho): Filipenses 2:1-9.');
     expect(ctx.text.indexOf('Unidade literária')).toBeGreaterThan(ctx.text.indexOf('## Camada 2'));
   });
 
