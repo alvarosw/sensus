@@ -16,6 +16,8 @@ Código: `packages/core/src/ai/siwc.ts` (funções puras, sem rede) e
 `app/src/auth/chatgpt/` (rede, armazenamento e a janela de retorno).
 
 1. O app sobe um servidor HTTP local em `127.0.0.1` (portas 1455 a 1459) **antes** de abrir o navegador.
+   A aba é aberta com `openAuthSessionAsync` (redirect `sensus://settings`): o código continua vindo só pelo
+   loopback, mas a biblioteca avisa quando a aba foi fechada (`cancel`).
 2. Abre `https://auth.openai.com/api/accounts/authorize` com PKCE S256, `state` e `nonce` novos, o escopo
    `openid profile email offline_access resource.invoke chatgpt.tokens.use.direct` e
    `resource=https://api.openai.com/v1`.
@@ -31,6 +33,11 @@ Código: `packages/core/src/ai/siwc.ts` (funções puras, sem rede) e
 
 Reautorização (incluindo "Liberar o plano") usa o mesmo client_id e não envia `agent_name_hint`. Só
 `prompt=consent` é enviado, e apenas quando a pessoa pede.
+
+**Cancelar.** Enquanto entra, a tela mostra "Cancelar" (`chatgpt-cancel`). Saem do login, com "Login
+cancelado.": o botão; a aba fechada (`cancel`/`dismiss`); a volta ao app sem código, depois de uma folga de
+1,5 s (`browserReturn.ts`, para o retorno do loopback que ainda estiver a caminho). Qualquer saída para o
+loopback fechar o servidor e liberar o estado. Sair da tela também cancela.
 
 ## Renovação e saída
 
@@ -96,8 +103,8 @@ Confirmar em aparelho real antes de publicar.
   `response.reasoning*.delta` para mostrar "pensando".
 - O corpo de erro de admissão (antes do stream) pode vir como `{"detail": ...}`. Esse texto é tratado como
   diagnóstico, não como código.
-- `dismissBrowser` é documentado só para iOS. No Android a aba do navegador continua aberta e a página diz
-  que pode ser fechada.
+- `dismissAuthSession` é tentado, mas só tem efeito no iOS. No Android a aba se fecha sozinha ao chegar no
+  redirect `sensus://settings`; se não fechar, a página diz que pode ser fechada.
 - A aba do navegador no Android roda fora do app. O servidor local precisa continuar vivo nesse intervalo:
   testar em aparelho.
 - Uso em apps públicos: a documentação diz que o lançamento inicial cobre projetos open source, uso pessoal
@@ -106,6 +113,8 @@ Confirmar em aparelho real antes de publicar.
 
 ## Testes
 
+- `npx vitest run app/src/auth/chatgpt`: a máquina de retorno (cancelamento por folga, fechamento da aba,
+  sucesso, settle, temporizadores).
 - `npx vitest run packages/core`: PKCE (vetor da RFC 7636), RS256 contra chaves geradas com `node:crypto`,
   callback, troca, renovação, erros de plano e o provedor com fetch falso.
 - `cd app && npx tsc --noEmit` e `npx expo-doctor`.

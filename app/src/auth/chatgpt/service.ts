@@ -1,6 +1,7 @@
 // Sign in with ChatGPT no app: login (loopback), troca de código, renovação, saída e listagem de modelos.
 // Os textos de erro vêm do núcleo (pt-BR). Nenhum token é registrado em log ou exibido.
 import * as WebBrowser from 'expo-web-browser';
+import { AppState } from 'react-native';
 import {
   buildAuthorizeUrl,
   buildChatGPTProviderConfig,
@@ -34,17 +35,39 @@ import {
   type ChatGPTAccountView,
   type StoredAccount,
 } from './accounts';
-import { ChatGPTNativeUnavailableError, isChatGPTNativeAvailable, startLoopbackCallback } from './loopback';
+import { ChatGPTNativeUnavailableError, isChatGPTNativeAvailable, startLoopbackCallback, type LoopbackCallback } from './loopback';
+import { createBrowserReturnWatch } from './browserReturn';
 
 /** Nome enviado no primeiro registro (agent_name_hint). */
 const AGENT_NAME = 'Sensus';
 
-/** Usuário fechou o navegador antes de concluir. Não é erro para mostrar em destaque. */
+/**
+ * Redirect do openAuthSessionAsync (esquema do app). A página de retorno do loopback leva a ele; no Android a
+ * aba se fecha sozinha ao chegar lá. O código vem sempre pelo loopback, nunca por este redirect.
+ */
+const APP_RETURN_URL = 'sensus://settings';
+
+/** Usuário fechou o navegador ou cancelou antes de concluir. Não é erro para mostrar em destaque. */
 export class SignInCancelledError extends Error {
   constructor() {
     super('Login cancelado.');
     this.name = 'SignInCancelledError';
   }
+}
+
+/** Login em andamento (um por vez). `cancel` para o listener e libera o estado. */
+interface ActiveSignIn {
+  cancel(): void;
+}
+let activeSignIn: ActiveSignIn | null = null;
+
+/** Cancela o login em andamento (botão Cancelar ou saída da tela). Sem login em andamento, não faz nada. */
+export function cancelChatGPTSignIn(): void {
+  activeSignIn?.cancel();
+}
+
+export function isChatGPTSignInActive(): boolean {
+  return activeSignIn !== null;
 }
 
 // ---- eventos (Configurações e cliente de IA reagem a mudanças) ----------------------------------
@@ -112,6 +135,56 @@ async function postTokenRequest(spec: HttpRequestSpec, grant: 'authorization_cod
 
 // ---- login ---------------------------------------------------------------------------------------
 
+/** Fecha a aba do navegador quando possível (iOS; no Android a aba já se fecha no redirect). */
+function dismissAuthBrowser(): void {
+  try {
+    WebBrowser.dismissAuthSession();
+  } catch {
+    // sem suporte a dismiss nesta plataforma: a página de retorno já informa que pode ser fechada
+  }
+}
+
+/**
+ * Espera o código no loopback enquanto o navegador está aberto. Termina por: código recebido; cancelamento
+ * (botão, ou o usuário voltou ao app / fechou a aba e a folga de RETURN_GRACE_MS passou sem retorno); erro do
+ * loopback (timeout de 5 min). Sempre remove o listener de AppState e libera `activeSignIn`.
+ */
+function waitForCallback(loopback: LoopbackCallback, url: string): Promise<string> {
+  return new Promise<string>((resolve, reject) => {
+    let finished = false;
+    let appSub: { remove(): void } | null = null;
+
+    const finish = (then: () => void) => {
+      if (finished) return;
+      finished = true;
+      watch.settle();
+      appSub?.remove();
+      appSub = null;
+      if (activeSignIn === handle) activeSignIn = null;
+      then();
+    };
+    const cancel = () =>
+      finish(() => {
+        dismissAuthBrowser();
+        reject(new SignInCancelledError());
+      });
+    const watch = createBrowserReturnWatch({ onCancel: cancel });
+    const handle: ActiveSignIn = { cancel };
+    activeSignIn = handle;
+
+    appSub = AppState.addEventListener('change', (state) => watch.appState(state));
+    loopback.target.then(
+      (t) => finish(() => resolve(t)),
+      (err: unknown) => finish(() => reject(err)),
+    );
+    WebBrowser.openAuthSessionAsync(url, APP_RETURN_URL).then(
+      (result) => watch.browserClosed(result.type),
+      (err: unknown) => finish(() => reject(err)),
+    );
+  });
+}
+
+
 async function getHostId(): Promise<string> {
   return getOrCreateHostId(() => newHostId(expoCrypto));
 }
@@ -124,6 +197,7 @@ async function getHostId(): Promise<string> {
  */
 export async function signInWithChatGPT(opts: { reconsent?: boolean } = {}): Promise<StoredAccount> {
   if (!isChatGPTNativeAvailable()) throw new ChatGPTNativeUnavailableError();
+  if (activeSignIn) throw new Error('Já há um login com o ChatGPT em andamento.');
 
   const prior = await readActiveAccount();
   const clientId = prior?.clientId ?? SIWC.dynamicClientId;
@@ -147,22 +221,11 @@ export async function signInWithChatGPT(opts: { reconsent?: boolean } = {}): Pro
       idTokenHint: prior?.idToken ?? undefined,
       reconsent: opts.reconsent,
     });
-    target = await new Promise<string>((resolve, reject) => {
-      loopback.target.then(resolve, reject);
-      WebBrowser.openBrowserAsync(url).then(
-        (result) => {
-          // Fechou sem concluir: dá uma folga curta, porque o retorno pode estar chegando.
-          if (result.type === 'cancel' || result.type === 'dismiss') {
-            setTimeout(() => reject(new SignInCancelledError()), 1500);
-          }
-        },
-        reject,
-      );
-    });
+    target = await waitForCallback(loopback, url);
   } finally {
     loopback.close();
   }
-  await WebBrowser.dismissBrowser().catch(() => undefined);
+  dismissAuthBrowser();
 
   const cb = parseCallback(target, { redirectUri: loopback.redirectUri, state, clientId });
   const json = await postTokenRequest(

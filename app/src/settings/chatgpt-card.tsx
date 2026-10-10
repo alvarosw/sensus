@@ -1,11 +1,11 @@
 // Cartão principal de Configurações: entrar com o ChatGPT (plano), status do plano, modelo e saída.
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { LLMError, SiwcError, siwcErrorMessage, type ChatGPTModel } from '@sensus/core';
 import { Card, Pill, Txt, useTheme } from '@/design';
 import { FormButton } from '@/features/common/Buttons';
 import { ChatGPTNativeUnavailableError } from '@/auth/chatgpt/loopback';
-import { listChatGPTModels, setChatGPTModel, SignInCancelledError } from '@/auth/chatgpt/service';
+import { cancelChatGPTSignIn, listChatGPTModels, setChatGPTModel, SignInCancelledError } from '@/auth/chatgpt/service';
 import { useSettings } from './settings-context';
 
 const COPY = {
@@ -15,6 +15,8 @@ const COPY = {
   unavailable: 'Disponível no app instalado (build de desenvolvimento).',
   signIn: 'Entrar com ChatGPT',
   signingIn: 'Entrando…',
+  cancel: 'Cancelar',
+  cancelled: 'Login cancelado.',
   signedOut: 'Sessão encerrada neste aparelho. Entre de novo para usar o plano.',
   planActive: 'Plano: ativo',
   planNotEligible: 'Plano: não elegível. Requer Go, Plus ou Pro. Usando sua chave de API, se houver.',
@@ -30,7 +32,7 @@ const COPY = {
   failed: 'Não foi possível concluir. Tente de novo.',
 };
 
-type Notice = { tone: 'ok' | 'error'; text: string } | null;
+type Notice = { tone: 'ok' | 'error' | 'info'; text: string } | null;
 
 function errorText(e: unknown): string {
   if (e instanceof ChatGPTNativeUnavailableError) return COPY.unavailable;
@@ -43,6 +45,7 @@ export function ChatGPTCard() {
   const { c } = useTheme();
   const { chatgpt } = useSettings();
   const [busy, setBusy] = useState(false);
+  const [signingIn, setSigningIn] = useState(false);
   const [notice, setNotice] = useState<Notice>(null);
   const [models, setModels] = useState<ChatGPTModel[]>([]);
   const [loadingModels, setLoadingModels] = useState(false);
@@ -50,15 +53,21 @@ export function ChatGPTCard() {
   const account = chatgpt.account;
   const hasSession = !!account?.hasSession;
 
+  // Sair da tela com o login aberto para o listener (e a aba fica sem retorno).
+  useEffect(() => () => cancelChatGPTSignIn(), []);
+
   const signIn = async (reconsent: boolean) => {
     setBusy(true);
+    setSigningIn(true);
     setNotice(null);
     try {
       await chatgpt.signIn({ reconsent });
       setNotice({ tone: 'ok', text: COPY.planActive });
     } catch (e) {
-      if (!(e instanceof SignInCancelledError)) setNotice({ tone: 'error', text: errorText(e) });
+      if (e instanceof SignInCancelledError) setNotice({ tone: 'info', text: COPY.cancelled });
+      else setNotice({ tone: 'error', text: errorText(e) });
     } finally {
+      setSigningIn(false);
       setBusy(false);
     }
   };
@@ -120,10 +129,14 @@ export function ChatGPTCard() {
       {!hasSession ? (
         <FormButton
           testID="chatgpt-signin"
-          label={busy ? COPY.signingIn : COPY.signIn}
+          label={signingIn ? COPY.signingIn : COPY.signIn}
           disabled={busy || !chatgpt.available}
           onPress={() => signIn(false)}
         />
+      ) : null}
+
+      {signingIn ? (
+        <FormButton testID="chatgpt-cancel" variant="secondary" label={COPY.cancel} onPress={() => cancelChatGPTSignIn()} />
       ) : null}
 
       {hasSession && account?.planBlocked ? (
@@ -165,7 +178,7 @@ export function ChatGPTCard() {
       ) : null}
 
       {notice ? (
-        <Txt v="bodySm" tint={notice.tone === 'ok' ? c.srcText : c.danger} testID="chatgpt-notice">{notice.text}</Txt>
+        <Txt v="bodySm" tint={notice.tone === 'ok' ? c.srcText : notice.tone === 'info' ? c.muted : c.danger} testID="chatgpt-notice">{notice.text}</Txt>
       ) : null}
     </Card>
   );

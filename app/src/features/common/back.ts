@@ -22,8 +22,8 @@ export const BACK_PRIORITY = {
   jump: 34,
   /** Folha de estudo (fecha a seleção). */
   sheet: 20,
-  /** Referência fixada no topo do leitor. */
-  pinned: 10,
+  /** Referência fixada no topo do leitor. Fixar é a última ação: um "voltar" remove a barra antes da folga. */
+  pinned: 30,
 } as const;
 
 interface Layer {

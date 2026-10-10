@@ -81,19 +81,62 @@ def read_conf(root: Path, module: str) -> dict:
 # Endereço de e-mail, com ou sem <> em volta (ex.: "Nome <pessoa@dominio.net>").
 _EMAIL = re.compile(r"[ \t]*<?[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}>?")
 
+# Contatos pessoais em front matter (About, introduções de livro/capítulo): telefone, endereço postal.
+# Telefone: 3-3-4 ou 2-3-4 dígitos em grupos (opcionalmente com +DDI ou (DDD)).
+_PHONE = re.compile(r"(?<![\d.])(?:\+\d{1,3}[ .-]?)?\(?\d{2,3}\)?[ .-]\d{3,4}[ .-]\d{4}(?!\d)")
+# CEP/ZIP: código de 5 dígitos depois de sigla de estado ou vírgula (ou 12345-678 / 12345-6789).
+_POSTAL_CODE = re.compile(r"(?:\b[A-Z]{2}\b,?\s+|,\s*)\d{5}(?:-\d{3,4})?(?!\d)|(?<!\d)\d{5}-\d{3}(?!\d)|\bCEP\b")
+# Logradouro: número, 1 a 3 palavras com inicial maiúscula e um tipo de via por extenso (ou abreviado sem ambiguidade).
+_STREET = re.compile(
+    r"(?<![\w.])\d{1,6}[ ,]+(?:[A-Z][\w.'’-]*[ ,]+){1,3}"
+    r"(?:Street|Road|Avenue|Boulevard|Drive|Lane|Court|Suite|Place|Apartment|Building|Highway|Rd|Ave|Blvd|Ste|Apt)(?!\w)"
+)
+# Caixa postal, rua e avenida (português).
+_POBOX = re.compile(r"\b(?:P\.?\s*O\.?\s*Box\s*\d+|Caixa\s+Postal|Rua\s+[A-Z]|Avenida\s+[A-Z])")
+
 
 def strip_emails(s: str) -> str:
     """Remove endereços de e-mail de terceiros (metadados e corpo dos módulos)."""
     return _EMAIL.sub("", s)
 
 
+_SENTENCE_END = re.compile(r"(?<=[.!?;])\s+")
+_SHORT_LINE = 240
+
+
+def _is_contact(s: str) -> bool:
+    return bool(_PHONE.search(s) or _STREET.search(s) or _POBOX.search(s) or _POSTAL_CODE.search(s))
+
+
+def strip_contacts(s: str) -> str:
+    """Remove contatos pessoais de texto de front matter; título, autoria e o restante ficam.
+
+    - e-mail sai do trecho;
+    - linha curta (até _SHORT_LINE) com telefone, logradouro, caixa postal ou CEP/ZIP sai inteira;
+    - linha longa sai só nas frases que trazem o contato (o resto da prosa fica).
+    Usado só em About/Description e em introduções (versículo 0), não no corpo dos verbetes.
+    """
+    kept = []
+    for ln in strip_emails(s).split("\n"):
+        if not _is_contact(ln):
+            kept.append(ln)
+        elif len(ln) > _SHORT_LINE:
+            parts = [p for p in _SENTENCE_END.split(ln) if p and not _is_contact(p)]
+            if parts:
+                kept.append(" ".join(parts).strip())
+    out = "\n".join(kept)
+    out = re.sub(r"[ \t]+\n", "\n", out)
+    out = re.sub(r"\n{3,}", "\n\n", out)
+    return out.strip()
+
+
 def conf_plain(s: str | None) -> str:
-    """Texto de About/Description (com \\par) em texto simples, sem e-mails."""
+    """Texto de About/Description (com \\par) em texto simples, sem contatos pessoais."""
     if not s:
         return ""
     s = s.replace("\\\n", " ").replace("\\par", "\n")
     s = re.sub(r"\n\s*\n", "\n\n", s)
-    return strip_emails(re.sub(r"[ \t]+", " ", s)).strip()
+    return strip_contacts(re.sub(r"[ \t]+", " ", s)).strip()
 
 
 # ---- leitura -----------------------------------------------------------------

@@ -4,6 +4,7 @@ import { useEffect, useRef, type ReactNode } from 'react';
 import {
   Animated,
   Easing,
+  Platform,
   Pressable,
   Text,
   View,
@@ -244,28 +245,36 @@ export function Fact({ value, label, greek, onPress, testID }: { value: string |
 /**
  * Pílula de citação inline (proto: .cite). Ponto colorido pelo tipo da fonte; `bad` = cite_id fora do contexto
  * (riscada em vermelho). Use dentro de <Text> para fluir com o parágrafo.
+ *
+ * Na web é a pílula com fundo. No Android/iOS, fundo e cantos arredondados num <Text> aninhado desenham-se
+ * deslocados e invadem as linhas vizinhas quando o tamanho ou a altura de linha diferem do parágrafo. Por isso,
+ * no nativo a pílula é só texto colorido (sem fundo, sem altura de linha própria), herdando a linha do pai.
  */
 export function CitePill({ citeId, label, bad, onPress, greekLabel, testID }: { citeId: string; label: string; bad?: boolean; onPress?: () => void; greekLabel?: boolean; testID?: string }) {
   const { c, st } = useTheme();
   const dot = st[sourceTypeOf(citeId)];
+  const web = Platform.OS === 'web';
+  const cite = type.cite as TextStyle;
+  const pill: TextStyle = web
+    ? {
+        ...cite,
+        color: bad ? c.danger : c.srcText,
+        backgroundColor: bad ? 'transparent' : c.src,
+        textDecorationLine: bad ? 'line-through' : 'none',
+        borderRadius: radius.sm,
+        overflow: 'hidden',
+      }
+    : {
+        fontFamily: cite.fontFamily,
+        fontSize: cite.fontSize,
+        color: bad ? c.danger : c.srcText,
+        textDecorationLine: bad ? 'line-through' : 'none',
+      };
   return (
-    <Text
-      testID={testID ?? `cite-${citeId}`}
-      onPress={onPress}
-      style={[
-        type.cite as TextStyle,
-        {
-          color: bad ? c.danger : c.srcText,
-          backgroundColor: bad ? 'transparent' : c.src,
-          textDecorationLine: bad ? 'line-through' : 'none',
-          borderRadius: radius.sm,
-          overflow: 'hidden',
-        },
-      ]}
-    >
-      <Text style={{ color: bad ? c.danger : dot }}>{' ■ '}</Text>
-      <Text style={greekLabel ? { fontFamily: fontFamilies.greekBold, fontSize: 12 } : undefined}>{bad ? '?' : label}</Text>
-      {' '}
+    <Text testID={testID ?? `cite-${citeId}`} onPress={onPress} style={pill}>
+      <Text style={{ color: bad ? c.danger : dot }}>{' ■ '}</Text>
+      <Text style={greekLabel ? { fontFamily: fontFamilies.greekBold, fontSize: web ? 12 : cite.fontSize } : undefined}>{bad ? '?' : label}</Text>
+      {' '}
     </Text>
   );
 }
