@@ -13,6 +13,11 @@ Ordem de preferência:
 
 Versificação KJV (pysword.canons) é usada para o último versículo de cada capítulo
 e para descartar referências inválidas (ex.: "Jude 30").
+
+Ambiguidade "Phil.": a abreviação é de Filipenses (4 capítulos) ou de Filemom (1 capítulo).
+"Phil. 2:5" é Filipenses; "Phil. 2" (sem capítulo:versículo) é Filemom, versículo 2
+(Smith: "Ápia ... Phil. 2"). "Philem", "Philm" e "Phm" são Filemom (ThML do Smith usa "phm" também
+para Filipenses com capítulo 2-4; isso não é resolvido aqui).
 """
 
 import re
@@ -61,7 +66,12 @@ _PLACEHOLDER = "\x01"
 
 
 # Abreviações usadas na prosa dos dicionários que não estão em refs.py.
-ABBR = {"lu": 42, "mr": 41, "joe": 29, "so": 22, "ze": 36, "habb": 35}
+PHILIPPIANS = 50
+PHILEMON = 57
+ABBR = {
+    "lu": 42, "mr": 41, "joe": 29, "so": 22, "ze": 36, "habb": 35,
+    "philem": PHILEMON, "philm": PHILEMON, "phm": PHILEMON,
+}
 _NAME_NORM = [(b[0], re.sub(r"[^a-z0-9]", "", b[3].lower())) for b in BOOK_BY_NUM.values()]
 
 
@@ -114,6 +124,12 @@ def _chapter_range(b: int, c1: int, c2: int) -> tuple[int, int] | None:
     return vid(b, c1, 1), vid(b, c2, _last_verse(b, c2))
 
 
+def _is_bare_phil(book_text: str) -> bool:
+    """True se o nome do livro termina na abreviação "Phil" (não "Philippians" nem "Philem")."""
+    words = book_text.split()
+    return bool(words) and words[-1].rstrip(".").lower() == "phil"
+
+
 def _starts_book(s: str, i: int) -> bool:
     """True se em s[i:] começa um nome de livro ("1 Cor", "Rom"), e não um número."""
     m = _BOOK_START.match(s, i)
@@ -133,14 +149,18 @@ def _scan(s: str, loose: bool) -> list[tuple[int, int]]:
         pos = m.end()
         b = _book_any(m.group("book"), extra)
         c = int(m.group("ch"))
+        v_txt = m.group("v")
+        if v_txt is None and b == PHILIPPIANS and _is_bare_phil(m.group("book")):
+            # "Phil. 2" sem ":" é Filemom, versículo 2 (Filemom tem um único capítulo).
+            b, c, v_txt = PHILEMON, 1, m.group("ch")
         if b is None or _last_verse(b, c) is None:
             continue
-        if m.group("v") is None:
+        if v_txt is None:
             kind = "c"  # capítulo inteiro
             items = [(vid(b, c, 1), vid(b, c, _last_verse(b, c)))]
         else:
             kind = "v"
-            v = int(m.group("v"))
+            v = int(v_txt)
             if not _valid_cv(b, c, v):
                 continue
             items = [(vid(b, c, v), vid(b, c, v))]
@@ -306,6 +326,23 @@ if __name__ == "__main__":
     assert refs("1 Joh 2:1") == [(62002001, 62002001)]
     assert refs("Lu 4:3") == [(42004003, 42004003)]
     assert refs("Ecclus 3:1") == []  # apócrifo: fora do cânon de 66 livros
+    # "Phil." ambíguo: com capítulo:versículo é Filipenses; sem ":" é Filemom (Smith)
+    assert refs("Phil. 2:5") == [(50002005, 50002005)]
+    assert refs("Phil 4:3") == [(50004003, 50004003)]
+    assert refs("Phil. 2:5, 7") == [(50002005, 50002005), (50002007, 50002007)]
+    assert refs("Apphia, addressed with Philemon and Archippus in Phil. 2; a member") == [(57001002, 57001002)]
+    assert refs("Archippus ... called Phil 2.") == [(57001002, 57001002)]
+    assert refs("Phil. 2-3") == [(57001002, 57001003)]
+    assert refs("Phil. 2, 4") == [(57001002, 57001002), (57001004, 57001004)]
+    assert refs("Phil. 30") == []  # Filemom tem 25 versículos
+    assert refs("Phil. 5:3") == []  # sem capítulo 5 em Filipenses; Filemom não tem capítulo 5
+    assert refs("Soph. Phil. 534") == []  # Philoctetes, não é livro bíblico
+    assert refs("Philm 1:2") == [(57001002, 57001002)]
+    assert refs("Philem 1:2") == [(57001002, 57001002)]
+    assert refs("Phm 1:2") == [(57001002, 57001002)]
+    assert refs("Philemon 1:2") == [(57001002, 57001002)]
+    assert refs('<scripRef passage="phm 4:10">Philemon 4:10</scripRef>') == []  # capítulo 4 não existe em Filemom
+    assert refs("Philippians 2") == [(50002001, 50002030)]  # nome completo: capítulo inteiro, nunca Filemom
     # marcação OSIS (Easton): "Rev. 1:8" + "11" de outra referência não vira Rev 1:11
     s = ('These letters occur in <ref osisRef="Bible:Rev.1.8">Rev. 1:8</ref>,'
          '<ref osisRef="Bible:Gen.1.11">11</ref>; <ref osisRef="Bible:Gen.21.6">21:6</ref>.')

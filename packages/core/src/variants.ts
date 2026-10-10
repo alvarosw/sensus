@@ -1,56 +1,69 @@
-// Variantes textuais por posição: alinha as leituras TR/BYZ e NA/SBL/WH de cada versículo.
+// Variantes textuais por lacunas: alinha as leituras de TR, BYZ e NA de cada versículo.
 import type { Token } from './types';
 import { formatVerse } from './refs';
-import { hasEdition } from './panel';
+import { BASE_EDITIONS, hasEdition } from './panel';
+
+/** Uma leitura (ou um grupo de edições com a mesma leitura) em um sítio de variação. */
+export interface VariantReading {
+  /** Edições que trazem esta leitura, na ordem TR, BYZ, NA (ex.: ['TR', 'BYZ']). */
+  editions: string[];
+  /** Palavras desta leitura, na ordem textual (vazio = omissão). */
+  tokens: Token[];
+}
 
 export interface VariantSite {
   vid: number;
   /** Referência em pt-BR do versículo, ex.: "Filipenses 2:5". */
   ref: string;
-  /** Palavras da leitura TR/BYZ neste ponto (vazio = omitida no TR/BYZ). */
+  /** Palavras da leitura TR neste ponto (vazio = omitida no TR). */
   trReading: Token[];
-  /** Palavras da leitura NA/SBL/WH neste ponto (vazio = omitida no NA). */
+  /** Palavras da leitura NA neste ponto (vazio = omitida no NA). */
   naReading: Token[];
+  /**
+   * Leituras do sítio, com as edições de leitura idêntica agrupadas (ex.: TR/BYZ e NA).
+   * Sempre tem pelo menos duas leituras distintas.
+   */
+  readings: VariantReading[];
 }
 
-/** Forma comparável: sem acentos e sem pontuação, minúscula. */
-function key(surface: string): string {
-  return surface.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
-}
-
-/** Alinhamento LCS entre duas sequências de palavras; devolve pares (índice em A, índice em B) iguais. */
-function alignPairs(a: readonly Token[], b: readonly Token[]): Array<[number, number]> {
-  const n = a.length;
-  const m = b.length;
-  const dp: number[][] = Array.from({ length: n + 1 }, () => new Array<number>(m + 1).fill(0));
-  for (let i = n - 1; i >= 0; i--) {
-    for (let j = m - 1; j >= 0; j--) {
-      dp[i]![j] =
-        key(a[i]!.surface) === key(b[j]!.surface)
-          ? dp[i + 1]![j + 1]! + 1
-          : Math.max(dp[i + 1]![j]!, dp[i]![j + 1]!);
-    }
-  }
-  const pairs: Array<[number, number]> = [];
-  let i = 0;
-  let j = 0;
-  while (i < n && j < m) {
-    if (key(a[i]!.surface) === key(b[j]!.surface)) {
-      pairs.push([i, j]);
-      i++;
-      j++;
-    } else if (dp[i + 1]![j]! >= dp[i]![j + 1]!) {
-      i++;
-    } else {
-      j++;
-    }
-  }
-  return pairs;
+/** Palavra presente em todas as edições comparadas: âncora que delimita os sítios. */
+function isAnchor(t: Token): boolean {
+  return BASE_EDITIONS.every((e) => hasEdition(t, e));
 }
 
 /**
- * Sítios de variação do NT grego (corpus gnt). Um sítio é um trecho entre palavras comuns às duas
- * leituras em que TR/BYZ e NA/SBL/WH diferem. Versículos sem diferença não geram sítios.
+ * Monta o sítio de uma lacuna (palavras entre duas âncoras). Cada edição lê as palavras da lacuna que
+ * a contêm, em ordem; edições com a mesma sequência de tokens ficam agrupadas.
+ * Devolve null se todas as leituras coincidem (inclusive vazias): não há variação a mostrar.
+ */
+function siteOf(vid: number, gap: readonly Token[]): VariantSite | null {
+  const perEdition = BASE_EDITIONS.map((edition) => ({
+    edition,
+    tokens: gap.filter((t) => hasEdition(t, edition)),
+  }));
+  const groups: Array<{ signature: string; reading: VariantReading }> = [];
+  for (const { edition, tokens } of perEdition) {
+    const signature = tokens.map((t) => t.cite_id).join(',');
+    const group = groups.find((g) => g.signature === signature);
+    if (group) group.reading.editions.push(edition);
+    else groups.push({ signature, reading: { editions: [edition], tokens } });
+  }
+  if (groups.length < 2) return null;
+  return {
+    vid,
+    ref: formatVerse(vid),
+    trReading: perEdition[0]!.tokens,
+    naReading: perEdition[BASE_EDITIONS.length - 1]!.tokens,
+    readings: groups.map((g) => g.reading),
+  };
+}
+
+/**
+ * Sítios de variação do NT grego (corpus gnt). Percorre as palavras de cada versículo em ordem de pos:
+ * palavras presentes em TR, BYZ e NA são âncoras; cada trecho contínuo de palavras não-âncora é um sítio.
+ * Trechos antes da primeira âncora ou depois da última também são sítios (a borda do versículo faz
+ * de âncora), para que uma omissão no fim do versículo não desapareça. Versículos sem diferença não
+ * geram sítios.
  */
 export function variantSites(tokens: readonly Token[]): VariantSite[] {
   const sorted = tokens.filter((t) => t.corpus === 'gnt').sort((x, y) => x.vid - y.vid || x.pos - y.pos);
@@ -63,22 +76,17 @@ export function variantSites(tokens: readonly Token[]): VariantSite[] {
 
   const sites: VariantSite[] = [];
   for (const [vid, group] of byVid) {
-    // Leitura TR (rotulada TR/BYZ no texto): palavras presentes no TR. Palavras só de BYZ/NA entram
-    // na leitura NA quando faltam no TR.
-    const tr = group.filter((t) => hasEdition(t, 'TR'));
-    const na = group.filter((t) => hasEdition(t, 'NA'));
-    const pairs = alignPairs(tr, na);
-    let prevTr = 0;
-    let prevNa = 0;
-    for (const [pi, pj] of [...pairs, [tr.length, na.length] as [number, number]]) {
-      const trGap = tr.slice(prevTr, pi);
-      const naGap = na.slice(prevNa, pj);
-      if (trGap.length > 0 || naGap.length > 0) {
-        sites.push({ vid, ref: formatVerse(vid), trReading: trGap, naReading: naGap });
-      }
-      prevTr = pi + 1;
-      prevNa = pj + 1;
+    let gap: Token[] = [];
+    const flush = (): void => {
+      const site = gap.length > 0 ? siteOf(vid, gap) : null;
+      if (site) sites.push(site);
+      gap = [];
+    };
+    for (const t of group) {
+      if (isAnchor(t)) flush();
+      else gap.push(t);
     }
+    flush();
   }
   return sites;
 }

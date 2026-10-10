@@ -164,27 +164,28 @@ function buildItems(panel: PanelData): Item[] {
     });
   }
 
-  // Variantes: leituras lado a lado por posição, cada uma citando o(s) seu(s) token(s).
+  // Variantes: leituras por sítio (lacunas entre palavras comuns a TR, BYZ e NA). Cada leitura cita os seus tokens.
   for (const site of variantSites(original)) {
-    const cites = [...site.trReading, ...site.naReading].map((t) => t.cite_id);
+    const cites = [...new Set(site.readings.flatMap((r) => r.tokens.map((t) => t.cite_id)))];
     const fmt = (list: Token[]): string =>
       list.length === 0
-        ? '(omitida: sem palavra correspondente)'
+        ? '—omite—'
         : list
             .map(
               (t) =>
                 `${t.surface} [${t.cite_id}] (morfologia ${t.morph ?? '-'}${t.morph_desc ? ` = ${t.morph_desc}` : ''})`,
             )
             .join(' + ');
+    const readings = site.readings.map((r) => `${r.editions.join('/')}: ${fmt(r.tokens)}`).join(' | ');
     push({
       citeId: cites[0] ?? '',
       cites: cites.slice(1),
       layer: 1,
-      section: 'Variantes textuais (leituras por posição)',
+      section: 'Variantes textuais (leituras alinhadas por lacuna)',
       sectionOrder: 3,
       priority: 1,
       mandatory: true,
-      line: `Variante em ${site.ref} — TR/BYZ: ${fmt(site.trReading)} | NA/SBL/WH: ${fmt(site.naReading)}`,
+      line: `Variante em ${site.ref} — ${readings}`,
     });
   }
 

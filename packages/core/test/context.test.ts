@@ -143,11 +143,11 @@ describe('serializePanel', () => {
     // Fixture: em 2:6 TR/BYZ tem ἐν e NA não tem palavra correspondente (omitida).
     const at6 = ctx.text.split('\n').find((l) => l.startsWith('- Variante em Filipenses 2:6')) ?? '';
     expect(at6).toMatch(/TR\/BYZ: ἐν \[tok:gnt:50002006:5\] \(morfologia -\)/);
-    expect(at6).toContain('NA/SBL/WH: (omitida: sem palavra correspondente)');
+    expect(at6).toContain('NA: —omite—');
     // Em 2:8 NA tem ἑαυτὸν e TR/BYZ não tem: a leitura do NA cita o seu token.
     const at8 = ctx.text.split('\n').find((l) => l.startsWith('- Variante em Filipenses 2:8')) ?? '';
-    expect(at8).toContain('NA/SBL/WH: ἑαυτὸν [tok:gnt:50002008:7]');
-    expect(at8).toContain('TR/BYZ: (omitida');
+    expect(at8).toContain('BYZ/NA: ἑαυτὸν [tok:gnt:50002008:7]');
+    expect(at8).toContain('TR: —omite—');
   });
 
   it('lista as palavras de conteúdo com morfologia e descrição, cada uma com citação', () => {
