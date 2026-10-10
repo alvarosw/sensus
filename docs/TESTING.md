@@ -80,6 +80,9 @@ scripts/emu.sh status | stop
 - Na primeira abertura do Expo Go aparecem o aviso "System UI isn't responding" (toque em "Wait") e o menu de
   desenvolvedor (feche no X, ou `emu.sh back`). O primeiro bundle leva ~1 min. Um botão de engrenagem flutuante
   do Expo Go aparece nas capturas.
+- Se o emulador não alcança o Metro (o app fica em "não foi possível conectar" ou o bundle não carrega), faça o
+  túnel pelo adb e aponte o Metro para o loopback: `adb -s emulator-5554 reverse tcp:<porta> tcp:<porta>` e
+  `REACT_NATIVE_PACKAGER_HOSTNAME=127.0.0.1 npx expo start --port <porta>` (ou `npx expo run:android -p <porta>`).
 - `input text` só aceita ASCII. Pare o Metro que você iniciou (`kill` pelo PID).
 - Um celular físico pode aparecer em `adb devices`; o script sempre usa `-s emulator-5554`.
 

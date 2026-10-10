@@ -22,8 +22,9 @@ export const PROVIDER_PRESETS: Record<PresetId, ProviderPreset> = {
     label: 'NVIDIA (build.nvidia.com)',
     kind: 'openai-compatible',
     baseUrl: 'https://integrate.api.nvidia.com/v1',
-    // Nemotron 3 Super com o raciocínio desligado: primeiro texto em ~2 s (com raciocínio, ~120 s).
-    defaultModel: 'nvidia/nemotron-3-super-120b-a12b',
+    // Nemotron 3 Ultra com o raciocínio desligado: primeiro texto em ~2,6 s; 50 citações válidas e 0 inválidas no
+    // benchmark (Nemotron 3 Super: 11 inválidas).
+    defaultModel: 'nvidia/nemotron-3-ultra-550b-a55b',
     keyUrl: 'https://build.nvidia.com',
     extraBody: { chat_template_kwargs: { enable_thinking: false } },
   },

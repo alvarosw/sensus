@@ -17,7 +17,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from sensus.staging import StagingWriter, cite_com  # noqa: E402
 from ingest.sword_common import (  # noqa: E402
-    BASE_URL, conf_plain, download, extract, open_module, raw_entries, read_conf, strip_markup,
+    BASE_URL, conf_plain, download, extract, open_module, raw_entries, read_conf, strip_emails,
+    strip_markup,
 )
 
 # (módulo SWORD, zip no repositório, tradição, autor)
@@ -141,7 +142,7 @@ def ingest(name: str, zip_name: str, tradition: str, author: str) -> None:
                 + (about[:400] if about else "")
             ),
         )
-        entries = ((v, strip_markup(raw)) for v, raw in raw_entries(reader))
+        entries = ((v, strip_emails(strip_markup(raw))) for v, raw in raw_entries(reader))
         seen: set[str] = set()
         n_verse_rows = n_intro_rows = 0
         for start, end, text in build_rows(entries):

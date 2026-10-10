@@ -78,13 +78,22 @@ def read_conf(root: Path, module: str) -> dict:
     return conf
 
 
+# Endereço de e-mail, com ou sem <> em volta (ex.: "Nome <pessoa@dominio.net>").
+_EMAIL = re.compile(r"[ \t]*<?[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}>?")
+
+
+def strip_emails(s: str) -> str:
+    """Remove endereços de e-mail de terceiros (metadados e corpo dos módulos)."""
+    return _EMAIL.sub("", s)
+
+
 def conf_plain(s: str | None) -> str:
-    """Texto de About/Description (com \\par) em texto simples."""
+    """Texto de About/Description (com \\par) em texto simples, sem e-mails."""
     if not s:
         return ""
     s = s.replace("\\\n", " ").replace("\\par", "\n")
     s = re.sub(r"\n\s*\n", "\n\n", s)
-    return re.sub(r"[ \t]+", " ", s).strip()
+    return strip_emails(re.sub(r"[ \t]+", " ", s)).strip()
 
 
 # ---- leitura -----------------------------------------------------------------
