@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+node_modules/
+__pycache__/
+.venv/
+data/raw/
+data/staging/
+data/*.db
+app/assets/sensus.db
+app/dist/
+.expo/
