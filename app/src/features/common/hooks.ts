@@ -11,12 +11,19 @@ export function useBooks(): Book[] {
   const [books, setBooks] = useState<Book[]>([]);
   useEffect(() => {
     let alive = true;
-    loadBooks(repo).then(
-      (b) => alive && setBooks(b),
-      () => undefined,
-    );
+    let timer: ReturnType<typeof setTimeout> | null = null;
+    const attempt = (n: number) =>
+      loadBooks(repo).then(
+        (b) => alive && setBooks(b),
+        () => {
+          // Falha de leitura não fica em cache: tenta de novo algumas vezes.
+          if (alive && n < 4) timer = setTimeout(() => attempt(n + 1), 400 * (n + 1));
+        },
+      );
+    attempt(0);
     return () => {
       alive = false;
+      if (timer) clearTimeout(timer);
     };
   }, [repo]);
   return books;
@@ -27,16 +34,17 @@ export interface CiteState {
   /** null = id inexistente (citação inválida). */
   detail: CiteDetail | null;
   error: string | undefined;
+  reload: () => void;
 }
 
 /** Carrega um cite_id; citeId null não carrega nada. */
 export function useCite(citeId: string | null): CiteState {
   const repo = useRepo();
   const state = useAsync<CiteDetail | null>(() => (citeId ? loadCite(repo, citeId) : Promise.resolve(null)), [repo, citeId]);
-  if (!citeId) return { loading: false, detail: null, error: undefined };
+  if (!citeId) return { loading: false, detail: null, error: undefined, reload: state.reload };
   // Ao trocar de id, evita mostrar o registro anterior.
   const stale = state.data && state.data.citeId !== citeId;
-  return { loading: state.loading || !!stale, detail: stale ? null : (state.data ?? null), error: state.error };
+  return { loading: state.loading || !!stale, detail: stale ? null : (state.data ?? null), error: state.error, reload: state.reload };
 }
 
 /** Preferência do sistema por menos movimento (animações curtas). */

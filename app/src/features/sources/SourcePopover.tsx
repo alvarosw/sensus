@@ -6,6 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { formatShortRef } from '@sensus/core';
 import {
   fontFamilies,
+  IconButton,
   motion,
   radius,
   shadow,
@@ -21,6 +22,7 @@ import { useAsync } from '@/data/use-async';
 import { useStudy } from '@/state/study';
 import { traditionLabel } from '../study/format';
 import { askAbout, panelFor, showInText } from '../common/actions';
+import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { PopButton } from '../common/Buttons';
 import { loadLexicon, loadXrefText, pickLexicon, type CiteDetail } from '../common/cites';
 import { useBooks, useCite } from '../common/hooks';
@@ -33,6 +35,7 @@ export function SourcePopover() {
   const insets = useSafeAreaInsets();
   const citeId = useStudy((s) => s.popoverCite);
   const closePopover = useStudy((s) => s.closePopover);
+  useBackLayer('popover', citeId != null, closePopover, BACK_PRIORITY.popover);
   const shownId = useLast(citeId);
   const { progress, mounted } = usePresence(citeId !== null, motion.pop);
 
@@ -87,7 +90,7 @@ export function SourcePopover() {
 
 function PopoverBody({ citeId, onClose }: { citeId: string; onClose: () => void }) {
   const { c } = useTheme();
-  const { loading, detail, error } = useCite(citeId);
+  const { loading, detail, error, reload } = useCite(citeId);
 
   if (loading) {
     return (
@@ -103,21 +106,33 @@ function PopoverBody({ citeId, onClose }: { citeId: string; onClose: () => void 
   if (!detail) {
     return (
       <>
-        <ScrollView style={{ flexGrow: 0, flexShrink: 1 }} contentContainerStyle={{ gap: 8 }}>
+        <CloseButton onPress={onClose} />
+        <ScrollView style={{ flexGrow: 0, flexShrink: 1 }} contentContainerStyle={{ gap: 8, paddingRight: 40 }}>
           <Txt v="body" tint={c.danger} bold testID="popover-invalid">
             {error ? SRC.loadError : SRC.invalidTitle}
           </Txt>
-          <Txt v="excerpt">{error ?? SRC.invalidBody(citeId)}</Txt>
-          <Txt v="bodySm" color="muted">{SRC.invalidShort}</Txt>
+          {error ? null : <Txt v="excerpt">{SRC.notFound}</Txt>}
+          {error ? null : <Txt v="bodySm" color="muted">{SRC.invalidShort}</Txt>}
           <Txt v="mono" color="muted" selectable>{`cite_id ${citeId}`}</Txt>
         </ScrollView>
-        <Actions>
-          <PopButton testID="popover-close" label={SRC.close} onPress={onClose} />
-        </Actions>
+        {error ? (
+          <Actions>
+            <PopButton testID="popover-retry" label={SRC.retry} onPress={reload} />
+          </Actions>
+        ) : null}
       </>
     );
   }
   return <ResolvedBody detail={detail} onClose={onClose} />;
+}
+
+/** Fechar: botão de ícone no canto superior direito do popover. */
+function CloseButton({ onPress }: { onPress: () => void }) {
+  return (
+    <View style={{ position: 'absolute', top: 10, right: 10, zIndex: 2 }}>
+      <IconButton testID="popover-close" icon="close" label={SRC.close} onPress={onPress} />
+    </View>
+  );
 }
 
 function Actions({ children }: { children: React.ReactNode }) {
@@ -153,8 +168,9 @@ function ResolvedBody({ detail, onClose }: { detail: CiteDetail; onClose: () => 
 
   return (
     <>
+      <CloseButton onPress={onClose} />
       <ScrollView style={{ flexGrow: 0, flexShrink: 1 }} contentContainerStyle={{ gap: 8 }} showsVerticalScrollIndicator={false}>
-        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, flexWrap: 'wrap', paddingRight: 40 }}>
           <TypeMark kind={detail.kind} label={detail.typeLabel} />
           {detail.kind === 'tok' ? (
             <Text style={{ fontFamily: fontFamilies.greekBold, fontSize: 15, color: st.tok }}>{detail.label}</Text>
@@ -180,7 +196,6 @@ function ResolvedBody({ detail, onClose }: { detail: CiteDetail; onClose: () => 
         ) : null}
         {detail.kind === 'xr' ? <PopButton testID="popover-pin" label={SRC.pin} onPress={pinXref} /> : null}
         <PopButton testID="popover-ask" label={SRC.ask} onPress={() => askAbout(detail)} />
-        <PopButton testID="popover-close" label="✕" accessibilityLabel={SRC.close} onPress={onClose} />
       </Actions>
     </>
   );

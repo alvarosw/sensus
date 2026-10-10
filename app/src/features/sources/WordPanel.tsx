@@ -39,7 +39,7 @@ export function WordPanel({ entry }: { entry: WordEntry }) {
 
   if (tokenId && tokenState.loading) return <PanelSkeleton />;
   if (tokenId && !token) {
-    return <Empty text={tokenState.error ? SRC.loadError : SRC.invalidBody(tokenId)} />;
+    return <Empty text={tokenState.error ? SRC.loadError : SRC.notFound} />;
   }
   return <WordBody token={token} strongBase={strongBase} fallbackId={tokenId ?? `lemma:${strongBase}`} />;
 }

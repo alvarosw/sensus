@@ -1,6 +1,6 @@
 import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { SensusThemeProvider, useSensusFonts } from '@/design';
+import { fontFamilies, SensusThemeProvider, useSensusFonts, useTheme as useDesignTheme } from '@/design';
 import { StatusBar } from 'expo-status-bar';
 import type { ReactNode } from 'react';
 import { DbProvider, useDbState } from '@/data/db-context';
@@ -23,6 +23,7 @@ export default function RootLayout() {
 
 function AppStack() {
   const theme = useTheme();
+  const { c } = useDesignTheme();
   return (
     <SettingsProvider>
       <DbProvider>
@@ -38,7 +39,16 @@ function AppStack() {
             }}
           >
             <Stack.Screen name="index" options={{ headerShown: false }} />
-            <Stack.Screen name="settings" options={{ title: t('settings.title') }} />
+            <Stack.Screen
+              name="settings"
+              options={{
+                title: t('settings.title'),
+                headerStyle: { backgroundColor: c.bg },
+                headerTintColor: c.accent,
+                headerTitleStyle: { color: c.text, fontFamily: fontFamilies.readSemibold, fontSize: 17 },
+                contentStyle: { backgroundColor: c.bg },
+              }}
+            />
           </Stack>
         </DbGate>
       </DbProvider>

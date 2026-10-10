@@ -27,7 +27,7 @@ export function SourcePanel({ citeId }: { citeId: string }) {
     return <SourceOnlyBody source={source} citeId={citeId} />;
   }
   if (cite.loading) return <PanelSkeleton />;
-  if (!cite.detail) return <Empty text={cite.error ? SRC.loadError : SRC.invalidBody(citeId)} />;
+  if (!cite.detail) return <Empty text={cite.error ? SRC.loadError : SRC.notFound} />;
   return <SourceBody detail={cite.detail} />;
 }
 

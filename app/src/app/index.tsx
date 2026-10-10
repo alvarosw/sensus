@@ -7,6 +7,7 @@ import type { Book } from '@sensus/core';
 import { size, useTheme } from '@/design';
 import { ChatLayer } from '@/features/chat/ChatLayer';
 import { ToastHost } from '@/features/common/Toast';
+import { BACK_PRIORITY, useBackLayer, useRootBackHandler } from '@/features/common/back';
 import { BookPicker } from '@/features/nav/BookPicker';
 import { JumpPopover } from '@/features/nav/JumpPopover';
 import { TopBar } from '@/features/nav/TopBar';
@@ -24,6 +25,11 @@ export default function MainScreen() {
   const [jumpOpen, setJumpOpen] = useState(false);
   const [booksOpen, setBooksOpen] = useState(false);
   const areaHeight = Math.max(0, rootH - insets.top - size.topBar);
+
+  // Voltar do sistema: fecha a camada mais à frente; na tela base, confirma a saída.
+  useRootBackHandler();
+  useBackLayer('books', booksOpen, () => setBooksOpen(false), BACK_PRIORITY.picker);
+  useBackLayer('jump', jumpOpen, () => setJumpOpen(false), BACK_PRIORITY.jump);
 
   const onLayout = useCallback((e: LayoutChangeEvent) => setRootH(e.nativeEvent.layout.height), []);
   const pick = (book: Book, chapter: number) => {

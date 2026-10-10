@@ -6,6 +6,7 @@ import { router } from 'expo-router';
 import { formatShortRef } from '@sensus/core';
 import { fontFamilies, IconButton, LinkButton, motion, QuestionButton, radius, shadow, size, Txt, useTheme } from '@/design';
 import { useStudy, LENS_LABELS } from '@/state/study';
+import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { usePresence } from '../common/motion';
 import { useBooks } from '../common/hooks';
 import { CHAT } from '../common/strings';
@@ -48,7 +49,8 @@ export function ChatPanel({
   send: (q: string) => void;
 }) {
   const { c } = useTheme();
-  const books = useBooks();
+  const ownBooks = useBooks();
+  const books = ownBooks.length > 0 ? ownBooks : api.passage.books;
   const chatOpen = useStudy((s) => s.chatOpen);
   const closeChat = useStudy((s) => s.closeChat);
   const thread = useStudy((s) => s.thread);
@@ -56,6 +58,7 @@ export function ChatPanel({
   const lens = useStudy((s) => s.lens);
   const bubble = useStudy((s) => s.bubble);
   const detent = useStudy((s) => s.detent);
+  useBackLayer('chat', chatOpen, closeChat, BACK_PRIORITY.chat);
   const { progress, mounted } = usePresence(chatOpen, motion.chat);
   const kb = useKeyboardHeight();
   const suggestions = useSuggestions(api.passage, api.range, api.hasProvider);
@@ -65,7 +68,7 @@ export function ChatPanel({
   const scrollTo = useRef<string | null>(null);
   const seen = useRef(thread0Count());
 
-  const rangeText = api.range ? formatShortRef(api.range.start, api.range.end, books, true) : null;
+  const rangeText = api.range && books.length > 0 ? formatShortRef(api.range.start, api.range.end, books, true) : null;
 
   // Foco no campo ao abrir com a conversa vazia ou com anexos (o teclado sobe depois da animação).
   useEffect(() => {

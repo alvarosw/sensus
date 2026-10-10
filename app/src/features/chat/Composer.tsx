@@ -81,6 +81,7 @@ export const Composer = forwardRef<
             fontFamily: fontFamilies.ui,
             fontSize: 14,
             color: c.text,
+            outlineColor: c.accent,
           }}
         />
         <Pressable

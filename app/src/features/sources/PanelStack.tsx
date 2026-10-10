@@ -7,6 +7,7 @@ import { fontFamilies, IconButton, motion, size, Txt, useTheme } from '@/design'
 import { useRepo } from '@/data/db-context';
 import { useAsync } from '@/data/use-async';
 import { useStudy, type PanelEntry } from '@/state/study';
+import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { loadCite, loadLexicon, loadSources } from '../common/cites';
 import { rangeLabel } from '../common/format';
 import { useBooks } from '../common/hooks';
@@ -21,6 +22,7 @@ export function PanelStack() {
   const insets = useSafeAreaInsets();
   const panels = useStudy((s) => s.panels);
   const popPanel = useStudy((s) => s.popPanel);
+  useBackLayer('panels', panels.length > 0, popPanel, BACK_PRIORITY.panel);
   const shown = useLast<PanelEntry[]>(panels.length > 0 ? panels : null);
   const { progress, mounted } = usePresence(panels.length > 0, motion.panel);
   const slide = useAnimatedStyle(() => ({ transform: [{ translateX: `${(1 - progress.value) * 100}%` }] }));

@@ -27,17 +27,19 @@ export const CHAT = {
 } as const;
 
 export const SRC = {
-  open: 'Abrir completo',
+  open: 'Abrir fonte completa',
   openWord: 'Análise completa',
-  ask: 'Perguntar',
+  ask: 'Perguntar sobre isto',
   show: 'Mostrar no texto',
   pin: 'Fixar lado a lado',
   close: 'Fechar',
   loading: 'Carregando…',
   invalidTitle: 'Citação inválida',
   invalidBody: (id: string) => `A IA citou ${id}, que não está no contexto enviado. A afirmação deve ser tratada como sem fonte.`,
+  notFound: 'Esta fonte não foi encontrada no banco.',
+  retry: 'Tentar de novo',
   invalidShort: 'O id não estava no contexto enviado',
-  loadError: 'Não foi possível carregar esta fonte.',
+  loadError: 'Não foi possível carregar esta fonte agora. Tente de novo.',
   license: 'Licença',
   licenseOpen: 'Abrir licença',
   origin: 'Abrir origem',

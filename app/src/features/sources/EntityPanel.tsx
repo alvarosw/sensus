@@ -24,7 +24,7 @@ export function EntityPanel({ citeId }: { citeId: string }) {
     );
   }
   if (!cite.detail || cite.detail.record.table !== 'entity') {
-    return <Empty text={cite.error ? SRC.loadError : SRC.invalidBody(citeId)} />;
+    return <Empty text={cite.error ? SRC.loadError : SRC.notFound} />;
   }
   return <EntityBody detail={cite.detail} entity={cite.detail.record.record} />;
 }

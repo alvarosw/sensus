@@ -46,6 +46,24 @@ export function sourceShort(source: Source | undefined, fallbackId: string): str
   return SHORT_SOURCE[fallbackId] ?? (source ? shortTitle(source.title) : fallbackId);
 }
 
+// ---- fila de consultas ------------------------------------------------------------------
+// O driver do banco (wa-sqlite na web) falha com "Error code 21" (uso indevido da API) quando várias
+// consultas rodam ao mesmo tempo na mesma conexão. Aqui as consultas das prévias/painéis entram numa
+// fila e, se uma falhar, tentam de novo uma vez.
+let queue: Promise<unknown> = Promise.resolve();
+export function serial<T>(fn: () => Promise<T>): Promise<T> {
+  const run = queue.then(async () => {
+    try {
+      return await fn();
+    } catch {
+      await new Promise((r) => setTimeout(r, 150));
+      return fn();
+    }
+  });
+  queue = run.catch(() => undefined);
+  return run;
+}
+
 // ---- caches por repo ---------------------------------------------------------------------
 
 interface RepoCache {
@@ -68,12 +86,12 @@ function cacheOf(repo: Repo): RepoCache {
 
 export function loadBooks(repo: Repo): Promise<Book[]> {
   const c = cacheOf(repo);
-  return (c.books ??= repo.books());
+  return (c.books ??= serial(() => repo.books()));
 }
 
 export function loadSources(repo: Repo): Promise<Map<string, Source>> {
   const c = cacheOf(repo);
-  return (c.sources ??= repo.sources().then((rows) => new Map(rows.map((s) => [s.id, s]))));
+  return (c.sources ??= serial(() => repo.sources()).then((rows) => new Map(rows.map((s) => [s.id, s]))));
 }
 
 function wordOf(surface: string): string {
@@ -173,7 +191,7 @@ export function loadCite(repo: Repo, citeId: string): Promise<CiteDetail | null>
   let p = c.cites.get(citeId);
   if (!p) {
     p = (async () => {
-      const [record, sources, books] = await Promise.all([repo.resolveCite(citeId), loadSources(repo), loadBooks(repo)]);
+      const [record, sources, books] = await Promise.all([serial(() => repo.resolveCite(citeId)), loadSources(repo), loadBooks(repo)]);
       if (!record) return null;
       return build(record, citeId, sources.get(record.record.source_id), books);
     })();
@@ -189,7 +207,7 @@ export function loadLexicon(repo: Repo, strongBase: string): Promise<LexiconEntr
   const c = cacheOf(repo);
   let p = c.lexicon.get(strongBase);
   if (!p) {
-    p = repo.lexicon([strongBase]);
+    p = serial(() => repo.lexicon([strongBase]));
     p.catch(() => c.lexicon.delete(strongBase));
     c.lexicon.set(strongBase, p);
   }
@@ -217,8 +235,7 @@ export function loadConcordance(repo: Repo, strongBase: string): Promise<{ count
   const c = cacheOf(repo);
   let p = c.concordance.get(strongBase);
   if (!p) {
-    p = repo
-      .concordance(strongBase, DEFAULT_TEXT_SOURCE, CONCORDANCE_LIMIT)
+    p = serial(() => repo.concordance(strongBase, DEFAULT_TEXT_SOURCE, CONCORDANCE_LIMIT))
       .then((r) => ({ count: r.count, vids: r.samples.map((s) => s.vid) }));
     p.catch(() => c.concordance.delete(strongBase));
     c.concordance.set(strongBase, p);
@@ -228,7 +245,7 @@ export function loadConcordance(repo: Repo, strongBase: string): Promise<{ count
 
 /** Texto do destino de uma referência cruzada (até 12 versículos, juntos). */
 export async function loadXrefText(repo: Repo, start: Vid, end: Vid): Promise<VerseText[]> {
-  return repo.verseTexts(DEFAULT_TEXT_SOURCE, { start, end }, 12);
+  return serial(() => repo.verseTexts(DEFAULT_TEXT_SOURCE, { start, end }, 12));
 }
 
 /**
@@ -248,7 +265,7 @@ export function loadEntityPassages(repo: Repo, citeId: string): Promise<Vid[]> {
 
 async function scanEntity(repo: Repo, citeId: string): Promise<Vid[]> {
   const has = async (start: Vid, end: Vid): Promise<boolean> =>
-    (await repo.entities({ start, end })).some((e) => e.cite_id === citeId);
+    (await serial(() => repo.entities({ start, end }))).some((e) => e.cite_id === citeId);
   // Bisseção: desce só nas metades que ainda contêm a entidade.
   const bisect = async (lo: Vid, hi: Vid, out: Vid[]): Promise<void> => {
     if (lo === hi) {
