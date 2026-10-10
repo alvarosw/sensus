@@ -4,15 +4,20 @@ Pendências registradas durante o desenvolvimento. Prioridade: **P1** (próximo)
 
 ## Dados
 
-- **P2 — Tamanho do banco.** Build de Filipenses com NT completo = 72 MB; com AT (hebraico) = 163 MB.
-  Maiores tabelas: `token` (27 MB), `verse_text` (13 MB), `lexicon_entry` (10 MB). Ideias:
-  trocar `cite_id` TEXT por chave composta derivável (o app reconstrói o cite_id), remover colunas
-  redundantes (`strong_base` derivável de `strong`), distribuir o AT como download opcional,
-  compactar verbetes longos (LSJ) ou carregá-los sob demanda.
+- **Feito — Tamanho do banco.** `token` e `verse_text` ficam em tabelas compactas
+  (`pipeline/schema_physical.sql`): `cite_id` derivado (VIEW), `source_id` como inteiro, strings
+  repetidas (strong, morfologia, glosas, edições) em `dict_str`. `resolveCite` busca `txt:`/`tok:`
+  pela chave. O léxico passa a ter só os `strong_base` usados pelos livros escolhidos, como já dizia
+  o docstring do builder (antes usava os tokens de toda a Bíblia). Filipenses: 75,6 MB → 33,9 MB
+  (sem esse filtro, ~42 MB). Resta: `verse_text` (~11 MB, texto integral de 3 edições) e
+  `dictionary_entry` (~5 MB), texto puro sem compressão possível em SQL. LSJ comprimido: não feito,
+  porque o app não descomprime em SQL.
+  Build com AT (hebraico) incluído: 163 MB → 70,9 MB. Ainda em aberto: distribuir o AT como download
+  opcional, se o tamanho do app ainda importar.
 - **P2 — Versificação.** `openbible-xref` usa as referências da fonte sem remapear para KJV;
   TAGNT tem 384 tokens com `pos` deslocado por colisão NRSV→KJV. Avaliar a tabela TVTMS do STEPBible.
-- **P2 — `entity_ref` com `token_pos` NULL** não deduplica pela PK no SQLite (ingestores deduplicam
-  em código). Considerar `token_pos INTEGER NOT NULL DEFAULT -1`.
+- **Feito — `entity_ref` com `token_pos` NULL**: o builder remove duplicatas (a PK do SQLite não as
+  detecta com NULL).
 - **P2 — Wesley (AT)** reaproveita notas entre versículos; linhas do AT precisam de revisão.
   Calvino: ~11 entradas truncadas no próprio módulo SWORD.
 - **P2 — ISBE** contém artefatos de conversão ("ø" no lugar de "°", ">" soltos).

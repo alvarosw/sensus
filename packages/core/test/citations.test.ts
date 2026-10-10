@@ -121,3 +121,10 @@ describe('abreviações não encerram sentença', () => {
     expect(parseCited('Veja [[xr:openbible:50002005:50001002-50001002]].', xr)[0]?.kind).toBe('source');
   });
 });
+
+describe('avisos de ausência são estrutura', () => {
+  it('"o contexto não traz fontes ..." é aviso, mas "sem fonte" continua sendo afirmação sem citação', () => {
+    const segs = parseCited('O contexto não traz fontes rotuladas para esta passagem. Sem fonte aqui.', VALID);
+    expect(segs.map((s) => s.kind)).toEqual(['structure', 'uncited']);
+  });
+});

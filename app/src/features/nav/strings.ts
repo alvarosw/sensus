@@ -1,0 +1,23 @@
+// Textos de navegação (pt-BR). Ficam aqui porque i18n/index.ts é compartilhado com outras telas.
+export const NAV = {
+  continueReading: 'Continuar lendo',
+  resume: 'Retomar',
+  verseOf: (verse: number) => `versículo ${verse}`,
+  searchLabel: 'Buscar livro ou referência',
+  searchPlaceholder: 'fp 2:5-8, jo 3:16, sl 23…',
+  clearSearch: 'Limpar busca',
+  unmatched: 'Não reconheço essa referência. Exemplos: fp 2:5-8, 1co 13, sl 23.',
+  read: 'Ler',
+  study: (ref: string) => `Estudar ${ref}`,
+  openChapter: (ref: string) => `Abrir ${ref}`,
+  books: 'Livros',
+  chooseBook: 'Escolha o livro',
+  chapterLabel: (n: number) => `Capítulo ${n}`,
+  chapterAria: (name: string, n: number) => `${name} ${n}`,
+  prevChapter: 'Anterior',
+  nextChapter: 'Próximo',
+  testamentOT: 'AT',
+  testamentNT: 'NT',
+  close: 'Fechar',
+  bookChapters: (count: number) => `${count} ${count === 1 ? 'capítulo' : 'capítulos'}`,
+} as const;

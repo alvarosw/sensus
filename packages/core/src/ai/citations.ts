@@ -12,7 +12,8 @@ const MARKER_RE = new RegExp(
 );
 // Marcador já completo no início do trecho (usado para o corte em streaming).
 const COMPLETE_AT_START = new RegExp(`^(?:\\[\\[[^\\[\\]\\n]*\\]\\]|\\[${CITE_ID}(?:\\s*[,;]\\s*${CITE_ID})*\\])`);
-const TERMINAL = /[.!?…]/;
+// Ponto-e-vírgula também separa cláusulas ("Filipenses 2:6 — ...; ἁρπαγμὸν ..."): cada cláusula tem sua citação.
+const TERMINAL = /[.!?…;]/;
 
 /**
  * Abreviações comuns (sem o ponto, minúsculas) após as quais o ponto não encerra a sentença:
@@ -26,6 +27,9 @@ const ABBREVIATIONS: ReadonlySet<string> = new Set([
   'is', 'jr', 'lm', 'ez', 'dn', 'os', 'jl', 'am', 'mq', 'na', 'hc', 'sf', 'ag', 'zc', 'ml',
   'mt', 'mc', 'lc', 'jo', 'at', 'rm', 'co', 'fp', 'fl', 'cl', 'ts', 'tm', 'fm', 'hb', 'tg', 'pe', 'jd',
   'ap', 'nº', 'n', 'etc',
+  // Abreviações gramaticais (morfologia em português): "3ª sing.", "masc. pl.", "acus.".
+  'sing', 'pl', 'masc', 'fem', 'neut', 'nom', 'gen', 'dat', 'acus', 'ac', 'imp', 'ind', 'subj', 'opt',
+  'inf', 'part', 'pres', 'aor', 'perf', 'fut', 'imperf', 'pass', 'med', 'dep', 'ativ', 'ex',
 ]);
 
 /** O ponto que acaba `buf` pertence a uma abreviação (ex.: "vv", "p.ex", ou uma letra isolada). */
@@ -47,7 +51,7 @@ function plainCore(text: string): string {
 
 /** Aviso de ausência ("O contexto não traz registros para esta seção."), não é afirmação sobre a Escritura. */
 const ABSENCE_RE =
-  /\b(n[ãa]o\s+(traz|tem|cont[ée]m|h[áa]|apresenta)|sem)\s+(registros?|informa[çc][õo]es|material|dados)\b(?=.*\b(contexto|se[çc][ãa]o|camada|tema|passagem|banco)\b|\s*\.?$)/i;
+  /\b(?:n[ãa]o\s+(?:traz|tem|cont[ée]m|h[áa]|apresenta)\s+(?:\S+\s+)?(?:registros?|informa[çc][õo]es|material|dados|fontes?|entradas?)|sem\s+(?:registros?|informa[çc][õo]es|material|dados))\b(?=.*\b(contexto|se[çc][ãa]o|camada|tema|passagem|banco)\b|\s*\.?$)/i;
 
 /**
  * Classifica um segmento:

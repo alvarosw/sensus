@@ -1,83 +1,94 @@
-import { Pressable, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 import type { Book } from '@sensus/core';
-import { t } from '@/i18n';
-import { Card, Heading } from './primitives';
-import { Meta } from './text';
+import { abbrOf } from '@/features/nav/abbrev';
+import { groupBooks } from '@/features/nav/categories';
 import { useTheme } from './theme';
 
-/** Grupo de livros (AT ou NT). Cada livro expande em uma grade de capítulos. */
-export function BookGroup({
-  title,
+const HAIRLINE = StyleSheet.hairlineWidth;
+
+/** Grade de livros de um testamento: cada categoria tem faixa tingida e tiles (sigla grande, nome pequeno). */
+export function BookTileGrid({
   books,
-  openBook,
-  onToggle,
-  onChapter,
+  testament,
+  onPick,
 }: {
-  title: string;
-  books: Book[];
-  openBook: number | null;
-  onToggle: (num: number | null) => void;
-  onChapter: (book: number, chapter: number) => void;
+  books: readonly Book[];
+  testament: 'OT' | 'NT';
+  onPick: (book: Book) => void;
 }) {
   const theme = useTheme();
+  const groups = groupBooks(books, testament);
   return (
-    <View style={{ gap: 10 }}>
-      <Heading level={3}>{title.toUpperCase()}</Heading>
-      {books.map((book) => {
-        const expanded = openBook === book.num;
-        return (
-          <Card key={book.num} style={{ padding: 0 }}>
-            <Pressable
-              accessibilityRole="button"
-              accessibilityState={{ expanded }}
-              onPress={() => onToggle(expanded ? null : book.num)}
-              style={({ pressed }) => ({
-                flexDirection: 'row',
-                alignItems: 'center',
-                padding: 14,
-                backgroundColor: pressed ? theme.surfaceAlt : theme.surface,
-                borderRadius: 14,
-              })}
+    <View style={{ gap: 18 }}>
+      {groups.map(({ category, books: list }) =>
+        list.length === 0 ? null : (
+          <View key={category.id} style={{ gap: 8 }}>
+            <View
+              accessibilityRole="header"
+              style={{
+                alignSelf: 'flex-start',
+                backgroundColor: theme.tint,
+                borderRadius: 8,
+                paddingVertical: 4,
+                paddingHorizontal: 10,
+              }}
             >
-              <View style={{ flex: 1 }}>
-                <Text style={{ color: theme.text, fontSize: 16, fontWeight: '600' }}>{book.name_pt}</Text>
-                <Meta>{t('books.chapters', { count: book.chapters })}</Meta>
-              </View>
-              <Text style={{ color: theme.textMuted, fontSize: 16 }}>{expanded ? '−' : '+'}</Text>
-            </Pressable>
-            {expanded ? (
-              <View
+              <Text
                 style={{
-                  flexDirection: 'row',
-                  flexWrap: 'wrap',
-                  gap: 8,
-                  padding: 14,
-                  paddingTop: 0,
+                  color: theme.tintText,
+                  fontSize: 12,
+                  fontWeight: '700',
+                  letterSpacing: 0.6,
+                  textTransform: 'uppercase',
                 }}
               >
-                {Array.from({ length: book.chapters }, (_, i) => i + 1).map((chapter) => (
-                  <Pressable
-                    key={chapter}
-                    accessibilityRole="button"
-                    accessibilityLabel={`${book.name_pt} ${chapter}`}
-                    onPress={() => onChapter(book.num, chapter)}
-                    style={({ pressed }) => ({
-                      width: 52,
-                      height: 44,
-                      borderRadius: 10,
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      backgroundColor: pressed ? theme.selected : theme.chip,
-                    })}
-                  >
-                    <Text style={{ color: theme.text, fontWeight: '600' }}>{chapter}</Text>
-                  </Pressable>
-                ))}
-              </View>
-            ) : null}
-          </Card>
-        );
-      })}
+                {category.title}
+              </Text>
+            </View>
+            <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginHorizontal: -4 }}>
+              {list.map((book) => (
+                <BookTile key={book.num} book={book} onPress={() => onPick(book)} />
+              ))}
+            </View>
+          </View>
+        ),
+      )}
     </View>
+  );
+}
+
+function BookTile({ book, onPress }: { book: Book; onPress: () => void }) {
+  const theme = useTheme();
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel={`${book.name_pt}, ${book.chapters} capítulos`}
+      onPress={onPress}
+      style={({ pressed }) => ({ width: '25%', padding: 4, opacity: pressed ? 0.7 : 1 })}
+    >
+      <View
+        style={{
+          minHeight: 72,
+          borderRadius: 14,
+          borderWidth: HAIRLINE,
+          borderColor: theme.border,
+          backgroundColor: theme.surface,
+          alignItems: 'center',
+          justifyContent: 'center',
+          paddingVertical: 8,
+          paddingHorizontal: 4,
+          gap: 2,
+        }}
+      >
+        <Text style={{ color: theme.accent, fontSize: 19, fontWeight: '700' }}>{abbrOf(book.num)}</Text>
+        <Text
+          numberOfLines={1}
+          adjustsFontSizeToFit
+          style={{ color: theme.textMuted, fontSize: 11, textAlign: 'center' }}
+        >
+          {book.name_pt}
+        </Text>
+      </View>
+    </Pressable>
   );
 }

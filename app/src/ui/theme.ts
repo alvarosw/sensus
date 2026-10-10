@@ -19,6 +19,11 @@ export interface Theme {
   warn: string;
   warnText: string;
   danger: string;
+  /** Destaque temporário de versículo (ao abrir por referência). */
+  highlight: string;
+  /** Faixa de cabeçalho dos grupos de livros. */
+  tint: string;
+  tintText: string;
 }
 
 const light: Theme = {
@@ -40,6 +45,9 @@ const light: Theme = {
   warn: '#FBE9CF',
   warnText: '#8A4B00',
   danger: '#B3261E',
+  highlight: '#F6E2A8',
+  tint: '#EADFCB',
+  tintText: '#5B3A12',
 };
 
 const dark: Theme = {
@@ -61,6 +69,9 @@ const dark: Theme = {
   warn: '#3F2E14',
   warnText: '#F0C07A',
   danger: '#F2A39C',
+  highlight: '#5C4A1E',
+  tint: '#2C251C',
+  tintText: '#E9C98F',
 };
 
 export function useTheme(): Theme {
@@ -69,3 +80,53 @@ export function useTheme(): Theme {
 
 /** Fonte de leitura para o texto bíblico (serifada). */
 export const readingFont = Platform.select({ ios: 'Georgia', default: 'serif' });
+
+// ---- cores por tabela de citação (chips inline do texto rico) ---------------------
+
+export type CiteTable =
+  | 'verse_text'
+  | 'token'
+  | 'lexicon_entry'
+  | 'commentary'
+  | 'dictionary_entry'
+  | 'xref'
+  | 'entity';
+
+export interface CiteTone {
+  bg: string;
+  fg: string;
+}
+
+const citeTonesLight: Record<CiteTable, CiteTone> = {
+  verse_text: { bg: '#E4ECE2', fg: '#2E5A34' },
+  token: { bg: '#E3E8F4', fg: '#33407A' },
+  lexicon_entry: { bg: '#EFE3F1', fg: '#6A3B73' },
+  commentary: { bg: '#F4E9D6', fg: '#7A4E1D' },
+  dictionary_entry: { bg: '#DDEEEE', fg: '#2B5F5F' },
+  xref: { bg: '#E9E9E6', fg: '#4A4A44' },
+  entity: { bg: '#F5E1E1', fg: '#8A3434' },
+};
+
+const citeTonesDark: Record<CiteTable, CiteTone> = {
+  verse_text: { bg: '#22332A', fg: '#A9D6B0' },
+  token: { bg: '#262C42', fg: '#B5BFEB' },
+  lexicon_entry: { bg: '#33243A', fg: '#D7B6E2' },
+  commentary: { bg: '#3A2E1C', fg: '#E8C98F' },
+  dictionary_entry: { bg: '#1F3434', fg: '#9FD2D2' },
+  xref: { bg: '#2E2E2A', fg: '#CFCFC6' },
+  entity: { bg: '#3D2424', fg: '#F0B3B3' },
+};
+
+export const CITE_NEUTRAL_LIGHT: CiteTone = { bg: '#EFEBE2', fg: '#4A4A44' };
+export const CITE_NEUTRAL_DARK: CiteTone = { bg: '#302A22', fg: '#CFCFC6' };
+
+/** Cores de chip por tabela de origem, no tema claro ou escuro. */
+export function useCiteTones(): { tone: (table: CiteTable | undefined) => CiteTone; scheme: 'light' | 'dark' } {
+  const scheme = useColorScheme() === 'dark' ? 'dark' : 'light';
+  const table = scheme === 'dark' ? citeTonesDark : citeTonesLight;
+  const neutral = scheme === 'dark' ? CITE_NEUTRAL_DARK : CITE_NEUTRAL_LIGHT;
+  return {
+    scheme,
+    tone: (t) => (t ? table[t] : neutral),
+  };
+}

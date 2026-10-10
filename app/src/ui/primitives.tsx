@@ -6,6 +6,7 @@ import {
   Text,
   View,
   type StyleProp,
+  type TextStyle,
   type ViewStyle,
 } from 'react-native';
 import { useTheme } from './theme';
@@ -38,7 +39,7 @@ export function Heading({ children, level = 2 }: { children: ReactNode; level?: 
   );
 }
 
-export function Muted({ children, style }: { children: ReactNode; style?: StyleProp<ViewStyle> }) {
+export function Muted({ children, style }: { children: ReactNode; style?: StyleProp<TextStyle> }) {
   const theme = useTheme();
   return (
     <Text style={[{ color: theme.textMuted, fontSize: 13, lineHeight: 18 }, style]}>{children}</Text>

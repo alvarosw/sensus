@@ -13,3 +13,7 @@ export * from './ai/morphcheck';
 export * from './morph';
 export * from './relevance';
 export * from './variants';
+export * from './ai/structured-types';
+export * from './ai/cite-index';
+export * from './ai/rich-text';
+export * from './ai/structured';

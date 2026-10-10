@@ -1,32 +1,43 @@
 // CLI de teste ponta a ponta, sem celular.
-//   npm run ask -- "Phil 2:5-8"                  resumo estruturado da passagem
-//   npm run ask -- "Phil 2:5-8" "sua pergunta"   resposta com base no contexto
-//   npm run ask -- "Phil 2:5-8" --context        só imprime o contexto serializado
-//   npm run ask -- --list-models                 lista os modelos do provedor (NVIDIA_*)
+//   npm run ask -- "Phil 2:5-8"                    resumo estruturado (visão, seções, perguntas)
+//   npm run ask -- "Phil 2:5-8" --section texto    aprofunda uma seção (texto, literario, historico,
+//                                                  lingua, intertexto, interpretacao, aplicacao)
+//   npm run ask -- "Phil 2:5-8" "sua pergunta"     resposta com base no contexto
+//   npm run ask -- "Phil 2:5-8" --context          só imprime o contexto serializado
+//   npm run ask -- --list-models                   lista os modelos do provedor (NVIDIA_*)
 import { existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DatabaseSync } from 'node:sqlite';
 import { config as loadEnv } from 'dotenv';
 import {
+  answerMessages,
+  blocksToPlainText,
   buildPanel,
   buildProviderConfig,
+  buildRichTextContext,
   CHAT_MAX_TOKENS,
-  chatMessages,
-  checkMorphClaims,
+  claimsOf,
   DEFAULT_PANEL_LIMITS,
   OpenAICompatibleProvider,
-  parseCited,
   parseRef,
+  parseStructuredAnswer,
+  parseStructuredSummary,
   Repo,
+  SECTION_KEYS,
+  SECTION_LABELS,
+  sectionMessages,
   serializePanel,
   SUMMARY_MAX_TOKENS,
   summaryMessages,
-  tokenIndex,
-  type CitedSegment,
+  type Block,
   type PanelData,
+  type RichTextContext,
+  type SectionKey,
   type SqlDriver,
   type SqlParam,
+  type StructuredAnswer,
+  type StructuredSummary,
 } from '../src/index';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -39,8 +50,9 @@ const CONTEXT_BUDGET = 60_000;
 const DB_PATH = process.env.SENSUS_DB ? resolve(process.env.SENSUS_DB) : resolve(ROOT, 'data', 'sensus.db');
 
 function usage(): void {
-  console.error('Uso: npm run ask -- "<referência>" [pergunta] [--context]');
+  console.error('Uso: npm run ask -- "<referência>" [pergunta] [--section <chave>] [--context]');
   console.error('     npm run ask -- --list-models');
+  console.error(`Seções: ${SECTION_KEYS.join(', ')}`);
   console.error('Exemplos: "Phil 2:5-8", "Filipenses 2", "Rom 8:28-30"');
 }
 
@@ -66,43 +78,118 @@ function printStats(panel: PanelData): void {
   console.log('');
 }
 
-function printReport(segments: CitedSegment[], validIds: ReadonlySet<string>): void {
-  const body = segments;
-  const validCount = body.reduce((n, s) => n + s.cites.length, 0);
-  const invalid = body.flatMap((s) => s.invalidCites);
-  const distinct = new Set(body.flatMap((s) => s.cites));
-  const uncited = body.filter((s) => s.kind === 'uncited');
-  const sourced = body.filter((s) => s.kind === 'source').length;
-  const inference = body.filter((s) => s.kind === 'inference').length;
-  const structure = body.filter((s) => s.kind === 'structure').length;
-  const conflicts = body.filter((s) => (s.morphConflicts?.length ?? 0) > 0);
+/** Contagens de citações e de frases sem citação nos blocos (inclusive itens de lista). */
+function citationStats(blocks: readonly Block[]): { valid: number; invalid: string[]; distinct: Set<string> } {
+  const stats = { valid: 0, invalid: [] as string[], distinct: new Set<string>() };
+  const visit = (inlines: readonly { type: string; refs?: Array<{ citeId: string; valid: boolean; citeIds?: string[] }> }[]) => {
+    for (const inl of inlines) {
+      if (inl.type !== 'cite' || !inl.refs) continue;
+      for (const r of inl.refs) {
+        if (r.valid) {
+          stats.valid += 1;
+          for (const id of r.citeIds ?? [r.citeId]) stats.distinct.add(id);
+        } else {
+          stats.invalid.push(r.citeId);
+        }
+      }
+    }
+  };
+  for (const b of blocks) {
+    if (b.type === 'list') for (const item of b.items) visit(item.inlines);
+    else visit(b.inlines);
+  }
+  return stats;
+}
 
-  console.log('\n--- Validação de citações ---');
+/** Validação: classificação dos blocos, citações, frases sem citação e conflitos morfológicos. */
+function printValidation(blocks: readonly Block[], validCount: number, complete: boolean): void {
+  const claims = claimsOf(blocks);
+  const count = (kind: string) => claims.filter((c) => c.kind === kind).length;
+  const stats = citationStats(blocks);
+  const uncited = claims.flatMap((c) => c.uncited);
+  const conflicts = claims.flatMap((c) => c.morphConflicts.map((m) => ({ ...m })));
+
+  console.log('\n--- Validação ---');
   console.log(
-    `Trechos: ${body.length} (${sourced} com fonte, ${inference} inferências, ${structure} estrutura, ${uncited.length} sem citação)`,
+    `Blocos: ${claims.length} (${count('source')} com fonte, ${count('inference')} inferências, ${count('mixed')} mistos, ${count('structure')} estrutura)`,
   );
-  console.log(`Citações: ${validCount} válidas (${distinct.size} distintas, de ${validIds.size} disponíveis), ${invalid.length} inválidas`);
-  console.log(`Conflitos morfológicos: ${conflicts.length} trecho(s)`);
-  for (const s of conflicts) {
-    for (const c of s.morphConflicts ?? []) {
-      console.log(`  - "${c.term}" não bate com a análise dos tokens citados (${c.expected}): ${s.text.slice(0, 100)}`);
+  console.log(
+    `Citações: ${stats.valid} válidas (${stats.distinct.size} distintas, de ${validCount} disponíveis), ${stats.invalid.length} inválidas`,
+  );
+  if (stats.invalid.length > 0) {
+    console.log('Inválidas:');
+    for (const id of [...new Set(stats.invalid)]) console.log(`  - ${id}`);
+  }
+  console.log(`Frases sem citação: ${uncited.length}`);
+  for (const t of uncited.slice(0, 6)) console.log(`  - ${t.slice(0, 140)}`);
+  console.log(`Conflitos morfológicos: ${conflicts.length}`);
+  for (const c of conflicts) console.log(`  - "${c.term}" não bate com a análise dos tokens citados (${c.expected})`);
+  console.log(`Resposta completa (@fim recebido): ${complete ? 'sim' : 'não'}`);
+}
+
+function printSummary(s: StructuredSummary, validCount: number): void {
+  const all: Block[] = [...s.overview, ...SECTION_KEYS.flatMap((k) => s.sections[k] ?? [])];
+  console.log('\n--- Visão geral ---');
+  console.log(blocksToPlainText(s.overview));
+  for (const key of SECTION_KEYS) {
+    const blocks = s.sections[key];
+    if (!blocks) {
+      console.log(`\n--- ${SECTION_LABELS[key]} --- (não recebida)`);
+      continue;
+    }
+    console.log(`\n--- ${SECTION_LABELS[key]} ---`);
+    console.log(blocksToPlainText(blocks));
+  }
+  console.log('\n--- Perguntas para continuar ---');
+  for (const q of s.questions) console.log(`- ${q}`);
+  printValidation(all, validCount, s.complete);
+}
+
+function printAnswer(title: string, a: StructuredAnswer, validCount: number): void {
+  console.log(`\n--- ${title} ---`);
+  console.log(blocksToPlainText(a.blocks));
+  if (a.followUps.length > 0) {
+    console.log('\n--- Perguntas para continuar ---');
+    for (const q of a.followUps) console.log(`- ${q}`);
+  }
+  printValidation(a.blocks, validCount, a.complete);
+}
+
+/** Lê as flags e os argumentos posicionais; `--section` consome o valor seguinte. */
+function parseArgs(argv: string[]): { flags: Set<string>; section?: string; positional: string[] } {
+  const flags = new Set<string>();
+  const positional: string[] = [];
+  let section: string | undefined;
+  for (let i = 0; i < argv.length; i++) {
+    const a = argv[i]!;
+    if (a === '--section') {
+      section = argv[i + 1];
+      i++;
+    } else if (a.startsWith('--')) {
+      flags.add(a);
+    } else {
+      positional.push(a);
     }
   }
-  if (invalid.length > 0) {
-    console.log('Inválidas:');
-    for (const id of [...new Set(invalid)]) console.log(`  - ${id}`);
+  return { flags, section, positional };
+}
+
+async function streamTo(
+  provider: OpenAICompatibleProvider,
+  messages: ReturnType<typeof summaryMessages>,
+  maxTokens: number,
+): Promise<string> {
+  let full = '';
+  for await (const piece of provider.stream({ messages, temperature: 0.2, maxTokens })) {
+    full += piece;
+    process.stdout.write(piece);
   }
-  if (uncited.length > 0) {
-    console.log('Trechos sem citação (revisar se são fatos):');
-    for (const s of uncited.slice(0, 8)) console.log(`  - ${s.text.slice(0, 140)}`);
-    if (uncited.length > 8) console.log(`  ... e mais ${uncited.length - 8}`);
-  }
+  process.stdout.write('\n');
+  return full;
 }
 
 async function main(): Promise<void> {
-  const args = process.argv.slice(2);
-  const flags = new Set(args.filter((a) => a.startsWith('--')));
-  const positional = args.filter((a) => !a.startsWith('--'));
+  const { flags, section, positional } = parseArgs(process.argv.slice(2));
 
   if (flags.has('--list-models')) {
     const provider = new OpenAICompatibleProvider(providerFromEnv(process.env), fetch);
@@ -113,6 +200,12 @@ async function main(): Promise<void> {
 
   const [refArg, ...questionParts] = positional;
   if (!refArg) {
+    usage();
+    process.exitCode = 1;
+    return;
+  }
+  if (section !== undefined && !(SECTION_KEYS as readonly string[]).includes(section)) {
+    console.error(`Seção desconhecida: "${section}".`);
     usage();
     process.exitCode = 1;
     return;
@@ -134,7 +227,8 @@ async function main(): Promise<void> {
   const repo = new Repo(driver);
 
   try {
-    const range = parseRef(refArg, await repo.books());
+    const books = await repo.books();
+    const range = parseRef(refArg, books);
     if (!range) {
       console.error(`Referência não reconhecida: "${refArg}". Exemplos: "Phil 2:5-8", "Filipenses 2", "Rom 8:28-30".`);
       process.exitCode = 1;
@@ -165,30 +259,31 @@ async function main(): Promise<void> {
       return;
     }
 
-    const question = questionParts.join(' ').trim();
-    const messages = question ? chatMessages(context, [], question) : summaryMessages(context);
+    const rich: RichTextContext = buildRichTextContext(context, panel, books);
     const provider = new OpenAICompatibleProvider(cfg, fetch);
+    const question = questionParts.join(' ').trim();
 
-    console.log(`\n--- ${question ? 'Resposta' : 'Resumo'} (${cfg.model}) ---\n`);
-    let answer = '';
+    let answer: string;
     try {
-      for await (const piece of provider.stream({
-        messages,
-        temperature: 0.2,
-        maxTokens: question ? CHAT_MAX_TOKENS : SUMMARY_MAX_TOKENS,
-      })) {
-        answer += piece;
-        process.stdout.write(piece);
+      if (question) {
+        console.log(`\n--- Resposta (${cfg.model}) ---\n`);
+        answer = await streamTo(provider, answerMessages(context, [], question), CHAT_MAX_TOKENS);
+        printAnswer('Resposta', parseStructuredAnswer(answer, rich), context.citeIds.size);
+      } else if (section) {
+        const key = section as SectionKey;
+        console.log(`\n--- ${SECTION_LABELS[key]} (${cfg.model}) ---\n`);
+        answer = await streamTo(provider, sectionMessages(context, key), SUMMARY_MAX_TOKENS);
+        printAnswer(SECTION_LABELS[key], parseStructuredAnswer(answer, rich), context.citeIds.size);
+      } else {
+        console.log(`\n--- Resumo (${cfg.model}) ---\n`);
+        answer = await streamTo(provider, summaryMessages(context), SUMMARY_MAX_TOKENS);
+        printSummary(parseStructuredSummary(answer, rich), context.citeIds.size);
       }
     } catch (err) {
       console.error(`\n\nFalha na chamada ao provedor: ${err instanceof Error ? err.message : String(err)}`);
       process.exitCode = 1;
       return;
     }
-    process.stdout.write('\n');
-
-    const segments = checkMorphClaims(parseCited(answer, context.citeIds), tokenIndex(panel.layers.text.original));
-    printReport(segments, context.citeIds);
   } finally {
     db.close();
   }

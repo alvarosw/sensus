@@ -364,12 +364,24 @@ export class Repo {
     const colon = citeId.indexOf(':');
     if (colon <= 0) return null;
     switch (citeId.slice(0, colon)) {
+      // txt/tok: cite_id é derivado nas views (pipeline/schema_physical.sql), então a busca vai pela chave
+      // (source/vid, vid/pos) e o cite_id só confirma o registro. Sem isso, a view varreria a tabela.
       case 'txt': {
-        const record = await this.first<VerseText>(`SELECT ${VERSE_COLS} FROM verse_text WHERE cite_id = ?`, [citeId]);
+        const m = /^txt:(.+):(\d+)$/.exec(citeId);
+        if (!m) return null;
+        const record = await this.first<VerseText>(
+          `SELECT ${VERSE_COLS} FROM verse_text WHERE source_id = ? AND vid = ? AND cite_id = ?`,
+          [m[1]!, Number(m[2]), citeId],
+        );
         return record ? { table: 'verse_text', record } : null;
       }
       case 'tok': {
-        const record = await this.first<Token>(`SELECT ${TOKEN_COLS} FROM token WHERE cite_id = ?`, [citeId]);
+        const m = /^tok:(?:gnt|hot):(\d+):(\d+)$/.exec(citeId);
+        if (!m) return null;
+        const record = await this.first<Token>(
+          `SELECT ${TOKEN_COLS} FROM token WHERE vid = ? AND pos = ? AND cite_id = ?`,
+          [Number(m[1]), Number(m[2]), citeId],
+        );
         return record ? { table: 'token', record } : null;
       }
       case 'lex': {

@@ -18,6 +18,9 @@
 --   strong = 'G' ou 'H' + 4 dígitos + sufixo opcional de desambiguação STEPBible
 --          (ex.: 'G2424', 'H0430G'). strong_base = sem sufixo (ex.: 'H0430').
 --   Todo texto é texto puro (UTF-8, parágrafos separados por "\n\n"), sem HTML.
+--
+-- Este arquivo descreve o contrato lógico. No banco do app, token e verse_text são VIEWs sobre
+-- tabelas compactas (cite_id derivado, strings repetidas em dict_str): ver pipeline/schema_physical.sql.
 
 CREATE TABLE source (
   id            TEXT PRIMARY KEY,      -- ex.: 'tagnt', 'blivre', 'sword-mhc'
@@ -147,7 +150,8 @@ CREATE TABLE entity (
 CREATE TABLE entity_ref (
   entity_cite_id  TEXT NOT NULL REFERENCES entity(cite_id),
   vid             INTEGER NOT NULL,
-  token_pos       INTEGER,             -- posição do token, quando a fonte liga à palavra
+  token_pos       INTEGER,             -- posição do token, quando a fonte liga à palavra (NULL = sem ligação;
+                                       -- o builder remove duplicatas, pois a PK não as detecta com NULL)
   PRIMARY KEY (entity_cite_id, vid, token_pos)
 );
 

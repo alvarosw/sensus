@@ -3,16 +3,19 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {
+  buildCiteIndex,
   buildPanel,
-  chatMessages,
-  CitationStream,
   formatReference,
-  parseCited,
+  parseStructuredSummary,
+  SECTION_KEYS,
   serializePanel,
   summaryMessages,
+  answerMessages,
+  SUMMARY_MAX_TOKENS,
+  CHAT_MAX_TOKENS,
   type ChatMessage,
-  type CitedSegment,
   type PanelData,
+  type RichTextContext,
   type SerializedContext,
   type VerseRange,
 } from '@sensus/core';
@@ -20,22 +23,31 @@ import { streamChat } from '@/ai/client';
 import { useRepo } from '@/data/db-context';
 import { useAsync } from '@/data/use-async';
 import { APP_LOCALE, t } from '@/i18n';
-import { CitedText } from '@/features/cited-text';
-import { PanelSections } from '@/features/panel-sections';
+import { AnswerCard } from '@/features/thread';
+import { PassageCard } from '@/features/passage';
+import { QuestionChips, RichText } from '@/features/rich-text';
+import { SectionCard } from '@/features/section-card';
+import { SheetProvider } from '@/features/sheets';
 import { useSettings } from '@/settings/settings-context';
-import { Button, Card, CollapsibleSection, Heading, Muted } from '@/ui/primitives';
+import { Button, Card, Heading } from '@/ui/primitives';
+import { Skeleton } from '@/ui/skeleton';
 import { ErrorView, LoadingView } from '@/ui/state';
 import { Body, Meta } from '@/ui/text';
 import { useTheme } from '@/ui/theme';
 
-type SummaryStatus = 'idle' | 'streaming' | 'done' | 'error';
+type Status = 'idle' | 'streaming' | 'done' | 'error';
+
+interface Turn {
+  question: string;
+  raw: string;
+}
 
 function messageOf(e: unknown): string {
   return e instanceof Error ? e.message : String(e);
 }
 
 export default function StudyScreen() {
-  const params = useLocalSearchParams<{ start: string; end: string }>();
+  const params = useLocalSearchParams<{ start: string; end: string; ask?: string }>();
   const range: VerseRange = useMemo(
     () => ({ start: Number(params.start), end: Number(params.end) }),
     [params.start, params.end],
@@ -47,106 +59,125 @@ export default function StudyScreen() {
 
   const books = useAsync(() => repo.books(), [repo]);
   const panelState = useAsync<PanelData>(() => buildPanel(repo, range), [repo, range.start, range.end]);
-
   const panel = panelState.data;
-  const context: SerializedContext | null = useMemo(
-    () => (panel ? serializePanel(panel) : null),
-    [panel],
+  const bookList = books.data ?? [];
+
+  const context: SerializedContext | null = useMemo(() => (panel ? serializePanel(panel) : null), [panel]);
+  const rtCtx: RichTextContext | null = useMemo(
+    () =>
+      context && panel && books.data
+        ? { citeIds: context.citeIds, citeIndex: buildCiteIndex(panel, books.data), tokens: panel.layers.text.original }
+        : null,
+    [context, panel, books.data],
   );
   const reference = panel?.reference ?? (books.data ? formatReference(range, books.data) : '');
-  const titleOf = (sourceId: string) => panel?.sources[sourceId]?.title;
 
-  // ---- resumo (streaming com citações) -------------------------------------
-  const [summarySegments, setSummarySegments] = useState<CitedSegment[]>([]);
-  const [summaryStatus, setSummaryStatus] = useState<SummaryStatus>('idle');
+  // ---- resumo: inicia sozinho ao abrir o estudo ----------------------------------
+  const [summaryRaw, setSummaryRaw] = useState('');
+  const [summaryStatus, setSummaryStatus] = useState<Status>('idle');
   const [summaryError, setSummaryError] = useState<string | null>(null);
   const summaryAbort = useRef<AbortController | null>(null);
 
-  // ---- chat (somente em memória) ------------------------------------------
-  const [history, setHistory] = useState<ChatMessage[]>([]);
-  const [pending, setPending] = useState<{ question: string; segments: CitedSegment[] } | null>(null);
-  const [draft, setDraft] = useState('');
-  const [chatError, setChatError] = useState<string | null>(null);
-  const chatAbort = useRef<AbortController | null>(null);
-
-  // Trocar o trecho invalida resumo e conversa anteriores.
-  useEffect(() => {
-    summaryAbort.current?.abort();
-    chatAbort.current?.abort();
-    setSummarySegments([]);
-    setSummaryStatus('idle');
-    setSummaryError(null);
-    setHistory([]);
-    setPending(null);
-    setChatError(null);
-    return () => {
-      summaryAbort.current?.abort();
-      chatAbort.current?.abort();
-    };
-  }, [range.start, range.end]);
-
-  const generate = useCallback(async () => {
+  const runSummary = useCallback(() => {
     if (!provider || !context) return;
     summaryAbort.current?.abort();
     const controller = new AbortController();
     summaryAbort.current = controller;
-    const stream = new CitationStream(context.citeIds);
-    setSummarySegments([]);
+    setSummaryRaw('');
     setSummaryError(null);
     setSummaryStatus('streaming');
-    try {
-      await streamChat(
-        provider,
-        summaryMessages(context, { language: APP_LOCALE }),
-        (chunk) => setSummarySegments(stream.push(chunk)),
-        controller.signal,
-      );
-      setSummarySegments(stream.finish());
-      setSummaryStatus('done');
-    } catch (e) {
-      setSummarySegments(stream.finish());
-      if (controller.signal.aborted) {
-        setSummaryStatus('done');
-        return;
-      }
-      setSummaryError(messageOf(e));
-      setSummaryStatus('error');
-    }
+    streamChat(
+      provider,
+      summaryMessages(context, { language: APP_LOCALE }),
+      (chunk) => setSummaryRaw((prev) => prev + chunk),
+      controller.signal,
+      SUMMARY_MAX_TOKENS,
+    ).then(
+      () => {
+        if (!controller.signal.aborted) setSummaryStatus('done');
+      },
+      (e: unknown) => {
+        if (controller.signal.aborted) return;
+        setSummaryError(messageOf(e));
+        setSummaryStatus('error');
+      },
+    );
   }, [provider, context]);
 
-  const send = useCallback(async () => {
-    const question = draft.trim();
-    if (!question || !provider || !context || pending) return;
-    const controller = new AbortController();
-    chatAbort.current = controller;
-    const stream = new CitationStream(context.citeIds);
-    setDraft('');
-    setChatError(null);
-    setPending({ question, segments: [] });
-    try {
-      await streamChat(
-        provider,
-        chatMessages(context, history, question, { language: APP_LOCALE }),
-        (chunk) => setPending({ question, segments: stream.push(chunk) }),
-        controller.signal,
-      );
-      const reply = stream.text;
-      setHistory((h) => [
-        ...h,
-        { role: 'user', content: question },
-        { role: 'assistant', content: reply },
-      ]);
-    } catch (e) {
-      if (!controller.signal.aborted) {
-        setDraft(question);
-        setChatError(messageOf(e));
-      }
-    } finally {
-      setPending(null);
-    }
-  }, [draft, provider, context, pending, history]);
+  useEffect(() => {
+    runSummary();
+    return () => summaryAbort.current?.abort();
+  }, [runSummary]);
 
-  // ---- estados de carregamento ---------------------------------------------
+  const structured = useMemo(
+    () => (rtCtx && summaryRaw ? parseStructuredSummary(summaryRaw, rtCtx) : null),
+    [rtCtx, summaryRaw],
+  );
+
+  // ---- perguntas: thread em memória ----------------------------------------------
+  const [thread, setThread] = useState<Turn[]>([]);
+  const [pending, setPending] = useState<Turn | null>(null);
+  const [draft, setDraft] = useState('');
+  const [chatError, setChatError] = useState<string | null>(null);
+  const chatAbort = useRef<AbortController | null>(null);
+  const scrollRef = useRef<ScrollView>(null);
+
+  // Trocar o trecho invalida resumo e conversa anteriores.
+  useEffect(() => {
+    chatAbort.current?.abort();
+    setThread([]);
+    setPending(null);
+    setChatError(null);
+    setDraft('');
+    return () => chatAbort.current?.abort();
+  }, [range.start, range.end]);
+
+  const ask = useCallback(
+    async (question: string) => {
+      const q = question.trim();
+      if (!q || !provider || !context || !rtCtx || pending) return;
+      chatAbort.current?.abort();
+      const controller = new AbortController();
+      chatAbort.current = controller;
+      setChatError(null);
+      setDraft('');
+      setPending({ question: q, raw: '' });
+      const history: ChatMessage[] = thread.flatMap((turn) => [
+        { role: 'user' as const, content: turn.question },
+        { role: 'assistant' as const, content: turn.raw },
+      ]);
+      let raw = '';
+      try {
+        await streamChat(
+          provider,
+          answerMessages(context, history, q, { language: APP_LOCALE }),
+          (chunk) => {
+            raw += chunk;
+            setPending({ question: q, raw });
+          },
+          controller.signal,
+          CHAT_MAX_TOKENS,
+        );
+        setThread((th) => [...th, { question: q, raw }]);
+      } catch (e) {
+        if (!controller.signal.aborted) setChatError(messageOf(e));
+      } finally {
+        setPending(null);
+      }
+    },
+    [provider, context, rtCtx, pending, thread],
+  );
+
+  // Pergunta vinda de outra tela (ex.: aprofundamento): envia uma vez ao abrir.
+  const autoAsked = useRef<string | null>(null);
+  useEffect(() => {
+    if (params.ask && rtCtx && provider && autoAsked.current !== params.ask) {
+      autoAsked.current = params.ask;
+      void ask(params.ask);
+    }
+  }, [params.ask, rtCtx, provider, ask]);
+
+  // ---- estados de carregamento ---------------------------------------------------
   if (panelState.loading || books.loading) {
     return (
       <>
@@ -155,7 +186,7 @@ export default function StudyScreen() {
       </>
     );
   }
-  if (panelState.error || !panel) {
+  if (panelState.error || !panel || !rtCtx) {
     return (
       <>
         <Stack.Screen options={{ title: t('study.title') }} />
@@ -165,134 +196,125 @@ export default function StudyScreen() {
   }
 
   const hasProvider = provider !== null;
-  const citeIds = context?.citeIds ?? new Set<string>();
+  const streaming = summaryStatus === 'streaming';
+  const questionsReady = structured !== null && structured.questions.length > 0;
 
   return (
-    <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-      <Stack.Screen options={{ title: reference || t('study.title') }} />
+    <SheetProvider>
+      <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+        <Stack.Screen options={{ title: reference || t('study.title') }} />
 
-      <ScrollView
-        contentContainerStyle={{ padding: 16, gap: 16 }}
-        contentInsetAdjustmentBehavior="automatic"
-        keyboardShouldPersistTaps="handled"
-      >
-        <Card>
-          <Meta>{t('source.reference')}</Meta>
-          <Heading level={1}>{reference}</Heading>
-        </Card>
-
-        <Card style={{ gap: 12 }}>
-          <Heading>{t('study.summaryTitle')}</Heading>
-          <Muted>{t('study.summaryHint')}</Muted>
+        <ScrollView
+          ref={scrollRef}
+          contentContainerStyle={{ padding: 16, gap: 18 }}
+          contentInsetAdjustmentBehavior="automatic"
+          keyboardShouldPersistTaps="handled"
+          onContentSizeChange={() => {
+            if (thread.length > 0 || pending) scrollRef.current?.scrollToEnd({ animated: true });
+          }}
+        >
+          <PassageCard panel={panel} reference={reference} />
 
           {!hasProvider ? (
-            <View style={{ gap: 10 }}>
+            <Card style={{ gap: 10 }}>
+              <Heading>{t('study.summaryTitle')}</Heading>
               <Body>{t('study.noProvider')}</Body>
               <Button label={t('study.configure')} variant="secondary" onPress={() => router.push('/settings')} />
-            </View>
+            </Card>
           ) : (
-            <View style={{ gap: 12 }}>
-              {summaryStatus === 'streaming' ? (
-                <Button label={t('study.stop')} variant="secondary" onPress={() => summaryAbort.current?.abort()} />
-              ) : (
-                <Button
-                  label={summaryStatus === 'done' ? t('study.regenerate') : t('study.generate')}
-                  onPress={generate}
+            <View style={{ gap: 14 }}>
+              <Card style={{ gap: 12 }}>
+                <Heading>{t('study.overview')}</Heading>
+                {structured && structured.overview.length > 0 ? (
+                  <RichText blocks={structured.overview} index={rtCtx.citeIndex} />
+                ) : summaryStatus === 'error' ? (
+                  <View style={{ gap: 10 }}>
+                    <Text style={{ color: theme.danger, fontSize: 14, lineHeight: 20 }}>
+                      {t('study.summaryError', { message: summaryError ?? '' })}
+                    </Text>
+                    <Button label={t('common.retry')} variant="secondary" onPress={runSummary} />
+                  </View>
+                ) : (
+                  <Skeleton lines={3} />
+                )}
+              </Card>
+
+              {SECTION_KEYS.map((key) => (
+                <SectionCard
+                  key={key}
+                  sectionKey={key}
+                  blocks={structured?.sections[key]}
+                  streaming={streaming}
+                  index={rtCtx.citeIndex}
+                  panel={panel}
+                  books={bookList}
+                  start={range.start}
+                  end={range.end}
                 />
-              )}
-              {summaryStatus === 'streaming' && summarySegments.length === 0 ? (
-                <Meta>{t('study.generating')}</Meta>
+              ))}
+
+              {questionsReady ? (
+                <Card style={{ gap: 12 }}>
+                  <Heading level={3}>{t('study.questionsTitle')}</Heading>
+                  <QuestionChips questions={structured.questions} onAsk={ask} disabled={pending !== null} />
+                </Card>
               ) : null}
-              {summaryStatus === 'error' && summaryError ? (
-                <Text style={{ color: theme.danger, fontSize: 14 }}>
-                  {t('study.summaryError', { message: summaryError })}
-                </Text>
-              ) : null}
-              {summarySegments.length > 0 ? <CitedText segments={summarySegments} titleOf={titleOf} /> : null}
             </View>
           )}
-        </Card>
 
-        <PanelSections panel={panel} books={books.data ?? []} />
-
-        <CollapsibleSection
-          title={t('study.chatTitle')}
-          count={history.length / 2}
-          defaultOpen={history.length > 0}
-        >
-          {history.length === 0 && pending === null ? <Muted>{t('study.chatEmpty')}</Muted> : null}
-          {history.map((m, i) =>
-            m.role === 'user' ? (
-              <View key={i} style={{ alignSelf: 'flex-end', maxWidth: '85%' }}>
-                <View style={{ backgroundColor: theme.selected, borderRadius: 12, padding: 10 }}>
-                  <Body>{m.content}</Body>
-                </View>
-              </View>
-            ) : (
-              <View key={i} style={{ gap: 4 }}>
-                <Meta>{t('study.chatAi')}</Meta>
-                <CitedText segments={parseCited(m.content, citeIds)} titleOf={titleOf} />
-              </View>
-            ),
-          )}
-          {pending !== null ? (
-            <View style={{ alignSelf: 'flex-end', maxWidth: '85%' }}>
-              <View style={{ backgroundColor: theme.selected, borderRadius: 12, padding: 10 }}>
-                <Body>{pending.question}</Body>
-              </View>
-            </View>
-          ) : null}
-          {pending !== null ? (
-            <View style={{ gap: 4 }}>
-              <Meta>{t('study.chatAi')}</Meta>
-              {pending.segments.length > 0 ? (
-                <CitedText segments={pending.segments} titleOf={titleOf} />
-              ) : (
-                <Meta>{t('study.generating')}</Meta>
-              )}
-            </View>
+          {thread.map((turn, i) => (
+            <AnswerCard
+              key={i}
+              question={turn.question}
+              raw={turn.raw}
+              rtCtx={rtCtx}
+              onAsk={ask}
+              disabled={pending !== null}
+            />
+          ))}
+          {pending ? (
+            <AnswerCard question={pending.question} raw={pending.raw} rtCtx={rtCtx} onAsk={ask} disabled />
           ) : null}
           {chatError ? (
-            <Text style={{ color: theme.danger, fontSize: 14 }}>{t('study.chatError', { message: chatError })}</Text>
+            <Text style={{ color: theme.danger, fontSize: 14, lineHeight: 20 }}>
+              {t('study.chatError', { message: chatError })}
+            </Text>
           ) : null}
-        </CollapsibleSection>
-      </ScrollView>
+          {thread.length === 0 && pending === null && hasProvider ? <Meta>{t('study.chatEmpty')}</Meta> : null}
+        </ScrollView>
 
-      <SafeAreaView
-        edges={['bottom']}
-        style={{ backgroundColor: theme.surface, borderTopWidth: 1, borderTopColor: theme.border }}
-      >
-        <View style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 10, padding: 12 }}>
-          <TextInput
-            value={draft}
-            onChangeText={setDraft}
-            editable={hasProvider && pending === null}
-            placeholder={hasProvider ? t('study.chatPlaceholder') : t('study.noProvider')}
-            placeholderTextColor={theme.textMuted}
-            multiline
-            style={{
-              flex: 1,
-              maxHeight: 120,
-              minHeight: 44,
-              borderWidth: 1,
-              borderColor: theme.border,
-              borderRadius: 12,
-              paddingHorizontal: 12,
-              paddingVertical: 10,
-              color: theme.text,
-              backgroundColor: theme.bg,
-              fontSize: 15,
-            }}
-          />
-          <View style={{ width: 96 }}>
-            <Button
-              label={t('study.chatSend')}
-              onPress={send}
-              disabled={!draft.trim() || !hasProvider || pending !== null}
+        <SafeAreaView
+          edges={['bottom']}
+          style={{ backgroundColor: theme.surface, borderTopWidth: 1, borderTopColor: theme.border }}
+        >
+          <View style={{ flexDirection: 'row', alignItems: 'flex-end', gap: 10, padding: 12 }}>
+            <TextInput
+              value={draft}
+              onChangeText={setDraft}
+              editable={hasProvider && pending === null}
+              placeholder={hasProvider ? t('study.askPlaceholder') : t('study.noProvider')}
+              placeholderTextColor={theme.textMuted}
+              multiline
+              style={{
+                flex: 1,
+                maxHeight: 120,
+                minHeight: 44,
+                borderWidth: 1,
+                borderColor: theme.border,
+                borderRadius: 12,
+                paddingHorizontal: 12,
+                paddingVertical: 10,
+                color: theme.text,
+                backgroundColor: theme.bg,
+                fontSize: 15,
+              }}
             />
+            <View style={{ width: 96 }}>
+              <Button label={t('study.chatSend')} onPress={() => ask(draft)} disabled={!draft.trim() || !hasProvider || pending !== null} />
+            </View>
           </View>
-        </View>
-      </SafeAreaView>
-    </KeyboardAvoidingView>
+        </SafeAreaView>
+      </KeyboardAvoidingView>
+    </SheetProvider>
   );
 }
