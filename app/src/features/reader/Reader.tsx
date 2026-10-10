@@ -99,6 +99,8 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
   const anchorRef = useRef<{ idx: number; y: number; scroll: number } | null>(null);
 
   const pendingRef = useRef<Pending | null>(null);
+  // Rolagem de um pedido já aplicado que ainda acompanha o layout (ver o efeito de rolagem pendente).
+  const settleRef = useRef<{ p: Pending; until: number } | null>(null);
   const [pendingTick, setPendingTick] = useState(0);
   const lastNavAt = useRef(0);
   const [flashVid, setFlashVid] = useState<Vid>(0);
@@ -167,6 +169,10 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
     async (dir: 'prev' | 'next') => {
       const w = winRef.current;
       if (!w || loadingEdge.current[dir]) return;
+      // Durante uma navegação o leitor ainda não está na posição final: não carrega capítulos nas bordas
+      // (carregar o anterior ao montar desloca a rolagem para o capítulo errado).
+      const st = settleRef.current;
+      if (pendingRef.current || (st && Date.now() < st.until)) return;
       const idx = dir === 'prev' ? w.lo - 1 : w.hi + 1;
       if (idx < 0 || idx >= TOTAL_CHAPTERS) return;
       loadingEdge.current[dir] = true;
@@ -227,7 +233,6 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
 
   // Resolve a rolagem pendente assim que a geometria do alvo existe. Em listas recém-montadas o layout ainda
   // se ajusta (alturas reais), então acompanha o alvo por um instante até a geometria estabilizar.
-  const settleRef = useRef<{ p: Pending; until: number } | null>(null);
   const computeOffset = useCallback(
     (p: Pending): number | null => {
       const idx = vidChapterIndex(p.vid);
@@ -284,6 +289,8 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
   // ---- título (posição) e última posição ----
   const persistTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const updatePosition = useCallback(() => {
+    // Enquanto a navegação não foi aplicada, a posição lida é a da lista antiga/montagem: não mexe no título.
+    if (pendingRef.current) return;
     const y = offsetRef.current;
     const list = geo.mountedChapters();
     if (list.length === 0) return;

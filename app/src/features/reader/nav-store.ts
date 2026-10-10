@@ -30,8 +30,18 @@ export const useReaderNav = create<ReaderNav>()((set) => ({
   request: null,
   setPosition: (book, chapter) =>
     set((s) => (s.position.book === book && s.position.chapter === chapter ? s : { position: { book, chapter } })),
+  // O título já mostra o destino (a rolagem confirma depois, pelo próprio leitor).
   goChapter: (book, chapter) =>
-    set({ request: { id: ++seq, kind: 'chapter', vid: book * 1_000_000 + chapter * 1000 + 1, animated: true } }),
-  goVerse: (vid, opts) => set({ request: { id: ++seq, kind: 'verse', vid, flash: opts?.flash, animated: opts?.animated ?? true } }),
+    set({
+      position: { book, chapter },
+      request: { id: ++seq, kind: 'chapter', vid: book * 1_000_000 + chapter * 1000 + 1, animated: true },
+    }),
+  goVerse: (vid, opts) => {
+    const book = Math.floor(vid / 1_000_000);
+    const chapter = Math.floor((vid % 1_000_000) / 1000);
+    const request: NavRequest = { id: ++seq, kind: 'verse', vid, flash: opts?.flash, animated: opts?.animated ?? true };
+    if (book >= 1 && chapter >= 1) set({ position: { book, chapter }, request });
+    else set({ request });
+  },
   consume: (id) => set((s) => (s.request?.id === id ? { request: null } : s)),
 }));

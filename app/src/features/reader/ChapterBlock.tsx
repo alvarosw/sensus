@@ -1,14 +1,15 @@
 // Um capítulo do leitor contínuo: cabeçalho do livro (no capítulo 1), marcador de capítulo e os
-// parágrafos. Versículos são texto aninhado (fluxo contínuo, como no protótipo); marcadores inline
-// de 1×1 no início e no fim de cada versículo informam a posição para alças e rolagem.
+// parágrafos. Versículos são texto aninhado (fluxo contínuo, como no protótipo).
+// Posição dos versículos: na web, marcadores inline no DOM; no nativo, as linhas do texto disposto
+// (onTextLayout) dão y exato de cada linha e x aproximado pela contagem de caracteres. Marcadores inline
+// de View no nativo quebrariam o realce de seleção (lacunas) e não são medidos de forma confiável.
 import { memo, useCallback, useEffect, useMemo, useRef, type ReactElement } from 'react';
 import { Platform, Text, View, type LayoutChangeEvent } from 'react-native';
 import { BOOK_TABLE, splitVid, type Token, type VerseText, type Vid } from '@sensus/core';
 import { fontFamilies, gutter, radius, type, useTheme } from '@/design';
-import { abbrOf } from '../nav/abbrev';
 import type { FlowBlock } from '../nav/verse-flow';
 import type { ChapterData } from './chapters';
-import type { ReaderGeometry } from './geometry';
+import { LINE, type ReaderGeometry } from './geometry';
 import { READER } from './strings';
 
 const WJ = '⁠'; // junta o marcador inline ao texto vizinho (sem quebra de linha entre eles)
@@ -98,7 +99,7 @@ export const ChapterBlock = memo(function ChapterBlock({ data, geo, sourceName, 
             {it.title}
           </Text>
         ) : it.kind === 'run' ? (
-          <Run key={it.key} idx={data.idx} runKey={`${data.idx}:${it.key}`} verses={it.verses} endsParagraph={it.endsParagraph} geo={geo} selStart={selStart} selEnd={selEnd} flashVid={flashVid} onVerse={onVerse} />
+          <Run key={it.key} runKey={`${data.idx}:${it.key}`} verses={it.verses} endsParagraph={it.endsParagraph} geo={geo} selStart={selStart} selEnd={selEnd} flashVid={flashVid} onVerse={onVerse} />
         ) : (
           <GreekLine key={it.key} tokens={it.tokens} endsParagraph={it.endsParagraph} onWord={onWord} />
         ),
@@ -126,51 +127,91 @@ function ChapterMarker({ book, chapter, onY, first, geo, idx }: { book: string; 
   );
 }
 
-// Na web a View é `display:flex` (bloco): precisa ser inline para não quebrar a linha.
-const MARKER_STYLE = (Platform.OS === 'web' ? { width: 1, height: 1, display: 'inline-flex' } : { width: 1, height: 1 }) as object;
+// ---- posição dos versículos ----
 
-/**
- * Marcador inline de 1×1 no início/fim de um versículo. Na web e no iOS o `onLayout` informa x/y dentro do
- * texto; no Android (Fabric) o `onLayout` de Views dentro de <Text> nunca dispara, mas `measure()` devolve a
- * posição real (relativa ao <Text> pai). Por isso, no nativo, o trecho (Run) avisa quando o texto foi
- * disposto (`onTextLayout`) e cada marcador se mede com `measure()`.
- */
-function Marker({ geo, kind, vid, run, register }: { geo: ReaderGeometry; kind: 'start' | 'end'; vid: Vid; run: string; register: (fn: () => void) => () => void }) {
-  const ref = useRef<View>(null);
-  useEffect(
-    () => () => {
-      geo.removeMark(kind, vid, run);
-    },
-    [geo, kind, vid, run],
-  );
-  useEffect(() => {
-    if (Platform.OS === 'web') return;
-    const measure = () => {
-      ref.current?.measure((x, y, w, h) => {
-        // Antes do posicionamento o nativo devolve tudo zerado (inclusive o tamanho): ignora.
-        if (w === 0 && h === 0) return;
-        geo.setMark(kind, vid, run, gutter.reader + x, y);
-      });
-    };
-    return register(measure);
-  }, [geo, kind, vid, run, register]);
-  return (
-    <View
-      ref={
-        Platform.OS === 'web'
-          ? (n) => geo.setWebNode(kind, vid, n as unknown as HTMLElement | null)
-          : ref
-      }
-      accessible={false}
-      importantForAccessibility="no"
-      onLayout={(e) => geo.setMark(kind, vid, run, gutter.reader + e.nativeEvent.layout.x, e.nativeEvent.layout.y)}
-      style={MARKER_STYLE}
-    />
-  );
+/** Texto do trecho exatamente como é renderizado (para casar com as linhas do nativo). */
+interface Flow {
+  flat: string;
+  /** Índice do primeiro caractere (marcador de junção) de cada versículo. */
+  first: number[];
+  /** Índice do último caractere (marcador de junção) de cada versículo. */
+  last: number[];
 }
 
+function flowOf(verses: VerseText[]): Flow {
+  let flat = '';
+  const first: number[] = [];
+  const last: number[] = [];
+  verses.forEach((v, i) => {
+    first.push(flat.length);
+    flat += WJ + supNumber(splitVid(v.vid).verse) + ' ' + v.text + WJ;
+    last.push(flat.length - 1);
+    if (i < verses.length - 1) flat += ' ';
+  });
+  return { flat, first, last };
+}
+
+interface LayoutLine {
+  text?: string;
+  x: number;
+  y: number;
+  width: number;
+}
+
+const isWs = (ch: string): boolean => ch === ' ' || ch === ' ' || ch === '\n' || ch === '\t';
+const isSkippable = (ch: string): boolean => isWs(ch) || ch === WJ;
+
+/**
+ * Intervalo [a, b) de cada linha dentro de `flat`. Casa o texto da linha com o texto do trecho, caractere
+ * a caractere; espaços e marcadores de junção que a quebra de linha descarta são pulados.
+ */
+function lineSpans(lines: LayoutLine[], flat: string): Array<{ a: number; b: number }> {
+  const spans: Array<{ a: number; b: number }> = [];
+  let p = 0;
+  for (const line of lines) {
+    const a = p;
+    const text = line.text ?? '';
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i]!;
+      const same = (x: string) => x === ch || (isWs(x) && isWs(ch));
+      let q = p;
+      while (q < flat.length && !same(flat[q]!) && isSkippable(flat[q]!)) q++;
+      if (q < flat.length && same(flat[q]!)) p = q + 1;
+    }
+    spans.push({ a, b: p });
+  }
+  return spans;
+}
+
+function lineIndexOf(spans: Array<{ a: number; b: number }>, k: number): number {
+  for (let i = 0; i < spans.length; i++) if (k >= spans[i]!.a && k < spans[i]!.b) return i;
+  return Math.max(0, spans.length - 1);
+}
+
+/** Posição (x relativo ao trecho, y da linha de base) de cada versículo, a partir das linhas dispostas. */
+function versePoints(lines: LayoutLine[], flow: Flow, count: number): Array<{ sx: number; sy: number; ex: number; ey: number } | null> {
+  const spans = lineSpans(lines, flow.flat);
+  const at = (k: number, boundary: boolean) => {
+    const i = lineIndexOf(spans, k);
+    const line = lines[i];
+    const span = spans[i];
+    if (!line || !span) return null;
+    const len = Math.max(1, span.b - span.a);
+    // Fração da linha até o caractere (borda esquerda) ou até o fim dele (borda direita).
+    const frac = Math.min(1, Math.max(0, (k + (boundary ? 1 : 0) - span.a) / len));
+    return { x: line.x + frac * line.width, y: line.y + LINE.baseline - 1 };
+  };
+  const out: Array<{ sx: number; sy: number; ex: number; ey: number } | null> = [];
+  for (let i = 0; i < count; i++) {
+    const s = at(flow.first[i]! + 1, false);
+    const e = at(flow.last[i]! - 1, true);
+    out.push(s && e ? { sx: s.x, sy: s.y, ex: e.x, ey: e.y } : null);
+  }
+  return out;
+}
+
+/** Trecho de texto de um parágrafo; cada versículo é texto aninhado com realce próprio. */
 const Run = memo(function Run({
-  idx,
   runKey,
   verses,
   endsParagraph,
@@ -180,7 +221,6 @@ const Run = memo(function Run({
   flashVid,
   onVerse,
 }: {
-  idx: number;
   runKey: string;
   verses: VerseText[];
   endsParagraph: boolean;
@@ -192,29 +232,30 @@ const Run = memo(function Run({
 }) {
   const { c } = useTheme();
   useEffect(() => () => geo.removeRun(runKey), [geo, runKey]);
-  // Medição dos marcadores no nativo (ver Marker): reexecutada a cada layout do texto.
-  const measurers = useRef(new Set<() => void>());
-  const register = useCallback((fn: () => void) => {
-    measurers.current.add(fn);
-    return () => void measurers.current.delete(fn);
-  }, []);
-  const timers = useRef<Array<ReturnType<typeof setTimeout>>>([]);
-  const measureAll = useCallback(() => {
-    if (Platform.OS === 'web') return;
-    for (const t of timers.current) clearTimeout(t);
-    // O nativo posiciona os anexos do texto logo depois do layout; repete para pegar o assentamento final.
-    timers.current = [30, 250].map((ms) => setTimeout(() => measurers.current.forEach((f) => f()), ms));
-  }, []);
-  useEffect(() => {
-    measureAll();
-    return () => timers.current.forEach(clearTimeout);
-  }, [measureAll, verses]);
+  const flow = useMemo(() => flowOf(verses), [verses]);
+
+  // Nativo: ao dispor o texto, grava a posição de início e fim de cada versículo (relativa ao trecho).
+  const onTextLayout = useCallback(
+    (e: { nativeEvent: { lines: LayoutLine[] } }) => {
+      if (Platform.OS === 'web') return;
+      const pts = versePoints(e.nativeEvent.lines, flow, verses.length);
+      verses.forEach((v, i) => {
+        const p = pts[i];
+        if (!p) return;
+        geo.setMark('start', v.vid, runKey, gutter.reader + p.sx, p.sy);
+        geo.setMark('end', v.vid, runKey, gutter.reader + p.ex, p.ey);
+      });
+    },
+    [geo, runKey, flow, verses],
+  );
+
   const nodes: ReactElement[] = [];
   verses.forEach((v, i) => {
     const n = splitVid(v.vid).verse;
     const selected = selStart > 0 && v.vid >= selStart && v.vid <= selEnd;
     const flash = v.vid === flashVid;
-    nodes.push(<Marker key={`s${v.vid}`} geo={geo} kind="start" vid={v.vid} run={runKey} register={register} />);
+    // Na web, marcadores inline medem a posição pelo DOM; no nativo a posição vem de onTextLayout.
+    if (Platform.OS === 'web') nodes.push(<Marker key={`s${v.vid}`} geo={geo} kind="start" vid={v.vid} run={runKey} />);
     nodes.push(
       <Text
         key={`v${v.vid}`}
@@ -227,12 +268,12 @@ const Run = memo(function Run({
         style={{ backgroundColor: selected ? c.selected : flash ? c.highlight : undefined, borderRadius: radius.xs }}
       >
         {WJ}
-        <Text style={{ fontFamily: fontFamilies.uiBold, fontSize: SUP_SIZE, lineHeight: SUP_SIZE, color: selected ? c.accent : c.muted }}>{supNumber(n)}{'\u00A0'}</Text>
+        <Text style={{ fontFamily: fontFamilies.uiBold, fontSize: SUP_SIZE, lineHeight: SUP_SIZE, color: selected ? c.accent : c.muted }}>{supNumber(n)}{' '}</Text>
         {v.text}
         {WJ}
       </Text>,
     );
-    nodes.push(<Marker key={`e${v.vid}`} geo={geo} kind="end" vid={v.vid} run={runKey} register={register} />);
+    if (Platform.OS === 'web') nodes.push(<Marker key={`e${v.vid}`} geo={geo} kind="end" vid={v.vid} run={runKey} />);
     if (i < verses.length - 1) {
       // O espaço entre versículos também é pintado quando os dois lados estão selecionados (sem fresta branca).
       const next = verses[i + 1]!;
@@ -245,13 +286,31 @@ const Run = memo(function Run({
     }
   });
   return (
-    <View onLayout={(e) => { geo.setRun(runKey, e.nativeEvent.layout.y); measureAll(); }} style={{ paddingHorizontal: gutter.reader, marginBottom: endsParagraph ? 14 : 0 }}>
-      <Text selectable={false} onTextLayout={measureAll} style={{ ...type.scripture, color: c.text }}>
+    <View onLayout={(e) => geo.setRun(runKey, e.nativeEvent.layout.y)} style={{ paddingHorizontal: gutter.reader, marginBottom: endsParagraph ? 14 : 0 }}>
+      <Text selectable={false} onTextLayout={onTextLayout} style={{ ...type.scripture, color: c.text }}>
         {nodes}
       </Text>
     </View>
   );
 });
+
+/** Marcador inline de 1×1 no início/fim de um versículo (somente web: posição pelo DOM). */
+function Marker({ geo, kind, vid, run }: { geo: ReaderGeometry; kind: 'start' | 'end'; vid: Vid; run: string }) {
+  useEffect(
+    () => () => {
+      geo.removeMark(kind, vid, run);
+    },
+    [geo, kind, vid, run],
+  );
+  return (
+    <View
+      ref={(n) => geo.setWebNode(kind, vid, n as unknown as HTMLElement | null)}
+      accessible={false}
+      importantForAccessibility="no"
+      style={{ width: 1, height: 1, display: 'inline-flex' } as object}
+    />
+  );
+}
 
 function GreekLine({ tokens, endsParagraph, onWord }: { tokens: Token[]; endsParagraph: boolean; onWord: (citeId: string) => void }) {
   const { c } = useTheme();

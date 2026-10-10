@@ -237,7 +237,8 @@ export const useStudy = create<StudyState>()((set, get) => ({
   appendGeneration: (key, chunk) =>
     set((s) => {
       const cur = s.generations[key] ?? { text: '', status: 'streaming' as const };
-      return { generations: { ...s.generations, [key]: { ...cur, text: cur.text + chunk } } };
+      // Chegou texto: a geração deixa de estar "pensando".
+      return { generations: { ...s.generations, [key]: { ...cur, text: cur.text + chunk, thinking: false } } };
     }),
 
   openPopover: (citeId) => set({ popoverCite: citeId }),

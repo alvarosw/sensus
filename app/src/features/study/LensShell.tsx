@@ -5,6 +5,7 @@ import { View, type LayoutChangeEvent } from 'react-native';
 import { router } from 'expo-router';
 import {
   ActButton,
+  Caret,
   Card,
   Empty,
   LinkButton,
@@ -103,6 +104,16 @@ function SkeletonLines({ lines = 3 }: { lines?: number }) {
   );
 }
 
+/** Modelo de raciocínio ainda pensando, sem texto: uma linha discreta no lugar do esqueleto. */
+function ThinkingLine() {
+  return (
+    <Txt v="meta" color="muted" italic testID="ai-thinking">
+      {STUDY.thinking}
+      <Caret />
+    </Txt>
+  );
+}
+
 function NoProviderCard() {
   return (
     <Card testID="ai-noprovider" style={{ gap: space[5] }}>
@@ -161,6 +172,8 @@ function AiBlock({ lens }: { lens: LensKey }) {
         />
       ) : ai.status === 'done' ? (
         <Empty text={STUDY.noSummary} />
+      ) : ai.thinking ? (
+        <ThinkingLine />
       ) : (
         <SkeletonLines lines={lens === 'visao' ? 3 : 2} />
       )}
@@ -192,6 +205,8 @@ function DeepBlock({ lens, view, index }: { lens: LensKey; view: DeepView; index
         />
       ) : view.status === 'error' ? (
         <Txt v="bodySm" color="danger">{view.error ?? STUDY.summaryError('')}</Txt>
+      ) : view.thinking ? (
+        <ThinkingLine />
       ) : (
         <SkeletonLines />
       )}

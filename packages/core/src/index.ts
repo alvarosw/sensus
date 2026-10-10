@@ -5,6 +5,8 @@ export * from './repo';
 export * from './panel';
 export * from './translate';
 export * from './ai/provider';
+export * from './ai/openai-responses';
+export * from './ai/siwc';
 export * from './ai/presets';
 export * from './ai/context';
 export * from './ai/prompts';

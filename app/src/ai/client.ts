@@ -3,6 +3,7 @@ import {
   CHAT_CONTEXT_PREFIX,
   CHAT_MAX_TOKENS,
   createProvider,
+  LLMError,
   SUMMARY_MAX_TOKENS,
   type ChatMessage,
   type FetchLike,
@@ -10,6 +11,8 @@ import {
   type ProviderConfig,
 } from '@sensus/core';
 import { DEMO_PRESET_ID, DemoProvider } from './demo-provider';
+import { getChatGPTAccessToken, markPlanNotEligible } from '@/auth/chatgpt/service';
+import { useStudy } from '@/state/study';
 
 /**
  * fetch com streaming real (response.body) no React Native, via expo/fetch.
@@ -21,7 +24,8 @@ export const streamingFetch: FetchLike = (input, init) =>
 export function providerFor(config: ProviderConfig): LLMProvider & { listModels?: () => Promise<string[]> } {
   // Preset 'demo': respostas gravadas, sem rede (ver ai/demo-provider.ts).
   if (config.id === DEMO_PRESET_ID) return new DemoProvider();
-  return createProvider(config, streamingFetch);
+  // Plano ChatGPT: o token vem do armazenamento seguro e é renovado quando preciso.
+  return createProvider(config, streamingFetch, { getAccessToken: getChatGPTAccessToken });
 }
 
 /** Pergunta sobre a passagem (chatMessages) carrega a mensagem de contexto; o resumo não. */
@@ -44,9 +48,27 @@ export async function streamChat(
   maxTokens = isChatRequest(messages) ? CHAT_MAX_TOKENS : SUMMARY_MAX_TOKENS,
   onReasoning?: () => void,
 ): Promise<void> {
-  const stream = providerFor(config).stream({ messages, temperature: 0.2, maxTokens, signal, onReasoning });
-  for await (const chunk of stream) {
-    onChunk(chunk);
+  const run = async (cfg: ProviderConfig, emit: (chunk: string) => void): Promise<void> => {
+    const stream = providerFor(cfg).stream({ messages, temperature: 0.2, maxTokens, signal, onReasoning });
+    for await (const chunk of stream) emit(chunk);
+  };
+  let emitted = false;
+  try {
+    await run(config, (chunk) => {
+      emitted = true;
+      onChunk(chunk);
+    });
+  } catch (err) {
+    if (!(err instanceof LLMError) || err.code !== 'plan_not_eligible' || emitted) throw err;
+    // Conta recusada pelo plano (403), antes de qualquer texto: marca a conta e usa a chave de API.
+    const firstRefusal = await markPlanNotEligible();
+    if (!config.fallback) throw err;
+    if (firstRefusal) {
+      useStudy.getState().showToast({
+        text: 'Sua conta do ChatGPT não tem o plano para o Sensus. Usando sua chave de API.',
+      });
+    }
+    await run(config.fallback, onChunk);
   }
 }
 

@@ -1,4 +1,5 @@
 import {
+  buildChatGPTProviderConfig,
   buildProviderConfig,
   PRESET_IDS,
   PROVIDER_PRESETS,
@@ -38,20 +39,19 @@ export function buildConfigFrom(
   return config;
 }
 
-/**
- * Provedor efetivo, por prioridade:
- *  1. EXPO_PUBLIC_SENSUS_DEMO=1: demo (offline), sempre;
- *  2. configuração salva (com sua chave), ou o preset 'demo' salvo;
- *  3. na web (sem nada salvo): demo;
- *  4. provedor de desenvolvimento do .env, se houver.
- */
-export function resolveProvider(
+/** Estado do plano ChatGPT para a escolha do provedor (ver auth/chatgpt/service.ts: isPlanActive). */
+export interface ChatGPTSession {
+  planActive: boolean;
+  model: string;
+}
+
+/** Provedor por chave de API (preset salvo, ou demo, ou o .env de desenvolvimento). */
+function resolveApiKeyProvider(
   stored: StoredProviderSettings | null,
   savedApiKey: string | null,
   dev: DevProvider | null,
-  demo: DemoPolicy = DEMO_POLICY,
+  demo: DemoPolicy,
 ): ProviderConfig | null {
-  if (demo.forced || stored?.presetId === DEMO_PRESET_ID) return { ...DEMO_PROVIDER_CONFIG };
   if (stored && savedApiKey && isPresetId(stored.presetId)) {
     return buildConfigFrom(stored.presetId, stored.baseUrl, stored.model, savedApiKey);
   }
@@ -60,6 +60,28 @@ export function resolveProvider(
     return buildConfigFrom(DEV_PRESET, dev.baseUrl, dev.model, dev.apiKey);
   }
   return null;
+}
+
+/**
+ * Provedor efetivo, por prioridade:
+ *  1. EXPO_PUBLIC_SENSUS_DEMO=1 ou o preset 'demo' salvo: demo (offline);
+ *  2. ChatGPT, quando a conta está conectada com o escopo do plano e não foi recusada.
+ *     A chave de API (se houver) fica como `fallback`, usada só se a conta for recusada (403);
+ *  3. configuração salva (com sua chave), ou o padrão da web (demo), ou o provedor de desenvolvimento do .env.
+ */
+export function resolveProvider(
+  stored: StoredProviderSettings | null,
+  savedApiKey: string | null,
+  dev: DevProvider | null,
+  demo: DemoPolicy = DEMO_POLICY,
+  chatgpt: ChatGPTSession | null = null,
+): ProviderConfig | null {
+  if (demo.forced || stored?.presetId === DEMO_PRESET_ID) return { ...DEMO_PROVIDER_CONFIG };
+  const keyProvider = resolveApiKeyProvider(stored, savedApiKey, dev, demo);
+  if (chatgpt?.planActive && chatgpt.model) {
+    return { ...buildChatGPTProviderConfig(chatgpt.model), fallback: keyProvider ?? undefined };
+  }
+  return keyProvider;
 }
 
 /** Valor inicial do formulário: salvo, ou derivado do .env, ou o preset padrão. */

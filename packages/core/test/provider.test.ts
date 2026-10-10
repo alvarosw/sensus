@@ -200,6 +200,38 @@ describe('OpenAICompatibleProvider.stream', () => {
   });
 });
 
+describe('OpenAICompatibleProvider extraBody', () => {
+  const okSse = () => sseResponse(['data: {"choices":[{"delta":{"content":"ok"}}]}\n\n', 'data: [DONE]\n\n']);
+
+  it('envia extraBody no corpo (ex.: desligar raciocínio) sem sobrescrever modelo, mensagens ou stream', async () => {
+    const bodies: string[] = [];
+    const fetchImpl: FetchLike = async (_url, init) => {
+      bodies.push(String(init?.body));
+      return okSse();
+    };
+    const provider = new OpenAICompatibleProvider(
+      config({ extraBody: { chat_template_kwargs: { enable_thinking: false }, model: 'outro', stream: false } }),
+      fetchImpl,
+    );
+    expect(await collect(provider)).toBe('ok');
+    const body = JSON.parse(bodies[0] ?? '{}') as Record<string, unknown>;
+    expect(body.chat_template_kwargs).toEqual({ enable_thinking: false });
+    expect(body).toMatchObject({ model: 'modelo-x', stream: true });
+    expect(body.messages).toEqual([{ role: 'user', content: 'oi' }]);
+  });
+
+  it('sem extraBody, o corpo da requisição não ganha campos extras', async () => {
+    const bodies: string[] = [];
+    const fetchImpl: FetchLike = async (_url, init) => {
+      bodies.push(String(init?.body));
+      return okSse();
+    };
+    await collect(new OpenAICompatibleProvider(config(), fetchImpl));
+    const body = JSON.parse(bodies[0] ?? '{}') as Record<string, unknown>;
+    expect(Object.keys(body).sort()).toEqual(['messages', 'model', 'stream', 'temperature']);
+  });
+});
+
 describe('OpenAICompatibleProvider.listModels', () => {
   it('lista ids de GET {baseUrl}/models', async () => {
     let url = '';
@@ -216,15 +248,21 @@ describe('OpenAICompatibleProvider.listModels', () => {
 });
 
 describe('presets', () => {
-  it('monta a configuração do preset NVIDIA sem modelo padrão', () => {
+  it('monta a configuração do preset NVIDIA com o modelo sugerido e o raciocínio desligado', () => {
     const cfg = buildProviderConfig('nvidia', { apiKey: ' k ', baseUrl: '' });
     expect(cfg).toMatchObject({
       id: 'nvidia',
       kind: 'openai-compatible',
       baseUrl: 'https://integrate.api.nvidia.com/v1',
       apiKey: 'k',
-      model: '',
+      model: 'nvidia/nemotron-3-super-120b-a12b',
+      extraBody: { chat_template_kwargs: { enable_thinking: false } },
     });
+  });
+
+  it('só os presets que pedem extraBody o levam para a configuração', () => {
+    expect(buildProviderConfig('openai', { apiKey: 'k' }).extraBody).toBeUndefined();
+    expect(buildProviderConfig('nvidia', { apiKey: 'k', model: 'outro/modelo' }).model).toBe('outro/modelo');
   });
 
   it('usa o modelo sugerido do preset quando não há sobrescrita', () => {

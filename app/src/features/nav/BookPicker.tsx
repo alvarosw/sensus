@@ -160,7 +160,18 @@ export function BookPicker({
                             opacity: pressed ? 0.6 : 1,
                           })}
                         >
-                          <Txt v="bodySm" bold center numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.7} color={current ? 'accent' : 'text'}>{b.name_pt}</Txt>
+                          {/* Uma linha só, sem quebrar palavra: nomes longos (ex.: "1 Tessalonicenses") usam corpo menor. */}
+                          <Txt
+                            v="bodySm"
+                            bold
+                            center
+                            numberOfLines={1}
+                            ellipsizeMode="tail"
+                            color={current ? 'accent' : 'text'}
+                            style={b.name_pt.length > 11 ? { fontSize: 11.5, lineHeight: 15 } : undefined}
+                          >
+                            {b.name_pt}
+                          </Txt>
                           <Txt v="meta" color="muted" style={{ fontSize: 10.5, lineHeight: 13 }}>{abbrOf(b.num)}</Txt>
                         </Pressable>
                       );

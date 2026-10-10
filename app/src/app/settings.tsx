@@ -12,6 +12,7 @@ import { useSettings } from '@/settings/settings-context';
 import type { StoredProviderSettings } from '@/settings/provider-store';
 import { FormButton } from '@/features/common/Buttons';
 import { SETTINGS } from '@/features/common/strings';
+import { ChatGPTCard } from '@/settings/chatgpt-card';
 
 type Notice = { tone: 'ok' | 'error'; text: string } | null;
 
@@ -126,6 +127,10 @@ export default function SettingsScreen() {
       contentInsetAdjustmentBehavior="automatic"
       keyboardShouldPersistTaps="handled"
     >
+      <ChatGPTCard />
+
+      <Txt v="eyebrow" color="muted" style={{ marginTop: 6 }}>Usar uma chave de API (alternativa)</Txt>
+
       <Card style={{ gap: 6 }}>
         <Txt v="bodySm">{t('settings.byokHint')}</Txt>
         <Txt v="meta" color="muted">{t('settings.status', { state })}</Txt>

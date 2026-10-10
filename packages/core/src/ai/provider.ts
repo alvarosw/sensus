@@ -1,29 +1,11 @@
 // Provedores de LLM. O primeiro adaptador fala o protocolo OpenAI (/chat/completions com SSE).
 // Para outro provedor, basta um novo arquivo que implemente LLMProvider e um ramo em createProvider.
 import type { ChatRequest, FetchLike, LLMProvider, ProviderConfig } from '../types';
-
-export type LLMErrorCode =
-  | 'config'
-  | 'auth'
-  | 'not_found'
-  | 'rate_limit'
-  | 'server'
-  | 'http'
-  | 'network'
-  | 'timeout'
-  | 'protocol';
-
-export class LLMError extends Error {
-  readonly code: LLMErrorCode;
-  readonly status: number | undefined;
-
-  constructor(message: string, code: LLMErrorCode, status?: number) {
-    super(message);
-    this.name = 'LLMError';
-    this.code = code;
-    this.status = status;
-  }
-}
+import { LLMError, type LLMErrorCode } from './llm-error';
+import { readSSEData, StallWatch, STALL_TIMEOUT_MS } from './sse';
+import { OpenAIResponsesProvider } from './openai-responses';
+export { LLMError, type LLMErrorCode } from './llm-error';
+export { STALL_TIMEOUT_MS } from './sse';
 
 interface ChatCompletionPayload {
   choices?: Array<{
@@ -70,102 +52,6 @@ async function readErrorDetail(res: Response): Promise<string> {
     return '';
   }
 }
-
-/** Sem bytes por este tempo, a requisição é abortada e o erro 'timeout' é mostrado (com "tente novamente"). */
-export const STALL_TIMEOUT_MS = 45_000;
-
-/**
- * Vigia a conexão: `failed` rejeita (com LLMError 'timeout') se nenhum byte chegar por `ms`.
- * `touch()` reinicia o prazo a cada atividade; `stop()` desarma ao fim da resposta.
- */
-class StallWatch {
-  readonly failed: Promise<never>;
-  private readonly ms: number;
-  private readonly label: string;
-  private readonly abort: () => void;
-  private fail: (err: LLMError) => void = () => undefined;
-  private timer: ReturnType<typeof setTimeout> | undefined;
-
-  constructor(ms: number, label: string, abort: () => void) {
-    this.ms = ms;
-    this.label = label;
-    this.abort = abort;
-    this.failed = new Promise<never>((_, reject) => {
-      this.fail = reject;
-    });
-    this.failed.catch(() => undefined);
-    this.touch();
-  }
-
-  touch(): void {
-    if (this.timer !== undefined) clearTimeout(this.timer);
-    this.timer = setTimeout(() => {
-      this.timer = undefined;
-      this.abort();
-      this.fail(
-        new LLMError(
-          `${this.label} parou de responder (sem dados por ${Math.round(this.ms / 1000)} s). Tentar novamente.`,
-          'timeout',
-        ),
-      );
-    }, this.ms);
-  }
-
-  stop(): void {
-    if (this.timer !== undefined) clearTimeout(this.timer);
-    this.timer = undefined;
-  }
-}
-
-/**
- * Lê um corpo SSE e devolve o conteúdo de cada linha `data:` (sem o prefixo).
- * `collect` recebe todas as linhas, para o fallback de resposta JSON não-streamed.
- * Cada leitura é corrida contra o `watch` (ver StallWatch).
- */
-async function* readSSEData(
-  body: ReadableStream<Uint8Array>,
-  collect: string[],
-  watch: StallWatch,
-): AsyncGenerator<string> {
-  const reader = body.getReader();
-  const decoder = new TextDecoder();
-  let buffer = '';
-  let finished = false;
-  const handle = (rawLine: string): string | undefined => {
-    const line = rawLine.replace(/\r$/, '');
-    collect.push(line);
-    return line.startsWith('data:') ? line.slice(5).trim() : undefined;
-  };
-  try {
-    for (;;) {
-      const { done, value } = await Promise.race([reader.read(), watch.failed]);
-      watch.touch();
-      if (done) break;
-      buffer += decoder.decode(value, { stream: true });
-      let nl = buffer.indexOf('\n');
-      while (nl !== -1) {
-        const data = handle(buffer.slice(0, nl));
-        buffer = buffer.slice(nl + 1);
-        if (data !== undefined) yield data;
-        nl = buffer.indexOf('\n');
-      }
-    }
-    buffer += decoder.decode();
-    if (buffer.length > 0) {
-      const data = handle(buffer);
-      if (data !== undefined) yield data;
-    }
-    finished = true;
-  } finally {
-    if (finished) {
-      reader.releaseLock();
-    } else {
-      // Sem await: após um timeout a leitura pendente pode não resolver nunca.
-      reader.cancel().catch(() => undefined);
-    }
-  }
-}
-
 export class OpenAICompatibleProvider implements LLMProvider {
   readonly config: ProviderConfig;
   private readonly fetchImpl: FetchLike;
@@ -179,6 +65,7 @@ export class OpenAICompatibleProvider implements LLMProvider {
   async *stream(req: ChatRequest): AsyncGenerator<string> {
     this.assertConfigured();
     const body = JSON.stringify({
+      ...this.config.extraBody,
       model: this.config.model,
       messages: req.messages,
       temperature: req.temperature ?? 0.2,
@@ -366,11 +253,28 @@ export class OpenAICompatibleProvider implements LLMProvider {
   }
 }
 
+export interface ProviderDeps {
+  /**
+   * Token de acesso do plano ChatGPT (kind 'chatgpt'). Deve renovar o token quando estiver perto de expirar.
+   * `forceRefresh` é pedido após um 401, para tentar uma renovação antes de desistir.
+   */
+  getAccessToken?: (opts?: { forceRefresh?: boolean }) => Promise<string>;
+}
+
 /** Fábrica por tipo de provedor. Novos adaptadores entram aqui. */
-export function createProvider(config: ProviderConfig, fetchImpl: FetchLike): LLMProvider & { listModels?: () => Promise<string[]> } {
+export function createProvider(
+  config: ProviderConfig,
+  fetchImpl: FetchLike,
+  deps: ProviderDeps = {},
+): LLMProvider & { listModels?: () => Promise<string[]> } {
   switch (config.kind) {
     case 'openai-compatible':
       return new OpenAICompatibleProvider(config, fetchImpl);
+    case 'chatgpt':
+      if (!deps.getAccessToken) {
+        throw new LLMError('Sessão do ChatGPT não disponível. Entre com o ChatGPT nas configurações.', 'config');
+      }
+      return new OpenAIResponsesProvider(config, fetchImpl, deps.getAccessToken);
     default:
       throw new LLMError(`Tipo de provedor não suportado: ${String((config as { kind: unknown }).kind)}`, 'config');
   }

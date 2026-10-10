@@ -43,6 +43,8 @@ export interface DeepView {
   followUps: string[];
   status: 'streaming' | 'done' | 'error';
   error?: string;
+  /** Modelo de raciocínio pensando, sem texto ainda ("pensando…"). */
+  thinking: boolean;
 }
 
 export interface StudyAi {
@@ -52,6 +54,8 @@ export interface StudyAi {
   summary: StructuredSummary | null;
   /** Lente que está recebendo texto agora (cursor piscante). */
   writingLens: LensKey | null;
+  /** Resumo: modelo de raciocínio pensando, sem texto ainda ("pensando…" no lugar do esqueleto). */
+  thinking: boolean;
   /** Perícope diferente da seleção: texto "Resumo da perícope …". */
   unitRange: Range | null;
   retry: () => void;
@@ -176,12 +180,18 @@ function messageOf(e: unknown): string {
   return e instanceof Error ? e.message : String(e);
 }
 
+/** Modelo de raciocínio ainda pensando e sem texto: a UI mostra "pensando…" no lugar do esqueleto. */
+function markThinking(key: string): void {
+  const g = useStudy.getState().generations[key];
+  if (g && !g.thinking && !g.text) useStudy.getState().setGeneration(key, { thinking: true });
+}
+
 function runStream(provider: ProviderConfig, key: string, messages: Parameters<typeof streamChat>[1]): void {
   const store = useStudy.getState();
   controllers.get(key)?.abort();
   const ctrl = new AbortController();
   controllers.set(key, ctrl);
-  store.setGeneration(key, { text: '', status: 'streaming', error: undefined });
+  store.setGeneration(key, { text: '', status: 'streaming', error: undefined, thinking: false });
   let buf = '';
   let timer: ReturnType<typeof setTimeout> | null = null;
   const flush = () => {
@@ -201,19 +211,20 @@ function runStream(provider: ProviderConfig, key: string, messages: Parameters<t
     },
     ctrl.signal,
     SUMMARY_MAX_TOKENS,
+    () => markThinking(key),
   ).then(
     () => {
       if (timer) clearTimeout(timer);
       flush();
       if (controllers.get(key) === ctrl) controllers.delete(key);
-      useStudy.getState().setGeneration(key, { status: 'done' });
+      useStudy.getState().setGeneration(key, { status: 'done', thinking: false });
     },
     (e: unknown) => {
       if (timer) clearTimeout(timer);
       flush();
       if (controllers.get(key) === ctrl) controllers.delete(key);
       if (ctrl.signal.aborted) return;
-      useStudy.getState().setGeneration(key, { status: 'error', error: messageOf(e) });
+      useStudy.getState().setGeneration(key, { status: 'error', error: messageOf(e), thinking: false });
     },
   );
 }
@@ -259,7 +270,7 @@ function useBuildStudyData(range: Range): { data: StudyData; ai: StudyAi } {
       if (k.startsWith('summary:') && k !== key) {
         c.abort();
         controllers.delete(k);
-        useStudy.getState().setGeneration(k, { text: '', status: 'idle', error: undefined });
+        useStudy.getState().setGeneration(k, { text: '', status: 'idle', error: undefined, thinking: false });
       }
     }
     const focus = unitRange.start === range.start && unitRange.end === range.end ? undefined : { start: range.start, end: range.end };
@@ -280,7 +291,7 @@ function useBuildStudyData(range: Range): { data: StudyData; ai: StudyAi } {
       controllers.clear();
       // Gerações interrompidas voltam a "idle" para recomeçar quando a folha reabrir.
       const st = useStudy.getState();
-      for (const [k, g] of Object.entries(st.generations)) if (g.status === 'streaming') st.setGeneration(k, { text: '', status: 'idle' });
+      for (const [k, g] of Object.entries(st.generations)) if (g.status === 'streaming') st.setGeneration(k, { text: '', status: 'idle', thinking: false });
     },
     [],
   );
@@ -301,6 +312,8 @@ function useBuildStudyData(range: Range): { data: StudyData; ai: StudyAi } {
         : gen?.status === 'streaming' && summaryText
           ? 'streaming'
           : 'waiting';
+
+  const thinking = !!gen?.thinking && !summaryText;
 
   const writingLens = useMemo<LensKey | null>(() => {
     if (status !== 'streaming' || !summary) return null;
@@ -342,6 +355,7 @@ function useBuildStudyData(range: Range): { data: StudyData; ai: StudyAi } {
           followUps: parsed.followUps,
           status: g.status === 'streaming' ? 'streaming' : g.status === 'error' ? 'error' : 'done',
           error: g.error,
+          thinking: !!g.thinking && !g.text,
         });
       }
       return out;
@@ -366,9 +380,10 @@ function useBuildStudyData(range: Range): { data: StudyData; ai: StudyAi } {
       error: gen?.error ?? null,
       summary,
       writingLens,
+      thinking,
       unitRange: unitRange && (unitRange.start !== range.start || unitRange.end !== range.end) ? unitRange : null,
       retry: () => {
-        if (key) useStudy.getState().setGeneration(key, { text: '', status: 'idle', error: undefined });
+        if (key) useStudy.getState().setGeneration(key, { text: '', status: 'idle', error: undefined, thinking: false });
         startSummary();
       },
       canDeepen,
@@ -376,7 +391,7 @@ function useBuildStudyData(range: Range): { data: StudyData; ai: StudyAi } {
       deepViews,
       questions,
     }),
-    [provider, status, gen?.error, summary, writingLens, unitRange, range.start, range.end, key, startSummary, canDeepen, deepen, deepViews, questions],
+    [provider, status, gen?.error, summary, writingLens, thinking, unitRange, range.start, range.end, key, startSummary, canDeepen, deepen, deepViews, questions],
   );
 
   const tokenByKey = useMemo(() => {

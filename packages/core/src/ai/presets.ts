@@ -12,6 +12,8 @@ export interface ProviderPreset {
   defaultModel: string;
   /** Onde obter a chave, para mensagens de configuração. */
   keyUrl?: string;
+  /** Campos extras do corpo das requisições (ver ProviderConfig.extraBody). */
+  extraBody?: Record<string, unknown>;
 }
 
 export const PROVIDER_PRESETS: Record<PresetId, ProviderPreset> = {
@@ -20,8 +22,10 @@ export const PROVIDER_PRESETS: Record<PresetId, ProviderPreset> = {
     label: 'NVIDIA (build.nvidia.com)',
     kind: 'openai-compatible',
     baseUrl: 'https://integrate.api.nvidia.com/v1',
-    defaultModel: '',
+    // Nemotron 3 Super com o raciocínio desligado: primeiro texto em ~2 s (com raciocínio, ~120 s).
+    defaultModel: 'nvidia/nemotron-3-super-120b-a12b',
     keyUrl: 'https://build.nvidia.com',
+    extraBody: { chat_template_kwargs: { enable_thinking: false } },
   },
   openai: {
     id: 'openai',
@@ -66,5 +70,32 @@ export function buildProviderConfig(presetId: PresetId, overrides: ProviderOverr
     baseUrl: overrides.baseUrl?.trim() || preset.baseUrl,
     apiKey: overrides.apiKey.trim(),
     model: overrides.model?.trim() || preset.defaultModel,
+    ...(preset.extraBody ? { extraBody: preset.extraBody } : {}),
+  };
+}
+
+/**
+ * Plano ChatGPT (Sign in with ChatGPT). Fica fora de PresetId/PRESET_IDS: não tem chave de API nem
+ * entra nas listas de provedores por chave. O modelo vem da lista da conta (listModelInfo).
+ */
+export const CHATGPT_PRESET_ID = 'chatgpt' as const;
+
+export const CHATGPT_PRESET = {
+  id: CHATGPT_PRESET_ID,
+  label: 'ChatGPT (plano)',
+  kind: 'chatgpt',
+  baseUrl: 'https://api.openai.com/v1',
+  defaultModel: '',
+} as const;
+
+/** Configuração do plano ChatGPT. O token de acesso é injetado pelo app (createProvider deps). */
+export function buildChatGPTProviderConfig(model: string): ProviderConfig {
+  return {
+    id: CHATGPT_PRESET_ID,
+    kind: 'chatgpt',
+    label: CHATGPT_PRESET.label,
+    baseUrl: CHATGPT_PRESET.baseUrl,
+    apiKey: '',
+    model: model.trim(),
   };
 }

@@ -200,11 +200,23 @@ export interface ChatMessage {
 export interface ProviderConfig {
   /** Preset de origem ('nvidia', 'openai', 'openrouter', 'custom'...). */
   id: string;
-  kind: 'openai-compatible';
+  /** 'chatgpt': plano ChatGPT via Sign in with ChatGPT (apiKey vazio; token vem de getAccessToken). */
+  kind: 'openai-compatible' | 'chatgpt';
   label: string;
   baseUrl: string;
   apiKey: string;
   model: string;
+  /**
+   * Campos extras do corpo de cada requisição (ex.: `{ chat_template_kwargs: { enable_thinking: false } }`
+   * para desligar o raciocínio em modelos que o aceitam). Os campos do próprio núcleo (model, messages,
+   * stream, ...) prevalecem sobre estes.
+   */
+  extraBody?: Record<string, unknown>;
+  /**
+   * Configuração usada quando este provedor recusa a conta (plan_not_eligible) antes de qualquer texto.
+   * O app preenche com a chave de API configurada; o núcleo não usa este campo.
+   */
+  fallback?: ProviderConfig;
 }
 
 export interface ChatRequest {
