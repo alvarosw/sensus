@@ -1,10 +1,26 @@
 # Opções de licença para o código
 
-Decisão pendente do responsável. Este documento compara quatro licenças aprovadas pela OSI para o
-código do Sensus (pipeline, núcleo TypeScript e app). Não trata dos dados: eles seguem
-`DATA_LICENSES.md`, independentemente da licença escolhida para o código.
+Este documento compara quatro licenças aprovadas pela OSI para o código do Sensus (pipeline, núcleo
+TypeScript e app). Não trata dos dados: eles seguem `DATA_LICENSES.md`, independentemente da licença
+escolhida para o código.
 
 > Não é parecer jurídico. Confirmar os pontos marcados **Verificar** antes de escolher.
+
+## Decisão: AGPL-3.0
+
+**Escolhida pelo responsável:** GNU Affero General Public License, versão 3, "ou posterior"
+(`AGPL-3.0-or-later`). Texto completo em [`LICENSE`](../LICENSE). Os `package.json` da raiz, de
+`packages/core/` e de `app/` declaram essa licença.
+
+- Motivo: manter o projeto aberto também quando rodado como serviço em rede. Cópias modificadas que
+  forem distribuídas ou oferecidas por rede precisam abrir o código-fonte sob a mesma licença.
+- "Ou posterior" permite adotar versões futuras da AGPL. Se for preferível fechar a versão, trocar
+  para `AGPL-3.0-only` antes de qualquer contribuição externa aceita.
+- A licença não se estende aos dados (ver `DATA_LICENSES.md`).
+- Pontos ainda **Verificar** da tabela abaixo (App Store e programa da OpenAI) continuam em aberto e não
+  foram resolvidos pela decisão.
+
+As seções seguintes são o registro da comparação que levou a essa escolha.
 
 ## Contexto do projeto
 
@@ -58,4 +74,4 @@ código do Sensus (pipeline, núcleo TypeScript e app). Não trata dos dados: el
 3. Haverá backend hospedado? Se sim, AGPL-3.0 passa a ter efeito prático.
 4. Qual licença o programa de elegibilidade da OpenAI exige?
 
-Depois da escolha, adicionar o arquivo `LICENSE` na raiz e atualizar o `README.md`.
+Feito após a decisão: arquivo `LICENSE` na raiz e seção "Licenças" do `README.md` atualizados.

@@ -88,11 +88,13 @@ provedor de IA offline com respostas gravadas (`dev/fixtures/`) e convenções d
 
 ## Licenças
 
-- **Código:** licença a ser definida pelo responsável. Opções comparadas em
+- **Código:** [GNU AGPL-3.0 ou posterior](LICENSE) (`AGPL-3.0-or-later`). Pipeline, núcleo e app.
+  Pela cláusula de rede (seção 13), quem roda uma versão modificada como serviço acessível por rede
+  deve oferecer o código-fonte modificado aos usuários desse serviço. Veja as escolhas em
   [docs/LICENSE_OPTIONS.md](docs/LICENSE_OPTIONS.md).
-- **Dados:** cada fonte tem licença própria. Veja [DATA_LICENSES.md](DATA_LICENSES.md). O banco
-  `sensus.db` inclui dados sob **CC BY-SA 4.0** (Theographic), além de fontes com atribuição obrigatória
-  e uma fonte de uso não comercial.
+- **Dados:** a AGPL **não cobre os dados**. Cada fonte tem licença própria, listada em
+  [DATA_LICENSES.md](DATA_LICENSES.md). O banco `sensus.db` inclui dados sob **CC BY-SA 4.0**
+  (Theographic), além de fontes com atribuição obrigatória e uma fonte de uso não comercial.
 
 ## Contribuindo
 
