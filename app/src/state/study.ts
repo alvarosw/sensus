@@ -50,6 +50,8 @@ export interface ChatTurn {
   answer: string;
   status: 'streaming' | 'done' | 'error';
   error?: string;
+  /** Modelo de raciocínio ainda pensando (nenhum texto da resposta chegou): a UI mostra "pensando…". */
+  thinking?: boolean;
 }
 
 /** Painéis empilhados em tela cheia, com trilha de volta. */
@@ -64,6 +66,8 @@ export interface Generation {
   text: string;
   status: 'idle' | 'streaming' | 'done' | 'error';
   error?: string;
+  /** Raciocínio em curso, sem texto ainda (ver ChatTurn.thinking). */
+  thinking?: boolean;
 }
 
 export interface BubblePosition {
@@ -161,6 +165,7 @@ export interface StudyState {
   finishTurn(id: string, error?: string): void;
   /** Reinicia uma vez (tentar de novo após erro): zera a resposta e volta a 'streaming'. */
   resetTurn(id: string): void;
+  setTurnThinking(id: string, on: boolean): void;
 
   showToast(t: StudyState['toast']): void;
 }
@@ -258,14 +263,19 @@ export const useStudy = create<StudyState>()((set, get) => ({
     }));
     return id;
   },
-  appendTurn: (id, chunk) => set((s) => ({ thread: s.thread.map((t) => (t.id === id ? { ...t, answer: t.answer + chunk } : t)) })),
+  appendTurn: (id, chunk) =>
+    set((s) => ({ thread: s.thread.map((t) => (t.id === id ? { ...t, answer: t.answer + chunk, thinking: false } : t)) })),
   finishTurn: (id, error) =>
     set((s) => ({
-      thread: s.thread.map((t) => (t.id === id ? { ...t, status: error ? 'error' : 'done', error } : t)),
+      thread: s.thread.map((t) => (t.id === id ? { ...t, status: error ? 'error' : 'done', error, thinking: false } : t)),
       unread: s.chatOpen ? s.unread : s.unread + 1,
     })),
   resetTurn: (id) =>
-    set((s) => ({ thread: s.thread.map((t) => (t.id === id ? { ...t, answer: '', status: 'streaming', error: undefined } : t)) })),
+    set((s) => ({
+      thread: s.thread.map((t) => (t.id === id ? { ...t, answer: '', status: 'streaming', error: undefined, thinking: false } : t)),
+    })),
+  setTurnThinking: (id, on) =>
+    set((s) => ({ thread: s.thread.map((t) => (t.id === id && !!t.thinking !== on ? { ...t, thinking: on } : t)) })),
 
   showToast: (t) => set({ toast: t }),
 }));

@@ -149,7 +149,7 @@ export function BookPicker({
                             width: '31.5%',
                             minHeight: 44,
                             borderRadius: radius.lg,
-                            paddingHorizontal: 8,
+                            paddingHorizontal: 4,
                             paddingVertical: 6,
                             alignItems: 'center',
                             justifyContent: 'center',
@@ -160,7 +160,7 @@ export function BookPicker({
                             opacity: pressed ? 0.6 : 1,
                           })}
                         >
-                          <Txt v="bodySm" bold center numberOfLines={2} color={current ? 'accent' : 'text'}>{b.name_pt}</Txt>
+                          <Txt v="bodySm" bold center numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.7} color={current ? 'accent' : 'text'}>{b.name_pt}</Txt>
                           <Txt v="meta" color="muted" style={{ fontSize: 10.5, lineHeight: 13 }}>{abbrOf(b.num)}</Txt>
                         </Pressable>
                       );

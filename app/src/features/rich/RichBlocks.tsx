@@ -8,7 +8,6 @@ import {
   Caret,
   CitePill,
   ClaimFrame,
-  Empty,
   Greek,
   fontFamilies,
   radius,
@@ -22,6 +21,7 @@ import {
   useTheme,
   useUncitedStyle,
 } from '@/design';
+import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { useCite } from '../common/hooks';
 import { useStudy } from '@/state/study';
 import { morphLabelsPt, bareWord } from '../study/format';
@@ -216,6 +216,10 @@ function ClaimView({
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showSources, setShowSources] = useState(false);
+  useBackLayer(`menu-${claimKey}`, menuOpen, () => {
+    setMenuOpen(false);
+    setShowSources(false);
+  }, BACK_PRIORITY.menu);
   const info = useMemo<ClaimMenuInfo>(
     () => ({ claimKey, text: inlinesToText(inlines), citeIds: citeIdsOf(inlines), block }),
     [claimKey, inlines, block],
@@ -297,7 +301,9 @@ function ClaimMenu({
   return (
     <View style={{ gap: space[4] }}>
       <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space[3] }}>
-        <MenuChip testID={`claim-src-${info.claimKey}`} label={`De onde vem isso? (${info.citeIds.length})`} active={sourcesOpen} onPress={onToggleSources} />
+        {info.citeIds.length > 0 && (
+          <MenuChip testID={`claim-src-${info.claimKey}`} label={`De onde vem isso? (${info.citeIds.length})`} active={sourcesOpen} onPress={onToggleSources} />
+        )}
         <MenuChip
           testID={`claim-deepen-${info.claimKey}`}
           label="Detalhar este ponto"
@@ -315,16 +321,14 @@ function ClaimMenu({
           }}
         />
       </View>
-      {sourcesOpen &&
-        (info.citeIds.length === 0 ? (
-          <Empty text="Este parágrafo não cita fontes: é uma inferência marcada como tal." />
-        ) : (
-          <View style={{ gap: space[3] }}>
-            {info.citeIds.map((id) => (
-              <MiniSource key={id} citeId={id} onOpen={ctx.onCite} />
-            ))}
-          </View>
-        ))}
+      {info.citeIds.length === 0 && <Txt v="meta" color="muted">Sem fontes neste parágrafo.</Txt>}
+      {sourcesOpen && info.citeIds.length > 0 && (
+        <View style={{ gap: space[3] }}>
+          {info.citeIds.map((id) => (
+            <MiniSource key={id} citeId={id} onOpen={ctx.onCite} />
+          ))}
+        </View>
+      )}
     </View>
   );
 }

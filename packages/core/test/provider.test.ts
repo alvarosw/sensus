@@ -145,6 +145,59 @@ describe('OpenAICompatibleProvider.stream', () => {
     expect((error as LLMError).code).toBe('config');
     expect(called).toBe(false);
   });
+
+  it('avisa do raciocínio antes do texto e não o trata como resposta', async () => {
+    const reasoning = (t: string) => `data: {"choices":[{"delta":{"reasoning_content":"${t}"}}]}\r\n\r\n`;
+    const chunks = [reasoning('pensando'), reasoning(' mais'), 'data: {"choices":[{"delta":{"content":"Pronto"}}]}\r\n\r\n', 'data: [DONE]\r\n\r\n'];
+    let thinking = 0;
+    const provider = new OpenAICompatibleProvider(config(), async () => sseResponse(chunks));
+    let text = '';
+    for await (const piece of provider.stream({ messages: [], onReasoning: () => thinking++ })) text += piece;
+    expect(thinking).toBe(2);
+    expect(text).toBe('Pronto');
+  });
+
+  it('erro explícito quando o fluxo termina só com raciocínio', async () => {
+    const chunks = ['data: {"choices":[{"delta":{"reasoning_content":"hmm"}}]}\n\n', 'data: [DONE]\n\n'];
+    const provider = new OpenAICompatibleProvider(config(), async () => sseResponse(chunks));
+    const error = await collect(provider).catch((e: unknown) => e);
+    expect((error as LLMError).code).toBe('protocol');
+    expect((error as LLMError).message).toContain('limite de tokens');
+  });
+
+  it('aborta e reporta timeout quando nenhum byte chega dentro do prazo', async () => {
+    let aborted = false;
+    const hanging: FetchLike = async (_url, init) =>
+      new Promise<Response>((_resolve, reject) => {
+        init?.signal?.addEventListener('abort', () => {
+          aborted = true;
+          reject(Object.assign(new Error('aborted'), { name: 'AbortError' }));
+        });
+      });
+    const provider = new OpenAICompatibleProvider(config(), hanging);
+    const error = await provider.stream({ messages: [], stallMs: 30 }).next().catch((e: unknown) => e);
+    expect((error as LLMError).code).toBe('timeout');
+    expect(aborted).toBe(true);
+  });
+
+  it('o prazo de inatividade reinicia a cada pedaço recebido', async () => {
+    const encoder2 = new TextEncoder();
+    const slow: FetchLike = async () =>
+      new Response(
+        new ReadableStream<Uint8Array>({
+          async start(controller) {
+            for (const piece of ['data: {"choices":[{"delta":{"content":"a"}}]}\n\n', 'data: {"choices":[{"delta":{"content":"b"}}]}\n\n', 'data: [DONE]\n\n']) {
+              await new Promise((r) => setTimeout(r, 20));
+              controller.enqueue(encoder2.encode(piece));
+            }
+            controller.close();
+          },
+        }),
+        { headers: { 'content-type': 'text/event-stream' } },
+      );
+    const text = await collect(new OpenAICompatibleProvider(config(), slow)).catch((e: unknown) => e);
+    expect(text).toBe('ab');
+  });
 });
 
 describe('OpenAICompatibleProvider.listModels', () => {

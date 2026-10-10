@@ -1,7 +1,7 @@
 // Um capítulo do leitor contínuo: cabeçalho do livro (no capítulo 1), marcador de capítulo e os
 // parágrafos. Versículos são texto aninhado (fluxo contínuo, como no protótipo); marcadores inline
 // de 1×1 no início e no fim de cada versículo informam a posição para alças e rolagem.
-import { memo, useEffect, useMemo, type ReactElement } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, type ReactElement } from 'react';
 import { Platform, Text, View, type LayoutChangeEvent } from 'react-native';
 import { BOOK_TABLE, splitVid, type Token, type VerseText, type Vid } from '@sensus/core';
 import { fontFamilies, gutter, radius, type, useTheme } from '@/design';
@@ -129,16 +129,38 @@ function ChapterMarker({ book, chapter, onY, first, geo, idx }: { book: string; 
 // Na web a View é `display:flex` (bloco): precisa ser inline para não quebrar a linha.
 const MARKER_STYLE = (Platform.OS === 'web' ? { width: 1, height: 1, display: 'inline-flex' } : { width: 1, height: 1 }) as object;
 
-function Marker({ geo, kind, vid, run }: { geo: ReaderGeometry; kind: 'start' | 'end'; vid: Vid; run: string }) {
+/**
+ * Marcador inline de 1×1 no início/fim de um versículo. Na web e no iOS o `onLayout` informa x/y dentro do
+ * texto; no Android (Fabric) o `onLayout` de Views dentro de <Text> nunca dispara, mas `measure()` devolve a
+ * posição real (relativa ao <Text> pai). Por isso, no nativo, o trecho (Run) avisa quando o texto foi
+ * disposto (`onTextLayout`) e cada marcador se mede com `measure()`.
+ */
+function Marker({ geo, kind, vid, run, register }: { geo: ReaderGeometry; kind: 'start' | 'end'; vid: Vid; run: string; register: (fn: () => void) => () => void }) {
+  const ref = useRef<View>(null);
   useEffect(
     () => () => {
       geo.removeMark(kind, vid, run);
     },
     [geo, kind, vid, run],
   );
+  useEffect(() => {
+    if (Platform.OS === 'web') return;
+    const measure = () => {
+      ref.current?.measure((x, y, w, h) => {
+        // Antes do posicionamento o nativo devolve tudo zerado (inclusive o tamanho): ignora.
+        if (w === 0 && h === 0) return;
+        geo.setMark(kind, vid, run, gutter.reader + x, y);
+      });
+    };
+    return register(measure);
+  }, [geo, kind, vid, run, register]);
   return (
     <View
-      ref={Platform.OS === 'web' ? (n) => geo.setWebNode(kind, vid, n as unknown as HTMLElement | null) : undefined}
+      ref={
+        Platform.OS === 'web'
+          ? (n) => geo.setWebNode(kind, vid, n as unknown as HTMLElement | null)
+          : ref
+      }
       accessible={false}
       importantForAccessibility="no"
       onLayout={(e) => geo.setMark(kind, vid, run, gutter.reader + e.nativeEvent.layout.x, e.nativeEvent.layout.y)}
@@ -170,12 +192,29 @@ const Run = memo(function Run({
 }) {
   const { c } = useTheme();
   useEffect(() => () => geo.removeRun(runKey), [geo, runKey]);
+  // Medição dos marcadores no nativo (ver Marker): reexecutada a cada layout do texto.
+  const measurers = useRef(new Set<() => void>());
+  const register = useCallback((fn: () => void) => {
+    measurers.current.add(fn);
+    return () => void measurers.current.delete(fn);
+  }, []);
+  const timers = useRef<Array<ReturnType<typeof setTimeout>>>([]);
+  const measureAll = useCallback(() => {
+    if (Platform.OS === 'web') return;
+    for (const t of timers.current) clearTimeout(t);
+    // O nativo posiciona os anexos do texto logo depois do layout; repete para pegar o assentamento final.
+    timers.current = [30, 250].map((ms) => setTimeout(() => measurers.current.forEach((f) => f()), ms));
+  }, []);
+  useEffect(() => {
+    measureAll();
+    return () => timers.current.forEach(clearTimeout);
+  }, [measureAll, verses]);
   const nodes: ReactElement[] = [];
   verses.forEach((v, i) => {
     const n = splitVid(v.vid).verse;
     const selected = selStart > 0 && v.vid >= selStart && v.vid <= selEnd;
     const flash = v.vid === flashVid;
-    nodes.push(<Marker key={`s${v.vid}`} geo={geo} kind="start" vid={v.vid} run={runKey} />);
+    nodes.push(<Marker key={`s${v.vid}`} geo={geo} kind="start" vid={v.vid} run={runKey} register={register} />);
     nodes.push(
       <Text
         key={`v${v.vid}`}
@@ -193,12 +232,21 @@ const Run = memo(function Run({
         {WJ}
       </Text>,
     );
-    nodes.push(<Marker key={`e${v.vid}`} geo={geo} kind="end" vid={v.vid} run={runKey} />);
-    if (i < verses.length - 1) nodes.push(<Text key={`sp${v.vid}`}> </Text>);
+    nodes.push(<Marker key={`e${v.vid}`} geo={geo} kind="end" vid={v.vid} run={runKey} register={register} />);
+    if (i < verses.length - 1) {
+      // O espaço entre versículos também é pintado quando os dois lados estão selecionados (sem fresta branca).
+      const next = verses[i + 1]!;
+      const joined = selected && selStart > 0 && next.vid >= selStart && next.vid <= selEnd;
+      nodes.push(
+        <Text key={`sp${v.vid}`} style={joined ? { backgroundColor: c.selected } : undefined}>
+          {' '}
+        </Text>,
+      );
+    }
   });
   return (
-    <View onLayout={(e) => geo.setRun(runKey, e.nativeEvent.layout.y)} style={{ paddingHorizontal: gutter.reader, marginBottom: endsParagraph ? 14 : 0 }}>
-      <Text selectable={false} style={{ ...type.scripture, color: c.text }}>
+    <View onLayout={(e) => { geo.setRun(runKey, e.nativeEvent.layout.y); measureAll(); }} style={{ paddingHorizontal: gutter.reader, marginBottom: endsParagraph ? 14 : 0 }}>
+      <Text selectable={false} onTextLayout={measureAll} style={{ ...type.scripture, color: c.text }}>
         {nodes}
       </Text>
     </View>

@@ -1,6 +1,6 @@
 // Dados da folha de estudo: painel da seleção, painel da perícope (contexto da IA), resumo em streaming
 // e "Detalhar" por lente. Uma instância vive em <StudySheet/> e chega às lentes por contexto.
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import {
   deepenMessages,
   parseStructuredAnswer,
@@ -15,11 +15,13 @@ import {
   type Book,
   type PanelData,
   type ProviderConfig,
+  type Repo,
   type RichTextContext,
   type StructuredSummary,
   type Vid,
 } from '@sensus/core';
 import { streamChat } from '@/ai/client';
+import { useRepo } from '@/data/db-context';
 import { APP_LOCALE } from '@/i18n';
 import { useSettings } from '@/settings/settings-context';
 import { LENS_KEYS, useStudy, type LensKey } from '@/state/study';
@@ -73,8 +75,59 @@ export interface StudyData {
   /** palavra normalizada → cite_id do token (para tornar o grego tocável em textos de fontes). */
   tokenByKey: ReadonlyMap<string, string>;
   textSource: string;
+  /** Versículos da seleção e vizinhos imediatos (inclusive em outro livro); null enquanto carrega. */
+  edges: RangeEdges | null;
   /** Rótulo curto de um cite_id do painel (ex.: "Calvino", "Fp 2:5"); o próprio id se desconhecido. */
   labelOf: (citeId: string) => string;
+}
+
+export interface RangeEdges {
+  count: number | null;
+  prev: Vid | null;
+  next: Vid | null;
+}
+
+/** Último versículo do livro (para "+ prev" quando a seleção começa no primeiro versículo de um livro). */
+async function lastVerseOf(repo: Repo, src: string, book: number, books: readonly Book[]): Promise<Vid | null> {
+  const b = books.find((x) => x.num === book);
+  if (!b) return null;
+  return (await repo.chapter(src, book, b.chapters)).at(-1)?.vid ?? null;
+}
+
+/** Primeiro versículo do livro (para "+ next" quando a seleção termina no último versículo de um livro). */
+async function firstVerseOf(repo: Repo, src: string, book: number, books: readonly Book[]): Promise<Vid | null> {
+  if (!books.some((x) => x.num === book)) return null;
+  return (await repo.chapter(src, book, 1))[0]?.vid ?? null;
+}
+
+/** Contagem e vizinhos da seleção, direto do banco. Os vizinhos atravessam o livro (ex.: Cl 1:1 → Fp 4:23). */
+function useRangeEdges(range: Range, textSource: string, books: readonly Book[]): RangeEdges | null {
+  const repo = useRepo();
+  const key = `${textSource}:${range.start}-${range.end}:${books.length}`;
+  const [state, setState] = useState<{ key: string; edges: RangeEdges } | null>(null);
+  useEffect(() => {
+    let alive = true;
+    const src = textSource === 'kjv' ? 'kjv' : 'blivre';
+    (async () => {
+      const first = splitVid(range.start).book;
+      const last = splitVid(range.end).book;
+      const [inside, before, after] = await Promise.all([
+        repo.verseTexts(src, range),
+        repo.neighbors(src, { start: range.start, end: range.start }, 1),
+        repo.neighbors(src, { start: range.end, end: range.end }, 1),
+      ]);
+      const prev = before.before.at(-1)?.vid ?? (await lastVerseOf(repo, src, first - 1, books));
+      const next = after.after[0]?.vid ?? (await firstVerseOf(repo, src, last + 1, books));
+      return { count: inside.length > 0 ? inside.length : null, prev: prev ?? null, next: next ?? null };
+    })().then(
+      (edges) => alive && setState({ key, edges }),
+      () => undefined,
+    );
+    return () => {
+      alive = false;
+    };
+  }, [repo, key, range, textSource, books]);
+  return state?.key === key ? state.edges : null;
 }
 
 // Dois contextos: os dados determinísticos mudam só com a seleção; a IA muda a cada pedaço do stream.
@@ -183,6 +236,17 @@ function useBuildStudyData(range: Range): { data: StudyData; ai: StudyAi } {
   // O painel da perícope é preparado já no "espiar"; só a IA espera a folha abrir.
   const unitPanel = usePassagePanel(unitRange);
 
+  // Falha de carga (ex.: banco ainda abrindo): uma nova tentativa automática; depois, o botão "Tentar novamente".
+  const autoRetried = useRef<string | null>(null);
+  useEffect(() => {
+    const id = `${range.start}-${range.end}`;
+    if (!sel.error || autoRetried.current === id) return;
+    autoRetried.current = id;
+    const t = setTimeout(sel.reload, 1200);
+    return () => clearTimeout(t);
+  }, [sel.error, sel.reload, range.start, range.end]);
+
+  const edges = useRangeEdges(range, textSource, books);
   const key = unitRange ? summaryCacheKey(unitRange) : null;
   const gen = key ? generations[key] : undefined;
   const ctxReady = !!(unitPanel.context && unitPanel.richCtx);
@@ -329,8 +393,8 @@ function useBuildStudyData(range: Range): { data: StudyData; ai: StudyAi } {
   const citeIndex = sel.richCtx?.citeIndex;
   const labelOf = useCallback((id: string) => citeIndex?.get(id)?.label ?? id, [citeIndex]);
   const data = useMemo<StudyData>(
-    () => ({ range, books: allBooks, panel, loading, error: sel.error, reload: sel.reload, unit: sel.unit, tokenByKey, textSource, labelOf }),
-    [range, allBooks, panel, loading, sel.error, sel.reload, sel.unit, tokenByKey, textSource, labelOf],
+    () => ({ range, books: allBooks, panel, loading, error: sel.error, reload: sel.reload, unit: sel.unit, tokenByKey, textSource, edges, labelOf }),
+    [range, allBooks, panel, loading, sel.error, sel.reload, sel.unit, tokenByKey, textSource, edges, labelOf],
   );
   return { data, ai };
 }

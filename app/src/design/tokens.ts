@@ -250,7 +250,6 @@ export const size = {
   topBar: 52,
   iconButton: 32,
   topBarButton: 36,
-  quickAction: 40,
   input: 40,
   bubble: 54,
   handle: 22,

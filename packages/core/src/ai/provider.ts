@@ -10,6 +10,7 @@ export type LLMErrorCode =
   | 'server'
   | 'http'
   | 'network'
+  | 'timeout'
   | 'protocol';
 
 export class LLMError extends Error {
@@ -26,7 +27,8 @@ export class LLMError extends Error {
 
 interface ChatCompletionPayload {
   choices?: Array<{
-    delta?: { content?: string | null };
+    // Modelos de raciocínio (ex.: nemotron) streamam `reasoning_content` antes de `content`.
+    delta?: { content?: string | null; reasoning_content?: string | null; reasoning?: string | null };
     message?: { content?: string | null };
     text?: string;
   }>;
@@ -69,11 +71,62 @@ async function readErrorDetail(res: Response): Promise<string> {
   }
 }
 
+/** Sem bytes por este tempo, a requisição é abortada e o erro 'timeout' é mostrado (com "tente novamente"). */
+export const STALL_TIMEOUT_MS = 45_000;
+
+/**
+ * Vigia a conexão: `failed` rejeita (com LLMError 'timeout') se nenhum byte chegar por `ms`.
+ * `touch()` reinicia o prazo a cada atividade; `stop()` desarma ao fim da resposta.
+ */
+class StallWatch {
+  readonly failed: Promise<never>;
+  private readonly ms: number;
+  private readonly label: string;
+  private readonly abort: () => void;
+  private fail: (err: LLMError) => void = () => undefined;
+  private timer: ReturnType<typeof setTimeout> | undefined;
+
+  constructor(ms: number, label: string, abort: () => void) {
+    this.ms = ms;
+    this.label = label;
+    this.abort = abort;
+    this.failed = new Promise<never>((_, reject) => {
+      this.fail = reject;
+    });
+    this.failed.catch(() => undefined);
+    this.touch();
+  }
+
+  touch(): void {
+    if (this.timer !== undefined) clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      this.timer = undefined;
+      this.abort();
+      this.fail(
+        new LLMError(
+          `${this.label} parou de responder (sem dados por ${Math.round(this.ms / 1000)} s). Tentar novamente.`,
+          'timeout',
+        ),
+      );
+    }, this.ms);
+  }
+
+  stop(): void {
+    if (this.timer !== undefined) clearTimeout(this.timer);
+    this.timer = undefined;
+  }
+}
+
 /**
  * Lê um corpo SSE e devolve o conteúdo de cada linha `data:` (sem o prefixo).
  * `collect` recebe todas as linhas, para o fallback de resposta JSON não-streamed.
+ * Cada leitura é corrida contra o `watch` (ver StallWatch).
  */
-async function* readSSEData(body: ReadableStream<Uint8Array>, collect: string[]): AsyncGenerator<string> {
+async function* readSSEData(
+  body: ReadableStream<Uint8Array>,
+  collect: string[],
+  watch: StallWatch,
+): AsyncGenerator<string> {
   const reader = body.getReader();
   const decoder = new TextDecoder();
   let buffer = '';
@@ -85,7 +138,8 @@ async function* readSSEData(body: ReadableStream<Uint8Array>, collect: string[])
   };
   try {
     for (;;) {
-      const { done, value } = await reader.read();
+      const { done, value } = await Promise.race([reader.read(), watch.failed]);
+      watch.touch();
       if (done) break;
       buffer += decoder.decode(value, { stream: true });
       let nl = buffer.indexOf('\n');
@@ -106,7 +160,8 @@ async function* readSSEData(body: ReadableStream<Uint8Array>, collect: string[])
     if (finished) {
       reader.releaseLock();
     } else {
-      await reader.cancel().catch(() => undefined);
+      // Sem await: após um timeout a leitura pendente pode não resolver nunca.
+      reader.cancel().catch(() => undefined);
     }
   }
 }
@@ -130,53 +185,90 @@ export class OpenAICompatibleProvider implements LLMProvider {
       max_tokens: req.maxTokens,
       stream: true,
     });
-    const res = await this.send('/chat/completions', 'POST', body, 'text/event-stream', req.signal);
 
-    if (!res.body) {
-      const payload = await this.parsePayload(res);
-      const text = extractText(payload);
-      if (text) yield text;
-      return;
-    }
+    // Uma requisição só: o sinal do chamador e o vigia de inatividade a abortam juntos.
+    const controller = new AbortController();
+    const abortFromCaller = () => controller.abort();
+    if (req.signal?.aborted) controller.abort();
+    req.signal?.addEventListener('abort', abortFromCaller);
+    const watch = new StallWatch(req.stallMs ?? STALL_TIMEOUT_MS, this.config.label, () => controller.abort());
+    const empty = () =>
+      new LLMError(
+        `${this.config.label} não devolveu texto. Se o modelo raciocina, pode ter gasto o limite de tokens antes da resposta.`,
+        'protocol',
+      );
+    let produced = false;
 
-    const contentType = res.headers.get('content-type') ?? '';
-    if (contentType.includes('application/json')) {
-      const payload = await this.parsePayload(res);
-      const text = extractText(payload);
-      if (text) yield text;
-      return;
-    }
+    try {
+      const res = await Promise.race([
+        this.send('/chat/completions', 'POST', body, 'text/event-stream', controller.signal),
+        watch.failed,
+      ]);
+      watch.touch();
 
-    const lines: string[] = [];
-    let events = 0;
-    for await (const data of readSSEData(res.body, lines)) {
-      if (data === '') continue;
-      if (data === '[DONE]') return;
-      events++;
-      let payload: ChatCompletionPayload;
-      try {
-        payload = JSON.parse(data) as ChatCompletionPayload;
-      } catch {
-        throw new LLMError(`Resposta do ${this.config.label} em formato inesperado.`, 'protocol');
+      if (!res.body) {
+        const payload = await Promise.race([this.parsePayload(res), watch.failed]);
+        const text = extractText(payload);
+        if (!text) throw empty();
+        yield text;
+        return;
       }
-      const failure = errorMessageOf(payload);
-      if (failure) throw new LLMError(`${this.config.label} retornou erro: ${failure}`, 'http');
-      const text = extractText(payload);
-      if (text) yield text;
-    }
 
-    if (events === 0) {
-      // Servidor ignorou stream:true e devolveu JSON simples sem o content-type esperado.
-      const raw = lines.join('\n').trim();
-      if (!raw) throw new LLMError(`${this.config.label} devolveu uma resposta vazia.`, 'protocol');
-      let payload: ChatCompletionPayload;
-      try {
-        payload = JSON.parse(raw) as ChatCompletionPayload;
-      } catch {
-        throw new LLMError(`Resposta do ${this.config.label} em formato inesperado.`, 'protocol');
+      const contentType = res.headers.get('content-type') ?? '';
+      if (contentType.includes('application/json')) {
+        const payload = await Promise.race([this.parsePayload(res), watch.failed]);
+        const text = extractText(payload);
+        if (!text) throw empty();
+        yield text;
+        return;
       }
-      const text = extractText(payload);
-      if (text) yield text;
+
+      const lines: string[] = [];
+      let events = 0;
+      for await (const data of readSSEData(res.body, lines, watch)) {
+        if (data === '') continue;
+        if (data === '[DONE]') break;
+        events++;
+        let payload: ChatCompletionPayload;
+        try {
+          payload = JSON.parse(data) as ChatCompletionPayload;
+        } catch {
+          throw new LLMError(`Resposta do ${this.config.label} em formato inesperado.`, 'protocol');
+        }
+        const failure = errorMessageOf(payload);
+        if (failure) throw new LLMError(`${this.config.label} retornou erro: ${failure}`, 'http');
+        const delta = payload.choices?.[0]?.delta;
+        if (delta?.reasoning_content || delta?.reasoning) req.onReasoning?.();
+        const text = extractText(payload);
+        if (text) {
+          produced = true;
+          yield text;
+        }
+      }
+
+      if (events === 0) {
+        // Servidor ignorou stream:true e devolveu JSON simples sem o content-type esperado.
+        const raw = lines.join('\n').trim();
+        if (!raw) throw new LLMError(`${this.config.label} devolveu uma resposta vazia.`, 'protocol');
+        let payload: ChatCompletionPayload;
+        try {
+          payload = JSON.parse(raw) as ChatCompletionPayload;
+        } catch {
+          throw new LLMError(`Resposta do ${this.config.label} em formato inesperado.`, 'protocol');
+        }
+        const text = extractText(payload);
+        if (text) {
+          produced = true;
+          yield text;
+        }
+      }
+
+      // Fluxo que terminou sem nenhum texto (só raciocínio, ou limite de tokens): erro explícito,
+      // em vez de a interface ficar aguardando para sempre.
+      if (!produced) throw empty();
+    } finally {
+      watch.stop();
+      req.signal?.removeEventListener('abort', abortFromCaller);
     }
   }
 

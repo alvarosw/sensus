@@ -33,6 +33,8 @@ function isChatRequest(messages: readonly ChatMessage[]): boolean {
  * Emite pedaços de texto (com marcadores [[cite_id]]) conforme chegam. Cancelável via signal.
  * Limite de saída: SUMMARY_MAX_TOKENS para o resumo e CHAT_MAX_TOKENS para perguntas (detectadas
  * pelo contexto de chat); modelos com raciocínio gastam parte do limite antes de responder.
+ * `onReasoning` avisa de cada pedaço de raciocínio (antes do texto) para a UI mostrar "pensando…".
+ * Sem bytes por 45 s, lança LLMError com código 'timeout'.
  */
 export async function streamChat(
   config: ProviderConfig,
@@ -40,8 +42,10 @@ export async function streamChat(
   onChunk: (chunk: string) => void,
   signal?: AbortSignal,
   maxTokens = isChatRequest(messages) ? CHAT_MAX_TOKENS : SUMMARY_MAX_TOKENS,
+  onReasoning?: () => void,
 ): Promise<void> {
-  for await (const chunk of providerFor(config).stream({ messages, temperature: 0.2, maxTokens, signal })) {
+  const stream = providerFor(config).stream({ messages, temperature: 0.2, maxTokens, signal, onReasoning });
+  for await (const chunk of stream) {
     onChunk(chunk);
   }
 }

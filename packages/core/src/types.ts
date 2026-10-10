@@ -212,6 +212,10 @@ export interface ChatRequest {
   temperature?: number;
   maxTokens?: number;
   signal?: AbortSignal;
+  /** Chamado a cada pedaço de raciocínio do modelo (antes de qualquer texto): para mostrar "pensando…". */
+  onReasoning?: () => void;
+  /** Tempo sem dados até desistir (ms). Padrão: 45 s. */
+  stallMs?: number;
 }
 
 export interface LLMProvider {

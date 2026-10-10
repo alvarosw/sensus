@@ -21,11 +21,6 @@ export const STUDY = {
   factVv: (n: number, ot: boolean) => `${n} vv. no ${ot ? 'AT' : 'NT'}`,
   factNoData: 'Sem dados',
 
-  qaStudy: 'Estudar',
-  qaWords: 'Palavras',
-  qaCompare: 'Comparar',
-  qaAsk: 'Perguntar',
-
   deepen: 'Detalhar',
   seeAll: 'Ver todos',
   seeLess: 'Menos',

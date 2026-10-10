@@ -21,6 +21,7 @@ export const CHAT = {
   contextError: 'Não foi possível montar o contexto deste trecho.',
   failed: (message: string) => `Falha na resposta: ${message}`,
   interrupted: 'Resposta interrompida.',
+  thinking: 'pensando…',
   retry: 'Tentar de novo',
   fallbackQuestions: ['Qual é a ideia central deste trecho?', 'O que as fontes dizem sobre este trecho?'],
   close: 'Fechar',

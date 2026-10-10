@@ -54,7 +54,10 @@ export function TurnView({
       <View style={{ gap: 8 }}>
         <Txt v="eyebrow" color="muted">{CHAT.by}</Txt>
         {turn.answer.length === 0 && streaming ? (
-          <View style={{ gap: 8 }}>
+          <View style={{ gap: 8 }} testID={turn.thinking ? 'turn-thinking' : undefined}>
+            {turn.thinking ? (
+              <Txt v="meta" color="muted" style={{ fontStyle: 'italic' }}>{CHAT.thinking}</Txt>
+            ) : null}
             <Skeleton />
             <Skeleton width="90%" />
             <Skeleton width="60%" />

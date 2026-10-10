@@ -81,16 +81,26 @@ async function execute(id: string, provider: ProviderConfig): Promise<void> {
     }
   };
 
+  // "Pensando…": o raciocínio chega antes do texto; marca a vez (uma vez por trecho) até o texto começar.
+  let thinking = false;
+  const onReasoning = () => {
+    if (thinking) return;
+    thinking = true;
+    useStudy.getState().setTurnThinking(id, true);
+  };
+
   try {
     await streamChat(
       provider,
       messages,
       (chunk) => {
+        thinking = false;
         buffer += chunk;
         timer ??= setTimeout(flush, 40);
       },
       controller.signal,
       CHAT_MAX_TOKENS,
+      onReasoning,
     );
     flush();
     useStudy.getState().finishTurn(id);

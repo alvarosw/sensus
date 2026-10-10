@@ -4,6 +4,7 @@ import { Pressable, View } from 'react-native';
 import { Icon, Txt, fontFamilies, shadow, useTheme } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useStudy } from '@/state/study';
+import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { shortRef } from '../nav/abbrev';
 import { READER } from './strings';
 
@@ -13,6 +14,7 @@ export function PinnedBar() {
   const pinned = useStudy((s) => s.pinned);
   const source = useStudy((s) => s.textSource);
   const [text, setText] = useState('');
+  useBackLayer('pinned', pinned != null, () => useStudy.getState().pin(null), BACK_PRIORITY.pinned);
 
   useEffect(() => {
     if (!pinned) {

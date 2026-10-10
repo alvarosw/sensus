@@ -1,5 +1,6 @@
 // Formatação e seleção de dados para a folha de estudo (referências, tradições, morfologia, palavras-chave).
 import {
+  BOOK_TABLE,
   commentatorName,
   formatReference,
   formatShortRef,
@@ -20,16 +21,22 @@ export function chv(vid: Vid): string {
   return `${p.chapter}:${p.verse}`;
 }
 
-/** Referência com hífen trocado por travessão entre números: "Filipenses 1:30–2:1". */
+/**
+ * Referência com travessão: "Filipenses 1:30–2:1" ou "Filipenses 4:23 – Colossenses 1:1". Nome do livro e
+ * capítulo ficam juntos (espaço não separável) para a quebra de linha cair só no travessão entre livros.
+ */
 export function refTitle(start: Vid, end: Vid, books: readonly Book[]): string {
-  if (books.length === 0) return '';
-  return formatReference({ start, end }, books as Book[]).replace(/(?<=\d)-(?=\d)/g, '–');
+  const table = books.length > 0 ? (books as Book[]) : BOOK_TABLE;
+  return formatReference({ start, end }, table)
+    .replace(/(?<=\d)-(?=\d)/g, '–')
+    .replace(/ - /g, ' – ')
+    .replace(/(?<=\p{L}) (?=\d)/gu, '\u00A0');
 }
 
 /** "1:27–2:4" (sem livro) ou "Fp 1:27–2:4" (com livro abreviado). */
 export function refShort(start: Vid, end: Vid, books: readonly Book[], withBook = false): string {
-  if (books.length === 0) return `${chv(start)}${start === end ? '' : `–${chv(end)}`}`;
-  return formatShortRef(start, end, books as Book[], withBook);
+  const table = books.length > 0 ? (books as Book[]) : BOOK_TABLE;
+  return formatShortRef(start, end, table, withBook);
 }
 
 export function sourceLabel(textSource: string): string {

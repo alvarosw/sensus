@@ -204,23 +204,6 @@ export function LinkButton({ label, onPress, testID }: { label: string; onPress:
   );
 }
 
-/** Botão rápido da folha em "espiar" (proto: .qa button). */
-export function QuickAction({ label, primary, onPress, testID }: { label: string; primary?: boolean; onPress: () => void; testID?: string }) {
-  const { c } = useTheme();
-  return (
-    <Pressable
-      testID={testID}
-      onPress={onPress}
-      style={({ pressed }) => ({
-        flex: primary ? 1.4 : 1, height: size.quickAction, borderRadius: radius.xl, alignItems: 'center', justifyContent: 'center',
-        backgroundColor: primary ? c.accent : c.chip, opacity: pressed ? 0.7 : 1,
-      })}
-    >
-      <Txt v="bodySm" color={primary ? 'accentText' : 'text'} bold>{label}</Txt>
-    </Pressable>
-  );
-}
-
 /** Pergunta sugerida (proto: .q) — círculo "?" + texto. */
 export function QuestionButton({ text, onPress, testID }: { text: string; onPress: () => void; testID?: string }) {
   const { c } = useTheme();
@@ -472,6 +455,8 @@ export function ClaimFrame({
         {children}
         {onMore && (
           <Pressable
+            testID={testID ? `${testID}-more` : undefined}
+            accessibilityRole="button"
             accessibilityLabel="Ações deste parágrafo"
             onPress={onMore}
             hitSlop={8}

@@ -43,7 +43,6 @@ de `useTheme()` e dos tokens.
 | `IconButton` | `.icon-btn` | Expandir, fechar, voltar, minimizar. |
 | `Pill` | `.pill-btn` | Escopo da seleção (`+ 1:29`, `Perícope 1:27–2:4` como `suggest`). |
 | `Fact` | `.fact` | Números da base em "espiar" (comentaristas, variantes, refs., hápax). |
-| `QuickAction` | `.qa` | Estudar (primário) · Palavras · Comparar · Perguntar. |
 | `ActButton` | `.act` `.act.deepen` | Ações de lente: Detalhar (`deepen`), Ver todos (`count`). |
 | `LinkButton` | `.card-actions` | Ações de texto dentro de cards. |
 | `QuestionButton` | `.q` | Pergunta sugerida (abre o chat e pergunta). |
@@ -64,8 +63,8 @@ de `useTheme()` e dos tokens.
 | Altura | Conteúdo |
 |---|---|
 | Leitura (`closed`) | Leitor contínuo entre capítulos e livros; o título no topo acompanha a posição. |
-| Espiar (`peek`) | Ao selecionar: referência, alcance, fatos da base, ações rápidas. Sem IA. |
-| Estudar (`half`) | Trilho de lentes + lentes numa única rolagem. A seleção fica visível acima e tocável. |
+| Espiar (`peek`) | Ao selecionar: referência, alcance (+ vizinhos), fatos da base e o trilho de lentes. Sem IA. |
+| Estudar (`half`) | Trilho de lentes (fixo no topo ao rolar) + lentes numa única rolagem. Tocar uma lente rola até ela de qualquer posição. A seleção fica visível acima e tocável. |
 | Aprofundar (`full`) | Tela cheia para ler fontes; painéis empilhados com trilha de volta. |
 
 **Gestos e seleção.** Tocar seleciona e abre "espiar". Tocar outro estende o intervalo (mesmo em outro capítulo).
