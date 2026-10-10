@@ -86,20 +86,54 @@ export function extractQuestions(lines: readonly string[]): string[] {
   return out;
 }
 
-/** Resumo: "@visao" (2–3 frases), uma seção por marcador, "@perguntas" e "@fim". */
+/** Perguntas por lente: no máximo duas linhas começando com "? " por seção. */
+export const MAX_LENS_QUESTIONS = 2;
+
+/**
+ * Separa as linhas "? pergunta" (perguntas da lente) do texto da seção. Linhas com só "?" (início de
+ * stream) são descartadas. O restante volta como corpo da seção.
+ */
+export function splitLensQuestions(lines: readonly string[]): { body: string[]; questions: string[] } {
+  const body: string[] = [];
+  const questions: string[] = [];
+  for (const line of lines) {
+    const m = /^\s*\?(\s+(.*))?$/.exec(line);
+    if (!m) {
+      body.push(line);
+      continue;
+    }
+    const q = extractQuestions([m[2] ?? ''])[0];
+    if (q && questions.length < MAX_LENS_QUESTIONS) questions.push(q);
+  }
+  return { body, questions };
+}
+
+/**
+ * Resumo: "@visao" (2–3 frases), uma seção por marcador, "@perguntas" e "@fim".
+ * Cada lente pode trazer linhas "? pergunta" (sectionQuestions); a visão geral usa a chave 'visao'.
+ */
 export function parseStructuredSummary(text: string, ctx: RichTextContext): StructuredSummary {
   const split = splitMarkers(text, SUMMARY_MARKERS);
-  const overview = parseRichText([...split.preamble, ...(split.parts.get('visao') ?? [])].join('\n'), ctx);
+  const sectionQuestions: NonNullable<StructuredSummary['sectionQuestions']> = {};
+
+  const overviewLines = splitLensQuestions([...split.preamble, ...(split.parts.get('visao') ?? [])]);
+  const overview = parseRichText(overviewLines.body.join('\n'), ctx);
+  if (overviewLines.questions.length > 0) sectionQuestions.visao = overviewLines.questions;
+
   const sections: StructuredSummary['sections'] = {};
   for (const key of SECTION_KEYS as readonly SectionKey[]) {
-    const body = split.parts.get(key);
-    if (body) sections[key] = parseRichText(body.join('\n'), ctx);
+    const part = split.parts.get(key);
+    if (!part) continue;
+    const lens = splitLensQuestions(part);
+    sections[key] = parseRichText(lens.body.join('\n'), ctx);
+    if (lens.questions.length > 0) sectionQuestions[key] = lens.questions;
   }
   return {
     overview,
     sections,
     questions: extractQuestions(split.parts.get('perguntas') ?? []),
     complete: split.complete,
+    sectionQuestions,
   };
 }
 

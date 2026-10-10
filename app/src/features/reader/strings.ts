@@ -1,0 +1,39 @@
+// Textos do leitor e da barra superior (pt-BR). i18n/index.ts é compartilhado com outras telas.
+export const READER = {
+  books: 'Livros',
+  currentRef: (name: string) => `${name}. Ir para…`,
+  jumpPlaceholder: 'Ir para… ex.: fp 2:5',
+  jumpLabel: 'Ir para referência',
+  jumpNote: 'Rolagem contínua: o capítulo seguinte carrega ao chegar no fim.',
+  jumpUnknown: 'Não reconheço essa referência.',
+  greek: 'Grego (TR) sob os versículos selecionados',
+  greekOn: 'Grego do TR sob os versículos selecionados',
+  greekOff: 'Grego oculto',
+  textSource: (label: string) => `Fonte do texto: ${label}. Alternar`,
+  verse: (n: number) => `Versículo ${n}`,
+  reduced: (ref: string) => `Seleção reduzida a ${ref}`,
+  undo: 'Desfazer',
+  handleStart: 'Início da seleção',
+  handleEnd: 'Fim da seleção',
+  bookEdge: (book: string, chapter: number) => `↑ ${book} ${chapter} · continue rolando para cima`,
+  bookSub: (source: string) => `${source} · rolagem contínua`,
+  endOfBible: 'Fim das Escrituras',
+  unpin: 'Desafixar',
+  loading: 'Carregando o texto…',
+  loadError: 'Não foi possível carregar o texto.',
+  retry: 'Tentar de novo',
+  // seletor de livros
+  pickBook: 'Livros',
+  testamentOT: 'AT',
+  testamentNT: 'NT',
+  chaptersOf: (n: number) => `${n} ${n === 1 ? 'capítulo' : 'capítulos'}`,
+  chapterAria: (name: string, n: number) => `${name} ${n}`,
+  settings: 'Configurações',
+  close: 'Fechar',
+  back: 'Voltar aos livros',
+} as const;
+
+export const SOURCE_LABEL: Record<string, { short: string; long: string }> = {
+  blivre: { short: 'BLivre', long: 'Bíblia Livre' },
+  kjv: { short: 'KJV', long: 'King James Version' },
+};

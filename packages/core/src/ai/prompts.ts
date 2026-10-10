@@ -1,6 +1,8 @@
 // Prompts em pt-BR: papel de tutor hermenêutico, método, regras de fundamentação e formato de citação.
 import type { ChatMessage } from '../types';
 import { SECTION_KEYS, SECTION_LABELS, type SectionKey } from './structured-types';
+import { formatReference } from '../refs';
+import type { VerseRange } from '../types';
 
 /**
  * Limites de saída. Modelos com raciocínio gastam parte do limite antes de responder, por isso são folgados.
@@ -19,6 +21,31 @@ export interface PromptOptions {
 export interface ChatPromptOptions extends PromptOptions {
   /** Quantas mensagens anteriores (usuário/assistente) enviar. Padrão: 8. */
   maxHistory?: number;
+  /** Anexos escolhidos pelo leitor (trechos, palavras, notas). A resposta deve focar neles. Adicionado em v0.4. */
+  attachments?: ChatAttachment[];
+}
+
+/** Anexo da conversa: rótulo, cite_ids que ele representa e, opcionalmente, o texto citado. */
+export interface ChatAttachment {
+  label: string;
+  citeIds?: string[];
+  text?: string;
+}
+
+export interface SummaryPromptOptions extends PromptOptions {
+  /** Seleção exata do leitor dentro da unidade literária. O resumo continua sendo da unidade. Adicionado em v0.4. */
+  focus?: VerseRange;
+}
+
+/** Versão do formato do resumo: muda quando o prompt muda, para invalidar o cache. */
+export const SUMMARY_PROMPT_VERSION = 'resumo-v2';
+
+/**
+ * Chave de cache do resumo de uma unidade literária (repo.literaryUnit). O app resume a unidade inteira
+ * e reutiliza o mesmo resumo para qualquer seleção dentro dela (a seleção vai em `focus`, não na chave).
+ */
+export function summaryCacheKey(unit: VerseRange): string {
+  return `summary:${SUMMARY_PROMPT_VERSION}:${unit.start}-${unit.end}`;
 }
 
 const LANGUAGE_NAMES: Readonly<Record<string, string>> = {
@@ -66,20 +93,28 @@ const SUMMARY_FORMAT = [
   'Responda no formato abaixo, com exatamente estas linhas-marcadoras (cada uma em sua linha, começando com @), sem outros títulos:',
   '@visao',
   '(2 a 3 frases: o que é a passagem e o que ela ensina em síntese)',
+  '? (1 a 2 perguntas específicas da visão geral, uma por linha, cada uma começando com "? ")',
   '@texto',
   '(1 a 3 frases sobre traduções, texto original e variantes; cite cada afirmação)',
+  '? (1 a 2 perguntas específicas desta camada, começando com "? "; respondíveis pelo contexto)',
   '@literario',
   '(1 a 3 frases: contexto antes e depois, divisão e gênero)',
+  '? (1 a 2 perguntas específicas desta camada, começando com "? ")',
   '@historico',
   '(1 a 3 frases: pessoas, lugares e termos explicados pelos dicionários)',
+  '? (1 a 2 perguntas específicas desta camada, começando com "? ")',
   '@lingua',
   '(1 a 3 frases: palavras-chave e os sentidos que o léxico sustenta)',
+  '? (1 a 2 perguntas específicas desta camada, começando com "? ")',
   '@intertexto',
   '(1 a 3 frases: referências cruzadas e temas)',
+  '? (1 a 2 perguntas específicas desta camada, começando com "? ")',
   '@interpretacao',
   '(1 a 3 frases: o que as tradições dizem; leituras disputadas de forma simétrica)',
+  '? (1 a 2 perguntas específicas desta camada, começando com "? ")',
   '@aplicacao',
   '(1 a 3 frases, cada uma começando com "(Inferência)")',
+  '? (1 a 2 perguntas específicas desta camada, começando com "? ")',
   '@perguntas',
   '- (3 a 5 perguntas concretas que um estudante de seminário faria em seguida sobre ESTA passagem; cada uma respondível pelo contexto)',
   '@fim',
@@ -89,11 +124,17 @@ const SUMMARY_FORMAT = [
   'Gramática: afirmações sobre modo, tempo, voz, caso, pessoa ou número copiam a análise do token citado, em português, e citam esse token.',
 ].join('\n');
 
-/** Resumo objetivo por seções (formato de linhas-marcadoras) de um painel já serializado. */
-export function summaryMessages(context: { text: string }, opts: PromptOptions = {}): ChatMessage[] {
+/**
+ * Resumo objetivo por seções (formato de linhas-marcadoras) de um painel já serializado.
+ * Com `focus`, a unidade continua sendo resumida, e a mensagem diz qual seleção o leitor fez dentro dela.
+ */
+export function summaryMessages(context: { text: string }, opts: SummaryPromptOptions = {}): ChatMessage[] {
+  const focusNote = opts.focus
+    ? `Seleção do leitor dentro desta unidade: ${formatReference(opts.focus)}. Resuma a unidade inteira, não só a seleção; ao final de @visao, acrescente uma frase sobre o que a seleção mostra.\n\n`
+    : '';
   return [
     { role: 'system', content: buildSystemPrompt(opts) },
-    { role: 'user', content: `${SUMMARY_FORMAT}\n\n<contexto>\n${context.text}\n</contexto>` },
+    { role: 'user', content: `${focusNote}${SUMMARY_FORMAT}\n\n<contexto>\n${context.text}\n</contexto>` },
   ];
 }
 
@@ -107,20 +148,60 @@ const SECTION_HINTS: Record<SectionKey, string> = {
   aplicacao: 'aplicações pastorais; cada frase começa com "(Inferência)"',
 };
 
-/** Aprofundamento em uma camada: texto detalhado com citações, perguntas de seguimento e @fim. */
-export function sectionMessages(context: { text: string }, section: SectionKey, opts: PromptOptions = {}): ChatMessage[] {
-  if (!SECTION_KEYS.includes(section)) throw new RangeError(`seção desconhecida: ${section}`);
-  const instructions = [
-    `Aprofunde a seção "${SECTION_LABELS[section]}" desta passagem: ${SECTION_HINTS[section]}.`,
+const VISAO_HINT = 'a visão geral do trecho: o que é a passagem e o que ela ensina em síntese';
+
+/**
+ * Aprofundamento de uma lente ("Detalhar"): texto detalhado com citações, perguntas de seguimento e @fim.
+ * Aceita 'visao' (visão geral) e, opcionalmente, o trecho exato a detalhar (`claim`).
+ */
+export function deepenMessages(
+  context: { text: string },
+  lens: SectionKey | 'visao',
+  opts: PromptOptions & { claim?: string } = {},
+): ChatMessage[] {
+  if (lens !== 'visao' && !SECTION_KEYS.includes(lens)) throw new RangeError(`lente desconhecida: ${lens}`);
+  const label = lens === 'visao' ? 'Visão geral' : SECTION_LABELS[lens];
+  const hint = lens === 'visao' ? VISAO_HINT : SECTION_HINTS[lens];
+  const lines = [
+    `Aprofunde a lente "${label}" desta passagem: ${hint}.`,
     'Use somente o contexto. Explique com detalhe, cite cada afirmação factual com [[cite_id]] e explique termos técnicos.',
+  ];
+  if (opts.claim?.trim()) {
+    lines.push(`Detalhar este ponto: "${opts.claim.trim()}". Responda só sobre esse ponto, com citações.`);
+  }
+  lines.push(
     'Pode usar títulos (###), listas, **negrito** e *itálico*. Sem tabelas.',
-    'Se a camada não tiver registros no contexto, diga que o contexto não traz registros para ela.',
+    'Se a lente não tiver registros no contexto, diga que o contexto não traz registros para ela.',
     'Ao final, uma linha "@perguntas" seguida de 2 a 4 perguntas (linhas começando com "- ") que um estudante faria em seguida, e depois uma linha "@fim".',
-  ].join('\n');
+  );
   return [
     { role: 'system', content: buildSystemPrompt(opts) },
-    { role: 'user', content: `${instructions}\n\n<contexto>\n${context.text}\n</contexto>` },
+    { role: 'user', content: `${lines.join('\n')}\n\n<contexto>\n${context.text}\n</contexto>` },
   ];
+}
+
+/** Aprofundamento de uma seção. Alias de deepenMessages para uma seção do resumo. */
+export function sectionMessages(context: { text: string }, section: SectionKey, opts: PromptOptions = {}): ChatMessage[] {
+  if (!SECTION_KEYS.includes(section)) throw new RangeError(`seção desconhecida: ${section}`);
+  return deepenMessages(context, section, opts);
+}
+
+const ATTACHMENT_TEXT_MAX = 1500;
+
+/** Bloco "Anexos:" da pergunta: rótulo, cite_ids e texto citado de cada anexo. Vazio sem anexos. */
+export function attachmentsBlock(attachments: readonly ChatAttachment[]): string {
+  if (attachments.length === 0) return '';
+  const items = attachments.map((a) => {
+    const ids = a.citeIds?.length ? ` (cite_ids: ${a.citeIds.join(', ')})` : '';
+    const quote = a.text?.trim()
+      ? `\n  "${a.text.trim().replace(/\s+/g, ' ').slice(0, ATTACHMENT_TEXT_MAX)}"`
+      : '';
+    return `- ${a.label}${ids}${quote}`;
+  });
+  return [
+    'Anexos (foque a resposta neles e cite os cite_ids de cada anexo que usar):',
+    ...items,
+  ].join('\n');
 }
 
 /** Pergunta sobre a passagem: sistema, contexto, histórico recente, a pergunta e o formato de resposta. */
@@ -141,7 +222,13 @@ export function answerMessages(
     ...past,
     {
       role: 'user',
-      content: `${question.trim()}\n\nResponda com markdown (negrito, itálico, listas, títulos; sem tabelas) e cite cada afirmação factual com [[cite_id]]. Ao final, uma linha "@perguntas" com 2 a 3 perguntas de seguimento (linhas começando com "- "), e depois uma linha "@fim".`,
+      content: [
+        question.trim(),
+        attachmentsBlock(opts.attachments ?? []),
+        'Responda com markdown (negrito, itálico, listas, títulos; sem tabelas) e cite cada afirmação factual com [[cite_id]]. Ao final, uma linha "@perguntas" com 2 a 3 perguntas de seguimento (linhas começando com "- "), e depois uma linha "@fim".',
+      ]
+        .filter(Boolean)
+        .join('\n\n'),
     },
   ];
 }

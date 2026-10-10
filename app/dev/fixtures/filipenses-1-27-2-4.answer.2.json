@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "reference": "Filipenses 1:27-2:4",
+  "range": {
+    "start": 50001027,
+    "end": 50002004
+  },
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "recordedAt": "2026-10-10T04:47:56.108Z",
+  "kind": "answer",
+  "question": "Como a variante textual em Fp 2:1 (\"tina\" vs \"tis\") afeta a tradução \"alguma consolação\" vs \"qualquer consolação\"?",
+  "text": "### Variante textual em Filipenses 2:1\n\n**Leituras**  \n- **TR**: *τινα* — pronome indefinido, nominativo plural neutro [[tok:gnt:50002001:161]]  \n- **BYZ/NA**: *τις* — pronome indefinido, nominativo singular feminino [[tok:gnt:50002001:160]]\n\n**Significado lexical**  \n- *τις* (G5100) funciona como “um, certo, qualquer” em contextos indefinidos [[lex:stepbible-tbesg:G5100]].\n\n**Concordância com *παράκλησις***  \n- *παράκλησις* (“consolação”) é substantivo feminino singular.  \n- A leitura *τις* (singular feminino) concorda em gênero, número e caso, o que favorece a tradução “**qualquer consolação**” (sentido universal: “se há qualquer consolação…”).  \n- A leitura *τινα* (plural neutro) não concorda com *παράκλησις*; gramaticalmente esperaria um substantivo plural neutro (ex.: “consolações”). (Inferência)\n\n**Impacto na tradução portuguesa**  \n- A **Bíblia Livre** verte “se há **alguma consolação**” [[txt:blivre:50002001]], forma que reflete a leitura *τις* (singular feminino) ou uma opção interpretativa de “alguma” como “qualquer”.  \n- Se a leitura *τινα* fosse seguida literalmente, a tradução mais natural seria “se há **algumas consolações**” (plural), o que mudaria o sentido de uma única experiência de consolo para múltiplas. (Inferência)\n\n**Conclusão**  \nA variante afeta a concordância gramatical e, consequentemente, a nuance entre “qualquer consolação” (universal, singular) e “alguma(s) consolação(ões)” (existencial, possivelmente plural). A maioria das edições críticas (BYZ, NA) adota *τις*, o que apoia a tradução “qualquer consolação”. (Inferência)\n\n@perguntas\n- Qual a evidência manuscrita mais antiga para *τις* versus *τινα*?\n- Como os comentários patrísticos e reformados tratam essa variante?\n- Existe alguma diferença teológica significativa entre “alguma consolação” e “qualquer consolação” no contexto de Filipenses 2:1?\n\n@fim"
+}

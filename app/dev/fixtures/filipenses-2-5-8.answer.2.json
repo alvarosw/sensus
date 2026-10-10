@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "reference": "Filipenses 2:5-8",
+  "range": {
+    "start": 50002005,
+    "end": 50002008
+  },
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "recordedAt": "2026-10-10T04:41:36.956Z",
+  "kind": "answer",
+  "question": "A omissão de γὰρ em NA 28 altera a força argumentativa entre vv. 4 e 5?",
+  "text": "## Resposta\n\n**Dados textuais**  \n- O token γὰρ (G1063) aparece no Textus Receptus e no texto bizantino, mas está ausente no NA 28 [[tok:gnt:50002005:20]].  \n- O léxico indica que γὰρ é uma partícula coordenativa usada “when giving a reason or explanation, for” [[lex:stepbible-tbesg:G1063]].\n\n**Efeito na conexão lógica**  \n(Inferência) A omissão de γὰρ remove um marcador explícito de fundamentação (“pois”, “porque”) que ligaria o imperativo do v. 5 à exortação do v. 4. Sem essa partícula, a relação argumentativa torna-se menos explícita, embora o contexto imediato ainda possa sugerir continuidade.\n\n@perguntas  \n- Qual o impacto da mudança de φρονείσθω (imperativo passivo 3ª pessoa do singular) para φρονεῖτε (imperativo ativo 2ª pessoa do plural) na força exortativa?  \n- Como os comentários históricos (p. ex., Calvino, Wesley) tratam a presença ou ausência de γὰρ neste versículo?  \n- Existe alguma evidência patrística que prefira uma leitura sem γὰρ?\n\n@fim"
+}

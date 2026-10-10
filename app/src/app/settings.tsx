@@ -1,15 +1,17 @@
+// Configurações de IA e aparência, com o design system (tokens e componentes de src/design).
 import { useEffect, useState } from 'react';
-import { ScrollView, Text, TextInput, View } from 'react-native';
-import { buildProviderConfig, PRESET_IDS, PROVIDER_PRESETS, type PresetId } from '@sensus/core';
+import { ScrollView, TextInput, View } from 'react-native';
+import { buildProviderConfig } from '@sensus/core';
+import { Card, fontFamilies, Pill, radius, Segmented, Txt, useTheme, type SchemePreference } from '@/design';
 import { t } from '@/i18n';
 import { listProviderModels } from '@/ai/client';
-import { initialFormSettings, isPresetId } from '@/settings/resolve';
+import { initialFormSettings } from '@/settings/resolve';
+import { APP_PRESET_IDS, APP_PRESETS, DEMO_PRESET_ID, isAppPresetId, presetNeedsKey, type AppPresetId } from '@/settings/presets';
+import { DEMO_PROVIDER_CONFIG } from '@/ai/demo-provider';
 import { useSettings } from '@/settings/settings-context';
 import type { StoredProviderSettings } from '@/settings/provider-store';
-import { Button, Card, Chip, Heading } from '@/ui/primitives';
-import { Body, Label, Meta } from '@/ui/text';
-import { LoadingView } from '@/ui/state';
-import { useTheme } from '@/ui/theme';
+import { FormButton } from '@/features/common/Buttons';
+import { SETTINGS } from '@/features/common/strings';
 
 type Notice = { tone: 'ok' | 'error'; text: string } | null;
 
@@ -19,8 +21,17 @@ function messageOf(e: unknown): string {
   return e instanceof Error ? e.message : String(e);
 }
 
+function Field({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <View style={{ gap: 6 }}>
+      <Txt v="eyebrow" color="muted">{label}</Txt>
+      {children}
+    </View>
+  );
+}
+
 export default function SettingsScreen() {
-  const theme = useTheme();
+  const { c, preference, setPreference } = useTheme();
   const settings = useSettings();
 
   const [form, setForm] = useState<StoredProviderSettings | null>(null);
@@ -29,45 +40,47 @@ export default function SettingsScreen() {
   const [testing, setTesting] = useState(false);
   const [models, setModels] = useState<string[]>([]);
 
-  // Preenche o formulário uma vez, quando as configurações terminam de carregar.
   useEffect(() => {
-    if (settings.loaded && form === null) {
-      setForm(initialFormSettings(settings.stored, settings.devProvider));
-    }
+    if (settings.loaded && form === null) setForm(initialFormSettings(settings.stored, settings.devProvider));
   }, [settings.loaded, settings.stored, settings.devProvider, form]);
 
-  if (!settings.loaded || form === null) return <LoadingView />;
+  const inputStyle = {
+    height: 44,
+    borderWidth: 1,
+    borderColor: c.border,
+    borderRadius: radius.xl,
+    paddingHorizontal: 12,
+    color: c.text,
+    backgroundColor: c.bg,
+    fontFamily: fontFamilies.ui,
+    fontSize: 14,
+  } as const;
 
-  const presetId: PresetId | null = isPresetId(form.presetId) ? form.presetId : null;
+  if (!settings.loaded || form === null) {
+    return <View style={{ flex: 1, backgroundColor: c.bg }}><Txt v="body" color="muted" style={{ padding: 16 }}>{t('common.loading')}</Txt></View>;
+  }
+
+  const presetId: AppPresetId | null = isAppPresetId(form.presetId) ? form.presetId : null;
+  const isDemo = presetId === DEMO_PRESET_ID;
+  const needsKey = presetId ? presetNeedsKey(presetId) : true;
   const update = (patch: Partial<StoredProviderSettings>) => setForm({ ...form, ...patch });
 
-  const selectPreset = (id: PresetId) => {
-    const preset = PROVIDER_PRESETS[id];
+  const selectPreset = (id: AppPresetId) => {
+    const preset = APP_PRESETS[id];
     setModels([]);
+    setNotice(null);
     setForm({ presetId: id, baseUrl: preset.baseUrl, model: preset.defaultModel });
   };
 
   const onSave = async () => {
+    if (!presetId) return;
     const newKey = apiKeyInput.trim();
     const key = newKey || settings.savedApiKey || '';
-    if (!presetId) return;
-    if (!key) {
-      setNotice({ tone: 'error', text: t('settings.needKey') });
-      return;
-    }
-    if (!form.baseUrl.trim()) {
-      setNotice({ tone: 'error', text: t('settings.needBaseUrl') });
-      return;
-    }
-    if (!form.model.trim()) {
-      setNotice({ tone: 'error', text: t('settings.needModel') });
-      return;
-    }
+    if (needsKey && !key) return setNotice({ tone: 'error', text: t('settings.needKey') });
+    if (!form.baseUrl.trim()) return setNotice({ tone: 'error', text: t('settings.needBaseUrl') });
+    if (!form.model.trim()) return setNotice({ tone: 'error', text: t('settings.needModel') });
     try {
-      await settings.save(
-        { presetId, baseUrl: form.baseUrl.trim(), model: form.model.trim() },
-        newKey || undefined,
-      );
+      await settings.save({ presetId, baseUrl: form.baseUrl.trim(), model: form.model.trim() }, newKey || undefined);
       setApiKeyInput('');
       setNotice({ tone: 'ok', text: t('settings.saved') });
     } catch (e) {
@@ -78,16 +91,11 @@ export default function SettingsScreen() {
   const onTest = async () => {
     if (!presetId) return;
     const key = apiKeyInput.trim() || settings.savedApiKey || settings.devProvider?.apiKey || '';
-    if (!key) {
-      setNotice({ tone: 'error', text: t('settings.needKey') });
-      return;
-    }
-    if (!form.baseUrl.trim()) {
-      setNotice({ tone: 'error', text: t('settings.needBaseUrl') });
-      return;
-    }
-    // A listagem de modelos não exige modelo escolhido.
-    const config = buildProviderConfig(presetId, { apiKey: key, baseUrl: form.baseUrl, model: form.model });
+    if (needsKey && !key) return setNotice({ tone: 'error', text: t('settings.needKey') });
+    if (!form.baseUrl.trim()) return setNotice({ tone: 'error', text: t('settings.needBaseUrl') });
+    const config = isDemo
+      ? { ...DEMO_PROVIDER_CONFIG }
+      : buildProviderConfig(presetId as Exclude<AppPresetId, 'demo'>, { apiKey: key, baseUrl: form.baseUrl, model: form.model });
     setTesting(true);
     setNotice(null);
     try {
@@ -110,116 +118,119 @@ export default function SettingsScreen() {
   const hasKey = settings.savedApiKey !== null;
   const state = settings.provider ? t('settings.stateReady') : t('settings.stateMissing');
 
-  const inputStyle = {
-    borderWidth: 1,
-    borderColor: theme.border,
-    borderRadius: 12,
-    paddingHorizontal: 12,
-    paddingVertical: 10,
-    color: theme.text,
-    backgroundColor: theme.bg,
-    fontSize: 15,
-  } as const;
-
   return (
     <ScrollView
-      contentContainerStyle={{ padding: 16, gap: 16 }}
+      testID="settings"
+      style={{ flex: 1, backgroundColor: c.bg }}
+      contentContainerStyle={{ padding: 16, gap: 14 }}
       contentInsetAdjustmentBehavior="automatic"
       keyboardShouldPersistTaps="handled"
     >
       <Card style={{ gap: 6 }}>
-        <Body>{t('settings.byokHint')}</Body>
-        <Meta>{t('settings.status', { state })}</Meta>
+        <Txt v="bodySm">{t('settings.byokHint')}</Txt>
+        <Txt v="meta" color="muted">{t('settings.status', { state })}</Txt>
       </Card>
 
-      <Card style={{ gap: 12 }}>
-        <Heading level={3}>{t('settings.provider')}</Heading>
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
-          {PRESET_IDS.map((id) => (
-            <Chip
+      <Card style={{ gap: 14 }}>
+        <Txt v="lensTitle">{t('settings.provider')}</Txt>
+        <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
+          {APP_PRESET_IDS.map((id) => (
+            <Pill
               key={id}
-              label={PROVIDER_PRESETS[id].label}
-              selected={id === presetId}
+              testID={`preset-${id}`}
+              label={APP_PRESETS[id].label}
+              variant={id === presetId ? 'suggest' : 'default'}
               onPress={() => selectPreset(id)}
             />
           ))}
         </View>
-
-        <Label>{t('settings.baseUrl')}</Label>
-        <TextInput
-          value={form.baseUrl}
-          onChangeText={(baseUrl) => update({ baseUrl })}
-          autoCapitalize="none"
-          autoCorrect={false}
-          keyboardType="url"
-          style={inputStyle}
-        />
-
-        <Label>{t('settings.model')}</Label>
-        <TextInput
-          value={form.model}
-          onChangeText={(model) => update({ model })}
-          autoCapitalize="none"
-          autoCorrect={false}
-          style={inputStyle}
-        />
+        {isDemo ? <Txt v="bodySm" color="muted">{SETTINGS.demoHint}</Txt> : null}
+        <Field label={t('settings.baseUrl')}>
+          <TextInput
+            testID="settings-base-url"
+            value={form.baseUrl}
+            onChangeText={(baseUrl) => update({ baseUrl })}
+            autoCapitalize="none"
+            autoCorrect={false}
+            keyboardType="url"
+            editable={!isDemo}
+            style={[inputStyle, isDemo && { opacity: 0.6 }]}
+          />
+        </Field>
+        <Field label={t('settings.model')}>
+          <TextInput
+            testID="settings-model"
+            value={form.model}
+            onChangeText={(model) => update({ model })}
+            autoCapitalize="none"
+            autoCorrect={false}
+            editable={!isDemo}
+            style={[inputStyle, isDemo && { opacity: 0.6 }]}
+          />
+        </Field>
       </Card>
 
-      <Card style={{ gap: 12 }}>
-        <Heading level={3}>{t('settings.apiKey')}</Heading>
-        <TextInput
-          value={apiKeyInput}
-          onChangeText={setApiKeyInput}
-          placeholder={hasKey ? '••••••••' : t('settings.apiKeyPlaceholder')}
-          placeholderTextColor={theme.textMuted}
-          secureTextEntry
-          autoCapitalize="none"
-          autoCorrect={false}
-          textContentType="password"
-          style={inputStyle}
-        />
-        {hasKey ? <Meta>{t('settings.apiKeySaved')}</Meta> : null}
-        {!hasKey && settings.devProvider ? <Meta>{t('settings.apiKeyDev')}</Meta> : null}
-        {hasKey ? <Button label={t('settings.removeKey')} variant="ghost" onPress={onRemoveKey} /> : null}
-      </Card>
+      {needsKey ? (
+        <Card style={{ gap: 10 }}>
+          <Txt v="lensTitle">{t('settings.apiKey')}</Txt>
+          <TextInput
+            testID="settings-api-key"
+            value={apiKeyInput}
+            onChangeText={setApiKeyInput}
+            placeholder={hasKey ? '••••••••' : t('settings.apiKeyPlaceholder')}
+            placeholderTextColor={c.muted}
+            secureTextEntry
+            autoCapitalize="none"
+            autoCorrect={false}
+            textContentType="password"
+            style={inputStyle}
+          />
+          {hasKey ? <Txt v="meta" color="muted">{t('settings.apiKeySaved')}</Txt> : null}
+          {!hasKey && settings.devProvider ? <Txt v="meta" color="muted">{t('settings.apiKeyDev')}</Txt> : null}
+          {hasKey ? <FormButton variant="ghost" label={t('settings.removeKey')} onPress={onRemoveKey} /> : null}
+        </Card>
+      ) : null}
 
       {models.length > 0 ? (
         <Card style={{ gap: 10 }}>
-          <Label>{t('settings.pickModel')}</Label>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
+          <Txt v="eyebrow" color="muted">{t('settings.pickModel')}</Txt>
+          <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
             {models.slice(0, MAX_MODEL_CHIPS).map((id) => (
-              <Chip
-                key={id}
-                label={id}
-                selected={id === form.model}
-                onPress={() => update({ model: id })}
-              />
+              <Pill key={id} label={id} variant={id === form.model ? 'suggest' : 'default'} onPress={() => update({ model: id })} />
             ))}
           </View>
         </Card>
       ) : null}
 
       {notice ? (
-        <Text
-          style={{
-            color: notice.tone === 'ok' ? theme.sourceChipText : theme.danger,
-            fontSize: 14,
-            lineHeight: 20,
-          }}
-        >
-          {notice.text}
-        </Text>
+        <Txt v="bodySm" tint={notice.tone === 'ok' ? c.srcText : c.danger} testID="settings-notice">{notice.text}</Txt>
       ) : null}
 
-      <View style={{ gap: 10 }}>
-        <Button label={t('settings.save')} onPress={onSave} />
-        <Button
-          label={testing ? t('settings.testing') : t('settings.test')}
+      <View style={{ gap: 8 }}>
+        <FormButton testID="settings-save" label={t('settings.save')} onPress={onSave} />
+        <FormButton
+          testID="settings-test"
           variant="secondary"
+          label={testing ? t('settings.testing') : t('settings.test')}
+          disabled={testing}
           onPress={onTest}
-          loading={testing}
         />
       </View>
+
+      <Card style={{ gap: 10 }}>
+        <Txt v="lensTitle">{SETTINGS.appearance}</Txt>
+        <Txt v="eyebrow" color="muted">{SETTINGS.theme}</Txt>
+        <Segmented<SchemePreference>
+          testID="theme-pref"
+          value={preference}
+          onChange={setPreference}
+          options={[
+            { key: 'light', label: SETTINGS.light },
+            { key: 'dark', label: SETTINGS.dark },
+            { key: 'system', label: SETTINGS.system },
+          ]}
+        />
+      </Card>
     </ScrollView>
   );
 }

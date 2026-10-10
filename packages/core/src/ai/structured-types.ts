@@ -84,6 +84,11 @@ export interface StructuredSummary {
   questions: string[];
   /** true quando o stream terminou e o marcador final foi recebido. */
   complete: boolean;
+  /**
+   * Perguntas específicas de cada lente (linhas "? ..." dentro da seção; 'visao' = visão geral).
+   * Até 2 por lente; só as lentes com perguntas aparecem. Adicionado em v0.4.
+   */
+  sectionQuestions?: Partial<Record<SectionKey | 'visao', string[]>>;
 }
 
 /** Resposta de chat/aprofundamento: texto rico + novas perguntas sugeridas ao final. */

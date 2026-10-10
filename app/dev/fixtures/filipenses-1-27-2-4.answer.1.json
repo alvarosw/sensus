@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "reference": "Filipenses 1:27-2:4",
+  "range": {
+    "start": 50001027,
+    "end": 50002004
+  },
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "recordedAt": "2026-10-10T04:47:56.108Z",
+  "kind": "answer",
+  "question": "Qual a relação gramatical entre os quatro \"se\" (ei) de Fp 2:1 e o imperativo \"plērōsate\" de 2:2?",
+  "text": "## Relação gramatical\n\n- Os quatro “se” (εἰ) em **Fp 2:1** são conjunções condicionais (marcadas como **COND**) que introduzem as protases da frase [[tok:gnt:50002001:10]] [[tok:gnt:50002001:70]] [[tok:gnt:50002001:110]] [[tok:gnt:50002001:150]].\n- O verbo **πληρώσατε** (*plērōsate*) em **Fp 2:2** é um imperativo aoristo ativo, 2ª pessoa do plural (**V‑AAM‑2P**) [[tok:gnt:50002002:10]].\n- (Inferência) As quatro orações condicionais formam uma série de protases de **condição de primeira classe** (εἰ + indicativo elíptico) que servem de fundamento para a exortação expressa no imperativo principal (apódose) do versículo 2.\n\n@perguntas\n- Qual a classificação exata dessas condições (primeira, segunda, terceira classe) segundo a gramática grega?\n- O verbo “é” (ἐστίν) está elíptico em cada protase? Como isso afeta a tradução?\n- De que modo o imperativo aoristo “plērōsate” se relaciona com os particípios presentes que o seguem (φρονῆτε, ἔχοντες, φρονοῦντες)?\n\n@fim"
+}

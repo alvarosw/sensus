@@ -9,6 +9,7 @@ import {
   type LLMProvider,
   type ProviderConfig,
 } from '@sensus/core';
+import { DEMO_PRESET_ID, DemoProvider } from './demo-provider';
 
 /**
  * fetch com streaming real (response.body) no React Native, via expo/fetch.
@@ -18,6 +19,8 @@ export const streamingFetch: FetchLike = (input, init) =>
   expoFetch(input, init as Parameters<typeof expoFetch>[1]) as unknown as Promise<Response>;
 
 export function providerFor(config: ProviderConfig): LLMProvider & { listModels?: () => Promise<string[]> } {
+  // Preset 'demo': respostas gravadas, sem rede (ver ai/demo-provider.ts).
+  if (config.id === DEMO_PRESET_ID) return new DemoProvider();
   return createProvider(config, streamingFetch);
 }
 

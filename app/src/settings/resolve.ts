@@ -5,6 +5,9 @@ import {
   type PresetId,
   type ProviderConfig,
 } from '@sensus/core';
+import { DEMO_PROVIDER_CONFIG } from '../ai/demo-provider';
+import { DEMO_POLICY, type DemoPolicy } from './demo';
+import { DEMO_PRESET_ID } from './presets';
 import type { StoredProviderSettings } from './provider-store';
 
 /** Credenciais de desenvolvimento vindas do .env (app.config.ts -> extra.devProvider). */
@@ -36,17 +39,23 @@ export function buildConfigFrom(
 }
 
 /**
- * Provedor efetivo: a configuração salva (com sua chave) tem prioridade; sem
- * nada salvo, usa o provedor de desenvolvimento do .env, se houver.
+ * Provedor efetivo, por prioridade:
+ *  1. EXPO_PUBLIC_SENSUS_DEMO=1: demo (offline), sempre;
+ *  2. configuração salva (com sua chave), ou o preset 'demo' salvo;
+ *  3. na web (sem nada salvo): demo;
+ *  4. provedor de desenvolvimento do .env, se houver.
  */
 export function resolveProvider(
   stored: StoredProviderSettings | null,
   savedApiKey: string | null,
   dev: DevProvider | null,
+  demo: DemoPolicy = DEMO_POLICY,
 ): ProviderConfig | null {
+  if (demo.forced || stored?.presetId === DEMO_PRESET_ID) return { ...DEMO_PROVIDER_CONFIG };
   if (stored && savedApiKey && isPresetId(stored.presetId)) {
     return buildConfigFrom(stored.presetId, stored.baseUrl, stored.model, savedApiKey);
   }
+  if (demo.byDefault) return { ...DEMO_PROVIDER_CONFIG };
   if (dev) {
     return buildConfigFrom(DEV_PRESET, dev.baseUrl, dev.model, dev.apiKey);
   }
@@ -57,8 +66,12 @@ export function resolveProvider(
 export function initialFormSettings(
   stored: StoredProviderSettings | null,
   dev: DevProvider | null,
+  demo: DemoPolicy = DEMO_POLICY,
 ): StoredProviderSettings {
   if (stored) return stored;
+  if (demo.byDefault) {
+    return { presetId: DEMO_PRESET_ID, baseUrl: DEMO_PROVIDER_CONFIG.baseUrl, model: DEMO_PROVIDER_CONFIG.model };
+  }
   const preset = PROVIDER_PRESETS[dev ? DEV_PRESET : PRESET_IDS[0]];
   return {
     presetId: preset.id,

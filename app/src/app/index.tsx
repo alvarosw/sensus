@@ -1,107 +1,71 @@
-import { useEffect, useRef, useState } from 'react';
-import { ScrollView } from 'react-native';
+// Tela principal: leitor contínuo + barra superior + camadas (estudo, fontes, chat, aviso) sobre ele.
+import { useCallback, useState } from 'react';
+import { View, type LayoutChangeEvent } from 'react-native';
+import { router } from 'expo-router';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { Book } from '@sensus/core';
-import { useRepo } from '@/data/db-context';
-import { useAsync } from '@/data/use-async';
-import { BookTileGrid } from '@/ui/book-list';
-import { ErrorView, LoadingView } from '@/ui/state';
-import { t } from '@/i18n';
-import { ChapterSheet } from '@/features/nav/ChapterSheet';
-import { ContinueCard } from '@/features/nav/ContinueCard';
-import { ReferenceSearch } from '@/features/nav/ReferenceSearch';
-import { Segmented } from '@/features/nav/Segmented';
-import { useLastPosition } from '@/features/nav/last-position';
-import type { RefMatch } from '@/features/nav/reference';
-import { NAV } from '@/features/nav/strings';
-import { openReaderAt, openStudy } from '@/features/nav/routes';
+import { size, useTheme } from '@/design';
+import { ChatLayer } from '@/features/chat/ChatLayer';
+import { ToastHost } from '@/features/common/Toast';
+import { BookPicker } from '@/features/nav/BookPicker';
+import { JumpPopover } from '@/features/nav/JumpPopover';
+import { TopBar } from '@/features/nav/TopBar';
+import { PinnedBar } from '@/features/reader/PinnedBar';
+import { Reader } from '@/features/reader/Reader';
+import { useReaderNav } from '@/features/reader/nav-store';
+import { SourceLayer } from '@/features/sources/SourceLayer';
+import { StudySheet } from '@/features/study/StudySheet';
 
-export default function HomeScreen() {
-  const repo = useRepo();
-  const books = useAsync(() => repo.books(), [repo]);
-  const last = useLastPosition();
+export default function MainScreen() {
+  const { c } = useTheme();
+  const insets = useSafeAreaInsets();
+  const position = useReaderNav((s) => s.position);
+  const [rootH, setRootH] = useState(0);
+  const [jumpOpen, setJumpOpen] = useState(false);
+  const [booksOpen, setBooksOpen] = useState(false);
+  const areaHeight = Math.max(0, rootH - insets.top - size.topBar);
 
-  const [testament, setTestament] = useState<'OT' | 'NT'>('OT');
-  const [query, setQuery] = useState('');
-  const [sheetBook, setSheetBook] = useState<Book | null>(null);
-  const [sheetOpen, setSheetOpen] = useState(false);
-
-  // Abre na aba do testamento da última leitura, uma vez por sessão.
-  const testamentSet = useRef(false);
-  useEffect(() => {
-    if (testamentSet.current || !last || !books.data) return;
-    testamentSet.current = true;
-    const b = books.data.find((x) => x.num === last.book);
-    if (b) setTestament(b.testament);
-  }, [last, books.data]);
-
-  if (books.loading) return <LoadingView />;
-  if (books.error) {
-    return <ErrorView message={t('common.error')} detail={books.error} onRetry={books.reload} />;
-  }
-
-  const all = books.data ?? [];
-  const lastBook = last ? all.find((b) => b.num === last.book) : undefined;
-
-  function openBook(book: Book) {
-    setSheetBook(book);
-    setSheetOpen(true);
-  }
-
-  function openRef(match: RefMatch, target: 'reader' | 'study') {
-    if (target === 'study') {
-      openStudy(match.range);
-      return;
-    }
-    openReaderAt(match.book.num, match.chapter, match.verse ?? undefined, match.verseEnd ?? undefined);
-  }
+  const onLayout = useCallback((e: LayoutChangeEvent) => setRootH(e.nativeEvent.layout.height), []);
+  const pick = (book: Book, chapter: number) => {
+    setBooksOpen(false);
+    useReaderNav.getState().goChapter(book.num, chapter);
+  };
 
   return (
-    <ScrollView
-      contentContainerStyle={{ padding: 16, paddingBottom: 40, gap: 18 }}
-      contentInsetAdjustmentBehavior="automatic"
-      keyboardShouldPersistTaps="handled"
-    >
-      {last && lastBook ? (
-        <ContinueCard
-          position={last}
-          book={lastBook}
-          onPress={() => openReaderAt(last.book, last.chapter, last.verse)}
-        />
-      ) : null}
-
-      <ReferenceSearch
-        books={all}
-        query={query}
-        onQueryChange={setQuery}
-        onOpenRef={openRef}
-        onPickBook={openBook}
-      />
-
-      {query.trim() === '' ? (
-        <>
-          <Segmented<'OT' | 'NT'>
-            accessibilityLabel={NAV.chooseBook}
-            value={testament}
-            onChange={setTestament}
-            options={[
-              { value: 'OT', label: NAV.testamentOT },
-              { value: 'NT', label: NAV.testamentNT },
-            ]}
-          />
-          <BookTileGrid books={all} testament={testament} onPick={openBook} />
-        </>
-      ) : null}
-
-      <ChapterSheet
-        visible={sheetOpen}
-        books={all}
-        initialBook={sheetBook}
-        onPick={(book, chapter) => {
-          setSheetOpen(false);
-          openReaderAt(book.num, chapter);
+    <View testID="main" onLayout={onLayout} style={{ flex: 1, backgroundColor: c.bg }}>
+      <TopBar
+        jumpOpen={jumpOpen}
+        booksOpen={booksOpen}
+        onBooks={() => {
+          setJumpOpen(false);
+          setBooksOpen((o) => !o);
         }}
-        onClose={() => setSheetOpen(false)}
+        onJump={() => {
+          setBooksOpen(false);
+          setJumpOpen((o) => !o);
+        }}
       />
-    </ScrollView>
+      <PinnedBar />
+      <View style={{ flex: 1 }}>
+        <Reader areaHeight={areaHeight} />
+      </View>
+      {jumpOpen && <JumpPopover onClose={() => setJumpOpen(false)} />}
+      <BookPicker
+        visible={booksOpen}
+        currentBook={position.book}
+        currentChapter={position.chapter}
+        areaHeight={areaHeight}
+        onPick={pick}
+        onSettings={() => {
+          setBooksOpen(false);
+          router.push('/settings');
+        }}
+        onClose={() => setBooksOpen(false)}
+      />
+      <StudySheet />
+      <SourceLayer />
+      <ChatLayer />
+      <ToastHost />
+    </View>
   );
 }

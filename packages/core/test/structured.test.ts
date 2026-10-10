@@ -2,6 +2,12 @@ import type { DatabaseSync } from 'node:sqlite';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import {
   answerMessages,
+  attachmentsBlock,
+  deepenMessages,
+  MAX_LENS_QUESTIONS,
+  splitLensQuestions,
+  summaryCacheKey,
+  SUMMARY_PROMPT_VERSION,
   blocksToPlainText,
   buildPanel,
   buildRichTextContext,
@@ -219,5 +225,81 @@ describe('prompts e tabelas de seção', () => {
     expect(sys).toContain('renderiza markdown');
     expect(sys).toContain('Não use tabelas');
     expect(sys).toContain('[[cite_id]]');
+  });
+});
+
+describe('perguntas por lente, anexos, foco e aprofundamento', () => {
+  it('linhas "? " viram perguntas da lente (até 2), fora do corpo da seção', () => {
+    const text = [
+      '@visao',
+      'Visão.',
+      '? Pergunta da visão?',
+      '@texto',
+      'Texto [[txt:blivre:50002005]].',
+      '? Primeira lente?',
+      '? Segunda lente?',
+      '? Terceira ignorada?',
+      '@fim',
+    ].join('\n');
+    const out = parseStructuredSummary(text, ctx);
+    expect(out.sectionQuestions?.visao).toEqual(['Pergunta da visão?']);
+    expect(out.sectionQuestions?.texto).toEqual(['Primeira lente?', 'Segunda lente?']);
+    expect(blocksToPlainText(out.sections.texto ?? [])).toBe('Texto [Bíblia Livre 2:5].');
+    expect(blocksToPlainText(out.overview)).toBe('Visão.');
+  });
+
+  it('"?" sozinho (início de stream) some; "?abc" continua sendo texto', () => {
+    expect(splitLensQuestions(['?', 'corpo', '?sem espaço', '? ok?'])).toEqual({
+      body: ['corpo', '?sem espaço'],
+      questions: ['ok?'],
+    });
+    expect(MAX_LENS_QUESTIONS).toBe(2);
+  });
+
+  it('o formato do resumo pede perguntas por lente', () => {
+    const user = summaryMessages({ text: contextText })[1]!.content;
+    expect(user).toContain('começando com "? "');
+    expect(user.match(/\? \(1 a 2 perguntas/g)?.length).toBeGreaterThanOrEqual(7);
+  });
+
+  it('summaryMessages com focus menciona a seleção e pede o resumo da unidade', () => {
+    const user = summaryMessages({ text: contextText }, { focus: { start: 50002005, end: 50002008 } })[1]!.content;
+    expect(user).toContain('Seleção do leitor dentro desta unidade: Filipenses 2:5-8');
+    expect(user).toContain('Resuma a unidade inteira');
+    expect(summaryMessages({ text: contextText })[1]!.content).not.toContain('Seleção do leitor');
+  });
+
+  it('summaryCacheKey depende só da unidade e da versão do formato', () => {
+    const unit = { start: 50002001, end: 50002030 };
+    expect(summaryCacheKey(unit)).toBe(`summary:${SUMMARY_PROMPT_VERSION}:50002001-50002030`);
+    expect(summaryCacheKey({ ...unit })).toBe(summaryCacheKey(unit));
+    expect(summaryCacheKey({ start: 50002001, end: 50002029 })).not.toBe(summaryCacheKey(unit));
+  });
+
+  it('anexos entram na mensagem do usuário com rótulo, cite_ids e texto citado', () => {
+    const msgs = answerMessages({ text: contextText }, [], 'Explique', {
+      attachments: [
+        { label: 'Versículo 2:5', citeIds: ['txt:blivre:50002005'], text: 'Tende em vós o mesmo sentimento' },
+        { label: 'Nota', text: 'uma nota' },
+      ],
+    });
+    const user = msgs[msgs.length - 1]!.content;
+    expect(user).toContain('Anexos (foque a resposta neles');
+    expect(user).toContain('- Versículo 2:5 (cite_ids: txt:blivre:50002005)');
+    expect(user).toContain('"Tende em vós o mesmo sentimento"');
+    expect(user).toContain('- Nota');
+    expect(attachmentsBlock([])).toBe('');
+    expect(answerMessages({ text: contextText }, [], 'Explique').at(-1)!.content).not.toContain('Anexos');
+  });
+
+  it('deepenMessages aceita visão geral e o ponto a detalhar; lente inválida lança erro', () => {
+    const msgs = deepenMessages({ text: contextText }, 'visao', { claim: 'a kenosis' });
+    const user = msgs[msgs.length - 1]!.content;
+    expect(user).toContain('Aprofunde a lente "Visão geral"');
+    expect(user).toContain('Detalhar este ponto: "a kenosis"');
+    expect(user).toContain('@perguntas');
+    expect(user).toContain('@fim');
+    expect(deepenMessages({ text: contextText }, 'lingua')[1]!.content).toContain(SECTION_LABELS.lingua);
+    expect(() => deepenMessages({ text: '' }, 'nope' as never)).toThrow(RangeError);
   });
 });

@@ -131,6 +131,7 @@ function printSummary(s: StructuredSummary, validCount: number): void {
   const all: Block[] = [...s.overview, ...SECTION_KEYS.flatMap((k) => s.sections[k] ?? [])];
   console.log('\n--- Visão geral ---');
   console.log(blocksToPlainText(s.overview));
+  for (const q of s.sectionQuestions?.visao ?? []) console.log(`? ${q}`);
   for (const key of SECTION_KEYS) {
     const blocks = s.sections[key];
     if (!blocks) {
@@ -139,6 +140,7 @@ function printSummary(s: StructuredSummary, validCount: number): void {
     }
     console.log(`\n--- ${SECTION_LABELS[key]} ---`);
     console.log(blocksToPlainText(blocks));
+    for (const q of s.sectionQuestions?.[key] ?? []) console.log(`? ${q}`);
   }
   console.log('\n--- Perguntas para continuar ---');
   for (const q of s.questions) console.log(`- ${q}`);

@@ -1,9 +1,8 @@
-import { Stack, router } from 'expo-router';
+import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SensusThemeProvider, useSensusFonts } from '@/design';
 import { StatusBar } from 'expo-status-bar';
 import type { ReactNode } from 'react';
-import { Pressable, Text } from 'react-native';
 import { DbProvider, useDbState } from '@/data/db-context';
 import { t } from '@/i18n';
 import { SettingsProvider } from '@/settings/settings-context';
@@ -38,25 +37,7 @@ function AppStack() {
               headerShadowVisible: false,
             }}
           >
-            <Stack.Screen
-              name="index"
-              options={{
-                title: t('app.name'),
-                headerRight: () => (
-                  <Pressable
-                    accessibilityRole="button"
-                    accessibilityLabel={t('study.configure')}
-                    onPress={() => router.push('/settings')}
-                    hitSlop={8}
-                  >
-                    <Text style={{ color: theme.accent, fontWeight: '600' }}>{t('study.configure')}</Text>
-                  </Pressable>
-                ),
-              }}
-            />
-            <Stack.Screen name="reader/[book]/[chapter]" options={{ title: t('reader.title') }} />
-            <Stack.Screen name="study" options={{ title: t('study.title') }} />
-            <Stack.Screen name="source/[cite]" options={{ title: t('source.title') }} />
+            <Stack.Screen name="index" options={{ headerShown: false }} />
             <Stack.Screen name="settings" options={{ title: t('settings.title') }} />
           </Stack>
         </DbGate>

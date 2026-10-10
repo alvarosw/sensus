@@ -111,6 +111,8 @@ export interface StudyState {
   bubble: BubblePosition;
   attachments: Attachment[];
   thread: ChatTurn[];
+  /** Pergunta pronta (sugerida numa lente, "Detalhar" etc.) para o chat enviar assim que abrir; o chat zera após consumir. */
+  pendingQuestion: string | null;
 
   // ---- aviso ----
   toast: { text: string; actionLabel?: string; onAction?: () => void } | null;
@@ -151,9 +153,14 @@ export interface StudyState {
   detach(id: string): void;
   clearAttachments(): void;
   /** Cria a vez da pergunta (status streaming) e devolve o id; limpa os anexos. */
+  /** Abre o chat e pede que ele envie `q` (com os anexos atuais). */
+  askQuestion(q: string): void;
+  consumeQuestion(): void;
   startTurn(question: string, range: ChatTurn['range']): string;
   appendTurn(id: string, chunk: string): void;
   finishTurn(id: string, error?: string): void;
+  /** Reinicia uma vez (tentar de novo após erro): zera a resposta e volta a 'streaming'. */
+  resetTurn(id: string): void;
 
   showToast(t: StudyState['toast']): void;
 }
@@ -181,6 +188,7 @@ export const useStudy = create<StudyState>()((set, get) => ({
   bubble: { side: 'right', bottom: null },
   attachments: [],
   thread: [],
+  pendingQuestion: null,
   toast: null,
 
   setTextSource: (id) => set({ textSource: id }),
@@ -240,6 +248,8 @@ export const useStudy = create<StudyState>()((set, get) => ({
   attach: (a) => set((s) => (s.attachments.some((x) => x.id === a.id) ? {} : { attachments: [...s.attachments, a] })),
   detach: (id) => set((s) => ({ attachments: s.attachments.filter((a) => a.id !== id) })),
   clearAttachments: () => set({ attachments: [] }),
+  askQuestion: (q) => set({ pendingQuestion: q, chatOpen: true, unread: 0, popoverCite: null }),
+  consumeQuestion: () => set({ pendingQuestion: null }),
   startTurn: (question, range) => {
     const id = `t${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
     set((s) => ({
@@ -254,6 +264,8 @@ export const useStudy = create<StudyState>()((set, get) => ({
       thread: s.thread.map((t) => (t.id === id ? { ...t, status: error ? 'error' : 'done', error } : t)),
       unread: s.chatOpen ? s.unread : s.unread + 1,
     })),
+  resetTurn: (id) =>
+    set((s) => ({ thread: s.thread.map((t) => (t.id === id ? { ...t, answer: '', status: 'streaming', error: undefined } : t)) })),
 
   showToast: (t) => set({ toast: t }),
 }));
