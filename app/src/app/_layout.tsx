@@ -1,4 +1,6 @@
 import { Stack, router } from 'expo-router';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SensusThemeProvider, useSensusFonts } from '@/design';
 import { StatusBar } from 'expo-status-bar';
 import type { ReactNode } from 'react';
 import { Pressable, Text } from 'react-native';
@@ -9,6 +11,18 @@ import { LoadingView, ErrorView } from '@/ui/state';
 import { useTheme } from '@/ui/theme';
 
 export default function RootLayout() {
+  const fontsReady = useSensusFonts();
+  if (!fontsReady) return null;
+  return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SensusThemeProvider>
+        <AppStack />
+      </SensusThemeProvider>
+    </GestureHandlerRootView>
+  );
+}
+
+function AppStack() {
   const theme = useTheme();
   return (
     <SettingsProvider>
