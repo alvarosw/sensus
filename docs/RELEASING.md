@@ -14,7 +14,7 @@ Como gerar e publicar o Sensus. Decisões do responsável:
 |---|---|
 | `npm run release:version -- 1.0.1` | Grava a versão em `app/app.config.ts` (`APP_VERSION`, fonte da verdade) e em `app/package.json`. |
 | `npm run release:check` | Testes (vitest), typecheck do núcleo e do app e, se existir `dist/sensus-<versão>.apk`, a varredura de segredos. Aceita um APK: `npm run release:check -- dist/x.apk`. |
-| `npm run release:android [-- preview]` | Build local (APK) do perfil `production` (padrão) ou `preview`; grava `dist/sensus-<versão>.apk` (ou `-preview.apk`), roda `app/scripts/check-apk-secrets.sh` e apaga o APK se houver segredo. Antes, o banco de leitura precisa estar sincronizado: `cd app && npm run sync-db ../data/sensus-reader.db`. |
+| `npm run release:android [-- preview\|emulator]` | Build local (APK) do perfil `production` (padrão), `preview` ou `emulator`; grava `dist/sensus-<versão>.apk` (ou `-preview.apk`, `-emulator.apk`), roda `app/scripts/check-apk-secrets.sh` e apaga o APK se houver segredo. Antes, o banco de leitura precisa estar sincronizado: `cd app && npm run sync-db ../data/sensus-reader.db`. |
 | `npm run release:ios` | Build iOS `production` (simulador) na nuvem, com `--no-wait`; imprime o link do build. |
 | `npm run release:github` | Imprime o `gh release create v<versão> dist/sensus-<versão>.apk ...` (com SHA-256 nas notas). Use `-- --run` para executar. |
 
@@ -70,16 +70,23 @@ Ao rodar `eas build` sem `--local`, o EAS consome a cota de builds da conta. Con
 - O build trabalha em `TMPDIR`. O `/tmp` costuma ser um tmpfs pequeno (5,8 GB aqui) e o NDK estoura ("No space left
   on device"), então o script usa `~/.cache/sensus-release-tmp` se `TMPDIR` não estiver definido. Um build completo
   leva cerca de 30 minutos (Gradle, NDK e R8).
-- **Tamanho:** o APK atual (perfil `preview`, 1.0.0) tem ~95 MB porque empacota as quatro ABIs (arm64-v8a,
-  armeabi-v7a, x86, x86_64). A meta de envio direto em `app/app.config.ts` é ~30 MiB, o que pede só `arm64-v8a`
-  (ver a decisão pendente no commit de release).
+- **Arquitetura (ABI):** os perfis `production` e `preview` definem, em `app/eas.json`, a variável
+  `ORG_GRADLE_PROJECT_reactNativeArchitectures=arm64-v8a`. O Gradle a lê como `-PreactNativeArchitectures`
+  (`app/android/gradle.properties`, que lista as quatro ABIs), então o APK de distribuição leva só `arm64-v8a`.
+  Antes disso o APK empacotava as quatro (~95 MB). Todo celular Android atual é arm64.
+- **Emulador (QA):** o perfil `emulator` (estende `preview`) troca a variável por `x86_64`, para rodar no AVD
+  `rep-phone`. O APK gerado (`dist/sensus-<versão>-emulator.apk`) não é para distribuição: não suba para o GitHub.
+  Conferência: `unzip -l <apk> | awk '$4 ~ /^lib\//{split($4,a,"/"); print a[2]}' | sort -u` lista só as ABIs do APK.
+- **Tamanho:** o APK `preview` 1.0.0 com só arm64-v8a mede 38,8 MB (era 94,6 MB com quatro ABIs). Ele inclui o
+  banco de leitura (`res/Qu.db`, 17 MB). Meta de envio direto: ≲ 55 MB.
 - Verificação feita no primeiro build: `check-apk-secrets.sh` passou; o banco de leitura entrou como `res/Qu.db`.
 
 ## Perfis do `app/eas.json`
 
 - `development`: dev client, simulador iOS (`ios.simulator: true`), `APP_ENV=development`.
-- `preview`: estende `production`, distribuição interna (APK Android; simulador iOS).
-- `production`: APK para instalação direta (Android, `buildType: apk`); iOS simulador por enquanto.
+- `preview`: estende `production`, distribuição interna (APK Android arm64-v8a; simulador iOS).
+- `emulator`: estende `preview` e troca a ABI para `x86_64` (QA no emulador Android). Só para teste local.
+- `production`: APK para instalação direta (Android, `buildType: apk`, arm64-v8a); iOS simulador por enquanto.
   `APP_ENV=production` sempre. Nunca defina `SENSUS_DEV_PROVIDER` em um perfil: ele injeta a chave de
   desenvolvimento no app (ver `docs/AI_PROVIDERS.md`).
 

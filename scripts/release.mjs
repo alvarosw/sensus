@@ -2,7 +2,8 @@
 // Rotinas de release do Sensus. Uso na raiz do repositório (ver docs/RELEASING.md):
 //   npm run release:version -- 1.0.1          grava a versão em app/app.config.ts e app/package.json
 //   npm run release:check [-- <apk>]          testes, typecheck e (se houver APK) varredura de segredos
-//   npm run release:android [-- preview]      build Android local com EAS -> dist/sensus-<versão>[-perfil].apk
+//   npm run release:android [-- preview|emulator]  build Android local com EAS -> dist/sensus-<versão>[-perfil].apk
+//                                             (production: só arm64-v8a; emulator: só x86_64, para QA)
 //   npm run release:ios                       build iOS na nuvem EAS (simulador), imprime o link
 //   npm run release:github [-- --run]         imprime (ou, com --run, executa) o gh release create
 import { spawnSync } from 'node:child_process';
@@ -21,7 +22,7 @@ const EASIGNORE = join(ROOT, '.easignore');
 const DB_ASSET = 'app/assets/sensus.db'; // banco de leitura empacotado no APK (gitignored; ver sync-db)
 const SEMVER = /^\d+\.\d+\.\d+$/;
 const VERSION_LINE = /^const APP_VERSION = '(\d+\.\d+\.\d+)';$/m;
-const PROFILES = ['production', 'preview'];
+const PROFILES = ['production', 'preview', 'emulator'];
 
 function fail(message) {
   console.error(`release: ${message}`);
