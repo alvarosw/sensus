@@ -303,3 +303,25 @@ describe('perguntas por lente, anexos, foco e aprofundamento', () => {
     expect(() => deepenMessages({ text: '' }, 'nope' as never)).toThrow(RangeError);
   });
 });
+
+describe('prompt: citação logo após cada frase e rótulo de inferência exato', () => {
+  it('manda citar logo após cada frase factual e não deixar frase sem citação por causa da posição', () => {
+    const sys = buildSystemPrompt();
+    expect(sys).toContain('Logo após cada frase factual');
+    expect(sys).toContain('Frase factual. [[cite_id]]');
+    expect(sys).toContain('Cada frase factual tem a sua citação');
+  });
+
+  it('manda começar inferências com exatamente "(Inferência)" e só a frase de inferência num parágrafo misto', () => {
+    const sys = buildSystemPrompt();
+    expect(sys).toContain('começam com exatamente "(Inferência)"');
+    expect(sys).toContain('comece com "(Inferência)" só a frase de inferência');
+    const user = summaryMessages({ text: contextText })[1]!.content;
+    expect(user).toContain('Logo após cada frase factual, a citação [[cite_id]]');
+    expect(user).toContain('Frases de inferência começam com "(Inferência)"');
+  });
+
+  it('a versão do resumo mudou com o prompt (invalida o cache de resumos antigos)', () => {
+    expect(SUMMARY_PROMPT_VERSION).toBe('resumo-v3');
+  });
+});

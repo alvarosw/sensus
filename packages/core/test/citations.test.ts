@@ -22,10 +22,10 @@ describe('parseCited', () => {
 
   it('classifica inferências, sentenças sem citação e ids só inválidos', () => {
     const segs = parseCited(
-      '(Inferência) A humildade é um modelo para a igreja. Sem fonte aqui. Afirmação falsa [[nope]].',
+      'Sem fonte aqui. (Inferência) A humildade é um modelo para a igreja. Afirmação falsa [[nope]].',
       VALID,
     );
-    expect(segs.map((s) => s.kind)).toEqual(['inference', 'uncited', 'uncited']);
+    expect(segs.map((s) => s.kind)).toEqual(['uncited', 'inference', 'uncited']);
     expect(segs[2]?.invalidCites).toEqual(['nope']);
   });
 
@@ -126,5 +126,121 @@ describe('avisos de ausência são estrutura', () => {
   it('"o contexto não traz fontes ..." é aviso, mas "sem fonte" continua sendo afirmação sem citação', () => {
     const segs = parseCited('O contexto não traz fontes rotuladas para esta passagem. Sem fonte aqui.', VALID);
     expect(segs.map((s) => s.kind)).toEqual(['structure', 'uncited']);
+  });
+});
+
+describe('rótulo de inferência: todas as grafias que o modelo usa', () => {
+  const LABELS = [
+    '(Inferência)',
+    '(inferência)',
+    '(Inferência):',
+    '**(Inferência)**',
+    '*(Inferência)*',
+    '_(Inferência)_',
+    '_Inferência:_',
+    '**Inferência:**',
+    'Inferência:',
+    '  (  Inferência  )  ',
+    '**(Inferência)**:',
+  ];
+
+  it.each(LABELS)('%j no início da frase classifica como inferência', (label) => {
+    const segs = parseCited(`${label} A humildade é um modelo para a igreja.`, VALID);
+    expect(segs.map((s) => s.kind)).toEqual(['inference']);
+  });
+
+  it.each(['- ', '* ', '1. ', '> ', '"', '“'])('marcador de lista ou aspa (%j) antes do rótulo', (prefix) => {
+    expect(parseCited(`${prefix}(Inferência) Aplique à igreja.`, VALID)[0]?.kind).toBe('inference');
+  });
+
+  it('um negrito inicial ("**Efeito na conexão lógica** (Inferência) …") também conta', () => {
+    // Trecho real (filipenses-2-5-8.answer.2), com o rótulo depois do título em negrito.
+    const text =
+      '**Efeito na conexão lógica** (Inferência) A omissão de γὰρ remove um marcador explícito de fundamentação (“pois”, “porque”) que ligaria o imperativo do v. 5 à exortação do v. 4. Sem essa partícula, a relação argumentativa torna-se menos explícita, embora o contexto imediato ainda possa sugerir continuidade.';
+    const segs = parseCited(text, VALID);
+    expect(segs.map((s) => s.kind)).toEqual(['inference', 'inference']);
+  });
+
+  it('"Inferência" sem dois-pontos nem parênteses é palavra comum, não rótulo', () => {
+    expect(parseCited('Inferência bíblica exige contexto.', VALID)[0]?.kind).toBe('uncited');
+  });
+
+  it('o rótulo também começa uma frase no meio do parágrafo', () => {
+    const segs = parseCited(
+      'Fato com fonte [[txt:blivre:50002005]]. (Inferência) A igreja deve imitar Cristo. **(Inferência)** Aplique.',
+      VALID,
+    );
+    expect(segs.map((s) => s.kind)).toEqual(['source', 'inference', 'inference']);
+  });
+
+  it('um rótulo sozinho depois de frases sem citação marca essas frases como inferência', () => {
+    // Trecho real (filipenses-1-27-2-4.answer.2): o rótulo vem no fim do item.
+    const text =
+      'A leitura *τινα* (plural neutro) não concorda com *παράκλησις*; gramaticalmente esperaria um substantivo plural neutro (ex.: “consolações”). (Inferência)';
+    expect(parseCited(text, VALID).map((s) => s.kind)).toEqual(['inference', 'inference', 'inference']);
+  });
+
+  it('a frase inicial com rótulo faz as frases sem citação seguintes serem inferência, até a primeira citação', () => {
+    const segs = parseCited('(Inferência) Imite Cristo. Sem fonte nesta frase. Com fonte [[txt:blivre:50002005]]. Nova sem fonte.', VALID);
+    expect(segs.map((s) => s.kind)).toEqual(['inference', 'inference', 'source', 'uncited']);
+  });
+});
+
+describe('atribuição: uma citação vale para as frases sem fonte anteriores no mesmo parágrafo', () => {
+  it('a citação no fim do parágrafo cobre as frases anteriores, com as citações do grupo', () => {
+    const segs = parseCited('Primeira afirmação. Segunda afirmação [[txt:blivre:50002005]].', VALID);
+    expect(segs.map((s) => s.kind)).toEqual(['source', 'source']);
+    expect(segs[0]?.cites).toEqual(['txt:blivre:50002005']);
+  });
+
+  it('a cobertura para na citação anterior', () => {
+    const segs = parseCited('Antiga sem fonte. Nova com fonte [[txt:blivre:50002005]]. Depois sem fonte. Fim.', VALID);
+    expect(segs.map((s) => s.kind)).toEqual(['source', 'source', 'uncited', 'uncited']);
+  });
+
+  it('inferência e frase de estrutura não contam como sem fonte e não interrompem a cobertura', () => {
+    const segs = parseCited(
+      'Fato sem fonte. (Inferência) Imite Cristo. Pergunta sobre isso? Outro fato [[txt:blivre:50002005]].',
+      VALID,
+    );
+    expect(segs.map((s) => s.kind)).toEqual(['source', 'inference', 'structure', 'source']);
+  });
+
+  it('parágrafos diferentes não se cobrem', () => {
+    expect(parseCited('Sem fonte.\n\nCom fonte [[txt:blivre:50002005]].', VALID).map((s) => s.kind)).toEqual([
+      'uncited',
+      'source',
+    ]);
+  });
+
+  it('citação inválida não cobre nada', () => {
+    expect(parseCited('Sem fonte. Inventada [[nope]].', VALID).map((s) => s.kind)).toEqual(['uncited', 'uncited']);
+  });
+
+  it('ponto dentro de parênteses não separa a frase (a citação fecha a frase inteira)', () => {
+    // Trecho real (filipenses-2-5-8.answer.1, na forma em que o modelo escreveu).
+    const segs = parseCited(
+      'O sentido é ativo (vide Fp 2:6…; BYZ diz "tó" e NA diz "ἁρπαγμὸν"). Outro ponto [[txt:blivre:50002005]].',
+      VALID,
+    );
+    expect(segs.map((s) => s.kind)).toEqual(['source', 'source']);
+  });
+
+  it.each([
+    'O contexto não traz registros para esta seção.',
+    'O contexto não traz comentários dispensacionalistas para esta passagem.',
+    'O contexto traz comentários de várias tradições.',
+    '**Observação**: O contexto não traz fontes de aliança sobre esta passagem.',
+    'Abaixo, cada tradição é resumida.',
+    'Qual é o sentido de ἁρπαγμὸν?',
+  ])('frase sobre o contexto ou pergunta é estrutura, não afirmação sem fonte: %s', (text) => {
+    expect(parseCited(text, VALID)[0]?.kind).toBe('structure');
+  });
+});
+
+describe('rótulo só no fim da primeira frase não faz o parágrafo inteiro ser inferência', () => {
+  it('a frase inicial que termina com "(Inferência)" marca só ela; a seguinte sem rótulo continua sem fonte', () => {
+    const segs = parseCited('Fato curto (Inferência). Outra frase sem fonte.', VALID);
+    expect(segs.map((s) => s.kind)).toEqual(['inference', 'uncited']);
   });
 });

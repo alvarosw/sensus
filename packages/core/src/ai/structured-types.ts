@@ -64,12 +64,19 @@ export type Block =
   | { type: 'list'; ordered: boolean; items: { inlines: Inline[]; claim: ClaimInfo }[] }
   | { type: 'quote'; inlines: Inline[]; claim: ClaimInfo };
 
-/** Classificação de confiabilidade de um parágrafo/item (agrega as frases que o compõem). */
+/**
+ * Classificação de confiabilidade de um parágrafo/item (agrega as frases que o compõem).
+ * - inference: não há frase factual e há inferência (moldura azul; o rótulo "(Inferência)" não aparece);
+ * - source: todas as frases factuais têm citação (frases de inferência no meio são destacadas);
+ * - mixed: há ao menos uma frase factual sem citação. Vale exatamente quando `uncited` não está vazio;
+ * - structure: só títulos, rótulos, perguntas e avisos (sem moldura).
+ */
 export interface ClaimInfo {
-  /** source: todas as frases factuais citadas; inference: rotulado "(Inferência)"; mixed: há frases sem citação. */
   kind: 'source' | 'inference' | 'mixed' | 'structure';
-  /** Frases factuais sem citação (para destacar). */
+  /** Frases factuais sem citação, depois da atribuição (para destacar). Vazio se kind não for 'mixed'. */
   uncited: string[];
+  /** Frases de inferência (com o rótulo), para destacar dentro de um bloco que não é inferência. Adicionado em v0.5. */
+  inference: string[];
   morphConflicts: MorphConflict[];
 }
 

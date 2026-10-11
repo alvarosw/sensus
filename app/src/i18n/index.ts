@@ -28,7 +28,6 @@ const pt = {
   'study.viewSources': 'Ver fontes',
   'study.deepen': 'Aprofundar',
   'common.showAll': 'Mostrar todos ({count})',
-  'rich.uncited': 'Contém afirmação sem fonte',
   'rich.morphConflict': 'Análise gramatical diverge do token citado (esperado: {expected}).',
   'rich.morphTerm': 'Termo usado pela IA: {term}',
   'sheet.openFull': 'Abrir fonte completa',

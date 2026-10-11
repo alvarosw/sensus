@@ -1,7 +1,7 @@
 // Texto rico da resposta da IA: subconjunto de markdown + citações inline, tolerante a streaming.
 import type { MorphConflict, Token } from '../types';
 import { checkMorphClaims } from './morphcheck';
-import { parseCited, safeParseLength } from './citations';
+import { parseCited, safeParseLength, stripInferenceLabels } from './citations';
 import type { Block, CiteRef, ClaimInfo, Inline, RichTextContext } from './structured-types';
 
 export type { RichTextContext } from './structured-types';
@@ -159,7 +159,13 @@ export function parseInline(raw: string, ctx: RichTextContext, tokenByKey: Reado
   return mergeText(out);
 }
 
-/** Classificação de confiabilidade do bloco a partir das frases (mesma lógica de parseCited). */
+/**
+ * Classificação de confiabilidade do bloco a partir das frases (ver parseCited e attributeCitations).
+ * - inference: não há frase factual; há frase de inferência (o bloco inteiro ganha a moldura);
+ * - source: há frases factuais e nenhuma sem citação (frases de inferência, se houver, são destacadas);
+ * - mixed: há ao menos uma frase factual sem citação; `uncited` lista exatamente essas frases;
+ * - structure: só títulos, rótulos, perguntas e avisos.
+ */
 export function claimOf(raw: string, ctx: RichTextContext, tokenMap: ReadonlyMap<string, Token>): ClaimInfo {
   const segments = parseCited(raw, ctx.citeIds);
   const checked = checkMorphClaims(segments, tokenMap);
@@ -170,17 +176,18 @@ export function claimOf(raw: string, ctx: RichTextContext, tokenMap: ReadonlyMap
     }
   }
   const factual = segments.filter((s) => s.kind === 'source' || s.kind === 'uncited');
+  const uncited = segments.filter((s) => s.kind === 'uncited').map((s) => s.text);
+  const inference = segments.filter((s) => s.kind === 'inference').map((s) => s.text);
   let kind: ClaimInfo['kind'];
-  if (factual.length === 0) {
-    kind = segments.some((s) => s.kind === 'inference') ? 'inference' : 'structure';
-  } else {
-    kind = factual.some((s) => s.kind === 'uncited') ? 'mixed' : 'source';
-  }
-  return {
-    kind,
-    uncited: factual.filter((s) => s.kind === 'uncited').map((s) => s.text),
-    morphConflicts: conflicts,
-  };
+  if (factual.length === 0) kind = inference.length > 0 ? 'inference' : 'structure';
+  else kind = uncited.length > 0 ? 'mixed' : 'source';
+  return { kind, uncited, inference, morphConflicts: conflicts };
+}
+
+/** Texto a exibir de uma afirmação: sem o rótulo quando a moldura de inferência já o mostra. */
+function displayText(text: string, claim: ClaimInfo): string {
+  const shown = claim.kind === 'inference' ? stripInferenceLabels(text) : text;
+  return shown.replace(/[ \t]{2,}/g, ' ');
 }
 
 type Acc =
@@ -200,7 +207,7 @@ export function parseRichText(text: string, ctx: RichTextContext): Block[] {
     if (key && !tokenByKey.has(key)) tokenByKey.set(key, t.cite_id);
   }
 
-  const lines = text.replace(/\r\n?/g, '\n').split('\n');
+  const lines = text.normalize('NFC').replace(/\r\n?/g, '\n').split('\n');
   if (text.length > 0 && !text.endsWith('\n')) {
     const i = lines.length - 1;
     lines[i] = lines[i]!.slice(0, safeParseLength(lines[i]!));
@@ -215,15 +222,18 @@ export function parseRichText(text: string, ctx: RichTextContext): Block[] {
     if (acc.kind === 'list') {
       const items = acc.items
         .filter((t) => t.trim())
-        .map((t) => ({ inlines: parseInline(t, ctx, tokenByKey), claim: claimOf(t, ctx, tokenMap) }))
+        .map((t) => {
+          const claim = claimOf(t, ctx, tokenMap);
+          return { inlines: parseInline(displayText(t, claim), ctx, tokenByKey), claim };
+        })
         .filter((i) => i.inlines.length > 0);
       if (items.length > 0) blocks.push({ type: 'list', ordered: acc.ordered, items });
     } else {
       const joined = acc.lines.join(' ').trim();
       if (joined) {
-        const inlines = parseInline(joined, ctx, tokenByKey);
+        const claim = claimOf(joined, ctx, tokenMap);
+        const inlines = parseInline(displayText(joined, claim), ctx, tokenByKey);
         if (inlines.length > 0) {
-          const claim = claimOf(joined, ctx, tokenMap);
           blocks.push(acc.kind === 'quote' ? { type: 'quote', inlines, claim } : { type: 'paragraph', inlines, claim });
         }
       }

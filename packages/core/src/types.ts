@@ -243,8 +243,10 @@ export interface CitedSegment {
   /** cite_ids citados pela IA mas ausentes do contexto. */
   invalidCites: string[];
   /**
-   * source = afirmação apoiada em fonte; inference = rotulada pela IA como inferência/aplicação;
-   * uncited = afirmação sem citação; structure = título, rótulo de seção ou aviso de ausência (não é fato).
+   * source = afirmação apoiada em fonte (inclui a frase sem citação própria coberta pela citação seguinte
+   * do mesmo parágrafo; então cites traz as citações do grupo); inference = rotulada pela IA como
+   * "(Inferência)" (início ou fim da frase); uncited = afirmação factual sem citação;
+   * structure = título, rótulo de seção, pergunta ou aviso sobre o contexto (não é fato).
    */
   kind: 'source' | 'inference' | 'uncited' | 'structure';
   /**

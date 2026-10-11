@@ -432,8 +432,9 @@ export function Caret() {
 
 /**
  * Moldura de afirmação da IA (proto: .claim). kind vem de ClaimInfo:
- * - inference: fundo azul, borda esquerda e rótulo "Inferência";
- * - mixed: rodapé "Contém afirmação sem fonte" (frases sem fonte sublinhadas em pontilhado pelo chamador, use uncitedStyle);
+ * - inference: fundo azul, borda esquerda e rótulo "Inferência" (o texto vem sem o rótulo);
+ * - source / mixed: sem moldura. Em 'mixed', as frases sem fonte são sublinhadas em pontilhado pelo chamador
+ *   (useUncitedStyle), sem rodapé: só as frases realmente sem citação aparecem;
  * - morphConflict: aviso âmbar com a análise do token citado.
  * onMore abre o menu ⋯ (Detalhar / De onde vem isso? / Perguntar sobre isto).
  */
@@ -475,7 +476,6 @@ export function ClaimFrame({
           </Pressable>
         )}
       </View>
-      {kind === 'mixed' && <Txt v="meta" color="warnText" style={{ fontSize: 11 }}>Contém afirmação sem fonte</Txt>}
       {morphWarning && (
         <View style={{ backgroundColor: c.warn, borderRadius: radius.md, paddingHorizontal: 9, paddingVertical: 6 }}>
           <Txt v="bodySm" color="warnText" bold style={{ fontSize: 12.5 }}>{morphWarning}</Txt>

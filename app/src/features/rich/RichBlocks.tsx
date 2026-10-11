@@ -1,6 +1,7 @@
 // Renderiza Block[] (parseRichText / parseStructured*) com o design system: citações coloridas por tipo,
-// grego tocável, estados de confiabilidade (fonte, inferência, sem fonte, divergência morfológica) e o
-// menu ⋯ de cada afirmação (Detalhar este ponto / De onde vem isso? / Perguntar sobre isto).
+// grego tocável, estados de confiabilidade (moldura de inferência; frases de inferência destacadas; frases
+// sem fonte com sublinhado pontilhado; divergência morfológica) e o menu ⋯ de cada afirmação
+// (Detalhar este ponto / De onde vem isso? / Perguntar sobre isto).
 import { memo, useMemo, useState, type ReactNode } from 'react';
 import { Pressable, Text, View, type TextStyle } from 'react-native';
 import { type Block, type CiteRef, type ClaimInfo, type Inline } from '@sensus/core';
@@ -182,7 +183,6 @@ function inlinesToText(inlines: readonly Inline[]): string {
   return inlines
     .map((i) => (i.type === 'cite' ? '' : i.text))
     .join('')
-    .replace(/^\s*\(Infer[eê]ncia\)\s*/i, '')
     .replace(/\s+/g, ' ')
     .replace(/ ([.,;:!?])/g, '$1')
     .trim();
@@ -370,7 +370,7 @@ function MiniSource({ citeId, onOpen }: { citeId: string; onOpen: (id: string) =
 interface Mark {
   start: number;
   end: number;
-  kind: 'uncited' | 'morph';
+  kind: 'uncited' | 'inference' | 'morph';
 }
 
 function escapeRe(s: string): string {
@@ -387,18 +387,23 @@ function fold(s: string): string {
   return out;
 }
 
+/** Rótulo de inferência no texto já visível (o Markdown já tirou os asteriscos). */
+const INFERENCE_VISIBLE_LABEL = /^\s*(?:\(\s*infer[êe]ncia\s*\)\s*:?|infer[êe]ncia\s*:)\s*/i;
+
+/** Acha uma frase (das listas do ClaimInfo) no texto visível; ignora a marcação Markdown que o texto já não tem. */
+function markSentence(texts: string, sentence: string, kind: 'uncited' | 'inference', marks: Mark[]): void {
+  const words = sentence.replace(/[*_`]/g, '').match(/\S+/g);
+  if (!words) return;
+  const m = new RegExp(words.map(escapeRe).join('\\s*'), 'u').exec(texts);
+  if (m) marks.push({ start: m.index, end: m.index + m[0].length, kind });
+}
+
 function marksFor(texts: string, claim: ClaimInfo | null): Mark[] {
   if (!claim) return [];
   const marks: Mark[] = [];
-  if (claim.kind === 'mixed') {
-    for (const sentence of claim.uncited) {
-      const words = sentence.match(/\S+/g);
-      if (!words) continue;
-      const re = new RegExp(words.map(escapeRe).join('\\s*'), 'u');
-      const m = re.exec(texts);
-      if (m) marks.push({ start: m.index, end: m.index + m[0].length, kind: 'uncited' });
-    }
-  }
+  // Frases sem citação (só em blocos 'mixed') e frases de inferência dentro de um bloco que não é inferência.
+  if (claim.kind === 'mixed') for (const sentence of claim.uncited) markSentence(texts, sentence, 'uncited', marks);
+  if (claim.kind !== 'inference') for (const sentence of claim.inference) markSentence(texts, sentence, 'inference', marks);
   if (claim.morphConflicts.length > 0) {
     const folded = fold(texts);
     for (const conflict of claim.morphConflicts) {
@@ -433,34 +438,21 @@ function Inlines({
   const { c } = useTheme();
   const uncited = useUncitedStyle();
   const base = v === 'claim' ? fontFamilies.ui : v === 'lensTitle' ? fontFamilies.readSemibold : fontFamilies.uiBold;
-
-  // Remove o rótulo "(Inferência)": a moldura já o mostra.
-  const items = useMemo(() => {
-    let stripped = false;
-    return inlines.map((inl) => {
-      if (!stripped && inl.type !== 'cite') {
-        stripped = true;
-        if (claim?.kind === 'inference' && inl.type === 'text') {
-          return { ...inl, text: inl.text.replace(/^\s*\(Infer[eê]ncia\)\s*/i, '') };
-        }
-      }
-      return inl;
-    });
-  }, [inlines, claim?.kind]);
+  // O rótulo "(Inferência)" já sai do texto da moldura no núcleo (parseRichText); aqui só se desenha.
 
   const { texts, offsets } = useMemo(() => {
     let full = '';
     const offs: number[] = [];
-    for (const inl of items) {
+    for (const inl of inlines) {
       offs.push(full.length);
       if (inl.type !== 'cite') full += inl.text;
     }
     return { texts: full, offsets: offs };
-  }, [items]);
+  }, [inlines]);
   const marks = useMemo(() => marksFor(texts, claim), [texts, claim]);
 
   const nodes: ReactNode[] = [];
-  items.forEach((inl, i) => {
+  inlines.forEach((inl, i) => {
     if (inl.type === 'text') {
       const start = offsets[i]!;
       const end = start + inl.text.length;
@@ -477,12 +469,32 @@ function Inlines({
       const parts: ReactNode[] = [];
       const push = (a: number, b: number, kind?: Mark['kind']) => {
         if (b <= a) return;
+        const piece = inl.text.slice(a - start, b - start);
+        if (kind === 'inference') {
+          // Frase de inferência dentro de um bloco com fonte: fundo azul e etiqueta no lugar do "(Inferência)".
+          const label = INFERENCE_VISIBLE_LABEL.exec(piece);
+          parts.push(
+            <Text key={`${i}-${a}`} style={{ backgroundColor: c.inf }}>
+              {label ? (
+                <Text style={{ fontFamily: fontFamilies.uiBold, fontSize: 10, letterSpacing: 0.6, color: c.infBorder }}>INFERÊNCIA  </Text>
+              ) : null}
+              {label ? piece.slice(label[0].length) : piece}
+            </Text>,
+          );
+          return;
+        }
         parts.push(
           <Text
             key={`${i}-${a}`}
-            style={kind === 'uncited' ? uncited : kind === 'morph' ? { textDecorationLine: 'underline', textDecorationColor: c.warnText } : undefined}
+            style={
+              kind === 'uncited'
+                ? uncited
+                : kind === 'morph'
+                  ? { textDecorationLine: 'underline', textDecorationColor: c.warnText }
+                  : undefined
+            }
           >
-            {inl.text.slice(a - start, b - start)}
+            {piece}
           </Text>,
         );
       };
@@ -509,7 +521,7 @@ function Inlines({
         </Greek>,
       );
     } else {
-      const prev = items[i - 1];
+      const prev = inlines[i - 1];
       const needsSpace = !prev || prev.type === 'cite' ? false : !/\s$/.test(prev.text);
       nodes.push(
         <Text key={i}>

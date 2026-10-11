@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import type { DatabaseSync } from 'node:sqlite';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import {
@@ -6,10 +7,12 @@ import {
   buildCiteIndex,
   buildPanel,
   buildRichTextContext,
+  claimsOf,
   commentatorName,
   formatShortRef,
   parseRichText,
   Repo,
+  stripInferenceLabels,
   serializePanel,
   titleCaseHeadword,
   wordKey,
@@ -230,5 +233,191 @@ describe('parseRichText', () => {
   it('blocksToPlainText rotula citações e marca inválidas', () => {
     const plain = blocksToPlainText(parseRichText('Texto [[txt:blivre:50002005]] e [[txt:x:1]].', ctx));
     expect(plain).toBe('Texto [Bíblia Livre 2:5] e [inválida: txt:x:1].');
+  });
+});
+
+/** Contexto que aceita os cite_ids do próprio trecho (os trechos reais citam ids de outras passagens). */
+function ctxFor(text: string): RichTextContext {
+  const citeIds = new Set(ctx.citeIds);
+  for (const m of text.matchAll(/(?:txt|tok|lex|com|dic|xr|ent):[A-Za-z0-9:._-]+/g)) citeIds.add(m[0]);
+  return { ...ctx, citeIds };
+}
+
+const LABEL_RE = /infer[êe]ncia/i;
+
+describe('blocos: rótulo de inferência e atribuição com trechos reais', () => {
+  it('parágrafo de aplicação (Fp 1:27-2:4, resumo): três inferências na mesma moldura, sem o rótulo no texto', () => {
+    const text = [
+      '(Inferência) A conduta "digna do evangelho" exige coerência entre confissão e vida comunitária, especialmente sob pressão externa.',
+      '(Inferência) A unidade não é uniformidade forçada, mas fruto da humildade que considera o outro superior, imitando a mentalidade de Cristo (2:5-11).',
+      '(Inferência) O sofrimento por Cristo não é acidente, mas graça concedida que valida a cidadania celestial e fortalece o testemunho coletivo.',
+    ].join('\n');
+    const blocks = parseRichText(text, ctxFor(text));
+    expect(blocks).toHaveLength(1);
+    const para = blocks[0] as Extract<Block, { type: 'paragraph' }>;
+    expect(para.claim.kind).toBe('inference');
+    expect(para.claim.uncited).toEqual([]);
+    expect(visibleText(blocks)).not.toMatch(LABEL_RE);
+    expect(visibleText(blocks)).toContain('A conduta "digna do evangelho"');
+  });
+
+  it.each([
+    ['**(Inferência)** Aplique à igreja.', '(Inferência)'],
+    ['*(Inferência)* Aplique à igreja.', '*(Inferência)*'],
+    ['_Inferência:_ Aplique à igreja.', '_Inferência:_'],
+    ['Inferência: Aplique à igreja.', 'Inferência:'],
+    ['(inferência) Aplique à igreja.', '(inferência)'],
+    ['   (Inferência)    Aplique   à igreja.', 'extra spaces'],
+    ['"(Inferência) Aplique à igreja."', 'aspas'],
+  ])('parágrafo que começa com %j vira inferência, sem o rótulo (%s)', (text) => {
+    const blocks = parseRichText(text, ctxFor(text));
+    expect(blocks[0]).toMatchObject({ type: 'paragraph', claim: { kind: 'inference' } });
+    expect(visibleText(blocks)).not.toMatch(LABEL_RE);
+    expect(visibleText(blocks)).toContain('Aplique à igreja.');
+  });
+
+  it('itens de lista e citação com as variantes do rótulo', () => {
+    const text = '- **(Inferência)** Aplique à igreja.\n- *(Inferência)* Imite a humildade.\n- _Inferência:_ Sirva.\n\n> (inferência) Ame.';
+    const blocks = parseRichText(text, ctxFor(text));
+    const list = blocks[0] as Extract<Block, { type: 'list' }>;
+    expect(list.items.map((i) => i.claim.kind)).toEqual(['inference', 'inference', 'inference']);
+    expect(blocks[1]).toMatchObject({ type: 'quote', claim: { kind: 'inference' } });
+    expect(visibleText(blocks)).not.toMatch(LABEL_RE);
+  });
+
+  it('rótulo no meio do parágrafo: a frase de inferência é destacada e o rótulo continua visível (sem moldura)', () => {
+    const text = 'Fato com fonte [[txt:blivre:50002005]]. (Inferência) A igreja deve imitar Cristo.';
+    const blocks = parseRichText(text, ctxFor(text));
+    const para = blocks[0] as Extract<Block, { type: 'paragraph' }>;
+    expect(para.claim.kind).toBe('source');
+    expect(para.claim.inference).toEqual(['(Inferência) A igreja deve imitar Cristo.']);
+    expect(visibleText(blocks)).toContain('(Inferência) A igreja deve imitar Cristo.');
+  });
+
+  it('rótulo final de item real (Fp 2:5-8 e 1:27-2:4): o item inteiro é inferência', () => {
+    const text =
+      '- A leitura *τινα* (plural neutro) não concorda com *παράκλησις*; gramaticalmente esperaria um substantivo plural neutro (ex.: “consolações”). (Inferência)';
+    const blocks = parseRichText(text, ctxFor(text));
+    const list = blocks[0] as Extract<Block, { type: 'list' }>;
+    expect(list.items[0]?.claim.kind).toBe('inference');
+    expect(list.items[0]?.claim.uncited).toEqual([]);
+    expect(visibleText(blocks)).not.toMatch(LABEL_RE);
+  });
+
+  it('negrito inicial antes do rótulo (Fp 2:5-8, resposta): a inferência tem moldura e o título fica', () => {
+    const text =
+      '**Efeito na conexão lógica**  \n(Inferência) A omissão de γὰρ remove um marcador explícito de fundamentação (“pois”, “porque”) que ligaria o imperativo do v. 5 à exortação do v. 4. Sem essa partícula, a relação argumentativa torna-se menos explícita, embora o contexto imediato ainda possa sugerir continuidade.';
+    const blocks = parseRichText(text, ctxFor(text));
+    expect(blocks[0]).toMatchObject({ type: 'paragraph', claim: { kind: 'inference', uncited: [] } });
+    expect(visibleText(blocks)).toContain('Efeito na conexão lógica');
+    expect(visibleText(blocks)).not.toMatch(LABEL_RE);
+  });
+
+  it('afirmação com citação no fim do item não aparece como sem fonte (Fp 1:27, léxico real)', () => {
+    const text =
+      '**G4866 συναθλέω (*sunathleō*)** — “lutar junto”, “combater em equipe”. Glosa: “to contend” [[tok:gnt:50001027:270]]. Ocorre em Fp 1:27 e 4:3 [[lex:stepbible-tbesg:G4866]].';
+    const blocks = parseRichText(text, ctxFor(text));
+    const para = blocks[0] as Extract<Block, { type: 'paragraph' }>;
+    expect(para.claim.kind).toBe('source');
+    expect(para.claim.uncited).toEqual([]);
+  });
+
+  it('frase sem citação antes do último grupo de citações é coberta; a depois dele continua sem fonte', () => {
+    const text =
+      'Em 1:27 é particípio presente ativo: **συναθλοῦντες** [[tok:gnt:50001027:270]], indicando ação simultânea. *Particípio* = forma verbal que funciona como adjetivo.';
+    const blocks = parseRichText(text, ctxFor(text));
+    const para = blocks[0] as Extract<Block, { type: 'paragraph' }>;
+    expect(para.claim.kind).toBe('mixed');
+    expect(para.claim.uncited).toEqual(['*Particípio* = forma verbal que funciona como adjetivo.']);
+  });
+
+  it('"Observação" com o contexto (Fp 1:27-2:4, interpretação real) é estrutura, e "Abaixo…" também', () => {
+    const text = [
+      '**Observação**: O contexto não traz comentários de tradições dispensacionalista ou de aliança (covenant) sobre esta passagem; portanto, não é possível apresentar leituras simétricas dessas correntes aqui.',
+      'Abaixo, cada um é resumido com suas ênfases.',
+    ].join('\n\n');
+    const blocks = parseRichText(text, ctxFor(text));
+    const obs = blocks[0] as Extract<Block, { type: 'paragraph' }>;
+    expect(obs.claim.uncited).toEqual(['portanto, não é possível apresentar leituras simétricas dessas correntes aqui.']);
+    const abaixo = blocks[1] as Extract<Block, { type: 'paragraph' }>;
+    expect(abaixo.claim.kind).toBe('structure');
+  });
+
+  it('invariante: uncited não vazio exatamente quando kind é mixed', () => {
+    const text = [
+      'Sem fonte nenhuma.',
+      '',
+      'Fato [[txt:blivre:50002005]]. Outro sem fonte.',
+      '',
+      '(Inferência) Aplique. Fato com fonte [[txt:blivre:50002005]].',
+      '',
+      '- Item sem fonte.\n- Item [[txt:blivre:50002005]].',
+    ].join('\n');
+    for (const claim of claimsOf(parseRichText(text, ctxFor(text)))) {
+      expect(claim.uncited.length > 0).toBe(claim.kind === 'mixed');
+    }
+  });
+});
+
+describe('stripInferenceLabels', () => {
+  it('tira o rótulo de cada frase sem colar as frases vizinhas', () => {
+    expect(stripInferenceLabels('(Inferência) A conduta. (Inferência) A unidade. Fim.')).toBe('A conduta. A unidade. Fim.');
+    expect(stripInferenceLabels('Cristo. (Inferência) A obediência.')).toBe('Cristo. A obediência.');
+    expect(stripInferenceLabels('**(Inferência)** Aplique. _Inferência:_ Sirva.')).toBe('Aplique. Sirva.');
+  });
+
+  it('não mexe em "inferência" no meio de uma frase comum', () => {
+    expect(stripInferenceLabels('Uma inferência: o texto é claro.')).toBe('Uma inferência: o texto é claro.');
+  });
+});
+
+describe('stripInferenceLabels com rótulo seguido de pontuação', () => {
+  it('"texto (Inferência)." vira "texto." sem espaço sobrando', () => {
+    expect(stripInferenceLabels('Fato curto (Inferência).')).toBe('Fato curto.');
+  });
+});
+
+describe('inferência no celular: listas, negrito, citação e rótulo no meio', () => {
+  const FIXTURE_PATH = new URL('../../../app/dev/fixtures/inference-phone.json', import.meta.url);
+  const phone = (): string => (JSON.parse(readFileSync(FIXTURE_PATH, 'utf8')) as { text: string }).text;
+
+  it('itens de lista com rótulo dentro do negrito saem sem "**" sobrando e viram inferência', () => {
+    const text = phone().split('\n').filter((l) => l.startsWith('- ')).join('\n');
+    const blocks = parseRichText(text, ctxFor(text));
+    const list = blocks[0] as Extract<Block, { type: 'list' }>;
+    expect(list.items).toHaveLength(5);
+    // Itens só com inferência viram moldura; o item com cláusula factual citada (";") fica 'source' e destaca a frase.
+    expect(list.items.map((i) => i.claim.kind)).toEqual(['inference', 'source', 'inference', 'source', 'inference']);
+    for (const item of list.items) expect(item.claim.inference.length).toBeGreaterThan(0);
+    // O item com moldura não mostra o rótulo nem asteriscos; os itens parciais mantêm o rótulo (destaque azul na frase).
+    const framed = list.items[0]!;
+    const shown = visibleText([{ type: 'paragraph', inlines: framed.inlines, claim: framed.claim }]);
+    expect(shown).not.toMatch(LABEL_RE);
+    expect(shown).not.toContain('**');
+    expect(shown).toContain('Ensine unidade sem exigir uniformidade em tudo: neste trecho');
+  });
+
+  it('inferência parcial dentro de um item com citação: a frase de inferência fica destacada, o rótulo continua visível', () => {
+    const text = '- (Inferência) **Examine a liderança**, perguntando se as decisões são movidas por humildade. O texto contrapõe essas motivações [[txt:blivre:50002003]].';
+    const blocks = parseRichText(text, ctxFor(text));
+    const item = (blocks[0] as Extract<Block, { type: 'list' }>).items[0]!;
+    expect(item.claim.kind).toBe('source');
+    expect(item.claim.inference).toEqual(['(Inferência) **Examine a liderança**, perguntando se as decisões são movidas por humildade.']);
+    expect(visibleText(blocks)).toContain('(Inferência) Examine a liderança');
+  });
+
+  it('frase de inferência com citação no fim, no meio do parágrafo', () => {
+    const text = 'Fato com fonte [[txt:blivre:50002005]]. (Inferência) Imite Cristo [[txt:blivre:50002008]].';
+    const blocks = parseRichText(text, ctxFor(text));
+    const para = blocks[0] as Extract<Block, { type: 'paragraph' }>;
+    expect(para.claim.kind).toBe('source');
+    expect(para.claim.inference).toEqual(['(Inferência) Imite Cristo.']);
+  });
+
+  it('inferência com citação no próprio bloco: a moldura continua inferência', () => {
+    const text = '(Inferência) Imite Cristo [[txt:blivre:50002008]].';
+    const blocks = parseRichText(text, ctxFor(text));
+    expect(blocks[0]).toMatchObject({ type: 'paragraph', claim: { kind: 'inference' } });
+    expect(visibleText(blocks).trim()).toBe('Imite Cristo .');
   });
 });
