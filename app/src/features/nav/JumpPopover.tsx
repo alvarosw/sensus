@@ -35,9 +35,10 @@ export function JumpPopover({ onClose }: { onClose: () => void }) {
       useReaderNav.getState().goChapter(ref.book.num, ref.chapter);
       return;
     }
-    const s = useStudy.getState();
-    s.setSelection(ref.range.start, ref.range.end);
-    s.jumpTo(ref.range.start);
+    // Seleção primeiro (abre a folha), depois o pedido de rolagem: um só caminho (nav-store), que carrega o
+    // capítulo do alvo (inclusive de outro livro) antes de rolar.
+    useStudy.getState().setSelection(ref.range.start, ref.range.end);
+    useReaderNav.getState().goVerse(ref.range.start, { flash: true });
   };
 
   return (

@@ -3,6 +3,7 @@ import { create } from 'zustand';
 import { clearTranslationCache } from './engine';
 import { downloadModel, modelReady, removeModel, translationSupported } from './native';
 import { readTranslatePrefs, writeTranslatePrefs } from './storage';
+import { claimOfferOwner } from './offer-session';
 
 /** unknown: ainda não verificado; missing: não baixado; downloading; ready: pronto; error: última tentativa falhou. */
 export type ModelStatus = 'unknown' | 'missing' | 'downloading' | 'ready' | 'error';
@@ -14,6 +15,12 @@ interface TranslateState {
   enabled: boolean;
   /** "Ativar" ou "Agora não" já foram escolhidos: a oferta não volta a aparecer. */
   offerAnswered: boolean;
+  /**
+   * Quem mostra a oferta nesta sessão do app (id do painel que a exibiu primeiro). Depois que ela apareceu uma
+   * vez, os outros painéis não a repetem até o app ser fechado (além do "Agora não" persistido).
+   */
+  offerOwner: number | null;
+  claimOffer(id: number): void;
   model: ModelStatus;
   load(): Promise<void>;
   /** Liga (baixa o modelo se faltar) ou desliga (mantém o modelo). */
@@ -54,6 +61,8 @@ export const useTranslate = create<TranslateState>()((set, get) => {
     supported: translationSupported,
     enabled: false,
     offerAnswered: false,
+    offerOwner: null,
+    claimOffer: (id) => set((s) => ({ offerOwner: claimOfferOwner(s.offerOwner, id) })),
     model: 'unknown',
 
     load: async () => {

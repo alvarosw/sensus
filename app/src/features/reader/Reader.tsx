@@ -16,6 +16,7 @@ import { SelectionHandles } from './Handles';
 import { TOTAL_CHAPTERS, chapterAt, loadChapter, vidChapterIndex, type ChapterData } from './chapters';
 import { LINE, ReaderGeometry } from './geometry';
 import { useReaderNav, type NavRequest } from './nav-store';
+import { createLoadSequencer, mayAutoScroll, planNavigation } from './nav-sequencing';
 import { READER, SOURCE_LABEL } from './strings';
 import { sheetCover } from './viewport';
 
@@ -99,6 +100,10 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
   const anchorRef = useRef<{ idx: number; y: number; scroll: number } | null>(null);
 
   const pendingRef = useRef<Pending | null>(null);
+  // Cargas da janela: a última vence (uma carga antiga que termina depois não sobrescreve a nova), e enquanto
+  // uma navegação carrega, a lista visível ainda é a antiga: título e rolagem automática ficam parados.
+  const [loads] = useState(createLoadSequencer);
+  const loadingNav = useRef(false);
   // Rolagem de um pedido já aplicado que ainda acompanha o layout (ver o efeito de rolagem pendente).
   const settleRef = useRef<{ p: Pending; until: number } | null>(null);
   const [pendingTick, setPendingTick] = useState(0);
@@ -116,21 +121,28 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
     async (req: Omit<Pending, 'align' | 'startedAt'> & { align?: Pending['align'] }, source: string) => {
       const idx = vidChapterIndex(req.vid);
       const hi = Math.min(idx + 1, TOTAL_CHAPTERS - 1);
+      const token = loads.begin();
+      loadingNav.current = true;
       setHidden(true);
       try {
         const ds = await Promise.all([idx, ...(hi > idx ? [hi] : [])].map((i) => loadChapter(repo, source, i)));
+        // Outro pedido começou depois deste: ele é que vale (não mexe em janela, rolagem nem erro).
+        if (!loads.isCurrent(token)) return;
         sourceRef.current = source;
         setChapters(Object.fromEntries(ds.map((d) => [d.idx, d])));
         setLoadedSource(source);
         setWin((w) => ({ lo: idx, hi, epoch: (w?.epoch ?? 0) + 1 }));
         loadingEdge.current = { prev: false, next: false };
         setPending({ align: 'comfort', ...req, reset: true, startedAt: Date.now() });
+        loadingNav.current = false;
         setError(null);
       } catch (e) {
+        if (!loads.isCurrent(token)) return;
+        loadingNav.current = false;
         setError(e instanceof Error ? e.message : String(e));
       }
     },
-    [repo, setPending],
+    [repo, setPending, loads],
   );
 
   // Abertura: ?start/&end (seleção + rolagem), ?go (versículo) ou a última posição lida.
@@ -206,15 +218,20 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
   const cellCtx = useMemo<CellCtx>(() => ({ geo, onCell }), [geo, onCell]);
 
   // ---- navegação (livros, "ir para", jumpTarget) ----
+  // Só consome o pedido quando a janela existe (antes disso ele fica na loja e é atendido ao montar o leitor).
+  const ready = win !== null;
   useEffect(() => {
-    if (!request || !winRef.current) return;
+    if (!request || !ready) return;
     useReaderNav.getState().consume(request.id);
-    const idx = vidChapterIndex(request.vid);
-    const w = winRef.current;
-    if (idx >= w.lo && idx <= w.hi && geo.hasChapter(idx) && sourceRef.current === loadedSource) {
-      setPending({ ...request, align: 'comfort', startedAt: Date.now() });
-    } else void reset({ ...request, align: 'comfort' }, sourceRef.current);
-  }, [request, geo, loadedSource, reset, setPending]);
+    const plan = planNavigation({
+      targetIdx: vidChapterIndex(request.vid),
+      win: winRef.current,
+      hasChapter: geo.hasChapter(vidChapterIndex(request.vid)),
+      sameSource: sourceRef.current === loadedSource,
+    });
+    if (plan === 'scroll') setPending({ ...request, align: 'comfort', startedAt: Date.now() });
+    else void reset({ ...request, align: 'comfort' }, sourceRef.current);
+  }, [request, geo, loadedSource, reset, setPending, ready]);
 
   useEffect(() => {
     if (jumpTarget == null) return;
@@ -289,8 +306,9 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
   // ---- título (posição) e última posição ----
   const persistTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const updatePosition = useCallback(() => {
-    // Enquanto a navegação não foi aplicada, a posição lida é a da lista antiga/montagem: não mexe no título.
-    if (pendingRef.current) return;
+    // Enquanto a navegação não foi aplicada (pendente ou ainda carregando), a posição lida é a da lista antiga:
+    // não mexe no título, senão ele volta ao capítulo de origem logo depois de "ir para".
+    if (pendingRef.current || loadingNav.current) return;
     const y = offsetRef.current;
     const list = geo.mountedChapters();
     if (list.length === 0) return;
@@ -444,14 +462,22 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
   );
   useEffect(() => {
     if (!selection || (detent !== 'peek' && detent !== 'half')) return;
+    // Tenta por ~3 s: uma navegação entre livros pode levar mais que um ou dois ciclos para carregar.
+    const MAX_TRIES = 25;
     let tries = 0;
     let timer: ReturnType<typeof setTimeout>;
     const run = () => {
-      if (dragRef.current || pendingRef.current || Date.now() - lastNavAt.current < 500) {
-        if (++tries < 8) timer = setTimeout(run, 120);
+      const ok = mayAutoScroll({
+        dragging: !!dragRef.current,
+        navPending: !!pendingRef.current,
+        loadingNav: loadingNav.current,
+        sinceNavMs: Date.now() - lastNavAt.current,
+      });
+      if (!ok) {
+        if (++tries < MAX_TRIES) timer = setTimeout(run, 120);
         return;
       }
-      if (!keepVisible(detent) && ++tries < 8) timer = setTimeout(run, 120);
+      if (!keepVisible(detent) && ++tries < MAX_TRIES) timer = setTimeout(run, 120);
     };
     timer = setTimeout(run, 60);
     return () => clearTimeout(timer);

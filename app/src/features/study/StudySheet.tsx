@@ -233,7 +233,7 @@ function Sheet({ topInset, active }: { topInset: number; active: boolean }) {
                 <Head detent={detent} />
               </View>
             </GestureDetector>
-            <SheetBody open={open} bottomInset={insets.bottom} onPeekLayout={setPeekContentH} onRailLayout={setRailBoxH} />
+            <SheetBody open={open} atFull={detent === 'full'} bottomInset={insets.bottom} onPeekLayout={setPeekContentH} onRailLayout={setRailBoxH} />
           </View>
         </Animated.View>
       )}
@@ -297,7 +297,7 @@ function Head({ detent }: { detent: Detent }) {
 // Ordem do conteúdo: espiar (fatos, escopo) → espaçador do trilho → lentes, numa só rolagem. O trilho fica
 // FORA da rolagem (sobreposto): toque funciona mesmo com a lista em inércia, e ele cola no topo ao rolar.
 
-function SheetBody({ open, bottomInset, onPeekLayout, onRailLayout }: { open: boolean; bottomInset: number; onPeekLayout: (h: number) => void; onRailLayout: (h: number) => void }) {
+function SheetBody({ open, atFull, bottomInset, onPeekLayout, onRailLayout }: { open: boolean; atFull: boolean; bottomInset: number; onPeekLayout: (h: number) => void; onRailLayout: (h: number) => void }) {
   const lensTarget = useStudy((s) => s.lensTarget);
   const setLens = useStudy((s) => s.setLens);
   const scroll = useRef<ScrollView>(null);
@@ -421,7 +421,9 @@ function SheetBody({ open, bottomInset, onPeekLayout, onRailLayout }: { open: bo
   };
 
   return (
-    <View style={{ flex: 1 }}>
+    // No detent cheio a folha chega à base da tela: a rolagem termina acima da barra de navegação do Android
+    // (inset inferior), senão links no meio do conteúdo, como "Ver no mapa", ficam atrás dela.
+    <View style={{ flex: 1, paddingBottom: atFull ? bottomInset : 0 }}>
       <ScrollView
         ref={scroll}
         testID="sheet-scroll"

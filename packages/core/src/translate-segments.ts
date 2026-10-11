@@ -46,7 +46,10 @@ const LEXICON_ABBR = [
   's\\.v', 'q\\.v',
 ];
 /** Siglas sem ponto (corpus e léxico) que não devem ser traduzidas. */
-const ACRONYMS = ['LXX', 'TH', 'NT', 'OT', 'LSJ', 'BDAG', 'TDNT', 'TBESG', 'TFLSJ'];
+const ACRONYMS = [
+  'LXX', 'TH', 'NT', 'OT', 'MT', 'LSJ', 'BDAG', 'BDB', 'TDNT', 'TBESG', 'TFLSJ', 'AS', 'Thayer', 'Strong', 'KJV', 'AV', 'RV',
+  'ASV', 'TR', 'Byz', 'NA27', 'NA28',
+];
 
 const BOOK_ALT = [...BOOK_ABBR, ...BOOK_NAMES]
   .sort((a, b) => b.length - a.length)
@@ -68,6 +71,8 @@ const PROTECTED = new RegExp(
     String.raw`(?<![\p{L}\p{N}])(?:[1-3]\s)?(?:${BOOK_NAMES.map((b) => b.replace(/\./g, '\\.')).join('|')})\s\d{1,3}(?:[:.,]\d{1,3}(?:[-–]\d{1,3})?)?(?![\p{L}\p{N}])`,
     String.raw`(?<![\p{L}])(?:${LEXICON_ABBR.join('|')})\.`,
     String.raw`(?<![\p{L}])(?:${ACRONYMS.join('|')})(?![\p{L}])`,
+    // Sigla entre parênteses (ex.: a abreviação de Abbott-Smith "(AS)"): ALL-CAPS de 1 a 6 letras.
+    String.raw`\(\p{Lu}{1,6}\)`,
   ].join('|'),
   'gu',
 );

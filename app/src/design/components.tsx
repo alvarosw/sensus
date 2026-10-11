@@ -485,10 +485,19 @@ export function ClaimFrame({
   );
 }
 
-/** Estilo de frase sem fonte dentro de uma afirmação (proto: .claim .uncited). */
+/**
+ * Estilo de frase sem fonte dentro de uma afirmação (proto: .claim .uncited).
+ * Android ignora textDecorationStyle (o sublinhado sai sólido e claro), então o aviso é um sublinhado
+ * `warnText` com fundo `warn` leve, que se lê nos dois temas. No web mantém o pontilhado do protótipo.
+ */
 export function useUncitedStyle(): TextStyle {
   const { c } = useTheme();
-  return { textDecorationLine: 'underline', textDecorationStyle: 'dotted', textDecorationColor: c.warnText };
+  return {
+    textDecorationLine: 'underline',
+    textDecorationStyle: Platform.OS === 'web' ? 'dotted' : undefined,
+    textDecorationColor: c.warnText,
+    backgroundColor: c.warn,
+  };
 }
 
 /** Separador horizontal fino. */

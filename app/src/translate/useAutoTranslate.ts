@@ -28,12 +28,17 @@ export interface AutoTranslation {
   retry(): void;
 }
 
+let panelSeq = 0;
+
 export function useAutoTranslate(text: string | null | undefined, lang: string | null | undefined): AutoTranslation {
   const loaded = useTranslate((s) => s.loaded);
   const supported = useTranslate((s) => s.supported);
   const enabled = useTranslate((s) => s.enabled);
   const offerAnswered = useTranslate((s) => s.offerAnswered);
   const answerOffer = useTranslate((s) => s.answerOffer);
+  const offerOwner = useTranslate((s) => s.offerOwner);
+  const claimOffer = useTranslate((s) => s.claimOffer);
+  const [panelId] = useState(() => ++panelSeq);
 
   const [showOriginal, setShowOriginal] = useState(false);
   const [attempt, setAttempt] = useState(0);
@@ -66,6 +71,13 @@ export function useAutoTranslate(text: string | null | undefined, lang: string |
     };
   }, [active, body, cached, attempt]);
 
+  // A oferta aparece em um só painel por sessão: o primeiro que a mostra a reivindica; os demais não a repetem.
+  const baseOffer = eligible && loaded && !enabled && !offerAnswered;
+  const offer = baseOffer && (offerOwner === null || offerOwner === panelId);
+  useEffect(() => {
+    if (offer && offerOwner === null) claimOffer(panelId);
+  }, [offer, offerOwner, claimOffer, panelId]);
+
   const current = done && done.text === body ? done : null;
   const translation = active ? (cached ?? current?.out ?? null) : null;
   const failed = active && translation === null && current?.error === true;
@@ -80,7 +92,7 @@ export function useAutoTranslate(text: string | null | undefined, lang: string |
     loading,
     failed,
     eligible,
-    offer: eligible && loaded && !enabled && !offerAnswered,
+    offer,
     showOriginal,
     toggleOriginal: () => setShowOriginal((v) => !v),
     answerOffer: (accept) => {

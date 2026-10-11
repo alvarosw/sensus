@@ -1,7 +1,7 @@
 // Mapa do Sensus: MapLibre com o estilo próprio (claro/escuro), marcadores por lugar e atribuição visível.
 // `lite` = miniatura do Histórico: sem gestos, sem rótulos; só os marcadores e o enquadramento.
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
-import { Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
+import { ActivityIndicator, Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
 import {
   Camera,
   GeoJSONSource,
@@ -34,7 +34,10 @@ export const SensusMap = memo(function SensusMap({ markers, selectedId, onSelect
   const style_ = useMemo(() => sensusMapStyle(scheme), [scheme]);
   const cameraRef = useRef<CameraRef>(null);
   const [failed, setFailed] = useState(false);
+  // `ready`: o estilo carregou (a câmera já pode se mover). `tilesReady`: os primeiros mosaicos foram desenhados;
+  // até lá o mapa fica coberto por um carregamento, em vez de mostrar uma tela em branco por vários segundos.
   const [ready, setReady] = useState(false);
+  const [tilesReady, setTilesReady] = useState(false);
   const initial = useMemo(() => viewFor(markers), [markers]);
 
   const geojson = useMemo(
@@ -90,6 +93,8 @@ export const SensusMap = memo(function SensusMap({ markers, selectedId, onSelect
         touchRotate={false}
         touchPitch={false}
         onDidFinishLoadingStyle={() => setReady(true)}
+        onDidFinishLoadingMap={() => setTilesReady(true)}
+        onDidFinishRenderingFrameFully={() => setTilesReady(true)}
         onDidFailLoadingMap={() => setFailed(true)}
       >
         <Camera ref={cameraRef} initialViewState={initial.bounds ? { bounds: initial.bounds } : { center: initial.center, zoom: initial.zoom }} />
@@ -145,8 +150,13 @@ export const SensusMap = memo(function SensusMap({ markers, selectedId, onSelect
         </View>
       ) : null}
 
-      {!failed && !ready ? (
-        <View style={[StyleSheet.absoluteFill, { alignItems: 'center', justifyContent: 'center', backgroundColor: c.surfaceAlt }]} pointerEvents="none">
+      {!failed && !tilesReady ? (
+        <View
+          testID={testID ? `${testID}-loading` : undefined}
+          style={[StyleSheet.absoluteFill, { alignItems: 'center', justifyContent: 'center', gap: 8, backgroundColor: c.surfaceAlt }]}
+          pointerEvents="none"
+        >
+          <ActivityIndicator color={c.muted} />
           <Txt v="meta" color="muted">{MAPS.loading}</Txt>
         </View>
       ) : null}

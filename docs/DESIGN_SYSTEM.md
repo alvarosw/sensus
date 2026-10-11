@@ -130,7 +130,7 @@ Três famílias de ação em todo o app: **detalhar** (mais do mesmo item), **fo
 |---|---|
 | Com fonte | Texto normal + pílulas de citação. |
 | Inferência | `ClaimFrame kind="inference"`: fundo `inf`, borda esquerda `infBorder`, rótulo "INFERÊNCIA" (o "(Inferência)" some do texto). Frase de inferência dentro de um bloco com fonte: fundo `inf` só na frase, rótulo visível. |
-| Sem fonte | Só a frase factual sem citação (a citação do parágrafo cobre as frases anteriores a ela): sublinhado pontilhado `warnText`. Sem rodapé. |
+| Sem fonte | Só a frase factual sem citação (a citação do parágrafo cobre as frases anteriores a ela): sublinhado `warnText` com fundo `warn` leve (`useUncitedStyle`). No web o sublinhado é pontilhado; no Android (que ignora `textDecorationStyle`) sai sólido. Sem rodapé. |
 | Citação inválida | `CitePill bad`: "?" riscado em vermelho; prévia explica que o id não estava no contexto. |
 | Divergência morfológica | Termo sublinhado + aviso âmbar "O token citado é subjuntivo" (de `morphConflicts`). |
 

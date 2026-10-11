@@ -68,6 +68,34 @@ describe('segmentForTranslation', () => {
     expect(keep).toContain('e.g.');
   });
 
+  it('protege siglas de léxico e fontes (AS, BDB, LSJ, Thayer, LXX, NA28, TR...)', () => {
+    const text = 'Abbott-Smith (AS) and BDB, LSJ, BDAG, TDNT, Thayer, Strong, LXX, MT, NT, OT, KJV, AV, RV, ASV, NA27, NA28, TR, Byz.';
+    const keep = segmentForTranslation(text).filter((s) => s.kind === 'keep').map((s) => s.text).join('|');
+    for (const sigla of ['(AS)', 'BDB', 'LSJ', 'BDAG', 'TDNT', 'Thayer', 'Strong', 'LXX', 'MT', 'NT', 'OT', 'KJV', 'AV', 'RV', 'ASV', 'NA27', 'NA28', 'TR', 'Byz']) {
+      expect(keep).toContain(sigla);
+    }
+    expect(joined(segmentForTranslation(text))).toBe(text);
+  });
+
+  it('não traduz "(AS)" dentro de uma nota de léxico (regressão: virava "(Como)")', () => {
+    const segs = segmentForTranslation('ἀγάπη (AS) — love, charity.');
+    expect(segs.some((s) => s.kind === 'translate' && s.text.includes('AS'))).toBe(false);
+    expect(segs.filter((s) => s.kind === 'keep').map((s) => s.text).join('')).toContain('(AS)');
+    expect(runs('Abbott-Smith (AS) gives the sense.')).toEqual(['Abbott-Smith', 'gives the sense.']);
+  });
+
+  it('protege parênteses com sigla em maiúsculas (1 a 6 letras) e não pega palavras em minúscula', () => {
+    expect(runs('see (TDNT) and (BDAGGG)')).toEqual(['see', 'and']);
+    expect(runs('see (ABCDEFG) now')).toEqual(['see (ABCDEFG) now']);
+  });
+
+  it('protege cf. e ibid. em notas', () => {
+    const keep = segmentForTranslation('So cf. Thayer, ibid. and cf. Mt 5:3.').filter((s) => s.kind === 'keep').map((s) => s.text).join('|');
+    expect(keep).toContain('cf.');
+    expect(keep).toContain('ibid.');
+    expect(keep).toContain('Mt 5:3');
+  });
+
   it('mantém quebras de parágrafo e traduz cada parágrafo separadamente', () => {
     const text = 'First paragraph here.\n\nSecond paragraph here.';
     expect(segmentForTranslation(text)).toEqual([
