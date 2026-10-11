@@ -93,8 +93,30 @@ let jwksCache: { at: number; jwks: Jwks } | null = null;
 function describeNetworkError(err: unknown, step: string): string {
   const e = err as { name?: unknown; message?: unknown } | null;
   const name = typeof e?.name === 'string' ? e.name : 'erro';
-  const message = typeof e?.message === 'string' ? e.message.replace(/\s+/g, ' ').slice(0, 80) : '';
+  const message = typeof e?.message === 'string' ? e.message.replace(/\s+/g, ' ').slice(0, 160) : '';
   return message ? `${step}: ${name}: ${message}` : `${step}: ${name}`;
+}
+
+/**
+ * O retorno do loopback chega com o Sensus ainda em segundo plano (a aba do navegador está na frente). Neste
+ * aparelho, o sistema bloqueia a rede (inclusive o DNS) de apps em segundo plano, então a troca do código
+ * falhava com "Unable to resolve host". Espera o app voltar ao primeiro plano antes de qualquer requisição.
+ */
+async function waitForForeground(timeoutMs = 15_000): Promise<void> {
+  if (AppState.currentState === 'active') return;
+  await new Promise<void>((resolve) => {
+    let sub: { remove(): void } | null = null;
+    const timer = setTimeout(() => {
+      sub?.remove();
+      resolve();
+    }, timeoutMs);
+    sub = AppState.addEventListener('change', (state) => {
+      if (state !== 'active') return;
+      clearTimeout(timer);
+      sub?.remove();
+      resolve();
+    });
+  });
 }
 
 async function getJwks(): Promise<Jwks> {
@@ -235,6 +257,7 @@ export async function signInWithChatGPT(opts: { reconsent?: boolean } = {}): Pro
     loopback.close();
   }
   dismissAuthBrowser();
+  await waitForForeground();
 
   const cb = parseCallback(target, { redirectUri: loopback.redirectUri, state, clientId });
   const json = await postTokenRequest(
