@@ -255,7 +255,7 @@ describe('presets', () => {
       kind: 'openai-compatible',
       baseUrl: 'https://integrate.api.nvidia.com/v1',
       apiKey: 'k',
-      model: 'nvidia/nemotron-3-ultra-550b-a55b',
+      model: 'google/gemma-4-31b-it',
       extraBody: { chat_template_kwargs: { enable_thinking: false } },
     });
   });

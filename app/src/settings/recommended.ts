@@ -1,17 +1,10 @@
 // Modelos recomendados por provedor (seletor "Recomendados" e opções rápidas da verificação).
 // Fonte: RECOMMENDED_MODELS do núcleo (packages/core/src/ai/recommended-models.ts), primeiro item = padrão.
-// Enquanto o arquivo do núcleo não existe, a lista é vazia e a tela só mostra o seletor normal.
-export type RecommendedTier = 'equilibrado' | 'rapido' | 'preciso';
+import { RECOMMENDED_MODELS, type RecommendedModel, type RecommendedTier } from '@sensus/core';
 
-export interface RecommendedModel {
-  id: string;
-  label: string;
-  tier: RecommendedTier;
-  note: string;
-  extraBody?: Record<string, unknown>;
-}
+export type { RecommendedModel, RecommendedTier } from '@sensus/core';
 
-const RECOMMENDED: Record<string, readonly RecommendedModel[]> = {};
+const RECOMMENDED: Record<string, readonly RecommendedModel[]> = RECOMMENDED_MODELS;
 
 /** Modelos recomendados do provedor (preset), na ordem em que aparecem; vazio se não há. */
 export function recommendedFor(presetId: string): readonly RecommendedModel[] {

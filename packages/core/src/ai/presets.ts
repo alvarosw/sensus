@@ -22,9 +22,9 @@ export const PROVIDER_PRESETS: Record<PresetId, ProviderPreset> = {
     label: 'NVIDIA (build.nvidia.com)',
     kind: 'openai-compatible',
     baseUrl: 'https://integrate.api.nvidia.com/v1',
-    // Nemotron 3 Ultra com o raciocínio desligado: primeiro texto em ~2,6 s; 50 citações válidas e 0 inválidas no
-    // benchmark (Nemotron 3 Super: 11 inválidas).
-    defaultModel: 'nvidia/nemotron-3-ultra-550b-a55b',
+    // Gemma 4 31B com o raciocínio desligado: o melhor do benchmark (ver docs/MODEL_BENCHMARK.md): precisão 95,
+    // 9/9 respostas completas, citações quase todas válidas. Outras opções: RECOMMENDED_MODELS (recommended-models.ts).
+    defaultModel: 'google/gemma-4-31b-it',
     keyUrl: 'https://build.nvidia.com',
     extraBody: { chat_template_kwargs: { enable_thinking: false } },
   },

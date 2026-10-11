@@ -10,6 +10,7 @@ export * from './ai/reset';
 export { chatGPTFailureOf, type ChatGPTFailure } from './ai/llm-error';
 export * from './ai/siwc';
 export * from './ai/presets';
+export * from './ai/recommended-models';
 export * from './ai/context';
 export * from './ai/prompts';
 export * from './ai/citations';
