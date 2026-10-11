@@ -95,13 +95,30 @@ Tabela gerada por `npx tsx packages/core/tools/bench-models.ts report` (9 execu�
 5. **Kimi K3** tem a maior precisão (95,4, nenhuma citação inválida), mas leva 144 s em média. Só vale para quem
    prefere esperar.
 6. **Spot-read em pt-BR**: textos fluentes nos quatro recomendados. Problema de formato: citações com colchete
-   simples (`[tok:…]`), que o app não transforma em chips (gemma 21 casos, ultra 15, super 30), e um id inventado
-   `[[contexto]]` no super.
+   simples (`[tok:…]`), que o app não transformava em chips (gemma 21 casos, ultra 15, super 30), e um id inventado
+   `[[contexto]]` no super. Corrigido no núcleo depois da medição: `[id]` simples e listas `[[id], [id]]` viram chips
+   (`citations.ts`, `rich-text.ts`); a tabela acima é anterior à correção.
 
 ## Recomendação
 
-`RECOMMENDED_MODELS.nvidia`, ordem do melhor geral: Gemma 4 31B (padrão, equilibrado), Nemotron 3 Ultra (equilibrado),
-Nemotron 3 Super (rápido), Kimi K3 (preciso). `presets.ts` passa a usar `google/gemma-4-31b-it` como padrão.
+`RECOMMENDED_MODELS.nvidia`, na ordem: Nemotron 3 Ultra (padrão, equilibrado), Gemma 4 31B (preciso), Nemotron 3 Super
+(rápido). `presets.ts` passa a usar `nvidia/nemotron-3-ultra-550b-a55b` como padrão. Kimi K3 sai da lista (ver Decisão).
+
+## Decisão
+
+A escolha do padrão pesa a latência mais do que o "Geral" da tabela, por três motivos:
+
+- **O primeiro texto é a espera que o leitor sente.** Com o Ultra, a resposta começa em 2,4 s; com o Gemma, em 46,6 s.
+  O total (43 s e 63 s) ainda importa, mas um texto que começa a aparecer em poucos segundos tolera bem o resto.
+- **O "Geral" (80% precisão, 20% velocidade) não separa os dois.** Gemma e Ultra empatam (86,5 e 86,3). A diferença
+  de precisão (95,3 contra 90,4) é maior que o ruído da amostra (1 a 2 pontos, ver Limitações); a de primeiro texto
+  (44 s) também é grande. Pesar o primeiro texto mais que a precisão é uma escolha, não um resultado da medição.
+- **Kimi K3 sai da lista.** A precisão é igual à do Gemma (95,4 contra 95,3), mas o total é de 144 s contra 63 s. O
+  ganho de primeiro texto (29 s contra 47 s) não compensa o dobro de tempo de cada resposta completa.
+
+**Custo do padrão.** O Ultra deixa 191 frases factuais sem citação nas 9 execuções (Gemma: 10), concentradas nas
+respostas em lista. Se a cobertura de citação pesar mais que a espera, o padrão deve ser o Gemma. Trocar é uma linha
+em `presets.ts` e na ordem de `recommended-models.ts`.
 
 ## Limitações
 

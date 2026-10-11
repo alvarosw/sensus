@@ -11,6 +11,15 @@ describe('RECOMMENDED_MODELS', () => {
     expect(nvidia!.length).toBeLessThanOrEqual(4);
   });
 
+  it('ordem da decisão do benchmark: equilibrado (padrão), preciso, rápido', () => {
+    const nvidia = RECOMMENDED_MODELS.nvidia!;
+    expect(nvidia.map((m) => [m.id, m.tier])).toEqual([
+      ['nvidia/nemotron-3-ultra-550b-a55b', 'equilibrado'],
+      ['google/gemma-4-31b-it', 'preciso'],
+      ['nvidia/nemotron-3-super-120b-a12b', 'rapido'],
+    ]);
+  });
+
   it('o primeiro é o padrão do preset NVIDIA', () => {
     const first = RECOMMENDED_MODELS.nvidia![0]!;
     expect(first.id).toBe(PROVIDER_PRESETS.nvidia.defaultModel);

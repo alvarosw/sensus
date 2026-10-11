@@ -4,14 +4,21 @@ import type { CitedSegment } from '../types';
 const SENTINEL = '';
 // Prefixos do schema (pipeline/schema.sql): txt, tok, lex, com, dic, xr, ent (xr tem dois caracteres).
 const CITE_ID = '(?:txt|tok|lex|com|dic|xr|ent):[A-Za-z0-9:._-]+';
+const CITE_LIST = `${CITE_ID}(?:\\s*[,;]\\s*${CITE_ID})*`;
 
-// [[id]] ou [[id1, id2]] (qualquer conteúdo sem colchetes) e [id] ou [id1, id2] com prefixo de cite_id.
-const MARKER_RE = new RegExp(
-  `\\[\\[([^\\[\\]\\n]*)\\]\\]|\\[(${CITE_ID}(?:\\s*[,;]\\s*${CITE_ID})*)\\]`,
-  'g',
-);
-// Marcador já completo no início do trecho (usado para o corte em streaming).
-const COMPLETE_AT_START = new RegExp(`^(?:\\[\\[[^\\[\\]\\n]*\\]\\]|\\[${CITE_ID}(?:\\s*[,;]\\s*${CITE_ID})*\\])`);
+/**
+ * Marcadores de citação (fonte única para o segmentador e para o texto rico):
+ * - [[qualquer coisa]] e [[id1, id2]]: ids fora do contexto viram chip inválido, como antes;
+ * - [[id], [id]] ou [[id] [id]]: cada id entre colchetes, dentro de colchetes duplos (forma que o modelo usa);
+ * - [id] ou [id1, id2]: só com prefixo de cite_id, para não casar colchetes comuns ("[contexto]", "[1]").
+ * As formas com um colchete só não valem quando seguidas de "(", que é link Markdown ("[texto](url)").
+ */
+export const CITE_MARKER_SOURCE = [
+  '\\[\\[[^\\[\\]\\n]*\\]\\]',
+  `\\[\\[${CITE_ID}\\](?:[\\s,;]*\\[${CITE_ID}\\])*\\]?(?!\\()`,
+  `\\[${CITE_LIST}\\](?!\\()`,
+].join('|');
+const MARKER_RE = new RegExp(CITE_MARKER_SOURCE, 'g');
 // Ponto-e-vírgula também separa cláusulas ("Filipenses 2:6 — ...; ἁρπαγμὸν ..."): cada cláusula tem sua citação.
 const TERMINAL = /[.!?…;]/;
 
@@ -176,9 +183,11 @@ export function stripInferenceLabels(text: string): string {
     .trim();
 }
 
-function splitIds(body: string): string[] {
-  return body
-    .split(/[,;]/)
+/** Ids de um marcador (qualquer forma de CITE_MARKER_SOURCE): sem colchetes; ids não têm espaço, vírgula nem ponto e vírgula. */
+export function citeIdsOfMarker(marker: string): string[] {
+  return marker
+    .replace(/[[\]]/g, ' ')
+    .split(/[\s,;]+/)
     .map((s) => s.trim())
     .filter(Boolean);
 }
@@ -263,8 +272,8 @@ function splitSentences(flat: string, markers: string[][]): RawSentence[] {
  */
 export function parseCited(text: string, validIds: ReadonlySet<string>): CitedSegment[] {
   const markers: string[][] = [];
-  const flat = text.replace(MARKER_RE, (_match: string, double: string | undefined, single: string | undefined) => {
-    markers.push(splitIds(double ?? single ?? ''));
+  const flat = text.replace(MARKER_RE, (match: string) => {
+    markers.push(citeIdsOfMarker(match));
     return SENTINEL;
   });
 

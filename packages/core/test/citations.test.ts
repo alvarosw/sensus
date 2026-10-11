@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { CitationStream, parseCited, safeParseLength, stripCitations } from '../src/index';
+import { CitationStream, citeIdsOfMarker, parseCited, safeParseLength, stripCitations } from '../src/index';
 
 const VALID = new Set(['txt:blivre:50002005', 'tok:gnt:50002005:1', 'dic:easton:christ']);
 
@@ -242,5 +242,44 @@ describe('rótulo só no fim da primeira frase não faz o parágrafo inteiro ser
   it('a frase inicial que termina com "(Inferência)" marca só ela; a seguinte sem rótulo continua sem fonte', () => {
     const segs = parseCited('Fato curto (Inferência). Outra frase sem fonte.', VALID);
     expect(segs.map((s) => s.kind)).toEqual(['inference', 'uncited']);
+  });
+});
+
+describe('marcadores com colchete simples, listas em colchetes e links Markdown', () => {
+  it('colchete simples com id válido vira citação, sem o colchete no texto', () => {
+    const segs = parseCited('Paulo exorta à unidade [txt:blivre:50002005].', VALID);
+    expect(segs).toHaveLength(1);
+    expect(segs[0]).toMatchObject({ kind: 'source', cites: ['txt:blivre:50002005'], text: 'Paulo exorta à unidade.' });
+  });
+
+  it('[[id], [id]] (forma do Nemotron Ultra) vale como uma citação com os dois ids', () => {
+    const segs = parseCited('Verbo feito por meio dele [[txt:blivre:50002005], [tok:gnt:50002005:1]].', VALID);
+    expect(segs[0]).toMatchObject({ kind: 'source', cites: ['txt:blivre:50002005', 'tok:gnt:50002005:1'], text: 'Verbo feito por meio dele.' });
+  });
+
+  it('[id] [id] com espaço, sem vírgula, também é lista', () => {
+    const segs = parseCited('Forma [[tok:gnt:50002005:1] [txt:blivre:50002005]] aqui.', VALID);
+    expect(segs[0]).toMatchObject({ kind: 'source', cites: ['tok:gnt:50002005:1', 'txt:blivre:50002005'] });
+  });
+
+  it('colchete com prefixo de id fora do contexto é citação inválida, como os demais marcadores', () => {
+    const segs = parseCited('Fato [com:sword-gill:50002006-50002006].', VALID);
+    expect(segs[0]).toMatchObject({ kind: 'uncited', cites: [], invalidCites: ['com:sword-gill:50002006-50002006'] });
+  });
+
+  it('colchetes comuns e links Markdown não são citação', () => {
+    const segs = parseCited('Veja [Mateus](https://example.org) e [contexto] e [1] e [txt: texto livre].', VALID);
+    expect(segs).toHaveLength(1);
+    expect(segs[0]!.cites).toEqual([]);
+    expect(segs[0]!.invalidCites).toEqual([]);
+    expect(segs[0]!.text).toContain('[contexto]');
+    expect(segs[0]!.text).toContain('[Mateus](https://example.org)');
+  });
+
+  it('citeIdsOfMarker tira colchetes e separa ids em qualquer forma', () => {
+    expect(citeIdsOfMarker('[txt:blivre:50002005]')).toEqual(['txt:blivre:50002005']);
+    expect(citeIdsOfMarker('[[txt:a:1], [tok:b:2]]')).toEqual(['txt:a:1', 'tok:b:2']);
+    expect(citeIdsOfMarker('[[lex:c:G1] [lex:c:G2]]')).toEqual(['lex:c:G1', 'lex:c:G2']);
+    expect(citeIdsOfMarker('[[txt:a:1; tok:b:2]]')).toEqual(['txt:a:1', 'tok:b:2']);
   });
 });

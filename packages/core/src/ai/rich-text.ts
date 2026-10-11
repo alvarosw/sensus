@@ -1,13 +1,13 @@
 // Texto rico da resposta da IA: subconjunto de markdown + citações inline, tolerante a streaming.
 import type { MorphConflict, Token } from '../types';
 import { checkMorphClaims } from './morphcheck';
-import { parseCited, safeParseLength, stripInferenceLabels } from './citations';
+import { CITE_MARKER_SOURCE, citeIdsOfMarker, parseCited, safeParseLength, stripInferenceLabels } from './citations';
 import type { Block, CiteRef, ClaimInfo, Inline, RichTextContext } from './structured-types';
 
 export type { RichTextContext } from './structured-types';
 
-const CITE_PREFIX = 'txt|tok|lex|com|dic|xr|ent';
-const MARKER = `\\[\\[[^\\[\\]\\n]*\\]\\]|\\[(?:${CITE_PREFIX}):[^\\[\\]\\n]*\\]`;
+/** Um marcador de citação (ver CITE_MARKER_SOURCE em citations.ts: mesma regra do segmentador). */
+const MARKER = `(?:${CITE_MARKER_SOURCE})`;
 /** Uma sequência de citações consecutivas (separadas só por espaço ou vírgula) forma um grupo. */
 const RUN_RE = new RegExp(`(?:${MARKER})(?:[\\s,;]*(?:${MARKER}))*`, 'g');
 const ONE_MARKER_RE = new RegExp(MARKER, 'g');
@@ -21,14 +21,6 @@ const TRAILING_PARTIAL_RE = /\[{1,2}(?:(?:txt|tok|lex|com|dic|xr|ent)(?::[^\[\]\
 /** Normalização para casar palavras do texto com tokens: NFC, sem pontuação, minúsculas. */
 export function wordKey(text: string): string {
   return text.normalize('NFC').replace(/[\p{P}\p{S}\s]/gu, '').toLowerCase();
-}
-
-function citeIdsOf(marker: string): string[] {
-  const inner = marker.startsWith('[[') ? marker.slice(2, -2) : marker.slice(1, -1);
-  return inner
-    .split(/[,;]/)
-    .map((s) => s.trim())
-    .filter(Boolean);
 }
 
 /** Ano-verso de um id txt (txt:fonte:vid); undefined para os demais. */
@@ -163,7 +155,7 @@ export function parseInline(raw: string, ctx: RichTextContext, tokenByKey: Reado
   };
   for (const m of raw.matchAll(RUN_RE)) {
     pushText(raw.slice(last, m.index));
-    const ids = [...m[0].matchAll(ONE_MARKER_RE)].flatMap((x) => citeIdsOf(x[0]));
+    const ids = [...m[0].matchAll(ONE_MARKER_RE)].flatMap((x) => citeIdsOfMarker(x[0]));
     if (ids.length > 0) {
       const refs = buildRefs(ids, ctx);
       // Mesma fonte repetida logo em seguida (só espaço entre elas): um chip só, não dois lado a lado.

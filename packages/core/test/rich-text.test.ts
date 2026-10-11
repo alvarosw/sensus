@@ -448,3 +448,57 @@ describe('citações repetidas', () => {
     expect(found[0]!.refs.map((r) => r.citeId)).toEqual(['txt:blivre:50002005', 'txt:kjv:50002005']);
   });
 });
+
+/** Ids de todas as citações (incluindo as de um grupo de versículos unidos) na ordem do texto. */
+function citeIdsOfBlocks(blocks: readonly Block[]): string[] {
+  return citesOf(blocks).flatMap((i) => (i.type === 'cite' ? i.refs.flatMap((r) => r.citeIds ?? [r.citeId]) : []));
+}
+
+describe('citações com colchete simples e listas em colchetes (saída real de Gemma 4 e Nemotron Ultra)', () => {
+  // Trechos literais das saídas do benchmark (tmp/bench-models/texts): a única diferença do formato do app é o colchete.
+  const GEMMA_SUMMARY =
+    'O Textus Receptus (TR) apresenta em 2:1 o pronome indefinido *τινα* [tok:gnt:50002001:161] no nominativo plural neutro, enquanto BYZ/NA trazem *τις* [tok:gnt:50002001:160] no nominativo singular feminino [[txt:blivre:50002001]]. Em 2:5, o TR/BYZ usa o verbo *φρονείσθω* [tok:gnt:50002005:31] no presente passivo imperativo terceira pessoa singular, diferindo do *φρονεῖτε* [tok:gnt:50002005:30] (presente ativo imperativo segunda pessoa plural) da NA [[txt:blivre:50002005]]. Outras variantes ocorrem em 2:3, 2:4 e 2:7, alterando conjunções e formas verbais [[txt:blivre:50002003]] [[txt:blivre:50002004]] [[txt:blivre:50002007]].';
+  const GEMMA_ANSWER =
+    'O texto inicia com a alegria de Paulo por ter sido lembrado pelos filipenses [[txt:blivre:50004010]]. Na língua original, o termo para "contentar-me" é *autarkēs* [tok:gnt:50004011:120], que significa ser autossuficiente ou independente [[lex:stepbible-tbesg:G0842]].';
+  const ULTRA_LIST =
+    '- Os versículos seguintes afirmam que **o mundo foi feito por meio do Verbo, mas não o conheceu** (1:10) [[txt:blivre:43001006], [txt:blivre:43001010]].\n- Termo: [[tok:gnt:43001001:100], [tok:gnt:43001001:110]]';
+
+  it('o resumo do Gemma vira chips para todo colchete simples, sem colchete sobrando no texto', () => {
+    const blocks = parseRichText(GEMMA_SUMMARY, ctx);
+    expect(citeIdsOfBlocks(blocks)).toEqual([
+      'tok:gnt:50002001:161',
+      'tok:gnt:50002001:160',
+      'txt:blivre:50002001',
+      'tok:gnt:50002005:31',
+      'tok:gnt:50002005:30',
+      'txt:blivre:50002005',
+      'txt:blivre:50002003',
+      'txt:blivre:50002004',
+      'txt:blivre:50002007',
+    ]);
+    expect(visibleText(blocks)).not.toMatch(/[[\]]/);
+  });
+
+  it('a resposta do Gemma com léxico e tabela de palavras: citações e texto corretos', () => {
+    const blocks = parseRichText(GEMMA_ANSWER, ctx);
+    expect(citeIdsOfBlocks(blocks)).toEqual(['txt:blivre:50004010', 'tok:gnt:50004011:120', 'lex:stepbible-tbesg:G0842']);
+    expect(visibleText(blocks)).not.toMatch(/[[\]]/);
+  });
+
+  it('listas [[id], [id]] do Nemotron Ultra viram chips, sem colchetes soltos', () => {
+    const blocks = parseRichText(ULTRA_LIST, ctx);
+    expect(citeIdsOfBlocks(blocks)).toEqual([
+      'txt:blivre:43001006',
+      'txt:blivre:43001010',
+      'tok:gnt:43001001:100',
+      'tok:gnt:43001001:110',
+    ]);
+    expect(visibleText(blocks)).not.toMatch(/[[\]]/);
+  });
+
+  it('links Markdown e colchetes comuns continuam como texto', () => {
+    const blocks = parseRichText('Veja [Mateus](https://example.org) e [contexto] [1].', ctx);
+    expect(citeIdsOfBlocks(blocks)).toEqual([]);
+    expect(blocksToPlainText(blocks)).toBe('Veja Mateus e [contexto] [1].');
+  });
+});
