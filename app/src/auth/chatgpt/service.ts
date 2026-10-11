@@ -89,13 +89,21 @@ function notify(): void {
 const JWKS_TTL_MS = 60 * 60_000;
 let jwksCache: { at: number; jwks: Jwks } | null = null;
 
+/** Tipo e mensagem curtos de uma falha de rede (sem URL nem corpo de resposta). */
+function describeNetworkError(err: unknown, step: string): string {
+  const e = err as { name?: unknown; message?: unknown } | null;
+  const name = typeof e?.name === 'string' ? e.name : 'erro';
+  const message = typeof e?.message === 'string' ? e.message.replace(/\s+/g, ' ').slice(0, 80) : '';
+  return message ? `${step}: ${name}: ${message}` : `${step}: ${name}`;
+}
+
 async function getJwks(): Promise<Jwks> {
   if (jwksCache && Date.now() - jwksCache.at < JWKS_TTL_MS) return jwksCache.jwks;
   let res: Response;
   try {
     res = await fetch(SIWC.jwksUrl);
-  } catch {
-    throw new SiwcError('Sem conexão para verificar a identidade.', 'jwks_unavailable');
+  } catch (err) {
+    throw new SiwcError('Sem conexão para verificar a identidade.', 'jwks_unavailable', undefined, describeNetworkError(err, 'jwks'));
   }
   if (!res.ok) throw new SiwcError('Chaves de verificação indisponíveis.', 'jwks_unavailable', res.status);
   const body = (await res.json()) as Partial<Jwks>;
@@ -112,8 +120,9 @@ async function postTokenRequest(spec: HttpRequestSpec, grant: 'authorization_cod
   let res: Response;
   try {
     res = await fetch(spec.url, { method: spec.method, headers: spec.headers, body: spec.body });
-  } catch {
-    throw new SiwcError('Sem conexão com o ChatGPT.', 'network');
+  } catch (err) {
+    const step = grant === 'refresh_token' ? 'renovação' : 'troca do código';
+    throw new SiwcError('Sem conexão com o ChatGPT.', 'network', undefined, describeNetworkError(err, step));
   }
   let json: unknown = null;
   try {

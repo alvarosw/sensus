@@ -49,12 +49,15 @@ export type SiwcErrorCode =
 export class SiwcError extends Error {
   readonly code: SiwcErrorCode;
   readonly status: number | undefined;
+  /** Detalhe técnico curto (etapa e tipo do erro), sem tokens nem corpos de resposta. */
+  readonly detail: string | undefined;
 
-  constructor(message: string, code: SiwcErrorCode, status?: number) {
+  constructor(message: string, code: SiwcErrorCode, status?: number, detail?: string) {
     super(message);
     this.name = 'SiwcError';
     this.code = code;
     this.status = status;
+    this.detail = detail;
   }
 }
 
@@ -570,7 +573,7 @@ export function siwcErrorMessage(err: unknown): string {
       return 'A identidade do ChatGPT não pôde ser verificada. Tente entrar de novo.';
     case 'jwks_unavailable':
     case 'network':
-      return 'Sem conexão com o ChatGPT. Verifique a internet e tente de novo.';
+      return `Sem conexão com o ChatGPT. Verifique a internet e tente de novo.${err.detail ? ` (${err.detail})` : ''}`;
     case 'server':
       return 'O ChatGPT está indisponível no momento. Tente de novo em instantes.';
     default:
