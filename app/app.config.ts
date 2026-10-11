@@ -64,6 +64,19 @@ export default (): ExpoConfig => {
       'expo-secure-store',
       'expo-asset',
       [
+        // Release enxuto para envio direto (limite de 30 MiB): R8 + shrinkResources,
+        // libs nativas comprimidas no APK e bundle JS comprimido (sem noCompress).
+        'expo-build-properties',
+        {
+          android: {
+            enableMinifyInReleaseBuilds: true,
+            enableShrinkResourcesInReleaseBuilds: true,
+            useLegacyPackaging: true,
+            enableBundleCompression: true,
+          },
+        },
+      ],
+      [
         'expo-splash-screen',
         {
           backgroundColor: '#F4F1EA',
