@@ -228,4 +228,12 @@ export class DemoProvider implements LLMProvider {
   async listModels(): Promise<string[]> {
     return ['demo-fixtures'];
   }
+
+  async listModelListings(): Promise<{ id: string; usable: boolean }[]> {
+    return [{ id: 'demo-fixtures', usable: true }];
+  }
+
+  async checkModel(): Promise<void> {
+    // Offline: nada a verificar.
+  }
 }

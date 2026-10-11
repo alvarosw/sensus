@@ -18,6 +18,22 @@ Sem nenhum método disponível (sem ChatGPT pronto e sem chave), o app mostra a 
 Configurações. O provedor de demonstração (offline) vale só quando definido. O `.env` de desenvolvimento só
 existe em builds de desenvolvimento: em produção a chave do `.env` nunca é usada.
 
+## Modelos no seletor (só chat)
+
+O seletor de modelos da chave de API mostra só modelos que conversam em texto. Código: `packages/core/src/ai/models.ts`.
+
+- **Metadados, quando o provedor os envia.** OpenRouter: `architecture.output_modalities` sem `text` oculta o
+  modelo (imagem, áudio). Campo `type` (Together, LM Studio): embeddings, rerankers, imagem, moderação e código
+  são ocultos.
+- **Id, sempre.** Mesmo com saída de texto, o id vale: embeddings, rerankers, guardas de segurança, reward,
+  parse/OCR, imagem, vídeo, áudio, tradução, código, completions legados e tempo real ficam ocultos.
+  NVIDIA e OpenAI devolvem só ids, então dependem da heurística. Modelos de visão que conversam (ex.:
+  `llama-3.2-11b-vision-instruct`) continuam visíveis.
+- O modelo recomendado do preset aparece primeiro. "Mostrar todos" revela os ocultos.
+- **Verificar modelo** (sob demanda, nunca em lote): um chat de 1 token com o modelo escolhido. ✓ = respondeu;
+  ✗ = motivo do provedor (ex.: NVIDIA 404 "Function ... Not found for account").
+- Teste de fixture: `packages/core/test/fixtures/nvidia-models.json` (80 ids reais, sem chave).
+
 ## Como funciona o login
 
 Código: `packages/core/src/ai/siwc.ts` (funções puras, sem rede) e

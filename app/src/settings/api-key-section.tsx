@@ -1,11 +1,12 @@
 // Chave de API (avançado, recolhido): provedores com chave, URL base, chave mascarada, modelo, teste de conexão.
-// A lógica de salvar, testar e remover é a mesma de antes; só a apresentação segue a proposta.
+// Os modelos listados passam pelo filtro de chat do núcleo (só os que conversam em texto; o resto fica oculto).
+// Trocar e Remover ficam numa linha abaixo da caixa da chave; Remover pede confirmação.
 import { useEffect, useState, type ReactNode } from 'react';
 import { Pressable, TextInput, View } from 'react-native';
-import { buildProviderConfig } from '@sensus/core';
-import { Card, fontFamilies, Icon, ListGroup, Pill, RadioOption, radius, Txt, useTheme } from '@/design';
+import { buildProviderConfig, orderModelListings, type ModelListing } from '@sensus/core';
+import { Card, fontFamilies, Icon, LinkButton, ListGroup, Pill, RadioOption, radius, Txt, useTheme } from '@/design';
 import { FormButton } from '@/features/common/Buttons';
-import { listProviderModels } from '@/ai/client';
+import { checkProviderModel, listProviderModels } from '@/ai/client';
 import { DEMO_PROVIDER_CONFIG } from '@/ai/demo-provider';
 import { initialFormSettings } from './resolve';
 import { APP_PRESET_IDS, APP_PRESETS, DEMO_PRESET_ID, isAppPresetId, presetNeedsKey, type AppPresetId } from './presets';
@@ -16,7 +17,8 @@ import { SETTINGS_COPY as COPY } from './strings';
 
 type Notice = { tone: 'ok' | 'error'; text: string } | null;
 
-const MAX_MODEL_CHIPS = 25;
+/** Limite de chips de modelo de chat na tela (listas grandes, como a do OpenRouter, são cortadas). */
+const MAX_MODEL_CHIPS = 60;
 
 function messageOf(e: unknown): string {
   return e instanceof Error ? e.message : String(e);
@@ -44,7 +46,12 @@ export function ApiKeySection() {
   const [keyEditing, setKeyEditing] = useState(false);
   const [notice, setNotice] = useState<Notice>(null);
   const [testing, setTesting] = useState(false);
-  const [models, setModels] = useState<string[]>([]);
+  const [models, setModels] = useState<ModelListing[]>([]);
+  const [showHidden, setShowHidden] = useState(false);
+  /** Resultado da verificação sob demanda, por id de modelo: true = respondeu; texto = motivo da falha. */
+  const [verdicts, setVerdicts] = useState<Record<string, true | string>>({});
+  const [verifying, setVerifying] = useState(false);
+  const [confirmRemove, setConfirmRemove] = useState(false);
 
   useEffect(() => {
     if (settings.loaded && form === null) setForm(initialFormSettings(settings.stored, settings.devProvider));
@@ -61,6 +68,9 @@ export function ApiKeySection() {
   const selectPreset = (id: AppPresetId) => {
     const preset = APP_PRESETS[id];
     setModels([]);
+    setShowHidden(false);
+    setVerdicts({});
+    setConfirmRemove(false);
     setNotice(null);
     setKeyEditing(false);
     setApiKeyInput('');
@@ -102,7 +112,7 @@ export function ApiKeySection() {
     try {
       const found = await listProviderModels(config);
       setModels(found);
-      setNotice({ tone: 'ok', text: COPY.testOk(found.length) });
+      setNotice({ tone: 'ok', text: COPY.testOk(found.filter((m) => m.usable).length) });
     } catch (e) {
       setModels([]);
       setNotice({ tone: 'error', text: COPY.testFail(messageOf(e)) });
@@ -111,9 +121,28 @@ export function ApiKeySection() {
     }
   };
 
+  const onVerify = async () => {
+    if (!presetId || isDemo || verifying) return;
+    const key = apiKeyInput.trim() || settings.savedApiKey || settings.devProvider?.apiKey || '';
+    if (needsKey && !key) return setNotice({ tone: 'error', text: COPY.needKeyToTest });
+    if (!form.baseUrl.trim()) return setNotice({ tone: 'error', text: COPY.needBaseUrl });
+    const model = form.model.trim();
+    if (!model) return setNotice({ tone: 'error', text: COPY.needModel });
+    setVerifying(true);
+    try {
+      await checkProviderModel(buildProviderConfig(presetId as Exclude<AppPresetId, 'demo'>, { apiKey: key, baseUrl: form.baseUrl, model }));
+      setVerdicts((v) => ({ ...v, [model]: true }));
+    } catch (e) {
+      setVerdicts((v) => ({ ...v, [model]: messageOf(e) }));
+    } finally {
+      setVerifying(false);
+    }
+  };
+
   const onRemoveKey = async () => {
     await settings.removeApiKey();
     setKeyEditing(false);
+    setConfirmRemove(false);
     setNotice({ tone: 'ok', text: COPY.keyRemoved });
   };
 
@@ -171,41 +200,92 @@ export function ApiKeySection() {
   if (isDemo) {
     body = <Txt v="bodySm" color="muted">{COPY.demoHint}</Txt>;
   } else {
+    const actionRow = { flexDirection: 'row' as const, alignItems: 'center' as const, flexWrap: 'wrap' as const, gap: 18 };
     const keyField =
       hasKey && !keyEditing ? (
-        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 8, borderWidth: 1, borderColor: c.border, borderRadius: radius.lg, paddingHorizontal: 12, minHeight: 42, backgroundColor: c.surface, flexWrap: 'wrap' }}>
-          <Txt v="bodySm" color="muted" testID="api-key-masked">{'•••••••••••• · ' + COPY.apiKeyMasked}</Txt>
-          <View style={{ flexDirection: 'row', gap: 6 }}>
-            <FormButton testID="api-key-change" variant="secondary" label={COPY.change} onPress={() => setKeyEditing(true)} />
-            <FormButton testID="settings-remove-key" variant="ghost" label={COPY.remove} onPress={onRemoveKey} />
+        <View style={{ gap: 4 }}>
+          <View testID="api-key-masked-box" style={{ borderWidth: 1, borderColor: c.border, borderRadius: radius.lg, paddingHorizontal: 12, minHeight: 42, justifyContent: 'center', backgroundColor: c.surface }}>
+            <Txt v="bodySm" color="muted" testID="api-key-masked">{'•••••••••••• · ' + COPY.apiKeyMasked}</Txt>
           </View>
+          {confirmRemove ? (
+            <View testID="api-key-remove-confirm" style={{ gap: 6, paddingTop: 4 }}>
+              <Txt v="bodySm">{COPY.removeConfirm}</Txt>
+              <View style={actionRow}>
+                <LinkButton testID="api-key-remove-cancel" label={COPY.cancel} onPress={() => setConfirmRemove(false)} />
+                <LinkButton testID="settings-remove-key" tone="danger" label={COPY.remove} onPress={onRemoveKey} />
+              </View>
+            </View>
+          ) : (
+            <View style={[actionRow, { paddingTop: 4 }]}>
+              <LinkButton testID="api-key-change" label={COPY.change} onPress={() => setKeyEditing(true)} />
+              <LinkButton testID="api-key-remove" tone="danger" label={COPY.remove} onPress={() => setConfirmRemove(true)} />
+            </View>
+          )}
         </View>
       ) : (
-        <TextInput
-          testID="settings-api-key"
-          value={apiKeyInput}
-          onChangeText={setApiKeyInput}
-          placeholder={COPY.apiKeyPlaceholder}
-          placeholderTextColor={c.muted}
-          secureTextEntry
-          autoCapitalize="none"
-          autoCorrect={false}
-          textContentType="password"
-          accessibilityLabel={COPY.apiKey}
-          style={monoInput}
-        />
+        <View style={{ gap: 4 }}>
+          <TextInput
+            testID="settings-api-key"
+            value={apiKeyInput}
+            onChangeText={setApiKeyInput}
+            placeholder={COPY.apiKeyPlaceholder}
+            placeholderTextColor={c.muted}
+            secureTextEntry
+            autoCapitalize="none"
+            autoCorrect={false}
+            textContentType="password"
+            accessibilityLabel={COPY.apiKey}
+            style={monoInput}
+          />
+          {hasKey ? (
+            <View style={[actionRow, { paddingTop: 4 }]}>
+              <LinkButton testID="api-key-edit-cancel" label={COPY.cancel} onPress={() => { setKeyEditing(false); setApiKeyInput(''); }} />
+            </View>
+          ) : null}
+        </View>
       );
 
+    // Modelos de chat primeiro (o recomendado do preset no topo); ocultos só com "Mostrar todos".
+    const ordered = orderModelListings(models, presetId ? APP_PRESETS[presetId].defaultModel : undefined);
+    const usable = ordered.filter((m) => m.usable);
+    const hidden = ordered.filter((m) => !m.usable);
+    const shownChats = usable.slice(0, MAX_MODEL_CHIPS);
+    const chipList = showHidden ? [...shownChats, ...hidden] : shownChats;
     const modelChips = models.length > 0 ? (
       <View style={{ gap: 8 }}>
         <Txt v="eyebrow" color="muted">{COPY.pickModel}</Txt>
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
-          {models.slice(0, MAX_MODEL_CHIPS).map((id) => (
-            <Pill key={id} label={id} variant={id === form.model ? 'suggest' : 'default'} onPress={() => update({ model: id })} />
-          ))}
+          {chipList.map((m) => {
+            const verdict = verdicts[m.id];
+            const mark = verdict === undefined ? '' : verdict === true ? '✓ ' : '✗ ';
+            return (
+              <Pill
+                key={m.id}
+                testID={`model-chip-${m.id}`}
+                label={mark + m.id}
+                variant={m.id === form.model ? 'suggest' : m.usable ? 'default' : 'dashed'}
+                onPress={() => update({ model: m.id })}
+              />
+            );
+          })}
         </View>
+        {hidden.length > 0 ? (
+          <View style={{ gap: 6 }}>
+            <LinkButton
+              testID="settings-models-toggle"
+              label={showHidden ? COPY.hideHiddenModels : COPY.showAllModels(hidden.length)}
+              onPress={() => setShowHidden((v) => !v)}
+            />
+            {showHidden ? <Txt v="meta" color="muted">{COPY.hiddenHint}</Txt> : null}
+          </View>
+        ) : null}
+        {usable.length > shownChats.length ? (
+          <Txt v="meta" color="muted">{COPY.moreModels(shownChats.length, usable.length)}</Txt>
+        ) : null}
       </View>
     ) : null;
+
+    const verdict = verdicts[form.model.trim()];
 
     body = (
       <View style={{ gap: 12 }}>
@@ -235,7 +315,7 @@ export function ApiKeySection() {
               autoCapitalize="none"
               autoCorrect={false}
               accessibilityLabel={COPY.modelField}
-              style={[monoInput, { flex: 1 }]}
+              style={[monoInput, { flex: 1, minWidth: 0 }]}
             />
             <FormButton
               testID="settings-test"
@@ -244,6 +324,14 @@ export function ApiKeySection() {
               disabled={testing}
               onPress={onTest}
             />
+          </View>
+          <View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', gap: 14 }}>
+            <LinkButton testID="settings-verify" label={verifying ? COPY.verifying : COPY.verify} onPress={onVerify} />
+            {verdict !== undefined ? (
+              <Txt v="meta" tint={verdict === true ? c.srcText : c.danger} testID="settings-verify-result" style={{ flexShrink: 1 }}>
+                {verdict === true ? COPY.verifyOk : COPY.verifyFail(verdict)}
+              </Txt>
+            ) : null}
           </View>
         </Field>
         {modelChips}

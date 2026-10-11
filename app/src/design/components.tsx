@@ -196,11 +196,11 @@ export function ActButton({ label, onPress, deepen, count, testID }: { label: st
   );
 }
 
-/** Ação de texto dentro de card (proto: .card-actions button). */
-export function LinkButton({ label, onPress, testID }: { label: string; onPress: () => void; testID?: string }) {
+/** Ação de texto dentro de card (proto: .card-actions button). `danger` = ação destrutiva (ex.: Remover). */
+export function LinkButton({ label, onPress, testID, tone = 'accent' }: { label: string; onPress: () => void; testID?: string; tone?: 'accent' | 'danger' }) {
   return (
-    <Pressable testID={testID} onPress={onPress} hitSlop={4} style={({ pressed }) => ({ paddingVertical: 4, paddingRight: 8, opacity: pressed ? 0.6 : 1 })}>
-      <Txt v="button" color="accent">{label}</Txt>
+    <Pressable testID={testID} accessibilityRole="button" onPress={onPress} hitSlop={4} style={({ pressed }) => ({ paddingVertical: 4, paddingRight: 8, opacity: pressed ? 0.6 : 1 })}>
+      <Txt v="button" color={tone}>{label}</Txt>
     </Pressable>
   );
 }

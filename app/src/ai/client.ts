@@ -8,7 +8,9 @@ import {
   type ChatMessage,
   type FetchLike,
   type LLMProvider,
+  type ModelListing,
   type ProviderConfig,
+  type ProviderExtras,
 } from '@sensus/core';
 import { DEMO_PRESET_ID, DemoProvider } from './demo-provider';
 import { getChatGPTAccessToken, markChatGPTAttention, markChatGPTWorking } from '@/auth/chatgpt/service';
@@ -23,7 +25,7 @@ import { decideError } from '@/settings/route';
 export const streamingFetch: FetchLike = (input, init) =>
   expoFetch(input, init as Parameters<typeof expoFetch>[1]) as unknown as Promise<Response>;
 
-export function providerFor(config: ProviderConfig): LLMProvider & { listModels?: () => Promise<string[]> } {
+export function providerFor(config: ProviderConfig): LLMProvider & ProviderExtras {
   // Preset 'demo': respostas gravadas, sem rede (ver ai/demo-provider.ts).
   if (config.id === DEMO_PRESET_ID) return new DemoProvider();
   // Plano ChatGPT: o token vem do armazenamento seguro e é renovado quando preciso.
@@ -87,9 +89,19 @@ export async function streamChat(
   }
 }
 
-/** Testa credenciais e conectividade listando os modelos (GET /models). Lança LLMError em falha. */
-export async function listProviderModels(config: ProviderConfig): Promise<string[]> {
+/**
+ * Testa credenciais e conectividade listando os modelos (GET /models), com a marca de uso em texto.
+ * Lança LLMError em falha.
+ */
+export async function listProviderModels(config: ProviderConfig): Promise<ModelListing[]> {
   const provider = providerFor(config);
-  if (!provider.listModels) throw new Error('Provedor sem listagem de modelos.');
-  return provider.listModels();
+  if (!provider.listModelListings) throw new Error('Provedor sem listagem de modelos.');
+  return provider.listModelListings();
+}
+
+/** Verifica sob demanda que o modelo configurado responde a um chat (1 token). Lança LLMError em falha. */
+export async function checkProviderModel(config: ProviderConfig): Promise<void> {
+  const provider = providerFor(config);
+  if (!provider.checkModel) throw new Error('Provedor sem teste de modelo.');
+  return provider.checkModel();
 }

@@ -86,6 +86,22 @@ scripts/emu.sh status | stop
 - `input text` só aceita ASCII. Pare o Metro que você iniciou (`kill` pelo PID).
 - Um celular físico pode aparecer em `adb devices`; o script sempre usa `-s emulator-5554`.
 
+## Build de release no celular
+
+`expo prebuild` regrava os `scripts` de `app/package.json` (o Expo reescreve o arquivo a partir do template).
+Por isso, depois de cada prebuild, rode `git checkout app/package.json` antes de commitar; caso contrário o
+commit leva a reescrita junto. Fluxo completo:
+
+```bash
+cd app && npx expo prebuild --platform android
+cd android && ANDROID_HOME=/home/albus/Android/Sdk APP_ENV=production NODE_ENV=production \
+  ./gradlew assembleRelease -PreactNativeArchitectures=arm64-v8a
+cd .. && git checkout app/package.json      # desfaz a reescrita do prebuild
+adb -s <serial> install -r android/app/build/outputs/apk/release/app-release.apk
+```
+
+Confira no APK que não há chave de API embutida (0 ocorrências de `nvapi-` nos recursos e no DEX).
+
 ## Convenção de `testID`
 
 `kebab-case`, estável, com ids de dados no fim. Na web viram `data-testid`. Exemplos:

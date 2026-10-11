@@ -4,8 +4,20 @@ import type { ChatRequest, FetchLike, LLMProvider, ProviderConfig } from '../typ
 import { LLMError, type LLMErrorCode } from './llm-error';
 import { readSSEData, StallWatch, STALL_TIMEOUT_MS } from './sse';
 import { OpenAIResponsesProvider } from './openai-responses';
+import { classifyModels, type ModelListing } from './models';
 export { LLMError, type LLMErrorCode } from './llm-error';
 export { STALL_TIMEOUT_MS } from './sse';
+export { classifyModel, classifyModels, idExclusionReason, orderModelListings, type ModelListing } from './models';
+
+/** Recursos extras de um provedor, além de stream(). Opcionais: nem todo adaptador os tem. */
+export interface ProviderExtras {
+  /** Ids de todos os modelos (sem filtro), em ordem alfabética. */
+  listModels?: () => Promise<string[]>;
+  /** Modelos com a marca de uso em texto (ver models.ts). */
+  listModelListings?: () => Promise<ModelListing[]>;
+  /** Teste de uso do modelo configurado: lança LLMError se ele não responder a um chat. */
+  checkModel?: () => Promise<void>;
+}
 
 interface ChatCompletionPayload {
   choices?: Array<{
@@ -15,7 +27,7 @@ interface ChatCompletionPayload {
     text?: string;
   }>;
   error?: { message?: string } | string;
-  data?: Array<{ id?: string }>;
+  data?: unknown[];
 }
 
 function isAbortError(err: unknown): boolean {
@@ -159,14 +171,34 @@ export class OpenAICompatibleProvider implements LLMProvider {
     }
   }
 
-  /** Lista os ids de modelos disponíveis (GET {baseUrl}/models). */
+  /** Lista os ids de modelos disponíveis (GET {baseUrl}/models), sem filtro. */
   async listModels(): Promise<string[]> {
+    return (await this.listModelListings()).map((m) => m.id).sort();
+  }
+
+  /** Modelos do GET {baseUrl}/models com a marca de uso em texto (filtro do seletor). */
+  async listModelListings(): Promise<ModelListing[]> {
     const res = await this.send('/models', 'GET', undefined, 'application/json');
     const payload = await this.parsePayload(res);
-    return (payload.data ?? [])
-      .map((m) => m.id)
-      .filter((id): id is string => typeof id === 'string')
-      .sort();
+    return classifyModels(payload.data ?? []);
+  }
+
+  /**
+   * Teste de uso do modelo configurado: um chat com 1 token de saída, sem streaming. Qualquer resposta
+   * de sucesso conta como disponível (modelos de raciocínio podem não produzir texto com 1 token).
+   */
+  async checkModel(): Promise<void> {
+    this.assertConfigured();
+    const body = JSON.stringify({
+      ...this.config.extraBody,
+      model: this.config.model,
+      messages: [{ role: 'user', content: 'Responda com uma palavra.' }],
+      temperature: 0,
+      max_tokens: 1,
+      stream: false,
+    });
+    const res = await this.send('/chat/completions', 'POST', body, 'application/json');
+    await this.parsePayload(res);
   }
 
   private assertConfigured(): void {
@@ -266,7 +298,7 @@ export function createProvider(
   config: ProviderConfig,
   fetchImpl: FetchLike,
   deps: ProviderDeps = {},
-): LLMProvider & { listModels?: () => Promise<string[]> } {
+): LLMProvider & ProviderExtras {
   switch (config.kind) {
     case 'openai-compatible':
       return new OpenAICompatibleProvider(config, fetchImpl);
