@@ -1,8 +1,8 @@
 # Licenças dos dados
 
 Este arquivo lista todas as fontes de dados do Sensus, com licença, origem e atribuição exigida.
-Foi montado a partir dos metadados de `data/staging/*/source.json` (31 fontes). O banco `sensus.db`
-grava licença, URL, versão e atribuição de cada fonte na tabela `source`.
+Foi montado a partir dos metadados de `data/staging/*/source.json` (31 fontes). Os bancos gerados
+(`sensus.db`, completo, e `sensus-reader.db`, do APK) gravam licença, URL, versão e atribuição de cada fonte na tabela `source`.
 
 > Não é parecer jurídico. Itens marcados **Verificar** dependem de interpretação ou de confirmação
 > na fonte antes da distribuição.
@@ -20,9 +20,9 @@ grava licença, URL, versão e atribuição de cada fonte na tabela `source`.
 3. **Atribuição visível no app.** CC BY e CC BY-SA exigem crédito. O app deve exibir a atribuição de
    cada fonte usada (requisito registrado em `docs/BACKLOG.md`, seção Licenças).
 4. **Coordenadas com origem no OpenStreetMap.** Ver item 4 da seção "Verificar".
-5. **Fontes fora do build atual.** `data/sensus.db` hoje tem 27 das 31 fontes. Estão em staging,
-   mas fora do build: `hbo-wlc`, `tahot`, `stepbible-tbesh`, `sword-kd`. Elas entram no próximo build
-   e precisam da mesma atribuição.
+5. **Build completo.** `data/sensus.db` (versão 2026.10.11) tem as 31 fontes e os 66 livros. O banco leitor
+   (`data/sensus-reader.db`, no APK) tem só `blivre`, `kjv`, `grc-tr`, `hbo-wlc` e os parágrafos de `tagnt` e
+   `tahot`, todos com a mesma atribuição do banco completo. Ver seção 6.
 
 ## 2. Fontes
 
@@ -42,10 +42,10 @@ Cambridge. Licença CC BY 4.0: credite "STEP Bible" com link para www.STEPBible.
 |---|---|---|
 | `tagnt` | Translators Amalgamated Greek NT (TAGNT) | Inclui tokens sintéticos para leituras alternativas (TR/BYZ). |
 | `grc-tr` | Textus Receptus, derivado do TAGNT | Palavras marcadas como presentes no TR. |
-| `tahot` | Translators Amalgamated Hebrew OT (TAHOT) | **Fora do build atual.** Base Leningrado, com correções da STEPBible. |
-| `hbo-wlc` | Hebraico do AT (Leningrado), derivado do TAHOT | **Fora do build atual.** Mesma base do TAHOT. |
+| `tahot` | Translators Amalgamated Hebrew OT (TAHOT) | Base Leningrado, com correções da STEPBible. |
+| `hbo-wlc` | Hebraico do AT (Leningrado), derivado do TAHOT | Mesma base do TAHOT. |
 | `stepbible-tbesg` | TBESG, léxico grego | Definições baseadas em Abbott-Smith, editadas pela STEPBible. |
-| `stepbible-tbesh` | TBESH, léxico hebraico | **Fora do build atual.** Definições baseadas em BDB (abreviado). |
+| `stepbible-tbesh` | TBESH, léxico hebraico | Definições baseadas em BDB (abreviado). |
 | `stepbible-tflsj` | TFLSJ, LSJ formatado | Base Liddell-Scott-Jones (domínio público), formatada pela Tyndale House. |
 | `stepbible-tipnr` | TIPNR, nomes próprios | Coordenadas via OpenBible.info, ver item 4 de "Verificar". |
 
@@ -90,7 +90,7 @@ domínio público (DistributionLicense=Public Domain).* A atribuição completa 
 | `sword-calvincommentaries` | João Calvin (1509-1564) | Calvin's Collected Commentaries | v1.1 | PD. Notas do módulo trazem e-mail de quem converteu o módulo. Ver item 8. |
 | `sword-clarke` | Adam Clarke (1762-1832) | Commentary and Critical Notes on the Bible | v2.0 | PD. |
 | `sword-jfb` | Jamieson, Fausset, Brown (1871) | Critical and Explanatory Commentary on the Whole Bible | v3.0 | PD. Ver item 8 (e-mail no texto). |
-| `sword-kd` | Keil e Delitzsch (1864) | Biblical Commentary on the Old Testament | v2.0 | PD. **Fora do build atual.** |
+| `sword-kd` | Keil e Delitzsch (1864) | Biblical Commentary on the Old Testament | v2.0 | PD. |
 | `sword-mhc` | Matthew Henry (1662-1714) | Complete Commentary on the Whole Bible | v2.2 | PD. Texto do CCEL. |
 | `sword-scofield` | C. I. Scofield (1843-1921) | Reference Notes, edição de 1917 | v2.1 | PD. |
 | `sword-wesley` | John Wesley (1703-1791) | Notes on the Bible | v1.1 | PD. |
@@ -137,6 +137,8 @@ Mapa do mundo antigo (AWMC): não incluído; ver `docs/BACKLOG.md`, seção App.
 2. **Banco misto (`sensus.db`).** Os termos de cada fonte ficam no `source`. Antes de publicar o banco,
    decidir entre (a) excluir o RWP do build distribuído ou (b) distribuir o banco com aviso explícito de
    que as linhas do RWP são só para uso não comercial. Recomenda-se revisão jurídica.
+   **Status:** a release 2026.10.11 inclui o RWP, como o build completo pede, e as notas da release repetem a
+   restrição não comercial. Confirmar antes de publicar; excluir o RWP exige refazer o build.
 3. **Theographic.** O banco que inclui Theographic deve ir sob CC BY-SA 4.0 com atribuição. Os metadados
    de `source.json` já registram isso.
 4. **ODbL (OpenStreetMap).** Parte das coordenadas de `openbible-geo` e `stepbible-tipnr` pode vir do
@@ -155,10 +157,12 @@ Mapa do mundo antigo (AWMC): não incluído; ver `docs/BACKLOG.md`, seção App.
 8. **E-mails de terceiros.** `sword-calvincommentaries` (notas do módulo, gravadas na tabela `source`)
    e `sword-jfb` (texto do staging) têm e-mails de terceiros. Remover antes do build. O e-mail do
    Calvin entra no banco publicado.
+   **Status (2026-10-11):** a busca por endereços de e-mail em `data/staging/` não encontrou nenhum. Repetir a
+   busca antes de cada release.
 9. **ISBE.** Confirmar que o módulo é da edição de 1915, em domínio público. Edições posteriores podem
    ter proteção.
-10. **Fontes fora do build.** Ao incluir `tahot`, `hbo-wlc`, `stepbible-tbesh` e `sword-kd`, atualizar a
-    tela de licenças e este arquivo.
+10. **Tela de licenças do app.** As 31 fontes estão no build completo desde 2026.10.11. A tela "Sobre e
+    licenças" do app precisa listar todas, com as atribuições acima (`docs/BACKLOG.md`, seção Licenças).
 
 ## 4. Ferramentas e modelos de terceiros (não são dados do banco)
 
@@ -170,3 +174,18 @@ Mapa do mundo antigo (AWMC): não incluído; ver `docs/BACKLOG.md`, seção App.
 
 Toda nova fonte precisa de `source.json` com `license`, `license_url`, `url`, `version` e `attribution`,
 e de uma linha nesta tabela. Só entram fontes cuja licença permita redistribuir o dado derivado.
+
+## 6. Distribuição dos bancos
+
+- **Banco completo** (`data/sensus.db`, build `--edition full`): publicado como ZIP na release `data-<versão>` do
+  GitHub (`dist/data/sensus-full-<versão>.zip`, deflate, uma entrada `sensus.db`). O app baixa o ZIP e confere o
+  SHA-256 e o tamanho indicados em `data-manifest.json` (raiz do repositório, lido pelo app em `main`).
+  Gerado por `pipeline/package_data.py`; a release é criada por `scripts/release-data.sh` (`--dry-run` só mostra o
+  comando). O ZIP e o `dist/` não entram no git.
+- **Banco leitor** (`data/sensus-reader.db`, build `--edition reader`): empacotado no APK como `app/assets/sensus.db`,
+  para o app funcionar offline antes do download. Não é publicado separadamente.
+- **Termos de redistribuição do banco completo:** CC BY-SA 4.0 no que deriva do Theographic (regra 1), restrição
+  não comercial do RWP (regra 2) e atribuições de cada fonte. As notas da release resumem essas atribuições e
+  trazem o aviso CC BY-SA. Cada release nova deve repetir as atribuições e o aviso.
+- **Versão dos dados:** `meta.data_version` (AAAA.MM.DD) e `meta.schema_version` (3 desde o layout com `xref`
+  compacta e a view `token_strong`). O app aceita só o esquema que conhece (`app/src/data/edition.ts`).

@@ -272,7 +272,7 @@ export class Repo {
    * do texto `textSourceId`. `exclude` (ex.: o próprio intervalo) não entra nos exemplos, mas não altera o total.
    */
   async concordance(strongBase: string, textSourceId: string, limit: number, exclude?: VerseRange): Promise<Concordance> {
-    const countRow = await this.first<CountRow>('SELECT COUNT(DISTINCT vid) AS n FROM token WHERE strong_base = ?', [strongBase]);
+    const countRow = await this.first<CountRow>('SELECT COUNT(DISTINCT vid) AS n FROM token_strong WHERE strong_base = ?', [strongBase]);
     const count = countRow?.n ?? 0;
     if (limit <= 0 || count === 0) return { count, samples: [] };
 
@@ -285,7 +285,7 @@ export class Repo {
     params.push(limit);
     const samples = await this.all<VerseText>(
       `SELECT v.cite_id, v.source_id, v.vid, v.text FROM verse_text v
-       WHERE v.source_id = ? AND v.vid IN (SELECT DISTINCT vid FROM token WHERE strong_base = ?${excl})
+       WHERE v.source_id = ? AND v.vid IN (SELECT DISTINCT vid FROM token_strong WHERE strong_base = ?${excl})
        ORDER BY v.vid LIMIT ?`,
       params,
     );
@@ -323,9 +323,9 @@ export class Repo {
               MIN(r.end_vid - r.start_vid) AS ref_span,
               (SELECT COUNT(*) FROM entry_ref x WHERE x.entry_cite_id = d.cite_id) AS total_refs
        FROM entry_ref r
-       JOIN dictionary_entry d ON d.cite_id = r.entry_cite_id
-       JOIN source s ON s.id = d.source_id
-       WHERE r.start_vid <= ? AND r.end_vid >= ? AND s.kind IN (${placeholders(allowed.length)})
+       CROSS JOIN dictionary_entry d CROSS JOIN source s
+       WHERE d.cite_id = r.entry_cite_id AND s.id = d.source_id
+         AND r.start_vid <= ? AND r.end_vid >= ? AND s.kind IN (${placeholders(allowed.length)})
        GROUP BY d.cite_id, s.kind
        ORDER BY s.kind, d.headword, d.cite_id`,
       [range.end, range.start, ...allowed],
@@ -432,8 +432,14 @@ export class Repo {
         const record = await this.first<DictionaryEntry>(`SELECT ${DICTIONARY_COLS} FROM dictionary_entry WHERE cite_id = ?`, [citeId]);
         return record ? { table: 'dictionary_entry', record } : null;
       }
+      // xr: cite_id é derivado na view (pipeline/schema_physical.sql); a busca vai pela chave da tabela.
       case 'xr': {
-        const record = await this.first<XRef>(`SELECT ${XREF_COLS} FROM xref WHERE cite_id = ?`, [citeId]);
+        const m = /^xr:([^:]+):(\d+):(\d+)-(\d+)$/.exec(citeId);
+        if (!m) return null;
+        const record = await this.first<XRef>(
+          `SELECT ${XREF_COLS} FROM xref WHERE from_vid = ? AND source_id = ? AND to_start_vid = ? AND to_end_vid = ? AND cite_id = ?`,
+          [Number(m[2]), m[1]!, Number(m[3]), Number(m[4]), citeId],
+        );
         return record ? { table: 'xref', record } : null;
       }
       case 'ent': {

@@ -160,6 +160,10 @@ CREATE TABLE meta (
   value  TEXT NOT NULL
 );
 
+-- Concordância: só (vid, pos, corpus, strong_base). Enxuta para o painel; no layout físico é uma
+-- view própria (pipeline/schema_physical.sql), porque a view completa de token faz junções demais por linha.
+CREATE VIEW token_strong AS SELECT vid, pos, corpus, strong_base FROM token;
+
 CREATE INDEX idx_verse_text_vid   ON verse_text(vid);
 CREATE INDEX idx_token_vid        ON token(vid);
 CREATE INDEX idx_token_strong     ON token(strong_base);

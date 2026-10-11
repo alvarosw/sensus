@@ -8,7 +8,9 @@
 --   * source_id vira inteiro (src_code.sid); corpus vira 0 = gnt, 1 = hot.
 --   * Strings repetidas (strong, morfologia, glosas, edições...) vão para dict_str e são referenciadas por id.
 --     surface, variant_note e alt_ref continuam em texto, por serem quase todos distintos.
--- Tabelas pequenas (commentary, lexicon_entry, dictionary_entry, xref, entity...) mantêm o formato lógico.
+-- xref também é compactada: cite_id derivado (xr:{source}:{from}:{start}-{end}), source_id como sid, e a
+-- chave primária (from_vid, sid, to_start, to_end) serve de índice para from_vid (idx_xref_from sai).
+-- Tabelas pequenas (commentary, lexicon_entry, dictionary_entry, entity...) mantêm o formato lógico.
 
 -- Dicionário de strings repetidas. id estável dentro do arquivo; v é único.
 CREATE TABLE dict_str (
@@ -81,9 +83,25 @@ CREATE TABLE verse_t (
 INSERT INTO verse_t (sid, vid, text)
 SELECT c.sid, v.vid, v.text FROM verse_text v JOIN src_code c ON c.source_id = v.source_id;
 
+-- Referências cruzadas (~640 mil linhas). Sem o cite_id armazenado e sem o índice dele, o espaço cai muito.
+-- A chave (from_vid, sid, to_start, to_end) é única porque o cite_id derivado é igual ao da fonte em todas as linhas.
+CREATE TABLE xref_t (
+  from_vid      INTEGER NOT NULL,
+  sid           INTEGER NOT NULL REFERENCES src_code(sid),
+  to_start_vid  INTEGER NOT NULL,
+  to_end_vid    INTEGER NOT NULL,
+  weight        REAL,
+  PRIMARY KEY (from_vid, sid, to_start_vid, to_end_vid)
+) WITHOUT ROWID;
+
+INSERT INTO xref_t (from_vid, sid, to_start_vid, to_end_vid, weight)
+SELECT x.from_vid, c.sid, x.to_start_vid, x.to_end_vid, x.weight
+FROM xref x JOIN src_code c ON c.source_id = x.source_id;
+
 -- As tabelas lógicas cedem o lugar às VIEWs de mesmo nome.
 DROP TABLE token;
 DROP TABLE verse_text;
+DROP TABLE xref;
 
 CREATE VIEW verse_text AS
 SELECT 'txt:' || c.source_id || ':' || v.vid AS cite_id,
@@ -119,3 +137,19 @@ LEFT JOIN dict_str mo ON mo.id = t.morph_id
 LEFT JOIN dict_str md ON md.id = t.morph_desc_id
 LEFT JOIN dict_str gl ON gl.id = t.gloss_id
 LEFT JOIN dict_str ed ON ed.id = t.editions_id;
+
+-- Concordância (ver schema.sql): só as colunas de busca, com uma junção para strong_base.
+DROP VIEW token_strong;
+CREATE VIEW token_strong AS
+SELECT t.vid AS vid, t.pos AS pos, (CASE t.corpus WHEN 0 THEN 'gnt' ELSE 'hot' END) AS corpus,
+       sb.v AS strong_base
+FROM token_t t LEFT JOIN dict_str sb ON sb.id = t.strong_base_id;
+
+CREATE VIEW xref AS
+SELECT 'xr:' || c.source_id || ':' || x.from_vid || ':' || x.to_start_vid || '-' || x.to_end_vid AS cite_id,
+       c.source_id AS source_id,
+       x.from_vid AS from_vid,
+       x.to_start_vid AS to_start_vid,
+       x.to_end_vid AS to_end_vid,
+       x.weight AS weight
+FROM xref_t x JOIN src_code c ON c.sid = x.sid;

@@ -28,7 +28,7 @@ _Capturas em breve._
 
 | Pasta | Conteúdo |
 |---|---|
-| `pipeline/` | Ingestores Python (uma fonte cada) → `data/staging/` → `build_db.py` → `data/sensus.db` |
+| `pipeline/` | Ingestores Python (uma fonte cada) → `data/staging/` → `build_db.py` → `data/sensus.db` (completo) e `data/sensus-reader.db` (APK) |
 | `pipeline/schema.sql` | Contrato do banco (tabelas, `vid`, formatos de `cite_id`) |
 | `packages/core/` | Núcleo TypeScript sem dependências de plataforma: repositório, painel, IA, citações |
 | `app/` | App Expo (React Native), interface em pt-BR |
@@ -52,8 +52,27 @@ baixa a própria fonte.
 cd pipeline
 python3 -m venv .venv && .venv/bin/pip install requests lxml pysword
 .venv/bin/python -I ingest/blivre.py        # e os demais ingestores em pipeline/ingest/
-.venv/bin/python build_db.py --books Phil --sources <lista>
+.venv/bin/python build_db.py --books Phil --sources <lista>   # filtro de teste; sem --books, todos os livros
 ```
+
+### 1b. Dados para distribuição
+
+O banco completo é baixado pelo app; o banco leitor vai dentro do APK (funciona offline antes do download).
+A versão dos dados (`--data-version`, padrão = hoje) tem de ser a mesma nos dois.
+
+```bash
+cd pipeline
+python3 build_db.py --edition full   --data-version 2026.10.11   # data/sensus.db (~456 MB, 66 livros, 31 fontes)
+python3 build_db.py --edition reader --data-version 2026.10.11   # data/sensus-reader.db (~17 MB)
+python3 package_data.py                                          # dist/data/sensus-full-<v>.zip (~138 MB) e data-manifest.json
+cd .. && scripts/release-data.sh --dry-run                       # mostra o comando de release; sem --dry-run chama o gh
+```
+
+- `scripts/release-data.sh` cria a release `data-<versão>` com as notas de atribuição (CC BY-SA 4.0, CC BY, RWP
+  não comercial). Só o responsável roda sem `--dry-run`. Depois, commite `data-manifest.json` em `main`.
+- Detalhes de licença e distribuição: [DATA_LICENSES.md](DATA_LICENSES.md), seção 6.
+- Para o APK, empacote o banco leitor (não o completo):
+  `cd app && npm run sync-db ../data/sensus-reader.db`. Sem caminho, `sync-db` copia `data/sensus.db` (completo).
 
 ### 2. Núcleo e testes
 
@@ -71,7 +90,7 @@ O `.env` nunca vai para o repositório.
 
 ```bash
 cd app
-npm run sync-db        # copia ../data/sensus.db para assets/sensus.db
+npm run sync-db ../data/sensus-reader.db   # copia o banco leitor para assets/sensus.db (seção 1b); sem argumento, o completo
 npx expo start
 ```
 
