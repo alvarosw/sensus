@@ -1,7 +1,6 @@
 // Cards de fontes por tipo (proto: wordCard, comCard, xrCard, dicCard, placeCard, matrix).
 import { memo, useMemo } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
-import Svg, { Circle, G, Line, Text as SvgText } from 'react-native-svg';
 import {
   formatShortRef,
   titleCaseHeadword,
@@ -209,40 +208,7 @@ export function EntityCard({
   );
 }
 
-// ---- lugar com mini-mapa ----------------------------------------------------------------------------------------
-
-const MAP = 92;
-const DEG = 60; // px por grau (escala regional)
-
-function MiniMap({ lat, lon, name }: { lat: number; lon: number; name: string }) {
-  const { c, st } = useTheme();
-  const grid = 15;
-  // A grade acompanha as coordenadas: lugares diferentes ficam sobre linhas diferentes.
-  const offX = (((-lon * DEG) % grid) + grid) % grid;
-  const offY = (((lat * DEG) % grid) + grid) % grid;
-  const lines = [0, 1, 2, 3, 4, 5, 6].map((i) => i * grid);
-  const x = MAP / 2;
-  const y = MAP / 2;
-  return (
-    <View style={{ width: MAP, height: MAP, borderRadius: radius.lg, backgroundColor: c.surfaceAlt, overflow: 'hidden' }}>
-      <Svg width={MAP} height={MAP} viewBox={`0 0 ${MAP} ${MAP}`} accessibilityLabel={`Posição de ${name}`}>
-        <G stroke={c.border} strokeWidth={1}>
-          {lines.map((g) => (
-            <Line key={`v${g}`} x1={g + offX} y1={0} x2={g + offX} y2={MAP} />
-          ))}
-          {lines.map((g) => (
-            <Line key={`h${g}`} x1={0} y1={g + offY} x2={MAP} y2={g + offY} />
-          ))}
-        </G>
-        <Circle cx={x} cy={y} r={9} fill={st.ent} fillOpacity={0.25} />
-        <Circle cx={x} cy={y} r={4} fill={st.ent} />
-        <SvgText x={x} y={y - 12} textAnchor="middle" fontSize={9} fontWeight="700" fill={c.text}>
-          {name.length > 14 ? `${name.slice(0, 13)}…` : name}
-        </SvgText>
-      </Svg>
-    </View>
-  );
-}
+// ---- lugar (o mapa real fica em PassageMapCard e no painel de mapa) ----------------------------------------
 
 export function PlaceCard({
   entity,
@@ -261,7 +227,6 @@ export function PlaceCard({
   return (
     <Card testID={`place-${entity.cite_id}`}>
       <View style={{ flexDirection: 'row', gap: 12, alignItems: 'flex-start' }}>
-        <MiniMap lat={entity.lat} lon={entity.lon} name={entity.name} />
         <View style={{ flex: 1, minWidth: 0, gap: 4 }}>
           <CardTop>
             <TypeMark kind="ent" label={STUDY.place} />

@@ -13,6 +13,8 @@ import { rangeLabel } from '../common/format';
 import { useBooks } from '../common/hooks';
 import { useLast, usePresence } from '../common/motion';
 import { SRC } from '../common/strings';
+import { MapPanel } from '../maps/MapPanel';
+import { MAPS } from '../maps/strings';
 import { EntityPanel } from './EntityPanel';
 import { SourcePanel } from './SourcePanel';
 import { WordPanel } from './WordPanel';
@@ -52,15 +54,22 @@ export function PanelStack() {
           <IconButton testID="panel-back" icon="back" label={SRC.back} onPress={popPanel} />
           <Crumbs panels={shown} />
         </View>
-        <ScrollView
-          key={`${shown.length}-${entryKey(top)}`}
-          testID="panel-body"
-          style={{ flex: 1 }}
-          contentContainerStyle={{ padding: 16, paddingBottom: 16 + insets.bottom, gap: 12 }}
-          keyboardShouldPersistTaps="handled"
-        >
-          <PanelBody entry={top} />
-        </ScrollView>
+        {top.kind === 'map' ? (
+          // Mapa ocupa a tela: sem ScrollView, para o gesto do mapa não disputar a rolagem.
+          <View key={`${shown.length}-${entryKey(top)}`} testID="panel-body" style={{ flex: 1 }}>
+            <PanelBody entry={top} />
+          </View>
+        ) : (
+          <ScrollView
+            key={`${shown.length}-${entryKey(top)}`}
+            testID="panel-body"
+            style={{ flex: 1 }}
+            contentContainerStyle={{ padding: 16, paddingBottom: 16 + insets.bottom, gap: 12 }}
+            keyboardShouldPersistTaps="handled"
+          >
+            <PanelBody entry={top} />
+          </ScrollView>
+        )}
       </Animated.View>
     </View>
   );
@@ -72,6 +81,8 @@ function entryKey(e: PanelEntry): string {
       return e.tokenCiteId;
     case 'lemma':
       return e.strongBase;
+    case 'map':
+      return `${e.scope.range.start}-${e.scope.range.end}`;
     default:
       return e.citeId;
   }
@@ -86,6 +97,8 @@ function PanelBody({ entry }: { entry: PanelEntry }) {
       return <SourcePanel citeId={entry.citeId} />;
     case 'entity':
       return <EntityPanel citeId={entry.citeId} />;
+    case 'map':
+      return <MapPanel scope={entry.scope} />;
   }
 }
 
@@ -115,6 +128,8 @@ function useCrumb(entry: PanelEntry): { label: string; greek: boolean } {
         const d = await loadCite(repo, entry.citeId);
         return { label: d?.label ?? '?', greek: false };
       }
+      case 'map':
+        return { label: MAPS.title, greek: false };
     }
   }, [repo, key]);
   return state.data ?? { label: '…', greek: false };

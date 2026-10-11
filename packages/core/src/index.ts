@@ -22,3 +22,4 @@ export * from './ai/cite-index';
 export * from './ai/rich-text';
 export * from './ai/structured';
 export * from './translate-segments';
+export * from './places';

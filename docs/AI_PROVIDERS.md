@@ -32,6 +32,15 @@ O seletor de modelos da chave de API mostra só modelos que conversam em texto. 
 - O modelo recomendado do preset aparece primeiro. "Mostrar todos" revela os ocultos.
 - **Verificar modelo** (sob demanda, nunca em lote): um chat de 1 token com o modelo escolhido. ✓ = respondeu;
   ✗ = motivo do provedor (ex.: NVIDIA 404 "Function ... Not found for account").
+- **Salvar verifica antes.** Salvar a conexão (chave, URL base, modelo) roda a mesma verificação. Se falhar
+  (401, 404 "não disponível para esta conta", tempo esgotado em 30 s, rede), nada é salvo e o formulário mostra
+  o motivo e sugestões. Sem resposta em 8 s, aparece o aviso "Demorando" com os modelos recomendados como opções
+  rápidas; se responder depois, salva com "Funciona, mas está lento". Regras e estados em
+  `app/src/settings/verify-save.ts` (função pura, testada em `verify-save.test.ts`). O núcleo só devolve ao fim
+  da chamada, então o primeiro byte não é medido à parte.
+- **Modelos recomendados** (`RECOMMENDED_MODELS`, `packages/core/src/ai/recommended-models.ts`): grupo
+  "Recomendados" acima da lista, com etiqueta (Equilibrado, Rápido, Preciso) e nota. Escolher um aplica também o
+  `extraBody` do modelo (ex.: raciocínio desligado), salvo junto da conexão e substituindo o do preset.
 - Teste de fixture: `packages/core/test/fixtures/nvidia-models.json` (80 ids reais, sem chave).
 
 ## Como funciona o login

@@ -9,6 +9,7 @@
     "@expo-google-fonts/literata": "^0.4.3",
     "@expo-google-fonts/manrope": "^0.4.2",
     "@gorhom/bottom-sheet": "^5.2.14",
+    "@maplibre/maplibre-react-native": "11.4.0",
     "@sensus/core": "*",
     "expo": "~57.0.27",
     "expo-asset": "~57.0.19",
