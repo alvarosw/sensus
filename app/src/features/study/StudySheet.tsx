@@ -13,6 +13,7 @@ import {
   type NativeSyntheticEvent,
 } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
+import Svg, { Defs, LinearGradient as SvgGradient, Rect, Stop } from 'react-native-svg';
 import Animated, {
   Easing,
   cancelAnimation,
@@ -100,9 +101,10 @@ function Sheet({ topInset, active }: { topInset: number; active: boolean }) {
   const [mounted, setMounted] = useState(detent !== 'closed');
 
   const heights = useMemo(() => {
-    const peek = sheetHeight('peek', avail, headH + peekContentH + railBoxH);
+    // O espaço da barra de navegação (inset inferior) fica abaixo do trilho: o peek não pode terminar sob ela.
+    const peek = sheetHeight('peek', avail, headH + peekContentH + railBoxH + insets.bottom);
     return { peek, half: sheetHeight('half', avail), full: sheetHeight('full', avail) };
-  }, [avail, headH, peekContentH, railBoxH]);
+  }, [avail, headH, peekContentH, railBoxH, insets.bottom]);
 
   const h = useSharedValue(0);
   const startH = useSharedValue(0);
@@ -462,6 +464,23 @@ function unitStartOf(v: Vid): Vid {
 
 // ---- "espiar": escopo e fatos -----------------------------------------------------------------------------------
 
+/** Degradê na borda direita da fila de fatos: indica que há mais à direita (a fila rola na horizontal). */
+function FadeEdge({ color, width }: { color: string; width: number }) {
+  return (
+    <View pointerEvents="none" style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width }}>
+      <Svg width="100%" height="100%" preserveAspectRatio="none">
+        <Defs>
+          <SvgGradient id="sensus-fact-fade" x1="0" y1="0" x2="1" y2="0">
+            <Stop offset="0" stopColor={color} stopOpacity="0" />
+            <Stop offset="1" stopColor={color} stopOpacity="1" />
+          </SvgGradient>
+        </Defs>
+        <Rect x="0" y="0" width="100%" height="100%" fill="url(#sensus-fact-fade)" />
+      </Svg>
+    </View>
+  );
+}
+
 function PeekContent({ onLayout }: { onLayout: (e: LayoutChangeEvent) => void }) {
   const { c } = useTheme();
   const { range, books, panel, unit, edges, error, reload } = useStudyData();
@@ -514,6 +533,7 @@ function PeekContent({ onLayout }: { onLayout: (e: LayoutChangeEvent) => void })
           <LinkButton label={STUDY.retry} onPress={reload} testID="panel-retry" />
         </View>
       ) : (
+      <View>
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 6, paddingLeft: gutter.sheet, paddingRight: gutter.sheet, paddingBottom: 10 }} style={{ flexGrow: 0 }}>
         {facts ? (
           <>
@@ -536,6 +556,8 @@ function PeekContent({ onLayout }: { onLayout: (e: LayoutChangeEvent) => void })
           [0, 1, 2].map((i) => <View key={i} style={{ width: 96, height: 44, borderRadius: radius.lg, backgroundColor: c.surfaceAlt, opacity: 0.6 }} />)
         )}
       </ScrollView>
+      {facts ? <FadeEdge color={c.surface} width={36} /> : null}
+      </View>
       )}
 
     </View>

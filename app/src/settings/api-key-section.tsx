@@ -126,7 +126,14 @@ export function ApiKeySection() {
     setForm({ presetId: id, baseUrl: preset.baseUrl, model: preset.defaultModel });
   };
 
-  const summary = isDemo ? COPY.keyDemo : hasKey ? `${keyLabelOf(settings)} · ${COPY.keySaved}` : COPY.keyNone;
+  // Chave do .env de desenvolvimento (opt-in) conta como chave em uso, igual ao "Em uso agora".
+  const summary = isDemo
+    ? COPY.keyDemo
+    : hasKey
+      ? `${keyLabelOf(settings)} · ${COPY.keySaved}`
+      : settings.devProvider
+        ? `${keyLabelOf(settings)} · ${COPY.keyDev}`
+        : COPY.keyNone;
 
   /** Chave da verificação e da gravação. Gravar usa só a chave digitada ou a salva (nunca a do .env). */
   const keysFor = (purpose: VerifyPurpose): { key: string; newKey?: string } => {

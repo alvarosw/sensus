@@ -45,11 +45,12 @@
     "typescript": "~6.0.3"
   },
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "start": "SENSUS_DEV_PROVIDER=1 expo start",
+    "android": "SENSUS_DEV_PROVIDER=1 expo start --android",
+    "ios": "SENSUS_DEV_PROVIDER=1 expo start --ios",
     "sync-db": "node scripts/sync-db.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check:apk": "scripts/check-apk-secrets.sh"
   },
   "private": true,
   "expo": {

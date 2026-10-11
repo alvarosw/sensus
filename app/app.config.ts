@@ -11,6 +11,13 @@ const isProduction =
   process.env.EAS_BUILD_PROFILE === 'production' ||
   process.env.NODE_ENV === 'production';
 
+/**
+ * Opt-in explícito da chave de desenvolvimento: SENSUS_DEV_PROVIDER=1. Sem ele, nenhum build (dev ou release)
+ * recebe a chave do .env. Os scripts `start`/`android`/`ios` já definem a variável; builds de release de QA
+ * precisam defini-la no prebuild/gradle. Produção nunca a define. Ver docs/TESTING.md (check-apk-secrets.sh).
+ */
+const devProviderOptIn = process.env.SENSUS_DEV_PROVIDER === '1';
+
 export interface DevProvider {
   baseUrl: string;
   apiKey: string;
@@ -18,11 +25,11 @@ export interface DevProvider {
 }
 
 /**
- * Lê o .env da raiz do monorepo somente em desenvolvimento.
+ * Lê o .env da raiz do monorepo, somente com o opt-in SENSUS_DEV_PROVIDER=1.
  * Usado como fallback quando o usuário ainda não salvou um provedor no app.
  */
 function readDevProvider(): DevProvider | null {
-  if (isProduction) return null;
+  if (!devProviderOptIn) return null;
   // app/app.config.ts -> raiz do repositório/.env
   loadDotenv({ path: resolve(__dirname, '..', '.env') });
   const apiKey = process.env.NVIDIA_API_KEY;
@@ -93,7 +100,8 @@ export default (): ExpoConfig => {
     },
     extra: {
       appEnv: isProduction ? 'production' : 'development',
-      ...(devProvider ? { devProvider } : {}),
+      // Só com a chave injetada: o runtime (settings-context.tsx) exige devProviderOptIn para usá-la.
+      ...(devProvider ? { devProvider, devProviderOptIn: true } : {}),
     },
   };
 };

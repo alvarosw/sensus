@@ -71,10 +71,11 @@ export interface SettingsValue {
 const SettingsContext = createContext<SettingsValue | null>(null);
 
 function readDevProvider(): DevProvider | null {
-  // Só em desenvolvimento: a chave do .env nunca é usada como reserva em builds de produção.
-  if (!__DEV__) return null;
-  const extra = Constants.expoConfig?.extra as { devProvider?: unknown } | undefined;
-  const dev = extra?.devProvider as Partial<DevProvider> | undefined;
+  // Gate de execução: a chave só é usada com o opt-in do build (SENSUS_DEV_PROVIDER=1 -> extra.devProviderOptIn).
+  // Sem ele, um build de release nunca usa a chave, mesmo que o JSON embutido a tenha.
+  const extra = Constants.expoConfig?.extra as { devProvider?: unknown; devProviderOptIn?: unknown } | undefined;
+  if (extra?.devProviderOptIn !== true) return null;
+  const dev = extra.devProvider as Partial<DevProvider> | undefined;
   if (!dev || typeof dev.apiKey !== 'string' || !dev.apiKey) return null;
   return {
     apiKey: dev.apiKey,

@@ -15,8 +15,12 @@ A escolha depende do **modo** em Configurações (padrão: Automático):
 - **Só chave de API**: usa só a chave salva. O ChatGPT é ignorado.
 
 Sem nenhum método disponível (sem ChatGPT pronto e sem chave), o app mostra a mensagem e um atalho para as
-Configurações. O provedor de demonstração (offline) vale só quando definido. O `.env` de desenvolvimento só
-existe em builds de desenvolvimento: em produção a chave do `.env` nunca é usada.
+Configurações. O provedor de demonstração (offline) vale só quando definido. A chave do `.env` da raiz
+(`NVIDIA_API_KEY`, `NVIDIA_BASE_URL`, `NVIDIA_MODEL`) entra no build **só com opt-in explícito**:
+`SENSUS_DEV_PROVIDER=1` (os scripts `start`, `android` e `ios` de `app/package.json` já definem a variável).
+Sem o opt-in, nenhum build (dev ou release) embute a chave. Com o opt-in, `app.config.ts` grava
+`extra.devProvider` e `extra.devProviderOptIn`, e o app só usa a chave quando `devProviderOptIn` está presente.
+Builds de produção não devem definir a variável; `app/scripts/check-apk-secrets.sh <apk>` confirma isso no APK.
 
 ## Modelos no seletor (só chat)
 

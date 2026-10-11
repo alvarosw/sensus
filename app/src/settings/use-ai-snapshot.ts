@@ -31,13 +31,14 @@ export function useAiSnapshot(): AiSnapshot {
         ? { connected: account.connected, hasSession: account.hasSession, planEnabled: account.planEnabled, email: account.email }
         : null,
       attention: s.chatgpt.attention,
-      keySaved: s.savedApiKey !== null,
+      // A chave de desenvolvimento (opt-in) também é uma chave disponível: mesmo critério de "Em uso agora".
+      keySaved: s.savedApiKey !== null || s.devProvider !== null,
       keyLabel,
       pause: s.pause,
       now: Date.now(),
     }),
     // `now` muda quando a pausa muda (settings-context re-renderiza ao vencer a pausa).
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [s.mode, s.provider, account, s.chatgpt.attention, s.savedApiKey, keyLabel, s.pause],
+    [s.mode, s.provider, account, s.chatgpt.attention, s.savedApiKey, s.devProvider, keyLabel, s.pause],
   );
 }

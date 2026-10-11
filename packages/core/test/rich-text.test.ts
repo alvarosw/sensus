@@ -421,3 +421,30 @@ describe('inferência no celular: listas, negrito, citação e rótulo no meio',
     expect(visibleText(blocks).trim()).toBe('Imite Cristo .');
   });
 });
+
+describe('citações repetidas', () => {
+  const cites = (blocks: Block[]) => {
+    const p = blocks[0];
+    if (!p || (p.type !== 'paragraph' && p.type !== 'quote')) throw new Error('esperado parágrafo');
+    return p.inlines.filter((i): i is Extract<Inline, { type: 'cite' }> => i.type === 'cite');
+  };
+
+  it('a mesma fonte repetida logo em seguida vira um chip só', () => {
+    const raw = 'Paulo escreveu aos crentes [txt:blivre:50002005] [txt:blivre:50002005].';
+    const found = cites(parseRichText(raw, ctx));
+    expect(found).toHaveLength(1);
+    expect(found[0]!.refs).toHaveLength(1);
+  });
+
+  it('a mesma fonte separada por texto continua aparecendo nos dois lugares', () => {
+    const raw = 'Primeiro [txt:blivre:50002005] e depois outra frase [txt:blivre:50002005].';
+    expect(cites(parseRichText(raw, ctx))).toHaveLength(2);
+  });
+
+  it('fontes diferentes lado a lado continuam separadas', () => {
+    const raw = 'Afirmação com dupla base [txt:blivre:50002005] [txt:kjv:50002005].';
+    const found = cites(parseRichText(raw, ctx));
+    expect(found).toHaveLength(1);
+    expect(found[0]!.refs.map((r) => r.citeId)).toEqual(['txt:blivre:50002005', 'txt:kjv:50002005']);
+  });
+});

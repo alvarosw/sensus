@@ -100,7 +100,25 @@ cd .. && git checkout app/package.json      # desfaz a reescrita do prebuild
 adb -s <serial> install -r android/app/build/outputs/apk/release/app-release.apk
 ```
 
-Confira no APK que não há chave de API embutida (0 ocorrências de `nvapi-` nos recursos e no DEX).
+Confira no APK que não há chave de API embutida, com o script (sai com 1 se achar `nvapi-` ou a configuração
+`devProvider`/`devProviderOptIn` no `assets/app.config`):
+
+```bash
+app/scripts/check-apk-secrets.sh app/android/app/build/outputs/apk/release/app-release.apk
+```
+
+A chave do `.env` só entra no build com `SENSUS_DEV_PROVIDER=1` (opt-in; ver `docs/AI_PROVIDERS.md`). Os
+scripts `npm start`/`android`/`ios` já definem a variável, então builds de desenvolvimento a levam. Um build de
+QA no emulador com a chave precisa dela explicitamente no prebuild e no gradle:
+
+```bash
+cd app && SENSUS_DEV_PROVIDER=1 npx expo prebuild --platform android
+cd android && SENSUS_DEV_PROVIDER=1 ANDROID_HOME=/home/albus/Android/Sdk APP_ENV=production NODE_ENV=production \
+  ./gradlew assembleRelease -PreactNativeArchitectures=x86_64
+```
+
+Esse APK de QA **deve** falhar no script: é a prova de que a chave está lá. Não copie para `dist/` e apague depois.
+O build de produção (sem a variável) tem de passar no script.
 
 ## Convenção de `testID`
 

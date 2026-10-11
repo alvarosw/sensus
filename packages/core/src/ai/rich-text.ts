@@ -142,6 +142,18 @@ function mergeText(inlines: Inline[]): Inline[] {
   return out;
 }
 
+/** Último grupo de citações do trecho, se só houver espaços depois dele. Iguais ao novo grupo = duplicata. */
+function sameAsPreviousCite(out: readonly Inline[], refs: CiteRef[]): boolean {
+  for (let i = out.length - 1; i >= 0; i--) {
+    const inl = out[i]!;
+    if (inl.type === 'text' && !inl.text.trim()) continue;
+    if (inl.type !== 'cite') return false;
+    const key = (rs: readonly CiteRef[]) => rs.map((r) => `${r.citeId}|${r.label}|${r.valid}`).join(',');
+    return key(inl.refs) === key(refs);
+  }
+  return false;
+}
+
 /** Converte um trecho inline (com citações, negrito, itálico) em Inlines. */
 export function parseInline(raw: string, ctx: RichTextContext, tokenByKey: ReadonlyMap<string, string>): Inline[] {
   const out: Inline[] = [];
@@ -152,7 +164,11 @@ export function parseInline(raw: string, ctx: RichTextContext, tokenByKey: Reado
   for (const m of raw.matchAll(RUN_RE)) {
     pushText(raw.slice(last, m.index));
     const ids = [...m[0].matchAll(ONE_MARKER_RE)].flatMap((x) => citeIdsOf(x[0]));
-    if (ids.length > 0) out.push({ type: 'cite', refs: buildRefs(ids, ctx) });
+    if (ids.length > 0) {
+      const refs = buildRefs(ids, ctx);
+      // Mesma fonte repetida logo em seguida (só espaço entre elas): um chip só, não dois lado a lado.
+      if (!sameAsPreviousCite(out, refs)) out.push({ type: 'cite', refs });
+    }
     last = m.index + m[0].length;
   }
   pushText(raw.slice(last));

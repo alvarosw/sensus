@@ -52,6 +52,7 @@ export const SETTINGS_COPY = {
   keyNone: 'Não configurada',
   keyDemo: 'Demonstração offline',
   keySaved: 'chave salva',
+  keyDev: 'chave de desenvolvimento',
   provider: 'Provedor',
   baseUrl: 'URL base',
   apiKey: 'Chave de API',

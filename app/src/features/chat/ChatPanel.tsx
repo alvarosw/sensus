@@ -107,7 +107,8 @@ export function ChatPanel({
   const style = useAnimatedStyle(() => ({
     opacity: interpolate(progress.value, [0, 0.7], [0, 1], 'clamp'),
     transform: [{ scale: interpolate(progress.value, [0, 1], [0.15, 1]) }],
-    bottom: 8 + kb.value,
+    // Sem teclado, o painel sobe o inset da barra de navegação (3 botões); com teclado, sobe com ele.
+    bottom: 8 + Math.max(kb.value, metrics.insetBottom),
   }));
 
   if (!mounted) return null;
@@ -233,7 +234,7 @@ export function ChatPanel({
         onStop={api.stop}
         streaming={api.streaming}
         disabled={noProvider || api.contextBusy}
-        bottomPad={10 + (kbOpen ? 0 : metrics.insetBottom)}
+        bottomPad={10}
       />
     </Animated.View>
   );
