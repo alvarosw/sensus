@@ -6,6 +6,8 @@ export * from './panel';
 export * from './translate';
 export * from './ai/provider';
 export * from './ai/openai-responses';
+export * from './ai/reset';
+export { chatGPTFailureOf, type ChatGPTFailure } from './ai/llm-error';
 export * from './ai/siwc';
 export * from './ai/presets';
 export * from './ai/context';

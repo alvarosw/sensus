@@ -19,6 +19,8 @@ import {
 } from './provider-store';
 import { resolveProvider, type DevProvider } from './resolve';
 import { DEMO_POLICY } from './demo';
+import { usePrefs } from './prefs';
+import type { ChatGPTPause, ProviderMode } from './route';
 import {
   isPlanActive,
   readChatGPTAccount,
@@ -30,12 +32,17 @@ import {
 import { isChatGPTNativeAvailable } from '@/auth/chatgpt/loopback';
 import type { ChatGPTAccountView } from '@/auth/chatgpt/accounts';
 
+/** Atenção da conta: a sessão precisa de novo login, ou a conta não tem o plano. Null se está tudo certo. */
+export type ChatGPTAttention = 'reauth' | 'not_eligible' | null;
+
 export interface ChatGPTState {
   /** Módulo nativo presente (build de desenvolvimento). No Expo Go, false. */
   available: boolean;
   account: ChatGPTAccountView | null;
   /** Plano pronto para uso (sessão, escopo concedido, sem recusa de elegibilidade). */
   planActive: boolean;
+  /** Motivo de atenção da conta (aviso e cartão), ou null. */
+  attention: ChatGPTAttention;
   signIn: (opts?: { reconsent?: boolean }) => Promise<void>;
   signOut: () => Promise<{ revoked: boolean }>;
   retryPlan: () => Promise<void>;
@@ -47,8 +54,13 @@ export interface SettingsValue {
   stored: StoredProviderSettings | null;
   savedApiKey: string | null;
   devProvider: DevProvider | null;
-  /** Provedor pronto para uso pela IA, ou null se não houver chave. */
+  /** Provedor pronto para uso pela IA, ou null se não houver um método disponível agora. */
   provider: ProviderConfig | null;
+  /** Modo de escolha (Automático, Só ChatGPT, Só chave de API). */
+  mode: ProviderMode;
+  setMode: (mode: ProviderMode) => void;
+  /** Pausa do ChatGPT vigente (só no modo Automático), ou null. */
+  pause: ChatGPTPause | null;
   save: (settings: StoredProviderSettings, newApiKey?: string) => Promise<void>;
   removeApiKey: () => Promise<void>;
   chatgpt: ChatGPTState;
@@ -57,6 +69,8 @@ export interface SettingsValue {
 const SettingsContext = createContext<SettingsValue | null>(null);
 
 function readDevProvider(): DevProvider | null {
+  // Só em desenvolvimento: a chave do .env nunca é usada como reserva em builds de produção.
+  if (!__DEV__) return null;
   const extra = Constants.expoConfig?.extra as { devProvider?: unknown } | undefined;
   const dev = extra?.devProvider as Partial<DevProvider> | undefined;
   if (!dev || typeof dev.apiKey !== 'string' || !dev.apiKey) return null;
@@ -74,6 +88,13 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
   const [stored, setStored] = useState<StoredProviderSettings | null>(null);
   const [savedApiKey, setSavedApiKey] = useState<string | null>(null);
   const [account, setAccount] = useState<ChatGPTAccountView | null>(null);
+  const [now, setNow] = useState(() => Date.now());
+
+  const mode = usePrefs((s) => s.mode);
+  const storedPause = usePrefs((s) => s.pause);
+  const setMode = usePrefs((s) => s.setMode);
+  const clearPause = usePrefs((s) => s.clearPause);
+  const prefsLoaded = usePrefs((s) => s.loaded);
 
   const reloadAccount = useCallback(async () => {
     setAccount(await readChatGPTAccount());
@@ -81,6 +102,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     let alive = true;
+    void usePrefs.getState().load();
     Promise.all([readStoredSettings(), readApiKey(), readChatGPTAccount().catch(() => null)]).then(([settings, key, acc]) => {
       if (!alive) return;
       setStored(settings);
@@ -97,6 +119,15 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     };
   }, [reloadAccount]);
 
+  // Quando a pausa do ChatGPT termina, a escolha volta a tentar o ChatGPT na próxima pergunta.
+  useEffect(() => {
+    if (!storedPause || storedPause.until <= Date.now()) return;
+    const id = setTimeout(() => setNow(Date.now()), storedPause.until - Date.now() + 50);
+    return () => clearTimeout(id);
+  }, [storedPause]);
+
+  const pause = storedPause && storedPause.until > now ? storedPause : null;
+
   const save = useCallback(async (settings: StoredProviderSettings, newApiKey?: string) => {
     writeStoredSettings(settings);
     if (newApiKey) await writeApiKey(newApiKey);
@@ -109,17 +140,23 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     setSavedApiKey(null);
   }, []);
 
+  const attention: ChatGPTAttention =
+    account && !account.connected ? null : account?.needsReauth ? 'reauth' : account?.planBlocked ? 'not_eligible' : null;
+
   const chatgpt = useMemo<ChatGPTState>(
     () => ({
       available: isChatGPTNativeAvailable(),
       account,
       planActive: isPlanActive(account),
+      attention,
       signIn: async (opts) => {
         await signInWithChatGPT(opts);
+        clearPause();
         await reloadAccount();
       },
       signOut: async () => {
         const result = await signOutChatGPT();
+        clearPause();
         await reloadAccount();
         return result;
       },
@@ -129,24 +166,43 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
       },
       reload: reloadAccount,
     }),
-    [account, reloadAccount],
+    [account, attention, reloadAccount, clearPause],
+  );
+
+  const chatgptSession = useMemo(
+    () =>
+      account
+        ? {
+            connected: account.connected,
+            ready: isPlanActive(account) && !!account.model,
+            attention: account.connected && attention !== null,
+            model: account.model,
+          }
+        : null,
+    [account, attention],
+  );
+
+  const provider = useMemo(
+    () =>
+      resolveProvider(stored, savedApiKey, devProvider, DEMO_POLICY, chatgptSession, { mode, pause, now }),
+    [stored, savedApiKey, chatgptSession, mode, pause, now],
   );
 
   const value = useMemo<SettingsValue>(
     () => ({
-      loaded,
+      loaded: loaded && prefsLoaded,
       stored,
       savedApiKey,
       devProvider,
-      provider: resolveProvider(stored, savedApiKey, devProvider, DEMO_POLICY, {
-        planActive: chatgpt.planActive,
-        model: account?.model ?? '',
-      }),
+      provider,
+      mode,
+      setMode,
+      pause,
       save,
       removeApiKey,
       chatgpt,
     }),
-    [loaded, stored, savedApiKey, save, removeApiKey, chatgpt, account],
+    [loaded, prefsLoaded, stored, savedApiKey, provider, mode, setMode, pause, save, removeApiKey, chatgpt],
   );
 
   return <SettingsContext.Provider value={value}>{children}</SettingsContext.Provider>;

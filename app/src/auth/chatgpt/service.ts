@@ -293,6 +293,7 @@ export async function signInWithChatGPT(opts: { reconsent?: boolean } = {}): Pro
     scopes: tokens.scopes,
     planEnabled,
     planBlocked: false,
+    needsReauth: false,
     model: prior?.model ?? '',
     accessToken: tokens.accessToken,
     refreshToken: tokens.refreshToken,
@@ -356,6 +357,7 @@ async function refreshAccount(key: string): Promise<StoredAccount> {
         expiresAt: tokens.expiresAt,
         scopes: tokens.scopes,
         planEnabled: hasPlanScope(tokens.scopes),
+        needsReauth: false,
         signedOut: false,
         savedAt: nowMs,
       });
@@ -365,7 +367,7 @@ async function refreshAccount(key: string): Promise<StoredAccount> {
     } catch (err) {
       if (err instanceof SiwcError && err.code === 'refresh_invalid') {
         // Refresh não utilizável: limpa os tokens e pede novo login (o client_id salvo é reutilizado).
-        await updateAccount(key, { accessToken: '', refreshToken: null, idToken: null, expiresAt: 0 });
+        await updateAccount(key, { accessToken: '', refreshToken: null, idToken: null, expiresAt: 0, needsReauth: true });
         notify();
         throw new LLMError('A sessão do ChatGPT expirou. Entre de novo nas configurações.', 'reauth');
       }
@@ -435,13 +437,39 @@ export async function listChatGPTModels(): Promise<ChatGPTModel[]> {
   }
 }
 
-/** Marca a conta como não elegível (403). O cliente de IA passa a usar a chave de API. */
+/** Marca a conta como não elegível (403). Fica como atenção nas Configurações até nova tentativa ou novo login. */
 export async function markPlanNotEligible(): Promise<boolean> {
   const acc = await readActiveAccount();
   if (!acc || acc.planBlocked) return false;
   await updateAccount(acc.key, { planBlocked: true });
   notify();
   return true;
+}
+
+/**
+ * Atenção da conta (chamado pelo cliente de IA quando a falha é de conta): não elegível (403) ou sessão
+ * recusada (reauth). Não apaga credenciais e não é trocado pela chave de API.
+ */
+export async function markChatGPTAttention(reason: 'reauth' | 'not_eligible'): Promise<void> {
+  if (reason === 'not_eligible') {
+    await markPlanNotEligible();
+    return;
+  }
+  const acc = await readActiveAccount();
+  if (!acc || acc.needsReauth) return;
+  await updateAccount(acc.key, { needsReauth: true });
+  notify();
+}
+
+/**
+ * Uma requisição do plano deu certo: a conta funciona, então limpa a atenção (recusa de elegibilidade e
+ * sessão recusada). Só grava quando há algo para limpar.
+ */
+export async function markChatGPTWorking(): Promise<void> {
+  const acc = await readActiveAccount();
+  if (!acc || (!acc.planBlocked && !acc.needsReauth)) return;
+  await updateAccount(acc.key, { planBlocked: false, needsReauth: false });
+  notify();
 }
 
 /** Nova tentativa do plano (por exemplo, depois de assinar o Go, Plus ou Pro). */

@@ -6,6 +6,7 @@ export type { StoredProviderSettings } from './provider-store';
 
 const SETTINGS_KEY = 'sensus.provider.settings';
 const API_KEY_ITEM = 'sensus.provider.apiKey';
+const PREFS_KEY = 'sensus.provider.prefs';
 
 function storage(): Storage | null {
   try {
@@ -53,4 +54,25 @@ export async function writeApiKey(apiKey: string): Promise<void> {
 
 export async function deleteApiKey(): Promise<void> {
   storage()?.removeItem(API_KEY_ITEM);
+}
+
+/** Preferências não secretas (ver provider-store.ts). */
+export interface StoredProviderPrefs {
+  mode: string;
+  pause: { until: number; known: boolean } | null;
+}
+
+export async function readProviderPrefs(): Promise<StoredProviderPrefs | null> {
+  try {
+    const raw = storage()?.getItem(PREFS_KEY);
+    if (!raw) return null;
+    const parsed: unknown = JSON.parse(raw);
+    return parsed && typeof parsed === 'object' ? (parsed as StoredProviderPrefs) : null;
+  } catch {
+    return null;
+  }
+}
+
+export function writeProviderPrefs(prefs: StoredProviderPrefs): void {
+  storage()?.setItem(PREFS_KEY, JSON.stringify(prefs));
 }

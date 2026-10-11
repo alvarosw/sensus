@@ -10,8 +10,9 @@ import { DEMO_PROVIDER_CONFIG } from '../ai/demo-provider';
 import { DEMO_POLICY, type DemoPolicy } from './demo';
 import { DEMO_PRESET_ID } from './presets';
 import type { StoredProviderSettings } from './provider-store';
+import { chooseRoute, type ChatGPTPause, type ChatGPTRouteState, type ProviderMode } from './route';
 
-/** Credenciais de desenvolvimento vindas do .env (app.config.ts -> extra.devProvider). */
+/** Credenciais de desenvolvimento vindas do .env (app.config.ts -> extra.devProvider). Só em builds de dev. */
 export interface DevProvider {
   baseUrl: string;
   apiKey: string;
@@ -39,10 +40,14 @@ export function buildConfigFrom(
   return config;
 }
 
-/** Estado do plano ChatGPT para a escolha do provedor (ver auth/chatgpt/service.ts: isPlanActive). */
-export interface ChatGPTSession {
-  planActive: boolean;
-  model: string;
+/** Entrada do plano ChatGPT para a escolha (ver ChatGPTRouteState em route.ts). */
+export type ChatGPTSession = ChatGPTRouteState & { model: string };
+
+/** Política de escolha no instante da resolução. */
+export interface RoutePolicy {
+  mode: ProviderMode;
+  pause: ChatGPTPause | null;
+  now: number;
 }
 
 /** Provedor por chave de API (preset salvo, ou demo, ou o .env de desenvolvimento). */
@@ -63,11 +68,12 @@ function resolveApiKeyProvider(
 }
 
 /**
- * Provedor efetivo, por prioridade:
+ * Provedor efetivo, conforme o modo e a conta (regras em route.ts, chooseRoute):
  *  1. EXPO_PUBLIC_SENSUS_DEMO=1 ou o preset 'demo' salvo: demo (offline);
- *  2. ChatGPT, quando a conta está conectada com o escopo do plano e não foi recusada.
- *     A chave de API (se houver) fica como `fallback`, usada só se a conta for recusada (403);
- *  3. configuração salva (com sua chave), ou o padrão da web (demo), ou o provedor de desenvolvimento do .env.
+ *  2. 'key' (Só chave de API): a chave salva (ou o padrão);
+ *  3. 'chatgpt' (Só ChatGPT): o ChatGPT, sem reserva; nunca a chave;
+ *  4. 'auto': ChatGPT com a chave como `fallback`, quando o plano está pronto e sem pausa; com conta
+ *     em atenção, só o ChatGPT (sem chave); sem isso, a chave.
  */
 export function resolveProvider(
   stored: StoredProviderSettings | null,
@@ -75,16 +81,25 @@ export function resolveProvider(
   dev: DevProvider | null,
   demo: DemoPolicy = DEMO_POLICY,
   chatgpt: ChatGPTSession | null = null,
+  policy: RoutePolicy = { mode: 'auto', pause: null, now: Date.now() },
 ): ProviderConfig | null {
   if (demo.forced || stored?.presetId === DEMO_PRESET_ID) return { ...DEMO_PROVIDER_CONFIG };
   const keyProvider = resolveApiKeyProvider(stored, savedApiKey, dev, demo);
-  if (chatgpt?.planActive && chatgpt.model) {
-    return { ...buildChatGPTProviderConfig(chatgpt.model), fallback: keyProvider ?? undefined };
+  const choice = chooseRoute(policy.mode, chatgpt, policy.pause, policy.now);
+  const chatgptConfig = chatgpt?.model ? buildChatGPTProviderConfig(chatgpt.model) : null;
+  switch (choice) {
+    case 'chatgpt':
+      return chatgptConfig;
+    case 'chatgpt-with-key':
+      return chatgptConfig ? { ...chatgptConfig, fallback: keyProvider ?? undefined } : keyProvider;
+    case 'key':
+      return keyProvider;
+    case 'none':
+      return null;
   }
-  return keyProvider;
 }
 
-/** Valor inicial do formulário: salvo, ou derivado do .env, ou o preset padrão. */
+/** Valor inicial do formulário: salvo, ou derivado do .env de desenvolvimento, ou o preset padrão. */
 export function initialFormSettings(
   stored: StoredProviderSettings | null,
   dev: DevProvider | null,

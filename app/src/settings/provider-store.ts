@@ -11,6 +11,7 @@ export interface StoredProviderSettings {
 }
 
 const FILE_NAME = 'provider-settings.json';
+const PREFS_FILE_NAME = 'provider-prefs.json';
 const API_KEY_ITEM = 'sensus.provider.apiKey';
 
 function settingsFile(): File {
@@ -57,4 +58,31 @@ export async function writeApiKey(apiKey: string): Promise<void> {
 
 export async function deleteApiKey(): Promise<void> {
   await SecureStore.deleteItemAsync(API_KEY_ITEM);
+}
+
+/** Preferências não secretas: modo de escolha e pausa do ChatGPT (arquivo JSON, sem chave). */
+export interface StoredProviderPrefs {
+  mode: string;
+  pause: { until: number; known: boolean } | null;
+}
+
+function prefsFile(): File {
+  return new File(Paths.document, PREFS_FILE_NAME);
+}
+
+export async function readProviderPrefs(): Promise<StoredProviderPrefs | null> {
+  try {
+    const file = prefsFile();
+    if (!file.exists) return null;
+    const parsed: unknown = JSON.parse(await file.text());
+    return parsed && typeof parsed === 'object' ? (parsed as StoredProviderPrefs) : null;
+  } catch {
+    return null;
+  }
+}
+
+export function writeProviderPrefs(prefs: StoredProviderPrefs): void {
+  const file = prefsFile();
+  if (!file.exists) file.create();
+  file.write(JSON.stringify(prefs));
 }

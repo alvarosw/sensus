@@ -5,6 +5,7 @@
 // por isso maxTokens/temperature do pedido são ignorados e o histórico é reenviado a cada pergunta.
 import type { ChatMessage, ChatRequest, FetchLike, LLMProvider, ProviderConfig } from '../types';
 import { LLMError } from './llm-error';
+import { resetAtOf } from './reset';
 import { readSSEData, StallWatch, STALL_TIMEOUT_MS } from './sse';
 
 export interface ChatGPTModel {
@@ -22,7 +23,7 @@ interface ErrorBody {
 }
 
 /** Erro de plano (códigos subscription_sharing_* e chatpass_v2_*), ou null se o código não for de plano. */
-export function planCodeError(code: string, status: number, param?: string): LLMError | null {
+export function planCodeError(code: string, status: number, param?: string, resetAt?: number): LLMError | null {
   const at = param ? ` (parâmetro: ${param})` : '';
   switch (code) {
     case 'subscription_sharing_user_not_eligible':
@@ -36,6 +37,7 @@ export function planCodeError(code: string, status: number, param?: string): LLM
         'Limite de uso do plano ChatGPT atingido. Veja o uso em ChatGPT > Configurações > Uso.',
         'plan_limit',
         status,
+        resetAt,
       );
     case 'subscription_sharing_usage_unavailable':
     case 'subscription_sharing_user_unavailable':
@@ -48,9 +50,10 @@ export function planCodeError(code: string, status: number, param?: string): LLM
       return new LLMError('A sessão do ChatGPT não é mais válida. Entre de novo nas configurações.', 'reauth', status);
     case 'chatpass_v2_scope_not_authorized':
     case 'chatpass_v2_invalid_authorization_context':
+      // Permissão do plano recusada ou contexto inválido: precisa de novo login e consentimento (não usa a chave).
       return new LLMError(
         'A permissão do plano ChatGPT não foi concedida para este login. Entre de novo e aceite o uso do plano.',
-        'plan_unsupported',
+        'reauth',
         status,
       );
     default:
@@ -62,14 +65,18 @@ function stringField(v: unknown): string | undefined {
   return typeof v === 'string' && v ? v : undefined;
 }
 
-/** Converte uma resposta HTTP de erro (antes do stream) em LLMError. Não inclui tokens. */
-export function chatGPTHttpError(status: number, body: unknown): LLMError {
+/**
+ * Converte uma resposta HTTP de erro (antes do stream) em LLMError. Não inclui tokens.
+ * `headers` (da resposta) e o corpo informam `resetAt` quando trazem o horário de volta do limite.
+ */
+export function chatGPTHttpError(status: number, body: unknown, headers?: Headers, nowMs = Date.now()): LLMError {
   const b = (body && typeof body === 'object' ? body : {}) as ErrorBody;
   const code = stringField(b.error?.code);
   const param = stringField(b.error?.param);
   const detail = stringField(b.error?.message) ?? stringField(b.detail) ?? stringField(b.message);
+  const resetAt = resetAtOf({ headers, body }, nowMs);
   if (code) {
-    const mapped = planCodeError(code, status, param);
+    const mapped = planCodeError(code, status, param, resetAt);
     if (mapped) return mapped;
   }
   // Admissão antes do stream: corpo {"detail": "..."} é diagnóstico, não código estável.
@@ -77,7 +84,9 @@ export function chatGPTHttpError(status: number, body: unknown): LLMError {
   if (status === 403) {
     return new LLMError(`Acesso negado pelo ChatGPT (política ou permissão)${detail ? `: ${detail}` : '.'}`, 'plan_unsupported', status);
   }
-  if (status === 429) return new LLMError('Limite de requisições atingido no ChatGPT. Aguarde um pouco.', 'rate_limit', status);
+  if (status === 429) {
+    return new LLMError('Limite de requisições atingido no ChatGPT. Aguarde um pouco.', 'rate_limit', status, resetAt);
+  }
   if (status === 503) return new LLMError('O plano ChatGPT está indisponível agora. Tente de novo em instantes.', 'plan_unavailable', status);
   if (status >= 500) return new LLMError(`O ChatGPT está indisponível no momento (HTTP ${status}).`, 'server', status);
   return new LLMError(`Erro do ChatGPT (HTTP ${status})${detail ? `: ${detail}` : '.'}`, 'http', status);
@@ -95,13 +104,14 @@ export function toResponsesInput(messages: readonly ChatMessage[]): {
   return { instructions: system.length > 0 ? system.join('\n\n') : undefined, input };
 }
 
-function eventError(ev: Record<string, unknown>): LLMError {
+function eventError(ev: Record<string, unknown>, nowMs = Date.now()): LLMError {
   const nested = ev.response && typeof ev.response === 'object' ? (ev.response as { error?: unknown }).error : undefined;
   const candidates = [nested, ev.error, ev].filter((c): c is Record<string, unknown> => !!c && typeof c === 'object');
   const code = candidates.map((c) => stringField(c.code)).find(Boolean);
   const param = candidates.map((c) => stringField(c.param)).find(Boolean);
+  const resetAt = candidates.map((c) => resetAtOf({ body: { error: c } }, nowMs)).find((v) => v !== undefined) ?? resetAtOf({ body: ev }, nowMs);
   if (code) {
-    const mapped = planCodeError(code, 200, param);
+    const mapped = planCodeError(code, 200, param, resetAt);
     if (mapped) return mapped;
   }
   const message = candidates.map((c) => stringField(c.message)).find(Boolean);
@@ -263,6 +273,6 @@ export class OpenAIResponsesProvider implements LLMProvider {
     } catch {
       parsed = null;
     }
-    throw chatGPTHttpError(res.status, parsed);
+    throw chatGPTHttpError(res.status, parsed, res.headers);
   }
 }

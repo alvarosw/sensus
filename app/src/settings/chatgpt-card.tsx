@@ -19,20 +19,33 @@ const COPY = {
   cancelled: 'Login cancelado.',
   signedOut: 'Sessão encerrada neste aparelho. Entre de novo para usar o plano.',
   planActive: 'Plano: ativo',
-  planNotEligible: 'Plano: não elegível. Requer Go, Plus ou Pro. Usando sua chave de API, se houver.',
+  planNotEligible: 'Plano: não elegível. Requer Go, Plus ou Pro.',
   planPermission: 'Plano: permissão não concedida. Libere o uso do plano para o Sensus.',
   retryPlan: 'Tentar o plano de novo',
   grantPlan: 'Liberar o plano',
   loadModels: 'Carregar modelos',
   loadingModels: 'Carregando…',
   model: 'Modelo',
-  signOut: 'Sair',
+  signOut: 'Desconectar ChatGPT',
+  reconnect: 'Entrar de novo',
+  attentionReauth: 'Sua sessão com o ChatGPT expirou ou foi recusada. Entre de novo para voltar a usar o plano. Enquanto isso, o Sensus não usa sua chave de API nessas perguntas.',
+  attentionNotEligible: 'Esta conta do ChatGPT não tem o plano para o Sensus (requer Go, Plus ou Pro). Assine um plano e tente de novo, troque de conta ou desconecte. Enquanto isso, o Sensus não usa sua chave de API nessas perguntas.',
+  limitUntil: 'Limite do plano atingido — volta às',
+  limitRetry: 'Limite do plano atingido — nova tentativa às',
+  limitHint: 'Até lá, as perguntas usam sua chave de API.',
   signedOutOk: 'Sessão encerrada.',
   notRevoked: 'Não foi possível revogar agora. Desconecte o Sensus em ChatGPT > Configurações.',
   failed: 'Não foi possível concluir. Tente de novo.',
 };
 
 type Notice = { tone: 'ok' | 'error' | 'info'; text: string } | null;
+
+/** HH:MM no horário do aparelho (sem depender de Intl). */
+function clock(ms: number): string {
+  const d = new Date(ms);
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return `${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
 
 function errorText(e: unknown): string {
   if (e instanceof ChatGPTNativeUnavailableError) return COPY.unavailable;
@@ -43,7 +56,7 @@ function errorText(e: unknown): string {
 
 export function ChatGPTCard() {
   const { c } = useTheme();
-  const { chatgpt } = useSettings();
+  const { chatgpt, mode, pause } = useSettings();
   const [busy, setBusy] = useState(false);
   const [signingIn, setSigningIn] = useState(false);
   const [notice, setNotice] = useState<Notice>(null);
@@ -104,11 +117,16 @@ export function ChatGPTCard() {
     await chatgpt.reload();
   };
 
+  const attention = chatgpt.attention;
   let status: string;
-  if (!account || !hasSession) status = COPY.signedOut;
+  if (!account || !account.connected) status = COPY.signedOut;
   else if (account.planBlocked) status = COPY.planNotEligible;
   else if (!account.planEnabled) status = COPY.planPermission;
+  else if (!hasSession) status = COPY.signedOut;
   else status = COPY.planActive;
+
+  // A pausa só se aplica ao modo Automático (no modo Só ChatGPT não há reserva para usar).
+  const paused = mode === 'auto' && pause !== null;
 
   return (
     <Card testID="chatgpt-card" style={{ gap: 12 }}>
@@ -122,11 +140,28 @@ export function ChatGPTCard() {
       {account ? (
         <View style={{ gap: 4 }}>
           {account.email ? <Txt v="meta" color="muted">{account.email}</Txt> : null}
-          <Txt v="bodySm" tint={chatgpt.planActive ? c.srcText : c.muted} testID="chatgpt-status">{status}</Txt>
+          {attention ? null : <Txt v="bodySm" tint={chatgpt.planActive ? c.srcText : c.muted} testID="chatgpt-status">{status}</Txt>}
         </View>
       ) : null}
 
-      {!hasSession ? (
+      {attention ? (
+        <View testID="chatgpt-attention" style={{ gap: 10 }}>
+          <Txt v="bodySm" tint={c.danger} bold>Sua conexão com o ChatGPT precisa de atenção</Txt>
+          <Txt v="bodySm">{attention === 'reauth' ? COPY.attentionReauth : COPY.attentionNotEligible}</Txt>
+          <FormButton testID="chatgpt-reconnect" label={COPY.reconnect} disabled={busy || !chatgpt.available} onPress={() => signIn(false)} />
+        </View>
+      ) : null}
+
+      {paused && pause ? (
+        <View testID="chatgpt-paused" style={{ gap: 4 }}>
+          <Txt v="bodySm" tint={c.danger} testID="chatgpt-paused-text">
+            {pause.known ? `${COPY.limitUntil} ${clock(pause.until)}.` : `${COPY.limitRetry} ${clock(pause.until)}.`}
+          </Txt>
+          <Txt v="meta" color="muted">{COPY.limitHint}</Txt>
+        </View>
+      ) : null}
+
+      {!hasSession && !attention ? (
         <FormButton
           testID="chatgpt-signin"
           label={signingIn ? COPY.signingIn : COPY.signIn}
@@ -173,7 +208,7 @@ export function ChatGPTCard() {
         </View>
       ) : null}
 
-      {hasSession ? (
+      {account && account.connected ? (
         <FormButton testID="chatgpt-signout" variant="ghost" label={COPY.signOut} disabled={busy} onPress={signOut} />
       ) : null}
 

@@ -18,7 +18,7 @@ export const CHAT = {
   intro: (range: string | null, lens: string) =>
     `Pergunte sobre ${range ?? 'o trecho'} ou sobre algo anexado. Sugestões da lente ${lens}:`,
   introNoAi: (range: string | null) => `Pergunte sobre ${range ?? 'o trecho'} ou sobre algo anexado.`,
-  noProvider: 'Nenhum provedor de IA configurado. Adicione uma chave de API (ou use a demonstração) nas configurações.',
+  noProvider: 'Nenhum método de IA disponível. Entre com o ChatGPT ou adicione uma chave de API nas configurações.',
   configure: 'Configurar IA',
   contextLoading: 'Montando o contexto do trecho…',
   contextError: 'Não foi possível montar o contexto deste trecho.',

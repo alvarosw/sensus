@@ -34,7 +34,7 @@ export const STUDY = {
   summaryContains: 'que contém a seleção',
   noSummary: 'Sem resumo para esta seção.',
   thinking: 'pensando…',
-  noProvider: 'Nenhum provedor de IA configurado. Adicione sua chave de API (ou use o modo de demonstração) nas configurações para ver o resumo por lente.',
+  noProvider: 'Nenhum método de IA disponível. Entre com o ChatGPT ou adicione uma chave de API nas configurações para ver o resumo por lente.',
   configure: 'Configurar IA',
   summaryError: (m: string) => `Não foi possível gerar o resumo: ${m}`,
   retry: 'Tentar novamente',

@@ -7,6 +7,7 @@ import type { ReactNode } from 'react';
 import { DbProvider, useDbState } from '@/data/db-context';
 import { t } from '@/i18n';
 import { SettingsProvider } from '@/settings/settings-context';
+import { AttentionModal } from '@/settings/AttentionModal';
 import { LoadingView, ErrorView } from '@/ui/state';
 import { useTheme } from '@/ui/theme';
 
@@ -54,6 +55,7 @@ function AppStack() {
             />
           </Stack>
         </DbGate>
+        <AttentionModal />
       </DbProvider>
     </SettingsProvider>
   );

@@ -7,8 +7,16 @@ O Sensus usa a IA para resumos e perguntas sobre o trecho. Há dois caminhos:
    developers.openai.com/siwc).
 2. **Chave de API (alternativa).** NVIDIA, OpenAI, OpenRouter ou endpoint compatível, com chave própria.
 
-A escolha é automática: com a conta ChatGPT conectada e o plano liberado, o Sensus usa o ChatGPT. Caso
-contrário, usa a chave de API salva. Sem nada disso, o provedor de demonstração (offline) ou nenhum.
+A escolha depende do **modo** em Configurações (padrão: Automático):
+
+- **Automático**: usa o ChatGPT primeiro e a chave de API como reserva. Limite do plano, falha transitória ou
+  parada do ChatGPT são resolvidos com a chave, sem aviso ao usuário. Conta com problema de acesso não usa a chave.
+- **Só ChatGPT**: usa só o ChatGPT. Nunca usa a chave; limites e falhas aparecem como erro.
+- **Só chave de API**: usa só a chave salva. O ChatGPT é ignorado.
+
+Sem nenhum método disponível (sem ChatGPT pronto e sem chave), o app mostra a mensagem e um atalho para as
+Configurações. O provedor de demonstração (offline) vale só quando definido. O `.env` de desenvolvimento só
+existe em builds de desenvolvimento: em produção a chave do `.env` nunca é usada.
 
 ## Como funciona o login
 
@@ -55,14 +63,52 @@ loopback fechar o servidor e liberar o estado. Sair da tela também cancela.
 O plano é usado somente por contas Go, Plus ou Pro. O uso é debitado do plano do ChatGPT, não de uma chave de API. Ele aparece na
 própria conta do ChatGPT (Configurações > Uso). O plano Free não tem acesso.
 
-| Situação | Código do núcleo | O que o app faz |
+Código: `packages/core/src/ai/openai-responses.ts` (mapeamento), `llm-error.ts` (`LLMError.resetAt` e
+`chatGPTFailureOf`) e `reset.ts` (horário de volta).
+
+| Situação | Código do núcleo | Classe (`chatGPTFailureOf`) |
 |---|---|---|
-| 403 `subscription_sharing_user_not_eligible` | `plan_not_eligible` | Marca a conta como não elegível e usa a chave de API, com um aviso (uma vez). Sem novo OAuth. |
-| 429 `subscription_sharing_usage_limit_exceeded` | `plan_limit` | Mostra o limite e não repete. |
-| 503 `subscription_sharing_usage_unavailable` | `plan_unavailable` | Mantém as credenciais e pede para tentar depois. |
-| 400 `subscription_sharing_unsupported_capability` | `plan_unsupported` | Indica o parâmetro recusado. |
-| 401 `subscription_sharing_invalid_user` / 401 persistente | `reauth` | Pede novo login. |
-| Stream sem `response.completed` | `protocol` | Erro: resposta parcial não é aceita como sucesso. |
+| 429 `subscription_sharing_usage_limit_exceeded` (ou no meio do stream) | `plan_limit` (+ `resetAt?`) | `plan_limit` |
+| 429 sem código de plano | `rate_limit` (+ `resetAt?`) | `rate_limit` |
+| 403 `subscription_sharing_user_not_eligible` | `plan_not_eligible` | `not_eligible` |
+| 401 `subscription_sharing_invalid_user` / 401 depois da renovação / refresh `invalid_grant` etc. | `reauth` | `reauth` |
+| 403 `chatpass_v2_scope_not_authorized` / `chatpass_v2_invalid_authorization_context` (permissão do plano recusada) | `reauth` | `reauth` |
+| 503 `subscription_sharing_usage_unavailable` / `subscription_sharing_user_unavailable` | `plan_unavailable` | `transient` |
+| 5xx, falha de rede, parada sem bytes (45 s), stream sem `response.completed` | `server`, `network`, `timeout`, `protocol` | `transient` |
+| 400 `subscription_sharing_unsupported_capability`, 403 `subscription_sharing_route_not_supported`, 403 genérico | `plan_unsupported` / `http` | `transient` |
+
+Os documentos da OpenAI (developers.openai.com/siwc, errors-and-recovery e token-reference) **não informam
+horário de volta** para o limite de uso: nenhum cabeçalho `Retry-After` ou `x-ratelimit-reset*`, nenhum campo
+`resets_at`. Por isso o núcleo lê esses nomes **se** vierem (corpo: `resets_at`, `reset_at`, `retry_after`;
+cabeçalhos: `Retry-After`, `x-ratelimit-reset*`, em segundos, duração `6m0s`, epoch ou data), aceita só valores
+plausíveis (futuros e até 7 dias) e deixa `resetAt` vazio no resto. A documentação também manda não inferir
+um horário a partir do código de limite.
+
+### Política de escolha e reserva
+
+Aplicada em `app/src/ai/client.ts` (`streamChat`, para resumo, Detalhar e chat) e `app/src/settings/route.ts`
+(função pura, com testes em `route.test.ts`):
+
+1. **Limite do plano** (`plan_limit`, `rate_limit`), no modo Automático: repete **o mesmo pedido** com a chave
+   de API, sem mensagem ao usuário. Pausa o ChatGPT até o horário informado (`resetAt`, com "volta às HH:MM");
+   sem horário, até **10 minutos** depois (`CHATGPT_LIMIT_RETRY_MS`, com "nova tentativa às HH:MM"). Durante a
+   pausa, o modo Automático usa a chave. Não há chamadas de teste: a próxima pergunta real depois do horário
+   tenta o ChatGPT de novo. Quando um pedido do ChatGPT dá certo, a pausa é apagada. A pausa vale também no
+   Automático sem chave de API (o erro aparece e as perguntas não insistem no limite).
+2. **Falha transitória** (5xx, rede, parada, protocolo): repete com a chave, sem pausa.
+3. **Falha no meio da resposta**: se já chegou texto do ChatGPT, o texto parcial é descartado (`onRestart`)
+   e a resposta é refeita inteira com a chave. Nunca há emenda de duas respostas.
+4. **Falha de conta** (`reauth`, `not_eligible`): **não usa a chave**. Abre o modal "Sua conexão com o ChatGPT
+   precisa de atenção" (`AttentionModal`, botões "Abrir Configurações" e "Agora não") e marca a conta como
+   em atenção. Nas Configurações, o cartão mostra o motivo, com "Entrar de novo" e "Desconectar ChatGPT"
+   (e "Tentar o plano de novo" para conta sem plano). O modo Automático continua sem usar a chave enquanto a
+   conta estiver em atenção; ao desconectar, usa a chave normalmente. Um pedido que dá certo limpa a atenção.
+   Não há bloqueio permanente sem chave: a atenção só muda o aviso e a rota de falha, não a elegibilidade.
+5. **Só ChatGPT**: nunca usa a chave. Limite ou falha transitória aparece como erro (sem pausa).
+6. **Só chave de API**: nunca chama o ChatGPT.
+7. **Sem método disponível**: mensagem clara com atalho para as Configurações.
+
+Os tempos e o modo ficam salvos no aparelho (`provider-prefs.json`, ou `localStorage` na web), sem chaves nem tokens.
 
 Limites da prévia: `store=false` e `stream=true` são obrigatórios; mensagens de sistema vão em
 `instructions`; `temperature`, `max_output_tokens` e `previous_response_id` não são enviados. O histórico
@@ -113,9 +159,12 @@ Confirmar em aparelho real antes de publicar.
 
 ## Testes
 
+- `npx vitest run packages/core`: PKCE (vetor da RFC 7636), RS256 contra chaves geradas com `node:crypto`,
+  callback, troca, renovação, erros de plano com fetch falso (`chatgpt-failures.test.ts`: `resetAt` por
+  cabeçalho e corpo, classes de falha, parada, protocolo), o provedor e a API de erro.
+- `npx vitest run app/src/settings`: a máquina de escolha e reserva (`route.test.ts`): modos, pausa de 10
+  minutos (`CHATGPT_LIMIT_RETRY_MS`), horário informado, falhas por classe e a regra de atenção sem chave.
 - `npx vitest run app/src/auth/chatgpt`: a máquina de retorno (cancelamento por folga, fechamento da aba,
   sucesso, settle, temporizadores).
-- `npx vitest run packages/core`: PKCE (vetor da RFC 7636), RS256 contra chaves geradas com `node:crypto`,
-  callback, troca, renovação, erros de plano e o provedor com fetch falso.
 - `cd app && npx tsc --noEmit` e `npx expo-doctor`.
-- Teste real de login exige o navegador e a conta da pessoa; não é automatizado.
+- Teste real de login e de limite exige o navegador e a conta da pessoa; não é automatizado.

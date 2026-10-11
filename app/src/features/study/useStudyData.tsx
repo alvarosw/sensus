@@ -202,6 +202,13 @@ function runStream(provider: ProviderConfig, key: string, messages: Parameters<t
       useStudy.getState().appendGeneration(key, chunk);
     }
   };
+  // Reserva com a chave: descarta o texto parcial e refaz a resposta inteira (sem emendar).
+  const restart = () => {
+    if (timer) clearTimeout(timer);
+    timer = null;
+    buf = '';
+    useStudy.getState().setGeneration(key, { text: '', status: 'streaming', error: undefined, thinking: false });
+  };
   streamChat(
     provider,
     messages,
@@ -212,6 +219,7 @@ function runStream(provider: ProviderConfig, key: string, messages: Parameters<t
     ctrl.signal,
     SUMMARY_MAX_TOKENS,
     () => markThinking(key),
+    restart,
   ).then(
     () => {
       if (timer) clearTimeout(timer);

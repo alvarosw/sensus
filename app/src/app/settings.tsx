@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { ScrollView, TextInput, View } from 'react-native';
 import { buildProviderConfig } from '@sensus/core';
 import { Card, fontFamilies, Pill, radius, Segmented, Txt, useTheme, type SchemePreference } from '@/design';
+import type { ProviderMode } from '@/settings/route';
 import { t } from '@/i18n';
 import { listProviderModels } from '@/ai/client';
 import { initialFormSettings } from '@/settings/resolve';
@@ -17,6 +18,12 @@ import { ChatGPTCard } from '@/settings/chatgpt-card';
 type Notice = { tone: 'ok' | 'error'; text: string } | null;
 
 const MAX_MODEL_CHIPS = 25;
+
+const MODE_HINT: Record<ProviderMode, string> = {
+  auto: 'Usa o ChatGPT primeiro. Se o plano estiver no limite ou falhar, usa sua chave de API, sem aviso.',
+  chatgpt: 'Usa só o ChatGPT. Não usa a chave de API; limites e falhas aparecem como erro.',
+  key: 'Usa só a chave de API. O ChatGPT não é usado.',
+};
 
 function messageOf(e: unknown): string {
   return e instanceof Error ? e.message : String(e);
@@ -127,6 +134,21 @@ export default function SettingsScreen() {
       contentInsetAdjustmentBehavior="automatic"
       keyboardShouldPersistTaps="handled"
     >
+      <Card testID="provider-mode" style={{ gap: 10 }}>
+        <Txt v="lensTitle">Como a IA responde</Txt>
+        <Segmented<ProviderMode>
+          testID="provider-mode-select"
+          value={settings.mode}
+          onChange={settings.setMode}
+          options={[
+            { key: 'auto', label: 'Automático' },
+            { key: 'chatgpt', label: 'Só ChatGPT' },
+            { key: 'key', label: 'Só chave de API' },
+          ]}
+        />
+        <Txt v="bodySm" color="muted" testID="provider-mode-hint">{MODE_HINT[settings.mode]}</Txt>
+      </Card>
+
       <ChatGPTCard />
 
       <Txt v="eyebrow" color="muted" style={{ marginTop: 6 }}>Usar uma chave de API (alternativa)</Txt>

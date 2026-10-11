@@ -11,8 +11,10 @@ import {
   type ProviderConfig,
 } from '@sensus/core';
 import { DEMO_PRESET_ID, DemoProvider } from './demo-provider';
-import { getChatGPTAccessToken, markPlanNotEligible } from '@/auth/chatgpt/service';
-import { useStudy } from '@/state/study';
+import { getChatGPTAccessToken, markChatGPTAttention, markChatGPTWorking } from '@/auth/chatgpt/service';
+import { openChatGPTAttention } from '@/settings/attention';
+import { usePrefs } from '@/settings/prefs';
+import { decideError } from '@/settings/route';
 
 /**
  * fetch com streaming real (response.body) no React Native, via expo/fetch.
@@ -39,6 +41,13 @@ function isChatRequest(messages: readonly ChatMessage[]): boolean {
  * pelo contexto de chat); modelos com raciocínio gastam parte do limite antes de responder.
  * `onReasoning` avisa de cada pedaço de raciocínio (antes do texto) para a UI mostrar "pensando…".
  * Sem bytes por 45 s, lança LLMError com código 'timeout'.
+ *
+ * Reserva (regra em docs/AI_PROVIDERS.md, aplicada por decideError em settings/route.ts):
+ *  - Config do ChatGPT com `fallback` (modo Automático): limite (plan_limit/rate_limit) pausa o ChatGPT e
+ *    repete com a chave; falha transitória (5xx, rede, parada, protocolo) repete com a chave, sem pausa.
+ *    Se já havia texto, `onRestart` avisa para descartar o parcial: a resposta é refeita inteira.
+ *  - Falha de conta (reauth, not_eligible): nunca usa a chave; abre o aviso de atenção e lança o erro.
+ *  - Sem `fallback` (Só ChatGPT, ou só chave): o erro é lançado como está.
  */
 export async function streamChat(
   config: ProviderConfig,
@@ -47,28 +56,34 @@ export async function streamChat(
   signal?: AbortSignal,
   maxTokens = isChatRequest(messages) ? CHAT_MAX_TOKENS : SUMMARY_MAX_TOKENS,
   onReasoning?: () => void,
+  onRestart?: () => void,
 ): Promise<void> {
   const run = async (cfg: ProviderConfig, emit: (chunk: string) => void): Promise<void> => {
     const stream = providerFor(cfg).stream({ messages, temperature: 0.2, maxTokens, signal, onReasoning });
     for await (const chunk of stream) emit(chunk);
   };
-  let emitted = false;
   try {
-    await run(config, (chunk) => {
-      emitted = true;
-      onChunk(chunk);
-    });
+    await run(config, onChunk);
   } catch (err) {
-    if (!(err instanceof LLMError) || err.code !== 'plan_not_eligible' || emitted) throw err;
-    // Conta recusada pelo plano (403), antes de qualquer texto: marca a conta e usa a chave de API.
-    const firstRefusal = await markPlanNotEligible();
-    if (!config.fallback) throw err;
-    if (firstRefusal) {
-      useStudy.getState().showToast({
-        text: 'Sua conta do ChatGPT não tem o plano para o Sensus. Usando sua chave de API.',
-      });
+    if (config.kind !== 'chatgpt' || signal?.aborted || !(err instanceof LLMError)) throw err;
+    const { mode } = usePrefs.getState();
+    const action = decideError(err, { mode, hasFallback: !!config.fallback, now: Date.now() });
+    if (action.kind === 'attention') {
+      await markChatGPTAttention(action.reason).catch(() => undefined);
+      openChatGPTAttention(action.reason);
+      throw err;
     }
+    if (action.pause) usePrefs.getState().pauseChatGPT(action.pause);
+    if (action.kind === 'error' || !config.fallback) throw err;
+    // Refaz a resposta inteira com a chave: o texto parcial do ChatGPT é descartado, não emendado.
+    onRestart?.();
     await run(config.fallback, onChunk);
+    return;
+  }
+  if (config.kind === 'chatgpt') {
+    // O plano respondeu: limpa a pausa e a atenção da conta.
+    usePrefs.getState().clearPause();
+    void markChatGPTWorking().catch(() => undefined);
   }
 }
 

@@ -89,6 +89,15 @@ async function execute(id: string, provider: ProviderConfig): Promise<void> {
     useStudy.getState().setTurnThinking(id, true);
   };
 
+  // Reserva com a chave: o texto parcial do ChatGPT é descartado e a resposta recomeça do zero.
+  const onRestart = () => {
+    if (timer) clearTimeout(timer);
+    timer = null;
+    buffer = '';
+    thinking = false;
+    useStudy.getState().resetTurn(id);
+  };
+
   try {
     await streamChat(
       provider,
@@ -101,6 +110,7 @@ async function execute(id: string, provider: ProviderConfig): Promise<void> {
       controller.signal,
       CHAT_MAX_TOKENS,
       onReasoning,
+      onRestart,
     );
     flush();
     useStudy.getState().finishTurn(id);

@@ -19,6 +19,8 @@ export interface StoredAccount {
   planEnabled: boolean;
   /** Último 403 de elegibilidade: o plano não está disponível para esta conta. */
   planBlocked: boolean;
+  /** Sessão recusada depois da renovação (refresh inutilizável ou 401 persistente): precisa de novo login. Opcional: registros antigos não têm. */
+  needsReauth?: boolean;
   /** Modelo escolhido (id da lista da conta). Vazio até listar. */
   model: string;
   /** Vazios quando a sessão foi encerrada (o registro e o client_id ficam, como o docs pede). */
@@ -36,6 +38,9 @@ export interface ChatGPTAccountView {
   email: string | null;
   planEnabled: boolean;
   planBlocked: boolean;
+  needsReauth: boolean;
+  /** Conta salva e não encerrada pelo usuário (mesmo que a sessão precise de novo login). */
+  connected: boolean;
   model: string;
   hasSession: boolean;
   savedAt: number;
@@ -165,6 +170,8 @@ export function toView(a: StoredAccount | null): ChatGPTAccountView | null {
     email: a.email,
     planEnabled: a.planEnabled,
     planBlocked: a.planBlocked,
+    needsReauth: a.needsReauth === true,
+    connected: !a.signedOut,
     model: a.model,
     hasSession: !a.signedOut && !!a.accessToken && !!a.refreshToken,
     savedAt: a.savedAt,
