@@ -24,6 +24,9 @@ import { shortRef } from '../common/format';
 import { useBooks, useCite } from '../common/hooks';
 import { morphParts } from '../common/morph-pt';
 import { SRC } from '../common/strings';
+import { useAutoTranslate } from '@/translate/useAutoTranslate';
+import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
+import { useSourceLang } from '@/translate/source-lang';
 import { KeyValues, LicenseBlock, RefChips } from './PanelParts';
 
 type WordEntry = { kind: 'word'; tokenCiteId: string } | { kind: 'lemma'; strongBase: string };
@@ -86,6 +89,12 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
   const word = token ? token.surface.normalize('NFC').replace(/^[\p{P}\p{S}\s]+|[\p{P}\p{S}\s]+$/gu, '') : lemma;
 
   const lexSources = [token ? sources.data?.get(token.source_id) : undefined, lex ? sources.data?.get(lex.source_id) : undefined];
+  // Tradução automática: o idioma vem da fonte (en para TBESG e TFLSJ); o LSJ só é traduzido quando aberto.
+  const lexLang = useSourceLang(lex?.source_id ?? null);
+  const lsjLang = useSourceLang(pair.lsj?.source_id ?? null);
+  const lexTr = useAutoTranslate(lex?.definition ?? null, lexLang);
+  const lsjText = pair.lsj ? (pair.lsj.definition.length > LSJ_MAX ? `${pair.lsj.definition.slice(0, LSJ_MAX)}…` : pair.lsj.definition) : null;
+  const lsjTr = useAutoTranslate(showLsj ? lsjText : null, lsjLang);
   const licenseSummary = [token ? 'TAGNT' : null, lex ? sourceShort(sources.data?.get(lex.source_id), lex.source_id) : null]
     .filter(Boolean)
     .join(' e ');
@@ -138,7 +147,8 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
             {lex.lemma ?? lemma}
             {lex.gloss ? <Text style={{ fontFamily: fontFamilies.ui, fontSize: 13, color: c.muted }}>{`  ${lex.gloss}`}</Text> : null}
           </Text>
-          <Txt v="excerpt" style={{ fontSize: 13.5 }} selectable>{lex.definition}</Txt>
+          <Txt v="excerpt" style={{ fontSize: 13.5 }} selectable testID="word-lexicon-text">{lexTr.display}</Txt>
+          <AutoTranslateNote tr={lexTr} testID="word-lexicon-tr" />
           <View style={{ flexDirection: 'row', flexWrap: 'wrap', columnGap: 8 }}>
             {pair.lsj ? (
               <LinkButton testID="word-lsj" label={showLsj ? SRC.hideLsj : SRC.seeLsj} onPress={() => setShowLsj((v) => !v)} />
@@ -157,9 +167,8 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
         <>
           <SubHeader label={SRC.lexiconLsj} />
           <Card testID="word-lsj-card">
-            <Txt v="excerpt" style={{ fontSize: 13.5 }} selectable>
-              {pair.lsj.definition.length > LSJ_MAX ? `${pair.lsj.definition.slice(0, LSJ_MAX)}…` : pair.lsj.definition}
-            </Txt>
+            <Txt v="excerpt" style={{ fontSize: 13.5 }} selectable testID="word-lsj-text">{lsjTr.display}</Txt>
+            <AutoTranslateNote tr={lsjTr} testID="word-lsj-tr" />
           </Card>
         </>
       ) : null}

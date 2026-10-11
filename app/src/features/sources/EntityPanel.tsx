@@ -1,5 +1,6 @@
 // Painel de entidade (pessoa, lugar, evento, grupo): descrição, coordenadas, mini-mapa e outras passagens.
 import { View } from 'react-native';
+import Svg, { Circle, G, Line, Path, Text as SvgText } from 'react-native-svg';
 import { Empty, LinkButton, Skeleton, SubHeader, Tag, Txt, TypeMark, useTheme } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useAsync } from '@/data/use-async';
@@ -8,8 +9,9 @@ import { askAbout, showInText } from '../common/actions';
 import { loadEntityPassages, type CiteDetail } from '../common/cites';
 import { useBooks, useCite } from '../common/hooks';
 import { SRC } from '../common/strings';
+import { useAutoTranslate } from '@/translate/useAutoTranslate';
+import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
 import { LicenseBlock, RefChips } from './PanelParts';
-import { PlaceMapBlock } from '../maps/PlaceMap';
 
 export function EntityPanel({ citeId }: { citeId: string }) {
   const cite = useCite(citeId);
@@ -29,11 +31,16 @@ export function EntityPanel({ citeId }: { citeId: string }) {
   return <EntityBody detail={cite.detail} entity={cite.detail.record.record} />;
 }
 
+function formatCoords(lat: number, lon: number): string {
+  return `${Math.abs(lat).toFixed(3)}° ${lat >= 0 ? 'N' : 'S'} · ${Math.abs(lon).toFixed(3)}° ${lon >= 0 ? 'L' : 'O'}`;
+}
+
 function EntityBody({ detail, entity }: { detail: CiteDetail; entity: Entity }) {
   const repo = useRepo();
   const books = useBooks();
   const passages = useAsync(() => loadEntityPassages(repo, detail.citeId), [repo, detail.citeId]);
   const hasPlace = entity.lat != null && entity.lon != null;
+  const descTr = useAutoTranslate(entity.description, detail.source?.lang ?? null);
 
   return (
     <View style={{ gap: 12 }}>
@@ -43,9 +50,22 @@ function EntityBody({ detail, entity }: { detail: CiteDetail; entity: Entity }) 
       </View>
       <Txt v="panelTitle" testID="panel-title">{entity.name}</Txt>
 
-      {hasPlace ? <PlaceMapBlock entity={entity as Entity & { lat: number; lon: number }} /> : null}
+      {hasPlace ? (
+        <View style={{ flexDirection: 'row', gap: 12, alignItems: 'flex-start' }}>
+          <MiniMap name={entity.name} />
+          <View style={{ flex: 1, gap: 4 }}>
+            <SubHeader label={SRC.coords} />
+            <Txt v="mono" color="muted" testID="entity-coords">{formatCoords(entity.lat as number, entity.lon as number)}</Txt>
+          </View>
+        </View>
+      ) : null}
 
-      {entity.description ? <Txt v="fullText" selectable>{entity.description}</Txt> : null}
+      {entity.description ? (
+        <View style={{ gap: 4 }}>
+          <Txt v="fullText" selectable testID="entity-description">{descTr.display}</Txt>
+          <AutoTranslateNote tr={descTr} testID="entity-tr" />
+        </View>
+      ) : null}
 
       <SubHeader label={SRC.otherPassages} />
       {passages.loading ? (
@@ -60,6 +80,31 @@ function EntityBody({ detail, entity }: { detail: CiteDetail; entity: Entity }) 
         <LinkButton testID="panel-ask" label={SRC.askEntity} onPress={() => askAbout(detail, { closePanels: true })} />
       </View>
       <LicenseBlock sources={[detail.source]} citeId={detail.citeId} />
+    </View>
+  );
+}
+
+/** Mini-mapa esquemático (proto: .place svg): grade, água e o ponto da entidade ao centro. */
+function MiniMap({ name }: { name: string }) {
+  const { c, st } = useTheme();
+  return (
+    <View style={{ width: 92, height: 92, borderRadius: 10, backgroundColor: c.surfaceAlt, overflow: 'hidden' }} testID="entity-map">
+      <Svg width={92} height={92} viewBox="0 0 92 92" accessibilityLabel={`Posição de ${name}`}>
+        <G stroke={c.border} strokeWidth={1}>
+          {[16, 31, 46, 61, 76].map((g) => (
+            <G key={g}>
+              <Line x1={g} y1={0} x2={g} y2={92} />
+              <Line x1={0} y1={g} x2={92} y2={g} />
+            </G>
+          ))}
+        </G>
+        <Path d="M0 70 C20 62 30 74 50 68 S80 76 92 70 V92 H0Z" fill={st.tok} fillOpacity={0.25} />
+        <Circle cx={46} cy={46} r={9} fill={st.ent} fillOpacity={0.25} />
+        <Circle cx={46} cy={46} r={4} fill={st.ent} />
+        <SvgText x={46} y={34} textAnchor="middle" fontSize={9} fontWeight="700" fill={c.text}>
+          {name.length > 14 ? `${name.slice(0, 13)}…` : name}
+        </SvgText>
+      </Svg>
     </View>
   );
 }

@@ -5,7 +5,6 @@ import Constants from 'expo-constants';
 import { Card, ListGroup, ListRow, Txt, useTheme } from '@/design';
 import { useSources, licenseGroupOf } from '@/settings/use-sources';
 import { SETTINGS_COPY as COPY } from '@/settings/strings';
-import { MAP_ATTRIBUTIONS } from '@/features/maps/strings';
 
 function Line({ label, value }: { label: string; value: string }) {
   const { c } = useTheme();
@@ -40,9 +39,6 @@ export default function AboutScreen() {
           <Txt v="bodySm" color="muted">{COPY.attributionHint}</Txt>
           {nonCommercial.map((s) => (
             <Txt key={s.id} v="bodySm" tint={c.warnText}>{COPY.nonCommercial(s.title)}</Txt>
-          ))}
-          {MAP_ATTRIBUTIONS.map((line) => (
-            <Txt key={line} v="bodySm" color="muted" testID="about-map-attribution">{line}</Txt>
           ))}
           {error ? <Txt v="bodySm" tint={c.danger}>{COPY.noSources}</Txt> : null}
         </Card>

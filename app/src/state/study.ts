@@ -55,21 +55,11 @@ export interface ChatTurn {
 }
 
 /** Painéis empilhados em tela cheia, com trilha de volta. */
-/** Escopos do mapa em tela cheia: seleção, perícope e livro (intervalos de versículos). */
-export interface MapScope {
-  range: { start: Vid; end: Vid };
-  unit: { start: Vid; end: Vid } | null;
-  book: { start: Vid; end: Vid };
-  /** Escopo que abre primeiro. */
-  initial: 'selection' | 'unit' | 'book';
-}
-
 export type PanelEntry =
   | { kind: 'word'; tokenCiteId: string }
   | { kind: 'lemma'; strongBase: string }
   | { kind: 'source'; citeId: string }
-  | { kind: 'entity'; citeId: string }
-  | { kind: 'map'; scope: MapScope };
+  | { kind: 'entity'; citeId: string };
 
 /** Geração de IA (resumo por pericope e "Detalhar" por lente). Chave: `${unitStart}-${unitEnd}` (+ `:${lens}`). */
 export interface Generation {

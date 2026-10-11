@@ -156,9 +156,12 @@ function Sheet({ topInset, active }: { topInset: number; active: boolean }) {
     startIdx.value = Math.max(0, ORDER.indexOf(detent as (typeof ORDER)[number]));
   }, [detent, startIdx]);
 
+  // Com o chat aberto o arrasto da alça fica desligado: o gesto não pode capturar toques sobre o chat.
+  const chatOpen = useStudy((s) => s.chatOpen);
   const pan = useMemo(
     () =>
       Gesture.Pan()
+        .enabled(!chatOpen)
         .minDistance(6)
         .onStart(() => {
           'worklet';
@@ -181,7 +184,7 @@ function Sheet({ topInset, active }: { topInset: number; active: boolean }) {
           if (cur < peekV.value * 0.55) best = -1;
           runOnJS(commit)(best);
         }),
-    [commit, fullV, h, halfV, peekV, startH, startIdx],
+    [chatOpen, commit, fullV, h, halfV, peekV, startH, startIdx],
   );
 
   const sheetStyle = useAnimatedStyle(() => ({ height: h.value }));

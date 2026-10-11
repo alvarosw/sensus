@@ -29,6 +29,9 @@ import { useBooks, useCite } from '../common/hooks';
 import { morphPills } from '../common/morph-pt';
 import { useLast, usePresence } from '../common/motion';
 import { SRC } from '../common/strings';
+import { useAutoTranslate } from '@/translate/useAutoTranslate';
+import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
+import { useSourceLang } from '@/translate/source-lang';
 
 export function SourcePopover() {
   const { c } = useTheme();
@@ -205,6 +208,7 @@ function Body({ detail, repo }: { detail: CiteDetail; repo: ReturnType<typeof us
   const { st } = useTheme();
   const books = useBooks();
   const { record } = detail;
+  const textSource = useStudy((s) => s.textSource);
 
   const extra = useAsync<{ lex: ReturnType<typeof pickLexicon> | null; xr: string | null }>(async () => {
     if (record.table === 'token' && record.record.strong_base) {
@@ -217,6 +221,22 @@ function Body({ detail, repo }: { detail: CiteDetail; repo: ReturnType<typeof us
     }
     return { lex: null, xr: null };
   }, [repo, detail.citeId]);
+
+  // Tradução automática do trecho mostrado: o idioma vem da fonte (lexicon, Bíblia escolhida ou a própria fonte).
+  const lexSource = extra.data?.lex?.tbesg;
+  const lexLang = useSourceLang(lexSource?.source_id ?? null);
+  const textLang = useSourceLang(textSource);
+  const shownText =
+    record.table === 'token'
+      ? lexSource
+        ? [lexSource.gloss, lexSource.definition].filter(Boolean).join(' — ')
+        : null
+      : record.table === 'xref'
+        ? (extra.data?.xr ?? null)
+        : detail.text;
+  const shownLang =
+    record.table === 'token' ? lexLang : record.table === 'xref' ? textLang : (detail.source?.lang ?? null);
+  const tr = useAutoTranslate(shownText || null, shownLang);
 
   if (record.table === 'token') {
     const t = record.record;
@@ -238,9 +258,10 @@ function Body({ detail, repo }: { detail: CiteDetail; repo: ReturnType<typeof us
           </View>
         ) : null}
         {lex ? (
-          <Txt v="excerpt" numberOfLines={7} style={{ fontSize: 13.5 }}>
-            {[lex.gloss, lex.definition].filter(Boolean).join(' — ')}
-          </Txt>
+          <>
+            <Txt v="excerpt" numberOfLines={7} style={{ fontSize: 13.5 }}>{tr.display}</Txt>
+            <AutoTranslateNote tr={tr} testID="popover-tr" />
+          </>
         ) : null}
       </>
     );
@@ -250,7 +271,8 @@ function Body({ detail, repo }: { detail: CiteDetail; repo: ReturnType<typeof us
     const x = record.record;
     return (
       <>
-        <Txt v="excerpt" numberOfLines={7}>{extra.data?.xr ?? ''}</Txt>
+        <Txt v="excerpt" numberOfLines={7}>{tr.display}</Txt>
+        <AutoTranslateNote tr={tr} testID="popover-tr" />
         <Txt v="meta" color="muted" style={{ fontFamily: fontFamilies.ui }}>
           {[SRC.linkedTo(formatShortRef(x.from_vid, x.from_vid, books, true)), x.weight != null ? SRC.votes(x.weight) : null]
             .filter(Boolean)
@@ -264,7 +286,8 @@ function Body({ detail, repo }: { detail: CiteDetail; repo: ReturnType<typeof us
     const e = record.record;
     return (
       <>
-        <Txt v="excerpt" numberOfLines={7}>{detail.text}</Txt>
+        <Txt v="excerpt" numberOfLines={7}>{tr.display}</Txt>
+        <AutoTranslateNote tr={tr} testID="popover-tr" />
         {e.lat != null && e.lon != null ? (
           <Txt v="mono" color="muted">{`${e.lat.toFixed(3)}° · ${e.lon.toFixed(3)}°`}</Txt>
         ) : null}
@@ -272,5 +295,10 @@ function Body({ detail, repo }: { detail: CiteDetail; repo: ReturnType<typeof us
     );
   }
 
-  return <Txt v="excerpt" numberOfLines={7} selectable>{detail.text}</Txt>;
+  return (
+    <>
+      <Txt v="excerpt" numberOfLines={7} selectable>{tr.display}</Txt>
+      <AutoTranslateNote tr={tr} testID="popover-tr" />
+    </>
+  );
 }

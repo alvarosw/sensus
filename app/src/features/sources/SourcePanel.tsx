@@ -12,6 +12,10 @@ import { askAbout, showInText } from '../common/actions';
 import { loadSources, loadXrefText, type CiteDetail } from '../common/cites';
 import { useBooks, useCite } from '../common/hooks';
 import { SRC } from '../common/strings';
+import { useAutoTranslate } from '@/translate/useAutoTranslate';
+import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
+import { useTranslate } from '@/translate/store';
+import { useSourceLang } from '@/translate/source-lang';
 import { LicenseBlock, RefChips } from './PanelParts';
 
 export function SourcePanel({ citeId }: { citeId: string }) {
@@ -80,9 +84,15 @@ function SourceBody({ detail }: { detail: CiteDetail }) {
   }, [repo, detail.citeId]);
 
   const text = fullTextOf(detail, xr.data ?? '');
+  // Texto de versículo (xref) vem da Bíblia escolhida (blivre = pt, kjv = en), não da fonte da ligação.
+  const textSource = useStudy((s) => s.textSource);
+  const textSourceLang = useSourceLang(textSource);
+  const textLang = record.table === 'xref' ? textSourceLang : (source?.lang ?? null);
+  const tr = useAutoTranslate(text || null, textLang);
+  const translateOn = useTranslate((s) => s.enabled);
   const links = useMemo(
-    () => (source?.lang === 'en' && text ? googleTranslateLinks(text, APP_LANG, 'en') : []),
-    [source?.lang, text],
+    () => (textLang === 'en' && text ? googleTranslateLinks(text, APP_LANG, 'en') : []),
+    [textLang, text],
   );
   const refs: Vid[] = detail.ranges.map((r) => r.start);
 
@@ -99,7 +109,10 @@ function SourceBody({ detail }: { detail: CiteDetail }) {
       {xr.loading && record.table === 'xref' ? (
         <Skeleton height={80} />
       ) : text ? (
-        <Txt v="fullText" testID="panel-fulltext" selectable>{text}</Txt>
+        <View style={{ gap: 6 }}>
+          <Txt v="fullText" testID="panel-fulltext" selectable>{tr.display}</Txt>
+          <AutoTranslateNote tr={tr} testID="panel-tr" />
+        </View>
       ) : null}
 
       {refs.length > 0 ? (
@@ -114,7 +127,7 @@ function SourceBody({ detail }: { detail: CiteDetail }) {
         </>
       ) : null}
 
-      {links.length > 0 ? (
+      {links.length > 0 && (!translateOn || tr.failed) ? (
         <>
           <SubHeader label={SRC.translate} />
           <Txt v="meta" color="muted" style={{ fontSize: 12 }}>{SRC.translateHint}</Txt>

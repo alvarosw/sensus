@@ -5,7 +5,7 @@ import { SourcePopover } from './SourcePopover';
 
 export function SourceLayer() {
   return (
-    <View pointerEvents="box-none" style={[StyleSheet.absoluteFill, { zIndex: 13 }]}>
+    <View pointerEvents="box-none" style={[StyleSheet.absoluteFill, { zIndex: 13, elevation: 30 }]}>
       <SourcePopover />
       <PanelStack />
     </View>

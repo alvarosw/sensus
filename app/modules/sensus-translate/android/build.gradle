@@ -1,0 +1,19 @@
+apply plugin: 'com.android.library'
+apply plugin: 'expo-module-gradle-plugin'
+
+group = 'expo.modules.sensustranslate'
+version = '0.1.0'
+
+android {
+  namespace "expo.modules.sensustranslate"
+
+  defaultConfig {
+    versionCode 1
+    versionName "0.1.0"
+  }
+}
+
+dependencies {
+  // Modelos de tradução ficam no Google Play Services; o app não guarda o texto traduzido.
+  implementation 'com.google.mlkit:translate:17.0.3'
+}

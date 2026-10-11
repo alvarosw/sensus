@@ -63,8 +63,6 @@ export default (): ExpoConfig => {
       'expo-sqlite',
       'expo-secure-store',
       'expo-asset',
-      // MapLibre: mapas vetoriais (OpenFreeMap). Sem chave de API.
-      '@maplibre/maplibre-react-native',
       [
         // Release enxuto para envio direto (limite de 30 MiB): R8 + shrinkResources,
         // libs nativas comprimidas no APK e bundle JS comprimido (sem noCompress).

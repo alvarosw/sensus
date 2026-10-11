@@ -112,21 +112,6 @@ domínio público (DistributionLicense=Public Domain).* A atribuição completa 
 | `sword-torrey` | R. A. Torrey | Torrey's New Topical Textbook | v1.3 |
 | `sword-tsk` | Canne, Browne, Blayney, Scott et al. (c. 1880) | Treasury of Scripture Knowledge | v1.4 |
 
-### 2.8 Mapas (serviços de tiles e estilo; não são dados do banco)
-
-Os mapas usam MapLibre com vetores do OpenFreeMap (esquema OpenMapTiles). Não há chave de API.
-O estilo (claro e escuro) é gerado pelo app a partir dos tokens de cor; não copia o estilo de terceiros.
-
-| Recurso | Origem | Licença | Atribuição exigida (visível no app) | Condições |
-|---|---|---|---|---|
-| Dados de mapa | OpenStreetMap | ODbL 1.0 | © OpenStreetMap contributors (openstreetmap.org/copyright) | Share-alike sobre banco derivado: ver item 4 de "Verificar". |
-| Esquema e vetores | OpenMapTiles (via OpenFreeMap) | CC BY 4.0 | © OpenMapTiles | Atribuição em todo mapa. |
-| Serviço de tiles | OpenFreeMap (openfreemap.org, `https://tiles.openfreemap.org/planet`) | MIT (projeto); uso público livre, sem limite declarado | OpenFreeMap | Fontes de glifos: `tiles.openfreemap.org/fonts` (Noto Sans). |
-| Biblioteca | maplibre-react-native 11.4.0 | MIT | (em "Sobre e licenças") | Plugin nativo com `app.config.ts`. |
-
-Atribuição mostrada: "© OpenStreetMap contributors · © OpenMapTiles · OpenFreeMap" (`features/maps/strings.ts`).
-Mapa do mundo antigo (AWMC): não incluído; ver `docs/BACKLOG.md`, seção App.
-
 ## 3. Verificar antes de distribuir
 
 1. **RWP (`sword-rwp`).** Manter ou excluir é decisão do responsável. Se mantido, o app precisa exibir
@@ -143,9 +128,6 @@ Mapa do mundo antigo (AWMC): não incluído; ver `docs/BACKLOG.md`, seção App.
    OpenStreetMap (ODbL 1.0). Adicionar o crédito "© OpenStreetMap contributors" na tela de licenças. Se
    o uso for considerado derivação de banco de dados, o ODbL pode exigir share-alike também para essa
    parte. Confirmar.
-   **Status:** o crédito já aparece nos mapas e em "Sobre e licenças" (seção 2.8). Falta a decisão
-   sobre share-alike.
-
 5. **KJV (GPL declarada).** O texto é de domínio público, mas o módulo declara GPL. Manter a referência
    ao CrossWire e o aviso. Se o app distribuir código do módulo SWORD (e não só o texto), a GPL se aplica
    a esse código.
@@ -161,7 +143,13 @@ Mapa do mundo antigo (AWMC): não incluído; ver `docs/BACKLOG.md`, seção App.
 10. **Fontes fora do build.** Ao incluir `tahot`, `hbo-wlc`, `stepbible-tbesh` e `sword-kd`, atualizar a
     tela de licenças e este arquivo.
 
-## 4. Atualizar este arquivo
+## 4. Ferramentas e modelos de terceiros (não são dados do banco)
+
+- **Google ML Kit Translation** (tradução inglês -> português no aparelho, opcional). O modelo é baixado pelo
+  Google Play Services e não entra no `sensus.db` nem no APK. Sujeito aos termos do Google ML Kit. As traduções
+  geradas não são armazenadas (apenas em memória durante a sessão).
+
+## 5. Atualizar este arquivo
 
 Toda nova fonte precisa de `source.json` com `license`, `license_url`, `url`, `version` e `attribution`,
 e de uma linha nesta tabela. Só entram fontes cuja licença permita redistribuir o dado derivado.

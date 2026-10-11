@@ -6,6 +6,7 @@ import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, { useAnimatedStyle, useSharedValue, type SharedValue } from 'react-native-reanimated';
 import type { Vid } from '@sensus/core';
 import { size, useTheme } from '@/design';
+import { useStudy } from '@/state/study';
 import { LINE, type ReaderGeometry } from './geometry';
 import { READER } from './strings';
 
@@ -54,7 +55,10 @@ function Handle({ which, x, top, scroll, viewportHeight, onDragStart, onDrag, on
     const y = topSV.value - scroll.value;
     return { transform: [{ translateY: y }], opacity: y > -BOX && y < heightSV.value ? 1 : 0 };
   });
+  // Com o chat aberto a alça fica desligada: não pode capturar toques sobre o chat (que cobre o leitor).
+  const chatOpen = useStudy((st) => st.chatOpen);
   const pan = Gesture.Pan()
+    .enabled(!chatOpen)
     .runOnJS(true)
     .minDistance(0)
     .onBegin(() => onDragStart(which))

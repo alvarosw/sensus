@@ -3,6 +3,8 @@ import { ScrollView, Switch, View } from 'react-native';
 import { Card, Segmented, Txt, useTheme, type SchemePreference } from '@/design';
 import { useAppPrefs, type TextSourceId } from '@/settings/app-prefs';
 import { SETTINGS_COPY as COPY } from '@/settings/strings';
+import { TranslateSettingsCard } from '@/translate/SettingsCard';
+import { TR } from '@/translate/strings';
 
 function Section({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -74,6 +76,10 @@ export default function AppearanceScreen() {
             />
           </View>
         </Card>
+      </Section>
+
+      <Section label={TR.settingsSection}>
+        <TranslateSettingsCard />
       </Section>
     </ScrollView>
   );

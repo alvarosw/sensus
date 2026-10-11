@@ -32,7 +32,7 @@ export function ToastHost() {
 
   if (!shown || !mounted) return null;
   return (
-    <View pointerEvents="box-none" style={[StyleSheet.absoluteFill, { zIndex: 15 }]}>
+    <View pointerEvents="box-none" style={[StyleSheet.absoluteFill, { zIndex: 15, elevation: 40 }]}>
       <View
         pointerEvents="box-none"
         style={{ position: 'absolute', left: 0, right: 0, top: insets.top + size.topBar + 12, alignItems: 'center' }}

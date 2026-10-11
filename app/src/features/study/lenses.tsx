@@ -42,7 +42,6 @@ import {
   XrefCard,
 } from './cards';
 import { LensShell } from './LensShell';
-import { PassageMapCard } from '../maps/PassageMapCard';
 import { bareWord, chv, keyWordsOf, refShort, traditionLabel, viewCommentary, type CommentaryView } from './format';
 import { STUDY } from './strings';
 import { useStudyData, type StudyData } from './useStudyData';
@@ -428,7 +427,6 @@ export function HistoricoLens({ onLayout }: LensProps) {
           const open = (id: string) => useStudy.getState().pushPanel({ kind: 'entity', citeId: id });
           return (
             <View style={{ gap: space[6] }}>
-              {places.length > 0 && <PassageMapCard range={data.range} unit={data.unit} />}
               {places.length > 0 && (
                 <>
                   <SubHeader label={places.length > 1 ? STUDY.places : STUDY.place} />
