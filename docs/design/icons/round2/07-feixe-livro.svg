@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>Sensus 07: Feixe sobre o livro (claro)</title>
+  <rect width="1024" height="1024" fill="#F7F5F0"/><path fill="#EAD3A6" fill-rule="evenodd" d="M320 280L232 556L470 556Z"/><path fill="#7A4E1D" fill-rule="evenodd" d="M292 280A28 28 0 1 0 348 280A28 28 0 1 0 292 280Z"/><path fill="#7A4E1D" fill-rule="evenodd" d="M512 560C440 530 340 530 270 560L270 720C340 700 440 700 512 740ZM512 560C584 530 684 530 754 560L754 720C684 700 584 700 512 740Z"/><path fill="#F3E6CC" fill-rule="evenodd" d="M512 560C440 530 340 530 270 560L300 615C360 600 430 620 512 640Z"/>
+</svg>
