@@ -10,7 +10,7 @@ export type ModelStatus = 'unknown' | 'missing' | 'downloading' | 'ready' | 'err
 
 interface TranslateState {
   loaded: boolean;
-  /** Aparelho com o módulo nativo (Android). Em outros lugares a tradução não aparece. */
+  /** Aparelho com o módulo nativo (Android ou iOS). Em outros lugares a tradução não aparece. */
   supported: boolean;
   enabled: boolean;
   /** "Ativar" ou "Agora não" já foram escolhidos: a oferta não volta a aparecer. */

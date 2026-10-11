@@ -13,7 +13,7 @@ export const TR = {
   settingsSection: 'Tradução automática',
   settingsToggle: 'Traduzir textos em inglês automaticamente',
   settingsHelp: 'Tradução automática no aparelho; pode conter erros — toque em Ver original.',
-  unavailable: 'Indisponível neste aparelho (a tradução automática funciona no Android).',
+  unavailable: 'Indisponível neste aparelho (a tradução automática funciona no Android e no iPhone).',
   modelMissing: 'Não baixado',
   modelDownloading: 'Baixando modelo…',
   modelReady: 'Pronto no aparelho',

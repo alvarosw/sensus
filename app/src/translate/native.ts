@@ -1,4 +1,4 @@
-// Ponte para o módulo nativo SensusTranslate (Google ML Kit, só Android). Sem ele, a tradução fica indisponível.
+// Ponte para o módulo nativo SensusTranslate (Google ML Kit, Android e iOS). Sem ele, a tradução fica indisponível.
 import { Platform } from 'react-native';
 import { requireOptionalNativeModule } from 'expo';
 
@@ -10,9 +10,11 @@ interface SensusTranslateNative {
 }
 
 const mod: SensusTranslateNative | null =
-  Platform.OS === 'android' ? requireOptionalNativeModule<SensusTranslateNative>('SensusTranslate') : null;
+  Platform.OS === 'android' || Platform.OS === 'ios'
+    ? requireOptionalNativeModule<SensusTranslateNative>('SensusTranslate')
+    : null;
 
-/** true quando o aparelho pode traduzir (Android com o módulo nativo). */
+/** true quando o aparelho pode traduzir (Android ou iOS com o módulo nativo). */
 export const translationSupported: boolean = mod !== null;
 
 function need(): SensusTranslateNative {
