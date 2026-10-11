@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Animated, Easing, Pressable, ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BOOK_TABLE, type Book } from '@sensus/core';
-import { IconButton, LinkButton, Segmented, SubHeader, Txt, fontFamilies, motion, radius, shadow, useTheme } from '@/design';
+import { Icon, IconButton, Segmented, SubHeader, Txt, fontFamilies, motion, radius, shadow, useTheme } from '@/design';
 import { READER } from '../reader/strings';
 import { abbrOf } from './abbrev';
 import { groupBooks } from './categories';
@@ -183,7 +183,17 @@ export function BookPicker({
           )}
         </ScrollView>
         <View style={{ paddingHorizontal: 16, paddingTop: 4, alignItems: 'flex-start' }}>
-          <LinkButton testID="books-settings" label={READER.settings} onPress={onSettings} />
+          <Pressable
+            testID="books-settings"
+            accessibilityRole="button"
+            accessibilityLabel={READER.settings}
+            onPress={onSettings}
+            hitSlop={4}
+            style={({ pressed }) => ({ flexDirection: 'row', alignItems: 'center', gap: 6, minHeight: 44, paddingRight: 8, opacity: pressed ? 0.6 : 1 })}
+          >
+            <Icon name="gear" size={16} color={c.accent} />
+            <Txt v="button" color="accent">{READER.settings}</Txt>
+          </Pressable>
         </View>
       </Animated.View>
     </View>

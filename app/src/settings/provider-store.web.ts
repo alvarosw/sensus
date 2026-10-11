@@ -76,3 +76,27 @@ export async function readProviderPrefs(): Promise<StoredProviderPrefs | null> {
 export function writeProviderPrefs(prefs: StoredProviderPrefs): void {
   storage()?.setItem(PREFS_KEY, JSON.stringify(prefs));
 }
+
+/** Preferências de leitura e aparência (ver provider-store.ts). */
+export interface StoredAppPrefs {
+  theme?: unknown;
+  textSource?: unknown;
+  greekDefault?: unknown;
+}
+
+const APP_PREFS_KEY = 'sensus.app.prefs';
+
+export async function readAppPrefs(): Promise<StoredAppPrefs | null> {
+  try {
+    const raw = storage()?.getItem(APP_PREFS_KEY);
+    if (!raw) return null;
+    const parsed: unknown = JSON.parse(raw);
+    return parsed && typeof parsed === 'object' ? (parsed as StoredAppPrefs) : null;
+  } catch {
+    return null;
+  }
+}
+
+export function writeAppPrefs(prefs: StoredAppPrefs): void {
+  storage()?.setItem(APP_PREFS_KEY, JSON.stringify(prefs));
+}

@@ -1,23 +1,41 @@
 import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { KeyboardProvider } from 'react-native-keyboard-controller';
-import { fontFamilies, SensusThemeProvider, useSensusFonts, useTheme as useDesignTheme } from '@/design';
+import { useEffect, useState } from 'react';
+import { SensusThemeProvider, useSensusFonts } from '@/design';
 import { StatusBar } from 'expo-status-bar';
 import type { ReactNode } from 'react';
 import { DbProvider, useDbState } from '@/data/db-context';
 import { t } from '@/i18n';
 import { SettingsProvider } from '@/settings/settings-context';
 import { AttentionModal } from '@/settings/AttentionModal';
+import { useAppPrefs } from '@/settings/app-prefs';
 import { LoadingView, ErrorView } from '@/ui/state';
 import { useTheme } from '@/ui/theme';
 
 export default function RootLayout() {
   const fontsReady = useSensusFonts();
-  if (!fontsReady) return null;
+  const prefsReady = useAppPrefsBoot();
+  if (!fontsReady || !prefsReady) return null;
+  return <RootProviders />;
+}
+
+/** Carrega as preferências de aparência e leitura antes de montar o app (o tema inicial depende delas). */
+function useAppPrefsBoot(): boolean {
+  const loaded = useAppPrefs((s) => s.loaded);
+  useEffect(() => {
+    void useAppPrefs.getState().load();
+  }, []);
+  return loaded;
+}
+
+function RootProviders() {
+  // Lido uma vez, depois de carregado: o tema escolhido nas Configurações vale desde o início.
+  const [initialTheme] = useState(() => useAppPrefs.getState().theme);
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <KeyboardProvider>
-        <SensusThemeProvider>
+        <SensusThemeProvider initial={initialTheme}>
           <AppStack />
         </SensusThemeProvider>
       </KeyboardProvider>
@@ -27,7 +45,6 @@ export default function RootLayout() {
 
 function AppStack() {
   const theme = useTheme();
-  const { c } = useDesignTheme();
   return (
     <SettingsProvider>
       <DbProvider>
@@ -43,16 +60,8 @@ function AppStack() {
             }}
           >
             <Stack.Screen name="index" options={{ headerShown: false }} />
-            <Stack.Screen
-              name="settings"
-              options={{
-                title: t('settings.title'),
-                headerStyle: { backgroundColor: c.bg },
-                headerTintColor: c.accent,
-                headerTitleStyle: { color: c.text, fontFamily: fontFamilies.readSemibold, fontSize: 17 },
-                contentStyle: { backgroundColor: c.bg },
-              }}
-            />
+            {/* Pilha própria em settings/_layout.tsx (cabeçalhos e voltar do design system). */}
+            <Stack.Screen name="settings" options={{ headerShown: false }} />
           </Stack>
         </DbGate>
         <AttentionModal />

@@ -4,6 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BOOK_TABLE } from '@sensus/core';
 import { Icon, TopBarButton, fontFamilies, size, type, useTheme } from '@/design';
 import { useStudy } from '@/state/study';
+import { useAppPrefs } from '@/settings/app-prefs';
 import { useReaderNav } from '../reader/nav-store';
 import { READER, SOURCE_LABEL } from '../reader/strings';
 
@@ -21,9 +22,9 @@ export function TopBar({ jumpOpen, booksOpen, onBooks, onJump }: { jumpOpen: boo
     s.toggleGreek();
     s.showToast({ text: useStudy.getState().greek ? READER.greekOn : READER.greekOff });
   };
+  // O botão do leitor grava o texto padrão (Configurações > Aparência e leitura).
   const toggleSource = () => {
-    const s = useStudy.getState();
-    s.setTextSource(s.textSource === 'blivre' ? 'kjv' : 'blivre');
+    useAppPrefs.getState().setTextSource(textSource === 'blivre' ? 'kjv' : 'blivre');
   };
 
   return (

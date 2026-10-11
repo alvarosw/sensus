@@ -1,0 +1,546 @@
+<title>Configurações do Sensus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Gentium+Book+Plus:wght@400;700&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Proposta de tela: Configurações do Sensus (v2). Só a área de Configurações; nenhum código do app foi alterado.
+   Layout: telefone interativo fixo à esquerda (lista principal e sub-telas), justificativa curta à direita.
+   Paleta e tipos: tokens exatos de app/src/design/tokens.ts (claro e escuro). */
+:root{
+  color-scheme:light;
+  --bg:#F7F5F0; --surface:#FFFFFF; --surface-alt:#EFEBE2; --text:#1F1B16; --muted:#6B645A; --border:#DDD6C8;
+  --accent:#7A4E1D; --accent-text:#FFFFFF; --selected:#F0DFC0; --chip:#EFE6D6;
+  --src:#E4ECE2; --src-text:#2E5A34; --inf:#EDF2F9; --inf-border:#5B7BA6; --warn:#FBE9CF; --warn-text:#8A4B00;
+  --danger:#B3261E; --highlight:#F6E2A8; --tint:#EADFCB; --tint-text:#5B3A12; --scrim:rgba(31,27,22,.28); --bezel:#2A251F;
+  --f-read:"Literata", Georgia, "Times New Roman", serif;
+  --f-ui:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-gr:"Gentium Book Plus", "Literata", "Palatino Linotype", serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#16130F; --surface:#221E19; --surface-alt:#2B261F; --text:#F1EBE1; --muted:#A9A193; --border:#3D372E;
+  --accent:#E0B274; --accent-text:#1F1B16; --selected:#4A3A24; --chip:#302A22;
+  --src:#22332A; --src-text:#A9D6B0; --inf:#1E2733; --inf-border:#7FA2CF; --warn:#3F2E14; --warn-text:#F0C07A;
+  --danger:#F2A39C; --highlight:#5C4A1E; --tint:#2C251C; --tint-text:#E9C98F; --scrim:rgba(0,0,0,.5); --bezel:#0B0907;
+  color-scheme:dark; } }
+:root[data-theme="dark"]{
+  --bg:#16130F; --surface:#221E19; --surface-alt:#2B261F; --text:#F1EBE1; --muted:#A9A193; --border:#3D372E;
+  --accent:#E0B274; --accent-text:#1F1B16; --selected:#4A3A24; --chip:#302A22;
+  --src:#22332A; --src-text:#A9D6B0; --inf:#1E2733; --inf-border:#7FA2CF; --warn:#3F2E14; --warn-text:#F0C07A;
+  --danger:#F2A39C; --highlight:#5C4A1E; --tint:#2C251C; --tint-text:#E9C98F; --scrim:rgba(0,0,0,.5); --bezel:#0B0907;
+  color-scheme:dark; }
+
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--text)}
+body{margin:0;font-family:var(--f-ui);font-size:15px;line-height:1.55}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){ *{transition:none!important} }
+
+.page{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:56px;max-width:1180px;margin:0 auto;padding-block:32px 72px;padding-inline:24px;align-items:start}
+@media (max-width:900px){ .page{grid-template-columns:minmax(0,1fr);gap:40px;padding-inline:16px;padding-block:20px 48px} }
+
+/* ---------- justificativa ---------- */
+.spec{min-width:0;display:flex;flex-direction:column;gap:40px}
+.eyebrow{font-family:var(--f-ui);font-weight:700;font-size:11px;line-height:14px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted)}
+.spec header{display:flex;flex-direction:column;gap:12px}
+.spec h1{font-family:var(--f-read);font-weight:600;font-size:clamp(30px,4vw,40px);line-height:1.1;margin:0;text-wrap:balance}
+.lede{font-family:var(--f-read);font-size:18px;line-height:1.6;max-width:62ch;margin:0}
+.sec{display:flex;flex-direction:column;gap:12px;min-width:0}
+.sec h2{font-family:var(--f-read);font-weight:600;font-size:22px;line-height:1.25;margin:0;text-wrap:balance}
+.sec p{margin:0;max-width:66ch}
+.sec ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;max-width:66ch}
+.code{font-family:var(--f-mono);font-size:12.5px}
+.muted{color:var(--muted)}
+.pair{display:flex;flex-direction:column;gap:10px;max-width:360px}
+.gear-note{display:flex;align-items:center;gap:8px;font-size:14px}
+.gear-note svg{width:16px;height:16px;color:var(--accent);flex:none}
+.gear-note b{font-family:var(--f-ui);font-weight:700;color:var(--accent);font-size:13px}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.checks li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:10px;align-items:start}
+.checks li::before{content:"";width:13px;height:13px;margin-top:5px;border:1.5px solid var(--accent);border-radius:4px}
+
+/* ---------- telefone ---------- */
+.stage{position:sticky;top:24px;display:flex;flex-direction:column;gap:12px;align-items:center;min-width:0}
+@media (max-width:900px){ .stage{position:static} }
+.stage-label{font-family:var(--f-ui);font-weight:700;font-size:11px;letter-spacing:.7px;text-transform:uppercase;color:var(--muted);margin:0;text-align:center}
+.stage-note{font-size:12.5px;color:var(--muted);text-align:center;max-width:390px;margin:0}
+.chip-group{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;max-width:390px}
+.chip-btn{border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:4px 11px;font-family:var(--f-ui);font-weight:600;font-size:12px;color:var(--text);white-space:nowrap}
+.chip-btn[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--selected)}
+
+.phone{position:relative;width:min(390px,100%);height:min(780px,84svh);min-height:600px;display:flex;flex-direction:column;overflow:hidden;
+  border-radius:40px;box-shadow:0 0 0 10px var(--bezel),0 30px 60px rgba(0,0,0,.25);isolation:isolate;
+  background:var(--bg);color:var(--text);
+  --bg:#F7F5F0; --surface:#FFFFFF; --surface-alt:#EFEBE2; --text:#1F1B16; --muted:#6B645A; --border:#DDD6C8;
+  --accent:#7A4E1D; --accent-text:#FFFFFF; --selected:#F0DFC0; --chip:#EFE6D6; --src:#E4ECE2; --src-text:#2E5A34;
+  --warn:#FBE9CF; --warn-text:#8A4B00; --danger:#B3261E;}
+.phone.is-dark{
+  --bg:#16130F; --surface:#221E19; --surface-alt:#2B261F; --text:#F1EBE1; --muted:#A9A193; --border:#3D372E;
+  --accent:#E0B274; --accent-text:#1F1B16; --selected:#4A3A24; --chip:#302A22; --src:#22332A; --src-text:#A9D6B0;
+  --warn:#3F2E14; --warn-text:#F0C07A; --danger:#F2A39C;}
+@media (max-width:480px){ .phone{border-radius:26px;box-shadow:0 0 0 6px var(--bezel)} }
+.ph-top{flex:none;height:52px;display:flex;align-items:center;gap:6px;padding:0 8px;background:var(--surface);border-bottom:1px solid var(--border)}
+.ph-title{flex:1;min-width:0;text-align:center;font-family:var(--f-read);font-weight:600;font-size:17px;line-height:22px;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.back{flex:none;width:44px;height:44px;border:0;background:transparent;border-radius:12px;display:grid;place-items:center;color:var(--accent)}
+.back svg{width:24px;height:24px}
+.spacer{width:44px;flex:none}
+.ph-scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:16px 16px 28px;display:flex;flex-direction:column;gap:16px}
+.ph-scroll::-webkit-scrollbar{width:4px}
+.ph-scroll::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+
+.grp{display:flex;flex-direction:column;gap:8px;min-width:0}
+.grp > .eyebrow{padding-left:2px}
+.group{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.row{display:flex;align-items:center;gap:10px;width:100%;min-height:60px;padding:12px 14px;border:0;border-top:1px solid var(--border);background:var(--surface);text-align:left;color:var(--text)}
+.row:first-child{border-top:0}
+.row .txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.row .t{font-weight:600;font-size:15px;line-height:20px}
+.row .s{font-size:13px;line-height:18px;color:var(--muted)}
+.row .ico{width:20px;height:20px;flex:none;color:var(--warn-text)}
+.row .chev{width:18px;height:18px;flex:none;color:var(--muted)}
+.row.warn{background:var(--warn)}
+.row.warn .t,.row.warn .s{color:var(--warn-text)}
+.row.warn .chev{color:var(--warn-text)}
+.row.static{cursor:default}
+.row.warn .s{font-weight:600}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card-h{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.card-h h3{margin:0;font-family:var(--f-read);font-weight:600;font-size:17px;line-height:22px}
+.card.soft{background:var(--surface-alt);border-color:transparent}
+.ph-text{margin:0;font-size:14px;line-height:19px;color:var(--text)}
+.ph-text.muted{color:var(--muted);font-size:13px;line-height:18px}
+.ph-text.ok{color:var(--src-text);font-weight:600}
+.ph-text.err{color:var(--danger)}
+.pill{flex:none;display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:3px 9px;font-family:var(--f-ui);font-weight:700;font-size:11.5px;line-height:16px;white-space:nowrap}
+.pill svg{width:12px;height:12px}
+.pill.muted{background:var(--chip);color:var(--muted)}
+.pill.ok{background:var(--src);color:var(--src-text)}
+.pill.warn{background:var(--warn);color:var(--warn-text)}
+
+.btns{display:flex;flex-direction:column;gap:8px}
+.btn{height:44px;border-radius:10px;border:1px solid transparent;font-family:var(--f-ui);font-weight:700;font-size:14px;width:100%;background:transparent}
+.btn.primary{background:var(--accent);color:var(--accent-text)}
+.btn.secondary{background:var(--surface-alt);color:var(--text);border-color:var(--border)}
+.btn.ghost{height:40px;color:var(--accent)}
+.btn.small{height:36px;width:auto;padding:0 12px;font-size:13px;border-color:var(--border);background:var(--surface-alt);color:var(--text);border-radius:8px;white-space:nowrap}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap}
+
+.seg{display:flex;background:var(--surface-alt);border-radius:10px;padding:3px;gap:2px}
+.seg button{flex:1 1 0;min-width:0;border:0;background:transparent;border-radius:8px;height:34px;padding:0 6px;font-family:var(--f-ui);font-weight:600;font-size:13px;color:var(--muted);white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--text);box-shadow:0 1px 2px rgba(0,0,0,.1)}
+.helper{margin:0;font-size:13px;line-height:18px;color:var(--muted)}
+
+.opt{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;align-items:start;padding:10px 12px;border:0;border-top:1px solid var(--border);background:var(--surface);text-align:left;width:100%}
+.opt:first-child{border-top:0}
+.opt .dot{width:18px;height:18px;margin-top:2px;border-radius:50%;border:1.5px solid var(--muted);display:grid;place-items:center}
+.opt[aria-checked="true"] .dot{border-color:var(--accent)}
+.opt[aria-checked="true"] .dot::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.opt[aria-checked="true"]{background:var(--selected)}
+.opt .nm{font-weight:700;font-size:14px;display:block;line-height:19px}
+.opt .hs{font-size:12.5px;line-height:17px;color:var(--muted);display:block;overflow-wrap:anywhere}
+.opt .hs.mono{font-family:var(--f-mono);font-size:11.5px}
+.radios{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+
+.disc{border:0;background:transparent;width:100%;padding:0;display:flex;align-items:center;gap:10px;text-align:left}
+.disc .grow{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.disc .grow b{font-family:var(--f-read);font-weight:600;font-size:16px;line-height:21px}
+.disc .grow small{font-size:12.5px;color:var(--muted)}
+.disc svg{width:18px;height:18px;color:var(--muted);flex:none;transition:transform .2s}
+.disc[aria-expanded="true"] svg{transform:rotate(180deg)}
+
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field > .eyebrow{font-size:10.5px}
+.input{height:42px;width:100%;min-width:0;border:1px solid var(--border);border-radius:10px;padding:0 12px;background:var(--surface);color:var(--text);font-size:14px}
+.input.mono{font-family:var(--f-mono);font-size:12.5px}
+.input[disabled]{opacity:.6}
+.key-row{display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid var(--border);border-radius:10px;padding:0 12px;min-height:42px;background:var(--surface);flex-wrap:wrap}
+.key-row code{font-family:var(--f-mono);font-size:13px;letter-spacing:.08em}
+.model-row{display:flex;gap:8px;align-items:stretch}
+.model-row .input{flex:1}
+.model-row .btn.small{height:42px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--border);background:var(--surface);border-radius:999px;padding:4px 10px;font-family:var(--f-mono);font-size:11.5px;color:var(--text)}
+.chip[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--selected)}
+.hint-dim{font-size:12.5px;color:var(--muted);margin:0}
+
+.switch-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.switch{position:relative;width:46px;height:28px;border-radius:999px;border:0;background:var(--border);flex:none;padding:0}
+.switch::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--surface);box-shadow:0 1px 3px rgba(0,0,0,.2);transition:transform .18s}
+.switch[aria-checked="true"]{background:var(--accent)}
+.switch[aria-checked="true"]::after{transform:translateX(18px)}
+
+.inuse{font-size:13.5px;line-height:19px;margin:0;border-top:1px dashed var(--border);padding-top:10px}
+.inuse b{font-family:var(--f-ui);font-weight:700;color:var(--accent)}
+.save-msg{font-size:13px;color:var(--src-text);font-weight:600;margin:0}
+.attrib{font-size:12.5px;line-height:18px;color:var(--muted);margin:0}
+.attrib b{color:var(--text);font-weight:700}
+.lines{display:flex;flex-direction:column}
+.line{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-top:1px solid var(--border);font-size:14px}
+.line:first-child{border-top:0;padding-top:0}
+.line span:first-child{color:var(--muted)}
+</style>
+
+<div class="page">
+<main class="stage" aria-label="Simulação da tela de Configurações">
+  <p class="stage-label">Estado do assistente (simulado)</p>
+  <div class="chip-group" id="stateChips" role="group" aria-label="Estado do assistente"></div>
+
+  <section class="phone" id="phone" aria-label="Tela de Configurações do Sensus">
+    <header class="ph-top" id="top"></header>
+    <div class="ph-scroll" id="body"></div>
+  </section>
+
+  <p class="stage-note">Interativo: abra as sub-telas, troque o estado e o tema. Os dados são exemplos; nenhuma chave real aparece aqui.</p>
+</main>
+
+<article class="spec">
+  <header>
+    <div class="eyebrow">Sensus · proposta de tela (v2)</div>
+    <h1>Configurações</h1>
+    <p class="lede">A tela principal tem três linhas. O assistente de IA ganha uma tela própria, porque é o único assunto com estados que pedem ação. Quando algo está parado, a linha muda de cor e diz o motivo.</p>
+  </header>
+
+  <section class="sec">
+    <h2>Lista principal</h2>
+    <p class="muted">Duas linhas levam a sub-telas. "Sobre e licenças" também leva, pelo motivo abaixo.</p>
+    <div class="pair">
+      <span class="eyebrow">Normal</span>
+      <div class="group">
+        <button class="row static" type="button"><span class="txt"><span class="t">Assistente de IA</span><span class="s">ChatGPT · plano ativo</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+      <span class="eyebrow">Alerta: limite, atenção ou sem método</span>
+      <div class="group">
+        <button class="row warn static" type="button"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5v5.5M12 16.2v.3"/></svg><span class="txt"><span class="t">Assistente de IA</span><span class="s">Limite atingido · volta às 14:32</span></span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <p class="gear-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M9.23 4.92L9.93 2.73L14.07 2.73L14.77 4.92L15.05 5.04L17.09 3.98L20.02 6.91L18.96 8.95L19.08 9.23L21.27 9.93L21.27 14.07L19.08 14.77L18.96 15.05L20.02 17.09L17.09 20.02L15.05 18.96L14.77 19.08L14.07 21.27L9.93 21.27L9.23 19.08L8.95 18.96L6.91 20.02L3.98 17.09L5.04 15.05L4.92 14.77L2.73 14.07L2.73 9.93L4.92 9.23L5.04 8.95L3.98 6.91L6.91 3.98L8.95 5.04Z M9 12a3 3 0 1 0 6 0a3 3 0 1 0 -6 0Z"/></svg><span>Entrada: o botão "Configurações" ganha a engrenagem à esquerda do rótulo.</span></p>
+  </section>
+
+  <section class="sec">
+    <h2>Sobre e licenças: linha, não rodapé</h2>
+    <p>Sobre tem conteúdo que cresce: atribuições obrigatórias de cada fonte e a lista completa. Num rodapé, ele disputaria espaço com as preferências e ficaria escondido. Como linha, aparece com versão e licença no subtítulo e leva à lista. O backlog exige essas atribuições visíveis no app.</p>
+  </section>
+
+  <section class="sec">
+    <h2>Assistente de IA</h2>
+    <ul>
+      <li><b>ChatGPT no topo.</b> É o caminho principal. Os estados que param as respostas (limite, login expirado, conta sem plano) ficam ali, com a ação certa ao lado.</li>
+      <li><b>Modo em três frases.</b> Cada modo diz o que acontece quando o ChatGPT falha. Sem termos técnicos.</li>
+      <li><b>"Em uso agora".</b> Uma linha que diz qual caminho responde neste momento. Substitui a frase antiga "pronto para gerar resumos".</li>
+      <li><b>Chave de API recolhida.</b> Fica em avançado. A linha resume o provedor sem abrir.</li>
+      <li><b>Atenção não usa a chave.</b> Diz isso na tela, porque o app de fato não usa a chave nesse caso.</li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <h2>Para aprovar</h2>
+    <ul class="checks">
+      <li>Três linhas na lista principal, com a linha de IA em alerta quando houver limite, atenção ou nenhum método.</li>
+      <li>Sobre e licenças como sub-tela, com lista completa de fontes em um nível a mais.</li>
+      <li>Textos de limite: "volta às HH:MM" quando o horário é conhecido, e "nova tentativa às HH:MM, a cada 10 min" quando não é.</li>
+      <li>Decisão do responsável sobre Robertson's Word Pictures, de uso não comercial.</li>
+    </ul>
+    <p class="muted" style="font-size:13.5px">Divergência: docs/AI_PROVIDERS.md diz que um 403 usa a chave de API. O código manda para atenção, sem chave. A proposta segue o código; o documento precisa de atualização.</p>
+  </section>
+</article>
+</div>
+
+<script>
+(function () {
+  var TITLES = { main: 'Configurações', ai: 'Assistente de IA', look: 'Aparência e leitura', about: 'Sobre e licenças', sources: 'Fontes e licenças' };
+  var ST = {
+    padrao:   { label: 'Desconectado, com chave', conn: false, pill: ['Desconectado', 'muted'], lines: ['Use o plano Go, Plus ou Pro do seu ChatGPT. Requer um desses planos.'], ctas: [['Entrar com ChatGPT', 'primary']], key: true },
+    conectado:{ label: 'Conectado, plano ativo', conn: true, pill: ['Plano ativo', 'ok'], lines: ['conta@exemplo.com · Plano Plus'], ctas: [['Desconectar ChatGPT', 'ghost']], key: true, model: true },
+    limite:   { label: 'Limite, volta às 14:32', conn: true, pill: ['Limite atingido', 'warn'], lines: ['Limite do plano atingido. Volta às 14:32.'], ctas: [['Tentar o plano de novo', 'secondary'], ['Desconectar ChatGPT', 'ghost']], key: true },
+    limiteNH: { label: 'Limite, sem horário', conn: true, pill: ['Limite atingido', 'warn'], lines: ['Limite do plano atingido. Nova tentativa às 14:42, a cada 10 min até voltar.'], ctas: [['Tentar o plano de novo', 'secondary'], ['Desconectar ChatGPT', 'ghost']], key: true },
+    sessao:   { label: 'Atenção: login expirou', conn: true, pill: ['Atenção', 'warn'], lines: ['Sua sessão com o ChatGPT expirou. Entre de novo para voltar a usar o plano.', 'Enquanto isso, o Sensus não usa sua chave de API nessas perguntas.'], ctas: [['Entrar de novo', 'primary'], ['Desconectar ChatGPT', 'ghost']], key: true },
+    semPlano: { label: 'Atenção: conta não elegível', conn: true, pill: ['Atenção', 'warn'], lines: ['Esta conta não tem o plano para o Sensus. Requer Go, Plus ou Pro.', 'Enquanto isso, o Sensus não usa sua chave de API nessas perguntas.'], ctas: [['Tentar de novo', 'secondary'], ['Desconectar ChatGPT', 'ghost']], key: true },
+    nenhum:   { label: 'Não configurado', conn: false, pill: ['Não configurado', 'warn'], lines: ['Entre com ChatGPT ou informe uma chave de API para ter resumos e perguntas.'], ctas: [['Entrar com ChatGPT', 'primary']], key: false }
+  };
+  var WARN_STATES = ['limite', 'limiteNH', 'sessao', 'semPlano', 'nenhum'];
+  var NEXT = { 'Entrar com ChatGPT': 'conectado', 'Entrar de novo': 'conectado', 'Tentar o plano de novo': 'conectado', 'Tentar de novo': 'conectado', 'Desconectar ChatGPT': 'padrao' };
+  var MODES = [
+    { id: 'auto', name: 'Automático', help: 'Recomendado. Usa o ChatGPT primeiro. Com o plano no limite ou com falha, usa sua chave de API.' },
+    { id: 'chatgpt', name: 'Só ChatGPT', help: 'Nunca usa a chave. Se o plano não responder, a pergunta mostra o erro.' },
+    { id: 'key', name: 'Só chave de API', help: 'Usa só a chave. A conta ChatGPT fica conectada, mas não é consultada.' }
+  ];
+  var PROV = {
+    nvidia: { name: 'NVIDIA', host: 'https://integrate.api.nvidia.com/v1', sub: 'build.nvidia.com' },
+    openai: { name: 'OpenAI', host: 'https://api.openai.com/v1', sub: 'api.openai.com' },
+    openrouter: { name: 'OpenRouter', host: 'https://openrouter.ai/api/v1', sub: 'openrouter.ai' },
+    custom: { name: 'Personalizado', host: 'https://seu-servidor.exemplo/v1', sub: 'compatível com OpenAI' },
+    demo: { name: 'Demonstração', host: 'offline', sub: 'sem chave nem rede' }
+  };
+  var PROV_ORDER = ['nvidia', 'openai', 'openrouter', 'custom', 'demo'];
+  var MODELS = ['modelo-exemplo-grande', 'modelo-exemplo-rapido', 'modelo-exemplo-compacto'];
+
+  var ui = { stack: ['main'], state: 'padrao', mode: 'auto', preset: 'nvidia', keyOpen: false, keyGone: false, keyEditing: false,
+             testing: false, tested: false, model: MODELS[0], theme: 'Sistema', book: 'BLivre', greek: false, saved: false };
+
+  var $body = document.getElementById('body');
+  var $top = document.getElementById('top');
+  var $phone = document.getElementById('phone');
+  var $chips = document.getElementById('stateChips');
+  var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+  function current() { return ui.stack[ui.stack.length - 1]; }
+
+  var ICON = {
+    alert: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 7v6M12 17v.5"/></svg>',
+    warnCircle: '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7.5v5.5M12 16.2v.3"/></svg>',
+    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+    chevRight: '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>',
+    chevDown: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>',
+    back: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>'
+  };
+
+  function isDark() {
+    if (ui.theme === 'Escuro') return true;
+    if (ui.theme === 'Claro') return false;
+    return !!(mq && mq.matches);
+  }
+  function hasKey() { return ST[ui.state].key && !ui.keyGone; }
+  function provName() { return PROV[ui.preset].name; }
+
+  // Há algum caminho que responde agora? (ChatGPT conectado e sem Só chave; ou chave com modo que a usa.)
+  function chatgptWorks() { return ST[ui.state].conn && ST[ui.state].pill[1] !== 'warn' && ui.mode !== 'key'; }
+  function keyWorks() { return hasKey() && ui.mode !== 'chatgpt'; }
+
+  function aiWarn() { return WARN_STATES.indexOf(ui.state) !== -1 || (!chatgptWorks() && !keyWorks()); }
+
+  function aiSub() {
+    var s = ui.state;
+    if (s === 'limite') return 'Limite atingido · volta às 14:32';
+    if (s === 'limiteNH') return 'Limite atingido · nova tentativa às 14:42';
+    if (s === 'sessao') return 'Atenção · entrar de novo no ChatGPT';
+    if (s === 'semPlano') return 'Atenção · conta sem plano para o Sensus';
+    if (!chatgptWorks() && !keyWorks()) return 'Não configurado';
+    if (chatgptWorks()) return 'ChatGPT · plano ativo';
+    return 'Usando chave de API (' + provName() + ')';
+  }
+
+  function inUse() {
+    var s = ui.state, m = ui.mode, k = hasKey(), p = provName();
+    var key = '<b>Chave de API (' + p + ')</b>';
+    if (m === 'key') return k ? key + '.' : '<b>Nenhum</b>. Falta a chave de API.';
+    if (s === 'padrao') return k ? key + ', porque o ChatGPT não está conectado.' : '<b>Nenhum</b>. Conecte o ChatGPT ou salve uma chave.';
+    if (s === 'conectado') return m === 'chatgpt' || !k ? '<b>ChatGPT</b>. Sem reserva.' : '<b>ChatGPT</b>. Reserva: chave de API (' + p + ').';
+    if (s === 'limite') return m === 'chatgpt' ? '<b>Nenhum</b> até as 14:32. Só ChatGPT, sem reserva.' : (k ? key + ' até as 14:32; depois, ChatGPT.' : '<b>Nenhum</b> até as 14:32.');
+    if (s === 'limiteNH') return m === 'chatgpt' ? '<b>Nenhum</b> por 10 minutos. Só ChatGPT, sem reserva.' : (k ? key + ' por 10 minutos; depois, ChatGPT.' : '<b>Nenhum</b> por 10 minutos.');
+    if (s === 'sessao' || s === 'semPlano') return '<b>Nenhum</b> até ' + (s === 'sessao' ? 'entrar de novo' : 'tentar de novo') + '. A chave não é usada.';
+    return '<b>Nenhum</b>. Sem resumos até configurar um caminho.';
+  }
+
+  function keySummary() {
+    if (ui.preset === 'demo') return 'Demonstração offline';
+    return hasKey() ? provName() + ' · chave salva' : 'Não configurada';
+  }
+
+  // ---------- telas ----------
+  function rowHtml(id, title, sub, warn) {
+    return '<button class="row' + (warn ? ' warn' : '') + '" type="button" data-act="push" data-id="' + id + '">' +
+      (warn ? ICON.warnCircle : '') +
+      '<span class="txt"><span class="t">' + esc(title) + '</span><span class="s">' + esc(sub) + '</span></span>' +
+      ICON.chevRight + '</button>';
+  }
+
+  function mainScreen() {
+    return '<div class="group">' +
+      rowHtml('ai', 'Assistente de IA', aiSub(), aiWarn()) +
+      rowHtml('look', 'Aparência e leitura', ui.theme + ' · texto ' + ui.book, false) +
+      rowHtml('about', 'Sobre e licenças', 'Versão 1.0.0 · AGPL-3.0', false) +
+      '</div>';
+  }
+
+  function connectionCard() {
+    var s = ST[ui.state];
+    var pill = '<span class="pill ' + s.pill[1] + '">' + (s.pill[1] === 'warn' ? ICON.alert : s.pill[1] === 'ok' ? ICON.check : '') + esc(s.pill[0]) + '</span>';
+    var lines = s.lines.map(function (l, i) {
+      return '<p class="ph-text' + (i === 0 ? '' : ' muted') + '">' + esc(l) + '</p>';
+    }).join('');
+    var model = '';
+    if (s.model) {
+      model = '<div class="field"><span class="eyebrow">Modelo</span><div class="chips">' + MODELS.map(function (id) {
+        return '<button class="chip" type="button" aria-pressed="' + (ui.model === id) + '" data-act="model" data-id="' + id + '">' + esc(id) + '</button>';
+      }).join('') + '</div></div>';
+    }
+    var btns = s.ctas.map(function (c) {
+      return '<button class="btn ' + c[1] + '" type="button" data-act="cta" data-label="' + esc(c[0]) + '">' + esc(c[0]) + '</button>';
+    }).join('');
+    return '<div class="card"><div class="card-h"><h3>ChatGPT</h3>' + pill + '</div>' + lines + model + '<div class="btns">' + btns + '</div></div>';
+  }
+
+  function modeCard() {
+    var radios = MODES.map(function (m) {
+      return '<button class="opt" type="button" role="radio" aria-checked="' + (ui.mode === m.id) + '" data-act="mode" data-id="' + m.id + '"><span class="dot"></span><span><span class="nm">' + esc(m.name) + '</span><span class="hs">' + esc(m.help) + '</span></span></button>';
+    }).join('');
+    return '<div class="card" style="padding:0;gap:0;overflow:hidden"><div class="radios" role="radiogroup" aria-label="Como a IA responde" style="border:0;border-radius:0">' + radios + '</div>' +
+      '<p class="inuse" style="margin:0;padding:12px 14px;border-top:1px solid var(--border);border-style:solid;border-width:1px 0 0 0"><b>Em uso agora</b>: ' + inUse() + '</p></div>';
+  }
+
+  function keySection() {
+    var isDemo = ui.preset === 'demo';
+    var open = ui.keyOpen;
+    var k = hasKey();
+    var head = '<button class="disc" type="button" aria-expanded="' + open + '" data-act="keyOpen"><span class="grow"><b>Chave de API</b><small>' + esc(keySummary()) + '</small></span>' + ICON.chevDown + '</button>';
+    if (!open) return '<div class="card">' + head + '</div>';
+
+    var radios = '<div class="radios" role="radiogroup" aria-label="Provedor">' + PROV_ORDER.map(function (id) {
+      var p = PROV[id];
+      return '<button class="opt" type="button" role="radio" aria-checked="' + (ui.preset === id) + '" data-act="preset" data-id="' + id + '"><span class="dot"></span><span><span class="nm">' + esc(p.name) + '</span><span class="hs' + (id === 'demo' ? '' : ' mono') + '">' + esc(p.sub) + '</span></span></button>';
+    }).join('') + '</div>';
+
+    var fields;
+    if (isDemo) {
+      fields = '<p class="hint-dim">Demonstração offline: respostas gravadas, sem chave nem rede.</p>';
+    } else {
+      var keyField;
+      if (k && !ui.keyEditing) {
+        keyField = '<div class="key-row"><code>••••••••••••7KQ2</code><span class="btn-row"><button class="btn small" type="button" data-act="keyEdit">Trocar</button><button class="btn small" type="button" data-act="keyRemove">Remover</button></span></div>' +
+          '<p class="hint-dim">Guardada neste aparelho. Só é enviada ao provedor escolhido.</p>';
+      } else {
+        keyField = '<input class="input mono" type="password" placeholder="Cole sua chave" aria-label="Chave de API" autocomplete="off">' +
+          '<p class="hint-dim">Fica neste aparelho. Só é enviada ao provedor escolhido.</p>';
+      }
+      var result = '';
+      if (ui.testing) result = '<p class="ph-text muted">Testando…</p>';
+      else if (ui.tested) {
+        result = (k || isDemo)
+          ? '<p class="ph-text ok">Conexão ok. 12 modelos disponíveis.</p><div class="chips">' + MODELS.map(function (id) {
+              return '<button class="chip" type="button" aria-pressed="' + (ui.model === id) + '" data-act="model" data-id="' + id + '">' + esc(id) + '</button>';
+            }).join('') + '</div>'
+          : '<p class="ph-text err">Informe uma chave de API antes de testar.</p>';
+      }
+      fields = '<div class="field"><span class="eyebrow">URL base</span><input class="input mono" value="' + esc(PROV[ui.preset].host) + '" aria-label="URL base"' + (ui.preset === 'custom' ? '' : ' disabled') + '></div>' +
+        '<div class="field"><span class="eyebrow">Chave de API</span>' + keyField + '</div>' +
+        '<div class="field"><span class="eyebrow">Modelo</span><div class="model-row"><input class="input mono" value="' + esc(ui.model) + '" aria-label="Modelo"><button class="btn small" type="button" data-act="test">Testar conexão</button></div></div>' +
+        result +
+        '<div class="btns"><button class="btn primary" type="button" data-act="save">Salvar</button>' +
+        (ui.saved ? '<p class="save-msg">Configurações salvas.</p>' : '') + '</div>';
+    }
+    var note = ui.mode === 'chatgpt' ? '<p class="hint-dim">Não é usada no modo Só ChatGPT.</p>' : '';
+    return '<div class="card" style="gap:14px">' + head + note +
+      '<div class="field"><span class="eyebrow">Provedor</span>' + radios + '</div>' + fields + '</div>';
+  }
+
+  function aiScreen() {
+    var privacy = '<div class="card soft"><p class="ph-text" style="font-size:13.5px">Chaves e tokens ficam só neste aparelho, no armazenamento seguro do sistema.</p><p class="ph-text" style="font-size:13.5px">Nada gerado pela IA é guardado: resumos e respostas não são salvos. O Sensus não tem servidor próprio; as perguntas vão só ao ChatGPT ou ao provedor escolhido.</p></div>';
+    return '<div class="grp"><span class="eyebrow">Conta ChatGPT · principal</span>' + connectionCard() + '</div>' +
+      '<div class="grp"><span class="eyebrow">Como a IA responde</span>' + modeCard() + '</div>' +
+      '<div class="grp"><span class="eyebrow">Avançado</span>' + keySection() + '</div>' +
+      '<div class="grp"><span class="eyebrow">Privacidade</span>' + privacy + '</div>';
+  }
+
+  function lookScreen() {
+    return '<div class="grp"><span class="eyebrow">Tema</span><div class="card" style="gap:10px">' +
+        '<div class="seg" role="group" aria-label="Tema">' + ['Sistema', 'Claro', 'Escuro'].map(function (t) {
+          return '<button type="button" aria-pressed="' + (ui.theme === t) + '" data-act="theme" data-id="' + t + '">' + t + '</button>';
+        }).join('') + '</div>' +
+        '<p class="helper">Sistema segue a configuração do aparelho.</p></div></div>' +
+      '<div class="grp"><span class="eyebrow">Leitura</span><div class="card" style="gap:14px">' +
+        '<div class="field"><span class="eyebrow">Texto padrão</span><div class="seg" role="group" aria-label="Texto padrão">' + ['BLivre', 'KJV'].map(function (b) {
+          return '<button type="button" aria-pressed="' + (ui.book === b) + '" data-act="book" data-id="' + b + '">' + b + '</button>';
+        }).join('') + '</div><p class="helper">Também muda no leitor, pelo botão BLivre.</p></div>' +
+        '<div class="switch-row"><div><div style="font-weight:700;font-size:14px">Grego (TR) sob os versículos</div><p class="helper" style="margin-top:2px">Desligado por padrão. Liga-se no leitor, pelo botão Αα.</p></div>' +
+          '<button class="switch" type="button" role="switch" aria-checked="' + ui.greek + '" aria-label="Grego sob os versículos" data-act="greek"></button></div>' +
+      '</div></div>';
+  }
+
+  function aboutScreen() {
+    return '<div class="card" style="gap:12px"><div class="lines">' +
+        '<div class="line"><span>Versão</span><span>1.0.0</span></div>' +
+        '<div class="line"><span>Licença do app</span><span>AGPL-3.0</span></div>' +
+      '</div></div>' +
+      '<div class="grp"><span class="eyebrow">Atribuições</span><div class="card" style="gap:10px">' +
+        '<p class="attrib"><b>Bíblia Livre</b> (CC BY 3.0 Brasil) · <b>STEP Bible</b> (CC BY 4.0) · <b>OpenBible.info</b> (CC BY 4.0) · <b>Theographic</b> (CC BY-SA 4.0) · <b>Robertson\'s Word Pictures</b> (uso não comercial).</p>' +
+      '</div></div>' +
+      '<div class="group">' + rowHtml('sources', 'Fontes e licenças', '27 fontes no banco atual', false) + '</div>';
+  }
+
+  function sourcesScreen() {
+    function item(name, lic) {
+      return '<div class="line" style="display:block"><div style="font-weight:700;font-size:14px">' + esc(name) + '</div><div class="muted" style="font-size:12.5px">' + esc(lic) + '</div></div>';
+    }
+    return '<div class="grp"><span class="eyebrow">Creative Commons</span><div class="card">' +
+        item('Bíblia Livre (BLivre)', 'CC BY 3.0 Brasil · atribuição') +
+        item('STEP Bible (TAGNT, TBESG)', 'CC BY 4.0 · atribuição') +
+        item('OpenBible.info (geo, referências)', 'CC BY 4.0 · atribuição') +
+        item('Theographic', 'CC BY-SA 4.0 · compartilhar igual') +
+      '</div></div>' +
+      '<div class="grp"><span class="eyebrow">Uso não comercial</span><div class="card">' +
+        item("Robertson's Word Pictures", 'Licença do módulo SWORD · só uso não comercial') +
+      '</div></div>' +
+      '<div class="grp"><span class="eyebrow">Domínio público e outras</span><div class="card">' +
+        item('KJV (SWORD)', 'Domínio público; GPL declarada no módulo') +
+        item('Comentários e dicionários (SWORD)', 'Domínio público, conforme o módulo') +
+      '</div></div>' +
+      '<p class="stage-note" style="text-align:left;max-width:none">Exemplo de estrutura. A lista real sai da tabela source e de DATA_LICENSES.md.</p>';
+  }
+
+  var SCREENS = { main: mainScreen, ai: aiScreen, look: lookScreen, about: aboutScreen, sources: sourcesScreen };
+
+  function renderTop() {
+    var s = current();
+    var back = ui.stack.length > 1 ? '<button class="back" type="button" aria-label="Voltar" data-act="back">' + ICON.back + '</button>' : '<span class="spacer"></span>';
+    $top.innerHTML = back + '<h2 class="ph-title">' + esc(TITLES[s]) + '</h2><span class="spacer"></span>';
+  }
+
+  function renderChips() {
+    $chips.innerHTML = Object.keys(ST).map(function (id) {
+      return '<button class="chip-btn" type="button" aria-pressed="' + (ui.state === id) + '" data-act="state" data-id="' + id + '">' + esc(ST[id].label) + '</button>';
+    }).join('');
+  }
+
+  function render() {
+    $phone.classList.toggle('is-dark', isDark());
+    renderChips();
+    renderTop();
+    $body.innerHTML = SCREENS[current()]();
+    $body.scrollTop = 0;
+  }
+
+  function setState(id) {
+    ui.state = id; ui.keyGone = false; ui.keyEditing = false; ui.tested = false; ui.saved = false;
+    render();
+  }
+
+  $chips.addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-id]');
+    if (b) setState(b.getAttribute('data-id'));
+  });
+
+  $phone.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-act]');
+    if (!b) return;
+    var act = b.getAttribute('data-act'), id = b.getAttribute('data-id');
+    if (act === 'push') { ui.stack.push(id); render(); }
+    else if (act === 'back') { if (ui.stack.length > 1) ui.stack.pop(); render(); }
+    else if (act === 'mode') { ui.mode = id; ui.saved = false; render(); }
+    else if (act === 'theme') { ui.theme = id; render(); }
+    else if (act === 'book') { ui.book = id; render(); }
+    else if (act === 'greek') { ui.greek = !ui.greek; render(); }
+    else if (act === 'keyOpen') { ui.keyOpen = !ui.keyOpen; render(); }
+    else if (act === 'preset') { ui.preset = id; ui.tested = false; ui.saved = false; ui.keyEditing = false; ui.model = MODELS[0]; render(); }
+    else if (act === 'model') { ui.model = id; render(); }
+    else if (act === 'keyEdit') { ui.keyEditing = true; render(); }
+    else if (act === 'keyRemove') { ui.keyGone = true; ui.keyEditing = false; ui.tested = false; render(); }
+    else if (act === 'test') {
+      ui.testing = true; ui.tested = false; render();
+      setTimeout(function () { ui.testing = false; ui.tested = true; render(); }, 700);
+    }
+    else if (act === 'save') { ui.saved = true; ui.keyEditing = false; render(); }
+    else if (act === 'cta') {
+      var label = b.getAttribute('data-label');
+      if (NEXT[label]) setState(NEXT[label]);
+    }
+  });
+
+  if (mq && mq.addEventListener) mq.addEventListener('change', function () { if (ui.theme === 'Sistema') render(); });
+
+  render();
+})();
+</script>

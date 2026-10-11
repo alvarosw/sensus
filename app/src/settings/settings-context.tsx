@@ -61,6 +61,8 @@ export interface SettingsValue {
   setMode: (mode: ProviderMode) => void;
   /** Pausa do ChatGPT vigente (só no modo Automático), ou null. */
   pause: ChatGPTPause | null;
+  /** Encerra a pausa do limite: a próxima pergunta volta a tentar o ChatGPT. */
+  resumeChatGPT: () => void;
   save: (settings: StoredProviderSettings, newApiKey?: string) => Promise<void>;
   removeApiKey: () => Promise<void>;
   chatgpt: ChatGPTState;
@@ -198,11 +200,12 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
       mode,
       setMode,
       pause,
+      resumeChatGPT: clearPause,
       save,
       removeApiKey,
       chatgpt,
     }),
-    [loaded, prefsLoaded, stored, savedApiKey, provider, mode, setMode, pause, save, removeApiKey, chatgpt],
+    [loaded, prefsLoaded, stored, savedApiKey, provider, mode, setMode, pause, clearPause, save, removeApiKey, chatgpt],
   );
 
   return <SettingsContext.Provider value={value}>{children}</SettingsContext.Provider>;

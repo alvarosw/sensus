@@ -86,3 +86,33 @@ export function writeProviderPrefs(prefs: StoredProviderPrefs): void {
   if (!file.exists) file.create();
   file.write(JSON.stringify(prefs));
 }
+
+/** Preferências de leitura e aparência (não secretas): arquivo JSON no diretório de documentos. */
+export interface StoredAppPrefs {
+  theme?: unknown;
+  textSource?: unknown;
+  greekDefault?: unknown;
+}
+
+const APP_PREFS_FILE_NAME = 'app-prefs.json';
+
+function appPrefsFile(): File {
+  return new File(Paths.document, APP_PREFS_FILE_NAME);
+}
+
+export async function readAppPrefs(): Promise<StoredAppPrefs | null> {
+  try {
+    const file = appPrefsFile();
+    if (!file.exists) return null;
+    const parsed: unknown = JSON.parse(await file.text());
+    return parsed && typeof parsed === 'object' ? (parsed as StoredAppPrefs) : null;
+  } catch {
+    return null;
+  }
+}
+
+export function writeAppPrefs(prefs: StoredAppPrefs): void {
+  const file = appPrefsFile();
+  if (!file.exists) file.create();
+  file.write(JSON.stringify(prefs));
+}

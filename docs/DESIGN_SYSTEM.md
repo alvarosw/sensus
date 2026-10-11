@@ -55,6 +55,25 @@ de `useTheme()` e dos tokens.
 | `Skeleton`, `Caret` | `.skel` `.caret` | Carregamento e streaming. |
 | `ClaimFrame` + `useUncitedStyle` | `.claim` | Afirmação da IA com estados de confiabilidade e menu ⋯. |
 | `Icon` | SVGs do protótipo | `menu`, `chevronUp/Down`, `close`, `back`, `send`, `chat`, `minus`, `more`, `pin`, `search`. |
+| `ListGroup`, `ListRow` | `.group` `.row` | Lista de Configurações: linhas com chevron; `warn` = alerta âmbar (limite, atenção, sem método). |
+| `RadioOption` | `.opt` | Escolha única com bolinha (modos de resposta, provedores). |
+| `StatusPill` | `.pill` | Estado: `ok` (plano ativo), `warn` (atenção, limite), `muted` (desconectado). |
+| `HeaderBackButton` | `.back` | Voltar do cabeçalho das sub-telas de Configurações (chevron, 44 px). |
+| `Icon` (`gear`, `alert`, `check`, `chevronRight`, `chevronLeft`) | SVGs | Engrenagem do botão Configurações (seletor de livros); alerta e confirmação dos estados. |
+
+## Configurações
+
+Rotas em `app/src/app/settings/` (pilha própria, `_layout.tsx`): `index` (lista principal, três linhas),
+`ai` (Assistente de IA), `appearance` (Aparência e leitura), `about` (Sobre e licenças) e `sources` (Fontes e
+licenças, uma tela abaixo). `/settings` continua valendo. A proposta aprovada é
+[`docs/design/settings-proposal.html`](design/settings-proposal.html).
+
+- Textos em `app/src/settings/strings.ts`. Estado do assistente em `app/src/settings/ai-status.ts` (função pura,
+  com testes): a linha da lista, "Em uso agora" e o cartão ChatGPT saem do provedor efetivo, nunca de texto fixo.
+- Preferências de aparência e leitura em `app/src/settings/app-prefs.ts` (tema, texto padrão BLivre/KJV, grego TR
+  ligado ao abrir). O botão BLivre do leitor e o Αα seguem a mesma regra da proposta: o primeiro grava o padrão,
+  o segundo vale só na sessão.
+- Fontes e licenças vêm da tabela `source` (`useSources`), agrupadas por licença. Uso não comercial aparece em aviso.
 
 ## Estrutura da experiência
 

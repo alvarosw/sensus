@@ -498,3 +498,159 @@ export function Divider({ style }: { style?: StyleProp<ViewStyle> }) {
 }
 
 export type { PressableProps };
+
+// ---- listas, opções e estados (proto: .group .row .opt .pill .back) ------------------------
+
+/** Grupo de linhas com borda e cantos arredondados (proto: .group). */
+export function ListGroup({ children, testID }: { children: ReactNode; testID?: string }) {
+  const { c } = useTheme();
+  return (
+    <View testID={testID} style={{ backgroundColor: c.surface, borderWidth: 1, borderColor: c.border, borderRadius: radius.card, overflow: 'hidden' }}>
+      {children}
+    </View>
+  );
+}
+
+/**
+ * Linha de navegação com chevron (proto: .row). `warn` = alerta: fundo e texto de aviso, com ícone
+ * (limite, atenção ou sem método). `first` tira a divisória de cima.
+ */
+export function ListRow({
+  title,
+  subtitle,
+  onPress,
+  warn,
+  first,
+  testID,
+}: {
+  title: string;
+  subtitle: string;
+  onPress: () => void;
+  warn?: boolean;
+  first?: boolean;
+  testID?: string;
+}) {
+  const { c } = useTheme();
+  const fg = warn ? c.warnText : c.text;
+  return (
+    <Pressable
+      testID={testID}
+      accessibilityRole="button"
+      accessibilityLabel={warn ? `${title}. ${subtitle}` : title}
+      onPress={onPress}
+      style={({ pressed }) => ({
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: space[5],
+        minHeight: 60,
+        paddingHorizontal: space[7],
+        paddingVertical: space[6],
+        borderTopWidth: first ? 0 : 1,
+        borderTopColor: c.border,
+        backgroundColor: warn ? c.warn : c.surface,
+        opacity: pressed ? 0.7 : 1,
+      })}
+    >
+      {warn ? <Icon name="alert" size={20} color={c.warnText} /> : null}
+      <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
+        <Txt v="body" bold tint={fg}>{title}</Txt>
+        <Txt v="bodySm" bold={!!warn} tint={warn ? c.warnText : c.muted}>{subtitle}</Txt>
+      </View>
+      <Icon name="chevronRight" size={18} color={warn ? c.warnText : c.muted} />
+    </Pressable>
+  );
+}
+
+/** Opção de escolha única com bolinha (proto: .opt). `help` aparece abaixo do nome. */
+export function RadioOption({
+  selected,
+  title,
+  help,
+  mono,
+  first,
+  onPress,
+  testID,
+}: {
+  selected: boolean;
+  title: string;
+  help?: string;
+  mono?: boolean;
+  first?: boolean;
+  onPress: () => void;
+  testID?: string;
+}) {
+  const { c } = useTheme();
+  return (
+    <Pressable
+      testID={testID}
+      accessibilityRole="radio"
+      accessibilityState={{ checked: selected }}
+      accessibilityLabel={help ? `${title}. ${help}` : title}
+      onPress={onPress}
+      style={({ pressed }) => ({
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        gap: space[5],
+        paddingHorizontal: 12,
+        paddingVertical: 10,
+        borderTopWidth: first ? 0 : 1,
+        borderTopColor: c.border,
+        backgroundColor: selected ? c.selected : c.surface,
+        opacity: pressed ? 0.7 : 1,
+      })}
+    >
+      <View
+        style={{
+          width: 18,
+          height: 18,
+          marginTop: 2,
+          borderRadius: 9,
+          borderWidth: 1.5,
+          borderColor: selected ? c.accent : c.muted,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        {selected ? <View style={{ width: 9, height: 9, borderRadius: 4.5, backgroundColor: c.accent }} /> : null}
+      </View>
+      <View style={{ flex: 1, minWidth: 0, gap: 1 }}>
+        <Txt v="bodySm" bold style={{ fontSize: 14, lineHeight: 19 }}>{title}</Txt>
+        {help ? (
+          <Txt v="bodySm" color="muted" style={{ fontSize: 12.5, lineHeight: 17, fontFamily: mono ? fontFamilies.mono : undefined }}>
+            {help}
+          </Txt>
+        ) : null}
+      </View>
+    </Pressable>
+  );
+}
+
+/** Pílula de estado (proto: .pill): ok = verde, warn = âmbar (atenção), muted = neutro. */
+export function StatusPill({ label, tone, testID }: { label: string; tone: 'ok' | 'warn' | 'muted'; testID?: string }) {
+  const { c } = useTheme();
+  const bg = tone === 'ok' ? c.src : tone === 'warn' ? c.warn : c.chip;
+  const fg = tone === 'ok' ? c.srcText : tone === 'warn' ? c.warnText : c.muted;
+  return (
+    <View testID={testID} style={{ flexDirection: 'row', alignItems: 'center', gap: 5, alignSelf: 'flex-start', borderRadius: radius.pill, paddingHorizontal: 9, paddingVertical: 3, backgroundColor: bg }}>
+      {tone === 'ok' ? <Icon name="check" size={12} color={fg} /> : tone === 'warn' ? <Icon name="alert" size={12} color={fg} /> : null}
+      <Txt v="meta" tint={fg} style={{ fontFamily: fontFamilies.uiBold, fontSize: 11.5, lineHeight: 16 }}>{label}</Txt>
+    </View>
+  );
+}
+
+/** Voltar do cabeçalho de uma sub-tela (proto: .back): chevron de 44 px de toque. */
+export function HeaderBackButton({ label, onPress, testID }: { label: string; onPress: () => void; testID?: string }) {
+  const { c } = useTheme();
+  return (
+    <Pressable
+      testID={testID}
+      accessibilityRole="button"
+      accessibilityLabel={label}
+      onPress={onPress}
+      hitSlop={6}
+      style={({ pressed }) => ({ width: size.minTouch, height: size.minTouch, alignItems: 'center', justifyContent: 'center', opacity: pressed ? 0.6 : 1 })}
+    >
+      <Icon name="chevronLeft" size={24} color={c.accent} />
+    </Pressable>
+  );
+}
