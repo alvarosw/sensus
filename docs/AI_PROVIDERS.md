@@ -42,6 +42,12 @@ O seletor de modelos da chave de API mostra só modelos que conversam em texto. 
   rápidas; se responder depois, salva com "Funciona, mas está lento". Regras e estados em
   `app/src/settings/verify-save.ts` (função pura, testada em `verify-save.test.ts`). O núcleo só devolve ao fim
   da chamada, então o primeiro byte não é medido à parte.
+- **Chave ou modelo?** Em 401/403/404 na verificação, a tela lista os modelos com a mesma chave (GET /models).
+  Se a listagem funciona, a chave é aceita e a frase é "Este modelo não está disponível para esta chave ou
+  conta" (o modelo não é da conta ou não existe); se a listagem recusa a chave, a frase é "Chave de API
+  inválida". Sem resposta conclusiva, vale a frase do código HTTP.
+- **Reaproveita sucesso recente:** um sucesso com a mesma chave, URL, modelo e corpo extra vale por 5 min; Salvar
+  logo depois grava sem verificar de novo. Cancelar volta ao início; a resposta que chegar depois é ignorada. O resultado aparece logo acima de Salvar.
 - **Modelos recomendados** (`RECOMMENDED_MODELS`, `packages/core/src/ai/recommended-models.ts`): grupo
   "Recomendados" acima da lista, com etiqueta (Equilibrado, Rápido, Preciso) e nota. Escolher um aplica também o
   `extraBody` do modelo (ex.: raciocínio desligado), salvo junto da conexão e substituindo o do preset.

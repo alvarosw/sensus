@@ -66,6 +66,7 @@ export const SETTINGS_COPY = {
   test: 'Testar conexão',
   testing: 'Testando…',
   save: 'Salvar',
+  saving: 'Salvando…',
   saved: 'Configurações salvas.',
   keyRemoved: 'Chave removida deste aparelho.',
   demoHint: 'Demonstração offline: respostas gravadas, sem chave nem rede.',

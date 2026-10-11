@@ -8,6 +8,7 @@ import { orderModelListings, type ModelListing } from '@sensus/core';
 import { Card, fontFamilies, Icon, LinkButton, ListGroup, Pill, RadioOption, radius, Txt, useTheme } from '@/design';
 import { FormButton } from '@/features/common/Buttons';
 import { checkProviderModel, listProviderModels } from '@/ai/client';
+import { LLMError, type ProviderConfig } from '@sensus/core';
 import { DEMO_PROVIDER_CONFIG } from '@/ai/demo-provider';
 import { formConfig, initialFormSettings } from './resolve';
 import { APP_PRESET_IDS, APP_PRESETS, DEMO_PRESET_ID, isAppPresetId, presetNeedsKey, type AppPresetId } from './presets';
@@ -16,12 +17,16 @@ import type { StoredProviderSettings } from './provider-store';
 import { keyLabelOf } from './use-ai-snapshot';
 import { SETTINGS_COPY as COPY } from './strings';
 import {
+  canReusePass,
   failureOf,
   isSaveBusy,
   isVerifying,
+  keyProbeOf,
   VERIFY_COPY,
   VERIFY_IDLE,
   verifyReducer,
+  verifySignature,
+  type KeyProbe,
   type VerifyEvent,
   type VerifyPurpose,
   type VerifyState,
@@ -35,6 +40,27 @@ type Notice = { tone: 'ok' | 'error'; text: string } | null;
 const MAX_MODEL_CHIPS = 60;
 /** Intervalo em que a verificação recalcula o aviso de lentidão e o tempo esgotado. */
 const VERIFY_TICK_MS = 250;
+/** Tempo máximo da listagem de modelos usada para saber se a chave é aceita (ver probeKey). */
+const KEY_PROBE_TIMEOUT_MS = 10_000;
+
+/**
+ * Lista os modelos com a mesma chave, para separar problema de chave de problema de modelo. Sem resposta
+ * conclusiva (rede, tempo esgotado, endpoint sem listagem), devolve 'unknown'.
+ */
+async function probeKey(config: ProviderConfig): Promise<KeyProbe> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const timeout = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => reject(new LLMError('Tempo esgotado na listagem.', 'timeout')), KEY_PROBE_TIMEOUT_MS);
+  });
+  try {
+    await Promise.race([listProviderModels(config), timeout]);
+    return keyProbeOf({ ok: true });
+  } catch (error) {
+    return keyProbeOf({ ok: false, error });
+  } finally {
+    clearTimeout(timer);
+  }
+}
 
 function messageOf(e: unknown): string {
   return e instanceof Error ? e.message : String(e);
@@ -73,6 +99,8 @@ export function ApiKeySection() {
   const verifyRef = useRef<VerifyState>(VERIFY_IDLE);
   const attemptIdRef = useRef(0);
   const attemptModelRef = useRef('');
+  /** Último sucesso de verificação (assinatura e horário): Salvar logo depois não verifica de novo. */
+  const passRef = useRef<{ signature: string; at: number } | null>(null);
 
   const send = (event: VerifyEvent) => {
     verifyRef.current = verifyReducer(verifyRef.current, event);
@@ -142,30 +170,14 @@ export function ApiKeySection() {
     return { key: typed || settings.savedApiKey || settings.devProvider?.apiKey || '' };
   };
 
-  /**
-   * Verifica o modelo do rascunho e, se pedido com `save`, grava quando responder. Falha ou troca de
-   * tentativa: nada é gravado. Resposta lenta que chega depois do aviso também grava (estado "lento").
-   */
-  const startVerification = async (purpose: VerifyPurpose, draft: StoredProviderSettings, key: string, newKey?: string) => {
-    if (!presetId || presetId === DEMO_PRESET_ID) return;
-    const id = ++attemptIdRef.current;
-    const model = draft.model.trim();
-    const baseUrl = draft.baseUrl.trim();
-    attemptModelRef.current = model;
-    setNotice(null);
-    send({ type: 'start', id, purpose, at: Date.now() });
+  /** Grava a conexão verificada. Só na tentativa `id` ainda válida (passou e não foi trocada). */
+  const commitSave = async (
+    id: number,
+    draft: { presetId: AppPresetId; baseUrl: string; model: string; extraBody?: Record<string, unknown> },
+    newKey: string | undefined,
+  ) => {
     try {
-      await checkProviderModel(formConfig(presetId, baseUrl, model, key, draft.extraBody));
-    } catch (e) {
-      if (isLive(id, 'verifying')) send({ type: 'failed', id, at: Date.now(), failure: failureOf(e, model) });
-      return;
-    }
-    if (!isLive(id, 'verifying')) return;
-    send({ type: 'passed', id, at: Date.now() });
-    setVerdicts((v) => ({ ...v, [model]: true }));
-    if (purpose === 'check') return;
-    try {
-      await settings.save({ presetId, baseUrl, model, extraBody: draft.extraBody }, newKey);
+      await settings.save({ presetId: draft.presetId, baseUrl: draft.baseUrl, model: draft.model, extraBody: draft.extraBody }, newKey);
       setApiKeyInput('');
       setKeyEditing(false);
       if (isLive(id, 'passed')) send({ type: 'saved', id });
@@ -175,6 +187,53 @@ export function ApiKeySection() {
       }
     }
   };
+
+  /**
+   * Verifica o modelo do rascunho e, se pedido com `save`, grava quando responder. Falha ou troca de
+   * tentativa: nada é gravado. Um sucesso com a mesma chave, modelo e corpo extra nos últimos 5 min não
+   * verifica de novo. Em 401/403/404 separa chave de modelo (probeKey) antes de escolher a frase.
+   */
+  const startVerification = async (purpose: VerifyPurpose, draft: StoredProviderSettings, key: string, newKey?: string) => {
+    if (!presetId || presetId === DEMO_PRESET_ID) return;
+    const id = ++attemptIdRef.current;
+    const model = draft.model.trim();
+    const baseUrl = draft.baseUrl.trim();
+    const extraBody = draft.extraBody;
+    const signature = verifySignature({ presetId, baseUrl, model, extraBody }, key);
+    attemptModelRef.current = model;
+    setNotice(null);
+    const startedAt = Date.now();
+    send({ type: 'start', id, purpose, at: startedAt });
+    const draftSave = { presetId, baseUrl, model, extraBody };
+
+    if (canReusePass(passRef.current, signature, startedAt)) {
+      send({ type: 'passed', id, at: startedAt });
+      setVerdicts((v) => ({ ...v, [model]: true }));
+      if (purpose === 'save') await commitSave(id, draftSave, newKey);
+      return;
+    }
+
+    const config = formConfig(presetId, baseUrl, model, key, extraBody);
+    try {
+      await checkProviderModel(config);
+    } catch (e) {
+      if (!isLive(id, 'verifying')) return;
+      const keyFault = e instanceof LLMError && (e.code === 'auth' || e.code === 'not_found');
+      const probe = keyFault ? await probeKey(config) : 'unknown';
+      if (!isLive(id, 'verifying')) return;
+      send({ type: 'failed', id, at: Date.now(), failure: failureOf(e, model, probe) });
+      setVerdicts((v) => ({ ...v, [model]: false }));
+      return;
+    }
+    if (!isLive(id, 'verifying')) return;
+    send({ type: 'passed', id, at: Date.now() });
+    passRef.current = { signature, at: Date.now() };
+    setVerdicts((v) => ({ ...v, [model]: true }));
+    if (purpose === 'save') await commitSave(id, draftSave, newKey);
+  };
+
+  /** Cancelar: a resposta que chegar depois é ignorada (a tentativa já não é a viva). */
+  const onCancel = () => send({ type: 'cancel' });
 
   /** Escolhe o modelo (botão, opção recomendada ou digitação). Com verificação em curso, refaz a verificação. */
   const chooseModel = (model: string, extraBody?: Record<string, unknown>) => {
@@ -440,12 +499,6 @@ export function ApiKeySection() {
           <View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', gap: 14 }}>
             <LinkButton testID="settings-verify" label={verifyingNow ? COPY.verifying : COPY.verify} onPress={onVerify} />
           </View>
-          <VerifyPanel
-            state={verify}
-            recommended={recommended}
-            onCancel={() => send({ type: 'cancel' })}
-            onPick={(m: RecommendedModel) => chooseModel(m.id, m.extraBody)}
-          />
         </Field>
         {recommended.length > 0 ? (
           <RecommendedGroup
@@ -458,9 +511,16 @@ export function ApiKeySection() {
         {notice ? (
           <Txt v="bodySm" tint={notice.tone === 'ok' ? c.srcText : c.danger} testID="settings-notice">{notice.text}</Txt>
         ) : null}
+        {/* O resultado da verificação (e Cancelar) fica logo acima de Salvar: é onde o usuário olha. */}
+        <VerifyPanel
+          state={verify}
+          recommended={recommended}
+          onCancel={onCancel}
+          onPick={(m: RecommendedModel) => chooseModel(m.id, m.extraBody)}
+        />
         <FormButton
           testID="settings-save"
-          label={saveBusy ? VERIFY_COPY.verifying : COPY.save}
+          label={verify.phase === 'verifying' ? VERIFY_COPY.verifying : verify.phase === 'passed' && saveBusy ? COPY.saving : COPY.save}
           disabled={saveBusy}
           onPress={onSave}
         />

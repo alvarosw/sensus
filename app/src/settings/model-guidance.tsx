@@ -138,7 +138,9 @@ export function VerifyPanel({
   }
 
   if (state.phase === 'passed') {
-    if (state.purpose === 'save') return null;
+    if (state.purpose === 'save') {
+      return <Txt v="bodySm" tint={c.srcText} testID="verify-result">{VERIFY_COPY.savingVerified}</Txt>;
+    }
     if (!state.slow) return <Txt v="bodySm" tint={c.srcText} testID="verify-result">{VERIFY_COPY.okCheck}</Txt>;
     return (
       <View testID="verify-panel">

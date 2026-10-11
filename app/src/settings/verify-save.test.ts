@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { LLMError } from '@sensus/core';
 import {
+  canReusePass,
   failureOf,
   isSaveBusy,
   isVerifying,
@@ -8,8 +9,10 @@ import {
   SLOW_AFTER_MS,
   suggestionsFor,
   VERIFY_IDLE,
+  KEY_REUSE_MS,
   VERIFY_TIMEOUT_MS,
   verifyReducer,
+  verifySignature,
   type FailureReason,
   type VerifyEvent,
   type VerifyState,
@@ -139,10 +142,41 @@ describe('falhas: classificação do erro do provedor', () => {
     });
   });
 
-  it('404 vira modelo indisponível, com a frase da tela', () => {
+  it('404 vira modelo não encontrado, com a mesma frase de sugestão', () => {
     const f = failureOf(new LLMError('x', 'not_found', 404), 'acme/chat');
     expect(f.reason).toBe('model_unavailable');
-    expect(f.message).toBe('O modelo acme/chat não está disponível para esta conta (HTTP 404).');
+    expect(f.message).toBe('O modelo acme/chat não foi encontrado no provedor (HTTP 404). Confira o nome do modelo.');
+  });
+
+  it('403 com a chave aceita (listagem funciona) vira modelo sem acesso, não chave inválida', () => {
+    const f = failureOf(new LLMError('x', 'auth', 403), 'ai21labs/jamba-1.5-large-instruct', 'valid');
+    expect(f.reason).toBe('model_unavailable');
+    expect(f.message).toBe(
+      'Este modelo não está disponível para esta chave ou conta (HTTP 403). A chave é aceita pelo provedor.',
+    );
+  });
+
+  it('404 com a chave aceita vira modelo sem acesso, com o mesmo texto do 403', () => {
+    const f = failureOf(new LLMError('x', 'not_found', 404), 'acme/chat', 'valid');
+    expect(f.reason).toBe('model_unavailable');
+    expect(f.message).toBe(
+      'Este modelo não está disponível para esta chave ou conta (HTTP 404). A chave é aceita pelo provedor.',
+    );
+  });
+
+  it('401/403 com a listagem recusada vira chave inválida', () => {
+    expect(failureOf(new LLMError('x', 'auth', 403), 'm', 'invalid')).toEqual({
+      reason: 'auth',
+      message: 'Chave de API inválida ou sem acesso (HTTP 403).',
+    });
+  });
+
+  it('404 com a listagem recusada (chave) continua sendo chave inválida', () => {
+    expect(failureOf(new LLMError('x', 'not_found', 404), 'm', 'invalid').reason).toBe('auth');
+  });
+
+  it('a chave aceita não muda outros motivos', () => {
+    expect(failureOf(new LLMError('x', 'server', 503), 'm', 'valid').reason).toBe('server');
   });
 
   it('timeout, rede, limite, servidor e protocolo têm motivo próprio', () => {
@@ -166,6 +200,10 @@ describe('falhas: classificação do erro do provedor', () => {
     expect(failureOf('', 'm').message).toBe('Falha desconhecida.');
   });
 
+  it('sugestões de modelo indisponível são as mesmas para 403 e 404 (apontam para os recomendados)', () => {
+    expect(suggestionsFor('model_unavailable')[0]).toBe('Escolha um dos modelos recomendados ou outro da lista.');
+  });
+
   it('toda falha tem sugestões', () => {
     const reasons: FailureReason[] = ['auth', 'model_unavailable', 'timeout', 'network', 'rate_limit', 'server', 'config', 'protocol', 'save', 'other'];
     for (const r of reasons) expect(suggestionsFor(r).length).toBeGreaterThan(0);
@@ -184,5 +222,35 @@ describe('falhas: classificação do erro do provedor', () => {
     expect(offersQuickPicks(failedWith('auth'))).toBe(false);
     expect(offersQuickPicks(failedWith('network'))).toBe(false);
     expect(offersQuickPicks(VERIFY_IDLE)).toBe(false);
+  });
+});
+
+describe('verificação recente reaproveitada', () => {
+  const base = { presetId: 'nvidia', baseUrl: 'https://integrate.api.nvidia.com/v1', model: 'm/a' };
+
+  it('mesma chave, modelo e corpo extra: a assinatura é igual; outra chave ou modelo muda', () => {
+    const sig = verifySignature({ ...base, extraBody: { x: 1 } }, 'nvapi-AAA');
+    expect(verifySignature({ ...base, extraBody: { x: 1 } }, 'nvapi-AAA')).toBe(sig);
+    expect(verifySignature({ ...base, extraBody: { x: 1 } }, 'nvapi-BBB')).not.toBe(sig);
+    expect(verifySignature({ ...base, model: 'm/b', extraBody: { x: 1 } }, 'nvapi-AAA')).not.toBe(sig);
+    expect(verifySignature({ ...base, extraBody: { x: 2 } }, 'nvapi-AAA')).not.toBe(sig);
+  });
+
+  it('a assinatura não contém a chave em texto', () => {
+    expect(verifySignature(base, 'nvapi-SEGREDO-123')).not.toContain('SEGREDO');
+  });
+
+  it('reaproveita um sucesso de até KEY_REUSE_MS com a mesma assinatura', () => {
+    const sig = verifySignature(base, 'k');
+    const pass = { signature: sig, at: T0 };
+    expect(canReusePass(pass, sig, T0 + KEY_REUSE_MS)).toBe(true);
+    expect(canReusePass(pass, sig, T0 + KEY_REUSE_MS + 1)).toBe(false);
+  });
+
+  it('não reaproveita sem sucesso anterior, com outra assinatura ou com o relógio andando para trás', () => {
+    const sig = verifySignature(base, 'k');
+    expect(canReusePass(null, sig, T0)).toBe(false);
+    expect(canReusePass({ signature: 'outra', at: T0 }, sig, T0)).toBe(false);
+    expect(canReusePass({ signature: sig, at: T0 + 1_000 }, sig, T0)).toBe(false);
   });
 });

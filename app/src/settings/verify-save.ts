@@ -8,6 +8,8 @@ import { LLMError } from '@sensus/core';
 export const SLOW_AFTER_MS = 8_000;
 /** Sem resposta por este tempo, a verificação falha por tempo esgotado (nada é salvo). */
 export const VERIFY_TIMEOUT_MS = 30_000;
+/** Um sucesso com a mesma chave, modelo e corpo extra vale por este tempo: Salvar não verifica de novo. */
+export const KEY_REUSE_MS = 5 * 60_000;
 
 /** `save`: verifica e, se der certo, salva. `check`: só verifica ("Verificar modelo"). */
 export type VerifyPurpose = 'save' | 'check';
@@ -23,6 +25,13 @@ export type FailureReason =
   | 'protocol'
   | 'save'
   | 'other';
+
+/**
+ * Resultado de listar os modelos com a mesma chave (GET /models), quando a verificação do modelo falha com
+ * 401/403/404: 'valid' = a chave é aceita (o problema é o modelo); 'invalid' = a chave é recusada;
+ * 'unknown' = a listagem não deu resposta conclusiva.
+ */
+export type KeyProbe = 'valid' | 'invalid' | 'unknown';
 
 export interface VerifyFailure {
   reason: FailureReason;
@@ -121,25 +130,35 @@ export function offersQuickPicks(state: VerifyState): boolean {
   return false;
 }
 
-function timeoutFailure(ms: number): VerifyFailure {
+export function timeoutFailure(ms: number): VerifyFailure {
   return {
     reason: 'timeout',
     message: `O provedor não respondeu em ${seconds(ms)} s. A conexão não foi salva.`,
   };
 }
 
-/** Classifica a falha de checkProviderModel (ou de gravação) em motivo e frase para o usuário. */
-export function failureOf(error: unknown, model: string): VerifyFailure {
+/**
+ * Classifica a falha de checkProviderModel (ou de gravação) em motivo e frase para o usuário. Em 401/403/404 o
+ * `probe` diz se a chave é aceita: com chave aceita, a falha é do modelo (sem acesso ou inexistente) e a frase
+ * diz isso; com chave recusada (ou sem resposta conclusiva), a frase fala da chave.
+ */
+export function failureOf(error: unknown, model: string, probe: KeyProbe = 'unknown'): VerifyFailure {
   if (error instanceof LLMError) {
     const status = error.status;
     switch (error.code) {
       case 'auth':
-        return { reason: 'auth', message: `Chave de API rejeitada pelo provedor (HTTP ${status ?? 401}).` };
-      case 'not_found':
+      case 'not_found': {
+        const fallbackStatus = error.code === 'auth' ? 401 : 404;
+        if (probe === 'valid') return modelDenied(status ?? fallbackStatus);
+        if (probe === 'invalid') return invalidKey(status ?? fallbackStatus);
+        if (error.code === 'auth') {
+          return { reason: 'auth', message: `Chave de API rejeitada pelo provedor (HTTP ${status ?? 401}).` };
+        }
         return {
           reason: 'model_unavailable',
-          message: `O modelo ${model} não está disponível para esta conta (HTTP ${status ?? 404}).`,
+          message: `O modelo ${model} não foi encontrado no provedor (HTTP ${status ?? 404}). Confira o nome do modelo.`,
         };
+      }
       case 'timeout':
         return { reason: 'timeout', message: 'O provedor parou de responder no meio do caminho.' };
       case 'network':
@@ -160,13 +179,54 @@ export function failureOf(error: unknown, model: string): VerifyFailure {
   return { reason: 'other', message: text || 'Falha desconhecida.' };
 }
 
+/** O provedor aceita a chave (listagem funciona), mas não este modelo: sem acesso ou inexistente. */
+function modelDenied(status: number): VerifyFailure {
+  return {
+    reason: 'model_unavailable',
+    message: `Este modelo não está disponível para esta chave ou conta (HTTP ${status}). A chave é aceita pelo provedor.`,
+  };
+}
+
+function invalidKey(status: number): VerifyFailure {
+  return { reason: 'auth', message: `Chave de API inválida ou sem acesso (HTTP ${status}).` };
+}
+
+/** Pelo resultado da listagem de modelos (com a mesma chave): aceita, recusada ou inconclusiva. */
+export function keyProbeOf(listing: { ok: true } | { ok: false; error: unknown }): KeyProbe {
+  if (listing.ok) return 'valid';
+  return listing.error instanceof LLMError && listing.error.code === 'auth' ? 'invalid' : 'unknown';
+}
+
+/**
+ * Assinatura da verificação: presetId, URL base, modelo, corpo extra e uma impressão da chave (FNV-1a, sem a
+ * chave em texto). Duas tentativas com a mesma assinatura testam a mesma coisa.
+ */
+export function verifySignature(
+  input: { presetId: string; baseUrl: string; model: string; extraBody?: Record<string, unknown> },
+  key: string,
+): string {
+  let hash = 0x811c9dc5;
+  for (let i = 0; i < key.length; i++) {
+    hash ^= key.charCodeAt(i);
+    hash = Math.imul(hash, 0x01000193) >>> 0;
+  }
+  return JSON.stringify([input.presetId, input.baseUrl, input.model, input.extraBody ?? null, hash.toString(16), key.length]);
+}
+
+/** Um sucesso anterior (assinatura e horário) ainda vale para esta assinatura? */
+export function canReusePass(pass: { signature: string; at: number } | null, signature: string, now: number): boolean {
+  if (!pass || pass.signature !== signature) return false;
+  const age = now - pass.at;
+  return age >= 0 && age <= KEY_REUSE_MS;
+}
+
 /** Sugestões por motivo (o que o usuário pode fazer a seguir). */
 export function suggestionsFor(reason: FailureReason): string[] {
   switch (reason) {
     case 'auth':
       return ['Confira a chave de API; cole de novo se preciso.', 'Veja se a chave está ativa no site do provedor.'];
     case 'model_unavailable':
-      return ['Escolha outro modelo (os recomendados aparecem logo abaixo, quando houver).', 'Confira o nome do modelo.'];
+      return ['Escolha um dos modelos recomendados ou outro da lista.', 'Confira o nome do modelo.'];
     case 'timeout':
       return ['Tente de novo.', 'Um modelo mais rápido costuma responder em segundos.'];
     case 'network':
@@ -193,8 +253,10 @@ export const VERIFY_COPY = {
   slowDone: (ms: number) => `Funciona, mas está lento (respondeu em ${seconds(ms)} s). Um modelo mais rápido costuma responder em segundos.`,
   okCheck: '✓ Disponível para respostas.',
   saved: 'Configurações salvas.',
+  reused: '✓ Verificado há pouco. Salvo sem nova verificação.',
   savedSlow: 'Salvo. Funciona, mas está lento. Um modelo mais rápido costuma responder em segundos.',
   failedSave: 'Não salvo: o modelo não passou na verificação.',
+  savingVerified: '✓ Verificado. Salvando…',
   failedCheck: 'Modelo não verificado.',
   cancel: 'Cancelar',
 } as const;
