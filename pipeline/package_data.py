@@ -35,12 +35,14 @@ def read_meta(db_path: Path) -> dict[str, str]:
         con.close()
 
 
-def sha256_of(path: Path) -> str:
-    h = hashlib.sha256()
+def digests_of(path: Path) -> tuple[str, str]:
+    """(sha256, md5) do arquivo numa só leitura em blocos. O md5 é o que o app confere no aparelho (nativo, rápido)."""
+    sha, md5 = hashlib.sha256(), hashlib.md5()
     with open(path, "rb") as fh:
         for chunk in iter(lambda: fh.read(1 << 20), b""):
-            h.update(chunk)
-    return h.hexdigest()
+            sha.update(chunk)
+            md5.update(chunk)
+    return sha.hexdigest(), md5.hexdigest()
 
 
 def main():
@@ -71,12 +73,14 @@ def main():
         assert z.getinfo(ENTRY).file_size == db.stat().st_size, "tamanho descompactado diferente"
     part.replace(zip_path)
 
+    sha256, md5 = digests_of(zip_path)
     manifest = {
         "data_version": version,
         "schema_version": schema,
         "full": {
             "url": f"https://github.com/{GITHUB_REPO}/releases/download/data-{version}/{zip_path.name}",
-            "sha256": sha256_of(zip_path),
+            "md5": md5,
+            "sha256": sha256,
             "size": zip_path.stat().st_size,
             "uncompressed_size": db.stat().st_size,
         },
@@ -84,7 +88,7 @@ def main():
     }
     Path(args.manifest).write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"{zip_path} ({manifest['full']['size'] / 1e6:.1f} MB; banco {manifest['full']['uncompressed_size'] / 1e6:.1f} MB)")
-    print(f"sha256 {manifest['full']['sha256']}")
+    print(f"sha256 {manifest['full']['sha256']}  md5 {manifest['full']['md5']}")
     print(f"manifesto: {args.manifest} (data_version {version}, schema {schema}, app >= {min_app})")
 
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Falha (código 1) se o APK carrega segredos de desenvolvimento:
 #   - "nvapi-" em qualquer lugar (chave de API da NVIDIA);
-#   - a configuração injetada extra.devProvider / devProviderOptIn no JSON embutido (assets/app.config).
+#   - a configuração injetada extra.devProvider / devProviderOptIn no JSON embutido (assets/app.config);
+#   - a URL de teste dos dados de estudo (extra.dataManifestUrl, só com SENSUS_DEV_PROVIDER=1).
 # O nome "devProvider" também aparece no bundle JS como identificador de código; isso é esperado e não conta.
 #
 #   app/scripts/check-apk-secrets.sh <arquivo.apk>
@@ -36,6 +37,7 @@ check() {
 check "chave de API de desenvolvimento" 'nvapi-'
 check "configuração de desenvolvimento embutida" '"devProvider"[[:space:]]*:[[:space:]]*\{'
 check "opt-in de desenvolvimento embutido" '"devProviderOptIn"[[:space:]]*:'
+check "URL de teste dos dados de estudo" '"dataManifestUrl"[[:space:]]*:'
 
 if (( status == 0 )); then
   echo "OK: nenhum segredo de desenvolvimento em $(basename "$apk")"

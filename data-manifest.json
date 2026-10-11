@@ -3,6 +3,7 @@
   "schema_version": 3,
   "full": {
     "url": "https://github.com/alvarosw/sensus/releases/download/data-2026.10.11/sensus-full-2026.10.11.zip",
+    "md5": "93461013fa4038c14f5ecaee9c28ecd6",
     "sha256": "03a835eae399955c15938431386831e7a5625207d893de228c18cfb63780e116",
     "size": 137530333,
     "uncompressed_size": 455663616

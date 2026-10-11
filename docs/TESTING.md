@@ -122,6 +122,24 @@ cd android && SENSUS_DEV_PROVIDER=1 ANDROID_HOME=/home/albus/Android/Sdk APP_ENV
 Esse APK de QA **deve** falhar no script: é a prova de que a chave está lá. Não copie para `dist/` e apague depois.
 O build de produção (sem a variável) tem de passar no script.
 
+### Download dos dados de estudo no emulador (QA)
+
+Com `SENSUS_DEV_PROVIDER=1` e `SENSUS_DATA_MANIFEST_URL=http://127.0.0.1:8799/data-manifest.json` no prebuild e
+no gradle, o APK lê o manifesto de um servidor local em vez do real. No emulator, `127.0.0.1` é o próprio
+emulador, então faça o túnel antes de abrir a tela de dados:
+
+```bash
+adb -s emulator-5554 reverse tcp:8799 tcp:8799     # ou use http://10.0.2.2:8799 no lugar de 127.0.0.1
+```
+
+Sem o túnel, a tela mostra "Não foi possível verificar os dados" e o servidor não recebe nenhuma requisição.
+Para remover o túnel depois: `adb -s emulator-5554 reverse --remove tcp:8799`.
+
+O servidor de QA é um script local (não fica no repositório) que serve o ZIP real de `dist/data` e o manifesto
+com o MD5 correto. Um `control.json` lido a cada requisição injeta falhas: `{"dropFromStart": N}` corta cada faixa `Range` a partir do byte N após 1 MB (simula
+queda de conexão e retomada); `{"shaBad": true}` troca o MD5 do manifesto (simula corrupção, a tela mostra a
+mensagem de conferência); `{"ignoreRange": true}` ignora `Range`; `{}` restaura o comportamento normal.
+
 ## Convenção de `testID`
 
 `kebab-case`, estável, com ids de dados no fim. Na web viram `data-testid`. Exemplos:

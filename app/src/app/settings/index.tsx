@@ -8,6 +8,9 @@ import { aiSummary } from '@/settings/ai-status';
 import { useAiSnapshot } from '@/settings/use-ai-snapshot';
 import { useAppPrefs } from '@/settings/app-prefs';
 import { SETTINGS_COPY as COPY } from '@/settings/strings';
+import { useDataStore } from '@/data/data-store';
+import { dataRowSubtitle } from '@/data/view';
+import { DATA_COPY } from '@/data/strings';
 
 const THEME_LABEL = { system: COPY.themeSystem, light: COPY.themeLight, dark: COPY.themeDark } as const;
 
@@ -18,6 +21,10 @@ export default function SettingsScreen() {
   const theme = useAppPrefs((s) => s.theme);
   const textSource = useAppPrefs((s) => s.textSource);
   const version = Constants.expoConfig?.version ?? '';
+  const dataMachine = useDataStore((s) => s.machine);
+  const dataEdition = useDataStore((s) => s.edition);
+  const dataInstalled = useDataStore((s) => s.installed);
+  const dataManifest = useDataStore((s) => s.manifest);
 
   if (!loaded) return <View style={{ flex: 1, backgroundColor: c.bg }} />;
   return (
@@ -36,6 +43,17 @@ export default function SettingsScreen() {
           title={COPY.rowLook}
           subtitle={`${THEME_LABEL[theme]} · texto ${textSource === 'kjv' ? 'KJV' : 'BLivre'}`}
           onPress={() => router.push('/settings/appearance')}
+        />
+        <ListRow
+          testID="settings-row-data"
+          title={DATA_COPY.rowTitle}
+          subtitle={dataRowSubtitle({
+            machine: dataMachine,
+            edition: dataEdition,
+            installedVersion: dataInstalled?.dataVersion ?? null,
+            downloadBytes: dataManifest?.full.size ?? null,
+          })}
+          onPress={() => router.push('/settings/data')}
         />
         <ListRow
           testID="settings-row-about"

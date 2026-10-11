@@ -25,6 +25,15 @@ export interface DevProvider {
 }
 
 /**
+ * URL do manifesto dos dados de estudo, só com o opt-in de QA (SENSUS_DEV_PROVIDER=1): permite apontar um servidor
+ * local no teste de ponta a ponta (ver docs/TESTING.md). Builds de produção ignoram a variável.
+ */
+function readDataManifestOverride(): string | null {
+  if (!devProviderOptIn) return null;
+  return process.env.SENSUS_DATA_MANIFEST_URL || null;
+}
+
+/**
  * Lê o .env da raiz do monorepo, somente com o opt-in SENSUS_DEV_PROVIDER=1.
  * Usado como fallback quando o usuário ainda não salvou um provedor no app.
  */
@@ -43,6 +52,7 @@ function readDevProvider(): DevProvider | null {
 
 export default (): ExpoConfig => {
   const devProvider = readDevProvider();
+  const dataManifestUrl = readDataManifestOverride();
   return {
     name: 'Sensus',
     slug: 'sensus',
@@ -82,6 +92,8 @@ export default (): ExpoConfig => {
             enableShrinkResourcesInReleaseBuilds: true,
             useLegacyPackaging: true,
             enableBundleCompression: true,
+            // Só no QA: o servidor local do teste de download é HTTP simples (Android bloqueia isso por padrão).
+            ...(devProviderOptIn ? { usesCleartextTraffic: true } : {}),
           },
         },
       ],
@@ -102,6 +114,7 @@ export default (): ExpoConfig => {
       appEnv: isProduction ? 'production' : 'development',
       // Só com a chave injetada: o runtime (settings-context.tsx) exige devProviderOptIn para usá-la.
       ...(devProvider ? { devProvider, devProviderOptIn: true } : {}),
+      ...(dataManifestUrl ? { dataManifestUrl } : {}),
     },
   };
 };

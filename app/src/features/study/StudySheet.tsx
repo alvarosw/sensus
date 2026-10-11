@@ -42,6 +42,8 @@ import {
   type Detent,
 } from '@/design';
 import { LENS_KEYS, LENS_LABELS, useStudy, type LensKey } from '@/state/study';
+import { useEdition } from '@/data/db-context';
+import { StudyDataPrompt } from '@/data/StudyDataPrompt';
 import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { useReduceMotion } from '../common/hooks';
 import { chv, keyWordsOf, refShort, refTitle, sourceLabel } from './format';
@@ -66,6 +68,8 @@ const ORDER = ['peek', 'half', 'full'] as const;
 
 export function StudySheet({ topInset }: StudySheetProps): ReactElement | null {
   const insets = useSafeAreaInsets();
+  const edition = useEdition();
+  const clearSelection = useStudy((s) => s.clearSelection);
   const selection = useStudy((s) => s.selection);
   const detent = useStudy((s) => s.detent);
   const start = selection?.start ?? null;
@@ -76,6 +80,8 @@ export function StudySheet({ topInset }: StudySheetProps): ReactElement | null {
   if (range) lastRange.current = range;
   const shown = range ?? lastRange.current;
   if (!shown) return null;
+  // Banco de leitura: sem comentários, léxico e referências. Só o convite para baixar os dados aparece.
+  if (edition === 'reader') return <StudyDataPrompt onClose={clearSelection} />;
   return (
     <StudyDataProvider range={shown}>
       <Sheet topInset={topInset ?? insets.top + size.topBar} active={!!range && detent !== 'closed'} />
