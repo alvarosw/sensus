@@ -1,5 +1,6 @@
 import { Stack } from 'expo-router';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { KeyboardProvider } from 'react-native-keyboard-controller';
 import { fontFamilies, SensusThemeProvider, useSensusFonts, useTheme as useDesignTheme } from '@/design';
 import { StatusBar } from 'expo-status-bar';
 import type { ReactNode } from 'react';
@@ -14,9 +15,11 @@ export default function RootLayout() {
   if (!fontsReady) return null;
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <SensusThemeProvider>
-        <AppStack />
-      </SensusThemeProvider>
+      <KeyboardProvider>
+        <SensusThemeProvider>
+          <AppStack />
+        </SensusThemeProvider>
+      </KeyboardProvider>
     </GestureHandlerRootView>
   );
 }

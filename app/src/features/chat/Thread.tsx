@@ -1,6 +1,6 @@
 // Conversa: vez da pergunta (balão à direita, anexos como chips) e resposta (byline SENSUS, RichBlocks, seguimentos).
 import { useMemo } from 'react';
-import { View } from 'react-native';
+import { Pressable, View } from 'react-native';
 import { parseStructuredAnswer } from '@sensus/core';
 import { fontFamilies, LinkButton, QuestionButton, radius, Skeleton, Txt, useTheme } from '@/design';
 import { useStudy, type ChatTurn } from '@/state/study';
@@ -8,6 +8,7 @@ import { RichBlocks } from '../rich/RichBlocks';
 import { GreekText } from '../common/GreekText';
 import { CHAT } from '../common/strings';
 import { turnCtxOf, EMPTY_CTX } from './engine';
+import { plainAnswer } from './plainAnswer';
 import type { ChatApi } from './useChat';
 
 export function TurnView({
@@ -15,11 +16,14 @@ export function TurnView({
   api,
   onAsk,
   onLayoutY,
+  onPick,
 }: {
   turn: ChatTurn;
   api: ChatApi;
   onAsk: (q: string) => void;
   onLayoutY: (id: string, y: number) => void;
+  /** Long-press numa resposta pronta: abre o texto selecionável. */
+  onPick: (text: string) => void;
 }) {
   const { c } = useTheme();
   const ctx = turnCtxOf(turn.id) ?? api.richCtx ?? EMPTY_CTX;
@@ -63,7 +67,15 @@ export function TurnView({
             <Skeleton width="60%" />
           </View>
         ) : (
-          <RichBlocks blocks={parsed.blocks} streaming={streaming} claimKeyPrefix={`ans-${turn.id}`} />
+          <Pressable
+            testID={`answer-${turn.id}`}
+            disabled={streaming}
+            delayLongPress={350}
+            onLongPress={() => onPick(plainAnswer(parsed.blocks))}
+            accessibilityHint={CHAT.selectHint}
+          >
+            <RichBlocks blocks={parsed.blocks} streaming={streaming} claimKeyPrefix={`ans-${turn.id}`} />
+          </Pressable>
         )}
         {turn.status === 'error' ? (
           <View

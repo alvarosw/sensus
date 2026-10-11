@@ -1,7 +1,9 @@
 // Painel do chat (proto: .chat): cresce a partir da bolinha; cabeçalho, conversa e composer.
-import { useEffect, useRef, useState } from 'react';
-import { Keyboard, Platform, ScrollView, TextInput, View } from 'react-native';
-import Animated, { interpolate, useAnimatedStyle } from 'react-native-reanimated';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { ScrollView, StyleSheet, TextInput, View } from 'react-native';
+import { useKeyboardHandler } from 'react-native-keyboard-controller';
+import Animated, { interpolate, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
+import { scheduleOnRN } from 'react-native-worklets';
 import { router } from 'expo-router';
 import { formatShortRef } from '@sensus/core';
 import { fontFamilies, IconButton, LinkButton, motion, QuestionButton, radius, shadow, size, Txt, useTheme } from '@/design';
@@ -19,21 +21,6 @@ import { useSuggestions, type ChatApi } from './useChat';
 const thread0Count = () => useStudy.getState().thread.length;
 const SIDE_INSET = 8;
 const TOP_GAP = 8;
-
-function useKeyboardHeight(): number {
-  const [h, setH] = useState(0);
-  useEffect(() => {
-    // No Android a janela já se ajusta ao teclado; só o iOS precisa do deslocamento manual.
-    if (Platform.OS !== 'ios') return;
-    const show = Keyboard.addListener('keyboardWillChangeFrame', (e) => setH(Math.max(0, e.endCoordinates.height)));
-    const hide = Keyboard.addListener('keyboardWillHide', () => setH(0));
-    return () => {
-      show.remove();
-      hide.remove();
-    };
-  }, []);
-  return h;
-}
 
 export function ChatPanel({
   metrics,
@@ -60,13 +47,36 @@ export function ChatPanel({
   const detent = useStudy((s) => s.detent);
   useBackLayer('chat', chatOpen, closeChat, BACK_PRIORITY.chat);
   const { progress, mounted } = usePresence(chatOpen, motion.chat);
-  const kb = useKeyboardHeight();
+  // Altura do teclado acompanhada pelo keyboard-controller (Android com edge-to-edge não redimensiona a janela).
+  const kb = useSharedValue(0);
+  const [kbOpen, setKbOpen] = useState(false);
+  // Resposta aberta para seleção de texto (long-press numa resposta).
+  const [picked, setPicked] = useState<string | null>(null);
+  useBackLayer('answer-text', picked !== null, () => setPicked(null), BACK_PRIORITY.menu);
   const suggestions = useSuggestions(api.passage, api.range, api.hasProvider);
   const inputRef = useRef<TextInput>(null);
   const scrollRef = useRef<ScrollView>(null);
   // Ao começar uma pergunta nova, rola até ela (o início da resposta fica à vista, como numa leitura).
   const scrollTo = useRef<string | null>(null);
   const seen = useRef(thread0Count());
+
+  // Referência estável (o worklet só agenda funções definidas no runtime JS).
+  const scrollToEnd = useCallback(() => scrollRef.current?.scrollToEnd({ animated: true }), []);
+  useKeyboardHandler(
+    {
+      onMove: (e) => {
+        'worklet';
+        kb.value = Math.max(0, e.height);
+      },
+      onEnd: (e) => {
+        'worklet';
+        kb.value = Math.max(0, e.height);
+        if (e.height > 0) scheduleOnRN(scrollToEnd);
+        scheduleOnRN(setKbOpen, e.height > 0);
+      },
+    },
+    [scrollToEnd],
+  );
 
   const rangeText = api.range && books.length > 0 ? formatShortRef(api.range.start, api.range.end, books, true) : null;
 
@@ -97,6 +107,7 @@ export function ChatPanel({
   const style = useAnimatedStyle(() => ({
     opacity: interpolate(progress.value, [0, 0.7], [0, 1], 'clamp'),
     transform: [{ scale: interpolate(progress.value, [0, 1], [0.15, 1]) }],
+    bottom: 8 + kb.value,
   }));
 
   if (!mounted) return null;
@@ -113,7 +124,6 @@ export function ChatPanel({
           left: SIDE_INSET,
           right: SIDE_INSET,
           top,
-          bottom: kb > 0 ? kb + 8 : 8,
           backgroundColor: c.surface,
           borderRadius: radius.sheet,
           borderWidth: 1,
@@ -179,7 +189,9 @@ export function ChatPanel({
             )}
           </View>
         ) : (
-          thread.map((t) => <TurnView key={t.id} turn={t} api={api} onAsk={send} onLayoutY={onTurnLayout} />)
+          thread.map((t) => (
+            <TurnView key={t.id} turn={t} api={api} onAsk={send} onLayoutY={onTurnLayout} onPick={setPicked} />
+          ))
         )}
         {api.contextBusy && thread.length > 0 ? <Txt v="meta" color="muted">{CHAT.contextLoading}</Txt> : null}
         {api.passage.error && !api.passage.context ? <Txt v="meta" color="danger">{CHAT.contextError}</Txt> : null}
@@ -187,6 +199,29 @@ export function ChatPanel({
           <LinkButton testID="chat-configure" label={CHAT.configure} onPress={() => { closeChat(); router.push('/settings'); }} />
         ) : null}
       </ScrollView>
+
+      {picked !== null ? (
+        <View testID="answer-text" style={[StyleSheet.absoluteFill, { backgroundColor: c.surface, zIndex: 2 }]}>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: 10,
+              paddingVertical: 10,
+              paddingLeft: 16,
+              paddingRight: 10,
+              borderBottomWidth: 1,
+              borderBottomColor: c.border,
+            }}
+          >
+            <Txt v="lensTitle" style={{ flex: 1, fontSize: 17, lineHeight: 22 }}>{CHAT.selectTitle}</Txt>
+            <IconButton testID="answer-text-close" icon="close" label={CHAT.selectClose} onPress={() => setPicked(null)} />
+          </View>
+          <ScrollView contentContainerStyle={{ padding: 16 }}>
+            <Txt v="body" selectable style={{ fontSize: 15, lineHeight: 23 }}>{picked}</Txt>
+          </ScrollView>
+        </View>
+      ) : null}
 
       <Composer
         ref={inputRef}
@@ -198,7 +233,7 @@ export function ChatPanel({
         onStop={api.stop}
         streaming={api.streaming}
         disabled={noProvider || api.contextBusy}
-        bottomPad={10 + (kb > 0 ? 0 : metrics.insetBottom)}
+        bottomPad={10 + (kbOpen ? 0 : metrics.insetBottom)}
       />
     </Animated.View>
   );
