@@ -21,3 +21,4 @@ export * from './ai/structured-types';
 export * from './ai/cite-index';
 export * from './ai/rich-text';
 export * from './ai/structured';
+export * from './places';

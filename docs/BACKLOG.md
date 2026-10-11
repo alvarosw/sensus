@@ -52,6 +52,12 @@ Pendências registradas durante o desenvolvimento. Prioridade: **P1** (próximo)
 - **P1 — Rodar em dispositivo/emulador** (ainda não testado fora do `expo export`).
 - **P2 — `importDatabaseFromAssetAsync`** é marcado como API de teste no expo-sqlite.
 - **P3 — Vizinhos do tema** a partir do comportamento (palavra tocada → concordância; entidade → linha do tempo).
+- **P2 — Mapa do mundo antigo (AWMC, tiles "Antiquity à la Carte")**: não incluído. Motivos: (1) o
+  endereço publicado (`http://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png`) responde só em HTTP; em HTTPS não
+  conecta, e o build de release do Android bloqueia tráfego sem TLS por padrão. Usar exigiria liberar texto
+  puro para um domínio de terceiros; (2) a licença está em conflito: a página do AWMC diz CC BY-NC 4.0 para
+  "muitos mapas" e o post do CAWM diz CC BY 4.0 para os tiles; (3) o endereço já mudou de host (Mapbox, depois
+  Iowa). Reabrir se houver HTTPS estável e licença confirmada por escrito.
 
 ## Licenças
 
