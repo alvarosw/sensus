@@ -9,7 +9,12 @@
   "scripts": {
     "typecheck": "tsc -p packages/core --noEmit",
     "test": "vitest run",
-    "ask": "tsx packages/core/tools/ask.ts"
+    "ask": "tsx packages/core/tools/ask.ts",
+    "release:version": "node scripts/release.mjs version",
+    "release:check": "node scripts/release.mjs check",
+    "release:android": "node scripts/release.mjs android",
+    "release:ios": "node scripts/release.mjs ios",
+    "release:github": "node scripts/release.mjs github"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",

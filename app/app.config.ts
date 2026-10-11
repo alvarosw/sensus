@@ -18,6 +18,12 @@ const isProduction =
  */
 const devProviderOptIn = process.env.SENSUS_DEV_PROVIDER === '1';
 
+/**
+ * Versão de release (x.y.z): fonte única. `npm run release:version -- <x.y.z>` atualiza este valor e app/package.json.
+ * versionCode (Android) e buildNumber (iOS) não ficam aqui: o EAS os incrementa (eas.json, appVersionSource "remote").
+ */
+const APP_VERSION = '1.0.0';
+
 export interface DevProvider {
   baseUrl: string;
   apiKey: string;
@@ -56,7 +62,8 @@ export default (): ExpoConfig => {
   return {
     name: 'Sensus',
     slug: 'sensus',
-    version: '1.0.0',
+    owner: 'alvarosw',
+    version: APP_VERSION,
     orientation: 'portrait',
     scheme: 'sensus',
     icon: './assets/images/icon.png',
@@ -64,6 +71,10 @@ export default (): ExpoConfig => {
     ios: {
       bundleIdentifier: 'com.sensus.app',
       supportsTablet: true,
+      infoPlist: {
+        // Login ChatGPT: o retorno usa http://127.0.0.1 (loopback); o iOS bloqueia isso sem esta exceção.
+        NSAppTransportSecurity: { NSAllowsLocalNetworking: true },
+      },
     },
     android: {
       package: 'com.sensus.app',
@@ -111,6 +122,8 @@ export default (): ExpoConfig => {
       reactCompiler: true,
     },
     extra: {
+      // EAS: projeto @alvarosw/sensus (criado com `eas init`; o CLI não grava em app.config.ts dinâmico).
+      eas: { projectId: '4378b4f1-4d3b-44fd-96c0-f977df8af071' },
       appEnv: isProduction ? 'production' : 'development',
       // Só com a chave injetada: o runtime (settings-context.tsx) exige devProviderOptIn para usá-la.
       ...(devProvider ? { devProvider, devProviderOptIn: true } : {}),
