@@ -8,6 +8,11 @@ export interface StoredProviderSettings {
   presetId: string;
   baseUrl: string;
   model: string;
+  /**
+   * Corpo extra das requisições escolhido com o modelo (modelo recomendado, ex.: raciocínio desligado).
+   * Quando existe, substitui o do preset; ausente = o do preset (ver resolve.ts, formConfig).
+   */
+  extraBody?: Record<string, unknown>;
 }
 
 const FILE_NAME = 'provider-settings.json';

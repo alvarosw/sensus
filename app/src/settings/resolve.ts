@@ -26,6 +26,21 @@ export function isPresetId(id: string): id is PresetId {
 }
 
 /**
+ * Configuração do formulário (salva ou ainda não salva, na verificação). `extraBody` escolhido com o modelo
+ * substitui o do preset; sem ele, vale o do preset. Nunca registrar o retorno: contém a chave.
+ */
+export function formConfig(
+  presetId: PresetId,
+  baseUrl: string,
+  model: string,
+  apiKey: string,
+  extraBody?: Record<string, unknown>,
+): ProviderConfig {
+  const config = buildProviderConfig(presetId, { apiKey, baseUrl, model });
+  return extraBody && typeof extraBody === 'object' && !Array.isArray(extraBody) ? { ...config, extraBody } : config;
+}
+
+/**
  * Configuração pronta para uso, ou null se faltar URL, modelo ou chave.
  * Nunca registrar o retorno: contém a chave.
  */
@@ -34,8 +49,9 @@ export function buildConfigFrom(
   baseUrl: string,
   model: string,
   apiKey: string,
+  extraBody?: Record<string, unknown>,
 ): ProviderConfig | null {
-  const config = buildProviderConfig(presetId, { apiKey, baseUrl, model });
+  const config = formConfig(presetId, baseUrl, model, apiKey, extraBody);
   if (!config.baseUrl || !config.model || !config.apiKey) return null;
   return config;
 }
@@ -58,7 +74,7 @@ function resolveApiKeyProvider(
   demo: DemoPolicy,
 ): ProviderConfig | null {
   if (stored && savedApiKey && isPresetId(stored.presetId)) {
-    return buildConfigFrom(stored.presetId, stored.baseUrl, stored.model, savedApiKey);
+    return buildConfigFrom(stored.presetId, stored.baseUrl, stored.model, savedApiKey, stored.extraBody);
   }
   if (demo.byDefault) return { ...DEMO_PROVIDER_CONFIG };
   if (dev) {

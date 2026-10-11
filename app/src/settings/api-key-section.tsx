@@ -1,24 +1,40 @@
 // Chave de API (avançado, recolhido): provedores com chave, URL base, chave mascarada, modelo, teste de conexão.
 // Os modelos listados passam pelo filtro de chat do núcleo (só os que conversam em texto; o resto fica oculto).
-// Trocar e Remover ficam numa linha abaixo da caixa da chave; Remover pede confirmação.
-import { useEffect, useState, type ReactNode } from 'react';
+// Salvar verifica o modelo antes (1 token, ver verify-save.ts): se falhar, nada é salvo; se demorar, avisa e
+// ainda salva quando responder. Trocar e Remover ficam numa linha abaixo da caixa da chave; Remover pede confirmação.
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Pressable, TextInput, View } from 'react-native';
-import { buildProviderConfig, orderModelListings, type ModelListing } from '@sensus/core';
+import { orderModelListings, type ModelListing } from '@sensus/core';
 import { Card, fontFamilies, Icon, LinkButton, ListGroup, Pill, RadioOption, radius, Txt, useTheme } from '@/design';
 import { FormButton } from '@/features/common/Buttons';
 import { checkProviderModel, listProviderModels } from '@/ai/client';
 import { DEMO_PROVIDER_CONFIG } from '@/ai/demo-provider';
-import { initialFormSettings } from './resolve';
+import { formConfig, initialFormSettings } from './resolve';
 import { APP_PRESET_IDS, APP_PRESETS, DEMO_PRESET_ID, isAppPresetId, presetNeedsKey, type AppPresetId } from './presets';
 import { useSettings } from './settings-context';
 import type { StoredProviderSettings } from './provider-store';
 import { keyLabelOf } from './use-ai-snapshot';
 import { SETTINGS_COPY as COPY } from './strings';
+import {
+  failureOf,
+  isSaveBusy,
+  isVerifying,
+  VERIFY_COPY,
+  VERIFY_IDLE,
+  verifyReducer,
+  type VerifyEvent,
+  type VerifyPurpose,
+  type VerifyState,
+} from './verify-save';
+import { extraBodyFor, recommendedFor, type RecommendedModel } from './recommended';
+import { RecommendedGroup, VerifyPanel } from './model-guidance';
 
 type Notice = { tone: 'ok' | 'error'; text: string } | null;
 
 /** Limite de chips de modelo de chat na tela (listas grandes, como a do OpenRouter, são cortadas). */
 const MAX_MODEL_CHIPS = 60;
+/** Intervalo em que a verificação recalcula o aviso de lentidão e o tempo esgotado. */
+const VERIFY_TICK_MS = 250;
 
 function messageOf(e: unknown): string {
   return e instanceof Error ? e.message : String(e);
@@ -48,10 +64,41 @@ export function ApiKeySection() {
   const [testing, setTesting] = useState(false);
   const [models, setModels] = useState<ModelListing[]>([]);
   const [showHidden, setShowHidden] = useState(false);
-  /** Resultado da verificação sob demanda, por id de modelo: true = respondeu; texto = motivo da falha. */
-  const [verdicts, setVerdicts] = useState<Record<string, true | string>>({});
-  const [verifying, setVerifying] = useState(false);
+  /** Resultado por id de modelo (✓ / ✗ nas opções): true = respondeu; false = falhou. */
+  const [verdicts, setVerdicts] = useState<Record<string, boolean>>({});
   const [confirmRemove, setConfirmRemove] = useState(false);
+  // Verificação do modelo: o estado vive no reducer (verify-save.ts). O espelho em ref é atualizado na hora,
+  // para que a continuação de uma chamada só grave se a tentativa ainda estiver válida.
+  const [verify, setVerify] = useState<VerifyState>(VERIFY_IDLE);
+  const verifyRef = useRef<VerifyState>(VERIFY_IDLE);
+  const attemptIdRef = useRef(0);
+  const attemptModelRef = useRef('');
+
+  const send = (event: VerifyEvent) => {
+    verifyRef.current = verifyReducer(verifyRef.current, event);
+    setVerify(verifyRef.current);
+  };
+  /** A tentativa `id` ainda está nesta fase (não foi cancelada, trocada nem expirou). */
+  const isLive = (id: number, phase: VerifyState['phase']) => {
+    const s = verifyRef.current;
+    return s.phase === phase && s.phase !== 'idle' && s.id === id;
+  };
+
+  // Enquanto verifica: recalcula o aviso de lentidão e o tempo esgotado.
+  const verifyId = verify.phase === 'verifying' ? verify.id : 0;
+  useEffect(() => {
+    if (verifyId === 0) return;
+    const timer = setInterval(() => send({ type: 'tick', at: Date.now() }), VERIFY_TICK_MS);
+    return () => clearInterval(timer);
+  }, [verifyId]);
+
+  // Falha (inclusive tempo esgotado) marca o modelo com ✗.
+  useEffect(() => {
+    if (verify.phase === 'failed' && attemptModelRef.current) {
+      const model = attemptModelRef.current;
+      setVerdicts((v) => ({ ...v, [model]: false }));
+    }
+  }, [verify]);
 
   useEffect(() => {
     if (settings.loaded && form === null) setForm(initialFormSettings(settings.stored, settings.devProvider));
@@ -64,6 +111,7 @@ export function ApiKeySection() {
   const needsKey = presetId ? presetNeedsKey(presetId) : true;
   const hasKey = settings.savedApiKey !== null;
   const update = (patch: Partial<StoredProviderSettings>) => setForm({ ...form, ...patch });
+  const recommended = presetId ? recommendedFor(presetId) : [];
 
   const selectPreset = (id: AppPresetId) => {
     const preset = APP_PRESETS[id];
@@ -74,26 +122,84 @@ export function ApiKeySection() {
     setNotice(null);
     setKeyEditing(false);
     setApiKeyInput('');
+    send({ type: 'reset' });
     setForm({ presetId: id, baseUrl: preset.baseUrl, model: preset.defaultModel });
   };
 
   const summary = isDemo ? COPY.keyDemo : hasKey ? `${keyLabelOf(settings)} · ${COPY.keySaved}` : COPY.keyNone;
 
+  /** Chave da verificação e da gravação. Gravar usa só a chave digitada ou a salva (nunca a do .env). */
+  const keysFor = (purpose: VerifyPurpose): { key: string; newKey?: string } => {
+    const typed = apiKeyInput.trim();
+    if (purpose === 'save') return { key: typed || settings.savedApiKey || '', newKey: typed || undefined };
+    return { key: typed || settings.savedApiKey || settings.devProvider?.apiKey || '' };
+  };
+
+  /**
+   * Verifica o modelo do rascunho e, se pedido com `save`, grava quando responder. Falha ou troca de
+   * tentativa: nada é gravado. Resposta lenta que chega depois do aviso também grava (estado "lento").
+   */
+  const startVerification = async (purpose: VerifyPurpose, draft: StoredProviderSettings, key: string, newKey?: string) => {
+    if (!presetId || presetId === DEMO_PRESET_ID) return;
+    const id = ++attemptIdRef.current;
+    const model = draft.model.trim();
+    const baseUrl = draft.baseUrl.trim();
+    attemptModelRef.current = model;
+    setNotice(null);
+    send({ type: 'start', id, purpose, at: Date.now() });
+    try {
+      await checkProviderModel(formConfig(presetId, baseUrl, model, key, draft.extraBody));
+    } catch (e) {
+      if (isLive(id, 'verifying')) send({ type: 'failed', id, at: Date.now(), failure: failureOf(e, model) });
+      return;
+    }
+    if (!isLive(id, 'verifying')) return;
+    send({ type: 'passed', id, at: Date.now() });
+    setVerdicts((v) => ({ ...v, [model]: true }));
+    if (purpose === 'check') return;
+    try {
+      await settings.save({ presetId, baseUrl, model, extraBody: draft.extraBody }, newKey);
+      setApiKeyInput('');
+      setKeyEditing(false);
+      if (isLive(id, 'passed')) send({ type: 'saved', id });
+    } catch (e) {
+      if (isLive(id, 'passed')) {
+        send({ type: 'failed', id, at: Date.now(), failure: { reason: 'save', message: COPY.saveError(messageOf(e)) } });
+      }
+    }
+  };
+
+  /** Escolhe o modelo (botão, opção recomendada ou digitação). Com verificação em curso, refaz a verificação. */
+  const chooseModel = (model: string, extraBody?: Record<string, unknown>) => {
+    const draft: StoredProviderSettings = { ...form, model, extraBody };
+    setForm(draft);
+    const current = verifyRef.current;
+    if (current.phase === 'verifying') {
+      const { key, newKey } = keysFor(current.purpose);
+      void startVerification(current.purpose, draft, key, newKey);
+    } else {
+      send({ type: 'reset' });
+    }
+  };
+
   const onSave = async () => {
-    if (!presetId) return;
+    if (!presetId || isSaveBusy(verify)) return;
     const newKey = apiKeyInput.trim();
     const key = newKey || settings.savedApiKey || '';
     if (needsKey && !key) return setNotice({ tone: 'error', text: COPY.needKey });
     if (!form.baseUrl.trim()) return setNotice({ tone: 'error', text: COPY.needBaseUrl });
     if (!form.model.trim()) return setNotice({ tone: 'error', text: COPY.needModel });
-    try {
-      await settings.save({ presetId, baseUrl: form.baseUrl.trim(), model: form.model.trim() }, newKey || undefined);
-      setApiKeyInput('');
-      setKeyEditing(false);
-      setNotice({ tone: 'ok', text: COPY.saved });
-    } catch (e) {
-      setNotice({ tone: 'error', text: COPY.saveError(messageOf(e)) });
+    if (isDemo) {
+      // Demonstração: offline, nada a verificar.
+      try {
+        await settings.save({ presetId, baseUrl: form.baseUrl.trim(), model: form.model.trim() }, undefined);
+        setNotice({ tone: 'ok', text: COPY.saved });
+      } catch (e) {
+        setNotice({ tone: 'error', text: COPY.saveError(messageOf(e)) });
+      }
+      return;
     }
+    await startVerification('save', form, key, newKey || undefined);
   };
 
   const onTest = async () => {
@@ -106,7 +212,7 @@ export function ApiKeySection() {
     if (!form.baseUrl.trim()) return setNotice({ tone: 'error', text: COPY.needBaseUrl });
     const config = isDemo
       ? { ...DEMO_PROVIDER_CONFIG }
-      : buildProviderConfig(presetId as Exclude<AppPresetId, 'demo'>, { apiKey: key, baseUrl: form.baseUrl, model: form.model });
+      : formConfig(presetId as Exclude<AppPresetId, 'demo'>, form.baseUrl, form.model, key, form.extraBody);
     setTesting(true);
     setNotice(null);
     try {
@@ -121,22 +227,13 @@ export function ApiKeySection() {
     }
   };
 
-  const onVerify = async () => {
-    if (!presetId || isDemo || verifying) return;
-    const key = apiKeyInput.trim() || settings.savedApiKey || settings.devProvider?.apiKey || '';
+  const onVerify = () => {
+    if (!presetId || isDemo || isVerifying(verify)) return;
+    const { key } = keysFor('check');
     if (needsKey && !key) return setNotice({ tone: 'error', text: COPY.needKeyToTest });
     if (!form.baseUrl.trim()) return setNotice({ tone: 'error', text: COPY.needBaseUrl });
-    const model = form.model.trim();
-    if (!model) return setNotice({ tone: 'error', text: COPY.needModel });
-    setVerifying(true);
-    try {
-      await checkProviderModel(buildProviderConfig(presetId as Exclude<AppPresetId, 'demo'>, { apiKey: key, baseUrl: form.baseUrl, model }));
-      setVerdicts((v) => ({ ...v, [model]: true }));
-    } catch (e) {
-      setVerdicts((v) => ({ ...v, [model]: messageOf(e) }));
-    } finally {
-      setVerifying(false);
-    }
+    if (!form.model.trim()) return setNotice({ tone: 'error', text: COPY.needModel });
+    void startVerification('check', form, key);
   };
 
   const onRemoveKey = async () => {
@@ -246,7 +343,11 @@ export function ApiKeySection() {
       );
 
     // Modelos de chat primeiro (o recomendado do preset no topo); ocultos só com "Mostrar todos".
-    const ordered = orderModelListings(models, presetId ? APP_PRESETS[presetId].defaultModel : undefined);
+    // Os recomendados aparecem no grupo próprio, então não se repetem na lista.
+    const recIds = new Set(recommended.map((m) => m.id));
+    const ordered = orderModelListings(models, presetId ? APP_PRESETS[presetId].defaultModel : undefined).filter(
+      (m) => !recIds.has(m.id),
+    );
     const usable = ordered.filter((m) => m.usable);
     const hidden = ordered.filter((m) => !m.usable);
     const shownChats = usable.slice(0, MAX_MODEL_CHIPS);
@@ -257,14 +358,14 @@ export function ApiKeySection() {
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
           {chipList.map((m) => {
             const verdict = verdicts[m.id];
-            const mark = verdict === undefined ? '' : verdict === true ? '✓ ' : '✗ ';
+            const mark = verdict === undefined ? '' : verdict ? '✓ ' : '✗ ';
             return (
               <Pill
                 key={m.id}
                 testID={`model-chip-${m.id}`}
                 label={mark + m.id}
                 variant={m.id === form.model ? 'suggest' : m.usable ? 'default' : 'dashed'}
-                onPress={() => update({ model: m.id })}
+                onPress={() => chooseModel(m.id, extraBodyFor(presetId ?? '', m.id))}
               />
             );
           })}
@@ -285,7 +386,8 @@ export function ApiKeySection() {
       </View>
     ) : null;
 
-    const verdict = verdicts[form.model.trim()];
+    const verifyingNow = isVerifying(verify);
+    const saveBusy = isSaveBusy(verify);
 
     body = (
       <View style={{ gap: 12 }}>
@@ -311,7 +413,10 @@ export function ApiKeySection() {
             <TextInput
               testID="settings-model"
               value={form.model}
-              onChangeText={(model) => update({ model })}
+              onChangeText={(model) => {
+                update({ model, extraBody: presetId ? extraBodyFor(presetId, model.trim()) : undefined });
+                if (!verifyingNow) send({ type: 'reset' });
+              }}
               autoCapitalize="none"
               autoCorrect={false}
               accessibilityLabel={COPY.modelField}
@@ -326,19 +431,32 @@ export function ApiKeySection() {
             />
           </View>
           <View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', gap: 14 }}>
-            <LinkButton testID="settings-verify" label={verifying ? COPY.verifying : COPY.verify} onPress={onVerify} />
-            {verdict !== undefined ? (
-              <Txt v="meta" tint={verdict === true ? c.srcText : c.danger} testID="settings-verify-result" style={{ flexShrink: 1 }}>
-                {verdict === true ? COPY.verifyOk : COPY.verifyFail(verdict)}
-              </Txt>
-            ) : null}
+            <LinkButton testID="settings-verify" label={verifyingNow ? COPY.verifying : COPY.verify} onPress={onVerify} />
           </View>
+          <VerifyPanel
+            state={verify}
+            recommended={recommended}
+            onCancel={() => send({ type: 'cancel' })}
+            onPick={(m: RecommendedModel) => chooseModel(m.id, m.extraBody)}
+          />
         </Field>
+        {recommended.length > 0 ? (
+          <RecommendedGroup
+            models={recommended}
+            selectedId={form.model.trim()}
+            onPick={(m) => chooseModel(m.id, m.extraBody)}
+          />
+        ) : null}
         {modelChips}
         {notice ? (
           <Txt v="bodySm" tint={notice.tone === 'ok' ? c.srcText : c.danger} testID="settings-notice">{notice.text}</Txt>
         ) : null}
-        <FormButton testID="settings-save" label={COPY.save} onPress={onSave} />
+        <FormButton
+          testID="settings-save"
+          label={saveBusy ? VERIFY_COPY.verifying : COPY.save}
+          disabled={saveBusy}
+          onPress={onSave}
+        />
       </View>
     );
   }
