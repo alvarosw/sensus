@@ -1,18 +1,20 @@
-// Botão "voltar" do sistema em camadas: fecha sempre a camada mais à frente.
+// Botão "voltar" do sistema em camadas: esconde o teclado primeiro; depois fecha sempre a camada mais à frente.
 // Cada sobreposição registra-se com useBackLayer(...) enquanto está aberta; a tela base instala
 // useRootBackHandler(), que fecha a camada de maior prioridade ou, sem camadas, confirma a saída do app.
-import { useEffect, useRef } from 'react';
-import { Alert, BackHandler, Platform } from 'react-native';
+import { useCallback, useEffect, useRef } from 'react';
+import { Alert, BackHandler, Keyboard, Platform } from 'react-native';
 import { useFocusEffect } from 'expo-router';
-import { useCallback } from 'react';
+import { backAction, closeTopLayer, registerBackLayer, topBackLayer } from './back-registry';
+
+export { closeTopLayer } from './back-registry';
 
 /** Prioridade = distância do usuário (maior = mais à frente). */
 export const BACK_PRIORITY = {
-  /** Painéis empilhados (palavra, fonte, entidade): fecha um por vez. */
+  /** Painéis empilhados (palavra, fonte, entidade, mapa): fecha um por vez. */
   panel: 60,
   /** Prévia de citação. */
   popover: 50,
-  /** Menus de contexto (⋯ de afirmação etc.). */
+  /** Menus de contexto (⋯ de afirmação etc.) e texto selecionável da resposta. */
   menu: 45,
   /** Chat flutuante aberto. */
   chat: 40,
@@ -26,41 +28,18 @@ export const BACK_PRIORITY = {
   pinned: 30,
 } as const;
 
-interface Layer {
-  priority: number;
-  /** Ordem de abertura, para desempatar camadas de mesma prioridade (a mais recente primeiro). */
-  order: number;
-  close: () => void;
-}
-
-const layers = new Map<string, Layer>();
-let counter = 0;
-
 /**
  * Registra uma camada enquanto `open` for true. `close` deve fechar só esta camada
  * (ex.: o chat minimiza; a folha limpa a seleção; o painel volta um nível).
+ * A camada é removida ao fechar ou desmontar; `close` sempre usa a versão mais recente (sem novo registro a cada render).
  */
 export function useBackLayer(id: string, open: boolean, close: () => void, priority: number) {
   const closeRef = useRef(close);
   closeRef.current = close;
   useEffect(() => {
-    if (!open) return;
-    layers.set(id, { priority, order: ++counter, close: () => closeRef.current() });
-    return () => {
-      layers.delete(id);
-    };
+    if (!open) return undefined;
+    return registerBackLayer(id, priority, () => closeRef.current());
   }, [id, open, priority]);
-}
-
-/** Fecha a camada mais à frente. Retorna false se não havia nenhuma. */
-export function closeTopLayer(): boolean {
-  let top: Layer | null = null;
-  for (const l of layers.values()) {
-    if (!top || l.priority > top.priority || (l.priority === top.priority && l.order > top.order)) top = l;
-  }
-  if (!top) return false;
-  top.close();
-  return true;
 }
 
 /**
@@ -72,7 +51,15 @@ export function useRootBackHandler(exitTitle = 'Sair do Sensus?', exitMessage = 
     useCallback(() => {
       if (Platform.OS !== 'android') return undefined;
       const sub = BackHandler.addEventListener('hardwareBackPress', () => {
-        if (closeTopLayer()) return true;
+        const action = backAction(Keyboard.isVisible(), topBackLayer() !== null);
+        if (action === 'dismiss-keyboard') {
+          Keyboard.dismiss();
+          return true;
+        }
+        if (action === 'close-layer') {
+          closeTopLayer();
+          return true;
+        }
         Alert.alert(exitTitle, exitMessage, [
           { text: 'Cancelar', style: 'cancel' },
           { text: 'Sair', style: 'destructive', onPress: () => BackHandler.exitApp() },

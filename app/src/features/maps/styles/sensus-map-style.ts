@@ -63,14 +63,23 @@ export function mapColors(scheme: Scheme): MapColors {
   };
 }
 
-/** Estilo completo (claro ou escuro). Estável por esquema: a tela memoiza o objeto. */
-export function sensusMapStyle(scheme: Scheme): StyleSpecification {
+/**
+ * Rótulo no idioma do aparelho. O OpenFreeMap traz `name:<código>` (ex.: `name:pt`) em todas as camadas com
+ * nome; sem dado nesse idioma cai para `name_int` (internacional), depois `name:latin` e, por fim, o nome local.
+ */
+export function labelField(lang: string): unknown {
+  const code = /^[a-z]{2,3}$/i.test(lang) ? lang.toLowerCase() : 'en';
+  return ['coalesce', ['get', `name:${code}`], ['get', 'name_int'], ['get', 'name:latin'], ['get', 'name']];
+}
+
+/** Estilo completo (claro ou escuro, no idioma do aparelho). Estável por esquema e idioma: a tela memoiza o objeto. */
+export function sensusMapStyle(scheme: Scheme, lang: string): StyleSpecification {
   const m = mapColors(scheme);
-  const name = ['coalesce', ['get', 'name:latin'], ['get', 'name']] as unknown as string;
+  const name = labelField(lang) as string;
 
   return {
     version: 8,
-    name: `Sensus ${scheme}`,
+    name: `Sensus ${scheme} ${lang}`,
     glyphs: OPENFREEMAP_GLYPHS,
     sources: {
       openmaptiles: { type: 'vector', url: OPENFREEMAP_TILES, attribution: ATTRIBUTION },

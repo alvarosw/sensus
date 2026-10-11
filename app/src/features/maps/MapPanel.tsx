@@ -13,6 +13,7 @@ import { MapLegend } from './MapLegend';
 import { SensusMap } from './SensusMap';
 import { MAPS } from './strings';
 import { useMarkers, usePlaceSites } from './usePlaceSites';
+import { placeTitle, usePlaceTranslation } from './usePlaceName';
 
 type Which = 'selection' | 'unit' | 'book';
 
@@ -88,6 +89,8 @@ function PlaceCardSheet({ site, books, onClose }: { site: PlaceSite; books: read
   const { c } = useTheme();
   const words = MAPS.bands;
   const name = site.candidates[0]?.name ?? site.name;
+  const translated = usePlaceTranslation(site.name);
+  const title = placeTitle(site.name, translated);
   const ident = `${name} · ${MAPS.confidence.toLowerCase()} ${confidenceLabel(site, words)}`;
   const vids = site.vids.slice(0, 60);
   const openPlace = () => useStudy.getState().pushPanel({ kind: 'entity', citeId: site.citeIds[0]! });
@@ -101,7 +104,7 @@ function PlaceCardSheet({ site, books, onClose }: { site: PlaceSite; books: read
         <View style={{ flex: 1 }} />
         <IconButton icon="close" label={MAPS.close} onPress={onClose} testID="map-place-close" />
       </View>
-      <Txt v="sheetTitle" testID="map-place-name">{site.name}</Txt>
+      <Txt v="sheetTitle" testID="map-place-name">{title}</Txt>
       <Txt v="mono" color="muted" testID="map-place-coords">{formatCoords(site.lat, site.lon)}</Txt>
       <Txt v="bodySm" testID="map-place-ident">{`${MAPS.identification}: ${ident}`}</Txt>
       {vids.length > 0 ? (

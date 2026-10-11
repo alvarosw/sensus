@@ -14,6 +14,7 @@ import { fontFamilies, radius, Txt, useTheme } from '@/design';
 import { MAPS } from './strings';
 import { sensusMapStyle } from './styles/sensus-map-style';
 import { radiusOf, viewFor, type MapMarker } from './geometry';
+import { DEVICE_LANG } from '../common/device-lang';
 
 export type { MapMarker } from './geometry';
 export { radiusOf, viewFor } from './geometry';
@@ -29,9 +30,11 @@ interface Props {
   testID?: string;
 }
 
+const TILES_WAIT_MS = 9000;
+
 export const SensusMap = memo(function SensusMap({ markers, selectedId, onSelect, lite = false, controls = false, style, testID }: Props) {
   const { scheme, c, st } = useTheme();
-  const style_ = useMemo(() => sensusMapStyle(scheme), [scheme]);
+  const style_ = useMemo(() => sensusMapStyle(scheme, DEVICE_LANG), [scheme]);
   const cameraRef = useRef<CameraRef>(null);
   const [failed, setFailed] = useState(false);
   // `ready`: o estilo carregou (a câmera já pode se mover). `tilesReady`: os primeiros mosaicos foram desenhados;
@@ -39,6 +42,13 @@ export const SensusMap = memo(function SensusMap({ markers, selectedId, onSelect
   const [ready, setReady] = useState(false);
   const [tilesReady, setTilesReady] = useState(false);
   const initial = useMemo(() => viewFor(markers), [markers]);
+  // Teto para a sobreposição: o primeiro carregamento de mosaicos pode demorar; depois disso o mapa aparece
+  // (os mosaicos chegam em seguida), em vez de ficar coberto por tempo indefinido.
+  useEffect(() => {
+    if (tilesReady || failed) return undefined;
+    const t = setTimeout(() => setTilesReady(true), TILES_WAIT_MS);
+    return () => clearTimeout(t);
+  }, [tilesReady, failed]);
 
   const geojson = useMemo(
     () => ({
