@@ -42,6 +42,7 @@
     "zustand": "^5.0.15"
   },
   "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "@types/react": "~19.2.2",
     "dotenv": "^18.0.7",
     "playwright": "1.63.0",
@@ -53,7 +54,8 @@
     "ios": "SENSUS_DEV_PROVIDER=1 expo start --ios",
     "sync-db": "node scripts/sync-db.mjs",
     "typecheck": "tsc --noEmit",
-    "check:apk": "scripts/check-apk-secrets.sh"
+    "check:apk": "scripts/check-apk-secrets.sh",
+    "icons": "node scripts/generate-icons.mjs"
   },
   "private": true,
   "expo": {

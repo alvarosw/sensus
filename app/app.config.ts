@@ -68,9 +68,18 @@ export default (): ExpoConfig => {
     scheme: 'sensus',
     icon: './assets/images/icon.png',
     userInterfaceStyle: 'automatic',
+    web: {
+      favicon: './assets/images/favicon.png',
+    },
     ios: {
       bundleIdentifier: 'com.sensus.app',
       supportsTablet: true,
+      // Ícone aprovado (concept #12, centro óptico), com variantes escura e tinted do iOS 18+.
+      icon: {
+        light: './assets/images/icon.png',
+        dark: './assets/images/ios-icon-dark.png',
+        tinted: './assets/images/ios-icon-tinted.png',
+      },
       infoPlist: {
         // Login ChatGPT: o retorno usa http://127.0.0.1 (loopback); o iOS bloqueia isso sem esta exceção.
         NSAppTransportSecurity: { NSAllowsLocalNetworking: true },
@@ -79,9 +88,9 @@ export default (): ExpoConfig => {
     android: {
       package: 'com.sensus.app',
       adaptiveIcon: {
-        backgroundColor: '#F4F1EA',
+        // Papel do design system (tokens de docs/design/icon-concepts.html).
+        backgroundColor: '#F7F5F0',
         foregroundImage: './assets/images/android-icon-foreground.png',
-        backgroundImage: './assets/images/android-icon-background.png',
         monochromeImage: './assets/images/android-icon-monochrome.png',
       },
       predictiveBackGestureEnabled: false,
@@ -111,9 +120,13 @@ export default (): ExpoConfig => {
       [
         'expo-splash-screen',
         {
-          backgroundColor: '#F4F1EA',
+          backgroundColor: '#F7F5F0',
           image: './assets/images/splash-icon.png',
-          imageWidth: 76,
+          imageWidth: 200,
+          dark: {
+            backgroundColor: '#16130F',
+            image: './assets/images/splash-icon-dark.png',
+          },
         },
       ],
     ],
