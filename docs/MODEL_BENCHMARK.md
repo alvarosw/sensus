@@ -131,6 +131,36 @@ em `presets.ts` e na ordem de `recommended-models.ts`.
 - A pontuação "Geral" é uma escolha de peso (80% precisão, 20% velocidade), não uma verdade. Os números brutos estão
   na tabela para quem preferir outro peso.
 
+## Atualização de 16/10/2026
+
+**Motivo.** `nvidia/nemotron-3-ultra-550b-a55b` passou a responder HTTP 404 em `/chat/completions` ("Specified function
+... is not found"), embora continue em `GET /models`. Seis chamadas mínimas (`max_tokens` 16) entre 21:12 e 21:22, com
+intervalos de 2 a 3 minutos, deram o mesmo erro. A página do modelo em build.nvidia.com não traz aviso de
+descontinuação nem substituto. Por isso o padrão mudou.
+
+**Novo teste.** `probe` (46 candidatos de chat) e `run` nos cinco que responderam e que mais importam: Super 120B
+(o rápido de antes), Gemma 4 31B (o preciso), Muse Glimmer 30B, DeepSeek V4.1 Flash (falhou no `probe` anterior) e
+Step 5 Preview (novo na lista). Kimi K2.6 e K3 deram 404. A mesma metodologia e configuração (raciocínio desligado,
+9 tarefas por modelo).
+
+| Modelo | Erros | Completos | 1º texto (s) | Total (s) | Cit. válidas / inválidas | Sem citação | Conflitos morfo | Erros de língua | Precisão | Geral |
+|---|---|---|---|---|---|---|---|---|---|---|
+| google/gemma-4-31b-it | 0 | 9 | 11,6 | 71,2 | 187 / 17 | 14 | 0 | 5 | 96,0 | 85,7 |
+| nvidia/nemotron-3-super-120b-a12b | 0 | 8 | 3,0 | 18,1 | 313 / 23 | 21 | 0 | 2 | 84,1 | 85,8 |
+| meta/muse-glimmer-30b | 0 | 8 | 84,4 | 155,9 | 269 / 0 | 99 | 6 | 370 | 84,0 | 67,2 |
+| stepfun-ai/step-5-preview | 0 | 3 | 2,5 | 155,2 | 517 / 141 | 798 | 0 | 53 | 45,6 | 36,5 |
+| deepseek-ai/deepseek-v4.1-flash | 9 | 0 | – | – | – | – | – | – | 0,0 | 0,0 |
+
+Notas: o DeepSeek parou de responder em todas as tarefas (240 s sem dados). O Super no modo padrão (com raciocínio)
+voltou vazio em 4 tarefas e ficou com precisão 38,9; não entra na decisão, que é do modo desligado. Os tempos são de
+uma janela com carga variável da NVIDIA.
+
+**Decisão.** Gemma 4 31B vira o padrão. Com o Ultra fora, a comparação com o Super se resume a precisão e
+completude: Gemma 96,0 contra 84,1, e 9 de 9 respostas completas contra 8. O Super ganha em velocidade (primeiro texto
+em 3 s contra 12 s), e fica como opção rápida. Os "Geral" dos dois empatam (85,7 e 85,8), mas o critério de primeiro
+texto da seção "Decisão" anterior já não decide sozinho: sem o Ultra, a diferença de precisão é a maior e mais
+consistente. Muse Glimmer e Step 5 ficam de fora (precisão ou citações ruins); DeepSeek sai por falta de resposta.
+
 ## Reproduzir
 
 ```bash

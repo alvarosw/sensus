@@ -127,11 +127,11 @@ describe('orderModelListings', () => {
     const listings = [
       { id: 'a-embed', usable: false, reason: 'embeddings' },
       { id: 'c-chat', usable: true },
-      { id: 'nvidia/nemotron-3-ultra-550b-a55b', usable: true },
+      { id: 'google/gemma-4-31b-it', usable: true },
       { id: 'b-chat', usable: true },
     ];
-    expect(orderModelListings(listings, 'nvidia/nemotron-3-ultra-550b-a55b').map((m) => m.id)).toEqual([
-      'nvidia/nemotron-3-ultra-550b-a55b',
+    expect(orderModelListings(listings, 'google/gemma-4-31b-it').map((m) => m.id)).toEqual([
+      'google/gemma-4-31b-it',
       'b-chat',
       'c-chat',
       'a-embed',
