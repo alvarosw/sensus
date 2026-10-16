@@ -2,7 +2,8 @@
 //  - theme: sistema | claro | escuro (o provider de tema é atualizado pela tela de Aparência);
 //  - textSource: texto corrido padrão (BLivre ou KJV). O botão do leitor também grava aqui;
 //  - greekDefault: grego (TR) sob os versículos ao abrir o app. O botão Αα só muda a sessão.
-//  - timelineLines / timelineEvents: favoritos da linha do tempo (cite_ids de linhas e de marcadores).
+//  - timelineLines / timelineEvents: favoritos da linha do tempo (cite_ids de linhas e de marcadores);
+//    timelineRecent: linhas adicionadas recentemente ao paralelo (o mais recente primeiro).
 // Os valores de aparência são aplicados ao estado do leitor (state/study.ts) ao carregar e a cada mudança.
 import { create } from 'zustand';
 import { useStudy } from '@/state/study';
@@ -16,6 +17,8 @@ const THEMES: readonly SchemePreference[] = ['system', 'light', 'dark'];
 
 /** Limite de favoritos guardados (evita arquivo crescer sem controle). */
 const MAX_FAVORITES = 500;
+/** Linhas recentes guardadas no seletor do paralelo. */
+const MAX_RECENT_LINES = 6;
 
 export const DEFAULT_APP_PREFS = {
   theme: 'system' as SchemePreference,
@@ -23,6 +26,7 @@ export const DEFAULT_APP_PREFS = {
   greekDefault: false,
   timelineLines: [] as string[],
   timelineEvents: [] as string[],
+  timelineRecent: [] as string[],
 };
 
 interface AppPrefsState {
@@ -34,6 +38,8 @@ interface AppPrefsState {
   timelineLines: string[];
   /** Marcadores da linha do tempo (cite_id do evento). */
   timelineEvents: string[];
+  /** Linhas usadas recentemente no paralelo (cite_id), a mais recente primeiro. */
+  timelineRecent: string[];
   load(): Promise<void>;
   setTheme(theme: SchemePreference): void;
   /** Grava o texto padrão e aplica ao leitor agora. */
@@ -42,6 +48,8 @@ interface AppPrefsState {
   setGreekDefault(on: boolean): void;
   toggleTimelineLine(id: string): void;
   toggleTimelineEvent(citeId: string): void;
+  /** Põe a linha no topo das recentes (sem repetir). */
+  pushTimelineRecent(id: string): void;
 }
 
 interface PersistedPrefs {
@@ -50,6 +58,7 @@ interface PersistedPrefs {
   greekDefault: boolean;
   timelineLines: string[];
   timelineEvents: string[];
+  timelineRecent: string[];
 }
 
 function persist(p: PersistedPrefs): void {
@@ -74,8 +83,8 @@ function toggleId(list: string[], id: string): string[] {
 
 export const useAppPrefs = create<AppPrefsState>()((set, get) => {
   const current = (): PersistedPrefs => {
-    const { theme, textSource, greekDefault, timelineLines, timelineEvents } = get();
-    return { theme, textSource, greekDefault, timelineLines, timelineEvents };
+    const { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineRecent } = get();
+    return { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineRecent };
   };
   return {
     loaded: false,
@@ -88,7 +97,8 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       const greekDefault = typeof stored?.greekDefault === 'boolean' ? stored.greekDefault : DEFAULT_APP_PREFS.greekDefault;
       const timelineLines = idList(stored?.timelineLines);
       const timelineEvents = idList(stored?.timelineEvents);
-      set({ loaded: true, theme, textSource, greekDefault, timelineLines, timelineEvents });
+      const timelineRecent = idList(stored?.timelineRecent).slice(0, MAX_RECENT_LINES);
+      set({ loaded: true, theme, textSource, greekDefault, timelineLines, timelineEvents, timelineRecent });
       useStudy.setState({ textSource, greek: greekDefault });
     },
     toggleTimelineLine: (id) => {
@@ -100,6 +110,11 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       const timelineEvents = toggleId(get().timelineEvents, citeId);
       set({ timelineEvents });
       persist({ ...current(), timelineEvents });
+    },
+    pushTimelineRecent: (id) => {
+      const timelineRecent = [id, ...get().timelineRecent.filter((x) => x !== id)].slice(0, MAX_RECENT_LINES);
+      set({ timelineRecent });
+      persist({ ...current(), timelineRecent });
     },
     setTheme: (theme) => {
       set({ theme });

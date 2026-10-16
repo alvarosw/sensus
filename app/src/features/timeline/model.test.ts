@@ -3,10 +3,12 @@ import {
   clampView,
   cursorTolerance,
   eraById,
+  extentOf,
   eventInEra,
   eventYear,
   filterEvents,
   filterLines,
+  laneBounds,
   lineInEra,
   matchesEventText,
   nearestPerLane,
@@ -91,19 +93,46 @@ describe('filtros', () => {
 });
 
 describe('paralelo', () => {
-  it('viewport fica dentro dos dados e com largura mínima', () => {
-    expect(clampView(-9000, -8000)).toEqual({ lo: -4300, hi: -3300 });
-    expect(clampView(100, 1000)).toEqual({ lo: -700, hi: 200 });
-    expect(clampView(0, 2)).toEqual({ lo: 0, hi: 6 });
+  const ext = { lo: -4300, hi: 200 };
+
+  it('viewport fica dentro da extensão e com largura mínima de 2 anos', () => {
+    expect(clampView({ lo: -9000, hi: -8000 }, ext)).toEqual({ lo: -4300, hi: -3300 });
+    expect(clampView({ lo: 100, hi: 1000 }, ext)).toEqual({ lo: -700, hi: 200 });
+    expect(clampView({ lo: 0, hi: 0.5 }, ext)).toEqual({ lo: 0, hi: 2 });
+    expect(clampView({ lo: 0, hi: 0.5 }, { lo: 0, hi: 1 })).toEqual({ lo: 0, hi: 1 });
   });
 
   it('zoom mantém o ano sob o dedo no mesmo lugar do eixo', () => {
-    const z = zoomView(-100, 100, 0.5, 50);
+    const z = zoomView({ lo: -100, hi: 100 }, 0.5, 50, { lo: -1000, hi: 1000 });
     expect(z.lo + (z.hi - z.lo) * ((50 - z.lo) / (z.hi - z.lo))).toBeCloseTo(50);
     expect(z.hi - z.lo).toBeCloseTo(100);
   });
 
-  it('passo do eixo deixa rótulos de pelo menos 64 px', () => {
+  it('zoom para fora para na extensão', () => {
+    expect(zoomView({ lo: -100, hi: 100 }, 3, 0, { lo: -150, hi: 150 })).toEqual({ lo: -150, hi: 150 });
+  });
+
+  it('extensão: união das linhas com margem pequena; sem linhas, nada', () => {
+    expect(extentOf([])).toBeNull();
+    const e = extentOf([
+      { lo: -1000, hi: -900 },
+      { lo: -950, hi: 30 },
+    ]);
+    expect(e!.lo).toBeCloseTo(-1000 - (1030 * 0.06 + 0.5));
+    expect(e!.hi).toBeCloseTo(30 + (1030 * 0.06 + 0.5));
+    // Um só ponto: a extensão mínima é de 4 anos, com a mesma margem.
+    const point = extentOf([{ lo: 10, hi: 10 }]);
+    expect(point!.hi - point!.lo).toBeCloseTo(2 * (4 * 0.06 + 0.5));
+  });
+
+  it('intervalo da linha: sem pontas isoladas, ou todos os eventos quando incluídos', () => {
+    const keys = [-4003, 26, 27, 28, 30];
+    expect(laneBounds(keys, false)).toEqual({ lo: 26, hi: 30 });
+    expect(laneBounds(keys, true)).toEqual({ lo: -4003, hi: 30 });
+    expect(laneBounds([], false)).toBeNull();
+  });
+
+  it('passo do eixo deixa rótulos de pelo menos 70 px', () => {
     expect(tickStep(4000, 300)).toBe(1000);
     expect(tickStep(200, 300)).toBe(50);
     expect(tickStep(10, 300)).toBe(5);

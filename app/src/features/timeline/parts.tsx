@@ -132,7 +132,21 @@ export function LineCard({
 }
 
 /** Pílula de filtro (um toque liga/desliga). */
-export function Chip({ label, on, onPress, testID, star }: { label: string; on: boolean; onPress: () => void; testID?: string; star?: boolean }) {
+export function Chip({
+  label,
+  on,
+  onPress,
+  testID,
+  star,
+  disabled,
+}: {
+  label: string;
+  on: boolean;
+  onPress: () => void;
+  testID?: string;
+  star?: boolean;
+  disabled?: boolean;
+}) {
   const { c } = useTheme();
   const bg = on ? (star ? c.accent : c.text) : c.surface;
   const fg = on ? (star ? c.accentText : c.bg) : c.muted;
@@ -140,7 +154,8 @@ export function Chip({ label, on, onPress, testID, star }: { label: string; on: 
     <Pressable
       testID={testID}
       accessibilityRole="button"
-      accessibilityState={{ selected: on }}
+      accessibilityState={{ selected: on, disabled: !!disabled }}
+      disabled={disabled}
       onPress={onPress}
       hitSlop={4}
       style={({ pressed }) => ({
@@ -152,7 +167,7 @@ export function Chip({ label, on, onPress, testID, star }: { label: string; on: 
         borderColor: on ? bg : c.border,
         backgroundColor: bg,
         justifyContent: 'center',
-        opacity: pressed ? 0.7 : 1,
+        opacity: disabled ? 0.45 : pressed ? 0.7 : 1,
       })}
     >
       <Txt v="button" tint={fg} style={{ fontSize: 12.5, lineHeight: 16 }}>

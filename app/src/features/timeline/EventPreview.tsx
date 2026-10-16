@@ -1,9 +1,10 @@
 // Prévia de um evento (folha sobre a tela): ano e referência, pessoas (levam à linha da pessoa), "Também em"
-// (outras linhas do evento), "Ler" (leitor com os versículos destacados) e marcador.
+// (outras linhas do evento), "Ler" (leitor com os versículos destacados) e marcador. No paralelo, "Também em"
+// vira "+ linha" para pôr a linha na comparação.
 import { useMemo } from 'react';
 import { Modal, Pressable, ScrollView, View } from 'react-native';
 import { useRouter } from 'expo-router';
-import type { TimelineLine } from '@sensus/core';
+import type { TimelineLine, TimelineLineRef } from '@sensus/core';
 import { Txt, radius, space, useTheme } from '@/design';
 import { useBooks, useReduceMotion } from '@/features/common/hooks';
 import { useAppPrefs } from '@/settings/app-prefs';
@@ -14,7 +15,24 @@ import { useEventDetail, useTimelineLines } from './useTimeline';
 import { openInReader } from './actions';
 import { Chip } from './parts';
 
-export function EventPreview({ citeId, currentLineId, onClose }: { citeId: string; currentLineId?: string; onClose: () => void }) {
+/** Comparação no paralelo: linhas já na tela, se o limite está cheio e o que fazer ao tocar em "+ linha". */
+export interface PreviewCompare {
+  onScreen: ReadonlySet<string>;
+  full: boolean;
+  onAdd: (line: TimelineLineRef) => void;
+}
+
+export function EventPreview({
+  citeId,
+  currentLineId,
+  compare,
+  onClose,
+}: {
+  citeId: string;
+  currentLineId?: string;
+  compare?: PreviewCompare;
+  onClose: () => void;
+}) {
   const { c } = useTheme();
   const router = useRouter();
   const books = useBooks();
@@ -81,7 +99,28 @@ export function EventPreview({ citeId, currentLineId, onClose }: { citeId: strin
                 </View>
               )}
 
-              {others.length > 0 && (
+              {others.length > 0 && compare && (
+                <View style={{ gap: space[3] }}>
+                  <Txt v="eyebrow" color="muted">{TL.alsoIn}</Txt>
+                  <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space[3] }}>
+                    {others
+                      .filter((l) => !compare.onScreen.has(l.id))
+                      .map((l) => (
+                        <Chip
+                          key={l.id}
+                          testID={`tl-add-${l.id}`}
+                          label={TL.compareAdd(l.name)}
+                          on={false}
+                          disabled={compare.full}
+                          onPress={() => compare.onAdd(l)}
+                        />
+                      ))}
+                  </View>
+                  {compare.full && <Txt v="meta" color="muted">{TL.compareLimit}</Txt>}
+                </View>
+              )}
+
+              {others.length > 0 && !compare && (
                 <View style={{ gap: space[3] }}>
                   <Txt v="eyebrow" color="muted">{TL.alsoIn}</Txt>
                   <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space[3] }}>

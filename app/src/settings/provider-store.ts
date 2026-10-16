@@ -100,6 +100,8 @@ export interface StoredAppPrefs {
   /** Favoritos da linha do tempo: cite_ids de linhas e de eventos (listas de texto). */
   timelineLines?: unknown;
   timelineEvents?: unknown;
+  /** Linhas usadas recentemente no paralelo (lista de texto). */
+  timelineRecent?: unknown;
 }
 
 const APP_PREFS_FILE_NAME = 'app-prefs.json';
