@@ -275,60 +275,60 @@ export function TimelineCard({
   const yearW = Math.ceil(Math.max(1, ...years.map((y) => y.length)) * 11 * 0.62);
   return (
     <View style={{ gap: space[3] }}>
-    <Card testID="timeline">
-      {/* Uma só área: o gap do Card separaria os pontos e cortaria o fio entre eles. */}
-      <View>
-        {events.map((e, i) => {
-          const year = years[i]!;
-          const reference = refShort(e.first_vid, e.last_vid, books, true);
-          return (
-            <Pressable
-              key={e.cite_id}
-              testID={`timeline-${e.cite_id}`}
-              accessibilityRole="button"
-              accessibilityLabel={`${e.title}, ${year}, ${reference}`}
-              onPress={() => onOpen(e)}
-              hitSlop={4}
-              style={({ pressed }) => ({
-                flexDirection: 'row',
-                gap: space[4],
-                minHeight: size.minTouch,
-                opacity: pressed ? 0.7 : e.inRange ? 1 : 0.55,
-              })}
-            >
-              <Txt v="mono" color="muted" style={{ width: yearW, textAlign: 'right', fontSize: 11, lineHeight: 16, paddingTop: 1 }} numberOfLines={1}>
-                {year}
-              </Txt>
-              <View style={{ width: 18, alignItems: 'center' }}>
-                <View
-                  style={{
-                    width: 18,
-                    height: 18,
-                    borderRadius: 9,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    backgroundColor: e.inRange ? c.selected : 'transparent',
-                  }}
-                >
-                  <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: e.inRange ? c.accent : st.ent }} />
-                </View>
-                {i < events.length - 1 && <View style={{ flex: 1, width: 2, backgroundColor: c.border, marginVertical: 2 }} />}
-              </View>
-              <View style={{ flex: 1, minWidth: 0, paddingBottom: space[5], gap: 2 }}>
-                <Txt v="bodySm" bold color={e.inRange ? 'text' : 'muted'} numberOfLines={2}>
-                  {e.title}
+      <Card testID="timeline">
+        {/* Uma só área: o gap do Card separaria os pontos e cortaria o fio entre eles. */}
+        <View>
+          {events.map((e, i) => {
+            const year = years[i]!;
+            const reference = refShort(e.first_vid, e.last_vid, books, true);
+            return (
+              <Pressable
+                key={e.cite_id}
+                testID={`timeline-${e.cite_id}`}
+                accessibilityRole="button"
+                accessibilityLabel={`${e.title}, ${year}, ${reference}`}
+                onPress={() => onOpen(e)}
+                hitSlop={4}
+                style={({ pressed }) => ({
+                  flexDirection: 'row',
+                  gap: space[4],
+                  minHeight: size.minTouch,
+                  opacity: pressed ? 0.7 : e.inRange ? 1 : 0.55,
+                })}
+              >
+                <Txt v="mono" color="muted" style={{ width: yearW, textAlign: 'right', fontSize: 11, lineHeight: 16, paddingTop: 1 }} numberOfLines={1}>
+                  {year}
                 </Txt>
-                <View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', columnGap: space[3] }}>
-                  <Txt v="meta" color="muted" style={{ fontSize: 11 }}>{reference}</Txt>
-                  {e.inRange && <Txt v="meta" color="accent" style={{ fontSize: 11 }}>{STUDY.timelineHere}</Txt>}
+                <View style={{ width: 18, alignItems: 'center' }}>
+                  <View
+                    style={{
+                      width: 18,
+                      height: 18,
+                      borderRadius: 9,
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      backgroundColor: e.inRange ? c.selected : 'transparent',
+                    }}
+                  >
+                    <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: e.inRange ? c.accent : st.ent }} />
+                  </View>
+                  {i < events.length - 1 && <View style={{ flex: 1, width: 2, backgroundColor: c.border, marginVertical: 2 }} />}
                 </View>
-              </View>
-            </Pressable>
-          );
-        })}
-      </View>
-    </Card>
-    {onOpenTimeline && <LinkButton label={STUDY.timelineOpen} onPress={onOpenTimeline} testID="timeline-open" />}
+                <View style={{ flex: 1, minWidth: 0, paddingBottom: space[5], gap: 2 }}>
+                  <Txt v="bodySm" bold color={e.inRange ? 'text' : 'muted'} numberOfLines={2}>
+                    {e.title}
+                  </Txt>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', columnGap: space[3] }}>
+                    <Txt v="meta" color="muted" style={{ fontSize: 11 }}>{reference}</Txt>
+                    {e.inRange && <Txt v="meta" color="accent" style={{ fontSize: 11 }}>{STUDY.timelineHere}</Txt>}
+                  </View>
+                </View>
+              </Pressable>
+            );
+          })}
+        </View>
+      </Card>
+      {onOpenTimeline && <LinkButton label={STUDY.timelineOpen} onPress={onOpenTimeline} testID="timeline-open" />}
     </View>
   );
 }
