@@ -209,6 +209,21 @@ describe('Repo.timelineSearch', () => {
   });
 });
 
+describe('Repo.timelineSearchLines', () => {
+  it('casa o nome da linha, com termo em português (viagem → Journey), e devolve as linhas com contagem', async () => {
+    expect((await repo.timelineSearchLines('paul')).map((l) => l.name)).toEqual(['Paul']);
+    expect((await repo.timelineSearchLines('viagem')).map((l) => l.name)).toEqual(['Journey']);
+    expect((await repo.timelineSearchLines('Jerusalém')).map((l) => l.name)).toEqual(['Jerusalem']);
+    expect((await repo.timelineSearchLines('paul'))[0]?.count).toBe(3);
+  });
+
+  it('respeita o limite e devolve vazio para busca vazia ou sem resultado', async () => {
+    expect((await repo.timelineSearchLines('s', 1)).length).toBeLessThanOrEqual(1);
+    expect(await repo.timelineSearchLines('   ')).toEqual([]);
+    expect(await repo.timelineSearchLines('zzzz')).toEqual([]);
+  });
+});
+
 describe('Repo.timelineSummary', () => {
   it('conta os eventos por era; a lacuna intertestamentária aparece com zero', async () => {
     const s = await repo.timelineSummary();

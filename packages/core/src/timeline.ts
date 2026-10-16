@@ -109,3 +109,29 @@ export function searchTerms(query: string): string[] {
   }
   return [...terms];
 }
+
+/** Distância (anos) a partir da qual uma ponta isolada sai da extensão da linha (ver timelineCore). */
+export const TIMELINE_FAR_YEARS = 50;
+
+/** Núcleo de uma linha: a extensão sem as pontas isoladas, e as posições descartadas (`far`, em ordem). */
+export interface TimelineCore {
+  lo: number;
+  hi: number;
+  far: number[];
+}
+
+/**
+ * Extensão de uma linha sem os eventos isolados nas pontas (ex.: Jesus "participa" da criação, em 4003 a.C.; Moisés
+ * na transfiguração). Uma ponta sai quando o intervalo até o vizinho passa de 50 anos e de metade do que resta da
+ * linha. Para com dois eventos. Linha vazia devolve lo = hi = 0 e nenhuma posição descartada.
+ */
+export function timelineCore(sortKeys: readonly number[], farYears: number = TIMELINE_FAR_YEARS): TimelineCore {
+  const ys = [...sortKeys].sort((a, b) => a - b);
+  if (ys.length === 0) return { lo: 0, hi: 0, far: [] };
+  let i = 0;
+  let j = ys.length - 1;
+  const far: number[] = [];
+  while (j - i >= 2 && ys[i + 1]! - ys[i]! > farYears && ys[i + 1]! - ys[i]! > 0.5 * (ys[j]! - ys[i + 1]!)) far.push(ys[i++]!);
+  while (j - i >= 2 && ys[j]! - ys[j - 1]! > farYears && ys[j]! - ys[j - 1]! > 0.5 * (ys[j - 1]! - ys[i]!)) far.push(ys[j--]!);
+  return { lo: ys[i]!, hi: ys[j]!, far: far.sort((a, b) => a - b) };
+}

@@ -123,20 +123,29 @@ function timelineEventOf(row: EventRow): TimelineLineEvent | null {
   };
 }
 
-/** Pares linha → evento, para as três origens de linha do tempo (ver TimelineLine). Cada uma é um CTE `memb`. */
-const TIMELINE_MEMBERS = `WITH memb(kind, line_id, line_name, event_id) AS (
+/**
+ * Pares linha → evento, para as três origens de linha do tempo (ver TimelineLine). Cada uma é um CTE `memb`.
+ * Com termos, o filtro pelo nome da linha entra em cada origem antes do json_each: a busca não lê a cronologia
+ * inteira. Os parâmetros vêm na ordem do SQL (um conjunto por origem).
+ */
+function timelineMembers(nameTerms: readonly string[] = []): { sql: string; params: string[] } {
+  const named = (col: string) =>
+    nameTerms.length > 0 ? ` AND (${nameTerms.map(() => `instr(lower(${col}), ?) > 0`).join(' OR ')})` : '';
+  const sql = `WITH memb(kind, line_id, line_name, event_id) AS (
   SELECT 'person', p.cite_id, p.name, json_extract(j.value, '$.cite_id')
     FROM entity p, json_each(json_extract(p.data, '$.timeline')) j
-   WHERE p.type = 'person' AND p.source_id = 'theographic' AND json_valid(p.data)
+   WHERE p.type = 'person' AND p.source_id = 'theographic' AND json_valid(p.data)${named('p.name')}
   UNION ALL
   SELECT 'place', p.cite_id, p.name, json_extract(j.value, '$.cite_id')
     FROM entity p, json_each(json_extract(p.data, '$.eventsHere')) j
-   WHERE p.type = 'place' AND p.source_id = 'theographic' AND json_valid(p.data)
+   WHERE p.type = 'place' AND p.source_id = 'theographic' AND json_valid(p.data)${named('p.name')}
   UNION ALL
   SELECT 'period', json_extract(j.value, '$.cite_id'), json_extract(j.value, '$.name'), e.cite_id
     FROM entity e, json_each(json_extract(e.data, '$.partOf')) j
-   WHERE e.type = 'event' AND json_valid(e.data)
+   WHERE e.type = 'event' AND json_valid(e.data)${named("json_extract(j.value, '$.name')")}
 )`;
+  return { sql, params: [...nameTerms, ...nameTerms, ...nameTerms] };
+}
 /** Posição cronológica do evento (guardada antes do json_extract, que falha em JSON inválido). */
 const TIMELINE_KEY = `CASE WHEN json_valid(e.data) THEN json_extract(e.data, '$.sortKey') END`;
 /** Título do evento: o do JSON, ou o nome do registro. */
@@ -529,14 +538,21 @@ export class Repo {
 
   /** Linhas do tempo da cronologia completa: períodos, pessoas e lugares com ao menos um evento, mais frequentes primeiro. */
   timelineLines(): Promise<TimelineLine[]> {
+    return this.timelineLinesWhere([]).then((rows) => rows.map(lineOf));
+  }
+
+  /** Agregado das linhas (ver timelineLines), com filtro opcional pelo nome: a base da lista e da busca. */
+  private timelineLinesWhere(nameTerms: readonly string[]): Promise<MemberRow[]> {
+    const m = timelineMembers(nameTerms);
     return this.all<MemberRow>(
-      `${TIMELINE_MEMBERS},
+      `${m.sql},
        ev AS (SELECT e.cite_id, ${TIMELINE_KEY} AS sk FROM entity e WHERE e.type = 'event')
        SELECT m.kind, m.line_id AS id, MAX(m.line_name) AS name, COUNT(DISTINCT m.event_id) AS n, MIN(ev.sk) AS lo, MAX(ev.sk) AS hi
          FROM memb m JOIN ev ON ev.cite_id = m.event_id AND ev.sk IS NOT NULL
         GROUP BY m.kind, m.line_id
         ORDER BY n DESC, name, m.line_id`,
-    ).then((rows) => rows.map(lineOf));
+      m.params,
+    );
   }
 
   /**
@@ -544,10 +560,11 @@ export class Repo {
    * último versículo do evento. Linha inexistente devolve lista vazia.
    */
   async timelineLineEvents(lineId: string): Promise<TimelineLineEvent[]> {
+    const m = timelineMembers();
     const rows = await this.all<EventRow>(
-      `${TIMELINE_MEMBERS} ${EVENT_SELECT}
+      `${m.sql} ${EVENT_SELECT}
         WHERE e.type = 'event' AND e.cite_id IN (SELECT event_id FROM memb WHERE line_id = ?)`,
-      [lineId],
+      [...m.params, lineId],
     );
     return rows
       .map((row) => timelineEventOf(row))
@@ -568,12 +585,13 @@ export class Repo {
   async timelineMemberships(eventIds: readonly string[]): Promise<Map<string, TimelineLineRef[]>> {
     const out = new Map<string, TimelineLineRef[]>();
     for (const part of chunks([...new Set(eventIds)], 400)) {
+      const m = timelineMembers();
       const rows = await this.all<{ event_id: string; kind: TimelineLine['kind']; id: string; name: string }>(
-        `${TIMELINE_MEMBERS}
+        `${m.sql}
          SELECT DISTINCT m.event_id, m.kind, m.line_id AS id, m.line_name AS name
            FROM memb m WHERE m.event_id IN (${part.map(() => '?').join(', ')})
           ORDER BY m.kind, m.line_name`,
-        part,
+        [...m.params, ...part],
       );
       for (const r of rows) {
         const list = out.get(r.event_id) ?? [];
@@ -591,7 +609,7 @@ export class Repo {
   async timelineSearch(query: string): Promise<TimelineSearchResult> {
     const terms = searchTerms(query);
     if (terms.length === 0) return { lines: [], events: [] };
-    const lines = (await this.timelineLines()).filter((l) => terms.some((t) => normalizeSearch(l.name).includes(t)));
+    const lines = (await this.timelineLinesWhere(terms)).map(lineOf);
     const match = terms.map(() => `instr(lower(${TIMELINE_TITLE}), ?) > 0`).join(' OR ');
     const rows = await this.all<EventRow>(`${EVENT_SELECT} WHERE e.type = 'event' AND (${match})`, terms);
     const events = rows.map((row) => timelineEventOf(row)).filter((e): e is TimelineLineEvent => e !== null).sort(bySortKey);
@@ -600,6 +618,30 @@ export class Repo {
       lines,
       events: events.map((e) => ({ ...e, lines: memberships.get(e.cite_id) ?? [] })),
     };
+  }
+
+  /**
+   * Linhas do tempo para o seletor "+ Linha": nome da linha casa com um termo (ver searchTerms), no máximo `limit`.
+   * Ordem: nome que começa com a busca primeiro, depois mais eventos. O filtro roda no banco (a cronologia tem
+   * milhares de linhas); só o recorte volta. Busca vazia devolve lista vazia.
+   */
+  async timelineSearchLines(query: string, limit = 30): Promise<TimelineLine[]> {
+    const terms = searchTerms(query);
+    if (terms.length === 0) return [];
+    // Relevância pelo melhor termo (o texto digitado ou o equivalente em inglês): igual, começa com, palavra começa com.
+    const rankOf = (name: string, q: string): number => {
+      const n = normalizeSearch(name);
+      if (n === q) return 0;
+      if (n.startsWith(q)) return 1;
+      if (n.split(/[\s(,-]+/).some((w) => w.startsWith(q))) return 2;
+      return 3;
+    };
+    const rows = await this.timelineLinesWhere(terms);
+    return rows
+      .map((row) => ({ line: lineOf(row), rank: Math.min(...terms.map((t) => rankOf(row.name, t))) }))
+      .sort((a, b) => a.rank - b.rank || b.line.count - a.line.count || (a.line.name < b.line.name ? -1 : a.line.name > b.line.name ? 1 : 0))
+      .slice(0, Math.max(0, limit))
+      .map((r) => r.line);
   }
 
   /** Posições cronológicas (sortKey) de todos os eventos; base da densidade do paralelo. */
