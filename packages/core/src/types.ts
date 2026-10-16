@@ -146,6 +146,57 @@ export interface TimelineEvent {
   inRange: boolean;
 }
 
+/** Evento de uma linha do tempo (mesmos campos, sem o marcador de trecho). */
+export type TimelineLineEvent = Omit<TimelineEvent, 'inRange'>;
+
+/**
+ * Linha do tempo da cronologia completa: um período (evento-pai, partOf), uma pessoa (campo timeline) ou um lugar
+ * (campo eventsHere). id é o cite_id do registro de origem. from/to são anos (arredondados de sortKey), pelo
+ * primeiro e pelo último evento da linha.
+ */
+export interface TimelineLine {
+  id: string;
+  kind: 'period' | 'person' | 'place';
+  /** Nome na fonte (em inglês). */
+  name: string;
+  count: number;
+  from: number;
+  to: number;
+}
+
+/** Linha do tempo em que um evento aparece ("Também em"). */
+export interface TimelineLineRef {
+  id: string;
+  kind: TimelineLine['kind'];
+  name: string;
+}
+
+/** Era da Bíblia para o resumo e o filtro: intervalo [from, to) em sortKey. gap = lacuna sem eventos da fonte. */
+export interface TimelineEra {
+  id: string;
+  name: string;
+  from: number;
+  to: number;
+  gap?: boolean;
+}
+
+export interface TimelineEraSummary extends TimelineEra {
+  count: number;
+  /** Contagem de eventos em faixas iguais do intervalo da era (histograma de densidade). */
+  density: number[];
+}
+
+export interface TimelineSummary {
+  total: number;
+  eras: TimelineEraSummary[];
+}
+
+/** Resultado da busca na linha do tempo: linhas cujo nome casa e eventos cujo título casa. */
+export interface TimelineSearchResult {
+  lines: TimelineLine[];
+  events: Array<TimelineLineEvent & { lines: TimelineLineRef[] }>;
+}
+
 /** Qualquer registro citável, resolvido a partir de um cite_id. */
 export type CitableRecord =
   | { table: 'verse_text'; record: VerseText }

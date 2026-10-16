@@ -11,6 +11,11 @@ import type {
   Source,
   TextDivision,
   TimelineEvent,
+  TimelineLine,
+  TimelineLineEvent,
+  TimelineLineRef,
+  TimelineSearchResult,
+  TimelineSummary,
   Token,
   VerseRange,
   VerseText,
@@ -18,6 +23,7 @@ import type {
   XRef,
 } from './types';
 import { LAST_VERSE, makeVid, splitVid } from './refs';
+import { eraSummaries, normalizeSearch, searchTerms } from './timeline';
 
 /** Fonte de texto usada por padrão para contexto literário e alvos de referências cruzadas. */
 export const DEFAULT_TEXT_SOURCE = 'blivre';
@@ -93,7 +99,7 @@ interface EventRow {
 }
 
 /** Converte a linha de um evento; null se faltar a posição cronológica ou os versículos (dado incompleto). */
-function timelineEventOf(row: EventRow, inRange: boolean): TimelineEvent | null {
+function timelineEventOf(row: EventRow): TimelineLineEvent | null {
   if (row.first_vid == null || row.last_vid == null) return null;
   let j: Record<string, unknown>;
   try {
@@ -114,8 +120,52 @@ function timelineEventOf(row: EventRow, inRange: boolean): TimelineEvent | null 
       .map((p) => ({ cite_id: p.cite_id, name: String(p.name ?? '') })),
     first_vid: row.first_vid,
     last_vid: row.last_vid,
-    inRange,
   };
+}
+
+/** Pares linha → evento, para as três origens de linha do tempo (ver TimelineLine). Cada uma é um CTE `memb`. */
+const TIMELINE_MEMBERS = `WITH memb(kind, line_id, line_name, event_id) AS (
+  SELECT 'person', p.cite_id, p.name, json_extract(j.value, '$.cite_id')
+    FROM entity p, json_each(json_extract(p.data, '$.timeline')) j
+   WHERE p.type = 'person' AND p.source_id = 'theographic' AND json_valid(p.data)
+  UNION ALL
+  SELECT 'place', p.cite_id, p.name, json_extract(j.value, '$.cite_id')
+    FROM entity p, json_each(json_extract(p.data, '$.eventsHere')) j
+   WHERE p.type = 'place' AND p.source_id = 'theographic' AND json_valid(p.data)
+  UNION ALL
+  SELECT 'period', json_extract(j.value, '$.cite_id'), json_extract(j.value, '$.name'), e.cite_id
+    FROM entity e, json_each(json_extract(e.data, '$.partOf')) j
+   WHERE e.type = 'event' AND json_valid(e.data)
+)`;
+/** Posição cronológica do evento (guardada antes do json_extract, que falha em JSON inválido). */
+const TIMELINE_KEY = `CASE WHEN json_valid(e.data) THEN json_extract(e.data, '$.sortKey') END`;
+/** Título do evento: o do JSON, ou o nome do registro. */
+const TIMELINE_TITLE = `COALESCE(CASE WHEN json_valid(e.data) THEN json_extract(e.data, '$.title') END, e.name)`;
+
+interface MemberRow {
+  kind: TimelineLine['kind'];
+  id: string;
+  name: string;
+  n: number;
+  lo: number;
+  hi: number;
+}
+
+/** Linha do tempo de uma pessoa, lugar ou período, com a contagem de eventos e a faixa de anos (ver TimelineLine). */
+function lineOf(row: MemberRow): TimelineLine {
+  return { id: row.id, kind: row.kind, name: row.name, count: row.n, from: Math.round(row.lo), to: Math.round(row.hi) };
+}
+
+/** Ordem cronológica (sortKey) e, em empate, pelo cite_id. */
+function bySortKey<T extends TimelineLineEvent>(a: T, b: T): number {
+  return a.sortKey - b.sortKey || (a.cite_id < b.cite_id ? -1 : a.cite_id > b.cite_id ? 1 : 0);
+}
+
+/** Chunks para IN (...): o SQLite aceita poucos parâmetros por consulta. */
+function chunks<T>(items: readonly T[], size: number): T[][] {
+  const out: T[][] = [];
+  for (let i = 0; i < items.length; i += size) out.push(items.slice(i, i + size));
+  return out;
 }
 
 export class Repo {
@@ -450,13 +500,16 @@ export class Repo {
          AND e.cite_id IN (SELECT entity_cite_id FROM entity_ref WHERE vid BETWEEN ? AND ?)`,
       [range.start, range.end],
     );
-    const events = inRange.map((row) => timelineEventOf(row, true)).filter((e): e is TimelineEvent => e !== null);
+    const events = inRange
+      .map((row) => timelineEventOf(row))
+      .filter((e): e is TimelineLineEvent => e !== null)
+      .map((e) => ({ ...e, inRange: true }));
     if (events.length === 0) return [];
 
     const lo = Math.min(...events.map((e) => e.sortKey));
     const hi = Math.max(...events.map((e) => e.sortKey));
     // CASE (e não AND) porque json_extract falha em JSON inválido: a guarda precisa ser avaliada antes.
-    const key = `CASE WHEN json_valid(e.data) THEN json_extract(e.data, '$.sortKey') END`;
+    const key = TIMELINE_KEY;
     const [before, after] = await Promise.all([
       this.all<EventRow>(
         `${EVENT_SELECT} WHERE e.type = 'event' AND ${key} < ? ORDER BY ${key} DESC, e.cite_id DESC LIMIT ?`,
@@ -468,9 +521,97 @@ export class Repo {
       ),
     ]);
     const context = [...before, ...after]
-      .map((row) => timelineEventOf(row, false))
-      .filter((e): e is TimelineEvent => e !== null);
-    return [...events, ...context].sort((a, b) => a.sortKey - b.sortKey || (a.cite_id < b.cite_id ? -1 : a.cite_id > b.cite_id ? 1 : 0));
+      .map((row) => timelineEventOf(row))
+      .filter((e): e is TimelineLineEvent => e !== null)
+      .map((e) => ({ ...e, inRange: false }));
+    return [...events, ...context].sort(bySortKey);
+  }
+
+  /** Linhas do tempo da cronologia completa: períodos, pessoas e lugares com ao menos um evento, mais frequentes primeiro. */
+  timelineLines(): Promise<TimelineLine[]> {
+    return this.all<MemberRow>(
+      `${TIMELINE_MEMBERS},
+       ev AS (SELECT e.cite_id, ${TIMELINE_KEY} AS sk FROM entity e WHERE e.type = 'event')
+       SELECT m.kind, m.line_id AS id, MAX(m.line_name) AS name, COUNT(DISTINCT m.event_id) AS n, MIN(ev.sk) AS lo, MAX(ev.sk) AS hi
+         FROM memb m JOIN ev ON ev.cite_id = m.event_id AND ev.sk IS NOT NULL
+        GROUP BY m.kind, m.line_id
+        ORDER BY n DESC, name, m.line_id`,
+    ).then((rows) => rows.map(lineOf));
+  }
+
+  /**
+   * Eventos de uma linha do tempo (id = TimelineLine.id), em ordem de sortKey, com participantes e o primeiro e o
+   * último versículo do evento. Linha inexistente devolve lista vazia.
+   */
+  async timelineLineEvents(lineId: string): Promise<TimelineLineEvent[]> {
+    const rows = await this.all<EventRow>(
+      `${TIMELINE_MEMBERS} ${EVENT_SELECT}
+        WHERE e.type = 'event' AND e.cite_id IN (SELECT event_id FROM memb WHERE line_id = ?)`,
+      [lineId],
+    );
+    return rows
+      .map((row) => timelineEventOf(row))
+      .filter((e): e is TimelineLineEvent => e !== null)
+      .sort(bySortKey);
+  }
+
+  /** Um evento pelo cite_id (ex.: o evento do trecho, para abrir a cronologia nele). Null se não for evento válido. */
+  async timelineEvent(citeId: string): Promise<TimelineLineEvent | null> {
+    const row = await this.first<EventRow>(`${EVENT_SELECT} WHERE e.type = 'event' AND e.cite_id = ?`, [citeId]);
+    return row ? timelineEventOf(row) : null;
+  }
+
+  /**
+   * Linhas do tempo em que cada evento aparece (chave: cite_id do evento). Eventos sem linha não entram no mapa.
+   * Usado na prévia ("Também em") e na busca.
+   */
+  async timelineMemberships(eventIds: readonly string[]): Promise<Map<string, TimelineLineRef[]>> {
+    const out = new Map<string, TimelineLineRef[]>();
+    for (const part of chunks([...new Set(eventIds)], 400)) {
+      const rows = await this.all<{ event_id: string; kind: TimelineLine['kind']; id: string; name: string }>(
+        `${TIMELINE_MEMBERS}
+         SELECT DISTINCT m.event_id, m.kind, m.line_id AS id, m.line_name AS name
+           FROM memb m WHERE m.event_id IN (${part.map(() => '?').join(', ')})
+          ORDER BY m.kind, m.line_name`,
+        part,
+      );
+      for (const r of rows) {
+        const list = out.get(r.event_id) ?? [];
+        list.push({ id: r.id, kind: r.kind, name: r.name });
+        out.set(r.event_id, list);
+      }
+    }
+    return out;
+  }
+
+  /**
+   * Busca na cronologia completa. Linhas: nome da linha casa com um termo (ver searchTerms). Eventos: título casa
+   * com um termo. Termos em português viram os termos em inglês da fonte. Busca vazia devolve nada.
+   */
+  async timelineSearch(query: string): Promise<TimelineSearchResult> {
+    const terms = searchTerms(query);
+    if (terms.length === 0) return { lines: [], events: [] };
+    const lines = (await this.timelineLines()).filter((l) => terms.some((t) => normalizeSearch(l.name).includes(t)));
+    const match = terms.map(() => `instr(lower(${TIMELINE_TITLE}), ?) > 0`).join(' OR ');
+    const rows = await this.all<EventRow>(`${EVENT_SELECT} WHERE e.type = 'event' AND (${match})`, terms);
+    const events = rows.map((row) => timelineEventOf(row)).filter((e): e is TimelineLineEvent => e !== null).sort(bySortKey);
+    const memberships = await this.timelineMemberships(events.map((e) => e.cite_id));
+    return {
+      lines,
+      events: events.map((e) => ({ ...e, lines: memberships.get(e.cite_id) ?? [] })),
+    };
+  }
+
+  /** Posições cronológicas (sortKey) de todos os eventos; base da densidade do paralelo. */
+  async timelineSortKeys(): Promise<number[]> {
+    const rows = await this.all<{ sk: number | null }>(`SELECT ${TIMELINE_KEY} AS sk FROM entity e WHERE e.type = 'event'`);
+    return rows.map((r) => r.sk).filter((k): k is number => typeof k === 'number');
+  }
+
+  /** Resumo da Bíblia inteira por era: contagem de eventos e histograma de densidade (ver TIMELINE_ERAS). */
+  async timelineSummary(): Promise<TimelineSummary> {
+    const keys = await this.timelineSortKeys();
+    return { total: keys.length, eras: eraSummaries(keys) };
   }
 
   /** Resolve um cite_id ao registro de origem. Retorna null se o prefixo ou o id não existir. */
