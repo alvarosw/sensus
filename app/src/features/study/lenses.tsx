@@ -132,8 +132,8 @@ export function VisaoLens({ onLayout }: LensProps) {
   const data = useStudyData();
   const ai = useStudyAi();
   const steps = useMemo(
-    () => buildThread({ panel: data.panel, range: data.range, books: data.books, hasAi: ai.status !== 'noprovider' }),
-    [data.panel, data.range, data.books, ai.status],
+    () => buildThread({ panel: data.panel, range: data.range, books: data.books, ai: { status: ai.status, summary: ai.summary } }),
+    [data.panel, data.range, data.books, ai.status, ai.summary],
   );
   return (
     <LensShell

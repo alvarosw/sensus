@@ -96,6 +96,12 @@ export interface StructuredSummary {
    * Até 2 por lente; só as lentes com perguntas aparecem. Adicionado em v0.4.
    */
   sectionQuestions?: Partial<Record<SectionKey | 'visao', string[]>>;
+  /**
+   * Palavra que move o trecho, escolhida pela IA: cite_id de um token do contexto, dado pela linha
+   * "= [[tok:…]]" no início de @lingua. Ausente quando a IA não escolheu ou escolheu um id inválido.
+   * Adicionado em v0.6.
+   */
+  keyWordCiteId?: string;
 }
 
 /** Resposta de chat/aprofundamento: texto rico + novas perguntas sugeridas ao final. */

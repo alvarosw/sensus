@@ -38,7 +38,7 @@ export interface SummaryPromptOptions extends PromptOptions {
 }
 
 /** Versão do formato do resumo: muda quando o prompt muda, para invalidar o cache. */
-export const SUMMARY_PROMPT_VERSION = 'resumo-v5';
+export const SUMMARY_PROMPT_VERSION = 'resumo-v6';
 
 /**
  * Chave de cache do resumo de uma unidade literária (repo.literaryUnit). O app resume a unidade inteira
@@ -98,7 +98,8 @@ const SUMMARY_FORMAT = [
   '(1 a 2 frases, como um passo da história do trecho: onde ele está no texto (antes e depois, divisão, gênero))',
   '? (1 a 2 perguntas específicas desta camada, começando com "? "; respondíveis pelo contexto)',
   '@lingua',
-  '(1 a 2 frases, como o passo seguinte: a palavra-chave e o sentido que o léxico sustenta; ligue-se ao que veio antes quando fizer sentido)',
+  '= [[cite_id do token]] (primeira linha de @lingua: "= " seguido do cite_id de UM token deste contexto, a palavra que move o trecho selecionado; nada mais na linha)',
+  '(1 a 2 frases, como o passo seguinte: a palavra escolhida na linha "=" e o sentido que o léxico sustenta; ligue-se ao que veio antes quando fizer sentido)',
   '? (1 a 2 perguntas específicas desta camada, começando com "? ")',
   '@texto',
   '(1 a 2 frases, como o passo seguinte: traduções, original e variantes; cite cada afirmação)',
@@ -130,7 +131,7 @@ const SUMMARY_FORMAT = [
  */
 export function summaryMessages(context: { text: string }, opts: SummaryPromptOptions = {}): ChatMessage[] {
   const focusNote = opts.focus
-    ? `Seleção do leitor dentro desta unidade: ${formatReference(opts.focus)}. Resuma a unidade inteira, não só a seleção; ao final de @visao, acrescente uma frase sobre o que a seleção mostra.\n\n`
+    ? `Seleção do leitor dentro desta unidade: ${formatReference(opts.focus)}. Resuma a unidade inteira, não só a seleção; ao final de @visao, acrescente uma frase sobre o que a seleção mostra. Na linha "=" de @lingua, escolha um token da seleção.\n\n`
     : '';
   return [
     { role: 'system', content: buildSystemPrompt(opts) },

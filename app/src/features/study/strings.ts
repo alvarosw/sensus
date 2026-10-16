@@ -93,6 +93,7 @@ export const STUDY = {
   // Língua
   word: 'Palavra',
   hapax: 'hápax',
+  commentMentions: (n: number) => `citada em ${n} comentário${n === 1 ? '' : 's'}`,
   lexiconConcordance: 'Léxico e concordância',
   languageEmpty: 'Sem palavras do texto original para estes versículos.',
   inText: 'no texto',
