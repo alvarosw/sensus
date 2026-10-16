@@ -322,6 +322,6 @@ describe('prompt: citação logo após cada frase e rótulo de inferência exato
   });
 
   it('a versão do resumo mudou com o prompt (invalida o cache de resumos antigos)', () => {
-    expect(SUMMARY_PROMPT_VERSION).toBe('resumo-v4');
+    expect(SUMMARY_PROMPT_VERSION).toBe('resumo-v5');
   });
 });

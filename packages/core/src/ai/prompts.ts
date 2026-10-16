@@ -38,7 +38,7 @@ export interface SummaryPromptOptions extends PromptOptions {
 }
 
 /** Versão do formato do resumo: muda quando o prompt muda, para invalidar o cache. */
-export const SUMMARY_PROMPT_VERSION = 'resumo-v4';
+export const SUMMARY_PROMPT_VERSION = 'resumo-v5';
 
 /**
  * Chave de cache do resumo de uma unidade literária (repo.literaryUnit). O app resume a unidade inteira
@@ -98,7 +98,7 @@ const SUMMARY_FORMAT = [
   '(1 a 2 frases, como um passo da história do trecho: onde ele está no texto (antes e depois, divisão, gênero))',
   '? (1 a 2 perguntas específicas desta camada, começando com "? "; respondíveis pelo contexto)',
   '@lingua',
-  '(1 a 2 frases, como o passo seguinte: a palavra-chave e o sentido que o léxico sustenta; ligue-se ao passo anterior quando fizer sentido)',
+  '(1 a 2 frases, como o passo seguinte: a palavra-chave e o sentido que o léxico sustenta; ligue-se ao que veio antes quando fizer sentido)',
   '? (1 a 2 perguntas específicas desta camada, começando com "? ")',
   '@texto',
   '(1 a 2 frases, como o passo seguinte: traduções, original e variantes; cite cada afirmação)',
@@ -119,7 +119,7 @@ const SUMMARY_FORMAT = [
   '- (3 a 5 perguntas concretas que um estudante de seminário faria em seguida sobre ESTA passagem; cada uma respondível pelo contexto)',
   '@fim',
   '',
-  'Regras: seja objetivo e breve. Cada seção é um passo de uma narrativa que conta o trecho: a seção seguinte se liga à anterior quando fizer sentido. Logo após cada frase factual, a citação [[cite_id]] (ex.: "Frase. [[cite_id]]"). Frases de inferência começam com "(Inferência)". Pode usar **negrito** e *itálico*. Sem tabelas.',
+  'Regras: seja objetivo e breve. Cada seção é um passo de uma narrativa que conta o trecho: a seção seguinte se liga à anterior quando fizer sentido, pelo conteúdo (nunca escreva "passo", "seção", "camada" nem "anterior" para se referir ao próprio resumo). Logo após cada frase factual, a citação [[cite_id]] (ex.: "Frase. [[cite_id]]"). Frases de inferência começam com "(Inferência)". Pode usar **negrito** e *itálico*. Sem tabelas.',
   'Se uma camada não tiver nenhum item no contexto, diga em uma frase que o contexto não traz registros para ela. Nunca diga isso sobre uma camada que tem itens.',
   'Gramática: afirmações sobre modo, tempo, voz, caso, pessoa ou número copiam a análise do token citado, em português, e citam esse token.',
 ].join('\n');

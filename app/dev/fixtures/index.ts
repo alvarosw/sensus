@@ -10,5 +10,6 @@ import f6 from './filipenses-2-5-8.answer.2.json';
 import f7 from './filipenses-2-5-8.section.interpretacao.json';
 import f8 from './filipenses-2-5-8.section.lingua.json';
 import f9 from './filipenses-2-5-8.summary.json';
+import f10 from './inference-phone.json';
 
-export const FIXTURES: readonly Fixture[] = [f0, f1, f2, f3, f4, f5, f6, f7, f8, f9] as unknown as Fixture[];
+export const FIXTURES: readonly Fixture[] = [f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10] as unknown as Fixture[];
