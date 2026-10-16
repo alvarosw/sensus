@@ -579,6 +579,18 @@ export class Repo {
   }
 
   /**
+   * Todos os eventos da cronologia, em ordem (são poucas centenas). Base da busca que casa a tradução já em cache:
+   * a busca no banco só enxerga o original.
+   */
+  async timelineAllEvents(): Promise<TimelineLineEvent[]> {
+    const rows = await this.all<EventRow>(`${EVENT_SELECT} WHERE e.type = 'event'`);
+    return rows
+      .map((row) => timelineEventOf(row))
+      .filter((e): e is TimelineLineEvent => e !== null)
+      .sort(bySortKey);
+  }
+
+  /**
    * Linhas do tempo em que cada evento aparece (chave: cite_id do evento). Eventos sem linha não entram no mapa.
    * Usado na prévia ("Também em") e na busca.
    */

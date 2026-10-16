@@ -224,6 +224,14 @@ describe('Repo.timelineSearchLines', () => {
   });
 });
 
+describe('Repo.timelineAllEvents', () => {
+  it('devolve todos os eventos válidos, em ordem cronológica', async () => {
+    const all = await repo.timelineAllEvents();
+    expect(all.length).toBe(6);
+    expect(all.map((e) => e.sortKey)).toEqual([...all.map((e) => e.sortKey)].sort((a, b) => a - b));
+  });
+});
+
 describe('Repo.timelineSummary', () => {
   it('conta os eventos por era; a lacuna intertestamentária aparece com zero', async () => {
     const s = await repo.timelineSummary();
