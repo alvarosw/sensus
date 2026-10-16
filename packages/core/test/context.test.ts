@@ -41,7 +41,7 @@ function commentaryOnly(commentaries: Commentary[]): PanelData {
   clone.layers.text.original = [];
   clone.layers.text.variants = [];
   clone.layers.literary = { before: [], after: [], divisions: [], bookIntro: [] };
-  clone.layers.historical = { entities: [], dictionary: [] };
+  clone.layers.historical = { entities: [], dictionary: [], events: [] };
   clone.layers.language = { lexicon: [], concordance: {} };
   clone.layers.intertext = { xrefs: [], topics: [] };
   clone.layers.interpretation = { commentaries };

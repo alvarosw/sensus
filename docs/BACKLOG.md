@@ -52,6 +52,10 @@ Pendências registradas durante o desenvolvimento. Prioridade: **P1** (próximo)
 
 - **P1 — Rodar em dispositivo/emulador** (ainda não testado fora do `expo export`).
 - **P2 — `importDatabaseFromAssetAsync`** é marcado como API de teste no expo-sqlite.
+- **P2 — Títulos da linha do tempo em inglês** (lente Histórico, eventos da fonte Theographic). A tradução
+  automática (`useAutoTranslate`) trabalha com um bloco de texto por vez, com oferta e "Ver original" próprios;
+  com 5 a 8 títulos na mesma lista, isso multiplicaria ofertas e notas. Caminho: tradução em lote (uma chamada
+  com os títulos, depois dividida de volta) ou tradução pré-computada no pipeline.
 - **P3 — Vizinhos do tema** a partir do comportamento (palavra tocada → concordância; entidade → linha do tempo).
 - **P2 — Mapa do mundo antigo (AWMC, tiles "Antiquity à la Carte")**: não incluído. Motivos: (1) o
   endereço publicado (`http://cawm.lib.uiowa.edu/tiles/{z}/{x}/{y}.png`) responde só em HTTP; em HTTPS não

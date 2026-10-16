@@ -86,6 +86,8 @@ export const STUDY = {
   otherPassagesSoon: 'A lista de passagens que citam esta entidade chega em breve.',
   entityType: { person: 'Pessoa', place: 'Lugar', event: 'Evento', group: 'Grupo', other: 'Entidade' } as Record<string, string>,
   historicalEmpty: 'Sem lugares, pessoas ou verbetes ligados a estes versículos.',
+  timeline: 'Linha do tempo',
+  timelineHere: 'neste trecho',
 
   // Língua
   word: 'Palavra',

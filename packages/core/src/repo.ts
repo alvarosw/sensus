@@ -10,9 +10,11 @@ import type {
   SqlParam,
   Source,
   TextDivision,
+  TimelineEvent,
   Token,
   VerseRange,
   VerseText,
+  Vid,
   XRef,
 } from './types';
 import { LAST_VERSE, makeVid, splitVid } from './refs';
@@ -33,6 +35,13 @@ const COMMENTARY_COLS = 'cite_id, source_id, start_vid, end_vid, text';
 const DICTIONARY_COLS = 'cite_id, source_id, headword, text';
 const XREF_COLS = 'cite_id, source_id, from_vid, to_start_vid, to_end_vid, weight';
 const ENTITY_COLS = 'cite_id, source_id, type, name, description, lat, lon, data';
+/** Evento com o primeiro e o último versículo do evento inteiro (todos os entity_ref dele). */
+const EVENT_SELECT = `SELECT e.cite_id, e.source_id, e.name, e.data,
+  (SELECT MIN(x.vid) FROM entity_ref x WHERE x.entity_cite_id = e.cite_id) AS first_vid,
+  (SELECT MAX(x.vid) FROM entity_ref x WHERE x.entity_cite_id = e.cite_id) AS last_vid
+  FROM entity e`;
+/** Quantos eventos de contexto entram antes e depois do trecho na linha do tempo. */
+const TIMELINE_CONTEXT = 2;
 
 export type DictionaryKind = 'dictionary' | 'topical';
 /**
@@ -72,6 +81,41 @@ function introVids(range: VerseRange): number[] {
     }
   }
   return out;
+}
+
+interface EventRow {
+  cite_id: string;
+  source_id: string;
+  name: string;
+  data: string | null;
+  first_vid: Vid | null;
+  last_vid: Vid | null;
+}
+
+/** Converte a linha de um evento; null se faltar a posição cronológica ou os versículos (dado incompleto). */
+function timelineEventOf(row: EventRow, inRange: boolean): TimelineEvent | null {
+  if (row.first_vid == null || row.last_vid == null) return null;
+  let j: Record<string, unknown>;
+  try {
+    j = JSON.parse(row.data ?? '{}') as Record<string, unknown>;
+  } catch {
+    return null;
+  }
+  if (typeof j.sortKey !== 'number') return null;
+  const participants = Array.isArray(j.participants) ? j.participants : [];
+  return {
+    cite_id: row.cite_id,
+    source_id: row.source_id,
+    title: typeof j.title === 'string' && j.title ? j.title : row.name,
+    startDate: typeof j.startDate === 'string' ? j.startDate : null,
+    sortKey: j.sortKey,
+    participants: participants
+      .filter((p): p is { cite_id: string; name: string } => typeof p?.cite_id === 'string')
+      .map((p) => ({ cite_id: p.cite_id, name: String(p.name ?? '') })),
+    first_vid: row.first_vid,
+    last_vid: row.last_vid,
+    inRange,
+  };
 }
 
 export class Repo {
@@ -393,6 +437,40 @@ export class Repo {
        ORDER BY e.name, e.cite_id, r.vid`,
       [range.start, range.end],
     );
+  }
+
+  /**
+   * Linha do tempo: eventos (entity.type='event') com algum versículo no intervalo, em ordem cronológica (sortKey),
+   * mais até 2 eventos de contexto antes e 2 depois na cronologia global (inRange=false), para situar o trecho.
+   * Sem eventos no intervalo, devolve lista vazia (sem contexto). Banco sem eventos (ex.: o leitor) também dá vazia.
+   */
+  async timelineEvents(range: VerseRange): Promise<TimelineEvent[]> {
+    const inRange = await this.all<EventRow>(
+      `${EVENT_SELECT} WHERE e.type = 'event'
+         AND e.cite_id IN (SELECT entity_cite_id FROM entity_ref WHERE vid BETWEEN ? AND ?)`,
+      [range.start, range.end],
+    );
+    const events = inRange.map((row) => timelineEventOf(row, true)).filter((e): e is TimelineEvent => e !== null);
+    if (events.length === 0) return [];
+
+    const lo = Math.min(...events.map((e) => e.sortKey));
+    const hi = Math.max(...events.map((e) => e.sortKey));
+    // CASE (e não AND) porque json_extract falha em JSON inválido: a guarda precisa ser avaliada antes.
+    const key = `CASE WHEN json_valid(e.data) THEN json_extract(e.data, '$.sortKey') END`;
+    const [before, after] = await Promise.all([
+      this.all<EventRow>(
+        `${EVENT_SELECT} WHERE e.type = 'event' AND ${key} < ? ORDER BY ${key} DESC, e.cite_id DESC LIMIT ?`,
+        [lo, TIMELINE_CONTEXT],
+      ),
+      this.all<EventRow>(
+        `${EVENT_SELECT} WHERE e.type = 'event' AND ${key} > ? ORDER BY ${key}, e.cite_id LIMIT ?`,
+        [hi, TIMELINE_CONTEXT],
+      ),
+    ]);
+    const context = [...before, ...after]
+      .map((row) => timelineEventOf(row, false))
+      .filter((e): e is TimelineEvent => e !== null);
+    return [...events, ...context].sort((a, b) => a.sortKey - b.sortKey || (a.cite_id < b.cite_id ? -1 : a.cite_id > b.cite_id ? 1 : 0));
   }
 
   /** Resolve um cite_id ao registro de origem. Retorna null se o prefixo ou o id não existir. */

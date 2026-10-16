@@ -70,7 +70,7 @@ export async function buildPanel(repo: Repo, range: VerseRange, opts: PanelOptio
   const startBook = books.find((b) => b.num === splitVid(r.start).book);
 
   const unit = await repo.literaryUnit(textSource, r);
-  const [translationLists, tokens, neighbors, divisions, entities, dictionary, topics, commentaries, xrefs, bookIntro] =
+  const [translationLists, tokens, neighbors, divisions, entities, dictionary, topics, commentaries, xrefs, bookIntro, events] =
     await Promise.all([
       Promise.all(textSources.map((s) => repo.verseTexts(s.id, r))),
       repo.tokens(r),
@@ -82,6 +82,7 @@ export async function buildPanel(repo: Repo, range: VerseRange, opts: PanelOptio
       repo.commentaries(r),
       repo.xrefs(r, limits.xrefs, textSource),
       startBook ? repo.bookIntro(startBook) : Promise.resolve([]),
+      repo.timelineEvents(r),
     ]);
 
   const strongBases = [...new Set(tokens.map((t) => t.strong_base).filter((s): s is string => !!s))];
@@ -129,6 +130,7 @@ export async function buildPanel(repo: Repo, range: VerseRange, opts: PanelOptio
   note(historicalDictionary);
   note(rankedTopics);
   note(rankedEntities);
+  note(events);
   note(commentaries);
   note(boundedBookIntro);
 
@@ -153,6 +155,7 @@ export async function buildPanel(repo: Repo, range: VerseRange, opts: PanelOptio
       historical: {
         entities: rankedEntities,
         dictionary: historicalDictionary,
+        events,
       },
       language: { lexicon, concordance },
       intertext: {
