@@ -119,6 +119,7 @@ Três famílias de ação em todo o app: **detalhar** (mais do mesmo item), **fo
 | Vizinhança e divisões | neighbors · `text_division` | Faixa com vizinhos apagados e a seleção no meio; "incluir". | Incluir vizinho; expandir à perícope. | Divisões; introdução do livro. | "Como se liga ao anterior?" |
 | Entidade | `entity` `ent:` | Lugar com mini-mapa e coordenadas; pessoa com papel. | Ver entidade; outras passagens. | Theographic, TIPNR, OpenBible. | "O que se sabe de Filipos no séc. I?" |
 | Verbete | `dictionary_entry` `dic:` | Cabeçalho + 4 linhas. | Ler inteiro; traduzir. | ISBE, Easton, Smith. | Anexar verbete. |
+| Evento (linha do tempo) | `entity` type `event` `ent:` | Ano (mono) à esquerda, ponto, título e referência; trecho com ponto accent e rótulo "neste trecho", contexto esmaecido. | Ver versículos do evento. | Theographic. | — |
 | Índice temático | `dictionary_entry` (topical) | Etiquetas tocáveis. | Prévia do tema. | Nave, Torrey. | "Onde mais este tema aparece?" |
 | Referência cruzada | `xref` `xr:` | Destino em destaque, origem em cinza, barra de relevância, texto do destino. | Fixar lado a lado. | OpenBible/TSK com peso. | "Como se relacionam?" (anexa as duas pontas) |
 | Comentário | `commentary` `com:` | Autor, tradição, versículo; trecho em serifa; matriz de quem comenta cada versículo; filtro por tradição. | Ler completo; mais do autor. | Obra, tradição, licença. | "Onde os comentaristas divergem?" |

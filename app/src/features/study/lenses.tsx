@@ -11,6 +11,7 @@ import {
   type Commentary,
   type Entity,
   type PanelData,
+  type TimelineEvent,
   type Token,
   type Vid,
 } from '@sensus/core';
@@ -29,6 +30,7 @@ import {
   Card,
 } from '@/design';
 import { useStudy, type LensKey } from '@/state/study';
+import { useReaderNav } from '@/features/reader/nav-store';
 import {
   CommentaryCard,
   CommentaryMatrix,
@@ -36,6 +38,7 @@ import {
   EntityCard,
   FilterPill,
   PlaceCard,
+  TimelineCard,
   TopicTag,
   VariantCard,
   WordCard,
@@ -52,6 +55,8 @@ export interface LensProps {
 }
 
 const SHOWN = 3;
+/** Linhas da linha do tempo antes de "Ver todos" (inclui os eventos de contexto). */
+const TIMELINE_SHOWN = 8;
 
 // ---- utilidades ---------------------------------------------------------------------------------------
 
@@ -406,9 +411,9 @@ export function HistoricoLens({ onLayout }: LensProps) {
       seen.add(k);
       return true;
     });
-    return { places, people, dic: panel.layers.historical.dictionary };
+    return { places, people, dic: panel.layers.historical.dictionary, events: panel.layers.historical.events };
   }, [panel]);
-  const total = parts ? parts.people.length + parts.dic.length : 0;
+  const total = parts ? parts.people.length + parts.dic.length + parts.events.length : 0;
 
   return (
     <LensShell
@@ -424,10 +429,24 @@ export function HistoricoLens({ onLayout }: LensProps) {
           const places = expanded ? parts.places : parts.places.slice(0, 1);
           const people = expanded ? parts.people : parts.people.slice(0, 2);
           const dic = expanded ? parts.dic : parts.dic.slice(0, 2);
-          if (parts.places.length + parts.people.length + parts.dic.length === 0) return <Empty text={STUDY.historicalEmpty} />;
+          const events = expanded ? parts.events : parts.events.slice(0, TIMELINE_SHOWN);
+          if (parts.places.length + parts.people.length + parts.dic.length + parts.events.length === 0) {
+            return <Empty text={STUDY.historicalEmpty} />;
+          }
           const open = (id: string) => useStudy.getState().pushPanel({ kind: 'entity', citeId: id });
+          // Mesmo caminho de "ir para": seleção nos versículos do evento e rolagem do leitor até eles.
+          const openEvent = (e: TimelineEvent) => {
+            useStudy.getState().setSelection(e.first_vid, e.last_vid);
+            useReaderNav.getState().goVerse(e.first_vid, { flash: true });
+          };
           return (
             <View style={{ gap: space[6] }}>
+              {events.length > 0 && (
+                <>
+                  <SubHeader label={STUDY.timeline} />
+                  <TimelineCard events={events} books={data.books} onOpen={openEvent} />
+                </>
+              )}
               {places.length > 0 && <PassageMapCard range={data.range} unit={data.unit} />}
               {places.length > 0 && (
                 <>

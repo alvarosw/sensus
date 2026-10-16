@@ -126,6 +126,26 @@ export interface Entity {
   data: string | null;
 }
 
+/**
+ * Evento da linha do tempo (entity.type='event', fonte Theographic). Campos do JSON em entity.data,
+ * já lidos; first_vid e last_vid vêm de entity_ref (o evento inteiro, não só o trecho).
+ */
+export interface TimelineEvent {
+  cite_id: string;
+  source_id: string;
+  /** Título em inglês, como na fonte. */
+  title: string;
+  /** Data da fonte: "-4003", "0047" ou "0047-05-01". Formatada por formatEventDate. */
+  startDate: string | null;
+  /** Posição cronológica global (ano com fração); ordena a linha do tempo. */
+  sortKey: number;
+  participants: Array<{ cite_id: string; name: string }>;
+  first_vid: Vid;
+  last_vid: Vid;
+  /** false = evento de contexto: vizinho na cronologia, fora do intervalo. */
+  inRange: boolean;
+}
+
 /** Qualquer registro citável, resolvido a partir de um cite_id. */
 export type CitableRecord =
   | { table: 'verse_text'; record: VerseText }
@@ -167,6 +187,11 @@ export interface PanelData {
     historical: {
       entities: Entity[];
       dictionary: DictionaryEntry[];
+      /**
+       * Linha do tempo: eventos ligados ao intervalo, em ordem cronológica, mais até 2 de contexto antes
+       * e 2 depois (inRange=false). Vazia se o intervalo não tem nenhum evento (ver Repo.timelineEvents).
+       */
+      events: TimelineEvent[];
     };
     /** 4. Língua original. */
     language: {

@@ -2,12 +2,14 @@
 import { memo, useMemo } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
 import {
+  formatEventDate,
   formatShortRef,
   titleCaseHeadword,
   type Book,
   type DictionaryEntry,
   type Entity,
   type Token,
+  type TimelineEvent,
   type XRef,
 } from '@sensus/core';
 import {
@@ -19,6 +21,7 @@ import {
   MeterBar,
   MorphPill,
   radius,
+  size,
   Tag,
   Txt,
   TypeMark,
@@ -243,6 +246,79 @@ export function PlaceCard({
             <LinkButton label={STUDY.otherPassages} onPress={onOthers} />
           </View>
         </View>
+      </View>
+    </Card>
+  );
+}
+
+// ---- linha do tempo (proto: .tl) -------------------------------------------------------------------------------------
+
+/**
+ * Eventos em ordem cronológica: ano à esquerda, ponto e título. Eventos do trecho têm ponto de destaque e rótulo;
+ * os de contexto aparecem esmaecidos. Tocar leva a seleção e o leitor aos versículos do evento.
+ */
+export function TimelineCard({
+  events,
+  books,
+  onOpen,
+}: {
+  events: readonly TimelineEvent[];
+  books: readonly Book[];
+  onOpen: (event: TimelineEvent) => void;
+}) {
+  const { c, st } = useTheme();
+  return (
+    <Card testID="timeline">
+      {/* Uma só área: o gap do Card separaria os pontos e cortaria o fio entre eles. */}
+      <View>
+        {events.map((e, i) => {
+          const year = formatEventDate(e.startDate) ?? '';
+          const reference = refShort(e.first_vid, e.last_vid, books, true);
+          return (
+            <Pressable
+              key={e.cite_id}
+              testID={`timeline-${e.cite_id}`}
+              accessibilityRole="button"
+              accessibilityLabel={`${e.title}, ${year}, ${reference}`}
+              onPress={() => onOpen(e)}
+              hitSlop={4}
+              style={({ pressed }) => ({
+                flexDirection: 'row',
+                gap: space[4],
+                minHeight: size.minTouch,
+                opacity: pressed ? 0.7 : e.inRange ? 1 : 0.55,
+              })}
+            >
+              <Txt v="mono" color="muted" style={{ width: 76, textAlign: 'right', fontSize: 11, lineHeight: 16, paddingTop: 1 }} numberOfLines={1}>
+                {year}
+              </Txt>
+              <View style={{ width: 18, alignItems: 'center' }}>
+                <View
+                  style={{
+                    width: 18,
+                    height: 18,
+                    borderRadius: 9,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundColor: e.inRange ? c.selected : 'transparent',
+                  }}
+                >
+                  <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: e.inRange ? c.accent : st.ent }} />
+                </View>
+                {i < events.length - 1 && <View style={{ flex: 1, width: 2, backgroundColor: c.border, marginVertical: 2 }} />}
+              </View>
+              <View style={{ flex: 1, minWidth: 0, paddingBottom: space[5], gap: 2 }}>
+                <Txt v="bodySm" bold color={e.inRange ? 'text' : 'muted'} numberOfLines={2}>
+                  {e.title}
+                </Txt>
+                <View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', columnGap: space[3] }}>
+                  <Txt v="meta" color="muted" style={{ fontSize: 11 }}>{reference}</Txt>
+                  {e.inRange && <Txt v="meta" color="accent" style={{ fontSize: 11 }}>{STUDY.timelineHere}</Txt>}
+                </View>
+              </View>
+            </Pressable>
+          );
+        })}
       </View>
     </Card>
   );
