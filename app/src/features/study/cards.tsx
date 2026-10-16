@@ -267,12 +267,15 @@ export function TimelineCard({
   onOpen: (event: TimelineEvent) => void;
 }) {
   const { c, st } = useTheme();
+  // Coluna do ano do tamanho do rótulo mais longo (mono: ~0,6 em por caractere), sem sobra à esquerda.
+  const years = events.map((e) => formatEventDate(e.startDate) ?? '');
+  const yearW = Math.ceil(Math.max(1, ...years.map((y) => y.length)) * 11 * 0.62);
   return (
     <Card testID="timeline">
       {/* Uma só área: o gap do Card separaria os pontos e cortaria o fio entre eles. */}
       <View>
         {events.map((e, i) => {
-          const year = formatEventDate(e.startDate) ?? '';
+          const year = years[i]!;
           const reference = refShort(e.first_vid, e.last_vid, books, true);
           return (
             <Pressable
@@ -289,7 +292,7 @@ export function TimelineCard({
                 opacity: pressed ? 0.7 : e.inRange ? 1 : 0.55,
               })}
             >
-              <Txt v="mono" color="muted" style={{ width: 76, textAlign: 'right', fontSize: 11, lineHeight: 16, paddingTop: 1 }} numberOfLines={1}>
+              <Txt v="mono" color="muted" style={{ width: yearW, textAlign: 'right', fontSize: 11, lineHeight: 16, paddingTop: 1 }} numberOfLines={1}>
                 {year}
               </Txt>
               <View style={{ width: 18, alignItems: 'center' }}>

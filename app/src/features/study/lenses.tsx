@@ -419,7 +419,11 @@ export function HistoricoLens({ onLayout }: LensProps) {
     if (!panel) return null;
     const places = dedupePlaces(panel.layers.historical.entities);
     const placeNames = new Set(places.map((p) => p.name.toLowerCase()));
-    const others = panel.layers.historical.entities.filter((e) => !placeNames.has(e.name.toLowerCase()) && !(e.type === 'place' && e.lat != null));
+    // Eventos que já estão na linha do tempo não se repetem em "Pessoas e grupos".
+    const inTimeline = new Set(panel.layers.historical.events.map((e) => e.cite_id));
+    const others = panel.layers.historical.entities.filter(
+      (e) => !placeNames.has(e.name.toLowerCase()) && !(e.type === 'place' && e.lat != null) && !inTimeline.has(e.cite_id),
+    );
     const seen = new Set<string>();
     const people = others.filter((e) => {
       const k = e.name.toLowerCase();
