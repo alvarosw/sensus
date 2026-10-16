@@ -46,6 +46,11 @@ export const STUDY = {
     aplicacao: 'sem fonte própria',
   },
 
+  // Visão geral (o fio)
+  threadTitle: 'O fio deste trecho',
+  stepsCount: (n: number) => `${n} ${n === 1 ? 'passo' : 'passos'}`,
+  andMore: (n: number) => `e mais ${n}`,
+
   // Texto
   translations: 'Traduções e original',
   cmpBlivre: 'Bíblia Livre',

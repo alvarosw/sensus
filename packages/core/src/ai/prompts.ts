@@ -38,7 +38,7 @@ export interface SummaryPromptOptions extends PromptOptions {
 }
 
 /** Versão do formato do resumo: muda quando o prompt muda, para invalidar o cache. */
-export const SUMMARY_PROMPT_VERSION = 'resumo-v3';
+export const SUMMARY_PROMPT_VERSION = 'resumo-v4';
 
 /**
  * Chave de cache do resumo de uma unidade literária (repo.literaryUnit). O app resume a unidade inteira
@@ -94,32 +94,32 @@ const SUMMARY_FORMAT = [
   '@visao',
   '(2 a 3 frases: o que é a passagem e o que ela ensina em síntese)',
   '? (1 a 2 perguntas específicas da visão geral, uma por linha, cada uma começando com "? ")',
-  '@texto',
-  '(1 a 3 frases sobre traduções, texto original e variantes; cite cada afirmação)',
-  '? (1 a 2 perguntas específicas desta camada, começando com "? "; respondíveis pelo contexto)',
   '@literario',
-  '(1 a 3 frases: contexto antes e depois, divisão e gênero)',
+  '(1 a 2 frases, como um passo da história do trecho: onde ele está no texto (antes e depois, divisão, gênero))',
+  '? (1 a 2 perguntas específicas desta camada, começando com "? "; respondíveis pelo contexto)',
+  '@lingua',
+  '(1 a 2 frases, como o passo seguinte: a palavra-chave e o sentido que o léxico sustenta; ligue-se ao passo anterior quando fizer sentido)',
+  '? (1 a 2 perguntas específicas desta camada, começando com "? ")',
+  '@texto',
+  '(1 a 2 frases, como o passo seguinte: traduções, original e variantes; cite cada afirmação)',
+  '? (1 a 2 perguntas específicas desta camada, começando com "? "; respondíveis pelo contexto)',
+  '@intertexto',
+  '(1 a 2 frases, como o passo seguinte: a referência cruzada de maior peso e o tema que ela ecoa)',
   '? (1 a 2 perguntas específicas desta camada, começando com "? ")',
   '@historico',
-  '(1 a 3 frases: pessoas, lugares e termos explicados pelos dicionários)',
-  '? (1 a 2 perguntas específicas desta camada, começando com "? ")',
-  '@lingua',
-  '(1 a 3 frases: palavras-chave e os sentidos que o léxico sustenta)',
-  '? (1 a 2 perguntas específicas desta camada, começando com "? ")',
-  '@intertexto',
-  '(1 a 3 frases: referências cruzadas e temas)',
+  '(1 a 2 frases, como o passo seguinte: pessoas, lugares e termos explicados pelos dicionários)',
   '? (1 a 2 perguntas específicas desta camada, começando com "? ")',
   '@interpretacao',
-  '(1 a 3 frases: o que as tradições dizem; leituras disputadas de forma simétrica)',
+  '(1 a 2 frases, como o passo seguinte: o que as tradições dizem; leituras disputadas de forma simétrica)',
   '? (1 a 2 perguntas específicas desta camada, começando com "? ")',
   '@aplicacao',
-  '(1 a 3 frases, cada uma começando com "(Inferência)")',
+  '(1 a 2 frases, como o último passo, cada uma começando com "(Inferência)")',
   '? (1 a 2 perguntas específicas desta camada, começando com "? ")',
   '@perguntas',
   '- (3 a 5 perguntas concretas que um estudante de seminário faria em seguida sobre ESTA passagem; cada uma respondível pelo contexto)',
   '@fim',
   '',
-  'Regras: seja objetivo e breve. Logo após cada frase factual, a citação [[cite_id]] (ex.: "Frase. [[cite_id]]"). Frases de inferência começam com "(Inferência)". Pode usar **negrito** e *itálico*. Sem tabelas.',
+  'Regras: seja objetivo e breve. Cada seção é um passo de uma narrativa que conta o trecho: a seção seguinte se liga à anterior quando fizer sentido. Logo após cada frase factual, a citação [[cite_id]] (ex.: "Frase. [[cite_id]]"). Frases de inferência começam com "(Inferência)". Pode usar **negrito** e *itálico*. Sem tabelas.',
   'Se uma camada não tiver nenhum item no contexto, diga em uma frase que o contexto não traz registros para ela. Nunca diga isso sobre uma camada que tem itens.',
   'Gramática: afirmações sobre modo, tempo, voz, caso, pessoa ou número copiam a análise do token citado, em português, e citam esse token.',
 ].join('\n');

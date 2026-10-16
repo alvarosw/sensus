@@ -42,10 +42,12 @@ import {
   XrefCard,
 } from './cards';
 import { LensShell } from './LensShell';
+import { Thread } from './Thread';
+import { buildThread } from './thread';
 import { PassageMapCard } from '../maps/PassageMapCard';
 import { bareWord, chv, keyWordsOf, refShort, traditionLabel, viewCommentary, type CommentaryView } from './format';
 import { STUDY } from './strings';
-import { useStudyData, type StudyData } from './useStudyData';
+import { useStudyAi, useStudyData, type StudyData } from './useStudyData';
 
 export interface LensProps {
   onLayout?: (e: LayoutChangeEvent) => void;
@@ -121,7 +123,21 @@ function selectionVids(panel: PanelData, range: { start: Vid; end: Vid }): Vid[]
 // ---- Visão geral ---------------------------------------------------------------------------------------
 
 export function VisaoLens({ onLayout }: LensProps) {
-  return <LensShell lens="visao" title={SECTION_LABEL.visao} count={STUDY.lensCount.visao} onLayout={onLayout} />;
+  const data = useStudyData();
+  const ai = useStudyAi();
+  const steps = useMemo(
+    () => buildThread({ panel: data.panel, range: data.range, books: data.books, hasAi: ai.status !== 'noprovider' }),
+    [data.panel, data.range, data.books, ai.status],
+  );
+  return (
+    <LensShell
+      lens="visao"
+      title={STUDY.threadTitle}
+      count={steps.length > 0 ? STUDY.stepsCount(steps.length) : undefined}
+      summary={<Thread steps={steps} />}
+      onLayout={onLayout}
+    />
+  );
 }
 
 const SECTION_LABEL: Record<LensKey, string> = {

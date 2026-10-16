@@ -6,7 +6,6 @@ import {
   parseStructuredAnswer,
   parseStructuredSummary,
   splitVid,
-  SECTION_KEYS,
   summaryCacheKey,
   summaryMessages,
   SUMMARY_MAX_TOKENS,
@@ -173,6 +172,8 @@ function effectiveUnit(unit: Range | null, sel: Range): Range | null {
 }
 
 const MAX_UNIT_VERSES = 45;
+/** Ordem em que o resumo chega (linhas-marcadoras de SUMMARY_FORMAT, no núcleo). */
+const STREAM_ORDER: readonly LensKey[] = ['visao', 'literario', 'lingua', 'texto', 'intertexto', 'historico', 'interpretacao', 'aplicacao'];
 const controllers = new Map<string, AbortController>();
 const FLUSH_MS = 60;
 
@@ -325,9 +326,12 @@ function useBuildStudyData(range: Range): { data: StudyData; ai: StudyAi } {
 
   const writingLens = useMemo<LensKey | null>(() => {
     if (status !== 'streaming' || !summary) return null;
+    // A última seção com texto na ordem em que o resumo chega (SUMMARY_FORMAT) é a que está sendo escrita.
     let cur: LensKey | null = null;
-    if (summary.overview.length > 0) cur = 'visao';
-    for (const k of SECTION_KEYS) if ((summary.sections[k]?.length ?? 0) > 0) cur = k;
+    for (const k of STREAM_ORDER) {
+      const has = k === 'visao' ? summary.overview.length > 0 : (summary.sections[k]?.length ?? 0) > 0;
+      if (has) cur = k;
+    }
     return cur;
   }, [status, summary]);
 

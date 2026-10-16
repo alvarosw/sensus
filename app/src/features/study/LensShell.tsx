@@ -1,17 +1,13 @@
-// Casca de uma lente (proto: lensShell): título + contagem, bloco da IA, "DETALHADO", conteúdo das fontes,
-// ações (Detalhar / Ver todos) e perguntas sugeridas.
+// Casca de uma lente (proto: lensShell): título + contagem, resumo próprio (só a Visão geral, o fio), "DETALHADO",
+// conteúdo das fontes, ações (Detalhar / Ver todos) e perguntas sugeridas. Nas outras lentes o resumo da seção
+// não aparece aqui: ele vive no passo correspondente do fio.
 import { memo, type ReactNode } from 'react';
 import { View, type LayoutChangeEvent } from 'react-native';
-import { router } from 'expo-router';
 import {
   ActButton,
   Caret,
-  Card,
-  Empty,
-  LinkButton,
   QuestionButton,
   Skeleton,
-  Tag,
   Txt,
   space,
   useTheme,
@@ -19,8 +15,7 @@ import {
 import { RichBlocks } from '../rich/RichBlocks';
 import { useStudy, type LensKey } from '@/state/study';
 import { STUDY } from './strings';
-import { refShort } from './format';
-import { useStudyAi, useStudyData, type DeepView } from './useStudyData';
+import { useStudyAi, type DeepView } from './useStudyData';
 
 export interface LensShellProps {
   lens: LensKey;
@@ -28,12 +23,14 @@ export interface LensShellProps {
   count?: string;
   /** Total de itens de fonte além dos exibidos (botão "Ver todos N"); 0 = sem botão. */
   sourcesN?: number;
+  /** Resumo próprio da lente, logo abaixo do título (hoje, só o fio da Visão geral). */
+  summary?: ReactNode;
   /** Conteúdo determinístico (cards). */
   children?: ReactNode;
   onLayout?: (e: LayoutChangeEvent) => void;
 }
 
-export const LensShell = memo(function LensShell({ lens, title, count, sourcesN = 0, children, onLayout }: LensShellProps) {
+export const LensShell = memo(function LensShell({ lens, title, count, sourcesN = 0, summary, children, onLayout }: LensShellProps) {
   const { c } = useTheme();
   const ai = useStudyAi();
   const expanded = useStudy((s) => !!s.expanded[lens]);
@@ -61,7 +58,7 @@ export const LensShell = memo(function LensShell({ lens, title, count, sourcesN 
         {count ? <Txt v="meta" color="muted" style={{ fontSize: 11.5 }}>{count}</Txt> : null}
       </View>
 
-      <AiBlock lens={lens} />
+      {summary}
       {deep.map((d, i) => (
         <DeepBlock key={d.key} lens={lens} view={d} index={i} />
       ))}
@@ -91,9 +88,9 @@ export const LensShell = memo(function LensShell({ lens, title, count, sourcesN 
   );
 });
 
-// ---- bloco da IA -----------------------------------------------------------------------------------
+// ---- estados da IA compartilhados (o fio e os blocos detalhados) -----------------------------------
 
-function SkeletonLines({ lines = 3 }: { lines?: number }) {
+export function SkeletonLines({ lines = 3 }: { lines?: number }) {
   const widths = ['92%', '78%', '40%'] as const;
   return (
     <View style={{ gap: space[4] }}>
@@ -105,79 +102,12 @@ function SkeletonLines({ lines = 3 }: { lines?: number }) {
 }
 
 /** Modelo de raciocínio ainda pensando, sem texto: uma linha discreta no lugar do esqueleto. */
-function ThinkingLine() {
+export function ThinkingLine() {
   return (
     <Txt v="meta" color="muted" italic testID="ai-thinking">
       {STUDY.thinking}
       <Caret />
     </Txt>
-  );
-}
-
-function NoProviderCard() {
-  return (
-    <Card testID="ai-noprovider" style={{ gap: space[5] }}>
-      <Txt v="bodySm" bold>Resumo por IA</Txt>
-      <Txt v="bodySm" color="muted">{STUDY.noProvider}</Txt>
-      <View style={{ flexDirection: 'row' }}>
-        <ActButton deepen label={STUDY.configure} onPress={() => router.push('/settings')} testID="ai-configure" />
-      </View>
-    </Card>
-  );
-}
-
-function ScopeTag() {
-  const ai = useStudyAi();
-  const { books } = useStudyData();
-  if (!ai.unitRange) return null;
-  return (
-    <View style={{ flexDirection: 'row', alignItems: 'center', gap: space[3], flexWrap: 'wrap' }}>
-      <Txt v="meta" color="muted" style={{ fontSize: 11 }}>{STUDY.summaryOfUnit}</Txt>
-      <Tag label={refShort(ai.unitRange.start, ai.unitRange.end, books)} />
-      <Txt v="meta" color="muted" style={{ fontSize: 11 }}>{STUDY.summaryContains}</Txt>
-    </View>
-  );
-}
-
-function AiBlock({ lens }: { lens: LensKey }) {
-  const ai = useStudyAi();
-  const deepenClaim = (info: { text: string; claimKey: string }) => ai.deepen(lens, { claim: info.text, claimKey: info.claimKey });
-
-  if (ai.status === 'noprovider') return lens === 'visao' ? <NoProviderCard /> : null;
-
-  if (ai.status === 'error') {
-    return lens === 'visao' ? (
-      <View style={{ gap: space[3] }}>
-        <Txt v="bodySm" color="danger" testID="ai-error">{STUDY.summaryError(ai.error ?? '')}</Txt>
-        <View style={{ flexDirection: 'row' }}>
-          <LinkButton label={STUDY.retry} onPress={ai.retry} testID="ai-retry" />
-        </View>
-      </View>
-    ) : (
-      <Empty text="Resumo indisponível. Veja a Visão geral." />
-    );
-  }
-
-  const blocks = lens === 'visao' ? ai.summary?.overview : ai.summary?.sections[lens as Exclude<LensKey, 'visao'>];
-  const hasBlocks = !!blocks && blocks.length > 0;
-  return (
-    <View style={{ gap: space[4] }} testID={`ai-${lens}`}>
-      {lens === 'visao' && <ScopeTag />}
-      {hasBlocks ? (
-        <RichBlocks
-          blocks={blocks}
-          streaming={ai.writingLens === lens}
-          claimKeyPrefix={lens}
-          onDeepen={deepenClaim}
-        />
-      ) : ai.status === 'done' ? (
-        <Empty text={STUDY.noSummary} />
-      ) : ai.thinking ? (
-        <ThinkingLine />
-      ) : (
-        <SkeletonLines lines={lens === 'visao' ? 3 : 2} />
-      )}
-    </View>
   );
 }
 
