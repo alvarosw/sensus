@@ -1,15 +1,19 @@
 // O fio do trecho (Visão geral em passos): montagem pura dos passos a partir do painel determinístico.
 // Ordem narrativa e títulos fixos; cada passo tem a evidência do banco (aparece antes da IA) e a lente que
 // a sustenta. Passos sem dados são omitidos; Aplicação só aparece quando há IA (não tem fonte própria).
+// Língua espera a escolha da IA (esqueleto) e, sem ela, usa os fallbacks de keyword.ts.
 import {
   commentatorName,
   titleCaseHeadword,
   variantSites,
   type Book,
   type PanelData,
+  type SectionKey,
+  type StructuredSummary,
   type Vid,
 } from '@sensus/core';
-import { bareWord, chv, isOldTestament, keyWordsOf, refShort } from './format';
+import { bareWord, chv, isOldTestament, lexiconByBase, refShort } from './format';
+import { chooseKeyWord, citedIdsOf, type WordAi, type WordBy } from './keyword';
 import { STUDY } from './strings';
 
 export type ThreadLensKey = 'literario' | 'lingua' | 'texto' | 'intertexto' | 'historico' | 'interpretacao' | 'aplicacao';
@@ -42,8 +46,10 @@ const MAX_COMMENTATORS = 5;
 export type ThreadEvidence =
   /** Versículo vizinho anterior (Literário). */
   | { kind: 'verse'; ref: string; text: string }
-  /** Palavra mais rara do trecho (Língua). `note` = "hápax" ou "N vv. no NT/AT". */
-  | { kind: 'word'; tokenCiteId: string; lemma: string; gloss: string | null; note: string | null }
+  /** Palavra que move o trecho (Língua). `note` = "hápax" ou "N vv. no NT/AT"; `by` diz de onde veio a escolha. */
+  | { kind: 'word'; tokenCiteId: string; lemma: string; gloss: string | null; note: string | null; by: WordBy; mentions?: number }
+  /** Língua aguardando a escolha da IA: o passo mostra um esqueleto no lugar da evidência. */
+  | { kind: 'pending' }
   /** Primeiro sítio de variação entre TR, BYZ e NA (Texto). */
   | { kind: 'variants'; ref: string; readings: Array<{ text: string; editions: string[] }> }
   /** Referência cruzada de maior peso (Intertexto). */
@@ -60,24 +66,35 @@ export interface ThreadStep {
   evidence: ThreadEvidence | null;
 }
 
+/** Estado da IA para o fio. */
+export interface ThreadAi {
+  /** 'noprovider' = sem IA configurada (sem Aplicação); 'error' = falhou (o fio segue sem esperar a IA). */
+  status: 'noprovider' | 'waiting' | 'streaming' | 'done' | 'error';
+  /** Resumo recebido até agora (null antes do primeiro pedaço). */
+  summary: StructuredSummary | null;
+}
+
 export interface ThreadInput {
   panel: PanelData | null;
   /** Seleção do leitor (o painel é da seleção). */
   range: { start: Vid; end: Vid };
   books: readonly Book[];
-  /** Há IA configurada: só então o passo Aplicação aparece. */
-  hasAi: boolean;
+  ai: ThreadAi;
 }
+
+/** Seções que vêm depois de @lingua no resumo (ordem de SUMMARY_FORMAT, não a de exibição). */
+const AFTER_LINGUA: readonly SectionKey[] = ['texto', 'intertexto', 'historico', 'interpretacao', 'aplicacao'];
 
 /**
  * Passos do fio, na ordem narrativa. Sem painel, nenhum passo (a folha ainda carrega). Um passo sem
  * evidência no banco é omitido; Aplicação entra só com IA.
  */
-export function buildThread({ panel, range, books, hasAi }: ThreadInput): ThreadStep[] {
+export function buildThread({ panel, range, books, ai }: ThreadInput): ThreadStep[] {
   if (!panel) return [];
+  const hasAi = ai.status !== 'noprovider';
   const evidence: Record<ThreadLensKey, ThreadEvidence | null> = {
     literario: literaryEvidence(panel, range, books),
-    lingua: languageEvidence(panel),
+    lingua: languageEvidence(panel, range, wordAiOf(ai)),
     texto: textEvidence(panel),
     intertexto: intertextEvidence(panel, books),
     historico: historicalEvidence(panel),
@@ -96,6 +113,17 @@ export function buildThread({ panel, range, books, hasAi }: ThreadInput): Thread
   return steps;
 }
 
+/** Estado da IA em termos da escolha da palavra: com a IA ativa, a seção @lingua termina quando a seguinte começa. */
+function wordAiOf({ status, summary }: ThreadAi): WordAi {
+  const linguaDone = status === 'done' || AFTER_LINGUA.some((k) => summary?.sections[k] !== undefined);
+  return {
+    active: status === 'waiting' || status === 'streaming' || status === 'done',
+    keyWordCiteId: summary?.keyWordCiteId ?? null,
+    linguaCiteIds: citedIdsOf(summary?.sections.lingua ?? []),
+    linguaDone,
+  };
+}
+
 /** Versículo anterior ao início da seleção, o mais próximo (último da lista de vizinhos). */
 function literaryEvidence(panel: PanelData, range: { start: Vid; end: Vid }, books: readonly Book[]): ThreadEvidence | null {
   const before = panel.layers.literary.before.filter((v) => v.vid < range.start).at(-1);
@@ -103,18 +131,24 @@ function literaryEvidence(panel: PanelData, range: { start: Vid; end: Vid }, boo
   return { kind: 'verse', ref: refShort(before.vid, before.vid, books, true), text: before.text };
 }
 
-/** Palavra mais rara do trecho (keyWordsOf já ordena do hápax para as mais comuns). */
-function languageEvidence(panel: PanelData): ThreadEvidence | null {
-  const word = keyWordsOf(panel)[0];
-  if (!word) return null;
-  const t = word.token;
-  const note = word.count === 1 ? STUDY.hapax : word.count > 1 ? STUDY.factVv(word.count, isOldTestament(word.strongBase)) : null;
+/** Palavra que move o trecho: a escolha de keyword.ts (IA, depois fallbacks), com a evidência do verbete. */
+function languageEvidence(panel: PanelData, range: { start: Vid; end: Vid }, ai: WordAi): ThreadEvidence | null {
+  const choice = chooseKeyWord(panel, range, ai);
+  if (choice.state === 'pending') return { kind: 'pending' };
+  if (choice.state === 'none') return null;
+  const { token: t, by, mentions } = choice.pick;
+  const sb = t.strong_base;
+  const lexicon = sb ? (lexiconByBase(panel).get(sb) ?? null) : null;
+  const count = sb ? (panel.layers.language.concordance[sb]?.count ?? 0) : 0;
+  const note = count === 1 ? STUDY.hapax : count > 1 ? STUDY.factVv(count, !!sb && isOldTestament(sb)) : null;
   return {
     kind: 'word',
     tokenCiteId: t.cite_id,
-    lemma: word.lexicon?.lemma ?? t.lemma ?? bareWord(t.surface),
-    gloss: word.lexicon?.gloss ?? t.gloss_en,
+    lemma: lexicon?.lemma ?? t.lemma ?? bareWord(t.surface),
+    gloss: lexicon?.gloss ?? t.gloss_en,
     note,
+    by,
+    ...(mentions !== undefined ? { mentions } : {}),
   };
 }
 

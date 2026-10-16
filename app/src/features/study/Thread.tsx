@@ -130,7 +130,13 @@ function Step({ step, index, last }: { step: ThreadStep; index: number; last: bo
           />
         </View>
 
-        {step.evidence && <Evidence evidence={step.evidence} />}
+        {step.evidence?.kind === 'pending' ? (
+          <View testID="thread-ev-pending">
+            <SkeletonLines lines={1} />
+          </View>
+        ) : (
+          step.evidence && <Evidence evidence={step.evidence} />
+        )}
 
         {showText &&
           (hasText ? (
@@ -169,6 +175,7 @@ function Evidence({ evidence }: { evidence: ThreadEvidence }) {
           </Greek>
           {evidence.gloss && <Txt v="meta" color="muted">{`“${evidence.gloss}”`}</Txt>}
           {evidence.note === STUDY.hapax ? <Tag label={STUDY.hapax} tone="tint" /> : evidence.note && <Txt v="meta" color="muted">{evidence.note}</Txt>}
+          {evidence.mentions ? <Txt v="meta" color="muted">{STUDY.commentMentions(evidence.mentions)}</Txt> : null}
         </View>
       )}
 

@@ -142,20 +142,31 @@ export interface KeyWord {
 const MAX_KEY_WORDS = 12;
 const COMMON_LIMIT = 40;
 
-/** Palavras de conteúdo do trecho, das mais raras para as mais comuns (hápax primeiro). */
-export function keyWordsOf(panel: PanelData): KeyWord[] {
+/** Verbete do léxico por strong_base (prefere TBESG quando há mais de um). */
+export function lexiconByBase(panel: PanelData): Map<string, LexiconEntry> {
   const lexByBase = new Map<string, LexiconEntry>();
   for (const l of panel.layers.language.lexicon) {
     if (!l.strong_base) continue;
     const cur = lexByBase.get(l.strong_base);
     if (!cur || (l.source_id.includes('tbesg') && !cur.source_id.includes('tbesg'))) lexByBase.set(l.strong_base, l);
   }
+  return lexByBase;
+}
+
+/** Token que conta como palavra de conteúdo com Strong: não é função; no NT, só do texto TR ou NA. */
+export function isKeyToken(t: Token): boolean {
+  if (!t.strong_base || !isContentToken(t)) return false;
+  return t.corpus !== 'gnt' || /\b(TR|NA)\b/.test(t.editions);
+}
+
+/** Palavras de conteúdo do trecho, das mais raras para as mais comuns (hápax primeiro). */
+export function keyWordsOf(panel: PanelData): KeyWord[] {
+  const lexByBase = lexiconByBase(panel);
   const seen = new Set<string>();
   const out: KeyWord[] = [];
   for (const t of panel.layers.text.original) {
     const sb = t.strong_base;
-    if (!sb || seen.has(sb) || !isContentToken(t)) continue;
-    if (t.corpus === 'gnt' && !/\b(TR|NA)\b/.test(t.editions)) continue;
+    if (!sb || seen.has(sb) || !isKeyToken(t)) continue;
     seen.add(sb);
     const count = panel.layers.language.concordance[sb]?.count ?? 0;
     out.push({ token: t, strongBase: sb, lexicon: lexByBase.get(sb) ?? null, count });

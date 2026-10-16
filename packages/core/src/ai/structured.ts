@@ -108,13 +108,43 @@ export function splitLensQuestions(lines: readonly string[]): { body: string[]; 
   return { body, questions };
 }
 
+/** Linha que começa com "=" (marca da palavra escolhida em @lingua). Sai do texto, mesmo incompleta no stream. */
+const KEYWORD_LINE_RE = /^\s*=(?:\s|\[|$)/;
+/** Linha "= [[cite_id]]": o id entre os colchetes duplos. */
+const KEYWORD_CITE_RE = /^\s*=\s*\[\[([^[\]\n]+)\]\]/;
+
+/**
+ * Separa a linha "= [[tok:…]]" das linhas da seção @lingua. Só um cite_id de token que existe no contexto é
+ * aceito; as demais linhas com "=" são descartadas sem aparecer no texto.
+ */
+export function splitKeyWordLine(lines: readonly string[], ctx: RichTextContext): { body: string[]; citeId?: string } {
+  const body: string[] = [];
+  let citeId: string | undefined;
+  for (const line of lines) {
+    if (!KEYWORD_LINE_RE.test(line)) {
+      body.push(line);
+      continue;
+    }
+    const id = KEYWORD_CITE_RE.exec(line)?.[1]?.trim();
+    if (!citeId && id && isKeyWordCite(id, ctx)) citeId = id;
+  }
+  return citeId ? { body, citeId } : { body };
+}
+
+function isKeyWordCite(id: string, ctx: RichTextContext): boolean {
+  if (!id.startsWith('tok:') || !ctx.citeIds.has(id)) return false;
+  return ctx.tokens ? ctx.tokens.some((t) => t.cite_id === id) : true;
+}
+
 /**
  * Resumo: "@visao" (2–3 frases), uma seção por marcador, "@perguntas" e "@fim".
  * Cada lente pode trazer linhas "? pergunta" (sectionQuestions); a visão geral usa a chave 'visao'.
+ * A seção @lingua pode começar com "= [[tok:…]]" (keyWordCiteId): a palavra que move o trecho.
  */
 export function parseStructuredSummary(text: string, ctx: RichTextContext): StructuredSummary {
   const split = splitMarkers(text, SUMMARY_MARKERS);
   const sectionQuestions: NonNullable<StructuredSummary['sectionQuestions']> = {};
+  let keyWordCiteId: string | undefined;
 
   const overviewLines = splitLensQuestions([...split.preamble, ...(split.parts.get('visao') ?? [])]);
   const overview = parseRichText(overviewLines.body.join('\n'), ctx);
@@ -122,8 +152,14 @@ export function parseStructuredSummary(text: string, ctx: RichTextContext): Stru
 
   const sections: StructuredSummary['sections'] = {};
   for (const key of SECTION_KEYS as readonly SectionKey[]) {
-    const part = split.parts.get(key);
-    if (!part) continue;
+    const raw = split.parts.get(key);
+    if (!raw) continue;
+    let part = raw;
+    if (key === 'lingua') {
+      const kw = splitKeyWordLine(raw, ctx);
+      part = kw.body;
+      keyWordCiteId = kw.citeId;
+    }
     const lens = splitLensQuestions(part);
     sections[key] = parseRichText(lens.body.join('\n'), ctx);
     if (lens.questions.length > 0) sectionQuestions[key] = lens.questions;
@@ -134,6 +170,7 @@ export function parseStructuredSummary(text: string, ctx: RichTextContext): Stru
     questions: extractQuestions(split.parts.get('perguntas') ?? []),
     complete: split.complete,
     sectionQuestions,
+    ...(keyWordCiteId ? { keyWordCiteId } : {}),
   };
 }
 

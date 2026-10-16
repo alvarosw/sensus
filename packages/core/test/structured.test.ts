@@ -322,6 +322,50 @@ describe('prompt: citação logo após cada frase e rótulo de inferência exato
   });
 
   it('a versão do resumo mudou com o prompt (invalida o cache de resumos antigos)', () => {
-    expect(SUMMARY_PROMPT_VERSION).toBe('resumo-v5');
+    expect(SUMMARY_PROMPT_VERSION).toBe('resumo-v6');
+  });
+});
+
+describe('palavra escolhida: linha "= [[tok:…]]" no início de @lingua', () => {
+  const TOKEN = 'tok:gnt:50002005:3';
+  const withLingua = (first: string) => `@visao\nVisão.\n@lingua\n${first}\nSentido [[${TOKEN}]].\n@texto\nTexto.\n@fim`;
+
+  it('a linha "=" vira keyWordCiteId e não aparece no texto da seção', () => {
+    const out = parseStructuredSummary(withLingua(`= [[${TOKEN}]]`), ctx);
+    expect(out.keyWordCiteId).toBe(TOKEN);
+    expect(blocksToPlainText(out.sections.lingua ?? [])).toBe(`Sentido [ἐν].`);
+    expect(blocksToPlainText(out.sections.lingua ?? [])).not.toContain('=');
+  });
+
+  it('sem linha "=" não há keyWordCiteId', () => {
+    const out = parseStructuredSummary(withLingua('Sem marca.'), ctx);
+    expect(out.keyWordCiteId).toBeUndefined();
+    expect(blocksToPlainText(out.sections.lingua ?? [])).toContain('Sem marca.');
+  });
+
+  it('um cite_id que não está no contexto (ou não é de token) é recusado e some do texto', () => {
+    const inventado = parseStructuredSummary(withLingua('= [[tok:gnt:99999999:1]]'), ctx);
+    expect(inventado.keyWordCiteId).toBeUndefined();
+    expect(blocksToPlainText(inventado.sections.lingua ?? [])).not.toContain('=');
+    const lexico = parseStructuredSummary(withLingua('= [[lex:strongs-gr:G1722]]'), ctx);
+    expect(lexico.keyWordCiteId).toBeUndefined();
+  });
+
+  it('a linha "=" é ocultada também incompleta no fim do stream', () => {
+    const cut = `@visao\nVisão.\n@lingua\n= [[tok:gnt:5000`;
+    const out = parseStructuredSummary(cut, ctx);
+    expect(out.keyWordCiteId).toBeUndefined();
+    expect(out.sections.lingua).toEqual([]);
+  });
+
+  it('a linha "=" só vale na seção @lingua, não em outras', () => {
+    const text = `@visao\nVisão.\n@texto\n= [[${TOKEN}]]\n@lingua\nx\n@fim`;
+    const out = parseStructuredSummary(text, ctx);
+    expect(out.keyWordCiteId).toBeUndefined();
+  });
+
+  it('o formato pede a linha "=" como primeira linha de @lingua', () => {
+    const user = summaryMessages({ text: contextText })[1]!.content;
+    expect(user).toContain('@lingua\n= [[cite_id do token]]');
   });
 });
