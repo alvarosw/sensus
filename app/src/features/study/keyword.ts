@@ -75,11 +75,25 @@ function isVerb(t: Token): boolean {
   return /^Verb/.test(t.morph_desc ?? '') || /^(?:H?V)(?:-|[a-z])/.test(t.morph ?? '');
 }
 
-/** Grupos de palavras de conteúdo do trecho, na ordem do texto. */
-function groupsOf(panel: PanelData, range: Range): WordGroup[] {
+/**
+ * Nome próprio (pessoa, lugar, grupo ou título, conforme o TAGNT: "Name type=…" na morfologia). No AT o banco
+ * não marca nomes; ali a exclusão não se aplica.
+ */
+export function isNameToken(t: Pick<Token, 'morph_desc'>): boolean {
+  return /Name type=/.test(t.morph_desc ?? '');
+}
+
+/** Formas com menos letras que isto não entram na contagem de comentários (evita "en", "kai" etc.). */
+export const MIN_FORM_LETTERS = 4;
+
+/**
+ * Grupos de palavras de conteúdo do trecho, na ordem do texto. Nomes próprios ficam de fora, salvo com
+ * `withNames` (só a leitura de uma palavra já citada pela IA, o fallback 1, aceita nomes).
+ */
+function groupsOf(panel: PanelData, range: Range, withNames = false): WordGroup[] {
   const byBase = new Map<string, WordGroup>();
   for (const t of panel.layers.text.original) {
-    if (!inRange(t.vid, range) || !isKeyToken(t)) continue;
+    if (!inRange(t.vid, range) || !isKeyToken(t) || (!withNames && isNameToken(t))) continue;
     const sb = t.strong_base!;
     let g = byBase.get(sb);
     if (!g) {
@@ -123,7 +137,7 @@ export function citedIdsOf(blocks: readonly Block[]): string[] {
   return out;
 }
 
-/** Primeiro token do trecho citado no desenvolvimento; se só houver lex:, o grupo do mesmo Strong. */
+/** Primeiro token do trecho citado no desenvolvimento; se só houver lex:, o grupo do mesmo Strong (nomes incluídos). */
 function citedToken(ids: readonly string[], tokens: readonly Token[], groups: readonly WordGroup[]): Token | undefined {
   for (const id of ids) {
     if (!id.startsWith('tok:')) continue;
@@ -145,7 +159,7 @@ function mostMentioned(groups: readonly WordGroup[], commentaries: readonly Comm
   let best: { g: WordGroup; mentions: number } | undefined;
   for (const g of groups) {
     let mentions = 0;
-    for (const f of g.forms) mentions += counts.get(f) ?? 0;
+    for (const f of g.forms) if (f.length >= MIN_FORM_LETTERS) mentions += counts.get(f) ?? 0;
     if (mentions > 0 && (!best || mentions > best.mentions)) best = { g, mentions };
   }
   return best ? { token: best.g.token, by: 'commentary', mentions: best.mentions } : undefined;
@@ -167,11 +181,12 @@ function mostRepeatedVerb(groups: readonly WordGroup[]): WordPick | undefined {
 export function chooseKeyWord(panel: PanelData, range: Range, ai: WordAi): WordChoice {
   const tokens = panel.layers.text.original.filter((t) => inRange(t.vid, range));
   const groups = groupsOf(panel, range);
+  const withNames = groupsOf(panel, range, true);
   if (ai.active) {
     const chosen = ai.keyWordCiteId ? tokens.find((t) => t.cite_id === ai.keyWordCiteId) : undefined;
     if (chosen) return { state: 'picked', pick: { token: chosen, by: 'ai' } };
     if (!ai.linguaDone) return { state: 'pending' };
-    const cited = citedToken(ai.linguaCiteIds, tokens, groups);
+    const cited = citedToken(ai.linguaCiteIds, tokens, withNames);
     if (cited) return { state: 'picked', pick: { token: cited, by: 'section' } };
   }
   const covering = panel.layers.interpretation.commentaries.filter((c) => c.start_vid <= range.end && c.end_vid >= range.start);

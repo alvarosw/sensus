@@ -2,7 +2,7 @@
 import { describe, expect, it } from 'vitest';
 import type { Block, Commentary, PanelData, Source, StructuredSummary, Token, VerseText, XRef } from '@sensus/core';
 import { buildThread, THREAD_TITLES, type ThreadAi } from './thread';
-import { normalizeForm } from './keyword';
+import { isNameToken, normalizeForm } from './keyword';
 
 const RANGE = { start: 50002005, end: 50002008 };
 /** Sem IA configurada. */
@@ -362,3 +362,82 @@ describe('Língua: a palavra que move o trecho (keyword.ts)', () => {
     expect(normalizeForm('Kenōsis')).toBe('kenosis');
   });
 });
+
+describe('Língua: nomes próprios e formas curtas ficam de fora dos fallbacks', () => {
+  const ISRAEL = tok({
+    cite_id: 'tok:israel',
+    vid: 50002006,
+    pos: 2,
+    surface: 'Ἰσραήλ',
+    editions: 'TR,BYZ,NA',
+    strong_base: 'G2474',
+    strong: 'G2474',
+    lemma: 'Ἰσραήλ',
+    translit: 'Israēl',
+    gloss_en: 'Israel',
+    morph: 'N-GSM-L',
+    morph_desc: 'Noun; Case=Genitive; Number=Singular; Gender=Masculine; Name type=Location',
+  });
+  const COMMENT_ISRAEL: Commentary[] = [
+    { cite_id: 'com:i', source_id: 'c', start_vid: 50002005, end_vid: 50002005, text: 'Israel, Israel and Israel again.' },
+  ] as Commentary[];
+  const SOURCES = { c: { id: 'c', title: 'C', author: 'C' } as Source };
+
+  it('nome próprio é reconhecido pela morfologia do TAGNT; palavra comum não', () => {
+    expect(isNameToken(ISRAEL)).toBe(true);
+    expect(isNameToken(KENOSIS_TOKEN)).toBe(false);
+  });
+
+  it('fallback 2: um nome muito mencionado nos comentários não é escolhido', () => {
+    const panel = panelOf({
+      tokens: [ISRAEL, HAPAX_TOKEN],
+      concordance: { G2474: { count: 68, samples: [] }, G725: { count: 1, samples: [] } },
+      commentaries: COMMENT_ISRAEL,
+      sources: SOURCES,
+    });
+    expect(lingua(buildThread({ panel, range: RANGE, books: [], ai: DONE }))).toMatchObject({ tokenCiteId: 'tok:h', by: 'hapax' });
+  });
+
+  it('fallback 3 e 4: nomes não viram hápax nem verbo', () => {
+    const rare = { ...ISRAEL, morph: 'N-GSM-L' };
+    const sozinho = panelOf({ tokens: [rare], concordance: { G2474: { count: 1, samples: [] } } });
+    expect(lingua(buildThread({ panel: sozinho, range: RANGE, books: [], ai: DONE }))).toBeUndefined();
+  });
+
+  it('a IA continua livre para escolher um nome (by "ai")', () => {
+    const panel = panelOf({ tokens: [ISRAEL], concordance: { G2474: { count: 68, samples: [] } } });
+    const ai: ThreadAi = { status: 'streaming', summary: summaryOf({ keyWordCiteId: 'tok:israel' }) };
+    expect(lingua(buildThread({ panel, range: RANGE, books: [], ai }))).toMatchObject({ tokenCiteId: 'tok:israel', by: 'ai' });
+  });
+
+  it('fallback 1: um nome citado pelo desenvolvimento da IA ainda pode ser a palavra', () => {
+    const panel = panelOf({ tokens: [ISRAEL], concordance: { G2474: { count: 68, samples: [] } } });
+    const ai: ThreadAi = { status: 'done', summary: summaryOf({ sections: { lingua: [citing('tok:israel')] } }) };
+    expect(lingua(buildThread({ panel, range: RANGE, books: [], ai }))).toMatchObject({ tokenCiteId: 'tok:israel', by: 'section' });
+  });
+
+  it('fallback 2: forma com menos de quatro letras não conta (en de ἦν não vira menção)', () => {
+    const EIMI = tok({
+      cite_id: 'tok:en',
+      vid: 50002006,
+      pos: 3,
+      surface: 'ἦν',
+      editions: 'TR,BYZ,NA',
+      strong_base: 'G1510',
+      strong: 'G1510',
+      lemma: 'εἰμί',
+      translit: 'en',
+      morph: 'V-IAI-3S',
+      morph_desc: 'Verb; Tense=Imperfect; Voice=Active; Mood=Indicative',
+    });
+    const panel = panelOf({
+      tokens: [EIMI, KENOSIS_TOKEN],
+      concordance: { G1510: { count: 2050, samples: [] }, G2758: { count: 5, samples: [] } },
+      commentaries: [{ cite_id: 'com:en', source_id: 'c', start_vid: 50002005, end_vid: 50002005, text: 'en en en en kai kai' }] as Commentary[],
+      sources: SOURCES,
+    });
+    // Sem menção válida, cai no verbo (ἦν é o único verbo do trecho).
+    expect(lingua(buildThread({ panel, range: RANGE, books: [], ai: DONE }))).toMatchObject({ tokenCiteId: 'tok:en', by: 'verb' });
+  });
+});
+
