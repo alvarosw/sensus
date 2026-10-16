@@ -10,6 +10,7 @@ import { StudyDataPrompt } from '@/data/StudyDataPrompt';
 import { useEdition } from '@/data/db-context';
 import { TL } from './strings';
 import { spanText } from './model';
+import { useTimelineText } from '@/translate/timeline-translate';
 
 export type LineKind = TimelineLine['kind'];
 
@@ -92,6 +93,7 @@ export function LineCard({
   onFavorite: () => void;
 }) {
   const { c } = useTheme();
+  const name = useTimelineText(line.name);
   return (
     <View
       style={{
@@ -112,21 +114,21 @@ export function LineCard({
       <Pressable
         testID={`tl-line-${line.id}`}
         accessibilityRole="button"
-        accessibilityLabel={`${line.name}, ${TL.kindLabel[line.kind]}, ${TL.lineTitleOf(line.count)}`}
+        accessibilityLabel={`${name}, ${TL.kindLabel[line.kind]}, ${TL.lineTitleOf(line.count)}`}
         onPress={onOpen}
         style={({ pressed }) => ({ flex: 1, minWidth: 0, flexDirection: 'row', alignItems: 'center', gap: space[5], opacity: pressed ? 0.7 : 1 })}
       >
         <KindMark kind={line.kind} />
         <View style={{ flex: 1, minWidth: 0, gap: 1 }}>
           <Txt v="lensTitle" tint={c.text} numberOfLines={1} style={{ fontSize: 15.5, lineHeight: 20 }}>
-            {line.name}
+            {name}
           </Txt>
           <Txt v="meta" color="muted" numberOfLines={1}>
             {`${TL.kindLabel[line.kind]} · ${TL.lineTitleOf(line.count)} · ${spanText(line.from, line.to)}`}
           </Txt>
         </View>
       </Pressable>
-      <StarButton on={favorite} label={favorite ? TL.unfavorite : TL.favoriteLine(line.name)} onPress={onFavorite} testID={`tl-fav-line-${line.id}`} />
+      <StarButton on={favorite} label={favorite ? TL.unfavorite : TL.favoriteLine(name)} onPress={onFavorite} testID={`tl-fav-line-${line.id}`} />
     </View>
   );
 }

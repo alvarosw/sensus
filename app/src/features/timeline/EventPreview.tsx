@@ -14,6 +14,7 @@ import { TL } from './strings';
 import { useEventDetail, useTimelineLines } from './useTimeline';
 import { openInReader } from './actions';
 import { Chip } from './parts';
+import { useTimelineText, useTimelineTexts } from '@/translate/timeline-translate';
 
 /** Comparação no paralelo: linhas já na tela, se o limite está cheio e o que fazer ao tocar em "+ linha". */
 export interface PreviewCompare {
@@ -51,6 +52,11 @@ export function EventPreview({
   const event = detail?.event ?? null;
   const others = (detail?.lines ?? []).filter((l) => l.id !== currentLineId);
   const people = event?.participants ?? [];
+  // Textos da linha do tempo, traduzidos quando configurado (a prévia não repete o aviso: ele fica na tela de trás).
+  const title = useTimelineText(event?.title);
+  const peopleNames = [...new Set(people.map((p) => p.name).filter(Boolean))];
+  const trPeople = useTimelineTexts(peopleNames);
+  const trLines = useTimelineTexts(others.map((l) => l.name));
   // Pessoa com linha própria vira link (exceto a linha em que a prévia já está).
   const personLine = (cite: string): TimelineLine | undefined =>
     lineIds.has(cite) && cite !== currentLineId ? (lines ?? []).find((l) => l.id === cite) : undefined;
@@ -78,7 +84,7 @@ export function EventPreview({
             <Txt v="meta" color="muted">{TL.previewLoading}</Txt>
           ) : (
             <ScrollView contentContainerStyle={{ gap: space[5] }} showsVerticalScrollIndicator={false}>
-              <Txt v="sheetTitle" accessibilityRole="header">{event.title}</Txt>
+              <Txt v="sheetTitle" accessibilityRole="header">{title}</Txt>
               <Txt v="meta" color="muted">
                 {`${eventYear(event)} · ${refShort(event.first_vid, event.last_vid, books, true)}`}
               </Txt>
@@ -90,9 +96,9 @@ export function EventPreview({
                     {people.map((p) => {
                       const line = personLine(p.cite_id);
                       return line ? (
-                        <Chip key={p.cite_id} testID={`tl-person-${p.cite_id}`} label={`${p.name} →`} on={false} onPress={() => openLine(line.id)} />
+                        <Chip key={p.cite_id} testID={`tl-person-${p.cite_id}`} label={`${trPeople(p.name)} →`} on={false} onPress={() => openLine(line.id)} />
                       ) : (
-                        <Txt key={p.cite_id} v="meta" color="muted" style={{ paddingVertical: space[2] }}>{p.name}</Txt>
+                        <Txt key={p.cite_id} v="meta" color="muted" style={{ paddingVertical: space[2] }}>{trPeople(p.name)}</Txt>
                       );
                     })}
                   </View>
@@ -109,7 +115,7 @@ export function EventPreview({
                         <Chip
                           key={l.id}
                           testID={`tl-add-${l.id}`}
-                          label={TL.compareAdd(l.name)}
+                          label={TL.compareAdd(trLines(l.name))}
                           on={false}
                           disabled={compare.full}
                           onPress={() => compare.onAdd(l)}
@@ -125,7 +131,7 @@ export function EventPreview({
                   <Txt v="eyebrow" color="muted">{TL.alsoIn}</Txt>
                   <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space[3] }}>
                     {others.map((l) => (
-                      <Chip key={l.id} testID={`tl-also-${l.id}`} label={`${l.name} →`} on={false} onPress={() => openLine(l.id)} />
+                      <Chip key={l.id} testID={`tl-also-${l.id}`} label={`${trLines(l.name)} →`} on={false} onPress={() => openLine(l.id)} />
                     ))}
                   </View>
                 </View>

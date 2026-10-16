@@ -31,6 +31,8 @@ import {
 import { ScriptText } from '../rich/ScriptText';
 import { useAutoTranslate } from '@/translate/useAutoTranslate';
 import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
+import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
+import { useTimelineTexts } from '@/translate/timeline-translate';
 import { useSourceLang } from '@/translate/source-lang';
 import { useStudy } from '@/state/study';
 import { bareWord, chv, isOldTestament, morphLabelsPt, refShort, type CommentaryView, type KeyWord } from './format';
@@ -273,8 +275,11 @@ export function TimelineCard({
   // Coluna do ano do tamanho do rótulo mais longo (mono: ~0,6 em por caractere), sem sobra à esquerda.
   const years = events.map((e) => formatEventDate(e.startDate) ?? '');
   const yearW = Math.ceil(Math.max(1, ...years.map((y) => y.length)) * 11 * 0.62);
+  // Títulos da linha do tempo, traduzidos quando configurado (um lote para o cartão inteiro).
+  const tr = useTimelineTexts(events.map((e) => e.title));
   return (
     <View style={{ gap: space[3] }}>
+      <TimelineTranslationNote testID="timeline-note" />
       <Card testID="timeline">
         {/* Uma só área: o gap do Card separaria os pontos e cortaria o fio entre eles. */}
         <View>
@@ -286,7 +291,7 @@ export function TimelineCard({
                 key={e.cite_id}
                 testID={`timeline-${e.cite_id}`}
                 accessibilityRole="button"
-                accessibilityLabel={`${e.title}, ${year}, ${reference}`}
+                accessibilityLabel={`${tr(e.title)}, ${year}, ${reference}`}
                 onPress={() => onOpen(e)}
                 hitSlop={4}
                 style={({ pressed }) => ({
@@ -316,7 +321,7 @@ export function TimelineCard({
                 </View>
                 <View style={{ flex: 1, minWidth: 0, paddingBottom: space[5], gap: 2 }}>
                   <Txt v="bodySm" bold color={e.inRange ? 'text' : 'muted'} numberOfLines={2}>
-                    {e.title}
+                    {tr(e.title)}
                   </Txt>
                   <View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', columnGap: space[3] }}>
                     <Txt v="meta" color="muted" style={{ fontSize: 11 }}>{reference}</Txt>

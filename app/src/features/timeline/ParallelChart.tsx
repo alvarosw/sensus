@@ -41,6 +41,8 @@ export interface ChartProps {
   view: Bounds;
   cursor: number | null;
   favEvents: ReadonlySet<string>;
+  /** Texto a mostrar (tradução quando configurada); as faixas e os títulos passam por ele. */
+  tr: (text: string) => string;
   onView: (v: Bounds) => void;
   onCursor: (year: number) => void;
   onPoint: (laneId: string, event: TimelineLineEvent) => void;
@@ -90,7 +92,7 @@ function axisTicks(view: Bounds, PW: number): number[] {
 
 export function ParallelChart(props: ChartProps) {
   const { c, st } = useTheme();
-  const { lanes, ext, view, cursor, favEvents, onView, onCursor, onPoint, onInclude } = props;
+  const { lanes, ext, view, cursor, favEvents, tr, onView, onCursor, onPoint, onInclude } = props;
   const [size, setSize] = useState({ W: 0, H: 0 });
   const { W, H } = size;
   const { PW, lh, x, yearOf } = geometry(view, W, H, lanes.length);
@@ -201,7 +203,7 @@ export function ParallelChart(props: ChartProps) {
                 const top = TOP + i * lh;
                 const cy = top + lh * 0.62;
                 const color = kindColor(l.line.kind, st);
-                const name = `${l.line.name} · ${l.total}`;
+                const name = `${tr(l.line.name)} · ${l.total}`;
                 const nameW = name.length * CHAR_W + 22;
                 const inView = l.visible.filter((e) => e.sortKey >= view.lo - 1 && e.sortKey <= view.hi + 1);
                 const withTitles = lh >= TITLE_MIN_LANE;
@@ -219,7 +221,7 @@ export function ParallelChart(props: ChartProps) {
                     {withTitles &&
                       inView.map((e) => {
                         const px = x(e.sortKey);
-                        const label = shortTitle(e.title);
+                        const label = shortTitle(tr(e.title));
                         const w = label.length * CHAR_W;
                         const lx = Math.max(4, px - 3);
                         if (lx <= lastEnd + 6 || lx + w >= W - 4) return null;

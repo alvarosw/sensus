@@ -4,12 +4,15 @@
 import { useMemo, useState, type ReactNode } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
 import { useRouter } from 'expo-router';
-import { TIMELINE_ERAS, type TimelineLine, type TimelineLineEvent, type TimelineLineRef } from '@sensus/core';
+import { matchesTranslatedText, TIMELINE_ERAS, type TimelineLine, type TimelineLineEvent, type TimelineLineRef } from '@sensus/core';
+import { cachedTranslation } from '@/translate/engine';
+import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
+import { useTimelineActive, useTimelineText, useTimelineTexts, useTimelineVersion } from '@/translate/timeline-translate';
 import { Txt, radius, space, useTheme } from '@/design';
 import { useAppPrefs } from '@/settings/app-prefs';
-import { eraById, eventYear, filterEvents, filterLines, participantNames, spanText, type KindFilter } from './model';
+import { eraById, eventYear, filterEvents, filterLines, spanText, type KindFilter } from './model';
 import { TL, TL_ERA_SHORT } from './strings';
-import { useEventsByIds, useTimelineLines, useTimelineSearch, useTimelineSummary } from './useTimeline';
+import { useAllTimelineEvents, useEventsByIds, useTimelineLines, useTimelineSearch, useTimelineSummary } from './useTimeline';
 import { Chip, ChipRow, Density, KindMark, LineCard, SearchField, SourceFooter, StarButton, TimelineGate } from './parts';
 import { EventPreview } from './EventPreview';
 
@@ -51,6 +54,28 @@ function HomeBody({ eventId }: { eventId?: string }) {
   const searching = query.trim().length > 0;
   const hits = useTimelineSearch(query);
   const favEvents = useEventsByIds(favEventIds);
+  const allEvents = useAllTimelineEvents();
+  const tlActive = useTimelineActive();
+  const version = useTimelineVersion();
+
+  // Busca: além do banco (original), o que casa a tradução já em cache (linhas e eventos ainda não buscados).
+  const q = query.trim();
+  const searchLines = useMemo(() => {
+    const db = hits?.lines ?? [];
+    if (!searching || !tlActive) return db;
+    const extra = all.filter((l) => !db.some((x) => x.id === l.id) && matchesTranslatedText(q, l.name, cachedTranslation(l.name)));
+    return [...db, ...extra];
+    // version: a tradução chegou ao cache; recalcula a busca por ela.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hits, searching, tlActive, all, q, version]);
+  const searchEvents = useMemo(() => {
+    const db = hits?.events ?? [];
+    if (!searching || !tlActive || !allEvents) return db;
+    const extra = allEvents.filter((e) => !db.some((x) => x.cite_id === e.cite_id) && matchesTranslatedText(q, e.title, cachedTranslation(e.title)));
+    return [...db, ...extra];
+    // version: a tradução chegou ao cache; recalcula a busca por ela.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hits, searching, tlActive, allEvents, q, version]);
 
   // Visão geral: intervalo da Bíblia inteira a partir das linhas (primeiro e último ano de todas).
   const span = useMemo(() => (all.length ? { from: Math.min(...all.map((l) => l.from)), to: Math.max(...all.map((l) => l.to)) } : null), [all]);
@@ -71,8 +96,8 @@ function HomeBody({ eventId }: { eventId?: string }) {
   if (lines === null || hits === null && searching) {
     body = <Txt v="meta" color="muted" style={{ margin: space[8] }}>{TL.noDataYet}</Txt>;
   } else if (searching) {
-    const hitLines = filterLines(hits?.lines ?? [], filter);
-    const hitEvents = kind === 'all' ? filterEvents(hits?.events ?? [], era, onlyFav, favEventSet) : [];
+    const hitLines = filterLines(searchLines, filter);
+    const hitEvents = kind === 'all' ? filterEvents(searchEvents, era, onlyFav, favEventSet) : [];
     const eventsShown = expanded.events ? hitEvents : hitEvents.slice(0, SHOWN);
     body = (
       <>
@@ -198,6 +223,9 @@ function HomeBody({ eventId }: { eventId?: string }) {
       </View>
 
       <ScrollView testID="tl-home" contentContainerStyle={{ paddingTop: space[4], paddingBottom: space[12], gap: space[2] }} keyboardShouldPersistTaps="handled">
+        <View style={{ paddingHorizontal: space[8] }}>
+          <TimelineTranslationNote testID="tl-note" />
+        </View>
         {body}
         <SourceFooter />
       </ScrollView>
@@ -283,25 +311,30 @@ function EventHit({
   onMark: () => void;
 }) {
   const { c, st } = useTheme();
-  const where = lines.slice(0, 3).map((l) => l.name).join(' · ');
+  const title = useTimelineText(event.title);
+  const lineNames = lines.slice(0, 3).map((l) => l.name);
+  const trLine = useTimelineTexts(lineNames);
+  const people = [...new Set(event.participants.map((p) => p.name).filter(Boolean))];
+  const trPeople = useTimelineTexts(people);
+  const where = lineNames.map(trLine).join(' · ') || people.map(trPeople).join(', ');
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', gap: space[4], paddingLeft: space[8], paddingRight: space[2] }}>
       <Pressable
         testID={`tl-event-${event.cite_id}`}
         accessibilityRole="button"
-        accessibilityLabel={`${event.title}, ${eventYear(event)}`}
+        accessibilityLabel={`${title}, ${eventYear(event)}`}
         onPress={onOpen}
         style={({ pressed }) => ({ flex: 1, minWidth: 0, flexDirection: 'row', alignItems: 'center', gap: space[4], minHeight: 48, opacity: pressed ? 0.7 : 1 })}
       >
         <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: marked ? c.accent : st.ent }} />
         <View style={{ flex: 1, minWidth: 0 }}>
-          <Txt v="bodySm" bold numberOfLines={2}>{event.title}</Txt>
+          <Txt v="bodySm" bold numberOfLines={2}>{title}</Txt>
           <Txt v="meta" color="muted" numberOfLines={1}>
-            {[eventYear(event), where || participantNames(event.participants)].filter(Boolean).join(' · ')}
+            {[eventYear(event), where].filter(Boolean).join(' · ')}
           </Txt>
         </View>
       </Pressable>
-      <StarButton on={marked} label={marked ? TL.unfavorite : TL.favoriteEvent(event.title)} onPress={onMark} testID={`tl-fav-event-${event.cite_id}`} />
+      <StarButton on={marked} label={marked ? TL.unfavorite : TL.favoriteEvent(title)} onPress={onMark} testID={`tl-fav-event-${event.cite_id}`} />
     </View>
   );
 }

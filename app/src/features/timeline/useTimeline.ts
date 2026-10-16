@@ -140,6 +140,18 @@ function useDebounced(value: string, ms: number): string {
   return out;
 }
 
+/**
+ * Todos os eventos com as linhas de cada um (~450 na fonte). Só alimenta a busca que casa a tradução já em cache;
+ * a busca no banco continua valendo para o original.
+ */
+export function useAllTimelineEvents(): Array<TimelineLineEvent & { lines: TimelineLineRef[] }> | null {
+  return useLoaded('all-events', async (repo) => {
+    const events = await repo.timelineAllEvents();
+    const memberships = await repo.timelineMemberships(events.map((e) => e.cite_id));
+    return events.map((e) => ({ ...e, lines: memberships.get(e.cite_id) ?? [] }));
+  });
+}
+
 /** Eventos pelos cite_ids (favoritos). Ignora ids que não são mais eventos. */
 export function useEventsByIds(ids: readonly string[]): TimelineLineEvent[] | null {
   const key = `events:${ids.join('|')}`;

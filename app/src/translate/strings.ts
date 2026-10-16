@@ -24,4 +24,8 @@ export const TR = {
   removeBody: 'A tradução automática será desligada. Para usar de novo, ative a opção (o modelo é baixado outra vez).',
   cancel: 'Cancelar',
   removeConfirm: 'Remover',
+  timelineNote: 'Títulos traduzidos automaticamente',
+  timelineShowOriginal: 'Ver original',
+  timelineOriginalNote: 'Mostrando o original em inglês',
+  timelineShowTranslation: 'Ver tradução',
 } as const;

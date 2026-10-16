@@ -9,6 +9,9 @@ import { PARALLEL_COMBOS } from './parallel-lanes';
 import { TL } from './strings';
 import { KindMark, SearchField } from './parts';
 import { useTimelineLineSearch } from './useTimeline';
+import { useTimelineTexts, useTimelineActive, useTimelineVersion } from '@/translate/timeline-translate';
+import { cachedTranslation } from '@/translate/engine';
+import { matchesTranslatedText } from '@sensus/core';
 
 export function LinePicker({
   lines,
@@ -39,6 +42,23 @@ export function LinePicker({
   const favs = favorites.flatMap((id) => (byId.has(id) ? [byId.get(id)!] : []));
   const rec = recent.flatMap((id) => (byId.has(id) ? [byId.get(id)!] : []));
 
+  // Busca: o banco (original) mais as linhas cuja tradução já está no cache.
+  const tlActive = useTimelineActive();
+  const version = useTimelineVersion();
+  const searchHits = useMemo(() => {
+    if (!hasText) return [];
+    const db = found ?? [];
+    if (!tlActive) return db;
+    const extra = lines.filter((l) => !db.some((x) => x.id === l.id) && matchesTranslatedText(text.trim(), l.name, cachedTranslation(l.name)));
+    return [...db, ...extra];
+    // version: a tradução chegou ao cache; a busca considera a tradução nova.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [found, hasText, lines, tlActive, text, version]);
+
+  // Nomes na tela (busca, favoritas, recentes e combinações) traduzidos num só lote.
+  const listed = hasText ? searchHits : [...favs, ...rec];
+  const tr = useTimelineTexts([...listed.map((l) => l.name), ...PARALLEL_COMBOS.flatMap((c) => c.lines.map((id) => byId.get(id)?.name ?? ''))]);
+
   const row = (line: TimelineLine) => {
     const here = onScreen.has(line.id);
     const disabled = here || full;
@@ -47,7 +67,7 @@ export function LinePicker({
         key={line.id}
         testID={`tl-pick-${line.id}`}
         accessibilityRole="button"
-        accessibilityLabel={line.name}
+        accessibilityLabel={tr(line.name)}
         accessibilityState={{ disabled }}
         disabled={disabled}
         onPress={() => onAdd(line)}
@@ -55,7 +75,7 @@ export function LinePicker({
       >
         <KindMark kind={line.kind} small />
         <View style={{ flex: 1, minWidth: 0 }}>
-          <Txt v="bodySm" bold numberOfLines={1}>{line.name}</Txt>
+          <Txt v="bodySm" bold numberOfLines={1}>{tr(line.name)}</Txt>
           <Txt v="meta" color="muted" numberOfLines={1}>{`${TL.kindLabel[line.kind]} · ${TL.lineTitleOf(line.count)} · ${spanText(line.from, line.to)}`}</Txt>
         </View>
         <Txt v="meta" tint={here ? c.muted : c.accent} bold>{here ? TL.onScreen : '+'}</Txt>
@@ -86,12 +106,12 @@ export function LinePicker({
 
           <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{ gap: space[5], paddingBottom: space[2] }}>
             {hasText ? (
-              found === null ? (
+              found === null && searchHits.length === 0 ? (
                 <Txt v="meta" color="muted">{TL.noDataYet}</Txt>
-              ) : found.length === 0 ? (
+              ) : searchHits.length === 0 ? (
                 <Txt v="bodySm" color="muted">{TL.pickNone(text.trim())}</Txt>
               ) : (
-                found.map(row)
+                searchHits.map(row)
               )
             ) : (
               <>
@@ -111,7 +131,7 @@ export function LinePicker({
                       >
                         <Txt v="bodySm" bold>{combo.name}</Txt>
                         <Txt v="meta" color="muted" numberOfLines={2}>
-                          {combo.lines.map((id) => byId.get(id)?.name ?? '').filter(Boolean).join(' · ')}
+                          {combo.lines.map((id) => tr(byId.get(id)?.name ?? '')).filter(Boolean).join(' · ')}
                         </Txt>
                       </Pressable>
                     ))}

@@ -29,6 +29,8 @@ import { ParallelChart, type ChartLane } from './ParallelChart';
 import { ParallelMap } from './ParallelMap';
 import { LinePicker } from './LinePicker';
 import { EventPreview, type PreviewCompare } from './EventPreview';
+import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
+import { useTimelineTexts } from '@/translate/timeline-translate';
 
 export function ParallelView({ lineId }: { lineId?: string }) {
   const { c, st } = useTheme();
@@ -177,6 +179,14 @@ export function ParallelView({ lineId }: { lineId?: string }) {
 
   const ready = lines !== null && laneIds !== null;
 
+  // Textos do gráfico, da escolha e das combinações: traduzidos num só lote quando configurado.
+  const comboNames = useMemo(() => PARALLEL_COMBOS.flatMap((combo) => combo.lines.map((id) => byId.get(id)?.name ?? '')), [byId]);
+  const chartTexts = useMemo(
+    () => [...laneViews.map((l) => l.line.name), ...laneViews.flatMap((l) => l.visible.map((e) => e.title)), ...comboNames],
+    [laneViews, comboNames],
+  );
+  const tr = useTimelineTexts(chartTexts);
+
   return (
     <TimelineGate>
       <View style={{ flex: 1, backgroundColor: c.bg }}>
@@ -184,12 +194,13 @@ export function ParallelView({ lineId }: { lineId?: string }) {
         <View style={{ gap: space[3], paddingTop: space[4], paddingBottom: space[3], paddingHorizontal: space[4], borderBottomWidth: 1, borderBottomColor: c.border }}>
           <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: space[3] }}>
             {laneViews.map((l) => (
-              <LaneChip key={l.id} testID={`tl-lane-${l.id}`} name={l.line.name} color={kindColor(l.line.kind, st)} onRemove={() => removeLane(l.id)} />
+              <LaneChip key={l.id} testID={`tl-lane-${l.id}`} name={tr(l.line.name)} color={kindColor(l.line.kind, st)} onRemove={() => removeLane(l.id)} />
             ))}
             <Chip testID="tl-add-line" label={TL.addLine} on={false} disabled={full || !lines} onPress={() => setPicking(true)} />
             {hasLanes && <Chip testID="tl-clear" label={TL.clearLines} on={false} onPress={clearLanes} />}
           </View>
           {full && <Txt v="meta" color="muted">{TL.laneLimit}</Txt>}
+          <TimelineTranslationNote testID="tl-paralelo-note" />
           {hasLanes && (
             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: space[3] }}>
               <Chip testID="tl-fit" label={TL.fitAll} on={false} onPress={() => ext && setViewState({ lo: ext.lo, hi: ext.hi })} />
@@ -220,7 +231,7 @@ export function ParallelView({ lineId }: { lineId?: string }) {
                 >
                   <Txt v="bodySm" bold>{combo.name}</Txt>
                   <Txt v="meta" color="muted" numberOfLines={2}>
-                    {combo.lines.map((id) => byId.get(id)?.name ?? '').filter(Boolean).join(' · ')}
+                    {combo.lines.map((id) => tr(byId.get(id)?.name ?? '')).filter(Boolean).join(' · ')}
                   </Txt>
                 </Pressable>
               ))}
@@ -239,6 +250,7 @@ export function ParallelView({ lineId }: { lineId?: string }) {
                   view={shownView}
                   cursor={cursor}
                   favEvents={favEvents}
+                  tr={tr}
                   onView={setView}
                   onCursor={setCursor}
                   onPoint={onPoint}
@@ -276,8 +288,8 @@ export function ParallelView({ lineId }: { lineId?: string }) {
                       >
                         <View style={{ width: 9, height: 9, borderRadius: 5, backgroundColor: kindColor(l.line.kind, st) }} />
                         <View style={{ flex: 1, minWidth: 0 }}>
-                          <Txt v="bodySm" bold numberOfLines={1}>{event.title}</Txt>
-                          <Txt v="meta" color="muted" numberOfLines={1}>{`${l.line.name} · ${eventYear(event)}`}</Txt>
+                          <Txt v="bodySm" bold numberOfLines={1}>{tr(event.title)}</Txt>
+                          <Txt v="meta" color="muted" numberOfLines={1}>{`${tr(l.line.name)} · ${eventYear(event)}`}</Txt>
                         </View>
                       </Pressable>
                     );

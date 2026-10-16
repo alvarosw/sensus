@@ -1,9 +1,11 @@
 // Tradução automática (inglês -> português) com cache só na memória: nada disto é gravado no aparelho.
-import { assembleTranslation, segmentForTranslation, translatableRuns, type TextSegment } from '@sensus/core';
+import { assembleTranslation, chunked, runsToTranslate, segmentForTranslation, translatableRuns, type TextSegment } from '@sensus/core';
 import { translateRuns } from './native';
 
 /** Teto de trechos guardados (cada trecho é uma frase ou um fragmento entre referências). */
-const CACHE_MAX = 800;
+const CACHE_MAX = 3000;
+/** Trechos por pedido ao aparelho (um lote da linha do tempo pode ter centenas de títulos e nomes). */
+const BATCH_SIZE = 100;
 
 const cache = new Map<string, string>();
 
@@ -48,6 +50,21 @@ export async function translateText(text: string): Promise<string> {
     });
   }
   return assembleTranslation(segs, recall);
+}
+
+/**
+ * Traduz de uma vez os trechos que faltam de vários textos (um pedido ao aparelho por lote de BATCH_SIZE). Só o
+ * cache da memória recebe o resultado: nada é gravado no aparelho.
+ */
+export async function translateMany(texts: readonly string[]): Promise<void> {
+  const missing = runsToTranslate(texts, (run) => cache.has(run));
+  for (const part of chunked(missing, BATCH_SIZE)) {
+    const out = await translateRuns(part);
+    part.forEach((run, i) => {
+      const value = out[i];
+      if (typeof value === 'string') remember(run, value);
+    });
+  }
 }
 
 /** Esvazia o cache (ex.: ao remover o modelo). */
