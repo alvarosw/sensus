@@ -324,10 +324,12 @@ export function ParallelView({ lineId, preset }: { lineId?: string; preset?: str
                       {TIMELINE_ERAS.map((era) => {
                         const x0 = Math.max(0, xOf(era.from));
                         const x1 = Math.min(PW, xOf(era.to));
-                        if (x1 - x0 < 46) return null;
+                        const text = (TL_ERA_SHORT[era.id] ?? era.name).toUpperCase();
+                        // Rótulo só se cabe na faixa da era (caixa alta, ~9 px por letra), para não sobrepor o vizinho.
+                        if (x1 - x0 < text.length * 9 + 8) return null;
                         return (
                           <SvgText key={`lbl-${era.id}`} x={x0 + 4} y={H - 6} fill={c.muted} fontSize={8.5} fontFamily={fontFamilies.uiBold} opacity={0.85}>
-                            {(TL_ERA_SHORT[era.id] ?? era.name).toUpperCase()}
+                            {text}
                           </SvgText>
                         );
                       })}

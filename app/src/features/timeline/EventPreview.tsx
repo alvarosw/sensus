@@ -33,7 +33,9 @@ export function EventPreview({ citeId, currentLineId, onClose }: { citeId: strin
   const event = detail?.event ?? null;
   const others = (detail?.lines ?? []).filter((l) => l.id !== currentLineId);
   const people = event?.participants ?? [];
-  const personLine = (cite: string): TimelineLine | undefined => (lineIds.has(cite) ? (lines ?? []).find((l) => l.id === cite) : undefined);
+  // Pessoa com linha própria vira link (exceto a linha em que a prévia já está).
+  const personLine = (cite: string): TimelineLine | undefined =>
+    lineIds.has(cite) && cite !== currentLineId ? (lines ?? []).find((l) => l.id === cite) : undefined;
 
   return (
     <Modal visible transparent animationType={reduce ? 'none' : 'slide'} onRequestClose={onClose} statusBarTranslucent>
