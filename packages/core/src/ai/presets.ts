@@ -22,9 +22,10 @@ export const PROVIDER_PRESETS: Record<PresetId, ProviderPreset> = {
     label: 'NVIDIA (build.nvidia.com)',
     kind: 'openai-compatible',
     baseUrl: 'https://integrate.api.nvidia.com/v1',
-    // Nemotron 3 Ultra com o raciocínio desligado: primeiro texto em ~2,5 s (Gemma 4 leva ~45 s), precisão 90
-    // (ver "Decisão" em docs/MODEL_BENCHMARK.md). Outras opções: RECOMMENDED_MODELS (recommended-models.ts).
-    defaultModel: 'nvidia/nemotron-3-ultra-550b-a55b',
+    // Gemma 4 31B com o raciocínio desligado: a mais precisa do benchmark (96) e sempre completa; primeiro texto
+    // em ~12 s. Nemotron 3 Ultra saiu (404 persistente em 16/10/2026). Ver docs/MODEL_BENCHMARK.md e
+    // RECOMMENDED_MODELS (recommended-models.ts).
+    defaultModel: 'google/gemma-4-31b-it',
     keyUrl: 'https://build.nvidia.com',
     extraBody: { chat_template_kwargs: { enable_thinking: false } },
   },
