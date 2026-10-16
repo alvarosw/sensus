@@ -65,6 +65,8 @@ function AppStack() {
             <Stack.Screen name="index" options={{ headerShown: false }} />
             {/* Pilha própria em settings/_layout.tsx (cabeçalhos e voltar do design system). */}
             <Stack.Screen name="settings" options={{ headerShown: false }} />
+            {/* Pilha própria em timeline/_layout.tsx (tela inicial, lista de linha, Bíblia inteira, paralelo). */}
+            <Stack.Screen name="timeline" options={{ headerShown: false }} />
             <Stack.Screen name="data-setup" options={{ headerShown: false }} />
           </Stack>
           {/* Depois da pilha: a oferta abre a tela de dados quando a navegação já está montada. */}

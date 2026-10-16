@@ -261,16 +261,20 @@ export function TimelineCard({
   events,
   books,
   onOpen,
+  onOpenTimeline,
 }: {
   events: readonly TimelineEvent[];
   books: readonly Book[];
   onOpen: (event: TimelineEvent) => void;
+  /** Abre a cronologia completa no evento do trecho ("Abrir na linha do tempo"). */
+  onOpenTimeline?: () => void;
 }) {
   const { c, st } = useTheme();
   // Coluna do ano do tamanho do rótulo mais longo (mono: ~0,6 em por caractere), sem sobra à esquerda.
   const years = events.map((e) => formatEventDate(e.startDate) ?? '');
   const yearW = Math.ceil(Math.max(1, ...years.map((y) => y.length)) * 11 * 0.62);
   return (
+    <View style={{ gap: space[3] }}>
     <Card testID="timeline">
       {/* Uma só área: o gap do Card separaria os pontos e cortaria o fio entre eles. */}
       <View>
@@ -324,6 +328,8 @@ export function TimelineCard({
         })}
       </View>
     </Card>
+    {onOpenTimeline && <LinkButton label={STUDY.timelineOpen} onPress={onOpenTimeline} testID="timeline-open" />}
+    </View>
   );
 }
 

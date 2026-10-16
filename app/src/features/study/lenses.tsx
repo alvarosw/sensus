@@ -2,6 +2,7 @@
 // formatado por tipo (catálogo em docs/DESIGN_SYSTEM.md).
 import { useMemo, useState, type ReactNode } from 'react';
 import { Pressable, Text, View, type LayoutChangeEvent } from 'react-native';
+import { router } from 'expo-router';
 import {
   hasEdition,
   splitVid,
@@ -459,12 +460,17 @@ export function HistoricoLens({ onLayout }: LensProps) {
             useStudy.getState().setSelection(e.first_vid, e.last_vid);
             useReaderNav.getState().goVerse(e.first_vid, { flash: true });
           };
+          // Cronologia completa, já no evento do trecho (o primeiro dele; sem evento neste trecho, a tela abre cheia).
+          const openTimeline = () => {
+            const cite = (parts.events.find((e) => e.inRange) ?? parts.events[0])?.cite_id;
+            router.push(cite ? { pathname: '/timeline', params: { evento: cite } } : '/timeline');
+          };
           return (
             <View style={{ gap: space[6] }}>
               {events.length > 0 && (
                 <>
                   <SubHeader label={STUDY.timeline} />
-                  <TimelineCard events={events} books={data.books} onOpen={openEvent} />
+                  <TimelineCard events={events} books={data.books} onOpen={openEvent} onOpenTimeline={openTimeline} />
                 </>
               )}
               {places.length > 0 && <PassageMapCard range={data.range} unit={data.unit} />}

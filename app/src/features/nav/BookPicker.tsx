@@ -6,6 +6,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BOOK_TABLE, type Book } from '@sensus/core';
 import { Icon, IconButton, Segmented, SubHeader, Txt, fontFamilies, motion, radius, shadow, useTheme } from '@/design';
 import { READER } from '../reader/strings';
+import { TL } from '../timeline/strings';
 import { abbrOf } from './abbrev';
 import { groupBooks } from './categories';
 
@@ -18,6 +19,7 @@ export function BookPicker({
   areaHeight,
   onPick,
   onSettings,
+  onTimeline,
   onClose,
 }: {
   visible: boolean;
@@ -26,6 +28,8 @@ export function BookPicker({
   areaHeight: number;
   onPick: (book: Book, chapter: number) => void;
   onSettings: () => void;
+  /** Abre a linha do tempo (seção Explorar). */
+  onTimeline: () => void;
   onClose: () => void;
 }) {
   const { c } = useTheme();
@@ -122,6 +126,31 @@ export function BookPicker({
             </>
           ) : (
             <>
+              <View style={{ gap: 8 }}>
+                <SubHeader label={TL.explore} />
+                <Pressable
+                  testID="picker-timeline"
+                  accessibilityRole="button"
+                  accessibilityLabel={TL.title}
+                  onPress={onTimeline}
+                  style={({ pressed }) => ({
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    gap: 12,
+                    minHeight: 52,
+                    paddingHorizontal: 12,
+                    borderRadius: radius.lg,
+                    backgroundColor: c.chip,
+                    opacity: pressed ? 0.6 : 1,
+                  })}
+                >
+                  <View style={{ flex: 1, minWidth: 0, gap: 1 }}>
+                    <Txt v="bodySm" bold color="text">{TL.title}</Txt>
+                    <Txt v="meta" color="muted">{TL.entrySub}</Txt>
+                  </View>
+                  <Icon name="chevronRight" size={16} color={c.muted} />
+                </Pressable>
+              </View>
               <Segmented<Testament>
                 testID="books-testament"
                 value={testament}

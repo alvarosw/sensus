@@ -66,6 +66,10 @@ export default function MainScreen() {
           setBooksOpen(false);
           router.push('/settings');
         }}
+        onTimeline={() => {
+          setBooksOpen(false);
+          router.push('/timeline');
+        }}
         onClose={() => setBooksOpen(false)}
       />
       <StudySheet />

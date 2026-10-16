@@ -97,6 +97,9 @@ export interface StoredAppPrefs {
   theme?: unknown;
   textSource?: unknown;
   greekDefault?: unknown;
+  /** Favoritos da linha do tempo: cite_ids de linhas e de eventos (listas de texto). */
+  timelineLines?: unknown;
+  timelineEvents?: unknown;
 }
 
 const APP_PREFS_FILE_NAME = 'app-prefs.json';

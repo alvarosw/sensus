@@ -88,6 +88,7 @@ export const STUDY = {
   historicalEmpty: 'Sem lugares, pessoas ou verbetes ligados a estes versículos.',
   timeline: 'Linha do tempo',
   timelineHere: 'neste trecho',
+  timelineOpen: 'Abrir na linha do tempo',
 
   // Língua
   word: 'Palavra',
