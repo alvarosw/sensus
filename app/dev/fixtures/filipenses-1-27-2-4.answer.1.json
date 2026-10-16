@@ -5,9 +5,9 @@
     "start": 50001027,
     "end": 50002004
   },
-  "model": "nvidia/nemotron-3-super-120b-a12b",
-  "recordedAt": "2026-10-16T21:04:16.813Z",
+  "model": "google/gemma-4-31b-it",
+  "recordedAt": "2026-10-16T23:31:37.579Z",
   "kind": "answer",
-  "question": "Como a variante textual ἀκούσω (aoristo) versus ἀκούω (presente) afeta a interpretação da expectativa de Paulo em Filipenses 1:27?",
-  "text": "A variante textual em Filipenses 1:27 mostra que o Textus Receptus (TR) e o Majority Text (BYZ) leem ἀκούσω (aoristo ativo subjuntivo 1ª pessoa singular), enquanto o Nestle-Aland (NA) lê ἀκούω (presente ativo subjuntivo 1ª pessoa singular) [[txt:grc-tr:50001027:161]] [[txt:grc-tr:50001027:160]]. A forma aorista (ἀκούσω) indica uma ação pontual ou completada no futuro, sugerindo que Paulo espera ouvir um relato específico em um momento determinado, seja quando estiver presente ou ausente [[tok:gnt:50001027:161]]. Já a forma presente (ἀκούω) implica uma ação contínua ou habitual, indicando que Paulo deseja estar constantemente informado sobre o estado dos filipenses, independentemente de sua presença ou ausência [[tok:gnt:50001027:160]]. Essa diferença afeta a interpretação da expectativa de Paulo: o aorista foca em uma futura verificação específica, enquanto o presente enfatiza um monitoramento contínuo de sua conduta. (Inferência) A escolha entre as variantes influencia se se entende que Paulo anseia por uma única atualização futura ou por um acompanhamento permanente da fidelidade da igreja. @perguntas\n- Como a variante textual em Filipenses 1:28 (μέν versus omissão) afeta o contraste entre a percepção dos adversários e a dos filipenses?\n- Em que medida a variante em Filipenses 2:1 (τινα versus τις) influencia a interpretação das condições de consolação em Cristo?\n- Como a variante em Filipenses 2:4 (σκοπεῖτε versus σκοποῦντες) altera a natureza do imperativo sobre cuidar dos interesses alheios?\n@fim"
+  "question": "Qual a morfologia do verbo *plērōsate* em 2:2?",
+  "text": "### Análise Morfológica de *plērōsate*\n\nO verbo *plērōsate* (πληρώσατέ), encontrado em Filipenses 2:2, apresenta a seguinte morfologia:\n\n*   **Verbo** [[tok:gnt:50002002:10]]\n*   **Tempo:** Aoristo [[tok:gnt:50002002:10]]\n*   **Voz:** Ativa [[tok:gnt:50002002:10]]\n*   **Modo:** Imperativo [[tok:gnt:50002002:10]]\n*   **Pessoa:** 2ª pessoa [[tok:gnt:50002002:10]]\n*   **Número:** Plural [[tok:gnt:50002002:10]]\n\n@perguntas\n- Qual o significado da glosa para este verbo em 2:2?\n- Quais são as variantes textuais presentes em Filipenses 2:4?\n- Como a tradição patristica interpreta a palavra \"somente\" em 1:27?\n\n@fim"
 }
