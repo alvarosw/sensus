@@ -51,6 +51,12 @@ const TRADITION_PT: Record<string, string> = {
   baptist: 'batista',
   dispensational: 'dispensacionalista',
   patristic: 'patrística',
+  adventist: 'adventista',
+  catholic: 'católica',
+  lutheran: 'luterana',
+  anglican: 'anglicana',
+  congregational: 'congregacional',
+  restoration: 'restauracionista',
 };
 
 export function traditionLabel(t: string | null | undefined): string {

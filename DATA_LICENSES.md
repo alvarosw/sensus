@@ -94,6 +94,33 @@ domínio público (DistributionLicense=Public Domain).* A atribuição completa 
 | `sword-mhc` | Matthew Henry (1662-1714) | Complete Commentary on the Whole Bible | v2.2 | PD. Texto do CCEL. |
 | `sword-scofield` | C. I. Scofield (1843-1921) | Reference Notes, edição de 1917 | v2.1 | PD. |
 | `sword-wesley` | John Wesley (1703-1791) | Notes on the Bible | v1.1 | PD. |
+| `sword-abbott` | John S. C. Abbott (1805-1877) e Jacob Abbott (1803-1879) | Illustrated New Testament (1878) | v1.1 | PD (`DistributionLicense=Public Domain`). |
+| `sword-burkitt` | William Burkitt (1650-1703) | Expository Notes with Practical Observations on the New Testament | v1.0 | PD. |
+| `sword-catena` | Tomás de Aquino (1225-1274), compilação de Pais da Igreja | Catena Aurea (Evangelhos) | v1.0.1 | PD. |
+| `sword-lightfoot` | John Lightfoot (1602-1675) | Commentary on the New Testament from the Talmud and Hebraica | v1.0 | PD. Texto de philologos.org. |
+| `sword-luther` | Martinho Lutero (1483-1546) e outros | Luther's Commentary on Selected Bible Passages | v1.1 | PD pelo `.conf`. O About cita edições de 1892 a 1932 (Lenker, Hay, Holman); conferir cada parte. Ver item 12. |
+| `sword-pnt` | B. W. Johnson (séc. XIX) | The People's New Testament, com notas explicativas | v1.1 | PD. |
+| `sword-tfg` | J. W. McGarvey (1829-1915) e Philip Y. Pendleton | The Fourfold Gospel e Commentary on Acts | v1.5 | PD. Módulo RawCom (texto sem compressão). Sem marcas de referência cruzada GBF. |
+
+**Adventistas (Ellen G. White, domínio público)**
+
+Autora falecida em 1915. As obras são publicadas antes de 1929 (domínio público nos EUA) e, no Brasil, pela regra de
+vida mais 70 anos. Só entram textos de Project Gutenberg e archive.org, nunca de egwwritings.org ou de PDFs do White
+Estate. Ver item 12. Não são comentários versículo a versículo: só parágrafos com referência explícita geram linhas.
+
+| Fonte (id) | Autor | Título e edição | Origem do texto | Condições |
+|---|---|---|---|---|
+| `egw-great-controversy` | Ellen G. White (1827-1915) | The Great Controversy (1911) | Project Gutenberg #25833 | Cabeçalho e rodapé do Gutenberg removidos. Notas e índice (apêndice) não usados. |
+| `egw-patriarchs` | Ellen G. White (1827-1915) | The Story of Patriarchs and Prophets (1913; copyright 1890) | Project Gutenberg #79498 | Cabeçalho e rodapé do Gutenberg removidos. Notas de rodapé ligadas pelo marcador [n]. |
+| `egw-prophets` | Ellen G. White (1827-1915) | The Story of Prophets and Kings (1917) | archive.org `storyofprophetsk0000elle` | Cabeçalhos de página removidos. |
+| `egw-acts` | Ellen G. White (1827-1915) | The Acts of the Apostles (1911) | archive.org `actsapostlesinp00unkngoog` | Cabeçalhos de página removidos. |
+| `egw-object-lessons` | Ellen G. White (1827-1915) | Christ's Object Lessons (1900) | archive.org `christsobjectles00whit` | OCR com alguns caracteres trocados em notas; só parágrafos com referência são usados. |
+| `egw-steps` | Ellen G. White (1827-1915) | Steps to Christ (1892; edição de 1896) | archive.org `stepstochrist00whit` | Texto da edição de 1896. |
+
+**Examinadas e não incluídas (adventistas e outras):** *The Desire of Ages* (os scans de 1898 trazem aviso de direitos
+de 1940, de edição revisada; titularidade não confirmada), *Daniel and the Revelation*, de Uriah Smith (OCR com erros
+residuais que a limpeza automática não corrige com segurança; ver item 12), Geneva Bible Translation Notes e Family Bible
+Notes (sem `DistributionLicense` no `.conf`), Darby Translation Notes (índice não alinhado à versificação).
 
 **Dicionários**
 
@@ -163,6 +190,11 @@ Mapa do mundo antigo (AWMC): não incluído; ver `docs/BACKLOG.md`, seção App.
    ter proteção.
 10. **Tela de licenças do app.** As 31 fontes estão no build completo desde 2026.10.11. A tela "Sobre e
     licenças" do app precisa listar todas, com as atribuições acima (`docs/BACKLOG.md`, seção Licenças).
+
+12. **Adventistas e Luther.** (a) Os textos de Ellen G. White são de autora falecida em 1915; as edições usadas são
+    anteriores a 1929. Se algum scan for de edição posterior, ou tiver aviso de direitos de edição revisada, a fonte sai.
+    (b) O `sword-luther` reúne material de várias edições; o `.conf` declara PD. Revisar antes de distribuir.
+    (c) Uriah Smith (1903) e outras fontes de OCR: só entram com texto revisado.
 
 ## 4. Ferramentas e modelos de terceiros (não são dados do banco)
 
