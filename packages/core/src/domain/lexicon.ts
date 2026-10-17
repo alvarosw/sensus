@@ -25,6 +25,13 @@ export interface LexiconPick {
   secondary: LexiconEntry | null;
 }
 
+/** Léxicos longos (LSJ): entram só truncados e só para palavras de conteúdo. */
+const LONG_LEXICON_SOURCES: ReadonlySet<string> = new Set(['stepbible-tflsj']);
+
+export function isLongLexiconSource(sourceId: string): boolean {
+  return LONG_LEXICON_SOURCES.has(sourceId);
+}
+
 /** Prefixo de Strong de cada língua (grego G; hebraico e aramaico H). */
 const STRONG_PREFIX: Record<Lang, 'G' | 'H'> = { grc: 'G', hbo: 'H', arc: 'H' };
 

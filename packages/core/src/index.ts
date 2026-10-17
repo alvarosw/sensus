@@ -16,7 +16,6 @@ export * from './ai/context';
 export * from './ai/prompts';
 export * from './ai/citations';
 export * from './ai/morphcheck';
-export * from './morph';
 export * from './relevance';
 export * from './variants';
 export * from './ai/structured-types';

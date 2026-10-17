@@ -2,6 +2,9 @@ import { describe, expect, it } from 'vitest';
 import {
   CORPUS,
   corpusOfCiteId,
+  editionsOf,
+  hasEditionVariants,
+  isBaseTextToken,
   langOfToken,
   testamentLabel,
   testamentOfBook,
@@ -16,6 +19,7 @@ describe('língua e testamento (NT grego e AT hebraico/aramaico)', () => {
       langs: ['grc'],
       tokensSource: 'tagnt',
       baseEditions: ['TR', 'BYZ', 'NA'],
+      textEdition: 'TR',
       interlinearText: 'grc-tr',
     });
     expect(CORPUS.hot).toEqual({
@@ -23,8 +27,26 @@ describe('língua e testamento (NT grego e AT hebraico/aramaico)', () => {
       langs: ['hbo', 'arc'],
       tokensSource: 'tahot',
       baseEditions: ['L'],
+      textEdition: null,
       interlinearText: 'hbo-wlc',
     });
+  });
+
+  it('texto-base por corpus: no NT só o que está no TR; no AT, todas as palavras', () => {
+    // Fp 2:7 (grego): palavra só no BYZ é variante, não texto-base
+    expect(isBaseTextToken({ corpus: 'gnt', editions: 'TR,BYZ,NA' })).toBe(true);
+    expect(isBaseTextToken({ corpus: 'gnt', editions: 'BYZ,NA' })).toBe(false);
+    // 1Rs 15:15 (hebraico): edições 'L' e Qere 'Q' entram; sem edição nenhuma também
+    expect(isBaseTextToken({ corpus: 'hot', editions: 'L' })).toBe(true);
+    expect(isBaseTextToken({ corpus: 'hot', editions: 'Q' })).toBe(true);
+    expect(isBaseTextToken({ corpus: 'hot', editions: '' })).toBe(true);
+  });
+
+  it('só o grego tem variantes entre edições-base; as edições de uma palavra são um conjunto', () => {
+    expect(hasEditionVariants('gnt')).toBe(true);
+    expect(hasEditionVariants('hot')).toBe(false);
+    expect([...editionsOf({ editions: 'TR, BYZ,,NA' })]).toEqual(['TR', 'BYZ', 'NA']);
+    expect(editionsOf({ editions: '' }).size).toBe(0);
   });
 
   it('testamento de livro pela tabela de livros', () => {

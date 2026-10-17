@@ -1,12 +1,10 @@
 // Serialização do painel em texto de contexto para o LLM, com orçamento por camada.
 import type { Commentary, LexiconEntry, PanelData, Token } from '../types';
 import { formatReference } from '../refs';
-import { hasEdition, missingBaseEditions } from '../panel';
-import { isContentToken } from '../morph';
+import { missingBaseEditions } from '../panel';
 import { variantSites } from '../variants';
 import { shortTitle } from '../domain/sources';
-
-export { isContentToken } from '../morph';
+import { hasEditionVariants, isBaseTextToken, isContentToken, isLongLexiconSource } from '../domain';
 
 export interface SerializedContext {
   /** Texto estruturado, agrupado nas seis camadas. */
@@ -37,9 +35,6 @@ const TOPIC_CLIP = 400;
 const XREF_CLIP = 500;
 const CONCORDANCE_CLIP = 400;
 const BOOK_INTRO_CLIP = 700;
-
-/** Léxicos longos: entram só truncados e só para palavras de conteúdo. */
-const LONG_LEXICON_SOURCES: ReadonlySet<string> = new Set(['stepbible-tflsj']);
 
 type Layer = 1 | 2 | 3 | 4 | 5 | 6;
 
@@ -103,7 +98,7 @@ function describeToken(t: Token, withMorph = true): string {
 }
 
 function isLongLexicon(l: LexiconEntry): boolean {
-  return LONG_LEXICON_SOURCES.has(l.source_id);
+  return isLongLexiconSource(l.source_id);
 }
 
 const TYPE_LABEL: Record<string, string> = {
@@ -141,10 +136,10 @@ function buildItems(panel: PanelData): Item[] {
   // Texto-base: palavras presentes no TR (hebraico: todas). Palavras de conteúdo mostram a morfologia
   // completa na camada 4; aqui ficam só a forma e o lema.
   for (const t of original) {
-    if (t.corpus === 'gnt' && !hasEdition(t, 'TR')) continue; // aparece nas leituras de variante
+    if (!isBaseTextToken(t)) continue; // aparece nas leituras de variante
     const notes: string[] = [];
     const missing = missingBaseEditions(t);
-    if (t.corpus === 'gnt' && missing.length > 0) {
+    if (hasEditionVariants(t.corpus) && missing.length > 0) {
       notes.push(`edições: ${t.editions}`, `ausente em ${missing.join(', ')}`);
       if (t.variant_note) notes.push(`nota: ${t.variant_note}`);
     }
@@ -247,7 +242,7 @@ function buildItems(panel: PanelData): Item[] {
   // Camada 4 — língua original
   // Palavras de conteúdo com análise morfológica completa (código e descrição TEGMC), com a sua citação.
   for (const t of original) {
-    if (!isContentToken(t) || !(t.corpus === 'hot' || hasEdition(t, 'TR'))) continue;
+    if (!isContentToken(t) || !isBaseTextToken(t)) continue;
     const morph = t.morph ? `morfologia ${t.morph}${t.morph_desc ? ` = ${t.morph_desc}` : ''}` : 'morfologia -';
     push({
       citeId: t.cite_id,

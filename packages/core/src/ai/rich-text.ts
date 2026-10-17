@@ -1,5 +1,7 @@
 // Texto rico da resposta da IA: subconjunto de markdown + citações inline, tolerante a streaming.
 import type { MorphConflict, Token } from '../types';
+import { splitVid } from '../refs';
+import { langOfToken, langOfWordText, SCRIPT_WORD_RE } from '../domain';
 import { checkMorphClaims } from './morphcheck';
 import { CITE_MARKER_SOURCE, citeIdsOfMarker, parseCited, safeParseLength, stripInferenceLabels } from './citations';
 import type { Block, CiteRef, ClaimInfo, Inline, RichTextContext } from './structured-types';
@@ -11,9 +13,6 @@ const MARKER = `(?:${CITE_MARKER_SOURCE})`;
 /** Uma sequência de citações consecutivas (separadas só por espaço ou vírgula) forma um grupo. */
 const RUN_RE = new RegExp(`(?:${MARKER})(?:[\\s,;]*(?:${MARKER}))*`, 'g');
 const ONE_MARKER_RE = new RegExp(MARKER, 'g');
-/** Palavras em grego (inclui polytonismo e elisão) ou hebraico. */
-const SCRIPT_WORD_RE = /[Ͱ-Ͽἀ-῿֐-׿][Ͱ-Ͽἀ-῿֐-׿\p{M}’']*/gu;
-const HEBREW_RE = /[֐-׿]/;
 const LINK_RE = /\[([^\]\n]+)\]\(([^)\s\n]*)\)/g;
 /** Resto de marcador ao final de um trecho (não deve aparecer como texto). */
 const TRAILING_PARTIAL_RE = /\[{1,2}(?:(?:txt|tok|lex|com|dic|xr|ent)(?::[^\[\]\n]*)?)?$/;
@@ -53,7 +52,7 @@ function buildRefs(ids: string[], ctx: RichTextContext): CiteRef[] {
     ) {
       const first = ctx.citeIndex.get(last.citeId)!;
       last.citeIds = [...(last.citeIds ?? [last.citeId]), id];
-      last.label = `${first.short} ${first.refLabel}–${verse.vid % 1000}`;
+      last.label = `${first.short} ${first.refLabel}–${splitVid(verse.vid).verse}`;
       lastVid = verse.vid;
       continue;
     }
@@ -93,8 +92,11 @@ function emphasisSpans(text: string): Span[] {
   return spans;
 }
 
-/** Divide um trecho de texto em palavras originais (grego/hebraico, com token quando casa) e texto comum. */
-function scriptInlines(span: Span, tokenByKey: ReadonlyMap<string, string>): Inline[] {
+/**
+ * Divide um trecho de texto em palavras originais (grego/hebraico, com token quando casa) e texto comum.
+ * A língua vem do token quando ele casa (aramaico, morfologia A); senão, da escrita da palavra.
+ */
+function scriptInlines(span: Span, tokenByKey: ReadonlyMap<string, Token>): Inline[] {
   const out: Inline[] = [];
   const flags = { ...(span.bold ? { bold: true } : {}), ...(span.italic ? { italic: true } : {}) };
   const text = span.text.replace(TRAILING_PARTIAL_RE, '');
@@ -102,11 +104,12 @@ function scriptInlines(span: Span, tokenByKey: ReadonlyMap<string, string>): Inl
   for (const m of text.matchAll(SCRIPT_WORD_RE)) {
     if (m.index > last) out.push({ type: 'text', text: text.slice(last, m.index), ...flags });
     const word = m[0];
+    const token = tokenByKey.get(wordKey(word));
     out.push({
       type: 'original',
       text: word,
-      lang: HEBREW_RE.test(word) ? 'hbo' : 'grc',
-      ...(tokenByKey.has(wordKey(word)) ? { tokenCiteId: tokenByKey.get(wordKey(word)) } : {}),
+      lang: token ? langOfToken(token) : langOfWordText(word),
+      ...(token ? { tokenCiteId: token.cite_id } : {}),
       ...flags,
     });
     last = m.index + word.length;
@@ -147,7 +150,7 @@ function sameAsPreviousCite(out: readonly Inline[], refs: CiteRef[]): boolean {
 }
 
 /** Converte um trecho inline (com citações, negrito, itálico) em Inlines. */
-export function parseInline(raw: string, ctx: RichTextContext, tokenByKey: ReadonlyMap<string, string>): Inline[] {
+export function parseInline(raw: string, ctx: RichTextContext, tokenByKey: ReadonlyMap<string, Token>): Inline[] {
   const out: Inline[] = [];
   let last = 0;
   const pushText = (chunk: string): void => {
@@ -209,10 +212,10 @@ type Acc =
  */
 export function parseRichText(text: string, ctx: RichTextContext): Block[] {
   const tokenMap = new Map<string, Token>((ctx.tokens ?? []).map((t) => [t.cite_id, t]));
-  const tokenByKey = new Map<string, string>();
+  const tokenByKey = new Map<string, Token>();
   for (const t of ctx.tokens ?? []) {
     const key = wordKey(t.surface);
-    if (key && !tokenByKey.has(key)) tokenByKey.set(key, t.cite_id);
+    if (key && !tokenByKey.has(key)) tokenByKey.set(key, t);
   }
 
   const lines = text.normalize('NFC').replace(/\r\n?/g, '\n').split('\n');

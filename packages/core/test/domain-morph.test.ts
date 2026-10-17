@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { isContentTokenByLang, isProperNameToken, isVerbToken, mainSegmentOf } from '../src/domain';
-import { isContentToken } from '../src/domain/morph';
+import { isContentToken as isContentTokenNucleo } from '../src/index';
+import { isProperNameToken, isVerbToken, mainSegmentOf, isContentToken } from '../src/domain';
 
 describe('morfologia: conteúdo, verbo e nome próprio por língua', () => {
   it('grego (Fp 2:7): ἐκένωσεν é verbo de conteúdo; ἀλλ᾽ é conjunção', () => {
@@ -62,7 +62,7 @@ describe('morfologia: conteúdo, verbo e nome próprio por língua', () => {
     expect(isContentToken({ corpus: 'hot', morph: 'AR/Ncbsc/Sp2ms' })).toBe(true);
   });
 
-  it('a versão por língua tem o nome explícito no núcleo', () => {
-    expect(isContentTokenByLang).toBe(isContentToken);
+  it('o nome exportado pelo núcleo (usado pelo app) é a mesma regra do domínio', () => {
+    expect(isContentTokenNucleo).toBe(isContentToken);
   });
 });

@@ -13,8 +13,10 @@ export interface CorpusSpec {
   langs: readonly Lang[];
   /** Ingestor que gera a tabela de tokens (morfologia). */
   tokensSource: 'tagnt' | 'tahot';
-  /** Edições-base do texto original (as que valem como "texto-base"). */
+  /** Edições-base do texto original. Mais de uma edição-base = há variantes textuais entre elas. */
   baseEditions: readonly string[];
+  /** Edição que define o texto-base da passagem (palavra fora dela não entra). null = o corpus inteiro é texto-base. */
+  textEdition: string | null;
   /** Id da fonte de texto interlinear do leitor. */
   interlinearText: string;
 }
@@ -25,6 +27,7 @@ export const CORPUS: Record<Corpus, CorpusSpec> = {
     langs: ['grc'],
     tokensSource: 'tagnt',
     baseEditions: ['TR', 'BYZ', 'NA'],
+    textEdition: 'TR',
     interlinearText: 'grc-tr',
   },
   hot: {
@@ -32,9 +35,29 @@ export const CORPUS: Record<Corpus, CorpusSpec> = {
     langs: ['hbo', 'arc'],
     tokensSource: 'tahot',
     baseEditions: ['L'],
+    textEdition: null,
     interlinearText: 'hbo-wlc',
   },
 };
+
+/** Edições de uma palavra (campo `editions`, separado por vírgula). */
+export function editionsOf(token: Pick<Token, 'editions'>): Set<string> {
+  return new Set(token.editions.split(',').map((e) => e.trim()).filter(Boolean));
+}
+
+/** Corpus com variantes textuais entre edições-base (o grego: TR, BYZ, NA). */
+export function hasEditionVariants(corpus: Corpus): boolean {
+  return CORPUS[corpus].baseEditions.length > 1;
+}
+
+/**
+ * Palavra do texto-base do seu corpus: no grego, a que está na edição TR (as outras são variantes, que aparecem
+ * nas leituras alinhadas); no hebraico, todas.
+ */
+export function isBaseTextToken(token: Pick<Token, 'corpus' | 'editions'>): boolean {
+  const edition = CORPUS[token.corpus].textEdition;
+  return edition === null || editionsOf(token).has(edition);
+}
 
 /** Testamento de um livro (1 a 66), pela tabela de livros. */
 export function testamentOfBook(book: number): Testament {

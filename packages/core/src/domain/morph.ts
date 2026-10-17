@@ -40,7 +40,10 @@ export function mainSegmentOf(token: Pick<Token, 'corpus' | 'morph'>): string {
   return segments.find((s) => /^[NAV]/.test(s)) ?? segments[0] ?? '';
 }
 
-/** Palavra de conteúdo (substantivo, verbo, adjetivo, advérbio ou código desconhecido), não de função. */
+/**
+ * Palavra de conteúdo (substantivo, verbo, adjetivo, advérbio ou código desconhecido), não de função.
+ * Grego: classes Robinson. Hebraico e aramaico: classe da morfologia (T, C, R, P, S são função).
+ */
 export function isContentToken(token: Pick<Token, 'corpus' | 'morph'>): boolean {
   if (!token.morph) return true;
   const main = mainSegmentOf(token);
