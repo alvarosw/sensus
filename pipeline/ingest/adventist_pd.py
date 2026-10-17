@@ -320,6 +320,7 @@ def read_body(work: Work, path: Path) -> tuple[str, dict[int, str]]:
                 footnotes[note] += " " + ln.strip()
                 continue
             note = None
+        ln = PAGE_PAREN.sub("", ln)  # número de página entre parênteses: "(115) the little child"
         ch = RUNNING_CHAPTER.match(ln)
         if ch:  # cabeçalho corrente "CHAPTER 2, VERSES 1-4 33": a página é do capítulo 2 (numeração arábica)
             kept += ["", f"CHAPTER {to_roman(int(ch.group(1)))}", ""]
@@ -360,7 +361,7 @@ def paragraphs(body: str, work: Work):
             text = re.sub(r"(?<=[a-z])- (?=[a-z])", "", text)  # "Ju- daism" -> "Judaism"
             text = " ".join(text.split())
             text = FOOTNOTE_NUM.sub(_drop_footnote_num, text)
-        if out and re.match(r"[\"“‘']*[a-z]", text) and out[-1][0] == chapter:
+        if out and re.match(r"[\"“‘'\s]*[a-z,.;:)\]]", text):
             merged = out[-1][1] + " " + text
             if work.origin == "archive":  # hífen que caiu entre duas partes (página em branco no meio)
                 merged = re.sub(r"(?<=[a-z])- (?=[a-z])", "", merged)
@@ -399,6 +400,7 @@ BOOK_FIRST = {w.lower().strip(".") for b in BOOK_BY_NUM.values() for w in b[3].s
 def _drop_footnote_num(m: re.Match) -> str:
     return m.group(0) if m.group(2).lower() in BOOK_FIRST else m.group(1) + " "
 MARKER = re.compile(r"\[(\d{1,4})\]")
+PAGE_PAREN = re.compile(r"^\s*\(\d{1,4}\)\s*")
 PAGE_NUM = re.compile(r"^\d{1,4}\s+(?=(?:Ibid|[a-z\"“‘]))")
 
 
@@ -550,6 +552,61 @@ def split_epigraph(para: str, verses: list[tuple[int, str]]) -> tuple[int | None
     return None, para
 
 
+def prepared(work: Work, body: str, alt: str, stats: Counter):
+    """Parágrafos antes das correções de OCR: (capítulo, marcas de nota, texto, epígrafe).
+
+    Epígrafe de seção (Mt 5–7) é separada antes das correções: o texto que sobra é o que se corrige.
+    Usado pelo build e pela auditoria (adventist_ocr_audit.py), que assim veem o mesmo texto.
+    """
+    verses = load_kjv(*SERMON) if work.sermon_sections else []
+    for chapter, para in paragraphs(body, work):
+        marks = [int(n) for n in MARKER.findall(para)]
+        para = MARKER.sub("", para)
+        if "{" in para or "}" in para:
+            para, fixed, unresolved = repair_tokens(para, alt) if alt else (para, 0, 0)
+            stats["palavras com OCR {} corrigidas pela outra digitalização"] += fixed
+            stats["palavras com OCR {} sem correspondência (mantidas)"] += unresolved
+        para = PAGE_NUM.sub("", COLON_SPACES.sub(r"\1:\2", para))
+        epi = None
+        if verses:
+            epi, para = split_epigraph(para, verses)
+        yield chapter, marks, para, epi
+
+
+CORR_DIR = Path(__file__).resolve().parent / "corrections"
+
+
+def para_key(para: str) -> str:
+    return hashlib.sha1(para.encode("utf-8")).hexdigest()[:16]
+
+
+def load_corrections(source_id: str):
+    """(edições por parágrafo, parágrafos descartados) de corrections/<fonte>.tsv (auditável)."""
+    edits: dict[str, list[tuple[int, str]]] = {}
+    drops: set[str] = set()
+    path = CORR_DIR / f"{source_id}.tsv"
+    if not path.exists():
+        return edits, drops
+    with open(path, encoding="utf-8") as f:
+        next(f)  # cabeçalho
+        for line in f:
+            key, idx, rule, orig, new = line.rstrip("\n").split("\t")[:5]
+            if rule == "drop":
+                drops.add(key)
+            else:
+                edits.setdefault(key, []).append((int(idx), orig, new))
+    return edits, drops
+
+
+def apply_edits(para: str, edits: list[tuple[int, str, str]]) -> str:
+    toks = para.split(" ")
+    for idx, orig, new in edits:
+        if toks[idx] != orig:
+            raise ValueError(f"correção fora do lugar: {orig!r} em {idx}")
+        toks[idx] = new
+    return " ".join(t for t in toks if t)
+
+
 def build_work(work: Work):
     """Lista de (start, end, texto) para uma obra, e contadores.
 
@@ -567,25 +624,23 @@ def build_work(work: Work):
         fn_refs[n] = [] if BARE_PHIL.search(t) else find_refs(COLON_SPACES.sub(r"\1:\2", t))
     items: list[dict] = []
     last_prose = None
-    verses = load_kjv(*SERMON) if work.sermon_sections else []
     section = None
-    for chapter, para in paragraphs(body, work):
+    edits, drops = load_corrections(work.source_id)
+    for chapter, marks, para, epi in prepared(work, body, alt, stats):
         stats["parágrafos"] += 1
-        marks = [int(n) for n in MARKER.findall(para)]
-        para = MARKER.sub("", para)
-        if "{" in para or "}" in para:
-            para, fixed, unresolved = repair_tokens(para, alt) if alt else (para, 0, 0)
-            stats["palavras com OCR {} corrigidas pela outra digitalização"] += fixed
-            stats["palavras com OCR {} sem correspondência (mantidas)"] += unresolved
-        para = PAGE_NUM.sub("", COLON_SPACES.sub(r"\1:\2", para))
-        if verses:
-            epi, rest = split_epigraph(para, verses)
-            if epi is not None:
-                section = epi
-                stats["seções (epígrafe igual ao texto de Mt 5–7 na KJV)"] += 1
-                if not rest:
-                    continue
-                para = rest
+        if epi is not None:
+            section = epi
+            stats["seções (epígrafe igual ao texto de Mt 5–7 na KJV)"] += 1
+            if not para:
+                continue
+        key = para_key(para)
+        if key in drops:
+            stats["descartadas: OCR não recuperável (corrections/)"] += 1
+            stats["referências perdidas no descarte de OCR"] += len(find_refs(para))
+            continue
+        if key in edits:
+            para = apply_edits(para, edits[key])
+            stats["correções de OCR aplicadas (corrections/)"] += len(edits[key])
         refs = list(find_refs(para))
         for n in marks:
             refs += [r for r in fn_refs.get(n, []) if r not in refs]
