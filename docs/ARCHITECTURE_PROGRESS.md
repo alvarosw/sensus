@@ -53,9 +53,13 @@ com teste cobre o risco. Reavaliar depois.
 - 2026-10-17 03:30 — Lotes D e E integrados (873 testes, 0 exceções, noUnusedLocals ligado). /code-review de C+D
   sem bug (só um nome de variável). Teste manual final (Sonnet) em andamento sobre a versão integrada.
 
-## Próximos passos (para quem retomar)
+- 2026-10-17 04:40 — Teste manual (Sonnet, web, NT e AT, claro e escuro): itens 1–13 OK. Ajustes feitos depois
+  (`arq/fix-at`): variantes entre edições só no NT (texto e fato vindos do domínio) e etiquetas de morfologia
+  hebraica nos cards, com a classe primeiro. Pendência fora do escopo: no navegador headless os acentos de cantilação
+  hebraicos aparecem como caixas (fonte do Chromium); no Android aparecem certos.
+- 2026-10-17 04:45 — `arquitetura` → `main` (885 testes, 0 exceções).
 
-1. Esperar o relatório do teste manual (agente Sonnet). Conferir as capturas; bug confirmado → agente Haiku corrige
-   numa branch `arq/fix-*` a partir de `arquitetura`, revisão, merge, nova captura do ponto corrigido.
-2. Final: `git merge main` em `arquitetura`, `npm run check`, merge `--no-ff` de `arquitetura` na `main` (checkout
-   principal), `npm run check` na `main`, push da `main`.
+## Estado
+
+Entrega concluída. Novas features seguem `CLAUDE.md` e a skill `nova-feature`; antes de cada merge, a skill
+`revisao-pre-merge`.
