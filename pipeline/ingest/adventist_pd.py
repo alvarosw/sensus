@@ -57,12 +57,14 @@ BARE_PHIL = re.compile(r"\bPhil(?:ippians|\.)?\s*\d+(?![\d\s]*[:.]\s*\d)(?!\s*[:
 # Marcas de página e digitalização comuns aos scans do archive.org (linhas inteiras).
 SCAN_FURNITURE = re.compile(
     r"Digiti[sz]e[cd]?\s+by\s+Google|digital copy of a book|"
-    r"^\s*\[\s*\d[\d\s\-]*\]?.*$|^\s*\d{1,4}\s*$|^\s*\w?\s*$"
+    r"^\s*\d{0,4}\s*\[\s*\d[\d\s\-]*\]?.*$|^\s*\d{1,4}\s*$|^\s*\w?\s*$"
 )
 ILLUSTRATION = re.compile(r"\[Illustration[^\]]*\]", re.S)
 GUT_START = re.compile(r"^\*\*\* ?START OF (?:THE|THIS) PROJECT GUTENBERG.*$", re.M)
 GUT_END = re.compile(r"^\*\*\* ?END OF (?:THE|THIS) PROJECT GUTENBERG.*$", re.M)
 GUT_ITALIC = re.compile(r"_((?:(?!\n\s*\n)[^_]){1,300}?)_")  # sem cruzar parágrafo
+PAGE_BRACKET = re.compile(
+    r"(?:\b\d{1,4}\s+(?=\d[\d\s\-]*[\]}]))?[\[{]\s*\d[\d\s\-]*[\]}]?\s*|\d[\d\s\-]*\}\s*")
 ROMAN = re.compile(r"^[IVXLC]+$")
 TERMINAL = tuple('.!?"”’:;)')
 
@@ -80,6 +82,7 @@ class Work:
     running: str        # cabeçalho corrente do scan (regex, sem a numeração de página)
     chapter: str | None  # regex da linha de capítulo (grupo 1 = número/romano)
     rights: str         # justificativa de domínio público, para attribution
+    alt: tuple | None = None  # (url, arquivo) de outra digitalização da mesma obra, para corrigir OCR
 
 
 WORKS = [
@@ -104,13 +107,17 @@ WORKS = [
          "https://archive.org/details/actsapostlesinp00unkngoog",
          "https://archive.org/download/actsapostlesinp00unkngoog/actsapostlesinp00unkngoog_djvu.txt",
          "actsapostlesinp00unkngoog_djvu.txt", "archive", r"ACTS OF THE APOSTLES",
-         r"^(?i:chapter)\s+([IVXL]+)\s*$", "Internet Archive actsapostlesinp00unkngoog"),
+         r"^(?i:chapter)\s+([IVXL]+)\s*$", "Internet Archive actsapostlesinp00unkngoog",
+         alt=("https://ia600903.us.archive.org/34/items/actsofapostlesin0000elle/actsofapostlesin0000elle_djvu.txt",
+              "actsofapostlesin0000elle_djvu.txt")),
     Work("egw-object-lessons", "Christ's Object Lessons", "Christ's Object Lessons",
          "Pacific Press, 1900 (copyright 1900)",
          "https://archive.org/details/christsobjectles00whit",
          "https://archive.org/download/christsobjectles00whit/christsobjectles00whit_djvu.txt",
          "christsobjectles00whit_djvu.txt", "archive", r"CHRIST'?S OBJECT LESSONS", None,
-         "Internet Archive christsobjectles00whit (NYPL)"),
+         "Internet Archive christsobjectles00whit (NYPL)",
+         alt=("https://archive.org/download/christsobjectles0000unse_h6u4/christsobjectles0000unse_h6u4_djvu.txt",
+              "christsobjectles0000unse_h6u4_djvu.txt")),
     Work("egw-steps", "Steps to Christ", "Steps to Christ",
          "Fleming H. Revell, 1892; edição de 1896 (Review and Herald)",
          "https://archive.org/details/stepstochrist00whit",
@@ -212,9 +219,12 @@ def paragraphs(body: str, work: Work):
         buf.clear()
         if not text:
             return
+        if work.origin == "archive" and is_sidehead(text) and not (work.chapter and re.match(work.chapter, text)):
+            return  # título de página ("THE CALL OF ISAIAH") no meio da frase; o texto continua
         if work.origin == "archive":
             text = text.replace("^", "")
             text = re.sub(r"(?<=\s)_+(?=\s)", "", text)  # traço isolado do scan (não é palavra)
+            text = PAGE_BRACKET.sub("", text)  # número de página entre colchetes colado ao texto: "[ 3671 359 hearts"
             text = re.sub(r"(?<=[a-z])- (?=[a-z])", "", text)  # "Ju- daism" -> "Judaism"
             text = " ".join(text.split())
             text = FOOTNOTE_NUM.sub(_drop_footnote_num, text)
@@ -270,6 +280,50 @@ def has_ocr_junk(text: str) -> bool:
     return bool(OCR_JUNK.search(ORDINAL.sub("", text)))
 
 
+def is_sidehead(text: str) -> bool:
+    """Título de página do scan: só maiúsculas (aceita aspas), com pelo menos duas palavras."""
+    letters = re.sub(r"[^A-Za-z]", "", text)
+    return len(letters) >= 6 and letters.isupper() and len(text.split()) <= 12
+
+
+def load_alt(work: Work) -> str:
+    """Texto de outra digitalização da mesma obra, normalizado em espaços ('' se não houver)."""
+    if not work.alt:
+        return ""
+    url, name = work.alt
+    path = fetch(url, RAW / work.source_id / name)
+    if path.stat().st_size < 100_000:
+        path.unlink()
+        raise RuntimeError(f"{work.source_id}: download da digitalização alternativa falhou (resposta curta)")
+    return " ".join(path.read_text(encoding="utf-8", errors="replace").split())
+
+
+def repair_tokens(para: str, alt: str) -> tuple[str, int, int]:
+    """Troca cada palavra com marca de OCR ({, }) pela palavra da outra digitalização.
+
+    Só se as quatro palavras anteriores ocorrem iguais no outro scan e a palavra seguinte é limpa
+    e única. Não inventa nada: sem correspondência única, a palavra fica.
+    Retorna (texto, corrigidas, sem correspondência).
+    """
+    toks = para.split(" ")
+    fixed = unresolved = 0
+    for i, tok in enumerate(toks):
+        if not re.search(r"[{}]", tok):
+            continue
+        if i < 4 or any(re.search(r"[{}]", t) for t in toks[i - 4:i]):
+            unresolved += 1
+            continue
+        pat = r"\s+".join(re.escape(t) for t in toks[i - 4:i]) + r"\s+(\S+)"
+        hits = set(re.findall(pat, alt))
+        clean = [h for h in hits if not re.search(r"[{}^\\|]|\d[A-Za-z]|[A-Za-z]\d", h)]
+        if len(hits) == 1 and len(clean) == 1:
+            toks[i] = clean[0]
+            fixed += 1
+        else:
+            unresolved += 1
+    return " ".join(toks), fixed, unresolved
+
+
 def is_prose(text: str) -> bool:
     """Parágrafo de prosa: pelo menos 4 palavras minúsculas fora das referências."""
     return len(re.findall(r"\b[a-z]{4,}\b", REF_LIST.sub(" ", text))) >= 4
@@ -293,6 +347,7 @@ def build_work(work: Work):
     rows = []
     path = RAW / work.source_id / work.raw_name
     body, notes = read_body(work, path)
+    alt = load_alt(work)
     fn_refs = {}
     for n, t in notes.items():
         fn_refs[n] = [] if BARE_PHIL.search(t) else find_refs(COLON_SPACES.sub(r"\1:\2", t))
@@ -302,6 +357,10 @@ def build_work(work: Work):
         stats["parágrafos"] += 1
         marks = [int(n) for n in MARKER.findall(para)]
         para = MARKER.sub("", para)
+        if "{" in para or "}" in para:
+            para, fixed, unresolved = repair_tokens(para, alt) if alt else (para, 0, 0)
+            stats["palavras com OCR {} corrigidas pela outra digitalização"] += fixed
+            stats["palavras com OCR {} sem correspondência (mantidas)"] += unresolved
         para = PAGE_NUM.sub("", COLON_SPACES.sub(r"\1:\2", para))
         refs = list(find_refs(para))
         for n in marks:
