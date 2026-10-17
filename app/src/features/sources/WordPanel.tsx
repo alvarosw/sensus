@@ -16,7 +16,7 @@ import {
 } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useAsync } from '@/data/use-async';
-import { CORPUS, dirOf, scriptOf, sourceShort, type Testament, type Token, type Vid } from '@sensus/core';
+import { CORPUS, dirOf, editionLegend, scriptOf, sourceShort, type Testament, type Token, type Vid } from '@sensus/core';
 import { useStudy } from '@/state/study';
 import { showInText } from '../common/actions';
 import { loadConcordance, loadLexicon, loadSources } from '../common/cites';
@@ -105,6 +105,8 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
   const lemma = token?.lemma ?? lex?.lemma ?? strongBase ?? '';
   const gloss = token?.gloss_en ?? lex?.gloss ?? null;
   const editions = token ? token.editions.split(',').map((e) => e.trim()).filter(Boolean) : [];
+  // Edições do AT (L, Q, K…) vêm com legenda curta; no NT as siglas (TR, BYZ, NA) já se explicam.
+  const legend = editionLegend(editions);
 
   // Classe: o mapa determinístico cobre o hebraico inteiro e o grego por morphParts; o que sobrar em inglês
   // (termo fora do mapa) vai à tradução automática, em lote com a glosa.
@@ -176,6 +178,7 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
               <EditionBadge key={e} edition={e} />
             ))}
           </View>
+          {legend ? <Txt v="meta" color="muted">{legend}</Txt> : null}
         </>
       ) : null}
 
