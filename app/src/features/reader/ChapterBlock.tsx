@@ -3,7 +3,7 @@
 // Posição dos versículos: na web, marcadores inline no DOM; no nativo, as linhas do texto disposto
 // (onTextLayout) dão y exato de cada linha e x aproximado pela contagem de caracteres. Marcadores inline
 // de View no nativo quebrariam o realce de seleção (lacunas) e não são medidos de forma confiável.
-import { memo, useCallback, useEffect, useMemo, useRef, type ReactElement } from 'react';
+import { memo, useCallback, useEffect, useMemo, type ReactElement } from 'react';
 import { Platform, Text, View, type LayoutChangeEvent } from 'react-native';
 import { BOOK_TABLE, dirOf, scriptOf, splitVid, type Token, type VerseText, type Vid } from '@sensus/core';
 import { fontFamilies, gutter, radius, type, useTheme } from '@/design';

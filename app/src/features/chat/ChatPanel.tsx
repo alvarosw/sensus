@@ -49,7 +49,8 @@ export function ChatPanel({
   const { progress, mounted } = usePresence(chatOpen, motion.chat);
   // Altura do teclado acompanhada pelo keyboard-controller (Android com edge-to-edge não redimensiona a janela).
   const kb = useSharedValue(0);
-  const [kbOpen, setKbOpen] = useState(false);
+  // O valor não é lido; o setter fica porque cada mudança do teclado re-renderiza o painel (comportamento atual).
+  const [, setKbOpen] = useState(false);
   // Resposta aberta para seleção de texto (long-press numa resposta).
   const [picked, setPicked] = useState<string | null>(null);
   useBackLayer('answer-text', picked !== null, () => setPicked(null), BACK_PRIORITY.menu);
