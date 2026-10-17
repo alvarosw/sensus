@@ -51,6 +51,30 @@ export function hasEditionVariants(corpus: Corpus): boolean {
   return CORPUS[corpus].baseEditions.length > 1;
 }
 
+/** Edições-base de um corpus com variantes, com os nomes para a tela (o texto sai daqui, não de string fixa). */
+export interface EditionVariants {
+  corpus: Corpus;
+  /** "TR, BYZ e NA". */
+  list: string;
+  /** "TR/BYZ/NA". */
+  slash: string;
+}
+
+/**
+ * Variantes entre edições do trecho: o corpus com mais de uma edição-base que está no trecho (só o NT grego, hoje).
+ * Null quando o trecho é só do AT (ou de outro corpus sem variantes): a tela não mostra a seção nem o fato.
+ */
+export function editionVariantsOfRange(range: VerseRange): EditionVariants | null {
+  const first = splitVid(range.start).book;
+  const last = splitVid(range.end).book;
+  const testaments = new Set(BOOK_TABLE.filter((b) => b.num >= first && b.num <= last).map((b) => b.testament));
+  const corpus = (Object.keys(CORPUS) as Corpus[]).find((c) => hasEditionVariants(c) && testaments.has(CORPUS[c].testament));
+  if (!corpus) return null;
+  const eds = CORPUS[corpus].baseEditions;
+  const list = eds.length > 1 ? `${eds.slice(0, -1).join(', ')} e ${eds[eds.length - 1]}` : eds.join('');
+  return { corpus, list, slash: eds.join('/') };
+}
+
 /**
  * Palavra do texto-base do seu corpus: no grego, a que está na edição TR (as outras são variantes, que aparecem
  * nas leituras alinhadas); no hebraico, todas.

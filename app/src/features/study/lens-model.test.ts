@@ -10,6 +10,7 @@ import {
   compareRows,
   dedupePlaces,
   filterCommentaries,
+  textoCountLabel,
   historicalParts,
   literaryNeighborhood,
   passageDivisions,
@@ -151,5 +152,17 @@ describe('vizinhança literária', () => {
   it('divisões que começam dentro do trecho', () => {
     const divs = [{ vid: FP_2_5 - 1 }, { vid: FP_2_5 }, { vid: FP_2_7 + 1 }];
     expect(passageDivisions(divs, { start: FP_2_5, end: FP_2_7 })).toEqual([{ vid: FP_2_5 }]);
+  });
+});
+
+describe('cabeçalho da lente Texto', () => {
+  it('AT: só os versículos, sem contagem de variantes', () => {
+    expect(textoCountLabel(3, null)).toBe('3 vv');
+  });
+
+  it('NT: os versículos e as variantes entre edições (singular e plural)', () => {
+    expect(textoCountLabel(2, 0)).toBe('2 vv · 0 variantes');
+    expect(textoCountLabel(2, 1)).toBe('2 vv · 1 variante');
+    expect(textoCountLabel(2, 4)).toBe('2 vv · 4 variantes');
   });
 });

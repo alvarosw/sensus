@@ -15,8 +15,8 @@ export const STUDY = {
   railLabel: 'Lentes do estudo',
 
   factComentaristas: 'comentaristas',
-  factVariante: 'variante TR/NA',
-  factVariantes: 'variantes TR/NA',
+  factVariante: (slash: string) => `variante ${slash}`,
+  factVariantes: (slash: string) => `variantes ${slash}`,
   factXrefs: 'refs. cruzadas',
   factHapax: (t: Testament) => `hápax no ${testamentLabel(t)}`,
   /** Contagem de versículos no testamento da palavra; 1 vira "versículo", o resto "vv.". */
@@ -60,7 +60,7 @@ export const STUDY = {
   cmpOriginal: 'Original',
   originalHint: (nt: string, at: string) => `Original: ${nt} para o NT, ${at} para o AT. Toque numa palavra para ver morfologia.`,
   variantsTitle: 'Variantes entre edições',
-  variantsEmpty: 'Nenhuma diferença entre TR, BYZ e NA nestes versículos.',
+  variantsEmpty: (list: string) => `Nenhuma diferença entre ${list} nestes versículos.`,
   variantType: 'Variante',
   omits: 'omite',
   analyzeWord: 'Analisar palavra',

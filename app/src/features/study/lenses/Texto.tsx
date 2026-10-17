@@ -1,14 +1,14 @@
 // Lente Texto: traduções lado a lado (BLivre, KJV) ou o original do testamento do trecho (TR no NT, WLC no AT),
-// e as variantes textuais do NT.
+// e as variantes entre edições (só onde o trecho tem corpus com mais de uma edição-base: o NT grego).
 import { useMemo } from 'react';
 import { Text, View } from 'react-native';
-import { originalTextOf, originalTokensByVid, sourceShort, variantSites, type PanelData, type Token, type Vid } from '@sensus/core';
+import { editionVariantsOfRange, originalTextOf, originalTokensByVid, sourceShort, variantSites, type PanelData, type Token, type Vid } from '@sensus/core';
 import { Empty, fontFamilies, Greek, LinkButton, Segmented, SubHeader, Txt, space, useTheme } from '@/design';
 import { useStudy } from '@/state/study';
 import { bareWord, chv } from '@/features/common/format';
 import { LensShell } from '../LensShell';
 import { VariantCard } from '../cards';
-import { compareRows, selectedVids, type CompareRow } from '../lens-model';
+import { compareRows, selectedVids, textoCountLabel, type CompareRow } from '../lens-model';
 import { STUDY } from '../strings';
 import { useStudyData } from '../useStudyData';
 import { Body, Cards, SECTION_LABEL, useExpanded, type LensProps } from './shared';
@@ -74,7 +74,9 @@ export function TextoLens({ onLayout }: LensProps) {
   const setCompare = useStudy((s) => s.setCompare);
   const expanded = useExpanded('texto');
   const { panel, range, books } = data;
-  const sites = useMemo(() => (panel ? variantSites(panel.layers.text.original) : []), [panel]);
+  // Variantes só existem se o trecho tem um corpus com mais de uma edição-base (domínio); no AT a seção não aparece.
+  const editions = useMemo(() => editionVariantsOfRange(range), [range]);
+  const sites = useMemo(() => (panel && editions ? variantSites(panel.layers.text.original) : []), [panel, editions]);
   const vids = useMemo(() => (panel ? selectedVids(panel.layers.text.translations, range) : []), [panel, range]);
   const shown = expanded ? sites : sites.slice(0, 2);
   const st = useStudy.getState;
@@ -83,7 +85,7 @@ export function TextoLens({ onLayout }: LensProps) {
     <LensShell
       lens="texto"
       title={SECTION_LABEL.texto}
-      count={panel ? `${vids.length} vv · ${sites.length} ${sites.length === 1 ? 'variante' : 'variantes'}` : undefined}
+      count={panel ? textoCountLabel(vids.length, editions ? sites.length : null) : undefined}
       sourcesN={sites.length > 2 ? sites.length : 0}
       onLayout={onLayout}
     >
@@ -102,9 +104,9 @@ export function TextoLens({ onLayout }: LensProps) {
               ]}
             />
             <CompareText panel={p} vids={vids} />
-            <SubHeader label={STUDY.variantsTitle} />
-            {shown.length === 0 ? (
-              <Empty text={STUDY.variantsEmpty} />
+            {editions && <SubHeader label={STUDY.variantsTitle} />}
+            {editions && (shown.length === 0 ? (
+              <Empty text={STUDY.variantsEmpty(editions.list)} />
             ) : (
               <Cards>
                 {shown.map((s) => {
@@ -128,7 +130,7 @@ export function TextoLens({ onLayout }: LensProps) {
                   );
                 })}
               </Cards>
-            )}
+            ))}
           </View>
         )}
       </Body>

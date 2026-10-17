@@ -74,9 +74,13 @@ describe('peekFacts no NT grego (Fp 2:5-8)', () => {
     expect(facts.authors).toBe(2);
   });
 
-  it('variantes: a palavra omitida numa edição-base forma um sítio', () => {
+  it('variantes: a palavra omitida numa edição-base forma um sítio, com as edições do domínio', () => {
     const facts = peekFacts(panelOf({ tokens: [KENOSIS, OMITTED_NA] }));
-    expect(facts.variants).toBe(1);
+    expect(facts.variants).toEqual({ count: 1, editions: 'TR/BYZ/NA' });
+  });
+
+  it('sem variação no NT: o fato existe e vale 0', () => {
+    expect(peekFacts(panelOf({ tokens: [KENOSIS] })).variants).toEqual({ count: 0, editions: 'TR/BYZ/NA' });
   });
 
   it('hápax no NT: a palavra em destaque é a única ocorrência, com testamento NT', () => {
@@ -112,8 +116,14 @@ const VAYA = tok({
 const QERE = tok({ cite_id: 'tok:hot:11015015:5', corpus: 'hot', vid: VID_AT, pos: 5, surface: 'קָדְשֵׁ֖י', editions: 'Q', strong: 'H6944G', strong_base: 'H6944', morph: 'HC/Ncmpc' });
 
 describe('peekFacts no AT hebraico (1Rs 15:15)', () => {
-  it('no AT não há variantes de edição do NT, mesmo com Qere', () => {
-    expect(peekFacts(panelOf({ tokens: [VAYA, QERE] })).variants).toBe(0);
+  it('no AT não há fato de variantes (nem zero), mesmo com Qere', () => {
+    expect(peekFacts(panelOf({ tokens: [VAYA, QERE] })).variants).toBeNull();
+  });
+
+  it('trecho que atravessa testamentos: o fato de variantes vale para o NT', () => {
+    const range = { start: 11015015, end: 50002007 };
+    const facts = peekFacts({ ...panelOf({ tokens: [KENOSIS, OMITTED_NA] }), range } as PanelData);
+    expect(facts.variants).toEqual({ count: 1, editions: 'TR/BYZ/NA' });
   });
 
   it('hápax no AT: o Qere raro vence a palavra comum, com testamento OT', () => {

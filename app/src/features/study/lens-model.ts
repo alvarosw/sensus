@@ -144,6 +144,15 @@ export function literaryNeighborhood(lit: Pick<Literary, 'before' | 'after'>, ra
   };
 }
 
+/**
+ * Cabeçalho da lente Texto. Sem variantes entre edições no trecho (variantCount null, só AT), o contador traz só os
+ * versículos; com variantes, traz a contagem delas.
+ */
+export function textoCountLabel(vids: number, variantCount: number | null): string {
+  if (variantCount === null) return `${vids} vv`;
+  return `${vids} vv · ${variantCount} ${variantCount === 1 ? 'variante' : 'variantes'}`;
+}
+
 /** Divisões (títulos e parágrafos do original) que começam dentro do trecho. */
 export function passageDivisions<T extends { vid: Vid }>(divisions: readonly T[], range: VerseRange): T[] {
   return divisions.filter((d) => d.vid >= range.start && d.vid <= range.end);
