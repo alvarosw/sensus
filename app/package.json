@@ -1,7 +1,7 @@
 {
   "name": "sensus-app",
   "main": "expo-router/entry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "AGPL-3.0-or-later",
   "dependencies": {
     "@expo-google-fonts/gentium-book-plus": "^0.4.0",
