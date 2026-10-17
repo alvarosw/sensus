@@ -23,7 +23,7 @@ import type {
   XRef,
 } from './types';
 import { LAST_VERSE, makeVid, splitVid } from './refs';
-import { eraSummaries, normalizeSearch, searchTerms } from './timeline';
+import { eraSummaries, normalizeSearch, searchTerms, timelineCore } from './timeline';
 
 /** Fonte de texto usada por padrão para contexto literário e alvos de referências cruzadas. */
 export const DEFAULT_TEXT_SOURCE = 'blivre';
@@ -158,11 +158,19 @@ interface MemberRow {
   n: number;
   lo: number;
   hi: number;
+  /** sortKeys dos eventos da linha, separados por vírgula (GROUP_CONCAT). */
+  sks: string | null;
 }
 
-/** Linha do tempo de uma pessoa, lugar ou período, com a contagem de eventos e a faixa de anos (ver TimelineLine). */
+/**
+ * Linha do tempo de uma pessoa, lugar ou período, com a contagem de eventos e a faixa de anos (ver TimelineLine).
+ * A faixa é o núcleo da linha (timelineCore): pontas isoladas, como Jesus "participando" da criação, não a esticam,
+ * senão a linha apareceria no filtro de eras em que não está de fato.
+ */
 function lineOf(row: MemberRow): TimelineLine {
-  return { id: row.id, kind: row.kind, name: row.name, count: row.n, from: Math.round(row.lo), to: Math.round(row.hi) };
+  const keys = (row.sks ?? '').split(',').map(Number).filter((k) => Number.isFinite(k));
+  const core = keys.length > 0 ? timelineCore(keys) : { lo: row.lo, hi: row.hi };
+  return { id: row.id, kind: row.kind, name: row.name, count: row.n, from: Math.round(core.lo), to: Math.round(core.hi) };
 }
 
 /** Ordem cronológica (sortKey) e, em empate, pelo cite_id. */
@@ -547,7 +555,7 @@ export class Repo {
     return this.all<MemberRow>(
       `${m.sql},
        ev AS (SELECT e.cite_id, ${TIMELINE_KEY} AS sk FROM entity e WHERE e.type = 'event')
-       SELECT m.kind, m.line_id AS id, MAX(m.line_name) AS name, COUNT(DISTINCT m.event_id) AS n, MIN(ev.sk) AS lo, MAX(ev.sk) AS hi
+       SELECT m.kind, m.line_id AS id, MAX(m.line_name) AS name, COUNT(DISTINCT m.event_id) AS n, MIN(ev.sk) AS lo, MAX(ev.sk) AS hi, GROUP_CONCAT(ev.sk) AS sks
          FROM memb m JOIN ev ON ev.cite_id = m.event_id AND ev.sk IS NOT NULL
         GROUP BY m.kind, m.line_id
         ORDER BY n DESC, name, m.line_id`,

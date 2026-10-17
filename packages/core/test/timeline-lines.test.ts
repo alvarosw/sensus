@@ -125,6 +125,26 @@ describe('Repo.timelineLines', () => {
     ]);
   });
 
+  it('a faixa de anos é o núcleo da linha: um evento isolado muito longe não a estica', async () => {
+    // Como Jesus "participando" da criação: um evento em -4000 na linha de Paulo (40, 50, 70).
+    insertRow('entity', {
+      cite_id: 'ent:theographic:z',
+      source_id: 'theographic',
+      type: 'event',
+      name: 'z',
+      description: null,
+      lat: null,
+      lon: null,
+      data: JSON.stringify({ title: 'Creation', startDate: '-4000', sortKey: -4000, participants: [] }),
+    });
+    insertRow('entity_ref', { entity_cite_id: 'ent:theographic:z', vid: 1001001, token_pos: null });
+    db.prepare(`UPDATE entity SET data = ? WHERE cite_id = 'ent:theographic:paul'`).run(
+      JSON.stringify({ timeline: ['z', 'b', 'c', 'e'].map((id) => ({ cite_id: `ent:theographic:${id}` })) }),
+    );
+    const paul = (await repo.timelineLines()).find((l) => l.name === 'Paul');
+    expect(paul).toMatchObject({ count: 4, from: 40, to: 70 });
+  });
+
   it('pessoa sem eventos ligados não aparece', async () => {
     expect((await repo.timelineLines()).some((l) => l.name === 'Nobody')).toBe(false);
   });
