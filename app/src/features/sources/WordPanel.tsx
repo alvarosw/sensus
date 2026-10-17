@@ -27,7 +27,7 @@ import { morphParts } from '../common/morph-pt';
 import { SRC } from '../common/strings';
 import { wordView } from '../common/word-view';
 import { useAutoTranslate } from '@/translate/useAutoTranslate';
-import { useAutoTranslateBatch } from '@/translate/useAutoTranslateBatch';
+import { useTranslatable } from '@/translate/useTranslatable';
 import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
 import { useSourceLang } from '@/translate/source-lang';
 import { KeyValues, LicenseBlock, RefChips } from './PanelParts';
@@ -131,7 +131,7 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
   // Cabeçalho (glosa e classe em inglês) traduzido em um lote só, com uma nota. Glosa e classe são colunas em
   // inglês do banco, por isso o idioma é 'en' (a fonte do token tem o idioma da língua original).
   const headerEn = [gloss, ...parts.filter((r) => r.english).map((r) => r.value)].filter((t): t is string => !!t);
-  const header = useAutoTranslateBatch(headerEn, 'en');
+  const header = useTranslatable(headerEn, { lang: 'en', policy: 'item' });
   const licenseSummary = [
     token ? sourceShort(CORPUS[token.corpus].tokensSource) : null,
     lex ? sourceShort(lex.source_id, sources.data?.get(lex.source_id)?.title) : null,

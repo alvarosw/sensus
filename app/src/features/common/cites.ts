@@ -18,6 +18,8 @@ import {
   type Vid,
 } from '@sensus/core';
 import { sourceTypeOf, type SourceTypeColors } from '@/design';
+import { loadSources } from '@/data/sources';
+import { serial } from '@/data/serial';
 import { SRC } from './strings';
 
 export type CiteKind = keyof SourceTypeColors;
@@ -41,29 +43,15 @@ export interface CiteDetail {
   ranges: { start: Vid; end: Vid }[];
 }
 
-// ---- fila de consultas ------------------------------------------------------------------
-// O driver do banco (wa-sqlite na web) falha com "Error code 21" (uso indevido da API) quando várias
-// consultas rodam ao mesmo tempo na mesma conexão. Aqui as consultas das prévias/painéis entram numa
-// fila e, se uma falhar, tentam de novo uma vez.
-let queue: Promise<unknown> = Promise.resolve();
-export function serial<T>(fn: () => Promise<T>): Promise<T> {
-  const run = queue.then(async () => {
-    try {
-      return await fn();
-    } catch {
-      await new Promise((r) => setTimeout(r, 150));
-      return fn();
-    }
-  });
-  queue = run.catch(() => undefined);
-  return run;
-}
+// A fila de consultas e o registro de fontes moraram aqui; agora são da camada de dados. Reexportados para
+// quem já importa daqui.
+export { serial } from '@/data/serial';
+export { loadSources } from '@/data/sources';
 
 // ---- caches por repo ---------------------------------------------------------------------
 
 interface RepoCache {
   books?: Promise<Book[]>;
-  sources?: Promise<Map<string, Source>>;
   cites: Map<string, Promise<CiteDetail | null>>;
   lexicon: Map<string, Promise<LexiconEntry[]>>;
   concordance: Map<string, Promise<{ count: number; vids: Vid[] }>>;
@@ -82,11 +70,6 @@ function cacheOf(repo: Repo): RepoCache {
 export function loadBooks(repo: Repo): Promise<Book[]> {
   const c = cacheOf(repo);
   return (c.books ??= serial(() => repo.books()));
-}
-
-export function loadSources(repo: Repo): Promise<Map<string, Source>> {
-  const c = cacheOf(repo);
-  return (c.sources ??= serial(() => repo.sources()).then((rows) => new Map(rows.map((s) => [s.id, s]))));
 }
 
 function wordOf(surface: string): string {
