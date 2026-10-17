@@ -52,7 +52,8 @@ baixa a própria fonte.
 cd pipeline
 python3 -m venv .venv && .venv/bin/pip install requests lxml pysword
 .venv/bin/python -I ingest/blivre.py        # e os demais ingestores em pipeline/ingest/
-.venv/bin/python build_db.py --books Phil --sources <lista>   # filtro de teste; sem --books, todos os livros
+.venv/bin/python build_db.py --books Phil --sources <lista> --out ../data/teste.db   # filtro de teste; sem --books, todos os livros
+python3 -m unittest discover tests                              # testes do pipeline (biblioteca padrão; rodar em pipeline/)
 ```
 
 ### 1b. Dados para distribuição
@@ -64,6 +65,7 @@ A versão dos dados (`--data-version`, padrão = hoje) tem de ser a mesma nos do
 cd pipeline
 python3 build_db.py --edition full   --data-version 2026.10.11   # data/sensus.db (~456 MB, 66 livros, 31 fontes)
 python3 build_db.py --edition reader --data-version 2026.10.11   # data/sensus-reader.db (~17 MB)
+# --out sem valor: full grava data/sensus.db e reader grava data/sensus-reader.db (não se sobrescrevem)
 python3 package_data.py                                          # dist/data/sensus-full-<v>.zip (~138 MB) e data-manifest.json
 cd .. && scripts/release-data.sh --dry-run                       # mostra o comando de release; sem --dry-run chama o gh
 ```

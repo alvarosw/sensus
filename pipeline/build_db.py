@@ -4,6 +4,9 @@ Uso:
     python build_db.py [--edition full|reader] [--out ../data/sensus.db] [--books Phil,Col]
                        [--sources a,b] [--data-version 2026.10.11]
 
+--out padrão depende da edição: data/sensus.db (full) ou data/sensus-reader.db (reader). Assim, o
+build do reader não sobrescreve o banco completo.
+
 Edições:
   full    (padrão) todas as fontes de data/staging, todos os livros. É o banco que o app baixa no
           primeiro uso (ver pipeline/package_data.py para o ZIP publicado).
@@ -54,6 +57,12 @@ VID_COLS = {
 }
 
 
+def default_out(edition: str) -> Path:
+    """Saída padrão por edição: o reader nunca sobrescreve o banco completo."""
+    name = "sensus-reader.db" if edition == "reader" else "sensus.db"
+    return ROOT / "data" / name
+
+
 def wanted(edition: str, source_id: str, table: str) -> bool:
     """A tabela desta fonte entra na edição? (full: tudo)."""
     if edition == "full":
@@ -68,7 +77,8 @@ def wanted(edition: str, source_id: str, table: str) -> bool:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--edition", choices=EDITIONS, default="full")
-    ap.add_argument("--out", default=str(ROOT / "data" / "sensus.db"))
+    ap.add_argument("--out", default="",
+                    help="arquivo de saída; padrão: data/sensus.db (full) ou data/sensus-reader.db (reader)")
     ap.add_argument("--books", default="")
     ap.add_argument("--sources", default="")
     ap.add_argument("--data-version", default=datetime.now(timezone.utc).strftime("%Y.%m.%d"),
@@ -79,7 +89,7 @@ def main():
     only = {s for s in args.sources.split(",") if s}
     in_books = (lambda v: v // 1_000_000 in books) if books else (lambda v: True)
 
-    out = Path(args.out)
+    out = Path(args.out) if args.out else default_out(args.edition)
     out.parent.mkdir(parents=True, exist_ok=True)
     if out.exists():
         out.unlink()
