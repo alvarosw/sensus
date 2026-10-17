@@ -1,14 +1,11 @@
 // Leitor contínuo: lista virtualizada de capítulos (entre capítulos e livros), carregando os vizinhos
-// ao rolar nos dois sentidos. Seleção por toque, alças arrastáveis, grego do TR sob a seleção, rolagem
+// ao rolar nos dois sentidos. Seleção por toque, alças arrastáveis, original (TR ou WLC) sob a seleção, rolagem
 // até o versículo ("ir para") e manutenção da seleção visível acima da folha de estudo.
 import { createContext, memo, useCallback, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
 import { ActivityIndicator, FlatList, Platform, View, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent, type ViewProps } from 'react-native';
 import { useSharedValue } from 'react-native-reanimated';
 import { useLocalSearchParams } from 'expo-router';
-import { BOOK_TABLE, CORPUS, hasEdition, makeVid, sourceLong, splitVid, type Corpus, type Token, type Vid } from '@sensus/core';
-
-// Corpus do grego do NT (o TR sob o leitor): sai do domínio, não de uma string. O AT não tem interlinear aqui.
-const NT_CORPUS = (Object.keys(CORPUS) as Corpus[]).find((k) => CORPUS[k].testament === 'NT')!;
+import { BOOK_TABLE, makeVid, originalTokensByVid, sourceLong, splitVid, type Token, type Vid } from '@sensus/core';
 import { LinkButton, Txt, motion, useTheme, type Detent } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useStudy } from '@/state/study';
@@ -22,6 +19,7 @@ import { useReaderNav, type NavRequest } from '@/state/reader-nav';
 import { createLoadSequencer, mayAutoScroll, planNavigation } from './nav-sequencing';
 import { READER } from './strings';
 import { sheetCover } from './viewport';
+import { originalQueries } from './interlinear';
 
 interface Pending extends NavRequest {
   /** 'top' alinha ao topo (restaurar posição); 'comfort' deixa folga acima (ir para). */
@@ -486,8 +484,8 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
     return () => clearTimeout(timer);
   }, [detent, selection?.start, selection?.end, keepVisible]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // ---- grego do TR sob os versículos selecionados ----
-  const [greekTokens, setGreekTokens] = useState<Record<number, Token[]> | null>(null);
+  // ---- original (TR no NT, WLC no AT) sob os versículos selecionados ----
+  const [greekTokens, setGreekTokens] = useState<Map<Vid, Token[]> | null>(null);
   const committed = selection ? `${selection.start}-${selection.end}` : '';
   useEffect(() => {
     if (!greekOn || !selection) {
@@ -495,13 +493,9 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
       return;
     }
     let alive = true;
-    void repo
-      .tokens({ start: selection.start, end: selection.end }, NT_CORPUS)
-      .then((all) => {
-        if (!alive) return;
-        const by: Record<number, Token[]> = {};
-        for (const t of all) if (hasEdition(t, 'TR')) (by[t.vid] ??= []).push(t);
-        setGreekTokens(by);
+    void Promise.all(originalQueries(selection).map((q) => repo.tokens(q.range, q.corpus)))
+      .then((lists) => {
+        if (alive) setGreekTokens(originalTokensByVid(lists.flat()));
       })
       .catch(() => alive && setGreekTokens(null));
     return () => {
@@ -530,11 +524,10 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
       if (!d) return null;
       const s = extra.shown;
       const overlaps = s && s.start <= d.last && s.end >= d.first;
-      let gk: Record<number, Token[]> | undefined;
+      let gk: Map<Vid, Token[]> | undefined;
       if (extra.greekTokens && overlaps) {
-        for (const [k, v] of Object.entries(extra.greekTokens)) {
-          const vid = Number(k);
-          if (vid >= d.first && vid <= d.last) (gk ??= {})[vid] = v;
+        for (const [vid, toks] of extra.greekTokens) {
+          if (vid >= d.first && vid <= d.last) (gk ??= new Map()).set(vid, toks);
         }
       }
       return (
