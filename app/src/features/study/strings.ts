@@ -1,4 +1,6 @@
 // Textos da folha de estudo (pt-BR). Mantidos aqui para não colidir com a tabela global em i18n.
+import { testamentLabel, type Testament } from '@sensus/core';
+
 export const STUDY = {
   sheet: 'Estudo do trecho selecionado',
   expand: 'Expandir estudo',
@@ -16,9 +18,9 @@ export const STUDY = {
   factVariante: 'variante TR/NA',
   factVariantes: 'variantes TR/NA',
   factXrefs: 'refs. cruzadas',
-  factHapax: 'hápax no NT',
-  factHapaxOt: 'hápax no AT',
-  factVv: (n: number, ot: boolean) => `${n} vv. no ${ot ? 'AT' : 'NT'}`,
+  factHapax: (t: Testament) => `hápax no ${testamentLabel(t)}`,
+  /** Contagem de versículos no testamento da palavra; 1 vira "versículo", o resto "vv.". */
+  factVv: (n: number, t: Testament) => `${n} ${n === 1 ? 'versículo' : 'vv.'} no ${testamentLabel(t)}`,
   factNoData: 'Sem dados',
 
   deepen: 'Detalhar',

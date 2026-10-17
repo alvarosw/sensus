@@ -50,7 +50,16 @@ import { chv, keyWordsOf, refShort, refTitle } from './format';
 import { LENS_VIEWS } from './lenses';
 import { STUDY } from './strings';
 import { StudyDataProvider, useStudyData, type Range } from './useStudyData';
-import { commentatorOf, sourceShort, splitVid, variantSites, type Vid } from '@sensus/core';
+import {
+  chapterStartVid,
+  commentatorOf,
+  isIntroCommentary,
+  isIntroVid,
+  sourceShort,
+  splitVid,
+  variantSites,
+  type Vid,
+} from '@sensus/core';
 
 export interface StudySheetProps {
   /** Altura ocupada acima da área da folha, descontada das alturas. Padrão: área segura + barra superior (a folha é montada em tela cheia sobre o leitor). */
@@ -465,9 +474,10 @@ function SheetBody({ open, atFull, bottomInset, onPeekLayout, onRailLayout }: { 
 
 /** Início da perícope para exibição: a introdução do livro (x:0) não tem versículos, então começa no 1:1. */
 function unitStartOf(v: Vid): Vid {
+  if (!isIntroVid(v)) return v;
   const p = splitVid(v);
-  if (p.verse !== 0) return v;
-  return p.chapter === 0 ? v + 1001 : v + 1;
+  // Introdução do livro (capítulo 0) começa em 1:1, como a do capítulo começa em ch:1.
+  return chapterStartVid(p.book, Math.max(1, p.chapter));
 }
 
 // ---- "espiar": escopo e fatos -----------------------------------------------------------------------------------
@@ -506,7 +516,7 @@ function PeekContent({ onLayout }: { onLayout: (e: LayoutChangeEvent) => void })
 
   const facts = useMemo(() => {
     if (!panel) return null;
-    const coms = panel.layers.interpretation.commentaries.filter((c) => c.start_vid % 1000 !== 0 && c.end_vid % 1000 !== 0);
+    const coms = panel.layers.interpretation.commentaries.filter((c) => !isIntroCommentary(c));
     const authors = new Set(coms.map((c) => commentatorOf(panel.sources[c.source_id], c)));
     const sites = variantSites(panel.layers.text.original);
     const words = keyWordsOf(panel);
@@ -553,7 +563,7 @@ function PeekContent({ onLayout }: { onLayout: (e: LayoutChangeEvent) => void })
                 testID="fact-lingua"
                 greek
                 value={facts.word.lexicon?.lemma ?? facts.word.token.lemma ?? facts.word.token.surface}
-                label={facts.hapax ? (facts.word.strongBase.startsWith('H') ? STUDY.factHapaxOt : STUDY.factHapax) : STUDY.factVv(facts.word.count, facts.word.strongBase.startsWith('H'))}
+                label={facts.hapax ? STUDY.factHapax(facts.word.testament) : STUDY.factVv(facts.word.count, facts.word.testament)}
                 onPress={() => goToLens('lingua')}
               />
             )}

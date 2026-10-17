@@ -5,6 +5,8 @@ import { Pressable, Text, View, type LayoutChangeEvent } from 'react-native';
 import { router } from 'expo-router';
 import {
   hasEdition,
+  isIntroVid,
+  langOfToken,
   sourceShort,
   splitVid,
   titleCaseHeadword,
@@ -168,7 +170,7 @@ function CompareText({ panel, range, vids }: { panel: PanelData; range: { start:
   const trTokens = useMemo(() => {
     const m = new Map<Vid, Token[]>();
     for (const t of panel.layers.text.original) {
-      if (t.corpus !== 'gnt' || !hasEdition(t, 'TR')) continue;
+      if (langOfToken(t) !== 'grc' || !hasEdition(t, 'TR')) continue;
       const list = m.get(t.vid) ?? [];
       list.push(t);
       m.set(t.vid, list);
@@ -635,7 +637,7 @@ export function IntertextoLens({ onLayout }: LensProps) {
 // ---- Interpretação --------------------------------------------------------------------------------------------------
 
 function commentaryRef(c: Commentary, books: StudyData['books']): string {
-  return refShort(c.start_vid % 1000 === 0 ? c.start_vid + 1 : c.start_vid, c.end_vid, books);
+  return refShort(isIntroVid(c.start_vid) ? c.start_vid + 1 : c.start_vid, c.end_vid, books);
 }
 
 export function InterpretacaoLens({ onLayout }: LensProps) {
@@ -662,7 +664,7 @@ export function InterpretacaoLens({ onLayout }: LensProps) {
     const vids = [...new Set(views.flatMap((v) => {
       const out: Vid[] = [];
       for (let x = Math.max(v.commentary.start_vid, range.start); x <= Math.min(v.commentary.end_vid, range.end); x++) {
-        if (x % 1000 === 0) continue;
+        if (isIntroVid(x)) continue;
         out.push(x);
         if (out.length > 60) break;
       }
