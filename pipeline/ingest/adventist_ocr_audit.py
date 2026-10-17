@@ -7,6 +7,8 @@ Cada linha do TSV é uma correção de uma palavra (ou a descarte de um parágra
      dá uma palavra do dicionário inglês e nenhuma outra
   c  capitular perdida: uma única letra à frente que dá palavra do dicionário
   drop  parágrafo com lixo de OCR que não se restaurou: sai do banco (nada é adivinhado)
+  f  conferido em referência externa só para leitura (egwwritings): palavra a palavra sobre o nosso texto;
+     idx -1 = parágrafo reativado sem correção (falso positivo de lixo). Feito à mão, linha a linha, com contexto.
 
 O ingestor (adventist_pd.py) só APLICA o TSV, por chave = hash do parágrafo antes da correção.
 Os números de página entre parênteses e as quebras de página são tratados no ingestor (regras d).

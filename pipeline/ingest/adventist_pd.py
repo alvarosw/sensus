@@ -593,7 +593,7 @@ def load_corrections(source_id: str):
             key, idx, rule, orig, new = line.rstrip("\n").split("\t")[:5]
             if rule == "drop":
                 drops.add(key)
-            else:
+            elif int(idx) >= 0:  # idx -1: registro de parágrafo reativado sem correção (regra f)
                 edits.setdefault(key, []).append((int(idx), orig, new))
     return edits, drops
 
