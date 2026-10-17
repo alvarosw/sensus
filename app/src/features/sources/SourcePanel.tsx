@@ -15,7 +15,7 @@ import { useAutoTranslate } from '@/translate/useAutoTranslate';
 import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
 import { useTranslate } from '@/translate/store';
 import { useSourceLang } from '@/translate/source-lang';
-import { LicenseBlock, RefChips } from './PanelParts';
+import { LicenseBlock, RefChips } from '../common/PanelParts';
 
 export function SourcePanel({ citeId }: { citeId: string }) {
   const repo = useRepo();

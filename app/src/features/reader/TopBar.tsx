@@ -5,8 +5,8 @@ import { BOOK_TABLE, sourceAbbr } from '@sensus/core';
 import { Icon, TopBarButton, fontFamilies, size, type, useTheme } from '@/design';
 import { useStudy } from '@/state/study';
 import { useAppPrefs } from '@/settings/app-prefs';
-import { useReaderNav } from '../reader/nav-store';
-import { READER } from '../reader/strings';
+import { useReaderNav } from '@/state/reader-nav';
+import { READER } from './strings';
 
 export function TopBar({ jumpOpen, booksOpen, onBooks, onJump }: { jumpOpen: boolean; booksOpen: boolean; onBooks: () => void; onJump: () => void }) {
   const { c } = useTheme();

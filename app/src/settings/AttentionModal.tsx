@@ -2,7 +2,7 @@
 import { Modal, Pressable, View } from 'react-native';
 import { router } from 'expo-router';
 import { Card, Txt, useTheme } from '@/design';
-import { FormButton } from '@/features/common/Buttons';
+import { FormButton } from '@/ui/Buttons';
 import { useAttention, type AttentionReason } from './attention';
 
 const COPY: Record<AttentionReason, string> = {

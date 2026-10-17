@@ -10,12 +10,11 @@ import { useAsync } from '@/data/use-async';
 import { useStudy, type PanelEntry } from '@/state/study';
 import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { loadCite, loadLexicon, loadSources } from '../common/cites';
-import { rangeLabel } from '../common/format';
+import { refShort } from '../common/format';
 import { useBooks } from '../common/hooks';
 import { useLast, usePresence } from '../common/motion';
 import { SRC } from '../common/strings';
-import { MapPanel } from '../maps/MapPanel';
-import { MAPS } from '../maps/strings';
+import { MAPS, MapPanel } from '@/features/maps';
 import { EntityPanel } from './EntityPanel';
 import { SourcePanel } from './SourcePanel';
 import { WordPanel } from './WordPanel';
@@ -150,7 +149,7 @@ function Crumbs({ panels }: { panels: PanelEntry[] }) {
   const root = chatOpen
     ? SRC.rootChat
     : selection
-      ? SRC.rootStudy(rangeLabel(selection, books).replace(/^\S+\s/, ''))
+      ? SRC.rootStudy(refShort(selection.start, selection.end, books, true).replace(/^\S+\s/, ''))
       : SRC.rootRead;
   return (
     <ScrollView

@@ -5,7 +5,7 @@ import { ScrollView, View } from 'react-native';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Card, Txt, useTheme } from '@/design';
-import { FormButton } from '@/features/common/Buttons';
+import { FormButton } from '@/ui/Buttons';
 import { DownloadStatus } from '@/data/DownloadStatus';
 import { useDataStore } from '@/data/data-store';
 import { formatMB } from '@/data/plan';

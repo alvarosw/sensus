@@ -2,8 +2,8 @@
 import { Linking, Pressable, View } from 'react-native';
 import type { Book, Source, Vid } from '@sensus/core';
 import { fontFamilies, radius, Txt, useTheme } from '@/design';
-import { shortRef } from '../common/format';
-import { SRC } from '../common/strings';
+import { refShort } from './format';
+import { SRC } from './strings';
 
 /** Chips de referência (proto: .refs button / .here). `here` realça a ocorrência atual. */
 export function RefChips({
@@ -41,7 +41,7 @@ export function RefChips({
             })}
           >
             <Txt v="meta" tint={on ? c.accent : c.text} style={{ fontVariant: ['tabular-nums'] }}>
-              {shortRef(vid, books)}
+              {refShort(vid, vid, books, true)}
             </Txt>
           </Pressable>
         );

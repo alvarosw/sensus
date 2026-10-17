@@ -1,7 +1,7 @@
 // Pedidos de navegação ao leitor (livros, "ir para") e a posição atual (para o título do topo).
 // Fica separado do estado de estudo: só o leitor e a barra superior o usam.
 import { create } from 'zustand';
-import type { Vid } from '@sensus/core';
+import { makeVid, splitVid, type Vid } from '@sensus/core';
 
 export interface NavRequest {
   id: number;
@@ -34,11 +34,10 @@ export const useReaderNav = create<ReaderNav>()((set) => ({
   goChapter: (book, chapter) =>
     set({
       position: { book, chapter },
-      request: { id: ++seq, kind: 'chapter', vid: book * 1_000_000 + chapter * 1000 + 1, animated: true },
+      request: { id: ++seq, kind: 'chapter', vid: makeVid(book, chapter, 1), animated: true },
     }),
   goVerse: (vid, opts) => {
-    const book = Math.floor(vid / 1_000_000);
-    const chapter = Math.floor((vid % 1_000_000) / 1000);
+    const { book, chapter } = splitVid(vid);
     const request: NavRequest = { id: ++seq, kind: 'verse', vid, flash: opts?.flash, animated: opts?.animated ?? true };
     if (book >= 1 && chapter >= 1) set({ position: { book, chapter }, request });
     else set({ request });

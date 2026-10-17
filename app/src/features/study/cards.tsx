@@ -28,15 +28,17 @@ import {
   space,
   useTheme,
 } from '@/design';
-import { ScriptText } from '../rich/ScriptText';
+import { ScriptText } from '@/features/rich';
 import { useAutoTranslate } from '@/translate/useAutoTranslate';
 import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
 import { useTimelineTexts } from '@/translate/timeline-translate';
 import { useSourceLang } from '@/translate/source-lang';
 import { useStudy } from '@/state/study';
-import { EventPreview } from '@/features/timeline/EventPreview';
-import { bareWord, chv, morphLabelsPt, refShort, type CommentaryView, type KeyWord } from './format';
+import { EventPreview } from '@/features/timeline';
+import { type CommentaryView, type KeyWord } from './format';
+import { bareWord, chv, refShort } from '@/features/common/format';
+import { morphLabelsPt } from '@/features/common/morph-pt';
 import { STUDY } from './strings';
 
 // ---- palavra -----------------------------------------------------------------------------------------

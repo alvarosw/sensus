@@ -14,7 +14,8 @@ import {
   type StructuredSummary,
   type Vid,
 } from '@sensus/core';
-import { bareWord, chv, lexiconOfToken, refShort } from './format';
+import { lexiconOfToken } from './format';
+import { bareWord, chv, refShort } from '../common/format';
 import { chooseKeyWord, citedIdsOf, type WordAi, type WordBy } from './keyword';
 import { STUDY } from './strings';
 

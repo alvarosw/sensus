@@ -5,7 +5,7 @@ import { Icon, Txt, fontFamilies, shadow, useTheme } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useStudy } from '@/state/study';
 import { BACK_PRIORITY, useBackLayer } from '../common/back';
-import { shortRef } from '../nav/abbrev';
+import { refShort } from '../common/format';
 import { READER } from './strings';
 
 export function PinnedBar() {
@@ -38,7 +38,7 @@ export function PinnedBar() {
       ]}
     >
       <Txt v="meta" tint={st.xr} bold style={{ fontFamily: fontFamilies.uiBold, paddingTop: 2 }}>
-        {shortRef({ start: pinned.start, end: pinned.end })}
+        {refShort(pinned.start, pinned.end, [], true)}
       </Txt>
       <Txt v="excerpt" style={{ flex: 1, minWidth: 0, lineHeight: 20.3 }}>{text}</Txt>
       <Pressable

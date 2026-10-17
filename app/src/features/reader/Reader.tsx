@@ -12,13 +12,13 @@ const NT_CORPUS = (Object.keys(CORPUS) as Corpus[]).find((k) => CORPUS[k].testam
 import { LinkButton, Txt, motion, useTheme, type Detent } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useStudy } from '@/state/study';
-import { shortRef } from '../nav/abbrev';
-import { readLastPosition, writeLastPosition } from '../nav/last-position';
+import { refShort } from '../common/format';
+import { readLastPosition, writeLastPosition } from './last-position';
 import { ChapterBlock } from './ChapterBlock';
 import { SelectionHandles } from './Handles';
 import { TOTAL_CHAPTERS, chapterAt, loadChapter, vidChapterIndex, type ChapterData } from './chapters';
 import { LINE, ReaderGeometry } from './geometry';
-import { useReaderNav, type NavRequest } from './nav-store';
+import { useReaderNav, type NavRequest } from '@/state/reader-nav';
 import { createLoadSequencer, mayAutoScroll, planNavigation } from './nav-sequencing';
 import { READER } from './strings';
 import { sheetCover } from './viewport';
@@ -356,7 +356,7 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
         return;
       }
       s.tapVerse(vid);
-      s.showToast({ text: READER.reduced(shortRef({ start: vid, end: vid })), actionLabel: READER.undo, onAction: () => useStudy.getState().undoSelection() });
+      s.showToast({ text: READER.reduced(refShort(vid, vid, [], true)), actionLabel: READER.undo, onAction: () => useStudy.getState().undoSelection() });
       return;
     }
     s.tapVerse(vid);

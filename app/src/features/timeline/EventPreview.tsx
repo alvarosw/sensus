@@ -10,7 +10,7 @@ import type { TimelineLine, TimelineLineEvent, TimelineLineRef, Vid } from '@sen
 import { Txt, radius, space, useTheme } from '@/design';
 import { useBooks, useReduceMotion } from '@/features/common/hooks';
 import { useAppPrefs } from '@/settings/app-prefs';
-import { refShort } from '@/features/study/format';
+import { refShort } from '@/features/common/format';
 import { eventYear } from './model';
 import { TL } from './strings';
 import { useEventDetail, useTimelineLines, useVerseStart } from './useTimeline';

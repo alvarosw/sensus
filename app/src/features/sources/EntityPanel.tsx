@@ -10,8 +10,8 @@ import { useBooks, useCite } from '../common/hooks';
 import { SRC } from '../common/strings';
 import { useAutoTranslate } from '@/translate/useAutoTranslate';
 import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
-import { LicenseBlock, RefChips } from './PanelParts';
-import { PlaceMapBlock } from '../maps/PlaceMap';
+import { LicenseBlock, RefChips } from '../common/PanelParts';
+import { PlaceMapBlock } from '@/features/maps';
 
 export function EntityPanel({ citeId }: { citeId: string }) {
   const cite = useCite(citeId);

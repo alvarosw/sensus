@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { addLane, initialLanes, PARALLEL_COMBOS } from './parallel-lanes';
+import { PARALLEL_COMBOS } from '@sensus/core';
+import { addLane, initialLanes } from './parallel-lanes';
 
 describe('escolha das linhas do paralelo', () => {
   const known = new Set(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']);

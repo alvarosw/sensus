@@ -5,8 +5,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BOOK_TABLE } from '@sensus/core';
 import { Txt, fontFamilies, radius, shadow, size, useTheme } from '@/design';
 import { useStudy } from '@/state/study';
-import { useReaderNav } from '../reader/nav-store';
-import { READER } from '../reader/strings';
+import { useReaderNav } from '@/state/reader-nav';
+import { READER } from './strings';
 import { analyzeQuery } from './reference';
 
 export function JumpPopover({ onClose }: { onClose: () => void }) {
@@ -35,7 +35,7 @@ export function JumpPopover({ onClose }: { onClose: () => void }) {
       useReaderNav.getState().goChapter(ref.book.num, ref.chapter);
       return;
     }
-    // Seleção primeiro (abre a folha), depois o pedido de rolagem: um só caminho (nav-store), que carrega o
+    // Seleção primeiro (abre a folha), depois o pedido de rolagem: um só caminho (reader-nav), que carrega o
     // capítulo do alvo (inclusive de outro livro) antes de rolar.
     useStudy.getState().setSelection(ref.range.start, ref.range.end);
     useReaderNav.getState().goVerse(ref.range.start, { flash: true });

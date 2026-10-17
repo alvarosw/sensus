@@ -3,14 +3,12 @@ import {
   BOOK_TABLE,
   commentatorOf,
   formatReference,
-  formatShortRef,
   isBaseTextToken,
   isContentToken,
   isIntroCommentary,
   isIntroVid,
   langOfToken,
   pickLexicon,
-  splitVid,
   testamentOfCorpus,
   traditionLabel,
   type Book,
@@ -23,12 +21,6 @@ import {
   type Vid,
 } from '@sensus/core';
 
-/** "1:30" */
-export function chv(vid: Vid): string {
-  const p = splitVid(vid);
-  return `${p.chapter}:${p.verse}`;
-}
-
 /**
  * Referência com travessão: "Filipenses 1:30–2:1" ou "Filipenses 4:23 – Colossenses 1:1". Nome do livro e
  * capítulo ficam juntos (espaço não separável) para a quebra de linha cair só no travessão entre livros.
@@ -39,50 +31,6 @@ export function refTitle(start: Vid, end: Vid, books: readonly Book[]): string {
     .replace(/(?<=\d)-(?=\d)/g, '–')
     .replace(/ - /g, ' – ')
     .replace(/(?<=\p{L}) (?=\d)/gu, '\u00A0');
-}
-
-/** "1:27–2:4" (sem livro) ou "Fp 1:27–2:4" (com livro abreviado). */
-export function refShort(start: Vid, end: Vid, books: readonly Book[], withBook = false): string {
-  const table = books.length > 0 ? (books as Book[]) : BOOK_TABLE;
-  return formatShortRef(start, end, table, withBook);
-}
-
-// ---- morfologia em português ---------------------------------------------------------------------
-
-const MORPH_PT: Record<string, string> = {
-  Verb: 'verbo', Noun: 'substantivo', Adjective: 'adjetivo', Adverb: 'advérbio', Conjunction: 'conjunção',
-  Preposition: 'preposição', 'Definite article': 'artigo', 'Personal pronoun': 'pronome pessoal',
-  Present: 'presente', Aorist: 'aoristo', Imperfect: 'imperfeito', Perfect: 'perfeito', Future: 'futuro',
-  Pluperfect: 'mais-que-perfeito', Active: 'ativa', Passive: 'passiva', Middle: 'média',
-  'Middle or Passive': 'média/passiva', 'Middle or Passive Deponent': 'média/passiva depoente',
-  Deponent: 'depoente', Imperative: 'imperativo', Indicative: 'indicativo', Subjunctive: 'subjuntivo',
-  Optative: 'optativo', Participle: 'particípio', Infinitive: 'infinitivo', Nominative: 'nominativo',
-  Genitive: 'genitivo', Dative: 'dativo', Accusative: 'acusativo', Vocative: 'vocativo', Singular: 'singular',
-  Plural: 'plural', Masculine: 'masculino', Feminine: 'feminino', Neuter: 'neutro', '1st': '1ª pessoa',
-  '2nd': '2ª pessoa', '3rd': '3ª pessoa', Title: 'título', Negative: 'negativo',
-};
-
-function translateMorph(value: string): string {
-  const v = value.trim();
-  if (MORPH_PT[v]) return MORPH_PT[v]!;
-  const nth = /^(1st|2nd|3rd)\s+(.+)$/.exec(v); // "2nd Aorist" -> "aoristo 2º"
-  if (nth && MORPH_PT[nth[2]!]) return `${MORPH_PT[nth[2]!]} ${nth[1]![0]}º`;
-  const multi = v.split(/\s+/).map((w) => MORPH_PT[w] ?? w.toLowerCase());
-  return multi.join(' ');
-}
-
-/** Rótulos morfológicos em português para as pílulas do card (classe gramatical + tempo, voz, modo, caso...). */
-export function morphLabelsPt(desc: string | null | undefined, withClass = false): string[] {
-  if (!desc) return [];
-  const [cls, ...rest] = desc.split(';').map((s) => s.trim());
-  const out: string[] = [];
-  if (withClass && cls) out.push(translateMorph(cls));
-  for (const part of rest) {
-    const eq = part.indexOf('=');
-    if (eq < 0 || /^(Name type|Extra)/.test(part)) continue;
-    out.push(translateMorph(part.slice(eq + 1)));
-  }
-  return out;
 }
 
 // ---- comentários ---------------------------------------------------------------------------------
@@ -165,9 +113,4 @@ export function keyWordsOf(panel: PanelData): KeyWord[] {
   out.sort((a, b) => (a.count || 9999) - (b.count || 9999));
   const rare = out.filter((w) => w.count > 0 && w.count <= COMMON_LIMIT);
   return (rare.length > 0 ? rare : out).slice(0, MAX_KEY_WORDS);
-}
-
-/** Palavra sem pontuação de borda. */
-export function bareWord(surface: string): string {
-  return surface.normalize('NFC').replace(/^[\p{P}\p{S}\s]+|[\p{P}\p{S}\s]+$/gu, '');
 }

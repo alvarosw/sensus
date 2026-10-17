@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { LLMError, SiwcError, siwcErrorMessage, type ChatGPTModel } from '@sensus/core';
 import { Card, Pill, StatusPill, Txt, useTheme } from '@/design';
-import { FormButton } from '@/features/common/Buttons';
+import { FormButton } from '@/ui/Buttons';
 import { ChatGPTNativeUnavailableError } from '@/auth/chatgpt/loopback';
 import { cancelChatGPTSignIn, listChatGPTModels, setChatGPTModel, SignInCancelledError } from '@/auth/chatgpt/service';
 import { useSettings } from './settings-context';

@@ -25,7 +25,8 @@ import {
 import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { useCite } from '../common/hooks';
 import { useStudy } from '@/state/study';
-import { morphLabelsPt, bareWord } from '../study/format';
+import { bareWord } from '../common/format';
+import { morphLabelsPt } from '../common/morph-pt';
 
 /** Dados de uma afirmação, entregues às ações do menu ⋯. */
 export interface ClaimMenuInfo {

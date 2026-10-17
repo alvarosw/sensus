@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo } from 'react';
 import { parseStructuredSummary, splitVid, summaryCacheKey, type RichTextContext } from '@sensus/core';
 import { useSettings } from '@/settings/settings-context';
 import { LENS_LABELS, useStudy, type Attachment, type LensKey } from '@/state/study';
-import { usePassagePanel, type PassagePanel } from '../study/usePassagePanel';
+import { usePassagePanel, type PassagePanel } from '@/features/study';
 import { CHAT } from '../common/strings';
 import { ask as engineAsk, EMPTY_CTX, retry as engineRetry, stop as engineStop } from './engine';
 
