@@ -123,13 +123,11 @@ function collect(): Violation[] {
       if (!target) continue;
       const to = layerOf(target);
       const tr = rel(target);
+      // domínio só pode importar types.ts e refs.ts do núcleo (já verificado acima; por isso não cai em 'camada')
       if (from.layer === 'core-domain' && to.layer === 'core') {
         const ok = /packages\/core\/src\/(types|refs)\.ts$/.test(tr);
         if (!ok) out.push({ rule: 'dominio-isolado', file: r, detail: tr });
-      }
-      // domain/ pode importar só types.ts e refs.ts do núcleo (regra "dominio-isolado" abaixo)
-      const domainToCoreTypes = from.layer === 'core-domain' && to.layer === 'core';
-      if (RANK[to.layer] > RANK[from.layer] && !domainToCoreTypes) {
+      } else if (RANK[to.layer] > RANK[from.layer]) {
         out.push({ rule: 'camada', file: r, detail: tr });
       }
       if (from.layer === 'app-feature' && to.layer === 'app-feature' && from.feature !== to.feature) {
