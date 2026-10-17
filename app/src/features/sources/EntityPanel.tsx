@@ -1,6 +1,6 @@
 // Painel de entidade (pessoa, lugar, evento, grupo): descrição, coordenadas, mini-mapa e outras passagens.
 import { View } from 'react-native';
-import { Empty, LinkButton, Skeleton, SubHeader, Tag, Txt, TypeMark, useTheme } from '@/design';
+import { Empty, LinkButton, Skeleton, SubHeader, Tag, Txt, TypeMark } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useAsync } from '@/data/use-async';
 import type { Entity } from '@sensus/core';
@@ -10,8 +10,8 @@ import { useBooks, useCite } from '../common/hooks';
 import { SRC } from '../common/strings';
 import { useAutoTranslate } from '@/translate/useAutoTranslate';
 import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
-import { LicenseBlock, RefChips } from './PanelParts';
-import { PlaceMapBlock } from '../maps/PlaceMap';
+import { LicenseBlock, RefChips } from '../common/PanelParts';
+import { PlaceMapBlock } from '@/features/maps';
 
 export function EntityPanel({ citeId }: { citeId: string }) {
   const cite = useCite(citeId);

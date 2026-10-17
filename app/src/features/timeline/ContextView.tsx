@@ -4,7 +4,7 @@
 import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Pressable, ScrollView, View, type LayoutChangeEvent } from 'react-native';
 import { splitVid } from '@sensus/core';
-import { refShort } from '@/features/study/format';
+import { refShort } from '@/features/common/format';
 import { useBooks } from '@/features/common/hooks';
 import { Txt, size, space, useTheme } from '@/design';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';

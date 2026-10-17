@@ -2,8 +2,21 @@
 // Ordem: (1) a IA escolheu (linha "=" de @lingua); (2) a IA desenvolveu @lingua mas não marcou a palavra:
 // a primeira citada no desenvolvimento; (3) a mais mencionada nos comentários do trecho; (4) o hápax;
 // (5) um verbo. Sem IA, ou com erro, começa em (3). Sem nenhuma palavra possível, não há escolha.
-import type { Block, Commentary, LexiconEntry, PanelData, Token, Vid } from '@sensus/core';
-import { isKeyToken, lexiconByBase } from './format';
+import {
+  isProperNameToken,
+  isVerbToken,
+  langOfToken,
+  lexiconByBase,
+  type Block,
+  type Commentary,
+  type Lang,
+  type LexiconEntry,
+  type PanelData,
+  type StrongBase,
+  type Token,
+  type Vid,
+} from '@sensus/core';
+import { isKeyToken } from './format';
 
 export type WordBy = 'ai' | 'section' | 'commentary' | 'hapax' | 'verb';
 
@@ -39,7 +52,7 @@ interface WordGroup {
   token: Token;
   /** Ocorrências no trecho. */
   occurrences: number;
-  /** Versículos no NT/AT (concordância); 0 = desconhecido. */
+  /** Versículos com a palavra, no testamento dela (concordância); 0 = desconhecido. */
   count: number;
   verb: boolean;
   /** Formas comparáveis: lema, superfícies, transliterações (do token e do verbete). Nunca a glosa em inglês. */
@@ -71,29 +84,17 @@ function inRange(vid: Vid, range: Range): boolean {
   return vid >= range.start && vid <= range.end;
 }
 
-function isVerb(t: Token): boolean {
-  return /^Verb/.test(t.morph_desc ?? '') || /^(?:H?V)(?:-|[a-z])/.test(t.morph ?? '');
-}
-
-/**
- * Nome próprio (pessoa, lugar, grupo ou título, conforme o TAGNT: "Name type=…" na morfologia). No AT o banco
- * não marca nomes; ali a exclusão não se aplica.
- */
-export function isNameToken(t: Pick<Token, 'morph_desc'>): boolean {
-  return /Name type=/.test(t.morph_desc ?? '');
-}
-
 /** Formas com menos letras que isto não entram na contagem de comentários (evita "en", "kai" etc.). */
 export const MIN_FORM_LETTERS = 4;
 
 /**
- * Grupos de palavras de conteúdo do trecho, na ordem do texto. Nomes próprios ficam de fora, salvo com
- * `withNames` (só a leitura de uma palavra já citada pela IA, o fallback 1, aceita nomes).
+ * Grupos de palavras de conteúdo do trecho, na ordem do texto. Nomes próprios (domínio: TAGNT e TAHOT) ficam de
+ * fora, salvo com `withNames` (só a leitura de uma palavra já citada pela IA, o fallback 1, aceita nomes).
  */
 function groupsOf(panel: PanelData, range: Range, withNames = false): WordGroup[] {
   const byBase = new Map<string, WordGroup>();
   for (const t of panel.layers.text.original) {
-    if (!inRange(t.vid, range) || !isKeyToken(t) || (!withNames && isNameToken(t))) continue;
+    if (!inRange(t.vid, range) || !isKeyToken(t) || (!withNames && isProperNameToken(t))) continue;
     const sb = t.strong_base!;
     let g = byBase.get(sb);
     if (!g) {
@@ -108,12 +109,19 @@ function groupsOf(panel: PanelData, range: Range, withNames = false): WordGroup[
       byBase.set(sb, g);
     }
     g.occurrences++;
-    if (isVerb(t)) g.verb = true;
+    if (isVerbToken(t)) g.verb = true;
     for (const f of formsOf([t.lemma, t.surface, t.translit])) g.forms.add(f);
   }
-  const lex = lexiconByBase(panel);
+  // Verbete por base (o grupo agrupa as ocorrências de uma base): um por língua, calculado uma vez.
+  const byLang = new Map<Lang, Map<StrongBase, LexiconEntry>>();
   for (const g of byBase.values()) {
-    const l: LexiconEntry | undefined = lex.get(g.strongBase);
+    const lang = langOfToken(g.token);
+    let lex = byLang.get(lang);
+    if (!lex) {
+      lex = lexiconByBase(panel.layers.language.lexicon, lang);
+      byLang.set(lang, lex);
+    }
+    const l: LexiconEntry | undefined = lex.get(g.strongBase as StrongBase);
     for (const f of formsOf([l?.lemma, l?.translit])) g.forms.add(f);
   }
   return [...byBase.values()];
@@ -165,7 +173,7 @@ function mostMentioned(groups: readonly WordGroup[], commentaries: readonly Comm
   return best ? { token: best.g.token, by: 'commentary', mentions: best.mentions } : undefined;
 }
 
-/** Verbo do trecho: o mais repetido no trecho; no empate, o mais raro no NT/AT. */
+/** Verbo do trecho: o mais repetido no trecho; no empate, o mais raro no seu testamento. */
 function mostRepeatedVerb(groups: readonly WordGroup[]): WordPick | undefined {
   const verbs = groups
     .filter((g) => g.verb)

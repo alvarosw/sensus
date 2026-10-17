@@ -21,3 +21,7 @@ tmp/
 
 # APKs de teste gerados localmente
 dist/
+
+# worktrees e ajustes locais do Claude Code
+.claude/worktrees/
+.claude/settings.local.json

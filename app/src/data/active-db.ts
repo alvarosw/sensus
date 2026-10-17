@@ -4,7 +4,7 @@
 //  - 'sensus-full.db': a edição completa baixada (ver download-engine.ts). Quando existe e é válida, tem prioridade.
 // A troca é atômica do ponto de vista do app: o novo arquivo é validado antes e só depois a conexão é trocada.
 import * as SQLite from 'expo-sqlite';
-import { Directory, File, FileMode, Paths } from 'expo-file-system';
+import { Directory, File, Paths } from 'expo-file-system';
 import { Repo } from '@sensus/core';
 import bundledDb from '../../assets/sensus.db';
 import bundled from './bundled-db.json';

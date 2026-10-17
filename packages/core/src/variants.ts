@@ -2,6 +2,7 @@
 import type { Token } from './types';
 import { formatVerse } from './refs';
 import { BASE_EDITIONS, hasEdition } from './panel';
+import { hasEditionVariants } from './domain/language';
 
 /** Uma leitura (ou um grupo de edições com a mesma leitura) em um sítio de variação. */
 export interface VariantReading {
@@ -66,7 +67,7 @@ function siteOf(vid: number, gap: readonly Token[]): VariantSite | null {
  * geram sítios.
  */
 export function variantSites(tokens: readonly Token[]): VariantSite[] {
-  const sorted = tokens.filter((t) => t.corpus === 'gnt').sort((x, y) => x.vid - y.vid || x.pos - y.pos);
+  const sorted = tokens.filter((t) => hasEditionVariants(t.corpus)).sort((x, y) => x.vid - y.vid || x.pos - y.pos);
   const byVid = new Map<number, Token[]>();
   for (const t of sorted) {
     const list = byVid.get(t.vid) ?? [];

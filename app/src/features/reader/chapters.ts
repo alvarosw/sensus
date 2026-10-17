@@ -1,7 +1,7 @@
 // Capítulos como unidade do leitor contínuo: índice linear (livro, capítulo) ↔ posição na Bíblia,
 // carregamento dos versículos e agrupamento em parágrafos/títulos (text_division).
 import { BOOK_TABLE, DEFAULT_TEXT_SOURCE, LAST_VERSE, chapterRange, makeVid, splitVid, type Repo, type Vid } from '@sensus/core';
-import { buildFlow, type FlowBlock } from '../nav/verse-flow';
+import { buildFlow, type FlowBlock } from './verse-flow';
 
 const FIRST_IDX: number[] = []; // índice (0-based) do capítulo 1 de cada livro, por número do livro
 let total = 0;

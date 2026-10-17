@@ -4,7 +4,7 @@
 // (Detalhar este ponto / De onde vem isso? / Perguntar sobre isto).
 import { memo, useMemo, useState, type ReactNode } from 'react';
 import { Pressable, Text, View, type TextStyle } from 'react-native';
-import { type Block, type CiteRef, type ClaimInfo, type Inline } from '@sensus/core';
+import { dirOf, scriptOf, type Block, type CiteRef, type ClaimInfo, type Inline } from '@sensus/core';
 import {
   Caret,
   CitePill,
@@ -25,7 +25,7 @@ import {
 import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { useCite } from '../common/hooks';
 import { useStudy } from '@/state/study';
-import { morphLabelsPt, bareWord } from '../study/format';
+import { morphLabelsPt } from '../common/morph-pt';
 
 /** Dados de uma afirmação, entregues às ações do menu ⋯. */
 export interface ClaimMenuInfo {
@@ -335,10 +335,18 @@ function ClaimMenu({
 
 // ---- mini card de fonte ("De onde vem isso?") --------------------------------------------------------
 
+/** Tira o nome da fonte do início do rótulo ("TBESH H0935") quando a palavra que segue é grega ou hebraica. */
+function stripSourcePrefix(label: string): string {
+  const m = /^(\S+) (.+)$/u.exec(label);
+  if (!m) return label;
+  const script = scriptOf(m[2]!);
+  return script === 'greek' || script === 'hebrew' ? m[2]! : label;
+}
+
 function MiniSource({ citeId, onOpen }: { citeId: string; onOpen: (id: string) => void }) {
   const kind = sourceTypeOf(citeId);
   const { loading, detail } = useCite(citeId);
-  const title = detail ? (detail.kind === 'tok' || detail.kind === 'lex' ? detail.label.replace(/^\S+ (?=\p{Script=Greek})/u, '') : detail.label) : citeId.split(':').slice(1).join(' · ');
+  const title = detail ? (detail.kind === 'tok' || detail.kind === 'lex' ? stripSourcePrefix(detail.label) : detail.label) : citeId.split(':').slice(1).join(' · ');
   const excerpt =
     detail?.record.table === 'token'
       ? [detail.record.record.lemma, morphLabelsPt(detail.record.record.morph_desc, true).join(', '), detail.record.record.gloss_en ? `“${detail.record.record.gloss_en}”` : ''].filter(Boolean).join(' · ')
@@ -348,7 +356,7 @@ function MiniSource({ citeId, onOpen }: { citeId: string; onOpen: (id: string) =
       <CardTop>
         <TypeMark kind={kind} label={detail?.typeLabel ?? kind} />
         {kind === 'tok' ? (
-          <Greek base="bodySm" bold>{title}</Greek>
+          <Greek base="bodySm" bold dir={dirOf(scriptOf(title))}>{title}</Greek>
         ) : (
           <Txt v="bodySm" bold numberOfLines={1} style={{ flexShrink: 1 }}>{title}</Txt>
         )}
@@ -514,6 +522,7 @@ function Inlines({
           key={i}
           base={v === 'claim' ? 'claim' : 'body'}
           bold={inl.bold}
+          dir={dirOf(scriptOf(inl.text))}
           onPress={inl.tokenCiteId ? () => ctx.onToken(inl.tokenCiteId!) : undefined}
           testID={inl.tokenCiteId ? `tok-${inl.tokenCiteId}` : undefined}
         >

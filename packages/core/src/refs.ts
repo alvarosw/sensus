@@ -1,9 +1,9 @@
 // Ids de versículo (vid), nomes de livros e referências bíblicas em pt-BR.
+import { LAST_VERSE, MAX_BOOK, packVid, unpackVid } from './domain/vid';
 import type { Book, Vid, VerseRange } from './types';
 
-/** Último número de versículo; usado para "capítulo inteiro" (ex.: makeVid(b, c, LAST_VERSE)). */
-export const LAST_VERSE = 999;
-export const MAX_BOOK = 66;
+/** Último número de versículo ("capítulo inteiro", ex.: makeVid(b, c, LAST_VERSE)) e último livro: valores no domínio. */
+export { LAST_VERSE, MAX_BOOK };
 
 /** Livros por número (mapa) ou em lista (ex.: resultado de `repo.books()`). */
 export type BookSource = ReadonlyMap<number, Book> | readonly Book[];
@@ -102,20 +102,13 @@ export interface VidParts {
   verse: number;
 }
 
-/** livro*1_000_000 + capítulo*1000 + versículo. Versículo 0 = introdução do capítulo/livro. */
+/** Livro, capítulo e versículo num vid (aritmética em domain/vid.ts). Versículo 0 = introdução do capítulo/livro. */
 export function makeVid(book: number, chapter: number, verse: number): Vid {
-  if (!Number.isInteger(book) || book < 1 || book > MAX_BOOK) throw new RangeError(`livro inválido: ${book}`);
-  if (!Number.isInteger(chapter) || chapter < 0 || chapter > LAST_VERSE) throw new RangeError(`capítulo inválido: ${chapter}`);
-  if (!Number.isInteger(verse) || verse < 0 || verse > LAST_VERSE) throw new RangeError(`versículo inválido: ${verse}`);
-  return book * 1_000_000 + chapter * 1000 + verse;
+  return packVid(book, chapter, verse);
 }
 
 export function splitVid(vid: Vid): VidParts {
-  return {
-    book: Math.floor(vid / 1_000_000),
-    chapter: Math.floor(vid / 1000) % 1000,
-    verse: vid % 1000,
-  };
+  return unpackVid(vid);
 }
 
 export function chapterRange(book: number, chapter: number): VerseRange {

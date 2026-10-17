@@ -36,7 +36,6 @@ import {
   type SectionKey,
   type SqlDriver,
   type SqlParam,
-  type VerseRange,
 } from '@sensus/core';
 import type { Fixture, FixtureKind } from '../dev/fixtures/types';
 
@@ -107,7 +106,7 @@ function writeIndex(): void {
   const files = readdirSync(OUT)
     .filter((f) => f.endsWith('.json'))
     .sort();
-  const ident = (f: string, i: number) => `f${i}`;
+  const ident = (_f: string, i: number) => `f${i}`;
   const lines = [
     '// GERADO por scripts/record-fixtures.ts — não editar à mão.',
     "import type { Fixture } from './types';",

@@ -1,4 +1,6 @@
 // Textos da folha de estudo (pt-BR). Mantidos aqui para não colidir com a tabela global em i18n.
+import { testamentLabel, type Testament } from '@sensus/core';
+
 export const STUDY = {
   sheet: 'Estudo do trecho selecionado',
   expand: 'Expandir estudo',
@@ -13,12 +15,12 @@ export const STUDY = {
   railLabel: 'Lentes do estudo',
 
   factComentaristas: 'comentaristas',
-  factVariante: 'variante TR/NA',
-  factVariantes: 'variantes TR/NA',
+  factVariante: (slash: string) => `variante ${slash}`,
+  factVariantes: (slash: string) => `variantes ${slash}`,
   factXrefs: 'refs. cruzadas',
-  factHapax: 'hápax no NT',
-  factHapaxOt: 'hápax no AT',
-  factVv: (n: number, ot: boolean) => `${n} vv. no ${ot ? 'AT' : 'NT'}`,
+  factHapax: (t: Testament) => `hápax no ${testamentLabel(t)}`,
+  /** Contagem de versículos no testamento da palavra; 1 vira "versículo", o resto "vv.". */
+  factVv: (n: number, t: Testament) => `${n} ${n === 1 ? 'versículo' : 'vv.'} no ${testamentLabel(t)}`,
   factNoData: 'Sem dados',
 
   deepen: 'Detalhar',
@@ -55,10 +57,10 @@ export const STUDY = {
   translations: 'Traduções e original',
   cmpBlivre: 'Bíblia Livre',
   cmpKjv: 'KJV',
-  cmpTr: 'Grego TR',
-  cmpHint: 'Toque numa palavra para ver morfologia, léxico e concordância.',
+  cmpOriginal: 'Original',
+  originalHint: (nt: string, at: string) => `Original: ${nt} para o NT, ${at} para o AT. Toque numa palavra para ver morfologia.`,
   variantsTitle: 'Variantes entre edições',
-  variantsEmpty: 'Nenhuma diferença entre TR, BYZ e NA nestes versículos.',
+  variantsEmpty: (list: string) => `Nenhuma diferença entre ${list} nestes versículos.`,
   variantType: 'Variante',
   omits: 'omite',
   analyzeWord: 'Analisar palavra',

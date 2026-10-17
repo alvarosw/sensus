@@ -1,7 +1,7 @@
 // Relevância determinística para o contexto histórico-cultural (dicionários, índices temáticos, entidades).
 import type { Book, Token, VerseRange } from './types';
 import type { DictionaryHit, EntityHit } from './repo';
-import { isContentToken } from './morph';
+import { isContentToken } from './domain/morph';
 
 /** Verbete cujo intervalo de referências é mais largo que isto (em vids) é descartado, salvo casamento. */
 export const WIDE_REF_MIN = 12;

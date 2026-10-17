@@ -1,13 +1,14 @@
 // Resolução de cite_ids para prévias e painéis: registro + fonte + rótulos, com cache por Repo.
 // Usa só a API pública do Repo (resolveCite, lexicon, concordance, entities, verseTexts).
 import {
-  commentatorName,
+  bookRange,
+  chapterRange,
+  commentatorOf,
   DEFAULT_TEXT_SOURCE,
   formatShortRef,
-  shortTitle,
-  splitVid,
+  isIntroVid,
+  sourceShort,
   titleCaseHeadword,
-  LAST_VERSE,
   type Book,
   type CitableRecord,
   type LexiconEntry,
@@ -17,6 +18,8 @@ import {
   type Vid,
 } from '@sensus/core';
 import { sourceTypeOf, type SourceTypeColors } from '@/design';
+import { loadSources } from '@/data/sources';
+import { serial } from '@/data/serial';
 import { SRC } from './strings';
 
 export type CiteKind = keyof SourceTypeColors;
@@ -40,35 +43,15 @@ export interface CiteDetail {
   ranges: { start: Vid; end: Vid }[];
 }
 
-const SHORT_SOURCE: Record<string, string> = { blivre: 'Bíblia Livre', kjv: 'KJV', 'grc-tr': 'TR' };
-
-export function sourceShort(source: Source | undefined, fallbackId: string): string {
-  return SHORT_SOURCE[fallbackId] ?? (source ? shortTitle(source.title) : fallbackId);
-}
-
-// ---- fila de consultas ------------------------------------------------------------------
-// O driver do banco (wa-sqlite na web) falha com "Error code 21" (uso indevido da API) quando várias
-// consultas rodam ao mesmo tempo na mesma conexão. Aqui as consultas das prévias/painéis entram numa
-// fila e, se uma falhar, tentam de novo uma vez.
-let queue: Promise<unknown> = Promise.resolve();
-export function serial<T>(fn: () => Promise<T>): Promise<T> {
-  const run = queue.then(async () => {
-    try {
-      return await fn();
-    } catch {
-      await new Promise((r) => setTimeout(r, 150));
-      return fn();
-    }
-  });
-  queue = run.catch(() => undefined);
-  return run;
-}
+// A fila de consultas e o registro de fontes moraram aqui; agora são da camada de dados. Reexportados para
+// quem já importa daqui.
+export { serial } from '@/data/serial';
+export { loadSources } from '@/data/sources';
 
 // ---- caches por repo ---------------------------------------------------------------------
 
 interface RepoCache {
   books?: Promise<Book[]>;
-  sources?: Promise<Map<string, Source>>;
   cites: Map<string, Promise<CiteDetail | null>>;
   lexicon: Map<string, Promise<LexiconEntry[]>>;
   concordance: Map<string, Promise<{ count: number; vids: Vid[] }>>;
@@ -89,11 +72,6 @@ export function loadBooks(repo: Repo): Promise<Book[]> {
   return (c.books ??= serial(() => repo.books()));
 }
 
-export function loadSources(repo: Repo): Promise<Map<string, Source>> {
-  const c = cacheOf(repo);
-  return (c.sources ??= serial(() => repo.sources()).then((rows) => new Map(rows.map((s) => [s.id, s]))));
-}
-
 function wordOf(surface: string): string {
   return surface.normalize('NFC').replace(/^[\p{P}\p{S}\s]+|[\p{P}\p{S}\s]+$/gu, '');
 }
@@ -107,7 +85,7 @@ function build(record: CitableRecord, citeId: string, source: Source | undefined
       return {
         ...base,
         typeLabel: SRC.typeLabels.txt,
-        label: `${sourceShort(source, r.source_id)} ${formatShortRef(r.vid, r.vid, books, true)}`,
+        label: `${sourceShort(r.source_id, source?.title)} ${formatShortRef(r.vid, r.vid, books, true)}`,
         text: r.text,
         vid: r.vid,
         ranges: [{ start: r.vid, end: r.vid }],
@@ -130,7 +108,7 @@ function build(record: CitableRecord, citeId: string, source: Source | undefined
       return {
         ...base,
         typeLabel: SRC.typeLabels.lex,
-        label: `${sourceShort(source, r.source_id)} ${r.lemma ?? r.key}`,
+        label: `${sourceShort(r.source_id, source?.title)} ${r.lemma ?? r.key}`,
         text: [r.gloss, r.definition].filter(Boolean).join(' — '),
         vid: null,
       };
@@ -138,13 +116,12 @@ function build(record: CitableRecord, citeId: string, source: Source | undefined
     case 'commentary': {
       const r = record.record;
       const ref = formatShortRef(r.start_vid, r.end_vid, books, true);
-      const intro = splitVid(r.start_vid).verse === 0;
       return {
         ...base,
         typeLabel: SRC.typeLabels.com,
-        label: `${commentatorName(source, r)} ${ref}`,
+        label: `${commentatorOf(source, r)} ${ref}`,
         text: r.text,
-        vid: intro ? null : r.start_vid,
+        vid: isIntroVid(r.start_vid) ? null : r.start_vid,
         ranges: [{ start: r.start_vid, end: r.end_vid }],
       };
     }
@@ -214,8 +191,6 @@ export function loadLexicon(repo: Repo, strongBase: string): Promise<LexiconEntr
   return p;
 }
 
-export { pickLexicon, type LexiconPair } from './lexicon-pick';
-
 const CONCORDANCE_LIMIT = 80;
 
 /** Total de versículos com a palavra (NT para G…, AT para H…) e até 80 deles (ordem do texto). */
@@ -267,11 +242,11 @@ async function scanEntity(repo: Repo, citeId: string): Promise<Vid[]> {
   const books = await loadBooks(repo);
   const out: Vid[] = [];
   for (const b of books) {
-    const base = b.num * 1_000_000;
-    if (!(await has(base, base + 999_999))) continue;
+    const whole = bookRange(b.num);
+    if (!(await has(whole.start, whole.end))) continue;
     for (let ch = 1; ch <= b.chapters; ch++) {
-      const start = base + ch * 1000;
-      if (await has(start, start + LAST_VERSE)) await bisect(start, start + LAST_VERSE, out);
+      const { start, end } = chapterRange(b.num, ch);
+      if (await has(start, end)) await bisect(start, end, out);
     }
   }
   return out.sort((a, b) => a - b);

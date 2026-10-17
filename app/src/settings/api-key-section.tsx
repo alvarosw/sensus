@@ -6,7 +6,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Pressable, TextInput, View } from 'react-native';
 import { orderModelListings, type ModelListing } from '@sensus/core';
 import { Card, fontFamilies, Icon, LinkButton, ListGroup, Pill, RadioOption, radius, Txt, useTheme } from '@/design';
-import { FormButton } from '@/features/common/Buttons';
+import { FormButton } from '@/ui/Buttons';
 import { checkProviderModel, listProviderModels } from '@/ai/client';
 import { LLMError, type ProviderConfig } from '@sensus/core';
 import { DEMO_PROVIDER_CONFIG } from '@/ai/demo-provider';

@@ -2,6 +2,7 @@
 // e perguntas acionáveis. Implementado no núcleo; o app apenas renderiza estes tipos.
 
 import type { MorphConflict, PanelData, Token } from '../types';
+import type { Lang } from '../domain';
 
 /** Chaves das seções do resumo, na ordem de exibição. */
 export type SectionKey =
@@ -44,7 +45,7 @@ export const SECTION_LAYER: Record<SectionKey, keyof PanelData['layers'] | null>
 export type Inline =
   | { type: 'text'; text: string; bold?: boolean; italic?: boolean }
   /** Trecho em grego/hebraico (detectado por bloco Unicode). tokenCiteId quando casa com um token do painel. */
-  | { type: 'original'; text: string; lang: 'grc' | 'hbo'; tokenCiteId?: string; bold?: boolean; italic?: boolean }
+  | { type: 'original'; text: string; lang: Lang; tokenCiteId?: string; bold?: boolean; italic?: boolean }
   /** Grupo de citações consecutivas, já com rótulos legíveis (ver CiteIndex). */
   | { type: 'cite'; refs: CiteRef[] };
 
@@ -118,7 +119,7 @@ export interface CiteIndexEntry {
   table: 'verse_text' | 'token' | 'lexicon_entry' | 'commentary' | 'dictionary_entry' | 'xref' | 'entity';
   sourceTitle: string;
   tradition: string | null;
-  /** Nome curto da fonte usado no rótulo (ex.: "Bíblia Livre", "KJV", "TBESG"). Adicionado em v0.3. */
+  /** Nome curto da fonte usado no rótulo (ex.: "Bíblia Livre", "KJV", TBESG). Adicionado em v0.3. */
   short?: string;
   /** Parte de referência do rótulo de versículo (ex.: "2:5" ou "Fp 1:30"). Adicionado em v0.3. */
   refLabel?: string;

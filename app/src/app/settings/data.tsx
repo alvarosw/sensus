@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Alert, ScrollView, View } from 'react-native';
 import { Card, LinkButton, Txt, useTheme } from '@/design';
-import { FormButton } from '@/features/common/Buttons';
+import { FormButton } from '@/ui/Buttons';
 import { DownloadStatus } from '@/data/DownloadStatus';
 import { useDataStore, useUpdateState } from '@/data/data-store';
 import { formatMB } from '@/data/plan';

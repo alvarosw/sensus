@@ -1,7 +1,7 @@
 // Rodapé do chat: anexos (chips removíveis), campo da pergunta e botão enviar/parar.
 import { forwardRef } from 'react';
 import { Pressable, TextInput, View } from 'react-native';
-import { fontFamilies, Icon, radius, size, Txt, useTheme } from '@/design';
+import { fontFamilies, Icon, radius, size, useTheme } from '@/design';
 import { useStudy } from '@/state/study';
 import { GreekText } from '../common/GreekText';
 import { CHAT } from '../common/strings';

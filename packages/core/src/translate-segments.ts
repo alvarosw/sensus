@@ -3,6 +3,8 @@
 // referências bíblicas, URLs, marcas de seção, abreviações de léxico e quebras de parágrafo).
 // Só os trechos "translate" vão ao tradutor; juntar os segmentos de novo reproduz o texto original
 // (com as traduções nos lugares certos). Função pura: sem banco, rede nem dependências de runtime.
+import { LEXICONS } from './domain/lexicon';
+import { SCRIPT_WORD_SOURCE } from './domain/script';
 
 export interface TextSegment {
   /** "translate": prosa em inglês a traduzir. "keep": copiado sem alteração. */
@@ -10,7 +12,8 @@ export interface TextSegment {
   text: string;
 }
 
-const GREEK_HEBREW = String.raw`[\p{Script=Greek}\p{Script=Hebrew}\p{M}\u0387\u037E]`;
+/** Palavra em grego ou hebraico: a regex de escrita do domínio (ver domain/script.ts). */
+const SCRIPT_WORD = SCRIPT_WORD_SOURCE;
 
 /** Livros da Bíblia (abreviações e nomes curtos, em inglês e pt-BR), com maiúscula inicial. */
 const BOOK_ABBR = [
@@ -47,8 +50,10 @@ const LEXICON_ABBR = [
 ];
 /** Siglas sem ponto (corpus e léxico) que não devem ser traduzidas. */
 const ACRONYMS = [
-  'LXX', 'TH', 'NT', 'OT', 'MT', 'LSJ', 'BDAG', 'BDB', 'TDNT', 'TBESG', 'TFLSJ', 'AS', 'Thayer', 'Strong', 'KJV', 'AV', 'RV',
+  'LXX', 'TH', 'NT', 'OT', 'MT', 'LSJ', 'BDAG', 'BDB', 'TDNT', 'TFLSJ', 'AS', 'Thayer', 'Strong', 'KJV', 'AV', 'RV',
   'ASV', 'TR', 'Byz', 'NA27', 'NA28',
+  // Rótulos dos léxicos do domínio (TBESG, TBESH), sem repetir a sigla aqui.
+  ...Object.values(LEXICONS).map((l) => l.label),
 ];
 
 const BOOK_ALT = [...BOOK_ABBR, ...BOOK_NAMES]
@@ -64,7 +69,7 @@ const CHAPTER_VERSE = String.raw`\.?\s?\d{1,3}\s?[:.,]\s?\d{1,3}(?:\s?[-–]\s?\
 const PROTECTED = new RegExp(
   [
     String.raw`https?:\/\/[^\s<>"()]+[^\s<>"().,;:!?]|www\.[^\s<>"()]+[^\s<>"().,;:!?]`,
-    String.raw`${GREEK_HEBREW}+(?:[ \t\u00A0'’\-–]+${GREEK_HEBREW}+)*`,
+    String.raw`(?:${SCRIPT_WORD})+(?:[ \t\u00A0'’\-–]+(?:${SCRIPT_WORD})+)*`,
     String.raw`§§?\s?\d[\d.,–-]*|\d[\d.,–-]*\s?§+|¶\s?\d[\d.,–-]*`,
     String.raw`(?<![\p{L}\p{N}])[GH]\d{1,5}(?![\p{L}\p{N}])`,
     String.raw`(?<![\p{L}\p{N}])(?:(?:[1-3]|I{1,3})\s?)?(?:${BOOK_ALT})${CHAPTER_VERSE}(?![\p{L}\p{N}])`,

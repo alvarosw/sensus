@@ -2,7 +2,7 @@
 import { router } from 'expo-router';
 import type { Vid } from '@sensus/core';
 import { useStudy } from '@/state/study';
-import { useReaderNav } from '@/features/reader/nav-store';
+import { useReaderNav } from '@/state/reader-nav';
 
 /**
  * Leva o leitor aos versículos [first, last]: mesma seleção e mesmo destaque de "ir para" usados pelo trecho de

@@ -1,7 +1,7 @@
 // Provedores de LLM. O primeiro adaptador fala o protocolo OpenAI (/chat/completions com SSE).
 // Para outro provedor, basta um novo arquivo que implemente LLMProvider e um ramo em createProvider.
 import type { ChatRequest, FetchLike, LLMProvider, ProviderConfig } from '../types';
-import { LLMError, type LLMErrorCode } from './llm-error';
+import { LLMError } from './llm-error';
 import { readSSEData, StallWatch, STALL_TIMEOUT_MS } from './sse';
 import { OpenAIResponsesProvider } from './openai-responses';
 import { classifyModels, type ModelListing } from './models';
