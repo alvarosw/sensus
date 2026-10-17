@@ -1,9 +1,7 @@
 import { useMemo } from 'react';
-import { wordKey } from '@sensus/core';
+import { dirOf, SCRIPT_WORD_RE, scriptOf, wordKey } from '@sensus/core';
 import { Greek, Txt, type TypeVariant } from '@/design';
 import { useStudy } from '@/state/study';
-
-const SCRIPT_RE = /[Ͱ-Ͽἀ-῿֐-׿][Ͱ-Ͽἀ-῿֐-׿\p{M}’']*/gu;
 
 /**
  * Texto de fonte (comentário, verbete) com o grego/hebraico em Gentium. `tokens` (palavra → cite_id do token)
@@ -26,7 +24,7 @@ export function ScriptText({
   const nodes = useMemo(() => {
     const out: Array<{ t: string; script: boolean }> = [];
     let last = 0;
-    for (const m of text.matchAll(SCRIPT_RE)) {
+    for (const m of text.matchAll(SCRIPT_WORD_RE)) {
       if (m.index > last) out.push({ t: text.slice(last, m.index), script: false });
       out.push({ t: m[0], script: true });
       last = m.index + m[0].length;
@@ -40,7 +38,7 @@ export function ScriptText({
         if (!n.script) return n.t;
         const id = tokenByKey?.get(wordKey(n.t));
         return (
-          <Greek key={i} base={v} onPress={id ? () => pushPanel({ kind: 'word', tokenCiteId: id }) : undefined}>
+          <Greek key={i} base={v} dir={dirOf(scriptOf(n.t))} onPress={id ? () => pushPanel({ kind: 'word', tokenCiteId: id }) : undefined}>
             {n.t}
           </Greek>
         );

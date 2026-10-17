@@ -1,13 +1,14 @@
 // Resolução de cite_ids para prévias e painéis: registro + fonte + rótulos, com cache por Repo.
 // Usa só a API pública do Repo (resolveCite, lexicon, concordance, entities, verseTexts).
 import {
+  bookRange,
+  chapterRange,
   commentatorOf,
   DEFAULT_TEXT_SOURCE,
   formatShortRef,
+  isIntroVid,
   sourceShort,
-  splitVid,
   titleCaseHeadword,
-  LAST_VERSE,
   type Book,
   type CitableRecord,
   type LexiconEntry,
@@ -132,13 +133,12 @@ function build(record: CitableRecord, citeId: string, source: Source | undefined
     case 'commentary': {
       const r = record.record;
       const ref = formatShortRef(r.start_vid, r.end_vid, books, true);
-      const intro = splitVid(r.start_vid).verse === 0;
       return {
         ...base,
         typeLabel: SRC.typeLabels.com,
         label: `${commentatorOf(source, r)} ${ref}`,
         text: r.text,
-        vid: intro ? null : r.start_vid,
+        vid: isIntroVid(r.start_vid) ? null : r.start_vid,
         ranges: [{ start: r.start_vid, end: r.end_vid }],
       };
     }
@@ -208,8 +208,6 @@ export function loadLexicon(repo: Repo, strongBase: string): Promise<LexiconEntr
   return p;
 }
 
-export { pickLexicon, type LexiconPair } from './lexicon-pick';
-
 const CONCORDANCE_LIMIT = 80;
 
 /** Total de versículos com a palavra (NT para G…, AT para H…) e até 80 deles (ordem do texto). */
@@ -261,11 +259,11 @@ async function scanEntity(repo: Repo, citeId: string): Promise<Vid[]> {
   const books = await loadBooks(repo);
   const out: Vid[] = [];
   for (const b of books) {
-    const base = b.num * 1_000_000;
-    if (!(await has(base, base + 999_999))) continue;
+    const whole = bookRange(b.num);
+    if (!(await has(whole.start, whole.end))) continue;
     for (let ch = 1; ch <= b.chapters; ch++) {
-      const start = base + ch * 1000;
-      if (await has(start, start + LAST_VERSE)) await bisect(start, start + LAST_VERSE, out);
+      const { start, end } = chapterRange(b.num, ch);
+      if (await has(start, end)) await bisect(start, end, out);
     }
   }
   return out.sort((a, b) => a - b);

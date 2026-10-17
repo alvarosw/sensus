@@ -1,10 +1,10 @@
 // Agrupamento dos livros por categoria (intervalos canônicos, inclusivos).
-import type { Book } from '@sensus/core';
+import type { Book, Testament } from '@sensus/core';
 
 export interface BookCategory {
   id: string;
   title: string;
-  testament: 'OT' | 'NT';
+  testament: Testament;
   from: number;
   to: number;
 }
@@ -28,7 +28,7 @@ export interface CategoryGroup {
 }
 
 /** Livros de um testamento, agrupados por categoria na ordem canônica. */
-export function groupBooks(books: readonly Book[], testament: 'OT' | 'NT'): CategoryGroup[] {
+export function groupBooks(books: readonly Book[], testament: Testament): CategoryGroup[] {
   return BOOK_CATEGORIES.filter((c) => c.testament === testament).map((category) => ({
     category,
     books: books.filter((b) => b.num >= category.from && b.num <= category.to),

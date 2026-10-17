@@ -83,12 +83,15 @@ export function Greek({
   onPress,
   bold,
   testID,
+  dir,
 }: {
   children: ReactNode;
   base?: TypeVariant;
   onPress?: () => void;
   bold?: boolean;
   testID?: string;
+  /** Direção de leitura da palavra isolada (hebraico: rtl). Sem valor, herda do texto. */
+  dir?: 'ltr' | 'rtl';
 }) {
   const { c, st } = useTheme();
   const g = greekFor(type[base]);
@@ -100,6 +103,7 @@ export function Greek({
       style={{
         fontFamily: bold ? fontFamilies.greekBold : g.fontFamily,
         fontSize: g.fontSize,
+        writingDirection: dir,
         color: onPress ? st.tok : c.text,
         textDecorationLine: onPress ? 'underline' : 'none',
         textDecorationStyle: 'dotted',

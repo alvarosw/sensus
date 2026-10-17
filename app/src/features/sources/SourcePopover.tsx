@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Animated, { interpolate, useAnimatedStyle } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { formatShortRef, traditionLabel } from '@sensus/core';
+import { dirOf, formatShortRef, scriptOf, traditionLabel } from '@sensus/core';
 import {
   fontFamilies,
   IconButton,
@@ -23,11 +23,12 @@ import { useStudy } from '@/state/study';
 import { askAbout, panelFor, showInText } from '../common/actions';
 import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { PopButton } from '../common/Buttons';
-import { loadLexicon, loadXrefText, pickLexicon, type CiteDetail } from '../common/cites';
+import { loadLexicon, loadXrefText, type CiteDetail } from '../common/cites';
 import { useBooks, useCite } from '../common/hooks';
 import { morphPills } from '../common/morph-pt';
 import { useLast, usePresence } from '../common/motion';
 import { SRC } from '../common/strings';
+import { wordView, type WordView } from '../common/word-view';
 import { useAutoTranslate } from '@/translate/useAutoTranslate';
 import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
 import { useSourceLang } from '@/translate/source-lang';
@@ -175,7 +176,7 @@ function ResolvedBody({ detail, onClose }: { detail: CiteDetail; onClose: () => 
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, flexWrap: 'wrap', paddingRight: 40 }}>
           <TypeMark kind={detail.kind} label={detail.typeLabel} />
           {detail.kind === 'tok' ? (
-            <Text style={{ fontFamily: fontFamilies.greekBold, fontSize: 15, color: st.tok }}>{detail.label}</Text>
+            <Text style={{ fontFamily: fontFamilies.greekBold, fontSize: 15, color: st.tok, writingDirection: dirOf(scriptOf(detail.label)) }}>{detail.label}</Text>
           ) : (
             <Txt v="bodySm" bold style={{ fontSize: 13 }}>{detail.label}</Txt>
           )}
@@ -209,26 +210,26 @@ function Body({ detail, repo }: { detail: CiteDetail; repo: ReturnType<typeof us
   const { record } = detail;
   const textSource = useStudy((s) => s.textSource);
 
-  const extra = useAsync<{ lex: ReturnType<typeof pickLexicon> | null; xr: string | null }>(async () => {
+  const extra = useAsync<{ view: WordView | null; xr: string | null }>(async () => {
     if (record.table === 'token' && record.record.strong_base) {
       const entries = await loadLexicon(repo, record.record.strong_base);
-      return { lex: pickLexicon(entries, record.record.strong), xr: null };
+      return { view: wordView(record.record, record.record.strong_base, entries), xr: null };
     }
     if (record.table === 'xref') {
       const verses = await loadXrefText(repo, record.record.to_start_vid, record.record.to_end_vid);
-      return { lex: null, xr: verses.map((v) => v.text).join(' ') };
+      return { view: null, xr: verses.map((v) => v.text).join(' ') };
     }
-    return { lex: null, xr: null };
+    return { view: null, xr: null };
   }, [repo, detail.citeId]);
 
   // Tradução automática do trecho mostrado: o idioma vem da fonte (lexicon, Bíblia escolhida ou a própria fonte).
-  const lexSource = extra.data?.lex?.main;
-  const lexLang = useSourceLang(lexSource?.source_id ?? null);
+  const lex = extra.data?.view?.lex.primary ?? null;
+  const lexLang = useSourceLang(lex?.source_id ?? null);
   const textLang = useSourceLang(textSource);
   const shownText =
     record.table === 'token'
-      ? lexSource
-        ? [lexSource.gloss, lexSource.definition].filter(Boolean).join(' — ')
+      ? lex
+        ? [lex.gloss, lex.definition].filter(Boolean).join(' — ')
         : null
       : record.table === 'xref'
         ? (extra.data?.xr ?? null)
@@ -240,10 +241,10 @@ function Body({ detail, repo }: { detail: CiteDetail; repo: ReturnType<typeof us
   if (record.table === 'token') {
     const t = record.record;
     const pills = morphPills(t.morph_desc);
-    const lex = extra.data?.lex?.main;
+    const view = extra.data?.view;
     return (
       <>
-        <Text style={{ fontFamily: fontFamilies.greek, fontSize: 28, lineHeight: 34, color: st.tok }} selectable>
+        <Text style={{ fontFamily: fontFamilies.greek, fontSize: 28, lineHeight: 34, color: st.tok, writingDirection: dirOf(scriptOf(detail.label)) }} selectable>
           {detail.label}
         </Text>
         <Txt v="bodySm" color="muted" style={{ fontSize: 13 }}>
@@ -256,12 +257,14 @@ function Body({ detail, repo }: { detail: CiteDetail; repo: ReturnType<typeof us
             ))}
           </View>
         ) : null}
-        {lex ? (
+        {extra.loading ? null : lex ? (
           <>
             <Txt v="excerpt" numberOfLines={7} style={{ fontSize: 13.5 }}>{tr.display}</Txt>
             <AutoTranslateNote tr={tr} testID="popover-tr" />
           </>
-        ) : null}
+        ) : (
+          <Txt v="meta" color="muted" testID="popover-no-lexicon">{SRC.noLexiconEntry(view?.lexiconLabel ?? '')}</Txt>
+        )}
       </>
     );
   }

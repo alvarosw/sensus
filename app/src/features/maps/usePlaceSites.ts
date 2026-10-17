@@ -1,12 +1,12 @@
 // Lugares de um intervalo de versículos, já agrupados (ver groupPlaces em @sensus/core).
 import { useMemo } from 'react';
-import { groupPlaces, type PlaceSite, type VerseRange } from '@sensus/core';
+import { bookRange, bookStartVid, groupPlaces, MAX_BOOK, splitVid, type PlaceSite, type VerseRange } from '@sensus/core';
 import { useRepo } from '@/data/db-context';
 import { useAsync } from '@/data/use-async';
 import type { MapMarker } from './SensusMap';
 
 /** Todos os livros: usado para achar um lugar e seus homônimos fora do escopo atual. */
-export const WHOLE_BIBLE: VerseRange = { start: 1001001, end: 66022021 };
+export const WHOLE_BIBLE: VerseRange = { start: bookStartVid(1), end: bookRange(MAX_BOOK).end };
 
 export function usePlaceSites(range: VerseRange | null): { sites: PlaceSite[]; loading: boolean; error: string | undefined } {
   const repo = useRepo();
@@ -27,8 +27,7 @@ export function useMarkers(sites: readonly PlaceSite[]): MapMarker[] {
   return useMemo(() => markersOf(sites), [sites]);
 }
 
-/** Intervalo do livro que contém o versículo (BBCCCVVV: livro × 1.000.000). */
+/** Intervalo do livro que contém o versículo. */
 export function bookRangeOf(vid: number): VerseRange {
-  const base = Math.floor(vid / 1_000_000) * 1_000_000;
-  return { start: base, end: base + 999_999 };
+  return bookRange(splitVid(vid).book);
 }
