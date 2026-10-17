@@ -3,14 +3,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { Animated, Easing, Pressable, ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { BOOK_TABLE, type Book } from '@sensus/core';
+import { BOOK_TABLE, type Book, type Testament } from '@sensus/core';
 import { Icon, IconButton, Segmented, SubHeader, Txt, fontFamilies, motion, radius, shadow, useTheme } from '@/design';
 import { READER } from '../reader/strings';
 import { TL } from '../timeline/strings';
 import { abbrOf } from './abbrev';
 import { groupBooks } from './categories';
-
-type Testament = 'OT' | 'NT';
 
 export function BookPicker({
   visible,

@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Animated, { useAnimatedStyle } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { dirOf, scriptOf, type Repo, type Script } from '@sensus/core';
 import { fontFamilies, IconButton, motion, size, Txt, useTheme } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useAsync } from '@/data/use-async';
@@ -102,37 +103,42 @@ function PanelBody({ entry }: { entry: PanelEntry }) {
   }
 }
 
-/** Rótulo e fonte da trilha para uma entrada (o grego usa Gentium). */
-function useCrumb(entry: PanelEntry): { label: string; greek: boolean } {
+/** Rótulo da trilha e a escrita dele: palavra grega ou hebraica usa Gentium e segue a direção da escrita. */
+interface Crumb {
+  label: string;
+  script: Script;
+}
+
+function useCrumb(entry: PanelEntry): Crumb {
   const repo = useRepo();
   const key = `${entry.kind}:${entryKey(entry)}`;
-  const state = useAsync<{ label: string; greek: boolean }>(async () => {
-    switch (entry.kind) {
-      case 'word': {
-        const d = await loadCite(repo, entry.tokenCiteId);
-        return { label: d?.label ?? '?', greek: true };
-      }
-      case 'lemma': {
-        const entries = await loadLexicon(repo, entry.strongBase);
-        return { label: entries[0]?.lemma ?? entry.strongBase, greek: true };
-      }
-      case 'source': {
-        if (entry.citeId.startsWith('src:')) {
-          const s = (await loadSources(repo)).get(entry.citeId.slice(4));
-          return { label: s?.title ?? entry.citeId, greek: false };
-        }
-        const d = await loadCite(repo, entry.citeId);
-        return { label: d?.label ?? '?', greek: false };
-      }
-      case 'entity': {
-        const d = await loadCite(repo, entry.citeId);
-        return { label: d?.label ?? '?', greek: false };
-      }
-      case 'map':
-        return { label: MAPS.title, greek: false };
-    }
+  const state = useAsync<Crumb>(async () => {
+    const label = await labelOf(repo, entry);
+    return { label, script: scriptOf(label) };
   }, [repo, key]);
-  return state.data ?? { label: '…', greek: false };
+  return state.data ?? { label: '…', script: 'other' };
+}
+
+async function labelOf(repo: Repo, entry: PanelEntry): Promise<string> {
+  switch (entry.kind) {
+    case 'word':
+      return (await loadCite(repo, entry.tokenCiteId))?.label ?? '?';
+    case 'lemma': {
+      const entries = await loadLexicon(repo, entry.strongBase);
+      return entries[0]?.lemma ?? entry.strongBase;
+    }
+    case 'source': {
+      if (entry.citeId.startsWith('src:')) {
+        const s = (await loadSources(repo)).get(entry.citeId.slice(4));
+        return s?.title ?? entry.citeId;
+      }
+      return (await loadCite(repo, entry.citeId))?.label ?? '?';
+    }
+    case 'entity':
+      return (await loadCite(repo, entry.citeId))?.label ?? '?';
+    case 'map':
+      return MAPS.title;
+  }
 }
 
 function Crumbs({ panels }: { panels: PanelEntry[] }) {
@@ -170,14 +176,16 @@ function Crumbs({ panels }: { panels: PanelEntry[] }) {
 
 function CrumbItem({ entry, index, last, onPress }: { entry: PanelEntry; index: number; last: boolean; onPress: () => void }) {
   const { c } = useTheme();
-  const { label, greek } = useCrumb(entry);
+  const { label, script } = useCrumb(entry);
+  const original = script === 'greek' || script === 'hebrew';
   const text = (
     <Text
       numberOfLines={1}
       style={{
-        fontFamily: greek ? fontFamilies.greekBold : fontFamilies.uiBold,
-        fontSize: greek ? 13.5 : 12.5,
+        fontFamily: original ? fontFamilies.greekBold : fontFamilies.uiBold,
+        fontSize: original ? 13.5 : 12.5,
         color: last ? c.text : c.accent,
+        writingDirection: dirOf(script),
       }}
     >
       {label}

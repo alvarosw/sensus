@@ -5,7 +5,10 @@ import { createContext, memo, useCallback, useContext, useEffect, useMemo, useRe
 import { ActivityIndicator, FlatList, Platform, View, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent, type ViewProps } from 'react-native';
 import { useSharedValue } from 'react-native-reanimated';
 import { useLocalSearchParams } from 'expo-router';
-import { BOOK_TABLE, hasEdition, makeVid, sourceLong, splitVid, type Token, type Vid } from '@sensus/core';
+import { BOOK_TABLE, CORPUS, hasEdition, makeVid, sourceLong, splitVid, type Corpus, type Token, type Vid } from '@sensus/core';
+
+// Corpus do grego do NT (o TR sob o leitor): sai do domínio, não de uma string. O AT não tem interlinear aqui.
+const NT_CORPUS = (Object.keys(CORPUS) as Corpus[]).find((k) => CORPUS[k].testament === 'NT')!;
 import { LinkButton, Txt, motion, useTheme, type Detent } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useStudy } from '@/state/study';
@@ -493,7 +496,7 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
     }
     let alive = true;
     void repo
-      .tokens({ start: selection.start, end: selection.end }, 'gnt')
+      .tokens({ start: selection.start, end: selection.end }, NT_CORPUS)
       .then((all) => {
         if (!alive) return;
         const by: Record<number, Token[]> = {};

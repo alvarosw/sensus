@@ -16,16 +16,16 @@ import {
 } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useAsync } from '@/data/use-async';
-import { sourceShort, type Token, type Vid } from '@sensus/core';
+import { CORPUS, dirOf, scriptOf, sourceShort, type Testament, type Token, type Vid } from '@sensus/core';
 import { useStudy } from '@/state/study';
 import { showInText } from '../common/actions';
-import { loadConcordance, loadLexicon, pickLexicon, loadSources } from '../common/cites';
+import { loadConcordance, loadLexicon, loadSources } from '../common/cites';
 import { shortRef } from '../common/format';
 import { useBooks, useCite } from '../common/hooks';
 import { hebrewMorphPt } from '../common/morph-hb';
 import { morphParts } from '../common/morph-pt';
 import { SRC } from '../common/strings';
-import { isOldTestament } from '../study/format';
+import { wordView } from '../common/word-view';
 import { useAutoTranslate } from '@/translate/useAutoTranslate';
 import { useAutoTranslateBatch } from '@/translate/useAutoTranslateBatch';
 import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
@@ -73,9 +73,9 @@ interface ClasseRow {
  * Linhas de morfologia do token. Hebraico: a classe inteira pelo mapa (morph-hb); se algum termo ficar de fora, a
  * descrição original segue para a tradução. Grego: morphParts; valor com letra inglesa (termo fora do mapa) também.
  */
-function classeRowsOf(desc: string, ot: boolean): ClasseRow[] {
+function classeRowsOf(desc: string, hebrew: boolean): ClasseRow[] {
   if (!desc) return [];
-  if (ot) {
+  if (hebrew) {
     const hb = hebrewMorphPt(desc);
     return hb.complete ? [{ key: 'Classe', value: hb.text, english: false }] : [{ key: 'Classe', value: desc, english: true }];
   }
@@ -97,17 +97,18 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
   );
   const sources = useAsync(() => loadSources(repo), [repo]);
 
-  // AT (H…, TAHOT, TBESH) ou NT (G…, TAGNT, TBESG): o banco traz os dois, e o idioma decide a fonte.
-  const ot = token ? token.corpus === 'hot' : isOldTestament(strongBase ?? '');
-  const pair = useMemo(() => pickLexicon(lexicon.data ?? [], token?.strong ?? null), [lexicon.data, token?.strong]);
-  const lex = pair.main;
+  // Língua, testamento e verbete pelo domínio: AT (hebraico/aramaico, TAHOT, TBESH) ou NT (grego, TAGNT, TBESG).
+  const view = useMemo(() => wordView(token, strongBase, lexicon.data ?? []), [token, strongBase, lexicon.data]);
+  const testament: Testament | null = view.testament;
+  const lex = view.lex.primary;
+  const lsj = view.lex.secondary;
   const lemma = token?.lemma ?? lex?.lemma ?? strongBase ?? '';
   const gloss = token?.gloss_en ?? lex?.gloss ?? null;
   const editions = token ? token.editions.split(',').map((e) => e.trim()).filter(Boolean) : [];
 
   // Classe: o mapa determinístico cobre o hebraico inteiro e o grego por morphParts; o que sobrar em inglês
   // (termo fora do mapa) vai à tradução automática, em lote com a glosa.
-  const parts: ClasseRow[] = token ? classeRowsOf(token.morph_desc ?? '', ot) : [];
+  const parts: ClasseRow[] = token ? classeRowsOf(token.morph_desc ?? '', testament === 'OT') : [];
 
   const count = concordance.data?.count ?? 0;
   const vids = useMemo(() => {
@@ -117,19 +118,24 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
   }, [concordance.data, token]);
   const hapax = concordance.data != null && count === 1;
   const word = token ? token.surface.normalize('NFC').replace(/^[\p{P}\p{S}\s]+|[\p{P}\p{S}\s]+$/gu, '') : lemma;
+  // Palavra isolada no cabeçalho: hebraico lido da direita para a esquerda (grego e latim, da esquerda).
+  const wordDir = dirOf(scriptOf(word));
 
   const lexSources = [token ? sources.data?.get(token.source_id) : undefined, lex ? sources.data?.get(lex.source_id) : undefined];
   // Tradução automática: o idioma vem da fonte (en para TBESG e TFLSJ); o LSJ só é traduzido quando aberto.
   const lexLang = useSourceLang(lex?.source_id ?? null);
-  const lsjLang = useSourceLang(pair.lsj?.source_id ?? null);
+  const lsjLang = useSourceLang(lsj?.source_id ?? null);
   const lexTr = useAutoTranslate(lex?.definition ?? null, lexLang);
-  const lsjText = pair.lsj ? (pair.lsj.definition.length > LSJ_MAX ? `${pair.lsj.definition.slice(0, LSJ_MAX)}…` : pair.lsj.definition) : null;
+  const lsjText = lsj ? (lsj.definition.length > LSJ_MAX ? `${lsj.definition.slice(0, LSJ_MAX)}…` : lsj.definition) : null;
   const lsjTr = useAutoTranslate(showLsj ? lsjText : null, lsjLang);
   // Cabeçalho (glosa e classe em inglês) traduzido em um lote só, com uma nota. Glosa e classe são colunas em
   // inglês do banco, por isso o idioma é 'en' (a fonte do token tem o idioma da língua original).
   const headerEn = [gloss, ...parts.filter((r) => r.english).map((r) => r.value)].filter((t): t is string => !!t);
   const header = useAutoTranslateBatch(headerEn, 'en');
-  const licenseSummary = [token ? (ot ? 'TAHOT' : 'TAGNT') : null, lex ? sourceShort(lex.source_id, sources.data?.get(lex.source_id)?.title) : null]
+  const licenseSummary = [
+    token ? sourceShort(CORPUS[token.corpus].tokensSource) : null,
+    lex ? sourceShort(lex.source_id, sources.data?.get(lex.source_id)?.title) : null,
+  ]
     .filter(Boolean)
     .join(' e ');
 
@@ -146,7 +152,7 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
       <Text
         testID="word-hero"
         selectable
-        style={{ fontFamily: fontFamilies.greek, fontSize: 34, lineHeight: 38, color: c.text }}
+        style={{ fontFamily: fontFamilies.greek, fontSize: 34, lineHeight: 38, color: c.text, writingDirection: wordDir }}
       >
         {word}
       </Text>
@@ -173,19 +179,19 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
         </>
       ) : null}
 
-      <SubHeader label={`${SRC.lexicon} · ${ot ? 'TBESH' : 'TBESG'}`} />
+      <SubHeader label={`${SRC.lexicon} · ${view.lexiconLabel}`} />
       {lexicon.loading ? (
         <Skeleton height={64} />
       ) : lex ? (
         <Card testID="word-lexicon">
-          <Text style={{ fontFamily: fontFamilies.greek, fontSize: 20, lineHeight: 26, color: c.text }}>
+          <Text style={{ fontFamily: fontFamilies.greek, fontSize: 20, lineHeight: 26, color: c.text, writingDirection: dirOf(scriptOf(lex.lemma ?? lemma)) }}>
             {lex.lemma ?? lemma}
             {lex.gloss ? <Text style={{ fontFamily: fontFamilies.ui, fontSize: 13, color: c.muted }}>{`  ${lex.gloss}`}</Text> : null}
           </Text>
           <Txt v="excerpt" style={{ fontSize: 13.5 }} selectable testID="word-lexicon-text">{lexTr.display}</Txt>
           <AutoTranslateNote tr={lexTr} testID="word-lexicon-tr" />
           <View style={{ flexDirection: 'row', flexWrap: 'wrap', columnGap: 8 }}>
-            {pair.lsj ? (
+            {lsj ? (
               <LinkButton testID="word-lsj" label={showLsj ? SRC.hideLsj : SRC.seeLsj} onPress={() => setShowLsj((v) => !v)} />
             ) : null}
             <LinkButton
@@ -196,9 +202,9 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
           </View>
         </Card>
       ) : (
-        <Empty text={SRC.noLexiconEntry} />
+        <Empty text={SRC.noLexiconEntry(view.lexiconLabel)} />
       )}
-      {showLsj && pair.lsj ? (
+      {showLsj && lsj ? (
         <>
           <SubHeader label={SRC.lexiconLsj} />
           <Card testID="word-lsj-card">
@@ -210,7 +216,7 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
 
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
         <View style={{ flex: 1 }}>
-          <SubHeader label={SRC.concordance(count, ot)} />
+          <SubHeader label={SRC.concordance(count, testament)} />
         </View>
         {hapax ? <Tag label={SRC.hapax} tone="tint" /> : null}
       </View>
