@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Animated, { interpolate, useAnimatedStyle } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { formatShortRef } from '@sensus/core';
+import { formatShortRef, traditionLabel } from '@sensus/core';
 import {
   fontFamilies,
   IconButton,
@@ -20,7 +20,6 @@ import {
 import { useRepo } from '@/data/db-context';
 import { useAsync } from '@/data/use-async';
 import { useStudy } from '@/state/study';
-import { traditionLabel } from '../study/format';
 import { askAbout, panelFor, showInText } from '../common/actions';
 import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { PopButton } from '../common/Buttons';

@@ -8,7 +8,7 @@ import {
   buildPanel,
   buildRichTextContext,
   claimsOf,
-  commentatorName,
+  commentatorOf,
   formatShortRef,
   parseRichText,
   Repo,
@@ -99,7 +99,7 @@ describe('rótulos auxiliares', () => {
     expect(titleCaseHeadword('EMPTY; EMPTIER')).toBe('Empty; Emptier');
   });
 
-  it('commentatorName: pai da igreja pelo primeiro trecho; comentarista conhecido; autor como fallback', () => {
+  it('commentatorOf: pai da igreja pelo primeiro trecho; comentarista conhecido; autor como fallback', () => {
     const c = (source_id: string, text: string) => ({
       cite_id: 'x',
       source_id,
@@ -107,11 +107,11 @@ describe('rótulos auxiliares', () => {
       end_vid: 1,
       text,
     });
-    expect(commentatorName({ id: 'patristic' } as never, c('patristic', 'John Chrysostom — Homily on Philippians 1\n\nHere...'))).toBe('Crisóstomo');
-    expect(commentatorName({ id: 'sword-mhc' } as never, c('sword-mhc', 'Philippians'))).toBe('Matthew Henry');
-    expect(commentatorName({ id: 'patristic' } as never, c('patristic', 'Methodius of Olympus\n\nText'))).toBe('Metódio de Olimpo');
+    expect(commentatorOf({ id: 'patristic' } as never, c('patristic', 'John Chrysostom — Homily on Philippians 1\n\nHere...'))).toBe('Crisóstomo');
+    expect(commentatorOf({ id: 'sword-mhc' } as never, c('sword-mhc', 'Philippians'))).toBe('Matthew Henry');
+    expect(commentatorOf({ id: 'patristic' } as never, c('patristic', 'Methodius of Olympus\n\nText'))).toBe('Metódio de Olimpo');
     expect(
-      commentatorName({ id: 'x', author: 'Anônimo Autor (1800)' } as never, c('x', 'texto')),
+      commentatorOf({ id: 'x', author: 'Anônimo Autor (1800)' } as never, c('x', 'texto')),
     ).toBe('Anônimo Autor');
   });
 

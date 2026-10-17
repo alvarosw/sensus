@@ -4,6 +4,7 @@ import { formatReference } from '../refs';
 import { hasEdition, missingBaseEditions } from '../panel';
 import { isContentToken } from '../morph';
 import { variantSites } from '../variants';
+import { shortTitle } from '../domain/sources';
 
 export { isContentToken } from '../morph';
 
@@ -112,13 +113,6 @@ const TYPE_LABEL: Record<string, string> = {
   group: 'grupo',
   other: 'outro',
 };
-
-/** Título curto para a linha de citação: "TBESG - Translators Brief..." vira "TBESG". */
-export function shortTitle(title: string): string {
-  if (title.length <= 40) return title;
-  const head = title.split(/ - | \(/)[0]?.trim();
-  return head && head.length >= 2 ? head : title.slice(0, 40);
-}
 
 function buildItems(panel: PanelData): Item[] {
   const items: Item[] = [];

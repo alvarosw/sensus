@@ -46,11 +46,11 @@ import { useEdition } from '@/data/db-context';
 import { StudyDataPrompt } from '@/data/StudyDataPrompt';
 import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { useReduceMotion } from '../common/hooks';
-import { chv, keyWordsOf, refShort, refTitle, sourceLabel } from './format';
+import { chv, keyWordsOf, refShort, refTitle } from './format';
 import { LENS_VIEWS } from './lenses';
 import { STUDY } from './strings';
 import { StudyDataProvider, useStudyData, type Range } from './useStudyData';
-import { splitVid, variantSites, commentatorName, type Vid } from '@sensus/core';
+import { commentatorOf, sourceShort, splitVid, variantSites, type Vid } from '@sensus/core';
 
 export interface StudySheetProps {
   /** Altura ocupada acima da área da folha, descontada das alturas. Padrão: área segura + barra superior (a folha é montada em tela cheia sobre o leitor). */
@@ -285,7 +285,7 @@ function Head({ detent }: { detent: Detent }) {
           )}
           {crosses && <Tag tone="tint" label={STUDY.crosses(String(a.chapter), String(b.chapter))} />}
           {crossesBook && <Tag tone="tint" label={STUDY.crosses(refShort(range.start, range.start, books, true).split(' ')[0]!, refShort(range.end, range.end, books, true).split(' ')[0]!)} />}
-          <Txt v="meta" color="muted">{`· ${sourceLabel(textSource)}`}</Txt>
+          <Txt v="meta" color="muted">{`· ${sourceShort(textSource)}`}</Txt>
         </View>
       </View>
       <IconButton
@@ -507,7 +507,7 @@ function PeekContent({ onLayout }: { onLayout: (e: LayoutChangeEvent) => void })
   const facts = useMemo(() => {
     if (!panel) return null;
     const coms = panel.layers.interpretation.commentaries.filter((c) => c.start_vid % 1000 !== 0 && c.end_vid % 1000 !== 0);
-    const authors = new Set(coms.map((c) => commentatorName(panel.sources[c.source_id], c)));
+    const authors = new Set(coms.map((c) => commentatorOf(panel.sources[c.source_id], c)));
     const sites = variantSites(panel.layers.text.original);
     const words = keyWordsOf(panel);
     const hapax = words.find((w) => w.count === 1);

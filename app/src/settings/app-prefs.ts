@@ -9,11 +9,12 @@
 import { create } from 'zustand';
 import { useStudy } from '@/state/study';
 import type { SchemePreference } from '@/design';
+import { textSources } from '@sensus/core';
 import { readAppPrefs, writeAppPrefs, type StoredAppPrefs } from './provider-store';
 import { favoriteCombo, newComboId, parseCombos, recordRecent, removeCombo, unfavoriteCombo, type UserCombo } from '@/features/timeline/combos';
 
-export const TEXT_SOURCES = ['blivre', 'kjv'] as const;
-export type TextSourceId = (typeof TEXT_SOURCES)[number];
+/** Id de uma fonte de texto corrido (ver `textSources()` no núcleo). */
+export type TextSourceId = string;
 
 const THEMES: readonly SchemePreference[] = ['system', 'light', 'dark'];
 
@@ -97,7 +98,7 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       const stored = await readAppPrefs().catch(() => null);
       const theme = stored && THEMES.includes(stored.theme as SchemePreference) ? (stored.theme as SchemePreference) : DEFAULT_APP_PREFS.theme;
       const textSource =
-        stored && TEXT_SOURCES.includes(stored.textSource as TextSourceId) ? (stored.textSource as TextSourceId) : DEFAULT_APP_PREFS.textSource;
+        stored && textSources().includes(stored.textSource as TextSourceId) ? (stored.textSource as TextSourceId) : DEFAULT_APP_PREFS.textSource;
       const greekDefault = typeof stored?.greekDefault === 'boolean' ? stored.greekDefault : DEFAULT_APP_PREFS.greekDefault;
       const timelineLines = idList(stored?.timelineLines);
       const timelineEvents = idList(stored?.timelineEvents);

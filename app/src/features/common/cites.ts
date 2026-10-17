@@ -1,10 +1,10 @@
 // Resolução de cite_ids para prévias e painéis: registro + fonte + rótulos, com cache por Repo.
 // Usa só a API pública do Repo (resolveCite, lexicon, concordance, entities, verseTexts).
 import {
-  commentatorName,
+  commentatorOf,
   DEFAULT_TEXT_SOURCE,
   formatShortRef,
-  shortTitle,
+  sourceShort,
   splitVid,
   titleCaseHeadword,
   LAST_VERSE,
@@ -38,12 +38,6 @@ export interface CiteDetail {
   vid: Vid | null;
   /** Referências para chips (versículos/intervalos citados pelo registro). */
   ranges: { start: Vid; end: Vid }[];
-}
-
-const SHORT_SOURCE: Record<string, string> = { blivre: 'Bíblia Livre', kjv: 'KJV', 'grc-tr': 'TR' };
-
-export function sourceShort(source: Source | undefined, fallbackId: string): string {
-  return SHORT_SOURCE[fallbackId] ?? (source ? shortTitle(source.title) : fallbackId);
 }
 
 // ---- fila de consultas ------------------------------------------------------------------
@@ -107,7 +101,7 @@ function build(record: CitableRecord, citeId: string, source: Source | undefined
       return {
         ...base,
         typeLabel: SRC.typeLabels.txt,
-        label: `${sourceShort(source, r.source_id)} ${formatShortRef(r.vid, r.vid, books, true)}`,
+        label: `${sourceShort(r.source_id, source?.title)} ${formatShortRef(r.vid, r.vid, books, true)}`,
         text: r.text,
         vid: r.vid,
         ranges: [{ start: r.vid, end: r.vid }],
@@ -130,7 +124,7 @@ function build(record: CitableRecord, citeId: string, source: Source | undefined
       return {
         ...base,
         typeLabel: SRC.typeLabels.lex,
-        label: `${sourceShort(source, r.source_id)} ${r.lemma ?? r.key}`,
+        label: `${sourceShort(r.source_id, source?.title)} ${r.lemma ?? r.key}`,
         text: [r.gloss, r.definition].filter(Boolean).join(' — '),
         vid: null,
       };
@@ -142,7 +136,7 @@ function build(record: CitableRecord, citeId: string, source: Source | undefined
       return {
         ...base,
         typeLabel: SRC.typeLabels.com,
-        label: `${commentatorName(source, r)} ${ref}`,
+        label: `${commentatorOf(source, r)} ${ref}`,
         text: r.text,
         vid: intro ? null : r.start_vid,
         ranges: [{ start: r.start_vid, end: r.end_vid }],

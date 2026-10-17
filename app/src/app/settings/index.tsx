@@ -2,6 +2,7 @@
 import { ScrollView, View } from 'react-native';
 import { router } from 'expo-router';
 import Constants from 'expo-constants';
+import { sourceAbbr } from '@sensus/core';
 import { ListGroup, ListRow, useTheme } from '@/design';
 import { useSettings } from '@/settings/settings-context';
 import { aiSummary } from '@/settings/ai-status';
@@ -41,7 +42,7 @@ export default function SettingsScreen() {
         <ListRow
           testID="settings-row-look"
           title={COPY.rowLook}
-          subtitle={`${THEME_LABEL[theme]} · texto ${textSource === 'kjv' ? 'KJV' : 'BLivre'}`}
+          subtitle={`${THEME_LABEL[theme]} · texto ${sourceAbbr(textSource)}`}
           onPress={() => router.push('/settings/appearance')}
         />
         <ListRow

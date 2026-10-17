@@ -5,7 +5,7 @@ import { createContext, memo, useCallback, useContext, useEffect, useMemo, useRe
 import { ActivityIndicator, FlatList, Platform, View, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent, type ViewProps } from 'react-native';
 import { useSharedValue } from 'react-native-reanimated';
 import { useLocalSearchParams } from 'expo-router';
-import { BOOK_TABLE, hasEdition, makeVid, splitVid, type Token, type Vid } from '@sensus/core';
+import { BOOK_TABLE, hasEdition, makeVid, sourceLong, splitVid, type Token, type Vid } from '@sensus/core';
 import { LinkButton, Txt, motion, useTheme, type Detent } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useStudy } from '@/state/study';
@@ -17,7 +17,7 @@ import { TOTAL_CHAPTERS, chapterAt, loadChapter, vidChapterIndex, type ChapterDa
 import { LINE, ReaderGeometry } from './geometry';
 import { useReaderNav, type NavRequest } from './nav-store';
 import { createLoadSequencer, mayAutoScroll, planNavigation } from './nav-sequencing';
-import { READER, SOURCE_LABEL } from './strings';
+import { READER } from './strings';
 import { sheetCover } from './viewport';
 
 interface Pending extends NavRequest {
@@ -515,7 +515,7 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
     return out;
   }, [win, chapters]);
 
-  const sourceName = (SOURCE_LABEL[loadedSource] ?? SOURCE_LABEL.blivre!).long;
+  const sourceName = sourceLong(loadedSource);
   const extra = useMemo(
     () => ({ shown, greekTokens: greekOn ? greekTokens : null, flashVid, scheme, loadedSource }),
     [shown, greekOn, greekTokens, flashVid, scheme, loadedSource],

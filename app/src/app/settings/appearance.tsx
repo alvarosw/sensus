@@ -1,5 +1,6 @@
 // Aparência e leitura: tema (sistema, claro, escuro) e padrões do leitor (texto BLivre/KJV e grego TR).
 import { ScrollView, Switch, View } from 'react-native';
+import { sourceAbbr, textSources } from '@sensus/core';
 import { Card, Segmented, Txt, useTheme, type SchemePreference } from '@/design';
 import { useAppPrefs, type TextSourceId } from '@/settings/app-prefs';
 import { SETTINGS_COPY as COPY } from '@/settings/strings';
@@ -54,10 +55,7 @@ export default function AppearanceScreen() {
               testID="text-source"
               value={textSource}
               onChange={setTextSource}
-              options={[
-                { key: 'blivre', label: 'BLivre' },
-                { key: 'kjv', label: 'KJV' },
-              ]}
+              options={textSources().map((id) => ({ key: id, label: sourceAbbr(id) }))}
             />
             <Txt v="bodySm" color="muted">{COPY.textHelp}</Txt>
           </View>

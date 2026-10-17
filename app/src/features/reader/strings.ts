@@ -33,7 +33,3 @@ export const READER = {
   back: 'Voltar aos livros',
 } as const;
 
-export const SOURCE_LABEL: Record<string, { short: string; long: string }> = {
-  blivre: { short: 'BLivre', long: 'Bíblia Livre' },
-  kjv: { short: 'KJV', long: 'King James Version' },
-};
