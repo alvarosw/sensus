@@ -21,8 +21,8 @@ Estado vivo da migração descrita em [ARCHITECTURE.md](ARCHITECTURE.md) (alvo) 
 |---|---|---|---|
 | 0 | Base: ARCHITECTURE.md, CLAUDE.md, skills, teste de arquitetura, `npm run check`, CI | `arquitetura` | feito |
 | A | 1 domínio · 2 fixtures AT · 7 dividir repo · 13 contrato físico/pipeline · 5 registro de fontes | `arq/dominio`, `arq/fixtures-at`, `arq/repo-split`, `arq/contrato`, `arq/fontes` | feito (revisado com /code-review) |
-| B | 3 migrar língua/testamento/léxico · 4 `isContentToken` por língua · 12 tradução | `arq/migrar-nucleo`, `arq/migrar-estudo`, `arq/migrar-paineis`, `arq/traducao` | em andamento |
-| C | 8 desfazer ciclos e camadas · 9 formatadores únicos | `arq/ciclos` | depois de B |
+| B | 3 migrar língua/testamento/léxico · 4 `isContentToken` por língua · 12 tradução | `arq/migrar-nucleo`, `arq/migrar-estudo`, `arq/migrar-paineis`, `arq/traducao` | feito (revisado; teste manual em andamento) |
+| C | 8 desfazer ciclos e camadas · 9 formatadores únicos | `arq/ciclos` | em andamento |
 | D | 10 dividir lentes e prévia · 11 texto original por testamento (WLC no AT) | `arq/lentes`, `arq/original-at` | depois de C |
 | E | 15 fatiar `useStudy` · índices públicos das features · zerar exceções | `arq/estado` | por último |
 | T | Teste manual (Sonnet) após B, D e E; merge na `main` | — | — |
@@ -41,9 +41,13 @@ com teste cobre o risco. Reavaliar depois.
   Pendentes: `arq/migrar-nucleo` (isContentToken por língua no núcleo, contexto da IA, rich-text, panel) e
   `arq/traducao` (API única de tradução, `data/sources`).
 
+- 2026-10-17 01:10 — Lote B integrado (785 testes, 39 exceções). /code-review: palavra-chave alinhada ao
+  texto-base da IA (TR no NT, todo o AT inclusive Qere). Disparados em paralelo: teste manual (Sonnet, roteiro NT/AT
+  em docs/screenshots/teste-lote-b/ da worktree dele) e lote C (`arq/ciclos`).
+
 ## Próximos passos (para quem retomar)
 
-1. Para cada branch pendente do lote B (`arq/migrar-nucleo`, `arq/traducao`): `git log arquitetura..<branch>`.
+1. Para cada branch pendente (hoje: `arq/ciclos`): `git log arquitetura..<branch>`.
    Com commits e `npm run check` verde na worktree dela → `git merge --no-ff` em `arquitetura`, resolver
    `tests/architecture-exceptions.ts` regerando (`UPDATE_ARCH_EXCEPTIONS=1 npx vitest run tests`) e conferir que
    nenhum item novo apareceu em relação às duas versões. Sem commits ou incompleta (o agente pode ter parado no
