@@ -74,7 +74,14 @@ export function PeekContent({ onLayout }: { onLayout: (e: LayoutChangeEvent) => 
         {facts ? (
           <>
             <Fact testID="fact-interpretacao" value={facts.authors} label={STUDY.factComentaristas} onPress={() => goToLens('interpretacao')} />
-            <Fact testID="fact-texto" value={facts.variants} label={facts.variants === 1 ? STUDY.factVariante : STUDY.factVariantes} onPress={() => goToLens('texto')} />
+            {facts.variants && (
+              <Fact
+                testID="fact-texto"
+                value={facts.variants.count}
+                label={facts.variants.count === 1 ? STUDY.factVariante(facts.variants.editions) : STUDY.factVariantes(facts.variants.editions)}
+                onPress={() => goToLens('texto')}
+              />
+            )}
             <Fact testID="fact-intertexto" value={facts.xrefs} label={STUDY.factXrefs} onPress={() => goToLens('intertexto')} />
             {facts.word && (
               <Fact

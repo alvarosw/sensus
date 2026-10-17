@@ -3,6 +3,7 @@
 import {
   chapterStartVid,
   commentatorOf,
+  editionVariantsOfRange,
   isIntroCommentary,
   isIntroVid,
   splitVid,
@@ -21,8 +22,11 @@ export interface Span {
 export interface PeekFacts {
   /** Comentaristas distintos, sem contar as introduções. */
   authors: number;
-  /** Versículos com variante entre as edições-base do NT. */
-  variants: number;
+  /**
+   * Variantes entre as edições-base do corpus do trecho (TR, BYZ, NA no NT); null quando o trecho não tem corpus com
+   * variantes (só AT): então o fato não aparece.
+   */
+  variants: { count: number; editions: string } | null;
   /** Referências cruzadas do trecho. */
   xrefs: number;
   /** Palavra em destaque: o hápax da seleção, ou a palavra mais rara. Ausente se não há palavra-chave. */
@@ -35,13 +39,14 @@ export interface PeekFacts {
 export function peekFacts(panel: PanelData): PeekFacts {
   const coms = panel.layers.interpretation.commentaries.filter((c) => !isIntroCommentary(c));
   const authors = new Set(coms.map((c) => commentatorOf(panel.sources[c.source_id], c)));
-  const sites = variantSites(panel.layers.text.original);
+  const editions = editionVariantsOfRange(panel.range);
+  const sites = editions ? variantSites(panel.layers.text.original) : [];
   const words = keyWordsOf(panel);
   const hapax = words.find((w) => w.count === 1);
   const top = hapax ?? words[0];
   return {
     authors: authors.size,
-    variants: sites.length,
+    variants: editions ? { count: sites.length, editions: editions.slash } : null,
     xrefs: panel.layers.intertext.xrefs.length,
     word: top,
     hapax: !!hapax,

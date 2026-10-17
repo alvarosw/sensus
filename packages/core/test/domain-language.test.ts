@@ -3,6 +3,7 @@ import {
   CORPUS,
   corpusOfCiteId,
   editionsOf,
+  editionVariantsOfRange,
   hasEditionVariants,
   isBaseTextToken,
   langOfToken,
@@ -83,5 +84,20 @@ describe('língua e testamento (NT grego e AT hebraico/aramaico)', () => {
     expect(corpusOfCiteId('tok:gnt:50002007:30')).toBe('gnt');
     expect(corpusOfCiteId('tok:hot:11015015:1')).toBe('hot');
     expect(corpusOfCiteId('txt:blivre:50002007')).toBeNull();
+  });
+});
+
+describe('variantes entre edições do trecho (só onde há corpus com mais de uma edição-base)', () => {
+  it('NT grego: o trecho tem variantes, com os nomes das edições-base do corpus', () => {
+    expect(editionVariantsOfRange({ start: 50002005, end: 50002008 })).toEqual({ corpus: 'gnt', list: 'TR, BYZ e NA', slash: 'TR/BYZ/NA' });
+  });
+
+  it('AT hebraico: sem variantes entre edições (o L é a única edição-base)', () => {
+    expect(editionVariantsOfRange({ start: 11015015, end: 11015015 })).toBeNull();
+  });
+
+  it('trecho que atravessa testamentos: vale a parte do NT', () => {
+    expect(editionVariantsOfRange({ start: 39004005, end: 40001001 })?.corpus).toBe('gnt');
+    expect(editionVariantsOfRange({ start: 39004005, end: 39004006 })).toBeNull();
   });
 });
