@@ -44,16 +44,18 @@ Uso:
 """
 
 import hashlib
+import json
 import re
 import sys
 import urllib.request
 from collections import Counter
+from difflib import SequenceMatcher
 from dataclasses import dataclass
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from sensus.staging import RAW, StagingWriter, cite_com  # noqa: E402
+from sensus.staging import RAW, STAGING, StagingWriter, cite_com  # noqa: E402
 from ingest.refparse import VERSES, find_refs  # noqa: E402
 from sensus.refs import BOOK_BY_NUM  # noqa: E402
 
@@ -75,6 +77,8 @@ GUT_ITALIC = re.compile(r"_((?:(?!\n\s*\n)[^_]){1,300}?)_")  # sem cruzar parág
 PAGE_BRACKET = re.compile(
     r"(?:\b\d{1,4}\s+(?=\d[\d\s\-]*[\]}]))?[\[{]\s*\d[\d\s\-]*[\]}]?\s*|\d[\d\s\-]*\}\s*")
 ROMAN = re.compile(r"^[IVXLC]+$")
+# Número romano de capítulo lido errado pelo OCR do scan de 1907 ("IIL" = III, "XVILE" = XVII).
+ROMAN_OCR = {"IIL": "III", "XVILE": "XVII"}
 TERMINAL = tuple('.!?"”’:;)')
 
 
@@ -96,6 +100,16 @@ class Work:
     # Ao contrário de `running`, não remove a expressão dentro de uma linha de texto.
     furniture: str | None = None
     strict_ocr: bool = False  # marca {} que sobra (sem correspondência) descarta o parágrafo
+    # (início, fim) de um bloco a remover do texto: do início até o começo do fim (regex). Usado para o
+    # sumário, cujos títulos de capítulo não são de texto e confundiriam a numeração dos capítulos.
+    skip: tuple | None = None
+    # (regex, capítulo) de capítulos cujo cabeçalho o OCR perdeu: insere "CHAPTER <n>" antes do trecho que casa.
+    chapter_heads: tuple = ()
+    # Remove legendas de ilustração (título em maiúsculas + citação + "— Page N") e o OCR solto ao redor.
+    drop_captions: bool = False
+    # Seções encabeçadas por um versículo de Mt 5–7 (epígrafe igual ao texto da KJV): os parágrafos
+    # de prosa até a próxima epígrafe são ligados a esse versículo.
+    sermon_sections: bool = False
     author: str = AUTHOR
     # Trecho da atribuição sobre o domínio público (autor, falecimento e publicação).
     pd: str = ("Domínio público: autora falecida em 1915 e obra publicada antes de 1929 (domínio "
@@ -147,20 +161,84 @@ WORKS = [
          "https://archive.org/download/thoughtsfrommoun0000unse/thoughtsfrommoun0000unse_djvu.txt",
          "thoughtsfrommoun0000unse_djvu.txt", "archive", r"(?!)", None,
          "Internet Archive thoughtsfrommoun0000unse (Cincinnati Bible College & Seminary)",
-         furniture=r"HOFMANN", strict_ocr=True),
+         furniture=r"HOFMANN", strict_ocr=True, drop_captions=True, sermon_sections=True),
+    # Digitalização de 1907 (Southern Publishing Association): aspas e travessões do OCR são legíveis.
+    # A de 1897 (danielrevelation00smit_3) troca aspas por "4 '", "u" e "' '" e fica fora do build.
     Work("smith-daniel", "Daniel and the Revelation", "Daniel and the Revelation",
-         "Review and Herald, 1897 (copyright 1897)",
-         "https://archive.org/details/danielrevelation00smit_3",
-         "https://archive.org/download/danielrevelation00smit_3/danielrevelation00smit_3_djvu.txt",
-         "danielrevelation00smit_3_djvu.txt", "archive", r"(?!)", r"^CHAPTER\s+([IVXL]+)\.?\s*$",
-         "Internet Archive danielrevelation00smit_3 (Library of Congress)",
+         "Southern Publishing Association, 1907 (entrada de 1897; copyright 1907)",
+         "https://archive.org/details/danielrevelation0000smit",
+         "https://archive.org/download/danielrevelation0000smit/danielrevelation0000smit_djvu.txt",
+         "danielrevelation0000smit_djvu.txt", "archive", r"(?!)", r"^CHAPTER\s+([IVXL]+|IIL|XVILE)\s*\.?\s*$",
+         "Internet Archive danielrevelation0000smit (Claremont School of Theology)",
          author="Uriah Smith (1832-1903)",
          pd=("Domínio público: autor falecido em 1903 e obra publicada em 1897 (domínio público nos EUA); "
              "no Brasil, autor falecido há mais de 70 anos."),
-         furniture=(r"THE REVELATION\.|PROPHECY\s+O[FP]\s+DA[NX][EI]L\.?|"
-                    r"CHAPTER\s+[0-9IVXL]+,\s+VERSES?\s+[0-9\s\-,]+\.?|APPENDIX\.?|CONTENTS\.?|Page\.|"
+         skip=(r"^The Book of Daniel\s*$", r"ranking him in this respect"),
+         chapter_heads=((r"^Verse 1\. And in the second year of the reign of Nebuchadnezzar", "II"),
+                        (r"^Verse 1\. And there came one of the seven angels which had the", "XVII")),
+         furniture=(r"THE REVELATION\s*\.?|[£\d\s]*PROPHECY\s+O[FP]\s+DA[NX][EI]L\.?\s*\d*|"
+                    r"\d*\s*CHAPTER\.?\s+[0-9IVXL]+,\s+VERSES?\s+[0-9\s\-,]+\.?\s*\d*|APPENDIX\.?|"
+                    r"\d*\s*[CO]ONTENTS\.?\s*\d*|\d*\s*PREFACE\s*\d*|Page\.|"
                     r"(?=.*\d)[0-9IOl]{1,4}\.?"), strict_ocr=True),
 ]
+
+
+RUNNING_CHAPTER = re.compile(r"^\s*\d*\s*CHAPTER\.?\s+(\d{1,2}),\s+VERSES?\b.*$")
+
+
+def to_roman(n: int) -> str:
+    vals = [(10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")]
+    out = ""
+    for v, sym in vals:
+        while n >= v:
+            out += sym
+            n -= v
+    return out
+
+
+# Legenda de ilustração do scan: linha com duas ou mais palavras em maiúsculas (título) e, até 4 linhas
+# depois, "— Page N". Entre as duas, a citação. Em volta, linhas de OCR solto (ver is_junk).
+CAPTION_TITLE = re.compile(r"^[“\"‘]?(?:[A-Z][A-Z’'.,\-]*[ \t]+)+[A-Z][A-Z’'.,\-]*(?:[ \t].*)?$")
+CAPTION_END = re.compile(r"—\s*Page\s*\d+")
+JUNK_TOKEN = re.compile(r"^(?:[A-Za-z]{1,3}|\d{1,4}|\(\d{1,4}\)|[^\w\s]+)[.,:;?!]*$")
+
+
+def is_junk(line: str) -> bool:
+    """Linha curta de OCR de imagem (palavras de até 3 letras, números, pontuação)."""
+    tokens = line.split()
+    return 0 < len(tokens) and len(line) <= 30 and all(JUNK_TOKEN.match(t) for t in tokens)
+
+
+def drop_captions(raw: str) -> str:
+    """Troca por linha vazia cada legenda de ilustração e as linhas de OCR solto coladas a ela.
+
+    Linhas vazias entram no lugar, para o parágrafo antes e o depois continuarem separados e
+    serem juntados pela regra de continuação (minúscula depois de quebra de página).
+    """
+    lines = raw.split("\n")
+    drop: set[int] = set()
+    i = 0
+    while i < len(lines):
+        if i in drop or not CAPTION_TITLE.match(lines[i]):
+            i += 1
+            continue
+        end = next((k for k in range(i, min(i + 12, len(lines))) if CAPTION_END.search(lines[k])), None)
+        if end is None:
+            i += 1
+            continue
+        start, k, n = i, i - 1, 0
+        while k >= 0 and n < 6 and (not lines[k].strip() or is_junk(lines[k].strip())):
+            n += bool(lines[k].strip())
+            start = k
+            k -= 1
+        k, n = end + 1, 0
+        while k < len(lines) and n < 6 and (not lines[k].strip() or is_junk(lines[k].strip())):
+            n += bool(lines[k].strip())
+            end = k
+            k += 1
+        drop.update(range(start, end + 1))
+        i = end + 1
+    return "\n".join("" if idx in drop else ln for idx, ln in enumerate(lines))
 
 
 def sha256_of(path: Path) -> str:
@@ -212,7 +290,17 @@ def read_body(work: Work, path: Path) -> tuple[str, dict[int, str]]:
             raise RuntimeError(f"{work.source_id}: marcadores START/END do Gutenberg não encontrados")
         raw = raw[m.end():e.start()]
         raw = GUT_ITALIC.sub(r"\1", raw)  # marcação de itálico do Gutenberg: _palavra_
+    if work.skip:
+        start, end = (re.compile(p, re.M) for p in work.skip)
+        m = start.search(raw)
+        e = end.search(raw, m.end()) if m else None
+        if m and e:
+            raw = raw[:m.start()] + raw[e.start():]
+    for pat, roman in work.chapter_heads:
+        raw = re.sub(pat, lambda m, r=roman: f"\n\nCHAPTER {r}\n\n" + m.group(0), raw, count=1, flags=re.M)
     raw = ILLUSTRATION.sub("", raw)
+    if work.drop_captions:
+        raw = drop_captions(raw)
     raw = cut_back_matter(raw)
     raw = SOFT_HYPHEN.sub("", raw)
     head = work.running.replace(" ", r"\s+")  # o scan tem espaço duplo entre as palavras
@@ -232,6 +320,10 @@ def read_body(work: Work, path: Path) -> tuple[str, dict[int, str]]:
                 footnotes[note] += " " + ln.strip()
                 continue
             note = None
+        ch = RUNNING_CHAPTER.match(ln)
+        if ch:  # cabeçalho corrente "CHAPTER 2, VERSES 1-4 33": a página é do capítulo 2 (numeração arábica)
+            kept += ["", f"CHAPTER {to_roman(int(ch.group(1)))}", ""]
+            continue
         if furn and furn.fullmatch(" ".join(ln.split())):
             kept.append("")  # cabeçalho de página inteiro na linha: separa, sem colar parágrafos
             continue
@@ -287,7 +379,7 @@ def paragraphs(body: str, work: Work):
         if work.chapter:
             m = re.match(work.chapter, text)
             if m and out[-1][0] == chapter:
-                token = m.group(1)
+                token = ROMAN_OCR.get(m.group(1), m.group(1))
                 chapter = "I" if token == "l" else token.upper() if ROMAN.match(token.upper()) else token
                 out.pop()
     return out
@@ -318,6 +410,18 @@ ORDINAL = re.compile(r"\b\d+(?:st|nd|rd|th)\b")
 # Sinais de OCR ruim que a limpeza não corrige: marca {} que sobrou, símbolos de linha, "i"/"j" solto
 # (no lugar de palavra), vírgula ou ponto colado a dígito de nota ("years,1").
 STRICT_OCR = re.compile(r"[{}|~^\\<>]|(?<=\s)[ij](?=\s)|[A-Za-z][,;]\d")
+
+
+# Aspas do OCR de scan de 1928/1907: "‘‘" é aspas duplas de abertura; "’’" é de fechamento. Só pontuação:
+# a palavra não muda. "Tt" (por "It") é erro de letra, não de pontuação: o parágrafo sai.
+OCR_OPEN_DQ = re.compile(r"‘‘\s*")
+OCR_CLOSE_DQ = re.compile(r"’’")
+OCR_TT = re.compile(r"\bTt\b")
+
+
+def fix_ocr_quotes(text: str) -> str:
+    """Restaura só as aspas duplas que o OCR dividiu em dois apóstrofos (ver DATA_LICENSES.md)."""
+    return OCR_CLOSE_DQ.sub("”", OCR_OPEN_DQ.sub("“", text))
 
 
 def has_ocr_junk(text: str) -> bool:
@@ -381,6 +485,71 @@ def is_whole_chapter(s: int, e: int) -> bool:
     return v == 1 and ce == c and ve == VERSES[b][c - 1]
 
 
+SERMON = (40005001, 40007029)  # Mateus 5–7 (vid = livro·capítulo·versículo)
+
+
+def load_kjv(lo: int, hi: int) -> list[tuple[int, str]]:
+    """(vid, texto normalizado) dos versículos da KJV no intervalo, da staging de sword_kjv."""
+    out = []
+    with open(STAGING / "kjv" / "verse_text.jsonl", encoding="utf-8") as f:
+        for line in f:
+            r = json.loads(line)
+            if lo <= r["vid"] <= hi:
+                out.append((r["vid"], norm_words(r["text"])))
+    return out
+
+
+def norm_words(text: str) -> str:
+    return " " + " ".join(re.findall(r"[a-z0-9]+", text.lower())) + " "
+
+
+QUOTE = re.compile(r"[“\"]([^”\"]+)[”\"]")
+
+
+def epigraph_vid(para: str, verses: list[tuple[int, str]]) -> int | None:
+    """Versículo de Mt 5–7 que é a epígrafe do parágrafo (texto da KJV, igual ou quase igual).
+
+    Epígrafe: o parágrafo é a citação (entre aspas ou inteira), com no máximo 12 palavras fora
+    das aspas ("He opened His mouth ... saying, Blessed are ..."). Casa se o versículo está dentro
+    da citação (exato, após normalizar pontuação e caixa) ou se a citação tem o mesmo tamanho do
+    versículo e pelo menos 90% de semelhança (ex.: "Whosoever shall break" sem "therefore"), ou se a
+    citação é um trecho contínuo do versículo, com pelo menos 25 caracteres (ex.: "After this manner therefore pray ye.").
+    Prosa que cita o versículo no meio do texto tem mais de 12 palavras fora das aspas e não casa.
+    """
+    quotes = QUOTE.findall(para)
+    outside = QUOTE.sub(" ", para) if quotes else ""
+    if len(norm_words(outside).split()) > 12:
+        return None
+    cands = [norm_words(q) for q in quotes] or [norm_words(para)]
+    best = None
+    for vid, vn in verses:
+        if len(vn.strip()) < 20 or (best is not None and vid >= best):
+            continue
+        for qn in cands:
+            if vn in qn or (0.85 <= len(qn) / len(vn) <= 1.15
+                            and SequenceMatcher(None, qn, vn).ratio() >= 0.9) or (
+                    len(qn.strip()) >= 25 and qn.strip() in vn):
+                best = vid
+                break
+    return best
+
+
+def split_epigraph(para: str, verses: list[tuple[int, str]]) -> tuple[int | None, str]:
+    """(versículo, resto do parágrafo). Epígrafe no início do parágrafo, colada à prosa do OCR.
+
+    Ex.: "“He opened His mouth ... heaven.” nN SOMETHING strange ..." -> (40005003, "nN SOMETHING ...").
+    """
+    vid = epigraph_vid(para, verses)
+    if vid is not None:
+        return vid, ""
+    m = re.match(r"\s*[“\"][^”\"]+[”\"]", para)
+    if m:
+        vid = epigraph_vid(m.group(0), verses)
+        if vid is not None:
+            return vid, para[m.end():].strip()
+    return None, para
+
+
 def build_work(work: Work):
     """Lista de (start, end, texto) para uma obra, e contadores.
 
@@ -398,6 +567,8 @@ def build_work(work: Work):
         fn_refs[n] = [] if BARE_PHIL.search(t) else find_refs(COLON_SPACES.sub(r"\1:\2", t))
     items: list[dict] = []
     last_prose = None
+    verses = load_kjv(*SERMON) if work.sermon_sections else []
+    section = None
     for chapter, para in paragraphs(body, work):
         stats["parágrafos"] += 1
         marks = [int(n) for n in MARKER.findall(para)]
@@ -407,6 +578,14 @@ def build_work(work: Work):
             stats["palavras com OCR {} corrigidas pela outra digitalização"] += fixed
             stats["palavras com OCR {} sem correspondência (mantidas)"] += unresolved
         para = PAGE_NUM.sub("", COLON_SPACES.sub(r"\1:\2", para))
+        if verses:
+            epi, rest = split_epigraph(para, verses)
+            if epi is not None:
+                section = epi
+                stats["seções (epígrafe igual ao texto de Mt 5–7 na KJV)"] += 1
+                if not rest:
+                    continue
+                para = rest
         refs = list(find_refs(para))
         for n in marks:
             refs += [r for r in fn_refs.get(n, []) if r not in refs]
@@ -420,14 +599,27 @@ def build_work(work: Work):
             else:
                 stats["descartadas: nota ambígua ou com OCR ruim, sem parágrafo anterior"] += len(refs)
             continue
-        ocr = (work.origin == "archive" and has_ocr_junk(para)) or (
+        ocr = (work.origin == "archive" and (has_ocr_junk(para) or bool(OCR_TT.search(para)))) or (
             work.strict_ocr and bool(STRICT_OCR.search(para)))
+        if work.origin == "archive":
+            para = fix_ocr_quotes(para)
+        # "— Page N" que sobrou dentro do parágrafo: legenda cortada pelo scan, com texto misturado.
+        ocr = ocr or (work.drop_captions and bool(CAPTION_END.search(para)))
         item = {"chapter": chapter, "para": para, "refs": refs, "ocr": ocr,
-                "ambiguous": bool(BARE_PHIL.search(para)) or ocr}
+                "ambiguous": bool(BARE_PHIL.search(para)) or ocr,
+                "section": None if ocr or section is None else section}
         items.append(item)
         last_prose = item
     for it in items:
+        head = f"{work.author} — {work.short}"
+        if it["chapter"]:
+            head += f", cap. {it['chapter']}"
+        text = f"{head}\n\n{it['para']}"
         refs = it["refs"]
+        if it["section"] is not None:
+            # Parágrafo da seção: ligado ao versículo da epígrafe (além das referências do próprio texto).
+            rows.append((it["section"], it["section"], text))
+            stats["parágrafos ligados à seção (versículo da epígrafe)"] += 1
         if not refs:
             continue
         if it["ambiguous"]:
@@ -435,18 +627,11 @@ def build_work(work: Work):
                 else "ambíguas (Phil. sem capítulo:versículo)"
             stats[f"descartadas: {key}"] += len(refs)
             continue
-        keep = refs
         stats["referências de capítulo inteiro"] += sum(is_whole_chapter(*r) for r in refs)
-        if not keep:
-            continue
-        head = f"{work.author} — {work.short}"
-        if it["chapter"]:
-            head += f", cap. {it['chapter']}"
-        text = f"{head}\n\n{it['para']}"
-        for s, e in keep:
-            rows.append((s, e, text))
+        for s_, e_ in refs:
+            rows.append((s_, e_, text))
         stats["parágrafos com referência"] += 1
-        stats["referências"] += len(keep)
+        stats["referências"] += len(refs)
     return rows, stats
 
 
