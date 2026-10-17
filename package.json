@@ -7,8 +7,10 @@
     "packages/*"
   ],
   "scripts": {
-    "typecheck": "tsc -p packages/core --noEmit",
+    "typecheck": "tsc -p packages/core --noEmit && tsc -p app --noEmit",
     "test": "vitest run",
+    "test:arch": "vitest run tests",
+    "check": "npm run typecheck && vitest run",
     "ask": "tsx packages/core/tools/ask.ts",
     "release:version": "node scripts/release.mjs version",
     "release:check": "node scripts/release.mjs check",
