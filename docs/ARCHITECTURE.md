@@ -86,7 +86,21 @@ strings.ts          textos pt-BR
 - `strong_base` é calculado por uma função só no pipeline (`sensus/strong.py`), com a mesma regra de `parseStrong`.
 - A tabela de livros existe no Python e no TypeScript; um teste de paridade compara as duas.
 
-## 5. Qualidade antes do merge
+## 5. Mapa do código
+
+| Onde | O que mora ali |
+|---|---|
+| `packages/core/src/domain/` | `language` (Lang, Corpus, Testament, `CORPUS`, original por testamento, legenda das edições), `strong`, `lexicon` (`LEXICONS`, `pickLexicon`), `morph` (conteúdo, verbo, nome próprio por língua), `vid` (aritmética de vid), `script` (escrita e direção), `word` (`wordFacts`), `sources` (registro de fontes e tradições, idioma traduzível) |
+| `packages/core/src/repo/` | consultas ao banco por área (`text`, `language`, `commentary`, `dictionary`, `entities`, `timeline*`, `cite`); `Repo` é a fachada |
+| `packages/core/src/` | painel (`panel.ts`), IA (`ai/`), linha do tempo e combinações (`timeline*.ts`), tradução (segmentos e lotes) |
+| `app/src/ui/` | componentes sem domínio (inclui `Buttons`) |
+| `app/src/data/` | banco, download, fila serial de consultas, fontes carregadas |
+| `app/src/state/study/` | store compartilhado em slices (`reader`, `selection`, `sheet`, `lenses`, `generations`, `panels`, `chat`, `toast`); `state/reader-nav.ts` |
+| `app/src/translate/` | `useTranslatable` (política `item` ou `global`), motor e cache em memória |
+| `app/src/features/<f>/index.ts` | API pública de `reader` (inclui a navegação), `study`, `timeline`, `maps`, `rich` |
+| `app/src/features/study/` | folha (`StudySheet`, `PeekContent` + `peek-model`, `Rail`), lentes (`lenses/` + `lens-model`), cards (`cards/`), fio (`thread`, `keyword`), dados e IA (`useStudyData`, `useStudyAi`) |
+
+## 6. Qualidade antes do merge
 
 1. `npm run check` (typecheck do núcleo e do app, testes, arquitetura).
 2. Revisão de código com `/code-review` no diff da branch.

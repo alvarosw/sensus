@@ -23,8 +23,8 @@ Estado vivo da migração descrita em [ARCHITECTURE.md](ARCHITECTURE.md) (alvo) 
 | A | 1 domínio · 2 fixtures AT · 7 dividir repo · 13 contrato físico/pipeline · 5 registro de fontes | `arq/dominio`, `arq/fixtures-at`, `arq/repo-split`, `arq/contrato`, `arq/fontes` | feito (revisado com /code-review) |
 | B | 3 migrar língua/testamento/léxico · 4 `isContentToken` por língua · 12 tradução | `arq/migrar-nucleo`, `arq/migrar-estudo`, `arq/migrar-paineis`, `arq/traducao` | feito (revisado; teste manual em andamento) |
 | C | 8 desfazer ciclos e camadas · 9 formatadores únicos | `arq/ciclos` | feito (0 exceções) |
-| D | 10 dividir lentes, prévia, cards e dados do estudo · 11 texto original por testamento (WLC no AT) | `arq/lentes`, `arq/folha` | em andamento |
-| E | 15 fatiar `useStudy` · índices públicos das features · zerar exceções | `arq/estado` | por último |
+| D | 10 dividir lentes, prévia, cards e dados do estudo · 11 texto original por testamento (WLC no AT) | `arq/lentes`, `arq/folha` | feito |
+| E | 15 fatiar `useStudy` · índices públicos das features · zerar exceções · noUnusedLocals | `arq/estado` | feito |
 | T | Teste manual (Sonnet) após B, D e E; merge na `main` | — | — |
 
 Passo 14 (registro no contrato do banco) fica fora: exige rebuild e release de dados; o registro no núcleo (passo 5)
@@ -50,16 +50,12 @@ com teste cobre o risco. Reavaliar depois.
   Lote D disparado (`arq/lentes`: lentes por arquivo + original por testamento; `arq/folha`: prévia, cards,
   useStudyAi). Teste manual (Sonnet) retomado sobre `arquitetura`.
 
+- 2026-10-17 03:30 — Lotes D e E integrados (873 testes, 0 exceções, noUnusedLocals ligado). /code-review de C+D
+  sem bug (só um nome de variável). Teste manual final (Sonnet) em andamento sobre a versão integrada.
+
 ## Próximos passos (para quem retomar)
 
-1. Para cada branch pendente (hoje: `arq/lentes`, `arq/folha`): `git log arquitetura..<branch>`.
-   Com commits e `npm run check` verde na worktree dela → `git merge --no-ff` em `arquitetura`, resolver
-   `tests/architecture-exceptions.ts` regerando (`UPDATE_ARCH_EXCEPTIONS=1 npx vitest run tests`) e conferir que
-   nenhum item novo apareceu em relação às duas versões. Sem commits ou incompleta (o agente pode ter parado no
-   limite) → relançar um agente Haiku com o mesmo escopo (ver o lote B na tabela) a partir de `arquitetura`.
-2. `/code-review` no diff `main...arquitetura` do lote B; corrigir achados confirmados.
-3. Teste manual (agente Sonnet, docs/TESTING.md): Fp 2:5-8 e 1Rs 15:15 (folha de estudo, palavra hebraica com
-   TBESH/"no AT"/RTL, linha do tempo em Atos 16), claro e escuro; conferir as capturas.
-4. Lote C (`arq/ciclos`: passos 8 e 9 da revisão), depois D (10, 11) e E (15, index.ts das features, zerar
-   exceções), cada um com revisão e, ao fim de D e E, teste manual.
-5. Final: `git merge main` em `arquitetura`, `npm run check`, merge `--no-ff` na `main` local, push da `main`.
+1. Esperar o relatório do teste manual (agente Sonnet). Conferir as capturas; bug confirmado → agente Haiku corrige
+   numa branch `arq/fix-*` a partir de `arquitetura`, revisão, merge, nova captura do ponto corrigido.
+2. Final: `git merge main` em `arquitetura`, `npm run check`, merge `--no-ff` de `arquitetura` na `main` (checkout
+   principal), `npm run check` na `main`, push da `main`.
