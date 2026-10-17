@@ -3,12 +3,14 @@
 //  - textSource: texto corrido padrão (BLivre ou KJV). O botão do leitor também grava aqui;
 //  - greekDefault: grego (TR) sob os versículos ao abrir o app. O botão Αα só muda a sessão.
 //  - timelineLines / timelineEvents: favoritos da linha do tempo (cite_ids de linhas e de marcadores);
-//    timelineRecent: linhas adicionadas recentemente ao paralelo (o mais recente primeiro).
+//    timelineCombos: combinações do paralelo criadas pelo usuário (favoritas, sem limite; recentes, as últimas cinco).
+//    As prontas do app não são gravadas (ver combos.ts).
 // Os valores de aparência são aplicados ao estado do leitor (state/study.ts) ao carregar e a cada mudança.
 import { create } from 'zustand';
 import { useStudy } from '@/state/study';
 import type { SchemePreference } from '@/design';
 import { readAppPrefs, writeAppPrefs, type StoredAppPrefs } from './provider-store';
+import { favoriteCombo, newComboId, parseCombos, recordRecent, removeCombo, unfavoriteCombo, type UserCombo } from '@/features/timeline/combos';
 
 export const TEXT_SOURCES = ['blivre', 'kjv'] as const;
 export type TextSourceId = (typeof TEXT_SOURCES)[number];
@@ -17,8 +19,6 @@ const THEMES: readonly SchemePreference[] = ['system', 'light', 'dark'];
 
 /** Limite de favoritos guardados (evita arquivo crescer sem controle). */
 const MAX_FAVORITES = 500;
-/** Linhas recentes guardadas no seletor do paralelo. */
-const MAX_RECENT_LINES = 6;
 
 export const DEFAULT_APP_PREFS = {
   theme: 'system' as SchemePreference,
@@ -26,7 +26,7 @@ export const DEFAULT_APP_PREFS = {
   greekDefault: false,
   timelineLines: [] as string[],
   timelineEvents: [] as string[],
-  timelineRecent: [] as string[],
+  timelineCombos: [] as UserCombo[],
 };
 
 interface AppPrefsState {
@@ -38,8 +38,8 @@ interface AppPrefsState {
   timelineLines: string[];
   /** Marcadores da linha do tempo (cite_id do evento). */
   timelineEvents: string[];
-  /** Linhas usadas recentemente no paralelo (cite_id), a mais recente primeiro. */
-  timelineRecent: string[];
+  /** Combinações do paralelo do usuário (ver combos.ts): a mais recente primeiro. */
+  timelineCombos: UserCombo[];
   load(): Promise<void>;
   setTheme(theme: SchemePreference): void;
   /** Grava o texto padrão e aplica ao leitor agora. */
@@ -48,8 +48,12 @@ interface AppPrefsState {
   setGreekDefault(on: boolean): void;
   toggleTimelineLine(id: string): void;
   toggleTimelineEvent(citeId: string): void;
-  /** Põe a linha no topo das recentes (sem repetir). */
-  pushTimelineRecent(id: string): void;
+  /** Confirmar uma combinação: vira recente (no topo). */
+  recordCombo(lines: string[], name: string): void;
+  /** Favoritar (ou promover uma recente/pronta) com o nome dado. */
+  favoriteCombo(lines: string[], name: string): void;
+  unfavoriteCombo(id: string): void;
+  removeCombo(id: string): void;
 }
 
 interface PersistedPrefs {
@@ -58,7 +62,7 @@ interface PersistedPrefs {
   greekDefault: boolean;
   timelineLines: string[];
   timelineEvents: string[];
-  timelineRecent: string[];
+  timelineCombos: UserCombo[];
 }
 
 function persist(p: PersistedPrefs): void {
@@ -83,8 +87,8 @@ function toggleId(list: string[], id: string): string[] {
 
 export const useAppPrefs = create<AppPrefsState>()((set, get) => {
   const current = (): PersistedPrefs => {
-    const { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineRecent } = get();
-    return { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineRecent };
+    const { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos } = get();
+    return { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos };
   };
   return {
     loaded: false,
@@ -97,8 +101,8 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       const greekDefault = typeof stored?.greekDefault === 'boolean' ? stored.greekDefault : DEFAULT_APP_PREFS.greekDefault;
       const timelineLines = idList(stored?.timelineLines);
       const timelineEvents = idList(stored?.timelineEvents);
-      const timelineRecent = idList(stored?.timelineRecent).slice(0, MAX_RECENT_LINES);
-      set({ loaded: true, theme, textSource, greekDefault, timelineLines, timelineEvents, timelineRecent });
+      const timelineCombos = parseCombos(stored?.timelineCombos);
+      set({ loaded: true, theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos });
       useStudy.setState({ textSource, greek: greekDefault });
     },
     toggleTimelineLine: (id) => {
@@ -111,10 +115,25 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       set({ timelineEvents });
       persist({ ...current(), timelineEvents });
     },
-    pushTimelineRecent: (id) => {
-      const timelineRecent = [id, ...get().timelineRecent.filter((x) => x !== id)].slice(0, MAX_RECENT_LINES);
-      set({ timelineRecent });
-      persist({ ...current(), timelineRecent });
+    recordCombo: (lines, name) => {
+      const timelineCombos = recordRecent(get().timelineCombos, lines, name, newComboId());
+      set({ timelineCombos });
+      persist({ ...current(), timelineCombos });
+    },
+    favoriteCombo: (lines, name) => {
+      const timelineCombos = favoriteCombo(get().timelineCombos, lines, name, newComboId());
+      set({ timelineCombos });
+      persist({ ...current(), timelineCombos });
+    },
+    unfavoriteCombo: (id) => {
+      const timelineCombos = unfavoriteCombo(get().timelineCombos, id);
+      set({ timelineCombos });
+      persist({ ...current(), timelineCombos });
+    },
+    removeCombo: (id) => {
+      const timelineCombos = removeCombo(get().timelineCombos, id);
+      set({ timelineCombos });
+      persist({ ...current(), timelineCombos });
     },
     setTheme: (theme) => {
       set({ theme });
