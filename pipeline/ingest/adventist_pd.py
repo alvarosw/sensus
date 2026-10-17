@@ -1,6 +1,6 @@
 """Ingere obras adventistas em domínio público (Ellen G. White) como comentários por referência.
 
-Cada obra vira uma source 'egw-<slug>' (kind 'commentary', tradition 'adventist'). Estas obras
+Cada obra vira uma source 'egw-<slug>' (ou 'smith-daniel'), kind 'commentary', tradition 'adventist'. Estas obras
 não são comentários versículo a versículo: só os parágrafos que citam explicitamente versículos
 viram linhas. Cada referência inequívoca do parágrafo (ingest/refparse.py) gera uma linha com
 cite_id com:<source>:<início>-<fim>. O texto da linha é "Autor — Obra, cap. N" (como a patrística)
@@ -18,17 +18,26 @@ Regras:
   Gutenberg são removidos antes da divisão em parágrafos.
 - Texto em inglês, como nas demais fontes de comentário.
 
-Obras incluídas (todas com publicação anterior a 1929 e autora falecida em 1915):
+Obras incluídas (todas com publicação anterior a 1929; autora falecida em 1915):
 - egw-great-controversy: The Great Controversy (Gutenberg #25833; copyright 1888, 1907, 1911).
 - egw-patriarchs: The Story of Patriarchs and Prophets (Gutenberg #79498; copyright 1890, 1913).
 - egw-prophets: The Story of Prophets and Kings (archive.org storyofprophetsk0000elle; copyright 1917).
 - egw-acts: The Acts of the Apostles (archive.org actsapostlesinp00unkngoog; 1911).
 - egw-object-lessons: Christ's Object Lessons (archive.org christsobjectles00whit; copyright 1900).
 - egw-steps: Steps to Christ (archive.org stepstochrist00whit; edição de 1896, texto de 1892).
+- egw-thoughts: Thoughts from the Mount of Blessing (archive.org thoughtsfrommoun0000unse; impressão de 1928,
+  copyright 1900 e 1928; texto de 1896). Comentário do Sermão do Monte.
+- smith-daniel: Uriah Smith, Daniel and the Revelation (archive.org danielrevelation00smit_3, Library of Congress;
+  1897). Autor falecido em 1903. Estudo versículo a versículo, o único que não é de Ellen G. White.
 
-Descartadas (ver DATA_LICENSES.md): The Desire of Ages (os scans de 1898 trazem aviso de direitos
-de 1940 de edição revisada, e a titularidade desse texto não foi confirmada); Uriah Smith,
-Daniel and the Revelation (OCR com erros residuais que a limpeza automática não corrige com segurança).
+Descartadas (ver DATA_LICENSES.md):
+- The Desire of Ages: os scans de 1898 trazem aviso de direitos de 1940 de edição revisada (archive.org
+  desireofages0000elle); titularidade não confirmada.
+- Ministry of Healing (1905, archive.org ministryofhealin00whitrich) e Education (1903, archive.org
+  education00whitrich e education00whit): o texto vem com uma linha por parágrafo (mediana de 34 a 89
+  caracteres), e a frase é cortada no fim da linha. Juntar isso exige reconstruir os parágrafos, o que
+  mudaria o texto. A edição de 1905 com aviso de 1942 (ministryofhealin0000elle_r4y1) não serve.
+- Geneva Bible Notes e Family Bible Notes: sem licença clara no módulo SWORD nem no scan de archive.org.
 
 Uso:
     cd pipeline && .venv/bin/python -I ingest/adventist_pd.py [egw-steps,egw-acts]
@@ -83,6 +92,14 @@ class Work:
     chapter: str | None  # regex da linha de capítulo (grupo 1 = número/romano)
     rights: str         # justificativa de domínio público, para attribution
     alt: tuple | None = None  # (url, arquivo) de outra digitalização da mesma obra, para corrigir OCR
+    # Linha inteira que é cabeçalho/rodapé do scan (título corrente, capítulo de página, número de página).
+    # Ao contrário de `running`, não remove a expressão dentro de uma linha de texto.
+    furniture: str | None = None
+    strict_ocr: bool = False  # marca {} que sobra (sem correspondência) descarta o parágrafo
+    author: str = AUTHOR
+    # Trecho da atribuição sobre o domínio público (autor, falecimento e publicação).
+    pd: str = ("Domínio público: autora falecida em 1915 e obra publicada antes de 1929 (domínio "
+               "público nos EUA); no Brasil, autora falecida há mais de 70 anos.")
 
 
 WORKS = [
@@ -124,6 +141,25 @@ WORKS = [
          "https://archive.org/download/stepstochrist00whit/stepstochrist00whit_djvu.txt",
          "stepstochrist00whit_djvu.txt", "archive", r"STEPS TO CHRIST", None,
          "Internet Archive stepstochrist00whit"),
+    Work("egw-thoughts", "Thoughts from the Mount of Blessing", "Thoughts from the Mount of Blessing",
+         "Pacific Press, 1928 (copyright 1900, 1928; texto de 1896)",
+         "https://archive.org/details/thoughtsfrommoun0000unse",
+         "https://archive.org/download/thoughtsfrommoun0000unse/thoughtsfrommoun0000unse_djvu.txt",
+         "thoughtsfrommoun0000unse_djvu.txt", "archive", r"(?!)", None,
+         "Internet Archive thoughtsfrommoun0000unse (Cincinnati Bible College & Seminary)",
+         furniture=r"HOFMANN", strict_ocr=True),
+    Work("smith-daniel", "Daniel and the Revelation", "Daniel and the Revelation",
+         "Review and Herald, 1897 (copyright 1897)",
+         "https://archive.org/details/danielrevelation00smit_3",
+         "https://archive.org/download/danielrevelation00smit_3/danielrevelation00smit_3_djvu.txt",
+         "danielrevelation00smit_3_djvu.txt", "archive", r"(?!)", r"^CHAPTER\s+([IVXL]+)\.?\s*$",
+         "Internet Archive danielrevelation00smit_3 (Library of Congress)",
+         author="Uriah Smith (1832-1903)",
+         pd=("Domínio público: autor falecido em 1903 e obra publicada em 1897 (domínio público nos EUA); "
+             "no Brasil, autor falecido há mais de 70 anos."),
+         furniture=(r"THE REVELATION\.|PROPHECY\s+O[FP]\s+DA[NX][EI]L\.?|"
+                    r"CHAPTER\s+[0-9IVXL]+,\s+VERSES?\s+[0-9\s\-,]+\.?|APPENDIX\.?|CONTENTS\.?|Page\.|"
+                    r"(?=.*\d)[0-9IOl]{1,4}\.?"), strict_ocr=True),
 ]
 
 
@@ -180,6 +216,7 @@ def read_body(work: Work, path: Path) -> tuple[str, dict[int, str]]:
     raw = cut_back_matter(raw)
     raw = SOFT_HYPHEN.sub("", raw)
     head = work.running.replace(" ", r"\s+")  # o scan tem espaço duplo entre as palavras
+    furn = re.compile(work.furniture) if work.furniture else None
     running = re.compile(r"^\s*(?:\d+\s+)?" + head + r"(?:\s+\d+)?\s*\.?\s*$", re.I)
     inline_running = re.compile(r"\s*\b\d*\s*\b" + head + r"\b\s*\d*", re.I)
     footnotes: dict[int, str] = {}
@@ -195,6 +232,9 @@ def read_body(work: Work, path: Path) -> tuple[str, dict[int, str]]:
                 footnotes[note] += " " + ln.strip()
                 continue
             note = None
+        if furn and furn.fullmatch(" ".join(ln.split())):
+            kept.append("")  # cabeçalho de página inteiro na linha: separa, sem colar parágrafos
+            continue
         if running.match(ln) or (SCAN_FURNITURE.search(ln) and ln.strip()):
             kept.append("")  # linha de página: separa, sem colar parágrafos
             continue
@@ -273,6 +313,11 @@ PAGE_NUM = re.compile(r"^\d{1,4}\s+(?=(?:Ibid|[a-z\"“‘]))")
 # Erro típico de OCR perto de números ("2S:19", "2]viark'i4", "2Eze"): letra colada a dígito.
 OCR_JUNK = re.compile(r"[A-Za-z]\d|\d[A-Za-z]")
 ORDINAL = re.compile(r"\b\d+(?:st|nd|rd|th)\b")
+
+
+# Sinais de OCR ruim que a limpeza não corrige: marca {} que sobrou, símbolos de linha, "i"/"j" solto
+# (no lugar de palavra), vírgula ou ponto colado a dígito de nota ("years,1").
+STRICT_OCR = re.compile(r"[{}|~^\\<>]|(?<=\s)[ij](?=\s)|[A-Za-z][,;]\d")
 
 
 def has_ocr_junk(text: str) -> bool:
@@ -375,7 +420,8 @@ def build_work(work: Work):
             else:
                 stats["descartadas: nota ambígua ou com OCR ruim, sem parágrafo anterior"] += len(refs)
             continue
-        ocr = work.origin == "archive" and has_ocr_junk(para)
+        ocr = (work.origin == "archive" and has_ocr_junk(para)) or (
+            work.strict_ocr and bool(STRICT_OCR.search(para)))
         item = {"chapter": chapter, "para": para, "refs": refs, "ocr": ocr,
                 "ambiguous": bool(BARE_PHIL.search(para)) or ocr}
         items.append(item)
@@ -385,14 +431,15 @@ def build_work(work: Work):
         if not refs:
             continue
         if it["ambiguous"]:
-            key = "OCR com letra e dígito colados" if it.get("ocr") else "ambíguas (Phil. sem capítulo:versículo)"
+            key = "OCR (letra e dígito colados, ou sinais de OCR ruim)" if it.get("ocr") \
+                else "ambíguas (Phil. sem capítulo:versículo)"
             stats[f"descartadas: {key}"] += len(refs)
             continue
         keep = refs
         stats["referências de capítulo inteiro"] += sum(is_whole_chapter(*r) for r in refs)
         if not keep:
             continue
-        head = f"{AUTHOR} — {work.short}"
+        head = f"{work.author} — {work.short}"
         if it["chapter"]:
             head += f", cap. {it['chapter']}"
         text = f"{head}\n\n{it['para']}"
@@ -412,17 +459,16 @@ def ingest(work: Work) -> None:
         w.source(
             kind="commentary",
             title=work.title,
-            author=AUTHOR,
+            author=work.author,
             lang="en",
             license="Public Domain",
             license_url=GUT_LICENSE_URL if work.origin == "gutenberg" else None,
             url=work.url,
             version=f"{work.edition}; arquivo {work.raw_name} sha256 {digest[:16]}",
             attribution=(
-                f"{work.title}, {AUTHOR}. {work.edition}. Fonte do texto: {work.rights}"
+                f"{work.title}, {work.author}. {work.edition}. Fonte do texto: {work.rights}"
                 + (", sem o cabeçalho e o rodapé da licença do Project Gutenberg" if work.origin == "gutenberg" else "")
-                + ". Domínio público: autora falecida em 1915 e obra publicada antes de 1929 (domínio "
-                "público nos EUA); no Brasil, autora falecida há mais de 70 anos."
+                + ". " + work.pd
             ),
             tradition="adventist",
             notes=(

@@ -102,7 +102,7 @@ domínio público (DistributionLicense=Public Domain).* A atribuição completa 
 | `sword-pnt` | B. W. Johnson (séc. XIX) | The People's New Testament, com notas explicativas | v1.1 | PD. |
 | `sword-tfg` | J. W. McGarvey (1829-1915) e Philip Y. Pendleton | The Fourfold Gospel e Commentary on Acts | v1.5 | PD. Módulo RawCom (texto sem compressão). Sem marcas de referência cruzada GBF. |
 
-**Adventistas (Ellen G. White, domínio público)**
+**Adventistas (domínio público)**
 
 Autora falecida em 1915. As obras são publicadas antes de 1929 (domínio público nos EUA) e, no Brasil, pela regra de
 vida mais 70 anos. Só entram textos de Project Gutenberg e archive.org, nunca de egwwritings.org ou de PDFs do White
@@ -116,11 +116,16 @@ Estate. Ver item 12. Não são comentários versículo a versículo: só parágr
 | `egw-acts` | Ellen G. White (1827-1915) | The Acts of the Apostles (1911) | archive.org `actsapostlesinp00unkngoog` | Palavras ilegíveis no OCR trocadas pela edição de 1911 do mesmo texto (archive.org `actsofapostlesin0000elle`), só com vizinhança idêntica. |
 | `egw-object-lessons` | Ellen G. White (1827-1915) | Christ's Object Lessons (1900) | archive.org `christsobjectles00whit` | Palavras ilegíveis no OCR (marcadas por `{`) trocadas pela palavra da edição de 1900 do mesmo texto (archive.org `christsobjectles0000unse_h6u4`), só com vizinhança idêntica. |
 | `egw-steps` | Ellen G. White (1827-1915) | Steps to Christ (1892; edição de 1896) | archive.org `stepstochrist00whit` | Texto da edição de 1896. |
+| `egw-thoughts` | Ellen G. White (1827-1915) | Thoughts from the Mount of Blessing (1896; impressão de 1928, copyright 1900 e 1928) | archive.org `thoughtsfrommoun0000unse` (Cincinnati Bible College & Seminary) | Comentário do Sermão do Monte. Parágrafos com marca de OCR ruim ou sem correspondência descartados (`strict_ocr`). |
+| `smith-daniel` | Uriah Smith (1832-1903) | Daniel and the Revelation (1897) | archive.org `danielrevelation00smit_3` (Library of Congress) | Estudo versículo a versículo, não de Ellen G. White. Notas de cabeçalho de página removidas. Parágrafos com sinais de OCR ruim (`|`, `\`, `i`/`j` solto, `,1` colado) descartados (123 referências de 986 encontradas). |
 
 **Examinadas e não incluídas (adventistas e outras):** *The Desire of Ages* (os scans de 1898 trazem aviso de direitos
-de 1940, de edição revisada; titularidade não confirmada), *Daniel and the Revelation*, de Uriah Smith (OCR com erros
-residuais que a limpeza automática não corrige com segurança; ver item 12), Geneva Bible Translation Notes e Family Bible
-Notes (sem `DistributionLicense` no `.conf`), Darby Translation Notes (índice não alinhado à versificação).
+de 1940, de edição revisada; titularidade não confirmada); *Ministry of Healing* (1905) e *Education* (1903), em
+archive.org: o texto vem com uma linha por parágrafo, e a frase é cortada no fim da linha (mediana de 34 a 89
+caracteres), então os parágrafos não podem ser reconstruídos sem alterar o texto (a edição de 1905 com aviso de 1942 não
+serve); Geneva Bible Translation Notes e Family Bible Notes (sem `DistributionLicense` no `.conf`; o scan de 1599 no
+archive.org não traz licença); Darby Translation Notes (índice não alinhado à versificação).
+Ver item 12 para as demais.
 
 **Dicionários**
 
@@ -194,7 +199,7 @@ Mapa do mundo antigo (AWMC): não incluído; ver `docs/BACKLOG.md`, seção App.
 12. **Adventistas e Luther.** (a) Os textos de Ellen G. White são de autora falecida em 1915; as edições usadas são
     anteriores a 1929. Se algum scan for de edição posterior, ou tiver aviso de direitos de edição revisada, a fonte sai.
     (b) O `sword-luther` reúne material de várias edições; o `.conf` declara PD. Revisar antes de distribuir.
-    (c) Uriah Smith (1903) e outras fontes de OCR: só entram com texto revisado.
+    (c) `smith-daniel` usa a edição de 1897 (Library of Congress), não a de 1903; OCR com sinais ruins é descartado. Outras fontes de OCR: só com texto revisado.
     (d) `egw-great-controversy` usa a edição do Gutenberg (1911), que tem poucas citações no corpo. A edição de
     1895 (Digital Library of India, dli.ernet.236787) tem muito mais citações, mas o OCR troca palavras ("tho" por
     "the", "bo" por "be") em cerca de um terço dos parágrafos com referência. Não foi usada.
