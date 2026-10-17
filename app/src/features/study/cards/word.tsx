@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import type { Book } from '@sensus/core';
 import { Card, CardTop, fontFamilies, LinkButton, MeterBar, MorphPill, space, Tag, Txt, TypeMark, useTheme } from '@/design';
 import { bareWord, refShort } from '@/features/common/format';
-import { morphLabelsPt } from '@/features/common/morph-pt';
+import { morphChipsOf } from '@/features/common/morph-pt';
 import { STUDY } from '../strings';
 import type { KeyWord } from '../format';
 
@@ -28,7 +28,7 @@ export const WordCard = memo(function WordCard({
   const gloss = word.lexicon?.gloss ?? t.gloss_en;
   const n = word.count;
   const value = Math.min(1, Math.max(0.06, Math.log(n + 1) / Math.log(120)));
-  const morph = morphLabelsPt(t.morph_desc);
+  const morph = morphChipsOf(t.morph_desc, word.testament);
   return (
     <Card testID={`word-${t.cite_id}`}>
       <CardTop>

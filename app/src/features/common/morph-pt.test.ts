@@ -1,7 +1,7 @@
 // Dicionário único de morfologia em português: o painel (morphParts) e o card (morphLabelsPt) usam o mesmo termo com o
 // mesmo rótulo. Casos do grego do NT (TAGNT) e do hebraico/aramaico do AT.
 import { describe, expect, it } from 'vitest';
-import { morphLabelsPt, morphParts, morphPills, morphTerm } from './morph-pt';
+import { morphChipsOf, morphLabelsPt, morphParts, morphPills, morphTerm } from './morph-pt';
 
 describe('morfologia pt: um dicionário', () => {
   it('grego do NT: o card e o painel dão o mesmo rótulo a cada termo', () => {
@@ -38,5 +38,35 @@ describe('morfologia pt: um dicionário', () => {
   it('sem análise: nada', () => {
     expect(morphLabelsPt(null)).toEqual([]);
     expect(morphParts('')).toEqual([]);
+  });
+
+  it('card do NT: a classe é a primeira etiqueta, como no painel', () => {
+    const desc = 'Verb; Tense=Present; Voice=Active; Mood=Indicative';
+    expect(morphChipsOf(desc, 'NT')).toEqual(['Verbo', 'presente', 'ativa', 'indicativo']);
+    expect(morphChipsOf(desc, 'NT')[0]).toBe(morphParts(desc)[0]!.value);
+  });
+
+  it('card do AT (1Rs 15:15, כְּלִי): mesmo mapa do painel, classe primeiro', () => {
+    const desc = 'Consecutive Conjunction + Verb : Hiphil (Causative/declarative, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine';
+    expect(morphChipsOf(desc, 'OT')).toEqual([
+      'Conjunção consecutiva',
+      'verbo Hiphil (causativa/declarativa, ativa)',
+      'imperfeito consecutivo',
+      '3ª pessoa singular masculino',
+    ]);
+  });
+
+  it('card do AT: substantivo com estado e número (זָהָב, כֶּסֶף)', () => {
+    expect(morphChipsOf('Noun (Singular Masculine, Absolute)', 'OT')).toEqual(['Substantivo singular masculino', 'estado absoluto']);
+    expect(morphChipsOf('Noun (Singular Masculine, Construct)', 'OT')).toEqual(['Substantivo singular masculino', 'estado construto']);
+  });
+
+  it('card do AT: termo fora do mapa mostra a descrição original como uma etiqueta', () => {
+    expect(morphChipsOf('Noun (Singular Masculine, Frobnicated)', 'OT')).toEqual(['Noun (Singular Masculine, Frobnicated)']);
+  });
+
+  it('sem análise: nenhuma etiqueta', () => {
+    expect(morphChipsOf(null, 'OT')).toEqual([]);
+    expect(morphChipsOf('', 'NT')).toEqual([]);
   });
 });
