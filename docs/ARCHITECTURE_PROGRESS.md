@@ -37,3 +37,20 @@ com teste cobre o risco. Reavaliar depois.
   (strong_base tolerante, rótulo por obra da EGW, export duplicado); WordPanel TAHOT/TAGNT e filtro `% 1000`
   ficam para o lote B.
 - 2026-10-17 00:25 — Lote B disparado: 4 agentes Haiku (núcleo, estudo, painéis, tradução).
+- 2026-10-17 00:50 — Lote B: `arq/migrar-paineis` e `arq/migrar-estudo` integrados (752 testes, 52 exceções).
+  Pendentes: `arq/migrar-nucleo` (isContentToken por língua no núcleo, contexto da IA, rich-text, panel) e
+  `arq/traducao` (API única de tradução, `data/sources`).
+
+## Próximos passos (para quem retomar)
+
+1. Para cada branch pendente do lote B (`arq/migrar-nucleo`, `arq/traducao`): `git log arquitetura..<branch>`.
+   Com commits e `npm run check` verde na worktree dela → `git merge --no-ff` em `arquitetura`, resolver
+   `tests/architecture-exceptions.ts` regerando (`UPDATE_ARCH_EXCEPTIONS=1 npx vitest run tests`) e conferir que
+   nenhum item novo apareceu em relação às duas versões. Sem commits ou incompleta (o agente pode ter parado no
+   limite) → relançar um agente Haiku com o mesmo escopo (ver o lote B na tabela) a partir de `arquitetura`.
+2. `/code-review` no diff `main...arquitetura` do lote B; corrigir achados confirmados.
+3. Teste manual (agente Sonnet, docs/TESTING.md): Fp 2:5-8 e 1Rs 15:15 (folha de estudo, palavra hebraica com
+   TBESH/"no AT"/RTL, linha do tempo em Atos 16), claro e escuro; conferir as capturas.
+4. Lote C (`arq/ciclos`: passos 8 e 9 da revisão), depois D (10, 11) e E (15, index.ts das features, zerar
+   exceções), cada um com revisão e, ao fim de D e E, teste manual.
+5. Final: `git merge main` em `arquitetura`, `npm run check`, merge `--no-ff` na `main` local, push da `main`.
