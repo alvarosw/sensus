@@ -1,5 +1,6 @@
 // Números de Strong: base, prefixo, número e sufixo estendido (H0935P -> base H0935, sufixo P).
-// Mesma regra do pipeline (tagnt.py e tahot.py: strong_base = primeiros 5 caracteres, 'G'|'H' + 4 dígitos).
+// Mesma regra de pipeline/sensus/strong.py: 1 a 5 dígitos; base = prefixo + número com zeros até 4 dígitos
+// (G430 -> G0430; G20001 -> G20001); sufixo de letras, mantido como na fonte, nunca entra na base.
 import type { Testament } from './language';
 
 /** Base de Strong sem sufixo, com 4 dígitos (ex.: "H0935"). Tipo marcado: só se obtém por parseStrong. */
@@ -17,20 +18,19 @@ export interface Strong {
   suffix: string;
 }
 
-const STRONG_RE = /^([GH])(\d{1,4})([A-Z]*)$/;
+const STRONG_RE = /^([GH])(\d{1,5})([A-Za-z]*)$/;
 
 /**
- * Lê um Strong. Aceita sem zeros à esquerda ("h935p") e normaliza para 4 dígitos.
- * Devolve null para o que não é Strong (vazio, número zero, prefixo diferente de G/H).
+ * Lê um Strong como o pipeline (strong.py): aceita sem zeros à esquerda e normaliza a base para 4 dígitos,
+ * mas mantém 5 dígitos quando existem. Devolve null para o que não é Strong.
  */
 export function parseStrong(text: string): Strong | null {
-  const m = STRONG_RE.exec(text.trim().toUpperCase());
+  const m = STRONG_RE.exec(text);
   if (!m) return null;
   const prefix = m[1] as 'G' | 'H';
   const number = Number(m[2]);
-  if (number < 1) return null;
-  const digits = String(number).padStart(4, '0');
   const suffix = m[3] ?? '';
+  const digits = String(number).padStart(4, '0');
   return {
     raw: `${prefix}${digits}${suffix}`,
     base: `${prefix}${digits}` as StrongBase,
