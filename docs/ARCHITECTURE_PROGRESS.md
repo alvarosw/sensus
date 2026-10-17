@@ -20,9 +20,9 @@ Estado vivo da migração descrita em [ARCHITECTURE.md](ARCHITECTURE.md) (alvo) 
 | Lote | Passos (revisão §4) | Branches | Estado |
 |---|---|---|---|
 | 0 | Base: ARCHITECTURE.md, CLAUDE.md, skills, teste de arquitetura, `npm run check`, CI | `arquitetura` | feito |
-| A | 1 domínio · 2 fixtures AT · 7 dividir repo · 13 contrato físico/pipeline · 5 registro de fontes | `arq/dominio`, `arq/fixtures-at`, `arq/repo-split`, `arq/contrato`, `arq/fontes` | pendente |
-| B | 3 migrar língua/testamento/léxico · 4 `isContentToken` por língua | `arq/migrar-dominio` | depois de A |
-| C | 8 desfazer ciclos e camadas · 9 formatadores únicos · 12 tradução unificada | `arq/ciclos`, `arq/traducao` | depois de B |
+| A | 1 domínio · 2 fixtures AT · 7 dividir repo · 13 contrato físico/pipeline · 5 registro de fontes | `arq/dominio`, `arq/fixtures-at`, `arq/repo-split`, `arq/contrato`, `arq/fontes` | feito (revisado com /code-review) |
+| B | 3 migrar língua/testamento/léxico · 4 `isContentToken` por língua · 12 tradução | `arq/migrar-nucleo`, `arq/migrar-estudo`, `arq/migrar-paineis`, `arq/traducao` | em andamento |
+| C | 8 desfazer ciclos e camadas · 9 formatadores únicos | `arq/ciclos` | depois de B |
 | D | 10 dividir lentes e prévia · 11 texto original por testamento (WLC no AT) | `arq/lentes`, `arq/original-at` | depois de C |
 | E | 15 fatiar `useStudy` · índices públicos das features · zerar exceções | `arq/estado` | por último |
 | T | Teste manual (Sonnet) após B, D e E; merge na `main` | — | — |
@@ -33,3 +33,7 @@ com teste cobre o risco. Reavaliar depois.
 ## Registro
 
 - 2026-10-16 23:40 — Lote 0 pronto (78 exceções iniciais no teste de arquitetura).
+- 2026-10-17 00:20 — Lote A integrado em `arquitetura` (731 testes). /code-review: 3 correções aplicadas
+  (strong_base tolerante, rótulo por obra da EGW, export duplicado); WordPanel TAHOT/TAGNT e filtro `% 1000`
+  ficam para o lote B.
+- 2026-10-17 00:25 — Lote B disparado: 4 agentes Haiku (núcleo, estudo, painéis, tradução).
