@@ -13,6 +13,7 @@ import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from sensus.staging import StagingWriter, cite_lex  # noqa: E402
+from sensus.strong import strong_base  # noqa: E402
 
 REPO_SHA = "dd88ab3772971e17c0ec28a5a6e34f2e97c2f848"
 RAW_BASE = f"https://raw.githubusercontent.com/STEPBible/STEPBible-Data/{REPO_SHA}"
@@ -81,10 +82,6 @@ def dstrong_key(field: str) -> str | None:
     """Primeiro token de 'G2424G =' -> 'G2424G'. Retorna None se não for um Strong."""
     m = _STRONG.match(field)
     return m.group(1) if m else None
-
-
-def strong_base(key: str) -> str:
-    return re.match(r"[GH]\d+", key).group(0)
 
 
 def read_lexicon_table(lines: list[str]) -> list[list[str]]:
