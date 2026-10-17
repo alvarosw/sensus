@@ -32,6 +32,14 @@ MODULES = [
     ("Clarke", "Clarke.zip", "methodist", "Adam Clarke (1762-1832)"),
     ("Wesley", "Wesley.zip", "methodist", "John Wesley (1703-1791)"),
     ("RWP", "RWP.zip", "baptist", "A. T. Robertson (1863-1934)"),
+    # Lote 1 (domínio público pelo .conf do módulo; autores falecidos há mais de 70 anos):
+    ("Burkitt", "Burkitt.zip", "anglican", "William Burkitt (1650-1703)"),
+    ("Catena", "Catena.zip", "catholic", "Tomás de Aquino (1225-1274), compilação de Pais da Igreja"),
+    ("Lightfoot", "Lightfoot.zip", "reformed", "John Lightfoot (1602-1675)"),
+    ("Luther", "Luther.zip", "lutheran", "Martinho Lutero (1483-1546) e outros (ver About do módulo)"),
+    ("PNT", "PNT.zip", "restoration", "B. W. Johnson (séc. XIX)"),
+    ("TFG", "TFG.zip", "restoration", "J. W. McGarvey (1829-1915) e Philip Y. Pendleton"),
+    ("Abbott", "Abbott.zip", "congregational", "John S. C. Abbott (1805-1877) e Jacob Abbott (1803-1879)"),
 ]
 
 # Módulos com licença diferente de 'Public Domain', aprovados pelo responsável do projeto
@@ -51,6 +59,8 @@ SKIPPED = {
     "Gill": "não existe no repositório CrossWire (rawzip); ver ingest/gill.py",
     "Geneva": "conf sem DistributionLicense (notas da Bíblia de Genebra; licença não declarada)",
     "TSK": "fora do escopo deste ingestor (outro agente)",
+    "Family": "conf sem DistributionLicense (Family Bible Notes, Nazarene Users Group)",
+    "DTN": "índice RawCom não alinhado à versificação (nt.vss com 15.899 slots; texto de Isaías em nt); não validado",
 }
 
 

@@ -11,11 +11,14 @@ Notas:
   classe ZText/ZText4 do pysword, chamando o método privado _text_for_index.
 - O índice cobre também os slots de introdução (versículo 0), que são
   enumerados em iter_slots().
+- Módulos RawCom (ex.: TFG) não são suportados pelo pysword: RawComReader lê o .vss
+  (6 bytes por slot: offset uint32 e tamanho uint16) e o texto diretamente.
 """
 
 import functools
 import html
 import re
+import struct
 import urllib.request
 import zipfile
 from pathlib import Path
@@ -143,10 +146,45 @@ def conf_plain(s: str | None) -> str:
 
 _MODDRV = {"ztext": "ztext", "zcom": "ztext", "ztext4": "ztext4", "zcom4": "ztext4"}
 
+# Cabeçalho GBF de referência cruzada no RawCom (TFG): "<FU>#Mt 1:1|<Fu>" (link, não texto do comentário).
+_GBF_XREF = re.compile(r"<FU>#[^|<]*\|<Fu>")
 
-def open_module(conf: dict) -> SwordBible:
-    """Abre o módulo com o leitor ZText/ZText4 do pysword (também zCom/zCom4)."""
+
+class RawComReader:
+    """Leitor de módulos RawCom (texto sem compressão, pysword não o suporta).
+
+    Cada testamento tem <ot|nt> (texto) e <ot|nt>.vss (índice: uma entrada de 6 bytes por slot,
+    offset uint32 e tamanho uint16, little-endian). Os slots seguem a mesma ordem de iter_slots
+    (os dois primeiros são cabeçalhos), então a interface é a de SwordBible._text_for_index.
+    """
+
+    def __init__(self, base: Path):
+        self._testaments: dict[str, tuple[bytes, bytes]] = {}
+        for t in ("ot", "nt"):
+            idx, data = base / f"{t}.vss", base / t
+            if idx.exists() and data.exists():
+                self._testaments[t] = (idx.read_bytes(), data.read_bytes())
+
+    def _text_for_index(self, testament, index):
+        idx, data = self._testaments[testament]
+        if (index + 1) * 6 > len(idx):
+            return ""
+        off, size = struct.unpack_from("<IH", idx, index * 6)
+        raw = data[off:off + size]
+        if not raw:
+            return ""
+        try:
+            text = raw.decode("utf-8")
+        except UnicodeDecodeError:
+            text = raw.decode("cp1252", errors="replace")
+        return _GBF_XREF.sub("", text.replace("\r", ""))
+
+
+def open_module(conf: dict) -> SwordBible | RawComReader:
+    """Abre o módulo: pysword ZText/ZText4 (também zCom/zCom4) ou RawComReader (RawCom)."""
     drv = conf["moddrv"].lower()
+    if drv == "rawcom":
+        return RawComReader(Path(conf["_root"]) / conf["datapath"])
     if drv not in _MODDRV:
         raise ValueError(f"driver não suportado: {conf['moddrv']}")
     path = str(Path(conf["_root"]) / conf["datapath"])
