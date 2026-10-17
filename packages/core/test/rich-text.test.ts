@@ -93,6 +93,16 @@ describe('rótulos auxiliares', () => {
     expect(formatShortRef(43005018, 43005018, BOOK_TABLE, true)).toBe('Jo 5:18');
   });
 
+  it('formatShortRef: AT (Gn 1:1, Dn 2:4, 1Rs 15:15) e capítulo inteiro', () => {
+    expect(formatShortRef(1001001, 1001001, BOOK_TABLE, false)).toBe('1:1');
+    expect(formatShortRef(27002004, 27002004, BOOK_TABLE, true)).toBe('Dn 2:4');
+    expect(formatShortRef(11015015, 11015015, BOOK_TABLE, true)).toBe('1Rs 15:15');
+    expect(formatShortRef(1001001, 1001031, BOOK_TABLE, true)).toBe('Gn 1:1–31');
+    expect(formatShortRef(1001000, 1001999, BOOK_TABLE, true)).toBe('Gn 1');
+    expect(formatShortRef(1001001, 1002999, BOOK_TABLE, true)).toBe('Gn 1:1–2');
+    expect(formatShortRef(1001000, 1002999, BOOK_TABLE, false)).toBe('1:0–2');
+  });
+
   it('titleCaseHeadword: caixa de título com palavras pequenas minúsculas', () => {
     expect(titleCaseHeadword('CHRIST, OFFICES OF')).toBe('Christ, Offices of');
     expect(titleCaseHeadword('PHILIPPI')).toBe('Philippi');

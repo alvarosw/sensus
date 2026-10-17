@@ -34,7 +34,7 @@ import {
   Card,
 } from '@/design';
 import { useStudy, type LensKey } from '@/state/study';
-import { useReaderNav } from '@/features/reader/nav-store';
+import { useReaderNav } from '@/state/reader-nav';
 import {
   CommentaryCard,
   CommentaryMatrix,
@@ -51,8 +51,9 @@ import {
 import { LensShell } from './LensShell';
 import { Thread } from './Thread';
 import { buildThread } from './thread';
-import { PassageMapCard } from '../maps/PassageMapCard';
-import { bareWord, chv, keyWordsOf, refShort, viewCommentary, type CommentaryView } from './format';
+import { PassageMapCard } from '@/features/maps';
+import { keyWordsOf, viewCommentary, type CommentaryView } from './format';
+import { bareWord, chv, refShort } from '@/features/common/format';
 import { STUDY } from './strings';
 import { useStudyAi, useStudyData, type StudyData } from './useStudyData';
 

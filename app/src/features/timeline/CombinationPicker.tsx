@@ -12,7 +12,7 @@ import { TL } from './strings';
 import { KindMark, LaneChip, SearchField, kindColor } from './parts';
 import { useTimelineSearch } from './useTimeline';
 import { LineFilterChips, useLineMatches } from './LineFilters';
-import { canConfirm } from './combos';
+import { canConfirm } from '@sensus/core';
 import { useTimelineText, useTimelineTexts } from '@/translate/timeline-translate';
 
 export function CombinationPicker({

@@ -4,7 +4,7 @@
 import { Pressable, ScrollView, View } from 'react-native';
 import { Txt, radius, space, useTheme } from '@/design';
 import { useTimelineTexts } from '@/translate/timeline-translate';
-import type { ComboCard } from './combos';
+import type { ComboCard } from '@sensus/core';
 import { TL } from './strings';
 import { SourceFooter, StarButton } from './parts';
 

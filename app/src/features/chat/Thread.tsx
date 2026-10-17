@@ -4,7 +4,7 @@ import { Pressable, View } from 'react-native';
 import { parseStructuredAnswer } from '@sensus/core';
 import { fontFamilies, LinkButton, QuestionButton, radius, Skeleton, Txt, useTheme } from '@/design';
 import { useStudy, type ChatTurn } from '@/state/study';
-import { RichBlocks } from '../rich/RichBlocks';
+import { RichBlocks } from '@/features/rich';
 import { GreekText } from '../common/GreekText';
 import { CHAT } from '../common/strings';
 import { turnCtxOf, EMPTY_CTX } from './engine';

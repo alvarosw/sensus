@@ -7,7 +7,7 @@ import { memo, useCallback, useEffect, useMemo, useRef, type ReactElement } from
 import { Platform, Text, View, type LayoutChangeEvent } from 'react-native';
 import { BOOK_TABLE, splitVid, type Token, type VerseText, type Vid } from '@sensus/core';
 import { fontFamilies, gutter, radius, type, useTheme } from '@/design';
-import type { FlowBlock } from '../nav/verse-flow';
+import type { FlowBlock } from './verse-flow';
 import type { ChapterData } from './chapters';
 import { LINE, type ReaderGeometry } from './geometry';
 import { READER } from './strings';

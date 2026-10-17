@@ -40,6 +40,7 @@ const ATOMS: Record<string, string> = {
   Middle: 'média',
   'Passive Deponent': 'passiva depoente',
   'Middle Deponent': 'média depoente',
+  Deponent: 'depoente',
   'Middle or Passive': 'média/passiva',
   'Middle or Passive Deponent': 'média/passiva depoente',
   Indicative: 'indicativo',
@@ -101,8 +102,32 @@ const KEYS: Record<string, string> = {
 export function morphTerm(raw: string): string {
   return raw
     .split(' + ')
-    .map((part) => ATOMS[part.trim()] ?? part.trim())
+    .map((part) => termPt(part.trim()))
     .join(' + ');
+}
+
+function termPt(v: string): string {
+  if (ATOMS[v]) return ATOMS[v]!;
+  const nth = /^(1st|2nd|3rd)\s+(.+)$/.exec(v); // "2nd Imperfect" -> "imperfeito 2º"
+  if (nth && ATOMS[nth[2]!]) return `${ATOMS[nth[2]!]} ${nth[1]![0]}º`;
+  return v;
+}
+
+/**
+ * Rótulos das pílulas do card (classe gramatical opcional, depois tempo, voz, modo, caso...). Mesmo dicionário e mesma
+ * função que o painel: um termo sai com o mesmo rótulo nos dois lugares.
+ */
+export function morphLabelsPt(desc: string | null | undefined, withClass = false): string[] {
+  if (!desc) return [];
+  const [cls, ...rest] = desc.split(';').map((s) => s.trim());
+  const out: string[] = [];
+  if (withClass && cls) out.push(capitalize(morphTerm(cls)));
+  for (const part of rest) {
+    const eq = part.indexOf('=');
+    if (eq < 0 || /^(Name type|Extra)/.test(part)) continue;
+    out.push(morphTerm(part.slice(eq + 1)));
+  }
+  return out;
 }
 
 export interface MorphPart {

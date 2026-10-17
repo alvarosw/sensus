@@ -22,7 +22,7 @@ import {
   type Bounds,
 } from './model';
 import { addLane, initialLanes } from './parallel-lanes';
-import { buildCards, canConfirm, comboKey, defaultComboName, type ComboCard } from './combos';
+import { buildCards, canConfirm, comboKey, defaultComboName, type ComboCard } from '@sensus/core';
 import { TL } from './strings';
 import { Chip, LaneChip, SourceFooter, TimelineGate, kindColor } from './parts';
 import { lineEventsOf, useTimelineLines } from './useTimeline';

@@ -22,7 +22,7 @@ import { useAsync } from '@/data/use-async';
 import { useStudy } from '@/state/study';
 import { askAbout, panelFor, showInText } from '../common/actions';
 import { BACK_PRIORITY, useBackLayer } from '../common/back';
-import { PopButton } from '../common/Buttons';
+import { PopButton } from '@/ui/Buttons';
 import { loadLexicon, loadXrefText, type CiteDetail } from '../common/cites';
 import { useBooks, useCite } from '../common/hooks';
 import { morphPills } from '../common/morph-pt';

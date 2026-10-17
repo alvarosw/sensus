@@ -11,7 +11,7 @@ import { useStudy } from '@/state/study';
 import type { SchemePreference } from '@/design';
 import { textSources } from '@sensus/core';
 import { readAppPrefs, writeAppPrefs, type StoredAppPrefs } from './provider-store';
-import { favoriteCombo, newComboId, parseCombos, recordRecent, removeCombo, unfavoriteCombo, type UserCombo } from '@/features/timeline/combos';
+import { favoriteCombo, newComboId, parseCombos, recordRecent, removeCombo, unfavoriteCombo, type UserCombo } from '@sensus/core';
 
 /** Id de uma fonte de texto corrido (ver `textSources()` no núcleo). */
 export type TextSourceId = string;

@@ -1,6 +1,6 @@
 // Índice de citações: rótulos legíveis e determinísticos para cada cite_id do painel.
 import type { Book, Commentary, PanelData, Source, Token } from '../types';
-import { splitVid } from '../refs';
+import { LAST_VERSE, splitVid } from '../refs';
 import { commentatorOf, sourceShort } from '../domain/sources';
 import type { CiteIndex, CiteIndexEntry, RichTextContext } from './structured-types';
 import type { SerializedContext } from './context';
@@ -30,8 +30,9 @@ function abbreviationOf(books: readonly Book[], num: number): string {
 }
 
 /**
- * Referência de versículos: "2:5", "2:5–8", "2:5–3:1". O prefixo do livro entra quando `withBook` for true
- * (ex.: livro diferente do trecho, ou referências cruzadas).
+ * Referência curta, a única do núcleo e do app: "2:5", "2:5–8", "2:5–3:1", capítulo inteiro "2" (versículo 1 até o
+ * último, LAST_VERSE). O prefixo do livro ("Fp 2:5") entra quando `withBook` for true (ex.: livro diferente do
+ * trecho, referências cruzadas, rótulos de painel).
  */
 export function formatShortRef(
   startVid: number,
@@ -46,11 +47,13 @@ export function formatShortRef(
     return `${prefix}${s.chapter}:${s.verse} – ${abbreviationOf(books, e.book)} ${e.chapter}:${e.verse}`;
   }
   if (s.chapter === e.chapter) {
+    if (s.verse <= 1 && e.verse >= LAST_VERSE) return `${prefix}${s.chapter}`;
     return s.verse === e.verse
       ? `${prefix}${s.chapter}:${s.verse}`
       : `${prefix}${s.chapter}:${s.verse}–${e.verse}`;
   }
-  return `${prefix}${s.chapter}:${s.verse}–${e.chapter}:${e.verse}`;
+  const endPart = e.verse >= LAST_VERSE ? `${e.chapter}` : `${e.chapter}:${e.verse}`;
+  return `${prefix}${s.chapter}:${s.verse}–${endPart}`;
 }
 
 /** Título em caixa de título para cabeçalhos de verbete: "CHRIST, OFFICES OF" -> "Christ, Offices of". */

@@ -1,7 +1,25 @@
 // Combinações de linhas do paralelo: as prontas (fixas, nunca gravadas), as do usuário (recentes e favoritas, gravadas
 // em app-prefs) e a lista de cartões da entrada. Puro, para ser testado sem a tela. A ordem da lista de combinações
 // do usuário é a de recência: a primeira é a mais nova (favoritas e recentes na mesma lista, separadas por `favorite`).
-import { PARALLEL_COMBOS } from './parallel-lanes';
+
+const T = 'ent:theographic:';
+
+/** Combinações prontas: aparecem na entrada só para completar a lista enquanto o usuário tem poucas próprias. */
+export const PARALLEL_COMBOS: ReadonlyArray<{ id: string; name: string; lines: readonly string[] }> = [
+  { id: 'judah-israel', name: 'Judá e Israel', lines: [`${T}rec5W0YtPdi4yrvaY`, `${T}rec3R4qyFlVjCRORt`] },
+  { id: 'jesus-paul', name: 'Jesus e Paulo', lines: [`${T}recgkFqZovgbr3pAi`, `${T}recgkzNX07a7kGFYL`] },
+  {
+    id: 'paul-journeys',
+    name: 'Viagens de Paulo',
+    lines: [`${T}recUWXmZlrKxIx99u`, `${T}reciR4wcxOAcLxak0`, `${T}rec4bAiAcAOo9mPwO`],
+  },
+  { id: 'jerusalem-samaria', name: 'Jerusalém e Samaria', lines: [`${T}recL1WV82pXaRBQ59`, `${T}recEP3QZ3HUmIkv4Q`] },
+  {
+    id: 'abraham-joseph-moses',
+    name: 'Abraão, José e Moisés',
+    lines: [`${T}reccdFYIq50NyxNej`, `${T}rechuDYJoK32gmrME`, `${T}recjNRR60PAuFtjha`],
+  },
+];
 
 /** Combinação do usuário, gravada no aparelho. */
 export interface UserCombo {

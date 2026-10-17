@@ -2,7 +2,7 @@
 // pela tela de Dados de estudo e pelo cartão da folha de estudo. A ação de iniciar fica com quem chama.
 import { ActivityIndicator, View } from 'react-native';
 import { LinkButton, Txt, useTheme } from '@/design';
-import { FormButton } from '@/features/common/Buttons';
+import { FormButton } from '@/ui/Buttons';
 import { spaceNeeded, formatMB } from './plan';
 import { useDataStore } from './data-store';
 import { DATA_COPY } from './strings';

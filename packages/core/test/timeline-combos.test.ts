@@ -11,7 +11,7 @@ import {
   trimRecents,
   unfavoriteCombo,
   type UserCombo,
-} from './combos';
+} from '../src/timeline-combos';
 
 const combo = (id: string, lines: string[], favorite = false): UserCombo => ({ id, name: `n${id}`, lines, favorite });
 const READY = [

@@ -20,7 +20,7 @@ import { CORPUS, dirOf, scriptOf, sourceShort, type Testament, type Token, type 
 import { useStudy } from '@/state/study';
 import { showInText } from '../common/actions';
 import { loadConcordance, loadLexicon, loadSources } from '../common/cites';
-import { shortRef } from '../common/format';
+import { refShort } from '../common/format';
 import { useBooks, useCite } from '../common/hooks';
 import { hebrewMorphPt } from '../common/morph-hb';
 import { morphParts } from '../common/morph-pt';
@@ -30,7 +30,7 @@ import { useAutoTranslate } from '@/translate/useAutoTranslate';
 import { useTranslatable } from '@/translate/useTranslatable';
 import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
 import { useSourceLang } from '@/translate/source-lang';
-import { KeyValues, LicenseBlock, RefChips } from './PanelParts';
+import { KeyValues, LicenseBlock, RefChips } from '../common/PanelParts';
 
 type WordEntry = { kind: 'word'; tokenCiteId: string } | { kind: 'lemma'; strongBase: string };
 
@@ -148,7 +148,7 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
 
   return (
     <View style={{ gap: 12 }}>
-      <TypeMark kind="tok" label={token ? `${SRC.word} · ${shortRef(token.vid, books)}` : `${SRC.lemma} · ${strongBase ?? ''}`} />
+      <TypeMark kind="tok" label={token ? `${SRC.word} · ${refShort(token.vid, token.vid, books, true)}` : `${SRC.lemma} · ${strongBase ?? ''}`} />
       <Text
         testID="word-hero"
         selectable
