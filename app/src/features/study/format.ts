@@ -1,11 +1,10 @@
 // Formatação e seleção de dados para a folha de estudo (referências, tradições, morfologia, palavras-chave).
 import {
   BOOK_TABLE,
-  CORPUS,
   commentatorOf,
   formatReference,
   formatShortRef,
-  hasEdition,
+  isBaseTextToken,
   isContentToken,
   isIntroCommentary,
   isIntroVid,
@@ -144,12 +143,12 @@ export function lexiconOfToken(panel: PanelData, t: Token): LexiconEntry | null 
 }
 
 /**
- * Palavra que conta como chave: de conteúdo, com Strong, e presente numa edição-base do próprio corpus
- * (TR, BYZ ou NA no grego; L no hebraico). Variante de leitura (ex.: Qere) fica de fora.
+ * Palavra que conta como chave: de conteúdo, com Strong, e do texto-base do corpus (TR no NT; todo o texto no AT,
+ * inclusive o Qere). É a mesma regra do contexto da IA (isBaseTextToken): a palavra do passo nunca é uma que a IA
+ * não recebeu.
  */
 export function isKeyToken(t: Token): boolean {
-  if (!t.strong_base || !isContentToken(t)) return false;
-  return CORPUS[t.corpus].baseEditions.some((e) => hasEdition(t, e));
+  return !!t.strong_base && isContentToken(t) && isBaseTextToken(t);
 }
 
 /** Palavras de conteúdo do trecho, das mais raras para as mais comuns (hápax primeiro). */

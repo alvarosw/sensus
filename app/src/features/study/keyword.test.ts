@@ -135,8 +135,8 @@ describe('Língua no AT hebraico: 1Rs 15:15 (TAHOT e TBESH)', () => {
     expect(lingua(buildThread({ panel, range: RANGE_AT, books: [], ai: DONE }))).toBeUndefined();
   });
 
-  it('Qere (só na edição Q) não é palavra-chave: sem ele, o passo some', () => {
+  it('Qere (só na edição Q) é palavra-chave como o resto do texto do AT', () => {
     const panel = panelOf({ tokens: [KODESH_QERE], concordance: { H6944: { count: 1, samples: [] } } });
-    expect(lingua(buildThread({ panel, range: RANGE_AT, books: [], ai: DONE }))).toBeUndefined();
+    expect(lingua(buildThread({ panel, range: RANGE_AT, books: [], ai: DONE }))).toBeDefined();
   });
 });

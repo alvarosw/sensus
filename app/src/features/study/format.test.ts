@@ -65,15 +65,15 @@ const LEX_H0935P = { cite_id: 'lex:H0935P', source_id: 'stepbible-tbesh', key: '
 const LEX_G2758 = { cite_id: 'lex:G2758', source_id: 'stepbible-tbesg', key: 'G2758', strong_base: 'G2758', lemma: 'κενόω', translit: 'kenoō', gloss: 'to empty', definition: '', lang: 'en' };
 
 describe('isKeyToken: palavra-chave pelo domínio (edições-base e conteúdo)', () => {
-  it('NT: presente em TR, BYZ ou NA conta; só WH (variante) não', () => {
+  it('NT: só o texto-base da IA (TR) conta; leitura só de NA ou só de WH não', () => {
     expect(isKeyToken(KENOSIS)).toBe(true);
-    expect(isKeyToken(GREEK_NA)).toBe(true);
+    expect(isKeyToken(GREEK_NA)).toBe(false);
     expect(isKeyToken(GREEK_VARIANT_ONLY_WH)).toBe(false);
   });
 
-  it('AT: a edição-base é L; o Qere (só Q) não conta, a forma com L conta', () => {
+  it('AT: todo o texto é base (inclusive o Qere, a leitura que os tradutores seguem)', () => {
     expect(isKeyToken(VAYA)).toBe(true);
-    expect(isKeyToken(QERE)).toBe(false);
+    expect(isKeyToken(QERE)).toBe(true);
   });
 
   it('AT: partícula (HTo) é função e não conta; nome próprio conta aqui (quem exclui é o fallback)', () => {
@@ -101,9 +101,10 @@ describe('keyWordsOf: testamento e verbete por token', () => {
     expect(lexiconOfToken(panelOf([VAYA], [LEX_G2758]), VAYA)).toBeNull();
   });
 
-  it('um Qere não entra na lista: a palavra só existe na forma-base', () => {
+  it('o Qere entra na lista como as demais palavras do AT (mesma regra do contexto da IA)', () => {
     const panel = panelOf([QERE, VAYA]);
-    expect(keyWordsOf(panel).map((w) => w.strongBase)).toEqual(['H0935']);
+    expect(keyWordsOf(panel).map((w) => w.strongBase)).toContain('H0935');
+    expect(keyWordsOf(panel).map((w) => w.strongBase)).toContain(QERE.strong_base);
   });
 });
 
