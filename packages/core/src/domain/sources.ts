@@ -89,6 +89,8 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'egw-acts': { short: 'Atos dos Apóstolos', commentator: 'Ellen G. White · Atos dos Apóstolos', role: 'commentary', lang: 'en' },
   'egw-object-lessons': { short: 'Parábolas de Jesus', commentator: 'Ellen G. White · Parábolas de Jesus', role: 'commentary', lang: 'en' },
   'egw-steps': { short: 'Caminho a Cristo', commentator: 'Ellen G. White · Caminho a Cristo', role: 'commentary', lang: 'en' },
+  'egw-thoughts': { short: 'O Maior Discurso de Cristo', commentator: 'Ellen G. White · O Maior Discurso de Cristo', role: 'commentary', lang: 'en' },
+  'smith-daniel': { short: 'Daniel e Apocalipse', commentator: 'Uriah Smith · Daniel e Apocalipse', role: 'commentary', lang: 'en' },
 };
 
 /** Ordem de preferência das fontes de lugares (menor = melhor) para escolher a identificação moderna. */

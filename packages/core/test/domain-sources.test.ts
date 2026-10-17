@@ -62,6 +62,8 @@ const NOVAS: Array<{ id: string; kind: string; tradition: string }> = [
   { id: 'egw-acts', kind: 'commentary', tradition: 'adventist' },
   { id: 'egw-object-lessons', kind: 'commentary', tradition: 'adventist' },
   { id: 'egw-steps', kind: 'commentary', tradition: 'adventist' },
+  { id: 'egw-thoughts', kind: 'commentary', tradition: 'adventist' },
+  { id: 'smith-daniel', kind: 'commentary', tradition: 'adventist' },
 ];
 
 const ROLE_OF_KIND: Record<string, string[]> = {
