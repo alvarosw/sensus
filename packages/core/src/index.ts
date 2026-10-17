@@ -1,5 +1,6 @@
 // API pública do núcleo @sensus/core. Sem dependências de runtime: banco e rede entram por injeção.
 export * from './types';
+export * from './domain';
 export * from './refs';
 export * from './repo';
 export * from './panel';

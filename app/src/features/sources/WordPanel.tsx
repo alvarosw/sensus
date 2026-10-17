@@ -16,10 +16,10 @@ import {
 } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useAsync } from '@/data/use-async';
-import type { Token, Vid } from '@sensus/core';
+import { sourceShort, type Token, type Vid } from '@sensus/core';
 import { useStudy } from '@/state/study';
 import { showInText } from '../common/actions';
-import { loadConcordance, loadLexicon, pickLexicon, sourceShort, loadSources } from '../common/cites';
+import { loadConcordance, loadLexicon, pickLexicon, loadSources } from '../common/cites';
 import { shortRef } from '../common/format';
 import { useBooks, useCite } from '../common/hooks';
 import { hebrewMorphPt } from '../common/morph-hb';
@@ -129,7 +129,7 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
   // inglês do banco, por isso o idioma é 'en' (a fonte do token tem o idioma da língua original).
   const headerEn = [gloss, ...parts.filter((r) => r.english).map((r) => r.value)].filter((t): t is string => !!t);
   const header = useAutoTranslateBatch(headerEn, 'en');
-  const licenseSummary = [token ? (ot ? 'TAHOT' : 'TAGNT') : null, lex ? sourceShort(sources.data?.get(lex.source_id), lex.source_id) : null]
+  const licenseSummary = [token ? (ot ? 'TAHOT' : 'TAGNT') : null, lex ? sourceShort(lex.source_id, sources.data?.get(lex.source_id)?.title) : null]
     .filter(Boolean)
     .join(' e ');
 

@@ -3,7 +3,7 @@
 // a sustenta. Passos sem dados são omitidos; Aplicação só aparece quando há IA (não tem fonte própria).
 // Língua espera a escolha da IA (esqueleto) e, sem ela, usa os fallbacks de keyword.ts.
 import {
-  commentatorName,
+  commentatorOf,
   titleCaseHeadword,
   variantSites,
   type Book,
@@ -196,7 +196,7 @@ function interpretationEvidence(panel: PanelData): ThreadEvidence | null {
     ...new Set(
       panel.layers.interpretation.commentaries
         .filter((c) => c.start_vid % 1000 !== 0 && c.end_vid % 1000 !== 0)
-        .map((c) => commentatorName(panel.sources[c.source_id], c)),
+        .map((c) => commentatorOf(panel.sources[c.source_id], c)),
     ),
   ];
   if (names.length === 0) return null;

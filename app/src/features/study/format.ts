@@ -1,11 +1,12 @@
 // Formatação e seleção de dados para a folha de estudo (referências, tradições, morfologia, palavras-chave).
 import {
   BOOK_TABLE,
-  commentatorName,
+  commentatorOf,
   formatReference,
   formatShortRef,
   isContentToken,
   splitVid,
+  traditionLabel,
   type Book,
   type Commentary,
   type LexiconEntry,
@@ -37,31 +38,6 @@ export function refTitle(start: Vid, end: Vid, books: readonly Book[]): string {
 export function refShort(start: Vid, end: Vid, books: readonly Book[], withBook = false): string {
   const table = books.length > 0 ? (books as Book[]) : BOOK_TABLE;
   return formatShortRef(start, end, table, withBook);
-}
-
-export function sourceLabel(textSource: string): string {
-  return textSource === 'kjv' ? 'KJV' : 'Bíblia Livre';
-}
-
-const TRADITION_PT: Record<string, string> = {
-  reformed: 'reformada',
-  'reformed-baptist': 'batista reformada',
-  presbyterian: 'presbiteriana',
-  methodist: 'metodista',
-  baptist: 'batista',
-  dispensational: 'dispensacionalista',
-  patristic: 'patrística',
-  adventist: 'adventista',
-  catholic: 'católica',
-  lutheran: 'luterana',
-  anglican: 'anglicana',
-  congregational: 'congregacional',
-  restoration: 'restauracionista',
-};
-
-export function traditionLabel(t: string | null | undefined): string {
-  if (!t) return '';
-  return TRADITION_PT[t] ?? t;
 }
 
 // ---- morfologia em português ---------------------------------------------------------------------
@@ -119,7 +95,7 @@ export interface CommentaryView {
 
 export function viewCommentary(c: Commentary, source: Source | undefined): CommentaryView {
   const patristic = c.source_id === 'patristic';
-  const author = commentatorName(source, c);
+  const author = commentatorOf(source, c);
   let body = c.text;
   if (patristic) {
     const parts = c.text.split(/\n{2,}/);

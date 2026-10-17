@@ -5,8 +5,10 @@ import { Pressable, Text, View, type LayoutChangeEvent } from 'react-native';
 import { router } from 'expo-router';
 import {
   hasEdition,
+  sourceShort,
   splitVid,
   titleCaseHeadword,
+  traditionLabel,
   variantSites,
   SECTION_LABELS,
   type Commentary,
@@ -48,7 +50,7 @@ import { LensShell } from './LensShell';
 import { Thread } from './Thread';
 import { buildThread } from './thread';
 import { PassageMapCard } from '../maps/PassageMapCard';
-import { bareWord, chv, keyWordsOf, refShort, traditionLabel, viewCommentary, type CommentaryView } from './format';
+import { bareWord, chv, keyWordsOf, refShort, viewCommentary, type CommentaryView } from './format';
 import { STUDY } from './strings';
 import { useStudyAi, useStudyData, type StudyData } from './useStudyData';
 
@@ -62,22 +64,8 @@ const TIMELINE_SHOWN = 8;
 
 // ---- utilidades ---------------------------------------------------------------------------------------
 
-const SOURCE_SHORT: Record<string, string> = {
-  'sword-isbe': 'ISBE',
-  'sword-easton': 'Easton',
-  'sword-smith': 'Smith',
-  'sword-hitchcock': 'Hitchcock',
-  'sword-nave': 'Nave',
-  'sword-torrey': 'Torrey',
-  theographic: 'Theographic',
-  'openbible-geo': 'OpenBible',
-  'stepbible-tipnr': 'TIPNR',
-  'openbible-xref': 'OpenBible',
-  'sword-tsk': 'TSK',
-};
-
 function shortOf(panel: PanelData, sourceId: string): string {
-  return SOURCE_SHORT[sourceId] ?? panel.sources[sourceId]?.title.split(/[\s(,]/)[0] ?? sourceId;
+  return sourceShort(sourceId, panel.sources[sourceId]?.title);
 }
 
 function attachCard(id: string, label: string, text?: string, citeIds?: string[]) {

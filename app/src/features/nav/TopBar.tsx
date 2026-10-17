@@ -1,12 +1,12 @@
 // Barra superior (proto: .topbar): Livros · referência atual (abre "ir para") · Αα · fonte do texto.
 import { Platform, Pressable, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { BOOK_TABLE } from '@sensus/core';
+import { BOOK_TABLE, sourceAbbr } from '@sensus/core';
 import { Icon, TopBarButton, fontFamilies, size, type, useTheme } from '@/design';
 import { useStudy } from '@/state/study';
 import { useAppPrefs } from '@/settings/app-prefs';
 import { useReaderNav } from '../reader/nav-store';
-import { READER, SOURCE_LABEL } from '../reader/strings';
+import { READER } from '../reader/strings';
 
 export function TopBar({ jumpOpen, booksOpen, onBooks, onJump }: { jumpOpen: boolean; booksOpen: boolean; onBooks: () => void; onJump: () => void }) {
   const { c } = useTheme();
@@ -15,7 +15,7 @@ export function TopBar({ jumpOpen, booksOpen, onBooks, onJump }: { jumpOpen: boo
   const greek = useStudy((s) => s.greek);
   const textSource = useStudy((s) => s.textSource);
   const name = BOOK_TABLE[position.book - 1]?.name_pt ?? '';
-  const label = SOURCE_LABEL[textSource]?.short ?? textSource;
+  const label = sourceAbbr(textSource);
 
   const toggleGreek = () => {
     const s = useStudy.getState();
