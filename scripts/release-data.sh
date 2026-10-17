@@ -14,7 +14,9 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 DRY_RUN=0
 if [[ "${1:-}" == "--dry-run" ]]; then DRY_RUN=1; fi
 
-python3 "$ROOT/pipeline/package_data.py"
+# MIN_APP_VERSION (opcional): versão mínima do app no manifesto; padrão = a do app/package.json.
+python3 "$ROOT/pipeline/package_data.py" ${MIN_APP_VERSION:+--min-app-version "$MIN_APP_VERSION"}
+SOURCES=$(python3 -c 'import sqlite3,sys; print(sqlite3.connect(sys.argv[1]).execute("select count(*) from source").fetchone()[0])' "$ROOT/data/sensus.db")
 
 read -r VERSION SHA256 SIZE UNCOMPRESSED < <(python3 -c '
 import json, sys
@@ -26,7 +28,7 @@ ZIP="$ROOT/dist/data/sensus-full-$VERSION.zip"
 TAG="data-$VERSION"
 
 NOTES="$(cat <<EOF
-Banco completo do Sensus, dados versão $VERSION (66 livros, 31 fontes).
+Banco completo do Sensus, dados versão $VERSION (66 livros, $SOURCES fontes).
 
 Arquivo: sensus-full-$VERSION.zip (ZIP com uma entrada, sensus.db). O app baixa e confere o SHA-256 antes de usar.
 - SHA-256 do ZIP: $SHA256
