@@ -425,7 +425,7 @@ c5e257b9fd1c5cce	140	a	thrillimg	thrilling	Pollok’s | description | The last m
 28fbd349f9a93456	65	a	pronvise!	promise!	this | Wandering | Thus closes the volume of inspiration,— closes wit
 2e8ddf5fb708b12f	49	a	busldee	builder	whose | and | The place of gathering has nothing but attraction.
 540903f7dd8d0b7d	169	a	girdie	girdle	dusty | of | We must be there. We must bask in the forgiving sm
-556806828d7d20b5	0	f	W.	WITH a directness characteristic of the sacred writers,	f: conferido em Daniel 1, 12861.235
+556806828d7d20b5	0	f-linha	W.	WITH a directness characteristic of the sacred writers,	f: conferido em Daniel 1, 12861.235
 5155f7ec5d23cc10	0	f	WM		f: conferido em Daniel 1, 12861.235
 5155f7ec5d23cc10	1	f	|		f: conferido em Daniel 1, 12861.235
 5155f7ec5d23cc10	2	f	pe		f: conferido em Daniel 1, 12861.235
@@ -511,7 +511,7 @@ f67fec475a66b130	191	f	gomg	going	f: conferido em Daniel 6, 12861.608
 f67fec475a66b130	198	f	bine	him,	f: conferido em Daniel 6, 12861.608
 f67fec475a66b130	202	f	afore	efforts	f: conferido em Daniel 6, 12861.608
 f67fec475a66b130	203	f	ath	with	f: conferido em Daniel 6, 12861.608
-a0bd490dea1dfa69	0	f	HIS	THIS	f: conferido em Daniel 7, 12861.638
+a0bd490dea1dfa69	0	f-linha	HIS	THIS	f: conferido em Daniel 7, 12861.638
 a0bd490dea1dfa69	53	f	ng		f: conferido em Daniel 7, 12861.638
 a0bd490dea1dfa69	54	f	Sy		f: conferido em Daniel 7, 12861.638
 3645ad20679a30bb	104	f	Roaian	Roman	f: conferido em Daniel 7, 12861.638
@@ -559,7 +559,7 @@ c66e424424a817ab	171	f	“TO,	70.	f: conferido em Daniel 8, 12861.792
 29032659d94a2597	115	f	(v.	(u.	f: conferido em Daniel 9, 12861.974
 29032659d94a2597	116	f	o.	c.	f: conferido em Daniel 9, 12861.974
 29032659d94a2597	119	f	v.	D.	f: conferido em Daniel 9, 12861.974
-f8af7df78419b1f9	0	f	“Tn	“In	f: conferido em Daniel 9, 12861.974
+f8af7df78419b1f9	0	f-linha	“Tn	“In	f: conferido em Daniel 9, 12861.974
 f8af7df78419b1f9	14	f	Dp.	D.	f: conferido em Daniel 9, 12861.974
 e12491445a711a49	-1	f			f: conferido em Daniel 9, 12861.974; sem correção: texto casa com a referência (abreviações 'B. c.' já são corretas)
 ee02803af2a4d31c	6	f	'T5,	75,	f: conferido em Daniel 9, 12861.974
@@ -603,21 +603,21 @@ bf4c4264d4a9470d	44	f	he	have	f: conferido em Daniel 11, 12861.1150
 8c1c92d2a2e056ab	271	f	YE		f: conferido em Revelation intro, 12861.1655
 72f26b7ddb9896d1	96	f	Lord,’	‘Lord,’	f: conferido em Revelation 1, 12861.1664
 72f26b7ddb9896d1	97	f	xvgws,		f: conferido em Revelation 1, 12861.1664
-72f26b7ddb9896d1	100	f	@cds,	θεός,	f: conferido em Revelation 1, 12861.1664
-4eca24e343a48053	40	f	[¢8ys,	(ᾅδης,	f: conferido em Revelation 1, 12861.1664
+72f26b7ddb9896d1	100	f-original	@cds,	θεός,	f: conferido em Revelation 1, 12861.1664
+4eca24e343a48053	40	f-original	[¢8ys,	(ᾅδης,	f: conferido em Revelation 1, 12861.1664
 4eca24e343a48053	91	f	prison.	prison-house	f: conferido em Revelation 1, 12861.1664
 4eca24e343a48053	92	f	house		f: conferido em Revelation 1, 12861.1664
 4eca24e343a48053	126	f	con	control;	f: conferido em Revelation 1, 12861.1664
 4eca24e343a48053	127	f	trol;		f: conferido em Revelation 1, 12861.1664
-8e30b10985ce4f25	0	f	“Jt	“It	f: conferido em Revelation 2, 12861.1769
+8e30b10985ce4f25	0	f-linha	“Jt	“It	f: conferido em Revelation 2, 12861.1769
 8e30b10985ce4f25	21	f	ur	urn	f: conferido em Revelation 2, 12861.1769
 c0461216dbf27515	137	f	prop-	properly	f: conferido em Revelation 3, 12861.1858
 c0461216dbf27515	138	f	~		f: conferido em Revelation 3, 12861.1858
 c0461216dbf27515	139	f	erly		f: conferido em Revelation 3, 12861.1858
-c0461216dbf27515	145	f	4px?	ἀρχὴ	f: conferido em Revelation 3, 12861.1858
-872fdd4d6bfec69a	0	f	N	IN	f: conferido em Revelation 4, 12861.1962
+c0461216dbf27515	145	f-original	4px?	ἀρχὴ	f: conferido em Revelation 3, 12861.1858
+872fdd4d6bfec69a	0	f-linha	N	IN	f: conferido em Revelation 4, 12861.1962
 872fdd4d6bfec69a	70	f	ahd	and	f: conferido em Revelation 4, 12861.1962
-01506c2c071d3259	36	f	6psvn,	θρόνοι,	f: conferido em Revelation 4, 12861.1962
+01506c2c071d3259	36	f-original	6psvn,	θρόνοι,	f: conferido em Revelation 4, 12861.1962
 01506c2c071d3259	77	f	“TI	“I	f: conferido em Revelation 4, 12861.1962
 01506c2c071d3259	181	f	jn	in	f: conferido em Revelation 4, 12861.1962
 abb73306950dbb15	37	f	Kcclesiastical	Ecclesiastical	f: conferido em Revelation 6, 12861.2054
@@ -627,15 +627,15 @@ abb73306950dbb15	44	f	8.	3.	f: conferido em Revelation 6, 12861.2054
 9cdd1f8e0254eb09	28	f	.		f: conferido em Revelation 6, 12861.2054
 9cdd1f8e0254eb09	29	f	.		f: conferido em Revelation 6, 12861.2054
 9246b6d44337e6eb	4	f	1s	is	f: conferido em Revelation 7, 12861.2257
-5eb4e597ef186837	0	f	~1.	1.	f: conferido em Revelation 7, 12861.2257
-7d67e422eb2c821a	0	f	E	WE	f: conferido em Revelation 8, 12861.2335
+5eb4e597ef186837	0	f-linha	~1.	1.	f: conferido em Revelation 7, 12861.2257
+7d67e422eb2c821a	0	f-linha	E	WE	f: conferido em Revelation 8, 12861.2335
 7d67e422eb2c821a	10	f	trum-	trumpets,	f: conferido em Revelation 8, 12861.2335
 7d67e422eb2c821a	11	f	\W.		f: conferido em Revelation 8, 12861.2335
 7d67e422eb2c821a	12	f	pets,		f: conferido em Revelation 8, 12861.2335
 b8d89fa4f18614f8	170	f	sueh	such	f: conferido em Revelation 8, 12861.2335
 98e7bbaf6f13d0a0	19	f	ete.,	etc.,	f: conferido em Revelation 9, 12861.2428
-ac15733f0de13fe4	0	f	N	IN	f: conferido em Revelation 10, 12861.2539
-8f668453497c4218	0	f	E	We	f: conferido em Revelation 11, 12861.2577
+ac15733f0de13fe4	0	f-linha	N	IN	f: conferido em Revelation 10, 12861.2539
+8f668453497c4218	0	f-linha	E	We	f: conferido em Revelation 11, 12861.2577
 8f668453497c4218	225	f	‘“‘		f: conferido em Revelation 11, 12861.2577
 749c330644be2286	14	f	é		f: conferido em Revelation 11, 12861.2577
 52e11473fb4aee64	50	f	te	also	f: conferido em Revelation 13, 12861.2704
@@ -656,29 +656,29 @@ ac15733f0de13fe4	0	f	N	IN	f: conferido em Revelation 10, 12861.2539
 44f00795cf3d49c3	10	f	p-	p.	f: conferido em Revelation 13, 12861.2704
 5a1f66acba154a61	-1	f			f: conferido em Revelation 13, 12861.2704; falso positivo: 'N. Y.,' (abreviação) marcada como lixo; sem correção
 fc020d3296579e09	-1	f			f: conferido em Revelation 13, 12861.2704; falso positivo: 'Q.—' (abreviação de pergunta do catecismo) marcada como lixo; sem correção
-5dcbd1925b9918bd	0	f	“T	“I	f: conferido em Revelation 13, 12861.2704
-bc74368e354c447a	0	f	“T	“I	f: conferido em Revelation 13, 12861.2704
-ffadbe8aca130e80	0	f	“<Mrs,	“Mrs,	f: conferido em Revelation 13, 12861.2704
+5dcbd1925b9918bd	0	f-linha	“T	“I	f: conferido em Revelation 13, 12861.2704
+bc74368e354c447a	0	f-linha	“T	“I	f: conferido em Revelation 13, 12861.2704
+ffadbe8aca130e80	0	f-linha	“<Mrs,	“Mrs,	f: conferido em Revelation 13, 12861.2704
 2ed7f8f7076b3782	146	f	J	Jerusalem,	f: conferido em Revelation 14, 12861.3056
 2ed7f8f7076b3782	147	f	erusalem,		f: conferido em Revelation 14, 12861.3056
 2ed7f8f7076b3782	193	f	ete.;	etc.;	f: conferido em Revelation 14, 12861.3056
 0d89a1d313f6aee7	144	f	J	Jesus.”	f: conferido em Revelation 14, 12861.3056
 0d89a1d313f6aee7	145	f	esus.”		f: conferido em Revelation 14, 12861.3056
 5ed6418dd33d188b	83	f	ete.	etc.	f: conferido em Revelation 14, 12861.3056
-f963adef5e557d33	0	f	“T	“I	f: conferido em Revelation 16, 12861.3344
-5a050b342700dfc2	0	f	“T	“I	f: conferido em Revelation 16, 12861.3344
+f963adef5e557d33	0	f-linha	“T	“I	f: conferido em Revelation 16, 12861.3344
+5a050b342700dfc2	0	f-linha	“T	“I	f: conferido em Revelation 16, 12861.3344
 5a050b342700dfc2	25	f	the¢é	thee	f: conferido em Revelation 16, 12861.3344
-93fda806fcafd6ee	0	f	N	IN	f: conferido em Revelation 17, 12861.3436
-3f4452c417210352	0	f	ONTINUING	CONTINUING	f: conferido em Revelation 19, 12861.3546
+93fda806fcafd6ee	0	f-linha	N	IN	f: conferido em Revelation 17, 12861.3436
+3f4452c417210352	0	f-linha	ONTINUING	CONTINUING	f: conferido em Revelation 19, 12861.3546
 3f4452c417210352	9	f	C		f: conferido em Revelation 19, 12861.3546
 fc6a995a89c59cfe	36	f	(¢)	(c)	f: conferido em Revelation 20, 12861.3578
 24d877db17c7e4dc	12	f	(@)	(a)	f: conferido em Revelation 20, 12861.3578
-1a0c2b72c72b2135	4	f	ée7s	ὅστις	f: conferido em Revelation 20, 12861.3578
-1a0c2b72c72b2135	30	f	kat.	καὶ.	f: conferido em Revelation 20, 12861.3578
+1a0c2b72c72b2135	4	f-original	ée7s	ὅστις	f: conferido em Revelation 20, 12861.3578
+1a0c2b72c72b2135	30	f-original	kat.	καὶ.	f: conferido em Revelation 20, 12861.3578
 eb6c50efcd87bcfc	4	f	son.|	son.	f: conferido em Revelation 21, 12861.3649
-eb6c50efcd87bcfc	11	f	yépouvs	γάμους	f: conferido em Revelation 21, 12861.3649
+eb6c50efcd87bcfc	11	f-original	yépouvs	γάμους	f: conferido em Revelation 21, 12861.3649
 eb6c50efcd87bcfc	64	f	ete.,	etc.,	f: conferido em Revelation 21, 12861.3649
-cd131b576bf6550e	0	f	“Tt	“It	f: conferido em Revelation 21, 12861.3649
+cd131b576bf6550e	0	f-linha	“Tt	“It	f: conferido em Revelation 21, 12861.3649
 9fa38604ea4ed23f	81	f	o,	C.	f: conferido em Daniel intro, 12861.222
 9fa38604ea4ed23f	83	f	J	Jeremiah	f: conferido em Daniel intro, 12861.222
 9fa38604ea4ed23f	84	f	eremiah		f: conferido em Daniel intro, 12861.222
@@ -686,3 +686,6 @@ cd131b576bf6550e	0	f	“Tt	“It	f: conferido em Revelation 21, 12861.3649
 9fa38604ea4ed23f	150	f	fick	flourished	f: conferido em Daniel intro, 12861.222
 9fa38604ea4ed23f	156	f	co.	C.	f: conferido em Daniel intro, 12861.222
 58db9b82c6a7ce73	-1	f			f: conferido em Revelation 13, 12861.2704; falso positivo: 'Q.—' (pergunta do catecismo) marcada como lixo; texto casa com a referência
+0dc57dc301678ac2	0	f-linha	HE	The	f-linha: resíduo conferido em Daniel 7, 12861.638
+0dc57dc301678ac2	9	f	al		f: resíduo conferido em Daniel 7, 12861.638
+1544f24591da5a3a	0	f	'		f: resíduo conferido em Revelation 14, 12861.3056
