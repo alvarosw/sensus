@@ -8,7 +8,6 @@ export const ARCH_EXCEPTIONS: readonly string[] = [
   "camada | app/src/settings/api-key-section.tsx | app/src/features/common/Buttons.tsx",
   "camada | app/src/settings/app-prefs.ts | app/src/features/timeline/combos.ts",
   "camada | app/src/settings/chatgpt-card.tsx | app/src/features/common/Buttons.tsx",
-  "camada | app/src/translate/source-lang.ts | app/src/features/common/cites.ts",
   "ciclo-features | features/maps | features/sources",
   "ciclo-features | features/nav | features/reader",
   "ciclo-features | features/rich | features/study",

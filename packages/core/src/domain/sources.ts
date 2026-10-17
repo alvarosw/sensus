@@ -189,6 +189,35 @@ export function traditionLabel(id: string | null | undefined): string {
   return own(TRADITIONS, id)?.pt ?? id;
 }
 
+/** Código principal de um idioma BCP-47 em minúsculas ("en-US" -> "en"); null sem idioma. */
+export function langBase(lang: string | null | undefined): string | null {
+  const base = lang?.trim().toLowerCase().split(/[-_]/)[0];
+  return base ? base : null;
+}
+
+/**
+ * Idioma da fonte. Vale o do registro (`SOURCES`); fonte fora do registro usa o `lang` que veio do banco (`fallback`).
+ */
+export function sourceLangOf(id: string | null | undefined, fallback?: string | null): string | null {
+  if (!id) return langBase(fallback);
+  const registered = own(SOURCES, id)?.lang;
+  return langBase(registered ?? fallback);
+}
+
+/** O idioma é inglês: o que a tradução automática (inglês -> português) pode traduzir. */
+export function isTranslatableLang(lang: string | null | undefined): boolean {
+  return langBase(lang) === 'en';
+}
+
+/**
+ * A fonte pode ser traduzida automaticamente? Decide pelo idioma registrado da fonte, nunca pelo id nem por suposição
+ * (a linha do tempo, por exemplo, pergunta por `theographic`). `fallback` é o idioma do banco, só para fonte fora do
+ * registro.
+ */
+export function isTranslatableSource(id: string | null | undefined, fallback?: string | null): boolean {
+  return isTranslatableLang(sourceLangOf(id, fallback));
+}
+
 /** Ids das fontes de texto corrido que o leitor oferece (BLivre, KJV), na ordem do registro. */
 export function textSources(): string[] {
   return Object.keys(SOURCES).filter((id) => SOURCES[id]!.role === 'text');
