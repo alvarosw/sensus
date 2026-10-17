@@ -1,7 +1,7 @@
 // Peças comuns dos painéis empilhados: chips de referência, linha de licença, pares chave/valor.
 import { Linking, Pressable, View } from 'react-native';
 import type { Book, Source, Vid } from '@sensus/core';
-import { fontFamilies, radius, Txt, useTheme } from '@/design';
+import { fontFamilies, Txt, useTheme } from '@/design';
 import { refShort } from './format';
 import { SRC } from './strings';
 

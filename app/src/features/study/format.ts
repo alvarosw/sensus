@@ -6,7 +6,6 @@ import {
   isBaseTextToken,
   isContentToken,
   isIntroCommentary,
-  isIntroVid,
   langOfToken,
   pickLexicon,
   testamentOfCorpus,

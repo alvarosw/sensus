@@ -1,5 +1,5 @@
 // Índice de citações: rótulos legíveis e determinísticos para cada cite_id do painel.
-import type { Book, Commentary, PanelData, Source, Token } from '../types';
+import type { Book, PanelData, Token } from '../types';
 import { LAST_VERSE, splitVid } from '../refs';
 import { commentatorOf, sourceShort } from '../domain/sources';
 import type { CiteIndex, CiteIndexEntry, RichTextContext } from './structured-types';

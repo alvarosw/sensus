@@ -8,7 +8,6 @@ import {
   Layer,
   Map,
   type CameraRef,
-  type LngLatBounds,
 } from '@maplibre/maplibre-react-native';
 import { fontFamilies, radius, Txt, useTheme } from '@/design';
 import { MAPS } from './strings';

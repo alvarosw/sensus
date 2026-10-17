@@ -1,5 +1,4 @@
 // Prévia de citação (proto: .pop): cartão na base com trecho, fonte, tradição e cite_id; sobe sobre um véu.
-import { useMemo } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Animated, { interpolate, useAnimatedStyle } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
