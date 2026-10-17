@@ -1,6 +1,7 @@
 // Preferências de aparência e leitura, persistidas no aparelho (sem segredos).
 //  - theme: sistema | claro | escuro (o provider de tema é atualizado pela tela de Aparência);
-//  - textSource: texto corrido padrão (BLivre ou KJV). O botão do leitor também grava aqui;
+//  - textSource: texto corrido padrão (BLivre ou KJV). FONTE DA VERDADE. O botão do leitor também grava aqui, e
+//    o estado de estudo (`useStudy.textSource`) é só um espelho, escrito apenas por este arquivo (load e setTextSource);
 //  - greekDefault: grego (TR) sob os versículos ao abrir o app. O botão Αα só muda a sessão.
 //  - timelineLines / timelineEvents: favoritos da linha do tempo (cite_ids de linhas e de marcadores);
 //    timelineCombos: combinações do paralelo criadas pelo usuário (favoritas, sem limite; recentes, as últimas cinco).
@@ -141,6 +142,7 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       persist({ ...current(), theme });
     },
     setTextSource: (textSource) => {
+      // Ordem fixa: grava a preferência (fonte da verdade) e só então espelha no estudo.
       set({ textSource });
       persist({ ...current(), textSource });
       useStudy.getState().setTextSource(textSource);
