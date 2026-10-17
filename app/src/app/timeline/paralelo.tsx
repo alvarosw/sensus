@@ -1,4 +1,4 @@
-// Em paralelo (?linha=<cite_id> abre só com esta linha; sem o parâmetro, com as favoritas).
+// Em paralelo (?linha=<cite_id> abre só com esta linha; sem o parâmetro, a entrada com as combinações).
 import { useLocalSearchParams } from 'expo-router';
 import { ParallelView } from '@/features/timeline/ParallelView';
 

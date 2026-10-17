@@ -90,9 +90,6 @@ export interface Bounds {
 /** Largura mínima do zoom em anos: o máximo de aproximação. */
 export const PARALLEL_MIN_SPAN = 2;
 
-/** Linhas ao mesmo tempo no paralelo (o gráfico fica legível até aqui). */
-export const PARALLEL_MAX_LANES = 6;
-
 /**
  * Intervalo de uma linha no paralelo: o núcleo (sem as pontas isoladas, ver timelineCore) ou, com "incluir longe",
  * todos os eventos. null sem eventos.
