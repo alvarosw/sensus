@@ -26,7 +26,7 @@ App de estudo bíblico (Expo/React Native, pt-BR) com núcleo TypeScript (`packa
 ## Verificação
 
 ```bash
-npm run check        # typecheck do núcleo e do app + todos os testes (inclui arquitetura)
+npm run check        # typecheck do núcleo e do app + testes TS (inclui arquitetura) + testes do pipeline
 npm run test:arch    # só o teste de arquitetura
 ```
 
