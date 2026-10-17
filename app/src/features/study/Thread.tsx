@@ -3,13 +3,13 @@
 import { View } from 'react-native';
 import { router } from 'expo-router';
 import { ActButton, Card, Empty, Greek, LinkButton, Tag, Txt, space, radius, useTheme } from '@/design';
-import { RichBlocks } from '../rich/RichBlocks';
+import { RichBlocks } from '@/features/rich';
 import { LENS_LABELS, useStudy } from '@/state/study';
 import { SkeletonLines, ThinkingLine } from './LensShell';
 import { STUDY } from './strings';
 import { type ThreadEvidence, type ThreadStep } from './thread';
 import { useStudyAi, useStudyData } from './useStudyData';
-import { refShort } from './format';
+import { refShort } from '@/features/common/format';
 
 export function Thread({ steps }: { steps: ThreadStep[] }) {
   const ai = useStudyAi();

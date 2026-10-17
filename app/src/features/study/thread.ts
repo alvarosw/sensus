@@ -3,7 +3,9 @@
 // a sustenta. Passos sem dados são omitidos; Aplicação só aparece quando há IA (não tem fonte própria).
 // Língua espera a escolha da IA (esqueleto) e, sem ela, usa os fallbacks de keyword.ts.
 import {
-  commentatorName,
+  commentatorOf,
+  isIntroCommentary,
+  testamentOfCorpus,
   titleCaseHeadword,
   variantSites,
   type Book,
@@ -12,7 +14,8 @@ import {
   type StructuredSummary,
   type Vid,
 } from '@sensus/core';
-import { bareWord, chv, isOldTestament, lexiconByBase, refShort } from './format';
+import { lexiconOfToken } from './format';
+import { bareWord, chv, refShort } from '../common/format';
 import { chooseKeyWord, citedIdsOf, type WordAi, type WordBy } from './keyword';
 import { STUDY } from './strings';
 
@@ -46,7 +49,7 @@ const MAX_COMMENTATORS = 5;
 export type ThreadEvidence =
   /** Versículo vizinho anterior (Literário). */
   | { kind: 'verse'; ref: string; text: string }
-  /** Palavra que move o trecho (Língua). `note` = "hápax" ou "N vv. no NT/AT"; `by` diz de onde veio a escolha. */
+  /** Palavra que move o trecho (Língua). `note` = "hápax" ou a contagem no testamento; `by` diz de onde veio a escolha. */
   | { kind: 'word'; tokenCiteId: string; lemma: string; gloss: string | null; note: string | null; by: WordBy; mentions?: number }
   /** Língua aguardando a escolha da IA: o passo mostra um esqueleto no lugar da evidência. */
   | { kind: 'pending' }
@@ -138,9 +141,9 @@ function languageEvidence(panel: PanelData, range: { start: Vid; end: Vid }, ai:
   if (choice.state === 'none') return null;
   const { token: t, by, mentions } = choice.pick;
   const sb = t.strong_base;
-  const lexicon = sb ? (lexiconByBase(panel).get(sb) ?? null) : null;
+  const lexicon = lexiconOfToken(panel, t);
   const count = sb ? (panel.layers.language.concordance[sb]?.count ?? 0) : 0;
-  const note = count === 1 ? STUDY.hapax : count > 1 ? STUDY.factVv(count, !!sb && isOldTestament(sb)) : null;
+  const note = count === 1 ? STUDY.hapax : count > 1 ? STUDY.factVv(count, testamentOfCorpus(t.corpus)) : null;
   return {
     kind: 'word',
     tokenCiteId: t.cite_id,
@@ -195,8 +198,8 @@ function interpretationEvidence(panel: PanelData): ThreadEvidence | null {
   const names = [
     ...new Set(
       panel.layers.interpretation.commentaries
-        .filter((c) => c.start_vid % 1000 !== 0 && c.end_vid % 1000 !== 0)
-        .map((c) => commentatorName(panel.sources[c.source_id], c)),
+        .filter((c) => !isIntroCommentary(c))
+        .map((c) => commentatorOf(panel.sources[c.source_id], c)),
     ),
   ];
   if (names.length === 0) return null;

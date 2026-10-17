@@ -22,7 +22,7 @@ const devProviderOptIn = process.env.SENSUS_DEV_PROVIDER === '1';
  * Versão de release (x.y.z): fonte única. `npm run release:version -- <x.y.z>` atualiza este valor e app/package.json.
  * versionCode (Android) e buildNumber (iOS) não ficam aqui: o EAS os incrementa (eas.json, appVersionSource "remote").
  */
-const APP_VERSION = '1.1.0';
+const APP_VERSION = '1.2.0';
 
 export interface DevProvider {
   baseUrl: string;

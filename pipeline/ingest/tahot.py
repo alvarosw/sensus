@@ -21,6 +21,7 @@ from collections import defaultdict  # noqa: E402
 from urllib.parse import quote  # noqa: E402
 
 from sensus.refs import book_num, osis_ref, vid as make_vid  # noqa: E402
+from sensus.strong import strong_base_or_none as strong_base_of  # noqa: E402
 from sensus.staging import RAW, StagingWriter, cite_tok, cite_txt  # noqa: E402
 
 REPO_SHA = "dd88ab3772971e17c0ec28a5a6e34f2e97c2f848"
@@ -222,7 +223,7 @@ def parse_word(cols: list[str], stats: dict, codes: dict[str, str]) -> dict | No
         stats["strong_fallback"] += 1
     if strong is None:
         stats["no_strong"] += 1
-    strong_base = strong[:5] if strong else None
+    strong_base = strong_base_of(strong) if strong else None
     lemma = None
     if strong:
         for lm in LEMMA_RE.finditer(cols[11]):

@@ -1,24 +1,25 @@
 // Leitor contínuo: lista virtualizada de capítulos (entre capítulos e livros), carregando os vizinhos
-// ao rolar nos dois sentidos. Seleção por toque, alças arrastáveis, grego do TR sob a seleção, rolagem
+// ao rolar nos dois sentidos. Seleção por toque, alças arrastáveis, original (TR ou WLC) sob a seleção, rolagem
 // até o versículo ("ir para") e manutenção da seleção visível acima da folha de estudo.
 import { createContext, memo, useCallback, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from 'react';
 import { ActivityIndicator, FlatList, Platform, View, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent, type ViewProps } from 'react-native';
 import { useSharedValue } from 'react-native-reanimated';
 import { useLocalSearchParams } from 'expo-router';
-import { BOOK_TABLE, hasEdition, makeVid, splitVid, type Token, type Vid } from '@sensus/core';
+import { BOOK_TABLE, makeVid, originalTokensByVid, sourceLong, splitVid, type Token, type Vid } from '@sensus/core';
 import { LinkButton, Txt, motion, useTheme, type Detent } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useStudy } from '@/state/study';
-import { shortRef } from '../nav/abbrev';
-import { readLastPosition, writeLastPosition } from '../nav/last-position';
+import { refShort } from '../common/format';
+import { readLastPosition, writeLastPosition } from './last-position';
 import { ChapterBlock } from './ChapterBlock';
 import { SelectionHandles } from './Handles';
 import { TOTAL_CHAPTERS, chapterAt, loadChapter, vidChapterIndex, type ChapterData } from './chapters';
 import { LINE, ReaderGeometry } from './geometry';
-import { useReaderNav, type NavRequest } from './nav-store';
+import { useReaderNav, type NavRequest } from '@/state/reader-nav';
 import { createLoadSequencer, mayAutoScroll, planNavigation } from './nav-sequencing';
-import { READER, SOURCE_LABEL } from './strings';
+import { READER } from './strings';
 import { sheetCover } from './viewport';
+import { originalQueries } from './interlinear';
 
 interface Pending extends NavRequest {
   /** 'top' alinha ao topo (restaurar posição); 'comfort' deixa folga acima (ir para). */
@@ -353,7 +354,7 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
         return;
       }
       s.tapVerse(vid);
-      s.showToast({ text: READER.reduced(shortRef({ start: vid, end: vid })), actionLabel: READER.undo, onAction: () => useStudy.getState().undoSelection() });
+      s.showToast({ text: READER.reduced(refShort(vid, vid, [], true)), actionLabel: READER.undo, onAction: () => useStudy.getState().undoSelection() });
       return;
     }
     s.tapVerse(vid);
@@ -483,8 +484,8 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
     return () => clearTimeout(timer);
   }, [detent, selection?.start, selection?.end, keepVisible]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // ---- grego do TR sob os versículos selecionados ----
-  const [greekTokens, setGreekTokens] = useState<Record<number, Token[]> | null>(null);
+  // ---- original (TR no NT, WLC no AT) sob os versículos selecionados ----
+  const [greekTokens, setGreekTokens] = useState<Map<Vid, Token[]> | null>(null);
   const committed = selection ? `${selection.start}-${selection.end}` : '';
   useEffect(() => {
     if (!greekOn || !selection) {
@@ -492,13 +493,9 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
       return;
     }
     let alive = true;
-    void repo
-      .tokens({ start: selection.start, end: selection.end }, 'gnt')
-      .then((all) => {
-        if (!alive) return;
-        const by: Record<number, Token[]> = {};
-        for (const t of all) if (hasEdition(t, 'TR')) (by[t.vid] ??= []).push(t);
-        setGreekTokens(by);
+    void Promise.all(originalQueries(selection).map((q) => repo.tokens(q.range, q.corpus)))
+      .then((lists) => {
+        if (alive) setGreekTokens(originalTokensByVid(lists.flat()));
       })
       .catch(() => alive && setGreekTokens(null));
     return () => {
@@ -515,7 +512,7 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
     return out;
   }, [win, chapters]);
 
-  const sourceName = (SOURCE_LABEL[loadedSource] ?? SOURCE_LABEL.blivre!).long;
+  const sourceName = sourceLong(loadedSource);
   const extra = useMemo(
     () => ({ shown, greekTokens: greekOn ? greekTokens : null, flashVid, scheme, loadedSource }),
     [shown, greekOn, greekTokens, flashVid, scheme, loadedSource],
@@ -527,11 +524,10 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
       if (!d) return null;
       const s = extra.shown;
       const overlaps = s && s.start <= d.last && s.end >= d.first;
-      let gk: Record<number, Token[]> | undefined;
+      let gk: Map<Vid, Token[]> | undefined;
       if (extra.greekTokens && overlaps) {
-        for (const [k, v] of Object.entries(extra.greekTokens)) {
-          const vid = Number(k);
-          if (vid >= d.first && vid <= d.last) (gk ??= {})[vid] = v;
+        for (const [vid, toks] of extra.greekTokens) {
+          if (vid >= d.first && vid <= d.last) (gk ??= new Map()).set(vid, toks);
         }
       }
       return (

@@ -8,7 +8,7 @@ import {
   buildPanel,
   buildRichTextContext,
   claimsOf,
-  commentatorName,
+  commentatorOf,
   formatShortRef,
   parseRichText,
   Repo,
@@ -93,13 +93,23 @@ describe('rótulos auxiliares', () => {
     expect(formatShortRef(43005018, 43005018, BOOK_TABLE, true)).toBe('Jo 5:18');
   });
 
+  it('formatShortRef: AT (Gn 1:1, Dn 2:4, 1Rs 15:15) e capítulo inteiro', () => {
+    expect(formatShortRef(1001001, 1001001, BOOK_TABLE, false)).toBe('1:1');
+    expect(formatShortRef(27002004, 27002004, BOOK_TABLE, true)).toBe('Dn 2:4');
+    expect(formatShortRef(11015015, 11015015, BOOK_TABLE, true)).toBe('1Rs 15:15');
+    expect(formatShortRef(1001001, 1001031, BOOK_TABLE, true)).toBe('Gn 1:1–31');
+    expect(formatShortRef(1001000, 1001999, BOOK_TABLE, true)).toBe('Gn 1');
+    expect(formatShortRef(1001001, 1002999, BOOK_TABLE, true)).toBe('Gn 1:1–2');
+    expect(formatShortRef(1001000, 1002999, BOOK_TABLE, false)).toBe('1:0–2');
+  });
+
   it('titleCaseHeadword: caixa de título com palavras pequenas minúsculas', () => {
     expect(titleCaseHeadword('CHRIST, OFFICES OF')).toBe('Christ, Offices of');
     expect(titleCaseHeadword('PHILIPPI')).toBe('Philippi');
     expect(titleCaseHeadword('EMPTY; EMPTIER')).toBe('Empty; Emptier');
   });
 
-  it('commentatorName: pai da igreja pelo primeiro trecho; comentarista conhecido; autor como fallback', () => {
+  it('commentatorOf: pai da igreja pelo primeiro trecho; comentarista conhecido; autor como fallback', () => {
     const c = (source_id: string, text: string) => ({
       cite_id: 'x',
       source_id,
@@ -107,11 +117,11 @@ describe('rótulos auxiliares', () => {
       end_vid: 1,
       text,
     });
-    expect(commentatorName({ id: 'patristic' } as never, c('patristic', 'John Chrysostom — Homily on Philippians 1\n\nHere...'))).toBe('Crisóstomo');
-    expect(commentatorName({ id: 'sword-mhc' } as never, c('sword-mhc', 'Philippians'))).toBe('Matthew Henry');
-    expect(commentatorName({ id: 'patristic' } as never, c('patristic', 'Methodius of Olympus\n\nText'))).toBe('Metódio de Olimpo');
+    expect(commentatorOf({ id: 'patristic' } as never, c('patristic', 'John Chrysostom — Homily on Philippians 1\n\nHere...'))).toBe('Crisóstomo');
+    expect(commentatorOf({ id: 'sword-mhc' } as never, c('sword-mhc', 'Philippians'))).toBe('Matthew Henry');
+    expect(commentatorOf({ id: 'patristic' } as never, c('patristic', 'Methodius of Olympus\n\nText'))).toBe('Metódio de Olimpo');
     expect(
-      commentatorName({ id: 'x', author: 'Anônimo Autor (1800)' } as never, c('x', 'texto')),
+      commentatorOf({ id: 'x', author: 'Anônimo Autor (1800)' } as never, c('x', 'texto')),
     ).toBe('Anônimo Autor');
   });
 

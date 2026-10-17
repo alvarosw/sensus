@@ -29,6 +29,7 @@ import unicodedata  # noqa: E402
 import urllib.request  # noqa: E402
 
 from sensus import refs  # noqa: E402
+from sensus.strong import strong_base_or_none as strong_base  # noqa: E402
 from sensus.staging import RAW, StagingWriter, cite_tok, cite_txt  # noqa: E402
 
 SHA = "dd88ab3772971e17c0ec28a5a6e34f2e97c2f848"  # master de STEPBible-Data em 2026-10-09
@@ -328,7 +329,7 @@ def build_token_fields(r, tegmc, lemma_map):
         "translit": translit,
         "lemma": lemma,
         "strong": strong,
-        "strong_base": strong[:5],
+        "strong_base": strong_base(strong),
         "morph": morph,
         "morph_desc": morph_desc,
         "gloss_en": gloss,
@@ -349,9 +350,9 @@ def build_token_fields(r, tegmc, lemma_map):
         synth.append({
             "surface": alt["surface"],
             "translit": alt["translit"],
-            "lemma": lemma_map.get(s_strong[:5]) if s_strong else None,
+            "lemma": lemma_map.get(strong_base(s_strong)) if s_strong else None,
             "strong": s_strong,
-            "strong_base": s_strong[:5] if s_strong else None,
+            "strong_base": strong_base(s_strong) if s_strong else None,
             "morph": " + ".join(s_morphs),
             "morph_desc": " + ".join(s_descs) if all(s_descs) else None,
             "gloss_en": alt["gloss"],
@@ -423,7 +424,7 @@ def main():
     for r in rows:
         st = split_strong_morph(r["f"][3])[0][0]
         if st and STRONG.match(st):
-            lemma_count[st[:5]][clean_text(r["f"][4].split("=")[0])] += 1
+            lemma_count[strong_base(st)][clean_text(r["f"][4].split("=")[0])] += 1
     lemma_map = {k: c.most_common(1)[0][0] for k, c in lemma_count.items()}
 
     tr_words = collections.defaultdict(list)

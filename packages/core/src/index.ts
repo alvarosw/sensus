@@ -1,5 +1,6 @@
 // API pública do núcleo @sensus/core. Sem dependências de runtime: banco e rede entram por injeção.
 export * from './types';
+export * from './domain';
 export * from './refs';
 export * from './repo';
 export * from './panel';
@@ -15,7 +16,6 @@ export * from './ai/context';
 export * from './ai/prompts';
 export * from './ai/citations';
 export * from './ai/morphcheck';
-export * from './morph';
 export * from './relevance';
 export * from './variants';
 export * from './ai/structured-types';
@@ -26,3 +26,4 @@ export * from './translate-segments';
 export * from './translate-batch';
 export * from './places';
 export * from './timeline';
+export * from './timeline-combos';

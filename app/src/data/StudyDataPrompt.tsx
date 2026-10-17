@@ -3,7 +3,7 @@
 import { StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Card, gutter, IconButton, shadow, Txt, useTheme } from '@/design';
-import { FormButton } from '@/features/common/Buttons';
+import { FormButton } from '@/ui/Buttons';
 import { useDataStore } from './data-store';
 import { DownloadStatus } from './DownloadStatus';
 import { formatMB } from './plan';

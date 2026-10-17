@@ -1,6 +1,7 @@
 // Preferências de aparência e leitura, persistidas no aparelho (sem segredos).
 //  - theme: sistema | claro | escuro (o provider de tema é atualizado pela tela de Aparência);
-//  - textSource: texto corrido padrão (BLivre ou KJV). O botão do leitor também grava aqui;
+//  - textSource: texto corrido padrão (BLivre ou KJV). FONTE DA VERDADE. O botão do leitor também grava aqui, e
+//    o estado de estudo (`useStudy.textSource`) é só um espelho, escrito apenas por este arquivo (load e setTextSource);
 //  - greekDefault: grego (TR) sob os versículos ao abrir o app. O botão Αα só muda a sessão.
 //  - timelineLines / timelineEvents: favoritos da linha do tempo (cite_ids de linhas e de marcadores);
 //    timelineCombos: combinações do paralelo criadas pelo usuário (favoritas, sem limite; recentes, as últimas cinco).
@@ -9,11 +10,12 @@
 import { create } from 'zustand';
 import { useStudy } from '@/state/study';
 import type { SchemePreference } from '@/design';
+import { textSources } from '@sensus/core';
 import { readAppPrefs, writeAppPrefs, type StoredAppPrefs } from './provider-store';
-import { favoriteCombo, newComboId, parseCombos, recordRecent, removeCombo, unfavoriteCombo, type UserCombo } from '@/features/timeline/combos';
+import { favoriteCombo, newComboId, parseCombos, recordRecent, removeCombo, unfavoriteCombo, type UserCombo } from '@sensus/core';
 
-export const TEXT_SOURCES = ['blivre', 'kjv'] as const;
-export type TextSourceId = (typeof TEXT_SOURCES)[number];
+/** Id de uma fonte de texto corrido (ver `textSources()` no núcleo). */
+export type TextSourceId = string;
 
 const THEMES: readonly SchemePreference[] = ['system', 'light', 'dark'];
 
@@ -97,7 +99,7 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       const stored = await readAppPrefs().catch(() => null);
       const theme = stored && THEMES.includes(stored.theme as SchemePreference) ? (stored.theme as SchemePreference) : DEFAULT_APP_PREFS.theme;
       const textSource =
-        stored && TEXT_SOURCES.includes(stored.textSource as TextSourceId) ? (stored.textSource as TextSourceId) : DEFAULT_APP_PREFS.textSource;
+        stored && textSources().includes(stored.textSource as TextSourceId) ? (stored.textSource as TextSourceId) : DEFAULT_APP_PREFS.textSource;
       const greekDefault = typeof stored?.greekDefault === 'boolean' ? stored.greekDefault : DEFAULT_APP_PREFS.greekDefault;
       const timelineLines = idList(stored?.timelineLines);
       const timelineEvents = idList(stored?.timelineEvents);
@@ -140,6 +142,7 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       persist({ ...current(), theme });
     },
     setTextSource: (textSource) => {
+      // Ordem fixa: grava a preferência (fonte da verdade) e só então espelha no estudo.
       set({ textSource });
       persist({ ...current(), textSource });
       useStudy.getState().setTextSource(textSource);

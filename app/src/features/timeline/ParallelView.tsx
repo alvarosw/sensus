@@ -3,7 +3,7 @@
 // quando há muitas. A extensão é a das linhas (zoom máximo para fora); "Ajustar" volta a ela. Tocar no gráfico põe o
 // cursor de ano e mostra, embaixo, o evento mais próximo de cada linha; tocar num ponto abre a prévia. Abre só com a
 // linha de origem (?linha=<cite_id>); sem ela, na entrada.
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
 import { Stack } from 'expo-router';
 import { timelineCore, type TimelineLineEvent } from '@sensus/core';
@@ -22,9 +22,9 @@ import {
   type Bounds,
 } from './model';
 import { addLane, initialLanes } from './parallel-lanes';
-import { buildCards, canConfirm, comboKey, defaultComboName, type ComboCard } from './combos';
+import { buildCards, canConfirm, comboKey, defaultComboName, type ComboCard } from '@sensus/core';
 import { TL } from './strings';
-import { Chip, LaneChip, SourceFooter, TimelineGate, kindColor } from './parts';
+import { Chip, LaneChip, TimelineGate, kindColor } from './parts';
 import { lineEventsOf, useTimelineLines } from './useTimeline';
 import { ParallelChart, type ChartLane } from './ParallelChart';
 import { ParallelMap } from './ParallelMap';

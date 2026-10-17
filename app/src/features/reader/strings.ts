@@ -6,9 +6,9 @@ export const READER = {
   jumpLabel: 'Ir para referência',
   jumpNote: 'Rolagem contínua: o capítulo seguinte carrega ao chegar no fim.',
   jumpUnknown: 'Não reconheço essa referência.',
-  greek: 'Grego (TR) sob os versículos selecionados',
-  greekOn: 'Grego do TR sob os versículos selecionados',
-  greekOff: 'Grego oculto',
+  greek: 'Original (TR do NT, WLC do AT) sob os versículos selecionados',
+  greekOn: 'Original sob os versículos selecionados',
+  greekOff: 'Original oculto',
   textSource: (label: string) => `Fonte do texto: ${label}. Alternar`,
   verse: (n: number) => `Versículo ${n}`,
   reduced: (ref: string) => `Seleção reduzida a ${ref}`,
@@ -33,7 +33,3 @@ export const READER = {
   back: 'Voltar aos livros',
 } as const;
 
-export const SOURCE_LABEL: Record<string, { short: string; long: string }> = {
-  blivre: { short: 'BLivre', long: 'Bíblia Livre' },
-  kjv: { short: 'KJV', long: 'King James Version' },
-};

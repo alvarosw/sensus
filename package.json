@@ -7,8 +7,11 @@
     "packages/*"
   ],
   "scripts": {
-    "typecheck": "tsc -p packages/core --noEmit",
+    "typecheck": "tsc -p packages/core --noEmit && tsc -p app --noEmit",
     "test": "vitest run",
+    "test:arch": "vitest run tests",
+    "test:pipeline": "python3 -m unittest discover -s pipeline/tests",
+    "check": "npm run typecheck && vitest run && npm run test:pipeline",
     "ask": "tsx packages/core/tools/ask.ts",
     "release:version": "node scripts/release.mjs version",
     "release:check": "node scripts/release.mjs check",

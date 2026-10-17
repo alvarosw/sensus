@@ -1,5 +1,7 @@
 // Textos (pt-BR) do chat, das prévias/painéis de fonte, do aviso e das configurações.
 // Ficam aqui porque i18n/index.ts é compartilhado com outras telas.
+import { testamentLabel, type Testament } from '@sensus/core';
+
 export const CHAT = {
   title: 'Perguntas',
   subtitle: 'fica só nesta sessão',
@@ -67,11 +69,12 @@ export const SRC = {
   askForm: 'Perguntar sobre esta forma',
   askSource: 'Perguntar sobre esta fonte',
   askEntity: 'Perguntar sobre esta entidade',
-  concordance: (n: number, ot = false) => `Concordância · ${n} ${n === 1 ? 'versículo' : 'versículos'} no ${ot ? 'AT' : 'NT'}`,
+  concordance: (n: number, testament: Testament | null) =>
+    `Concordância · ${n} ${n === 1 ? 'versículo' : 'versículos'}${testament ? ` no ${testamentLabel(testament)}` : ''}`,
   hapax: 'hápax',
   moreOccurrences: (n: number) => `+ ${n} ocorrências`,
   noOccurrences: 'Sem ocorrências no texto-base.',
-  noLexiconEntry: 'Sem verbete no léxico para esta forma.',
+  noLexiconEntry: (label: string) => (label ? `Sem verbete no ${label} para esta forma.` : 'Sem verbete no léxico para esta forma.'),
   references: 'Referências',
   fullText: 'Texto completo',
   details: 'Fonte',

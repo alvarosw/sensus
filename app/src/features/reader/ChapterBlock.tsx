@@ -3,11 +3,11 @@
 // Posição dos versículos: na web, marcadores inline no DOM; no nativo, as linhas do texto disposto
 // (onTextLayout) dão y exato de cada linha e x aproximado pela contagem de caracteres. Marcadores inline
 // de View no nativo quebrariam o realce de seleção (lacunas) e não são medidos de forma confiável.
-import { memo, useCallback, useEffect, useMemo, useRef, type ReactElement } from 'react';
+import { memo, useCallback, useEffect, useMemo, type ReactElement } from 'react';
 import { Platform, Text, View, type LayoutChangeEvent } from 'react-native';
-import { BOOK_TABLE, splitVid, type Token, type VerseText, type Vid } from '@sensus/core';
+import { BOOK_TABLE, dirOf, scriptOf, splitVid, type Token, type VerseText, type Vid } from '@sensus/core';
 import { fontFamilies, gutter, radius, type, useTheme } from '@/design';
-import type { FlowBlock } from '../nav/verse-flow';
+import type { FlowBlock } from './verse-flow';
 import type { ChapterData } from './chapters';
 import { LINE, type ReaderGeometry } from './geometry';
 import { READER } from './strings';
@@ -26,8 +26,8 @@ type Item =
   | { kind: 'run'; key: string; verses: VerseText[]; endsParagraph: boolean }
   | { kind: 'greek'; key: string; vid: Vid; tokens: Token[]; endsParagraph: boolean };
 
-/** Divide os parágrafos em trechos; o grego do TR abre um bloco sob o versículo selecionado. */
-function buildItems(blocks: FlowBlock[], greek: Record<number, Token[]> | undefined, selStart: Vid, selEnd: Vid): Item[] {
+/** Divide os parágrafos em trechos; o original (grego do TR ou hebraico do WLC) abre um bloco sob o versículo selecionado. */
+function buildItems(blocks: FlowBlock[], greek: Map<Vid, Token[]> | undefined, selStart: Vid, selEnd: Vid): Item[] {
   const out: Item[] = [];
   for (const b of blocks) {
     if (b.kind === 'heading') {
@@ -37,7 +37,7 @@ function buildItems(blocks: FlowBlock[], greek: Record<number, Token[]> | undefi
     let cur: VerseText[] = [];
     for (const v of b.verses) {
       cur.push(v);
-      const toks = greek && v.vid >= selStart && v.vid <= selEnd ? greek[v.vid] : undefined;
+      const toks = greek && v.vid >= selStart && v.vid <= selEnd ? greek.get(v.vid) : undefined;
       if (toks && toks.length > 0) {
         out.push({ kind: 'run', key: `r${cur[0]!.vid}`, verses: cur, endsParagraph: false });
         out.push({ kind: 'greek', key: `g${v.vid}`, vid: v.vid, tokens: toks, endsParagraph: false });
@@ -61,7 +61,8 @@ export interface ChapterBlockProps {
   selStart: Vid;
   selEnd: Vid;
   flashVid: Vid;
-  greek?: Record<number, Token[]>;
+  /** Palavras do texto original (grego ou hebraico) por versículo; sem valor, o original fica oculto. */
+  greek?: Map<Vid, Token[]>;
   onVerse: (vid: Vid) => void;
   onWord: (citeId: string) => void;
 }
@@ -312,12 +313,16 @@ function Marker({ geo, kind, vid, run }: { geo: ReaderGeometry; kind: 'start' | 
   );
 }
 
+/** Linha do original sob o versículo. Hebraico (AT): lida da direita para a esquerda, com a barra do lado direito. */
 function GreekLine({ tokens, endsParagraph, onWord }: { tokens: Token[]; endsParagraph: boolean; onWord: (citeId: string) => void }) {
   const { c } = useTheme();
+  const dir = dirOf(scriptOf(tokens[0]?.surface ?? ''));
+  const rtl = dir === 'rtl';
+  const bar = rtl ? { paddingRight: 10, borderRightWidth: 2, borderRightColor: c.border } : { paddingLeft: 10, borderLeftWidth: 2, borderLeftColor: c.border };
   return (
     <View style={{ paddingHorizontal: gutter.reader, marginTop: 2, marginBottom: endsParagraph ? 14 : 6 }}>
-      <View style={{ paddingLeft: 10, borderLeftWidth: 2, borderLeftColor: c.border }}>
-        <Text testID="greek-line" selectable={false} style={{ fontFamily: fontFamilies.greek, fontSize: 16, lineHeight: 25.6, color: c.muted }}>
+      <View style={bar}>
+        <Text testID="greek-line" selectable={false} style={{ fontFamily: fontFamilies.greek, fontSize: 16, lineHeight: 25.6, color: c.muted, writingDirection: dir, textAlign: rtl ? 'right' : undefined }}>
           {tokens.map((t, i) => (
             <Text key={t.cite_id} testID={`greek-${t.cite_id}`} accessibilityRole={Platform.OS === 'web' ? undefined : 'button'} accessibilityLabel={t.surface} onPress={() => onWord(t.cite_id)} style={{ color: c.text }}>
               {t.surface}

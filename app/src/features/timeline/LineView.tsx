@@ -4,7 +4,7 @@
 import { useMemo, useState } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
-import { refShort } from '@/features/study/format';
+import { refShort } from '@/features/common/format';
 import { useBooks } from '@/features/common/hooks';
 import { Txt, space, useTheme } from '@/design';
 import { matchesTranslatedText } from '@sensus/core';

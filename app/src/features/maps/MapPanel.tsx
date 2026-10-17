@@ -8,7 +8,7 @@ import { Empty, IconButton, LinkButton, Segmented, shadow, Skeleton, Txt, TypeMa
 import { useStudy, type MapScope } from '@/state/study';
 import { useBooks } from '../common/hooks';
 import { showInText } from '../common/actions';
-import { RefChips } from '../sources/PanelParts';
+import { RefChips } from '../common/PanelParts';
 import { MapLegend } from './MapLegend';
 import { SensusMap } from './SensusMap';
 import { MAPS } from './strings';

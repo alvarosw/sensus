@@ -12,7 +12,7 @@ import {
   space,
   useTheme,
 } from '@/design';
-import { RichBlocks } from '../rich/RichBlocks';
+import { RichBlocks } from '@/features/rich';
 import { useStudy, type LensKey } from '@/state/study';
 import { STUDY } from './strings';
 import { useStudyAi, type DeepView } from './useStudyData';
