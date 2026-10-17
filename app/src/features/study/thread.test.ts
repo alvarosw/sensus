@@ -1,8 +1,8 @@
 // Montagem do fio: ordem e títulos fixos, omissão sem dados, escolha da evidência de cada passo.
 import { describe, expect, it } from 'vitest';
-import type { Block, Commentary, PanelData, Source, StructuredSummary, Token, VerseText, XRef } from '@sensus/core';
+import { isProperNameToken, type Block, type Commentary, type PanelData, type Source, type StructuredSummary, type Token, type VerseText, type XRef } from '@sensus/core';
 import { buildThread, THREAD_TITLES, type ThreadAi } from './thread';
-import { isNameToken, normalizeForm } from './keyword';
+import { normalizeForm } from './keyword';
 
 const RANGE = { start: 50002005, end: 50002008 };
 /** Sem IA configurada. */
@@ -384,8 +384,8 @@ describe('Língua: nomes próprios e formas curtas ficam de fora dos fallbacks',
   const SOURCES = { c: { id: 'c', title: 'C', author: 'C' } as Source };
 
   it('nome próprio é reconhecido pela morfologia do TAGNT; palavra comum não', () => {
-    expect(isNameToken(ISRAEL)).toBe(true);
-    expect(isNameToken(KENOSIS_TOKEN)).toBe(false);
+    expect(isProperNameToken(ISRAEL)).toBe(true);
+    expect(isProperNameToken(KENOSIS_TOKEN)).toBe(false);
   });
 
   it('fallback 2: um nome muito mencionado nos comentários não é escolhido', () => {

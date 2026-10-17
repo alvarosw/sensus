@@ -36,7 +36,7 @@ import { useTimelineTexts } from '@/translate/timeline-translate';
 import { useSourceLang } from '@/translate/source-lang';
 import { useStudy } from '@/state/study';
 import { EventPreview } from '@/features/timeline/EventPreview';
-import { bareWord, chv, isOldTestament, morphLabelsPt, refShort, type CommentaryView, type KeyWord } from './format';
+import { bareWord, chv, morphLabelsPt, refShort, type CommentaryView, type KeyWord } from './format';
 import { STUDY } from './strings';
 
 // ---- palavra -----------------------------------------------------------------------------------------
@@ -57,7 +57,6 @@ export const WordCard = memo(function WordCard({
   const lemma = word.lexicon?.lemma ?? t.lemma ?? bareWord(t.surface);
   const translit = word.lexicon?.translit ?? t.translit;
   const gloss = word.lexicon?.gloss ?? t.gloss_en;
-  const ot = isOldTestament(word.strongBase);
   const n = word.count;
   const value = Math.min(1, Math.max(0.06, Math.log(n + 1) / Math.log(120)));
   const morph = morphLabelsPt(t.morph_desc);
@@ -79,7 +78,7 @@ export const WordCard = memo(function WordCard({
         <View style={{ alignItems: 'flex-end', gap: 3 }}>
           {n === 1 && <Tag tone="warn" label={STUDY.hapax} />}
           <Txt v="meta" color="muted" style={{ fontSize: 11, fontVariant: ['tabular-nums'] }}>
-            {`${n} ${n === 1 ? 'versículo' : 'vv.'} no ${ot ? 'AT' : 'NT'}`}
+            {STUDY.factVv(n, word.testament)}
           </Txt>
           <MeterBar value={value} color={st.tok} />
         </View>

@@ -1,17 +1,25 @@
 // Formatação e seleção de dados para a folha de estudo (referências, tradições, morfologia, palavras-chave).
 import {
   BOOK_TABLE,
+  CORPUS,
   commentatorOf,
   formatReference,
   formatShortRef,
-  isContentToken,
+  hasEdition,
+  isContentTokenByLang,
+  isIntroCommentary,
+  isIntroVid,
+  langOfToken,
+  pickLexicon,
   splitVid,
+  testamentOfCorpus,
   traditionLabel,
   type Book,
   type Commentary,
   type LexiconEntry,
   type PanelData,
   type Source,
+  type Testament,
   type Token,
   type Vid,
 } from '@sensus/core';
@@ -107,7 +115,7 @@ export function viewCommentary(c: Commentary, source: Source | undefined): Comme
     column: patristic ? 'Patrística' : author,
     tradition: traditionLabel(source?.tradition),
     body: body.trim(),
-    intro: c.start_vid % 1000 === 0 || c.end_vid % 1000 === 0,
+    intro: isIntroCommentary(c),
   };
 }
 
@@ -116,34 +124,36 @@ export function viewCommentary(c: Commentary, source: Source | undefined): Comme
 export interface KeyWord {
   token: Token;
   strongBase: string;
+  /** Verbete do próprio token (o sufixo do Strong conta: H0935P recebe o verbete H0935P). */
   lexicon: LexiconEntry | null;
-  /** Total de versículos com a palavra (NT para G…, AT para H…). */
+  /** Total de versículos com a palavra, no testamento da palavra. */
   count: number;
+  testament: Testament;
 }
 
 const MAX_KEY_WORDS = 12;
 const COMMON_LIMIT = 40;
 
-/** Verbete do léxico por strong_base (prefere TBESG quando há mais de um). */
-export function lexiconByBase(panel: PanelData): Map<string, LexiconEntry> {
-  const lexByBase = new Map<string, LexiconEntry>();
-  for (const l of panel.layers.language.lexicon) {
-    if (!l.strong_base) continue;
-    const cur = lexByBase.get(l.strong_base);
-    if (!cur || (l.source_id.includes('tbesg') && !cur.source_id.includes('tbesg'))) lexByBase.set(l.strong_base, l);
-  }
-  return lexByBase;
+/**
+ * Verbete do token: a chave exata do Strong (com sufixo) na fonte da língua; sem ela, a base; na falta, o
+ * complementar (LSJ no grego). Escolha do domínio (pickLexicon), não da feature.
+ */
+export function lexiconOfToken(panel: PanelData, t: Token): LexiconEntry | null {
+  const pick = pickLexicon(panel.layers.language.lexicon, t.strong ?? t.strong_base, langOfToken(t));
+  return pick.primary ?? pick.secondary;
 }
 
-/** Token que conta como palavra de conteúdo com Strong: não é função; no NT, só do texto TR ou NA. */
+/**
+ * Palavra que conta como chave: de conteúdo, com Strong, e presente numa edição-base do próprio corpus
+ * (TR, BYZ ou NA no grego; L no hebraico). Variante de leitura (ex.: Qere) fica de fora.
+ */
 export function isKeyToken(t: Token): boolean {
-  if (!t.strong_base || !isContentToken(t)) return false;
-  return t.corpus !== 'gnt' || /\b(TR|NA)\b/.test(t.editions);
+  if (!t.strong_base || !isContentTokenByLang(t)) return false;
+  return CORPUS[t.corpus].baseEditions.some((e) => hasEdition(t, e));
 }
 
 /** Palavras de conteúdo do trecho, das mais raras para as mais comuns (hápax primeiro). */
 export function keyWordsOf(panel: PanelData): KeyWord[] {
-  const lexByBase = lexiconByBase(panel);
   const seen = new Set<string>();
   const out: KeyWord[] = [];
   for (const t of panel.layers.text.original) {
@@ -151,7 +161,7 @@ export function keyWordsOf(panel: PanelData): KeyWord[] {
     if (!sb || seen.has(sb) || !isKeyToken(t)) continue;
     seen.add(sb);
     const count = panel.layers.language.concordance[sb]?.count ?? 0;
-    out.push({ token: t, strongBase: sb, lexicon: lexByBase.get(sb) ?? null, count });
+    out.push({ token: t, strongBase: sb, lexicon: lexiconOfToken(panel, t), count, testament: testamentOfCorpus(t.corpus) });
   }
   out.sort((a, b) => (a.count || 9999) - (b.count || 9999));
   const rare = out.filter((w) => w.count > 0 && w.count <= COMMON_LIMIT);
@@ -161,8 +171,4 @@ export function keyWordsOf(panel: PanelData): KeyWord[] {
 /** Palavra sem pontuação de borda. */
 export function bareWord(surface: string): string {
   return surface.normalize('NFC').replace(/^[\p{P}\p{S}\s]+|[\p{P}\p{S}\s]+$/gu, '');
-}
-
-export function isOldTestament(strongBase: string): boolean {
-  return strongBase.startsWith('H');
 }
