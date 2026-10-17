@@ -1,10 +1,10 @@
 // Linha discreta sob um texto em inglês: oferta da primeira vez, carregando, falha ou "Tradução automática · Ver original".
 import { ActivityIndicator, View } from 'react-native';
 import { LinkButton, Tag, Txt, useTheme } from '@/design';
-import type { AutoTranslation } from './useAutoTranslate';
+import type { TranslationNoteState } from './useAutoTranslate';
 import { TR } from './strings';
 
-export function AutoTranslateNote({ tr, testID }: { tr: AutoTranslation; testID?: string }) {
+export function AutoTranslateNote({ tr, testID }: { tr: TranslationNoteState; testID?: string }) {
   const { c } = useTheme();
 
   if (tr.offer) {

@@ -214,23 +214,11 @@ export function loadLexicon(repo: Repo, strongBase: string): Promise<LexiconEntr
   return p;
 }
 
-export interface LexiconPair {
-  tbesg: LexiconEntry | null;
-  lsj: LexiconEntry | null;
-}
-
-/** Escolhe o verbete certo para a forma (strong estendido, ex.: G2424G); sem ele, o primeiro. */
-export function pickLexicon(entries: LexiconEntry[], strong: string | null): LexiconPair {
-  const pick = (source: string): LexiconEntry | null => {
-    const list = entries.filter((e) => e.source_id === source);
-    return list.find((e) => strong && e.key === strong) ?? list[0] ?? null;
-  };
-  return { tbesg: pick('stepbible-tbesg'), lsj: pick('stepbible-tflsj') };
-}
+export { pickLexicon, type LexiconPair } from './lexicon-pick';
 
 const CONCORDANCE_LIMIT = 80;
 
-/** Total de versículos com a palavra no NT e até 80 deles (ordem do texto). */
+/** Total de versículos com a palavra (NT para G…, AT para H…) e até 80 deles (ordem do texto). */
 export function loadConcordance(repo: Repo, strongBase: string): Promise<{ count: number; vids: Vid[] }> {
   const c = cacheOf(repo);
   let p = c.concordance.get(strongBase);

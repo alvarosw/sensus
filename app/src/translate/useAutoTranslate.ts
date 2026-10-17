@@ -28,6 +28,12 @@ export interface AutoTranslation {
   retry(): void;
 }
 
+/** Estado que a linha de nota (AutoTranslateNote) usa: o mesmo para um texto só e para um cabeçalho em lote. */
+export type TranslationNoteState = Pick<
+  AutoTranslation,
+  'offer' | 'loading' | 'failed' | 'available' | 'translated' | 'showOriginal' | 'toggleOriginal' | 'answerOffer' | 'retry'
+>;
+
 let panelSeq = 0;
 
 export function useAutoTranslate(text: string | null | undefined, lang: string | null | undefined): AutoTranslation {
