@@ -3,6 +3,9 @@
 /** Palavras em grego (inclui polytonismo e elisão) ou hebraico. Regex global: use com matchAll/replace. */
 export const SCRIPT_WORD_RE = /[Ͱ-Ͽἀ-῿֐-׿][Ͱ-Ͽἀ-῿֐-׿\p{M}’']*/gu;
 
+/** Fonte da regex de palavra (sem flags), para compor outra expressão com ela. */
+export const SCRIPT_WORD_SOURCE: string = SCRIPT_WORD_RE.source;
+
 export type Script = 'greek' | 'hebrew' | 'latin' | 'other';
 export type Dir = 'ltr' | 'rtl';
 

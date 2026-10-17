@@ -91,6 +91,15 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'egw-steps': { short: 'Caminho a Cristo', commentator: 'Ellen G. White · Caminho a Cristo', role: 'commentary', lang: 'en' },
 };
 
+/** Ordem de preferência das fontes de lugares (menor = melhor) para escolher a identificação moderna. */
+const PLACE_SOURCE_ORDER: readonly string[] = ['openbible-geo', 'theographic', 'stepbible-tipnr'];
+
+/** Posição da fonte de lugares na preferência; fontes fora da lista ficam por último (9). */
+export function placeSourceRank(sourceId: string): number {
+  const i = PLACE_SOURCE_ORDER.indexOf(sourceId);
+  return i < 0 ? 9 : i;
+}
+
 /** Rótulos pt-BR das tradições (o valor vem do pipeline, campo `source.tradition`). */
 export const TRADITIONS: Readonly<Record<string, { pt: string }>> = {
   reformed: { pt: 'reformada' },

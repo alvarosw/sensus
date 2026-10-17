@@ -6,7 +6,7 @@ import {
   formatReference,
   formatShortRef,
   hasEdition,
-  isContentTokenByLang,
+  isContentToken,
   isIntroCommentary,
   isIntroVid,
   langOfToken,
@@ -148,7 +148,7 @@ export function lexiconOfToken(panel: PanelData, t: Token): LexiconEntry | null 
  * (TR, BYZ ou NA no grego; L no hebraico). Variante de leitura (ex.: Qere) fica de fora.
  */
 export function isKeyToken(t: Token): boolean {
-  if (!t.strong_base || !isContentTokenByLang(t)) return false;
+  if (!t.strong_base || !isContentToken(t)) return false;
   return CORPUS[t.corpus].baseEditions.some((e) => hasEdition(t, e));
 }
 

@@ -1,6 +1,7 @@
 // Lugares para os mapas: agrupa a mesma localidade vinda de fontes diferentes e lê a confiança
 // da identificação (OpenBible.info, association_score de 0 a 1000). Função pura, sem banco.
 import type { PlaceVerseHit } from './repo';
+import { placeSourceRank } from './domain/sources';
 
 /** Faixas de confiança da identificação (legenda dos mapas). `none` = a fonte não avalia. */
 export type ConfidenceBand = 'high' | 'mid' | 'low' | 'none';
@@ -34,7 +35,6 @@ export interface PlaceSite {
   homonyms: Array<{ id: string; name: string; lat: number; lon: number }>;
 }
 
-const SOURCE_RANK: Record<string, number> = { 'openbible-geo': 0, theographic: 1, 'stepbible-tipnr': 2 };
 const MERGE_KM = 150;
 
 /** Nome para comparação: sem sublinhado, sem número de desambiguação ("Antioch 1"), sem caixa. */
@@ -108,7 +108,7 @@ export function groupPlaces(rows: PlaceVerseHit[]): PlaceSite[] {
     byEntity.set(r.cite_id, cur);
   }
   const entities = [...byEntity.values()].sort(
-    (a, b) => (SOURCE_RANK[a.entity.source_id] ?? 9) - (SOURCE_RANK[b.entity.source_id] ?? 9) || a.entity.cite_id.localeCompare(b.entity.cite_id),
+    (a, b) => placeSourceRank(a.entity.source_id) - placeSourceRank(b.entity.source_id) || a.entity.cite_id.localeCompare(b.entity.cite_id),
   );
 
   const buildings: Building[] = [];
@@ -145,7 +145,7 @@ export function groupPlaces(rows: PlaceVerseHit[]): PlaceSite[] {
       vids,
       sources: new Set([entity.source_id]),
       citeIds: [entity.cite_id],
-      rank: SOURCE_RANK[entity.source_id] ?? 9,
+      rank: placeSourceRank(entity.source_id),
     });
   }
 

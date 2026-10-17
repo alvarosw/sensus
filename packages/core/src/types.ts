@@ -1,8 +1,9 @@
 // Tipos compartilhados do núcleo do Sensus. Espelham pipeline/schema.sql.
 // O núcleo não depende de React Native nem de Node: acesso a banco e rede
 // chegam por injeção (SqlDriver, FetchLike).
+import type { Corpus } from './domain/language';
 
-/** livro*1_000_000 + capítulo*1000 + versículo (versificação KJV). */
+/** Livro, capítulo e versículo empacotados (versificação KJV; aritmética em domain/vid.ts). */
 export type Vid = number;
 
 export interface VerseRange {
@@ -61,7 +62,7 @@ export interface TextDivision {
 export interface Token {
   cite_id: string;
   source_id: string;
-  corpus: 'gnt' | 'hot';
+  corpus: Corpus;
   vid: Vid;
   pos: number;
   surface: string;

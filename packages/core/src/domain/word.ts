@@ -19,6 +19,14 @@ export interface WordFacts {
   isProperName: boolean;
 }
 
+/**
+ * Língua de uma palavra original que não tem token associado: só pela escrita (hebraico ou grego). O aramaico só
+ * se reconhece pela morfologia do token, por isso não sai daqui.
+ */
+export function langOfWordText(word: string): Lang {
+  return scriptOf(word) === 'hebrew' ? 'hbo' : 'grc';
+}
+
 export function wordFacts(
   token: Pick<Token, 'corpus' | 'morph' | 'morph_desc' | 'strong' | 'surface'>,
 ): WordFacts {

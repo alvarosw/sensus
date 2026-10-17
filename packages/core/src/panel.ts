@@ -4,21 +4,23 @@ import { formatReference, splitVid } from './refs';
 import { DEFAULT_TEXT_SOURCE, type Concordance, Repo, type DictionaryHit } from './repo';
 import { buildRelevanceContext, rankDictionary, rankEntities } from './relevance';
 
-/** Edições-base do NT grego; uma palavra fora de alguma delas é uma variante textual. */
-export const BASE_EDITIONS = ['TR', 'BYZ', 'NA'] as const;
+import { CORPUS, editionsOf, hasEditionVariants } from './domain/language';
+
+/** Edições-base do NT grego (TR, BYZ, NA); uma palavra fora de alguma delas é uma variante textual. */
+export const BASE_EDITIONS: readonly string[] = CORPUS.gnt.baseEditions;
 
 export function editionSet(token: Token): Set<string> {
-  return new Set(token.editions.split(',').map((e) => e.trim()).filter(Boolean));
+  return editionsOf(token);
 }
 
 export function hasEdition(token: Token, edition: string): boolean {
-  return editionSet(token).has(edition);
+  return editionsOf(token).has(edition);
 }
 
-/** Edições-base (TR, BYZ, NA) ausentes na palavra. */
+/** Edições-base do corpus da palavra que estão ausentes nela (TR, BYZ, NA no grego). */
 export function missingBaseEditions(token: Token): string[] {
-  const present = editionSet(token);
-  return BASE_EDITIONS.filter((e) => !present.has(e));
+  const present = editionsOf(token);
+  return CORPUS[token.corpus].baseEditions.filter((e) => !present.has(e));
 }
 
 export interface PanelLimits {
@@ -96,7 +98,7 @@ export async function buildPanel(repo: Repo, range: VerseRange, opts: PanelOptio
   for (const [base, c] of concordanceRows) concordance[base] = c;
 
   const translations: VerseText[] = translationLists.flat();
-  const variants = tokens.filter((t) => t.corpus === 'gnt' && missingBaseEditions(t).length > 0);
+  const variants = tokens.filter((t) => hasEditionVariants(t.corpus) && missingBaseEditions(t).length > 0);
   const boundedBookIntro = bookIntro.slice(0, limits.bookIntro);
   // Verbetes de introdução do livro já aparecem na camada literária: não os repete no histórico.
   const introIds = new Set(boundedBookIntro.map((d) => d.cite_id));

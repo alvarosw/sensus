@@ -40,17 +40,5 @@ export const ARCH_EXCEPTIONS: readonly string[] = [
   "feature-por-index | app/src/features/timeline/EventPreview.tsx | app/src/features/study/format.ts",
   "feature-por-index | app/src/features/timeline/LineView.tsx | app/src/features/study/format.ts",
   "feature-por-index | app/src/features/timeline/actions.ts | app/src/features/reader/nav-store.ts",
-  "literal-dominio | app/src/features/reader/nav-store.ts | vid * 1_000_000 ×1",
-  "literal-dominio | packages/core/src/ai/context.ts | corpus 'gnt'|'hot' ×3",
-  "literal-dominio | packages/core/src/ai/context.ts | fonte 'stepbible-*' ×1",
-  "literal-dominio | packages/core/src/ai/rich-text.ts | vid % 1000 ×1",
-  "literal-dominio | packages/core/src/ai/structured-types.ts | léxico 'tbesg'|'tbesh' ×1",
-  "literal-dominio | packages/core/src/panel.ts | corpus 'gnt'|'hot' ×1",
-  "literal-dominio | packages/core/src/places.ts | fonte 'stepbible-*' ×1",
-  "literal-dominio | packages/core/src/refs.ts | vid % 1000 ×2",
-  "literal-dominio | packages/core/src/refs.ts | vid * 1_000_000 ×2",
-  "literal-dominio | packages/core/src/translate-segments.ts | léxico 'tbesg'|'tbesh' ×1",
-  "literal-dominio | packages/core/src/types.ts | corpus 'gnt'|'hot' ×1",
-  "literal-dominio | packages/core/src/types.ts | vid * 1_000_000 ×1",
-  "literal-dominio | packages/core/src/variants.ts | corpus 'gnt'|'hot' ×1"
+  "literal-dominio | app/src/features/reader/nav-store.ts | vid * 1_000_000 ×1"
 ];
