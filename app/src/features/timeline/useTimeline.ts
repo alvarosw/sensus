@@ -123,14 +123,6 @@ export function useTimelineSearch(query: string): TimelineSearchResult | null {
   );
 }
 
-/** Linhas do tempo para o seletor "+ Linha" (ver Repo.timelineSearchLines), com atraso de 180 ms. Busca vazia: []. */
-export function useTimelineLineSearch(query: string): TimelineLine[] | null {
-  const debounced = useDebounced(query.trim(), 180);
-  return useLoaded(`line-search:${debounced}`, (repo) =>
-    debounced ? repo.timelineSearchLines(debounced) : Promise.resolve<TimelineLine[]>([]),
-  );
-}
-
 function useDebounced(value: string, ms: number): string {
   const [out, setOut] = useState(value);
   useEffect(() => {

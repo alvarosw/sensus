@@ -4,22 +4,21 @@
 import { useMemo, useState, type ReactNode } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
 import { useRouter } from 'expo-router';
-import { matchesTranslatedText, TIMELINE_ERAS, type TimelineLine, type TimelineLineEvent, type TimelineLineRef } from '@sensus/core';
+import { matchesTranslatedText, type TimelineLine, type TimelineLineEvent, type TimelineLineRef } from '@sensus/core';
 import { cachedTranslation } from '@/translate/engine';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
 import { useTimelineActive, useTimelineText, useTimelineTexts, useTimelineVersion } from '@/translate/timeline-translate';
 import { Txt, radius, space, useTheme } from '@/design';
 import { useAppPrefs } from '@/settings/app-prefs';
 import { eraById, eventYear, filterEvents, filterLines, spanText, type KindFilter } from './model';
-import { TL, TL_ERA_SHORT } from './strings';
+import { TL } from './strings';
 import { useAllTimelineEvents, useEventsByIds, useTimelineLines, useTimelineSearch, useTimelineSummary } from './useTimeline';
-import { Chip, ChipRow, Density, KindMark, LineCard, SearchField, SourceFooter, StarButton, TimelineGate } from './parts';
+import { Density, KindMark, LineCard, SearchField, SourceFooter, StarButton, TimelineGate } from './parts';
 import { EventPreview } from './EventPreview';
+import { LineFilterChips, useLineMatches } from './LineFilters';
 
 /** Quantos cartões cada lista mostra antes de "Mostrar todas". */
 const SHOWN = 30;
-/** Eras que entram no filtro (a lacuna não tem eventos). */
-const FILTER_ERAS = TIMELINE_ERAS.filter((e) => !e.gap);
 
 export function TimelineHome({ eventId }: { eventId?: string }) {
   return (
@@ -60,14 +59,7 @@ function HomeBody({ eventId }: { eventId?: string }) {
 
   // Busca: além do banco (original), o que casa a tradução já em cache (linhas e eventos ainda não buscados).
   const q = query.trim();
-  const searchLines = useMemo(() => {
-    const db = hits?.lines ?? [];
-    if (!searching || !tlActive) return db;
-    const extra = all.filter((l) => !db.some((x) => x.id === l.id) && matchesTranslatedText(q, l.name, cachedTranslation(l.name)));
-    return [...db, ...extra];
-    // version: a tradução chegou ao cache; recalcula a busca por ela.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hits, searching, tlActive, all, q, version]);
+  const searchLines = useLineMatches(query, all, hits);
   const searchEvents = useMemo(() => {
     const db = hits?.events ?? [];
     if (!searching || !tlActive || !allEvents) return db;
@@ -201,25 +193,15 @@ function HomeBody({ eventId }: { eventId?: string }) {
     <View style={{ flex: 1, backgroundColor: c.bg }}>
       <View style={{ gap: space[5], paddingHorizontal: space[8], paddingTop: space[5], paddingBottom: space[5], borderBottomWidth: 1, borderBottomColor: c.border }}>
         <SearchField testID="tl-search" value={query} onChangeText={setQuery} placeholder={TL.searchPlaceholder} />
-        <ChipRow>
-          {(
-            [
-              ['all', TL.kindAll],
-              ['period', TL.kindPeriod],
-              ['person', TL.kindPerson],
-              ['place', TL.kindPlace],
-            ] as const
-          ).map(([k, label]) => (
-            <Chip key={k} testID={`tl-kind-${k}`} label={label} on={kind === k} onPress={() => setKind(k)} />
-          ))}
-          <Chip testID="tl-only-fav" label={TL.onlyFavorites} on={onlyFav} star onPress={() => setOnlyFav((x) => !x)} />
-        </ChipRow>
-        <ChipRow>
-          <Chip testID="tl-era-all" label={TL.eraAll} on={eraId === 'all'} onPress={() => setEraId('all')} />
-          {FILTER_ERAS.map((e) => (
-            <Chip key={e.id} testID={`tl-era-${e.id}`} label={TL_ERA_SHORT[e.id] ?? e.name} on={eraId === e.id} onPress={() => setEraId(e.id)} />
-          ))}
-        </ChipRow>
+        <LineFilterChips
+          prefix="tl"
+          kind={kind}
+          onKind={setKind}
+          eraId={eraId}
+          onEra={setEraId}
+          onlyFav={onlyFav}
+          onOnlyFav={setOnlyFav}
+        />
       </View>
 
       <ScrollView testID="tl-home" contentContainerStyle={{ paddingTop: space[4], paddingBottom: space[12], gap: space[2] }} keyboardShouldPersistTaps="handled">

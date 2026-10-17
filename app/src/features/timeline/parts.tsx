@@ -271,3 +271,24 @@ export function SourceFooter({ text = TL.footer }: { text?: string }) {
 export function lineMetaText(line: TimelineLine): string {
   return `${TL.kindLabel[line.kind]} · ${TL.lineTitleOf(line.count)} · ${spanText(line.from, line.to)}`;
 }
+
+/** Chip de linha escolhida: bolinha da cor do tipo, nome e × para tirar. Usado no paralelo e no seletor. */
+export function LaneChip({ testID, name, color, onRemove }: { testID: string; name: string; color: string; onRemove: () => void }) {
+  const { c } = useTheme();
+  return (
+    <View testID={testID} style={{ flexDirection: 'row', alignItems: 'center', gap: space[3], minHeight: 34, paddingLeft: space[5], paddingRight: space[2], borderRadius: radius.pill, borderWidth: 1, borderColor: c.border, backgroundColor: c.surface, maxWidth: '100%' }}>
+      <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: color }} />
+      <Txt v="button" style={{ fontSize: 12.5, lineHeight: 16, flexShrink: 1 }} numberOfLines={1}>{name}</Txt>
+      <Pressable
+        testID={`${testID}-remove`}
+        accessibilityRole="button"
+        accessibilityLabel={TL.removeLane(name)}
+        onPress={onRemove}
+        hitSlop={8}
+        style={({ pressed }) => ({ width: 26, height: 26, borderRadius: 13, backgroundColor: c.surfaceAlt, alignItems: 'center', justifyContent: 'center', opacity: pressed ? 0.6 : 1 })}
+      >
+        <Txt v="button" color="muted" style={{ fontSize: 13, lineHeight: 15 }}>×</Txt>
+      </Pressable>
+    </View>
+  );
+}

@@ -1,7 +1,8 @@
-// EM PARALELO: as linhas escolhidas (chips com ×, "+ Linha", "Limpar") e o gráfico com uma faixa por linha. A
-// extensão é a das linhas (zoom máximo para fora); "Ajustar" volta a ela. Tocar no gráfico põe o cursor de ano e
-// mostra, embaixo, o evento mais próximo de cada linha; tocar num ponto abre a prévia. Abre só com a linha de
-// origem (?linha=<cite_id>); sem ela, com as favoritas; sem favoritas, com a tela de escolha.
+// EM PARALELO: sem linhas, a entrada com "Criar combinação" e as combinações (cartões); com linhas, as escolhidas
+// (chips com ×, "+ Linha", "Limpar", "★ Salvar combinação") e o gráfico com uma faixa por linha, que rola na vertical
+// quando há muitas. A extensão é a das linhas (zoom máximo para fora); "Ajustar" volta a ela. Tocar no gráfico põe o
+// cursor de ano e mostra, embaixo, o evento mais próximo de cada linha; tocar num ponto abre a prévia. Abre só com a
+// linha de origem (?linha=<cite_id>); sem ela, na entrada.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
 import { Stack } from 'expo-router';
@@ -10,7 +11,6 @@ import { Txt, radius, space, useTheme } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useAppPrefs } from '@/settings/app-prefs';
 import {
-  PARALLEL_MAX_LANES,
   clampView,
   cursorTolerance,
   eventYear,
@@ -21,13 +21,16 @@ import {
   zoomView,
   type Bounds,
 } from './model';
-import { addLane, initialLanes, PARALLEL_COMBOS } from './parallel-lanes';
+import { addLane, initialLanes } from './parallel-lanes';
+import { buildCards, canConfirm, comboKey, defaultComboName, type ComboCard } from './combos';
 import { TL } from './strings';
-import { Chip, SourceFooter, TimelineGate, kindColor } from './parts';
+import { Chip, LaneChip, SourceFooter, TimelineGate, kindColor } from './parts';
 import { lineEventsOf, useTimelineLines } from './useTimeline';
 import { ParallelChart, type ChartLane } from './ParallelChart';
 import { ParallelMap } from './ParallelMap';
-import { LinePicker } from './LinePicker';
+import { CombinationPicker } from './CombinationPicker';
+import { CombinationEntry } from './CombinationEntry';
+import { SaveComboSheet } from './SaveCombination';
 import { EventPreview, type PreviewCompare } from './EventPreview';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
 import { useTimelineTexts } from '@/translate/timeline-translate';
@@ -36,11 +39,14 @@ export function ParallelView({ lineId }: { lineId?: string }) {
   const { c, st } = useTheme();
   const repo = useRepo();
   const lines = useTimelineLines();
-  const favLineIds = useAppPrefs((s) => s.timelineLines);
   const favEventIds = useAppPrefs((s) => s.timelineEvents);
-  const recentIds = useAppPrefs((s) => s.timelineRecent);
-  const pushRecent = useAppPrefs((s) => s.pushTimelineRecent);
   const favEvents = useMemo(() => new Set(favEventIds), [favEventIds]);
+  const combos = useAppPrefs((s) => s.timelineCombos);
+  const recordCombo = useAppPrefs((s) => s.recordCombo);
+  const favoriteCombo = useAppPrefs((s) => s.favoriteCombo);
+  const unfavoriteCombo = useAppPrefs((s) => s.unfavoriteCombo);
+  const removeCombo = useAppPrefs((s) => s.removeCombo);
+  const cards = useMemo(() => buildCards(combos), [combos]);
 
   const [laneIds, setLaneIds] = useState<string[] | null>(null);
   const [included, setIncluded] = useState<ReadonlySet<string>>(new Set());
@@ -49,12 +55,13 @@ export function ParallelView({ lineId }: { lineId?: string }) {
   const [cursor, setCursor] = useState<number | null>(null);
   const [preview, setPreview] = useState<{ citeId: string; laneId: string } | null>(null);
   const [picking, setPicking] = useState(false);
+  const [saving, setSaving] = useState(false);
 
-  // Linhas iniciais, uma vez que o catálogo chegou.
+  // Linhas iniciais, uma vez que o catálogo chegou (só a de origem; sem ela, a entrada).
   useEffect(() => {
     if (!lines || laneIds !== null) return;
-    setLaneIds(initialLanes(lineId, favLineIds, new Set(lines.map((l) => l.id))));
-    // Só na primeira carga do catálogo: as favoritas do momento de abrir.
+    setLaneIds(initialLanes(lineId, new Set(lines.map((l) => l.id))));
+    // Só na primeira carga do catálogo.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lines]);
 
@@ -124,14 +131,9 @@ export function ParallelView({ lineId }: { lineId?: string }) {
   const shownView = view ?? ext;
 
   const lanesOnScreen = laneIds ?? [];
-  const full = lanesOnScreen.length >= PARALLEL_MAX_LANES;
   const hasLanes = lanesOnScreen.length > 0;
+  const nameOf = (id: string) => byId.get(id)?.name ?? '';
 
-  const addToScreen = (id: string) => {
-    setLaneIds((ids) => addLane(ids ?? [], id));
-    pushRecent(id);
-    setPicking(false);
-  };
   const removeLane = (id: string) => {
     setLaneIds((ids) => (ids ?? []).filter((x) => x !== id));
     setIncluded((s) => without(s, id));
@@ -141,11 +143,32 @@ export function ParallelView({ lineId }: { lineId?: string }) {
     setIncluded(new Set());
     setCursor(null);
   };
-  const applyCombo = (ids: readonly string[]) => {
-    setLaneIds(ids.slice(0, PARALLEL_MAX_LANES).filter((id) => byId.has(id)));
+  /** Confirmar no seletor: abre o paralelo com essas linhas e a combinação vira recente. */
+  const confirmPick = (ids: readonly string[]) => {
+    const sel = ids.filter((id) => byId.has(id));
+    if (!canConfirm(sel)) return;
+    setLaneIds(sel);
+    setIncluded((s) => new Set([...s].filter((id) => sel.includes(id))));
+    setCursor(null);
+    recordCombo(sel, defaultComboName(sel.map(nameOf)));
+    setPicking(false);
+  };
+  /** Cartão: abre o paralelo com as linhas dele (as prontas não são gravadas). */
+  const openCard = (card: ComboCard) => {
+    const sel = card.lines.filter((id) => byId.has(id));
+    if (!canConfirm(sel)) return;
+    setLaneIds(sel);
     setIncluded(new Set());
     setCursor(null);
-    setPicking(false);
+  };
+  const starCard = (card: ComboCard) => {
+    if (card.source === 'mine' && card.favorite) unfavoriteCombo(card.id);
+    else favoriteCombo(card.lines, card.name);
+  };
+  const savedNow = combos.some((c) => c.favorite && comboKey(c.lines) === comboKey(lanesOnScreen));
+  const saveCurrent = (name: string) => {
+    favoriteCombo(lanesOnScreen, name);
+    setSaving(false);
   };
 
   const includeFar = (id: string) => setIncluded((s) => new Set(s).add(id));
@@ -170,20 +193,18 @@ export function ParallelView({ lineId }: { lineId?: string }) {
 
   const compare: PreviewCompare = {
     onScreen: new Set(lanesOnScreen),
-    full,
     onAdd: (line) => {
-      addToScreen(line.id);
+      setLaneIds((ids) => addLane(ids ?? [], line.id));
       setPreview(null);
     },
   };
 
   const ready = lines !== null && laneIds !== null;
 
-  // Textos do gráfico, da escolha e das combinações: traduzidos num só lote quando configurado.
-  const comboNames = useMemo(() => PARALLEL_COMBOS.flatMap((combo) => combo.lines.map((id) => byId.get(id)?.name ?? '')), [byId]);
+  // Textos do gráfico: traduzidos num só lote quando configurado (os cartões traduzem os seus).
   const chartTexts = useMemo(
-    () => [...laneViews.map((l) => l.line.name), ...laneViews.flatMap((l) => l.visible.map((e) => e.title)), ...comboNames],
-    [laneViews, comboNames],
+    () => [...laneViews.map((l) => l.line.name), ...laneViews.flatMap((l) => l.visible.map((e) => e.title))],
+    [laneViews],
   );
   const tr = useTimelineTexts(chartTexts);
 
@@ -191,17 +212,17 @@ export function ParallelView({ lineId }: { lineId?: string }) {
     <TimelineGate>
       <View style={{ flex: 1, backgroundColor: c.bg }}>
         <Stack.Screen options={{ title: TL.parallelTitle }} />
-        <View style={{ gap: space[3], paddingTop: space[4], paddingBottom: space[3], paddingHorizontal: space[4], borderBottomWidth: 1, borderBottomColor: c.border }}>
-          <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: space[3] }}>
-            {laneViews.map((l) => (
-              <LaneChip key={l.id} testID={`tl-lane-${l.id}`} name={tr(l.line.name)} color={kindColor(l.line.kind, st)} onRemove={() => removeLane(l.id)} />
-            ))}
-            <Chip testID="tl-add-line" label={TL.addLine} on={false} disabled={full || !lines} onPress={() => setPicking(true)} />
-            {hasLanes && <Chip testID="tl-clear" label={TL.clearLines} on={false} onPress={clearLanes} />}
-          </View>
-          {full && <Txt v="meta" color="muted">{TL.laneLimit}</Txt>}
-          <TimelineTranslationNote testID="tl-paralelo-note" />
-          {hasLanes && (
+        {hasLanes && (
+          <View style={{ gap: space[3], paddingTop: space[4], paddingBottom: space[3], paddingHorizontal: space[4], borderBottomWidth: 1, borderBottomColor: c.border }}>
+            <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: space[3] }}>
+              {laneViews.map((l) => (
+                <LaneChip key={l.id} testID={`tl-lane-${l.id}`} name={tr(l.line.name)} color={kindColor(l.line.kind, st)} onRemove={() => removeLane(l.id)} />
+              ))}
+              <Chip testID="tl-add-line" label={TL.addLine} on={false} disabled={!lines} onPress={() => setPicking(true)} />
+              <Chip testID="tl-save" label={savedNow ? TL.savedCombo : TL.saveCombo} on={false} disabled={savedNow} onPress={() => setSaving(true)} />
+              <Chip testID="tl-clear" label={TL.clearLines} on={false} onPress={clearLanes} />
+            </View>
+            <TimelineTranslationNote testID="tl-paralelo-note" />
             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: space[3] }}>
               <Chip testID="tl-fit" label={TL.fitAll} on={false} onPress={() => ext && setViewState({ lo: ext.lo, hi: ext.hi })} />
               <View style={{ flexDirection: 'row', gap: space[3] }}>
@@ -209,35 +230,20 @@ export function ParallelView({ lineId }: { lineId?: string }) {
                 <ZoomButton testID="tl-zoom-in" label="+" accessibilityLabel={TL.zoomIn} onPress={() => zoomBy(0.5)} />
               </View>
             </View>
-          )}
-        </View>
+          </View>
+        )}
 
         {!ready && <Txt v="meta" color="muted" style={{ padding: space[8] }}>{TL.noDataYet}</Txt>}
 
         {ready && !hasLanes && (
-          <ScrollView contentContainerStyle={{ padding: space[8], gap: space[5] }}>
-            <Txt v="lensTitle" tint={c.text}>{TL.emptyTitle}</Txt>
-            <Txt v="meta" color="muted">{TL.emptyBody}</Txt>
-            <Txt v="eyebrow" color="muted" style={{ marginTop: space[3] }}>{TL.combos}</Txt>
-            <View style={{ gap: space[3] }}>
-              {PARALLEL_COMBOS.map((combo) => (
-                <Pressable
-                  key={combo.id}
-                  testID={`tl-combo-${combo.id}`}
-                  accessibilityRole="button"
-                  accessibilityLabel={combo.name}
-                  onPress={() => applyCombo(combo.lines)}
-                  style={({ pressed }) => ({ borderWidth: 1, borderColor: c.border, borderRadius: radius.card, backgroundColor: c.surface, padding: space[5], gap: 2, opacity: pressed ? 0.7 : 1 })}
-                >
-                  <Txt v="bodySm" bold>{combo.name}</Txt>
-                  <Txt v="meta" color="muted" numberOfLines={2}>
-                    {combo.lines.map((id) => tr(byId.get(id)?.name ?? '')).filter(Boolean).join(' · ')}
-                  </Txt>
-                </Pressable>
-              ))}
-            </View>
-            <SourceFooter />
-          </ScrollView>
+          <CombinationEntry
+            cards={cards}
+            nameOf={nameOf}
+            onCreate={() => setPicking(true)}
+            onOpen={openCard}
+            onStar={starCard}
+            onRemove={(card) => removeCombo(card.id)}
+          />
         )}
 
         {ready && hasLanes && (
@@ -304,16 +310,9 @@ export function ParallelView({ lineId }: { lineId?: string }) {
           <EventPreview citeId={preview.citeId} currentLineId={preview.laneId} compare={compare} onClose={() => setPreview(null)} />
         )}
         {picking && lines && (
-          <LinePicker
-            lines={lines}
-            laneIds={lanesOnScreen}
-            favorites={favLineIds}
-            recent={recentIds}
-            onAdd={(line) => addToScreen(line.id)}
-            onCombo={applyCombo}
-            onClose={() => setPicking(false)}
-          />
+          <CombinationPicker lines={lines} initial={lanesOnScreen} onConfirm={confirmPick} onClose={() => setPicking(false)} />
         )}
+        {saving && <SaveComboSheet defaultName={defaultComboName(lanesOnScreen.map(nameOf))} onSave={saveCurrent} onClose={() => setSaving(false)} />}
       </View>
     </TimelineGate>
   );
@@ -324,27 +323,6 @@ function without(set: ReadonlySet<string>, id: string): ReadonlySet<string> {
   const next = new Set(set);
   next.delete(id);
   return next;
-}
-
-/** Chip de linha na tela: bolinha da cor do tipo, nome e × para tirar. */
-function LaneChip({ testID, name, color, onRemove }: { testID: string; name: string; color: string; onRemove: () => void }) {
-  const { c } = useTheme();
-  return (
-    <View testID={testID} style={{ flexDirection: 'row', alignItems: 'center', gap: space[3], minHeight: 34, paddingLeft: space[5], paddingRight: space[2], borderRadius: radius.pill, borderWidth: 1, borderColor: c.border, backgroundColor: c.surface, maxWidth: '100%' }}>
-      <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: color }} />
-      <Txt v="button" style={{ fontSize: 12.5, lineHeight: 16, flexShrink: 1 }} numberOfLines={1}>{name}</Txt>
-      <Pressable
-        testID={`${testID}-remove`}
-        accessibilityRole="button"
-        accessibilityLabel={TL.removeLane(name)}
-        onPress={onRemove}
-        hitSlop={8}
-        style={({ pressed }) => ({ width: 26, height: 26, borderRadius: 13, backgroundColor: c.surfaceAlt, alignItems: 'center', justifyContent: 'center', opacity: pressed ? 0.6 : 1 })}
-      >
-        <Txt v="button" color="muted" style={{ fontSize: 13, lineHeight: 15 }}>×</Txt>
-      </Pressable>
-    </View>
-  );
 }
 
 /** Botão quadrado de zoom (− +). */

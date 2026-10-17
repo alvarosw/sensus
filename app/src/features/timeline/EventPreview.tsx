@@ -16,10 +16,9 @@ import { openInReader } from './actions';
 import { Chip } from './parts';
 import { useTimelineText, useTimelineTexts } from '@/translate/timeline-translate';
 
-/** Comparação no paralelo: linhas já na tela, se o limite está cheio e o que fazer ao tocar em "+ linha". */
+/** Comparação no paralelo: linhas já na tela e o que fazer ao tocar em "+ linha". */
 export interface PreviewCompare {
   onScreen: ReadonlySet<string>;
-  full: boolean;
   onAdd: (line: TimelineLineRef) => void;
 }
 
@@ -117,12 +116,10 @@ export function EventPreview({
                           testID={`tl-add-${l.id}`}
                           label={TL.compareAdd(trLines(l.name))}
                           on={false}
-                          disabled={compare.full}
                           onPress={() => compare.onAdd(l)}
                         />
                       ))}
                   </View>
-                  {compare.full && <Txt v="meta" color="muted">{TL.compareLimit}</Txt>}
                 </View>
               )}
 
