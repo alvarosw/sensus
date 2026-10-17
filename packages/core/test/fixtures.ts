@@ -7,7 +7,7 @@ const SCHEMA = new URL('../../../pipeline/schema.sql', import.meta.url);
 
 type Row = Record<string, SqlParam>;
 
-function insert(db: DatabaseSync, table: string, rows: Row[]): void {
+export function insert(db: DatabaseSync, table: string, rows: Row[]): void {
   for (const row of rows) {
     const cols = Object.keys(row);
     const sql = `INSERT INTO ${table} (${cols.join(', ')}) VALUES (${cols.map(() => '?').join(', ')})`;
@@ -15,7 +15,7 @@ function insert(db: DatabaseSync, table: string, rows: Row[]): void {
   }
 }
 
-function source(id: string, kind: string, title: string, extra: Row = {}): Row {
+export function source(id: string, kind: string, title: string, extra: Row = {}): Row {
   return {
     id,
     kind,
