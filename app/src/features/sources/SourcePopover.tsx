@@ -223,7 +223,7 @@ function Body({ detail, repo }: { detail: CiteDetail; repo: ReturnType<typeof us
   }, [repo, detail.citeId]);
 
   // Tradução automática do trecho mostrado: o idioma vem da fonte (lexicon, Bíblia escolhida ou a própria fonte).
-  const lexSource = extra.data?.lex?.tbesg;
+  const lexSource = extra.data?.lex?.main;
   const lexLang = useSourceLang(lexSource?.source_id ?? null);
   const textLang = useSourceLang(textSource);
   const shownText =
@@ -241,7 +241,7 @@ function Body({ detail, repo }: { detail: CiteDetail; repo: ReturnType<typeof us
   if (record.table === 'token') {
     const t = record.record;
     const pills = morphPills(t.morph_desc);
-    const lex = extra.data?.lex?.tbesg;
+    const lex = extra.data?.lex?.main;
     return (
       <>
         <Text style={{ fontFamily: fontFamilies.greek, fontSize: 28, lineHeight: 34, color: st.tok }} selectable>
