@@ -1,8 +1,9 @@
 // Dados da linha do tempo para as telas: consultas ao núcleo (Repo) com cache por banco. Cada consulta é
 // feita uma vez e reaproveitada entre telas; falha não fica em cache (tenta de novo na próxima montagem).
 import { useEffect, useState } from 'react';
-import type { Repo, TimelineLine, TimelineLineEvent, TimelineLineRef, TimelineSearchResult, TimelineSummary } from '@sensus/core';
+import type { Repo, TimelineLine, TimelineLineEvent, TimelineLineRef, TimelineSearchResult, TimelineSummary, Vid } from '@sensus/core';
 import { useRepo } from '@/data/db-context';
+import { useStudy } from '@/state/study';
 
 interface RepoCache {
   lines?: Promise<TimelineLine[]>;
@@ -158,5 +159,15 @@ export function useEventsByIds(ids: readonly string[]): TimelineLineEvent[] | nu
   return useLoaded(key, async (repo) => {
     const found = await Promise.all(ids.map((id) => repo.timelineEvent(id)));
     return found.filter((e): e is TimelineLineEvent => e !== null);
+  });
+}
+
+/** Começo do texto de um evento (os dois primeiros versículos, no texto de estudo). "" sem versículos; null enquanto carrega. */
+export function useVerseStart(first: Vid | null, last: Vid | null): string | null {
+  const textSource = useStudy((s) => s.textSource);
+  return useLoaded(`verse:${first ?? ''}-${last ?? ''}:${textSource}`, async (repo) => {
+    if (first == null || last == null) return '';
+    const verses = await repo.verseTexts(textSource, { start: first, end: last }, 2);
+    return verses.map((v) => v.text).join(' ');
   });
 }

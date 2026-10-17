@@ -1,5 +1,5 @@
 // Cards de fontes por tipo (proto: wordCard, comCard, xrCard, dicCard, placeCard, matrix).
-import { memo, useMemo } from 'react';
+import { memo, useMemo, useState } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
 import {
   formatEventDate,
@@ -35,6 +35,7 @@ import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
 import { useTimelineTexts } from '@/translate/timeline-translate';
 import { useSourceLang } from '@/translate/source-lang';
 import { useStudy } from '@/state/study';
+import { EventPreview } from '@/features/timeline/EventPreview';
 import { bareWord, chv, isOldTestament, morphLabelsPt, refShort, type CommentaryView, type KeyWord } from './format';
 import { STUDY } from './strings';
 
@@ -262,16 +263,19 @@ export function PlaceCard({
 export function TimelineCard({
   events,
   books,
-  onOpen,
+  onRead,
   onOpenTimeline,
 }: {
   events: readonly TimelineEvent[];
   books: readonly Book[];
-  onOpen: (event: TimelineEvent) => void;
-  /** Abre a cronologia completa no evento do trecho ("Abrir na linha do tempo"). */
+  /** "Ler no texto" da prévia: seleciona e rola o leitor até os versículos do evento. */
+  onRead: (first: number, last: number) => void;
+  /** Abre a cronologia do trecho em tela cheia ("Abrir na linha do tempo"). */
   onOpenTimeline?: () => void;
 }) {
   const { c, st } = useTheme();
+  // Tocar num evento só abre a prévia; a leitura vem do botão "Ler no texto" (o toque pode ser acidental).
+  const [preview, setPreview] = useState<string | null>(null);
   // Coluna do ano do tamanho do rótulo mais longo (mono: ~0,6 em por caractere), sem sobra à esquerda.
   const years = events.map((e) => formatEventDate(e.startDate) ?? '');
   const yearW = Math.ceil(Math.max(1, ...years.map((y) => y.length)) * 11 * 0.62);
@@ -292,7 +296,7 @@ export function TimelineCard({
                 testID={`timeline-${e.cite_id}`}
                 accessibilityRole="button"
                 accessibilityLabel={`${tr(e.title)}, ${year}, ${reference}`}
-                onPress={() => onOpen(e)}
+                onPress={() => setPreview(e.cite_id)}
                 hitSlop={4}
                 style={({ pressed }) => ({
                   flexDirection: 'row',
@@ -334,6 +338,7 @@ export function TimelineCard({
         </View>
       </Card>
       {onOpenTimeline && <LinkButton label={STUDY.timelineOpen} onPress={onOpenTimeline} testID="timeline-open" />}
+      {preview && <EventPreview citeId={preview} confirm={{ onRead }} onClose={() => setPreview(null)} />}
     </View>
   );
 }

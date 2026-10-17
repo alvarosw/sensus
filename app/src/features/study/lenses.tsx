@@ -12,7 +12,6 @@ import {
   type Commentary,
   type Entity,
   type PanelData,
-  type TimelineEvent,
   type Token,
   type Vid,
 } from '@sensus/core';
@@ -455,22 +454,21 @@ export function HistoricoLens({ onLayout }: LensProps) {
             return <Empty text={STUDY.historicalEmpty} />;
           }
           const open = (id: string) => useStudy.getState().pushPanel({ kind: 'entity', citeId: id });
-          // Mesmo caminho de "ir para": seleção nos versículos do evento e rolagem do leitor até eles.
-          const openEvent = (e: TimelineEvent) => {
-            useStudy.getState().setSelection(e.first_vid, e.last_vid);
-            useReaderNav.getState().goVerse(e.first_vid, { flash: true });
+          // Só chamado pela prévia, em "Ler no texto": seleção nos versículos do evento e rolagem do leitor até eles.
+          const readEvent = (first: number, last: number) => {
+            useStudy.getState().setSelection(first, last);
+            useReaderNav.getState().goVerse(first, { flash: true });
           };
-          // Cronologia completa, já no evento do trecho (o primeiro dele; sem evento neste trecho, a tela abre cheia).
+          // Cronologia do livro do trecho em tela cheia (começa no evento do trecho).
           const openTimeline = () => {
-            const cite = (parts.events.find((e) => e.inRange) ?? parts.events[0])?.cite_id;
-            router.push(cite ? { pathname: '/timeline', params: { evento: cite } } : '/timeline');
+            router.push({ pathname: '/timeline/contexto', params: { de: String(data.range.start), ate: String(data.range.end) } });
           };
           return (
             <View style={{ gap: space[6] }}>
               {events.length > 0 && (
                 <>
                   <SubHeader label={STUDY.timeline} />
-                  <TimelineCard events={events} books={data.books} onOpen={openEvent} onOpenTimeline={openTimeline} />
+                  <TimelineCard events={events} books={data.books} onRead={readEvent} onOpenTimeline={openTimeline} />
                 </>
               )}
               {places.length > 0 && <PassageMapCard range={data.range} unit={data.unit} />}

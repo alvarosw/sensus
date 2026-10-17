@@ -93,6 +93,20 @@ export const TL = {
   laneLoading: 'Carregando a linha…',
   done: 'Pronto',
   noDataYet: 'Carregando a cronologia…',
+
+  contextTitle: 'Cronologia do trecho',
+  scopeBook: 'Livro',
+  scopeBible: 'Bíblia inteira',
+  groupEvents: (n: number) => `${n} ${n === 1 ? 'evento' : 'eventos'}`,
+  inTrecho: 'neste trecho',
+  rulerLabel: 'Régua de anos',
+  rulerJump: (year: string) => `Ir para ${year}`,
+  contextEmpty: 'Nenhum evento neste livro.',
+  contextInvalid: 'Não foi possível abrir a cronologia deste trecho.',
+  readInText: 'Ler no texto',
+  verseStart: 'Começo do texto',
+  returnPill: 'Voltar à linha do tempo',
+  dismissReturn: 'Dispensar',
 };
 
 export const TL_ERA_SHORT: Record<string, string> = {

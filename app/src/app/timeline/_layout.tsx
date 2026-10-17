@@ -22,6 +22,7 @@ export default function TimelineLayout() {
       <Stack.Screen name="linha" options={{ title: TL.title }} />
       <Stack.Screen name="bible" options={{ title: TL.biblePlainTitle }} />
       <Stack.Screen name="paralelo" options={{ title: TL.parallelTitle }} />
+      <Stack.Screen name="contexto" options={{ title: TL.contextTitle }} />
     </Stack>
   );
 }

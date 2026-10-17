@@ -1,17 +1,19 @@
 // Prévia de um evento (folha sobre a tela): ano e referência, pessoas (levam à linha da pessoa), "Também em"
 // (outras linhas do evento), "Ler" (leitor com os versículos destacados) e marcador. No paralelo, "Também em"
 // vira "+ linha" para pôr a linha na comparação.
+// Modo de confirmação (confirm): só título, data, pessoas, começo do texto e "Ler no texto" / "Fechar". Usado onde um
+// toque não pode navegar sem confirmação (cartão do Histórico, cronologia do trecho).
 import { useMemo } from 'react';
 import { Modal, Pressable, ScrollView, View } from 'react-native';
 import { useRouter } from 'expo-router';
-import type { TimelineLine, TimelineLineRef } from '@sensus/core';
+import type { TimelineLine, TimelineLineEvent, TimelineLineRef, Vid } from '@sensus/core';
 import { Txt, radius, space, useTheme } from '@/design';
 import { useBooks, useReduceMotion } from '@/features/common/hooks';
 import { useAppPrefs } from '@/settings/app-prefs';
 import { refShort } from '@/features/study/format';
 import { eventYear } from './model';
 import { TL } from './strings';
-import { useEventDetail, useTimelineLines } from './useTimeline';
+import { useEventDetail, useTimelineLines, useVerseStart } from './useTimeline';
 import { openInReader } from './actions';
 import { Chip } from './parts';
 import { useTimelineText, useTimelineTexts } from '@/translate/timeline-translate';
@@ -27,11 +29,14 @@ export function EventPreview({
   citeId,
   currentLineId,
   compare,
+  confirm,
   onClose,
 }: {
   citeId: string;
   currentLineId?: string;
   compare?: PreviewCompare;
+  /** Modo de confirmação: "Ler no texto" entrega os versículos do evento (a prévia fecha antes). */
+  confirm?: { onRead: (first: Vid, last: Vid) => void };
   onClose: () => void;
 }) {
   const { c } = useTheme();
@@ -57,6 +62,7 @@ export function EventPreview({
   const peopleNames = [...new Set(people.map((p) => p.name).filter(Boolean))];
   const trPeople = useTimelineTexts(peopleNames);
   const trLines = useTimelineTexts(others.map((l) => l.name));
+  const verse = useVerseStart(event?.first_vid ?? null, event?.last_vid ?? null);
   // Pessoa com linha própria vira link (exceto a linha em que a prévia já está).
   const personLine = (cite: string): TimelineLine | undefined =>
     lineIds.has(cite) && cite !== currentLineId ? (lines ?? []).find((l) => l.id === cite) : undefined;
@@ -82,6 +88,14 @@ export function EventPreview({
           <View style={{ alignSelf: 'center', width: 38, height: 5, borderRadius: 3, backgroundColor: c.border }} />
           {!event ? (
             <Txt v="meta" color="muted">{TL.previewLoading}</Txt>
+          ) : confirm ? (
+            <ConfirmBody
+              event={event}
+              title={title}
+              verse={verse}
+              onRead={() => confirm.onRead(event.first_vid, event.last_vid)}
+              onClose={onClose}
+            />
           ) : (
             <ScrollView contentContainerStyle={{ gap: space[5] }} showsVerticalScrollIndicator={false}>
               <Txt v="sheetTitle" accessibilityRole="header">{title}</Txt>
@@ -179,5 +193,79 @@ export function EventPreview({
         </View>
       </View>
     </Modal>
+  );
+}
+
+/** Corpo do modo de confirmação: nada aqui navega; só "Ler no texto" (via onRead) e "Fechar". */
+function ConfirmBody({
+  event,
+  title,
+  verse,
+  onRead,
+  onClose,
+}: {
+  event: TimelineLineEvent;
+  title: string;
+  verse: string | null;
+  onRead: () => void;
+  onClose: () => void;
+}) {
+  const { c } = useTheme();
+  const books = useBooks();
+  const peopleNames = [...new Set(event.participants.map((p) => p.name).filter(Boolean))];
+  const trPeople = useTimelineTexts(peopleNames);
+  return (
+    <ScrollView contentContainerStyle={{ gap: space[5] }} showsVerticalScrollIndicator={false}>
+      <Txt v="sheetTitle" accessibilityRole="header">{title}</Txt>
+      <Txt v="meta" color="muted">{`${eventYear(event)} · ${refShort(event.first_vid, event.last_vid, books, true)}`}</Txt>
+      {peopleNames.length > 0 && (
+        <View style={{ gap: space[3] }}>
+          <Txt v="eyebrow" color="muted">{TL.people}</Txt>
+          <Txt v="meta" color="text">{peopleNames.map(trPeople).join(', ')}</Txt>
+        </View>
+      )}
+      {verse ? (
+        <View style={{ gap: space[3] }}>
+          <Txt v="eyebrow" color="muted">{TL.verseStart}</Txt>
+          <Txt v="excerpt" numberOfLines={4}>{verse}</Txt>
+        </View>
+      ) : null}
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space[4] }}>
+        <Pressable
+          testID="tl-read"
+          accessibilityRole="button"
+          onPress={() => {
+            onClose();
+            onRead();
+          }}
+          style={({ pressed }) => ({
+            minHeight: 44,
+            paddingHorizontal: space[8],
+            borderRadius: radius.lg,
+            backgroundColor: c.accent,
+            justifyContent: 'center',
+            opacity: pressed ? 0.8 : 1,
+          })}
+        >
+          <Txt v="button" tint={c.accentText}>{TL.readInText}</Txt>
+        </Pressable>
+        <Pressable
+          testID="tl-close"
+          accessibilityRole="button"
+          onPress={onClose}
+          style={({ pressed }) => ({
+            minHeight: 44,
+            paddingHorizontal: space[8],
+            borderRadius: radius.lg,
+            backgroundColor: c.surfaceAlt,
+            justifyContent: 'center',
+            opacity: pressed ? 0.8 : 1,
+          })}
+        >
+          <Txt v="button" color="text">{TL.close}</Txt>
+        </Pressable>
+      </View>
+      <Txt v="meta" color="muted" style={{ fontSize: 11 }}>{TL.previewSource}</Txt>
+    </ScrollView>
   );
 }

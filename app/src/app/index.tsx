@@ -4,7 +4,7 @@ import { View, type LayoutChangeEvent } from 'react-native';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import type { Book } from '@sensus/core';
-import { size, useTheme } from '@/design';
+import { size, space, useTheme } from '@/design';
 import { ChatLayer } from '@/features/chat/ChatLayer';
 import { ToastHost } from '@/features/common/Toast';
 import { BACK_PRIORITY, useBackLayer, useRootBackHandler } from '@/features/common/back';
@@ -14,6 +14,7 @@ import { TopBar } from '@/features/nav/TopBar';
 import { PinnedBar } from '@/features/reader/PinnedBar';
 import { Reader } from '@/features/reader/Reader';
 import { useReaderNav } from '@/features/reader/nav-store';
+import { ContextReturnPill } from '@/features/timeline/ContextReturnPill';
 import { SourceLayer } from '@/features/sources/SourceLayer';
 import { StudySheet } from '@/features/study/StudySheet';
 
@@ -55,6 +56,7 @@ export default function MainScreen() {
       <View style={{ flex: 1 }}>
         <Reader areaHeight={areaHeight} />
       </View>
+      <ContextReturnPill top={insets.top + size.topBar + space[3]} />
       {jumpOpen && <JumpPopover onClose={() => setJumpOpen(false)} />}
       <BookPicker
         visible={booksOpen}
