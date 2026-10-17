@@ -123,6 +123,42 @@ def alt_tokens(text: str) -> list[tuple[str, str]]:
     return out
 
 
+DETS = {"the", "this", "that", "these", "those", "a", "an", "his", "her", "our", "their", "its", "my",
+        "your", "some", "no", "every", "any", "each", "another"}
+CITE = re.compile(r"^(?:Dan|Rev|Isa|Eze|Ezek|Matt|Mark|Luke|John|Gen|Ex|Ps|Jer|Zech|Joel|Hos|Lev|Num|Deut|Acts)\.?,?$")
+
+
+def footnote_spans(toks: list[str]) -> list[tuple[int, int]]:
+    """Notas de rodapé intercaladas no texto do scan (índices de palavras, inclusive).
+
+    - "[For portraits, see page 150.]" (legenda de retrato entre colchetes);
+    - "Dan. 7:25, For biographical sketches, see Appendix." (nota de rodapé de página).
+    """
+    spans = []
+    i = 0
+    while i < len(toks):
+        w = toks[i].strip(",;:.").lower()
+        window = [x.strip(",;:.").lower() for x in toks[i:i + 7]]
+        if toks[i].startswith("[For") and any(x.endswith("]") for x in toks[i:i + 9]):
+            j = next(k for k in range(i, min(i + 9, len(toks))) if toks[k].endswith("]"))
+            spans.append((i, j))
+            i = j + 1
+            continue
+        if w in ("for", "see") and "appendix" in window[:6] and "biographical" in window[:3] or (
+                w == "see" and window[:2] == ["see", "appendix"]):
+            k = next(k for k in range(i, min(i + 7, len(toks))) if toks[k].strip(",;:.").lower() == "appendix")
+            a = i
+            if i >= 2 and CITE.match(toks[i - 2]) and toks[i - 1][:1].isdigit():
+                a = i - 2
+            elif i >= 1 and CITE.match(toks[i - 1]):
+                a = i - 1
+            spans.append((a, k))
+            i = k + 1
+            continue
+        i += 1
+    return spans
+
+
 def main():
     names = sys.argv[1].split(",") if len(sys.argv) > 1 else list(ALT)
     words = load_dict()
@@ -131,7 +167,17 @@ def main():
         stats = Counter()
         raw_path = A.RAW / sid / work.raw_name
         body, _ = A.read_body(work, raw_path)
-        paras = [(c, m, p) for c, m, p, _ in A.prepared(work, body, "", stats) if p]
+        paras = []  # (capítulo, marcas, texto, é_início_de_seção)
+        starts_next = False
+        prev_chapter = object()
+        for c, m, p, epi in A.prepared(work, body, "", stats):
+            starts_next = starts_next or epi is not None
+            if not p:
+                continue
+            # início de seção: depois de uma epígrafe (Mt 5–7) ou de um novo capítulo do livro
+            paras.append((c, m, p, starts_next or c != prev_chapter))
+            prev_chapter = c
+            starts_next = False
         # Texto de referência: as outras digitalizações (a obra inteira) e o próprio texto.
         alt: list[tuple[str, str]] = []
         for asid, url, name in ALT[sid]:
@@ -140,7 +186,7 @@ def main():
         alt_counts = Counter(n for n, _ in alt)
         # Nomes próprios: forma com maiúscula inicial no outro scan (Jerusalem, Jehoiakim's).
         alt_proper = {n for n, raw in alt if raw[:1].isupper() and not raw.isupper()}
-        ours_counts = Counter(norm(t) for _, _, para in paras for t in para.split(" ") if norm(t))
+        ours_counts = Counter(norm(t) for _, _, para, _ in paras for t in para.split(" ") if norm(t))
         idx4: dict[tuple, Counter] = defaultdict(Counter)
         idxR: dict[tuple, Counter] = defaultdict(Counter)
         idxL: dict[tuple, Counter] = defaultdict(Counter)
@@ -175,6 +221,11 @@ def main():
             return n, raw
 
         bigrams = {(alt[j][0], alt[j + 1][0]) for j in range(len(alt) - 1)}
+        # Pares de palavras vistos nos outros scans e no próprio texto (para validar frases).
+        ours_seq = [norm(t) for _, _, p, _ in paras for t in p.split(" ") if norm(t)]
+        bi_counts = Counter(zip([x[0] for x in alt], [x[0] for x in alt][1:]))
+        our_bi = Counter(zip(ours_seq, ours_seq[1:]))  # o texto desta obra, sem o outro scan (que repete o erro)
+        bi_counts.update(our_bi)
 
         def ok_alt(n: str, cand: str) -> bool:
             """Candidata da outra digitalização: palavra do dicionário, a até 1-3 letras da ilegível."""
@@ -183,14 +234,36 @@ def main():
                     and not junk(cand))
 
         rows_out = []
-        for chapter, _marks, para in paras:
+        prev_dropped = False
+        for chapter, _marks, para, is_start in paras:
             toks = para.split(" ")
             ns = [norm(t) for t in toks]
             edits = []
             unresolved: list[str] = []
+            skip: set[int] = set()
+            local = Counter(zip(ns, ns[1:]))  # pares desta própria frase não contam como confirmação
+            # (e) notas de rodapé intercaladas no texto: saem; palavra partida pela nota é reunida
+            for a, b in footnote_spans(toks):
+                for k in range(a, b + 1):
+                    edits.append((k, toks[k], "", "e"))
+                    skip.add(k)
+                stats["notas de rodapé intercaladas (e)"] += 1
+                nxt = b + 1
+                if nxt < len(toks) and toks[nxt][:1].islower() and a >= 1:
+                    prev = toks[a - 1]
+                    if prev.endswith("-"):
+                        edits.append((a - 1, prev, prev[:-1] + toks[nxt], "e"))
+                        edits.append((nxt, toks[nxt], "", "e"))
+                        skip.add(nxt)
+                    elif prev[-1:] in ".?!\"”’":
+                        # continuação de frase que começa depois da nota: a parte perdida não se recupera
+                        unresolved.append(f"continuação após nota: {toks[nxt]}")
+                skip.update(range(a, b + 1))
+            if is_start:
+                stats["inícios de seção"] += 1
             for i, tok in enumerate(toks):
                 n = ns[i]
-                if not n:
+                if not n or i in skip:
                     continue
                 if re.fullmatch(r"\(\d{1,4}\)[.,;:]?", tok):
                     # (d) número de página entre parênteses: sai se o outro scan tem palavra (não número) no lugar
@@ -207,7 +280,7 @@ def main():
                 fragment = i == 0 and 1 <= len(letters) <= 3 and n.isalpha() and (
                     letters.isupper() or re.search(r"[A-Z]", letters[1:]) is not None)
                 is_bad = bad(tok)
-                if not (is_bad or fragment):
+                if not (is_bad or fragment or (is_start and i == 0)):
                     continue
                 new = None
                 rule = None
@@ -246,6 +319,30 @@ def main():
                     edits.append((i, tok, new, rule))
                     continue
                 # (c) só para o que não é palavra (ITH, OME) ou para as capitulares típicas do livro (HE, HIS, ORE)
+                if is_start and i == 0 and not (letters.isupper() and 2 <= len(letters) <= 5 and not junk(tok)):
+                    stats["início de seção: sem capitular em maiúsculas (mantida)"] += 1
+                if is_start and i == 0 and letters.isupper() and 2 <= len(letters) <= 5 and not junk(tok) \
+                        and i + 1 < len(ns) and ns[i + 1]:
+                    # (c2) capitular em início de seção: a letra restaurada forma par válido com a palavra seguinte
+                    # (visto no outro scan ou no texto) e o par com a palavra como está não aparece
+                    orig_pair = our_bi[(n, ns[i + 1])] - local[(n, ns[i + 1])]
+                    # Candidata: forma o par com a palavra seguinte, ou é determinante e a palavra seguinte
+                    # já aparece depois de algum determinante (the effort, no effort): "HE effort" -> "THE effort".
+                    det_next = sum(bi_counts[(d, ns[i + 1])] for d in DETS)
+                    good = [ch + n for ch in "abcdefghijklmnopqrstuvwxyz" if (ch + n) in words and (
+                        bi_counts[(ch + n, ns[i + 1])] - local[(ch + n, ns[i + 1])] > 0
+                        or (ch + n in DETS and det_next > 0))]
+                    if orig_pair > 0:
+                        stats["início de seção: palavra como está forma frase válida"] += 1
+                    elif len(good) == 1:
+                        v = good[0]
+                        new = v.upper() if tok.isupper() else v.capitalize()
+                        rule = "c2"
+                        stats["início de seção: capitular restaurada (c2)"] += 1
+                    elif good:
+                        stats["início de seção: mais de uma capitular possível (mantida)"] += 1
+                    else:
+                        stats["início de seção: sem capitular que forme frase (mantida)"] += 1
                 c_ok = letters.isupper() and len(letters) >= 2 and (
                     letters.lower() not in words or letters in ("HE", "HIS", "ORE", "OME", "ITH"))
                 if new is None and fragment and c_ok and not junk(tok):
@@ -265,6 +362,10 @@ def main():
                 elif is_bad and (garbage(tok, known) or (i == 0 and len(letters) == 1 and letters not in "aAI")):
                     unresolved.append(tok)
             key = A.para_key(para)
+            if para[:1].islower() and prev_dropped:
+                # continuação de um parágrafo que saiu: sem o início, não se atribui ao anterior
+                unresolved.append("continuação de parágrafo descartado")
+            prev_dropped = bool(unresolved)
             if unresolved:
                 rows_out.append((key, -1, "drop", " ".join(unresolved)[:200], "", para[:70]))
                 stats["descartados"] += 1
