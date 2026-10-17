@@ -99,3 +99,9 @@ b02b59d1866444e6	114	f	BG	give	f: conferido em MB ch1 b150 150.30
 3e1f367a0867f0b0	73	f	YAMAUS		f: conferido em MB ch6 b150 150.627
 3e1f367a0867f0b0	74	f	V		f: conferido em MB ch6 b150 150.627
 3e1f367a0867f0b0	75	f	fied		f: conferido em MB ch6 b150 150.627
+f918fae25fb9e7e0	0	d	*		d: lixo inicial removido; começo válido: (sem palavra)
+8b51dcae5e4928a8	0	d	_,In	In	d: lixo inicial removido; começo válido: In
+94a22e9c7e82bb65	-1	drop	_.,,dation		motivo: início truncado e trecho não localizado na referência do Sermão do Monte (cap. 1 a 6)
+ec7bdb089afd2a92	-1	drop	-thirsty		motivo: trecho não localizado na referência (cap. 1 a 6)
+2dcf88b5421deaa5	-1	drop	said		motivo: órfão sem começo; a referência não confirma o início no mesmo parágrafo (cap. 2 e 5)
+1ecedda63ddedadf	-1	drop	said		motivo: órfão; o começo ('Till heaven and earth pass') é o drop d55ad7a5, não o parágrafo anterior do scan

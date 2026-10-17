@@ -689,3 +689,7 @@ cd131b576bf6550e	0	f-linha	“Tt	“It	f: conferido em Revelation 21, 12861.3649
 0dc57dc301678ac2	0	f-linha	HE	The	f-linha: resíduo conferido em Daniel 7, 12861.638
 0dc57dc301678ac2	9	f	al		f: resíduo conferido em Daniel 7, 12861.638
 1544f24591da5a3a	0	f	'		f: resíduo conferido em Revelation 14, 12861.3056
+e0ef91432e162b6b	-1	drop	/		motivo: fragmento de citação de Isaías 54:12 (ref. 'I will lay thy stones…'); o começo não está no scan, e restaurar exigiria acrescentar palavras
+4e37da75a6e7c1e4	0	d	-		d: lixo inicial removido; começo válido: (sem palavra)
+417cc87fd3b3c7b1	-1	drop	—ee		motivo: início truncado e no meio da frase de Gen 10:8-10 (referência: 'He was a mighty hunter before the Lord'); restauração não inequívoca
+c39ed107f0c93110	-1	drop	48:5.		motivo: fragmento do fim de nota ('Genesis 48:5 . This divided…') na referência; o começo está em outro parágrafo
