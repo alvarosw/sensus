@@ -108,7 +108,7 @@ export interface StudyState {
   lens: LensKey;
   /** Lente para a qual a folha deve rolar (consumido pela folha). */
   lensTarget: LensKey | null;
-  compare: 'blivre' | 'kjv' | 'tr';
+  compare: 'blivre' | 'kjv' | 'original';
   /** Filtro de tradição na lente de interpretação (null = todas). */
   tradition: string | null;
   /** "Ver todos" por lente/grupo. */
