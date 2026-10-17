@@ -32,3 +32,10 @@ def strong_base(strong: str) -> str:
         raise ValueError(f"Strong inválido: {strong!r}")
     prefix, number, _ = parts
     return f"{prefix}{number:04d}"
+
+
+def strong_base_or_none(strong: str | None) -> str | None:
+    """Como strong_base, mas devolve None para Strong ausente ou fora do formato (os ingestores não abortam)."""
+    if not strong or parse_strong(strong) is None:
+        return None
+    return strong_base(strong)

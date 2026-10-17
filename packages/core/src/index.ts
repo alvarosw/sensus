@@ -27,4 +27,3 @@ export * from './translate-segments';
 export * from './translate-batch';
 export * from './places';
 export * from './timeline';
-export * from './domain';

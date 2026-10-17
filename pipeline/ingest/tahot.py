@@ -21,7 +21,7 @@ from collections import defaultdict  # noqa: E402
 from urllib.parse import quote  # noqa: E402
 
 from sensus.refs import book_num, osis_ref, vid as make_vid  # noqa: E402
-from sensus.strong import strong_base as strong_base_of  # noqa: E402
+from sensus.strong import strong_base_or_none as strong_base_of  # noqa: E402
 from sensus.staging import RAW, StagingWriter, cite_tok, cite_txt  # noqa: E402
 
 REPO_SHA = "dd88ab3772971e17c0ec28a5a6e34f2e97c2f848"

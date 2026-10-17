@@ -81,13 +81,14 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'sword-luther': { short: 'Lutero', commentator: 'Lutero', role: 'commentary', lang: 'en' },
   'sword-pnt': { short: 'B. W. Johnson', commentator: 'B. W. Johnson', role: 'commentary', lang: 'en' },
   'sword-tfg': { short: 'McGarvey', commentator: 'McGarvey e Pendleton', role: 'commentary', lang: 'en' },
-  // Adventistas (Ellen G. White, domínio público; só parágrafos com referência explícita)
-  'egw-great-controversy': { short: 'Grande Conflito', commentator: 'Ellen G. White', role: 'commentary', lang: 'en' },
-  'egw-patriarchs': { short: 'Patriarcas e Profetas', commentator: 'Ellen G. White', role: 'commentary', lang: 'en' },
-  'egw-prophets': { short: 'Profetas e Reis', commentator: 'Ellen G. White', role: 'commentary', lang: 'en' },
-  'egw-acts': { short: 'Atos dos Apóstolos', commentator: 'Ellen G. White', role: 'commentary', lang: 'en' },
-  'egw-object-lessons': { short: 'Parábolas de Jesus', commentator: 'Ellen G. White', role: 'commentary', lang: 'en' },
-  'egw-steps': { short: 'Caminho a Cristo', commentator: 'Ellen G. White', role: 'commentary', lang: 'en' },
+  // Adventistas (Ellen G. White, domínio público; só parágrafos com referência explícita). O comentarista leva a
+  // obra: duas obras dela no mesmo versículo precisam de rótulos distintos.
+  'egw-great-controversy': { short: 'Grande Conflito', commentator: 'Ellen G. White · Grande Conflito', role: 'commentary', lang: 'en' },
+  'egw-patriarchs': { short: 'Patriarcas e Profetas', commentator: 'Ellen G. White · Patriarcas e Profetas', role: 'commentary', lang: 'en' },
+  'egw-prophets': { short: 'Profetas e Reis', commentator: 'Ellen G. White · Profetas e Reis', role: 'commentary', lang: 'en' },
+  'egw-acts': { short: 'Atos dos Apóstolos', commentator: 'Ellen G. White · Atos dos Apóstolos', role: 'commentary', lang: 'en' },
+  'egw-object-lessons': { short: 'Parábolas de Jesus', commentator: 'Ellen G. White · Parábolas de Jesus', role: 'commentary', lang: 'en' },
+  'egw-steps': { short: 'Caminho a Cristo', commentator: 'Ellen G. White · Caminho a Cristo', role: 'commentary', lang: 'en' },
 };
 
 /** Rótulos pt-BR das tradições (o valor vem do pipeline, campo `source.tradition`). */

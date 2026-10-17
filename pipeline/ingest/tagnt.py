@@ -29,7 +29,7 @@ import unicodedata  # noqa: E402
 import urllib.request  # noqa: E402
 
 from sensus import refs  # noqa: E402
-from sensus.strong import strong_base  # noqa: E402
+from sensus.strong import strong_base_or_none as strong_base  # noqa: E402
 from sensus.staging import RAW, StagingWriter, cite_tok, cite_txt  # noqa: E402
 
 SHA = "dd88ab3772971e17c0ec28a5a6e34f2e97c2f848"  # master de STEPBible-Data em 2026-10-09

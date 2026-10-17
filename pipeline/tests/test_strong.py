@@ -9,7 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from sensus.strong import parse_strong, strong_base  # noqa: E402
+from sensus.strong import parse_strong, strong_base, strong_base_or_none  # noqa: E402
 
 
 class StrongBaseTest(unittest.TestCase):
@@ -50,3 +50,13 @@ class ParseStrongTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class StrongBaseOrNoneTest(unittest.TestCase):
+    def test_valido_igual_a_strong_base(self):
+        self.assertEqual(strong_base_or_none("H0935P"), "H0935")
+
+    def test_ausente_ou_invalido_vira_none(self):
+        for s in (None, "", "X123", "G2424+"):
+            self.assertIsNone(strong_base_or_none(s))
+
