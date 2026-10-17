@@ -87,7 +87,8 @@ function resolveImport(from: string, spec: string): string | null {
   if (!base) return null;
   for (const ext of EXTS) {
     try {
-      if (statSync(base + ext).isFile()) return base + ext;
+      // só código conta como dependência; assets (ex.: app/assets/sensus.db, local e fora do git) não
+      if (statSync(base + ext).isFile()) return /\.tsx?$/.test(base + ext) ? base + ext : null;
     } catch {
       /* tenta a próxima extensão */
     }
