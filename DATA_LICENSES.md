@@ -113,8 +113,8 @@ Estate. Ver item 12. Não são comentários versículo a versículo: só parágr
 | `egw-great-controversy` | Ellen G. White (1827-1915) | The Great Controversy (1911) | Project Gutenberg #25833 | Cabeçalho e rodapé do Gutenberg removidos. Notas e índice (apêndice) não usados. |
 | `egw-patriarchs` | Ellen G. White (1827-1915) | The Story of Patriarchs and Prophets (1913; copyright 1890) | Project Gutenberg #79498 | Cabeçalho e rodapé do Gutenberg removidos. Notas de rodapé ligadas pelo marcador [n]. |
 | `egw-prophets` | Ellen G. White (1827-1915) | The Story of Prophets and Kings (1917) | archive.org `storyofprophetsk0000elle` | Cabeçalhos de página removidos. |
-| `egw-acts` | Ellen G. White (1827-1915) | The Acts of the Apostles (1911) | archive.org `actsapostlesinp00unkngoog` | Cabeçalhos de página removidos. |
-| `egw-object-lessons` | Ellen G. White (1827-1915) | Christ's Object Lessons (1900) | archive.org `christsobjectles00whit` | OCR com alguns caracteres trocados em notas; só parágrafos com referência são usados. |
+| `egw-acts` | Ellen G. White (1827-1915) | The Acts of the Apostles (1911) | archive.org `actsapostlesinp00unkngoog` | Palavras ilegíveis no OCR trocadas pela edição de 1911 do mesmo texto (archive.org `actsofapostlesin0000elle`), só com vizinhança idêntica. |
+| `egw-object-lessons` | Ellen G. White (1827-1915) | Christ's Object Lessons (1900) | archive.org `christsobjectles00whit` | Palavras ilegíveis no OCR (marcadas por `{`) trocadas pela palavra da edição de 1900 do mesmo texto (archive.org `christsobjectles0000unse_h6u4`), só com vizinhança idêntica. |
 | `egw-steps` | Ellen G. White (1827-1915) | Steps to Christ (1892; edição de 1896) | archive.org `stepstochrist00whit` | Texto da edição de 1896. |
 
 **Examinadas e não incluídas (adventistas e outras):** *The Desire of Ages* (os scans de 1898 trazem aviso de direitos
