@@ -46,6 +46,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from sensus.staging import RAW, StagingWriter, cite_com  # noqa: E402
 from ingest.refparse import VERSES, find_refs  # noqa: E402
+from sensus.refs import BOOK_BY_NUM  # noqa: E402
 
 UA = "Mozilla/5.0 (sensus-ingest; local research pipeline)"
 AUTHOR = "Ellen G. White (1827-1915)"
@@ -61,6 +62,7 @@ SCAN_FURNITURE = re.compile(
 ILLUSTRATION = re.compile(r"\[Illustration[^\]]*\]", re.S)
 GUT_START = re.compile(r"^\*\*\* ?START OF (?:THE|THIS) PROJECT GUTENBERG.*$", re.M)
 GUT_END = re.compile(r"^\*\*\* ?END OF (?:THE|THIS) PROJECT GUTENBERG.*$", re.M)
+GUT_ITALIC = re.compile(r"_((?:(?!\n\s*\n)[^_]){1,300}?)_")  # sem cruzar parágrafo
 ROMAN = re.compile(r"^[IVXLC]+$")
 TERMINAL = tuple('.!?"”’:;)')
 
@@ -84,7 +86,7 @@ WORKS = [
     Work("egw-great-controversy", "The Great Controversy Between Christ and Satan", "The Great Controversy",
          "Review & Herald, 1911 (copyright 1888, 1907, 1911)",
          "https://www.gutenberg.org/ebooks/25833", "https://www.gutenberg.org/cache/epub/25833/pg25833.txt",
-         "pg25833.txt", "gutenberg", r"THE GREAT CONTROVERSY", r"^(\d{1,2})\.\s+([A-Z][A-Z’'\-,;:!?. ]+?)\.?$",
+         "pg25833.txt", "gutenberg", r"THE GREAT CONTROVERSY", None,
          "Project Gutenberg eBook #25833"),
     Work("egw-patriarchs", "The Story of Patriarchs and Prophets", "Patriarchs and Prophets",
          "Pacific Press, 1913 (copyright 1890, 1913)",
@@ -140,6 +142,7 @@ def fetch(url: str, dest: Path) -> Path:
     return dest
 
 
+SOFT_HYPHEN = re.compile(r"¬\s*")  # hífen de fim de linha do OCR (DLI): "pict¬ured" -> "pictured"
 BACK_MATTER = re.compile(r"^\s*(?:APPENDIX|INDEX)\b[A-Z .,]*\.?\s*$", re.M)
 
 
@@ -165,10 +168,13 @@ def read_body(work: Work, path: Path) -> tuple[str, dict[int, str]]:
         if not m or not e:
             raise RuntimeError(f"{work.source_id}: marcadores START/END do Gutenberg não encontrados")
         raw = raw[m.end():e.start()]
+        raw = GUT_ITALIC.sub(r"\1", raw)  # marcação de itálico do Gutenberg: _palavra_
     raw = ILLUSTRATION.sub("", raw)
     raw = cut_back_matter(raw)
-    running = re.compile(r"^\s*(?:\d+\s+)?" + work.running + r"(?:\s+\d+)?\s*$", re.I)
-    inline_running = re.compile(r"\s*\b\d*\s*\b" + work.running + r"\b\s*\d*", re.I)
+    raw = SOFT_HYPHEN.sub("", raw)
+    head = work.running.replace(" ", r"\s+")  # o scan tem espaço duplo entre as palavras
+    running = re.compile(r"^\s*(?:\d+\s+)?" + head + r"(?:\s+\d+)?\s*\.?\s*$", re.I)
+    inline_running = re.compile(r"\s*\b\d*\s*\b" + head + r"\b\s*\d*", re.I)
     footnotes: dict[int, str] = {}
     kept, note = [], None
     for ln in raw.split("\n"):
@@ -208,10 +214,15 @@ def paragraphs(body: str, work: Work):
             return
         if work.origin == "archive":
             text = text.replace("^", "")
+            text = re.sub(r"(?<=\s)_+(?=\s)", "", text)  # traço isolado do scan (não é palavra)
             text = re.sub(r"(?<=[a-z])- (?=[a-z])", "", text)  # "Ju- daism" -> "Judaism"
             text = " ".join(text.split())
-        if out and text[:1].islower() and out[-1][1][-1:] not in TERMINAL and out[-1][0] == chapter:
-            out[-1] = (out[-1][0], out[-1][1] + " " + text)
+            text = FOOTNOTE_NUM.sub(_drop_footnote_num, text)
+        if out and re.match(r"[\"“‘']*[a-z]", text) and out[-1][0] == chapter:
+            merged = out[-1][1] + " " + text
+            if work.origin == "archive":  # hífen que caiu entre duas partes (página em branco no meio)
+                merged = re.sub(r"(?<=[a-z])- (?=[a-z])", "", merged)
+            out[-1] = (out[-1][0], merged)
             return
         out.append((chapter, text))
 
@@ -237,6 +248,14 @@ REF_LIST = re.compile(r"(?:[1-3]\s)?[A-Z][A-Za-z]*\.?\s*\d+(?:\s*:\s*\d+)?(?:\s*
 # "Isa. 5 : 3-7" -> "Isa. 5:3-7" (espaço antes/depois do dois-pontos do scan).
 COLON_SPACES = re.compile(r"(\d)\s*:\s*(\d)")
 FOOTNOTE_HEAD = re.compile(r"^Footnote (\d+):\s*$")
+# Nota numerada colada no texto (OCR): "again .” 1 Signs". Não mexe em "”  2 Peter 1:21" (livro bíblico).
+FOOTNOTE_NUM = re.compile(r"([”’\"])\s+\d{1,2}\s+(?=([A-Z“‘][A-Za-z]*))")
+BOOK_FIRST = {w.lower().strip(".") for b in BOOK_BY_NUM.values() for w in b[3].split()
+              if w.lower() not in ("1", "2", "3", "i", "ii", "iii", "the", "of", "and")} | {"song"}
+
+
+def _drop_footnote_num(m: re.Match) -> str:
+    return m.group(0) if m.group(2).lower() in BOOK_FIRST else m.group(1) + " "
 MARKER = re.compile(r"\[(\d{1,4})\]")
 PAGE_NUM = re.compile(r"^\d{1,4}\s+(?=(?:Ibid|[a-z\"“‘]))")
 
@@ -310,8 +329,8 @@ def build_work(work: Work):
             key = "OCR com letra e dígito colados" if it.get("ocr") else "ambíguas (Phil. sem capítulo:versículo)"
             stats[f"descartadas: {key}"] += len(refs)
             continue
-        keep = [r for r in refs if not is_whole_chapter(*r)]
-        stats["capítulo inteiro descartado"] += len(refs) - len(keep)
+        keep = refs
+        stats["referências de capítulo inteiro"] += sum(is_whole_chapter(*r) for r in refs)
         if not keep:
             continue
         head = f"{AUTHOR} — {work.short}"

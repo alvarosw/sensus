@@ -195,6 +195,9 @@ Mapa do mundo antigo (AWMC): não incluído; ver `docs/BACKLOG.md`, seção App.
     anteriores a 1929. Se algum scan for de edição posterior, ou tiver aviso de direitos de edição revisada, a fonte sai.
     (b) O `sword-luther` reúne material de várias edições; o `.conf` declara PD. Revisar antes de distribuir.
     (c) Uriah Smith (1903) e outras fontes de OCR: só entram com texto revisado.
+    (d) `egw-great-controversy` usa a edição do Gutenberg (1911), que tem poucas citações no corpo. A edição de
+    1895 (Digital Library of India, dli.ernet.236787) tem muito mais citações, mas o OCR troca palavras ("tho" por
+    "the", "bo" por "be") em cerca de um terço dos parágrafos com referência. Não foi usada.
 
 ## 4. Ferramentas e modelos de terceiros (não são dados do banco)
 
