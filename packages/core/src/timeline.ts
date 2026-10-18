@@ -110,6 +110,15 @@ export function searchTerms(query: string): string[] {
   return [...terms];
 }
 
+/**
+ * Casa a busca com um nome em português (tabela entity_name): sem acento, sem caixa, por trecho, como o nome em
+ * inglês. "arao" acha "Arão"; "joquebede" acha "Joquebede". Busca vazia não casa; nome ausente não casa.
+ */
+export function matchesSearchName(name: string | null | undefined, query: string): boolean {
+  const q = normalizeSearch(query);
+  return q !== '' && normalizeSearch(name ?? '').includes(q);
+}
+
 /** Distância (anos) a partir da qual uma ponta isolada sai da extensão da linha (ver timelineCore). */
 export const TIMELINE_FAR_YEARS = 50;
 

@@ -16,7 +16,7 @@ import { TL } from './strings';
 import { useEventDetail, useTimelineLines, useVerseStart } from './useTimeline';
 import { openInReader } from './actions';
 import { Chip } from './parts';
-import { useTimelineNames, useTimelineText } from '@/translate/timeline-translate';
+import { useTimelineNames, useTimelineTitle } from '@/translate/timeline-translate';
 
 /** Comparação no paralelo: linhas já na tela e o que fazer ao tocar em "+ linha". */
 export interface PreviewCompare {
@@ -57,7 +57,7 @@ export function EventPreview({
   const others = (detail?.lines ?? []).filter((l) => l.id !== currentLineId);
   const people = event?.participants ?? [];
   // Textos da linha do tempo, traduzidos quando configurado (a prévia não repete o aviso: ele fica na tela de trás).
-  const title = useTimelineText(event?.title);
+  const title = useTimelineTitle(event);
   const trPeople = useTimelineNames(people);
   const trLines = useTimelineNames(others);
   const verse = useVerseStart(event?.first_vid ?? null, event?.last_vid ?? null);

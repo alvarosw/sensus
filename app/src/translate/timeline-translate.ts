@@ -1,9 +1,10 @@
 // Tradução automática da linha do tempo (títulos, nomes de linhas, participantes): política 'global' de
 // useTranslatable. Os textos vêm da theographic; o idioma dela é lido do registro de fontes (isTranslatableSource),
 // não suposto aqui. Sem oferta por item; um "Ver original" para a linha do tempo inteira.
-// Nomes de pessoas e lugares com nome em português (namePt) não passam pela tradução: mostram o pt, exceto quando
-// o usuário pede "Ver original", que volta aos nomes ingleses (ver useTimelineNames).
-import { shownEntityName, type NameFields } from '@sensus/core';
+// Nomes de pessoas e lugares e títulos de evento com nome em português (namePt) não passam pela tradução: mostram o
+// pt, exceto quando o usuário pede "Ver original", que volta aos nomes ingleses (ver useTimelineNames e
+// useTimelineTitles).
+import { shownEntityName, shownEventTitle, type NameFields } from '@sensus/core';
 import { useGlobalView } from './global-batch';
 import { useTranslatable } from './useTranslatable';
 
@@ -40,6 +41,33 @@ export function useTimelineText(text: string | null | undefined): string {
  */
 export function useTimelineTexts(texts: readonly string[]): (text: string) => string {
   return useTranslatable(texts, GLOBAL).show;
+}
+
+/** Evento com o título em inglês e, quando existe, o título pt (ver useTimelineTitles). */
+export interface TitledEvent {
+  title: string;
+  namePt?: string | null;
+}
+
+/** Título de um evento da tela; ver useTimelineTitles. */
+export function useTimelineTitle(event: TitledEvent | null | undefined): string {
+  const show = useTimelineTitles(event ? [event] : []);
+  return event ? show(event) : '';
+}
+
+/**
+ * Títulos dos eventos da tela. Com título pt e sem "Ver original", mostra o pt (texto de fonte em português, fora da
+ * tradução automática); os demais entram no lote de tradução. Devolve a função que dá o título a mostrar; `events` é
+ * a lista de todos os eventos da tela (o que não tiver pt é traduzido).
+ */
+export function useTimelineTitles(events: readonly TitledEvent[]): (event: TitledEvent) => string {
+  const preferPt = !useGlobalView((s) => s.showOriginal);
+  const originals = events.filter((e) => !shownEventTitle(e, preferPt).pt).map((e) => e.title);
+  const show = useTimelineTexts(originals);
+  return (event) => {
+    const shown = shownEventTitle(event, preferPt);
+    return shown.pt ? shown.text : show(shown.text);
+  };
 }
 
 /** Um nome de entidade da tela (linha, pessoa ou lugar); ver useTimelineNames. */

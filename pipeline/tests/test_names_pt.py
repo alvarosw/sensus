@@ -12,7 +12,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from sensus.names_pt import (  # noqa: E402
-    avalia, base_name, candidates, choose, confianca, gentilico, similarity, skel, split_name,
+    avalia, base_name, candidates, choose, confianca, decompoe, escolhe_frase, gentilico, similarity, skel, split_name,
 )
 
 # AT (hebraico): Levítico 10:1 (Abihu) e Juízes 4:6 (Barak).
@@ -168,6 +168,111 @@ class ConfiancaTest(unittest.TestCase):
             with self.subTest(nome=nome):
                 self.assertFalse(gentilico(nome))
         self.assertEqual(confianca("Ludim", 0.9, 0.9, 0.9, 4), "alta")
+
+
+# Glossário reduzido (as formas reais estão em pipeline/ingest/corrections/glossario-compostos.tsv).
+GLOSSARIO = {
+    "Mount": ("monte", "monte de", "monte das"),
+    "Mount of": ("monte de", "monte das"),
+    "Valley of": ("vale de", "vale do"),
+    "Gate": ("porta", "porta dos", "porta de"),
+    "Gate of": ("porta de", "porta do"),
+    "Sea of": ("mar de", "mar do"),
+    "Sea": ("mar",),
+    "Wilderness of": ("deserto de",),
+}
+# AT (hebraico): 1 Samuel 17:2 e 17:19 (vale de Elá). NT (grego): Mateus 21:1 e 24:3 (monte das Oliveiras).
+SM_17_2 = (9017002, "E também Saul e os homens de Israel se juntaram, e assentaram o acampamento no vale de Elá, "
+                    "e ordenaram a batalha contra os filisteus.")
+SM_17_19 = (9017019, "E Saul e eles e todos os de Israel, estavam no vale de Elá, lutando com os filisteus.")
+MT_21_1 = (40021001, "E quando se aproximaram de Jerusalém, e chegaram a Betfagé, ao monte das Oliveiras, então Jesus "
+                     "mandou dois discípulos, dizendo-lhes:")
+MT_24_3 = (40024003, "E, depois de se assentar no monte das Oliveiras, os discípulos se aproximaram dele reservadamente, "
+                     "perguntando: Dize-nos, quando serão estas coisas, e que sinal haverá da tua vinda, e do fim da era?")
+
+
+class CompostoDecomposicaoTest(unittest.TestCase):
+    def test_cabeca_antes_do_nucleo(self):
+        c = decompoe("Mount Sinai", GLOSSARIO)
+        self.assertEqual((c.cabeca, c.nucleo, c.base, c.sufixo), ("Mount", "Sinai", "Mount Sinai", ""))
+
+    def test_of(self):
+        c = decompoe("Valley of Elah", GLOSSARIO)
+        self.assertEqual((c.cabeca, c.nucleo), ("Valley of", "Elah"))
+        c = decompoe("Mount of Olives", GLOSSARIO)  # NT: monte das Oliveiras
+        self.assertEqual((c.cabeca, c.nucleo), ("Mount of", "Olives"))
+
+    def test_nucleo_antes_da_cabeca_e_underscore(self):
+        c = decompoe("Fish Gate", GLOSSARIO)
+        self.assertEqual((c.cabeca, c.nucleo), ("Gate", "Fish"))
+        c = decompoe("Gilboa_Mount", GLOSSARIO)
+        self.assertEqual((c.cabeca, c.nucleo, c.base), ("Mount", "Gilboa", "Gilboa Mount"))
+
+    def test_artigo_possessivo_e_sufixo(self):
+        self.assertEqual(decompoe("Sea of the Philistines", GLOSSARIO).nucleo, "Philistines")
+        self.assertEqual(decompoe("Benjamin's Gate", GLOSSARIO).nucleo, "Benjamin")
+        c = decompoe("City of Palms 2", {"City of": ("cidade de",), **GLOSSARIO})
+        self.assertEqual((c.base, c.sufixo), ("City of Palms", " 2"))
+
+    def test_descritivo_de_pessoa_e_nao_proprio_ficam_fora(self):
+        for ruim in ["Wife of Simon", "Mother of Lemuel", "a_wife_of_Lot", "Holy Spirit", "Most Holy",
+                     "Gate of the Children of the People", "Valley of the Son of Hinnom"]:
+            with self.subTest(nome=ruim):
+                self.assertIsNone(decompoe(ruim, GLOSSARIO))
+
+
+class FraseTest(unittest.TestCase):
+    def test_at_frase_achada_com_nucleo_pt(self):
+        textos = dict([SM_17_2, SM_17_19])
+        f = escolhe_frase(GLOSSARIO["Valley of"], "Elah", "Elá", [SM_17_2[0], SM_17_19[0]], textos)
+        self.assertEqual((f.candidato, f.achados, f.confianca), ("vale de Elá", 2, "alta"))
+
+    def test_nt_frase_capturada_do_texto_com_grafia_parecida(self):
+        # Olives não tem nome pt próprio: 'das Oliveiras' é capturado no texto e 'Oliveiras' se parece com 'Olives'.
+        textos = dict([MT_21_1, MT_24_3])
+        f = escolhe_frase(GLOSSARIO["Mount of"], "Olives", None, [MT_21_1[0], MT_24_3[0]], textos)
+        self.assertEqual((f.candidato, f.confianca), ("monte das Oliveiras", "alta"))
+
+    def test_frase_nao_achada_fica_baixa(self):
+        textos = {1: "E foi a cidade de Nínive.", 2: "E ele disse."}
+        f = escolhe_frase(GLOSSARIO["Mount"], "Foo", None, [1, 2], textos)
+        self.assertEqual((f.candidato, f.achados, f.confianca), ("monte Foo", 0, "baixa"))
+
+    def test_achada_em_menos_da_metade_fica_media(self):
+        textos = {1: "E subiu ao monte Sinai.", 2: "E ele falou.", 3: "E ele voltou."}
+        f = escolhe_frase(GLOSSARIO["Mount"], "Sinai", "Sinai", [1, 2, 3], textos)
+        self.assertEqual((f.candidato, f.achados, f.confianca), ("monte Sinai", 1, "media"))
+
+    def test_um_ou_dois_versos_basta_um(self):
+        textos = {1: "E subiu ao monte Sinai.", 2: "E ele falou."}
+        f = escolhe_frase(GLOSSARIO["Mount"], "Sinai", "Sinai", [1, 2], textos)
+        self.assertEqual(f.confianca, "alta")
+
+    def test_nucleo_de_grafia_diferente_sem_nome_pt_fica_media(self):
+        # 'Red' não se parece com 'Vermelho': a frase é achada em todos os versos, mas não vira alta sem nome pt.
+        textos = {1: "e chegaram ao mar Vermelho.", 2: "e atravessaram o mar Vermelho."}
+        f = escolhe_frase(GLOSSARIO["Sea"], "Red", None, [1, 2], textos)
+        self.assertEqual((f.candidato, f.confianca), ("mar Vermelho", "media"))
+
+    def test_capturado_com_outro_nome_nao_vira_alta(self):
+        # Baal-hermon -> 'monte Líbano' é frase literal, mas outro lugar: grafia distante, então média.
+        textos = {1: "desde o monte Líbano até o vale."}
+        f = escolhe_frase(GLOSSARIO["Mount"], "Baal-hermon", None, [1], textos)
+        self.assertEqual((f.candidato, f.confianca), ("monte Líbano", "media"))
+
+    def test_frase_nao_pega_palavra_maior(self):
+        # 'monte Sinai' com núcleo pt 'Sinai' não pode casar com 'monte Sinaiticum'.
+        textos = {1: "e subiu ao monte Sinaiticum."}
+        f = escolhe_frase(GLOSSARIO["Mount"], "Sinai", "Sinai", [1], textos)
+        self.assertEqual(f.candidato, "monte Sinaiticum")  # a palavra inteira é a que vale, não 'monte Sinai'
+
+    def test_maiusculas_nao_importam_e_acento_importa(self):
+        textos = {1: "no VALE DE ELÁ"}  # caixa alta não conta como diferença
+        f = escolhe_frase(GLOSSARIO["Valley of"], "Elah", "Elá", [1], textos)
+        self.assertEqual(f.achados, 1)
+        # Sem acento, 'vale de Ela' não casa com o texto 'vale de Elá'; a frase achada é a do texto.
+        f = escolhe_frase(GLOSSARIO["Valley of"], "Elah", "Ela", [1], {1: "no vale de Elá."})
+        self.assertEqual(f.candidato, "vale de Elá")
 
 
 if __name__ == "__main__":

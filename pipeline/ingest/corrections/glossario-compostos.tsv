@@ -1,0 +1,58 @@
+# Glossário de cabeças de nomes compostos em inglês -> formas pt possíveis. Usado por nomes_pt.py (ver
+# pipeline/sensus/names_pt.py, decompoe e escolhe_frase). Colunas:
+#   cabeca   palavra ou expressão inglesa que encabeça o nome: 'Mount' (Mount Sinai), 'Mount of' (Mount of Olives),
+#            'Gate' (Fish Gate). Se a cabeça tem 'of', o composto é 'Cabeça of Núcleo'; senão é 'Cabeça Núcleo'
+#            ou 'Núcleo Cabeça' (Gilboa_Mount também vale).
+#   formas   formas pt que vêm antes do núcleo, separadas por '|'. Já incluem o conector e o artigo ('monte das',
+#            'porta dos'): a frase candidata é forma + ' ' + núcleo pt ('monte das' + 'Oliveiras').
+# Como revisar: uma cabeça errada gera só frases que não aparecem no texto, então a linha fica 'baixa' e não é usada.
+# Acrescente formas que a Bíblia Livre usa de fato (confira no texto) e não remova as que já estão, para não
+# perder frases achadas. Cabeça nova: só se algum composto dos dados começar ou terminar com ela (ver a lista de
+# compostos em nomes_pt.py). Descritivos de pessoa ('Wife of', 'Mother of', 'Son of') NÃO entram aqui.
+cabeca	formas
+Mount	monte|monte de|monte do|monte da|monte dos|monte das
+Mount of	monte de|monte do|monte da|monte dos|monte das
+Valley	vale|vale de|vale do|vale da|vale dos|vale das
+Valley of	vale de|vale do|vale da|vale dos|vale das
+Vale	vale|vale de|vale do|vale da|vale dos|vale das
+Vale of	vale de|vale do|vale da|vale dos|vale das
+Tribe of	tribo de|tribo do|tribo da|tribo dos|tribo das
+Gate	porta|porta de|porta do|porta da|porta dos|porta das
+Gate of	porta de|porta do|porta da|porta dos|porta das
+Sea	mar|mar de|mar do|mar da|mar dos|mar das
+Sea of	mar de|mar do|mar da|mar dos|mar das
+Tower	torre|torre de|torre do|torre da|torre dos|torre das
+Tower of	torre de|torre do|torre da|torre dos|torre das
+City	cidade|cidade de|cidade do|cidade da|cidade dos|cidade das
+City of	cidade de|cidade do|cidade da|cidade dos|cidade das
+Brook	ribeiro|torrente|ribeiro de|ribeiro do|ribeiro da|ribeiro dos|ribeiro das|torrente de|torrente do|torrente da
+Brook of	ribeiro de|ribeiro do|ribeiro da|ribeiro dos|ribeiro das|torrente de|torrente do|torrente da
+Wilderness	deserto|deserto de|deserto do|deserto da|deserto dos|deserto das
+Wilderness of	deserto de|deserto do|deserto da|deserto dos|deserto das
+Plain	planície|campina|planície de|planície do|planície da|planície dos|planície das
+Plain of	planície de|planície do|planície da|planície dos|planície das|campinas de|campinas do|campinas da|campinas dos|campinas das
+Plains	campinas|campinas de|campinas do|campinas da|campinas dos|campinas das|planície|planície de|planície do|planície da|planície dos|planície das
+Pool	tanque|açude|tanque de|tanque do|tanque da|tanque dos|tanque das|açude de|açude do|açude da|açude dos|açude das
+Pool of	tanque de|tanque do|tanque da|tanque dos|tanque das|açude de|açude do|açude da|açude dos|açude das
+Hall	sala|salão|sala de|sala do|sala da|sala dos|sala das|salão de|salão do|salão da|salão dos|salão das
+Hall of	sala de|sala do|sala da|sala dos|sala das|salão de|salão do|salão da|salão dos|salão das
+Spring	fonte|fonte de|fonte do|fonte da|fonte dos|fonte das
+Rock	rocha|penha|rocha de|rocha do|rocha da|rocha dos|rocha das
+Rock of	rocha de|rocha do|rocha da|rocha dos|rocha das
+Stone	pedra|pedra de|pedra do|pedra da|pedra dos|pedra das
+Way of	caminho de|caminho do|caminho da|caminho dos|caminho das
+Waters	águas|águas de|águas do|águas da|águas dos|águas das
+Waters of	águas de|águas do|águas da|águas dos|águas das
+Forest	bosque|floresta|bosque de|bosque do|bosque da|bosque dos|bosque das|floresta de|floresta do|floresta da|floresta dos|floresta das
+Forest of	bosque de|bosque do|bosque da|bosque dos|bosque das|floresta de|floresta do|floresta da|floresta dos|floresta das
+Festival	festa|festa de|festa do|festa da|festa dos|festa das
+Square	praça|praça de|praça do|praça da|praça dos|praça das
+Wall	muro|muro de|muro do|muro da|muro dos|muro das
+Forum	foro|foro de|foro do|foro da|foro dos|foro das|praça de|praça do|praça da|praça dos|praça das
+Forum of	foro de|foro do|foro da|foro dos|foro das|praça de|praça do|praça da|praça dos|praça das
+Hill	outeiro|colina|outeiro de|outeiro do|outeiro da|outeiro dos|outeiro das|colina de|colina do|colina da
+Hill of	outeiro de|outeiro do|outeiro da|outeiro dos|outeiro das|colina de|colina do|colina da|colina dos|colina das
+River	rio|rio de|rio do|rio da|rio dos|rio das
+River of	rio de|rio do|rio da|rio dos|rio das
+House	casa|casa de|casa do|casa da|casa dos|casa das
+House of	casa de|casa do|casa da|casa dos|casa das

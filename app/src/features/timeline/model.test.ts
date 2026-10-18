@@ -90,6 +90,16 @@ describe('filtros', () => {
     expect(matchesEventText(e, '  ')).toBe(true);
     expect(participantNames([{ name: 'Paul' }, { name: 'Paul' }, { name: 'Silas' }])).toBe('Paul, Silas');
   });
+
+  it('texto da linha casa também o título e o participante em pt (NT: Silas/Silas; AT: Morte de Saul/Arão)', () => {
+    const nt = { title: 'Paul and Silas imprisoned', namePt: 'Paulo e Silas presos', participants: [{ name: 'Silas', namePt: 'Silas' }] };
+    expect(matchesEventText(nt, 'presos')).toBe(true);
+    expect(matchesEventText(nt, 'paulo e')).toBe(true);
+    const at = { title: 'Death of Saul', namePt: 'Morte de Saul', participants: [{ name: 'Aaron', namePt: 'Arão' }] };
+    expect(matchesEventText(at, 'morte de saul')).toBe(true);
+    expect(matchesEventText(at, 'arao')).toBe(true);
+    expect(matchesEventText(at, 'moises')).toBe(false);
+  });
 });
 
 describe('paralelo', () => {

@@ -2,7 +2,7 @@
 import type { TimelineEvent, TimelineLine, TimelineLineEvent, TimelineLineRef, TimelineSummary, VerseRange } from '../types';
 import { eraSummaries } from '../timeline';
 import { all, chunks, type Db, first } from './sql';
-import { attachNames, attachParticipantNames, ptNames } from './names';
+import { attachEventNames, attachNames, ptNames } from './names';
 import {
   bySortKey,
   EVENT_SELECT,
@@ -55,12 +55,12 @@ export async function timelineEvents(db: Db, range: VerseRange): Promise<Timelin
     .map((row) => timelineEventOf(row))
     .filter((e): e is TimelineLineEvent => e !== null)
     .map((e) => ({ ...e, inRange: false }));
-  return attachParticipantNames(db, [...events, ...context].sort(bySortKey));
+  return attachEventNames(db, [...events, ...context].sort(bySortKey));
 }
 
 /** Agregado das linhas (ver timelineLines), com filtro opcional pelo nome: a base da lista e da busca. */
-export function timelineLinesWhere(db: Db, nameTerms: readonly string[]): Promise<MemberRow[]> {
-  const m = timelineMembers(nameTerms);
+export function timelineLinesWhere(db: Db, nameTerms: readonly string[], ptIds: readonly string[] = []): Promise<MemberRow[]> {
+  const m = timelineMembers(nameTerms, ptIds);
   return all<MemberRow>(
     db,
     `${m.sql},
@@ -91,7 +91,7 @@ export async function timelineLineEvents(db: Db, lineId: string): Promise<Timeli
       WHERE e.type = 'event' AND e.cite_id IN (SELECT event_id FROM memb WHERE line_id = ?)`,
     [...m.params, lineId],
   );
-  return attachParticipantNames(
+  return attachEventNames(
     db,
     rows
       .map((row) => timelineEventOf(row))
@@ -105,7 +105,7 @@ export async function timelineEvent(db: Db, citeId: string): Promise<TimelineLin
   const row = await first<EventRow>(db, `${EVENT_SELECT} WHERE e.type = 'event' AND e.cite_id = ?`, [citeId]);
   const event = row ? timelineEventOf(row) : null;
   if (!event) return null;
-  const [named] = await attachParticipantNames(db, [event]);
+  const [named] = await attachEventNames(db, [event]);
   return named!;
 }
 
@@ -115,7 +115,7 @@ export async function timelineEvent(db: Db, citeId: string): Promise<TimelineLin
  */
 export async function timelineAllEvents(db: Db): Promise<TimelineLineEvent[]> {
   const rows = await all<EventRow>(db, `${EVENT_SELECT} WHERE e.type = 'event'`);
-  return attachParticipantNames(
+  return attachEventNames(
     db,
     rows
       .map((row) => timelineEventOf(row))

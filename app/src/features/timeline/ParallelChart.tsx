@@ -7,6 +7,7 @@ import Svg, { Circle, G, Line, Rect, Text as SvgText } from 'react-native-svg';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { TIMELINE_ERAS, type NameFields, type TimelineLine, type TimelineLineEvent } from '@sensus/core';
 import { fontFamilies, useTheme } from '@/design';
+import type { TitledEvent } from '@/translate/timeline-translate';
 import { clampView, tickStep, xOfYear, yearAtX, yearText, zoomView, type Bounds } from './model';
 import { kindColor } from './parts';
 
@@ -41,8 +42,8 @@ export interface ChartProps {
   view: Bounds;
   cursor: number | null;
   favEvents: ReadonlySet<string>;
-  /** Texto a mostrar (tradução quando configurada); os títulos passam por ele. */
-  tr: (text: string) => string;
+  /** Título do evento a mostrar (pt quando existe; senão, tradução quando configurada). */
+  trTitle: (event: TitledEvent) => string;
   /** Nome da linha a mostrar (nome pt quando existe; senão, como `tr`). */
   trLine: (line: NameFields) => string;
   onView: (v: Bounds) => void;
@@ -94,7 +95,7 @@ function axisTicks(view: Bounds, PW: number): number[] {
 
 export function ParallelChart(props: ChartProps) {
   const { c, st } = useTheme();
-  const { lanes, ext, view, cursor, favEvents, tr, trLine, onView, onCursor, onPoint, onInclude } = props;
+  const { lanes, ext, view, cursor, favEvents, trTitle, trLine, onView, onCursor, onPoint, onInclude } = props;
   const [size, setSize] = useState({ W: 0, H: 0 });
   const { W, H } = size;
   // Altura do gráfico: a da área visível, ou o que cabe a faixa mínima de cada linha (o gráfico rola na vertical).
@@ -226,7 +227,7 @@ export function ParallelChart(props: ChartProps) {
                       {withTitles &&
                         inView.map((e) => {
                           const px = x(e.sortKey);
-                          const label = shortTitle(tr(e.title));
+                          const label = shortTitle(trTitle(e));
                           const w = label.length * CHAR_W;
                           const lx = Math.max(4, px - 3);
                           if (lx <= lastEnd + 6 || lx + w >= W - 4) return null;

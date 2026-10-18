@@ -115,6 +115,7 @@ describe('Repo.timelineEvents', () => {
       cite_id: 'ent:theographic:e3',
       source_id: 'theographic',
       title: 'Paul and Silas imprisoned',
+      namePt: null,
       startDate: '0047',
       sortKey: 50,
       participants: [{ cite_id: 'ent:isbe-ent:paulo', name: 'Paulo', namePt: null }],

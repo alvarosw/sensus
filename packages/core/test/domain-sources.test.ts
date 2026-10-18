@@ -77,9 +77,10 @@ const ROLE_OF_KIND: Record<string, string[]> = {
   entity: ['entity'],
 };
 
-// Nomes pt derivados da Bíblia Livre (entity_name, sem tradição).
+// Nomes pt derivados da Bíblia Livre e títulos pt dos eventos (entity_name, sem tradição).
 const NOMES_PT: Array<{ id: string; kind: string; tradition: null }> = [
   { id: 'sensus-nomes-pt', kind: 'entity', tradition: null },
+  { id: 'sensus-titulos-pt', kind: 'entity', tradition: null },
 ];
 
 const TODAS = [...BANCO, ...NOVAS, ...NOMES_PT];

@@ -167,6 +167,7 @@ describe('Repo.timelineLineEvents', () => {
       cite_id: 'ent:theographic:b',
       source_id: 'theographic',
       title: 'Paul and Silas go',
+      namePt: null,
       startDate: '0047',
       sortKey: 40,
       participants: [

@@ -7,7 +7,7 @@ import { useRouter } from 'expo-router';
 import { matchesTranslatedText, type TimelineLine, type TimelineLineEvent, type TimelineLineRef } from '@sensus/core';
 import { cachedTranslation } from '@/translate/engine';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
-import { useTimelineActive, useTimelineText, useTimelineNames, useTimelineVersion } from '@/translate/timeline-translate';
+import { useTimelineActive, useTimelineTitle, useTimelineNames, useTimelineVersion } from '@/translate/timeline-translate';
 import { Txt, radius, space, useTheme } from '@/design';
 import { useAppPrefs } from '@/settings/app-prefs';
 import { eraById, eventYear, filterEvents, filterLines, spanText, type KindFilter } from './model';
@@ -293,7 +293,7 @@ function EventHit({
   onMark: () => void;
 }) {
   const { c, st } = useTheme();
-  const title = useTimelineText(event.title);
+  const title = useTimelineTitle(event);
   const topLines = lines.slice(0, 3);
   const trLine = useTimelineNames(topLines);
   const trPerson = useTimelineNames(event.participants);

@@ -2,6 +2,7 @@
 // existir não quebra: a presença é lida uma vez por driver (sqlite_master) e, sem ela, nenhuma consulta de nome pt
 // roda; todo nome fica null e vale o nome da fonte. Ver domain/names.ts para a escolha do nome a mostrar.
 import { ENTITY_NAME_LANG } from '../domain/names';
+import { matchesSearchName } from '../timeline';
 import { all, chunks, type Db, placeholders } from './sql';
 
 /** Uma leitura de sqlite_master por driver (o driver muda quando o banco muda). */
@@ -45,14 +46,36 @@ export async function attachNames<T>(
   return items.map((item) => ({ ...item, namePt: names.get(idOf(item)) ?? null }));
 }
 
-/** Acrescenta `namePt` aos participantes de cada evento (chave: o cite_id do participante). */
-export async function attachParticipantNames<E extends { participants: Array<{ cite_id: string }> }>(
+/**
+ * Linhas pt de todas as entidades (cite_id, nome), lidas uma vez por driver: a busca casa o nome sem acento, o que
+ * o SQL não faz. Sem a tabela, lista vazia.
+ */
+const ptRows = new WeakMap<Db, Promise<Array<{ cite_id: string; name: string }>>>();
+
+/** cite_ids (pessoas, lugares e eventos) cujo nome pt casa com a busca (ver matchesSearchName). Sem a tabela, nenhum. */
+export async function ptNameIds(db: Db, query: string): Promise<string[]> {
+  let rows = ptRows.get(db);
+  if (!rows) {
+    rows = hasEntityNames(db).then((has) =>
+      has ? all<{ cite_id: string; name: string }>(db, 'SELECT cite_id, name FROM entity_name WHERE lang = ?', [ENTITY_NAME_LANG]) : [],
+    );
+    ptRows.set(db, rows);
+  }
+  return (await rows).filter((r) => matchesSearchName(r.name, query)).map((r) => r.cite_id);
+}
+
+/**
+ * Acrescenta `namePt` ao evento (título pt) e a cada participante (pelo cite_id dele). Um só lookup para os dois.
+ * Devolve na mesma ordem.
+ */
+export async function attachEventNames<E extends { cite_id: string; participants: Array<{ cite_id: string }> }>(
   db: Db,
   events: readonly E[],
-): Promise<E[]> {
-  const names = await ptNames(db, events.flatMap((e) => e.participants.map((p) => p.cite_id)));
+): Promise<Array<E & { namePt: string | null }>> {
+  const names = await ptNames(db, events.flatMap((e) => [e.cite_id, ...e.participants.map((p) => p.cite_id)]));
   return events.map((e) => ({
     ...e,
+    namePt: names.get(e.cite_id) ?? null,
     participants: e.participants.map((p) => ({ ...p, namePt: names.get(p.cite_id) ?? null })),
   }));
 }

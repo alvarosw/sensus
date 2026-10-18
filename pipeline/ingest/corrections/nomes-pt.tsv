@@ -9,6 +9,8 @@
 #   versos       versículos do nome que existem na Bíblia Livre
 #   cobertura    fração desses versículos em que o candidato aparece
 #   alternativa  segundo colocado, para conferir
+# Compostos (Mount Sinai, Valley of Elah): cabeça do glossário + núcleo; o candidato é a frase como está na
+# Bíblia Livre (nome pt = com maiúscula inicial). Não achada: candidato = forma do glossário + núcleo, confianca baixa.
 # Revisão: comece pelas linhas de confianca baixa. Para aceitar outro nome, troque nome_pt e marque
 # origem=revisado. Para o app mostrar o nome inglês, marque origem=sem. Linhas revisado e sem não são
 # recalculadas ao rodar o ingestor de novo.
@@ -48,18 +50,27 @@ Beth-eked	Prendei-os	Prendei-os	auto	baixa	3	2	0.50	Então
 Beth-haggan	Ibleão	Ibleão	auto	baixa	3	1	1.00	Megido
 Beth-merhak	Saiu	Saiu	auto	baixa	1	1	1.00	
 Bethany	Betábara	Betábara	auto	baixa	2	1	1.00	Estas
+Booths Festival	festa Booths	festa Booths	auto	baixa	1	1	0.00	
+Broad Wall	muro Broad	muro Broad	auto	baixa	3	2	0.00	
+Brook of the Willows	ribeiro de Willows	ribeiro de Willows	auto	baixa	2	1	0.00	
 Buzites	Baraquel	Baraquel	auto	baixa	1	2	1.00	Deus
 Cherethites	Bicri	Bicri	auto	baixa	1	9	0.11	Depois
 Cherethites	Eis	Eis	auto	baixa	1	3	0.33	Calebe
 Chronicles	Os	Os	auto	baixa	1	38	0.87	Onri
+City of Palms	cidade de Palms	cidade de Palms	auto	baixa	2	4	0.00	
+City of Salt	cidade de Salt	cidade de Salt	auto	baixa	2	1	0.00	
+City of the Lord	cidade de Lord	cidade de Lord	auto	baixa	1	2	0.00	
 Corban	Os	Os	auto	baixa	1	2	0.50	Tudo
 Cush	Deus	Deus	auto	baixa	1	1	1.00	SENHOR
 Cushi	Seja	Seja	auto	baixa	1	5	0.40	Correu
 Cyrenius	Quirino	Quirino	auto	baixa	1	1	1.00	Síria
+Dedication Festival	festa Dedication	festa Dedication	auto	baixa	1	1	0.00	
 Dehavites	Sinsai	Sinsai	auto	baixa	1	1	1.00	Reum
 Destiny	SENHOR	SENHOR	auto	baixa	1	1	1.00	Porém
 Dinaites	Sinsai	Sinsai	auto	baixa	1	1	1.00	Reum
 East	Zeba	Zeba	auto	baixa	3	18	0.06	Serão
+East Gate	porta East	porta East	auto	baixa	4	5	0.00	
+East Square	praça East	praça East	auto	baixa	1	1	0.00	
 Eder	Migdal-Eder	Migdal-Eder	auto	baixa	2	1	1.00	E
 Egypt	Leabim	Leabim	auto	baixa	1	4	0.25	Pute
 Elkosh	Revelação	Revelação	auto	baixa	3	1	1.00	Livro
@@ -72,12 +83,14 @@ Eznites	Estes	Estes	auto	baixa	1	1	1.00	Josebe-Bassebete
 Field	Jerusalém	Jerusalém	auto	baixa	1	3	0.67	Sear-Jasube
 Forest	E	E	auto	baixa	1	1	1.00	Judá
 Fortune	Porém	Porém	auto	baixa	1	1	1.00	SENHOR
+Foundation Gate	porta Foundation	porta Foundation	auto	baixa	1	1	0.00	
 Freedmen	Estêvão	Estêvão	auto	baixa	1	1	1.00	E
 Gadara	E	E	auto	baixa	1	1	1.00	Eles
 Galilee	Gilgal	Gilgal	auto	baixa	1	1	1.00	Dor
 Gamad	Arvade	Arvade	auto	baixa	3	1	1.00	Os
 Garmite	Estemoa	Estemoa	auto	baixa	1	1	1.00	Naã
 Garmites	Hodias	Hodias	auto	baixa	1	1	1.00	Estemoa
+Gate of the Foundation	porta de Foundation	porta de Foundation	auto	baixa	2	1	0.00	
 Gath	Davi	Davi	auto	baixa	1	2	1.00	Não
 Ge-harashim	Artesãos	Artesãos	auto	baixa	2	2	0.50	Seraías
 Gederah	Jeremias	Jeremias	auto	baixa	1	1	1.00	Jozabade
@@ -97,9 +110,13 @@ Goiim	Quedorlaomer	Quedorlaomer	auto	baixa	1	2	1.00	Tidal
 Gulloth-mayim	Ela	Ela	auto	baixa	1	2	0.50	Dá-me
 Hachmonites	Hacmoni	Hacmoni	auto	baixa	1	2	0.50	Jasobeão
 Hakkephirim	Gesém	Gesém	auto	baixa	2	1	1.00	Vem
+Hall of Judgment	sala de Judgment	sala de Judgment	auto	baixa	2	1	0.00	
+Hall of Pillars	sala de Pillars	sala de Pillars	auto	baixa	2	1	0.00	
+Hall of the Throne	sala de Throne	sala de Throne	auto	baixa	2	1	0.00	
 Hamathite	E	E	auto	baixa	1	2	0.50	Aos
 Hamathites	Aos	Aos	auto	baixa	1	2	0.50	E
 Hammelech	Abdeel	Abdeel	auto	baixa	2	2	0.50	Jerameel
+Hamon-gog Valley	vale Hamon-gog	vale Hamon-gog	auto	baixa	1	2	0.00	
 Hararites	Harar	Harar	auto	baixa	1	4	0.25	Sarar
 Harod	Samote	Samote	auto	baixa	1	2	0.50	Elica
 Haruphites	Semarias	Semarias	auto	baixa	1	1	1.00	Bealias
@@ -112,11 +129,13 @@ Heres	E	E	auto	baixa	3	1	1.00	Joás
 Hermes	Júpiter	Júpiter	auto	baixa	1	1	1.00	Mercúrio
 Hiddekel	Tigre	Tigre	auto	baixa	1	2	1.00	Eufrates
 Highway	Rogamo-te	Rogamo-te	auto	baixa	1	2	0.50	Deixa-me
+Hill Mizar	outeiro Mizar	outeiro Mizar	auto	baixa	1	1	0.00	
 Hivite	Heteu	Heteu	auto	baixa	1	9	0.11	Zibeão
 Hivites	Jebuseos	Jebuseos	auto	baixa	1	25	0.04	Antes
 Horesh	Deus	Deus	auto	baixa	3	4	0.25	Jônatas
 Horonaim	Entretanto	Entretanto	auto	baixa	1	1	1.00	Absalão
 Horonites	Tobias	Tobias	auto	baixa	1	3	0.67	Porém
+House of the Forest	casa de Forest	casa de Forest	auto	baixa	1	6	0.00	
 Hur	Ben-Hur	Ben-Hur	auto	baixa	2	1	1.00	Efraim
 Huram	Hirão	Hirão	auto	baixa	1	1	1.00	Eu
 Hushathites	Husatita	Husatita	auto	baixa	1	5	0.20	Safe
@@ -129,6 +148,7 @@ Jebusites	Jebuseos	Jebuseos	auto	baixa	1	37	0.03	Jebus
 Jemnath	Ecrom	Ecrom	auto	baixa	1	1	1.00	Desde
 Jeshimon	Zife	Zife	auto	baixa	2	4	0.50	Maom
 Jonath-elem-rechokim	Tem	Tem	auto	baixa	1	1	1.00	Deus
+Jordan Valley	vale Jordão	vale Jordão	auto	baixa	1	8	0.00	
 Josedech	Jeozadaque	Jeozadaque	auto	baixa	1	12	0.67	Josué
 Judaism	Igreja	Igreja	auto	baixa	1	2	0.50	Pois
 Judgment	Fez	Fez	auto	baixa	1	1	1.00	
@@ -138,9 +158,11 @@ Kenites	Quedes	Quedes	auto	baixa	1	10	0.10	Bendita
 Kenizzites	Os	Os	auto	baixa	1	1	1.00	
 Kir	Quir-Moabe	Quir-Moabe	auto	baixa	1	1	1.00	Certamente
 Kue	Coa	Coa	auto	baixa	3	2	1.00	E
+Lebanon Valley	vale Líbano	vale Líbano	auto	baixa	1	2	0.00	
 Lehem	Jasubi-Leem	Jasubi-Leem	auto	baixa	2	1	1.00	Joquim
 Lo-ammi	Chama	Chama	auto	baixa	2	1	1.00	Não-Meu-Povo
 Lo-ruhamah	Não-Amada	Não-Amada	auto	baixa	2	2	1.00	Chama
+Lower Pool	tanque Lower	tanque Lower	auto	baixa	1	1	0.00	
 Lucifer	Cortado	Cortado	auto	baixa	2	1	1.00	Como
 Maareh-geba	Baal-Tamar	Baal-Tamar	auto	baixa	3	1	1.00	Israel
 Mahalab	Hormá	Hormá	auto	baixa	2	1	1.00	Aczibe
@@ -156,10 +178,13 @@ Meronoth	Melatias	Melatias	auto	baixa	1	2	0.50	Obil
 Meronothites	Melatias	Melatias	auto	baixa	1	2	0.50	Jedias
 Meunites	Estes	Estes	auto	baixa	1	3	0.33	Deus
 Mezobaites	Eliel	Eliel	auto	baixa	1	1	1.00	Obede
+Middle Gate	porta Middle	porta Middle	auto	baixa	1	1	0.00	
 Miktam	Livra-me	Livra-me	auto	baixa	1	6	0.17	Guarda-me
 Mishraites	Quiriate-Jearim	Quiriate-Jearim	auto	baixa	1	1	1.00	E
 Misrephoth-maim	Mispá	Mispá	auto	baixa	3	2	0.50	Israel
 Mithnites	Josafá	Josafá	auto	baixa	1	1	1.00	Hanã
+Mizpeh Valley	vale Mizpeh	vale Mizpeh	auto	baixa	1	2	0.00	
+Moab Plains	campinas Moabe	campinas Moabe	auto	baixa	1	12	0.00	
 Mordecai	Reelaías	Reelaías	auto	baixa	2	2	0.50	Mardoqueu
 Moresheth	Miqueias	Miqueias	auto	baixa	1	2	1.00	Ezequias
 Mortar	Lamentai	Lamentai	auto	baixa	3	1	1.00	
@@ -173,22 +198,29 @@ Nazirites	Virá	Virá	auto	baixa	1	15	0.07	Se
 Nehelam	Semaías	Semaías	auto	baixa	2	3	1.00	Manda
 Nehelamites	Semaías	Semaías	auto	baixa	1	3	1.00	Eis
 Nephilim	Anaque	Anaque	auto	baixa	1	2	0.50	Também
+New Gate	porta New	porta New	auto	baixa	3	2	0.00	
 Nicolaitans	Mas	Mas	auto	baixa	1	2	0.50	Assim
 Nohah	Manaate	Manaate	auto	baixa	1	1	1.00	Geba
 Nohah	Menuá	Menuá	auto	baixa	1	1	1.00	Benjamim
 North	Então	Então	auto	baixa	1	10	0.20	Porém
+North Gate	porta North	porta North	auto	baixa	1	1	0.00	
+Old Pool	tanque Old	tanque Old	auto	baixa	1	1	0.00	
 On	Om	Om	auto	baixa	4	10	0.40	Coré
 Parbar	Em	Em	auto	baixa	2	1	1.00	
 Pavement	Pilatos	Pilatos	auto	baixa	1	1	1.00	Gabatá
 Pelethites	Benaia	Benaia	auto	baixa	1	7	0.71	Gate
 Pelonites	Helez	Helez	auto	baixa	1	4	0.50	Heles
+People's Gate	porta People	porta People	auto	baixa	2	1	0.00	
 Perizzites	Jebuseos	Jebuseos	auto	baixa	1	23	0.04	Heteu
 Phut	Pute	Pute	auto	baixa	1	3	1.00	Cuxe
 Pillars	Também	Também	auto	baixa	1	1	1.00	
 Place	Gólgota	Gólgota	auto	baixa	2	3	1.00	E
 Plain	Zoar	Zoar	auto	baixa	1	2	0.50	Moabe
+Plain of Aven	planície de Áven	planície de Áven	auto	baixa	1	1	0.00	
 Pool	Col-Hozé	Col-Hozé	auto	baixa	1	1	1.00	Fonte
 Pool	Fonte	Fonte	auto	baixa	1	1	1.00	E
+Potsherd Gate	porta Potsherd	porta Potsherd	auto	baixa	2	1	0.00	
+Preparation Festival	festa Preparation	festa Preparation	auto	baixa	1	6	0.00	
 Puthites	Quiriate-Jearim	Quiriate-Jearim	auto	baixa	1	1	1.00	E
 Pyrrhus	Sópater	Sópater	auto	baixa	1	1	1.00	Aristarco
 Raca	Idiota	Idiota	auto	baixa	1	1	1.00	Louco
@@ -200,16 +232,22 @@ River	Assíria	Assíria	auto	baixa	1	10	0.30	Isaque
 River	Petor	Petor	auto	baixa	1	1	1.00	Beor
 River	Reobote	Reobote	auto	baixa	1	2	1.00	E
 River	Reum	Reum	auto	baixa	1	16	0.06	Artaxerxes
+River of Arnon	rio de Arnom	rio de Arnom	auto	baixa	1	11	0.00	
 Rock	Maom	Maom	auto	baixa	1	4	1.00	Carmelo
+Rock of Escape	rocha de Escape	rocha de Escape	auto	baixa	2	1	0.00	
 Rocks	Saul	Saul	auto	baixa	1	1	1.00	Israel
 Sadducee	Naquele	Naquele	auto	baixa	1	14	0.07	Ninhada
 Sahar	Damasco	Damasco	auto	baixa	3	1	1.00	Helbom
 Salome	Porém	Porém	auto	baixa	1	1	1.00	Herodias
 Salt	Nibsã	Nibsã	auto	baixa	1	1	1.00	E
+Salt Valley	vale Salt	vale Salt	auto	baixa	1	5	0.00	
 Scythians	Cristo	Cristo	auto	baixa	1	1	1.00	Nisso
+Sea of the Philistines	mar de Philistines	mar de Philistines	auto	baixa	1	1	0.00	
+Sea of the Plain	mar de Plain	mar de Plain	auto	baixa	1	2	0.00	
 Secu	Socó	Socó	auto	baixa	3	1	1.00	Samuel
 Secundus	Segundo	Segundo	auto	baixa	2	1	1.00	Sópater
 Sela	E	E	auto	baixa	1	2	1.00	Acrabim
+Serpent's Stone	pedra Serpent	pedra Serpent	auto	baixa	2	1	0.00	
 Shephelah	Bete-Semes	Bete-Semes	auto	baixa	1	6	0.17	Baal-Hanã
 Shephelah	Sul	Sul	auto	baixa	2	19	0.05	Asná
 Shiggaion	SENHOR	SENHOR	auto	baixa	1	1	1.00	Deus
@@ -225,8 +263,10 @@ Sinites	E	E	auto	baixa	1	2	0.50	Aos
 Skull	Caveira	Caveira	auto	baixa	1	1	1.00	E
 South	O	O	auto	baixa	1	12	0.08	Mas
 South	Sul	Sul	auto	baixa	3	3	0.67	Juízo
+South Gate	porta South	porta South	auto	baixa	1	1	0.00	
 Stoic	Porque	Porque	auto	baixa	1	1	1.00	O
 Straight	Direita	Direita	auto	baixa	1	1	1.00	Levanta-te
+Straight Gate	porta Straight	porta Straight	auto	baixa	1	1	0.00	
 Sucathite	Hamate	Hamate	auto	baixa	1	1	1.00	Recabe
 Sukkiim	Com	Com	auto	baixa	1	1	1.00	Egito
 Suph	Tofel	Tofel	auto	baixa	3	1	1.00	Di-Zaabe
@@ -240,6 +280,9 @@ Tirathite	Jabez	Jabez	auto	baixa	1	1	1.00	Hamate
 Tizites	Jedaiel	Jedaiel	auto	baixa	1	1	1.00	Sinri
 Tower	Fornos	Fornos	auto	baixa	1	2	1.00	Paate-Moabe
 Tower	Ovelhas	Ovelhas	auto	baixa	2	4	0.50	Velha
+Tower of Eder	torre de Eder	torre de Eder	auto	baixa	1	2	0.00	
+Travelers Valley	vale Travelers	vale Travelers	auto	baixa	1	1	0.00	
+Tribe of Judah	tribo de Judá	tribo de Judá	auto	baixa	1	1	0.00	
 Unnamed#1	Assim	Assim	auto	baixa	1	1	1.00	Salomão
 Unnamed#1	Eliúde	Eliúde	auto	baixa	1	1	1.00	Matã
 Unnamed#2	Assim	Assim	auto	baixa	1	1	1.00	Salomão
@@ -253,7 +296,17 @@ Unnamed#6	Eliúde	Eliúde	auto	baixa	1	1	1.00	Matã
 Unnamed#7	Eliúde	Eliúde	auto	baixa	1	1	1.00	Matã
 Unnamed#8	Eliúde	Eliúde	auto	baixa	1	1	1.00	Matã
 Unnamed#9	Eliúde	Eliúde	auto	baixa	1	1	1.00	Matã
+Upper Pool	tanque Upper	tanque Upper	auto	baixa	1	3	0.00	
+Valley of Decision	vale de Decision	vale de Decision	auto	baixa	1	1	0.00	
+Valley of Hamon-gog	vale de Hamon-gog	vale de Hamon-gog	auto	baixa	1	2	0.00	
+Valley of Hamongog	vale de Hamongog	vale de Hamongog	auto	baixa	1	2	0.00	
+Valley of Lebanon	vale de Líbano	vale de Líbano	auto	baixa	2	2	0.00	
+Valley of Mizpeh	vale de Mizpeh	vale de Mizpeh	auto	baixa	2	1	0.00	
+Valley of Salt	vale de Salt	vale de Salt	auto	baixa	2	5	0.00	
+Valley of the Arnon	vale de Arnom	vale de Arnom	auto	baixa	1	11	0.00	
+Valley of the Passengers	vale de Passengers	vale de Passengers	auto	baixa	1	1	0.00	
 Vedan	Dã	Dã	auto	baixa	1	1	1.00	Javã
+Way of Holiness	caminho de Holiness	caminho de Holiness	auto	baixa	3	1	0.00	
 Weeks	Pentecostes	Pentecostes	auto	baixa	1	8	0.38	Três
 Willows	Por	Por	auto	baixa	1	1	1.00	
 Zaccur	Zabude	Zabude	auto	baixa	1	1	1.00	Utai
@@ -324,6 +377,7 @@ Basemath	Basemate	Basemate	auto	media	1	1	1.00	Salomão
 Basmath	Basemate	Basemate	auto	media	1	1	1.00	Salomão
 Bath-shua	Bete-Suá	Bete-Suá	auto	media	1	2	0.50	Sua
 Bealoth	Alote	Alote	auto	media	2	1	1.00	Baaná
+Beautiful Gate	porta do Templo	Porta do Templo	auto	media	3	2	0.50	Porta Formosa
 Beer-lahai-roi	Beer-Laai-Roi	Beer-Laai-Roi	auto	media	3	3	0.33	Abraão
 Beon	Beom	Beom	auto	media	2	1	1.00	Nebo
 Berothah	Berota	Berota	auto	media	3	3	0.33	Sibraim
@@ -336,6 +390,8 @@ Bethel	Betul	Betul	auto	media	1	3	0.33	Betuel
 Birzaith	Bizarvite	Bizarvite	auto	media	1	1	1.00	Berias
 Blastus	Blasto	Blasto	auto	media	2	1	1.00	Tiro
 Bor-ashan	Corasã	Corasã	auto	media	3	1	1.00	Hormá
+Brook Eshcol	ribeiro de Escol	Ribeiro de Escol	auto	media	1	4	0.25	
+Brook of Egypt	ribeiro do Egito	Ribeiro do Egito	auto	media	3	11	0.36	
 Bunni	Bani	Bani	auto	media	2	1	1.00	Bebai
 Caphtor	Caftor	Caftor	auto	media	3	13	0.23	Quir
 Caphtorim	Caftorim	Caftorim	auto	media	1	3	0.33	Caftor
@@ -347,6 +403,7 @@ Claudius	Cláudio	Cláudio	auto	media	2	11	0.18	Áquila
 Cnidus	Cnido	Cnido	auto	media	3	1	1.00	Creta
 Colossae	Colossos	Colossos	auto	media	3	2	0.50	Cristo
 Corinth	Corinto	Corinto	auto	media	3	15	0.47	Cristo
+Corner Gate	porta de Efraim	Porta de Efraim	auto	media	3	5	0.40	porta de Benjamim
 Coz	Coz	Coz	auto	media	1	1	1.00	Zobeba
 Crispus	Crispo	Crispo	auto	media	2	2	1.00	Deus
 Cun	Cum	Cum	auto	media	2	1	1.00	Assim
@@ -359,6 +416,8 @@ Destruction	Destruição	Destruição	auto	media	1	1	1.00	Egito
 Diblathaim	Almom-Diblataim	Almom-Diblataim	auto	media	1	3	0.67	Bete-Diblataim
 Dibon	Dimom	Dimom	auto	media	1	1	1.00	Pois
 Dimnah	Dimna	Dimna	auto	media	3	3	0.33	Naalal
+Dung Gate	porta do Esterco	Porta do Esterco	auto	media	3	4	1.00	porta do Vale
+Ebal Mount	monte de Ebal	Monte de Ebal	auto	media	1	8	0.38	monte Ebal
 Ebron	Hebrom	Hebrom	auto	media	2	1	1.00	Reobe
 Ela	Elá	Elá	auto	media	1	1	1.00	Benjamim
 Eliadah	Eliada	Eliada	auto	media	1	1	1.00	Hadadezer
@@ -375,6 +434,7 @@ Epaenetus	Epêneto	Epêneto	auto	media	2	1	1.00	Saudai
 Ephes-dammim	Efes-Damim	Efes-Damim	auto	media	3	3	0.33	Pas-Damim
 Ephesus	Éfeso	Éfeso	auto	media	3	24	0.67	Jesus
 Erastus	Erasto	Erasto	auto	media	2	3	1.00	Quarto
+Esau Mount	monte de Esaú	Monte de Esaú	auto	media	1	4	0.25	monte de Sião
 Etham	Etã	Etã	auto	media	3	4	1.00	E
 Ethan	Etã	Etã	auto	media	5	6	0.67	Hemã
 Ethiopia	Etíopes	Etíopes	auto	media	1	7	0.14	Índia
@@ -384,6 +444,8 @@ Euphrates	Eufrates	Eufrates	auto	media	3	61	0.38	Reobote
 Eutychus	Êutico	Êutico	auto	media	2	1	1.00	E
 Eve	Eva	Eva	auto	media	2	4	1.00	Obtive
 Ezem	Ezém	Ezém	auto	media	3	3	0.33	Azem
+Gate Miphkad	porta da Inspeção	Porta da Inspeção	auto	media	1	1	1.00	
+Gate of the Guard	porta da Prisão	Porta da Prisão	auto	media	1	1	1.00	porta das Ovelhas
 Geba	Gibeá	Gibeá	auto	media	2	1	1.00	Gaza
 Geber	Ben-Geber	Ben-Geber	auto	media	1	1	1.00	Argobe
 Gederah	Gedera	Gedera	auto	media	3	4	0.25	Gederá
@@ -392,7 +454,9 @@ Gershom	Gérson	Gérson	auto	media	5	7	1.00	Peregrino
 Geuel	Guel	Guel	auto	media	2	1	1.00	Gade
 Gibea	Gibeá	Gibeá	auto	media	2	1	1.00	Macbena
 Gibeon	Gibeom	Gibeom	auto	media	1	2	0.50	Gibar
+Great Sea	mar Grande	Mar Grande	auto	media	3	36	0.03	mar Vermelho
 Greece	Grécia	Grécia	auto	media	3	13	0.38	Porém
+Guard Gate	porta Velha	Porta Velha	auto	media	1	1	1.00	porta da Prisão
 Hadar	Hadade	Hadade	auto	media	1	2	1.00	Massá
 Hagri	Hagri	Hagri	auto	media	1	6	0.17	Hagarenos
 Hahiroth	Pi-Hairote	Pi-Hairote	auto	media	1	1	1.00	Mara
@@ -415,6 +479,7 @@ Hemath	Hamate	Hamate	auto	media	1	1	1.00	Recabe
 Hemdan	Hendã	Hendã	auto	media	2	2	0.50	Esbã
 Henoch	Enoque	Enoque	auto	media	1	2	1.00	Efá
 Hermon	Hermon	Hermon	auto	media	1	7	0.14	Hermom
+Hermon Mount	monte de Hermom	Monte de Hermom	auto	media	1	20	0.20	monte Hermom
 Herodian	Herodes	Herodes	auto	media	1	3	0.33	Depois
 Hesed	Ben-Hesede	Ben-Hesede	auto	media	2	1	1.00	Hefer
 Heth	Hete	Hete	auto	media	2	58	0.21	Heteu
@@ -430,6 +495,7 @@ Holon	Holom	Holom	auto	media	6	4	0.75	Gilo
 Hophra	Ofra	Ofra	auto	media	1	18	0.06	Faraó
 Horam	Horão	Horão	auto	media	2	1	1.00	Gezer
 Hori	Hori	Hori	auto	media	4	10	0.30	Homã
+Horse Gate	porta dos Cavalos	Porta dos Cavalos	auto	media	3	3	0.33	
 Hosea	Oseias	Oseias	auto	media	2	3	1.00	Joeroboão
 Hotham	Hotão	Hotão	auto	media	3	3	0.67	Amal
 Hothan	Hotão	Hotão	auto	media	1	1	1.00	Sama
@@ -505,6 +571,7 @@ Kain	Caim	Caim	auto	media	3	2	0.50	Quando
 Karnaim	Asterote-Carnaim	Asterote-Carnaim	auto	media	1	1	1.00	Savé-Quiriataim
 Kedesh-naphtali	Naftali	Naftali	auto	media	2	1	1.00	Quedes
 Kidron	Cedrom	Cedrom	auto	media	3	16	0.69	Derrubou
+King's Valley	vale do Rei	Vale do Rei	auto	media	2	2	0.50	vale de Savé
 Kir	Quir	Quir	auto	media	4	11	0.45	Caftor
 Kir-hareseth	Quir-Haresete	Quir-Haresete	auto	media	2	5	0.40	Moabe
 Kiriath-arim	Quiriate-Jearim	Quiriate-Jearim	auto	media	1	1	1.00	Quefira
@@ -558,19 +625,30 @@ Molech	Moloque	Moloque	auto	media	2	15	0.67	Moabe
 Mordecai	Mordecai	Mordecai	auto	media	2	50	0.02	Mardoqueu
 Moresheth	Moresete-Gate	Moresete-Gate	auto	media	1	3	0.33	Miqueias
 Moresheth-gath	Moresete-Gate	Moresete-Gate	auto	media	2	3	0.33	Portanto
+Mount Carmel	monte de Carmelo	Monte de Carmelo	auto	media	2	18	0.17	monte Carmelo
+Mount Esau	monte de Esaú	Monte de Esaú	auto	media	1	4	0.25	monte de Sião
+Mount Hermon	monte de Hermom	Monte de Hermom	auto	media	2	16	0.25	monte Hermom
+Mount Horeb	monte Horebe	Monte Horebe	auto	media	2	17	0.06	monte de Seir
+Mount Seir	monte de Seir	Monte de Seir	auto	media	4	35	0.46	monte de Halaque
+Mount Sinai	monte Sinai	Monte Sinai	auto	media	2	30	0.40	monte de Sinai
+Mount Tabor	monte de Tabor	Monte de Tabor	auto	media	2	9	0.33	
+Mount of Esau	monte de Esaú	Monte de Esaú	auto	media	1	4	0.25	monte de Sião
 Mozah	Moza	Moza	auto	media	3	1	1.00	Mispá
 Muppim	Mupim	Mupim	auto	media	1	3	0.33	Hupim
+Muster Gate	porta da Inspeção	Porta da Inspeção	auto	media	2	1	1.00	
 Nagge	Nagai	Nagai	auto	media	1	1	1.00	Naum
 Nahalol	Naalol	Naalol	auto	media	2	3	0.33	Zebulom
 Nain	Naim	Naim	auto	media	3	1	1.00	Jesus
 Nazareth	Nazaré	Nazaré	auto	media	3	33	0.39	Nazareno
 Neah	Neá	Neá	auto	media	3	3	0.33	Ete-Cazim
+Nebo Mount	monte Nebo	Monte Nebo	auto	media	1	6	0.33	monte Abarim
 Negeb	Negueve	Negueve	auto	media	3	44	0.18	Éder
 Netophah	Netofá	Netofá	auto	media	3	12	0.17	Netofate
 Nile	Nilo	Nilo	auto	media	3	48	0.08	Parecia-lhe
 Nimrod	Ninrode	Ninrode	auto	media	4	4	1.00	Assim
 Nympha	Ninfas	Ninfas	auto	media	1	1	1.00	Laodiceia
 Oded	Obede	Obede	auto	media	4	3	1.00	Deus
+Old Gate	porta Velha	Porta Velha	auto	media	1	1	1.00	
 Olivet	Oliveiras	Oliveiras	auto	media	1	3	1.00	Betfagé
 Oren	Orém	Orém	auto	media	2	1	1.00	Ozém
 Orpah	Orfa	Orfa	auto	media	2	2	1.00	Moabe
@@ -609,6 +687,7 @@ Ramoth	Jeremote	Jeremote	auto	media	1	1	1.00	Mesulão
 Rapha	Rafa	Rafa	auto	media	2	9	0.33	Gera
 Raphah	Rafa	Rafa	auto	media	1	2	0.50	Refaías
 Reaia	Reaías	Reaías	auto	media	1	1	1.00	Seu
+Red Sea	mar Vermelho	Mar Vermelho	auto	media	5	33	0.79	
 Rephaim	Efraim	Efraim	auto	media	1	9	0.11	Edrei
 Rhegium	Régio	Régio	auto	media	3	1	1.00	Putéoli
 Rhoda	Rode	Rode	auto	media	2	1	1.00	Pedro
@@ -616,9 +695,11 @@ Rimmon	Dimna	Dimna	auto	media	1	1	1.00	Naalal
 Rome	Roma	Roma	auto	media	3	34	0.41	Cirene
 Rufus	Rufo	Rufo	auto	media	4	2	1.00	Simão
 Sabbath	Sábado	Sábado	auto	media	1	151	0.04	Salvar
+Salt Sea	mar Salgado	Mar Salgado	auto	media	3	21	0.33	mar de Jazer
 Salu	Salu	Salu	auto	media	2	1	1.00	Simeão
 Samgar	Sangar-Nebo	Sangar-Nebo	auto	media	1	1	1.00	Rabmague
 Satan	Satanás	Satanás	auto	media	2	100	0.46	Tiatira
+Sea of Galilee	mar da Galileia	Mar da Galileia	auto	media	2	10	0.40	mar de Quinerete
 Seba	Seba	Seba	auto	media	2	2	1.00	Sabá
 Sela	Sela	Sela	auto	media	3	5	0.20	Enviai
 Sela	Selá	Selá	auto	media	1	2	0.50	Jocteel
@@ -636,6 +717,7 @@ Shaul	Saul	Saul	auto	media	6	10	0.90	Samlá
 Shavsha	Sausa	Sausa	auto	media	1	4	0.25	Sisa
 Sheba	Sabá	Sabá	auto	media	3	20	0.75	Seba
 Sheba	Sebá	Sebá	auto	media	6	9	0.44	Sabtá
+Sheep Gate	porta das Ovelhas	Porta das Ovelhas	auto	media	3	4	0.75	porta do Peixe
 Shelah	Salá	Salá	auto	media	1	8	0.75	Selá
 Shelah	Selá	Selá	auto	media	3	14	0.64	Zerá
 Sheleph	Salefe	Salefe	auto	media	2	2	1.00	Hazarmavé
@@ -676,6 +758,7 @@ Spain	Espanha	Espanha	auto	media	3	2	1.00	Assim
 Suah	Suá	Suá	auto	media	2	1	1.00	Sual
 Sur	Sur	Sur	auto	media	3	1	1.00	E
 Syene	Sevene	Sevene	auto	media	3	3	0.67	Sinim
+Tabor Mount	monte de Tabor	Monte de Tabor	auto	media	1	8	0.38	
 Tahpenes	Tafnes	Tafnes	auto	media	2	2	1.00	Genubate
 Tahtim-hodshi	Hodsi	Hodsi	auto	media	1	1	1.00	Dã-Jaã
 Tahtimhodshi	Hodsi	Hodsi	auto	media	1	1	1.00	Dã-Jaã
@@ -691,11 +774,17 @@ Tilgath-pilneser	Tiglate-Pilneser	Tiglate-Pilneser	auto	media	1	6	0.33	Tiglate-P
 Tishbe	Tisbita	Tisbita	auto	media	3	6	0.83	Jezabel
 Tobijah	Tobias	Tobias	auto	media	4	3	1.00	Tobadonias
 Tohu	Toú	Toú	auto	media	1	3	0.33	Toá
+Tower of the Hundred	torre de Hananeel	Torre de Hananeel	auto	media	2	2	0.50	torre de Hananel
 Troas	Troas	Troas	auto	media	3	6	0.17	Trôade
 Tyrannus	Tirano	Tirano	auto	media	2	1	1.00	Caminho
 Tyre	Tiro	Tiro	auto	media	3	64	0.83	Chipre
 Ulam	Ulão	Ulão	auto	media	4	4	1.00	Gileade
 Urbanus	Urbano	Urbano	auto	media	1	1	1.00	Estáquis
+Valley of Hinnom	vale de Hinom	Vale de Hinom	auto	media	2	12	0.25	Vale da Matança
+Valley of Slaughter	Vale da Matança	Vale da Matança	auto	media	1	2	1.00	
+Water Gate	porta das Águas	Porta das Águas	auto	media	3	5	1.00	porta da Fonte
+West Gate	porta de Salequete	Porta de Salequete	auto	media	1	1	1.00	
+Yeshanah Gate	porta Velha	Porta Velha	auto	media	1	2	1.00	porta da Prisão
 Yiron	Irom	Irom	auto	media	3	1	1.00	Horém
 Zacchur	Zacur	Zacur	auto	media	1	1	1.00	Hamuel
 Zachariah	Zacarias	Zacarias	auto	media	1	3	1.00	Azarias
@@ -771,6 +860,7 @@ Achan	Acã	Acã	auto	alta	2	7	0.86	Acar
 Achbor	Acbor	Acbor	auto	alta	5	8	0.88	Hadar
 Achim	Aquim	Aquim	auto	alta	2	1	1.00	Sadoque
 Achish	Aquis	Aquis	auto	alta	2	21	0.95	Davi
+Achor Valley	vale de Acor	Vale de Acor	auto	alta	1	5	1.00	
 Achsah	Acsa	Acsa	auto	alta	3	5	1.00	Quenaz
 Achshaph	Acsafe	Acsafe	auto	alta	3	3	1.00	Hazor
 Achzib	Aczibe	Aczibe	auto	alta	6	6	0.67	Aco
@@ -801,6 +891,7 @@ Adonikam	Adonicão	Adonicão	auto	alta	2	3	1.00	Semaías
 Adoraim	Adoraim	Adoraim	auto	alta	3	1	1.00	Azeca
 Adoram	Adorão	Adorão	auto	alta	1	5	0.60	Adonirão
 Adrammelech	Adrameleque	Adrameleque	auto	alta	4	3	1.00	Anameleque
+Adriatic Sea	mar Adriático	Mar Adriático	auto	alta	2	1	1.00	
 Adriel	Adriel	Adriel	auto	alta	2	2	1.00	Armoni
 Adullam	Adulão	Adulão	auto	alta	3	11	0.73	Ainda
 Adummim	Adumim	Adumim	auto	alta	3	2	1.00	Debir
@@ -927,6 +1018,7 @@ Apollos	Apolo	Apolo	auto	alta	2	10	1.00	Paulo
 Apollyon	Apoliom	Apoliom	auto	alta	1	1	1.00	Abadom
 Appaim	Apaim	Apaim	auto	alta	2	2	1.00	Alai
 Apphia	Ápia	Ápia	auto	alta	2	1	1.00	Arquipo
+Appii Forum	praça de Ápio	Praça de Ápio	auto	alta	1	1	1.00	
 Aquila	Áquila	Áquila	auto	alta	2	6	1.00	Priscila
 Ar	Ar	Ar	auto	alta	3	7	0.71	Ar-Moabe
 Arab	Arabe	Arabe	auto	alta	3	1	1.00	Esã
@@ -1016,6 +1108,7 @@ Atroth-shophan	Atarote-Sofã	Atarote-Sofã	auto	alta	3	1	1.00	Jazer
 Attai	Atai	Atai	auto	alta	6	4	1.00	Natã
 Attalia	Atália	Atália	auto	alta	3	2	0.50	E
 Aven	Áven	Áven	auto	alta	2	1	1.00	Caí
+Aven Valley	vale de Áven	Vale de Áven	auto	alta	1	1	1.00	
 Avith	Avite	Avite	auto	alta	3	2	1.00	Husão
 Avva	Hava	Hava	auto	alta	2	1	1.00	Sefarvaim
 Avvim	Avim	Avim	auto	alta	3	1	1.00	Pará
@@ -1061,6 +1154,7 @@ Baal-tamar	Baal-Tamar	Baal-Tamar	auto	alta	3	1	1.00	Gibeá
 Baal-zebub	Baal-Zebube	Baal-Zebube	auto	alta	2	4	1.00	Acaso
 Baal-zephon	Baal-Zefom	Baal-Zefom	auto	alta	3	3	1.00	Seguindo-os
 Baalah	Baalá	Baalá	auto	alta	5	4	1.00	Azém
+Baalah Mount	monte de Baalá	Monte de Baalá	auto	alta	1	1	1.00	
 Baalath	Baalate	Baalate	auto	alta	6	3	1.00	Elteque
 Baalhanan	Baal-Hanã	Baal-Hanã	auto	alta	2	5	1.00	Hadar
 Baalis	Baalis	Baalis	auto	alta	2	1	1.00	Gedalias
@@ -1138,10 +1232,12 @@ Bene-jaakan	Bene-Jaacã	Bene-Jaacã	auto	alta	3	3	0.67	Moserote
 Benhail	Bene-Hail	Bene-Hail	auto	alta	1	1	1.00	Obadias
 Beninu	Beninu	Beninu	auto	alta	2	1	1.00	Bani
 Benjamin	Benjamim	Benjamim	auto	alta	10	174	0.98	Quenaaná
+Benjamin Gate	porta de Benjamim	Porta de Benjamim	auto	alta	3	4	0.75	
 Beno	Beno	Beno	auto	alta	2	2	1.00	Os
 Beor	Beor	Beor	auto	alta	4	11	0.91	Belá
 Bera	Bera	Bera	auto	alta	2	1	1.00	Birsa
 Beracah	Beraca	Beraca	auto	alta	1	1	1.00	Semaá
+Beracah Valley	vale de Beraca	Vale de Beraca	auto	alta	1	1	1.00	
 Berachah	Beraca	Beraca	auto	alta	1	1	1.00	Semaá
 Beraiah	Beraías	Beraías	auto	alta	2	1	1.00	Adaías
 Berea	Bereia	Bereia	auto	alta	3	6	0.50	Derbe
@@ -1242,6 +1338,8 @@ Bozez	Bozez	Bozez	auto	alta	3	1	1.00	Sené
 Bozkath	Bozcate	Bozcate	auto	alta	3	2	1.00	Josias
 Bozrah	Bosra	Bosra	auto	alta	2	1	1.00	Sobre
 Bozrah	Bozra	Bozra	auto	alta	3	8	0.75	Bosra
+Brook Kidron	ribeiro de Cedrom	Ribeiro de Cedrom	auto	alta	1	2	1.00	
+Brook of the Arabah	ribeiro de Arabá	Ribeiro de Arabá	auto	alta	2	1	1.00	
 Bukki	Buqui	Buqui	auto	alta	4	4	1.00	Jogli
 Bukkiah	Buquias	Buquias	auto	alta	2	2	1.00	Josbecasa
 Bul	Bul	Bul	auto	alta	1	1	1.00	Edificou-a
@@ -1272,6 +1370,7 @@ Carchemish	Carquemis	Carquemis	auto	alta	3	3	0.67	Carquêmis
 Carchemish	Carquêmis	Carquêmis	auto	alta	1	1	1.00	Eufrates
 Carkas	Carcas	Carcas	auto	alta	1	1	1.00	Harbona
 Carmel	Carmelo	Carmelo	auto	alta	3	25	0.88	Amade
+Carmel Mount	monte de Carmelo	Monte de Carmelo	auto	alta	1	5	0.60	monte do Carmelo
 Carmi	Carmi	Carmi	auto	alta	4	7	1.00	Hezrom
 Carshena	Carsena	Carsena	auto	alta	2	1	1.00	Marsena
 Casiphia	Casifia	Casifia	auto	alta	3	1	1.00	Ido
@@ -1314,6 +1413,8 @@ Chorazin	Corazim	Corazim	auto	alta	3	2	1.00	Ai
 Chushan-rishathaim	Cusã-Risataim	Cusã-Risataim	auto	alta	1	2	1.00	Síria
 Chuza	Cuza	Cuza	auto	alta	2	1	1.00	Susana
 Cilicia	Cilícia	Cilícia	auto	alta	3	8	1.00	Lícia
+City of David	cidade de Davi	Cidade de Davi	auto	alta	1	46	0.91	cidade de Judá
+City of Destruction	Cidade da Destruição	Cidade da Destruição	auto	alta	1	1	1.00	
 Clauda	Clauda	Clauda	auto	alta	1	1	1.00	E
 Claudia	Cláudia	Cláudia	auto	alta	2	1	1.00	Lino
 Clement	Clemente	Clemente	auto	alta	2	1	1.00	Peço
@@ -1388,6 +1489,7 @@ Dophkah	Dofca	Dofca	auto	alta	3	2	1.00	Alus
 Dor	Dor	Dor	auto	alta	3	6	1.00	En-Dor
 Dorcas	Dorcas	Dorcas	auto	alta	1	3	0.67	Pedro
 Dothan	Dotã	Dotã	auto	alta	3	2	1.00	Então
+Dragon Spring	fonte do Dragão	Fonte do Dragão	auto	alta	3	1	1.00	
 Drusilla	Drusila	Drusila	auto	alta	2	1	1.00	Paulo
 Dumah	Dumá	Dumá	auto	alta	8	4	1.00	Esã
 Dura	Dura	Dura	auto	alta	3	1	1.00	Nabucodonosor
@@ -1410,6 +1512,8 @@ Eglaim	Eglaim	Eglaim	auto	alta	3	1	1.00	Beer-Elim
 Eglath-shelishiyah	Eglate-Selisia	Eglate-Selisia	auto	alta	3	2	0.50	Eglate-Selísia
 Eglon	Eglom	Eglom	auto	alta	5	12	1.00	Hebrom
 Egypt	Egito	Egito	auto	alta	3	715	0.77	Etíopes
+Egypt Sea	mar do Egito	Mar do Egito	auto	alta	1	1	1.00	
+Egyptian Sea	mar do Egito	Mar do Egito	auto	alta	1	1	1.00	
 Ehi	Eí	Eí	auto	alta	1	2	0.50	E
 Ehud	Eúde	Eúde	auto	alta	4	9	1.00	E
 Eker	Equer	Equer	auto	alta	2	1	1.00	Jerameel
@@ -1418,6 +1522,7 @@ El-bethel	El-Betel	El-Betel	auto	alta	2	1	1.00	E
 El-paran	El-Parã	El-Parã	auto	alta	3	1	1.00	Seir
 Eladah	Eleada	Eleada	auto	alta	1	1	1.00	Sutela
 Elah	Elá	Elá	auto	alta	11	13	1.00	Oolibama
+Elah Valley	vale de Elá	Vale de Elá	auto	alta	1	3	1.00	
 Elam	Elão	Elão	auto	alta	15	30	0.90	Sem
 Elasah	Elasá	Elasá	auto	alta	4	2	1.00	Maaseias
 Elath	Elate	Elate	auto	alta	3	6	0.67	Elote
@@ -1510,10 +1615,12 @@ Epher	Efer	Efer	auto	alta	6	4	1.00	Efá
 Ephlal	Eflal	Eflal	auto	alta	2	1	1.00	E
 Ephod	Éfode	Éfode	auto	alta	2	1	1.00	Haniel
 Ephraim	Efraim	Efraim	auto	alta	7	167	0.99	Zemaraim
+Ephraim Gate	porta de Efraim	Porta de Efraim	auto	alta	3	4	1.00	porta Velha
 Ephratah	Efrata	Efrata	auto	alta	1	4	0.75	Efrate
 Ephrath	Efrata	Efrata	auto	alta	2	3	1.00	Raquel
 Ephrathah	Efrata	Efrata	auto	alta	3	8	0.62	Raquel
 Ephron	Efrom	Efrom	auto	alta	2	10	1.00	Abraão
+Ephron Mount	monte de Efrom	Monte de Efrom	auto	alta	1	2	0.50	
 Er	Er	Er	auto	alta	6	8	1.00	Zerá
 Eran	Erã	Erã	auto	alta	2	2	0.50	Sutela
 Erech	Ereque	Ereque	auto	alta	3	2	0.50	Reum
@@ -1525,6 +1632,7 @@ Esek	Eseque	Eseque	auto	alta	3	1	1.00	E
 Eshan	Esã	Esã	auto	alta	3	1	1.00	Arabe
 Eshban	Esbã	Esbã	auto	alta	2	2	1.00	Querã
 Eshcol	Escol	Escol	auto	alta	2	2	1.00	Aner
+Eshcol Valley	vale de Escol	Vale de Escol	auto	alta	1	4	0.75	
 Eshtaol	Estaol	Estaol	auto	alta	3	8	0.88	Zorá
 Eshtemoa	Estemoa	Estemoa	auto	alta	4	6	0.83	Estemo
 Eshtemoh	Estemo	Estemo	auto	alta	1	1	1.00	Anim
@@ -1546,6 +1654,7 @@ Ezbon	Esbom	Esbom	auto	alta	2	1	1.00	Jerimote
 Ezbon	Ezbom	Ezbom	auto	alta	1	2	0.50	Ozni
 Ezekiel	Ezequiel	Ezequiel	auto	alta	2	2	1.00	Buzi
 Ezel	Ezel	Ezel	auto	alta	1	2	0.50	Estarás
+Ezel Stone	pedra de Ezel	Pedra de Ezel	auto	alta	1	1	1.00	
 Ezer	Eser	Eser	auto	alta	2	5	1.00	Seir
 Ezer	Ezer	Ezer	auto	alta	4	2	1.00	Jesua
 Ezer	Ézer	Ézer	auto	alta	6	3	1.00	Estes
@@ -1556,7 +1665,11 @@ Ezrah	Ezra	Ezra	auto	alta	1	1	1.00	Isbá
 Ezri	Ezri	Ezri	auto	alta	2	1	1.00	E
 Felix	Félix	Félix	auto	alta	2	8	1.00	Lísias
 Festus	Festo	Festo	auto	alta	1	13	0.92	Félix
+Fish Gate	porta do Peixe	Porta do Peixe	auto	alta	3	4	0.50	porta da Prisão
+Forest Ephraim	bosque de Efraim	Bosque de Efraim	auto	alta	1	1	1.00	
 Fortunatus	Fortunato	Fortunato	auto	alta	2	2	1.00	Estéfanas
+Forum of Appius	praça de Ápio	Praça de Ápio	auto	alta	2	1	1.00	
+Fountain Gate	porta da Fonte	Porta da Fonte	auto	alta	2	3	1.00	porta das Águas
 Gaal	Gaal	Gaal	auto	alta	2	9	1.00	A
 Gaash	Gaás	Gaás	auto	alta	3	4	1.00	Hidai
 Gabbai	Gabai	Gabai	auto	alta	2	1	1.00	Salai
@@ -1579,6 +1692,11 @@ Gamaliel	Gamaliel	Gamaliel	auto	alta	4	7	1.00	Amiúde
 Gamul	Gamul	Gamul	auto	alta	2	1	1.00	Jaquim
 Gareb	Garebe	Garebe	auto	alta	5	3	1.00	Goa
 Gatam	Gatã	Gatã	auto	alta	2	3	1.00	Ada
+Gate of Benjamin	porta de Benjamim	Porta de Benjamim	auto	alta	1	4	0.75	
+Gate of Ephraim	porta de Efraim	Porta de Efraim	auto	alta	2	4	1.00	porta do Peixe
+Gate of Yeshanah	porta da Prisão	Porta da Prisão	auto	alta	1	2	0.50	porta do Peixe
+Gate of the Fountain	porta da Fonte	Porta da Fonte	auto	alta	1	3	1.00	porta das Águas
+Gate of the Valley	porta do Vale	Porta do Vale	auto	alta	1	2	1.00	porta do Esterco
 Gath	Gate	Gate	auto	alta	4	44	0.68	Gaza
 Gath-hepher	Gate-Hefer	Gate-Hefer	auto	alta	3	2	1.00	Hamate
 Gath-rimmon	Gate-Rimom	Gate-Rimom	auto	alta	5	4	1.00	Aijalom
@@ -1602,6 +1720,7 @@ Gennesaret	Genesaré	Genesaré	auto	alta	3	3	1.00	Eles
 Genubath	Genubate	Genubate	auto	alta	2	1	1.00	E
 Gera	Gera	Gera	auto	alta	8	9	1.00	Hurão
 Gerar	Gerar	Gerar	auto	alta	3	10	1.00	Bateram
+Gerizim Mount	monte de Gerizim	Monte de Gerizim	auto	alta	1	4	0.75	monte Gerizim
 Gershon	Gérson	Gérson	auto	alta	2	34	0.91	Golã
 Gesham	Gesã	Gesã	auto	alta	1	1	1.00	Regém
 Geshan	Gesã	Gesã	auto	alta	1	1	1.00	Efá
@@ -1623,6 +1742,7 @@ Gidom	Gidom	Gidom	auto	alta	3	1	1.00	Rimom
 Gihon	Giom	Giom	auto	alta	5	7	0.86	Joiada
 Gilalai	Gilalai	Gilalai	auto	alta	2	1	1.00	Milalai
 Gilboa	Gilboa	Gilboa	auto	alta	2	3	1.00	Gileade
+Gilboa Mount	monte de Gilboa	Monte de Gilboa	auto	alta	1	6	0.83	monte de Gileade
 Gilead	Gileade	Gileade	auto	alta	10	100	0.91	Golã
 Gilgal	Gilgal	Gilgal	auto	alta	8	42	0.90	Gileade
 Giloh	Gilo	Gilo	auto	alta	3	3	0.67	Holom
@@ -1679,6 +1799,7 @@ Hakkatan	Catã	Catã	auto	alta	2	1	1.00	Azgade
 Hakkoz	Coz	Coz	auto	alta	4	5	1.00	Abias
 Hakupha	Hacufa	Hacufa	auto	alta	2	2	1.00	Baquebuque
 Halah	Hala	Hala	auto	alta	3	4	0.75	Hara
+Halak Mount	monte de Halaque	Monte de Halaque	auto	alta	1	2	1.00	monte Hermom
 Halhul	Halul	Halul	auto	alta	3	1	1.00	Bete-Zur
 Hali	Hali	Hali	auto	alta	3	1	1.00	Helcate
 Hallohesh	Haloés	Haloés	auto	alta	1	2	0.50	Haoés
@@ -1770,6 +1891,7 @@ Hazor-hadattah	Hazor-Hadata	Hazor-Hadata	auto	alta	3	1	1.00	Hazor
 Hazzelelponi	Hazelelponi	Hazelelponi	auto	alta	1	1	1.00	Jezreel
 Heber	Héber	Héber	auto	alta	10	14	0.86	Berias
 Hebron	Hebrom	Hebrom	auto	alta	7	77	0.86	Debir
+Hebron Valley	vale de Hebrom	Vale de Hebrom	auto	alta	1	1	1.00	
 Hegai	Hegai	Hegai	auto	alta	2	3	1.00	Chegando
 Helah	Helá	Helá	auto	alta	2	2	1.00	Etnã
 Helam	Helã	Helã	auto	alta	3	2	1.00	E
@@ -1826,6 +1948,7 @@ Hodijah	Hodias	Hodias	auto	alta	3	5	1.00	Quelita
 Hoglah	Hogla	Hogla	auto	alta	2	4	1.00	Noa
 Homam	Homã	Homã	auto	alta	1	2	0.50	Lotã
 Hophni	Hofni	Hofni	auto	alta	2	5	1.00	Fineias
+Hor Mount	monte de Hor	Monte de Hor	auto	alta	2	12	1.00	
 Hor-haggidgad	Hor-Gidgade	Hor-Gidgade	auto	alta	3	3	0.67	Gudgodá
 Horeb	Horebe	Horebe	auto	alta	1	16	0.94	Onze
 Horem	Horém	Horém	auto	alta	3	1	1.00	Irom
@@ -1878,6 +2001,7 @@ India	Índia	Índia	auto	alta	3	2	1.00	Sivã
 Iphdeiah	Ifdeias	Ifdeias	auto	alta	1	1	1.00	Penuel
 Iphedeiah	Ifdeias	Ifdeias	auto	alta	1	1	1.00	Penuel
 Iphtah	Iftá	Iftá	auto	alta	3	1	1.00	Asná
+Iphtahel Valley	vale de Iftá-El	Vale de Iftá-El	auto	alta	1	2	1.00	
 Ir	Ir	Ir	auto	alta	2	1	1.00	Aer
 Ir-shemesh	Ir-Semes	Ir-Semes	auto	alta	2	1	1.00	Estaol
 Ira	Ira	Ira	auto	alta	6	6	1.00	Davi
@@ -2000,6 +2124,7 @@ Jashub	Jasube	Jasube	auto	alta	4	4	0.75	Adaías
 Jasiel	Jaasiel	Jaasiel	auto	alta	1	1	1.00	Eliel
 Jathniel	Jatniel	Jatniel	auto	alta	2	1	1.00	Jediael
 Jazer	Jazer	Jazer	auto	alta	3	13	0.77	Jezer
+Jazer Sea	mar de Jazer	Mar de Jazer	auto	alta	1	1	1.00	
 Jaziz	Jaziz	Jaziz	auto	alta	2	1	1.00	Davi
 Jeaterai	Jeaterai	Jeaterai	auto	alta	1	2	0.50	Zerá
 Jeatherai	Jeaterai	Jeaterai	auto	alta	1	2	0.50	Zerá
@@ -2061,6 +2186,7 @@ Jeremoth	Jerimote	Jerimote	auto	alta	1	1	1.00	Alemete
 Jeriah	Jería	Jería	auto	alta	2	2	0.50	Jerias
 Jeribai	Jeribai	Jeribai	auto	alta	2	1	1.00	Josavias
 Jericho	Jericó	Jericó	auto	alta	4	68	0.87	Inri
+Jericho Valley	vale de Jericó	Vale de Jericó	auto	alta	1	1	1.00	
 Jeriel	Jeriel	Jeriel	auto	alta	2	1	1.00	Jamai
 Jerimoth	Jeremote	Jeremote	auto	alta	11	8	1.00	Semarias
 Jerimoth	Jerimote	Jerimote	auto	alta	3	2	1.00	Iri
@@ -2097,6 +2223,7 @@ Jeziel	Jeziel	Jeziel	auto	alta	2	1	1.00	Aiezer
 Jezliah	Izlias	Izlias	auto	alta	1	1	1.00	Elpaal
 Jezrahiah	Jezraías	Jezraías	auto	alta	2	1	1.00	Ezer
 Jezreel	Jezreel	Jezreel	auto	alta	12	43	0.86	Israel
+Jezreel Valley	vale de Jezreel	Vale de Jezreel	auto	alta	1	3	1.00	
 Jibsam	Ibsão	Ibsão	auto	alta	1	1	1.00	Jamai
 Jidlaph	Jidlafe	Jidlafe	auto	alta	2	1	1.00	Pildas
 Joab	Joabe	Joabe	auto	alta	8	124	0.98	Gia
@@ -2235,6 +2362,7 @@ Leah	Lia	Lia	auto	alta	2	32	1.00	Zilpa
 Leb-kamai	Lebe-Camai	Lebe-Camai	auto	alta	2	1	1.00	Eis
 Lebanah	Lebana	Lebana	auto	alta	2	2	1.00	Hagaba
 Lebanon	Líbano	Líbano	auto	alta	4	62	0.98	Voltarão
+Lebanon Mount	monte Líbano	Monte Líbano	auto	alta	1	1	1.00	monte de Baal-Hermom
 Lebaoth	Lebaote	Lebaote	auto	alta	3	1	1.00	Aim
 Lebonah	Lebona	Lebona	auto	alta	3	1	1.00	Siló
 Lecah	Leca	Leca	auto	alta	1	1	1.00	Lada
@@ -2451,6 +2579,7 @@ Mispereth	Misperete	Misperete	auto	alta	1	2	0.50	Mispar
 Mithkah	Mitca	Mitca	auto	alta	3	2	1.00	Tera
 Mithredath	Mitridate	Mitridate	auto	alta	4	2	1.00	Judá
 Mitylene	Mitilene	Mitilene	auto	alta	3	1	1.00	E
+Mizar Mount	monte Mizar	Monte Mizar	auto	alta	1	1	1.00	
 Mizpah	Mispá	Mispá	auto	alta	8	60	0.65	Israel
 Mizraim	Misraim	Misraim	auto	alta	1	4	0.50	Mizraim
 Mizzah	Mizá	Mizá	auto	alta	2	3	1.00	Samá
@@ -2460,9 +2589,37 @@ Moladah	Moladá	Moladá	auto	alta	3	4	0.75	Molada
 Molid	Molide	Molide	auto	alta	2	1	1.00	Abisur
 Moreh	Moré	Moré	auto	alta	6	3	1.00	Jordão
 Moriah	Moriá	Moriá	auto	alta	2	1	1.00	Toma
+Moriah Mount	monte Moriá	Monte Moriá	auto	alta	1	2	0.50	
 Moserah	Moserá	Moserá	auto	alta	2	1	1.00	Israel
 Moseroth	Moserote	Moserote	auto	alta	3	3	0.67	Hasmona
 Moses	Moisés	Moisés	auto	alta	2	785	1.00	Esses
+Mount Baal-hermon	monte de Baal-Hermom	Monte de Baal-Hermom	auto	alta	1	1	1.00	monte Líbano
+Mount Baalah	monte de Baalá	Monte de Baalá	auto	alta	2	1	1.00	
+Mount Baalhermon	monte de Baal-Hermom	Monte de Baal-Hermom	auto	alta	1	1	1.00	monte Líbano
+Mount Bashan	monte de Basã	Monte de Basã	auto	alta	1	1	1.00	
+Mount Ebal	monte de Ebal	Monte de Ebal	auto	alta	2	5	0.60	monte Ebal
+Mount Ephraim	monte de Efraim	Monte de Efraim	auto	alta	2	3	0.67	
+Mount Ephron	monte de Efrom	Monte de Efrom	auto	alta	2	1	1.00	
+Mount Gerizim	monte de Gerizim	Monte de Gerizim	auto	alta	2	5	0.60	monte Gerizim
+Mount Gilboa	monte de Gilboa	Monte de Gilboa	auto	alta	2	8	0.62	
+Mount Gilead	monte de Gileade	Monte de Gileade	auto	alta	2	1	1.00	
+Mount Halak	monte de Halaque	Monte de Halaque	auto	alta	2	2	1.00	monte Hermom
+Mount Heres	monte de Heres	Monte de Heres	auto	alta	2	1	1.00	
+Mount Hor	monte de Hor	Monte de Hor	auto	alta	4	12	1.00	
+Mount Jearim	monte de Jearim	Monte de Jearim	auto	alta	2	1	1.00	monte de Seir
+Mount Lebanon	monte Líbano	Monte Líbano	auto	alta	2	1	1.00	monte de Baal-Hermom
+Mount Mizar	monte Mizar	Monte Mizar	auto	alta	1	1	1.00	
+Mount Moriah	monte Moriá	Monte Moriá	auto	alta	2	1	1.00	
+Mount Nebo	monte Nebo	Monte Nebo	auto	alta	2	2	1.00	monte de Abarim
+Mount Paran	monte de Parã	Monte de Parã	auto	alta	2	2	1.00	
+Mount Perazim	monte de Perazim	Monte de Perazim	auto	alta	2	1	1.00	
+Mount Shapher	monte de Séfer	Monte de Séfer	auto	alta	1	2	1.00	
+Mount Shepher	monte de Séfer	Monte de Séfer	auto	alta	1	2	1.00	
+Mount Sion	monte de Sião	Monte de Sião	auto	alta	1	1	1.00	
+Mount Zalmon	monte de Salmom	Monte de Salmom	auto	alta	2	1	1.00	
+Mount Zemaraim	monte de Zemaraim	Monte de Zemaraim	auto	alta	2	1	1.00	
+Mount Zion	monte de Sião	Monte de Sião	auto	alta	2	25	0.72	monte Sião
+Mount of Olives	monte das Oliveiras	Monte das Oliveiras	auto	alta	3	18	0.61	
 Moza	Moza	Moza	auto	alta	4	5	1.00	Efá
 Mushi	Musi	Musi	auto	alta	2	10	0.80	Mali
 Myra	Mira	Mira	auto	alta	3	1	1.00	Lícia
@@ -2579,6 +2736,7 @@ Oholah	Oolá	Oolá	auto	alta	1	4	1.00	Oolibá
 Oholiab	Aoliabe	Aoliabe	auto	alta	1	5	1.00	Aisamaque
 Oholibah	Oolibá	Oolibá	auto	alta	1	5	1.00	Oolá
 Oholibamah	Oolibama	Oolibama	auto	alta	1	7	1.00	Zibeão
+Olives Mount	monte das Oliveiras	Monte das Oliveiras	auto	alta	1	14	0.79	
 Olympas	Olimpas	Olimpas	auto	alta	2	1	1.00	Júlia
 Omar	Omar	Omar	auto	alta	2	3	1.00	Temã
 Omega	Ômega	Ômega	auto	alta	1	4	1.00	Pérgamo
@@ -2615,6 +2773,7 @@ Pamphylia	Panfília	Panfília	auto	alta	3	5	1.00	Frígia
 Paphos	Pafo	Pafo	auto	alta	3	2	1.00	Paulo
 Parah	Pará	Pará	auto	alta	3	1	1.00	Ofra
 Paran	Parã	Parã	auto	alta	3	8	1.00	Labã
+Paran Mount	monte de Parã	Monte de Parã	auto	alta	1	2	1.00	
 Parmashta	Farmasta	Farmasta	auto	alta	2	1	1.00	Vaisata
 Parmenas	Parmenas	Parmenas	auto	alta	2	1	1.00	Antioquia
 Parnach	Parnaque	Parnaque	auto	alta	2	1	1.00	Elizafã
@@ -2652,6 +2811,7 @@ Peninnah	Penina	Penina	auto	alta	2	2	1.00	Elcana
 Penuel	Peniel	Peniel	auto	alta	2	6	1.00	E
 Penuel	Penuel	Penuel	auto	alta	4	2	1.00	Ézer
 Peor	Peor	Peor	auto	alta	3	8	0.50	SENHOR
+Perazim Mount	monte de Perazim	Monte de Perazim	auto	alta	1	1	1.00	
 Peresh	Seres	Seres	auto	alta	2	1	1.00	Perez
 Perez	Perez	Perez	auto	alta	1	15	0.93	Peres
 Perez-uzza	Perez-Uzá	Perez-Uzá	auto	alta	2	1	1.00	Uzá
@@ -2703,6 +2863,7 @@ Pispa	Pispa	Pispa	auto	alta	1	1	1.00	Ara
 Pispah	Pispa	Pispa	auto	alta	1	1	1.00	Ara
 Pithom	Pitom	Pitom	auto	alta	3	1	1.00	Então
 Pithon	Pitom	Pitom	auto	alta	2	2	1.00	Tareia
+Plain of Jordan	planície do Jordão	Planície do Jordão	auto	alta	1	2	1.00	
 Pleiades	Plêiades	Plêiades	auto	alta	1	3	1.00	Podes
 Pochereth-hazzebaim	Poquerete-Hazebaim	Poquerete-Hazebaim	auto	alta	1	2	1.00	Sefatias
 Poratha	Porata	Porata	auto	alta	2	1	1.00	Aridata
@@ -2710,6 +2871,7 @@ Poti-pherah	Potífera	Potífera	auto	alta	1	3	1.00	Azenate
 Potiphar	Potifar	Potifar	auto	alta	2	2	1.00	Faraó
 Potiphera	Potífera	Potífera	auto	alta	1	3	1.00	Azenate
 Priscilla	Priscila	Priscila	auto	alta	2	6	0.83	Prisca
+Prison Gate	porta da Prisão	Porta da Prisão	auto	alta	1	1	1.00	porta do Peixe
 Prochorus	Prócoro	Prócoro	auto	alta	2	1	1.00	Nicanor
 Ptolemais	Ptolemaida	Ptolemaida	auto	alta	2	1	1.00	Tiro
 Puah	Puá	Puá	auto	alta	4	2	1.00	Sifrá
@@ -2765,6 +2927,7 @@ Remeth	Remete	Remete	auto	alta	3	2	0.50	En-Ganim
 Rephael	Rafael	Rafael	auto	alta	2	1	1.00	Eliú
 Rephah	Refa	Refa	auto	alta	2	1	1.00	Resefe
 Rephaiah	Refaías	Refaías	auto	alta	9	6	0.83	Jesaías
+Rephaim Valley	vale de Refaim	Vale de Refaim	auto	alta	1	8	0.75	vale de Hinom
 Rephan	Renfã	Renfã	auto	alta	1	1	1.00	Porém
 Rephidim	Refidim	Refidim	auto	alta	3	5	1.00	Sim
 Resen	Resém	Resém	auto	alta	3	1	1.00	E
@@ -2835,11 +2998,17 @@ Saron	Sarom	Sarom	auto	alta	1	6	0.83	Sarona
 Sarsechim	Sarsequim	Sarsequim	auto	alta	1	1	1.00	Rabsáris
 Saul	Saul	Saul	auto	alta	2	327	0.98	Samuel
 Sceva	Ceva	Ceva	auto	alta	2	1	1.00	E
+Sea of Chinnereth	mar de Quinerete	Mar de Quinerete	auto	alta	1	2	1.00	
+Sea of Chinneroth	mar de Quinerete	Mar de Quinerete	auto	alta	1	1	1.00	
+Sea of Egypt	mar do Egito	Mar do Egito	auto	alta	1	1	1.00	
+Sea of Jazer	mar de Jazer	Mar de Jazer	auto	alta	2	1	1.00	
+Sea of Tiberias	mar de Tibérias	Mar de Tibérias	auto	alta	1	2	0.50	mar da Galileia
 Seba	Sebá	Sebá	auto	alta	2	2	1.00	Sabtá
 Sebam	Sebã	Sebã	auto	alta	2	1	1.00	Beom
 Secacah	Secacá	Secacá	auto	alta	3	1	1.00	Bete-Arabá
 Segub	Segube	Segube	auto	alta	4	3	1.00	Josué
 Seir	Seir	Seir	auto	alta	4	27	1.00	Eser
+Seir Mount	monte de Seir	Monte de Seir	auto	alta	2	12	1.00	monte de Jearim
 Seirah	Seirá	Seirá	auto	alta	3	2	0.50	Eúde
 Selah	Selá	Selá	auto	alta	1	74	0.99	Xeol
 Seled	Selede	Selede	auto	alta	2	1	1.00	E
@@ -2935,6 +3104,7 @@ Shenazar	Senazar	Senazar	auto	alta	1	1	1.00	Nedabias
 Shenazzar	Senazar	Senazar	auto	alta	1	1	1.00	Nedabias
 Shepham	Sefã	Sefã	auto	alta	3	3	0.67	Hazar-Enã
 Shephatiah	Sefatias	Sefatias	auto	alta	17	13	1.00	Abital
+Shepher Mount	monte de Séfer	Monte de Séfer	auto	alta	1	2	1.00	
 Shepho	Sefô	Sefô	auto	alta	2	2	0.50	Sefi
 Sherah	Seerá	Seerá	auto	alta	1	1	1.00	Uzém-Seerá
 Sherebiah	Serebias	Serebias	auto	alta	4	8	1.00	Sebanias
@@ -2970,6 +3140,7 @@ Shiphtan	Siftã	Siftã	auto	alta	2	1	1.00	Efraim
 Shishak	Sisaque	Sisaque	auto	alta	2	6	1.00	Semaías
 Shitrai	Sitrai	Sitrai	auto	alta	2	1	1.00	Adlai
 Shittim	Sitim	Sitim	auto	alta	3	6	0.67	Jericó
+Shittim Valley	vale de Sitim	Vale de Sitim	auto	alta	1	1	1.00	
 Shiza	Siza	Siza	auto	alta	2	1	1.00	Adina
 Shoa	Soa	Soa	auto	alta	3	1	1.00	Coa
 Shobab	Sobabe	Sobabe	auto	alta	4	4	1.00	Salomão
@@ -2992,6 +3163,7 @@ Sibbecai	Sibecai	Sibecai	auto	alta	1	5	0.80	Sipai
 Sibbechai	Sibecai	Sibecai	auto	alta	1	5	0.80	Sipai
 Sibmah	Sibma	Sibma	auto	alta	3	6	0.83	Hesbom
 Sibraim	Sibraim	Sibraim	auto	alta	3	1	1.00	Hazer-Haticom
+Siddim Valley	vale de Sidim	Vale de Sidim	auto	alta	1	3	1.00	
 Sidon	Sidom	Sidom	auto	alta	6	49	0.73	Sídon
 Sikkuth	Sicute	Sicute	auto	alta	1	1	1.00	Quium
 Silas	Silas	Silas	auto	alta	2	17	0.76	Silvano
@@ -2999,6 +3171,7 @@ Silla	Sila	Sila	auto	alta	3	1	1.00	Milo
 Simeon	Simeão	Simeão	auto	alta	8	47	0.96	Jemuel
 Simon	Simão	Simão	auto	alta	11	29	1.00	Tiago
 Sinai	Sinai	Sinai	auto	alta	2	55	0.69	Sim
+Sinai Wilderness	deserto de Sinai	Deserto de Sinai	auto	alta	1	13	1.00	deserto de Parã
 Siphmoth	Sifmote	Sifmote	auto	alta	3	1	1.00	Estemoa
 Sippai	Sipai	Sipai	auto	alta	1	2	0.50	Sibecai
 Sirah	Sirá	Sirá	auto	alta	3	1	1.00	Joabe
@@ -3016,6 +3189,7 @@ Sodom	Sodoma	Sodoma	auto	alta	3	50	0.96	Sidom
 Solomon	Salomão	Salomão	auto	alta	2	275	0.99	Milcom
 Sopater	Sópater	Sópater	auto	alta	2	2	0.50	Sosípatro
 Sophereth	Soferete	Soferete	auto	alta	2	2	1.00	Sotai
+Sorek Valley	vale de Soreque	Vale de Soreque	auto	alta	1	1	1.00	
 Sosthenes	Sóstenes	Sóstenes	auto	alta	2	2	1.00	Jesus
 Sotai	Sotai	Sotai	auto	alta	2	2	1.00	Soferete
 Stachys	Estáquis	Estáquis	auto	alta	2	1	1.00	Saudai
@@ -3123,6 +3297,9 @@ Tola	Tolá	Tolá	auto	alta	4	5	0.60	Tola
 Tolad	Tolade	Tolade	auto	alta	2	1	1.00	Bila
 Tophel	Tofel	Tofel	auto	alta	3	1	1.00	Hazerote
 Topheth	Tofete	Tofete	auto	alta	3	17	0.53	Moloque
+Tower of Hananel	torre de Hananeel	Torre de Hananeel	auto	alta	2	4	0.50	torre de Hananel
+Tower of Shechem	torre de Siquém	Torre de Siquém	auto	alta	1	3	1.00	
+Tower of the Ovens	torre dos Fornos	Torre dos Fornos	auto	alta	2	2	1.00	
 Trachonitis	Traconites	Traconites	auto	alta	3	1	1.00	Lisânias
 Trogyllium	Trogílio	Trogílio	auto	alta	3	1	1.00	Mileto
 Trophimus	Trófimo	Trófimo	auto	alta	2	3	1.00	Aristarco
@@ -3160,10 +3337,42 @@ Uzziah	Uzias	Uzias	auto	alta	7	37	0.73	Azarias
 Uzziel	Uziel	Uziel	auto	alta	12	19	0.84	Misael
 Vaizatha	Vaisata	Vaisata	auto	alta	1	1	1.00	Arisai
 Vajezatha	Vaisata	Vaisata	auto	alta	1	1	1.00	Farmasta
+Vale of Hebron	vale de Hebrom	Vale de Hebrom	auto	alta	1	1	1.00	
+Vale of Siddim	vale de Sidim	Vale de Sidim	auto	alta	1	3	1.00	
+Valley Gate	porta do Vale	Porta do Vale	auto	alta	2	4	0.75	porta do Esterco
+Valley of Achor	vale de Acor	Vale de Acor	auto	alta	2	5	1.00	
+Valley of Aijalon	vale de Aijalom	Vale de Aijalom	auto	alta	2	1	1.00	
+Valley of Aven	vale de Áven	Vale de Áven	auto	alta	1	1	1.00	
+Valley of Baca	Vale de Baca	Vale de Baca	auto	alta	2	1	1.00	
+Valley of Beracah	vale de Beraca	Vale de Beraca	auto	alta	2	1	1.00	
+Valley of Elah	vale de Elá	Vale de Elá	auto	alta	2	3	1.00	
+Valley of Eshcol	vale de Escol	Vale de Escol	auto	alta	1	4	0.75	
+Valley of Gerar	vale de Gerar	Vale de Gerar	auto	alta	2	2	0.50	
+Valley of Gibeon	vale de Gibeão	Vale de Gibeão	auto	alta	2	1	1.00	
+Valley of Hebron	vale de Hebrom	Vale de Hebrom	auto	alta	1	1	1.00	
+Valley of Iphtahel	vale de Iftá-El	Vale de Iftá-El	auto	alta	1	2	1.00	
+Valley of Jehoshaphat	vale de Josafá	Vale de Josafá	auto	alta	2	2	1.00	
+Valley of Jericho	vale de Jericó	Vale de Jericó	auto	alta	2	1	1.00	
+Valley of Jezreel	vale de Jezreel	Vale de Jezreel	auto	alta	2	5	0.60	
+Valley of Jiphthahel	vale de Iftá-El	Vale de Iftá-El	auto	alta	1	2	1.00	
+Valley of Rephaim	vale de Refaim	Vale de Refaim	auto	alta	2	8	0.75	vale de Hinom
+Valley of Shaveh	vale de Savé	Vale de Savé	auto	alta	3	2	0.50	vale do Rei
+Valley of Shittim	vale de Sitim	Vale de Sitim	auto	alta	2	1	1.00	
+Valley of Siddim	vale de Sidim	Vale de Sidim	auto	alta	1	3	1.00	
+Valley of Sorek	vale de Soreque	Vale de Soreque	auto	alta	2	1	1.00	
+Valley of Succoth	vale de Sucote	Vale de Sucote	auto	alta	2	2	1.00	
+Valley of Zeboim	vale de Zeboim	Vale de Zeboim	auto	alta	2	1	1.00	
+Valley of Zephathah	vale de Zefatá	Vale de Zefatá	auto	alta	2	1	1.00	
+Valley of Zered	vale de Zerede	Vale de Zerede	auto	alta	2	1	1.00	
 Vaniah	Vanias	Vanias	auto	alta	2	1	1.00	Eliasibe
 Vashti	Vasti	Vasti	auto	alta	2	10	1.00	Assuero
 Vophsi	Vofsi	Vofsi	auto	alta	2	1	1.00	Naftali
 Waheb	Vaebe	Vaebe	auto	alta	3	1	1.00	Sufa
+Waters of Jericho	águas de Jericó	Águas de Jericó	auto	alta	1	1	1.00	
+Waters of Merom	águas de Merom	Águas de Merom	auto	alta	1	2	1.00	
+Wilderness of Maon	deserto de Maom	Deserto de Maom	auto	alta	1	2	1.00	
+Wilderness of Sinai	deserto de Sinai	Deserto de Sinai	auto	alta	1	13	1.00	deserto de Parã
+Wilderness of Ziph	deserto de Zife	Deserto de Zife	auto	alta	1	3	1.00	
 Zaanan	Zaanã	Zaanã	auto	alta	3	1	1.00	Safir
 Zaanannim	Zaanim	Zaanim	auto	alta	3	2	0.50	Alom-Zaanim
 Zaavan	Zaavã	Zaavã	auto	alta	1	2	1.00	Jaacã
@@ -3195,6 +3404,7 @@ Zebedee	Zebedeu	Zebedeu	auto	alta	2	11	1.00	Entre
 Zebidah	Zebida	Zebida	auto	alta	1	1	1.00	Pedaías
 Zebina	Zebina	Zebina	auto	alta	2	1	1.00	Benaías
 Zeboiim	Zeboim	Zeboim	auto	alta	3	5	1.00	Sidim
+Zeboim Valley	vale de Zeboim	Vale de Zeboim	auto	alta	1	1	1.00	
 Zebudah	Zebida	Zebida	auto	alta	1	1	1.00	Ruma
 Zebul	Zebul	Zebul	auto	alta	2	5	1.00	Jerubaal
 Zebulun	Zebulom	Zebulom	auto	alta	2	48	0.96	Cabul
@@ -3213,6 +3423,7 @@ Zemirah	Zemira	Zemira	auto	alta	1	1	1.00	Eliézer
 Zenan	Zenã	Zenã	auto	alta	3	1	1.00	Hadasa
 Zenas	Zenas	Zenas	auto	alta	2	1	1.00	Auxilia
 Zephaniah	Sofonias	Sofonias	auto	alta	6	9	1.00	Seraías
+Zephathah Valley	vale de Zefatá	Vale de Zefatá	auto	alta	1	1	1.00	
 Zepho	Zefô	Zefô	auto	alta	2	3	0.67	Zefi
 Zephon	Zefom	Zefom	auto	alta	1	2	0.50	Zifiom
 Zer	Zer	Zer	auto	alta	3	1	1.00	Quinerete

@@ -27,3 +27,11 @@ export function shownEntityName(e: NameFields, preferPt: boolean): ShownName {
   if (preferPt && pt) return { text: pt, pt: true };
   return { text: e.name, pt: false };
 }
+
+/**
+ * Título de evento a mostrar. O título é o nome da entidade do evento (Entity.name na tabela), então vale a mesma
+ * regra de shownEntityName: pt quando existe e `preferPt` está ligado, senão o título da fonte (inglês).
+ */
+export function shownEventTitle(e: { title: string; namePt?: string | null }, preferPt: boolean): ShownName {
+  return shownEntityName({ name: e.title, namePt: e.namePt }, preferPt);
+}

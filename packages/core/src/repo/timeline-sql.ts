@@ -45,25 +45,33 @@ export function timelineEventOf(row: EventRow): TimelineLineEvent | null {
 /**
  * Pares linha → evento, para as três origens de linha do tempo (ver TimelineLine). Cada uma é um CTE `memb`.
  * Com termos, o filtro pelo nome da linha entra em cada origem antes do json_each: a busca não lê a cronologia
- * inteira. Os parâmetros vêm na ordem do SQL (um conjunto por origem).
+ * inteira. `ptIds` (cite_ids cujo nome pt casa com a busca, ver ptNameIds) entra como alternativa ao nome: um
+ * parâmetro só, em JSON (json_each), sem limite de variáveis por consulta. Os parâmetros vêm na ordem do SQL (um
+ * conjunto por origem).
  */
-export function timelineMembers(nameTerms: readonly string[] = []): { sql: string; params: string[] } {
-  const named = (col: string) =>
-    nameTerms.length > 0 ? ` AND (${nameTerms.map(() => `instr(lower(${col}), ?) > 0`).join(' OR ')})` : '';
+export function timelineMembers(nameTerms: readonly string[] = [], ptIds: readonly string[] = []): { sql: string; params: string[] } {
+  const usePt = ptIds.length > 0;
+  // Condição de nome de uma origem: termos (em inglês) OU cite_id na lista pt. Sem nenhum, a origem inteira.
+  const named = (col: string, idCol: string) => {
+    const conds = nameTerms.map(() => `instr(lower(${col}), ?) > 0`);
+    if (usePt) conds.push(`${idCol} IN (SELECT value FROM json_each(?))`);
+    return conds.length > 0 ? ` AND (${conds.join(' OR ')})` : '';
+  };
+  const paramsOf = (): string[] => [...nameTerms, ...(usePt ? [JSON.stringify(ptIds)] : [])];
   const sql = `WITH memb(kind, line_id, line_name, event_id) AS (
   SELECT 'person', p.cite_id, p.name, json_extract(j.value, '$.cite_id')
     FROM entity p, json_each(json_extract(p.data, '$.timeline')) j
-   WHERE p.type = 'person' AND p.source_id = 'theographic' AND json_valid(p.data)${named('p.name')}
+   WHERE p.type = 'person' AND p.source_id = 'theographic' AND json_valid(p.data)${named('p.name', 'p.cite_id')}
   UNION ALL
   SELECT 'place', p.cite_id, p.name, json_extract(j.value, '$.cite_id')
     FROM entity p, json_each(json_extract(p.data, '$.eventsHere')) j
-   WHERE p.type = 'place' AND p.source_id = 'theographic' AND json_valid(p.data)${named('p.name')}
+   WHERE p.type = 'place' AND p.source_id = 'theographic' AND json_valid(p.data)${named('p.name', 'p.cite_id')}
   UNION ALL
   SELECT 'period', json_extract(j.value, '$.cite_id'), json_extract(j.value, '$.name'), e.cite_id
     FROM entity e, json_each(json_extract(e.data, '$.partOf')) j
-   WHERE e.type = 'event' AND json_valid(e.data)${named("json_extract(j.value, '$.name')")}
+   WHERE e.type = 'event' AND json_valid(e.data)${named("json_extract(j.value, '$.name')", "json_extract(j.value, '$.cite_id')")}
 )`;
-  return { sql, params: [...nameTerms, ...nameTerms, ...nameTerms] };
+  return { sql, params: [...paramsOf(), ...paramsOf(), ...paramsOf()] };
 }
 /** Posição cronológica do evento (guardada antes do json_extract, que falha em JSON inválido). */
 export const TIMELINE_KEY = `CASE WHEN json_valid(e.data) THEN json_extract(e.data, '$.sortKey') END`;

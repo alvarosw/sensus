@@ -33,7 +33,7 @@ import { CombinationEntry } from './CombinationEntry';
 import { SaveComboSheet } from './SaveCombination';
 import { EventPreview, type PreviewCompare } from './EventPreview';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
-import { useTimelineNames, useTimelineTexts } from '@/translate/timeline-translate';
+import { useTimelineNames, useTimelineTitles } from '@/translate/timeline-translate';
 
 export function ParallelView({ lineId }: { lineId?: string }) {
   const { c, st } = useTheme();
@@ -203,8 +203,7 @@ export function ParallelView({ lineId }: { lineId?: string }) {
 
   // Textos do gráfico: traduzidos num só lote quando configurado (os cartões traduzem os seus). Nomes de linha
   // com nome pt entram com o pt, sem tradução.
-  const chartTexts = useMemo(() => laneViews.flatMap((l) => l.visible.map((e) => e.title)), [laneViews]);
-  const tr = useTimelineTexts(chartTexts);
+  const trTitle = useTimelineTitles(useMemo(() => laneViews.flatMap((l) => l.visible), [laneViews]));
   const trLine = useTimelineNames(laneViews.map((l) => l.line));
 
   return (
@@ -255,7 +254,7 @@ export function ParallelView({ lineId }: { lineId?: string }) {
                   view={shownView}
                   cursor={cursor}
                   favEvents={favEvents}
-                  tr={tr}
+                  trTitle={trTitle}
                   trLine={trLine}
                   onView={setView}
                   onCursor={setCursor}
@@ -294,7 +293,7 @@ export function ParallelView({ lineId }: { lineId?: string }) {
                       >
                         <View style={{ width: 9, height: 9, borderRadius: 5, backgroundColor: kindColor(l.line.kind, st) }} />
                         <View style={{ flex: 1, minWidth: 0 }}>
-                          <Txt v="bodySm" bold numberOfLines={1}>{tr(event.title)}</Txt>
+                          <Txt v="bodySm" bold numberOfLines={1}>{trTitle(event)}</Txt>
                           <Txt v="meta" color="muted" numberOfLines={1}>{`${trLine(l.line)} · ${eventYear(event)}`}</Txt>
                         </View>
                       </Pressable>

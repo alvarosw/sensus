@@ -1,7 +1,9 @@
 """Ingestor: nomes próprios em português (entity_name), derivados da Bíblia Livre. Sem IA e sem tradução automática.
 
 Entrada (staging, rodar depois dos ingestores): entity e entity_ref de theographic, stepbible-tipnr e
-openbible-geo; verse_text de blivre. A escolha do candidato está em sensus/names_pt.py.
+openbible-geo; verse_text de blivre. A escolha do candidato está em sensus/names_pt.py. Compostos ('Mount Sinai')
+usam corrections/glossario-compostos.tsv (cabeças inglesas -> formas pt) e são calculados depois dos nomes simples,
+porque a frase usa o nome pt do núcleo.
 
 Cálculo: por ENTIDADE (com os versículos dela), não pelo nome-base. Duas pessoas com o mesmo nome inglês
 (Noah: Noé em Gênesis, Noa em Números) recebem candidatos diferentes. As entidades com o mesmo nome-base
@@ -24,12 +26,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from sensus.names_pt import avalia, candidates, choose, gentilico, split_name  # noqa: E402
+from sensus.names_pt import (  # noqa: E402
+    Composto, avalia, candidates, choose, decompoe, escolhe_frase, gentilico, split_name,
+)
 from sensus.staging import STAGING, StagingWriter  # noqa: E402
 
 SOURCE_ID = "sensus-nomes-pt"
 ENTITY_SOURCES = ["theographic", "stepbible-tipnr", "openbible-geo"]
 TSV = Path(__file__).resolve().parent / "corrections" / "nomes-pt.tsv"
+GLOSSARIO_TSV = Path(__file__).resolve().parent / "corrections" / "glossario-compostos.tsv"
 COLUNAS = ["nome_en", "candidato", "nome_pt", "origem", "confianca", "entidades", "versos", "cobertura", "alternativa"]
 ORDEM_CONFIANCA = {"baixa": 0, "media": 1, "alta": 2}
 CABECALHO = [
@@ -44,6 +49,8 @@ CABECALHO = [
     "#   versos       versículos do nome que existem na Bíblia Livre",
     "#   cobertura    fração desses versículos em que o candidato aparece",
     "#   alternativa  segundo colocado, para conferir",
+    "# Compostos (Mount Sinai, Valley of Elah): cabeça do glossário + núcleo; o candidato é a frase como está na",
+    "# Bíblia Livre (nome pt = com maiúscula inicial). Não achada: candidato = forma do glossário + núcleo, confianca baixa.",
     "# Revisão: comece pelas linhas de confianca baixa. Para aceitar outro nome, troque nome_pt e marque",
     "# origem=revisado. Para o app mostrar o nome inglês, marque origem=sem. Linhas revisado e sem não são",
     "# recalculadas ao rodar o ingestor de novo.",
@@ -55,6 +62,17 @@ def jsonl(path: Path):
         for linha in fh:
             if linha.strip():
                 yield json.loads(linha)
+
+
+def ler_glossario() -> dict[str, tuple[str, ...]]:
+    """Cabeças inglesas dos compostos -> formas pt (corrections/glossario-compostos.tsv)."""
+    glossario = {}
+    for linha in GLOSSARIO_TSV.read_text(encoding="utf-8").splitlines():
+        if not linha.strip() or linha.startswith("#") or linha.startswith("cabeca\t"):
+            continue
+        cabeca, formas = linha.split("\t")
+        glossario[cabeca] = tuple(f for f in formas.split("|") if f)
+    return glossario
 
 
 def ler_tsv() -> list[dict]:
@@ -104,11 +122,21 @@ def main() -> None:
 
     grupos: dict[tuple[str, str], dict] = {}
     chave_entidade: dict[str, tuple[str, str]] = {}
-    compostos = sem_versos = 0
+    sem_versos = 0
+    # Compostos ('Mount Sinai'): decompostos aqui, frases escolhidas depois da parte simples (precisam dos nomes pt).
+    glossario = ler_glossario()
+    comp_ents: dict[str, Composto] = {}
+    compostos = fora_comp = 0
     for cid, e in entidades.items():
         partes = partes_de[cid]
         if partes is None:
             compostos += 1
+            if e["type"] != "event":
+                comp = decompoe(e["name"], glossario)
+                if comp:
+                    comp_ents[cid] = comp
+                else:
+                    fora_comp += 1
             continue
         base = partes[0]
         esc = choose(base, refs[cid], vc, df)
@@ -151,6 +179,43 @@ def main() -> None:
             "cobertura": f"{e.cobertura:.2f}",
             "alternativa": alt or "",
         })
+    # Compostos: uma linha por (nome-base, frase). Núcleo com nome pt (linhas alta ou revisado da parte simples)
+    # entra na frase; núcleo sem nome pt é capturado do próprio texto (ver names_pt.escolhe_frase).
+    nomes_pt_do_nucleo: dict[str, set[str]] = defaultdict(set)
+    for r in linhas:
+        if r["nome_pt"] and (r["origem"] == "revisado" or (r["origem"] == "auto" and r["confianca"] == "alta")):
+            nomes_pt_do_nucleo[r["nome_en"]].add(r["nome_pt"])
+    nucleo_pt = {k: next(iter(v)) for k, v in nomes_pt_do_nucleo.items() if len(v) == 1}
+
+    grupos_c: dict[str, dict] = {}
+    for cid, comp in comp_ents.items():
+        g = grupos_c.setdefault(comp.base, {"comp": comp, "cids": [], "versos": set()})
+        g["cids"].append(cid)
+        g["versos"] |= refs[cid]
+    comp_sem_versos = 0
+    for base, g in grupos_c.items():
+        comp = g["comp"]
+        V = sorted(g["versos"])
+        if not any(v in verses for v in V):
+            comp_sem_versos += len(g["cids"])
+            continue
+        fr = escolhe_frase(glossario[comp.cabeca], comp.nucleo, nucleo_pt.get(comp.nucleo), V, verses)
+        chave = (base, fr.candidato)
+        for cid in g["cids"]:
+            chave_entidade[cid] = chave
+        if chave in chaves_preservadas:
+            continue
+        linhas.append({
+            "nome_en": base,
+            "candidato": fr.candidato,
+            "nome_pt": fr.candidato[:1].upper() + fr.candidato[1:] if fr.achados else fr.candidato,
+            "origem": "auto",
+            "confianca": fr.confianca,
+            "entidades": str(len(g["cids"])),
+            "versos": str(fr.versos),
+            "cobertura": f"{fr.achados / fr.versos:.2f}" if fr.versos else "0.00",
+            "alternativa": fr.alternativa or "",
+        })
     escrever_tsv(linhas)
 
     # Staging: só linhas com nome pt utilizável. Revisado sem nome pt não conta.
@@ -175,14 +240,19 @@ def main() -> None:
                          "alinhamento de versículos (ver notes).",
             notes="Derivado: para cada nome inglês de theographic, stepbible-tipnr e openbible-geo, o nome pt é a "
                   "palavra da Bíblia Livre que aparece nos versículos da própria entidade e se parece com o nome. "
-                  "Sem IA e sem tradução automática. Revisado em pipeline/ingest/corrections/nomes-pt.tsv. Só nomes de "
-                  "uma palavra (compostos ficam com o nome inglês). Sufixo numérico mantido (Achzib 2); parênteses "
-                  "descartados.",
+                  "Sem IA e sem tradução automática. Revisado em pipeline/ingest/corrections/nomes-pt.tsv. Compostos "
+                  "(Mount Sinai, Valley of Elah) entram só com a frase que aparece no texto da própria entidade, com "
+                  "cabeça do glossário pt e núcleo pt; sem frase achada, ficam com o nome inglês. Sufixo numérico "
+                  "mantido (Achzib 2); parênteses descartados.",
         )
         for cid, e in entidades.items():
-            partes = split_name(e["name"])
-            if partes is None:
-                continue
+            if cid in comp_ents:
+                sufixo = comp_ents[cid].sufixo
+            else:
+                partes = split_name(e["name"])
+                if partes is None:
+                    continue
+                sufixo = partes[1]
             if e["type"] == "event":
                 eventos += 1
                 continue
@@ -190,7 +260,7 @@ def main() -> None:
             pt = utilizaveis.get(chave) if chave else None
             if not pt:
                 continue
-            w.row("entity_name", cite_id=cid, lang="pt", name=pt + partes[1])
+            w.row("entity_name", cite_id=cid, lang="pt", name=pt + sufixo)
             usados.add(chave)
             cites_gravados += 1
 
@@ -198,6 +268,12 @@ def main() -> None:
     auto = [r for r in linhas if r["origem"] == "auto"]
     print(f"\nEntidades: {len(entidades)} (compostos ou não próprios: {compostos}; "
           f"sem versículo na Bíblia Livre: {sem_versos}; eventos com linha descartados: {eventos})")
+    comp_linhas = [r for r in linhas if r["origem"] == "auto" and r["nome_en"] in grupos_c]
+    print(f"Compostos: entidades decompostas {len(comp_ents)} em {len(grupos_c)} nomes; "
+          f"fora (descritivo ou cabeça fora do glossário): {fora_comp} entidades; "
+          f"sem versículo na Bíblia Livre: {comp_sem_versos} entidades")
+    print("  linhas de composto por confiança: " + ", ".join(
+        f"{c}={sum(1 for r in comp_linhas if r['confianca'] == c)}" for c in ("alta", "media", "baixa")))
     print(f"Linhas do TSV (nome_en, candidato): {len(linhas)}. Auto por confiança: " + ", ".join(
         f"{c}={sum(1 for r in auto if r['confianca'] == c)}" for c in ("alta", "media", "baixa")))
     print(f"  alta pela segunda via (grafia diferente): {via2}; gentílicos -ite/-ites rebaixados a baixa: "

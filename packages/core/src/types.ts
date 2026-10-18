@@ -138,6 +138,8 @@ export interface TimelineEvent {
   source_id: string;
   /** Título em inglês, como na fonte. */
   title: string;
+  /** Título em português (tabela entity_name, revisado); null sem linha. Ver domain/names.ts (shownEventTitle). */
+  namePt?: string | null;
   /** Data da fonte: "-4003", "0047" ou "0047-05-01". Formatada por formatEventDate. */
   startDate: string | null;
   /** Posição cronológica global (ano com fração); ordena a linha do tempo. */

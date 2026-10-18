@@ -12,13 +12,17 @@ Confiança (ver confianca): 'alta' por uma de duas vias:
 'media' com semelhança >= 0.6; senão 'baixa'. Gentílicos e plurais em -ite/-ites são sempre 'baixa'
 (a Bíblia Livre os escreve em minúscula, então o candidato não sai bom; ver docs do glossário futuro).
 
+Compostos ('Mount Sinai', 'Valley of Elah', 'Gilboa_Mount'): decompoe() separa cabeça do glossário e núcleo;
+escolhe_frase() só aceita a frase que aparece literalmente no texto da Bíblia Livre (cabeça pt + núcleo pt, ou
+captura da palavra que segue a cabeça no próprio texto). Sem frase achada, a linha fica 'baixa' para revisão.
+
 Rodar os testes a partir da raiz do repositório: cd pipeline && python3 -m unittest discover tests
 """
 
 import difflib
 import re
 import unicodedata
-from collections import Counter
+from collections import Counter, defaultdict
 from dataclasses import dataclass
 
 LIMIAR_ALTA_SEMELHANCA = 0.8
@@ -163,3 +167,157 @@ def choose(name: str, verse_ids, verse_candidates: dict[int, set[str]], df: Coun
     melhor = ranking[0][1]
     alternativa = ranking[1][1] if len(ranking) > 1 else None
     return avalia(name, melhor, V, verse_candidates, df, alternativa)
+
+
+# Compostos (ver decompoe e escolhe_frase). Nome composto próprio = cabeça do glossário + núcleo de uma palavra.
+_ARTIGO_INICIAL = re.compile(r"^the\s+", re.IGNORECASE)
+_POSSESSIVO = re.compile(r"'s$")
+# Palavras que, mesmo capitalizadas no texto, não são o núcleo de um nome ('porta do SENHOR' não é nome).
+_NAO_NUCLEO_NO_TEXTO = {"Deus", "Senhor", "Jesus", "Cristo", "Espírito"}
+_LIMITE_PALAVRA = r"(?<!\w)"
+# Núcleo que veio só da captura (sem nome pt próprio) só vira 'alta' com grafia parecida ao inglês. Frase específica
+# de grafia diferente (Red Sea -> mar Vermelho) fica 'media' para revisão: 'Guard Gate' pegou 'porta Velha' de uma
+# lista de portas no mesmo versículo, e a especificidade não distingue isso.
+LIMIAR_NUCLEO_CAPTURA = 0.5
+
+
+@dataclass(frozen=True)
+class Composto:
+    """Composto decomposto: base (chave do TSV, sem sufixo e com espaço no lugar de '_'), sufixo numérico,
+    cabeça do glossário ('Mount', 'Valley of') e núcleo em inglês ('Sinai', 'Elah')."""
+    base: str
+    sufixo: str
+    cabeca: str
+    nucleo: str
+
+
+def _limpa_composto(name: str) -> tuple[str, str]:
+    """(base, sufixo) de um nome composto: parênteses fora, '_' e aspas tipográficas normalizados."""
+    s = _PARENTESES.sub("", name).strip()
+    sufixo = ""
+    m = _SUFIXO.search(s)
+    if m:
+        sufixo = f" {m.group(1)}"
+        s = s[: m.start()].rstrip()
+    s = s.replace("_", " ").replace("’", "'")
+    return " ".join(s.split()), sufixo
+
+
+def decompoe(name: str, glossario: dict[str, tuple[str, ...]]) -> Composto | None:
+    """Cabeça e núcleo de um nome composto próprio; None para descritivo ('Wife of Simon') ou cabeça fora do glossário.
+
+    Padrões, nesta ordem: 'Cabeça of Núcleo' (Mount of Olives), 'Núcleo Cabeça' (Fish Gate, Gilboa_Mount) e
+    'Cabeça Núcleo' (Mount Sinai). O núcleo tem de ser uma palavra só, sem 'of' dentro, sem artigo inicial e
+    sem possessivo: 'the Philistines' vira 'Philistines' e "Benjamin's" vira 'Benjamin'.
+    """
+    base, sufixo = _limpa_composto(name)
+    palavras = base.split(" ")
+    if len(palavras) < 2:
+        return None
+    if "of" in palavras:
+        i = palavras.index("of")
+        cabeca, resto = " ".join(palavras[: i + 1]), " ".join(palavras[i + 1:])
+    elif palavras[-1] in glossario:
+        cabeca, resto = palavras[-1], " ".join(palavras[:-1])
+    elif palavras[0] in glossario:
+        cabeca, resto = palavras[0], " ".join(palavras[1:])
+    else:
+        return None
+    if cabeca not in glossario:
+        return None
+    nucleo = _POSSESSIVO.sub("", _ARTIGO_INICIAL.sub("", resto))
+    if " " in nucleo or not nucleo[:1].isupper():
+        return None
+    return Composto(base, sufixo, cabeca, nucleo)
+
+
+def frases(formas: tuple[str, ...], nucleo_pt: str) -> list[str]:
+    """Frases candidatas: cada forma do glossário seguida do núcleo em português ('monte das' + 'Oliveiras')."""
+    return [f"{f} {nucleo_pt}" for f in formas]
+
+
+def _rx_frase(frase: str) -> re.Pattern:
+    # Sem diferença de maiúsculas; acentos têm de ser iguais; a frase não pode estar dentro de uma palavra maior.
+    return re.compile(_LIMITE_PALAVRA + re.escape(frase) + r"(?!\w)", re.IGNORECASE)
+
+
+def _rx_captura(forma: str) -> re.Pattern:
+    # A forma do glossário (sem diferença de maiúsculas) seguida de uma palavra capitalizada do próprio texto.
+    return re.compile(_LIMITE_PALAVRA + "((?i:" + re.escape(forma) + ")) ([A-ZÀ-Ý][\\wÀ-ÿ'-]*)(?!\\w)")
+
+
+def _captura_valida(palavra: str) -> bool:
+    return len(palavra) >= 3 and not palavra.isupper() and palavra not in _NAO_NUCLEO_NO_TEXTO
+
+
+
+def ocorrencias(texto: str, formas: tuple[str, ...], nucleo_pt: str | None) -> list[tuple[str, str | None]]:
+    """Trechos do texto que são frases candidatas: (trecho como escrito, palavra capturada ou None).
+
+    Duas vias: as frases com o núcleo pt (palavra None, o núcleo já tem nome pt) e as capturas (forma + palavra
+    capitalizada do texto), que cobrem núcleos sem nome pt próprio ('Fish' -> 'dos Peixes').
+    """
+    achadas: list[tuple[str, str | None]] = []
+    if nucleo_pt:
+        for fr in frases(formas, nucleo_pt):
+            m = _rx_frase(fr).search(texto)
+            if m:
+                achadas.append((m.group(0), None))
+    for forma in formas:
+        for m in _rx_captura(forma).finditer(texto):
+            if _captura_valida(m.group(2)):
+                achadas.append((m.group(0), m.group(2)))
+    return achadas
+
+
+@dataclass(frozen=True)
+class Frase:
+    """Resultado de escolhe_frase: a frase achada (como está no texto) e a confiança pela cobertura."""
+    candidato: str            # frase do texto (a mais comum); se não achada, forma do glossário + núcleo
+    alternativa: str | None   # segunda frase achada, para revisão humana
+    achados: int              # versículos do nome em que a frase aparece
+    versos: int               # versículos do nome que existem na Bíblia Livre
+    confianca: str            # 'alta' (>= 50% dos versículos), 'media' (achada em menos), 'baixa' (não achada)
+
+
+def escolhe_frase(formas: tuple[str, ...], nucleo_en: str, nucleo_pt: str | None, versos, textos: dict[int, str]) -> Frase:
+    """Escolhe a frase pt de um composto pelos versículos dele. Só aceita frase literal no texto da Bíblia Livre.
+
+    Ranking: mais versículos; empate, frase com núcleo pt (peso 1), depois a palavra capturada mais parecida com o
+    núcleo inglês, depois ordem do glossário e alfabética. Alta quando a frase aparece em pelo menos metade dos
+    versículos (com 1 ou 2 versículos, basta 1) E o núcleo tem nome pt ou grafia parecida ao inglês (ver
+    LIMIAR_NUCLEO_CAPTURA). Achada mas sem isso: 'media'.
+    """
+    V = [v for v in versos if v in textos]
+    n = len(V)
+    por_frase: dict[str, set[int]] = defaultdict(set)
+    trechos: dict[str, Counter] = defaultdict(Counter)
+    ordem: dict[str, int] = {}
+    mapeada: set[str] = set()
+    semelhanca: dict[str, float] = defaultdict(float)
+    if nucleo_pt:
+        for i, fr in enumerate(frases(formas, nucleo_pt)):
+            ordem.setdefault(fr.lower(), i)
+    for v in V:
+        for trecho, palavra in ocorrencias(textos[v], formas, nucleo_pt):
+            chave = trecho.lower()
+            por_frase[chave].add(v)
+            trechos[chave][trecho] += 1
+            if palavra is None:
+                mapeada.add(chave)
+            else:
+                semelhanca[chave] = max(semelhanca[chave], similarity(nucleo_en, palavra))
+
+    def peso(c: str) -> float:
+        return 1.0 if c in mapeada else semelhanca[c]
+
+    ranking = sorted(por_frase, key=lambda c: (-len(por_frase[c]), -peso(c), ordem.get(c, len(ordem)), c))
+    if not ranking:
+        nao_achada = frases(formas, nucleo_pt)[0] if nucleo_pt else f"{formas[0]} {nucleo_en}"
+        return Frase(nao_achada, None, 0, n, "baixa")
+    melhor = ranking[0]
+    k = len(por_frase[melhor])
+    alternativa = trechos[ranking[1]].most_common(1)[0][0] if len(ranking) > 1 else None
+    confiavel = melhor in mapeada or peso(melhor) >= LIMIAR_NUCLEO_CAPTURA
+    confianca = "alta" if k * 2 >= n and confiavel else "media"
+    return Frase(trechos[melhor].most_common(1)[0][0], alternativa, k, n, confianca)

@@ -1,7 +1,7 @@
 # Licenças dos dados
 
 Este arquivo lista todas as fontes de dados do Sensus, com licença, origem e atribuição exigida.
-Foi montado a partir dos metadados de `data/staging/*/source.json` (32 fontes, incluindo `sensus-nomes-pt`). Os bancos gerados
+Foi montado a partir dos metadados de `data/staging/*/source.json` (33 fontes, incluindo `sensus-nomes-pt` e `sensus-titulos-pt`). Os bancos gerados
 (`sensus.db`, completo, e `sensus-reader.db`, do APK) gravam licença, URL, versão e atribuição de cada fonte na tabela `source`.
 
 > Não é parecer jurídico. Itens marcados **Verificar** dependem de interpretação ou de confirmação
@@ -31,6 +31,7 @@ Foi montado a partir dos metadados de `data/staging/*/source.json` (32 fontes, i
 | Fonte (id) | Título e autor | Origem | Atribuição exigida | Condições |
 |---|---|---|---|---|
 | `theographic` | Theographic Bible Metadata, Robert Rouse (viz.bible) | https://github.com/robertrouse/theographic-bible-metadata (commit cfb1c48) | Theographic Bible Metadata, por Robert Rouse / viz.bible (https://github.com/robertrouse/theographic-bible-metadata), licença Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0). | **Share-alike.** Descrições vêm de dictionaryText, em inglês, e incluem texto do Easton (1897, domínio público). Links Markdown removidos. |
+| `sensus-titulos-pt` | Títulos de eventos em português (derivados), a partir de `theographic` | Derivado de `theographic` (commit cfb1c48), por `pipeline/ingest/titulos_pt.py` | Mesma atribuição de `theographic` (CC BY-SA 4.0), de quem vêm os títulos em inglês; a tradução é do projeto: "títulos traduzidos e revisados pelo projeto Sensus". | **Share-alike**, como `theographic`. **Derivado**: título pt de cada evento, rascunho do projeto conferido por pessoa em `pipeline/ingest/corrections/titulos-eventos-pt.tsv`; só os de origem revisado entram no banco. Sem IA e sem tradução automática no aparelho. |
 
 ### 2.2 CC BY 4.0 — STEP Bible / Tyndale House
 
