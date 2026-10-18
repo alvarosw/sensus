@@ -1,12 +1,12 @@
 {
-  "data_version": "2026.10.18.1",
+  "data_version": "2026.10.18.2",
   "schema_version": 3,
   "full": {
-    "url": "https://github.com/alvarosw/sensus/releases/download/data-2026.10.18.1/sensus-full-2026.10.18.1.zip",
-    "md5": "643071ebbdc24dceb7b645d3f864e2d1",
-    "sha256": "dcf2633225a6c38da32f67f34f4edf86f53d0f8b3461f80bd35e2abe7818fea7",
-    "size": 137814641,
-    "uncompressed_size": 456622080
+    "url": "https://github.com/alvarosw/sensus/releases/download/data-2026.10.18.2/sensus-full-2026.10.18.2.zip",
+    "md5": "e15d657c28a297f0181be3bb08b079ed",
+    "sha256": "442c06a741df3af3ec45065bd61d1c8f3c1c456be3cfd84b339ad3a9889a985a",
+    "size": 137880558,
+    "uncompressed_size": 456818688
   },
   "min_app_version": "1.0.0"
 }
