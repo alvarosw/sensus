@@ -1,6 +1,9 @@
 // Tradução automática da linha do tempo (títulos, nomes de linhas, participantes): política 'global' de
 // useTranslatable. Os textos vêm da theographic; o idioma dela é lido do registro de fontes (isTranslatableSource),
 // não suposto aqui. Sem oferta por item; um "Ver original" para a linha do tempo inteira.
+// Nomes de pessoas e lugares com nome em português (namePt) não passam pela tradução: mostram o pt, exceto quando
+// o usuário pede "Ver original", que volta aos nomes ingleses (ver useTimelineNames).
+import { shownEntityName, type NameFields } from '@sensus/core';
 import { useGlobalView } from './global-batch';
 import { useTranslatable } from './useTranslatable';
 
@@ -37,4 +40,25 @@ export function useTimelineText(text: string | null | undefined): string {
  */
 export function useTimelineTexts(texts: readonly string[]): (text: string) => string {
   return useTranslatable(texts, GLOBAL).show;
+}
+
+/** Um nome de entidade da tela (linha, pessoa ou lugar); ver useTimelineNames. */
+export function useTimelineName(name: NameFields | null | undefined): string {
+  const show = useTimelineNames(name ? [name] : []);
+  return name ? show(name) : '';
+}
+
+/**
+ * Nomes de pessoas, lugares e linhas da tela. Com nome pt e sem "Ver original", mostra o pt (texto de fonte em
+ * português). Os demais entram no lote de tradução. Devolve a função que dá o nome a mostrar; `names` é a lista
+ * de todos os nomes da tela (o que não for pt é traduzido).
+ */
+export function useTimelineNames(names: readonly NameFields[]): (name: NameFields) => string {
+  const preferPt = !useGlobalView((s) => s.showOriginal);
+  const originals = names.filter((n) => !shownEntityName(n, preferPt).pt).map((n) => n.name);
+  const show = useTimelineTexts(originals);
+  return (name) => {
+    const shown = shownEntityName(name, preferPt);
+    return shown.pt ? shown.text : show(shown.text);
+  };
 }

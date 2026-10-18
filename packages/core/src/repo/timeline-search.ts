@@ -2,6 +2,7 @@
 import type { TimelineLine, TimelineLineEvent, TimelineSearchResult } from '../types';
 import { normalizeSearch, searchTerms } from '../timeline';
 import { all, type Db } from './sql';
+import { attachNames, attachParticipantNames } from './names';
 import { bySortKey, EVENT_SELECT, type EventRow, lineOf, TIMELINE_TITLE, timelineEventOf } from './timeline-sql';
 import { timelineLinesWhere, timelineMemberships } from './timeline';
 
@@ -12,10 +13,13 @@ import { timelineLinesWhere, timelineMemberships } from './timeline';
 export async function timelineSearch(db: Db, query: string): Promise<TimelineSearchResult> {
   const terms = searchTerms(query);
   if (terms.length === 0) return { lines: [], events: [] };
-  const lines = (await timelineLinesWhere(db, terms)).map(lineOf);
+  const lines = await attachNames(db, (await timelineLinesWhere(db, terms)).map(lineOf), (l) => l.id);
   const match = terms.map(() => `instr(lower(${TIMELINE_TITLE}), ?) > 0`).join(' OR ');
   const rows = await all<EventRow>(db, `${EVENT_SELECT} WHERE e.type = 'event' AND (${match})`, terms);
-  const events = rows.map((row) => timelineEventOf(row)).filter((e): e is TimelineLineEvent => e !== null).sort(bySortKey);
+  const events = await attachParticipantNames(
+    db,
+    rows.map((row) => timelineEventOf(row)).filter((e): e is TimelineLineEvent => e !== null).sort(bySortKey),
+  );
   const memberships = await timelineMemberships(db, events.map((e) => e.cite_id));
   return {
     lines,
@@ -40,9 +44,10 @@ export async function timelineSearchLines(db: Db, query: string, limit = 30): Pr
     return 3;
   };
   const rows = await timelineLinesWhere(db, terms);
-  return rows
+  const ranked = rows
     .map((row) => ({ line: lineOf(row), rank: Math.min(...terms.map((t) => rankOf(row.name, t))) }))
     .sort((a, b) => a.rank - b.rank || b.line.count - a.line.count || (a.line.name < b.line.name ? -1 : a.line.name > b.line.name ? 1 : 0))
     .slice(0, Math.max(0, limit))
     .map((r) => r.line);
+  return attachNames(db, ranked, (l) => l.id);
 }

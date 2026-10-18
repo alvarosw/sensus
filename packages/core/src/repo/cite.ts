@@ -1,6 +1,7 @@
 // Resolve um cite_id ao registro de origem (ver repo/index.ts).
 import type { CitableRecord, Commentary, DictionaryEntry, Entity, LexiconEntry, Token, VerseText, XRef } from '../types';
 import { type Db, first, COMMENTARY_COLS, DICTIONARY_COLS, ENTITY_COLS, LEXICON_COLS, TOKEN_COLS, VERSE_COLS, XREF_COLS } from './sql';
+import { attachNames } from './names';
 
 /** Resolve um cite_id ao registro de origem. Retorna null se o prefixo ou o id não existir. */
 export async function resolveCite(db: Db, citeId: string): Promise<CitableRecord | null> {
@@ -53,8 +54,10 @@ export async function resolveCite(db: Db, citeId: string): Promise<CitableRecord
       return record ? { table: 'xref', record } : null;
     }
     case 'ent': {
-      const record = await first<Entity>(db, `SELECT ${ENTITY_COLS} FROM entity WHERE cite_id = ?`, [citeId]);
-      return record ? { table: 'entity', record } : null;
+      const row = await first<Entity>(db, `SELECT ${ENTITY_COLS} FROM entity WHERE cite_id = ?`, [citeId]);
+      if (!row) return null;
+      const [record] = await attachNames(db, [row], (r) => r.cite_id);
+      return { table: 'entity', record: record! };
     }
     default:
       return null;

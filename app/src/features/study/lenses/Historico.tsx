@@ -2,7 +2,7 @@
 import { useMemo } from 'react';
 import { View } from 'react-native';
 import { router } from 'expo-router';
-import { titleCaseHeadword } from '@sensus/core';
+import { shownEntityName, titleCaseHeadword } from '@sensus/core';
 import { Empty, SubHeader, space } from '@/design';
 import { useStudy } from '@/state/study';
 import { useReaderNav } from '@/state/reader-nav';
@@ -84,7 +84,7 @@ export function HistoricoLens({ onLayout }: LensProps) {
                         entity={e}
                         sourceShort={shortOf(p, e.source_id)}
                         onOpen={() => open(e.cite_id)}
-                        onAsk={() => attachCard(e.cite_id, e.name)}
+                        onAsk={() => attachCard(e.cite_id, shownEntityName(e, true).text)}
                       />
                     ))}
                   </Cards>

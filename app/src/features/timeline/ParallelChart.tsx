@@ -5,7 +5,7 @@ import { useRef, useState } from 'react';
 import { ScrollView, View, type LayoutChangeEvent } from 'react-native';
 import Svg, { Circle, G, Line, Rect, Text as SvgText } from 'react-native-svg';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
-import { TIMELINE_ERAS, type TimelineLine, type TimelineLineEvent } from '@sensus/core';
+import { TIMELINE_ERAS, type NameFields, type TimelineLine, type TimelineLineEvent } from '@sensus/core';
 import { fontFamilies, useTheme } from '@/design';
 import { clampView, tickStep, xOfYear, yearAtX, yearText, zoomView, type Bounds } from './model';
 import { kindColor } from './parts';
@@ -41,8 +41,10 @@ export interface ChartProps {
   view: Bounds;
   cursor: number | null;
   favEvents: ReadonlySet<string>;
-  /** Texto a mostrar (tradução quando configurada); as faixas e os títulos passam por ele. */
+  /** Texto a mostrar (tradução quando configurada); os títulos passam por ele. */
   tr: (text: string) => string;
+  /** Nome da linha a mostrar (nome pt quando existe; senão, como `tr`). */
+  trLine: (line: NameFields) => string;
   onView: (v: Bounds) => void;
   onCursor: (year: number) => void;
   onPoint: (laneId: string, event: TimelineLineEvent) => void;
@@ -92,7 +94,7 @@ function axisTicks(view: Bounds, PW: number): number[] {
 
 export function ParallelChart(props: ChartProps) {
   const { c, st } = useTheme();
-  const { lanes, ext, view, cursor, favEvents, tr, onView, onCursor, onPoint, onInclude } = props;
+  const { lanes, ext, view, cursor, favEvents, tr, trLine, onView, onCursor, onPoint, onInclude } = props;
   const [size, setSize] = useState({ W: 0, H: 0 });
   const { W, H } = size;
   // Altura do gráfico: a da área visível, ou o que cabe a faixa mínima de cada linha (o gráfico rola na vertical).
@@ -206,7 +208,7 @@ export function ParallelChart(props: ChartProps) {
                   const top = TOP + i * lh;
                   const cy = top + lh * 0.62;
                   const color = kindColor(l.line.kind, st);
-                  const name = `${tr(l.line.name)} · ${l.total}`;
+                  const name = `${trLine(l.line)} · ${l.total}`;
                   const nameW = name.length * CHAR_W + 22;
                   const inView = l.visible.filter((e) => e.sortKey >= view.lo - 1 && e.sortKey <= view.hi + 1);
                   const withTitles = lh >= TITLE_MIN_LANE;

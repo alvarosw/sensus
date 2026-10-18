@@ -10,7 +10,7 @@ import { Txt, space, useTheme } from '@/design';
 import { matchesTranslatedText } from '@sensus/core';
 import { cachedTranslation } from '@/translate/engine';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
-import { useTimelineActive, useTimelineText, useTimelineTexts, useTimelineVersion } from '@/translate/timeline-translate';
+import { useTimelineActive, useTimelineName, useTimelineNames, useTimelineTexts, useTimelineVersion } from '@/translate/timeline-translate';
 import { useAppPrefs } from '@/settings/app-prefs';
 import { eventYear, matchesEventText } from './model';
 import { TL } from './strings';
@@ -35,7 +35,7 @@ export function LineList({ lineId }: { lineId: string }) {
   const [onlyMarks, setOnlyMarks] = useState(false);
   const [preview, setPreview] = useState<string | null>(null);
 
-  const lineName = useTimelineText(line?.name);
+  const lineName = useTimelineName(line);
   const tlActive = useTimelineActive();
   const version = useTimelineVersion();
   // Filtro: original, e a tradução quando ela já está no cache.
@@ -50,8 +50,10 @@ export function LineList({ lineId }: { lineId: string }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [events, onlyMarks, favEventSet, text, tlActive, version],
   );
-  const rowTexts = useMemo(() => shown.flatMap((e) => [e.title, ...e.participants.map((p) => p.name)]), [shown]);
+  const rowTexts = useMemo(() => shown.map((e) => e.title), [shown]);
   const tr = useTimelineTexts(rowTexts);
+  const participants = useMemo(() => shown.flatMap((e) => e.participants), [shown]);
+  const trName = useTimelineNames(participants);
   const color = line ? kindColor(line.kind, st) : c.muted;
 
   return (
@@ -130,7 +132,7 @@ export function LineList({ lineId }: { lineId: string }) {
                     </Txt>
                     {e.participants.length > 0 && (
                       <Txt v="meta" color="muted" style={{ fontSize: 11.5 }} numberOfLines={1}>
-                        {[...new Set(e.participants.map((p) => tr(p.name)).filter(Boolean))].join(', ')}
+                        {[...new Set(e.participants.map((p) => trName(p)).filter(Boolean))].join(', ')}
                       </Txt>
                     )}
                   </View>

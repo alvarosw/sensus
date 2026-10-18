@@ -1,6 +1,6 @@
 // Lugares de um intervalo de versículos, já agrupados (ver groupPlaces em @sensus/core).
 import { useMemo } from 'react';
-import { bookRange, bookStartVid, groupPlaces, MAX_BOOK, splitVid, type PlaceSite, type VerseRange } from '@sensus/core';
+import { bookRange, bookStartVid, groupPlaces, MAX_BOOK, shownEntityName, splitVid, type PlaceSite, type VerseRange } from '@sensus/core';
 import { useRepo } from '@/data/db-context';
 import { useAsync } from '@/data/use-async';
 import type { MapMarker } from './SensusMap';
@@ -18,9 +18,9 @@ export function usePlaceSites(range: VerseRange | null): { sites: PlaceSite[]; l
   return { sites: state.data ?? [], loading: state.loading, error: state.error };
 }
 
-/** Marcadores do mapa a partir dos lugares. */
+/** Marcadores do mapa a partir dos lugares. O nome é o pt quando a fonte o traz (ver shownEntityName). */
 export function markersOf(sites: readonly PlaceSite[]): MapMarker[] {
-  return sites.map((s) => ({ id: s.id, name: s.name, lat: s.lat, lon: s.lon, band: s.band }));
+  return sites.map((s) => ({ id: s.id, name: shownEntityName(s, true).text, lat: s.lat, lon: s.lon, band: s.band }));
 }
 
 export function useMarkers(sites: readonly PlaceSite[]): MapMarker[] {

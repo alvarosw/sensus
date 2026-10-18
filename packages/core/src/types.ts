@@ -125,6 +125,8 @@ export interface Entity {
   lon: number | null;
   /** JSON da fonte. */
   data: string | null;
+  /** Nome em português (tabela entity_name); null sem linha ou em banco sem a tabela. Ver domain/names.ts. */
+  namePt?: string | null;
 }
 
 /**
@@ -140,7 +142,7 @@ export interface TimelineEvent {
   startDate: string | null;
   /** Posição cronológica global (ano com fração); ordena a linha do tempo. */
   sortKey: number;
-  participants: Array<{ cite_id: string; name: string }>;
+  participants: Array<{ cite_id: string; name: string; namePt?: string | null }>;
   first_vid: Vid;
   last_vid: Vid;
   /** false = evento de contexto: vizinho na cronologia, fora do intervalo. */
@@ -160,6 +162,8 @@ export interface TimelineLine {
   kind: 'period' | 'person' | 'place';
   /** Nome na fonte (em inglês). */
   name: string;
+  /** Nome em português da entidade (só pessoas e lugares têm; ver Entity.namePt). */
+  namePt?: string | null;
   count: number;
   from: number;
   to: number;
@@ -170,6 +174,7 @@ export interface TimelineLineRef {
   id: string;
   kind: TimelineLine['kind'];
   name: string;
+  namePt?: string | null;
 }
 
 /** Era da Bíblia para o resumo e o filtro: intervalo [from, to) em sortKey. gap = lacuna sem eventos da fonte. */

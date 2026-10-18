@@ -2,6 +2,7 @@
 import type { TimelineEvent, TimelineLine, TimelineLineEvent, TimelineLineRef, TimelineSummary, VerseRange } from '../types';
 import { eraSummaries } from '../timeline';
 import { all, chunks, type Db, first } from './sql';
+import { attachNames, attachParticipantNames, ptNames } from './names';
 import {
   bySortKey,
   EVENT_SELECT,
@@ -54,7 +55,7 @@ export async function timelineEvents(db: Db, range: VerseRange): Promise<Timelin
     .map((row) => timelineEventOf(row))
     .filter((e): e is TimelineLineEvent => e !== null)
     .map((e) => ({ ...e, inRange: false }));
-  return [...events, ...context].sort(bySortKey);
+  return attachParticipantNames(db, [...events, ...context].sort(bySortKey));
 }
 
 /** Agregado das linhas (ver timelineLines), com filtro opcional pelo nome: a base da lista e da busca. */
@@ -73,8 +74,9 @@ export function timelineLinesWhere(db: Db, nameTerms: readonly string[]): Promis
 }
 
 /** Linhas do tempo da cronologia completa: períodos, pessoas e lugares com ao menos um evento, mais frequentes primeiro. */
-export function timelineLines(db: Db): Promise<TimelineLine[]> {
-  return timelineLinesWhere(db, []).then((rows) => rows.map(lineOf));
+export async function timelineLines(db: Db): Promise<TimelineLine[]> {
+  const lines = (await timelineLinesWhere(db, [])).map(lineOf);
+  return attachNames(db, lines, (l) => l.id);
 }
 
 /**
@@ -89,16 +91,22 @@ export async function timelineLineEvents(db: Db, lineId: string): Promise<Timeli
       WHERE e.type = 'event' AND e.cite_id IN (SELECT event_id FROM memb WHERE line_id = ?)`,
     [...m.params, lineId],
   );
-  return rows
-    .map((row) => timelineEventOf(row))
-    .filter((e): e is TimelineLineEvent => e !== null)
-    .sort(bySortKey);
+  return attachParticipantNames(
+    db,
+    rows
+      .map((row) => timelineEventOf(row))
+      .filter((e): e is TimelineLineEvent => e !== null)
+      .sort(bySortKey),
+  );
 }
 
 /** Um evento pelo cite_id (ex.: o evento do trecho, para abrir a cronologia nele). Null se não for evento válido. */
 export async function timelineEvent(db: Db, citeId: string): Promise<TimelineLineEvent | null> {
   const row = await first<EventRow>(db, `${EVENT_SELECT} WHERE e.type = 'event' AND e.cite_id = ?`, [citeId]);
-  return row ? timelineEventOf(row) : null;
+  const event = row ? timelineEventOf(row) : null;
+  if (!event) return null;
+  const [named] = await attachParticipantNames(db, [event]);
+  return named!;
 }
 
 /**
@@ -107,10 +115,13 @@ export async function timelineEvent(db: Db, citeId: string): Promise<TimelineLin
  */
 export async function timelineAllEvents(db: Db): Promise<TimelineLineEvent[]> {
   const rows = await all<EventRow>(db, `${EVENT_SELECT} WHERE e.type = 'event'`);
-  return rows
-    .map((row) => timelineEventOf(row))
-    .filter((e): e is TimelineLineEvent => e !== null)
-    .sort(bySortKey);
+  return attachParticipantNames(
+    db,
+    rows
+      .map((row) => timelineEventOf(row))
+      .filter((e): e is TimelineLineEvent => e !== null)
+      .sort(bySortKey),
+  );
 }
 
 /**
@@ -135,6 +146,9 @@ export async function timelineMemberships(db: Db, eventIds: readonly string[]): 
       out.set(r.event_id, list);
     }
   }
+  // Nome pt de cada linha (pessoa ou lugar); a chave do mapa segue o cite_id do evento.
+  const names = await ptNames(db, [...out.values()].flat().map((r) => r.id));
+  for (const list of out.values()) for (const r of list) r.namePt = names.get(r.id) ?? null;
   return out;
 }
 

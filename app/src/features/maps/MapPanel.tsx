@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { confidenceLabel, type Book, type PlaceSite } from '@sensus/core';
+import { confidenceLabel, shownEntityName, type Book, type PlaceSite } from '@sensus/core';
 import { Empty, IconButton, LinkButton, Segmented, shadow, Skeleton, Txt, TypeMark, radius, useTheme } from '@/design';
 import { useStudy, type MapScope } from '@/state/study';
 import { useBooks } from '../common/hooks';
@@ -89,8 +89,10 @@ function PlaceCardSheet({ site, books, onClose }: { site: PlaceSite; books: read
   const { c } = useTheme();
   const words = MAPS.bands;
   const name = site.candidates[0]?.name ?? site.name;
-  const translated = usePlaceTranslation(site.name);
-  const title = placeTitle(site.name, translated);
+  // Nome pt da fonte vale como está (texto em português, sem tradução); sem ele, o nome da fonte pode ser traduzido.
+  const ptName = shownEntityName(site, true);
+  const translated = usePlaceTranslation(ptName.pt ? '' : site.name);
+  const title = ptName.pt ? ptName.text : placeTitle(site.name, translated);
   const ident = `${name} · ${MAPS.confidence.toLowerCase()} ${confidenceLabel(site, words)}`;
   const vids = site.vids.slice(0, 60);
   const openPlace = () => useStudy.getState().pushPanel({ kind: 'entity', citeId: site.citeIds[0]! });

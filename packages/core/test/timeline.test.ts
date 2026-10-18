@@ -117,7 +117,7 @@ describe('Repo.timelineEvents', () => {
       title: 'Paul and Silas imprisoned',
       startDate: '0047',
       sortKey: 50,
-      participants: [{ cite_id: 'ent:isbe-ent:paulo', name: 'Paulo' }],
+      participants: [{ cite_id: 'ent:isbe-ent:paulo', name: 'Paulo', namePt: null }],
       // Primeiro e último versículo do evento inteiro, não só os do intervalo.
       first_vid: 50002005,
       last_vid: 50003001,

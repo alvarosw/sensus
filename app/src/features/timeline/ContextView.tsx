@@ -8,7 +8,7 @@ import { refShort } from '@/features/common/format';
 import { useBooks } from '@/features/common/hooks';
 import { Txt, size, space, useTheme } from '@/design';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
-import { useTimelineTexts } from '@/translate/timeline-translate';
+import { useTimelineNames, useTimelineTexts } from '@/translate/timeline-translate';
 import { eventYear } from './model';
 import { TL } from './strings';
 import { useAllTimelineEvents } from './useTimeline';
@@ -66,11 +66,10 @@ function ContextBody({ span, initialScope }: { span: VerseSpan; initialScope: Co
   );
   const anchor = useMemo(() => anchorIndex(rows, trecho), [rows, trecho]);
   const marks = useMemo(() => rulerMarks(events ? events.map((e) => e.sortKey) : []), [events]);
-  const texts = useMemo(
-    () => rows.flatMap((r) => (r.kind === 'group' ? [r.group.name] : [r.event.title, ...r.event.participants.map((p) => p.name)])),
-    [rows],
-  );
+  const texts = useMemo(() => rows.flatMap((r) => (r.kind === 'group' ? [r.group.name] : [r.event.title])), [rows]);
   const tr = useTimelineTexts(texts);
+  const participants = useMemo(() => rows.flatMap((r) => (r.kind === 'group' ? [] : r.event.participants)), [rows]);
+  const trName = useTimelineNames(participants);
 
   // Rolagem: começa no evento do trecho (ou, na volta da pílula, onde o leitor parou). Medidas das linhas em
   // coordenadas do conteúdo; a régua usa as mesmas medidas.
@@ -224,7 +223,7 @@ function ContextBody({ span, initialScope }: { span: VerseSpan; initialScope: Co
               );
             }
             const { event, inTrecho, inGroup } = row;
-            const people = [...new Set(event.participants.map((p) => tr(p.name)).filter(Boolean))];
+            const people = [...new Set(event.participants.map((p) => trName(p)).filter(Boolean))];
             return (
               <View key={row.key} onLayout={measure(row.key)}>
                 <Pressable

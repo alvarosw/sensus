@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Pressable, View } from 'react-native';
 import {
   formatEventDate,
+  shownEntityName,
   titleCaseHeadword,
   type Book,
   type DictionaryEntry,
@@ -78,7 +79,7 @@ export function EntityCard({
     <Card testID={`ent-${entity.cite_id}`}>
       <CardTop>
         <TypeMark kind="ent" label={STUDY.entityType[entity.type] ?? STUDY.entityType.other!} />
-        <Txt v="bodySm" bold>{entity.name}</Txt>
+        <Txt v="bodySm" bold>{shownEntityName(entity, true).text}</Txt>
         <Txt v="meta" color="muted">{sourceShort}</Txt>
       </CardTop>
       {entity.description ? <Txt v="excerpt" numberOfLines={3}>{tr.display}</Txt> : null}
@@ -115,7 +116,7 @@ export function PlaceCard({
             <TypeMark kind="ent" label={STUDY.place} />
             <Txt v="meta" color="muted">{sourceShort}</Txt>
           </CardTop>
-          <Txt v="body" bold>{entity.name}</Txt>
+          <Txt v="body" bold>{shownEntityName(entity, true).text}</Txt>
           <Txt v="mono" color="muted" style={{ fontSize: 11 }}>
             {`${Math.abs(entity.lat).toFixed(3)}° ${ns} · ${Math.abs(entity.lon).toFixed(3)}° ${ew}`}
           </Txt>

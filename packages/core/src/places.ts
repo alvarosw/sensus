@@ -18,6 +18,8 @@ export interface PlaceSite {
   /** Chave estável: nome normalizado + coordenadas arredondadas. */
   id: string;
   name: string;
+  /** Nome em português da primeira fonte que o traz (ver domain/names.ts); null se nenhuma tiver. */
+  namePt: string | null;
   lat: number;
   lon: number;
   /** Fontes que compõem o lugar, com a principal primeiro. */
@@ -119,6 +121,7 @@ export function groupPlaces(rows: PlaceVerseHit[]): PlaceSite[] {
     if (same) {
       same.citeIds.push(entity.cite_id);
       same.sources.add(entity.source_id);
+      if (same.site.namePt == null && entity.namePt) same.site.namePt = entity.namePt.trim() || null;
       for (const v of vids) same.vids.add(v);
       if (ob && same.site.confidence == null && ob.score != null) {
         same.site.confidence = ob.score;
@@ -131,6 +134,7 @@ export function groupPlaces(rows: PlaceVerseHit[]): PlaceSite[] {
       site: {
         id: `${key}@${entity.lat.toFixed(2)},${entity.lon.toFixed(2)}`,
         name: entity.name.replace(/_/g, ' ').replace(/\s+\d+$/, ''),
+        namePt: entity.namePt?.trim() || null,
         lat: entity.lat,
         lon: entity.lon,
         citeIds: [],

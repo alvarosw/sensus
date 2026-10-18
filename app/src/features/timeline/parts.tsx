@@ -10,7 +10,7 @@ import { StudyDataPrompt } from '@/data/StudyDataPrompt';
 import { useEdition } from '@/data/db-context';
 import { TL } from './strings';
 import { spanText } from './model';
-import { useTimelineText } from '@/translate/timeline-translate';
+import { useTimelineName } from '@/translate/timeline-translate';
 
 export type LineKind = TimelineLine['kind'];
 
@@ -93,7 +93,7 @@ export function LineCard({
   onFavorite: () => void;
 }) {
   const { c } = useTheme();
-  const name = useTimelineText(line.name);
+  const name = useTimelineName(line);
   return (
     <View
       style={{
