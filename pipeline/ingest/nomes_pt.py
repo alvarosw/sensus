@@ -36,6 +36,7 @@ ENTITY_SOURCES = ["theographic", "stepbible-tipnr", "openbible-geo"]
 TSV = Path(__file__).resolve().parent / "corrections" / "nomes-pt.tsv"
 GLOSSARIO_TSV = Path(__file__).resolve().parent / "corrections" / "glossario-compostos.tsv"
 COLUNAS = ["nome_en", "candidato", "nome_pt", "origem", "confianca", "entidades", "versos", "cobertura", "alternativa"]
+ORIGENS = ("auto", "revisado", "sem")
 ORDEM_CONFIANCA = {"baixa": 0, "media": 1, "alta": 2}
 CABECALHO = [
     "# Nomes próprios em português: nome em inglês (nome-base, sem sufixo numérico) -> nome pt da Bíblia Livre.",
@@ -76,17 +77,30 @@ def ler_glossario() -> dict[str, tuple[str, ...]]:
 
 
 def ler_tsv() -> list[dict]:
-    """Linhas do TSV de revisão (sem comentários e cabeçalho). Vazio se não existe ou tem outro formato."""
+    """Linhas do TSV de revisão (sem comentários e cabeçalho). Vazio se não existe. Cabeçalho diferente ou origem
+    fora de auto/revisado/sem: erro, para o regenerador não regravar o arquivo perdendo revisões."""
     if not TSV.exists():
         return []
+    # número da linha física junto, para a mensagem de erro
     linhas = [
-        l for l in TSV.read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")
+        (n, l) for n, l in enumerate(TSV.read_text(encoding="utf-8").splitlines(), 1)
+        if l.strip() and not l.startswith("#")
     ]
-    cabecalho, *corpo = linhas
-    if cabecalho.split("\t") != COLUNAS:
-        print(f"aviso: {TSV.name} está em outro formato; as linhas antigas não são preservadas")
+    if not linhas:
         return []
-    return [dict(zip(COLUNAS, (l.split("\t") + [""] * len(COLUNAS))[: len(COLUNAS)])) for l in corpo]
+    (_, cabecalho), *corpo = linhas
+    if cabecalho.split("\t") != COLUNAS:
+        raise ValueError(f"{TSV.name}: cabeçalho difere do esperado {COLUNAS}: {cabecalho!r}")
+    rows = []
+    for n, l in corpo:
+        campos = (l.split("\t") + [""] * len(COLUNAS))[: len(COLUNAS)]
+        r = dict(zip(COLUNAS, campos))
+        origem = r["origem"]
+        r["origem"] = origem.strip().lower()
+        if r["origem"] not in ORIGENS:
+            raise ValueError(f"{TSV.name}, linha {n}: origem inválida {origem!r} (use auto, revisado ou sem)")
+        rows.append(r)
+    return rows
 
 
 def escrever_tsv(linhas: list[dict]) -> None:

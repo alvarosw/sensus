@@ -94,9 +94,9 @@ const PT_TERMS: ReadonlyArray<readonly [string, readonly string[]]> = [
   ['samaria', ['samaria']],
 ];
 
-/** Normaliza texto de busca: minúsculas, sem acento, espaços aparados. */
+/** Normaliza texto de busca: minúsculas, sem acento, espaços aparados e espaços internos colapsados ("morte  de saul"). */
 export function normalizeSearch(text: string): string {
-  return text.normalize('NFD').replace(/\p{M}+/gu, '').toLowerCase().trim();
+  return text.normalize('NFD').replace(/\p{M}+/gu, '').toLowerCase().replace(/\s+/g, ' ').trim();
 }
 
 /** Termos de busca: o texto normalizado e os equivalentes em inglês dos termos em português que casam com ele. */

@@ -5,15 +5,19 @@ Rodar a partir da raiz do repositório: cd pipeline && python3 -m unittest disco
 """
 
 import sys
+import tempfile
 import unittest
 from collections import Counter
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "ingest"))
 
 from sensus.names_pt import (  # noqa: E402
     avalia, base_name, candidates, choose, confianca, decompoe, escolhe_frase, gentilico, similarity, skel, split_name,
 )
+import nomes_pt  # noqa: E402
 
 # AT (hebraico): Levítico 10:1 (Abihu) e Juízes 4:6 (Barak).
 LV_10_1 = (3010001, "E os filhos de Arão, Nadabe e Abiú, tomaram cada um seu incensário, e puseram fogo neles, "
@@ -273,6 +277,40 @@ class FraseTest(unittest.TestCase):
         # Sem acento, 'vale de Ela' não casa com o texto 'vale de Elá'; a frase achada é a do texto.
         f = escolhe_frase(GLOSSARIO["Valley of"], "Elah", "Ela", [1], {1: "no vale de Elá."})
         self.assertEqual(f.candidato, "vale de Elá")
+
+
+class LerTsvTest(unittest.TestCase):
+    """ler_tsv do ingestor de nomes pt: revisão humana não pode se perder por erro de digitação ou formato."""
+
+    CABECALHO = "\t".join(nomes_pt.COLUNAS)
+
+    def _ler(self, conteudo: str):
+        with tempfile.TemporaryDirectory() as pasta:
+            arq = Path(pasta) / "nomes-pt.tsv"
+            arq.write_text(conteudo, encoding="utf-8")
+            with mock.patch.object(nomes_pt, "TSV", arq):
+                return nomes_pt.ler_tsv()
+
+    def test_origem_com_espaco_e_caixa_e_normalizada(self):
+        linha = "Abihu\tAbiú\tAbiú\tRevisado \talta\t1\t2\t1.00\t"
+        rows = self._ler(f"# comentário\n{self.CABECALHO}\n{linha}\n")
+        self.assertEqual([r["origem"] for r in rows], ["revisado"])
+        self.assertEqual(rows[0]["nome_pt"], "Abiú")
+
+    def test_origem_com_erro_de_digitacao_levanta_erro_com_linha_e_valor(self):
+        linha = "Abihu\tAbiú\tAbiú\trevisdo\talta\t1\t2\t1.00\t"
+        with self.assertRaises(ValueError) as ctx:
+            self._ler(f"{self.CABECALHO}\n{linha}\n")
+        self.assertIn("linha 2", str(ctx.exception))
+        self.assertIn("'revisdo'", str(ctx.exception))
+
+    def test_cabecalho_diferente_levanta_erro(self):
+        with self.assertRaises(ValueError):
+            self._ler("nome_en\tcandidato\torigem\n")
+
+    def test_so_cabecalho_ou_sem_arquivo_devolve_vazio(self):
+        self.assertEqual(self._ler(f"{self.CABECALHO}\n"), [])
+        self.assertEqual(self._ler("# só comentários\n"), [])
 
 
 if __name__ == "__main__":

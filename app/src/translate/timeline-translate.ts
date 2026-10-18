@@ -2,10 +2,11 @@
 // useTranslatable. Os textos vêm da theographic; o idioma dela é lido do registro de fontes (isTranslatableSource),
 // não suposto aqui. Sem oferta por item; um "Ver original" para a linha do tempo inteira.
 // Nomes de pessoas e lugares e títulos de evento com nome em português (namePt) não passam pela tradução: mostram o
-// pt, exceto quando o usuário pede "Ver original", que volta aos nomes ingleses (ver useTimelineNames e
+// pt, exceto quando a tradução está ativa e o usuário pede "Ver original", que volta aos nomes ingleses (ver useTimelineNames e
 // useTimelineTitles).
 import { shownEntityName, shownEventTitle, type NameFields } from '@sensus/core';
 import { useGlobalView } from './global-batch';
+import { preferPt } from './policy';
 import { useTranslatable } from './useTranslatable';
 
 /** Fonte dos dados da linha do tempo. */
@@ -16,6 +17,13 @@ const GLOBAL = { sourceId: TIMELINE_SOURCE, policy: 'global' } as const;
 /** A tradução da linha do tempo está configurada: opção ligada e modelo pronto no aparelho. */
 export function useTimelineActive(): boolean {
   return useTranslatable([], GLOBAL).active;
+}
+
+/** Nomes e títulos em pt da fonte (ver preferPt em policy.ts), com a tradução ativa ou não. */
+function usePreferPt(): boolean {
+  const active = useTimelineActive();
+  const showOriginal = useGlobalView((s) => s.showOriginal);
+  return preferPt(active, showOriginal);
 }
 
 /** Estado para a tela: configurada, mostrando o original ou a tradução, e o "Ver original". */
@@ -56,16 +64,16 @@ export function useTimelineTitle(event: TitledEvent | null | undefined): string 
 }
 
 /**
- * Títulos dos eventos da tela. Com título pt e sem "Ver original", mostra o pt (texto de fonte em português, fora da
+ * Títulos dos eventos da tela. Com título pt (e sem "Ver original" com a tradução ativa), mostra o pt (texto de fonte em português, fora da
  * tradução automática); os demais entram no lote de tradução. Devolve a função que dá o título a mostrar; `events` é
  * a lista de todos os eventos da tela (o que não tiver pt é traduzido).
  */
 export function useTimelineTitles(events: readonly TitledEvent[]): (event: TitledEvent) => string {
-  const preferPt = !useGlobalView((s) => s.showOriginal);
-  const originals = events.filter((e) => !shownEventTitle(e, preferPt).pt).map((e) => e.title);
+  const pt = usePreferPt();
+  const originals = events.filter((e) => !shownEventTitle(e, pt).pt).map((e) => e.title);
   const show = useTimelineTexts(originals);
   return (event) => {
-    const shown = shownEventTitle(event, preferPt);
+    const shown = shownEventTitle(event, pt);
     return shown.pt ? shown.text : show(shown.text);
   };
 }
@@ -77,16 +85,16 @@ export function useTimelineName(name: NameFields | null | undefined): string {
 }
 
 /**
- * Nomes de pessoas, lugares e linhas da tela. Com nome pt e sem "Ver original", mostra o pt (texto de fonte em
+ * Nomes de pessoas, lugares e linhas da tela. Com nome pt (e sem "Ver original" com a tradução ativa), mostra o pt (texto de fonte em
  * português). Os demais entram no lote de tradução. Devolve a função que dá o nome a mostrar; `names` é a lista
  * de todos os nomes da tela (o que não for pt é traduzido).
  */
 export function useTimelineNames(names: readonly NameFields[]): (name: NameFields) => string {
-  const preferPt = !useGlobalView((s) => s.showOriginal);
-  const originals = names.filter((n) => !shownEntityName(n, preferPt).pt).map((n) => n.name);
+  const pt = usePreferPt();
+  const originals = names.filter((n) => !shownEntityName(n, pt).pt).map((n) => n.name);
   const show = useTimelineTexts(originals);
   return (name) => {
-    const shown = shownEntityName(name, preferPt);
+    const shown = shownEntityName(name, pt);
     return shown.pt ? shown.text : show(shown.text);
   };
 }

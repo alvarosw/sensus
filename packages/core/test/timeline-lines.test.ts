@@ -289,4 +289,10 @@ describe('funções puras de cronologia', () => {
     expect(searchTerms('')).toEqual([]);
     expect(searchTerms('ceia')).toContain('supper');
   });
+
+  it('normalizeSearch colapsa espaços internos: "morte  de saul" (AT) e "  pedro   " (NT) casam como nome comum', () => {
+    expect(normalizeSearch('morte  de saul')).toBe('morte de saul');
+    expect(normalizeSearch('  pedro   ')).toBe('pedro');
+    expect(searchTerms('morte  de saul')).toEqual(searchTerms('morte de saul'));
+  });
 });
