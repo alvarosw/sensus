@@ -1,0 +1,794 @@
+# Notas da revisão das linhas de confiança média/baixa de nomes-pt.tsv (feita por agentes de IA, conferindo os
+# versículos da Bíblia Livre e pesquisando na web quando havia dúvida). Só registro: o ingestor não lê este arquivo.
+nome_en	candidato	nome_pt	origem	nota
+Abel	E	Abel	revisado	rev. IA: Gn 4:2 BL 'Abel'; candidato 'E' era conjunção
+Adramyttium	Aristarco		sem	rev. IA: At 27:2 BL só traz o adjetivo 'adramitino' (navio); candidato Aristarco é outra pessoa
+Al-taschith	Louvamos		sem	rev. IA: título musical do Sl 57, sem nome próprio no versículo
+Amaw	Balaão		sem	rev. IA: Nm 22:5 BL 'na terra dos filhos de seu povo' sem o nome; candidato Balaão é pessoa
+Amminadib	Sem		sem	rev. IA: Ct 6:12 BL sem o nome (texto 'carruagens de meu nobre'); candidato Sem não é o nome
+Amorite	Também	Amorreu	revisado	rev. IA: Gn 14:13 BL 'amorreu' (singular)
+Amorites	Camos	Amorreus	revisado	rev. IA: Gn 10:16 BL 'amorreus'; candidato Camos é outro povo
+Angle	Jerusalém		sem	rev. IA: lugar descrito como 'esquina/ângulo' (2Cr 26:9; Ne 3:19-20), sem nome próprio na BL; Jerusalém é o cenário
+Angle	Palal		sem	rev. IA: candidato Palal é pessoa (Ne 3:25), não o lugar; 'esquina' sem nome próprio
+Apharasthchite	Setar-Bozenai	Arfasaquita	revisado	rev. IA: Ed 4:9 BL 'arfasaquitas' (plural); singular derivado; candidato Setar-Bozenai é pessoa
+Aphik	Aco	Afeque	revisado	rev. IA: Jz 1:31 BL 'Afeque' na lista de cidades; candidato Aco é outra cidade
+Aram-naharaim	Por		sem	rev. IA: título do Sl 60 não traz o nome no versículo BL (Sl 60:1); candidato Por é conjunção
+Aram-zobah	Por		sem	rev. IA: título do Sl 60 não traz o nome no versículo BL (Sl 60:1); candidato Por é conjunção
+Aramitess	Asriel		sem	rev. IA: 1Cr 7:14 BL 'a síria' (concubina); candidato Asriel é outra pessoa
+Archites	Aitofel	Arquitas	revisado	rev. IA: Js 16:2 BL 'arquitas'; candidato Aitofel é outra pessoa
+Areopagus	Dâmaris	Areópago	revisado	rev. IA: At 17:19 BL 'areópago'; candidato Dâmaris é pessoa (At 17:34)
+Areopagus	Podemos	Areópago	revisado	rev. IA: At 17:19 BL 'areópago'; candidato Podemos é verbo
+Ariel	Cabzeel	Ariel	revisado	rev. IA: Ed 8:16 BL 'Ariel' (pessoa); candidato Cabzeel é outro lugar
+Arkite	E	Arqueu	revisado	rev. IA: Gn 10:17 BL 'arqueus' (plural); singular derivado; candidato E é conjunção
+Arkites	Aos	Arqueus	revisado	rev. IA: Gn 10:17 BL 'arqueus'; candidato Aos é artigo/preposição
+Aroer	Hotão	Aroer	revisado	rev. IA: Nm 32:34 BL "Aroer"; candidato Hotão é outra pessoa
+Artemis	Demétrio	Diana	revisado	rev. IA: At 19:24-28 BL 'Diana' (deusa); candidato Demétrio é o ourives
+Arvadite	Aos	Arvadeu	revisado	rev. IA: Gn 10:18 BL 'arvadeus' (plural); singular derivado; candidato Aos é preposição
+Arvadites	Aos	Arvadeus	revisado	rev. IA: Gn 10:18 BL 'arvadeus'; candidato Aos é preposição
+Asen	Harife		sem	rev. IA: Ne 7:24 BL 'filhos de Harife' (família); 'Asen' não aparece no versículo
+Avvim	Sior	Aveus	revisado	rev. IA: Dt 2:23 BL 'aveus' (grupo); candidato Sior é outro lugar
+Baharum	Eliaba	Baurim	revisado	rev. IA: 2Sm 3:16 BL 'Baurim' (Bahurim); 1Cr 11:33 traz 'baarumita'; candidato Eliaba é pessoa
+Bajith	Medeba		sem	rev. IA: Is 15:2 BL não traz 'Bajite' (é 'casa' comum); candidato Medeba é outro lugar
+Bear	Plêiades	Ursa	revisado	rev. IA: Jó 38:32 BL 'Ursa'; candidato Plêiades é outra constelação
+Behemoth	Observa	Beemote	revisado	rev. IA: Jó 40:15 BL 'beemote'; candidato Observa é verbo
+Beth-Ashtoreth	Astarote		sem	rev. IA: 1Sm 31:10 BL 'templo de Astarote' (templo, não nome de cidade); candidato Astarote não é o nome do lugar
+Beth-eked	Prendei-os		sem	rev. IA: 2Rs 10:12 BL descreve "casa de tosa de pastores" sem nome próprio; candidato Prendei-os é verbo
+Beth-haggan	Ibleão		sem	rev. IA: versículo cita Ibleão e Megido sem o nome exato; dúvida, candidato Ibleão não confirmado
+Beth-merhak	Saiu		sem	rev. IA: 2Sm 15:17 BL descreve lugar 'distante' sem nome próprio; candidato Saiu é verbo
+Bethany	Betábara	Betânia	revisado	rev. IA: Mt 21:17 BL 'Betânia'; candidato Betábara é outro lugar
+Booths Festival	festa Booths		sem	rev. IA: festa sem versos no banco; BL sem nome próprio na entidade
+Broad Wall	muro Broad	Muralha larga	revisado	rev. IA: Ne 12:38 BL 'a muralha larga'; candidato 'muro Broad' é tradução mecânica
+Brook of the Willows	ribeiro de Willows	Ribeiro dos salgueiros	revisado	rev. IA: Is 15:7 BL 'ribeiro dos salgueiros'; candidato é tradução mecânica
+Buzites	Baraquel	Buzitas	revisado	rev. IA: Jó 32:2 BL 'buzita' (singular); plural derivado; candidato Baraquel é pai de Eliú
+Cherethites	Bicri	Queretitas	revisado	rev. IA: 1Sm 30:14 BL 'queretitas' (2Sm 8:18 'quereteus'); candidato Bicri é pessoa
+Cherethites	Eis	Queretitas	revisado	rev. IA: 1Sm 30:14 BL 'queretitas'; candidato Eis é palavra comum
+Chronicles	Os		sem	rev. IA: livro-fonte citado nas fórmulas dos reis; sem nome próprio no versículo; candidato Os é artigo
+City of Palms	cidade de Palms	Cidade das palmeiras	revisado	rev. IA: Dt 34:3 BL 'cidade das palmeiras'; candidato é tradução mecânica
+City of Salt	cidade de Salt	Cidade do sal	revisado	rev. IA: Js 15:62 BL 'a cidade do sal'
+City of the Lord	cidade de Lord	Cidade do SENHOR	revisado	rev. IA: Is 60:14 BL 'te chamarão a cidade do SENHOR'
+Corban	Os	Corbã	revisado	rev. IA: Mc 7:11 BL 'corbã (isto é, oferta)'; candidato Os é artigo
+Cush	Deus	Cuxe	revisado	rev. IA: Gn 2:13 BL 'Cuxe'; candidato Deus não é o nome
+Cushi	Seja	Cusi	revisado	rev. IA: Sf 1:1 BL 'filho de Cusi'; Jr 36:14 'Cusi'; gentílico de 2Sm 18:21 é 'cuxita'
+Cyrenius	Quirino	Quirino	revisado	rev. IA: Lc 2:2 BL 'Quirino'; candidato correto
+Dedication Festival	festa Dedication		sem	rev. IA: festa sem versos no banco
+Dehavites	Sinsai		sem	rev. IA: Ed 4:9 BL traz só 'dinaítas'; 'dehavitas' não aparece no versículo
+Destiny	SENHOR		sem	rev. IA: Is 65:11 BL traduz como 'ídolo do destino' (sem nome próprio); candidato SENHOR não é o nome
+Dinaites	Sinsai	Dinaítas	revisado	rev. IA: Ed 4:9 BL 'dinaítas'; candidato Sinsai é pessoa
+East	Zeba		sem	rev. IA: direção geral (oriente), não nome de lugar; candidato Zeba é outro lugar
+East Gate	porta East	Porta oriental	revisado	rev. IA: Ne 3:29 BL 'porta oriental'; candidato é tradução mecânica
+East Square	praça East	Praça oriental	revisado	rev. IA: 2Cr 29:4 BL 'praça oriental'; candidato é tradução mecânica
+Eder	Migdal-Eder	Éder	revisado	rev. IA: Js 15:21 BL 'Éder' (cidade); candidato Migdal-Eder é outro lugar
+Egypt	Leabim	Egito	revisado	rev. IA: Gn 12:10 BL 'Egito'; candidato Leabim é povo (Gn 10:13)
+Elkosh	Revelação		sem	rev. IA: Na 1:1 BL só 'elcosita' (gentílico de Naum); lugar sem nome próprio no texto; candidato Revelação é palavra comum
+Emim	Savé-Quiriataim	Emins	revisado	rev. IA: Gn 14:5 BL 'emins'; candidato Savé-Quiriataim é cidade
+Ephron	Efraim	Efrom	revisado	rev. IA: Gn 23:8 BL 'Efrom' (pessoa); candidato Efraim é outro nome
+Ephron	Neftoa	Efrom	revisado	rev. IA: mesma entidade 'Ephron' (Gn 23:8 BL 'Efrom'); candidato Neftoa é fonte de água
+Epicurean	Parece	Epicureus	revisado	rev. IA: At 17:18 BL 'epicureus' (conferir)
+Ethiopia	Índia	Etiópia	revisado	rev. IA: 2Rs 19:9 BL 'rei de Etiópia'; candidato Índia é outro país
+Eznites	Estes		sem	rev. IA: BL não traz gentílico 'eznita' no versículo (2Sm 23:8); candidato Estes é pronome
+Field	Jerusalém	Campo do lavandeiro	revisado	rev. IA: Is 7:3 BL 'campo do lavandeiro'; candidato Jerusalém é outra cidade
+Forest	E		sem	rev. IA: 'casa do bosque' é descrição (1Rs 7:2); sem nome próprio; candidato E é conjunção
+Fortune	Porém		sem	rev. IA: Is 65:11 BL traduz como 'ídolo da sorte' (sem nome próprio); candidato Porém é conjunção
+Foundation Gate	porta Foundation		sem	rev. IA: porta sem versos no banco
+Freedmen	Estêvão	Libertos	revisado	rev. IA: At 6:9 BL 'sinagoga dos libertos'; candidato Estêvão é pessoa
+Gadara	E		sem	rev. IA: Mt 8:28 BL "terra dos gergesenos"; web: Gadara, Gerasa e Gergesa são variantes da mesma região; Gadara não aparece no versículo
+Galilee	Gilgal	Galileia	revisado	rev. IA: Js 20:7 BL 'Galileia'; candidato Gilgal é outro lugar
+Gamad	Arvade	Gamaditas	revisado	rev. IA: Ez 27:11 BL 'os gamaditas'; candidato Arvade é cidade
+Garmite	Estemoa	Garmita	revisado	rev. IA: 1Cr 4:19 BL 'o garmita' (singular); candidato Estemoa é outro nome
+Garmites	Hodias	Garmitas	revisado	rev. IA: 1Cr 4:19 BL 'garmita' (singular); plural derivado; candidato Hodias é mulher
+Gate of the Foundation	porta de Foundation	Porta do fundamento	revisado	rev. IA: 2Cr 23:5 BL 'porta do fundamento'; candidato é tradução mecânica
+Gath	Davi	Gate	revisado	rev. IA: Js 11:22 BL 'em Gate' (cidade filisteia); candidato Davi é outra pessoa
+Ge-harashim	Artesãos	Vale dos Artesãos	revisado	rev. IA: 1Cr 4:14 BL 'Vale dos Artesãos'; candidato é parte do nome
+Gederah	Jeremias	Gederá	revisado	rev. IA: Js 15:36 BL 'Gederá'; candidato Jeremias é pessoa (1Cr 12:4)
+Gerasa	Gadarenos		sem	rev. IA: BL usa 'gadarenos' (Mc 5:1; Lc 8:26) e 'gergesenos' (Mt 8:28) para a região; 'Gerasa' não aparece no texto
+Gibeah	Fineias	Gibeá	revisado	rev. IA: Js 15:57 BL 'Gibeá'; candidato Fineias é pessoa
+Gibeath-elohim	De	Morro de Deus	revisado	rev. IA: 1Sm 10:5 BL 'morro de Deus'; candidato De é palavra
+Gibeath-haaraloth	Israel	Monte dos prepúcios	revisado	rev. IA: Js 5:3 BL 'monte dos prepúcios'; candidato Israel é outro termo
+Gilo	Aitofel	Gilo	revisado	rev. IA: Js 15:51 BL 'Gilo'; candidato Aitofel é pessoa (gilonita em 2Sm 23:34)
+Girgashites	Antes	Girgaseus	revisado	rev. IA: Gn 15:21 BL 'girgaseus' (Gn 10:16 'gergeseus'); candidato Antes é palavra comum
+Girgasite	E	Girgaseu	revisado	rev. IA: Gn 15:21 BL 'girgaseus' (plural); singular derivado; candidato E é conjunção
+Girzites	Egito	Gersitas	revisado	rev. IA: 1Sm 27:8 BL 'gersitas'; candidato Egito é lugar
+Gittith	Jacó		sem	rev. IA: título musical de salmo (Sl 8 etc.), sem nome próprio no versículo
+Gizonites	Jônatas	Gizonitas	revisado	rev. IA: 1Cr 11:34 BL 'o gizonita' (singular); plural derivado; candidato Jônatas é pessoa
+God	Jugo		sem	rev. IA: título divino; regra do projeto: sem nome próprio (app mostra inglês); candidato Jugo não existe no texto
+Goiim	Gilgal		sem	rev. IA: Gn 14:1 BL traduz 'rei de nações' (termo comum); candidato Gilgal é outro lugar
+Goiim	Quedorlaomer		sem	rev. IA: Gn 14:1 BL traduz 'rei de nações' (termo comum); candidato Quedorlaomer é pessoa
+Gulloth-mayim	Ela		sem	rev. IA: Js 15:19 BL 'fontes superiores e inferiores' (descrição, sem nome próprio)
+Hachmonites	Hacmoni	Hacmonitas	revisado	rev. IA: 1Cr 11:11 BL 'Hacmoni' (família); 2Sm 23:8 BL 'taquemonita'; plural derivado
+Hakkephirim	Gesém		sem	rev. IA: Ne 6:2 BL traz só 'aldeias' (sem nome próprio); candidato Gesém é pessoa
+Hall of Judgment	sala de Judgment	Pórtico do juízo	revisado	rev. IA: 1Rs 7:7 BL 'pórtico do juízo'; candidato é tradução mecânica
+Hall of Pillars	sala de Pillars	Pórtico de colunas	revisado	rev. IA: 1Rs 7:6 BL 'pórtico de colunas'; candidato é tradução mecânica
+Hall of the Throne	sala de Throne	Pórtico do trono	revisado	rev. IA: 1Rs 7:7 BL 'pórtico do trono'; candidato é tradução mecânica
+Hamathite	E	Hamateu	revisado	rev. IA: Gn 10:18 BL 'hamateus' (plural); singular derivado; candidato E é conjunção
+Hamathites	Aos	Hamateus	revisado	rev. IA: Gn 10:18 BL 'hamateus'; candidato Aos é preposição
+Hammelech	Abdeel		sem	rev. IA: Jr 38:6 BL 'Malquias filho de rei' (título, não nome); candidato Abdeel é outra pessoa
+Hamon-gog Valley	vale Hamon-gog		sem	rev. IA: entidade sem correspondência no banco
+Hararites	Harar	Hararitas	revisado	rev. IA: 1Cr 11:34 BL 'o hararita' (singular); plural derivado; candidato Harar é o lugar
+Harod	Samote	Harode	revisado	rev. IA: Jz 7:1 BL 'fonte de Harode'; candidato Samote é pessoa (1Cr 11:27)
+Haruphites	Semarias	Harufitas	revisado	rev. IA: 1Cr 12:5 BL 'o harufita' (singular); plural derivado; candidato Semarias é pessoa
+Hasrah	Harás	Harás	revisado	rev. IA: 2Rs 22:14 BL 'filho de Harás'; candidato correto
+Hazerim	Gaza		sem	rev. IA: Dt 2:23 BL traz 'aldeias' (termo comum); candidato Gaza é cidade
+Helech	Arvade		sem	rev. IA: Ez 27:11 BL não traz o nome; candidato Arvade é cidade
+Heliopolis	Egito	Om	revisado	rev. IA: Gn 41:45 BL 'sacerdote de Om' (Heliópolis); candidato Egito é região
+Heliopolis	Potífera	Om	revisado	rev. IA: Gn 41:45 BL 'sacerdote de Om' (Heliópolis); candidato Potífera é pessoa
+Heres	E		sem	rev. IA: Jz 8:13 BL descreve a subida sem nome próprio; candidato Entretanto/E não é o nome
+Hermes	Júpiter	Hermes	revisado	rev. IA: Rm 16:14 BL 'Hermes' (pessoa); At 14:12 traz 'Mercúrio' (deus); candidato Júpiter é outro deus
+Hiddekel	Tigre	Tigre	revisado	rev. IA: Gn 2:14 BL 'Tigre'; alternativa Eufrates é outro rio
+Highway	Rogamo-te		sem	rev. IA: Nm 20:17 BL 'caminho real' (descrição, não nome próprio); candidato Rogamo-te é verbo
+Hill Mizar	outeiro Mizar	Monte Mizar	revisado	rev. IA: Sl 42:6 BL 'monte Mizar'; candidato é tradução mecânica
+Hivite	Heteu	Heveu	revisado	rev. IA: Gn 34:2 BL 'Hamor heveu'; candidato Heteu é outro povo
+Hivites	Jebuseos	Heveus	revisado	rev. IA: Gn 10:17 BL 'heveus'; candidato Jebuseos é outro povo
+Horesh	Deus		sem	rev. IA: 1Sm 23:15 BL traz 'bosque' (comum); candidato Deus não é o nome
+Horonaim	Entretanto	Horonaim	revisado	rev. IA: Jr 48:3 BL 'Horonaim'; candidato Entretanto é conjunção
+Horonites	Tobias	Horonitas	revisado	rev. IA: Ne 2:10 BL 'o horonita' (singular); plural derivado; candidato Tobias é pessoa
+House of the Forest	casa de Forest	Casa do bosque do Líbano	revisado	rev. IA: 1Rs 7:2 BL 'casa do bosque do Líbano'; candidato é parte do nome
+Hur	Ben-Hur	Hur	revisado	rev. IA: Ex 17:10 BL 'Hur'; candidato Ben-Hur não aparece como o nome do versículo
+Huram	Hirão	Hirão	revisado	rev. IA: 2Cr 2:13 BL 'Hirão' (rei de Tiro); candidato correto
+Hushathites	Husatita	Husatitas	revisado	rev. IA: 2Sm 21:18 BL 'husatita' (singular); plural derivado
+Ithrites	Quiriate-Jearim	Itreus	revisado	rev. IA: 1Cr 2:53 BL 'itreus'; candidato Quiriate-Jearim é cidade
+Iyim	Ijé-Abarim	Ijé-Abarim	revisado	rev. IA: Nm 33:45 BL 'Ijé-Abarim'; candidato correto
+Janen	Mataná		sem	rev. IA: Nm 21:19 BL cita Mataná, não Janen; sem forma confirmada
+Jebusite	E	Jebuseu	revisado	rev. IA: Js 15:8 BL 'jebuseus' (plural); singular derivado; candidato E é conjunção
+Jebusite	Jerusalém	Jebuseu	revisado	rev. IA: Js 15:8 BL 'jebuseus'; candidato Jerusalém é a cidade (Jebus)
+Jebusites	Jebuseos	Jebuseus	revisado	rev. IA: Gn 10:16 BL 'jebuseus'; candidato Jebuseos não é a forma do texto
+Jemnath	Ecrom		sem	rev. IA: Js 15:46 BL não traz o nome; candidato Ecrom é outro lugar
+Jeshimon	Zife	Jesimom	revisado	rev. IA: Nm 21:20 BL 'Jesimom'; candidato Zife é outra cidade
+Jonath-elem-rechokim	Tem		sem	rev. IA: título do Sl 56, sem nome próprio no versículo
+Jordan Valley	vale Jordão	Planície do Jordão	revisado	rev. IA: Gn 13:10 BL 'planície do Jordão'; candidato é tradução mecânica
+Josedech	Jeozadaque	Jeozadaque	revisado	rev. IA: 1Cr 6:14 BL 'Jeozadaque' (Ed 3:2 'Jozadaque'); candidato correto
+Judaism	Igreja	Judaísmo	revisado	rev. IA: Gl 1:13 BL 'judaísmo'; candidato Igreja é outro termo
+Judgment	Fez		sem	rev. IA: parte do nome 'pórtico do juízo' (1Rs 7:7); sozinho não é nome; candidato Fez é verbo
+Kadesh	Hodsi	Cades	revisado	rev. IA: Gn 14:7 BL 'Cades' (En-Mispate); candidato Hodsi é outra pessoa
+Kadmonites	Os	Cadmoneus	revisado	rev. IA: Gn 15:19 BL 'cadmoneus'; candidato Os é artigo
+Kenites	Quedes	Queneus	revisado	rev. IA: Gn 15:19 BL 'queneus'; candidato Quedes é lugar
+Kenizzites	Os	Quenezeus	revisado	rev. IA: Gn 15:19 BL 'quenezeus'; candidato Os é artigo
+Kir	Quir-Moabe	Quir	revisado	rev. IA: 2Rs 16:9 BL 'Quir'; candidato Quir-Moabe é outro lugar
+Kue	Coa	Coa	revisado	rev. IA: 1Rs 10:28 BL 'de Coa'; candidato correto
+Lebanon Valley	vale Líbano		sem	rev. IA: entidade sem versos no banco; sem nome próprio na BL
+Lehem	Jasubi-Leem	Jasubi-Leem	revisado	rev. IA: 1Cr 4:22 BL 'Jasubi-Leem'; candidato Joquim é pessoa
+Lo-ammi	Chama	Não-Meu-Povo	revisado	rev. IA: Os 1:9 BL 'Não-Meu-Povo'; candidato Chama é verbo
+Lo-ruhamah	Não-Amada	Não-Amada	revisado	rev. IA: Os 1:6 BL 'Não-Amada'; candidato correto
+Lower Pool	tanque Lower	Tanque de baixo	revisado	rev. IA: Is 22:9 BL 'tanque de baixo'; candidato é tradução mecânica
+Lucifer	Cortado		sem	rev. IA: Is 14:12 BL 'luminoso' (epíteto, sem nome próprio); candidato Cortado é verbo
+Maareh-geba	Baal-Tamar		sem	rev. IA: Jz 20:33 BL cita 'Baal-Tamar' (outro lugar); 'Maaré-Geba' não aparece
+Mahalab	Hormá		sem	rev. IA: Js 19:29 BL não traz o nome; candidato Hormá é outro lugar
+Mahalath	Não	Maalate	revisado	rev. IA: Gn 28:9 BL 'Maalate' (filha de Ismael); candidato Não é palavra
+Mahaneh-dan	Dã	Campo de Dã	revisado	rev. IA: Jz 18:12 BL 'campo de Dã'; candidato Dã é só a tribo
+Mahavites	Josavias	Maavitas	revisado	rev. IA: 1Cr 11:46 BL 'o maavita' (singular); plural derivado; candidato Josavias é pessoa
+Maranatha	Cristo		sem	rev. IA: 1Co 16:22 BL traz só 'Vem, Senhor' (sem a palavra aramaica); candidato Cristo não é o termo
+Mazzaroth	Ursa		sem	rev. IA: Jó 38:32 BL traz 'Ursa'; 'Mazarote' não aparece no versículo
+Mecherathites	Héfer	Mequeratitas	revisado	rev. IA: 1Cr 11:36 BL 'o mequeratita' (singular); plural derivado; candidato Héfer é pessoa
+Meholathites	Merabe	Meolatitas	revisado	rev. IA: 1Sm 18:19 BL 'Adriel meolatita' (singular); plural derivado; candidato Merabe é mulher
+Menuhoth	Manaatitas	Manaatitas	revisado	rev. IA: 1Cr 2:52 BL 'Manaatitas'; candidato correto
+Meronoth	Melatias		sem	rev. IA: Ne 3:7 BL só 'meronotita' (gentílico); lugar sem nome próprio no texto; candidato Melatias é pessoa
+Meronothites	Melatias	Meronotitas	revisado	rev. IA: 1Cr 27:30 BL 'meronotita' (singular); plural derivado; candidato Melatias é pessoa
+Meunites	Estes		sem	rev. IA: 1Cr 4:41 BL não traz o gentílico; candidato Estes é pronome
+Mezobaites	Eliel	Mezobaítas	revisado	rev. IA: 1Cr 11:47 BL 'o mezobaíta' (singular); plural derivado; candidato Eliel é pessoa
+Middle Gate	porta Middle	Porta do meio	revisado	rev. IA: Jr 39:3 BL 'porta do meio'; candidato é tradução mecânica
+Miktam	Livra-me		sem	rev. IA: título de salmo (Sl 16, 56-60), sem nome próprio; candidato Livra-me é verbo
+Mishraites	Quiriate-Jearim	Misraeus	revisado	rev. IA: 1Cr 2:53 BL 'os misraeus'; candidato Quiriate-Jearim é cidade
+Misrephoth-maim	Mispá		sem	rev. IA: Js 11:8 BL traz 'águas quentes' (descrição); 'Misrefote-Maim' não aparece
+Mithnites	Josafá	Mitenitas	revisado	rev. IA: 1Cr 11:43 BL 'o mitenita' (singular); plural derivado; candidato Josafá é pessoa
+Mizpeh Valley	vale Mizpeh		sem	rev. IA: entidade sem versos no banco
+Moab Plains	campinas Moabe		sem	rev. IA: entidade sem versos no banco
+Mordecai	Reelaías	Mardoqueu	revisado	rev. IA: Et 2:5 BL 'Mardoqueu'; candidato Reelaías é outra pessoa
+Moresheth	Miqueias	Moresete	revisado	rev. IA: Mq 1:14 BL 'Moresete-Gate'; candidato Miqueias é profeta
+Mortar	Lamentai		sem	rev. IA: Sf 1:11 BL traz 'vale' (descrição); sem nome próprio; candidato Lamentai é verbo
+Muth-labben	Louvarei		sem	rev. IA: título do Sl 9, sem nome próprio no versículo; candidato Louvarei é verbo
+Naamah	Então	Naamá	revisado	rev. IA: Gn 4:22 BL 'Naamá'; candidato Então é conjunção
+Naamathites	Bildade	Naamitas	revisado	rev. IA: Jó 2:11 BL 'Zofar naamita' (singular); plural derivado; candidato Bildade é pessoa
+Naphath	Taanaque		sem	rev. IA: Js 17:11 BL traz 'Taanaque' (outro lugar); 'Naphath' não aparece no versículo
+Naphath-dor	Tafate		sem	rev. IA: 1Rs 4:11 BL traz 'região de Dor' e Tafate (pessoa); 'Nafate-Dor' não aparece
+Naphoth-dor	Dor	Dor	revisado	rev. IA: Js 11:2 BL 'regiões de Dor'; candidato Dor é o nome usado no texto
+Nazirites	Virá	Nazireus	revisado	rev. IA: Nm 6:2 BL 'nazireu' (singular); plural derivado; candidato Virá é verbo
+Nehelam	Semaías		sem	rev. IA: Jr 29:24 BL traz só 'neelamita' (gentílico); lugar sem nome próprio; candidato Semaías é pessoa
+Nehelamites	Semaías	Neelamitas	revisado	rev. IA: Jr 29:24 BL 'o neelamita' (singular); plural derivado; candidato Semaías é pessoa
+Nephilim	Anaque		sem	rev. IA: Gn 6:4 BL traduz como 'gigantes' (termo comum); candidato Anaque é cidade/pessoa
+New Gate	porta New	Porta nova	revisado	rev. IA: Jr 26:10 BL 'porta nova do SENHOR'; candidato é tradução mecânica
+Nicolaitans	Mas	Nicolaítas	revisado	rev. IA: Ap 2:6 BL 'nicolaítas'; candidato Mas é conjunção
+Nohah	Manaate	Noá	revisado	rev. IA: 1Cr 8:2 BL 'Noá' (filho de Benjamim); candidato Manaate é lugar
+Nohah	Menuá	Noá	revisado	rev. IA: 1Cr 8:2 BL 'Noá' (filho de Benjamim); candidato Menuá é lugar
+North	Então		sem	rev. IA: direção geral (norte), não nome próprio; candidato Então é conjunção
+North Gate	porta North		sem	rev. IA: porta sem nome no versículo (Zc 14? sem 'norte' no texto); candidato porta North é tradução mecânica
+Old Pool	tanque Old	Tanque velho	revisado	rev. IA: Is 22:11 BL 'tanque velho'; candidato é tradução mecânica
+On	Om	Om	revisado	rev. IA: Gn 41:45 BL 'sacerdote de Om'; candidato correto; Coré não é o nome
+Parbar	Em		sem	rev. IA: 1Cr 26:18 BL traz 'Em' (palavra comum); Parbar não aparece no versículo
+Pavement	Pilatos	Gabatá	revisado	rev. IA: Jo 19:13 BL 'em hebraico Gabatá' (também 'Litóstrotos, ou pavimento'); candidato Pilatos é pessoa
+Pelethites	Benaia	Peleteus	revisado	rev. IA: 2Sm 8:18 BL 'peleteus'; candidato Benaia é pessoa
+Pelonites	Helez	Pelonitas	revisado	rev. IA: 1Cr 11:36 BL 'o pelonita' (singular); plural derivado; candidato Helez é pessoa
+People's Gate	porta People		sem	rev. IA: entidade sem correspondência no banco
+Perizzites	Jebuseos	Ferezeus	revisado	rev. IA: Gn 13:7 BL 'ferezeus'; candidato Jebuseos é outro povo
+Phut	Pute	Pute	revisado	rev. IA: Gn 10:6 BL 'Pute'; candidato correto
+Pillars	Também		sem	rev. IA: parte do nome 'pórtico de colunas' (1Rs 7:6); sozinho não é nome próprio
+Place	Gólgota	Gólgota	revisado	rev. IA: Mt 27:33 BL 'Gólgota' (lugar chamado); candidato correto
+Plain	Zoar		sem	rev. IA: planície comum (Gn 13:10 etc.), sem nome próprio na entidade; candidato Zoar é cidade
+Plain of Aven	planície de Áven	Vale de Áven	revisado	rev. IA: Am 1:5 BL 'vale de Áven'; candidato 'planície' não é o termo do texto
+Pool	Col-Hozé		sem	rev. IA: Ne 3:15 Col-Hozé é pessoa; o 'tanque do rei' (Ne 2:14) não é nome próprio
+Pool	Fonte		sem	rev. IA: Ne 2:14 'porta da Fonte' é nome de porta, não do tanque; sem confirmação
+Potsherd Gate	porta Potsherd		sem	rev. IA: porta sem nome no versículo (Jr 19:2 traz 'porta oriental')
+Preparation Festival	festa Preparation		sem	rev. IA: entidade sem versos no banco
+Puthites	Quiriate-Jearim	Puteus	revisado	rev. IA: 1Cr 2:53 BL 'os puteus'; candidato Quiriate-Jearim é cidade
+Pyrrhus	Sópater		sem	rev. IA: At 20:4 BL 'Sópater, de Bereia' sem o nome do pai Pirro; candidato é outra pessoa
+Raca	Idiota		sem	rev. IA: Mt 5:22 BL traz 'Idiota!' (tradução); 'Racá' não aparece como nome
+Ramah	Zabdias	Ramá	revisado	rev. IA: Js 18:25 BL 'Ramá'; candidato Zabdias é pessoa
+Ramathites	Zabdias	Ramatitas	revisado	rev. IA: 1Cr 27:27 BL 'Simei ramatita' (singular); plural derivado; candidato Zabdias é pessoa
+Rephaim	Argobe	Refains	revisado	rev. IA: Gn 14:5 BL 'refains'; candidato Argobe é lugar
+Rhodes	Os	Rodes	revisado	rev. IA: At 21:1 BL 'a Rodes'; candidato Os é artigo
+River	Assíria		sem	rev. IA: 'rio' genérico no versículo; sem nome próprio da entidade
+River	Petor		sem	rev. IA: 'rio' genérico no versículo; candidato Petor é cidade
+River	Reobote		sem	rev. IA: 'rio' genérico no versículo; candidato Reobote não é o nome do rio
+River	Reum		sem	rev. IA: 'rio' genérico no versículo; candidato Reum é pessoa
+River of Arnon	rio de Arnom	Ribeiro de Arnom	revisado	rev. IA: Dt 2:24 BL 'ribeiro de Arnom'; candidato 'rio de Arnom' não é o termo do texto
+Rock	Maom		sem	rev. IA: 'penha' (termo comum) no versículo; candidato Maom é lugar
+Rock of Escape	rocha de Escape	Selá-Hamalecote	revisado	rev. IA: 1Sm 23:28 BL 'Selá-Hamalecote'; candidato 'rocha de Escape' é tradução mecânica
+Rocks	Saul		sem	rev. IA: 1Sm 24:2 BL traz descrição (penhas); candidato Saul é pessoa
+Sadducee	Naquele	Saduceus	revisado	rev. IA: Mt 3:7 BL 'saduceus'; candidato Naquele é pronome
+Sahar	Damasco		sem	rev. IA: Ez 27:18 BL traz 'Helbom' (outro lugar); 'Sahar' não aparece no versículo
+Salome	Porém		sem	rev. IA: Mt 14:6 BL traz 'a filha de Herodias' sem o nome; candidato Porém é conjunção
+Salt	Nibsã	Mar salgado	revisado	rev. IA: Gn 14:3 BL 'mar salgado'; candidato Nibsã é cidade
+Salt Valley	vale Salt		sem	rev. IA: entidade sem versos no banco
+Scythians	Cristo	Citas	revisado	rev. IA: Cl 3:11 BL 'cita' (singular); plural derivado; candidato Cristo não é o povo
+Sea of the Philistines	mar de Philistines	Mar de filístia	revisado	rev. IA: Ex 23:31 BL 'mar de filístia'; candidato é tradução mecânica
+Sea of the Plain	mar de Plain	Mar da planície	revisado	rev. IA: 2Rs 14:25 BL 'mar da planície'; candidato é tradução mecânica
+Secu	Socó	Socó	revisado	rev. IA: 1Sm 19:22 BL 'poço grande que está em Socó'; candidato correto; Samuel é pessoa
+Secundus	Segundo	Segundo	revisado	rev. IA: At 20:4 BL 'Aristarco e Segundo'; candidato correto
+Sela	E	Selá	revisado	rev. IA: 2Rs 14:7 BL 'Selá'; candidato E é conjunção
+Serpent's Stone	pedra Serpent	Penha de Zoelete	revisado	rev. IA: 1Rs 1:9 BL 'penha de Zoelete'; candidato 'pedra Serpent' é tradução mecânica
+Shephelah	Bete-Semes		sem	rev. IA: BL traduz como 'planícies' (termo comum); 'Sefelá' não aparece; candidato Bete-Semes é cidade
+Shephelah	Sul		sem	rev. IA: BL traduz como 'planícies' (termo comum); candidato Sul é direção
+Shiggaion	SENHOR		sem	rev. IA: título do Sl 7, sem nome próprio no versículo; candidato SENHOR é outro termo
+Shilonites	Siloni	Silonitas	revisado	rev. IA: 1Rs 11:29 BL 'Aías silonita' (singular); plural derivado; candidato Siloni é ancestral (Ne 11:5)
+Shimeathite	Hamate	Simeatitas	revisado	rev. IA: 1Cr 2:55 BL 'os simeatitas'; candidato Hamate é outro lugar
+Shiphmites	Simei	Sifmitas	revisado	rev. IA: 1Cr 27:27 BL 'Zabdias sifmita' (singular); plural derivado; candidato Simei é pessoa
+Shuhites	Bildade	Suítas	revisado	rev. IA: Jó 2:11 BL 'Bildade suíta' (singular); plural derivado; candidato Bildade é pessoa
+Shulammites	Sulamita	Sulamita	revisado	rev. IA: Ct 6:13 BL 'Sulamita' (a moça); candidato correto
+Shumathites	Quiriate-Jearim	Sumateus	revisado	rev. IA: 1Cr 2:53 BL 'os sumateus'; candidato Quiriate-Jearim é cidade
+Shunammites	Abisague	Sunamita	revisado	rev. IA: 1Rs 1:3 BL 'Abisague sunamita' (a moça); candidato Abisague é pessoa
+Sinite	E	Sineu	revisado	rev. IA: Gn 10:17 BL 'sineus' (plural); singular derivado; candidato E é conjunção
+Sinites	E	Sineus	revisado	rev. IA: Gn 10:17 BL 'sineus'; candidato E é conjunção
+Skull	Caveira	Caveira	revisado	rev. IA: Lc 23:33 BL 'lugar chamado a Caveira'; candidato correto
+South	O		sem	rev. IA: direção geral (sul), não nome próprio; candidato O é artigo
+South	Sul		sem	rev. IA: direção geral (sul), não nome próprio; candidato Sul é direção
+South Gate	porta South		sem	rev. IA: porta sem nome próprio no versículo (1Cr 26:15 traz 'ao sul')
+Stoic	Porque	Estoicos	revisado	rev. IA: At 17:18 BL 'estoicos'; candidato Porque é conjunção
+Straight	Direita	Direita	revisado	rev. IA: At 9:11 BL 'a rua chamada Direita'; candidato correto
+Straight Gate	porta Straight	Rua Direita	revisado	rev. IA: At 9:11 BL 'a rua chamada Direita'; entidade tipada como porta, mas o texto diz rua
+Sucathite	Hamate	Sucatitas	revisado	rev. IA: 1Cr 2:55 BL 'os sucatitas'; candidato Hamate é outro lugar
+Sukkiim	Com	Suquitas	revisado	rev. IA: 2Cr 12:3 BL 'suquitas'; candidato Com é palavra comum
+Suph	Tofel		sem	rev. IA: Dt 1:1 BL não traz 'Suph'; candidato Tofel é outro lugar
+Syrtis	O		sem	rev. IA: At 27:17 BL traz 'bancos de areia' (descrição); 'Sirte' não aparece
+Tabbur-erez	Meonenim		sem	rev. IA: Jz 9:37 BL traz 'umbigo da terra' (descrição); candidato Meonenim é outro lugar
+Tarpelite	Reum	Tarpelita	revisado	rev. IA: Ed 4:9 BL 'tarpelitas' (plural); singular derivado; candidato Reum é pessoa
+Thebes	És	Nô	revisado	rev. IA: Jr 46:25 BL 'Amom de Nô'; candidato És é palavra comum
+There	SENHOR	O SENHOR Está Ali	revisado	rev. IA: Ez 48:35 BL 'O SENHOR Está Ali' (nome da cidade); candidato SENHOR é parte do nome
+Throne	Fez		sem	rev. IA: parte do nome 'pórtico do trono' (1Rs 7:7); sozinho não é nome próprio; candidato Fez é verbo
+Tirathite	Jabez	Tiratitas	revisado	rev. IA: 1Cr 2:55 BL 'os tiratitas'; candidato Jabez é lugar
+Tizites	Jedaiel	Tizitas	revisado	rev. IA: 1Cr 11:45 BL 'o tizita' (singular); plural derivado; candidato Jedaiel é pessoa
+Tower	Fornos		sem	rev. IA: termo genérico (torre); BL só tem 'torre dos Fornos' (Ne 3:11); candidato Fornos é parte de outro nome
+Tower	Ovelhas		sem	rev. IA: BL traz 'porta das Ovelhas' (Ne 12:39), sem 'torre das Ovelhas'; candidato Ovelhas é parte de outro nome
+Tower of Eder	torre de Eder		sem	rev. IA: entidade sem correspondência no banco; sem nome confirmado
+Travelers Valley	vale Travelers		sem	rev. IA: entidade sem correspondência no banco
+Tribe of Judah	tribo de Judá		sem	rev. IA: Pv 25:1 BL traz 'rei de Judá' (sem 'tribo de Judá' no versículo)
+Unnamed#1	Assim		sem	rev. IA: marcador sem nome próprio; candidato Assim é advérbio
+Unnamed#1	Eliúde		sem	rev. IA: marcador sem nome próprio; Eliúde (Mt 1:15) é outra pessoa
+Unnamed#2	Assim		sem	rev. IA: marcador sem nome próprio; candidato Assim é advérbio
+Unnamed#2	Eliúde		sem	rev. IA: marcador sem nome próprio; Eliúde (Mt 1:15) é outra pessoa
+Unnamed#3	Assim		sem	rev. IA: marcador sem nome próprio; candidato Assim é advérbio
+Unnamed#3	Eliúde		sem	rev. IA: marcador sem nome próprio; Eliúde (Mt 1:15) é outra pessoa
+Unnamed#4	Assim		sem	rev. IA: marcador sem nome próprio; candidato Assim é advérbio
+Unnamed#4	Eliúde		sem	rev. IA: marcador sem nome próprio; Eliúde (Mt 1:15) é outra pessoa
+Unnamed#5	Eliúde		sem	rev. IA: marcador sem nome próprio; Eliúde (Mt 1:15) é outra pessoa
+Unnamed#6	Eliúde		sem	rev. IA: marcador sem nome próprio; Eliúde (Mt 1:15) é outra pessoa
+Unnamed#7	Eliúde		sem	rev. IA: marcador sem nome próprio; Eliúde (Mt 1:15) é outra pessoa
+Unnamed#8	Eliúde		sem	rev. IA: marcador sem nome próprio; Eliúde (Mt 1:15) é outra pessoa
+Unnamed#9	Eliúde		sem	rev. IA: marcador sem nome próprio; Eliúde (Mt 1:15) é outra pessoa
+Upper Pool	tanque Upper	Tanque superior	revisado	rev. IA: Is 7:3 BL 'tanque superior'; candidato é tradução mecânica
+Valley of Decision	vale de Decision	Vale da decisão	revisado	rev. IA: Jl 3:14 BL 'vale da decisão'; candidato é tradução mecânica
+Valley of Hamon-gog	vale de Hamon-gog	Vale da multidão de Gogue	revisado	rev. IA: Ez 39:15 BL 'vale da multidão de Gogue'; candidato Hamon-gog não aparece no texto
+Valley of Hamongog	vale de Hamongog	Vale da multidão de Gogue	revisado	rev. IA: Ez 39:15 BL 'vale da multidão de Gogue'; candidato Hamongog não aparece no texto
+Valley of Lebanon	vale de Líbano	Planície do Líbano	revisado	rev. IA: Js 11:17 BL 'planície do Líbano'; candidato é tradução mecânica
+Valley of Mizpeh	vale de Mizpeh	Planície de Mispá	revisado	rev. IA: Js 11:8 BL 'planície de Mispá'; candidato é tradução mecânica
+Valley of Salt	vale de Salt	Vale do sal	revisado	rev. IA: 2Sm 8:13 BL 'vale do sal'; candidato é tradução mecânica
+Valley of the Arnon	vale de Arnom	Ribeiro de Arnom	revisado	rev. IA: Dt 2:36 BL 'ribeiro de Arnom' (BL não usa 'vale'); candidato é tradução mecânica
+Valley of the Passengers	vale de Passengers	Vale dos que passam	revisado	rev. IA: Ez 39:11 BL 'vale dos que passam ao oriente do mar'; candidato é tradução mecânica
+Vedan	Dã	Dã	revisado	rev. IA: Ez 27:19 BL "Dã e Javã de Uzal"; web: traduções variam entre Vedã e Dã (texto hebraico); candidato Dã mantido
+Way of Holiness	caminho de Holiness	Caminho da santidade	revisado	rev. IA: Is 35:8 BL 'caminho da santidade'; candidato é tradução mecânica
+Weeks	Pentecostes	Festa das semanas	revisado	rev. IA: Ex 34:22 BL 'festa das semanas'; Pentecostes é o nome grego (At 2:1), não usado nesse versículo
+Willows	Por		sem	rev. IA: parte do nome 'ribeiro dos salgueiros' (Is 15:7); sozinho não é nome próprio
+Zaccur	Zabude	Zacur	revisado	rev. IA: 1Cr 4:26 BL 'Zacur'; candidato Zabude é outra pessoa
+Zealot	Simão	Zelote	revisado	rev. IA: Mc 3:18 BL 'Simão o zelote'; grupo/epíteto, candidato Simão é o nome da pessoa
+Zemarite	Aos	Zemareu	revisado	rev. IA: Gn 10:18 BL 'zemareus' (plural); singular derivado; candidato Aos é preposição
+Zemarites	Aos	Zemareus	revisado	rev. IA: Gn 10:18 BL 'zemareus'; candidato Aos é preposição
+Zeus	Mercúrio	Júpiter	revisado	rev. IA: At 14:12 BL 'chamaram a Barnabé de Júpiter'; candidato Mercúrio é o deus Hermes
+Ziv	Zife	Zife	revisado	rev. IA: 1Rs 6:1 BL 'no mês de Zife'; candidato correto
+Zorathites	Zoratitas	Zoratitas	revisado	rev. IA: 1Cr 4:2 BL 'Zoratitas'; 1Cr 2:53 traz 'zorateus'; candidato Atarote é cidade
+Zuzim	Savé-Quiriataim	Zuzins	revisado	rev. IA: Gn 14:5 BL 'aos zuzins em Hã'; candidato Savé-Quiriataim é cidade
+Abaddon	Abadom	Abadom	revisado	rev. IA: Ap 9:11 BL 'Abadom' (hebraico); 'Apoliom' é o grego; candidato correto
+Abel-beth-maacah	Abel-Bete-Maaca	Abel de Bete-Maaca	revisado	rev. IA: 2Sm 20:15 BL 'Abel de Bete-Maaca'; candidato com hífens não é o texto
+Abiah	Abias	Abias	revisado	rev. IA: 1Cr 8:2 BL 'Abias'; candidato correto
+Abiel	Abiel	Abiel	revisado	rev. IA: 1Sm 9:1 BL 'filho de Abiel'; candidato correto
+Achaicus	Acaico	Acaico	revisado	rev. IA: 1Co 16:17 BL 'Acaico'; candidato correto
+Achsa	Acsa	Acsa	revisado	rev. IA: 1Cr 2:49 BL 'Acsa'; candidato correto
+Adam	Adão	Adão	revisado	rev. IA: Gn 2:19 BL 'Adão'; candidato correto
+Addar	Adar	Adar	revisado	rev. IA: 1Cr 8:3 BL 'Adar'; candidato correto
+Addon	Adom	Adom	revisado	rev. IA: Ne 7:61 BL 'Adom'; candidato correto
+Ader	Eder	Eder	revisado	rev. IA: 1Cr 8:15 BL 'Eder'; candidato correto
+Adin	Adim	Adim	revisado	rev. IA: Ed 2:15 BL 'filhos de Adim'; candidato correto
+Adoniram	Adonirão	Adonirão	revisado	rev. IA: 1Rs 4:6 BL 'Adonirão filho de Abda'; candidato correto
+Adria	Adriático	Adriático	revisado	rev. IA: At 27:27 BL 'mar Adriático'; candidato correto
+Aenon	Enom	Enom	revisado	rev. IA: Jo 3:23 BL 'em Enom, junto a Salim'; candidato correto
+Agabus	Ágabo	Ágabo	revisado	rev. IA: At 11:28 BL 'Ágabo'; candidato correto
+Agag	Agague	Agague	revisado	rev. IA: 1Sm 15:8 BL 'Agague rei de Amaleque'; candidato correto
+Ahiah	Aías	Aías	revisado	rev. IA: 1Rs 4:3 BL 'Aías, filhos de Sisa'; candidato correto
+Ahiam	Aião	Aião	revisado	rev. IA: 2Sm 23:33 BL 'Aião filho de Sarar'; candidato correto
+Ahiram	Airã	Airã	revisado	rev. IA: Nm 26:38 BL 'Airã, a família dos airamitas'; candidato correto
+Ahoah	Aoá	Aoá	revisado	rev. IA: 1Cr 8:4 BL 'Aoá'; candidato correto
+Ai	Ai	Ai	revisado	rev. IA: Js 7:2 BL 'Ai'; candidato correto
+Ain	Aim	Aim	revisado	rev. IA: Js 15:32 BL 'Aim'; candidato correto
+Akan	Jaacã	Acã	revisado	rev. IA: Gn 36:27 BL 'Acã'; candidato Jaacã é outro filho de Eser (1Cr 1:42)
+Akeldama	Aceldama	Aceldama	revisado	rev. IA: At 1:19 BL 'Aceldama'; candidato correto
+Alameth	Alemete	Alemete	revisado	rev. IA: 1Cr 7:8 BL 'Alemete'; candidato correto
+Alamoth	Alamote		sem	rev. IA: termo musical (1Cr 15:20 'sobre Alamote'), não nome próprio; candidato Alamote é o termo musical
+Allon	Alom	Alom	revisado	rev. IA: 1Cr 4:37 BL 'filho de Alom'; candidato correto
+Allon	Alom-Zaanim	Alom-Zaanim	revisado	rev. IA: Js 19:33 BL 'Alom-Zaanim'; candidato correto
+Amasiah	Amasias	Amasias	revisado	rev. IA: 2Cr 17:16 BL 'Amasias filho de Zicri'; candidato correto
+Ammon	Amom	Amom	revisado	rev. IA: Dt 2:19 BL 'filhos de Amom'; candidato correto
+Amon	Amom	Amom	revisado	rev. IA: 2Rs 21:18 BL 'reinou em seu lugar Amom seu filho'; candidato correto
+Amzi	Anzi	Anzi	revisado	rev. IA: 1Cr 6:46 BL 'filho de Anzi'; candidato correto
+Anak	Anaque	Anaque	revisado	rev. IA: Nm 13:22 BL 'filhos de Anaque'; candidato correto
+Ananiah	Ananias	Ananias	revisado	rev. IA: Ne 3:23 BL 'filho de Ananias'; candidato correto
+Anna	Ana	Ana	revisado	rev. IA: Lc 2:36 BL 'Ana, filha de Fanuel'; candidato correto
+Aphses	Hapises	Hapises	revisado	rev. IA: 1Cr 24:15 BL 'por Hapises'; candidato correto
+Ara	Ara	Ara	revisado	rev. IA: 1Cr 7:38 BL 'Ara'; candidato correto
+Arabah	Arabá		sem	rev. IA: BL usa 'Bete-Arabá' e termos comuns (planície, deserto); 'Arabá' sozinho não confirmado
+Arabia	Arábia	Arábia	revisado	rev. IA: 1Rs 10:15 BL 'reis de Arábia'; candidato correto
+Aram-maacah	Maaca	Síria de Maaca	revisado	rev. IA: 1Cr 19:6 BL 'da Síria de Maaca'; candidato Maaca é parte do nome
+Aran	Arã	Arã	revisado	rev. IA: 1Cr 1:42 BL 'Disã: Uz e Arã'; Gn 36:28 traz 'Harã'
+Arba	Arba	Arba	revisado	rev. IA: Js 14:15 BL 'Arba um homem grande'; candidato correto
+Archippus	Arquipo	Árquipo	revisado	rev. IA: Cl 4:17 BL 'Árquipo'; Fm 1:2 traz 'Arquipo'
+Arumah	Aruma	Aruma	revisado	rev. IA: Jz 9:41 BL 'ficou em Aruma'; candidato correto
+Asherah	Aserá	Aserá	revisado	rev. IA: Is 17:8 BL 'mastros de Aserá'; candidato correto
+Ashtoreth	Astarote	Astarote	revisado	rev. IA: 1Rs 11:5 BL 'Astarote, deusa dos sidônios'; candidato correto
+Atroth-beth-joab	Bete-Joabe		sem	rev. IA: 1Cr 2:54 BL traz 'Atarote' e 'Bete-Joabe' separados; nome composto não aparece
+Augustus	Augusto	Augusto	revisado	rev. IA: Lc 2:1 BL 'César Augusto'; candidato correto
+Azarael	Azareel	Azareel	revisado	rev. IA: Ne 12:36 BL 'Azareel'; candidato correto
+Azariahu	Azarias	Azarias	revisado	rev. IA: 2Cr 21:2 BL 'Azarias'; candidato correto
+Azotus	Azoto	Azoto	revisado	rev. IA: At 8:40 BL 'Azoto'; candidato correto
+Baalath-beer	Baalate-Beer	Baalate-Beer	revisado	rev. IA: Js 19:8 BL 'Baalate-Beer'; candidato correto
+Baale-judah	Judá	Baal de Judá	revisado	rev. IA: 2Sm 6:2 BL 'Baal de Judá'; candidato Judá é só parte do nome
+Baana	Baaná	Baaná	revisado	rev. IA: 1Rs 4:16 BL 'Baaná filho de Husai'; candidato correto
+Babylonia	Babilônia	Babilônia	revisado	rev. IA: Ed 1:11 BL 'da Babilônia'; candidato correto
+Bamoth-baal	Bamote-Baal	Bamote-Baal	revisado	rev. IA: Js 13:17 BL 'Bamote-Baal'; candidato correto
+Basemath	Basemate	Basemate	revisado	rev. IA: 1Rs 4:15 BL 'Basemate filha de Salomão'; candidato correto
+Basmath	Basemate	Basemate	revisado	rev. IA: 1Rs 4:15 BL 'Basemate filha de Salomão'; candidato correto
+Bath-shua	Bete-Suá	Bete-Suá	revisado	rev. IA: 1Cr 2:3 BL 'Bete-Suá, cananeia'; candidato correto (Gn 38:2 traz 'Sua')
+Bealoth	Alote	Bealote	revisado	rev. IA: Js 15:24 BL 'Bealote'; candidato Alote é outro lugar (1Cr 4:16)
+Beautiful Gate	porta do Templo	Porta Formosa	revisado	rev. IA: At 3:2 BL 'chamada Porta Formosa'; candidato 'porta do Templo' é descrição
+Beer-lahai-roi	Beer-Laai-Roi	Beer-Laai-Roi	revisado	rev. IA: Gn 25:11 BL 'Beer-Laai-Roi'; candidato correto
+Beon	Beom	Beom	revisado	rev. IA: Nm 32:3 BL 'Beom'; candidato correto
+Berothah	Berota	Berota	revisado	rev. IA: Ez 47:16 BL 'Berota'; candidato correto
+Berothai	Betá	Betá	revisado	rev. IA: 2Sm 8:8 BL 'Betá e de Beerote'; candidato correto
+Beth-azmaveth	Bete-Azmavete	Bete-Azmavete	revisado	rev. IA: Ne 7:28 BL 'Bete-Azmavete'; candidato correto
+Beth-gilgal	Gilgal	Casa de Gilgal	revisado	rev. IA: Ne 12:29 BL 'da casa de Gilgal'; candidato Gilgal é parte do nome
+Beth-millo	Milo	Casa de Milo	revisado	rev. IA: Jz 9:6 BL 'a casa de Milo'; candidato Milo é parte do nome
+Beth-rehob	Bete-Reobe	Bete-Reobe	revisado	rev. IA: Jz 18:28 BL 'vale que há em Bete-Reobe'; candidato correto
+Bethel	Betul	Betel	revisado	rev. IA: Gn 12:8 BL 'Betel'; candidato Betul não é o nome
+Birzaith	Bizarvite	Bizarvite	revisado	rev. IA: 1Cr 7:31 BL 'pai de Bizarvite'; candidato correto
+Blastus	Blasto	Blasto	revisado	rev. IA: At 12:20 BL 'Blasto'; candidato correto
+Bor-ashan	Corasã	Corasã	revisado	rev. IA: 1Sm 30:30 BL 'Corasã'; candidato correto
+Brook Eshcol	ribeiro de Escol	Ribeiro de Escol	revisado	rev. IA: Nm 13:23 BL 'ribeiro de Escol'; candidato correto
+Brook of Egypt	ribeiro do Egito	Ribeiro do Egito	revisado	rev. IA: Nm 34:5 BL 'ribeiro do Egito'; candidato correto
+Bunni	Bani	Buni	revisado	rev. IA: Ne 9:4 BL 'Buni'; candidato Bani é outra pessoa (Ne 9:4)
+Caphtor	Caftor	Caftor	revisado	rev. IA: Dt 2:23 BL 'os caftoreus que saíram de Caftor'; candidato correto
+Caphtorim	Caftorim	Caftorim	revisado	rev. IA: Gn 10:14 BL 'a Caftorim'; candidato correto
+Carpus	Carpo	Carpo	revisado	rev. IA: 2Tm 4:13 BL 'na casa de Carpo'; candidato correto
+Chaldea	Caldeia	Caldeia	revisado	rev. IA: Jr 50:10 BL 'a Caldeia'; candidato correto
+Chemosh	Quemos	Camos	revisado	rev. IA: Nm 21:29 BL 'povo de Camos'; candidato Quemos não aparece no texto
+Chesulloth	Quesulote	Quesulote	revisado	rev. IA: Js 19:18 BL 'Quesulote'; candidato correto
+Claudius	Cláudio	Cláudio	revisado	rev. IA: At 11:28 BL 'Cláudio César'; candidato correto
+Cnidus	Cnido	Cnido	revisado	rev. IA: At 27:7 BL 'em frente a Cnido'; candidato correto
+Colossae	Colossos	Colossos	revisado	rev. IA: Cl 1:2 BL 'em Colossos'; candidato correto
+Corinth	Corinto	Corinto	revisado	rev. IA: At 18:1 BL 'a Corinto'; candidato correto
+Corner Gate	porta de Efraim	Porta da esquina	revisado	rev. IA: 2Rs 14:13 BL 'até a porta da esquina'; candidato 'porta de Efraim' é outra porta
+Coz	Coz	Coz	revisado	rev. IA: 1Cr 4:8 BL 'Coz gerou a Anube'; candidato correto
+Crispus	Crispo	Crispo	revisado	rev. IA: At 18:8 BL 'Crispo, o chefe da sinagoga'; candidato correto
+Cun	Cum	Cum	revisado	rev. IA: 1Cr 18:8 BL 'de Cum, cidades de Hadadezer'; candidato correto
+Cyprus	Chipre	Chipre	revisado	rev. IA: Is 23:1 BL 'terra do Chipre'; candidato correto
+Cyrene	Cirene	Cirene	revisado	rev. IA: Mt 27:32 BL 'um homem de Cirene'; candidato correto
+Dalaiah	Delaías	Delaías	revisado	rev. IA: 1Cr 3:24 BL 'Delaías'; candidato correto
+Dekar	Ben-Dequer	Ben-Dequer	revisado	rev. IA: 1Rs 4:9 BL 'Ben-Dequer' (pessoa; candidato ok)
+Deker	Ben-Dequer	Ben-Dequer	revisado	rev. IA: 1Rs 4:9 mesma pessoa de Dekar; BL 'Ben-Dequer'
+Destruction	Destruição	Cidade da Destruição	revisado	rev. IA: Is 19:18 BL 'Cidade da Destruição' (Ir-ha-Heres); candidato 'Destruição' é só o substantivo
+Diblathaim	Almom-Diblataim	Almom-Diblataim	revisado	rev. IA: Nm 33:46 BL 'Almom-Diblataim' (candidato ok; Bete-Diblataim é outro lugar)
+Dibon	Dimom	Dibom	revisado	rev. IA: Nm 21:30 BL 'Dibom' (cidade de Moabe); 'Dimom' do candidato nao aparece
+Dimnah	Dimna	Dimna	revisado	rev. IA: Js 21:35 BL 'Dimna' (cidade levita)
+Dung Gate	porta do Esterco	Porta do Esterco	revisado	rev. IA: Ne 2:13 e 3:13 BL 'porta do Esterco'
+Ebal Mount	monte de Ebal	Monte Ebal	revisado	rev. IA: Dt 11:29 BL 'monte Ebal' (Dt 27:4 'monte de Ebal')
+Ebron	Hebrom	Hebrom	revisado	rev. IA: Js 19:28 BL 'Hebrom' (cidade de Aser, Ebron)
+Ela	Elá	Elá	revisado	rev. IA: 1Rs 4:18 BL 'Elá' (filho de Elá)
+Eliadah	Eliada	Eliada	revisado	rev. IA: 1Rs 11:23 BL 'Eliada' (pai de Rezom)
+Eliah	Elias	Elias	revisado	rev. IA: 1Cr 8:27 BL 'Elias' (filho de Jeroão); nao confundir com o profeta
+Eliehoenai	Elioenai	Elioenai	revisado	rev. IA: 1Cr 26:3 BL 'Elioenai'
+Elienai	Elioenai	Elioenai	revisado	rev. IA: 1Cr 8:20 BL 'Elioenai'
+Elihoenai	Elioenai	Elioenai	revisado	rev. IA: Ed 8:4 BL 'Elioenai, filho de Zeraías'
+Elmadam	Elmodã	Elmodã	revisado	rev. IA: Lc 3:28 BL 'Elmodã'
+Emmaus	Emaús	Emaús	revisado	rev. IA: Lc 24:13 BL 'Emaús'
+En-tappuah	Tapua	Tapua	revisado	rev. IA: Js 17:7 BL 'Tapua' (aos que habitam em Tapua; 'Micmetá' e outra cidade)
+Enaim	Então		sem	rev. IA: Gn 38:14 BL traduz o lugar como 'porta das águas' (sem nome no versículo); 'Então' é palavra comum
+Enam	Enã	Enã	revisado	rev. IA: Js 15:34 BL 'Enã'
+Epaenetus	Epêneto	Epêneto	revisado	rev. IA: Rm 16:5 BL 'Epêneto'
+Ephes-dammim	Efes-Damim	Efes-Damim	revisado	rev. IA: 1Sm 17:1 BL 'Efes-Damim'
+Ephesus	Éfeso	Éfeso	revisado	rev. IA: At 18:19 BL 'Éfeso' (At 18:19 e 18:21)
+Erastus	Erasto	Erasto	revisado	rev. IA: At 19:22 BL 'Erasto' (Rm 16:23 BL 'Erasto')
+Esau Mount	monte de Esaú	Montanha de Esaú	revisado	rev. IA: Ob 1:8 BL 'montanha de Esaú'
+Etham	Etã	Etã	revisado	rev. IA: Ex 13:20 BL 'Etã' (lugar na entrada do deserto)
+Ethan	Etã	Etã	revisado	rev. IA: 1Rs 4:31 BL 'Etã ezraíta' (sábio); mesma grafia nos demais
+Ethiopia	Etíopes	Cuxe	revisado	rev. IA: Gn 2:13 BL 'terra de Cuxe'; 'Etiópia' aparece uma vez (2Cr 12:9); 'Etíopes' e povo
+Eubulus	Êubulo	Êubulo	revisado	rev. IA: 2Tm 4:21 BL 'Êubulo'
+Euodias	Evódia	Evódia	revisado	rev. IA: Fp 4:2 BL 'Evódia'
+Euphrates	Eufrates	Eufrates	revisado	rev. IA: Gn 2:14 BL 'Eufrates'
+Eutychus	Êutico	Êutico	revisado	rev. IA: At 20:9 BL 'Êutico'
+Eve	Eva	Eva	revisado	rev. IA: Gn 3:20 BL 'Eva'
+Ezem	Ezém	Ezém	revisado	rev. IA: 1Cr 4:29 BL 'Ezém'; Js 15:29 usa 'Azém' (mesma cidade)
+Gate Miphkad	porta da Inspeção	Porta da Inspeção	revisado	rev. IA: Ne 3:31 BL 'porta da Inspeção' (Miphkad)
+Gate of the Guard	porta da Prisão	Porta da Prisão	revisado	rev. IA: Ne 12:39 BL 'porta da Prisão' (última porta da lista)
+Geba	Gibeá	Geba	revisado	rev. IA: Js 18:24 BL 'Geba' (cidade de Benjamim; nao confundir com Gibeá)
+Geber	Ben-Geber	Geber	revisado	rev. IA: 1Rs 4:19 BL 'Geber filho de Uri'; Ben-Geber (1Rs 4:13) e outra pessoa
+Gederah	Gedera	Gederá	revisado	rev. IA: Js 15:36 BL 'Gederá' (acento)
+Geliloth	Gelilote	Gelilote	revisado	rev. IA: Js 18:17 BL 'Gelilote'
+Gershom	Gérson	Gérson	revisado	rev. IA: Ex 2:22 BL 'Gérson'
+Geuel	Guel	Guel	revisado	rev. IA: Nm 13:15 BL 'Guel, filho de Maqui'
+Gibea	Gibeá	Gibeá	revisado	rev. IA: 1Cr 2:49 BL 'Gibeá' (pessoa, filha de Seva/Gibeá)
+Gibeon	Gibeom	Gibeão	revisado	rev. IA: Js 9:3 BL 'Gibeão' (grafia da Bíblia Livre)
+Great Sea	mar Grande	Mar Grande	revisado	rev. IA: Ez 47:15 BL 'mar Grande' (Js 15:12 'o mar grande')
+Greece	Grécia	Grécia	revisado	rev. IA: Dn 8:21 BL 'Grécia'
+Guard Gate	porta Velha	Porta da Prisão	revisado	rev. IA: Ne 12:39 BL: 'porta da Prisão' e a última porta (miphkad); 'porta Velha' é a Yeshanah
+Hadar	Hadade	Hadade	revisado	rev. IA: Gn 25:15 BL 'Hadade' (filho de Ismael)
+Hagri	Hagri	Hagri	revisado	rev. IA: 1Cr 11:38 BL 'Mibar, filho de Hagri'
+Hahiroth	Pi-Hairote	Pi-Hairote	revisado	rev. IA: Nm 33:8 BL 'Pi-Hairote'
+Ham	Hã		sem	rev. IA: Ham: pessoa (Cam, Gn 5:32) e lugar (Hã, Gn 14:5) com o mesmo nome; ambiguo, sem
+Hamath-zobah	Zobá	Hamate de Zobá	revisado	rev. IA: 2Cr 8:3 BL 'Hamate de Zobá' (cidade); 'Zobá' e so o reino
+Hammath	Hamate	Hamate	revisado	rev. IA: 1Cr 2:55 BL 'Hamate' (pai da casa de Recabe); Js 19:35 tambem 'Hamate'
+Hammon	Hamom	Hamom	revisado	rev. IA: Js 19:28 BL 'Hamom'
+Hananiah	Ananias	Hananias	revisado	rev. IA: 1Cr 25:4 e 3:19 BL 'Hananias' (OT); 'Ananias' e o nome do NT
+Hanoch	Enoque	Enoque	revisado	rev. IA: Gn 25:4 e Gn 46:9 BL 'Enoque'
+Hanun	Hanum	Hanum	revisado	rev. IA: 2Sm 10:1 BL 'Hanum'
+Harod	Harode	Harode	revisado	rev. IA: Jz 7:1 BL 'Harode' (fonte de Harode)
+Harosheth-hagoyim	Harosete	Harosete das nações	revisado	rev. IA: Jz 4:2 BL 'Harosete das nações' (cidade; 'Nações' do candidato era a forma traduzida)
+Hashabniah	Hasbaneias	Hasbaneias	revisado	rev. IA: Ne 3:10 BL 'Hasbaneias' (pai de Hatus)
+Havvoth-jair	Havote-Jair	Havote-Jair	revisado	rev. IA: Nm 32:41 BL 'Havote-Jair'
+Hebrews	Hebreus	Hebreus	revisado	rev. IA: BL usa 'hebreus' (minuscula) na maioria; nome de povo, forma com inicial maiuscula
+Heleb	Helebe	Helebe	revisado	rev. IA: 2Sm 23:29 BL 'Helebe'
+Heli	Eli	Eli	revisado	rev. IA: Lc 3:23 BL 'Eli' (filho de Eli, ancestral de Jesus)
+Hemam	Hemã	Hemã	revisado	rev. IA: Gn 36:22 BL 'Hemã'
+Hemath	Hamate	Hamate	revisado	rev. IA: 1Cr 2:55 BL 'Hamate, pai da casa de Recabe' (mesmo nome do Hammath)
+Hemdan	Hendã	Hendã	revisado	rev. IA: Gn 36:26 BL 'Hendã'
+Henoch	Enoque	Enoque	revisado	rev. IA: Gn 25:4 BL 'Enoque' (filho de Midiã)
+Hermon	Hermon	Hermom	revisado	rev. IA: Dt 3:9 BL 'Hermom' (a grafia do candidato, 'Hermon', nao e a do texto)
+Hermon Mount	monte de Hermom	Monte de Hermom	revisado	rev. IA: Dt 3:8 BL 'monte de Hermom'
+Herodian	Herodes		sem	rev. IA: Mt 22:16 BL cita os "apoiadores de Herodes" (grupo sem nome proprio no texto); Herodes e o rei
+Hesed	Ben-Hesede	Ben-Hesede	revisado	rev. IA: 1Rs 4:10 BL 'Ben-Hesede, em Arubote'
+Heth	Hete	Hete	revisado	rev. IA: Gn 10:15 BL 'Hete' (filho de Canaã)
+Hezeki	Hizqui	Hizqui	revisado	rev. IA: 1Cr 8:17 BL 'Hizqui'
+Hezron	Hebrom	Hezrom	revisado	rev. IA: Gn 46:9 BL 'Hezrom' (filho de Rúben); 'Hebrom' do candidato e outra cidade
+Hilen	Hilém	Hilém	revisado	rev. IA: 1Cr 6:58 BL 'Hilém'
+Hizkiah	Ezequias	Ezequias	revisado	rev. IA: 1Cr 3:23 BL 'Ezequias' (filho de Nearias)
+Hizkijah	Ezequias	Ezequias	revisado	rev. IA: Ne 10:17 BL 'Ezequias'
+Hodaiah	Hodavias	Hodavias	revisado	rev. IA: 1Cr 3:24 BL 'Hodavias'
+Hodevah	Hodeva	Hodavias	revisado	rev. IA: Ed 2:40 BL 'Hodavias' (família de Ed 2:40); 'Hodeva' do candidato nao aparece
+Hoham	Hoão	Hoão	revisado	rev. IA: Js 10:3 BL 'Hoão rei de Hebrom'
+Holon	Holom	Holom	revisado	rev. IA: Js 15:51 BL 'Holom'
+Hophra	Ofra		sem	rev. IA: Jr 37:5 BL so diz 'Faraó' (titulo, sem nome proprio); pt Bibles (ex. bibliaonline Jr 44:30) usam 'Hofra', mas o texto BL nao traz; sem
+Horam	Horão	Horão	revisado	rev. IA: Js 10:33 BL 'Horão, rei de Gezer'
+Hori	Hori	Hori	revisado	rev. IA: Gn 36:22 BL 'Hori' (filho de Lotã)
+Horse Gate	porta dos Cavalos	Porta dos Cavalos	revisado	rev. IA: Ne 3:28 BL 'porta dos Cavalos'
+Hosea	Oseias	Oseias	revisado	rev. IA: Os 1:1 BL 'Oseias'
+Hotham	Hotão	Hotão	revisado	rev. IA: 1Cr 7:32 BL 'Hotão' (filho de Héber)
+Hothan	Hotão	Hotão	revisado	rev. IA: 1Cr 11:44 BL 'Hotão' (aroerita)
+Humtah	Hunta	Hunta	revisado	rev. IA: Js 15:54 BL 'Hunta'
+Huram	Hurão	Hurão	revisado	rev. IA: 1Cr 8:5 BL 'Hurão' (filho de Bela)
+Hushah	Husá	Husá	revisado	rev. IA: 1Cr 4:4 BL 'Husá' (pai de Husá)
+Husham	Husão	Husão	revisado	rev. IA: Gn 36:34 BL 'Husão' (rei de Edom)
+Huz	Uz	Uz	revisado	rev. IA: Gn 22:21 BL 'Uz' (filho de Naor); 'Huz' e a mesma grafia de origem
+Ijon	Ijom	Ijom	revisado	rev. IA: 1Rs 15:20 BL 'Ijom'
+Imla	Inlá	Inlá	revisado	rev. IA: 1Rs 22:8 BL 'Micaías, filho de Inlá'
+Imlah	Inlá	Inlá	revisado	rev. IA: 1Rs 22:8 BL 'Micaías, filho de Inlá'
+Imrah	Inra	Inra	revisado	rev. IA: 1Cr 7:36 BL 'Inra'
+Imri	Inri	Inri	revisado	rev. IA: 1Cr 9:4 BL 'Inri' (filho de Onri)
+Ir-moab	Moabe	Cidade de Moabe	revisado	rev. IA: Nm 22:36 BL 'cidade de Moabe' (Ir-Moabe); 'Arnom' do candidato nao e nome
+Ir-nahash	Naás	Naás	revisado	rev. IA: 1Cr 4:12 BL 'cidade de Naás' (Ir-Naás)
+Ishiah	Issias	Issias	revisado	rev. IA: 1Cr 7:3 BL 'Issias'
+Ishijah	Issias	Issias	revisado	rev. IA: Ed 10:31 BL 'Issias' (lista de filhos de Harim)
+Isshijah	Issias	Issias	revisado	rev. IA: Ed 10:31 BL 'Issias'
+Isuah	Isva	Isva	revisado	rev. IA: Gn 46:17 BL 'Isva' (filho de Aser)
+Isui	Isvi	Isvi	revisado	rev. IA: Gn 46:17 BL 'Isvi' (filho de Aser)
+Ituraea	Itureia	Itureia	revisado	rev. IA: Lc 3:1 BL 'Itureia'
+Izhar	Zoar	Izar	revisado	rev. IA: Ex 6:18 BL 'Izar' (filho de Coate); 'Zoar' do candidato e outra pessoa (1Cr 4:7)
+Jaasu	Jaasai	Jaasai	revisado	rev. IA: Ed 10:37 BL 'Jaasai'
+Jaaziel	Aziel	Jaaziel	revisado	rev. IA: 1Cr 15:18 BL 'Jaaziel' (levita, musico); 'Aziel' do candidato nao e a forma do texto
+Jabesh-gilead	Jabes-Gileade	Jabes-Gileade	revisado	rev. IA: Jz 21:8 BL 'Jabes-Gileade'
+Jacob	Jacó	Jacó	revisado	rev. IA: Mt 1:15 BL 'Jacó' (pai de Jose; nao o patriarca)
+Jairus	Jairo	Jairo	revisado	rev. IA: Mc 5:22 BL 'Jairo'
+Jakim	Jaquim	Jaquim	revisado	rev. IA: 1Cr 8:19 BL 'Jaquim' (benjamita)
+Jamlech	Janleque	Janleque	revisado	rev. IA: 1Cr 4:34 BL 'Janleque'
+Jarmuth	Jarmute	Jarmute	revisado	rev. IA: Js 21:29 BL 'Jarmute' (candidato ok)
+Jason	Jáson	Jasão	revisado	rev. IA: At 17:5 BL 'casa de Jasão' (anfitrião em Tessalônica); 'Jáson' e outra pessoa (Rm 16:21)
+Jattir	Jatir	Jatir	revisado	rev. IA: Js 15:48 BL 'Jatir'
+Javan	Javã	Javã	revisado	rev. IA: Gn 10:2 BL 'Javã' (filho de Jafé)
+Jehiel	Jeieli	Jeiel	revisado	rev. IA: 1Cr 15:18 BL 'Jeiel' (musico levita); 'Jeieli' nao aparece
+Jehohanan	Joanã	Joanã	revisado	rev. IA: 2Cr 23:1 e 26:3 BL 'Joanã' (Jehohanan)
+Jehoiachin	Joaquim	Joaquim	revisado	rev. IA: 2Rs 24:6 BL 'Joaquim' (filho de Jeoaquim)
+Jehonathan	Jônatas	Jônatas	revisado	rev. IA: 1Cr 27:25 BL 'Jônatas filho de Uzias' (e outras pessoas)
+Jehoram	Jorão	Jeorão	revisado	rev. IA: 1Rs 22:50 BL 'Jeorão' (rei de Judá); a forma 'Jorão' e de outro rei/sacerdote
+Jehoshabeath	Jeosebate	Jeoseba	revisado	rev. IA: 2Rs 11:2 BL 'Jeoseba' (candidato Jeosebate nao aparece)
+Jehuel	Jeiel	Jeiel	revisado	rev. IA: 2Cr 29:14 BL 'Jeiel' (levita)
+Jehush	Jeús	Jeús	revisado	rev. IA: 1Cr 8:39 BL 'Jeús'
+Jerijah	Jerias	Jerias	revisado	rev. IA: 1Cr 26:31 BL 'Jerias'
+Jesaiah	Jesaías	Jesaías	revisado	rev. IA: 1Cr 3:21 BL 'Jesaías'
+Jeshimon	Jesimom	Jesimom	revisado	rev. IA: Nm 21:20 BL 'Jesimom'
+Jesiah	Issias	Issias	revisado	rev. IA: 1Cr 12:6 BL 'Issias'
+Jethro	Jetro	Jetro	revisado	rev. IA: Ex 2:18 e 3:1 BL 'Jetro' (sogro de Moisés); 'Egito' e alt errado
+Jeuel	Jeiel	Jeuel	revisado	rev. IA: 1Cr 9:6 BL 'Jeuel' (grafia do texto; nao Jeiel)
+Jeuz	Jeús	Jeús	revisado	rev. IA: 1Cr 8:10 BL 'Jeús'
+Jezoar	Zoar	Zoar	revisado	rev. IA: 1Cr 4:7 BL 'Zoar' (filho de Helá)
+Jezreel	Jezreelita	Jezreel	revisado	rev. IA: 2Sm 4:4 e Js 15:56 BL 'Jezreel' (lugar e pessoa); 'Jezreelita' e gentilico
+Joah	Ido	Joabe	revisado	rev. IA: 1Cr 6:21 BL 'Joabe' (filho de Zerá? ) - 'Ido' do candidato e o nome seguinte no texto
+Joah	Joabe	Joabe	revisado	rev. IA: 1Cr 26:4 BL 'Joabe' (filho de Obede-Edom)
+Joahaz	Joá	Joá	revisado	rev. IA: 2Cr 34:8 BL 'Joá filho de Jeoacaz'
+Joda	Judá	Judá	revisado	rev. IA: Lc 3:26 BL 'Judá' (ancestral)
+Joha	Joá	Joá	revisado	rev. IA: 1Cr 8:16 BL 'Joá, foram filhos de Berias'
+John	Jonas	João	revisado	rev. IA: Mt 3:1 BL 'João Batista' (apóstolo/profeta); 'Jonas' do candidato e o pai de Simão
+Joiada	Joiada	Joiada	revisado	rev. IA: Ne 12:10 BL 'Joiada'
+Jonas	Jonas	Jonas	revisado	rev. IA: Jo 1:42 BL 'Jonas' (pai de Pedro)
+Josabad	Jozabade	Jozabade	revisado	rev. IA: 1Cr 12:4 BL 'Jozabade'
+Jose	José	José	revisado	rev. IA: Lc 3:29 BL 'José' (filho de Eliézer)
+Josech	José	José	revisado	rev. IA: Lc 3:26 BL 'José' (filho de Matatias)
+Joses	José	José	revisado	rev. IA: Mt 13:55 BL 'José' (irmão de Jesus)
+Joshah	Josias	Josias	revisado	rev. IA: 1Cr 4:34 BL 'Josias filho de Amazias'
+Joshaphat	Josafá	Josafá	revisado	rev. IA: 1Cr 11:43 BL 'Josafá o mitenita'
+Joshua	José	Josué	revisado	rev. IA: Ex 17:9 BL 'Josué'; 'José' do candidato e outra pessoa
+Jozadak	Jozadaque	Jozadaque	revisado	rev. IA: Ed 10:18 BL 'Jozadaque' (pai de Jesua)
+Juda	Judá	Judá	revisado	rev. IA: Lc 3:26 BL 'Judá' (ancestral)
+Jude	Judas	Judas	revisado	rev. IA: Mt 13:55 BL 'Judas' (irmão de Jesus)
+Julius	Júlio	Júlio	revisado	rev. IA: At 27:1 BL 'Júlio' (centurião)
+Justus	Justo	Justo	revisado	rev. IA: At 18:7 BL 'Justo' (Cl 4:11 'Jesus, chamado Justo')
+Kadesh-barnea	Cades-Barneia	Cades-Barneia	revisado	rev. IA: Nm 32:8 BL 'Cades-Barneia'
+Kain	Caim	Caim	revisado	rev. IA: Js 15:57 BL 'Caim' (cidade); a pessoa Caim (Gn 4:1) tem o mesmo nome em BL
+Karnaim	Asterote-Carnaim	Carnaim	revisado	rev. IA: Am 6:13 BL 'Carnaim'; 'Asterote-Carnaim' do candidato e outra cidade (Gn 14:5)
+Kedesh-naphtali	Naftali	Quedes de Naftali	revisado	rev. IA: Jz 4:6 BL 'Quedes de Naftali'
+Kidron	Cedrom	Cedrom	revisado	rev. IA: 2Sm 15:23 BL 'ribeiro de Cedrom'
+King's Valley	vale do Rei	Vale do Rei	revisado	rev. IA: Gn 14:17 BL 'o vale do Rei'
+Kir	Quir	Quir	revisado	rev. IA: 2Rs 16:9 BL 'Quir'
+Kir-hareseth	Quir-Haresete	Quir-Haresete	revisado	rev. IA: 2Rs 3:25 BL 'Quir-Haresete'
+Kiriath-arim	Quiriate-Jearim	Quiriate-Jearim	revisado	rev. IA: Ed 2:25 BL 'Quiriate-Jearim' (lista de Quiriate-Jearim)
+Kitron	Quitrom	Quitrom	revisado	rev. IA: Jz 1:30 BL 'Quitrom'
+Kiyyun	Quium	Quium	revisado	rev. IA: Am 5:26 BL 'Quium' (divindade; 'Sicute' e outra palavra)
+Korah	Corá	Corá	revisado	rev. IA: Gn 36:16 e 1Cr 2:43 BL 'Corá' (ver Coré para o levita de Cor)
+Kore	Coré	Coré	revisado	rev. IA: 1Cr 9:19 BL 'Coré' (porteiro levita)
+LORD	Acorda		sem	rev. IA: Nome divino (SENHOR no texto); 'Acorda' do candidato e palavra comum
+Laadan	Ladã	Laadã	revisado	rev. IA: 1Cr 7:26 BL 'Laadã' (filho de Elisama)
+Laishah	Laís	Laís	revisado	rev. IA: Is 10:30 BL 'Laís'
+Lebo-hamath	Lebo-Hamate	Lebo-Hamate	revisado	rev. IA: Ez 47:15 BL 'Lebo-Hamate'
+Levi	Levi	Levi	revisado	rev. IA: Gn 29:34 BL 'Levi' (filho de Jacó)
+Leviathan	Leviatã	Leviatã	revisado	rev. IA: Is 27:1 BL 'Leviatã' (serpente)
+Libya	Líbia	Líbia	revisado	rev. IA: Na 3:9 BL 'Pute e Líbia'
+Linus	Lino	Lino	revisado	rev. IA: 2Tm 4:21 BL 'Lino'
+Lois	Loide	Loide	revisado	rev. IA: 2Tm 1:5 BL 'Loide'
+Lucius	Lúcio	Lúcio	revisado	rev. IA: At 13:1 BL 'Lúcio cireneu'
+Luke	Lucas	Lucas	revisado	rev. IA: Cl 4:14 BL 'Lucas, o médico amado'
+Maath	Maate	Maate	revisado	rev. IA: Lc 3:26 BL 'Maate'
+Magadan	Magdala	Magdala	revisado	rev. IA: Mt 15:39 BL 'região de Magdala' (Magadã)
+Mahalah	Maalá	Maalá	revisado	rev. IA: 1Cr 7:18 BL 'Maalá'
+Mahalath	Maalate	Maalate	revisado	rev. IA: 2Cr 11:18 BL 'Maalate'
+Malchus	Malco	Malco	revisado	rev. IA: Jo 18:10 BL 'Malco' (servo do sumo sacerdote)
+Mash	Mas	Mas	revisado	rev. IA: Gn 10:23 BL 'Mas' (filho de Arã)
+Maskil	Assim		sem	rev. IA: Termo musical (titulo dos Salmos); 'Assim' do candidato e palavra comum; BL nao traz o termo no versiculo
+Matthan	Matã	Matã	revisado	rev. IA: Mt 1:15 BL 'Matã' (pai de Jacó)
+Matthew	Mateus	Mateus	revisado	rev. IA: Mt 9:9 BL 'Mateus'
+Mehir	Maquir	Maquir	revisado	rev. IA: 1Cr 4:11 BL 'Maquir'
+Melita	Malta	Malta	revisado	rev. IA: At 28:1 BL 'Malta'
+Memphis	Mênfis	Mênfis	revisado	rev. IA: Ez 30:13 BL 'Mênfis' (cidade do Egito)
+Menan	Mainã	Mainã	revisado	rev. IA: Lc 3:31 BL 'Mainã' (filho de Meleá)
+Menna	Mainã	Mainã	revisado	rev. IA: Lc 3:31 BL 'Mainã'
+Meribah	Meribá	Meribá	revisado	rev. IA: Ex 17:7 BL 'Massá e Meribá' (lugar)
+Meribah-kadesh	Meribá-Cades	Meribá-Cades	revisado	rev. IA: Ez 47:19 BL 'Meribá-Cades'
+Meshech-Tubal	Tubal	Meseque e Tubal	revisado	rev. IA: Ez 32:26 BL 'Meseque e Tubal' (povos)
+Miamin	Miamim	Miamim	revisado	rev. IA: Ed 10:25 BL 'Miamim'
+Mica	Mica	Mica	revisado	rev. IA: 1Cr 9:15 BL 'Mica'
+Micah	Miqueias		sem	rev. IA: Ambiguo: 'Micah' e Mica (1Cr 23:20; 1Cr 5:5; 2Sm 9:12) em BL, mas o profeta (Miqueias) e outra pessoa; sem
+Micaiah	Miqueias	Micaías	revisado	rev. IA: 1Rs 22:8 BL 'Micaías' (profeta); 'Miqueias' do candidato e o profeta Miqueias (Mq)
+Micha	Mica	Mica	revisado	rev. IA: 1Cr 9:15 BL 'Mica' (filho de Zicri)
+Michah	Mica	Mica	revisado	rev. IA: 1Cr 23:20 BL 'Mica o primeiro' (sacerdote)
+Michaiah	Micaías	Micaías	revisado	rev. IA: 2Rs 22:12 BL 'Micaías' (pai de Acbor)
+Michaiah	Miqueias	Micaías	revisado	rev. IA: 1Rs 22:8 BL 'Micaías' (profeta); 'Miqueias' do candidato e outra forma
+Michmas	Micmás	Micmás	revisado	rev. IA: Ed 2:27 BL 'Micmás'
+Miletus	Mileto	Mileto	revisado	rev. IA: At 20:15 BL 'Mileto'
+Miniamin	Benjamim	Miniamim	revisado	rev. IA: Ne 12:41 BL 'Miniamim' (sacerdote); 'Benjamim' do candidato e outra pessoa
+Mishael	Misael	Misael	revisado	rev. IA: Dn 1:6 BL 'Misael'
+Mizpeh	Mispá	Mispá	revisado	rev. IA: Js 15:38 BL 'Mispá'
+Moadiah	Moadias	Moadias	revisado	rev. IA: Ne 12:17 BL "Moadias" (sacerdote); "Maazias" de Ne 10:8 e outra pessoa
+Molech	Moloque	Moloque	revisado	rev. IA: Lv 18:21 BL 'Moloque' (divindade)
+Mordecai	Mordecai	Mardoqueu	revisado	rev. IA: Et 2:5 BL 'Mardoqueu'
+Moresheth	Moresete-Gate	Moresete-Gate	revisado	rev. IA: Mq 1:14 BL 'Moresete-Gate' (lugar; 'morastita' e o gentilico de Miqueias)
+Moresheth-gath	Moresete-Gate	Moresete-Gate	revisado	rev. IA: Mq 1:14 BL 'Moresete-Gate' (candidato ok)
+Mount Carmel	monte de Carmelo	Monte de Carmelo	revisado	rev. IA: 1Rs 18:19 BL 'monte de Carmelo'
+Mount Esau	monte de Esaú	Montanha de Esaú	revisado	rev. IA: Ob 1:8 BL 'montanha de Esaú' (texto usa montanha, nao monte)
+Mount Hermon	monte de Hermom	Monte de Hermom	revisado	rev. IA: Dt 3:8 BL 'monte de Hermom'
+Mount Horeb	monte Horebe	Monte Horebe	revisado	rev. IA: Ex 33:6 BL 'monte Horebe'
+Mount Seir	monte de Seir	Monte de Seir	revisado	rev. IA: Dt 1:2 BL 'monte de Seir'
+Mount Sinai	monte Sinai	Monte de Sinai	revisado	rev. IA: Ex 19:11 BL 'monte de Sinai' (candidato 'monte Sinai' nao aparece aqui)
+Mount Tabor	monte de Tabor	Monte de Tabor	revisado	rev. IA: Jz 4:6 BL 'monte de Tabor'
+Mount of Esau	monte de Esaú	Montanha de Esaú	revisado	rev. IA: Ob 1:8 BL 'montanha de Esaú'
+Mozah	Moza	Moza	revisado	rev. IA: Js 18:26 BL 'Moza'
+Muppim	Mupim	Mupim	revisado	rev. IA: Gn 46:21 BL 'Mupim'
+Muster Gate	porta da Inspeção	Porta da Inspeção	revisado	rev. IA: Ne 3:31 BL 'porta da Inspeção'
+Nagge	Nagai	Nagai	revisado	rev. IA: Lc 3:25 BL 'Nagai'
+Nahalol	Naalol	Naalol	revisado	rev. IA: Jz 1:30 BL 'Naalol' (cidade de Zebulom)
+Nain	Naim	Naim	revisado	rev. IA: Lc 7:11 BL 'Naim'
+Nazareth	Nazaré	Nazaré	revisado	rev. IA: Mt 2:23 BL 'Nazaré'
+Neah	Neá	Neá	revisado	rev. IA: Js 19:13 BL 'Neá'
+Nebo Mount	monte Nebo	Monte Nebo	revisado	rev. IA: Dt 32:49 BL 'ao monte Nebo' (Nm 27:12 usa 'monte Abarim')
+Negeb	Negueve	Negueve	revisado	rev. IA: Is 21:1 BL 'Negueve'
+Netophah	Netofá	Netofá	revisado	rev. IA: Ed 2:22 BL 'Netofá' (Netofate em 2Sm 23:28)
+Nile	Nilo	Nilo	revisado	rev. IA: Ex 7:19 e demais textos BL 'Nilo' (Gn 41:1 diz 'rio'); candidato ok
+Nimrod	Ninrode	Ninrode	revisado	rev. IA: Gn 10:8 BL 'Ninrode'
+Nympha	Ninfas	Ninfas	revisado	rev. IA: Cl 4:15 BL 'Ninfas'
+Oded	Obede	Obede	revisado	rev. IA: 2Cr 15:1 e 28:9 BL 'Obede' (profeta)
+Old Gate	porta Velha	Porta Velha	revisado	rev. IA: Ne 3:6 BL 'porta Velha'
+Olivet	Oliveiras	Monte das Oliveiras	revisado	rev. IA: Lc 19:29 BL 'monte chamado das Oliveiras'
+Oren	Orém	Orém	revisado	rev. IA: 1Cr 2:25 BL 'Orém'
+Orpah	Orfa	Orfa	revisado	rev. IA: Rt 1:4 BL 'Orfa' (moabita)
+Paddan	Padã-Arã	Padã-Arã	revisado	rev. IA: Gn 25:20 BL 'Padã-Arã' (lugar de Betuel)
+Parthians	Partos	Partos	revisado	rev. IA: At 2:9 BL 'Partos'
+Passover	Páscoa	Páscoa	revisado	rev. IA: Ex 12:11 BL 'Páscoa do SENHOR' (festa)
+Perga	Perges	Perges	revisado	rev. IA: At 13:13 BL 'Perges' (cidade da Panfília)
+Persis	Pérside	Pérside	revisado	rev. IA: Rm 16:12 BL 'a amada Pérside' (mulher)
+Pharisee	Fariseu	Fariseu	revisado	rev. IA: Mt 3:7 BL 'fariseus' (grupo); forma singular para o grupo
+Pharosh	Parós	Parós	revisado	rev. IA: Ed 8:3 BL 'filhos de Parós'
+Phaseah	Paseia	Paseia	revisado	rev. IA: Ed 2:49 BL 'filhos de Paseia'
+Phenice	Fênix	Fênix	revisado	rev. IA: At 27:12 BL 'Fênix' (porto de Creta)
+Philetus	Fileto	Fileto	revisado	rev. IA: 2Tm 2:17 BL 'Fileto'
+Philippi	Filipos	Filipos	revisado	rev. IA: At 16:12 BL 'Filipos'
+Philistia	Filístia	Filístia	revisado	rev. IA: Ex 15:14 BL 'filístia' (região; grafia com inicial maiúscula como nome)
+Philistine	Filisteus	Filisteus	revisado	rev. IA: Gn 10:14 BL 'filisteus' (povo; nome de grupo com inicial maiúscula)
+Phurah	Pura	Pura	revisado	rev. IA: Jz 7:10 BL 'Pura' (servo de Gideão)
+Phygellus	Fígelo	Fígelo	revisado	rev. IA: 2Tm 1:15 BL 'Fígelo'
+Phygelus	Fígelo	Fígelo	revisado	rev. IA: 2Tm 1:15 BL 'Fígelo'
+Pirathon	Piratom	Piratom	revisado	rev. IA: Jz 12:15 BL 'Piratom'
+Pochereth	Poquerete-Hazebaim	Poquerete-Hazebaim	revisado	rev. IA: Ed 2:57 BL 'Poquerete-Hazebaim'
+Pontus	Ponto	Ponto	revisado	rev. IA: At 2:9 BL 'Ponto'
+Puah	Pua	Puá	revisado	rev. IA: Ex 1:15 BL 'Puá' (parteira)
+Publius	Públio	Públio	revisado	rev. IA: At 28:7 BL 'Públio'
+Pudens	Pudente	Pudente	revisado	rev. IA: 2Tm 4:21 BL 'Pudente'
+Quartus	Quarto	Quarto	revisado	rev. IA: Rm 16:23 BL 'o irmão Quarto'
+Quirinius	Quirino	Quirino	revisado	rev. IA: Lc 2:2 BL 'Quirino' (governador da Síria)
+Raamses	Ramessés	Ramessés	revisado	rev. IA: Ex 1:11 BL 'Ramessés'
+Rachab	Raabe	Raabe	revisado	rev. IA: Mt 1:5 BL 'Raabe'
+Raham	Raão	Raão	revisado	rev. IA: 1Cr 2:44 BL 'Raão'
+Rakem	Requém	Requém	revisado	rev. IA: 1Cr 7:16 BL 'Requém'
+Ram	Rão	Rão	revisado	rev. IA: 1Cr 2:25 BL 'Rão' (primogênito de Jerameel)
+Ramah	Hormá	Ramá	revisado	rev. IA: Js 18:25 BL 'Ramá'
+Ramathaim-zophim	Ramataim	Ramataim de Zofim	revisado	rev. IA: 1Sm 1:1 BL 'Ramataim de Zofim' (Elcana)
+Ramoth	Jeremote	Ramote	revisado	rev. IA: 1Cr 6:73 BL 'Ramote'
+Rapha	Rafa	Rafa	revisado	rev. IA: 1Cr 8:2 BL 'Rafa' (filho de Benjamim)
+Raphah	Rafa	Rafa	revisado	rev. IA: 1Cr 8:37 BL 'Rafa' (filho de Bineá)
+Reaia	Reaías	Reaías	revisado	rev. IA: 1Cr 5:5 BL 'Reaías'
+Red Sea	mar Vermelho	Mar Vermelho	revisado	rev. IA: Ex 10:19 BL 'mar Vermelho'
+Rephaim	Efraim	Refains	revisado	rev. IA: Gn 14:5 BL 'refains' (povo; candidato Efraim nao e)
+Rhegium	Régio	Régio	revisado	rev. IA: At 28:13 BL 'Régio'
+Rhoda	Rode	Rode	revisado	rev. IA: At 12:13 BL 'moça de nome Rode'
+Rimmon	Dimna	Rimom	revisado	rev. IA: Js 15:32 BL 'Rimom' (cidade); 2Sm 4:2 usa a mesma forma (pai de Baaná)
+Rome	Roma	Roma	revisado	rev. IA: At 28:16 BL 'Roma'
+Rufus	Rufo	Rufo	revisado	rev. IA: Mc 15:21 BL 'Rufo' (pai de Alexandre e Rufo)
+Sabbath	Sábado	Sábado	revisado	rev. IA: Ex 16:23 BL 'santo sábado' (dia de repouso)
+Salt Sea	mar Salgado	Mar Salgado	revisado	rev. IA: Gn 14:3 BL 'mar salgado'
+Salu	Salu	Salu	revisado	rev. IA: Nm 25:14 BL 'Salu'
+Samgar	Sangar-Nebo	Sangar-Nebo	revisado	rev. IA: Jr 39:3 BL 'Sangar-Nebo' (oficial)
+Satan	Satanás	Satanás	revisado	rev. IA: 1Cr 21:1 BL 'Satanás'
+Sea of Galilee	mar da Galileia	Mar da Galileia	revisado	rev. IA: Mt 4:18 BL 'mar da Galileia'
+Seba	Seba	Seba	revisado	rev. IA: Sl 72:10 BL 'Seba' (lugar); 'Sabá' tambem aparece
+Sela	Sela	Selá	revisado	rev. IA: 2Rs 14:7 BL 'tomou a Selá por guerra' (Edom)
+Sela	Selá	Selá	revisado	rev. IA: 2Rs 14:7 BL 'Selá'
+Senaah	Senaá	Senaá	revisado	rev. IA: Ed 2:35 BL 'Senaá'
+Sepharad	Sefarade	Sefarade	revisado	rev. IA: Ob 1:20 BL 'Sefarade' (candidato ok)
+Shaalbim	Saalbim	Saalbim	revisado	rev. IA: Jz 1:35 BL 'Saalbim'
+Shaharaim	Saaraim	Saaraim	revisado	rev. IA: 1Cr 8:8 BL 'Saaraim' (pai de Husim e Baara)
+Shallun	Salum	Salum	revisado	rev. IA: Ne 3:15 BL 'Salum filho de Col-Hozé'
+Shamariah	Samaria	Samaria	revisado	rev. IA: 2Cr 11:19 BL 'Samaria' (filho de Roboão)
+Shamed	Semede	Semede	revisado	rev. IA: 1Cr 8:12 BL 'Semede'
+Shamma	Samá	Samá	revisado	rev. IA: 1Cr 7:37 BL 'Samá'
+Shapham	Safã	Safã	revisado	rev. IA: 1Cr 5:12 BL 'Safã'
+Sharuhen	Saruém	Saruém	revisado	rev. IA: Js 19:6 BL 'Saruém'
+Shaul	Saul	Saul	revisado	rev. IA: 1Cr 6:24 e Gn 36:37 BL 'Saul'
+Shavsha	Sausa	Sisa	revisado	rev. IA: 1Rs 4:3 BL 'Sisa' (escriba de Salomão)
+Sheba	Sabá	Sabá	revisado	rev. IA: Gn 10:28 BL 'Sabá' (a rainha de Sabá); mesmo nome 'Sheba' tambem e pessoa (Seba, 2Sm 20:1)
+Sheba	Sebá	Sebá	revisado	rev. IA: 1Cr 5:13 BL 'Sebá' (gadita); nome 'Sheba' tem mais de uma entidade
+Sheep Gate	porta das Ovelhas	Porta das Ovelhas	revisado	rev. IA: Ne 3:1 BL 'porta das Ovelhas'
+Shelah	Salá	Salá	revisado	rev. IA: Gn 10:24 BL 'Salá' (filho de Arfaxade)
+Shelah	Selá	Selá	revisado	rev. IA: Gn 38:5 BL 'Selá' (filho de Judá); mesmo nome 'Shelah' tem outra entidade (Salá)
+Sheleph	Salefe	Salefe	revisado	rev. IA: Gn 10:26 BL 'Salefe'
+Shemaiah	Semeías	Semaías	revisado	rev. IA: 1Cr 15:8 BL 'Semaías' (grafia do texto)
+Shemariah	Samaria	Semarias	revisado	rev. IA: 1Cr 12:5 BL 'Semarias' (benjamita); 'Samaria' do candidato e outro nome
+Sheminith	Seminite	Seminite	revisado	rev. IA: 1Cr 15:21 BL 'ao modo de Seminite' (termo musical)
+Shemuel	Samuel	Samuel	revisado	rev. IA: Nm 34:20 BL 'Samuel filho de Amiúde'
+Shen	Sem	Sem	revisado	rev. IA: 1Sm 7:12 BL 'entre Mispá e Sem' (pedra); 'SENHOR' do candidato e erro
+Shephathiah	Sefatias	Sefatias	revisado	rev. IA: 1Cr 9:8 BL 'Sefatias'
+Shibah	Seba	Seba	revisado	rev. IA: Gn 26:33 BL 'Seba' (nome dado ao poço/cidade, Berseba)
+Shikkeron	Sicrom	Sicrom	revisado	rev. IA: Js 15:11 BL 'Sicrom'
+Shiloah	Siloé	Siloé	revisado	rev. IA: Is 8:6 BL 'águas de Siloé'
+Shimea	Simeia	Simeia	revisado	rev. IA: 1Cr 6:30 BL 'Simeia'
+Shimeon	Simeão	Simeão	revisado	rev. IA: Ed 10:31 BL 'Simeão'
+Shimhi	Simei	Simei	revisado	rev. IA: 1Cr 8:21 BL 'filhos de Simei'
+Shimon	Simeão	Simeão	revisado	rev. IA: 1Cr 4:20 BL 'filhos de Simeão' (pessoa, Simão filho de Isi)
+Shimrath	Sinrate	Sinrate	revisado	rev. IA: 1Cr 8:21 BL 'Sinrate'
+Shimrith	Simeate	Simeate	revisado	rev. IA: 2Rs 12:21 BL 'Simeate' (mãe de Jozabade)
+Shimron	Sinrom	Sinrom	revisado	rev. IA: Js 11:1 BL 'Sinrom'
+Shimron-meron	Sinrom-Merom	Sinrom-Merom	revisado	rev. IA: Js 12:20 BL 'Sinrom-Merom'
+Shion	Siom	Siom	revisado	rev. IA: Js 19:19 BL 'Siom'
+Shoham	Soão	Soão	revisado	rev. IA: 1Cr 24:27 BL 'Soão'
+Shua	Sua	Sua	revisado	rev. IA: Gn 38:2 BL 'Sua' (cananeu, pai de Bate-Sua)
+Shua	Suá	Suá	revisado	rev. IA: 1Cr 7:32 BL 'Suá' (filha de Héber); candidato 'Suá' correto
+Shuah	Sua	Suá	revisado	rev. IA: Gn 25:2 BL 'Suá' (filho de Abraão e Quetura)
+Shubael	Subael	Sebuel	revisado	rev. IA: 1Cr 25:4 BL 'Sebuel' (filho de Hemã); 'Subael' do candidato nao aparece
+Shuhah	Suá	Suá	revisado	rev. IA: 1Cr 4:11 BL 'Quelube, irmão de Suá'
+Shunem	Suném	Suném	revisado	rev. IA: Js 19:18 BL 'Suném'
+Shupham	Sufã	Sufã	revisado	rev. IA: Nm 26:39 BL 'Sufã, a família dos sufamitas'
+Sihon	Siom	Seom	revisado	rev. IA: Nm 21:21 BL 'Seom, rei dos amorreus' (grafia do texto; 'Siom' do candidato nao aparece)
+Siloam	Siloé	Siloé	revisado	rev. IA: Lc 13:4 BL 'Siloé' (torre em Siloé)
+Simri	Sinri	Sinri	revisado	rev. IA: 1Cr 26:10 BL 'Sinri' (levita)
+Sin	Sim	Sim	revisado	rev. IA: Ex 16:1 BL 'deserto de Sim'
+Sirion	Sírion	Siriom	revisado	rev. IA: Dt 3:9 BL 'Siriom' (nome sidônio do Hermom)
+Soco	Socó	Socó	revisado	rev. IA: 1Sm 17:1 e Js 15:35 BL 'Socó'
+Socoh	Sucote	Socó	revisado	rev. IA: Js 15:35 BL 'Socó' (Js 15:48 usa 'Sucote' para outro Socoh)
+Spain	Espanha	Espanha	revisado	rev. IA: Rm 15:24 BL 'Espanha'
+Suah	Suá	Suá	revisado	rev. IA: 1Cr 7:36 BL 'Suá' (filho de Zofa)
+Sur	Sur	Porta do Sur	revisado	rev. IA: 2Rs 11:6 BL 'porta do Sur' (nome de porta, nao 'Sur')
+Syene	Sevene	Sevene	revisado	rev. IA: Ez 29:10 BL 'desde Migdol e Sevene'
+Tabor Mount	monte de Tabor	Monte de Tabor	revisado	rev. IA: Js 19:22 BL 'até Tabor'; mesmo monte de Jz 4:6 ('monte de Tabor')
+Tahpenes	Tafnes	Tafnes	revisado	rev. IA: 1Rs 11:19 BL 'Tafnes' (rainha do Egito)
+Tahtim-hodshi	Hodsi	Hodsi	revisado	rev. IA: 2Sm 24:6 BL 'terra baixa de Hodsi'
+Tahtimhodshi	Hodsi	Hodsi	revisado	rev. IA: 2Sm 24:6 BL 'terra baixa de Hodsi'
+Tamar	Tadmor	Tamar	revisado	rev. IA: 2Sm 13:1 BL 'Tamar' (filha de Davi); 'Tadmor' do candidato e cidade
+Tehaphnehes	Tafnes	Tafnes	revisado	rev. IA: Ez 30:18 BL 'Tafnes'
+Tema	Tema	Tema	revisado	rev. IA: Gn 25:15 BL 'Tema' (pessoa; no lugar Jó 6:19 o texto é 'Temã')
+Tertius	Tércio	Tércio	revisado	rev. IA: Rm 16:22 BL 'Tércio'
+Tharshish	Társis	Társis	revisado	rev. IA: 1Cr 7:10 BL 'Társis'
+Tiberius	Tibério	Tibério	revisado	rev. IA: Lc 3:1 BL 'Tibério César'
+Tiglath-pileser	Tiglate-Pileser	Tiglate-Pileser	revisado	rev. IA: 2Rs 15:29 BL 'Tiglate-Pileser'; 'Tiglate-Pilneser' em 1Cr 5:6
+Tigris	Tigre	Tigre	revisado	rev. IA: Gn 2:14 BL 'Tigre'
+Tilgath-pilneser	Tiglate-Pilneser	Tiglate-Pileser	revisado	rev. IA: 2Rs 15:29 BL 'Tiglate-Pileser'; 'Tiglate-Pilneser' em 1Cr 5:6
+Tishbe	Tisbita	Tisbita	revisado	rev. IA: 1Rs 17:1 BL 'Elias Tisbita' (gentilico; forma do texto)
+Tobijah	Tobias	Tobias	revisado	rev. IA: Zc 6:10 BL 'Tobias'
+Tohu	Toú	Toú	revisado	rev. IA: 1Sm 1:1 BL 'filho de Toú'
+Tower of the Hundred	torre de Hananeel	Torre de Meá	revisado	rev. IA: Ne 3:1 BL 'até a torre de Meá' (torre dos Cem); 'torre de Hananel' e outra torre
+Troas	Troas	Trôade	revisado	rev. IA: At 16:8 BL 'desceram a Trôade'
+Tyrannus	Tirano	Tirano	revisado	rev. IA: At 19:9 BL 'escola de um certo Tirano'
+Tyre	Tiro	Tiro	revisado	rev. IA: Js 19:29 BL 'forte cidade de Tiro'
+Ulam	Ulão	Ulão	revisado	rev. IA: 1Cr 7:16 BL 'Ulão'
+Urbanus	Urbano	Urbano	revisado	rev. IA: Rm 16:9 BL 'Urbano'
+Valley of Hinnom	vale de Hinom	Vale do filho de Hinom	revisado	rev. IA: Jr 7:32 BL 'vale do filho de Hinom' (Js 15:8 mesmo vale)
+Valley of Slaughter	Vale da Matança	Vale da Matança	revisado	rev. IA: Jr 7:32 BL 'Vale da Matança'
+Water Gate	porta das Águas	Porta das Águas	revisado	rev. IA: Ne 3:26 BL 'porta das Águas'
+West Gate	porta de Salequete	Porta de Salequete	revisado	rev. IA: 1Cr 26:16 BL 'porta de Salequete'
+Yeshanah Gate	porta Velha	Porta Velha	revisado	rev. IA: Ne 3:6 BL 'porta Velha'
+Yiron	Irom	Irom	revisado	rev. IA: Js 19:38 BL 'Irom'
+Zacchur	Zacur	Zacur	revisado	rev. IA: 1Cr 4:26 BL 'Zacur'
+Zachariah	Zacarias	Zacarias	revisado	rev. IA: 2Rs 14:29 BL 'Zacarias' (rei de Israel)
+Zacharias	Zacarias	Zacarias	revisado	rev. IA: Lc 1:5 BL 'Zacarias' (sacerdote)
+Zaham	Zaaão	Zaaão	revisado	rev. IA: 2Cr 11:19 BL 'Zaaão'
+Zair	Seir	Seir	revisado	rev. IA: 2Rs 8:21 BL 'passou a Seir' (lugar)
+Zalmon	Salmom	Salmom	revisado	rev. IA: Sl 68:14 BL 'Salmom'
+Zaphon	Sião	Zafom	revisado	rev. IA: Js 13:27 BL 'Zafom' (candidato 'Sião' e errado)
+Zaphon	Zafom	Zafom	revisado	rev. IA: Js 13:27 BL 'Zafom'
+Zarephath	Sarepta	Sarepta	revisado	rev. IA: 1Rs 17:9 BL 'Sarepta de Sidom'
+Zatthu	Zatu	Zatu	revisado	rev. IA: Ne 10:14 BL 'Zatu'
+Zeboim	Zeboim	Zeboim	revisado	rev. IA: Ne 11:34 BL 'Zeboim'
+Zephath	Zefate	Zefate	revisado	rev. IA: Jz 1:17 BL 'Zefate'
+Zia	Zia	Zia	revisado	rev. IA: 1Cr 5:13 BL 'Zia'
+Zidkijah	Zedequias	Zedequias	revisado	rev. IA: Ne 10:1 BL 'Zedequias'
+Zidon	Sidom	Sidom	revisado	rev. IA: Gn 10:15 BL 'Sidom'
+Zimran	Zinrã	Zinrã	revisado	rev. IA: Gn 25:2 BL 'Zinrã'
+Zizah	Zina	Zina	revisado	rev. IA: 1Cr 23:10 BL 'Zina' (gersonita)
+Zobah-Hamath	Zobá	Hamate de Zobá	revisado	rev. IA: 2Cr 8:3 BL 'Hamate de Zobá'
+Zohar	Zoar	Zoar	revisado	rev. IA: Gn 23:8 BL 'filho de Zoar' (pai de Efron)
+Zorobabel	Zorobabel	Zorobabel	revisado	rev. IA: Mt 1:12 BL 'Zorobabel'

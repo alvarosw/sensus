@@ -1,4 +1,5 @@
-"""Ingestor: nomes próprios em português (entity_name), derivados da Bíblia Livre. Sem IA e sem tradução automática.
+"""Ingestor: nomes próprios em português (entity_name), derivados da Bíblia Livre. Escolha automática sem IA;
+linhas de confiança média/baixa revisadas por agentes de IA (notas em corrections/nomes-pt-revisao.tsv).
 
 Entrada (staging, rodar depois dos ingestores): entity e entity_ref de theographic, stepbible-tipnr e
 openbible-geo; verse_text de blivre. A escolha do candidato está em sensus/names_pt.py. Compostos ('Mount Sinai')
@@ -10,7 +11,7 @@ Cálculo: por ENTIDADE (com os versículos dela), não pelo nome-base. Duas pess
 e o mesmo candidato formam uma linha, identificada por (nome_en, candidato).
 
 Saídas:
-  a) pipeline/ingest/corrections/nomes-pt.tsv, versionado, para revisão humana. Linhas origem=auto são
+  a) pipeline/ingest/corrections/nomes-pt.tsv, versionado, para revisão. Linhas origem=auto são
      recalculadas a cada execução; origem=revisado e origem=sem são preservadas (chave nome_en + candidato).
   b) data/staging/sensus-nomes-pt/ (entity_name): uma linha por entidade (não evento) cuja linha tem nome pt
      utilizável (origem revisado com nome, ou auto com confianca alta).
@@ -254,7 +255,9 @@ def main() -> None:
                          "alinhamento de versículos (ver notes).",
             notes="Derivado: para cada nome inglês de theographic, stepbible-tipnr e openbible-geo, o nome pt é a "
                   "palavra da Bíblia Livre que aparece nos versículos da própria entidade e se parece com o nome. "
-                  "Sem IA e sem tradução automática. Revisado em pipeline/ingest/corrections/nomes-pt.tsv. Compostos "
+                  "Escolha automática sem IA; as linhas de confiança média/baixa foram revisadas por agentes de IA conferindo "
+                  "os versículos da Bíblia Livre (notas em corrections/nomes-pt-revisao.tsv). Revisado em "
+                  "pipeline/ingest/corrections/nomes-pt.tsv. Compostos "
                   "(Mount Sinai, Valley of Elah) entram só com a frase que aparece no texto da própria entidade, com "
                   "cabeça do glossário pt e núcleo pt; sem frase achada, ficam com o nome inglês. Sufixo numérico "
                   "mantido (Achzib 2); parênteses descartados.",

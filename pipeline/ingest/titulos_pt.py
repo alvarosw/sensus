@@ -1,10 +1,10 @@
-"""Ingestor: títulos dos eventos em português (entity_name, fonte sensus-titulos-pt). Sem IA e sem tradução automática
-no aparelho. As regras puras estão em sensus/titulos_pt.py.
+"""Ingestor: títulos dos eventos em português (entity_name, fonte sensus-titulos-pt). Títulos escritos e revisados por
+agentes de IA (nota "rev. IA" no TSV); sem tradução automática no aparelho. As regras puras estão em sensus/titulos_pt.py.
 
 Entrada (staging, rodar depois de theographic): eventos de data/staging/theographic/entity.jsonl.
 
 Saídas:
-  a) pipeline/ingest/corrections/titulos-eventos-pt.tsv, versionado, para revisão humana. Os rascunhos ficam ali e
+  a) pipeline/ingest/corrections/titulos-eventos-pt.tsv, versionado, para revisão. Os rascunhos ficam ali e
      nenhum deles vai para o banco.
   b) data/staging/sensus-titulos-pt/ (entity_name): uma linha por evento com origem=revisado e titulo_pt preenchido.
 
@@ -64,9 +64,10 @@ def main() -> None:
             version=f"derivado de theographic ({meta['version']}); pipeline/ingest/titulos_pt.py",
             attribution=meta["attribution"] + " Títulos traduzidos e revisados pelo projeto Sensus.",
             notes="Derivado: título em português de cada evento da Theographic (campo title, em inglês). Os títulos "
-                  "são rascunhos do projeto, conferidos por pessoa em pipeline/ingest/corrections/titulos-eventos-pt.tsv; "
+                  "foram escritos e revisados por agentes de IA (conferindo os versículos da Bíblia Livre e pesquisando em caso de "
+                  "dúvida; nota 'rev. IA' em pipeline/ingest/corrections/titulos-eventos-pt.tsv); "
                   "só os de origem revisado entram aqui. Nomes próprios vêm da Bíblia Livre (ver sensus-nomes-pt) ou dos "
-                  "participantes do evento. Sem IA e sem tradução automática no aparelho. Share-alike: como a "
+                  "participantes do evento. Sem tradução automática no aparelho. Share-alike: como a "
                   "Theographic, CC BY-SA 4.0.",
         )
         for cite_id, titulo in escolhidas:

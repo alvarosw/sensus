@@ -15,797 +15,803 @@
 # origem=revisado. Para o app mostrar o nome inglês, marque origem=sem. Linhas revisado e sem não são
 # recalculadas ao rodar o ingestor de novo.
 nome_en	candidato	nome_pt	origem	confianca	entidades	versos	cobertura	alternativa
-Abel	E	E	auto	baixa	1	1	1.00	Josué
-Adramyttium	Aristarco	Aristarco	auto	baixa	3	1	1.00	Ásia
-Al-taschith	Louvamos	Louvamos	auto	baixa	1	4	0.25	Filhos
-Amaw	Balaão	Balaão	auto	baixa	3	1	1.00	Um
-Amminadib	Sem	Sem	auto	baixa	1	1	1.00	
-Amorite	Também	Também	auto	baixa	1	4	0.25	Egito
-Amorites	Camos	Camos	auto	baixa	1	86	0.01	Chegastes
-Angle	Jerusalém	Jerusalém	auto	baixa	2	1	1.00	Uzias
-Angle	Palal	Palal	auto	baixa	1	5	0.20	Henadade
-Apharasthchite	Setar-Bozenai	Setar-Bozenai	auto	baixa	1	3	0.67	Tatenai
-Aphik	Aco	Aco	auto	baixa	2	1	1.00	Afeque
-Aram-naharaim	Por	Por	auto	baixa	2	1	1.00	Deus
-Aram-zobah	Por	Por	auto	baixa	1	1	1.00	Deus
-Aramitess	Asriel	Asriel	auto	baixa	1	1	1.00	Manassés
-Archites	Aitofel	Aitofel	auto	baixa	1	6	0.33	Atarote
-Areopagus	Dâmaris	Dâmaris	auto	baixa	2	3	0.33	Podemos
-Areopagus	Podemos	Podemos	auto	baixa	1	3	0.33	Paulo
-Ariel	Cabzeel	Cabzeel	auto	baixa	1	2	1.00	Moabe
-Arkite	E	E	auto	baixa	1	2	0.50	Aos
-Arkites	Aos	Aos	auto	baixa	1	2	0.50	E
-Aroer	Hotão	Hotão	auto	baixa	1	1	1.00	Sama
-Artemis	Demétrio	Demétrio	auto	baixa	1	5	0.20	Grande
-Arvadite	Aos	Aos	auto	baixa	1	2	0.50	E
-Arvadites	Aos	Aos	auto	baixa	1	2	0.50	E
-Asen	Harife	Harife	auto	baixa	1	1	1.00	Os
-Avvim	Sior	Sior	auto	baixa	1	2	0.50	Gaza
-Baharum	Eliaba	Eliaba	auto	baixa	1	1	1.00	Azmavete
-Bajith	Medeba	Medeba	auto	baixa	1	1	1.00	Nebo
-Bear	Plêiades	Plêiades	auto	baixa	1	2	0.50	Ursa
-Behemoth	Observa	Observa	auto	baixa	1	1	1.00	
-Beth-Ashtoreth	Astarote	Astarote	auto	baixa	1	1	1.00	Bete-Seã
-Beth-eked	Prendei-os	Prendei-os	auto	baixa	3	2	0.50	Então
-Beth-haggan	Ibleão	Ibleão	auto	baixa	3	1	1.00	Megido
-Beth-merhak	Saiu	Saiu	auto	baixa	1	1	1.00	
-Bethany	Betábara	Betábara	auto	baixa	2	1	1.00	Estas
-Booths Festival	festa Booths	festa Booths	auto	baixa	1	1	0.00	
-Broad Wall	muro Broad	muro Broad	auto	baixa	3	2	0.00	
-Brook of the Willows	ribeiro de Willows	ribeiro de Willows	auto	baixa	2	1	0.00	
-Buzites	Baraquel	Baraquel	auto	baixa	1	2	1.00	Deus
-Cherethites	Bicri	Bicri	auto	baixa	1	9	0.11	Depois
-Cherethites	Eis	Eis	auto	baixa	1	3	0.33	Calebe
-Chronicles	Os	Os	auto	baixa	1	38	0.87	Onri
-City of Palms	cidade de Palms	cidade de Palms	auto	baixa	2	4	0.00	
-City of Salt	cidade de Salt	cidade de Salt	auto	baixa	2	1	0.00	
-City of the Lord	cidade de Lord	cidade de Lord	auto	baixa	1	2	0.00	
-Corban	Os	Os	auto	baixa	1	2	0.50	Tudo
-Cush	Deus	Deus	auto	baixa	1	1	1.00	SENHOR
-Cushi	Seja	Seja	auto	baixa	1	5	0.40	Correu
-Cyrenius	Quirino	Quirino	auto	baixa	1	1	1.00	Síria
-Dedication Festival	festa Dedication	festa Dedication	auto	baixa	1	1	0.00	
-Dehavites	Sinsai	Sinsai	auto	baixa	1	1	1.00	Reum
-Destiny	SENHOR	SENHOR	auto	baixa	1	1	1.00	Porém
-Dinaites	Sinsai	Sinsai	auto	baixa	1	1	1.00	Reum
-East	Zeba	Zeba	auto	baixa	3	18	0.06	Serão
-East Gate	porta East	porta East	auto	baixa	4	5	0.00	
-East Square	praça East	praça East	auto	baixa	1	1	0.00	
-Eder	Migdal-Eder	Migdal-Eder	auto	baixa	2	1	1.00	E
-Egypt	Leabim	Leabim	auto	baixa	1	4	0.25	Pute
-Elkosh	Revelação	Revelação	auto	baixa	3	1	1.00	Livro
-Emim	Savé-Quiriataim	Savé-Quiriataim	auto	baixa	1	3	0.33	Asterote-Carnaim
-Ephron	Efraim	Efraim	auto	baixa	2	1	1.00	Jesana
-Ephron	Neftoa	Neftoa	auto	baixa	2	1	1.00	E
-Epicurean	Parece	Parece	auto	baixa	1	1	1.00	Evangelho
-Ethiopia	Índia	Índia	auto	baixa	1	4	0.50	Sivã
-Eznites	Estes	Estes	auto	baixa	1	1	1.00	Josebe-Bassebete
-Field	Jerusalém	Jerusalém	auto	baixa	1	3	0.67	Sear-Jasube
-Forest	E	E	auto	baixa	1	1	1.00	Judá
-Fortune	Porém	Porém	auto	baixa	1	1	1.00	SENHOR
-Foundation Gate	porta Foundation	porta Foundation	auto	baixa	1	1	0.00	
-Freedmen	Estêvão	Estêvão	auto	baixa	1	1	1.00	E
-Gadara	E	E	auto	baixa	1	1	1.00	Eles
-Galilee	Gilgal	Gilgal	auto	baixa	1	1	1.00	Dor
-Gamad	Arvade	Arvade	auto	baixa	3	1	1.00	Os
-Garmite	Estemoa	Estemoa	auto	baixa	1	1	1.00	Naã
-Garmites	Hodias	Hodias	auto	baixa	1	1	1.00	Estemoa
-Gate of the Foundation	porta de Foundation	porta de Foundation	auto	baixa	2	1	0.00	
-Gath	Davi	Davi	auto	baixa	1	2	1.00	Não
-Ge-harashim	Artesãos	Artesãos	auto	baixa	2	2	0.50	Seraías
-Gederah	Jeremias	Jeremias	auto	baixa	1	1	1.00	Jozabade
-Gerasa	Gadarenos	Gadarenos	auto	baixa	2	4	0.25	Galileia
-Gibeah	Fineias	Fineias	auto	baixa	1	1	1.00	Também
-Gibeath-elohim	De	De	auto	baixa	3	1	1.00	Deus
-Gibeath-haaraloth	Israel	Israel	auto	baixa	2	1	1.00	Josué
-Gilo	Aitofel	Aitofel	auto	baixa	1	1	1.00	Elifelete
-Girgashites	Antes	Antes	auto	baixa	1	16	0.06	Israel
-Girgasite	E	E	auto	baixa	1	2	1.00	
-Girzites	Egito	Egito	auto	baixa	1	1	1.00	Sur
-Gittith	Jacó	Jacó	auto	baixa	1	3	0.33	Pois
-Gizonites	Jônatas	Jônatas	auto	baixa	1	1	1.00	Hasém
-God	Jugo	Jugo	auto	baixa	1	8587	0.00	Node
-Goiim	Gilgal	Gilgal	auto	baixa	3	3	0.33	Quedorlaomer
-Goiim	Quedorlaomer	Quedorlaomer	auto	baixa	1	2	1.00	Tidal
-Gulloth-mayim	Ela	Ela	auto	baixa	1	2	0.50	Dá-me
-Hachmonites	Hacmoni	Hacmoni	auto	baixa	1	2	0.50	Jasobeão
-Hakkephirim	Gesém	Gesém	auto	baixa	2	1	1.00	Vem
-Hall of Judgment	sala de Judgment	sala de Judgment	auto	baixa	2	1	0.00	
-Hall of Pillars	sala de Pillars	sala de Pillars	auto	baixa	2	1	0.00	
-Hall of the Throne	sala de Throne	sala de Throne	auto	baixa	2	1	0.00	
-Hamathite	E	E	auto	baixa	1	2	0.50	Aos
-Hamathites	Aos	Aos	auto	baixa	1	2	0.50	E
-Hammelech	Abdeel	Abdeel	auto	baixa	2	2	0.50	Jerameel
-Hamon-gog Valley	vale Hamon-gog	vale Hamon-gog	auto	baixa	1	2	0.00	
-Hararites	Harar	Harar	auto	baixa	1	4	0.25	Sarar
-Harod	Samote	Samote	auto	baixa	1	2	0.50	Elica
-Haruphites	Semarias	Semarias	auto	baixa	1	1	1.00	Bealias
-Hasrah	Harás	Harás	auto	baixa	1	2	1.00	Asaías
-Hazerim	Gaza	Gaza	auto	baixa	1	1	1.00	Caftor
-Helech	Arvade	Arvade	auto	baixa	3	1	1.00	Os
-Heliopolis	Egito	Egito	auto	baixa	1	1	1.00	Bete-Semes
-Heliopolis	Potífera	Potífera	auto	baixa	1	5	0.60	José
-Heres	E	E	auto	baixa	3	1	1.00	Joás
-Hermes	Júpiter	Júpiter	auto	baixa	1	1	1.00	Mercúrio
-Hiddekel	Tigre	Tigre	auto	baixa	1	2	1.00	Eufrates
-Highway	Rogamo-te	Rogamo-te	auto	baixa	1	2	0.50	Deixa-me
-Hill Mizar	outeiro Mizar	outeiro Mizar	auto	baixa	1	1	0.00	
-Hivite	Heteu	Heteu	auto	baixa	1	9	0.11	Zibeão
-Hivites	Jebuseos	Jebuseos	auto	baixa	1	25	0.04	Antes
-Horesh	Deus	Deus	auto	baixa	3	4	0.25	Jônatas
-Horonaim	Entretanto	Entretanto	auto	baixa	1	1	1.00	Absalão
-Horonites	Tobias	Tobias	auto	baixa	1	3	0.67	Porém
-House of the Forest	casa de Forest	casa de Forest	auto	baixa	1	6	0.00	
-Hur	Ben-Hur	Ben-Hur	auto	baixa	2	1	1.00	Efraim
-Huram	Hirão	Hirão	auto	baixa	1	1	1.00	Eu
-Hushathites	Husatita	Husatita	auto	baixa	1	5	0.20	Safe
-Ithrites	Quiriate-Jearim	Quiriate-Jearim	auto	baixa	1	3	0.33	Ira
-Iyim	Ijé-Abarim	Ijé-Abarim	auto	baixa	2	1	1.00	Dibom-Gade
-Janen	Mataná	Mataná	auto	baixa	1	1	1.00	Naaliel
-Jebusite	E	E	auto	baixa	1	2	1.00	
-Jebusite	Jerusalém	Jerusalém	auto	baixa	1	1	1.00	Hinom
-Jebusites	Jebuseos	Jebuseos	auto	baixa	1	37	0.03	Jebus
-Jemnath	Ecrom	Ecrom	auto	baixa	1	1	1.00	Desde
-Jeshimon	Zife	Zife	auto	baixa	2	4	0.50	Maom
-Jonath-elem-rechokim	Tem	Tem	auto	baixa	1	1	1.00	Deus
-Jordan Valley	vale Jordão	vale Jordão	auto	baixa	1	8	0.00	
-Josedech	Jeozadaque	Jeozadaque	auto	baixa	1	12	0.67	Josué
-Judaism	Igreja	Igreja	auto	baixa	1	2	0.50	Pois
-Judgment	Fez	Fez	auto	baixa	1	1	1.00	
-Kadesh	Hodsi	Hodsi	auto	baixa	1	1	1.00	Depois
-Kadmonites	Os	Os	auto	baixa	1	1	1.00	
-Kenites	Quedes	Quedes	auto	baixa	1	10	0.10	Bendita
-Kenizzites	Os	Os	auto	baixa	1	1	1.00	
-Kir	Quir-Moabe	Quir-Moabe	auto	baixa	1	1	1.00	Certamente
-Kue	Coa	Coa	auto	baixa	3	2	1.00	E
-Lebanon Valley	vale Líbano	vale Líbano	auto	baixa	1	2	0.00	
-Lehem	Jasubi-Leem	Jasubi-Leem	auto	baixa	2	1	1.00	Joquim
-Lo-ammi	Chama	Chama	auto	baixa	2	1	1.00	Não-Meu-Povo
-Lo-ruhamah	Não-Amada	Não-Amada	auto	baixa	2	2	1.00	Chama
-Lower Pool	tanque Lower	tanque Lower	auto	baixa	1	1	0.00	
-Lucifer	Cortado	Cortado	auto	baixa	2	1	1.00	Como
-Maareh-geba	Baal-Tamar	Baal-Tamar	auto	baixa	3	1	1.00	Israel
-Mahalab	Hormá	Hormá	auto	baixa	2	1	1.00	Aczibe
-Mahalath	Não	Não	auto	baixa	1	2	0.50	Eles
-Mahaneh-dan	Dã	Dã	auto	baixa	4	2	1.00	Judá
-Mahavites	Josavias	Josavias	auto	baixa	1	1	1.00	Itma
-Maranatha	Cristo	Cristo	auto	baixa	1	1	1.00	Vem
-Mazzaroth	Ursa	Ursa	auto	baixa	1	1	1.00	Podes
-Mecherathites	Héfer	Héfer	auto	baixa	1	1	1.00	Aías
-Meholathites	Merabe	Merabe	auto	baixa	1	2	0.50	Mefibosete
-Menuhoth	Manaatitas	Manaatitas	auto	baixa	1	1	1.00	Haroé
-Meronoth	Melatias	Melatias	auto	baixa	1	2	0.50	Obil
-Meronothites	Melatias	Melatias	auto	baixa	1	2	0.50	Jedias
-Meunites	Estes	Estes	auto	baixa	1	3	0.33	Deus
-Mezobaites	Eliel	Eliel	auto	baixa	1	1	1.00	Obede
-Middle Gate	porta Middle	porta Middle	auto	baixa	1	1	0.00	
-Miktam	Livra-me	Livra-me	auto	baixa	1	6	0.17	Guarda-me
-Mishraites	Quiriate-Jearim	Quiriate-Jearim	auto	baixa	1	1	1.00	E
-Misrephoth-maim	Mispá	Mispá	auto	baixa	3	2	0.50	Israel
-Mithnites	Josafá	Josafá	auto	baixa	1	1	1.00	Hanã
-Mizpeh Valley	vale Mizpeh	vale Mizpeh	auto	baixa	1	2	0.00	
-Moab Plains	campinas Moabe	campinas Moabe	auto	baixa	1	12	0.00	
-Mordecai	Reelaías	Reelaías	auto	baixa	2	2	0.50	Mardoqueu
-Moresheth	Miqueias	Miqueias	auto	baixa	1	2	1.00	Ezequias
-Mortar	Lamentai	Lamentai	auto	baixa	3	1	1.00	
-Muth-labben	Louvarei	Louvarei	auto	baixa	1	1	1.00	SENHOR
-Naamah	Então	Então	auto	baixa	1	4	0.50	Zofar
-Naamathites	Bildade	Bildade	auto	baixa	1	4	0.50	Elifaz
-Naphath	Taanaque	Taanaque	auto	baixa	2	1	1.00	Issacar
-Naphath-dor	Tafate	Tafate	auto	baixa	1	1	1.00	Dor
-Naphoth-dor	Dor	Dor	auto	baixa	2	4	1.00	Quinerete
-Nazirites	Virá	Virá	auto	baixa	1	15	0.07	Se
-Nehelam	Semaías	Semaías	auto	baixa	2	3	1.00	Manda
-Nehelamites	Semaías	Semaías	auto	baixa	1	3	1.00	Eis
-Nephilim	Anaque	Anaque	auto	baixa	1	2	0.50	Também
-New Gate	porta New	porta New	auto	baixa	3	2	0.00	
-Nicolaitans	Mas	Mas	auto	baixa	1	2	0.50	Assim
-Nohah	Manaate	Manaate	auto	baixa	1	1	1.00	Geba
-Nohah	Menuá	Menuá	auto	baixa	1	1	1.00	Benjamim
-North	Então	Então	auto	baixa	1	10	0.20	Porém
-North Gate	porta North	porta North	auto	baixa	1	1	0.00	
-Old Pool	tanque Old	tanque Old	auto	baixa	1	1	0.00	
-On	Om	Om	auto	baixa	4	10	0.40	Coré
-Parbar	Em	Em	auto	baixa	2	1	1.00	
-Pavement	Pilatos	Pilatos	auto	baixa	1	1	1.00	Gabatá
-Pelethites	Benaia	Benaia	auto	baixa	1	7	0.71	Gate
-Pelonites	Helez	Helez	auto	baixa	1	4	0.50	Heles
-People's Gate	porta People	porta People	auto	baixa	2	1	0.00	
-Perizzites	Jebuseos	Jebuseos	auto	baixa	1	23	0.04	Heteu
-Phut	Pute	Pute	auto	baixa	1	3	1.00	Cuxe
-Pillars	Também	Também	auto	baixa	1	1	1.00	
-Place	Gólgota	Gólgota	auto	baixa	2	3	1.00	E
-Plain	Zoar	Zoar	auto	baixa	1	2	0.50	Moabe
-Plain of Aven	planície de Áven	planície de Áven	auto	baixa	1	1	0.00	
-Pool	Col-Hozé	Col-Hozé	auto	baixa	1	1	1.00	Fonte
-Pool	Fonte	Fonte	auto	baixa	1	1	1.00	E
-Potsherd Gate	porta Potsherd	porta Potsherd	auto	baixa	2	1	0.00	
-Preparation Festival	festa Preparation	festa Preparation	auto	baixa	1	6	0.00	
-Puthites	Quiriate-Jearim	Quiriate-Jearim	auto	baixa	1	1	1.00	E
-Pyrrhus	Sópater	Sópater	auto	baixa	1	1	1.00	Aristarco
-Raca	Idiota	Idiota	auto	baixa	1	1	1.00	Louco
-Ramah	Zabdias	Zabdias	auto	baixa	1	1	1.00	Simei
-Ramathites	Zabdias	Zabdias	auto	baixa	1	1	1.00	Simei
-Rephaim	Argobe	Argobe	auto	baixa	1	1	1.00	Gileade
-Rhodes	Os	Os	auto	baixa	1	1	1.00	Dedã
-River	Assíria	Assíria	auto	baixa	1	10	0.30	Isaque
-River	Petor	Petor	auto	baixa	1	1	1.00	Beor
-River	Reobote	Reobote	auto	baixa	1	2	1.00	E
-River	Reum	Reum	auto	baixa	1	16	0.06	Artaxerxes
-River of Arnon	rio de Arnom	rio de Arnom	auto	baixa	1	11	0.00	
-Rock	Maom	Maom	auto	baixa	1	4	1.00	Carmelo
-Rock of Escape	rocha de Escape	rocha de Escape	auto	baixa	2	1	0.00	
-Rocks	Saul	Saul	auto	baixa	1	1	1.00	Israel
-Sadducee	Naquele	Naquele	auto	baixa	1	14	0.07	Ninhada
-Sahar	Damasco	Damasco	auto	baixa	3	1	1.00	Helbom
-Salome	Porém	Porém	auto	baixa	1	1	1.00	Herodias
-Salt	Nibsã	Nibsã	auto	baixa	1	1	1.00	E
-Salt Valley	vale Salt	vale Salt	auto	baixa	1	5	0.00	
-Scythians	Cristo	Cristo	auto	baixa	1	1	1.00	Nisso
-Sea of the Philistines	mar de Philistines	mar de Philistines	auto	baixa	1	1	0.00	
-Sea of the Plain	mar de Plain	mar de Plain	auto	baixa	1	2	0.00	
-Secu	Socó	Socó	auto	baixa	3	1	1.00	Samuel
-Secundus	Segundo	Segundo	auto	baixa	2	1	1.00	Sópater
-Sela	E	E	auto	baixa	1	2	1.00	Acrabim
-Serpent's Stone	pedra Serpent	pedra Serpent	auto	baixa	2	1	0.00	
-Shephelah	Bete-Semes	Bete-Semes	auto	baixa	1	6	0.17	Baal-Hanã
-Shephelah	Sul	Sul	auto	baixa	2	19	0.05	Asná
-Shiggaion	SENHOR	SENHOR	auto	baixa	1	1	1.00	Deus
-Shilonites	Siloni	Siloni	auto	baixa	1	1	1.00	Joiaribe
-Shimeathite	Hamate	Hamate	auto	baixa	1	1	1.00	Recabe
-Shiphmites	Simei	Simei	auto	baixa	1	1	1.00	Zabdias
-Shuhites	Bildade	Bildade	auto	baixa	1	5	1.00	SENHOR
-Shulammites	Sulamita	Sulamita	auto	baixa	1	1	1.00	Volta
-Shumathites	Quiriate-Jearim	Quiriate-Jearim	auto	baixa	1	1	1.00	E
-Shunammites	Abisague	Abisague	auto	baixa	1	8	0.62	Bate-Seba
-Sinite	E	E	auto	baixa	1	2	0.50	Aos
-Sinites	E	E	auto	baixa	1	2	0.50	Aos
-Skull	Caveira	Caveira	auto	baixa	1	1	1.00	E
-South	O	O	auto	baixa	1	12	0.08	Mas
-South	Sul	Sul	auto	baixa	3	3	0.67	Juízo
-South Gate	porta South	porta South	auto	baixa	1	1	0.00	
-Stoic	Porque	Porque	auto	baixa	1	1	1.00	O
-Straight	Direita	Direita	auto	baixa	1	1	1.00	Levanta-te
-Straight Gate	porta Straight	porta Straight	auto	baixa	1	1	0.00	
-Sucathite	Hamate	Hamate	auto	baixa	1	1	1.00	Recabe
-Sukkiim	Com	Com	auto	baixa	1	1	1.00	Egito
-Suph	Tofel	Tofel	auto	baixa	3	1	1.00	Di-Zaabe
-Syrtis	O	O	auto	baixa	3	1	1.00	
-Tabbur-erez	Meonenim	Meonenim	auto	baixa	1	1	1.00	Eis
-Tarpelite	Reum	Reum	auto	baixa	1	1	1.00	Sinsai
-Thebes	És	És	auto	baixa	3	6	0.17	Pelúsio
-There	SENHOR	SENHOR	auto	baixa	1	1	1.00	E
-Throne	Fez	Fez	auto	baixa	1	1	1.00	
-Tirathite	Jabez	Jabez	auto	baixa	1	1	1.00	Hamate
-Tizites	Jedaiel	Jedaiel	auto	baixa	1	1	1.00	Sinri
-Tower	Fornos	Fornos	auto	baixa	1	2	1.00	Paate-Moabe
-Tower	Ovelhas	Ovelhas	auto	baixa	2	4	0.50	Velha
-Tower of Eder	torre de Eder	torre de Eder	auto	baixa	1	2	0.00	
-Travelers Valley	vale Travelers	vale Travelers	auto	baixa	1	1	0.00	
-Tribe of Judah	tribo de Judá	tribo de Judá	auto	baixa	1	1	0.00	
-Unnamed#1	Assim	Assim	auto	baixa	1	1	1.00	Salomão
-Unnamed#1	Eliúde	Eliúde	auto	baixa	1	1	1.00	Matã
-Unnamed#2	Assim	Assim	auto	baixa	1	1	1.00	Salomão
-Unnamed#2	Eliúde	Eliúde	auto	baixa	1	1	1.00	Matã
-Unnamed#3	Assim	Assim	auto	baixa	1	1	1.00	Salomão
-Unnamed#3	Eliúde	Eliúde	auto	baixa	1	1	1.00	Matã
-Unnamed#4	Assim	Assim	auto	baixa	1	1	1.00	Salomão
-Unnamed#4	Eliúde	Eliúde	auto	baixa	1	1	1.00	Matã
-Unnamed#5	Eliúde	Eliúde	auto	baixa	1	1	1.00	Matã
-Unnamed#6	Eliúde	Eliúde	auto	baixa	1	1	1.00	Matã
-Unnamed#7	Eliúde	Eliúde	auto	baixa	1	1	1.00	Matã
-Unnamed#8	Eliúde	Eliúde	auto	baixa	1	1	1.00	Matã
-Unnamed#9	Eliúde	Eliúde	auto	baixa	1	1	1.00	Matã
-Upper Pool	tanque Upper	tanque Upper	auto	baixa	1	3	0.00	
-Valley of Decision	vale de Decision	vale de Decision	auto	baixa	1	1	0.00	
-Valley of Hamon-gog	vale de Hamon-gog	vale de Hamon-gog	auto	baixa	1	2	0.00	
-Valley of Hamongog	vale de Hamongog	vale de Hamongog	auto	baixa	1	2	0.00	
-Valley of Lebanon	vale de Líbano	vale de Líbano	auto	baixa	2	2	0.00	
-Valley of Mizpeh	vale de Mizpeh	vale de Mizpeh	auto	baixa	2	1	0.00	
-Valley of Salt	vale de Salt	vale de Salt	auto	baixa	2	5	0.00	
-Valley of the Arnon	vale de Arnom	vale de Arnom	auto	baixa	1	11	0.00	
-Valley of the Passengers	vale de Passengers	vale de Passengers	auto	baixa	1	1	0.00	
-Vedan	Dã	Dã	auto	baixa	1	1	1.00	Javã
-Way of Holiness	caminho de Holiness	caminho de Holiness	auto	baixa	3	1	0.00	
-Weeks	Pentecostes	Pentecostes	auto	baixa	1	8	0.38	Três
-Willows	Por	Por	auto	baixa	1	1	1.00	
-Zaccur	Zabude	Zabude	auto	baixa	1	1	1.00	Utai
-Zealot	Simão	Simão	auto	baixa	1	2	1.00	Iscariotes
-Zemarite	Aos	Aos	auto	baixa	1	2	0.50	E
-Zemarites	Aos	Aos	auto	baixa	1	2	0.50	E
-Zeus	Mercúrio	Mercúrio	auto	baixa	1	2	0.50	E
-Ziv	Zife	Zife	auto	baixa	1	2	1.00	SENHOR
-Zorathites	Zoratitas	Zoratitas	auto	baixa	1	3	0.33	Atarote
-Zuzim	Savé-Quiriataim	Savé-Quiriataim	auto	baixa	1	1	1.00	Asterote-Carnaim
-Abaddon	Abadom	Abadom	auto	media	1	7	0.14	Apoliom
-Abel-beth-maacah	Abel-Bete-Maaca	Abel-Bete-Maaca	auto	media	3	6	0.33	Bete-Maaca
-Abiah	Abias	Abias	auto	media	2	3	1.00	Vasni
-Abiel	Abiel	Abiel	auto	media	3	7	0.43	Abinadabe
-Achaicus	Acaico	Acaico	auto	media	2	2	1.00	Estéfanas
-Achsa	Acsa	Acsa	auto	media	1	1	1.00	Macbena
-Adam	Adão	Adão	auto	media	2	27	0.74	Caim
-Addar	Adar	Adar	auto	media	5	2	1.00	Carca
-Addon	Adom	Adom	auto	media	2	2	0.50	Tel-Harsa
-Ader	Eder	Eder	auto	media	1	1	1.00	Arade
-Adin	Adim	Adim	auto	media	4	4	1.00	Dos
-Adoniram	Adonirão	Adonirão	auto	media	1	5	0.40	Adorão
-Adria	Adriático	Adriático	auto	media	1	1	1.00	E
-Aenon	Enom	Enom	auto	media	3	1	1.00	João
-Agabus	Ágabo	Ágabo	auto	media	2	2	1.00	Cláudio
-Agag	Agague	Agague	auto	media	4	13	0.46	De
-Ahiah	Aías	Aías	auto	media	3	3	1.00	Ailude
-Ahiam	Aião	Aião	auto	media	2	2	1.00	Harar
-Ahiram	Airã	Airã	auto	media	2	3	0.33	Benjamim
-Ahoah	Aoá	Aoá	auto	media	2	6	0.17	Naamã
-Ai	Ai	Ai	auto	media	7	37	0.84	Uiva
-Ain	Aim	Aim	auto	media	7	7	0.71	Asã
-Akan	Jaacã	Jaacã	auto	media	2	2	0.50	Acã
-Akeldama	Aceldama	Aceldama	auto	media	3	4	0.25	Jerusalém
-Alameth	Alemete	Alemete	auto	media	1	1	1.00	Anatote
-Alamoth	Alamote	Alamote	auto	media	1	3	0.33	Semiramote
-Allon	Alom	Alom	auto	media	2	2	0.50	Alom-Zaanim
-Allon	Alom-Zaanim	Alom-Zaanim	auto	media	2	1	1.00	Jabneel
-Amasiah	Amasias	Amasias	auto	media	2	1	1.00	Zicri
-Ammon	Amom	Amom	auto	media	3	125	0.68	Camos
-Amon	Amom	Amom	auto	media	6	21	0.86	Então
-Amzi	Anzi	Anzi	auto	media	4	2	1.00	Bani
-Anak	Anaque	Anaque	auto	media	2	16	0.44	Aimã
-Ananiah	Ananias	Ananias	auto	media	5	2	1.00	Anatote
-Anna	Ana	Ana	auto	media	2	1	1.00	Fanuel
-Aphses	Hapises	Hapises	auto	media	1	1	1.00	Hezir
-Ara	Ara	Ara	auto	media	2	1	1.00	Pispa
-Arabah	Arabá	Arabá	auto	media	4	27	0.11	Aberta
-Arabia	Arábia	Arábia	auto	media	4	19	0.37	Agar
-Aram-maacah	Maaca	Maaca	auto	media	2	1	1.00	Amom
-Aran	Arã	Arã	auto	media	2	2	0.50	Harã
-Arba	Arba	Arba	auto	media	2	3	0.33	Quiriate-Arba
-Archippus	Arquipo	Arquipo	auto	media	2	2	0.50	Árquipo
-Arumah	Aruma	Aruma	auto	media	3	3	0.33	Gaal
-Asherah	Aserá	Aserá	auto	media	1	40	0.05	Asa
-Ashtoreth	Astarote	Astarote	auto	media	2	3	1.00	Camos
-Atroth-beth-joab	Bete-Joabe	Bete-Joabe	auto	media	2	1	1.00	Atarote
-Augustus	Augusto	Augusto	auto	media	2	5	0.20	Mas
-Azarael	Azareel	Azareel	auto	media	1	1	1.00	Natanael
-Azariahu	Azarias	Azarias	auto	media	1	1	1.00	Zacarias
-Azotus	Azoto	Azoto	auto	media	1	1	1.00	Mas
-Baalath-beer	Baalate-Beer	Baalate-Beer	auto	media	3	5	0.20	Ramá
-Baale-judah	Judá	Judá	auto	media	2	1	1.00	Baal
-Baana	Baaná	Baaná	auto	media	3	2	1.00	Berequias
-Babylonia	Babilônia	Babilônia	auto	media	2	15	0.53	Dario
-Bamoth-baal	Bamote-Baal	Bamote-Baal	auto	media	3	3	0.33	Bete-Baal-Meom
-Basemath	Basemate	Basemate	auto	media	1	1	1.00	Salomão
-Basmath	Basemate	Basemate	auto	media	1	1	1.00	Salomão
-Bath-shua	Bete-Suá	Bete-Suá	auto	media	1	2	0.50	Sua
-Bealoth	Alote	Alote	auto	media	2	1	1.00	Baaná
-Beautiful Gate	porta do Templo	Porta do Templo	auto	media	3	2	0.50	Porta Formosa
-Beer-lahai-roi	Beer-Laai-Roi	Beer-Laai-Roi	auto	media	3	3	0.33	Abraão
-Beon	Beom	Beom	auto	media	2	1	1.00	Nebo
-Berothah	Berota	Berota	auto	media	3	3	0.33	Sibraim
-Berothai	Betá	Betá	auto	media	2	1	1.00	Beerote
-Beth-azmaveth	Bete-Azmavete	Bete-Azmavete	auto	media	2	3	0.33	Os
-Beth-gilgal	Gilgal	Gilgal	auto	media	2	1	1.00	Geba
-Beth-millo	Milo	Milo	auto	media	3	3	1.00	Sila
-Beth-rehob	Bete-Reobe	Bete-Reobe	auto	media	3	4	0.25	Reobe
-Bethel	Betul	Betul	auto	media	1	3	0.33	Betuel
-Birzaith	Bizarvite	Bizarvite	auto	media	1	1	1.00	Berias
-Blastus	Blasto	Blasto	auto	media	2	1	1.00	Tiro
-Bor-ashan	Corasã	Corasã	auto	media	3	1	1.00	Hormá
-Brook Eshcol	ribeiro de Escol	Ribeiro de Escol	auto	media	1	4	0.25	
-Brook of Egypt	ribeiro do Egito	Ribeiro do Egito	auto	media	3	11	0.36	
-Bunni	Bani	Bani	auto	media	2	1	1.00	Bebai
-Caphtor	Caftor	Caftor	auto	media	3	13	0.23	Quir
-Caphtorim	Caftorim	Caftorim	auto	media	1	3	0.33	Caftor
-Carpus	Carpo	Carpo	auto	media	1	1	1.00	Quando
-Chaldea	Caldeia	Caldeia	auto	media	3	91	0.08	Caldeus
-Chemosh	Quemos	Quemos	auto	media	2	8	0.38	Camos
-Chesulloth	Quesulote	Quesulote	auto	media	3	3	0.33	Jezreel
-Claudius	Cláudio	Cláudio	auto	media	2	11	0.18	Áquila
-Cnidus	Cnido	Cnido	auto	media	3	1	1.00	Creta
-Colossae	Colossos	Colossos	auto	media	3	2	0.50	Cristo
-Corinth	Corinto	Corinto	auto	media	3	15	0.47	Cristo
-Corner Gate	porta de Efraim	Porta de Efraim	auto	media	3	5	0.40	porta de Benjamim
-Coz	Coz	Coz	auto	media	1	1	1.00	Zobeba
-Crispus	Crispo	Crispo	auto	media	2	2	1.00	Deus
-Cun	Cum	Cum	auto	media	2	1	1.00	Assim
-Cyprus	Chipre	Chipre	auto	media	3	15	0.67	Jesus
-Cyrene	Cirene	Cirene	auto	media	3	7	0.29	Cireneu
-Dalaiah	Delaías	Delaías	auto	media	1	1	1.00	Pelaías
-Dekar	Ben-Dequer	Ben-Dequer	auto	media	1	1	1.00	Macaz
-Deker	Ben-Dequer	Ben-Dequer	auto	media	1	1	1.00	Elom-Bete-Hanã
-Destruction	Destruição	Destruição	auto	media	1	1	1.00	Egito
-Diblathaim	Almom-Diblataim	Almom-Diblataim	auto	media	1	3	0.67	Bete-Diblataim
-Dibon	Dimom	Dimom	auto	media	1	1	1.00	Pois
-Dimnah	Dimna	Dimna	auto	media	3	3	0.33	Naalal
-Dung Gate	porta do Esterco	Porta do Esterco	auto	media	3	4	1.00	porta do Vale
-Ebal Mount	monte de Ebal	Monte de Ebal	auto	media	1	8	0.38	monte Ebal
-Ebron	Hebrom	Hebrom	auto	media	2	1	1.00	Reobe
-Ela	Elá	Elá	auto	media	1	1	1.00	Benjamim
-Eliadah	Eliada	Eliada	auto	media	1	1	1.00	Hadadezer
-Eliah	Elias	Elias	auto	media	2	2	1.00	Jaaresias
-Eliehoenai	Elioenai	Elioenai	auto	media	2	2	1.00	Joanã
-Elienai	Elioenai	Elioenai	auto	media	2	1	1.00	Eliel
-Elihoenai	Elioenai	Elioenai	auto	media	1	1	1.00	Zeraías
-Elmadam	Elmodã	Elmodã	auto	media	1	1	1.00	Adi
-Emmaus	Emaús	Emaús	auto	media	3	3	0.33	E
-En-tappuah	Tapua	Tapua	auto	media	2	2	0.50	Micmetá
-Enaim	Então	Então	auto	media	3	2	0.50	Timna
-Enam	Enã	Enã	auto	media	3	1	1.00	En-Ganim
-Epaenetus	Epêneto	Epêneto	auto	media	2	1	1.00	Saudai
-Ephes-dammim	Efes-Damim	Efes-Damim	auto	media	3	3	0.33	Pas-Damim
-Ephesus	Éfeso	Éfeso	auto	media	3	24	0.67	Jesus
-Erastus	Erasto	Erasto	auto	media	2	3	1.00	Quarto
-Esau Mount	monte de Esaú	Monte de Esaú	auto	media	1	4	0.25	monte de Sião
-Etham	Etã	Etã	auto	media	3	4	1.00	E
-Ethan	Etã	Etã	auto	media	5	6	0.67	Hemã
-Ethiopia	Etíopes	Etíopes	auto	media	1	7	0.14	Índia
-Eubulus	Êubulo	Êubulo	auto	media	2	1	1.00	Lino
-Euodias	Evódia	Evódia	auto	media	1	1	1.00	Senhor
-Euphrates	Eufrates	Eufrates	auto	media	3	61	0.38	Reobote
-Eutychus	Êutico	Êutico	auto	media	2	1	1.00	E
-Eve	Eva	Eva	auto	media	2	4	1.00	Obtive
-Ezem	Ezém	Ezém	auto	media	3	3	0.33	Azem
-Gate Miphkad	porta da Inspeção	Porta da Inspeção	auto	media	1	1	1.00	
-Gate of the Guard	porta da Prisão	Porta da Prisão	auto	media	1	1	1.00	porta das Ovelhas
-Geba	Gibeá	Gibeá	auto	media	2	1	1.00	Gaza
-Geber	Ben-Geber	Ben-Geber	auto	media	1	1	1.00	Argobe
-Gederah	Gedera	Gedera	auto	media	3	4	0.25	Gederá
-Geliloth	Gelilote	Gelilote	auto	media	2	3	0.33	Boã
-Gershom	Gérson	Gérson	auto	media	5	7	1.00	Peregrino
-Geuel	Guel	Guel	auto	media	2	1	1.00	Gade
-Gibea	Gibeá	Gibeá	auto	media	2	1	1.00	Macbena
-Gibeon	Gibeom	Gibeom	auto	media	1	2	0.50	Gibar
-Great Sea	mar Grande	Mar Grande	auto	media	3	36	0.03	mar Vermelho
-Greece	Grécia	Grécia	auto	media	3	13	0.38	Porém
-Guard Gate	porta Velha	Porta Velha	auto	media	1	1	1.00	porta da Prisão
-Hadar	Hadade	Hadade	auto	media	1	2	1.00	Massá
-Hagri	Hagri	Hagri	auto	media	1	6	0.17	Hagarenos
-Hahiroth	Pi-Hairote	Pi-Hairote	auto	media	1	1	1.00	Mara
-Ham	Hã	Hã	auto	media	3	1	1.00	Savé-Quiriataim
-Hamath-zobah	Zobá	Zobá	auto	media	2	2	1.00	Hamate
-Hammath	Hamate	Hamate	auto	media	5	5	0.40	Racate
-Hammon	Hamom	Hamom	auto	media	3	2	1.00	Caná
-Hananiah	Ananias	Ananias	auto	media	3	19	0.32	Elnatã
-Hanoch	Enoque	Enoque	auto	media	3	6	1.00	Palu
-Hanun	Hanum	Hanum	auto	media	6	10	0.60	Hanã
-Harod	Harode	Harode	auto	media	3	3	0.33	Gideão
-Harosheth-hagoyim	Harosete	Harosete	auto	media	3	3	1.00	Nações
-Hashabniah	Hasbaneias	Hasbaneias	auto	media	2	2	1.00	Hatus
-Havvoth-jair	Havote-Jair	Havote-Jair	auto	media	3	6	0.17	Jair
-Hebrews	Hebreus	Hebreus	auto	media	1	37	0.03	Eles
-Heleb	Helebe	Helebe	auto	media	2	3	0.33	Helede
-Heli	Eli	Eli	auto	media	2	1	1.00	E
-Hemam	Hemã	Hemã	auto	media	1	2	0.50	Homã
-Hemath	Hamate	Hamate	auto	media	1	1	1.00	Recabe
-Hemdan	Hendã	Hendã	auto	media	2	2	0.50	Esbã
-Henoch	Enoque	Enoque	auto	media	1	2	1.00	Efá
-Hermon	Hermon	Hermon	auto	media	1	7	0.14	Hermom
-Hermon Mount	monte de Hermom	Monte de Hermom	auto	media	1	20	0.20	monte Hermom
-Herodian	Herodes	Herodes	auto	media	1	3	0.33	Depois
-Hesed	Ben-Hesede	Ben-Hesede	auto	media	2	1	1.00	Hefer
-Heth	Hete	Hete	auto	media	2	58	0.21	Heteu
-Hezeki	Hizqui	Hizqui	auto	media	1	1	1.00	Zebadias
-Hezron	Hebrom	Hebrom	auto	media	2	1	1.00	Cades-Barneia
-Hilen	Hilém	Hilém	auto	media	1	1	1.00	Debir
-Hizkiah	Ezequias	Ezequias	auto	media	2	2	1.00	Josias
-Hizkijah	Ezequias	Ezequias	auto	media	1	1	1.00	Azur
-Hodaiah	Hodavias	Hodavias	auto	media	1	1	1.00	Delaías
-Hodevah	Hodeva	Hodeva	auto	media	1	3	0.33	Hodavias
-Hoham	Hoão	Hoão	auto	media	2	1	1.00	Eglom
-Holon	Holom	Holom	auto	media	6	4	0.75	Gilo
-Hophra	Ofra	Ofra	auto	media	1	18	0.06	Faraó
-Horam	Horão	Horão	auto	media	2	1	1.00	Gezer
-Hori	Hori	Hori	auto	media	4	10	0.30	Homã
-Horse Gate	porta dos Cavalos	Porta dos Cavalos	auto	media	3	3	0.33	
-Hosea	Oseias	Oseias	auto	media	2	3	1.00	Joeroboão
-Hotham	Hotão	Hotão	auto	media	3	3	0.67	Amal
-Hothan	Hotão	Hotão	auto	media	1	1	1.00	Sama
-Humtah	Hunta	Hunta	auto	media	3	1	1.00	Quiriate-Arba
-Huram	Hurão	Hurão	auto	media	1	3	0.33	Hufã
-Hushah	Husá	Husá	auto	media	2	6	0.17	Hur
-Husham	Husão	Husão	auto	media	2	4	1.00	Avite
-Huz	Uz	Uz	auto	media	1	1	1.00	Buz
-Ijon	Ijom	Ijom	auto	media	3	4	0.75	Janoa
-Imla	Inlá	Inlá	auto	media	1	4	1.00	Micaías
-Imlah	Inlá	Inlá	auto	media	1	4	1.00	Micaías
-Imrah	Inra	Inra	auto	media	2	1	1.00	Beri
-Imri	Inri	Inri	auto	media	4	2	1.00	Onri
-Ir-moab	Moabe	Moabe	auto	media	1	1	1.00	Arnom
-Ir-nahash	Naás	Naás	auto	media	2	1	1.00	Teína
-Ishiah	Issias	Issias	auto	media	1	1	1.00	Izraías
-Ishijah	Issias	Issias	auto	media	1	1	1.00	Simeão
-Isshijah	Issias	Issias	auto	media	1	1	1.00	Simeão
-Isuah	Isva	Isva	auto	media	1	2	0.50	Isvá
-Isui	Isvi	Isvi	auto	media	1	3	1.00	Isva
-Ituraea	Itureia	Itureia	auto	media	2	1	1.00	Lisânias
-Izhar	Zoar	Zoar	auto	media	1	1	1.00	Zerete
-Jaasu	Jaasai	Jaasai	auto	media	1	1	1.00	Matanias
-Jaaziel	Aziel	Aziel	auto	media	2	3	0.33	Jaaziel
-Jabesh-gilead	Jabes-Gileade	Jabes-Gileade	auto	media	2	20	0.30	Jabes
-Jacob	Jacó	Jacó	auto	media	3	1011	0.34	José
-Jairus	Jairo	Jairo	auto	media	2	2	1.00	Jesus
-Jakim	Jaquim	Jaquim	auto	media	4	2	1.00	Zicri
-Jamlech	Janleque	Janleque	auto	media	2	1	1.00	Mesobabe
-Jarmuth	Jarmute	Jarmute	auto	media	6	7	0.43	Jeremote
-Jason	Jáson	Jáson	auto	media	2	5	0.20	Jasão
-Jattir	Jatir	Jatir	auto	media	3	6	0.33	Jathir
-Javan	Javã	Javã	auto	media	4	34	0.21	Tubal
-Jehiel	Jeieli	Jeieli	auto	media	1	6	0.33	Jeiel
-Jehohanan	Joanã	Joanã	auto	media	12	7	1.00	Esdras
-Jehoiachin	Joaquim	Joaquim	auto	media	2	22	0.41	Jeoaquim
-Jehonathan	Jônatas	Jônatas	auto	media	5	3	1.00	Netanias
-Jehoram	Jorão	Jorão	auto	media	2	1	1.00	Semiramote
-Jehoshabeath	Jeosebate	Jeosebate	auto	media	1	2	0.50	Jeoseba
-Jehuel	Jeiel	Jeiel	auto	media	1	1	1.00	Uziel
-Jehush	Jeús	Jeús	auto	media	1	1	1.00	Eseque
-Jerijah	Jerias	Jerias	auto	media	2	1	1.00	Jazer
-Jesaiah	Jesaías	Jesaías	auto	media	2	2	1.00	Refaías
-Jeshimon	Jesimom	Jesimom	auto	media	1	6	0.33	Zife
-Jesiah	Issias	Issias	auto	media	1	1	1.00	Joezer
-Jethro	Jetro	Jetro	auto	media	2	19	0.47	Egito
-Jeuel	Jeiel	Jeiel	auto	media	1	1	1.00	Elifelete
-Jeuz	Jeús	Jeús	auto	media	2	1	1.00	Saquias
-Jezoar	Zoar	Zoar	auto	media	1	1	1.00	Helá
-Jezreel	Jezreelita	Jezreelita	auto	media	1	6	0.17	Jezreel
-Joah	Ido	Ido	auto	media	1	2	0.50	Zima
-Joah	Joabe	Joabe	auto	media	2	1	1.00	Jozabade
-Joahaz	Joá	Joá	auto	media	2	1	1.00	Jeoacaz
-Joda	Judá	Judá	auto	media	1	1	1.00	José
-Joha	Joá	Joá	auto	media	4	2	1.00	Ispa
-John	Jonas	Jonas	auto	media	1	5	1.00	Simão
-Joiada	Joiada	Joiada	auto	media	3	5	1.00	Jadua
-Jonas	Jonas	Jonas	auto	media	1	4	1.00	Alimenta
-Josabad	Jozabade	Jozabade	auto	media	1	1	1.00	Ismaías
-Jose	José	José	auto	media	1	1	1.00	Jorim
-Josech	José	José	auto	media	1	1	1.00	Semei
-Joses	José	José	auto	media	3	5	1.00	Tiago
-Joshah	Josias	Josias	auto	media	2	1	1.00	Janleque
-Joshaphat	Josafá	Josafá	auto	media	3	2	1.00	Hanã
-Joshua	José	José	auto	media	1	1	1.00	Jorim
-Jozadak	Jozadaque	Jozadaque	auto	media	2	1	1.00	Jesua
-Juda	Judá	Judá	auto	media	2	2	1.00	Matatias
-Jude	Judas	Judas	auto	media	2	3	1.00	José
-Julius	Júlio	Júlio	auto	media	2	2	1.00	Itália
-Justus	Justo	Justo	auto	media	3	2	1.00	Deus
-Kadesh-barnea	Cades-Barneia	Cades-Barneia	auto	media	2	24	0.42	Calebe
-Kain	Caim	Caim	auto	media	3	2	0.50	Quando
-Karnaim	Asterote-Carnaim	Asterote-Carnaim	auto	media	1	1	1.00	Savé-Quiriataim
-Kedesh-naphtali	Naftali	Naftali	auto	media	2	1	1.00	Quedes
-Kidron	Cedrom	Cedrom	auto	media	3	16	0.69	Derrubou
-King's Valley	vale do Rei	Vale do Rei	auto	media	2	2	0.50	vale de Savé
-Kir	Quir	Quir	auto	media	4	11	0.45	Caftor
-Kir-hareseth	Quir-Haresete	Quir-Haresete	auto	media	2	5	0.40	Moabe
-Kiriath-arim	Quiriate-Jearim	Quiriate-Jearim	auto	media	1	1	1.00	Quefira
-Kitron	Quitrom	Quitrom	auto	media	3	3	0.33	Naalol
-Kiyyun	Quium	Quium	auto	media	1	1	1.00	Sicute
-Korah	Corá	Corá	auto	media	8	44	0.27	Oolibama
-Kore	Coré	Coré	auto	media	4	4	0.75	Corá
-LORD	Acorda	Acorda	auto	media	1	843	0.00	Melhorai
-Laadan	Ladã	Ladã	auto	media	1	9	0.44	Libni
-Laishah	Laís	Laís	auto	media	3	1	1.00	Galim
-Lebo-hamath	Lebo-Hamate	Lebo-Hamate	auto	media	2	12	0.25	Hamate
-Levi	Levi	Levi	auto	media	6	331	0.21	Melqui
-Leviathan	Leviatã	Leviatã	auto	media	1	5	0.40	Amaldiçoem-na
-Libya	Líbia	Líbia	auto	media	3	10	0.20	Frígia
-Linus	Lino	Lino	auto	media	2	1	1.00	Cláudia
-Lois	Loide	Loide	auto	media	2	1	1.00	Trago
-Lucius	Lúcio	Lúcio	auto	media	2	2	1.00	Jáson
-Luke	Lucas	Lucas	auto	media	2	4	0.75	Demas
-Maath	Maate	Maate	auto	media	2	1	1.00	Matatias
-Magadan	Magdala	Magdala	auto	media	2	1	1.00	Depois
-Mahalah	Maalá	Maalá	auto	media	1	1	1.00	Hamolequete
-Mahalath	Maalate	Maalate	auto	media	3	7	0.29	Abiail
-Malchus	Malco	Malco	auto	media	2	1	1.00	Simão
-Mash	Mas	Mas	auto	media	2	2	0.50	Assur
-Maskil	Assim	Assim	auto	media	1	14	0.07	Cantarei
-Matthan	Matã	Matã	auto	media	2	1	1.00	Eleazar
-Matthew	Mateus	Mateus	auto	media	2	8	0.62	Alfeu
-Mehir	Maquir	Maquir	auto	media	2	1	1.00	E
-Melita	Malta	Malta	auto	media	1	1	1.00	E
-Memphis	Mênfis	Mênfis	auto	media	3	8	0.38	Jeremias
-Menan	Mainã	Mainã	auto	media	1	1	1.00	Meleá
-Menna	Mainã	Mainã	auto	media	1	1	1.00	Meleá
-Meribah	Meribá	Meribá	auto	media	6	12	0.33	Massá
-Meribah-kadesh	Meribá-Cades	Meribá-Cades	auto	media	1	3	0.33	Cades
-Meshech-Tubal	Tubal	Tubal	auto	media	2	1	1.00	Meseque
-Miamin	Miamim	Miamim	auto	media	1	1	1.00	Ramias
-Mica	Mica	Mica	auto	media	3	5	0.80	Matanias
-Micah	Miqueias	Miqueias	auto	media	2	2	1.00	Samaria
-Micaiah	Miqueias	Miqueias	auto	media	1	2	1.00	Gemarias
-Micha	Mica	Mica	auto	media	2	3	1.00	Matanias
-Michah	Mica	Mica	auto	media	1	3	1.00	Issias
-Michaiah	Micaías	Micaías	auto	media	4	6	0.67	Mica
-Michaiah	Miqueias	Miqueias	auto	media	1	2	1.00	Gemarias
-Michmas	Micmás	Micmás	auto	media	1	2	1.00	Os
-Miletus	Mileto	Mileto	auto	media	3	3	1.00	Quios
-Miniamin	Benjamim	Benjamim	auto	media	2	1	1.00	Amarias
-Mishael	Misael	Misael	auto	media	5	21	0.38	Uziel
-Mizpeh	Mispá	Mispá	auto	media	7	3	1.00	Dileã
-Moadiah	Moadias	Moadias	auto	media	1	3	0.33	Maadias
-Molech	Moloque	Moloque	auto	media	2	15	0.67	Moabe
-Mordecai	Mordecai	Mordecai	auto	media	2	50	0.02	Mardoqueu
-Moresheth	Moresete-Gate	Moresete-Gate	auto	media	1	3	0.33	Miqueias
-Moresheth-gath	Moresete-Gate	Moresete-Gate	auto	media	2	3	0.33	Portanto
-Mount Carmel	monte de Carmelo	Monte de Carmelo	auto	media	2	18	0.17	monte Carmelo
-Mount Esau	monte de Esaú	Monte de Esaú	auto	media	1	4	0.25	monte de Sião
-Mount Hermon	monte de Hermom	Monte de Hermom	auto	media	2	16	0.25	monte Hermom
-Mount Horeb	monte Horebe	Monte Horebe	auto	media	2	17	0.06	monte de Seir
-Mount Seir	monte de Seir	Monte de Seir	auto	media	4	35	0.46	monte de Halaque
-Mount Sinai	monte Sinai	Monte Sinai	auto	media	2	30	0.40	monte de Sinai
-Mount Tabor	monte de Tabor	Monte de Tabor	auto	media	2	9	0.33	
-Mount of Esau	monte de Esaú	Monte de Esaú	auto	media	1	4	0.25	monte de Sião
-Mozah	Moza	Moza	auto	media	3	1	1.00	Mispá
-Muppim	Mupim	Mupim	auto	media	1	3	0.33	Hupim
-Muster Gate	porta da Inspeção	Porta da Inspeção	auto	media	2	1	1.00	
-Nagge	Nagai	Nagai	auto	media	1	1	1.00	Naum
-Nahalol	Naalol	Naalol	auto	media	2	3	0.33	Zebulom
-Nain	Naim	Naim	auto	media	3	1	1.00	Jesus
-Nazareth	Nazaré	Nazaré	auto	media	3	33	0.39	Nazareno
-Neah	Neá	Neá	auto	media	3	3	0.33	Ete-Cazim
-Nebo Mount	monte Nebo	Monte Nebo	auto	media	1	6	0.33	monte Abarim
-Negeb	Negueve	Negueve	auto	media	3	44	0.18	Éder
-Netophah	Netofá	Netofá	auto	media	3	12	0.17	Netofate
-Nile	Nilo	Nilo	auto	media	3	48	0.08	Parecia-lhe
-Nimrod	Ninrode	Ninrode	auto	media	4	4	1.00	Assim
-Nympha	Ninfas	Ninfas	auto	media	1	1	1.00	Laodiceia
-Oded	Obede	Obede	auto	media	4	3	1.00	Deus
-Old Gate	porta Velha	Porta Velha	auto	media	1	1	1.00	
-Olivet	Oliveiras	Oliveiras	auto	media	1	3	1.00	Betfagé
-Oren	Orém	Orém	auto	media	2	1	1.00	Ozém
-Orpah	Orfa	Orfa	auto	media	2	2	1.00	Moabe
-Paddan	Padã-Arã	Padã-Arã	auto	media	2	16	0.69	Canaã
-Parthians	Partos	Partos	auto	media	1	1	1.00	Elamitas
-Passover	Páscoa	Páscoa	auto	media	1	73	0.23	Respondereis
-Perga	Perges	Perges	auto	media	3	3	1.00	Pafo
-Persis	Pérside	Pérside	auto	media	2	1	1.00	Trifosa
-Pharisee	Fariseu	Fariseu	auto	media	1	95	0.01	Fariseus
-Pharosh	Parós	Parós	auto	media	1	1	1.00	Dos
-Phaseah	Paseia	Paseia	auto	media	1	2	1.00	Gazão
-Phenice	Fênix	Fênix	auto	media	1	1	1.00	E
-Philetus	Fileto	Fileto	auto	media	2	1	1.00	Himeneu
-Philippi	Filipos	Filipos	auto	media	3	8	0.75	Paulo
-Philistia	Filístia	Filístia	auto	media	3	251	0.02	Filisteia
-Philistine	Filisteus	Filisteus	auto	media	1	2	0.50	Caftorim
-Phurah	Pura	Pura	auto	media	1	2	1.00	E
-Phygellus	Fígelo	Fígelo	auto	media	1	1	1.00	Hermógenes
-Phygelus	Fígelo	Fígelo	auto	media	1	1	1.00	Hermógenes
-Pirathon	Piratom	Piratom	auto	media	3	5	0.20	Hidai
-Pochereth	Poquerete-Hazebaim	Poquerete-Hazebaim	auto	media	1	2	1.00	Sefatias
-Pontus	Ponto	Ponto	auto	media	3	3	1.00	Partos
-Puah	Pua	Pua	auto	media	2	3	0.33	Puá
-Publius	Públio	Públio	auto	media	2	2	1.00	Paulo
-Pudens	Pudente	Pudente	auto	media	2	1	1.00	Cláudia
-Quartus	Quarto	Quarto	auto	media	2	1	1.00	Erasto
-Quirinius	Quirino	Quirino	auto	media	1	1	1.00	Síria
-Raamses	Ramessés	Ramessés	auto	media	2	1	1.00	Israel
-Rachab	Raabe	Raabe	auto	media	1	1	1.00	Rute
-Raham	Raão	Raão	auto	media	2	1	1.00	Samai
-Rakem	Requém	Requém	auto	media	2	1	1.00	Seres
-Ram	Rão	Rão	auto	media	6	9	0.67	Esrom
-Ramah	Hormá	Hormá	auto	media	3	1	1.00	Hosa
-Ramathaim-zophim	Ramataim	Ramataim	auto	media	2	1	1.00	Zofim
-Ramoth	Jeremote	Jeremote	auto	media	1	1	1.00	Mesulão
-Rapha	Rafa	Rafa	auto	media	2	9	0.33	Gera
-Raphah	Rafa	Rafa	auto	media	1	2	0.50	Refaías
-Reaia	Reaías	Reaías	auto	media	1	1	1.00	Seu
-Red Sea	mar Vermelho	Mar Vermelho	auto	media	5	33	0.79	
-Rephaim	Efraim	Efraim	auto	media	1	9	0.11	Edrei
-Rhegium	Régio	Régio	auto	media	3	1	1.00	Putéoli
-Rhoda	Rode	Rode	auto	media	2	1	1.00	Pedro
-Rimmon	Dimna	Dimna	auto	media	1	1	1.00	Naalal
-Rome	Roma	Roma	auto	media	3	34	0.41	Cirene
-Rufus	Rufo	Rufo	auto	media	4	2	1.00	Simão
-Sabbath	Sábado	Sábado	auto	media	1	151	0.04	Salvar
-Salt Sea	mar Salgado	Mar Salgado	auto	media	3	21	0.33	mar de Jazer
-Salu	Salu	Salu	auto	media	2	1	1.00	Simeão
-Samgar	Sangar-Nebo	Sangar-Nebo	auto	media	1	1	1.00	Rabmague
-Satan	Satanás	Satanás	auto	media	2	100	0.46	Tiatira
-Sea of Galilee	mar da Galileia	Mar da Galileia	auto	media	2	10	0.40	mar de Quinerete
-Seba	Seba	Seba	auto	media	2	2	1.00	Sabá
-Sela	Sela	Sela	auto	media	3	5	0.20	Enviai
-Sela	Selá	Selá	auto	media	1	2	0.50	Jocteel
-Senaah	Senaá	Senaá	auto	media	2	5	0.40	Hassenaá
-Sepharad	Sefarade	Sefarade	auto	media	3	4	0.25	Sarepta
-Shaalbim	Saalbim	Saalbim	auto	media	3	5	0.40	Saalabim
-Shaharaim	Saaraim	Saaraim	auto	media	2	1	1.00	Baara
-Shallun	Salum	Salum	auto	media	1	1	1.00	Selá
-Shamariah	Samaria	Samaria	auto	media	1	1	1.00	Zaaão
-Shamed	Semede	Semede	auto	media	1	1	1.00	Misã
-Shamma	Samá	Samá	auto	media	2	1	1.00	Silsa
-Shapham	Safã	Safã	auto	media	2	1	1.00	Safate
-Sharuhen	Saruém	Saruém	auto	media	3	3	0.33	Bete-Lebaote
-Shaul	Saul	Saul	auto	media	6	10	0.90	Samlá
-Shavsha	Sausa	Sausa	auto	media	1	4	0.25	Sisa
-Sheba	Sabá	Sabá	auto	media	3	20	0.75	Seba
-Sheba	Sebá	Sebá	auto	media	6	9	0.44	Sabtá
-Sheep Gate	porta das Ovelhas	Porta das Ovelhas	auto	media	3	4	0.75	porta do Peixe
-Shelah	Salá	Salá	auto	media	1	8	0.75	Selá
-Shelah	Selá	Selá	auto	media	3	14	0.64	Zerá
-Sheleph	Salefe	Salefe	auto	media	2	2	1.00	Hazarmavé
-Shemaiah	Semeías	Semeías	auto	media	2	1	1.00	Gemarias
-Shemariah	Samaria	Samaria	auto	media	1	1	1.00	Zaaão
-Sheminith	Seminite	Seminite	auto	media	1	3	0.33	Micneias
-Shemuel	Samuel	Samuel	auto	media	4	2	1.00	Simeão
-Shen	Sem	Sem	auto	media	3	1	1.00	SENHOR
-Shephathiah	Sefatias	Sefatias	auto	media	1	1	1.00	Ibneias
-Shibah	Seba	Seba	auto	media	1	1	1.00	Berseba
-Shikkeron	Sicrom	Sicrom	auto	media	3	1	1.00	Ecrom
-Shiloah	Siloé	Siloé	auto	media	2	1	1.00	Resim
-Shimea	Simeia	Simeia	auto	media	4	2	1.00	Asaías
-Shimeon	Simeão	Simeão	auto	media	2	1	1.00	Harim
-Shimhi	Simei	Simei	auto	media	1	1	1.00	Sinrate
-Shimon	Simeão	Simeão	auto	media	2	1	1.00	Rina
-Shimrath	Sinrate	Sinrate	auto	media	2	1	1.00	Simei
-Shimrith	Simeate	Simeate	auto	media	1	2	1.00	Somer
-Shimron	Sinrom	Sinrom	auto	media	5	6	0.83	Jó
-Shimron-meron	Sinrom-Merom	Sinrom-Merom	auto	media	2	1	1.00	Acsafe
-Shion	Siom	Siom	auto	media	3	1	1.00	Anaarate
-Shoham	Soão	Soão	auto	media	2	1	1.00	Jaazias
-Shua	Sua	Sua	auto	media	1	3	0.67	Bete-Suá
-Shua	Suá	Suá	auto	media	2	1	1.00	Hotão
-Shuah	Sua	Sua	auto	media	1	3	0.67	Bete-Suá
-Shubael	Subael	Subael	auto	media	2	5	0.40	Sebuel
-Shuhah	Suá	Suá	auto	media	1	1	1.00	Estom
-Shunem	Suném	Suném	auto	media	3	9	0.33	Quesulote
-Shupham	Sufã	Sufã	auto	media	1	3	0.33	Hufã
-Sihon	Siom	Siom	auto	media	2	34	0.03	Seom
-Siloam	Siloé	Siloé	auto	media	2	5	0.60	Enviado
-Simri	Sinri	Sinri	auto	media	1	1	1.00	Merari
-Sin	Sim	Sim	auto	media	3	4	1.00	Sinai
-Sirion	Sírion	Sírion	auto	media	1	3	0.33	Siriom
-Soco	Socó	Socó	auto	media	2	2	1.00	Adulão
-Socoh	Sucote	Sucote	auto	media	3	1	1.00	Samir
-Spain	Espanha	Espanha	auto	media	3	2	1.00	Assim
-Suah	Suá	Suá	auto	media	2	1	1.00	Sual
-Sur	Sur	Sur	auto	media	3	1	1.00	E
-Syene	Sevene	Sevene	auto	media	3	3	0.67	Sinim
-Tabor Mount	monte de Tabor	Monte de Tabor	auto	media	1	8	0.38	
-Tahpenes	Tafnes	Tafnes	auto	media	2	2	1.00	Genubate
-Tahtim-hodshi	Hodsi	Hodsi	auto	media	1	1	1.00	Dã-Jaã
-Tahtimhodshi	Hodsi	Hodsi	auto	media	1	1	1.00	Dã-Jaã
-Tamar	Tadmor	Tadmor	auto	media	2	1	1.00	Baalate
-Tehaphnehes	Tafnes	Tafnes	auto	media	1	1	1.00	E
-Tema	Tema	Tema	auto	media	5	5	0.40	Temá
-Tertius	Tércio	Tércio	auto	media	2	1	1.00	Eu
-Tharshish	Társis	Társis	auto	media	1	1	1.00	Aisaar
-Tiberius	Tibério	Tibério	auto	media	2	12	0.08	Traconites
-Tiglath-pileser	Tiglate-Pileser	Tiglate-Pileser	auto	media	1	9	0.44	Tiglate-Pilneser
-Tigris	Tigre	Tigre	auto	media	2	2	1.00	Assíria
-Tilgath-pilneser	Tiglate-Pilneser	Tiglate-Pilneser	auto	media	1	6	0.33	Tiglate-Pileser
-Tishbe	Tisbita	Tisbita	auto	media	3	6	0.83	Jezabel
-Tobijah	Tobias	Tobias	auto	media	4	3	1.00	Tobadonias
-Tohu	Toú	Toú	auto	media	1	3	0.33	Toá
-Tower of the Hundred	torre de Hananeel	Torre de Hananeel	auto	media	2	2	0.50	torre de Hananel
-Troas	Troas	Troas	auto	media	3	6	0.17	Trôade
-Tyrannus	Tirano	Tirano	auto	media	2	1	1.00	Caminho
-Tyre	Tiro	Tiro	auto	media	3	64	0.83	Chipre
-Ulam	Ulão	Ulão	auto	media	4	4	1.00	Gileade
-Urbanus	Urbano	Urbano	auto	media	1	1	1.00	Estáquis
-Valley of Hinnom	vale de Hinom	Vale de Hinom	auto	media	2	12	0.25	Vale da Matança
-Valley of Slaughter	Vale da Matança	Vale da Matança	auto	media	1	2	1.00	
-Water Gate	porta das Águas	Porta das Águas	auto	media	3	5	1.00	porta da Fonte
-West Gate	porta de Salequete	Porta de Salequete	auto	media	1	1	1.00	
-Yeshanah Gate	porta Velha	Porta Velha	auto	media	1	2	1.00	porta da Prisão
-Yiron	Irom	Irom	auto	media	3	1	1.00	Horém
-Zacchur	Zacur	Zacur	auto	media	1	1	1.00	Hamuel
-Zachariah	Zacarias	Zacarias	auto	media	1	3	1.00	Azarias
-Zacharias	Zacarias	Zacarias	auto	media	2	12	1.00	Caifás
-Zaham	Zaaão	Zaaão	auto	media	2	1	1.00	Samaria
-Zair	Seir	Seir	auto	media	2	1	1.00	Jeorão
-Zalmon	Salmom	Salmom	auto	media	2	1	1.00	Quando
-Zaphon	Sião	Sião	auto	media	1	3	0.33	Belo
-Zaphon	Zafom	Zafom	auto	media	3	4	0.25	Seom
-Zarephath	Sarepta	Sarepta	auto	media	3	4	1.00	Sefarade
-Zatthu	Zatu	Zatu	auto	media	1	1	1.00	Paate-Moabe
-Zeboim	Zeboim	Zeboim	auto	media	3	1	1.00	Nebalate
-Zephath	Zefate	Zefate	auto	media	3	9	0.11	Simeão
-Zia	Zia	Zia	auto	media	2	1	1.00	Jacã
-Zidkijah	Zedequias	Zedequias	auto	media	1	1	1.00	Hacalias
-Zidon	Sidom	Sidom	auto	media	1	2	1.00	Canaã
-Zimran	Zinrã	Zinrã	auto	media	2	2	1.00	Suá
-Zizah	Zina	Zina	auto	media	2	2	1.00	Jaate
-Zobah-Hamath	Zobá	Zobá	auto	media	1	1	1.00	Hamate
-Zohar	Zoar	Zoar	auto	media	2	2	1.00	Manre
-Zorobabel	Zorobabel	Zorobabel	auto	media	1	1	1.00	Salatiel
+Abel	E	Abel	revisado	baixa	1	1	1.00	Josué
+Adramyttium	Aristarco	Aristarco	sem	baixa	3	1	1.00	Ásia
+Al-taschith	Louvamos	Louvamos	sem	baixa	1	4	0.25	Filhos
+Amaw	Balaão	Balaão	sem	baixa	3	1	1.00	Um
+Amminadib	Sem	Sem	sem	baixa	1	1	1.00	
+Amorite	Também	Amorreu	revisado	baixa	1	4	0.25	Egito
+Amorites	Camos	Amorreus	revisado	baixa	1	86	0.01	Chegastes
+Angle	Jerusalém	Jerusalém	sem	baixa	2	1	1.00	Uzias
+Angle	Palal	Palal	sem	baixa	1	5	0.20	Henadade
+Apharasthchite	Setar-Bozenai	Arfasaquita	revisado	baixa	1	3	0.67	Tatenai
+Aphik	Aco	Afeque	revisado	baixa	2	1	1.00	Afeque
+Aram-naharaim	Por	Por	sem	baixa	2	1	1.00	Deus
+Aram-zobah	Por	Por	sem	baixa	1	1	1.00	Deus
+Aramitess	Asriel	Asriel	sem	baixa	1	1	1.00	Manassés
+Archites	Aitofel	Arquitas	revisado	baixa	1	6	0.33	Atarote
+Areopagus	Dâmaris	Areópago	revisado	baixa	2	3	0.33	Podemos
+Areopagus	Podemos	Areópago	revisado	baixa	1	3	0.33	Paulo
+Ariel	Cabzeel	Ariel	revisado	baixa	1	2	1.00	Moabe
+Arkite	E	Arqueu	revisado	baixa	1	2	0.50	Aos
+Arkites	Aos	Arqueus	revisado	baixa	1	2	0.50	E
+Aroer	Hotão	Aroer	revisado	baixa	1	1	1.00	Sama
+Artemis	Demétrio	Diana	revisado	baixa	1	5	0.20	Grande
+Arvadite	Aos	Arvadeu	revisado	baixa	1	2	0.50	E
+Arvadites	Aos	Arvadeus	revisado	baixa	1	2	0.50	E
+Asen	Harife	Harife	sem	baixa	1	1	1.00	Os
+Avvim	Sior	Aveus	revisado	baixa	1	2	0.50	Gaza
+Baharum	Eliaba	Baurim	revisado	baixa	1	1	1.00	Azmavete
+Bajith	Medeba	Medeba	sem	baixa	1	1	1.00	Nebo
+Bear	Plêiades	Ursa	revisado	baixa	1	2	0.50	Ursa
+Behemoth	Observa	Beemote	revisado	baixa	1	1	1.00	
+Beth-Ashtoreth	Astarote	Astarote	sem	baixa	1	1	1.00	Bete-Seã
+Beth-eked	Prendei-os	Prendei-os	sem	baixa	3	2	0.50	Então
+Beth-haggan	Ibleão	Ibleão	sem	baixa	3	1	1.00	Megido
+Beth-merhak	Saiu	Saiu	sem	baixa	1	1	1.00	
+Bethany	Betábara	Betânia	revisado	baixa	2	1	1.00	Estas
+Booths Festival	festa Booths	festa Booths	sem	baixa	1	1	0.00	
+Broad Wall	muro Broad	Muralha larga	revisado	baixa	3	2	0.00	
+Brook of the Willows	ribeiro de Willows	Ribeiro dos salgueiros	revisado	baixa	2	1	0.00	
+Buzites	Baraquel	Buzitas	revisado	baixa	1	2	1.00	Deus
+Cherethites	Bicri	Queretitas	revisado	baixa	1	9	0.11	Depois
+Cherethites	Eis	Queretitas	revisado	baixa	1	3	0.33	Calebe
+Chronicles	Os	Os	sem	baixa	1	38	0.87	Onri
+City of Palms	cidade de Palms	Cidade das palmeiras	revisado	baixa	2	4	0.00	
+City of Salt	cidade de Mar salgado	cidade de Mar salgado	auto	baixa	2	1	0.00	
+City of Salt	cidade de Salt	Cidade do sal	revisado	baixa	2	1	0.00	
+City of the Lord	cidade de Lord	Cidade do SENHOR	revisado	baixa	1	2	0.00	
+Corban	Os	Corbã	revisado	baixa	1	2	0.50	Tudo
+Cush	Deus	Cuxe	revisado	baixa	1	1	1.00	SENHOR
+Cushi	Seja	Cusi	revisado	baixa	1	5	0.40	Correu
+Cyrenius	Quirino	Quirino	revisado	baixa	1	1	1.00	Síria
+Dedication Festival	festa Dedication	festa Dedication	sem	baixa	1	1	0.00	
+Dehavites	Sinsai	Sinsai	sem	baixa	1	1	1.00	Reum
+Destiny	SENHOR	SENHOR	sem	baixa	1	1	1.00	Porém
+Dinaites	Sinsai	Dinaítas	revisado	baixa	1	1	1.00	Reum
+East	Zeba	Zeba	sem	baixa	3	18	0.06	Serão
+East Gate	porta East	Porta oriental	revisado	baixa	4	5	0.00	
+East Square	praça East	Praça oriental	revisado	baixa	1	1	0.00	
+Eder	Migdal-Eder	Éder	revisado	baixa	2	1	1.00	E
+Egypt	Leabim	Egito	revisado	baixa	1	4	0.25	Pute
+Elkosh	Revelação	Revelação	sem	baixa	3	1	1.00	Livro
+Emim	Savé-Quiriataim	Emins	revisado	baixa	1	3	0.33	Asterote-Carnaim
+Ephron	Efraim	Efrom	revisado	baixa	2	1	1.00	Jesana
+Ephron	Neftoa	Efrom	revisado	baixa	2	1	1.00	E
+Epicurean	Parece	Epicureus	revisado	baixa	1	1	1.00	Evangelho
+Ethiopia	Índia	Etiópia	revisado	baixa	1	4	0.50	Sivã
+Eznites	Estes	Estes	sem	baixa	1	1	1.00	Josebe-Bassebete
+Field	Jerusalém	Campo do lavandeiro	revisado	baixa	1	3	0.67	Sear-Jasube
+Forest	E	E	sem	baixa	1	1	1.00	Judá
+Fortune	Porém	Porém	sem	baixa	1	1	1.00	SENHOR
+Foundation Gate	porta Foundation	porta Foundation	sem	baixa	1	1	0.00	
+Freedmen	Estêvão	Libertos	revisado	baixa	1	1	1.00	E
+Gadara	E	E	sem	baixa	1	1	1.00	Eles
+Galilee	Gilgal	Galileia	revisado	baixa	1	1	1.00	Dor
+Gamad	Arvade	Gamaditas	revisado	baixa	3	1	1.00	Os
+Garmite	Estemoa	Garmita	revisado	baixa	1	1	1.00	Naã
+Garmites	Hodias	Garmitas	revisado	baixa	1	1	1.00	Estemoa
+Gate of the Foundation	porta de Foundation	Porta do fundamento	revisado	baixa	2	1	0.00	
+Gath	Davi	Gate	revisado	baixa	1	2	1.00	Não
+Ge-harashim	Artesãos	Vale dos Artesãos	revisado	baixa	2	2	0.50	Seraías
+Gederah	Jeremias	Gederá	revisado	baixa	1	1	1.00	Jozabade
+Gerasa	Gadarenos	Gadarenos	sem	baixa	2	4	0.25	Galileia
+Gibeah	Fineias	Gibeá	revisado	baixa	1	1	1.00	Também
+Gibeath-elohim	De	Morro de Deus	revisado	baixa	3	1	1.00	Deus
+Gibeath-haaraloth	Israel	Monte dos prepúcios	revisado	baixa	2	1	1.00	Josué
+Gilo	Aitofel	Gilo	revisado	baixa	1	1	1.00	Elifelete
+Girgashites	Antes	Girgaseus	revisado	baixa	1	16	0.06	Israel
+Girgasite	E	Girgaseu	revisado	baixa	1	2	1.00	
+Girzites	Egito	Gersitas	revisado	baixa	1	1	1.00	Sur
+Gittith	Jacó	Jacó	sem	baixa	1	3	0.33	Pois
+Gizonites	Jônatas	Gizonitas	revisado	baixa	1	1	1.00	Hasém
+God	Jugo	Jugo	sem	baixa	1	8587	0.00	Node
+Goiim	Gilgal	Gilgal	sem	baixa	3	3	0.33	Quedorlaomer
+Goiim	Quedorlaomer	Quedorlaomer	sem	baixa	1	2	1.00	Tidal
+Gulloth-mayim	Ela	Ela	sem	baixa	1	2	0.50	Dá-me
+Hachmonites	Hacmoni	Hacmonitas	revisado	baixa	1	2	0.50	Jasobeão
+Hakkephirim	Gesém	Gesém	sem	baixa	2	1	1.00	Vem
+Hall of Judgment	sala de Judgment	Pórtico do juízo	revisado	baixa	2	1	0.00	
+Hall of Pillars	sala de Pillars	Pórtico de colunas	revisado	baixa	2	1	0.00	
+Hall of the Throne	sala de Throne	Pórtico do trono	revisado	baixa	2	1	0.00	
+Hamathite	E	Hamateu	revisado	baixa	1	2	0.50	Aos
+Hamathites	Aos	Hamateus	revisado	baixa	1	2	0.50	E
+Hammelech	Abdeel	Abdeel	sem	baixa	2	2	0.50	Jerameel
+Hamon-gog Valley	vale Hamon-gog	vale Hamon-gog	sem	baixa	1	2	0.00	
+Hararites	Harar	Hararitas	revisado	baixa	1	4	0.25	Sarar
+Harod	Samote	Harode	revisado	baixa	1	2	0.50	Elica
+Haruphites	Semarias	Harufitas	revisado	baixa	1	1	1.00	Bealias
+Hasrah	Harás	Harás	revisado	baixa	1	2	1.00	Asaías
+Hazerim	Gaza	Gaza	sem	baixa	1	1	1.00	Caftor
+Helech	Arvade	Arvade	sem	baixa	3	1	1.00	Os
+Heliopolis	Egito	Om	revisado	baixa	1	1	1.00	Bete-Semes
+Heliopolis	Potífera	Om	revisado	baixa	1	5	0.60	José
+Heres	E	E	sem	baixa	3	1	1.00	Joás
+Hermes	Júpiter	Hermes	revisado	baixa	1	1	1.00	Mercúrio
+Hiddekel	Tigre	Tigre	revisado	baixa	1	2	1.00	Eufrates
+Highway	Rogamo-te	Rogamo-te	sem	baixa	1	2	0.50	Deixa-me
+Hill Mizar	outeiro Mizar	Monte Mizar	revisado	baixa	1	1	0.00	
+Hivite	Heteu	Heveu	revisado	baixa	1	9	0.11	Zibeão
+Hivites	Jebuseos	Heveus	revisado	baixa	1	25	0.04	Antes
+Horesh	Deus	Deus	sem	baixa	3	4	0.25	Jônatas
+Horonaim	Entretanto	Horonaim	revisado	baixa	1	1	1.00	Absalão
+Horonites	Tobias	Horonitas	revisado	baixa	1	3	0.67	Porém
+House of the Forest	casa de Forest	Casa do bosque do Líbano	revisado	baixa	1	6	0.00	
+Hur	Ben-Hur	Hur	revisado	baixa	2	1	1.00	Efraim
+Huram	Hirão	Hirão	revisado	baixa	1	1	1.00	Eu
+Hushathites	Husatita	Husatitas	revisado	baixa	1	5	0.20	Safe
+Ithrites	Quiriate-Jearim	Itreus	revisado	baixa	1	3	0.33	Ira
+Iyim	Ijé-Abarim	Ijé-Abarim	revisado	baixa	2	1	1.00	Dibom-Gade
+Janen	Mataná	Mataná	sem	baixa	1	1	1.00	Naaliel
+Jebusite	E	Jebuseu	revisado	baixa	1	2	1.00	
+Jebusite	Jerusalém	Jebuseu	revisado	baixa	1	1	1.00	Hinom
+Jebusites	Jebuseos	Jebuseus	revisado	baixa	1	37	0.03	Jebus
+Jemnath	Ecrom	Ecrom	sem	baixa	1	1	1.00	Desde
+Jeshimon	Zife	Jesimom	revisado	baixa	2	4	0.50	Maom
+Jonath-elem-rechokim	Tem	Tem	sem	baixa	1	1	1.00	Deus
+Jordan Valley	vale Jordão	Planície do Jordão	revisado	baixa	1	8	0.00	
+Josedech	Jeozadaque	Jeozadaque	revisado	baixa	1	12	0.67	Josué
+Judaism	Igreja	Judaísmo	revisado	baixa	1	2	0.50	Pois
+Judgment	Fez	Fez	sem	baixa	1	1	1.00	
+Kadesh	Hodsi	Cades	revisado	baixa	1	1	1.00	Depois
+Kadmonites	Os	Cadmoneus	revisado	baixa	1	1	1.00	
+Kenites	Quedes	Queneus	revisado	baixa	1	10	0.10	Bendita
+Kenizzites	Os	Quenezeus	revisado	baixa	1	1	1.00	
+Kir	Quir-Moabe	Quir	revisado	baixa	1	1	1.00	Certamente
+Kue	Coa	Coa	revisado	baixa	3	2	1.00	E
+Lebanon Valley	vale Líbano	vale Líbano	sem	baixa	1	2	0.00	
+Lehem	Jasubi-Leem	Jasubi-Leem	revisado	baixa	2	1	1.00	Joquim
+Lo-ammi	Chama	Não-Meu-Povo	revisado	baixa	2	1	1.00	Não-Meu-Povo
+Lo-ruhamah	Não-Amada	Não-Amada	revisado	baixa	2	2	1.00	Chama
+Lower Pool	tanque Lower	Tanque de baixo	revisado	baixa	1	1	0.00	
+Lucifer	Cortado	Cortado	sem	baixa	2	1	1.00	Como
+Maareh-geba	Baal-Tamar	Baal-Tamar	sem	baixa	3	1	1.00	Israel
+Mahalab	Hormá	Hormá	sem	baixa	2	1	1.00	Aczibe
+Mahalath	Não	Maalate	revisado	baixa	1	2	0.50	Eles
+Mahaneh-dan	Dã	Campo de Dã	revisado	baixa	4	2	1.00	Judá
+Mahavites	Josavias	Maavitas	revisado	baixa	1	1	1.00	Itma
+Maranatha	Cristo	Cristo	sem	baixa	1	1	1.00	Vem
+Mazzaroth	Ursa	Ursa	sem	baixa	1	1	1.00	Podes
+Mecherathites	Héfer	Mequeratitas	revisado	baixa	1	1	1.00	Aías
+Meholathites	Merabe	Meolatitas	revisado	baixa	1	2	0.50	Mefibosete
+Menuhoth	Manaatitas	Manaatitas	revisado	baixa	1	1	1.00	Haroé
+Meronoth	Melatias	Melatias	sem	baixa	1	2	0.50	Obil
+Meronothites	Melatias	Meronotitas	revisado	baixa	1	2	0.50	Jedias
+Meunites	Estes	Estes	sem	baixa	1	3	0.33	Deus
+Mezobaites	Eliel	Mezobaítas	revisado	baixa	1	1	1.00	Obede
+Middle Gate	porta Middle	Porta do meio	revisado	baixa	1	1	0.00	
+Miktam	Livra-me	Livra-me	sem	baixa	1	6	0.17	Guarda-me
+Mishraites	Quiriate-Jearim	Misraeus	revisado	baixa	1	1	1.00	E
+Misrephoth-maim	Mispá	Mispá	sem	baixa	3	2	0.50	Israel
+Mithnites	Josafá	Mitenitas	revisado	baixa	1	1	1.00	Hanã
+Mizpeh Valley	vale Mispá	vale Mispá	auto	baixa	1	2	0.00	
+Mizpeh Valley	vale Mizpeh	vale Mizpeh	sem	baixa	1	2	0.00	
+Moab Plains	campinas Moabe	campinas Moabe	sem	baixa	1	12	0.00	
+Mordecai	Reelaías	Mardoqueu	revisado	baixa	2	2	0.50	Mardoqueu
+Moresheth	Miqueias	Moresete	revisado	baixa	1	2	1.00	Ezequias
+Mortar	Lamentai	Lamentai	sem	baixa	3	1	1.00	
+Muth-labben	Louvarei	Louvarei	sem	baixa	1	1	1.00	SENHOR
+Naamah	Então	Naamá	revisado	baixa	1	4	0.50	Zofar
+Naamathites	Bildade	Naamitas	revisado	baixa	1	4	0.50	Elifaz
+Naphath	Taanaque	Taanaque	sem	baixa	2	1	1.00	Issacar
+Naphath-dor	Tafate	Tafate	sem	baixa	1	1	1.00	Dor
+Naphoth-dor	Dor	Dor	revisado	baixa	2	4	1.00	Quinerete
+Nazirites	Virá	Nazireus	revisado	baixa	1	15	0.07	Se
+Nehelam	Semaías	Semaías	sem	baixa	2	3	1.00	Manda
+Nehelamites	Semaías	Neelamitas	revisado	baixa	1	3	1.00	Eis
+Nephilim	Anaque	Anaque	sem	baixa	1	2	0.50	Também
+New Gate	porta New	Porta nova	revisado	baixa	3	2	0.00	
+Nicolaitans	Mas	Nicolaítas	revisado	baixa	1	2	0.50	Assim
+Nohah	Manaate	Noá	revisado	baixa	1	1	1.00	Geba
+Nohah	Menuá	Noá	revisado	baixa	1	1	1.00	Benjamim
+North	Então	Então	sem	baixa	1	10	0.20	Porém
+North Gate	porta North	porta North	sem	baixa	1	1	0.00	
+Old Pool	tanque Old	Tanque velho	revisado	baixa	1	1	0.00	
+On	Om	Om	revisado	baixa	4	10	0.40	Coré
+Parbar	Em	Em	sem	baixa	2	1	1.00	
+Pavement	Pilatos	Gabatá	revisado	baixa	1	1	1.00	Gabatá
+Pelethites	Benaia	Peleteus	revisado	baixa	1	7	0.71	Gate
+Pelonites	Helez	Pelonitas	revisado	baixa	1	4	0.50	Heles
+People's Gate	porta People	porta People	sem	baixa	2	1	0.00	
+Perizzites	Jebuseos	Ferezeus	revisado	baixa	1	23	0.04	Heteu
+Phut	Pute	Pute	revisado	baixa	1	3	1.00	Cuxe
+Pillars	Também	Também	sem	baixa	1	1	1.00	
+Place	Gólgota	Gólgota	revisado	baixa	2	3	1.00	E
+Plain	Zoar	Zoar	sem	baixa	1	2	0.50	Moabe
+Plain of Aven	planície de Áven	Vale de Áven	revisado	baixa	1	1	0.00	
+Pool	Col-Hozé	Col-Hozé	sem	baixa	1	1	1.00	Fonte
+Pool	Fonte	Fonte	sem	baixa	1	1	1.00	E
+Potsherd Gate	porta Potsherd	porta Potsherd	sem	baixa	2	1	0.00	
+Preparation Festival	festa Preparation	festa Preparation	sem	baixa	1	6	0.00	
+Puthites	Quiriate-Jearim	Puteus	revisado	baixa	1	1	1.00	E
+Pyrrhus	Sópater	Sópater	sem	baixa	1	1	1.00	Aristarco
+Raca	Idiota	Idiota	sem	baixa	1	1	1.00	Louco
+Ramah	Zabdias	Ramá	revisado	baixa	1	1	1.00	Simei
+Ramathites	Zabdias	Ramatitas	revisado	baixa	1	1	1.00	Simei
+Rephaim	Argobe	Refains	revisado	baixa	1	1	1.00	Gileade
+Rhodes	Os	Rodes	revisado	baixa	1	1	1.00	Dedã
+River	Assíria	Assíria	sem	baixa	1	10	0.30	Isaque
+River	Petor	Petor	sem	baixa	1	1	1.00	Beor
+River	Reobote	Reobote	sem	baixa	1	2	1.00	E
+River	Reum	Reum	sem	baixa	1	16	0.06	Artaxerxes
+River of Arnon	rio de Arnom	Ribeiro de Arnom	revisado	baixa	1	11	0.00	
+Rock	Maom	Maom	sem	baixa	1	4	1.00	Carmelo
+Rock of Escape	rocha de Escape	Selá-Hamalecote	revisado	baixa	2	1	0.00	
+Rocks	Saul	Saul	sem	baixa	1	1	1.00	Israel
+Sadducee	Naquele	Saduceus	revisado	baixa	1	14	0.07	Ninhada
+Sahar	Damasco	Damasco	sem	baixa	3	1	1.00	Helbom
+Salome	Porém	Porém	sem	baixa	1	1	1.00	Herodias
+Salt	Nibsã	Mar salgado	revisado	baixa	1	1	1.00	E
+Salt Valley	vale Mar salgado	vale Mar salgado	auto	baixa	1	5	0.00	
+Salt Valley	vale Salt	vale Salt	sem	baixa	1	5	0.00	
+Scythians	Cristo	Citas	revisado	baixa	1	1	1.00	Nisso
+Sea of the Philistines	mar de Philistines	Mar de filístia	revisado	baixa	1	1	0.00	
+Sea of the Plain	mar de Plain	Mar da planície	revisado	baixa	1	2	0.00	
+Secu	Socó	Socó	revisado	baixa	3	1	1.00	Samuel
+Secundus	Segundo	Segundo	revisado	baixa	2	1	1.00	Sópater
+Sela	E	Selá	revisado	baixa	1	2	1.00	Acrabim
+Serpent's Stone	pedra Serpent	Penha de Zoelete	revisado	baixa	2	1	0.00	
+Shephelah	Bete-Semes	Bete-Semes	sem	baixa	1	6	0.17	Baal-Hanã
+Shephelah	Sul	Sul	sem	baixa	2	19	0.05	Asná
+Shiggaion	SENHOR	SENHOR	sem	baixa	1	1	1.00	Deus
+Shilonites	Siloni	Silonitas	revisado	baixa	1	1	1.00	Joiaribe
+Shimeathite	Hamate	Simeatitas	revisado	baixa	1	1	1.00	Recabe
+Shiphmites	Simei	Sifmitas	revisado	baixa	1	1	1.00	Zabdias
+Shuhites	Bildade	Suítas	revisado	baixa	1	5	1.00	SENHOR
+Shulammites	Sulamita	Sulamita	revisado	baixa	1	1	1.00	Volta
+Shumathites	Quiriate-Jearim	Sumateus	revisado	baixa	1	1	1.00	E
+Shunammites	Abisague	Sunamita	revisado	baixa	1	8	0.62	Bate-Seba
+Sinite	E	Sineu	revisado	baixa	1	2	0.50	Aos
+Sinites	E	Sineus	revisado	baixa	1	2	0.50	Aos
+Skull	Caveira	Caveira	revisado	baixa	1	1	1.00	E
+South	O	O	sem	baixa	1	12	0.08	Mas
+South	Sul	Sul	sem	baixa	3	3	0.67	Juízo
+South Gate	porta South	porta South	sem	baixa	1	1	0.00	
+Stoic	Porque	Estoicos	revisado	baixa	1	1	1.00	O
+Straight	Direita	Direita	revisado	baixa	1	1	1.00	Levanta-te
+Straight Gate	porta Direita	porta Direita	auto	baixa	1	1	0.00	
+Straight Gate	porta Straight	Rua Direita	revisado	baixa	1	1	0.00	
+Sucathite	Hamate	Sucatitas	revisado	baixa	1	1	1.00	Recabe
+Sukkiim	Com	Suquitas	revisado	baixa	1	1	1.00	Egito
+Suph	Tofel	Tofel	sem	baixa	3	1	1.00	Di-Zaabe
+Syrtis	O	O	sem	baixa	3	1	1.00	
+Tabbur-erez	Meonenim	Meonenim	sem	baixa	1	1	1.00	Eis
+Tarpelite	Reum	Tarpelita	revisado	baixa	1	1	1.00	Sinsai
+Thebes	És	Nô	revisado	baixa	3	6	0.17	Pelúsio
+There	SENHOR	O SENHOR Está Ali	revisado	baixa	1	1	1.00	E
+Throne	Fez	Fez	sem	baixa	1	1	1.00	
+Tirathite	Jabez	Tiratitas	revisado	baixa	1	1	1.00	Hamate
+Tizites	Jedaiel	Tizitas	revisado	baixa	1	1	1.00	Sinri
+Tower	Fornos	Fornos	sem	baixa	1	2	1.00	Paate-Moabe
+Tower	Ovelhas	Ovelhas	sem	baixa	2	4	0.50	Velha
+Tower of Eder	torre de Eder	torre de Eder	sem	baixa	1	2	0.00	
+Travelers Valley	vale Travelers	vale Travelers	sem	baixa	1	1	0.00	
+Tribe of Judah	tribo de Judá	tribo de Judá	sem	baixa	1	1	0.00	
+Unnamed#1	Assim	Assim	sem	baixa	1	1	1.00	Salomão
+Unnamed#1	Eliúde	Eliúde	sem	baixa	1	1	1.00	Matã
+Unnamed#2	Assim	Assim	sem	baixa	1	1	1.00	Salomão
+Unnamed#2	Eliúde	Eliúde	sem	baixa	1	1	1.00	Matã
+Unnamed#3	Assim	Assim	sem	baixa	1	1	1.00	Salomão
+Unnamed#3	Eliúde	Eliúde	sem	baixa	1	1	1.00	Matã
+Unnamed#4	Assim	Assim	sem	baixa	1	1	1.00	Salomão
+Unnamed#4	Eliúde	Eliúde	sem	baixa	1	1	1.00	Matã
+Unnamed#5	Eliúde	Eliúde	sem	baixa	1	1	1.00	Matã
+Unnamed#6	Eliúde	Eliúde	sem	baixa	1	1	1.00	Matã
+Unnamed#7	Eliúde	Eliúde	sem	baixa	1	1	1.00	Matã
+Unnamed#8	Eliúde	Eliúde	sem	baixa	1	1	1.00	Matã
+Unnamed#9	Eliúde	Eliúde	sem	baixa	1	1	1.00	Matã
+Upper Pool	tanque Upper	Tanque superior	revisado	baixa	1	3	0.00	
+Valley of Decision	vale de Decision	Vale da decisão	revisado	baixa	1	1	0.00	
+Valley of Hamon-gog	vale de Hamon-gog	Vale da multidão de Gogue	revisado	baixa	1	2	0.00	
+Valley of Hamongog	vale de Hamongog	Vale da multidão de Gogue	revisado	baixa	1	2	0.00	
+Valley of Lebanon	vale de Líbano	Planície do Líbano	revisado	baixa	2	2	0.00	
+Valley of Mizpeh	vale de Mispá	vale de Mispá	auto	baixa	2	1	0.00	
+Valley of Mizpeh	vale de Mizpeh	Planície de Mispá	revisado	baixa	2	1	0.00	
+Valley of Salt	vale de Mar salgado	vale de Mar salgado	auto	baixa	2	5	0.00	
+Valley of Salt	vale de Salt	Vale do sal	revisado	baixa	2	5	0.00	
+Valley of the Arnon	vale de Arnom	Ribeiro de Arnom	revisado	baixa	1	11	0.00	
+Valley of the Passengers	vale de Passengers	Vale dos que passam	revisado	baixa	1	1	0.00	
+Vedan	Dã	Dã	revisado	baixa	1	1	1.00	Javã
+Way of Holiness	caminho de Holiness	Caminho da santidade	revisado	baixa	3	1	0.00	
+Weeks	Pentecostes	Festa das semanas	revisado	baixa	1	8	0.38	Três
+Willows	Por	Por	sem	baixa	1	1	1.00	
+Zaccur	Zabude	Zacur	revisado	baixa	1	1	1.00	Utai
+Zealot	Simão	Zelote	revisado	baixa	1	2	1.00	Iscariotes
+Zemarite	Aos	Zemareu	revisado	baixa	1	2	0.50	E
+Zemarites	Aos	Zemareus	revisado	baixa	1	2	0.50	E
+Zeus	Mercúrio	Júpiter	revisado	baixa	1	2	0.50	E
+Ziv	Zife	Zife	revisado	baixa	1	2	1.00	SENHOR
+Zorathites	Zoratitas	Zoratitas	revisado	baixa	1	3	0.33	Atarote
+Zuzim	Savé-Quiriataim	Zuzins	revisado	baixa	1	1	1.00	Asterote-Carnaim
+Abaddon	Abadom	Abadom	revisado	media	1	7	0.14	Apoliom
+Abel-beth-maacah	Abel-Bete-Maaca	Abel de Bete-Maaca	revisado	media	3	6	0.33	Bete-Maaca
+Abiah	Abias	Abias	revisado	media	2	3	1.00	Vasni
+Abiel	Abiel	Abiel	revisado	media	3	7	0.43	Abinadabe
+Achaicus	Acaico	Acaico	revisado	media	2	2	1.00	Estéfanas
+Achsa	Acsa	Acsa	revisado	media	1	1	1.00	Macbena
+Adam	Adão	Adão	revisado	media	2	27	0.74	Caim
+Addar	Adar	Adar	revisado	media	5	2	1.00	Carca
+Addon	Adom	Adom	revisado	media	2	2	0.50	Tel-Harsa
+Ader	Eder	Eder	revisado	media	1	1	1.00	Arade
+Adin	Adim	Adim	revisado	media	4	4	1.00	Dos
+Adoniram	Adonirão	Adonirão	revisado	media	1	5	0.40	Adorão
+Adria	Adriático	Adriático	revisado	media	1	1	1.00	E
+Aenon	Enom	Enom	revisado	media	3	1	1.00	João
+Agabus	Ágabo	Ágabo	revisado	media	2	2	1.00	Cláudio
+Agag	Agague	Agague	revisado	media	4	13	0.46	De
+Ahiah	Aías	Aías	revisado	media	3	3	1.00	Ailude
+Ahiam	Aião	Aião	revisado	media	2	2	1.00	Harar
+Ahiram	Airã	Airã	revisado	media	2	3	0.33	Benjamim
+Ahoah	Aoá	Aoá	revisado	media	2	6	0.17	Naamã
+Ai	Ai	Ai	revisado	media	7	37	0.84	Uiva
+Ain	Aim	Aim	revisado	media	7	7	0.71	Asã
+Akan	Jaacã	Acã	revisado	media	2	2	0.50	Acã
+Akeldama	Aceldama	Aceldama	revisado	media	3	4	0.25	Jerusalém
+Alameth	Alemete	Alemete	revisado	media	1	1	1.00	Anatote
+Alamoth	Alamote	Alamote	sem	media	1	3	0.33	Semiramote
+Allon	Alom	Alom	revisado	media	2	2	0.50	Alom-Zaanim
+Allon	Alom-Zaanim	Alom-Zaanim	revisado	media	2	1	1.00	Jabneel
+Amasiah	Amasias	Amasias	revisado	media	2	1	1.00	Zicri
+Ammon	Amom	Amom	revisado	media	3	125	0.68	Camos
+Amon	Amom	Amom	revisado	media	6	21	0.86	Então
+Amzi	Anzi	Anzi	revisado	media	4	2	1.00	Bani
+Anak	Anaque	Anaque	revisado	media	2	16	0.44	Aimã
+Ananiah	Ananias	Ananias	revisado	media	5	2	1.00	Anatote
+Anna	Ana	Ana	revisado	media	2	1	1.00	Fanuel
+Aphses	Hapises	Hapises	revisado	media	1	1	1.00	Hezir
+Ara	Ara	Ara	revisado	media	2	1	1.00	Pispa
+Arabah	Arabá	Arabá	sem	media	4	27	0.11	Aberta
+Arabia	Arábia	Arábia	revisado	media	4	19	0.37	Agar
+Aram-maacah	Maaca	Síria de Maaca	revisado	media	2	1	1.00	Amom
+Aran	Arã	Arã	revisado	media	2	2	0.50	Harã
+Arba	Arba	Arba	revisado	media	2	3	0.33	Quiriate-Arba
+Archippus	Arquipo	Árquipo	revisado	media	2	2	0.50	Árquipo
+Arumah	Aruma	Aruma	revisado	media	3	3	0.33	Gaal
+Asherah	Aserá	Aserá	revisado	media	1	40	0.05	Asa
+Ashtoreth	Astarote	Astarote	revisado	media	2	3	1.00	Camos
+Atroth-beth-joab	Bete-Joabe	Bete-Joabe	sem	media	2	1	1.00	Atarote
+Augustus	Augusto	Augusto	revisado	media	2	5	0.20	Mas
+Azarael	Azareel	Azareel	revisado	media	1	1	1.00	Natanael
+Azariahu	Azarias	Azarias	revisado	media	1	1	1.00	Zacarias
+Azotus	Azoto	Azoto	revisado	media	1	1	1.00	Mas
+Baalath-beer	Baalate-Beer	Baalate-Beer	revisado	media	3	5	0.20	Ramá
+Baale-judah	Judá	Baal de Judá	revisado	media	2	1	1.00	Baal
+Baana	Baaná	Baaná	revisado	media	3	2	1.00	Berequias
+Babylonia	Babilônia	Babilônia	revisado	media	2	15	0.53	Dario
+Bamoth-baal	Bamote-Baal	Bamote-Baal	revisado	media	3	3	0.33	Bete-Baal-Meom
+Basemath	Basemate	Basemate	revisado	media	1	1	1.00	Salomão
+Basmath	Basemate	Basemate	revisado	media	1	1	1.00	Salomão
+Bath-shua	Bete-Suá	Bete-Suá	revisado	media	1	2	0.50	Sua
+Bealoth	Alote	Bealote	revisado	media	2	1	1.00	Baaná
+Beautiful Gate	porta do Templo	Porta Formosa	revisado	media	3	2	0.50	Porta Formosa
+Beer-lahai-roi	Beer-Laai-Roi	Beer-Laai-Roi	revisado	media	3	3	0.33	Abraão
+Beon	Beom	Beom	revisado	media	2	1	1.00	Nebo
+Berothah	Berota	Berota	revisado	media	3	3	0.33	Sibraim
+Berothai	Betá	Betá	revisado	media	2	1	1.00	Beerote
+Beth-azmaveth	Bete-Azmavete	Bete-Azmavete	revisado	media	2	3	0.33	Os
+Beth-gilgal	Gilgal	Casa de Gilgal	revisado	media	2	1	1.00	Geba
+Beth-millo	Milo	Casa de Milo	revisado	media	3	3	1.00	Sila
+Beth-rehob	Bete-Reobe	Bete-Reobe	revisado	media	3	4	0.25	Reobe
+Bethel	Betul	Betel	revisado	media	1	3	0.33	Betuel
+Birzaith	Bizarvite	Bizarvite	revisado	media	1	1	1.00	Berias
+Blastus	Blasto	Blasto	revisado	media	2	1	1.00	Tiro
+Bor-ashan	Corasã	Corasã	revisado	media	3	1	1.00	Hormá
+Brook Eshcol	ribeiro de Escol	Ribeiro de Escol	revisado	media	1	4	0.25	
+Brook of Egypt	ribeiro do Egito	Ribeiro do Egito	revisado	media	3	11	0.36	
+Bunni	Bani	Buni	revisado	media	2	1	1.00	Bebai
+Caphtor	Caftor	Caftor	revisado	media	3	13	0.23	Quir
+Caphtorim	Caftorim	Caftorim	revisado	media	1	3	0.33	Caftor
+Carpus	Carpo	Carpo	revisado	media	1	1	1.00	Quando
+Chaldea	Caldeia	Caldeia	revisado	media	3	91	0.08	Caldeus
+Chemosh	Quemos	Camos	revisado	media	2	8	0.38	Camos
+Chesulloth	Quesulote	Quesulote	revisado	media	3	3	0.33	Jezreel
+Claudius	Cláudio	Cláudio	revisado	media	2	11	0.18	Áquila
+Cnidus	Cnido	Cnido	revisado	media	3	1	1.00	Creta
+Colossae	Colossos	Colossos	revisado	media	3	2	0.50	Cristo
+Corinth	Corinto	Corinto	revisado	media	3	15	0.47	Cristo
+Corner Gate	porta de Efraim	Porta da esquina	revisado	media	3	5	0.40	porta de Benjamim
+Coz	Coz	Coz	revisado	media	1	1	1.00	Zobeba
+Crispus	Crispo	Crispo	revisado	media	2	2	1.00	Deus
+Cun	Cum	Cum	revisado	media	2	1	1.00	Assim
+Cyprus	Chipre	Chipre	revisado	media	3	15	0.67	Jesus
+Cyrene	Cirene	Cirene	revisado	media	3	7	0.29	Cireneu
+Dalaiah	Delaías	Delaías	revisado	media	1	1	1.00	Pelaías
+Dekar	Ben-Dequer	Ben-Dequer	revisado	media	1	1	1.00	Macaz
+Deker	Ben-Dequer	Ben-Dequer	revisado	media	1	1	1.00	Elom-Bete-Hanã
+Destruction	Destruição	Cidade da Destruição	revisado	media	1	1	1.00	Egito
+Diblathaim	Almom-Diblataim	Almom-Diblataim	revisado	media	1	3	0.67	Bete-Diblataim
+Dibon	Dimom	Dibom	revisado	media	1	1	1.00	Pois
+Dimnah	Dimna	Dimna	revisado	media	3	3	0.33	Naalal
+Dung Gate	porta do Esterco	Porta do Esterco	revisado	media	3	4	1.00	porta do Vale
+Ebal Mount	monte de Ebal	Monte Ebal	revisado	media	1	8	0.38	monte Ebal
+Ebron	Hebrom	Hebrom	revisado	media	2	1	1.00	Reobe
+Ela	Elá	Elá	revisado	media	1	1	1.00	Benjamim
+Eliadah	Eliada	Eliada	revisado	media	1	1	1.00	Hadadezer
+Eliah	Elias	Elias	revisado	media	2	2	1.00	Jaaresias
+Eliehoenai	Elioenai	Elioenai	revisado	media	2	2	1.00	Joanã
+Elienai	Elioenai	Elioenai	revisado	media	2	1	1.00	Eliel
+Elihoenai	Elioenai	Elioenai	revisado	media	1	1	1.00	Zeraías
+Elmadam	Elmodã	Elmodã	revisado	media	1	1	1.00	Adi
+Emmaus	Emaús	Emaús	revisado	media	3	3	0.33	E
+En-tappuah	Tapua	Tapua	revisado	media	2	2	0.50	Micmetá
+Enaim	Então	Então	sem	media	3	2	0.50	Timna
+Enam	Enã	Enã	revisado	media	3	1	1.00	En-Ganim
+Epaenetus	Epêneto	Epêneto	revisado	media	2	1	1.00	Saudai
+Ephes-dammim	Efes-Damim	Efes-Damim	revisado	media	3	3	0.33	Pas-Damim
+Ephesus	Éfeso	Éfeso	revisado	media	3	24	0.67	Jesus
+Erastus	Erasto	Erasto	revisado	media	2	3	1.00	Quarto
+Esau Mount	monte de Esaú	Montanha de Esaú	revisado	media	1	4	0.25	monte de Sião
+Etham	Etã	Etã	revisado	media	3	4	1.00	E
+Ethan	Etã	Etã	revisado	media	5	6	0.67	Hemã
+Ethiopia	Etíopes	Cuxe	revisado	media	1	7	0.14	Índia
+Eubulus	Êubulo	Êubulo	revisado	media	2	1	1.00	Lino
+Euodias	Evódia	Evódia	revisado	media	1	1	1.00	Senhor
+Euphrates	Eufrates	Eufrates	revisado	media	3	61	0.38	Reobote
+Eutychus	Êutico	Êutico	revisado	media	2	1	1.00	E
+Eve	Eva	Eva	revisado	media	2	4	1.00	Obtive
+Ezem	Ezém	Ezém	revisado	media	3	3	0.33	Azem
+Gate Miphkad	porta da Inspeção	Porta da Inspeção	revisado	media	1	1	1.00	
+Gate of the Guard	porta da Prisão	Porta da Prisão	revisado	media	1	1	1.00	porta das Ovelhas
+Geba	Gibeá	Geba	revisado	media	2	1	1.00	Gaza
+Geber	Ben-Geber	Geber	revisado	media	1	1	1.00	Argobe
+Gederah	Gedera	Gederá	revisado	media	3	4	0.25	Gederá
+Geliloth	Gelilote	Gelilote	revisado	media	2	3	0.33	Boã
+Gershom	Gérson	Gérson	revisado	media	5	7	1.00	Peregrino
+Geuel	Guel	Guel	revisado	media	2	1	1.00	Gade
+Gibea	Gibeá	Gibeá	revisado	media	2	1	1.00	Macbena
+Gibeon	Gibeom	Gibeão	revisado	media	1	2	0.50	Gibar
+Great Sea	mar Grande	Mar Grande	revisado	media	3	36	0.03	mar Vermelho
+Greece	Grécia	Grécia	revisado	media	3	13	0.38	Porém
+Guard Gate	porta Velha	Porta da Prisão	revisado	media	1	1	1.00	porta da Prisão
+Hadar	Hadade	Hadade	revisado	media	1	2	1.00	Massá
+Hagri	Hagri	Hagri	revisado	media	1	6	0.17	Hagarenos
+Hahiroth	Pi-Hairote	Pi-Hairote	revisado	media	1	1	1.00	Mara
+Ham	Hã	Hã	sem	media	3	1	1.00	Savé-Quiriataim
+Hamath-zobah	Zobá	Hamate de Zobá	revisado	media	2	2	1.00	Hamate
+Hammath	Hamate	Hamate	revisado	media	5	5	0.40	Racate
+Hammon	Hamom	Hamom	revisado	media	3	2	1.00	Caná
+Hananiah	Ananias	Hananias	revisado	media	3	19	0.32	Elnatã
+Hanoch	Enoque	Enoque	revisado	media	3	6	1.00	Palu
+Hanun	Hanum	Hanum	revisado	media	6	10	0.60	Hanã
+Harod	Harode	Harode	revisado	media	3	3	0.33	Gideão
+Harosheth-hagoyim	Harosete	Harosete das nações	revisado	media	3	3	1.00	Nações
+Hashabniah	Hasbaneias	Hasbaneias	revisado	media	2	2	1.00	Hatus
+Havvoth-jair	Havote-Jair	Havote-Jair	revisado	media	3	6	0.17	Jair
+Hebrews	Hebreus	Hebreus	revisado	media	1	37	0.03	Eles
+Heleb	Helebe	Helebe	revisado	media	2	3	0.33	Helede
+Heli	Eli	Eli	revisado	media	2	1	1.00	E
+Hemam	Hemã	Hemã	revisado	media	1	2	0.50	Homã
+Hemath	Hamate	Hamate	revisado	media	1	1	1.00	Recabe
+Hemdan	Hendã	Hendã	revisado	media	2	2	0.50	Esbã
+Henoch	Enoque	Enoque	revisado	media	1	2	1.00	Efá
+Hermon	Hermon	Hermom	revisado	media	1	7	0.14	Hermom
+Hermon Mount	monte de Hermom	Monte de Hermom	revisado	media	1	20	0.20	monte Hermom
+Herodian	Herodes	Herodes	sem	media	1	3	0.33	Depois
+Hesed	Ben-Hesede	Ben-Hesede	revisado	media	2	1	1.00	Hefer
+Heth	Hete	Hete	revisado	media	2	58	0.21	Heteu
+Hezeki	Hizqui	Hizqui	revisado	media	1	1	1.00	Zebadias
+Hezron	Hebrom	Hezrom	revisado	media	2	1	1.00	Cades-Barneia
+Hilen	Hilém	Hilém	revisado	media	1	1	1.00	Debir
+Hizkiah	Ezequias	Ezequias	revisado	media	2	2	1.00	Josias
+Hizkijah	Ezequias	Ezequias	revisado	media	1	1	1.00	Azur
+Hodaiah	Hodavias	Hodavias	revisado	media	1	1	1.00	Delaías
+Hodevah	Hodeva	Hodavias	revisado	media	1	3	0.33	Hodavias
+Hoham	Hoão	Hoão	revisado	media	2	1	1.00	Eglom
+Holon	Holom	Holom	revisado	media	6	4	0.75	Gilo
+Hophra	Ofra	Ofra	sem	media	1	18	0.06	Faraó
+Horam	Horão	Horão	revisado	media	2	1	1.00	Gezer
+Hori	Hori	Hori	revisado	media	4	10	0.30	Homã
+Horse Gate	porta dos Cavalos	Porta dos Cavalos	revisado	media	3	3	0.33	
+Hosea	Oseias	Oseias	revisado	media	2	3	1.00	Joeroboão
+Hotham	Hotão	Hotão	revisado	media	3	3	0.67	Amal
+Hothan	Hotão	Hotão	revisado	media	1	1	1.00	Sama
+Humtah	Hunta	Hunta	revisado	media	3	1	1.00	Quiriate-Arba
+Huram	Hurão	Hurão	revisado	media	1	3	0.33	Hufã
+Hushah	Husá	Husá	revisado	media	2	6	0.17	Hur
+Husham	Husão	Husão	revisado	media	2	4	1.00	Avite
+Huz	Uz	Uz	revisado	media	1	1	1.00	Buz
+Ijon	Ijom	Ijom	revisado	media	3	4	0.75	Janoa
+Imla	Inlá	Inlá	revisado	media	1	4	1.00	Micaías
+Imlah	Inlá	Inlá	revisado	media	1	4	1.00	Micaías
+Imrah	Inra	Inra	revisado	media	2	1	1.00	Beri
+Imri	Inri	Inri	revisado	media	4	2	1.00	Onri
+Ir-moab	Moabe	Cidade de Moabe	revisado	media	1	1	1.00	Arnom
+Ir-nahash	Naás	Naás	revisado	media	2	1	1.00	Teína
+Ishiah	Issias	Issias	revisado	media	1	1	1.00	Izraías
+Ishijah	Issias	Issias	revisado	media	1	1	1.00	Simeão
+Isshijah	Issias	Issias	revisado	media	1	1	1.00	Simeão
+Isuah	Isva	Isva	revisado	media	1	2	0.50	Isvá
+Isui	Isvi	Isvi	revisado	media	1	3	1.00	Isva
+Ituraea	Itureia	Itureia	revisado	media	2	1	1.00	Lisânias
+Izhar	Zoar	Izar	revisado	media	1	1	1.00	Zerete
+Jaasu	Jaasai	Jaasai	revisado	media	1	1	1.00	Matanias
+Jaaziel	Aziel	Jaaziel	revisado	media	2	3	0.33	Jaaziel
+Jabesh-gilead	Jabes-Gileade	Jabes-Gileade	revisado	media	2	20	0.30	Jabes
+Jacob	Jacó	Jacó	revisado	media	3	1011	0.34	José
+Jairus	Jairo	Jairo	revisado	media	2	2	1.00	Jesus
+Jakim	Jaquim	Jaquim	revisado	media	4	2	1.00	Zicri
+Jamlech	Janleque	Janleque	revisado	media	2	1	1.00	Mesobabe
+Jarmuth	Jarmute	Jarmute	revisado	media	6	7	0.43	Jeremote
+Jason	Jáson	Jasão	revisado	media	2	5	0.20	Jasão
+Jattir	Jatir	Jatir	revisado	media	3	6	0.33	Jathir
+Javan	Javã	Javã	revisado	media	4	34	0.21	Tubal
+Jehiel	Jeieli	Jeiel	revisado	media	1	6	0.33	Jeiel
+Jehohanan	Joanã	Joanã	revisado	media	12	7	1.00	Esdras
+Jehoiachin	Joaquim	Joaquim	revisado	media	2	22	0.41	Jeoaquim
+Jehonathan	Jônatas	Jônatas	revisado	media	5	3	1.00	Netanias
+Jehoram	Jorão	Jeorão	revisado	media	2	1	1.00	Semiramote
+Jehoshabeath	Jeosebate	Jeoseba	revisado	media	1	2	0.50	Jeoseba
+Jehuel	Jeiel	Jeiel	revisado	media	1	1	1.00	Uziel
+Jehush	Jeús	Jeús	revisado	media	1	1	1.00	Eseque
+Jerijah	Jerias	Jerias	revisado	media	2	1	1.00	Jazer
+Jesaiah	Jesaías	Jesaías	revisado	media	2	2	1.00	Refaías
+Jeshimon	Jesimom	Jesimom	revisado	media	1	6	0.33	Zife
+Jesiah	Issias	Issias	revisado	media	1	1	1.00	Joezer
+Jethro	Jetro	Jetro	revisado	media	2	19	0.47	Egito
+Jeuel	Jeiel	Jeuel	revisado	media	1	1	1.00	Elifelete
+Jeuz	Jeús	Jeús	revisado	media	2	1	1.00	Saquias
+Jezoar	Zoar	Zoar	revisado	media	1	1	1.00	Helá
+Jezreel	Jezreelita	Jezreel	revisado	media	1	6	0.17	Jezreel
+Joah	Ido	Joabe	revisado	media	1	2	0.50	Zima
+Joah	Joabe	Joabe	revisado	media	2	1	1.00	Jozabade
+Joahaz	Joá	Joá	revisado	media	2	1	1.00	Jeoacaz
+Joda	Judá	Judá	revisado	media	1	1	1.00	José
+Joha	Joá	Joá	revisado	media	4	2	1.00	Ispa
+John	Jonas	João	revisado	media	1	5	1.00	Simão
+Joiada	Joiada	Joiada	revisado	media	3	5	1.00	Jadua
+Jonas	Jonas	Jonas	revisado	media	1	4	1.00	Alimenta
+Josabad	Jozabade	Jozabade	revisado	media	1	1	1.00	Ismaías
+Jose	José	José	revisado	media	1	1	1.00	Jorim
+Josech	José	José	revisado	media	1	1	1.00	Semei
+Joses	José	José	revisado	media	3	5	1.00	Tiago
+Joshah	Josias	Josias	revisado	media	2	1	1.00	Janleque
+Joshaphat	Josafá	Josafá	revisado	media	3	2	1.00	Hanã
+Joshua	José	Josué	revisado	media	1	1	1.00	Jorim
+Jozadak	Jozadaque	Jozadaque	revisado	media	2	1	1.00	Jesua
+Juda	Judá	Judá	revisado	media	2	2	1.00	Matatias
+Jude	Judas	Judas	revisado	media	2	3	1.00	José
+Julius	Júlio	Júlio	revisado	media	2	2	1.00	Itália
+Justus	Justo	Justo	revisado	media	3	2	1.00	Deus
+Kadesh-barnea	Cades-Barneia	Cades-Barneia	revisado	media	2	24	0.42	Calebe
+Kain	Caim	Caim	revisado	media	3	2	0.50	Quando
+Karnaim	Asterote-Carnaim	Carnaim	revisado	media	1	1	1.00	Savé-Quiriataim
+Kedesh-naphtali	Naftali	Quedes de Naftali	revisado	media	2	1	1.00	Quedes
+Kidron	Cedrom	Cedrom	revisado	media	3	16	0.69	Derrubou
+King's Valley	vale do Rei	Vale do Rei	revisado	media	2	2	0.50	vale de Savé
+Kir	Quir	Quir	revisado	media	4	11	0.45	Caftor
+Kir-hareseth	Quir-Haresete	Quir-Haresete	revisado	media	2	5	0.40	Moabe
+Kiriath-arim	Quiriate-Jearim	Quiriate-Jearim	revisado	media	1	1	1.00	Quefira
+Kitron	Quitrom	Quitrom	revisado	media	3	3	0.33	Naalol
+Kiyyun	Quium	Quium	revisado	media	1	1	1.00	Sicute
+Korah	Corá	Corá	revisado	media	8	44	0.27	Oolibama
+Kore	Coré	Coré	revisado	media	4	4	0.75	Corá
+LORD	Acorda	Acorda	sem	media	1	843	0.00	Melhorai
+Laadan	Ladã	Laadã	revisado	media	1	9	0.44	Libni
+Laishah	Laís	Laís	revisado	media	3	1	1.00	Galim
+Lebo-hamath	Lebo-Hamate	Lebo-Hamate	revisado	media	2	12	0.25	Hamate
+Levi	Levi	Levi	revisado	media	6	331	0.21	Melqui
+Leviathan	Leviatã	Leviatã	revisado	media	1	5	0.40	Amaldiçoem-na
+Libya	Líbia	Líbia	revisado	media	3	10	0.20	Frígia
+Linus	Lino	Lino	revisado	media	2	1	1.00	Cláudia
+Lois	Loide	Loide	revisado	media	2	1	1.00	Trago
+Lucius	Lúcio	Lúcio	revisado	media	2	2	1.00	Jáson
+Luke	Lucas	Lucas	revisado	media	2	4	0.75	Demas
+Maath	Maate	Maate	revisado	media	2	1	1.00	Matatias
+Magadan	Magdala	Magdala	revisado	media	2	1	1.00	Depois
+Mahalah	Maalá	Maalá	revisado	media	1	1	1.00	Hamolequete
+Mahalath	Maalate	Maalate	revisado	media	3	7	0.29	Abiail
+Malchus	Malco	Malco	revisado	media	2	1	1.00	Simão
+Mash	Mas	Mas	revisado	media	2	2	0.50	Assur
+Maskil	Assim	Assim	sem	media	1	14	0.07	Cantarei
+Matthan	Matã	Matã	revisado	media	2	1	1.00	Eleazar
+Matthew	Mateus	Mateus	revisado	media	2	8	0.62	Alfeu
+Mehir	Maquir	Maquir	revisado	media	2	1	1.00	E
+Melita	Malta	Malta	revisado	media	1	1	1.00	E
+Memphis	Mênfis	Mênfis	revisado	media	3	8	0.38	Jeremias
+Menan	Mainã	Mainã	revisado	media	1	1	1.00	Meleá
+Menna	Mainã	Mainã	revisado	media	1	1	1.00	Meleá
+Meribah	Meribá	Meribá	revisado	media	6	12	0.33	Massá
+Meribah-kadesh	Meribá-Cades	Meribá-Cades	revisado	media	1	3	0.33	Cades
+Meshech-Tubal	Tubal	Meseque e Tubal	revisado	media	2	1	1.00	Meseque
+Miamin	Miamim	Miamim	revisado	media	1	1	1.00	Ramias
+Mica	Mica	Mica	revisado	media	3	5	0.80	Matanias
+Micah	Miqueias	Miqueias	sem	media	2	2	1.00	Samaria
+Micaiah	Miqueias	Micaías	revisado	media	1	2	1.00	Gemarias
+Micha	Mica	Mica	revisado	media	2	3	1.00	Matanias
+Michah	Mica	Mica	revisado	media	1	3	1.00	Issias
+Michaiah	Micaías	Micaías	revisado	media	4	6	0.67	Mica
+Michaiah	Miqueias	Micaías	revisado	media	1	2	1.00	Gemarias
+Michmas	Micmás	Micmás	revisado	media	1	2	1.00	Os
+Miletus	Mileto	Mileto	revisado	media	3	3	1.00	Quios
+Miniamin	Benjamim	Miniamim	revisado	media	2	1	1.00	Amarias
+Mishael	Misael	Misael	revisado	media	5	21	0.38	Uziel
+Mizpeh	Mispá	Mispá	revisado	media	7	3	1.00	Dileã
+Moadiah	Moadias	Moadias	revisado	media	1	3	0.33	Maadias
+Molech	Moloque	Moloque	revisado	media	2	15	0.67	Moabe
+Mordecai	Mordecai	Mardoqueu	revisado	media	2	50	0.02	Mardoqueu
+Moresheth	Moresete-Gate	Moresete-Gate	revisado	media	1	3	0.33	Miqueias
+Moresheth-gath	Moresete-Gate	Moresete-Gate	revisado	media	2	3	0.33	Portanto
+Mount Carmel	monte de Carmelo	Monte de Carmelo	revisado	media	2	18	0.17	monte Carmelo
+Mount Esau	monte de Esaú	Montanha de Esaú	revisado	media	1	4	0.25	monte de Sião
+Mount Hermon	monte de Hermom	Monte de Hermom	revisado	media	2	16	0.25	monte Hermom
+Mount Horeb	monte Horebe	Monte Horebe	revisado	media	2	17	0.06	monte de Seir
+Mount Seir	monte de Seir	Monte de Seir	revisado	media	4	35	0.46	monte de Halaque
+Mount Sinai	monte Sinai	Monte de Sinai	revisado	media	2	30	0.40	monte de Sinai
+Mount Tabor	monte de Tabor	Monte de Tabor	revisado	media	2	9	0.33	
+Mount of Esau	monte de Esaú	Montanha de Esaú	revisado	media	1	4	0.25	monte de Sião
+Mozah	Moza	Moza	revisado	media	3	1	1.00	Mispá
+Muppim	Mupim	Mupim	revisado	media	1	3	0.33	Hupim
+Muster Gate	porta da Inspeção	Porta da Inspeção	revisado	media	2	1	1.00	
+Nagge	Nagai	Nagai	revisado	media	1	1	1.00	Naum
+Nahalol	Naalol	Naalol	revisado	media	2	3	0.33	Zebulom
+Nain	Naim	Naim	revisado	media	3	1	1.00	Jesus
+Nazareth	Nazaré	Nazaré	revisado	media	3	33	0.39	Nazareno
+Neah	Neá	Neá	revisado	media	3	3	0.33	Ete-Cazim
+Nebo Mount	monte Nebo	Monte Nebo	revisado	media	1	6	0.33	monte Abarim
+Negeb	Negueve	Negueve	revisado	media	3	44	0.18	Éder
+Netophah	Netofá	Netofá	revisado	media	3	12	0.17	Netofate
+Nile	Nilo	Nilo	revisado	media	3	48	0.08	Parecia-lhe
+Nimrod	Ninrode	Ninrode	revisado	media	4	4	1.00	Assim
+Nympha	Ninfas	Ninfas	revisado	media	1	1	1.00	Laodiceia
+Oded	Obede	Obede	revisado	media	4	3	1.00	Deus
+Old Gate	porta Velha	Porta Velha	revisado	media	1	1	1.00	
+Olivet	Oliveiras	Monte das Oliveiras	revisado	media	1	3	1.00	Betfagé
+Oren	Orém	Orém	revisado	media	2	1	1.00	Ozém
+Orpah	Orfa	Orfa	revisado	media	2	2	1.00	Moabe
+Paddan	Padã-Arã	Padã-Arã	revisado	media	2	16	0.69	Canaã
+Parthians	Partos	Partos	revisado	media	1	1	1.00	Elamitas
+Passover	Páscoa	Páscoa	revisado	media	1	73	0.23	Respondereis
+Perga	Perges	Perges	revisado	media	3	3	1.00	Pafo
+Persis	Pérside	Pérside	revisado	media	2	1	1.00	Trifosa
+Pharisee	Fariseu	Fariseu	revisado	media	1	95	0.01	Fariseus
+Pharosh	Parós	Parós	revisado	media	1	1	1.00	Dos
+Phaseah	Paseia	Paseia	revisado	media	1	2	1.00	Gazão
+Phenice	Fênix	Fênix	revisado	media	1	1	1.00	E
+Philetus	Fileto	Fileto	revisado	media	2	1	1.00	Himeneu
+Philippi	Filipos	Filipos	revisado	media	3	8	0.75	Paulo
+Philistia	Filístia	Filístia	revisado	media	3	251	0.02	Filisteia
+Philistine	Filisteus	Filisteus	revisado	media	1	2	0.50	Caftorim
+Phurah	Pura	Pura	revisado	media	1	2	1.00	E
+Phygellus	Fígelo	Fígelo	revisado	media	1	1	1.00	Hermógenes
+Phygelus	Fígelo	Fígelo	revisado	media	1	1	1.00	Hermógenes
+Pirathon	Piratom	Piratom	revisado	media	3	5	0.20	Hidai
+Pochereth	Poquerete-Hazebaim	Poquerete-Hazebaim	revisado	media	1	2	1.00	Sefatias
+Pontus	Ponto	Ponto	revisado	media	3	3	1.00	Partos
+Puah	Pua	Puá	revisado	media	2	3	0.33	Puá
+Publius	Públio	Públio	revisado	media	2	2	1.00	Paulo
+Pudens	Pudente	Pudente	revisado	media	2	1	1.00	Cláudia
+Quartus	Quarto	Quarto	revisado	media	2	1	1.00	Erasto
+Quirinius	Quirino	Quirino	revisado	media	1	1	1.00	Síria
+Raamses	Ramessés	Ramessés	revisado	media	2	1	1.00	Israel
+Rachab	Raabe	Raabe	revisado	media	1	1	1.00	Rute
+Raham	Raão	Raão	revisado	media	2	1	1.00	Samai
+Rakem	Requém	Requém	revisado	media	2	1	1.00	Seres
+Ram	Rão	Rão	revisado	media	6	9	0.67	Esrom
+Ramah	Hormá	Ramá	revisado	media	3	1	1.00	Hosa
+Ramathaim-zophim	Ramataim	Ramataim de Zofim	revisado	media	2	1	1.00	Zofim
+Ramoth	Jeremote	Ramote	revisado	media	1	1	1.00	Mesulão
+Rapha	Rafa	Rafa	revisado	media	2	9	0.33	Gera
+Raphah	Rafa	Rafa	revisado	media	1	2	0.50	Refaías
+Reaia	Reaías	Reaías	revisado	media	1	1	1.00	Seu
+Red Sea	mar Vermelho	Mar Vermelho	revisado	media	5	33	0.79	
+Rephaim	Efraim	Refains	revisado	media	1	9	0.11	Edrei
+Rhegium	Régio	Régio	revisado	media	3	1	1.00	Putéoli
+Rhoda	Rode	Rode	revisado	media	2	1	1.00	Pedro
+Rimmon	Dimna	Rimom	revisado	media	1	1	1.00	Naalal
+Rome	Roma	Roma	revisado	media	3	34	0.41	Cirene
+Rufus	Rufo	Rufo	revisado	media	4	2	1.00	Simão
+Sabbath	Sábado	Sábado	revisado	media	1	151	0.04	Salvar
+Salt Sea	mar Salgado	Mar Salgado	revisado	media	3	21	0.33	mar de Jazer
+Salu	Salu	Salu	revisado	media	2	1	1.00	Simeão
+Samgar	Sangar-Nebo	Sangar-Nebo	revisado	media	1	1	1.00	Rabmague
+Satan	Satanás	Satanás	revisado	media	2	100	0.46	Tiatira
+Sea of Galilee	mar da Galileia	Mar da Galileia	revisado	media	2	10	0.40	mar de Quinerete
+Seba	Seba	Seba	revisado	media	2	2	1.00	Sabá
+Sela	Sela	Selá	revisado	media	3	5	0.20	Enviai
+Sela	Selá	Selá	revisado	media	1	2	0.50	Jocteel
+Senaah	Senaá	Senaá	revisado	media	2	5	0.40	Hassenaá
+Sepharad	Sefarade	Sefarade	revisado	media	3	4	0.25	Sarepta
+Shaalbim	Saalbim	Saalbim	revisado	media	3	5	0.40	Saalabim
+Shaharaim	Saaraim	Saaraim	revisado	media	2	1	1.00	Baara
+Shallun	Salum	Salum	revisado	media	1	1	1.00	Selá
+Shamariah	Samaria	Samaria	revisado	media	1	1	1.00	Zaaão
+Shamed	Semede	Semede	revisado	media	1	1	1.00	Misã
+Shamma	Samá	Samá	revisado	media	2	1	1.00	Silsa
+Shapham	Safã	Safã	revisado	media	2	1	1.00	Safate
+Sharuhen	Saruém	Saruém	revisado	media	3	3	0.33	Bete-Lebaote
+Shaul	Saul	Saul	revisado	media	6	10	0.90	Samlá
+Shavsha	Sausa	Sisa	revisado	media	1	4	0.25	Sisa
+Sheba	Sabá	Sabá	revisado	media	3	20	0.75	Seba
+Sheba	Sebá	Sebá	revisado	media	6	9	0.44	Sabtá
+Sheep Gate	porta das Ovelhas	Porta das Ovelhas	revisado	media	3	4	0.75	porta do Peixe
+Shelah	Salá	Salá	revisado	media	1	8	0.75	Selá
+Shelah	Selá	Selá	revisado	media	3	14	0.64	Zerá
+Sheleph	Salefe	Salefe	revisado	media	2	2	1.00	Hazarmavé
+Shemaiah	Semeías	Semaías	revisado	media	2	1	1.00	Gemarias
+Shemariah	Samaria	Semarias	revisado	media	1	1	1.00	Zaaão
+Sheminith	Seminite	Seminite	revisado	media	1	3	0.33	Micneias
+Shemuel	Samuel	Samuel	revisado	media	4	2	1.00	Simeão
+Shen	Sem	Sem	revisado	media	3	1	1.00	SENHOR
+Shephathiah	Sefatias	Sefatias	revisado	media	1	1	1.00	Ibneias
+Shibah	Seba	Seba	revisado	media	1	1	1.00	Berseba
+Shikkeron	Sicrom	Sicrom	revisado	media	3	1	1.00	Ecrom
+Shiloah	Siloé	Siloé	revisado	media	2	1	1.00	Resim
+Shimea	Simeia	Simeia	revisado	media	4	2	1.00	Asaías
+Shimeon	Simeão	Simeão	revisado	media	2	1	1.00	Harim
+Shimhi	Simei	Simei	revisado	media	1	1	1.00	Sinrate
+Shimon	Simeão	Simeão	revisado	media	2	1	1.00	Rina
+Shimrath	Sinrate	Sinrate	revisado	media	2	1	1.00	Simei
+Shimrith	Simeate	Simeate	revisado	media	1	2	1.00	Somer
+Shimron	Sinrom	Sinrom	revisado	media	5	6	0.83	Jó
+Shimron-meron	Sinrom-Merom	Sinrom-Merom	revisado	media	2	1	1.00	Acsafe
+Shion	Siom	Siom	revisado	media	3	1	1.00	Anaarate
+Shoham	Soão	Soão	revisado	media	2	1	1.00	Jaazias
+Shua	Sua	Sua	revisado	media	1	3	0.67	Bete-Suá
+Shua	Suá	Suá	revisado	media	2	1	1.00	Hotão
+Shuah	Sua	Suá	revisado	media	1	3	0.67	Bete-Suá
+Shubael	Subael	Sebuel	revisado	media	2	5	0.40	Sebuel
+Shuhah	Suá	Suá	revisado	media	1	1	1.00	Estom
+Shunem	Suném	Suném	revisado	media	3	9	0.33	Quesulote
+Shupham	Sufã	Sufã	revisado	media	1	3	0.33	Hufã
+Sihon	Siom	Seom	revisado	media	2	34	0.03	Seom
+Siloam	Siloé	Siloé	revisado	media	2	5	0.60	Enviado
+Simri	Sinri	Sinri	revisado	media	1	1	1.00	Merari
+Sin	Sim	Sim	revisado	media	3	4	1.00	Sinai
+Sirion	Sírion	Siriom	revisado	media	1	3	0.33	Siriom
+Soco	Socó	Socó	revisado	media	2	2	1.00	Adulão
+Socoh	Sucote	Socó	revisado	media	3	1	1.00	Samir
+Spain	Espanha	Espanha	revisado	media	3	2	1.00	Assim
+Suah	Suá	Suá	revisado	media	2	1	1.00	Sual
+Sur	Sur	Porta do Sur	revisado	media	3	1	1.00	E
+Syene	Sevene	Sevene	revisado	media	3	3	0.67	Sinim
+Tabor Mount	monte de Tabor	Monte de Tabor	revisado	media	1	8	0.38	
+Tahpenes	Tafnes	Tafnes	revisado	media	2	2	1.00	Genubate
+Tahtim-hodshi	Hodsi	Hodsi	revisado	media	1	1	1.00	Dã-Jaã
+Tahtimhodshi	Hodsi	Hodsi	revisado	media	1	1	1.00	Dã-Jaã
+Tamar	Tadmor	Tamar	revisado	media	2	1	1.00	Baalate
+Tehaphnehes	Tafnes	Tafnes	revisado	media	1	1	1.00	E
+Tema	Tema	Tema	revisado	media	5	5	0.40	Temá
+Tertius	Tércio	Tércio	revisado	media	2	1	1.00	Eu
+Tharshish	Társis	Társis	revisado	media	1	1	1.00	Aisaar
+Tiberius	Tibério	Tibério	revisado	media	2	12	0.08	Traconites
+Tiglath-pileser	Tiglate-Pileser	Tiglate-Pileser	revisado	media	1	9	0.44	Tiglate-Pilneser
+Tigris	Tigre	Tigre	revisado	media	2	2	1.00	Assíria
+Tilgath-pilneser	Tiglate-Pilneser	Tiglate-Pileser	revisado	media	1	6	0.33	Tiglate-Pileser
+Tishbe	Tisbita	Tisbita	revisado	media	3	6	0.83	Jezabel
+Tobijah	Tobias	Tobias	revisado	media	4	3	1.00	Tobadonias
+Tohu	Toú	Toú	revisado	media	1	3	0.33	Toá
+Tower of the Hundred	torre de Hananeel	Torre de Meá	revisado	media	2	2	0.50	torre de Hananel
+Troas	Troas	Trôade	revisado	media	3	6	0.17	Trôade
+Tyrannus	Tirano	Tirano	revisado	media	2	1	1.00	Caminho
+Tyre	Tiro	Tiro	revisado	media	3	64	0.83	Chipre
+Ulam	Ulão	Ulão	revisado	media	4	4	1.00	Gileade
+Urbanus	Urbano	Urbano	revisado	media	1	1	1.00	Estáquis
+Valley of Hinnom	vale de Hinom	Vale do filho de Hinom	revisado	media	2	12	0.25	Vale da Matança
+Valley of Slaughter	Vale da Matança	Vale da Matança	revisado	media	1	2	1.00	
+Water Gate	porta das Águas	Porta das Águas	revisado	media	3	5	1.00	porta da Fonte
+West Gate	porta de Salequete	Porta de Salequete	revisado	media	1	1	1.00	
+Yeshanah Gate	porta Velha	Porta Velha	revisado	media	1	2	1.00	porta da Prisão
+Yiron	Irom	Irom	revisado	media	3	1	1.00	Horém
+Zacchur	Zacur	Zacur	revisado	media	1	1	1.00	Hamuel
+Zachariah	Zacarias	Zacarias	revisado	media	1	3	1.00	Azarias
+Zacharias	Zacarias	Zacarias	revisado	media	2	12	1.00	Caifás
+Zaham	Zaaão	Zaaão	revisado	media	2	1	1.00	Samaria
+Zair	Seir	Seir	revisado	media	2	1	1.00	Jeorão
+Zalmon	Salmom	Salmom	revisado	media	2	1	1.00	Quando
+Zaphon	Sião	Zafom	revisado	media	1	3	0.33	Belo
+Zaphon	Zafom	Zafom	revisado	media	3	4	0.25	Seom
+Zarephath	Sarepta	Sarepta	revisado	media	3	4	1.00	Sefarade
+Zatthu	Zatu	Zatu	revisado	media	1	1	1.00	Paate-Moabe
+Zeboim	Zeboim	Zeboim	revisado	media	3	1	1.00	Nebalate
+Zephath	Zefate	Zefate	revisado	media	3	9	0.11	Simeão
+Zia	Zia	Zia	revisado	media	2	1	1.00	Jacã
+Zidkijah	Zedequias	Zedequias	revisado	media	1	1	1.00	Hacalias
+Zidon	Sidom	Sidom	revisado	media	1	2	1.00	Canaã
+Zimran	Zinrã	Zinrã	revisado	media	2	2	1.00	Suá
+Zizah	Zina	Zina	revisado	media	2	2	1.00	Jaate
+Zobah-Hamath	Zobá	Hamate de Zobá	revisado	media	1	1	1.00	Hamate
+Zohar	Zoar	Zoar	revisado	media	2	2	1.00	Manre
+Zorobabel	Zorobabel	Zorobabel	revisado	media	1	1	1.00	Salatiel
 Aaron	Arão	Arão	auto	alta	2	333	1.00	Anrão
 Abagtha	Abagta	Abagta	auto	alta	2	1	1.00	Bigtá
 Abana	Abana	Abana	auto	alta	3	1	1.00	Farpar
