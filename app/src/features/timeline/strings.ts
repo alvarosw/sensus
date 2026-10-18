@@ -35,7 +35,7 @@ export const TL = {
   noLinesFor: (q: string) => `Nenhuma linha com “${q}”.`,
   noEvents: 'Nenhum evento com esta busca e estes filtros.',
   noLines: 'Nenhuma linha do tempo com estes filtros.',
-  footer: 'Fonte: Theographic (CC BY-SA 4.0). As datas seguem a cronologia da fonte; os títulos estão em inglês, como na fonte.',
+  footer: 'Fonte: Theographic (CC BY-SA 4.0). As datas seguem a cronologia da fonte; títulos e nomes em português são adaptação do projeto Sensus.',
 
   lineTitleOf: (count: number) => `${count} ${count === 1 ? 'evento' : 'eventos'}`,
   inSource: (name: string) => `na fonte: ${name}`,
