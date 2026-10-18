@@ -95,3 +95,44 @@ export function globalAskList(
 export function preferPt(active: boolean, showOriginal: boolean): boolean {
   return !(active && showOriginal);
 }
+
+/**
+ * Contagens de uma tela para a nota da linha do tempo. `pt`: textos que mostram o pt da fonte (ver shownEntityName).
+ * `cached`: textos sem pt que já têm tradução no cache, ou seja, os que a tela mostraria traduzidos.
+ */
+export interface NoteCounts {
+  pt: number;
+  cached: number;
+}
+
+/**
+ * Conta os textos de uma tela. `pt` marca o texto com versão pt do banco (não passa pela tradução). Os demais contam
+ * como `cached` quando `cached(text)` diz que a tradução já está no cache. Não depende de "Ver original": a nota
+ * precisa saber o que mudaria ao alternar.
+ */
+export function noteCounts(items: readonly { text: string; pt: boolean }[], cached: (text: string) => boolean): NoteCounts {
+  let pt = 0;
+  let translated = 0;
+  for (const item of items) {
+    if (item.pt) pt++;
+    else if (item.text.trim().length > 0 && cached(item.text)) translated++;
+  }
+  return { pt, cached: translated };
+}
+
+/**
+ * O que a nota da linha do tempo diz numa tela:
+ *  - none: nada a dizer (tradução inativa, ou nenhum texto pt nem traduzido);
+ *  - machine: algum texto da tela foi traduzido pelo modelo, nenhum tem pt ("Títulos traduzidos automaticamente");
+ *  - partial: traduzidos pelo modelo e também com pt ("Alguns textos traduzidos automaticamente");
+ *  - pt: só texto pt do banco, sem tradução (só o "Ver original" discreto, sem aviso de tradução);
+ *  - original: "Ver original" ligado, com algo a voltar (pt ou tradução); o botão volta à tradução.
+ */
+export type TimelineNoteKind = 'none' | 'machine' | 'partial' | 'pt' | 'original';
+
+export function timelineNoteKind(input: NoteCounts & { active: boolean; showOriginal: boolean }): TimelineNoteKind {
+  if (!input.active) return 'none';
+  if (input.showOriginal) return input.pt + input.cached > 0 ? 'original' : 'none';
+  if (input.cached > 0) return input.pt > 0 ? 'partial' : 'machine';
+  return input.pt > 0 ? 'pt' : 'none';
+}

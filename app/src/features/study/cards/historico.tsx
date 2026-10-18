@@ -17,8 +17,9 @@ import { refShort } from '@/features/common/format';
 import { EventPreview } from '@/features/timeline';
 import { useAutoTranslate } from '@/translate/useAutoTranslate';
 import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
+import { EntityDescription } from '@/translate/EntityDescription';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
-import { useTimelineTitles } from '@/translate/timeline-translate';
+import { useTimelineNoteCounts, useTimelineTitles } from '@/translate/timeline-translate';
 import { useSourceLang } from '@/translate/source-lang';
 import { STUDY } from '../strings';
 
@@ -74,7 +75,7 @@ export function EntityCard({
   onOpen: () => void;
   onAsk: () => void;
 }) {
-  const tr = useAutoTranslate(entity.description, useSourceLang(entity.source_id));
+  const lang = useSourceLang(entity.source_id);
   return (
     <Card testID={`ent-${entity.cite_id}`}>
       <CardTop>
@@ -82,8 +83,7 @@ export function EntityCard({
         <Txt v="bodySm" bold>{shownEntityName(entity, true).text}</Txt>
         <Txt v="meta" color="muted">{sourceShort}</Txt>
       </CardTop>
-      {entity.description ? <Txt v="excerpt" numberOfLines={3}>{tr.display}</Txt> : null}
-      {entity.description ? <AutoTranslateNote tr={tr} testID={`ent-tr-${entity.cite_id}`} /> : null}
+      <EntityDescription entity={entity} lang={lang} variant="excerpt" noteTestID={`ent-tr-${entity.cite_id}`} />
       <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space[2] }}>
         <LinkButton label={STUDY.seeEntity} onPress={onOpen} />
         <LinkButton label={STUDY.ask} onPress={onAsk} />
@@ -107,7 +107,7 @@ export function PlaceCard({
 }) {
   const ns = entity.lat >= 0 ? 'N' : 'S';
   const ew = entity.lon >= 0 ? 'L' : 'O';
-  const tr = useAutoTranslate(entity.description, useSourceLang(entity.source_id));
+  const lang = useSourceLang(entity.source_id);
   return (
     <Card testID={`place-${entity.cite_id}`}>
       <View style={{ flexDirection: 'row', gap: 12, alignItems: 'flex-start' }}>
@@ -120,8 +120,7 @@ export function PlaceCard({
           <Txt v="mono" color="muted" style={{ fontSize: 11 }}>
             {`${Math.abs(entity.lat).toFixed(3)}° ${ns} · ${Math.abs(entity.lon).toFixed(3)}° ${ew}`}
           </Txt>
-          {entity.description ? <Txt v="excerpt" numberOfLines={3} style={{ fontSize: 13 }}>{tr.display}</Txt> : null}
-          {entity.description ? <AutoTranslateNote tr={tr} testID={`place-tr-${entity.cite_id}`} /> : null}
+          <EntityDescription entity={entity} lang={lang} variant="excerpt" small noteTestID={`place-tr-${entity.cite_id}`} />
           <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space[2] }}>
             <LinkButton label={STUDY.seeEntity} onPress={onOpen} />
             <LinkButton label={STUDY.otherPassages} onPress={onOthers} />
@@ -159,9 +158,10 @@ export function TimelineCard({
   const yearW = Math.ceil(Math.max(1, ...years.map((y) => y.length)) * 11 * 0.62);
   // Títulos da linha do tempo: o pt quando existe; o resto, traduzido quando configurado (um lote para o cartão).
   const trTitle = useTimelineTitles(events);
+  const noteCounts = useTimelineNoteCounts({ titles: events });
   return (
     <View style={{ gap: space[3] }}>
-      <TimelineTranslationNote testID="timeline-note" />
+      <TimelineTranslationNote testID="timeline-note" counts={noteCounts} />
       <Card testID="timeline">
         {/* Uma só área: o gap do Card separaria os pontos e cortaria o fio entre eles. */}
         <View>

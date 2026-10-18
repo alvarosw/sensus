@@ -1,7 +1,7 @@
 # Licenças dos dados
 
 Este arquivo lista todas as fontes de dados do Sensus, com licença, origem e atribuição exigida.
-Foi montado a partir dos metadados de `data/staging/*/source.json` (33 fontes, incluindo `sensus-nomes-pt` e `sensus-titulos-pt`). Os bancos gerados
+Foi montado a partir dos metadados de `data/staging/*/source.json` (34 fontes, incluindo `sensus-nomes-pt`, `sensus-titulos-pt` e `sensus-descricoes-pt`). Os bancos gerados
 (`sensus.db`, completo, e `sensus-reader.db`, do APK) gravam licença, URL, versão e atribuição de cada fonte na tabela `source`.
 
 > Não é parecer jurídico. Itens marcados **Verificar** dependem de interpretação ou de confirmação
@@ -32,6 +32,7 @@ Foi montado a partir dos metadados de `data/staging/*/source.json` (33 fontes, i
 |---|---|---|---|---|
 | `theographic` | Theographic Bible Metadata, Robert Rouse (viz.bible) | https://github.com/robertrouse/theographic-bible-metadata (commit cfb1c48) | Theographic Bible Metadata, por Robert Rouse / viz.bible (https://github.com/robertrouse/theographic-bible-metadata), licença Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0). | **Share-alike.** Descrições vêm de dictionaryText, em inglês, e incluem texto do Easton (1897, domínio público). Links Markdown removidos. |
 | `sensus-titulos-pt` | Títulos de eventos em português (derivados), a partir de `theographic` | Derivado de `theographic` (commit cfb1c48), por `pipeline/ingest/titulos_pt.py` | Mesma atribuição de `theographic` (CC BY-SA 4.0), de quem vêm os títulos em inglês; a tradução é do projeto: "títulos traduzidos e revisados pelo projeto Sensus". | **Share-alike**, como `theographic`. **Derivado**: título pt de cada evento, escrito e revisado por agentes de IA, conferindo os versículos da Bíblia Livre e pesquisando em caso de dúvida (nota "rev. IA" em `pipeline/ingest/corrections/titulos-eventos-pt.tsv`); só os de origem revisado entram no banco. Sem tradução automática no aparelho. |
+| `sensus-descricoes-pt` | Descrições das entidades em português (derivadas), a partir de `theographic`, `stepbible-tipnr` e `openbible-geo` | Derivado de `theographic` (commit cfb1c48), `stepbible-tipnr` (commit dd88ab3) e `openbible-geo` (commit 7eb18a5), por `pipeline/ingest/descricoes_pt.py` | Theographic Bible Metadata, por Robert Rouse / viz.bible, CC BY-SA 4.0; TIPNR, dados criados por STEP Bible (www.STEPBible.org), baseados em trabalho da Tyndale House Cambridge, CC BY 4.0; OpenBible.info Bible Geocoding Data, CC BY 4.0. A tradução é do projeto: "descrições traduzidas e revisadas pelo projeto Sensus". | **Share-alike**, como `theographic`. **Derivado**: as descrições do TIPNR são traduzidas por regra do projeto (`pipeline/sensus/descricoes_pt.py`, glossário em `pipeline/ingest/corrections/glossario-descricoes.tsv`); descrição que a regra não reconhece não entra. As de theographic e openbible-geo foram traduzidas e revisadas por agentes de IA (nota "rev. IA" em `pipeline/ingest/corrections/descricoes-pt.tsv`); só as de origem revisado entram. Sem tradução automática no aparelho. |
 
 ### 2.2 CC BY 4.0 — STEP Bible / Tyndale House
 

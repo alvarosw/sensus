@@ -1,0 +1,375 @@
+# Nomes em português que o alinhamento automático de nomes_pt.py não cobre: nomes compostos ('Jesus Christ',
+# 'Simon Peter') e descritivos ('Daughter of Pharaoh') e grupos. Lido por pipeline/ingest/nomes_pt.py. Colunas:
+#   nome_en    nome inglês COMPLETO da entidade na fonte (campo name, sem tirar sufixo nem parênteses)
+#   tipo       entity.type da entidade: person | place | group | other (eventos têm título próprio, em
+#              corrections/titulos-eventos-pt.tsv, e não entram aqui)
+#   nome_pt    nome em português que o app mostra; vazio quando origem=sem
+#   origem     revisado (vai para o banco) | sem (o app mostra o nome inglês; não gera nome pt)
+#   nota       observação para o revisor (fonte da forma, dúvida, versículo conferido)
+# Chave: nome_en + tipo. Cada chave aparece uma vez. Só entidades que o alinhamento automático não nomeou
+# recebem a linha; o alinhamento normal sempre vence.
+# Para preencher: copie o nome_en e o tipo do arquivo nomes-faltando.tsv (lista das entidades sem nome pt),
+# confira o nome na Bíblia Livre e marque origem=revisado. Nome sem tradução usual: origem=sem.
+# Depois de editar, rode: python3 pipeline/ingest/nomes_pt.py (e depois descricoes_pt.py, que usa os nomes pt).
+nome_en	tipo	nome_pt	origem	nota
+Abila	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Abila Lysaniou	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Adasa	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Adramyttium	place	Adramítio	revisado	rev. IA: At 27:2 (navio adramitino; banco 44027002)
+Adulis	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Al-taschith	other	Al-Tasquite	revisado	rev. IA: título de Sl 57-59 (forma de Almeida)
+Alamoth	other	Alamote	revisado	rev. IA: 1 Cr 15:20 (banco 13015020)
+Ama	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Amate	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Amaw	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Amminadib	person	Aminadabe	revisado	rev. IA: Ct 6:12 (banco 22006012)
+Angle	place	Porta do Ângulo	revisado	rev. IA: 2 Cr 26:9 (banco 14026009)
+Apostles	group	Apóstolos	revisado	rev. IA: grupo (banco 40010002)
+Apostles (Post-Ascension)	group	Apóstolos (depois da ascensão)	revisado	rev. IA: descritivo
+Apostles (The Eleven)	group	Apóstolos (os onze)	revisado	rev. IA: descritivo
+Arabah	place	Arabá	revisado	rev. IA: forma de Almeida para a Arabá
+Aram-naharaim	place	Arã-Naraim	revisado	rev. IA: título de Sl 60 (forma de Almeida)
+Aram-zobah	place	Arã-Zobá	revisado	rev. IA: título de Sl 60 (forma de Almeida)
+Aramitess	person	Aramita	revisado	rev. IA: gentílico de Arã (banco 13007014)
+Arbela	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Arsinoe	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Asen	person		sem	rev. IA: pesquisa não confirmou forma pt
+Ashdod's	place		sem	rev. IA: possessivo sem forma segura
+Atroth-beth-joab	place	Atarote-Bete-Joabe	revisado	rev. IA: forma do banco (13002054)
+Bajith	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Barsabas Justus	person	José Barsabás, chamado Justo	revisado	rev. IA: At 1:23 (banco 44001023)
+Batanea	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Beeroth Bene-jaakan	place	Beerote-Bene-Jaacã	revisado	rev. IA: forma do banco (5010006); glossário Bene-jaakan -> Bene-Jaacã
+Belamon	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Benjamin's Gate	place	Porta de Benjamim	revisado	rev. IA: glossário: Benjamin Gate -> Porta de Benjamim
+Beth-Ashtoreth	place	Bete-Astarote	revisado	rev. IA: forma do banco (9031010)
+Beth-eked	place	Bete-Eked	revisado	rev. IA: forma de Almeida (2 Rs 10:12; banco 12010012)
+Beth-haggan	place	Bete-Hagã	revisado	rev. IA: forma de Almeida (2 Rs 9:27; banco 12009027)
+Beth-horon_Lower	place	Bete-Horom de Baixo	revisado	rev. IA: descritivo (banco 6010010)
+Beth-horon_Upper	place	Bete-Horom de Cima	revisado	rev. IA: descritivo (banco 6016005)
+Beth-merhak	place		sem	rev. IA: sem forma segura; banco não traz o nome
+Bether 2	place		sem	rev. IA: ambíguo no banco; sem forma segura
+Bether_Mountain	place	Monte Beter	revisado	rev. IA: Ct 2:17 (banco 22002017)
+Bethlehem Ephrathah	place	Belém Efrata	revisado	rev. IA: Mq 5:2 (banco 33005002)
+Beyond the River	place	Além do Rio	revisado	rev. IA: Ed 4:10 (banco 15004010)
+Booths_Festival	other	Festa dos Tabernáculos	revisado	rev. IA: Jo 7:2 (banco 43007002)
+Caesarea Philippi	place	Cesareia de Filipe	revisado	rev. IA: Mt 16:13 (banco 40016013)
+Caesarea_Philippi	place	Cesareia de Filipe	revisado	rev. IA: Mt 16:13 (banco 40016013)
+Caleb Ephrathah	place	Calebe de Efrata	revisado	rev. IA: 1 Cr 2:24 (banco 13002024)
+Caleb_Ephrathah	place	Calebe de Efrata	revisado	rev. IA: 1 Cr 2:24 (banco 13002024)
+Canaanite_woman	person	Mulher cananeia	revisado	rev. IA: descritivo (banco 1046010)
+Canaanitish woman	person	Mulher cananeia	revisado	rev. IA: descritivo (banco 1046010)
+Carthage	place	Cartago	revisado	rev. IA: forma pt usual; sem versículo no banco
+Chalcis	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Charmande	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Chief Priests	group	Principais sacerdotes	revisado	rev. IA: grupo (descritivo)
+Chronicles	other	Crônicas	revisado	rev. IA: livros de Crônicas (banco 11014019)
+City of Salt	place	Cidade do Sal	revisado	rev. IA: banco 6015062
+City_of_Salt	place	Cidade do Sal	revisado	rev. IA: banco 6015062
+Claudius Lysias	person	Cláudio Lísias	revisado	rev. IA: At 23:26 (banco 44023026)
+Concubine the Aramitess	person	Concubina aramita	revisado	rev. IA: descritivo (banco 13007014)
+Daughter of Herodias	person	Filha de Herodias	revisado	rev. IA: descritivo (banco 40014006)
+Daughter of Lot - Older	person	Filha mais velha de Ló	revisado	rev. IA: descritivo (banco 1019031)
+Daughter of Lot - Younger	person	Filha mais nova de Ló	revisado	rev. IA: descritivo (banco 1019008)
+Daughter of Machir	person	Filha de Maquir	revisado	rev. IA: descritivo; glossário Machir -> Maquir (banco 13002021)
+Daughter of Meshullam	person	Filha de Mesulão	revisado	rev. IA: descritivo; glossário Meshullam -> Mesulão (banco 16006018)
+Daughter of Pharaoh	person	Filha de Faraó	revisado	rev. IA: descritivo; exemplo do pedido (banco 11003001)
+Daughter of Putiel	person	Filha de Putiel	revisado	rev. IA: descritivo; glossário Putiel (banco 2006025)
+Daughter of Shuah	person	Filha de Suá	revisado	rev. IA: descritivo; glossário Shuah -> Suá (banco 1038002)
+Dedication_Festival	other	Festa da Dedicação	revisado	rev. IA: Jo 10:22 (banco 43010022)
+Dehavites	group	Dinaítas	revisado	rev. IA: grupo; banco 15004009 (os dinaítas)
+Destiny	other	Destino	revisado	rev. IA: Is 65:11 (banco 23065011)
+Disciples of John	group	Discípulos de João	revisado	rev. IA: grupo (descritivo)
+Diviners' Oak	place	Carvalho dos Adivinhos	revisado	rev. IA: descritivo (banco 7009037)
+Diviners'_Oak	place	Carvalho dos Adivinhos	revisado	rev. IA: descritivo (banco 7009037)
+Diviners’ Oak	place	Carvalho dos Adivinhos	revisado	rev. IA: descritivo (banco 7009037)
+East	place	Terra do Oriente	revisado	rev. IA: descritivo (banco 1025006)
+Egypt's	place		sem	rev. IA: possessivo sem forma segura
+Elkosh	place		sem	rev. IA: forma do lugar não confirmada (banco 34001001 traz o gentílico)
+Enaim	place	Enaim	revisado	rev. IA: forma de Almeida (Gn 38:14; banco 1038014)
+Eridu	place	Eridu	revisado	rev. IA: forma pt usual; sem versículo no banco
+Etruria	place	Etrúria	revisado	rev. IA: forma pt usual; sem versículo no banco
+Eznites	group	Eznitas	revisado	rev. IA: gentílico (banco 10023008)
+Fair Havens	place	Bons Portos	revisado	rev. IA: At 27:8 (banco 44027008)
+Fair_Havens	place	Bons Portos	revisado	rev. IA: At 27:8 (banco 44027008)
+Forest	place	Bosque	revisado	rev. IA: descritivo (banco 23022008)
+Fortune	other	Sorte	revisado	rev. IA: Is 65:11 (banco 23065011)
+Foundation_Gate	place	Porta do Fundamento	revisado	rev. IA: glossário: Gate of the Foundation -> Porta do fundamento
+Gadara	place	Gadara	revisado	rev. IA: forma de Almeida (banco 40008028)
+Gate of the Children of the People	place	Porta dos Filhos do Povo	revisado	rev. IA: descritivo (banco 24017019)
+Gath-padalla	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Genealogy of Jesus	group	Genealogia de Jesus	revisado	rev. IA: descritivo
+Gerasa	place	Gerasa	revisado	rev. IA: forma pt usual (banco 41005001)
+Gergesa	place	Gergesa	revisado	rev. IA: forma pt usual (banco 40008028)
+Geruth Chimham	place	Gerute-Quimã	revisado	rev. IA: banco 24041017
+Geruth_Chimham	place	Gerute-Quimã	revisado	rev. IA: banco 24041017
+Gittith	other	Gitite	revisado	rev. IA: título de Salmos (forma de Almeida)
+God	person	Deus	revisado	rev. IA: banco 1001001
+Goiim	group	Goim	revisado	rev. IA: forma de Almeida (Gn 14:1, pesquisa web); banco 1014001 traz nações
+Goiim	place	Goim	revisado	rev. IA: forma de Almeida (Gn 14:1, pesquisa web)
+Goiim 1	place	Goim 1	revisado	rev. IA: forma de Almeida (Gn 14:1, pesquisa web)
+Goiim 2	place	Goim 2	revisado	rev. IA: forma de Almeida (Js 12:23; banco 6012023)
+Gulloth-mayim	place		sem	rev. IA: pesquisa não confirmou forma pt
+Gutium	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Hakkephirim	place		sem	rev. IA: pesquisa não confirmou forma em Almeida; banco 16006002 traz aldeias
+Halahha	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Ham	place	Hã	revisado	rev. IA: Gn 14:5 (banco 1014005); o glossário usa Cam para a pessoa
+Ham 1	place	Hã 1	revisado	rev. IA: Gn 14:5 (banco 1014005)
+Hammelech	person		sem	rev. IA: revisão: dúvida não resolvida (Jr 38:6 (banco 24038006); conferir: a entidade é Hammelech)
+Hamon-gog_Valley	place	Vale da multidão de Gogue	revisado	rev. IA: glossário: Valley of Hamon-gog
+Harhar	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Hatti	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Hazerim	place	Hazerim	revisado	rev. IA: Dt 2:23 (banco 5002023)
+Helech	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Heracleopolis Magna	place	Heracleópolis Magna	revisado	rev. IA: forma pt usual; sem versículo no banco
+Heracleopolis Parva	place		sem	rev. IA: forma pt não confirmada
+Heres	place	Heres	revisado	rev. IA: Jz 8:13 (banco 7008013)
+Herod Agrippa I	person	Herodes Agripa I	revisado	rev. IA: glossário Agrippa -> Agripa (banco 44012001)
+Herod Antipas	person	Herodes Antipas	revisado	rev. IA: glossário Antipas (banco 40014001)
+Herodian	group	Herodianos	revisado	rev. IA: grupo (banco 41003006)
+Herod’s palace	place	Palácio de Herodes	revisado	rev. IA: descritivo
+Highway	place	Caminho Real	revisado	rev. IA: banco 4020017
+Hilakku	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Holy Place	place	Lugar Santo	revisado	rev. IA: banco 11008008
+Holy Place 1	place	Lugar Santo 1	revisado	rev. IA: banco 2026033
+Holy Place 2	place	Lugar Santo 2	revisado	rev. IA: banco 11006005
+Holy Spirit	person	Espírito Santo	revisado	rev. IA: exemplo do pedido
+Holy_Place	place	Lugar Santo	revisado	rev. IA: banco 2026033
+Hophra	person	Hofra	revisado	rev. IA: forma de Almeida (Jr 44:30; banco 24037005)
+Horesh	place	Horesa	revisado	rev. IA: forma de Almeida (1 Sm 23:15; banco 9023015)
+House of the Forest of Lebanon	place	Casa do Bosque do Líbano	revisado	rev. IA: descritivo (banco 11007002)
+Jaar	place	Jaar	revisado	rev. IA: glossário: Jaar -> Jaar
+Janen	place		sem	rev. IA: sem forma pt confirmada; sem versículo claro
+Janua	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Jemnath	place		sem	rev. IA: sem forma pt confirmada; sem versículo claro
+Jerusalem's	place		sem	rev. IA: possessivo sem forma segura
+Jerusalem_wives	person	Mulheres de Jerusalém	revisado	rev. IA: descritivo (banco 10005013)
+Jesus Christ	person	Jesus Cristo	revisado	rev. IA: exemplo do pedido
+John Mark	person	João Marcos	revisado	rev. IA: banco 44012012
+John the Apostle	person	João, o apóstolo	revisado	rev. IA: banco 40004021
+John the Baptist	person	João Batista	revisado	rev. IA: exemplo do pedido (banco 40003001)
+Jonath-elem-rechokim	other		sem	rev. IA: título de Sl 56; forma pt não confirmada
+Judas Barsabas	person	Judas Barsabás	revisado	rev. IA: banco 44015022
+Judas Iscariot	person	Judas Iscariotes	revisado	rev. IA: banco 40010004
+Judgment	place	Pórtico do Juízo	revisado	rev. IA: descritivo (banco 11007007)
+King's_Highway	place	Caminho Real	revisado	rev. IA: banco 4020017
+King’s Highway	place	Caminho Real	revisado	rev. IA: banco 4020017
+Kumidi	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+LORD	other	SENHOR	revisado	rev. IA: convenção da Bíblia Livre (banco 1002004)
+Laash	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Lebanon_Valley	place	Planície do Líbano	revisado	rev. IA: glossário: Valley of Lebanon -> Planície do Líbano (banco 6011017)
+Lebbaeus Thaddaeus	person	Lebeu, chamado Tadeu	revisado	rev. IA: banco 40010003
+Line of Cain	group	Linhagem de Caim	revisado	rev. IA: descritivo; glossário Cain -> Caim
+Lower Beth-horon	place	Bete-Horom de Baixo	revisado	rev. IA: banco 6016003
+Lower Gulloth	place	Fontes de Baixo	revisado	rev. IA: descritivo (banco 6015019)
+Lucifer	other	Lúcifer	revisado	rev. IA: Is 14:12 (banco 23014012; sentido 'luminoso')
+Lucifer	person	Lúcifer	revisado	rev. IA: Is 14:12 (banco 23014012)
+Lydia	place	Lídia	revisado	rev. IA: glossário: Lydia -> Lídia
+Maareh-geba	place		sem	rev. IA: banco 7020033 não traz o nome; sem forma segura
+Madiama	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Magdala	place	Magdala	revisado	rev. IA: forma pt usual; Almeida em Mt 15:39 usa Magadã (pesquisa web)
+Magdalsenna	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Magdolum	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Mahalab	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Maranatha	other	Maranata	revisado	rev. IA: 1 Co 16:22 (banco 46016022)
+Mary Magdalene	person	Maria Madalena	revisado	rev. IA: banco 40027056
+Mary_Magdalene	person	Maria Madalena	revisado	rev. IA: banco 40027056
+Maskil	other	Masquil	revisado	rev. IA: título de Salmos (forma de Almeida)
+Mazzaroth	other	Mazarote	revisado	rev. IA: Jó 38:32 (banco 18038032)
+Merom	place	Merom	revisado	rev. IA: glossário: Merom -> Merom
+Meronoth	place		sem	rev. IA: forma do lugar não confirmada (gentílico meronotita em 1 Cr 27:30)
+Meunites	group	Meunins	revisado	rev. IA: forma de Almeida (2 Cr 26:7; banco 13004041)
+Micah	person		sem	rev. IA: revisão: dúvida não resolvida (glossário Micah -> Mica; conferir: versículos com o profeta usam Miqueias)
+Miktam	other	Mictão	revisado	rev. IA: título de Sl 16 (forma de Almeida)
+Misrephoth-maim	place	Misrefote-Maim	revisado	rev. IA: forma de Almeida (Js 11:8; banco 6011008)
+Mizpeh_Valley	place	Planície de Mispá	revisado	rev. IA: descritivo (banco 6011003)
+Moab_Plains	place	Campos de Moabe	revisado	rev. IA: banco 4022001
+Mortar	place		sem	rev. IA: ambíguo (pilão/almofariz); sem forma segura
+Most Holy	place	Lugar Santíssimo	revisado	rev. IA: banco 2026033
+Most Holy Place	place	Lugar Santíssimo	revisado	rev. IA: banco 2026034
+Most Holy Place 1	place	Lugar Santíssimo 1	revisado	rev. IA: banco 2026033
+Most Holy Place 2	place	Lugar Santíssimo 2	revisado	rev. IA: banco 11006016
+Most_Holy_Place	place	Lugar Santíssimo	revisado	rev. IA: banco 11007050
+Mother of Aholah and Aholibah	person		sem	rev. IA: nomes de Oolá e Oolibá não estão no banco
+Mother of Lemuel	person	Mãe de Lemuel	revisado	rev. IA: descritivo (banco 20031001)
+Mother of Zebedees children	person	Mãe dos filhos de Zebedeu	revisado	rev. IA: banco 40020020
+Mother of the Wife of Simon	person	Sogra de Simão	revisado	rev. IA: banco 40008014
+Muth-labben	other		sem	rev. IA: sem forma pt confirmada; pesquisa não confirmou
+Nahuru	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Naphath	place		sem	rev. IA: forma do lugar não confirmada; ver Js 17:11
+Naphath-dor	place	Nafote-Dor	revisado	rev. IA: forma de Almeida (Js 11:2); banco 11004011
+Nation of Israel	group	Nação de Israel	revisado	rev. IA: descritivo (banco 19014007)
+Nehelam	place	Neelamita	revisado	rev. IA: gentílico (banco 24029024)
+Nephilim	group	Nefilins	revisado	rev. IA: forma de Almeida (Gn 6:4; banco 1006004)
+New_Moon	other	Lua nova	revisado	rev. IA: banco 51002016
+North	place	Norte	revisado	rev. IA: descritivo (banco 27011006)
+North Gate	place	Porta do Norte	revisado	rev. IA: banco 13026014
+Nuhashe	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Parbar	place	Parbar	revisado	rev. IA: forma de Almeida (banco 13026018)
+People's_Gate	place	Porta dos Filhos do Povo	revisado	rev. IA: descritivo (banco 24017019)
+People’s Gate	place	Porta dos Filhos do Povo	revisado	rev. IA: descritivo (banco 24017019)
+Pharisees	group	Fariseus	revisado	rev. IA: glossário: Pharisee -> Fariseu; grupo
+Phillip the Apostle	person	Filipe, o apóstolo	revisado	rev. IA: banco 40010003
+Phillip the Evangelist	person	Filipe, o evangelista	revisado	rev. IA: banco 44006005
+Pillars	place	Colunas	revisado	rev. IA: descritivo (banco 11007006)
+Pitru	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Plain	place	Planície	revisado	rev. IA: descritivo (banco 5034003)
+Pontius Pilate	person	Pôncio Pilatos	revisado	rev. IA: banco 40027002; glossário Pilate -> Pilatos
+Pool	place		sem	rev. IA: ambíguo no banco (porta da Fonte); sem forma segura
+Portius Festus	person	Pórcio Festo	revisado	rev. IA: banco 44024027; glossário Festus -> Festo
+Potsherd Gate	place		sem	rev. IA: pesquisa não feita; sem forma segura
+Potsherd_Gate	place		sem	rev. IA: pesquisa não feita; sem forma segura
+Preparation_Festival	other	Dia da Preparação	revisado	rev. IA: banco 40027062
+Punt	place		sem	rev. IA: pesquisa não confirmou forma pt
+Pyrrhus	person	Pirro	revisado	rev. IA: At 20:4 (banco 44020004)
+Queen of Sheba	person	Rainha de Sabá	revisado	rev. IA: banco 11010001
+Queen_of_Sheba	person	Rainha de Sabá	revisado	rev. IA: banco 11010001
+Raca	other	Raca	revisado	rev. IA: banco 40005022
+Ragmat	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+River	place		sem	rev. IA: ambíguo no banco; sem forma segura
+River 2	place		sem	rev. IA: ambíguo no banco; sem forma segura
+River 3	place	Reobote do Rio	revisado	rev. IA: descritivo (banco 13001048)
+Rock	place		sem	rev. IA: ambíguo no banco; sem forma segura
+Rocks	place	Rochedos	revisado	rev. IA: banco 9024002
+Sadducees	group	Saduceus	revisado	rev. IA: glossário: Sadducee -> Saduceus
+Sahar	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Salome	person	Salomé	revisado	rev. IA: glossário
+Salona	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Salt_Valley	place	Vale do Sal	revisado	rev. IA: banco 10008013
+Samaria's	place		sem	rev. IA: possessivo sem forma segura
+Saparda	place		sem	rev. IA: pesquisa não confirmou forma pt
+Saparre	place		sem	rev. IA: pesquisa não confirmou forma pt
+Scribes	group	Escribas	revisado	rev. IA: grupo
+Scythia	place	Cítia	revisado	rev. IA: forma pt usual (Cl 3:11 traz citas)
+Second Quarter	place	Segundo Bairro	revisado	rev. IA: forma de Almeida (banco 12022014)
+Second_Quarter	place	Segundo Bairro	revisado	rev. IA: forma de Almeida (banco 14034022)
+Sergius Paulus	person	Sérgio Paulo	revisado	rev. IA: banco 44013007
+Sergius_Paulus	person	Sérgio Paulo	revisado	rev. IA: banco 44013007
+Shephelah	place	Sefelá	revisado	rev. IA: forma de Almeida (banco 6009001)
+Shiggaion	other		sem	rev. IA: pesquisa não confirmou forma em Almeida
+Shushan_Eduth	other		sem	rev. IA: pesquisa não confirmou forma em Almeida
+Simon Peter	person	Simão Pedro	revisado	rev. IA: banco 40004018
+Simon Zelotes	person	Simão, o zelote	revisado	rev. IA: banco 41003018
+Simon the Sorcerer	person	Simão, o mágico	revisado	rev. IA: banco 44008009 (usava magia)
+Simon the Tanner	person	Simão, o curtidor	revisado	rev. IA: banco 44009043
+Sister of Tahpenes	person	Irmã de Tafnes	revisado	rev. IA: banco 11011019
+Solomon's Portico	place	Pórtico de Salomão	revisado	rev. IA: banco 44003011
+Solomon's_Portico	place	Pórtico de Salomão	revisado	rev. IA: banco 44003011
+Solomon’s Portico	place	Pórtico de Salomão	revisado	rev. IA: banco 44003011
+South	place	Sul	revisado	rev. IA: descritivo (banco 38007007)
+South 1	place	Sul 1	revisado	rev. IA: banco 38007007
+South 2	place	Sul 2	revisado	rev. IA: banco 40012042
+South 3	place	Sul 3	revisado	rev. IA: banco 27011005 (rei do sul)
+South Gate	place	Porta do Sul	revisado	rev. IA: banco 13026015
+Sparta	place	Esparta	revisado	rev. IA: forma pt usual; sem versículo no banco
+Straight Gate	place		sem	rev. IA: revisão: dúvida não resolvida (descritivo (tradução literal de Straight))
+Straight Street	place	Rua Direita	revisado	rev. IA: banco 44009011
+Suph	place	Sufe	revisado	rev. IA: forma de Almeida (banco 5001001)
+Sutu	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Syrtis	place	Sirte	revisado	rev. IA: forma pt usual; banco 44027017 (bancos de areia)
+Tabbur-erez	place		sem	rev. IA: pesquisa não confirmou forma pt
+Tartessos	place		sem	rev. IA: identificação incerta; sem forma segura
+Tegarama	place		sem	rev. IA: identificação incerta; sem forma segura
+Thapsacus	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+The Lord Is There	place	O SENHOR Está Ali	revisado	rev. IA: banco 26048035
+The Lord Will Provide	place	O SENHOR Proverá	revisado	rev. IA: banco 1022014
+Thelme	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Thisbe	place	Tisbe	revisado	rev. IA: forma de Almeida (1 Rs 17:1)
+Three Taverns	place	Três Vendas	revisado	rev. IA: banco 44028015
+Three_Taverns	place	Três Vendas	revisado	rev. IA: banco 44028015
+Throne	place	Pórtico do Trono	revisado	rev. IA: descritivo (banco 11007007)
+Tjaru	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Tower	place		sem	rev. IA: ambíguo no banco; sem forma segura
+Tower_of_Eder	place	Torre do Rebanho	revisado	rev. IA: banco 33004008 (torre de vigilância do rebanho)
+Travelers_Valley	place	Vale dos que passam	revisado	rev. IA: glossário: Valley of the Passengers; banco 26039011
+Tribe of Asher	group	Tribo de Aser	revisado	rev. IA: glossário: Asher -> Aser
+Tribe of Benjamin	group	Tribo de Benjamim	revisado	rev. IA: glossário: Benjamin -> Benjamim
+Tribe of Dan	group	Tribo de Dã	revisado	rev. IA: glossário: Dan -> Dã
+Tribe of Gad	group	Tribo de Gade	revisado	rev. IA: glossário: Gad -> Gade
+Tribe of Issachar	group	Tribo de Issacar	revisado	rev. IA: glossário: Issachar -> Issacar
+Tribe of Joseph	group	Tribo de José	revisado	rev. IA: glossário: Joseph -> José
+Tribe of Judah	group	Tribo de Judá	revisado	rev. IA: glossário: Judah -> Judá
+Tribe of Levi	group	Tribo de Levi	revisado	rev. IA: glossário: Levi -> Levi
+Tribe of Naphtali	group	Tribo de Naftali	revisado	rev. IA: glossário: Naphtali -> Naftali
+Tribe of Reuben	group	Tribo de Rúben	revisado	rev. IA: glossário: Reuben -> Rúben
+Tribe of Simeon	group	Tribo de Simeão	revisado	rev. IA: glossário: Simeon -> Simeão
+Tribe of Zebulun	group	Tribo de Zebulom	revisado	rev. IA: glossário: Zebulun -> Zebulom
+Umman Manda	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Unnamed#1	person		sem	rev. IA: marcador sem nome
+Unnamed#2	person		sem	rev. IA: marcador sem nome
+Unnamed#3	person		sem	rev. IA: marcador sem nome
+Unnamed#4	person		sem	rev. IA: marcador sem nome
+Unnamed#5	person		sem	rev. IA: marcador sem nome
+Unnamed#6	person		sem	rev. IA: marcador sem nome
+Unnamed#7	person		sem	rev. IA: marcador sem nome
+Unnamed#8	person		sem	rev. IA: marcador sem nome
+Unnamed#9	person		sem	rev. IA: marcador sem nome
+Upper Beth-horon	place	Bete-Horom de Cima	revisado	rev. IA: banco 6016005
+Upper Gulloth	place	Fontes de Cima	revisado	rev. IA: descritivo (banco 6015019)
+Upu	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Uqnu	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Ur 2	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Ur of the Chaldees	place	Ur dos Caldeus	revisado	rev. IA: banco 1011028
+Ura	place		sem	rev. IA: sem forma pt confirmada; sem versículo no banco
+Valley of Mizpeh	place	Vale de Mispá	revisado	rev. IA: padrão do glossário (Valley of X -> Vale de X); banco 6011008
+Valley of Salt	place	Vale do Sal	revisado	rev. IA: banco 10008013
+Valley of the Son of Hinnom	place	Vale do filho de Hinom	revisado	rev. IA: glossário: Valley of Hinnom -> Vale do filho de Hinom
+Washer's_Field	place	Campo do Lavandeiro	revisado	rev. IA: descritivo (banco 23007003)
+Washer’s Field	place	Campo do Lavandeiro	revisado	rev. IA: descritivo (banco 23007003)
+Way of the Red Sea	place	Caminho do Mar Vermelho	revisado	rev. IA: descritivo (banco 4014025)
+Wife of Ezekiel	person	Esposa de Ezequiel	revisado	rev. IA: descritivo; glossário Ezekiel -> Ezequiel (banco 26024018)
+Wife of Simon	person		sem	rev. IA: revisão: dúvida não resolvida (descritivo; versículos ligados falam da sogra, conferir)
+Wildgoats_Rocks	place	Rochedos das Cabras Monteses	revisado	rev. IA: descritivo (banco 9024002)
+Wildgoats’ Rocks	place	Rochedos das Cabras Monteses	revisado	rev. IA: descritivo (banco 9024002)
+Willows	place	Ribeiro dos Salgueiros	revisado	rev. IA: descritivo (banco 23015007)
+Zion's	place		sem	rev. IA: possessivo sem forma segura
+a_wife_of_Eliphaz	person	Esposa de Elifaz	revisado	rev. IA: glossário Eliphaz -> Elifaz (banco 1036011)
+a_wife_of_Ezekiel	person	Esposa de Ezequiel	revisado	rev. IA: banco 26024018
+a_wife_of_Hezron	person	Esposa de Hezrom	revisado	rev. IA: glossário Hezron -> Hezrom (banco 13002009)
+a_wife_of_Jerahmeel	person	Esposa de Jerameel	revisado	rev. IA: glossário Jerahmeel -> Jerameel (banco 13002026)
+a_wife_of_Josiah	person	Esposa de Josias	revisado	rev. IA: glossário Josiah -> Josias (banco 13003015)
+a_wife_of_Lot	person	Esposa de Ló	revisado	rev. IA: banco 1019015
+a_wife_of_Peter	person	Esposa de Pedro	revisado	rev. IA: banco 46009005
+a_wife_of_Simeon	person	Esposa de Simeão	revisado	rev. IA: banco 1046010
+a_wife_of_Solomon	person		sem	rev. IA: revisão: dúvida não resolvida (banco 11004011; conferir)
+daughter1_of_Lot	person	Filha mais velha de Ló	revisado	rev. IA: banco 1019037
+daughter2_of_Lot	person	Filha mais nova de Ló	revisado	rev. IA: banco 1019038
+daughter_of_Annas	person	Filha de Anás	revisado	rev. IA: glossário Annas -> Anás (banco 43018013)
+daughter_of_Machir	person	Filha de Maquir	revisado	rev. IA: glossário Machir -> Maquir (banco 13002021)
+daughter_of_Meshullam	person	Filha de Mesulão	revisado	rev. IA: glossário Meshullam -> Mesulão (banco 16006018)
+daughter_of_Pharaoh	person	Filha de Faraó	revisado	rev. IA: banco 11003001
+daughter_of_Putiel	person	Filha de Putiel	revisado	rev. IA: banco 2006025
+daughter_of_Sanballat	person	Filha de Sambalate	revisado	rev. IA: glossário Sanballat -> Sambalate (banco 16013028)
+daughter_of_Shecaniah	person	Filha de Secanias	revisado	rev. IA: glossário Shecaniah -> Secanias (banco 16006018)
+father_of_Barnabas	person	Pai de Barnabé	revisado	rev. IA: glossário Barnabas -> Barnabé (banco 51004010)
+father_of_Conaniah	person	Pai de Conanias	revisado	rev. IA: banco 14031012
+father_of_Elizabeth	person	Pai de Isabel	revisado	rev. IA: glossário Elizabeth -> Isabel (banco 42001005)
+father_of_Eunice	person	Pai de Eunice	revisado	rev. IA: banco 55001005
+father_of_Hilkiah	person	Pai de Hilquias	revisado	rev. IA: glossário Hilkiah -> Hilquias (banco 24032007)
+father_of_Hodiah	person	Pai de Hodias	revisado	rev. IA: glossário Hodiah -> Hodias (banco 13004019)
+father_of_Lazarus	person	Pai de Lázaro	revisado	rev. IA: glossário Lazarus -> Lázaro (banco 42010039)
+father_of_Mamre	person	Pai de Manre	revisado	rev. IA: glossário Mamre -> Manre (banco 1014013)
+father_of_Nathan	person	Pai de Natã	revisado	rev. IA: glossário Nathan -> Natã (banco 13011038)
+father_of_Tahpenes	person	Pai de Tafnes	revisado	rev. IA: glossário Tahpenes -> Tafnes (banco 11011019)
+father_of_Timothy	person	Pai de Timóteo	revisado	rev. IA: glossário Timothy -> Timóteo (banco 44016001)
+huge_man	person	Homem enorme	revisado	rev. IA: descritivo (banco 10021020)
+husband_of_Hammolecheth	person	Marido de Hamolequete	revisado	rev. IA: glossário Hammolecheth (banco 13007018)
+husband_of_Mary	person	Marido de Maria	revisado	rev. IA: descritivo (banco 44012012)
+husband_of_Matred	person	Marido de Matrede	revisado	rev. IA: glossário Matred -> Matrede (banco 1036039)
+husband_of_Shimeath	person	Marido de Simeate	revisado	rev. IA: descritivo (banco 12012021)
+husband_of_Zeruiah	person	Marido de Zeruia	revisado	rev. IA: glossário Zeruiah -> Zeruia (banco 9026006)
+man of great stature	person	Homem de grande estatura	revisado	rev. IA: descritivo (banco 13020006)
+man of understanding	person	Homem entendido	revisado	rev. IA: descritivo (banco 15008018)
+motherInLaw_of_Peter	person	Sogra de Pedro	revisado	rev. IA: banco 40008014
+sister_of_Tahpenes	person	Irmã de Tafnes	revisado	rev. IA: banco 11011019
+son of Abinadab	person	Ben-Abinadabe	revisado	rev. IA: glossário Ben-abinadab -> Ben-Abinadabe
+son of Dekar	person	Ben-Dequer	revisado	rev. IA: glossário Dekar -> Ben-Dequer
+son of Geber	person	Ben-Geber	revisado	rev. IA: glossário Ben-Geber
+son of Hesed	person	Ben-Hesede	revisado	rev. IA: glossário Ben-hesed -> Ben-Hesede
+son of Hur	person	Ben-Hur	revisado	rev. IA: glossário Ben-hur -> Ben-Hur
+son of Joiada	person	Filho de Joiada	revisado	rev. IA: descritivo (banco 16013028)
+son_of_Jashen	person	Filho de Jásen	revisado	rev. IA: glossário Jashen -> Jásen (banco 10023032)
+son_of_Joiada	person	Filho de Joiada	revisado	rev. IA: banco 16013028
+sons of Jashen	person	Filhos de Jásen	revisado	rev. IA: glossário Jashen -> Jásen (banco 10023032)
+the giant in Gath	person	O gigante de Gate	revisado	rev. IA: descritivo; glossário Gath -> Gate (banco 10021016)
+wife_of_Heli	person		sem	rev. IA: revisão: dúvida não resolvida (descritivo; glossário Eli; conferir: versículo ligado fala de Isabel)

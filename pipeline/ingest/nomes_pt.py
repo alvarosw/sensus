@@ -10,6 +10,9 @@ Cálculo: por ENTIDADE (com os versículos dela), não pelo nome-base. Duas pess
 (Noah: Noé em Gênesis, Noa em Números) recebem candidatos diferentes. As entidades com o mesmo nome-base
 e o mesmo candidato formam uma linha, identificada por (nome_en, candidato).
 
+Nomes manuais (compostos e descritivos que o alinhamento não cobre, 'Jesus Christ', 'Daughter of Pharaoh'):
+corrections/nomes-pt-manuais.tsv, origem=revisado, aplicado às entidades (não eventos) sem nome pt pelo fluxo normal.
+
 Saídas:
   a) pipeline/ingest/corrections/nomes-pt.tsv, versionado, para revisão. Linhas origem=auto são
      recalculadas a cada execução; origem=revisado e origem=sem são preservadas (chave nome_en + candidato).
@@ -28,7 +31,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from sensus.names_pt import (  # noqa: E402
-    Composto, avalia, candidates, choose, decompoe, escolhe_frase, gentilico, split_name,
+    Composto, avalia, candidates, choose, decompoe, escolhe_frase, gentilico, ler_nomes_manuais, split_name,
 )
 from sensus.staging import STAGING, StagingWriter  # noqa: E402
 
@@ -36,6 +39,7 @@ SOURCE_ID = "sensus-nomes-pt"
 ENTITY_SOURCES = ["theographic", "stepbible-tipnr", "openbible-geo"]
 TSV = Path(__file__).resolve().parent / "corrections" / "nomes-pt.tsv"
 GLOSSARIO_TSV = Path(__file__).resolve().parent / "corrections" / "glossario-compostos.tsv"
+MANUAIS_TSV = Path(__file__).resolve().parent / "corrections" / "nomes-pt-manuais.tsv"
 COLUNAS = ["nome_en", "candidato", "nome_pt", "origem", "confianca", "entidades", "versos", "cobertura", "alternativa"]
 ORIGENS = ("auto", "revisado", "sem")
 ORDEM_CONFIANCA = {"baixa": 0, "media": 1, "alta": 2}
@@ -242,6 +246,8 @@ def main() -> None:
     usados: set[tuple[str, str]] = set()
     cites_gravados = eventos = 0
     meta = json.loads((STAGING / "blivre" / "source.json").read_text(encoding="utf-8"))
+    manuais = ler_nomes_manuais(MANUAIS_TSV.read_text(encoding="utf-8")) if MANUAIS_TSV.exists() else {}
+    manuais_gravados = 0
     with StagingWriter(SOURCE_ID) as w:
         w.source(
             kind="entity",
@@ -263,23 +269,29 @@ def main() -> None:
                   "mantido (Achzib 2); parênteses descartados.",
         )
         for cid, e in entidades.items():
+            # Sufixo: compostos pelo próprio decompõe; simples pelo split_name. Descritivo sem sufixo (None).
             if cid in comp_ents:
                 sufixo = comp_ents[cid].sufixo
             else:
                 partes = split_name(e["name"])
-                if partes is None:
-                    continue
-                sufixo = partes[1]
+                sufixo = partes[1] if partes is not None else None
             if e["type"] == "event":
-                eventos += 1
+                if sufixo is not None:
+                    eventos += 1
                 continue
             chave = chave_entidade.get(cid)
-            pt = utilizaveis.get(chave) if chave else None
-            if not pt:
+            pt = utilizaveis.get(chave) if chave and sufixo is not None else None
+            if pt:
+                w.row("entity_name", cite_id=cid, lang="pt", name=pt + sufixo)
+                usados.add(chave)
+                cites_gravados += 1
                 continue
-            w.row("entity_name", cite_id=cid, lang="pt", name=pt + sufixo)
-            usados.add(chave)
-            cites_gravados += 1
+            # Sem nome pt pelo fluxo normal: nome manual revisado (nome_en + tipo), com o nome completo.
+            manual = manuais.get((e["name"], e["type"]))
+            if manual and manual["origem"] == "revisado" and manual["nome_pt"].strip():
+                w.row("entity_name", cite_id=cid, lang="pt", name=manual["nome_pt"].strip())
+                cites_gravados += 1
+                manuais_gravados += 1
 
     # Resumo.
     auto = [r for r in linhas if r["origem"] == "auto"]
@@ -298,7 +310,8 @@ def main() -> None:
     print(f"Revisados: {sum(1 for r in linhas if r['origem'] == 'revisado')}, "
           f"sem (não usar pt): {sum(1 for r in linhas if r['origem'] == 'sem')}, "
           f"revisados sem nome pt: {sum(1 for r in linhas if r['origem'] == 'revisado' and not r['nome_pt'])}")
-    print(f"Linhas usadas: {len(usados)} | entidades com entity_name: {cites_gravados}")
+    print(f"Linhas usadas: {len(usados)} | entidades com entity_name: {cites_gravados} "
+          f"(nomes manuais revisados: {manuais_gravados} de {len(manuais)} linhas no TSV)")
     print(f"TSV: {TSV}")
 
 

@@ -8,7 +8,9 @@ import {
   isActive,
   isEligible,
   isOfferShown,
+  noteCounts,
   preferPt,
+  timelineNoteKind,
 } from './policy';
 
 const ON = { supported: true, loaded: true, enabled: true, model: 'ready', translatable: true };
@@ -100,5 +102,34 @@ describe('nome pt da linha do tempo', () => {
   it('com a tradução inativa, o pt aparece mesmo depois de "Ver original" (sem o botão, o nome não fica preso)', () => {
     expect(preferPt(false, false)).toBe(true);
     expect(preferPt(false, true)).toBe(true);
+  });
+});
+
+describe('nota da linha do tempo: o que a tela de fato traduziu', () => {
+  it('contagem: nome pt (NT, Paulo) conta como pt; nome sem pt (AT, Aaron) conta como traduzido só com cache', () => {
+    expect(noteCounts([{ text: 'Paulo', pt: true }], () => true)).toEqual({ pt: 1, cached: 0 });
+    expect(noteCounts([{ text: 'Aaron', pt: false }], (t) => t === 'Aaron')).toEqual({ pt: 0, cached: 1 });
+    expect(noteCounts([{ text: 'Aaron', pt: false }], () => false)).toEqual({ pt: 0, cached: 0 });
+    expect(noteCounts([{ text: '  ', pt: false }], () => true)).toEqual({ pt: 0, cached: 0 });
+  });
+
+  it('só texto pt do banco, com a tradução ativa e nada traduzido: sem aviso de tradução, só "Ver original"', () => {
+    expect(timelineNoteKind({ active: true, showOriginal: false, pt: 3, cached: 0 })).toBe('pt');
+  });
+
+  it('algo traduzido pelo modelo sem pt na tela: aviso total; com pt também na tela: aviso parcial', () => {
+    expect(timelineNoteKind({ active: true, showOriginal: false, pt: 0, cached: 2 })).toBe('machine');
+    expect(timelineNoteKind({ active: true, showOriginal: false, pt: 1, cached: 2 })).toBe('partial');
+  });
+
+  it('tradução inativa, ou nada a dizer: nenhuma nota', () => {
+    expect(timelineNoteKind({ active: false, showOriginal: false, pt: 3, cached: 2 })).toBe('none');
+    expect(timelineNoteKind({ active: true, showOriginal: false, pt: 0, cached: 0 })).toBe('none');
+  });
+
+  it('"Ver original" ligado: volta à tradução só quando há pt ou tradução para voltar; senão, nada', () => {
+    expect(timelineNoteKind({ active: true, showOriginal: true, pt: 1, cached: 0 })).toBe('original');
+    expect(timelineNoteKind({ active: true, showOriginal: true, pt: 0, cached: 2 })).toBe('original');
+    expect(timelineNoteKind({ active: true, showOriginal: true, pt: 0, cached: 0 })).toBe('none');
   });
 });

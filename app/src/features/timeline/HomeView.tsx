@@ -7,7 +7,7 @@ import { useRouter } from 'expo-router';
 import { matchesTranslatedText, type TimelineLine, type TimelineLineEvent, type TimelineLineRef } from '@sensus/core';
 import { cachedTranslation } from '@/translate/engine';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
-import { useTimelineActive, useTimelineTitle, useTimelineNames, useTimelineVersion } from '@/translate/timeline-translate';
+import { useTimelineActive, useTimelineTitle, useTimelineNames, useTimelineNoteCounts, useTimelineVersion } from '@/translate/timeline-translate';
 import { Txt, radius, space, useTheme } from '@/design';
 import { useAppPrefs } from '@/settings/app-prefs';
 import { eraById, eventYear, filterEvents, filterLines, spanText, type KindFilter } from './model';
@@ -84,6 +84,31 @@ function HomeBody({ eventId }: { eventId?: string }) {
     />
   );
 
+  // O que a lista mostra agora (com os cortes de "ver todos"): a nota da tradução conta só estes textos.
+  const showFavs = favLineIds.length > 0 || favEventIds.length > 0;
+  type VisibleEvent = TimelineLineEvent & { lines?: readonly TimelineLineRef[] };
+  const visible: { lines: TimelineLine[]; events: VisibleEvent[]; eventLines: boolean } = searching
+    ? {
+        lines: filterLines(searchLines, filter),
+        events: kind === 'all' ? filterEvents(searchEvents, era, onlyFav, favEventSet).slice(0, expanded.events ? undefined : SHOWN) : [],
+        eventLines: true,
+      }
+    : {
+        lines: [
+          ...(showFavs || onlyFav ? filterLines(all.filter((l) => favorites.has(l.id)), { ...filter, onlyFavorites: false }) : []),
+          ...(['period', 'person', 'place'] as const).flatMap((k) => {
+            const list = filterLines(all, { ...filter, kind: k, onlyFavorites: onlyFav });
+            return expanded[k] ? list : list.slice(0, SHOWN);
+          }),
+        ],
+        events: showFavs || onlyFav ? filterEvents(favEvents ?? [], era, false, new Set()) : [],
+        eventLines: false,
+      };
+  const noteCounts = useTimelineNoteCounts({
+    names: [...visible.lines, ...visible.events.flatMap((e) => [...e.participants, ...(visible.eventLines ? (e.lines ?? []).slice(0, 3) : [])])],
+    titles: visible.events,
+  });
+
   let body: ReactNode;
   if (lines === null || hits === null && searching) {
     body = <Txt v="meta" color="muted" style={{ margin: space[8] }}>{TL.noDataYet}</Txt>;
@@ -125,7 +150,6 @@ function HomeBody({ eventId }: { eventId?: string }) {
       { ...filter, onlyFavorites: false },
     );
     const favEventList = filterEvents(favEvents ?? [], era, false, new Set());
-    const showFavs = favLineIds.length > 0 || favEventIds.length > 0;
     body = (
       <>
         {(showFavs || onlyFav) && (
@@ -206,7 +230,7 @@ function HomeBody({ eventId }: { eventId?: string }) {
 
       <ScrollView testID="tl-home" contentContainerStyle={{ paddingTop: space[4], paddingBottom: space[12], gap: space[2] }} keyboardShouldPersistTaps="handled">
         <View style={{ paddingHorizontal: space[8] }}>
-          <TimelineTranslationNote testID="tl-note" />
+          <TimelineTranslationNote testID="tl-note" counts={noteCounts} />
         </View>
         {body}
         <SourceFooter />

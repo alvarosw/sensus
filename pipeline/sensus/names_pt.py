@@ -321,3 +321,38 @@ def escolhe_frase(formas: tuple[str, ...], nucleo_en: str, nucleo_pt: str | None
     confiavel = melhor in mapeada or peso(melhor) >= LIMIAR_NUCLEO_CAPTURA
     confianca = "alta" if k * 2 >= n and confiavel else "media"
     return Frase(trechos[melhor].most_common(1)[0][0], alternativa, k, n, confianca)
+
+
+# ---- nomes manuais (compostos e descritivos que o alinhamento não cobre) ----------------------------------------
+
+MANUAIS_COLUNAS = ["nome_en", "tipo", "nome_pt", "origem", "nota"]
+MANUAIS_ORIGENS = ("revisado", "sem")
+MANUAIS_TIPOS = ("person", "place", "group", "other")  # event fica de fora: título próprio (titulos_pt)
+
+
+def ler_nomes_manuais(texto: str) -> dict[tuple[str, str], dict]:
+    """Linhas do TSV de nomes manuais, pela chave (nome_en, tipo). Comentários (#) e linhas vazias são ignorados.
+
+    Erro (ValueError com o número da linha) para cabeçalho diferente, origem fora de revisado/sem, tipo fora de
+    entity.type ou chave repetida: o ingestor não grava um arquivo que perdeu revisões.
+    """
+    linhas = [(n, l) for n, l in enumerate(texto.splitlines(), 1) if l.strip() and not l.startswith("#")]
+    if not linhas:
+        return {}
+    (_, cabecalho), *corpo = linhas
+    if cabecalho.split("\t") != MANUAIS_COLUNAS:
+        raise ValueError(f"cabeçalho difere do esperado {MANUAIS_COLUNAS}: {cabecalho!r}")
+    out: dict[tuple[str, str], dict] = {}
+    for n, l in corpo:
+        campos = (l.split("\t") + [""] * len(MANUAIS_COLUNAS))[: len(MANUAIS_COLUNAS)]
+        r = dict(zip(MANUAIS_COLUNAS, campos))
+        r["origem"] = r["origem"].strip().lower()
+        if r["origem"] not in MANUAIS_ORIGENS:
+            raise ValueError(f"linha {n}: origem inválida {r['origem']!r} (use revisado ou sem)")
+        if r["tipo"] not in MANUAIS_TIPOS:
+            raise ValueError(f"linha {n}: tipo inválido {r['tipo']!r} (use {', '.join(MANUAIS_TIPOS)})")
+        chave = (r["nome_en"], r["tipo"])
+        if not r["nome_en"] or chave in out:
+            raise ValueError(f"linha {n}: nome_en vazio ou chave repetida {chave!r}")
+        out[chave] = r
+    return out

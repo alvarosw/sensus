@@ -2,6 +2,7 @@
 import type { Entity, VerseRange } from '../types';
 import { all, type Db } from './sql';
 import { attachNames } from './names';
+import { attachDescriptions } from './entity-text';
 
 /** Entidade com o número total de versículos em que aparece (genericidade). */
 export type EntityHit = Entity & { total_refs: number };
@@ -9,8 +10,8 @@ export type EntityHit = Entity & { total_refs: number };
 export type PlaceVerseHit = Entity & { lat: number; lon: number; vid: number };
 
 /**
- * Pessoas, lugares e grupos ligados a versículos do intervalo, com o total de referências de cada um e o nome em
- * português (`namePt`, ver domain/names.ts).
+ * Pessoas, lugares e grupos ligados a versículos do intervalo, com o total de referências de cada um, o nome em
+ * português (`namePt`) e a descrição em português (`descriptionPt`), ver domain/names.ts.
  */
 export async function entities(db: Db, range: VerseRange): Promise<EntityHit[]> {
   const rows = await all<EntityHit>(
@@ -22,7 +23,7 @@ export async function entities(db: Db, range: VerseRange): Promise<EntityHit[]> 
      ORDER BY e.name, e.cite_id`,
     [range.start, range.end],
   );
-  return attachNames(db, rows, (r) => r.cite_id);
+  return attachDescriptions(db, await attachNames(db, rows, (r) => r.cite_id), (r) => r.cite_id);
 }
 
 /**
@@ -38,5 +39,5 @@ export async function placesInRange(db: Db, range: VerseRange): Promise<PlaceVer
      ORDER BY e.name, e.cite_id, r.vid`,
     [range.start, range.end],
   );
-  return attachNames(db, rows, (r) => r.cite_id);
+  return attachDescriptions(db, await attachNames(db, rows, (r) => r.cite_id), (r) => r.cite_id);
 }

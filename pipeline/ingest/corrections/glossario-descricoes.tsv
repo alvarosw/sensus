@@ -1,0 +1,117 @@
+# Glossário das descrições em português (TIPNR, pipeline/sensus/descricoes_pt.py). Colunas:
+#   secao      cargo | tempo | tribo | lugar | relacao | nome
+#   ingles     termo como aparece na descrição da fonte (exato, com maiúsculas)
+#   portugues  tradução usada na frase
+#   nota       observação para o revisor (opcional)
+# Seções:
+#   cargo    o que é a entidade, sem artigo ('man' -> homem; 'high priest' -> sumo sacerdote)
+#   tempo    frase depois de 'living' ('at the time of Egypt and Wilderness' -> da época do Egito e do deserto);
+#            vira o trecho após a vírgula do cabeçalho
+#   tribo    nome da tribo depois de 'from the tribe of'
+#   lugar    complemento inteiro, quando a regra geral não cobre ('in Asia' -> na Ásia)
+#   relacao  relação de parentesco ou ligação, com 'of' ('son of' -> filho de); 'a son of' usa a mesma chave
+#   nome     palavra que aparece no lugar de nome próprio ('Pharaoh' -> Faraó); o nome da entidade vem de
+#            entity_name, não daqui
+# Termo que a descrição usa e não está aqui: a descrição fica sem tradução por regra (cai na tradução automática
+# do app). Acrescente termos conforme o relatório de cobertura do ingestor, sempre com a forma pt de gênero certo.
+secao	ingles	portugues	nota
+cargo	man	homem
+cargo	woman	mulher
+cargo	location	lugar
+cargo	high priest	sumo sacerdote
+cargo	priest	sacerdote
+cargo	warrior	guerreiro
+cargo	warriors	guerreiros
+cargo	musician	músico
+cargo	prophet	profeta
+cargo	prophetess	profetisa
+cargo	king	rei
+cargo	queen	rainha
+cargo	group	grupo
+cargo	male deity	divindade masculina
+cargo	female deity	divindade feminina
+cargo	deity	divindade
+cargo	people	povo
+cargo	woman or town	mulher ou cidade
+cargo	town	cidade
+cargo	emperor	imperador
+cargo	prince	príncipe
+cargo	apostle	apóstolo
+cargo	angel	anjo
+cargo	concubine	concubina
+cargo	chief	chefe
+cargo	steward	administrador
+cargo	servant	servo
+cargo	ruler	governante
+cargo	musical piece	peça musical
+tempo	at the time of the Patriarchs	da época dos patriarcas
+tempo	at the time of Egypt and Wilderness	da época do Egito e do deserto
+tempo	at the time of Exile and Return	da época do exílio e do retorno
+tempo	at the time of Divided Monarchy	da época da monarquia dividida
+tempo	at the time of United Monarchy	da época da monarquia unida
+tempo	at the time of the New Testament	da época do Novo Testamento
+tempo	at the time of the Exodus	da época do Êxodo
+tempo	before Israel's Monarchy	anterior à monarquia de Israel
+tempo	at the time before the Flood	da época anterior ao Dilúvio
+tempo	before the Flood	anterior ao Dilúvio
+tempo	at the time of Judges	da época dos juízes
+tribo	Levi	Levi
+tribo	Judah	Judá
+tribo	Asher	Aser
+tribo	Benjamin	Benjamim
+tribo	Ephraim	Efraim
+tribo	Manasseh	Manassés
+tribo	Simeon	Simeão
+tribo	Issachar	Issacar
+tribo	Zebulun	Zebulom
+tribo	Naphtali	Naftali
+tribo	Reuben	Rúben
+tribo	Gad	Gade
+tribo	Dan	Dã
+relacao	son of	filho de
+relacao	daughter of	filha de
+relacao	brother of	irmão de
+relacao	sister of	irmã de
+relacao	half-brother of	meio-irmão de
+relacao	half-sister of	meia-irmã de
+relacao	wife of	esposa de
+relacao	husband of	marido de
+relacao	mother of	mãe de
+relacao	father of	pai de
+relacao	founder of	fundador de
+relacao	concubine of	concubina de
+relacao	descendant of	descendente de
+nome	Pharaoh	Faraó
+nome	Asia	Ásia
+lugar	in Asia	na Ásia
+cargo	judge	juiz
+cargo	city	cidade
+cargo	gigantic man	homem gigante
+cargo	Pharaoh	faraó
+cargo	festival	festa
+cargo	governor	governador
+lugar	of Egypt	do Egito
+nome	Christ	Cristo
+lugar	of the Cushites	dos cuxitas
+lugar	of the Arabs	dos árabes
+lugar	of the Edomites	dos edomitas
+lugar	of the Midianites	dos midianitas
+lugar	of the Syrians	dos sírios
+lugar	of the Gomerians	dos gomeritas
+lugar	of the Ammonites	dos amonitas
+lugar	of the Greeks	dos gregos
+lugar	of the Ishmaelites	dos ismaelitas
+lugar	of the Moabites	dos moabitas
+lugar	of the Egyptians	dos egípcios
+lugar	of the Philistines	dos filisteus
+lugar	of the Hittites	dos heteus
+lugar	of the Canaanites	dos cananeus
+lugar	of the Amalekites	dos amalequitas
+lugar	of the Jebusites	dos jebuseus
+lugar	of the Assyrians	dos assírios
+lugar	of the Babylonians	dos babilônios
+lugar	of the Chaldeans	dos caldeus
+lugar	of the Persians	dos persas
+lugar	of the Hebrews	dos hebreus
+lugar	of the Israelites	dos israelitas
+cargo	Judge	juiz

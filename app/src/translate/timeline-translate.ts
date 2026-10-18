@@ -5,8 +5,9 @@
 // pt, exceto quando a tradução está ativa e o usuário pede "Ver original", que volta aos nomes ingleses (ver useTimelineNames e
 // useTimelineTitles).
 import { shownEntityName, shownEventTitle, type NameFields } from '@sensus/core';
+import { cachedTranslation } from './engine';
 import { useGlobalView } from './global-batch';
-import { preferPt } from './policy';
+import { noteCounts, preferPt, type NoteCounts } from './policy';
 import { useTranslatable } from './useTranslatable';
 
 /** Fonte dos dados da linha do tempo. */
@@ -24,6 +25,20 @@ function usePreferPt(): boolean {
   const active = useTimelineActive();
   const showOriginal = useGlobalView((s) => s.showOriginal);
   return preferPt(active, showOriginal);
+}
+
+/**
+ * Contagens para a nota de uma tela: quantos nomes e títulos mostrados têm pt do banco e quantos seriam mostrados
+ * traduzidos pelo modelo (já no cache). Cada tela passa só os textos que ela mostra; a nota decide (ver timelineNoteKind).
+ */
+export function useTimelineNoteCounts(input: { names?: readonly NameFields[]; titles?: readonly TitledEvent[] }): NoteCounts {
+  // assina o cache: quando um lote chega, a tela recalcula quantos textos já estão traduzidos
+  useTimelineVersion();
+  const items = [
+    ...(input.titles ?? []).map((t) => ({ text: t.title, pt: shownEventTitle(t, true).pt })),
+    ...(input.names ?? []).map((n) => ({ text: n.name, pt: shownEntityName(n, true).pt })),
+  ];
+  return noteCounts(items, (text) => cachedTranslation(text) !== null);
 }
 
 /** Estado para a tela: configurada, mostrando o original ou a tradução, e o "Ver original". */

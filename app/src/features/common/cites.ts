@@ -7,6 +7,7 @@ import {
   DEFAULT_TEXT_SOURCE,
   formatShortRef,
   isIntroVid,
+  shownDescription,
   shownEntityName,
   sourceShort,
   titleCaseHeadword,
@@ -38,6 +39,8 @@ export interface CiteDetail {
   labelRef: string;
   /** Texto do registro (versículo, comentário, verbete, definição, descrição). */
   text: string;
+  /** O texto é a descrição em português da fonte (entity_text): não passa pela tradução automática. */
+  textPt?: boolean;
   /** Versículo a mostrar no texto do leitor (null: o tipo não tem versículo). */
   vid: Vid | null;
   /** Referências para chips (versículos/intervalos citados pelo registro). */
@@ -156,7 +159,8 @@ function build(record: CitableRecord, citeId: string, source: Source | undefined
         ...base,
         typeLabel: SRC.entityTypes[r.type] ?? SRC.typeLabels.ent,
         label: shownEntityName(r, true).text,
-        text: r.description ?? '',
+        text: shownDescription(r, true)?.text ?? '',
+        textPt: shownDescription(r, true)?.pt ?? false,
         vid: null,
       };
     }

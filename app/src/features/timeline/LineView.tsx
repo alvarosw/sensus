@@ -10,7 +10,14 @@ import { Txt, space, useTheme } from '@/design';
 import { matchesTranslatedText } from '@sensus/core';
 import { cachedTranslation } from '@/translate/engine';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
-import { useTimelineActive, useTimelineName, useTimelineNames, useTimelineTitles, useTimelineVersion } from '@/translate/timeline-translate';
+import {
+  useTimelineActive,
+  useTimelineName,
+  useTimelineNames,
+  useTimelineNoteCounts,
+  useTimelineTitles,
+  useTimelineVersion,
+} from '@/translate/timeline-translate';
 import { useAppPrefs } from '@/settings/app-prefs';
 import { eventYear, matchesEventText } from './model';
 import { TL } from './strings';
@@ -53,6 +60,7 @@ export function LineList({ lineId }: { lineId: string }) {
   const trTitle = useTimelineTitles(shown);
   const participants = useMemo(() => shown.flatMap((e) => e.participants), [shown]);
   const trName = useTimelineNames(participants);
+  const noteCounts = useTimelineNoteCounts({ names: line ? [line, ...participants] : participants, titles: shown });
   const color = line ? kindColor(line.kind, st) : c.muted;
 
   return (
@@ -85,7 +93,7 @@ export function LineList({ lineId }: { lineId: string }) {
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <Chip testID="tl-only-marks" label={TL.onlyMarks} on={onlyMarks} star onPress={() => setOnlyMarks((x) => !x)} />
           </ScrollView>
-          <TimelineTranslationNote testID="tl-line-note" />
+          <TimelineTranslationNote testID="tl-line-note" counts={noteCounts} />
         </View>
 
         <ScrollView testID="tl-line-list" contentContainerStyle={{ paddingTop: space[5], paddingBottom: space[12] }} keyboardShouldPersistTaps="handled">

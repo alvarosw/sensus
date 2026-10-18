@@ -157,6 +157,9 @@ def main():
     nomes = db.execute("DELETE FROM entity_name WHERE cite_id NOT IN (SELECT cite_id FROM entity)").rowcount
     if nomes:
         print(f"entity_name: {nomes} nomes sem entidade removidos")
+    descs = db.execute("DELETE FROM entity_text WHERE cite_id NOT IN (SELECT cite_id FROM entity)").rowcount
+    if descs:
+        print(f"entity_text: {descs} descrições sem entidade removidas")
 
     # Layout físico. Conferências: a junção com src_code não pode descartar linhas.
     n_tok = db.execute("SELECT COUNT(*) FROM token").fetchone()[0]

@@ -25,7 +25,12 @@ export const TR = {
   cancel: 'Cancelar',
   removeConfirm: 'Remover',
   timelineNote: 'Títulos traduzidos automaticamente',
+  timelinePartialNote: 'Alguns textos traduzidos automaticamente',
   timelineShowOriginal: 'Ver original',
   timelineOriginalNote: 'Mostrando o original em inglês',
   timelineShowTranslation: 'Ver tradução',
+  // Descrição em português da fonte (entity_text): sem aviso de tradução; "Ver original" mostra o inglês.
+  descriptionShowOriginal: 'Ver original',
+  descriptionShowPt: 'Ver em português',
+  descriptionOriginalNote: 'Mostrando o original em inglês',
 } as const;

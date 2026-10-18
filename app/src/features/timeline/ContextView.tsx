@@ -8,7 +8,7 @@ import { refShort } from '@/features/common/format';
 import { useBooks } from '@/features/common/hooks';
 import { Txt, size, space, useTheme } from '@/design';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
-import { useTimelineNames, useTimelineTexts, useTimelineTitles } from '@/translate/timeline-translate';
+import { useTimelineNames, useTimelineNoteCounts, useTimelineTexts, useTimelineTitles } from '@/translate/timeline-translate';
 import { eventYear } from './model';
 import { TL } from './strings';
 import { useAllTimelineEvents } from './useTimeline';
@@ -72,6 +72,8 @@ function ContextBody({ span, initialScope }: { span: VerseSpan; initialScope: Co
   const trTitle = useTimelineTitles(eventsShown);
   const participants = useMemo(() => eventsShown.flatMap((e) => e.participants), [eventsShown]);
   const trName = useTimelineNames(participants);
+  // Nota: os nomes e títulos que esta tela mostra (grupos entram sem pt, como no lote acima).
+  const noteCounts = useTimelineNoteCounts({ names: [...participants, ...groupNames.map((name) => ({ name }))], titles: eventsShown });
 
   // Rolagem: começa no evento do trecho (ou, na volta da pílula, onde o leitor parou). Medidas das linhas em
   // coordenadas do conteúdo; a régua usa as mesmas medidas.
@@ -164,7 +166,7 @@ function ContextBody({ span, initialScope }: { span: VerseSpan; initialScope: Co
           <Chip testID="ctx-scope-book" label={`${TL.scopeBook}${bookName ? ` · ${bookName}` : ''}`} on={scope === 'book'} onPress={() => changeScope('book')} />
           <Chip testID="ctx-scope-bible" label={TL.scopeBible} on={scope === 'bible'} onPress={() => changeScope('bible')} />
         </View>
-        <TimelineTranslationNote testID="ctx-note" />
+        <TimelineTranslationNote testID="ctx-note" counts={noteCounts} />
       </View>
 
       <View style={{ flex: 1 }}>

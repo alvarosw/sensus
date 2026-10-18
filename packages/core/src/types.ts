@@ -127,6 +127,8 @@ export interface Entity {
   data: string | null;
   /** Nome em português (tabela entity_name); null sem linha ou em banco sem a tabela. Ver domain/names.ts. */
   namePt?: string | null;
+  /** Descrição em português (tabela entity_text); null sem linha ou em banco sem a tabela. Ver shownDescription. */
+  descriptionPt?: string | null;
 }
 
 /**

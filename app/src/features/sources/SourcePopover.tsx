@@ -233,8 +233,15 @@ function Body({ detail, repo }: { detail: CiteDetail; repo: ReturnType<typeof us
       : record.table === 'xref'
         ? (extra.data?.xr ?? null)
         : detail.text;
+  // Descrição pt da fonte (entity_text) não passa pela tradução: o idioma "de fonte" seria inglês e a traduziria à toa.
   const shownLang =
-    record.table === 'token' ? lexLang : record.table === 'xref' ? textLang : (detail.source?.lang ?? null);
+    record.table === 'token'
+      ? lexLang
+      : record.table === 'xref'
+        ? textLang
+        : detail.textPt
+          ? null
+          : (detail.source?.lang ?? null);
   const tr = useAutoTranslate(shownText || null, shownLang);
 
   if (record.table === 'token') {

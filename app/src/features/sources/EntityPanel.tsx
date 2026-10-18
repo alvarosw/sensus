@@ -8,8 +8,7 @@ import { askAbout, showInText } from '../common/actions';
 import { loadEntityPassages, type CiteDetail } from '../common/cites';
 import { useBooks, useCite } from '../common/hooks';
 import { SRC } from '../common/strings';
-import { useAutoTranslate } from '@/translate/useAutoTranslate';
-import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
+import { EntityDescription } from '@/translate/EntityDescription';
 import { LicenseBlock, RefChips } from '../common/PanelParts';
 import { PlaceMapBlock } from '@/features/maps';
 
@@ -36,7 +35,6 @@ function EntityBody({ detail, entity }: { detail: CiteDetail; entity: Entity }) 
   const books = useBooks();
   const passages = useAsync(() => loadEntityPassages(repo, detail.citeId), [repo, detail.citeId]);
   const hasPlace = entity.lat != null && entity.lon != null;
-  const descTr = useAutoTranslate(entity.description, detail.source?.lang ?? null);
 
   return (
     <View style={{ gap: 12 }}>
@@ -48,12 +46,9 @@ function EntityBody({ detail, entity }: { detail: CiteDetail; entity: Entity }) 
 
       {hasPlace ? <PlaceMapBlock entity={entity as Entity & { lat: number; lon: number }} /> : null}
 
-      {entity.description ? (
-        <View style={{ gap: 4 }}>
-          <Txt v="fullText" selectable testID="entity-description">{descTr.display}</Txt>
-          <AutoTranslateNote tr={descTr} testID="entity-tr" />
-        </View>
-      ) : null}
+      <View style={{ gap: 4 }}>
+        <EntityDescription entity={entity} lang={detail.source?.lang ?? null} variant="full" testID="entity-description" noteTestID="entity-tr" />
+      </View>
 
       <SubHeader label={SRC.otherPassages} />
       {passages.loading ? (

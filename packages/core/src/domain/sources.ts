@@ -65,6 +65,9 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'sensus-nomes-pt': { short: 'Nomes (BLivre)', role: 'entity', lang: 'pt' },
   // Títulos pt dos eventos (pipeline/ingest/titulos_pt.py), revisados por pessoa; entity_name com cite_id de evento.
   'sensus-titulos-pt': { short: 'Títulos (Theographic)', role: 'entity', lang: 'pt' },
+  // Descrições em pt (pipeline/ingest/descricoes_pt.py): TIPNR por regra; Theographic e OpenBible revisadas por IA.
+  // entity_text (não entity_name).
+  'sensus-descricoes-pt': { short: 'Descrições (pt)', role: 'entity', lang: 'pt' },
   // ---- comentários
   patristic: { short: 'Patrística', commentator: 'Padres da Igreja', role: 'commentary', lang: 'en' },
   gill: { short: 'Gill', commentator: 'Gill', role: 'commentary', lang: 'en' },

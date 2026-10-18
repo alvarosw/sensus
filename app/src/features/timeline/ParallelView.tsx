@@ -33,7 +33,7 @@ import { CombinationEntry } from './CombinationEntry';
 import { SaveComboSheet } from './SaveCombination';
 import { EventPreview, type PreviewCompare } from './EventPreview';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
-import { useTimelineNames, useTimelineTitles } from '@/translate/timeline-translate';
+import { useTimelineNames, useTimelineNoteCounts, useTimelineTitles } from '@/translate/timeline-translate';
 
 export function ParallelView({ lineId }: { lineId?: string }) {
   const { c, st } = useTheme();
@@ -203,8 +203,10 @@ export function ParallelView({ lineId }: { lineId?: string }) {
 
   // Textos do gráfico: traduzidos num só lote quando configurado (os cartões traduzem os seus). Nomes de linha
   // com nome pt entram com o pt, sem tradução.
-  const trTitle = useTimelineTitles(useMemo(() => laneViews.flatMap((l) => l.visible), [laneViews]));
+  const shownLaneEvents = useMemo(() => laneViews.flatMap((l) => l.visible), [laneViews]);
+  const trTitle = useTimelineTitles(shownLaneEvents);
   const trLine = useTimelineNames(laneViews.map((l) => l.line));
+  const noteCounts = useTimelineNoteCounts({ names: laneViews.map((l) => l.line), titles: shownLaneEvents });
 
   return (
     <TimelineGate>
@@ -220,7 +222,7 @@ export function ParallelView({ lineId }: { lineId?: string }) {
               <Chip testID="tl-save" label={savedNow ? TL.savedCombo : TL.saveCombo} on={false} disabled={savedNow} onPress={() => setSaving(true)} />
               <Chip testID="tl-clear" label={TL.clearLines} on={false} onPress={clearLanes} />
             </View>
-            <TimelineTranslationNote testID="tl-paralelo-note" />
+            <TimelineTranslationNote testID="tl-paralelo-note" counts={noteCounts} />
             <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: space[3] }}>
               <Chip testID="tl-fit" label={TL.fitAll} on={false} onPress={() => ext && setViewState({ lo: ext.lo, hi: ext.hi })} />
               <View style={{ flexDirection: 'row', gap: space[3] }}>

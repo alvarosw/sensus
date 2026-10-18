@@ -165,6 +165,15 @@ CREATE TABLE entity_name (
   PRIMARY KEY (cite_id, lang)
 );
 
+-- Descrição da entidade em outra língua (hoje só 'pt'). Sem linha = o app usa entity.description.
+CREATE TABLE entity_text (
+  cite_id      TEXT NOT NULL REFERENCES entity(cite_id),
+  lang         TEXT NOT NULL,
+  description  TEXT NOT NULL,
+  source_id    TEXT NOT NULL REFERENCES source(id),
+  PRIMARY KEY (cite_id, lang)
+);
+
 CREATE TABLE meta (
   key    TEXT PRIMARY KEY,
   value  TEXT NOT NULL
