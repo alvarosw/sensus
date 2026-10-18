@@ -8,6 +8,7 @@ import {
   isActive,
   isEligible,
   isOfferShown,
+  preferPt,
 } from './policy';
 
 const ON = { supported: true, loaded: true, enabled: true, model: 'ready', translatable: true };
@@ -87,5 +88,17 @@ describe('lote global (linha do tempo)', () => {
 
   it('nada a pedir quando tudo está no cache', () => {
     expect(globalAskList(['Paul'], has(['Paul']))).toEqual([]);
+  });
+});
+
+describe('nome pt da linha do tempo', () => {
+  it('com a tradução ativa, o pt aparece e "Ver original" volta ao inglês', () => {
+    expect(preferPt(true, false)).toBe(true);
+    expect(preferPt(true, true)).toBe(false);
+  });
+
+  it('com a tradução inativa, o pt aparece mesmo depois de "Ver original" (sem o botão, o nome não fica preso)', () => {
+    expect(preferPt(false, false)).toBe(true);
+    expect(preferPt(false, true)).toBe(true);
   });
 });

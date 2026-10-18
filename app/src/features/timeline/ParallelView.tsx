@@ -33,7 +33,7 @@ import { CombinationEntry } from './CombinationEntry';
 import { SaveComboSheet } from './SaveCombination';
 import { EventPreview, type PreviewCompare } from './EventPreview';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
-import { useTimelineTexts } from '@/translate/timeline-translate';
+import { useTimelineNames, useTimelineTitles } from '@/translate/timeline-translate';
 
 export function ParallelView({ lineId }: { lineId?: string }) {
   const { c, st } = useTheme();
@@ -201,12 +201,10 @@ export function ParallelView({ lineId }: { lineId?: string }) {
 
   const ready = lines !== null && laneIds !== null;
 
-  // Textos do gráfico: traduzidos num só lote quando configurado (os cartões traduzem os seus).
-  const chartTexts = useMemo(
-    () => [...laneViews.map((l) => l.line.name), ...laneViews.flatMap((l) => l.visible.map((e) => e.title))],
-    [laneViews],
-  );
-  const tr = useTimelineTexts(chartTexts);
+  // Textos do gráfico: traduzidos num só lote quando configurado (os cartões traduzem os seus). Nomes de linha
+  // com nome pt entram com o pt, sem tradução.
+  const trTitle = useTimelineTitles(useMemo(() => laneViews.flatMap((l) => l.visible), [laneViews]));
+  const trLine = useTimelineNames(laneViews.map((l) => l.line));
 
   return (
     <TimelineGate>
@@ -216,7 +214,7 @@ export function ParallelView({ lineId }: { lineId?: string }) {
           <View style={{ gap: space[3], paddingTop: space[4], paddingBottom: space[3], paddingHorizontal: space[4], borderBottomWidth: 1, borderBottomColor: c.border }}>
             <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: space[3] }}>
               {laneViews.map((l) => (
-                <LaneChip key={l.id} testID={`tl-lane-${l.id}`} name={tr(l.line.name)} color={kindColor(l.line.kind, st)} onRemove={() => removeLane(l.id)} />
+                <LaneChip key={l.id} testID={`tl-lane-${l.id}`} name={trLine(l.line)} color={kindColor(l.line.kind, st)} onRemove={() => removeLane(l.id)} />
               ))}
               <Chip testID="tl-add-line" label={TL.addLine} on={false} disabled={!lines} onPress={() => setPicking(true)} />
               <Chip testID="tl-save" label={savedNow ? TL.savedCombo : TL.saveCombo} on={false} disabled={savedNow} onPress={() => setSaving(true)} />
@@ -238,7 +236,7 @@ export function ParallelView({ lineId }: { lineId?: string }) {
         {ready && !hasLanes && (
           <CombinationEntry
             cards={cards}
-            nameOf={nameOf}
+            lineOf={(id) => byId.get(id)}
             onCreate={() => setPicking(true)}
             onOpen={openCard}
             onStar={starCard}
@@ -256,7 +254,8 @@ export function ParallelView({ lineId }: { lineId?: string }) {
                   view={shownView}
                   cursor={cursor}
                   favEvents={favEvents}
-                  tr={tr}
+                  trTitle={trTitle}
+                  trLine={trLine}
                   onView={setView}
                   onCursor={setCursor}
                   onPoint={onPoint}
@@ -294,8 +293,8 @@ export function ParallelView({ lineId }: { lineId?: string }) {
                       >
                         <View style={{ width: 9, height: 9, borderRadius: 5, backgroundColor: kindColor(l.line.kind, st) }} />
                         <View style={{ flex: 1, minWidth: 0 }}>
-                          <Txt v="bodySm" bold numberOfLines={1}>{tr(event.title)}</Txt>
-                          <Txt v="meta" color="muted" numberOfLines={1}>{`${tr(l.line.name)} · ${eventYear(event)}`}</Txt>
+                          <Txt v="bodySm" bold numberOfLines={1}>{trTitle(event)}</Txt>
+                          <Txt v="meta" color="muted" numberOfLines={1}>{`${trLine(l.line)} · ${eventYear(event)}`}</Txt>
                         </View>
                       </Pressable>
                     );

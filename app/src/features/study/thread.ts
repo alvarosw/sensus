@@ -13,6 +13,7 @@ import {
   type SectionKey,
   type StructuredSummary,
   type Vid,
+  shownEntityName,
 } from '@sensus/core';
 import { lexiconOfToken } from './format';
 import { bareWord, chv, refShort } from '../common/format';
@@ -185,7 +186,7 @@ function intertextEvidence(panel: PanelData, books: readonly Book[]): ThreadEvid
 /** Entidades primeiro, depois verbetes; sem repetir nome. */
 function historicalEvidence(panel: PanelData): ThreadEvidence | null {
   const all = [
-    ...panel.layers.historical.entities.map((e) => e.name),
+    ...panel.layers.historical.entities.map((e) => shownEntityName(e, true).text),
     ...panel.layers.historical.dictionary.map((d) => titleCaseHeadword(d.headword)),
   ];
   const names = [...new Set(all.map((n) => n.trim()).filter(Boolean))];

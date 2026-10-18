@@ -1,7 +1,7 @@
 # Licenças dos dados
 
 Este arquivo lista todas as fontes de dados do Sensus, com licença, origem e atribuição exigida.
-Foi montado a partir dos metadados de `data/staging/*/source.json` (31 fontes). Os bancos gerados
+Foi montado a partir dos metadados de `data/staging/*/source.json` (33 fontes, incluindo `sensus-nomes-pt` e `sensus-titulos-pt`). Os bancos gerados
 (`sensus.db`, completo, e `sensus-reader.db`, do APK) gravam licença, URL, versão e atribuição de cada fonte na tabela `source`.
 
 > Não é parecer jurídico. Itens marcados **Verificar** dependem de interpretação ou de confirmação
@@ -31,6 +31,7 @@ Foi montado a partir dos metadados de `data/staging/*/source.json` (31 fontes). 
 | Fonte (id) | Título e autor | Origem | Atribuição exigida | Condições |
 |---|---|---|---|---|
 | `theographic` | Theographic Bible Metadata, Robert Rouse (viz.bible) | https://github.com/robertrouse/theographic-bible-metadata (commit cfb1c48) | Theographic Bible Metadata, por Robert Rouse / viz.bible (https://github.com/robertrouse/theographic-bible-metadata), licença Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0). | **Share-alike.** Descrições vêm de dictionaryText, em inglês, e incluem texto do Easton (1897, domínio público). Links Markdown removidos. |
+| `sensus-titulos-pt` | Títulos de eventos em português (derivados), a partir de `theographic` | Derivado de `theographic` (commit cfb1c48), por `pipeline/ingest/titulos_pt.py` | Mesma atribuição de `theographic` (CC BY-SA 4.0), de quem vêm os títulos em inglês; a tradução é do projeto: "títulos traduzidos e revisados pelo projeto Sensus". | **Share-alike**, como `theographic`. **Derivado**: título pt de cada evento, rascunho do projeto conferido por pessoa em `pipeline/ingest/corrections/titulos-eventos-pt.tsv`; só os de origem revisado entram no banco. Sem IA e sem tradução automática no aparelho. |
 
 ### 2.2 CC BY 4.0 — STEP Bible / Tyndale House
 
@@ -61,6 +62,7 @@ Cambridge. Licença CC BY 4.0: credite "STEP Bible" com link para www.STEPBible.
 | Fonte (id) | Título | Origem | Atribuição exigida | Condições |
 |---|---|---|---|---|
 | `blivre` | Bíblia Livre (porbr2018), Diego Santos, Mario Sérgio, Marco Teles | https://ebible.org/find/details.php?id=porbr2018 ; repositório blivre/BibliaLivre (LICENCA.md) | Todas as Escrituras em português citadas são da Bíblia Livre (BLIVRE), Copyright © Diego Santos, Mario Sérgio, e Marco Teles, http://sites.google.com/site/biblialivre/ - fevereiro de 2018. Licença Creative Commons Atribuição 3.0 Brasil (http://creativecommons.org/licenses/by/3.0/br/). | Usa a licença 3.0 do LICENCA.md do projeto. O eBible cita 4.0 Brasil. As duas exigem atribuição. Notas de rodapé e referências removidas. |
+| `sensus-nomes-pt` | Nomes próprios em português (derivados), a partir de `blivre` | Derivado de `blivre` (porbr2018), por `pipeline/ingest/nomes_pt.py` | Mesma atribuição de `blivre` (CC BY 3.0 Brasil), de quem vêm os nomes. | **Derivado**: o nome pt de cada entidade é a palavra da Bíblia Livre que aparece nos mesmos versículos do nome inglês (theographic, stepbible-tipnr, openbible-geo), sem IA e sem tradução automática. Revisão em `pipeline/ingest/corrections/nomes-pt.tsv`. Só nomes de uma palavra. |
 
 ### 2.5 Não comercial (declarada pelo módulo)
 

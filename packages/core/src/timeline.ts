@@ -94,9 +94,9 @@ const PT_TERMS: ReadonlyArray<readonly [string, readonly string[]]> = [
   ['samaria', ['samaria']],
 ];
 
-/** Normaliza texto de busca: minúsculas, sem acento, espaços aparados. */
+/** Normaliza texto de busca: minúsculas, sem acento, espaços aparados e espaços internos colapsados ("morte  de saul"). */
 export function normalizeSearch(text: string): string {
-  return text.normalize('NFD').replace(/\p{M}+/gu, '').toLowerCase().trim();
+  return text.normalize('NFD').replace(/\p{M}+/gu, '').toLowerCase().replace(/\s+/g, ' ').trim();
 }
 
 /** Termos de busca: o texto normalizado e os equivalentes em inglês dos termos em português que casam com ele. */
@@ -108,6 +108,15 @@ export function searchTerms(query: string): string[] {
     if (pt.startsWith(q) || (q.length >= 3 && q.startsWith(pt))) for (const t of en) terms.add(t);
   }
   return [...terms];
+}
+
+/**
+ * Casa a busca com um nome em português (tabela entity_name): sem acento, sem caixa, por trecho, como o nome em
+ * inglês. "arao" acha "Arão"; "joquebede" acha "Joquebede". Busca vazia não casa; nome ausente não casa.
+ */
+export function matchesSearchName(name: string | null | undefined, query: string): boolean {
+  const q = normalizeSearch(query);
+  return q !== '' && normalizeSearch(name ?? '').includes(q);
 }
 
 /** Distância (anos) a partir da qual uma ponta isolada sai da extensão da linha (ver timelineCore). */

@@ -1,15 +1,19 @@
 // Pessoas, lugares e grupos ligados a versículos (ver repo/index.ts).
 import type { Entity, VerseRange } from '../types';
 import { all, type Db } from './sql';
+import { attachNames } from './names';
 
 /** Entidade com o número total de versículos em que aparece (genericidade). */
 export type EntityHit = Entity & { total_refs: number };
 /** Lugar com coordenadas e o versículo onde aparece (ver Repo.placesInRange). */
 export type PlaceVerseHit = Entity & { lat: number; lon: number; vid: number };
 
-/** Pessoas, lugares e grupos ligados a versículos do intervalo, com o total de referências de cada um. */
-export function entities(db: Db, range: VerseRange): Promise<EntityHit[]> {
-  return all<EntityHit>(
+/**
+ * Pessoas, lugares e grupos ligados a versículos do intervalo, com o total de referências de cada um e o nome em
+ * português (`namePt`, ver domain/names.ts).
+ */
+export async function entities(db: Db, range: VerseRange): Promise<EntityHit[]> {
+  const rows = await all<EntityHit>(
     db,
     `SELECT DISTINCT e.cite_id, e.source_id, e.type, e.name, e.description, e.lat, e.lon, e.data,
             (SELECT COUNT(*) FROM entity_ref x WHERE x.entity_cite_id = e.cite_id) AS total_refs
@@ -18,14 +22,15 @@ export function entities(db: Db, range: VerseRange): Promise<EntityHit[]> {
      ORDER BY e.name, e.cite_id`,
     [range.start, range.end],
   );
+  return attachNames(db, rows, (r) => r.cite_id);
 }
 
 /**
  * Lugares com coordenadas ligados a versículos do intervalo: uma linha por (lugar, versículo).
  * Usado pelos mapas (passagem, selecao, perícope, livro). `data` traz a identificação da fonte.
  */
-export function placesInRange(db: Db, range: VerseRange): Promise<PlaceVerseHit[]> {
-  return all<PlaceVerseHit>(
+export async function placesInRange(db: Db, range: VerseRange): Promise<PlaceVerseHit[]> {
+  const rows = await all<PlaceVerseHit>(
     db,
     `SELECT DISTINCT e.cite_id, e.source_id, e.type, e.name, e.description, e.lat, e.lon, e.data, r.vid AS vid
      FROM entity_ref r JOIN entity e ON e.cite_id = r.entity_cite_id
@@ -33,4 +38,5 @@ export function placesInRange(db: Db, range: VerseRange): Promise<PlaceVerseHit[
      ORDER BY e.name, e.cite_id, r.vid`,
     [range.start, range.end],
   );
+  return attachNames(db, rows, (r) => r.cite_id);
 }

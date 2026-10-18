@@ -8,7 +8,7 @@ import { refShort } from '@/features/common/format';
 import { useBooks } from '@/features/common/hooks';
 import { Txt, size, space, useTheme } from '@/design';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
-import { useTimelineTexts } from '@/translate/timeline-translate';
+import { useTimelineNames, useTimelineTexts, useTimelineTitles } from '@/translate/timeline-translate';
 import { eventYear } from './model';
 import { TL } from './strings';
 import { useAllTimelineEvents } from './useTimeline';
@@ -66,11 +66,12 @@ function ContextBody({ span, initialScope }: { span: VerseSpan; initialScope: Co
   );
   const anchor = useMemo(() => anchorIndex(rows, trecho), [rows, trecho]);
   const marks = useMemo(() => rulerMarks(events ? events.map((e) => e.sortKey) : []), [events]);
-  const texts = useMemo(
-    () => rows.flatMap((r) => (r.kind === 'group' ? [r.group.name] : [r.event.title, ...r.event.participants.map((p) => p.name)])),
-    [rows],
-  );
-  const tr = useTimelineTexts(texts);
+  const groupNames = useMemo(() => rows.flatMap((r) => (r.kind === 'group' ? [r.group.name] : [])), [rows]);
+  const tr = useTimelineTexts(groupNames);
+  const eventsShown = useMemo(() => rows.flatMap((r) => (r.kind === 'group' ? [] : [r.event])), [rows]);
+  const trTitle = useTimelineTitles(eventsShown);
+  const participants = useMemo(() => eventsShown.flatMap((e) => e.participants), [eventsShown]);
+  const trName = useTimelineNames(participants);
 
   // Rolagem: começa no evento do trecho (ou, na volta da pílula, onde o leitor parou). Medidas das linhas em
   // coordenadas do conteúdo; a régua usa as mesmas medidas.
@@ -224,13 +225,13 @@ function ContextBody({ span, initialScope }: { span: VerseSpan; initialScope: Co
               );
             }
             const { event, inTrecho, inGroup } = row;
-            const people = [...new Set(event.participants.map((p) => tr(p.name)).filter(Boolean))];
+            const people = [...new Set(event.participants.map((p) => trName(p)).filter(Boolean))];
             return (
               <View key={row.key} onLayout={measure(row.key)}>
                 <Pressable
                   testID={`ctx-event-${event.cite_id}`}
                   accessibilityRole="button"
-                  accessibilityLabel={`${tr(event.title)}, ${eventYear(event)}, ${refShort(event.first_vid, event.last_vid, books, true)}`}
+                  accessibilityLabel={`${trTitle(event)}, ${eventYear(event)}, ${refShort(event.first_vid, event.last_vid, books, true)}`}
                   onPress={() => setPreview(event.cite_id)}
                   style={({ pressed }) => ({
                     flexDirection: 'row',
@@ -249,7 +250,7 @@ function ContextBody({ span, initialScope }: { span: VerseSpan; initialScope: Co
                     <View style={{ flex: 1, width: 2, marginTop: 2, backgroundColor: c.border }} />
                   </View>
                   <View style={{ flex: 1, minWidth: 0, paddingBottom: space[6], gap: 2 }}>
-                    <Txt v="bodySm" bold numberOfLines={2}>{tr(event.title)}</Txt>
+                    <Txt v="bodySm" bold numberOfLines={2}>{trTitle(event)}</Txt>
                     <View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', columnGap: space[3] }}>
                       <Txt v="meta" color="muted" style={{ fontSize: 11.5 }}>{refShort(event.first_vid, event.last_vid, books, true)}</Txt>
                       {inTrecho && <Txt v="meta" color="accent" style={{ fontSize: 11 }}>{TL.inTrecho}</Txt>}

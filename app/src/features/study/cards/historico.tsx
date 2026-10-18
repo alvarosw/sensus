@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Pressable, View } from 'react-native';
 import {
   formatEventDate,
+  shownEntityName,
   titleCaseHeadword,
   type Book,
   type DictionaryEntry,
@@ -17,7 +18,7 @@ import { EventPreview } from '@/features/timeline';
 import { useAutoTranslate } from '@/translate/useAutoTranslate';
 import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
-import { useTimelineTexts } from '@/translate/timeline-translate';
+import { useTimelineTitles } from '@/translate/timeline-translate';
 import { useSourceLang } from '@/translate/source-lang';
 import { STUDY } from '../strings';
 
@@ -78,7 +79,7 @@ export function EntityCard({
     <Card testID={`ent-${entity.cite_id}`}>
       <CardTop>
         <TypeMark kind="ent" label={STUDY.entityType[entity.type] ?? STUDY.entityType.other!} />
-        <Txt v="bodySm" bold>{entity.name}</Txt>
+        <Txt v="bodySm" bold>{shownEntityName(entity, true).text}</Txt>
         <Txt v="meta" color="muted">{sourceShort}</Txt>
       </CardTop>
       {entity.description ? <Txt v="excerpt" numberOfLines={3}>{tr.display}</Txt> : null}
@@ -115,7 +116,7 @@ export function PlaceCard({
             <TypeMark kind="ent" label={STUDY.place} />
             <Txt v="meta" color="muted">{sourceShort}</Txt>
           </CardTop>
-          <Txt v="body" bold>{entity.name}</Txt>
+          <Txt v="body" bold>{shownEntityName(entity, true).text}</Txt>
           <Txt v="mono" color="muted" style={{ fontSize: 11 }}>
             {`${Math.abs(entity.lat).toFixed(3)}° ${ns} · ${Math.abs(entity.lon).toFixed(3)}° ${ew}`}
           </Txt>
@@ -156,8 +157,8 @@ export function TimelineCard({
   // Coluna do ano do tamanho do rótulo mais longo (mono: ~0,6 em por caractere), sem sobra à esquerda.
   const years = events.map((e) => formatEventDate(e.startDate) ?? '');
   const yearW = Math.ceil(Math.max(1, ...years.map((y) => y.length)) * 11 * 0.62);
-  // Títulos da linha do tempo, traduzidos quando configurado (um lote para o cartão inteiro).
-  const tr = useTimelineTexts(events.map((e) => e.title));
+  // Títulos da linha do tempo: o pt quando existe; o resto, traduzido quando configurado (um lote para o cartão).
+  const trTitle = useTimelineTitles(events);
   return (
     <View style={{ gap: space[3] }}>
       <TimelineTranslationNote testID="timeline-note" />
@@ -172,7 +173,7 @@ export function TimelineCard({
                 key={e.cite_id}
                 testID={`timeline-${e.cite_id}`}
                 accessibilityRole="button"
-                accessibilityLabel={`${tr(e.title)}, ${year}, ${reference}`}
+                accessibilityLabel={`${trTitle(e)}, ${year}, ${reference}`}
                 onPress={() => setPreview(e.cite_id)}
                 hitSlop={4}
                 style={({ pressed }) => ({
@@ -202,7 +203,7 @@ export function TimelineCard({
                 </View>
                 <View style={{ flex: 1, minWidth: 0, paddingBottom: space[5], gap: 2 }}>
                   <Txt v="bodySm" bold color={e.inRange ? 'text' : 'muted'} numberOfLines={2}>
-                    {tr(e.title)}
+                    {trTitle(e)}
                   </Txt>
                   <View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', columnGap: space[3] }}>
                     <Txt v="meta" color="muted" style={{ fontSize: 11 }}>{reference}</Txt>

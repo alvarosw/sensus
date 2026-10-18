@@ -13,7 +13,7 @@ import { KindMark, LaneChip, SearchField, kindColor } from './parts';
 import { useTimelineSearch } from './useTimeline';
 import { LineFilterChips, useLineMatches } from './LineFilters';
 import { canConfirm } from '@sensus/core';
-import { useTimelineText, useTimelineTexts } from '@/translate/timeline-translate';
+import { useTimelineName, useTimelineNames } from '@/translate/timeline-translate';
 
 export function CombinationPicker({
   lines,
@@ -49,8 +49,7 @@ export function CombinationPicker({
   const source = q ? (hits === null ? null : searchLines) : lines;
   const list = useMemo(() => (source ? filterLines(source, filter) : []), [source, kind, eraId, onlyFav, favorites]);
 
-  const names = selected.map((id) => byId.get(id)?.name ?? '');
-  const tr = useTimelineTexts(names);
+  const trLine = useTimelineNames(selected.map((id) => byId.get(id)).filter((l): l is TimelineLine => l !== undefined));
   const enabled = canConfirm(selected);
 
   const toggle = (id: string) => setSelected((ids) => (ids.includes(id) ? ids.filter((x) => x !== id) : [...ids, id]));
@@ -88,7 +87,7 @@ export function CombinationPicker({
                   <LaneChip
                     key={id}
                     testID={`tlc-sel-${id}`}
-                    name={tr(names[i] ?? '')}
+                    name={trLine(line)}
                     color={kindColor(line.kind, st)}
                     onRemove={() => toggle(id)}
                   />
@@ -138,7 +137,7 @@ export function CombinationPicker({
 /** Uma linha do seletor: marca de tipo, nome traduzido (se houver tradução), tipo · eventos · anos, e a marca. */
 function PickRow({ line, on, onToggle }: { line: TimelineLine; on: boolean; onToggle: () => void }) {
   const { c } = useTheme();
-  const name = useTimelineText(line.name);
+  const name = useTimelineName(line);
   return (
     <Pressable
       testID={`tlc-row-${line.id}`}

@@ -3,22 +3,22 @@
 // favorita ou desfavorita; as do usuário podem ser removidas.
 import { Pressable, ScrollView, View } from 'react-native';
 import { Txt, radius, space, useTheme } from '@/design';
-import { useTimelineTexts } from '@/translate/timeline-translate';
-import type { ComboCard } from '@sensus/core';
+import { useTimelineNames } from '@/translate/timeline-translate';
+import type { ComboCard, NameFields, TimelineLine } from '@sensus/core';
 import { TL } from './strings';
 import { SourceFooter, StarButton } from './parts';
 
 export function CombinationEntry({
   cards,
-  nameOf,
+  lineOf,
   onCreate,
   onOpen,
   onStar,
   onRemove,
 }: {
   cards: ComboCard[];
-  /** Nome de uma linha pelo cite_id (vazio se não existir). */
-  nameOf: (id: string) => string;
+  /** Linha pelo cite_id (undefined se não estiver na lista: o cartão mostra o nome vazio, como antes). */
+  lineOf: (id: string) => TimelineLine | undefined;
   onCreate: () => void;
   onOpen: (card: ComboCard) => void;
   onStar: (card: ComboCard) => void;
@@ -44,7 +44,7 @@ export function CombinationEntry({
           <ComboCardView
             key={card.id}
             card={card}
-            names={card.lines.map(nameOf)}
+            lines={card.lines.map((id) => lineOf(id) ?? { name: '' })}
             onOpen={() => onOpen(card)}
             onStar={() => onStar(card)}
             onRemove={() => onRemove(card)}
@@ -58,9 +58,9 @@ export function CombinationEntry({
 }
 
 /** Cartão de combinação: nome, linhas (traduzidas quando configurado), estrela e, nas do usuário, remover. */
-function ComboCardView({ card, names, onOpen, onStar, onRemove }: { card: ComboCard; names: string[]; onOpen: () => void; onStar: () => void; onRemove: () => void }) {
+function ComboCardView({ card, lines, onOpen, onStar, onRemove }: { card: ComboCard; lines: NameFields[]; onOpen: () => void; onStar: () => void; onRemove: () => void }) {
   const { c } = useTheme();
-  const tr = useTimelineTexts(names);
+  const trLine = useTimelineNames(lines);
   const mine = card.source === 'mine';
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', gap: space[2], paddingLeft: space[5], paddingRight: space[2], paddingVertical: space[3], borderWidth: 1, borderColor: c.border, borderRadius: radius.card, backgroundColor: c.surface }}>
@@ -72,7 +72,7 @@ function ComboCardView({ card, names, onOpen, onStar, onRemove }: { card: ComboC
         style={({ pressed }) => ({ flex: 1, minWidth: 0, gap: 2, opacity: pressed ? 0.7 : 1 })}
       >
         <Txt v="bodySm" bold numberOfLines={1}>{card.name}</Txt>
-        <Txt v="meta" color="muted" numberOfLines={2}>{names.map((n) => tr(n)).filter(Boolean).join(' · ')}</Txt>
+        <Txt v="meta" color="muted" numberOfLines={2}>{lines.map((l) => trLine(l)).filter(Boolean).join(' · ')}</Txt>
       </Pressable>
       <StarButton
         on={card.favorite}

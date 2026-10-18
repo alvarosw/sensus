@@ -118,10 +118,10 @@ describe('Repo.timelineLines', () => {
   it('lista períodos, pessoas e lugares com id, nome, tipo, contagem e anos (pela ordem de contagem)', async () => {
     const lines = await repo.timelineLines();
     expect(lines).toEqual([
-      { id: 'ent:theographic:paul', kind: 'person', name: 'Paul', count: 3, from: 40, to: 70 },
-      { id: 'ent:theographic:jerusalem', kind: 'place', name: 'Jerusalem', count: 2, from: 50, to: 60 },
-      { id: 'ent:theographic:P', kind: 'period', name: 'Journey', count: 2, from: 50, to: 70 },
-      { id: 'ent:theographic:silas', kind: 'person', name: 'Silas', count: 2, from: 40, to: 50 },
+      { id: 'ent:theographic:paul', kind: 'person', name: 'Paul', count: 3, from: 40, to: 70, namePt: null },
+      { id: 'ent:theographic:jerusalem', kind: 'place', name: 'Jerusalem', count: 2, from: 50, to: 60, namePt: null },
+      { id: 'ent:theographic:P', kind: 'period', name: 'Journey', count: 2, from: 50, to: 70, namePt: null },
+      { id: 'ent:theographic:silas', kind: 'person', name: 'Silas', count: 2, from: 40, to: 50, namePt: null },
     ]);
   });
 
@@ -167,11 +167,12 @@ describe('Repo.timelineLineEvents', () => {
       cite_id: 'ent:theographic:b',
       source_id: 'theographic',
       title: 'Paul and Silas go',
+      namePt: null,
       startDate: '0047',
       sortKey: 40,
       participants: [
-        { cite_id: 'ent:theographic:paul', name: 'Paul' },
-        { cite_id: 'ent:theographic:silas', name: 'Silas' },
+        { cite_id: 'ent:theographic:paul', name: 'Paul', namePt: null },
+        { cite_id: 'ent:theographic:silas', name: 'Silas', namePt: null },
       ],
       first_vid: 50002005,
       last_vid: 50003001,
@@ -202,7 +203,7 @@ describe('Repo.timelineMemberships', () => {
     const map = await repo.timelineMemberships(['ent:theographic:c', 'ent:theographic:d']);
     const ids = map.get('ent:theographic:c')?.map((r) => r.id) ?? [];
     expect(new Set(ids)).toEqual(new Set(['ent:theographic:P', 'ent:theographic:jerusalem', 'ent:theographic:paul', 'ent:theographic:silas']));
-    expect(map.get('ent:theographic:d')).toEqual([{ id: 'ent:theographic:jerusalem', kind: 'place', name: 'Jerusalem' }]);
+    expect(map.get('ent:theographic:d')).toEqual([{ id: 'ent:theographic:jerusalem', kind: 'place', name: 'Jerusalem', namePt: null }]);
     expect((await repo.timelineMemberships(['ent:theographic:a'])).has('ent:theographic:a')).toBe(false);
   });
 });
@@ -287,5 +288,11 @@ describe('funções puras de cronologia', () => {
     expect(searchTerms('Paulo')).toEqual(['paulo', 'paul']);
     expect(searchTerms('')).toEqual([]);
     expect(searchTerms('ceia')).toContain('supper');
+  });
+
+  it('normalizeSearch colapsa espaços internos: "morte  de saul" (AT) e "  pedro   " (NT) casam como nome comum', () => {
+    expect(normalizeSearch('morte  de saul')).toBe('morte de saul');
+    expect(normalizeSearch('  pedro   ')).toBe('pedro');
+    expect(searchTerms('morte  de saul')).toEqual(searchTerms('morte de saul'));
   });
 });

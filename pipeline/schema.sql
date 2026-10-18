@@ -155,6 +155,16 @@ CREATE TABLE entity_ref (
   PRIMARY KEY (entity_cite_id, vid, token_pos)
 );
 
+-- Nome da entidade em outra língua (hoje só 'pt', derivado da Bíblia Livre e revisado em
+-- pipeline/ingest/corrections/nomes-pt.tsv). Sem linha = o app usa entity.name.
+CREATE TABLE entity_name (
+  cite_id    TEXT NOT NULL REFERENCES entity(cite_id),
+  lang       TEXT NOT NULL,
+  name       TEXT NOT NULL,
+  source_id  TEXT NOT NULL REFERENCES source(id),
+  PRIMARY KEY (cite_id, lang)
+);
+
 CREATE TABLE meta (
   key    TEXT PRIMARY KEY,
   value  TEXT NOT NULL

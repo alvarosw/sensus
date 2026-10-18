@@ -7,7 +7,7 @@ import { useRouter } from 'expo-router';
 import { matchesTranslatedText, type TimelineLine, type TimelineLineEvent, type TimelineLineRef } from '@sensus/core';
 import { cachedTranslation } from '@/translate/engine';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
-import { useTimelineActive, useTimelineText, useTimelineTexts, useTimelineVersion } from '@/translate/timeline-translate';
+import { useTimelineActive, useTimelineTitle, useTimelineNames, useTimelineVersion } from '@/translate/timeline-translate';
 import { Txt, radius, space, useTheme } from '@/design';
 import { useAppPrefs } from '@/settings/app-prefs';
 import { eraById, eventYear, filterEvents, filterLines, spanText, type KindFilter } from './model';
@@ -293,12 +293,12 @@ function EventHit({
   onMark: () => void;
 }) {
   const { c, st } = useTheme();
-  const title = useTimelineText(event.title);
-  const lineNames = lines.slice(0, 3).map((l) => l.name);
-  const trLine = useTimelineTexts(lineNames);
-  const people = [...new Set(event.participants.map((p) => p.name).filter(Boolean))];
-  const trPeople = useTimelineTexts(people);
-  const where = lineNames.map(trLine).join(' · ') || people.map(trPeople).join(', ');
+  const title = useTimelineTitle(event);
+  const topLines = lines.slice(0, 3);
+  const trLine = useTimelineNames(topLines);
+  const trPerson = useTimelineNames(event.participants);
+  const people = [...new Set(event.participants.map((p) => trPerson(p)).filter(Boolean))];
+  const where = topLines.map((l) => trLine(l)).join(' · ') || people.join(', ');
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', gap: space[4], paddingLeft: space[8], paddingRight: space[2] }}>
       <Pressable

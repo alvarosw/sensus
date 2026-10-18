@@ -86,3 +86,12 @@ export function globalAskList(
 ): string[] {
   return texts.filter((t) => t.trim().length > 0 && !has.failed(t) && !has.cached(t));
 }
+
+/**
+ * Nomes e títulos da linha do tempo: mostrar o texto em português da fonte (sem passar pela tradução)? Sim, salvo
+ * quando a tradução está ativa e o usuário pediu "Ver original". Se a tradução ficou inativa (desligada ou modelo
+ * removido), o pt continua valendo, senão o nome ficaria preso em inglês sem o botão para voltar.
+ */
+export function preferPt(active: boolean, showOriginal: boolean): boolean {
+  return !(active && showOriginal);
+}

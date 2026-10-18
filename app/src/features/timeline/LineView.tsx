@@ -10,7 +10,7 @@ import { Txt, space, useTheme } from '@/design';
 import { matchesTranslatedText } from '@sensus/core';
 import { cachedTranslation } from '@/translate/engine';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
-import { useTimelineActive, useTimelineText, useTimelineTexts, useTimelineVersion } from '@/translate/timeline-translate';
+import { useTimelineActive, useTimelineName, useTimelineNames, useTimelineTitles, useTimelineVersion } from '@/translate/timeline-translate';
 import { useAppPrefs } from '@/settings/app-prefs';
 import { eventYear, matchesEventText } from './model';
 import { TL } from './strings';
@@ -35,7 +35,7 @@ export function LineList({ lineId }: { lineId: string }) {
   const [onlyMarks, setOnlyMarks] = useState(false);
   const [preview, setPreview] = useState<string | null>(null);
 
-  const lineName = useTimelineText(line?.name);
+  const lineName = useTimelineName(line);
   const tlActive = useTimelineActive();
   const version = useTimelineVersion();
   // Filtro: original, e a tradução quando ela já está no cache.
@@ -50,8 +50,9 @@ export function LineList({ lineId }: { lineId: string }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [events, onlyMarks, favEventSet, text, tlActive, version],
   );
-  const rowTexts = useMemo(() => shown.flatMap((e) => [e.title, ...e.participants.map((p) => p.name)]), [shown]);
-  const tr = useTimelineTexts(rowTexts);
+  const trTitle = useTimelineTitles(shown);
+  const participants = useMemo(() => shown.flatMap((e) => e.participants), [shown]);
+  const trName = useTimelineNames(participants);
   const color = line ? kindColor(line.kind, st) : c.muted;
 
   return (
@@ -102,7 +103,7 @@ export function LineList({ lineId }: { lineId: string }) {
                 <Pressable
                   testID={`tl-line-event-${e.cite_id}`}
                   accessibilityRole="button"
-                  accessibilityLabel={`${tr(e.title)}, ${eventYear(e)}, ${refShort(e.first_vid, e.last_vid, books, true)}`}
+                  accessibilityLabel={`${trTitle(e)}, ${eventYear(e)}, ${refShort(e.first_vid, e.last_vid, books, true)}`}
                   onPress={() => setPreview(e.cite_id)}
                   style={({ pressed }) => ({ flex: 1, minWidth: 0, flexDirection: 'row', gap: space[4], paddingLeft: space[6], opacity: pressed ? 0.7 : 1 })}
                 >
@@ -124,18 +125,18 @@ export function LineList({ lineId }: { lineId: string }) {
                     {!last && <View style={{ flex: 1, width: 2, marginTop: 2, backgroundColor: c.border }} />}
                   </View>
                   <View style={{ flex: 1, minWidth: 0, paddingBottom: space[7], gap: 2 }}>
-                    <Txt v="bodySm" bold numberOfLines={2}>{tr(e.title)}</Txt>
+                    <Txt v="bodySm" bold numberOfLines={2}>{trTitle(e)}</Txt>
                     <Txt v="meta" color="muted" style={{ fontSize: 11.5 }} numberOfLines={1}>
                       {refShort(e.first_vid, e.last_vid, books, true)}
                     </Txt>
                     {e.participants.length > 0 && (
                       <Txt v="meta" color="muted" style={{ fontSize: 11.5 }} numberOfLines={1}>
-                        {[...new Set(e.participants.map((p) => tr(p.name)).filter(Boolean))].join(', ')}
+                        {[...new Set(e.participants.map((p) => trName(p)).filter(Boolean))].join(', ')}
                       </Txt>
                     )}
                   </View>
                 </Pressable>
-                <StarButton on={marked} label={marked ? TL.unfavorite : TL.favoriteEvent(tr(e.title))} onPress={() => toggleEvent(e.cite_id)} testID={`tl-fav-line-event-${e.cite_id}`} />
+                <StarButton on={marked} label={marked ? TL.unfavorite : TL.favoriteEvent(trTitle(e))} onPress={() => toggleEvent(e.cite_id)} testID={`tl-fav-line-event-${e.cite_id}`} />
               </View>
             );
           })}

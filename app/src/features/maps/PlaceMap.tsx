@@ -1,7 +1,7 @@
 // Bloco de mapa do painel de entidade (lugar): o mapa real com o lugar, coordenadas e as outras identificações.
 import { useMemo } from 'react';
 import { View } from 'react-native';
-import { confidenceLabel, type Entity } from '@sensus/core';
+import { confidenceLabel, shownEntityName, type Entity } from '@sensus/core';
 import { radius, SubHeader, Txt, useTheme } from '@/design';
 import { SRC } from '../common/strings';
 import { formatCoords } from './MapPanel';
@@ -15,9 +15,10 @@ export function PlaceMapBlock({ entity }: { entity: Entity & { lat: number; lon:
   const { sites } = usePlaceSites(WHOLE_BIBLE);
   // O lugar desta entidade é o sítio que a agrupa (mesma localidade em outra fonte).
   const site = useMemo(() => sites.find((s) => s.citeIds.includes(entity.cite_id)) ?? null, [sites, entity.cite_id]);
+  const label = shownEntityName(entity, true).text;
   const markers = useMemo<MapMarker[]>(
-    () => [{ id: entity.cite_id, name: entity.name, lat: entity.lat, lon: entity.lon, band: site?.band ?? 'none' }],
-    [entity.cite_id, entity.name, entity.lat, entity.lon, site?.band],
+    () => [{ id: entity.cite_id, name: label, lat: entity.lat, lon: entity.lon, band: site?.band ?? 'none' }],
+    [entity.cite_id, label, entity.lat, entity.lon, site?.band],
   );
   const candidates = site?.candidates ?? [];
   const homonyms = site?.homonyms ?? [];

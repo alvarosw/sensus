@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { Empty, LinkButton, Skeleton, SubHeader, Tag, Txt, TypeMark } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useAsync } from '@/data/use-async';
-import type { Entity } from '@sensus/core';
+import { shownEntityName, type Entity } from '@sensus/core';
 import { askAbout, showInText } from '../common/actions';
 import { loadEntityPassages, type CiteDetail } from '../common/cites';
 import { useBooks, useCite } from '../common/hooks';
@@ -44,7 +44,7 @@ function EntityBody({ detail, entity }: { detail: CiteDetail; entity: Entity }) 
         <TypeMark kind="ent" label={detail.typeLabel} />
         {detail.source ? <Tag label={detail.source.title.split(/ - | \(/)[0] ?? detail.source.title} /> : null}
       </View>
-      <Txt v="panelTitle" testID="panel-title">{entity.name}</Txt>
+      <Txt v="panelTitle" testID="panel-title">{shownEntityName(entity, true).text}</Txt>
 
       {hasPlace ? <PlaceMapBlock entity={entity as Entity & { lat: number; lon: number }} /> : null}
 

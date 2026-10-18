@@ -7,6 +7,7 @@ import {
   DEFAULT_TEXT_SOURCE,
   formatShortRef,
   isIntroVid,
+  shownEntityName,
   sourceShort,
   titleCaseHeadword,
   type Book,
@@ -154,7 +155,7 @@ function build(record: CitableRecord, citeId: string, source: Source | undefined
       return {
         ...base,
         typeLabel: SRC.entityTypes[r.type] ?? SRC.typeLabels.ent,
-        label: r.name,
+        label: shownEntityName(r, true).text,
         text: r.description ?? '',
         vid: null,
       };

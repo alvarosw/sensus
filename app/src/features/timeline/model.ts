@@ -65,13 +65,17 @@ export function filterEvents<E extends { cite_id: string; sortKey: number }>(
 }
 
 /**
- * Filtro de texto dentro de uma linha: título do evento ou nome de um participante (sem acento, sem caixa).
- * Busca vazia não filtra.
+ * Filtro de texto dentro de uma linha: título do evento ou nome de um participante, em inglês ou em pt (sem acento,
+ * sem caixa). Busca vazia não filtra.
  */
-export function matchesEventText(e: { title: string; participants: ReadonlyArray<{ name: string }> }, query: string): boolean {
+export function matchesEventText(
+  e: { title: string; namePt?: string | null; participants: ReadonlyArray<{ name: string; namePt?: string | null }> },
+  query: string,
+): boolean {
   const q = normalizeSearch(query);
   if (!q) return true;
-  return normalizeSearch(e.title).includes(q) || e.participants.some((p) => normalizeSearch(p.name).includes(q));
+  const hit = (text: string | null | undefined) => normalizeSearch(text ?? '').includes(q);
+  return hit(e.title) || hit(e.namePt) || e.participants.some((p) => hit(p.name) || hit(p.namePt));
 }
 
 /** Participantes com nome, sem repetir: "Paul, Silas, Barnabas". */
