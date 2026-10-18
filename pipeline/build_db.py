@@ -153,6 +153,11 @@ def main():
     if lex:
         print(f"lexicon_entry: {lex} verbetes sem token correspondente removidos")
 
+    # Nome pt só existe para entidade presente (--books ou --sources podem tê-la removido).
+    nomes = db.execute("DELETE FROM entity_name WHERE cite_id NOT IN (SELECT cite_id FROM entity)").rowcount
+    if nomes:
+        print(f"entity_name: {nomes} nomes sem entidade removidos")
+
     # Layout físico. Conferências: a junção com src_code não pode descartar linhas.
     n_tok = db.execute("SELECT COUNT(*) FROM token").fetchone()[0]
     n_verse = db.execute("SELECT COUNT(*) FROM verse_text").fetchone()[0]

@@ -77,7 +77,12 @@ const ROLE_OF_KIND: Record<string, string[]> = {
   entity: ['entity'],
 };
 
-const TODAS = [...BANCO, ...NOVAS];
+// Nomes pt derivados da Bíblia Livre (entity_name, sem tradição).
+const NOMES_PT: Array<{ id: string; kind: string; tradition: null }> = [
+  { id: 'sensus-nomes-pt', kind: 'entity', tradition: null },
+];
+
+const TODAS = [...BANCO, ...NOVAS, ...NOMES_PT];
 
 describe('registro de fontes e tradições (domain/sources)', () => {
   it('toda fonte do banco e das ingestões novas está registrada, e não há id órfão', () => {

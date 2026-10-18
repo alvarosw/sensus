@@ -52,6 +52,7 @@ baixa a própria fonte.
 cd pipeline
 python3 -m venv .venv && .venv/bin/pip install requests lxml pysword
 .venv/bin/python -I ingest/blivre.py        # e os demais ingestores em pipeline/ingest/
+.venv/bin/python -I ingest/nomes_pt.py      # depois de blivre e das fontes de entidades (theographic, stepbible-tipnr, openbible-geo)
 .venv/bin/python build_db.py --books Phil --sources <lista> --out ../data/teste.db   # filtro de teste; sem --books, todos os livros
 python3 -m unittest discover tests                              # testes do pipeline (biblioteca padrão; rodar em pipeline/)
 ```
