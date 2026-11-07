@@ -107,7 +107,9 @@ async function download(dest: File, pkg: BiblePackage, ctx: BibleInstallContext)
 
 /** Descompacta o ZIP (uma entrada: o .db), confere o tamanho e valida a meta. Devolve o arquivo provisório no SQLite. */
 async function extract(entry: BibleEntry, pkg: BiblePackage, zip: File): Promise<File> {
-  const dir = stagingDir(entry.id);
+  // Subpasta própria: o ZIP baixado está em stagingDir(id), e recriar essa pasta apagava o ZIP antes de descompactar
+  // (toda instalação falhava com "arquivo incompleto").
+  const dir = new Directory(stagingDir(entry.id), 'extraido');
   if (dir.exists) dir.delete();
   dir.create({ intermediates: true, idempotent: true });
 
@@ -119,8 +121,8 @@ async function extract(entry: BibleEntry, pkg: BiblePackage, zip: File): Promise
     throw new StepFailure('corrupt');
   }
 
-  // O pacote traz um banco só, com o nome do contrato (bible-<id>.db). Abre pelo nome, como o banco completo faz:
-  // no build nativo, os itens de Directory.list() não passam em `instanceof File`, e a busca pela lista falhava.
+  // O pacote traz um banco só, com o nome do contrato (bible-<id>.db): abre pelo nome, como o banco completo faz; a
+  // lista do diretório fica como alternativa.
   const named = new File(dir, bibleFileName(entry.id));
   const listed = named.exists ? [] : dir.list().filter((e): e is File => e instanceof File && e.name.endsWith('.db'));
   const extracted = named.exists ? named : listed.length === 1 ? listed[0] : undefined;
