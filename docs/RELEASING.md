@@ -67,6 +67,11 @@ Ao rodar `eas build` sem `--local`, o EAS consome a cota de builds da conta. Con
 - Antes do build, o banco de leitura deve estar no `app/assets/` (`npm run sync-db ../data/sensus-reader.db`).
   Sem ele o bundle falha com "Unable to resolve module ../../assets/sensus.db".
 - O `ANDROID_HOME` padrão é `~/Android/Sdk`, se existir.
+- **Plugin de build local saindo com código 216, sem mensagem** (visto na 1.4.0, eas-cli 24.12.1): o `eas` chama o
+  plugin por `npx -y eas-cli-local-build-plugin@<versão>`, e por esse caminho o processo morre antes de imprimir
+  qualquer coisa. O binário do plugin funciona chamado direto: rode o build com
+  `EAS_LOCAL_BUILD_PLUGIN_PATH=$(ls -d ~/.npm/_npx/*/node_modules/eas-cli-local-build-plugin/bin/run | head -1) npm run release:android`
+  (confira que é a versão que o `eas-cli` pede, em `node_modules/eas-cli-local-build-plugin/package.json`).
 - O build trabalha em `TMPDIR`. O `/tmp` costuma ser um tmpfs pequeno (5,8 GB aqui) e o NDK estoura ("No space left
   on device"), então o script usa `~/.cache/sensus-release-tmp` se `TMPDIR` não estiver definido. Um build completo
   leva cerca de 30 minutos (Gradle, NDK e R8).
