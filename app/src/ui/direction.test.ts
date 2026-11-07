@@ -35,3 +35,9 @@ describe('uiDirectionStyle', () => {
     expect(uiDirectionStyle({ rtl: true, variant: 'body', content: true })).toEqual({});
   });
 });
+
+describe('títulos de tela', () => {
+  it('bookTitle é texto de interface (títulos de passo, nome do livro no idioma do app): segue o RTL', () => {
+    expect(uiDirectionStyle({ rtl: true, variant: 'bookTitle' })).toEqual({ writingDirection: 'rtl', textAlign: 'right' });
+  });
+});
