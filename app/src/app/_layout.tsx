@@ -102,7 +102,7 @@ function DataSetupGate() {
   const manifest = useDataStore((s) => s.manifest);
   const deferredVersion = useDataStore((s) => s.deferredVersion);
   const shown = useRef(false);
-  const suppressed = useRef(onboardingPending());
+  const [suppressed] = useState(onboardingPending);
 
   useEffect(() => {
     useDataStore.getState().load();
@@ -115,7 +115,7 @@ function DataSetupGate() {
     shouldPromptFirstRun({ activeEdition: edition, installedVersion, manifest, deferredVersion });
 
   useEffect(() => {
-    if (!prompt || shown.current || suppressed.current) return;
+    if (!prompt || shown.current || suppressed) return;
     shown.current = true;
     router.push('/data-setup');
   }, [prompt]);
