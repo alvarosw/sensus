@@ -19,5 +19,7 @@ export const deOnboarding = {
   aiTitle: 'Ein Assistent für deine Fragen',
   aiBody: 'Die KI fasst jeden Abschnitt zusammen und beantwortet deine Fragen mit Quellenangaben aus Sensus. Was sie erzeugt, wird nicht auf dem Gerät gespeichert.',
   aiConfigure: 'Jetzt einrichten',
+  continueLabel: 'Weiter',
+  dataContinueBackground: 'Weiter, während es lädt',
   revisit: 'Einführung noch einmal ansehen',
 };

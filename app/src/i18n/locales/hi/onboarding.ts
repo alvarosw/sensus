@@ -19,5 +19,7 @@ export const hiOnboarding = {
   aiTitle: 'सवालों के लिए एक सहायक',
   aiBody: 'AI हर अंश का सार बताता है और Sensus के स्रोतों का हवाला देकर आपके सवालों के जवाब देता है। AI जो कुछ बनाता है, वह डिवाइस पर सेव नहीं होता।',
   aiConfigure: 'अभी सेट करें',
+  continueLabel: 'जारी रखें',
+  dataContinueBackground: 'डाउनलोड होते हुए जारी रखें',
   revisit: 'परिचय फिर से देखें',
 };

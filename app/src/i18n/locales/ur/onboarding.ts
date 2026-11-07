@@ -19,5 +19,7 @@ export const urOnboarding = {
   aiTitle: 'سوالات کے لیے ایک معاون',
   aiBody: 'AI ہر حصے کا خلاصہ کرتا ہے اور Sensus کے ماخذ کا حوالہ دے کر آپ کے سوالات کے جواب دیتا ہے۔ AI جو کچھ بناتا ہے وہ آلے میں محفوظ نہیں ہوتا۔',
   aiConfigure: 'ابھی ترتیب دیں',
+  continueLabel: 'جاری رکھیں',
+  dataContinueBackground: 'ڈاؤن لوڈ کے دوران جاری رکھیں',
   revisit: 'تعارف دوبارہ دیکھیں',
 };

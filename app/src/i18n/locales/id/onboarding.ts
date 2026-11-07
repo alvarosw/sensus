@@ -19,5 +19,7 @@ export const idOnboarding = {
   aiTitle: 'Asisten untuk bertanya',
   aiBody: 'AI merangkum setiap bagian dan menjawab pertanyaan Anda dengan mengutip sumber Sensus. Tidak ada hasil AI yang disimpan di perangkat.',
   aiConfigure: 'Atur sekarang',
+  continueLabel: 'Lanjutkan',
+  dataContinueBackground: 'Lanjutkan sambil mengunduh',
   revisit: 'Lihat pengenalan lagi',
 };

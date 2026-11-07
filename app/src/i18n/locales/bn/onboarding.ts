@@ -19,5 +19,7 @@ export const bnOnboarding = {
   aiTitle: 'প্রশ্নের জন্য একজন সহকারী',
   aiBody: 'AI প্রতিটি অংশের সারাংশ দেয় এবং Sensus-এর সূত্র উদ্ধৃত করে আপনার প্রশ্নের উত্তর দেয়। AI যা তৈরি করে তা ডিভাইসে সংরক্ষিত হয় না।',
   aiConfigure: 'এখনই সেট করুন',
+  continueLabel: 'চালিয়ে যান',
+  dataContinueBackground: 'ডাউনলোড চলাকালীন চালিয়ে যান',
   revisit: 'পরিচিতি আবার দেখুন',
 };

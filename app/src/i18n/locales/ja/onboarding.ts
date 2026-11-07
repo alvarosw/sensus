@@ -19,5 +19,7 @@ export const jaOnboarding = {
   aiTitle: '質問のためのアシスタント',
   aiBody: 'AI は各箇所を要約し、Sensus の資料を引用して質問に答えます。AI が生成した内容は端末に保存されません。',
   aiConfigure: '今すぐ設定',
+  continueLabel: '続ける',
+  dataContinueBackground: 'ダウンロード中に続ける',
   revisit: '紹介をもう一度見る',
 };

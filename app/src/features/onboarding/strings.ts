@@ -28,6 +28,8 @@ const ptOnboarding = {
   aiBody: 'A IA resume cada trecho e responde às suas perguntas citando as fontes do Sensus. Nada que ela gera é gravado no aparelho.',
   aiConfigure: 'Configurar agora',
 
+  continueLabel: 'Continuar',
+  dataContinueBackground: 'Continuar enquanto baixa',
   revisit: 'Rever a apresentação',
 };
 

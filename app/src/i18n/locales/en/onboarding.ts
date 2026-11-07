@@ -19,5 +19,7 @@ export const enOnboarding = {
   aiTitle: 'An assistant for your questions',
   aiBody: 'The AI summarizes each passage and answers your questions, citing Sensus sources. Nothing the AI generates is saved on the device.',
   aiConfigure: 'Set up now',
+  continueLabel: 'Continue',
+  dataContinueBackground: 'Continue while it downloads',
   revisit: 'Review the introduction',
 };

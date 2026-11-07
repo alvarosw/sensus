@@ -19,5 +19,7 @@ export const viOnboarding = {
   aiTitle: 'Trợ lý để hỏi đáp',
   aiBody: 'AI tóm tắt từng đoạn và trả lời câu hỏi của bạn, có trích nguồn của Sensus. Nội dung AI tạo ra không được lưu trên thiết bị.',
   aiConfigure: 'Thiết lập ngay',
+  continueLabel: 'Tiếp tục',
+  dataContinueBackground: 'Tiếp tục trong khi tải xuống',
   revisit: 'Xem lại phần giới thiệu',
 };

@@ -19,5 +19,7 @@ export const zhOnboarding = {
   aiTitle: '提问助手',
   aiBody: 'AI 会概括每段经文，并引用 Sensus 的资料回答您的问题。AI 生成的内容不会保存在设备上。',
   aiConfigure: '立即设置',
+  continueLabel: '继续',
+  dataContinueBackground: '下载时继续',
   revisit: '重新查看介绍',
 };

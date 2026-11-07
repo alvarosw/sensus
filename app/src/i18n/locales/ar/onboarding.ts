@@ -19,5 +19,7 @@ export const arOnboarding = {
   aiTitle: 'مساعد للأسئلة',
   aiBody: 'يلخّص الذكاء الاصطناعي كل مقطع ويجيب عن أسئلتك مستشهدًا بمصادر Sensus. لا يُحفظ على الجهاز أي شيء يولّده.',
   aiConfigure: 'اضبطه الآن',
+  continueLabel: 'متابعة',
+  dataContinueBackground: 'المتابعة أثناء التنزيل',
   revisit: 'راجع المقدمة مرة أخرى',
 };

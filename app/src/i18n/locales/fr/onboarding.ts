@@ -19,5 +19,7 @@ export const frOnboarding = {
   aiTitle: 'Un assistant pour vos questions',
   aiBody: 'L’IA résume chaque passage et répond à vos questions en citant les sources de Sensus. Rien de ce qu’elle génère n’est enregistré sur l’appareil.',
   aiConfigure: 'Configurer maintenant',
+  continueLabel: 'Continuer',
+  dataContinueBackground: 'Continuer pendant le téléchargement',
   revisit: 'Revoir la présentation',
 };

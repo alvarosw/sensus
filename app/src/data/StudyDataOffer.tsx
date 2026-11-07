@@ -12,11 +12,13 @@ import { DATA_COPY } from './strings';
 export interface StudyDataOfferProps {
   /** "Depois": não oferecer de novo esta versão (quem chama grava e segue). */
   onLater: () => void;
+  /** Durante o download: botão para seguir adiante enquanto ele continua (o onboarding usa). */
+  background?: { label: string; onPress: () => void };
   /** Download concluído (ou "Continuar" depois dele). */
   onDone: () => void;
 }
 
-export function StudyDataOffer({ onLater, onDone }: StudyDataOfferProps) {
+export function StudyDataOffer({ onLater, onDone, background }: StudyDataOfferProps) {
   const phase = useDataStore((s) => s.machine.phase);
   const manifest = useDataStore((s) => s.manifest);
   const start = useDataStore((s) => s.start);
@@ -59,6 +61,8 @@ export function StudyDataOffer({ onLater, onDone }: StudyDataOfferProps) {
           <DownloadStatus testID="data-setup-status" />
           {phase === 'paused' || phase === 'error' ? (
             <FormButton testID="data-setup-later-2" variant="secondary" label={DATA_COPY.later} onPress={onLater} />
+          ) : background ? (
+            <FormButton testID="data-setup-background" variant="secondary" label={background.label} onPress={background.onPress} />
           ) : null}
         </View>
       ) : null}
