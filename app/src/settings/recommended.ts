@@ -1,6 +1,7 @@
 // Modelos recomendados por provedor (seletor "Recomendados" e opções rápidas da verificação).
 // Fonte: RECOMMENDED_MODELS do núcleo (packages/core/src/ai/recommended-models.ts), primeiro item = padrão.
 import { RECOMMENDED_MODELS, type RecommendedModel, type RecommendedTier } from '@sensus/core';
+import { SETTINGS_COPY } from './strings';
 
 export type { RecommendedModel, RecommendedTier } from '@sensus/core';
 
@@ -21,8 +22,15 @@ export function extraBodyFor(presetId: string, modelId: string): Record<string, 
   return recommendedById(presetId, modelId)?.extraBody;
 }
 
-export const TIER_LABEL: Record<RecommendedTier, string> = {
-  equilibrado: 'Equilibrado',
-  rapido: 'Rápido',
-  preciso: 'Preciso',
+/** Rótulos das faixas no idioma do app (lidos na hora do acesso). */
+export const TIER_LABEL: Readonly<Record<RecommendedTier, string>> = {
+  get equilibrado() {
+    return SETTINGS_COPY.tierBalanced;
+  },
+  get rapido() {
+    return SETTINGS_COPY.tierFast;
+  },
+  get preciso() {
+    return SETTINGS_COPY.tierPrecise;
+  },
 };

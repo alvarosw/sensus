@@ -89,6 +89,10 @@ export const jaSettings = {
   rowAbout: 'このアプリについてとライセンス',
   rowLanguage: '言語',
   langTitle: '言語',
+  tierBalanced: 'バランス',
+  tierFast: '高速',
+  tierPrecise: '高精度',
+  demoLabel: 'デモ（オフライン）',
   langInUse: '使用中',
   gearNote: '入口: 「設定」ボタンの左に歯車アイコンが付きます。',
 

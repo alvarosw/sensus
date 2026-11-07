@@ -89,6 +89,10 @@ export const enSettings = {
   rowAbout: 'About and licenses',
   rowLanguage: 'Language',
   langTitle: 'Language',
+  tierBalanced: 'Balanced',
+  tierFast: 'Fast',
+  tierPrecise: 'Precise',
+  demoLabel: 'Demo (offline)',
   langInUse: 'In use',
   gearNote: 'Entry: the "Settings" button gets the gear icon to the left of its label.',
 

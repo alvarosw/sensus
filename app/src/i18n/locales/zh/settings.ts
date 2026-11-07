@@ -89,6 +89,10 @@ export const zhSettings = {
   rowAbout: '关于与许可',
   rowLanguage: '语言',
   langTitle: '语言',
+  tierBalanced: '均衡',
+  tierFast: '快速',
+  tierPrecise: '精确',
+  demoLabel: '演示（离线）',
   langInUse: '当前使用',
   gearNote: '入口：“设置”按钮左侧会出现齿轮图标。',
 

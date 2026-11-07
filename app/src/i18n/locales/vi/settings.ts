@@ -89,6 +89,10 @@ export const viSettings = {
   rowAbout: 'Giới thiệu và giấy phép',
   rowLanguage: 'Ngôn ngữ',
   langTitle: 'Ngôn ngữ',
+  tierBalanced: 'Cân bằng',
+  tierFast: 'Nhanh',
+  tierPrecise: 'Chính xác',
+  demoLabel: 'Bản dùng thử (ngoại tuyến)',
   langInUse: 'Đang dùng',
   gearNote: 'Lối vào: nút "Cài đặt" có biểu tượng bánh răng bên trái nhãn.',
 

@@ -90,6 +90,10 @@ export const ruSettings = {
   rowAbout: 'О приложении и лицензии',
   rowLanguage: 'Язык',
   langTitle: 'Язык',
+  tierBalanced: 'Сбалансированная',
+  tierFast: 'Быстрая',
+  tierPrecise: 'Точная',
+  demoLabel: 'Демонстрация (офлайн)',
   langInUse: 'Используется',
   gearNote: 'Вход: у кнопки «Настройки» слева от надписи появляется шестерёнка.',
 

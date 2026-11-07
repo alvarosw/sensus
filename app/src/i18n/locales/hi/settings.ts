@@ -89,6 +89,10 @@ export const hiSettings = {
   rowAbout: 'परिचय और लाइसेंस',
   rowLanguage: 'भाषा',
   langTitle: 'भाषा',
+  tierBalanced: 'संतुलित',
+  tierFast: 'तेज़',
+  tierPrecise: 'सटीक',
+  demoLabel: 'डेमो (ऑफ़लाइन)',
   langInUse: 'उपयोग में',
   gearNote: 'प्रवेश: "सेटिंग्स" बटन पर लेबल के बाईं ओर गियर आइकन होता है।',
 

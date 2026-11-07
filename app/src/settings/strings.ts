@@ -14,6 +14,10 @@ const ptSettingsCopy = {
   rowAbout: 'Sobre e licenças',
   rowLanguage: 'Idioma',
   langTitle: 'Idioma',
+  tierBalanced: 'Equilibrado',
+  tierFast: 'Rápido',
+  tierPrecise: 'Preciso',
+  demoLabel: 'Demonstração (offline)',
   langInUse: 'Em uso',
   gearNote: 'Entrada: o botão "Configurações" ganha a engrenagem à esquerda do rótulo.',
 

@@ -90,6 +90,10 @@ export const arSettings = {
   rowAbout: 'حول والتراخيص',
   rowLanguage: 'اللغة',
   langTitle: 'اللغة',
+  tierBalanced: 'متوازن',
+  tierFast: 'سريع',
+  tierPrecise: 'دقيق',
+  demoLabel: 'عرض تجريبي (دون اتصال)',
   langInUse: 'المستخدمة',
   gearNote: 'المدخل: زر "الإعدادات" يكتسب ترسًا على يسار العنوان.',
 

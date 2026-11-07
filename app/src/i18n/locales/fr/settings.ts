@@ -89,6 +89,10 @@ export const frSettings = {
   rowAbout: 'À propos et licences',
   rowLanguage: 'Langue',
   langTitle: 'Langue',
+  tierBalanced: 'Équilibré',
+  tierFast: 'Rapide',
+  tierPrecise: 'Précis',
+  demoLabel: 'Démonstration (hors ligne)',
   langInUse: 'Utilisée',
   gearNote: 'Entrée : le bouton « Réglages » affiche l’icône d’engrenage à gauche de son libellé.',
 

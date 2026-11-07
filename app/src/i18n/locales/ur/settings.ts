@@ -89,6 +89,10 @@ export const urSettings = {
   rowAbout: 'تعارف اور لائسنس',
   rowLanguage: 'زبان',
   langTitle: 'زبان',
+  tierBalanced: 'متوازن',
+  tierFast: 'تیز',
+  tierPrecise: 'درست',
+  demoLabel: 'ڈیمو (آف لائن)',
   langInUse: 'استعمال میں',
   gearNote: 'داخلہ: "ترتیبات" بٹن پر لیبل کے بائیں جانب گیئر کا آئیکن ہوتا ہے۔',
 

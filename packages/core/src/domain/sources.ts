@@ -196,12 +196,17 @@ export function sourceLong(id: string): string {
   return own(SOURCES, id)?.long ?? sourceShort(id);
 }
 
+/** A fonte é a compilação dos Pais da Igreja (vários autores; o nome de cada um vem do próprio texto)? */
+export function isPatristicCompilation(id: string | null | undefined): boolean {
+  return id === 'patristic';
+}
+
 /**
  * Nome do comentarista de um comentário. Pais da Igreja: o nome vem do primeiro trecho do texto. Demais: o
  * comentarista do registro; fonte fora do registro, o autor (ou título) do banco, sem o que vem entre parênteses.
  */
 export function commentatorOf(source: Source | undefined, commentary: Commentary): string {
-  if (source?.id === 'patristic') {
+  if (isPatristicCompilation(source?.id)) {
     const firstLine = commentary.text.split('\n')[0] ?? '';
     const candidate = firstLine.split(/\s+[—–-]\s+|:/)[0]?.trim() ?? '';
     return (

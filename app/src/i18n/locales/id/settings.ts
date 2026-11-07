@@ -89,6 +89,10 @@ export const idSettings = {
   rowAbout: 'Tentang dan lisensi',
   rowLanguage: 'Bahasa',
   langTitle: 'Bahasa',
+  tierBalanced: 'Seimbang',
+  tierFast: 'Cepat',
+  tierPrecise: 'Akurat',
+  demoLabel: 'Demo (luring)',
   langInUse: 'Digunakan',
   gearNote: 'Akses: tombol "Pengaturan" mendapat ikon roda gigi di kiri labelnya.',
 

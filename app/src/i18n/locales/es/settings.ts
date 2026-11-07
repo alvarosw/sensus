@@ -89,6 +89,10 @@ export const esSettings = {
   rowAbout: 'Acerca de y licencias',
   rowLanguage: 'Idioma',
   langTitle: 'Idioma',
+  tierBalanced: 'Equilibrado',
+  tierFast: 'Rápido',
+  tierPrecise: 'Preciso',
+  demoLabel: 'Demostración (sin conexión)',
   langInUse: 'En uso',
   gearNote: 'Entrada: el botón "Configuración" gana el engranaje a la izquierda de su texto.',
 

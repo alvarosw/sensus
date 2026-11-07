@@ -89,6 +89,10 @@ export const deSettings = {
   rowAbout: 'Über und Lizenzen',
   rowLanguage: 'Sprache',
   langTitle: 'Sprache',
+  tierBalanced: 'Ausgewogen',
+  tierFast: 'Schnell',
+  tierPrecise: 'Präzise',
+  demoLabel: 'Demo (offline)',
   langInUse: 'Aktiv',
   gearNote: 'Eintrag: Die Schaltfläche „Einstellungen“ erhält links neben ihrem Namen das Zahnrad-Symbol.',
 

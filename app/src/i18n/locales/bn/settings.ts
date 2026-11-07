@@ -89,6 +89,10 @@ export const bnSettings = {
   rowAbout: 'পরিচিতি ও লাইসেন্স',
   rowLanguage: 'ভাষা',
   langTitle: 'ভাষা',
+  tierBalanced: 'ভারসাম্যপূর্ণ',
+  tierFast: 'দ্রুত',
+  tierPrecise: 'নির্ভুল',
+  demoLabel: 'ডেমো (অফলাইন)',
   langInUse: 'ব্যবহারে আছে',
   gearNote: 'প্রবেশপথ: "সেটিংস" বোতামে লেবেলের বাঁ দিকে গিয়ার আইকন থাকে।',
 
