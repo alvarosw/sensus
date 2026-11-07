@@ -30,9 +30,32 @@ Obras incluídas (todas com publicação anterior a 1929; autora falecida em 191
 - smith-daniel: Uriah Smith, Daniel and the Revelation (archive.org danielrevelation00smit_3, Library of Congress;
   1897). Autor falecido em 1903. Estudo versículo a versículo, o único que não é de Ellen G. White.
 
+Segunda leva (autores falecidos entre 1872 e 1922; publicações de 1873 a 1905):
+- egw-desire-of-ages: The Desire of Ages (archive.org desireofages00whit, Pacific Press, 1898). Sem aviso de 1940
+  nem de 1964 (os scans desireofages0000elle_w5v8 e _z5c9 trazem, e não entram).
+- haskell-daniel, haskell-seer: Stephen N. Haskell, The Story of Daniel the Prophet (R&H, 1901) e The Story of the
+  Seer of Patmos (R&H, 1905), archive.org. Títulos de seção "(Chapter 11:3-13)" ligam os parágrafos da seção a
+  esses versículos do livro indicado (`section_book`).
+- waggoner-galatians: E. J. Waggoner, The Glad Tidings (Gutenberg #63636; 1900), comentário de Gálatas.
+- waggoner-christ: E. J. Waggoner, Christ and His Righteousness (archive.org, 1893).
+- andrews-sabbath: J. N. Andrews, History of the Sabbath (Gutenberg #68714; 1873).
+- smith-us-prophecy: Uriah Smith, The United States in the Light of Prophecy (Gutenberg #12364; 1874).
+- smith-sanctuary: Uriah Smith, The Sanctuary and the Twenty-three Hundred Days of Daniel VIII, 14 (archive.org
+  sanctuarytwentyt0000smit; 1877).
+Nos scans com notas de rodapé de referência (`page_notes`), a nota vai para o parágrafo da página e a
+continuação da página volta ao parágrafo de prosa, sem colar na nota.
+
 Descartadas (ver DATA_LICENSES.md):
-- The Desire of Ages: os scans de 1898 trazem aviso de direitos de 1940 de edição revisada (archive.org
-  desireofages0000elle); titularidade não confirmada.
+- The Desire of Ages nos scans desireofages0000elle_w5v8 e _z5c9 (aviso de 1940 e de 1964; a de 1898 é usada).
+- Ministry of Healing (1905/1909): sem parágrafo com referência explícita no scan de 1909 (zero referências);
+  o de 1905 traz aviso de 1942. Não está no Gutenberg.
+- Education (Gutenberg #62102, 1903): pouquíssimas referências (cerca de 35 linhas de referência, sem comentário).
+- Early Writings (1893, archive.org): 73 referências, em volume de texto pouco citado; Testimonies (1901): poucas
+  referências explícitas no volume lido.
+- Jones, The Great Empires of Prophecy (1898, archive.org): scan com OCR ruim (barras verticais, ~100 referências).
+- Bates (The Opening Heavens, Seventh Day Sabbath, Gutenberg): 4 e 2 parágrafos com referência.
+- Andrews, The Complete Testimony of the Fathers (Gutenberg #55818): tema patrístico, 53 referências.
+- Smith, The State of the Dead (1873): sem referências explícitas.
 - Ministry of Healing (1905, archive.org ministryofhealin00whitrich) e Education (1903, archive.org
   education00whitrich e education00whit): o texto vem com uma linha por parágrafo (mediana de 34 a 89
   caracteres), e a frase é cortada no fim da linha. Juntar isso exige reconstruir os parágrafos, o que
@@ -58,6 +81,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from sensus.staging import RAW, STAGING, StagingWriter, cite_com  # noqa: E402
 from ingest.refparse import VERSES, find_refs  # noqa: E402
 from sensus.refs import BOOK_BY_NUM  # noqa: E402
+from sensus.adventist_texto import (  # noqa: E402
+    BASED_ON, CHAPTER_HEAD, REF_LINE, ROMAN, ROMAN_OCR, SECTION_HEAD, next_chapter, section_span,
+    tira_notas, to_roman,
+)
 
 UA = "Mozilla/5.0 (sensus-ingest; local research pipeline)"
 AUTHOR = "Ellen G. White (1827-1915)"
@@ -76,9 +103,6 @@ GUT_END = re.compile(r"^\*\*\* ?END OF (?:THE|THIS) PROJECT GUTENBERG.*$", re.M)
 GUT_ITALIC = re.compile(r"_((?:(?!\n\s*\n)[^_]){1,300}?)_")  # sem cruzar parágrafo
 PAGE_BRACKET = re.compile(
     r"(?:\b\d{1,4}\s+(?=\d[\d\s\-]*[\]}]))?[\[{]\s*\d[\d\s\-]*[\]}]?\s*|\d[\d\s\-]*\}\s*")
-ROMAN = re.compile(r"^[IVXLC]+$")
-# Número romano de capítulo lido errado pelo OCR do scan de 1907 ("IIL" = III, "XVILE" = XVII).
-ROMAN_OCR = {"IIL": "III", "XVILE": "XVII"}
 TERMINAL = tuple('.!?"”’:;)')
 
 
@@ -114,6 +138,17 @@ class Work:
     # Trecho da atribuição sobre o domínio público (autor, falecimento e publicação).
     pd: str = ("Domínio público: autora falecida em 1915 e obra publicada antes de 1929 (domínio "
                "público nos EUA); no Brasil, autora falecida há mais de 70 anos.")
+    # Capítulos numerados em sequência (cabeçalho "CHAPTER ..." com número romano, palavra ou OCR ruim): o
+    # número é o anterior + 1, ou +2 se o romano lido confirma um capítulo perdido (ver next_chapter).
+    chapter_seq: bool = False
+    # Título de seção "(Chapter 11:3-13)": os parágrafos seguintes, até o próximo título, ligam-se a esses
+    # versículos do livro indicado (ex.: 27 = Daniel). Como a epígrafe de Mt 5–7, mas pelo título da obra.
+    section_book: int | None = None
+    # Regex de caracteres de OCR ruim (ex.: "©" de scan): parágrafo com esse sinal sai, como em strict_ocr.
+    ocr_junk: str | None = None
+    # Notas de rodapé só de referência ficam antes do cabeçalho da página ("^^Zech. 9:16, 17."). Com esta marca, a
+    # continuação da página seguinte volta ao último parágrafo de prosa, e não cola na nota (ver paragraphs).
+    page_notes: bool = False
 
 
 WORKS = [
@@ -180,20 +215,96 @@ WORKS = [
                     r"\d*\s*CHAPTER\.?\s+[0-9IVXL]+,\s+VERSES?\s+[0-9\s\-,]+\.?\s*\d*|APPENDIX\.?|"
                     r"\d*\s*[CO]ONTENTS\.?\s*\d*|\d*\s*PREFACE\s*\d*|Page\.|"
                     r"(?=.*\d)[0-9IOl]{1,4}\.?"), strict_ocr=True),
+    Work("egw-desire-of-ages", "The Desire of Ages", "The Desire of Ages",
+         "Pacific Press, 1898 (copyright 1898)",
+         "https://archive.org/details/desireofages00whit",
+         "https://archive.org/download/desireofages00whit/desireofages00whit_djvu.txt",
+         "desireofages00whit_djvu.txt", "archive", r"THE DESIRE OF AGES", CHAPTER_HEAD,
+         "Internet Archive desireofages00whit (edição de 1898; o scan não traz aviso de 1940 nem de 1964)",
+         chapter_seq=True, ocr_junk=r"©", page_notes=True),
+    # Stephen N. Haskell (1855-1922): comentário versículo a versículo de Daniel. Títulos de seção "(Chapter 11:3-13)"
+    # são os versículos do próprio livro de Daniel (27).
+    Work("haskell-daniel", "The Story of Daniel the Prophet", "Daniel the Prophet",
+         "Review and Herald, 1901 (copyright 1901)",
+         "https://archive.org/details/the-story-of-daniel-the-prophet-1901-review-and-herald-orig",
+         "https://archive.org/download/the-story-of-daniel-the-prophet-1901-review-and-herald-orig/"
+         "The%20Story%20of%20Daniel%20the%20Prophet%20(1901)%20(Review%20and%20Herald)%20orig_djvu.txt",
+         "daniel1901_djvu.txt", "archive", r"STORY OF DANIEL THE PROPHET", CHAPTER_HEAD,
+         "Internet Archive the-story-of-daniel-the-prophet-1901-review-and-herald-orig (Review and Herald, 1901)",
+         author="Stephen N. Haskell (1855-1922)",
+         pd=("Domínio público: autor falecido em 1922 e obra publicada em 1901 (domínio público nos EUA); "
+             "no Brasil, autor falecido há mais de 70 anos."),
+         furniture=r"\d*\s*(?:STORY\s+)?OF DANIEL THE PROPHET\.?\s*\d*|\d*\s*STORY\s*\d*",
+         chapter_seq=True, section_book=27, ocr_junk=r"©", page_notes=True),
+    Work("haskell-seer", "The Story of the Seer of Patmos", "Seer of Patmos",
+         "Review and Herald, 1905",
+         "https://archive.org/details/storyofseerofpat01hask",
+         "https://archive.org/download/storyofseerofpat01hask/storyofseerofpat01hask_djvu.txt",
+         "seer1905_djvu.txt", "archive", r"STORY OF THE SEER OF PATMOS", CHAPTER_HEAD,
+         "Internet Archive storyofseerofpat01hask (Review and Herald, 1905)",
+         author="Stephen N. Haskell (1855-1922)",
+         pd=("Domínio público: autor falecido em 1922 e obra publicada em 1905 (domínio público nos EUA); "
+             "no Brasil, autor falecido há mais de 70 anos."),
+         furniture=r"\d*\s*(?:STORY\s+OF\s+THE\s+)?SEER OF PATMOS\.?\s*\d*|\d*\s*STORY\s*\d*",
+         chapter_seq=True, ocr_junk=r"©", page_notes=True),
+    # E. J. Waggoner (1855-1916): Gálatas (comentário em capítulos, com o texto citado em bloco).
+    Work("waggoner-galatians", "The Glad Tidings", "The Glad Tidings",
+         "Pacific Press, 1900 (copyright 1900)",
+         "https://www.gutenberg.org/ebooks/63636", "https://www.gutenberg.org/cache/epub/63636/pg63636.txt",
+         "pg63636.txt", "gutenberg", r"(?!)", r"^CHAPTER\s+([IVXL]+)\.?(?:\s.*)?$",
+         "Project Gutenberg eBook #63636",
+         author="E. J. Waggoner (1855-1916)",
+         # Sumário do Gutenberg (CHAPTER I... com números de página) antes do texto: sai, para não contar duas vezes.
+         skip=(r"^\s*CHAPTER I\.\s*$", r"^\s*CHAPTER I\.\s*$"),
+         pd=("Domínio público: autor falecido em 1916 e obra publicada em 1900 (domínio público nos EUA); "
+             "no Brasil, autor falecido há mais de 70 anos.")),
+    Work("waggoner-christ", "Christ and His Righteousness", "Christ and His Righteousness",
+         "Echo Publishing Company, 1893",
+         "https://archive.org/details/christ-and-his-righteousness-1893-echo-publishing",
+         "https://archive.org/download/christ-and-his-righteousness-1893-echo-publishing/"
+         "Christ%20and%20His%20Righteousness%20(1893)%20(Echo%20Publishing)_djvu.txt",
+         "christ1893_djvu.txt", "archive", r"CHRIST AND HIS RIGHTEOUSNESS", CHAPTER_HEAD,
+         "Internet Archive christ-and-his-righteousness-1893-echo-publishing (1893)",
+         author="E. J. Waggoner (1855-1916)",
+         pd=("Domínio público: autor falecido em 1916 e obra publicada em 1893 (domínio público nos EUA); "
+             "no Brasil, autor falecido há mais de 70 anos."),
+         furniture=r"\d*\s*CHRIST AND HIS RIGHTEOUSNESS[.,]?\s*\d*",
+         chapter_seq=True, ocr_junk=r"©|\|", page_notes=True),
+    # J. N. Andrews (1829-1883): história do sábado, com as citações bíblicas de Gênesis e Êxodo.
+    Work("andrews-sabbath", "History of the Sabbath and First Day of the Week", "History of the Sabbath",
+         "Steam Press of the Seventh-day Adventist Publishing Association, 1873",
+         "https://www.gutenberg.org/ebooks/68714", "https://www.gutenberg.org/cache/epub/68714/pg68714.txt",
+         "pg68714.txt", "gutenberg", r"(?!)", CHAPTER_HEAD,
+         "Project Gutenberg eBook #68714",
+         author="John Nevins Andrews (1829-1883)", chapter_seq=True,
+         pd=("Domínio público: autor falecido em 1883 e obra publicada em 1873 (domínio público nos EUA); "
+             "no Brasil, autor falecido há mais de 70 anos.")),
+    # Uriah Smith (1832-1903): Apocalipse 13 e os Estados Unidos (Gutenberg, impressão de 1874).
+    Work("smith-us-prophecy", "The United States in the Light of Prophecy", "The United States in Prophecy",
+         "Review and Herald, 1874",
+         "https://www.gutenberg.org/ebooks/12364", "https://www.gutenberg.org/cache/epub/12364/pg12364.txt",
+         "pg12364.txt", "gutenberg", r"(?!)", None,
+         "Project Gutenberg eBook #12364",
+         author="Uriah Smith (1832-1903)",
+         pd=("Domínio público: autor falecido em 1903 e obra publicada em 1874 (domínio público nos EUA); "
+             "no Brasil, autor falecido há mais de 70 anos.")),
+    # Uriah Smith (1832-1903): Dn 8:14, o santuário e os 2.300 dias (edição de 1877).
+    Work("smith-sanctuary", "The Sanctuary and the Twenty-three Hundred Days of Daniel VIII, 14", "The Sanctuary",
+         "Review and Herald, 1877",
+         "https://archive.org/details/sanctuarytwentyt0000smit",
+         "https://archive.org/download/sanctuarytwentyt0000smit/sanctuarytwentyt0000smit_djvu.txt",
+         "sanctuary1877_djvu.txt", "archive", r"THE SANCTUARY", None,
+         "Internet Archive sanctuarytwentyt0000smit (1877)",
+         author="Uriah Smith (1832-1903)",
+         pd=("Domínio público: autor falecido em 1903 e obra publicada em 1877 (domínio público nos EUA); "
+             "no Brasil, autor falecido há mais de 70 anos."),
+         furniture=r"\d*\s*THE SANCTUARY\.?\s*\d*", ocr_junk=r"©", page_notes=True,
+         # Índice remissivo e catálogo do editor (com anúncios) ficam no fim, depois de "INDEX. 349": saem.
+         skip=(r"^\s*INDEX[.,]?\s*\d+\s*$", r"\Z")),
 ]
 
 
 RUNNING_CHAPTER = re.compile(r"^\s*\d*\s*CHAPTER\.?\s+(\d{1,2}),\s+VERSES?\b.*$")
-
-
-def to_roman(n: int) -> str:
-    vals = [(10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")]
-    out = ""
-    for v, sym in vals:
-        while n >= v:
-            out += sym
-            n -= v
-    return out
 
 
 # Legenda de ilustração do scan: linha com duas ou mais palavras em maiúsculas (título) e, até 4 linhas
@@ -325,6 +436,12 @@ def read_body(work: Work, path: Path) -> tuple[str, dict[int, str]]:
         if ch:  # cabeçalho corrente "CHAPTER 2, VERSES 1-4 33": a página é do capítulo 2 (numeração arábica)
             kept += ["", f"CHAPTER {to_roman(int(ch.group(1)))}", ""]
             continue
+        if work.page_notes and BASED_ON.match(ln.strip()):
+            kept.append("")  # "This chapter is based on Luke 2:1-20." é nota editorial do capítulo, não texto da obra
+            continue
+        if work.page_notes and len(ln.strip()) < 120 and REF_LINE.match(ln.strip()):
+            kept += ["", ln.strip(), ""]  # linha só de referência (nota da página): parágrafo à parte
+            continue
         if furn and furn.fullmatch(" ".join(ln.split())):
             kept.append("")  # cabeçalho de página inteiro na linha: separa, sem colar parágrafos
             continue
@@ -333,6 +450,15 @@ def read_body(work: Work, path: Path) -> tuple[str, dict[int, str]]:
             continue
         kept.append(inline_running.sub(" ", ln))
     return "\n".join(kept), {k: " ".join(v.split()) for k, v in footnotes.items()}
+
+
+def strip_notes(para: str) -> tuple[str, list]:
+    """Tira as notas de rodapé com marca de OCR; devolve o texto e as referências delas."""
+    texto, notas = tira_notas(para)
+    refs: list = []
+    for nota in notas:
+        refs += [r for r in find_refs(COLON_SPACES.sub(r"\1:\2", nota)) if r not in refs]
+    return texto, refs
 
 
 def paragraphs(body: str, work: Work):
@@ -362,10 +488,13 @@ def paragraphs(body: str, work: Work):
             text = " ".join(text.split())
             text = FOOTNOTE_NUM.sub(_drop_footnote_num, text)
         if out and re.match(r"[\"“‘'\s]*[a-z,.;:)\]]", text):
-            merged = out[-1][1] + " " + text
+            j = len(out) - 1
+            if work.page_notes:  # pula a nota de rodapé só de referência, que fica no lugar dela
+                j = next((k for k in range(len(out) - 1, -1, -1) if is_prose(out[k][1])), j)
+            merged = out[j][1] + " " + text
             if work.origin == "archive":  # hífen que caiu entre duas partes (página em branco no meio)
                 merged = re.sub(r"(?<=[a-z])- (?=[a-z])", "", merged)
-            out[-1] = (out[-1][0], merged)
+            out[j] = (out[j][0], merged)
             return
         out.append((chapter, text))
 
@@ -380,8 +509,11 @@ def paragraphs(body: str, work: Work):
         if work.chapter:
             m = re.match(work.chapter, text)
             if m and out[-1][0] == chapter:
-                token = ROMAN_OCR.get(m.group(1), m.group(1))
-                chapter = "I" if token == "l" else token.upper() if ROMAN.match(token.upper()) else token
+                if work.chapter_seq:
+                    chapter = next_chapter(chapter, m.group(1))
+                else:
+                    token = ROMAN_OCR.get(m.group(1), m.group(1))
+                    chapter = "I" if token == "l" else token.upper() if ROMAN.match(token.upper()) else token
                 out.pop()
     return out
 
@@ -626,12 +758,22 @@ def build_work(work: Work):
     last_prose = None
     section = None
     edits, drops = load_corrections(work.source_id)
+    cur_chapter = None
     for chapter, marks, para, epi in prepared(work, body, alt, stats):
         stats["parágrafos"] += 1
+        if chapter != cur_chapter:  # título de seção não passa de um capítulo para o outro
+            cur_chapter = chapter
+            section = None
         if epi is not None:
-            section = epi
+            section = (epi, epi)
             stats["seções (epígrafe igual ao texto de Mt 5–7 na KJV)"] += 1
             if not para:
+                continue
+        if work.section_book is not None and len(para) <= 160:
+            sec = SECTION_HEAD.search(para)
+            if sec:  # título "(Chapter 11:3-13)": o que vem depois liga-se a esses versículos de Daniel
+                section = section_span(work.section_book, sec)
+                stats["títulos de seção com versículos (\"(Chapter c:v)\")"] += 1
                 continue
         key = para_key(para)
         if key in drops:
@@ -641,7 +783,11 @@ def build_work(work: Work):
         if key in edits:
             para = apply_edits(para, edits[key])
             stats["correções de OCR aplicadas (corrections/)"] += len(edits[key])
+        notes_refs: list = []
+        if work.page_notes:
+            para, notes_refs = strip_notes(para)
         refs = list(find_refs(para))
+        refs += [r for r in notes_refs if r not in refs]
         for n in marks:
             refs += [r for r in fn_refs.get(n, []) if r not in refs]
         if not refs and not is_prose(para):
@@ -655,7 +801,8 @@ def build_work(work: Work):
                 stats["descartadas: nota ambígua ou com OCR ruim, sem parágrafo anterior"] += len(refs)
             continue
         ocr = (work.origin == "archive" and (has_ocr_junk(para) or bool(OCR_TT.search(para)))) or (
-            work.strict_ocr and bool(STRICT_OCR.search(para)))
+            work.strict_ocr and bool(STRICT_OCR.search(para))) or (
+            work.ocr_junk is not None and bool(re.search(work.ocr_junk, para)))
         if work.origin == "archive":
             para = fix_ocr_quotes(para)
         # "— Page N" que sobrou dentro do parágrafo: legenda cortada pelo scan, com texto misturado.
@@ -672,9 +819,10 @@ def build_work(work: Work):
         text = f"{head}\n\n{it['para']}"
         refs = it["refs"]
         if it["section"] is not None:
-            # Parágrafo da seção: ligado ao versículo da epígrafe (além das referências do próprio texto).
-            rows.append((it["section"], it["section"], text))
-            stats["parágrafos ligados à seção (versículo da epígrafe)"] += 1
+            # Parágrafo da seção: ligado ao versículo da epígrafe ou ao título "(Chapter c:v)" (além das
+            # referências do próprio texto).
+            rows.append((it["section"][0], it["section"][1], text))
+            stats["parágrafos ligados à seção (versículo da epígrafe ou título de seção)"] += 1
         if not refs:
             continue
         if it["ambiguous"]:
@@ -712,10 +860,10 @@ def ingest(work: Work) -> None:
             ),
             tradition="adventist",
             notes=(
-                "Obra não é comentário versículo a versículo: só parágrafos que citam versículos "
-                "explicitamente geram linhas (uma por referência inequívoca). O cabeçalho do verbete "
-                "traz autor, obra e capítulo. Referências ambíguas (Phil. sem capítulo:versículo) "
-                "descartadas. Texto em inglês."
+                "Só parágrafos que citam versículos explicitamente geram linhas (uma por referência "
+                "inequívoca). Onde a obra tem títulos de seção com versículos, o parágrafo da seção também "
+                "se liga a esses versículos. O cabeçalho do verbete traz autor, obra e capítulo. Referências "
+                "ambíguas (Phil. sem capítulo:versículo) descartadas. Texto em inglês."
             ),
         )
         seen: Counter = Counter()
