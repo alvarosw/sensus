@@ -3,6 +3,15 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const jaStudy = {
+  threadLens: {
+    literario: '私たちの位置',
+    lingua: 'この箇所を動かす言葉',
+    texto: '写本は食い違う',
+    intertexto: '他の箇所にこだまする言葉',
+    historico: '人物・場所・背景',
+    interpretacao: '教会はどう読んだか',
+    aplicacao: 'そして私たちに',
+  },
   sheet: '選択した箇所の学び',
   expand: '学びを展開',
   collapse: '学びを折りたたむ',

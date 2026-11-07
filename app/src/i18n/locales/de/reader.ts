@@ -1,5 +1,17 @@
 // Alemão de app/src/features/reader/strings.ts. A revisar por falante nativo.
 export const deReader = {
+  bookCategory: {
+    law: 'Gesetz',
+    'history-ot': 'Geschichtsbücher',
+    poetry: 'Poetische Bücher',
+    'major-prophets': 'Große Propheten',
+    'minor-prophets': 'Kleine Propheten',
+    gospels: 'Evangelien',
+    'history-nt': 'Geschichte',
+    pauline: 'Paulusbriefe',
+    general: 'Allgemeine Briefe',
+    prophecy: 'Prophetie',
+  },
   books: 'Bücher',
   currentRef: (name: string) => `${name}. Gehe zu…`,
   jumpPlaceholder: 'Gehe zu… z. B.: Phil 2,5',

@@ -1,6 +1,18 @@
 import { arPlural } from '../../plural';
 // Árabe de app/src/features/reader/strings.ts. A revisar por falante nativo.
 export const arReader = {
+  bookCategory: {
+    law: 'الشريعة',
+    'history-ot': 'الأسفار التاريخية',
+    poetry: 'أسفار الشعر والحكمة',
+    'major-prophets': 'الأنبياء الكبار',
+    'minor-prophets': 'الأنبياء الصغار',
+    gospels: 'الأناجيل',
+    'history-nt': 'أعمال الرسل',
+    pauline: 'رسائل بولس',
+    general: 'الرسائل الجامعة',
+    prophecy: 'النبوءة',
+  },
   books: 'الأسفار',
   currentRef: (name: string) => `${name}. الانتقال إلى…`,
   jumpPlaceholder: 'الانتقال إلى… مثال: فيلبي 2:5',

@@ -3,6 +3,15 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const zhStudy = {
+  threadLens: {
+    literario: '我们在哪里',
+    lingua: '推动这段经文的词',
+    texto: '抄本有分歧',
+    intertexto: '其他经文中的回响',
+    historico: '人物、地点与背景',
+    interpretacao: '教会如何解读',
+    aplicacao: '对我们的意义',
+  },
   sheet: '所选经文的研读',
   expand: '展开研读',
   collapse: '收起研读',

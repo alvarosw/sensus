@@ -1,5 +1,17 @@
 // Indonésio de app/src/features/reader/strings.ts. A revisar por falante nativo.
 export const idReader = {
+  bookCategory: {
+    law: 'Hukum',
+    'history-ot': 'Sejarah',
+    poetry: 'Puisi',
+    'major-prophets': 'Nabi-nabi Besar',
+    'minor-prophets': 'Nabi-nabi Kecil',
+    gospels: 'Injil',
+    'history-nt': 'Kisah Para Rasul',
+    pauline: 'Surat-surat Paulus',
+    general: 'Surat-surat Umum',
+    prophecy: 'Nubuat',
+  },
   books: 'Kitab',
   currentRef: (name: string) => `${name}. Pergi ke…`,
   jumpPlaceholder: 'Pergi ke… contoh: Flp 2:5',

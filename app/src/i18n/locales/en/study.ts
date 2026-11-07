@@ -3,6 +3,15 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const enStudy = {
+  threadLens: {
+    literario: 'Where we are',
+    lingua: 'The word that moves the passage',
+    texto: 'The manuscripts differ',
+    intertexto: 'Echoes in other texts',
+    historico: 'People, places and context',
+    interpretacao: 'How the church read it',
+    aplicacao: 'And for us',
+  },
   sheet: 'Study of the selected passage',
   expand: 'Expand study',
   collapse: 'Reduce study',

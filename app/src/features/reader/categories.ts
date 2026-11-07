@@ -1,25 +1,37 @@
 // Agrupamento dos livros por categoria (intervalos canônicos, inclusivos).
 import type { Book, Testament } from '@sensus/core';
 
+/** Categorias dos livros. O nome de cada uma vem de READER.bookCategory (por idioma). */
+export type BookCategoryId =
+  | 'law'
+  | 'history-ot'
+  | 'poetry'
+  | 'major-prophets'
+  | 'minor-prophets'
+  | 'gospels'
+  | 'history-nt'
+  | 'pauline'
+  | 'general'
+  | 'prophecy';
+
 export interface BookCategory {
-  id: string;
-  title: string;
+  id: BookCategoryId;
   testament: Testament;
   from: number;
   to: number;
 }
 
 export const BOOK_CATEGORIES: readonly BookCategory[] = [
-  { id: 'law', title: 'Lei', testament: 'OT', from: 1, to: 5 },
-  { id: 'history-ot', title: 'Históricos', testament: 'OT', from: 6, to: 17 },
-  { id: 'poetry', title: 'Poéticos', testament: 'OT', from: 18, to: 22 },
-  { id: 'major-prophets', title: 'Profetas maiores', testament: 'OT', from: 23, to: 27 },
-  { id: 'minor-prophets', title: 'Profetas menores', testament: 'OT', from: 28, to: 39 },
-  { id: 'gospels', title: 'Evangelhos', testament: 'NT', from: 40, to: 43 },
-  { id: 'history-nt', title: 'Histórico', testament: 'NT', from: 44, to: 44 },
-  { id: 'pauline', title: 'Cartas paulinas', testament: 'NT', from: 45, to: 57 },
-  { id: 'general', title: 'Cartas gerais', testament: 'NT', from: 58, to: 65 },
-  { id: 'prophecy', title: 'Profecia', testament: 'NT', from: 66, to: 66 },
+  { id: 'law', testament: 'OT', from: 1, to: 5 },
+  { id: 'history-ot', testament: 'OT', from: 6, to: 17 },
+  { id: 'poetry', testament: 'OT', from: 18, to: 22 },
+  { id: 'major-prophets', testament: 'OT', from: 23, to: 27 },
+  { id: 'minor-prophets', testament: 'OT', from: 28, to: 39 },
+  { id: 'gospels', testament: 'NT', from: 40, to: 43 },
+  { id: 'history-nt', testament: 'NT', from: 44, to: 44 },
+  { id: 'pauline', testament: 'NT', from: 45, to: 57 },
+  { id: 'general', testament: 'NT', from: 58, to: 65 },
+  { id: 'prophecy', testament: 'NT', from: 66, to: 66 },
 ];
 
 export interface CategoryGroup {

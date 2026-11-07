@@ -33,6 +33,19 @@ const ptReader = {
   settings: 'Configurações',
   close: 'Fechar',
   back: 'Voltar aos livros',
+  // categorias dos livros no seletor (categories.ts)
+  bookCategory: {
+    law: 'Lei',
+    'history-ot': 'Históricos',
+    poetry: 'Poéticos',
+    'major-prophets': 'Profetas maiores',
+    'minor-prophets': 'Profetas menores',
+    gospels: 'Evangelhos',
+    'history-nt': 'Histórico',
+    pauline: 'Cartas paulinas',
+    general: 'Cartas gerais',
+    prophecy: 'Profecia',
+  },
 };
 export const READER = localized<typeof ptReader>({ pt: ptReader, ...readerTables });
 

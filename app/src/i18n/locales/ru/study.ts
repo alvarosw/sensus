@@ -4,6 +4,15 @@ import type { Testament } from '@sensus/core';
 import { ruPlural } from '../../plural';
 
 export const ruStudy = {
+  threadLens: {
+    literario: 'Где мы находимся',
+    lingua: 'Слово, которое движет отрывок',
+    texto: 'Рукописи расходятся',
+    intertexto: 'Отголоски в других текстах',
+    historico: 'Люди, места и контекст',
+    interpretacao: 'Как читала Церковь',
+    aplicacao: 'И для нас',
+  },
   sheet: 'Изучение выбранного фрагмента',
   expand: 'Развернуть изучение',
   collapse: 'Свернуть изучение',

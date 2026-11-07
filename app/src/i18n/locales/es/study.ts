@@ -3,6 +3,15 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const esStudy = {
+  threadLens: {
+    literario: 'Dónde estamos',
+    lingua: 'La palabra que mueve el pasaje',
+    texto: 'Los manuscritos divergen',
+    intertexto: 'Ecos en otros textos',
+    historico: 'Personas, lugares y contexto',
+    interpretacao: 'Cómo la iglesia lo leyó',
+    aplicacao: 'Y para nosotros',
+  },
   sheet: 'Estudio del pasaje seleccionado',
   expand: 'Expandir estudio',
   collapse: 'Reducir estudio',

@@ -3,6 +3,15 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const viStudy = {
+  threadLens: {
+    literario: 'Chúng ta đang ở đâu',
+    lingua: 'Từ khóa thúc đẩy đoạn này',
+    texto: 'Các bản chép tay khác nhau',
+    intertexto: 'Vang vọng trong các bản văn khác',
+    historico: 'Con người, địa danh và bối cảnh',
+    interpretacao: 'Hội thánh đã đọc thế nào',
+    aplicacao: 'Và cho chúng ta',
+  },
   sheet: 'Nghiên cứu phân đoạn đã chọn',
   expand: 'Mở rộng nghiên cứu',
   collapse: 'Thu gọn nghiên cứu',

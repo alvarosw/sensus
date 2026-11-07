@@ -3,6 +3,15 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const urStudy = {
+  threadLens: {
+    literario: 'ہم کہاں ہیں',
+    lingua: 'وہ لفظ جو حصے کو آگے بڑھاتا ہے',
+    texto: 'نسخے مختلف ہیں',
+    intertexto: 'دوسری عبارتوں میں گونج',
+    historico: 'لوگ، مقامات اور پس منظر',
+    interpretacao: 'کلیسیا نے اسے کیسے پڑھا',
+    aplicacao: 'اور ہمارے لیے',
+  },
   sheet: 'منتخب حصے کا مطالعہ',
   expand: 'مطالعہ بڑا کریں',
   collapse: 'مطالعہ چھوٹا کریں',

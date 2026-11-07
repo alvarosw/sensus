@@ -160,7 +160,7 @@ export function BookPicker({
               />
               {groups.map((g) => (
                 <View key={g.category.id} style={{ gap: 8 }}>
-                  <SubHeader label={g.category.title} />
+                  <SubHeader label={READER.bookCategory[g.category.id]} />
                   <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
                     {g.books.map((b) => {
                       const current = b.num === currentBook;

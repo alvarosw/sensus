@@ -1,5 +1,17 @@
 // Urdu de app/src/features/reader/strings.ts. A revisar por falante nativo.
 export const urReader = {
+  bookCategory: {
+    law: 'شریعت',
+    'history-ot': 'تاریخی کتابیں',
+    poetry: 'شاعرانہ کتابیں',
+    'major-prophets': 'بڑے نبی',
+    'minor-prophets': 'چھوٹے نبی',
+    gospels: 'انجیل',
+    'history-nt': 'اعمال',
+    pauline: 'پولس کے خطوط',
+    general: 'عمومی خطوط',
+    prophecy: 'نبوت',
+  },
   books: 'کتابیں',
   currentRef: (name: string) => `${name}۔ جائیں…`,
   jumpPlaceholder: 'جائیں… مثلاً phil 2:5',

@@ -1,6 +1,18 @@
 import { ruPlural } from '../../plural';
 // Russo de app/src/features/reader/strings.ts. A revisar por falante nativo.
 export const ruReader = {
+  bookCategory: {
+    law: 'Закон',
+    'history-ot': 'Исторические',
+    poetry: 'Поэтические',
+    'major-prophets': 'Большие пророки',
+    'minor-prophets': 'Малые пророки',
+    gospels: 'Евангелия',
+    'history-nt': 'Деяния',
+    pauline: 'Послания Павла',
+    general: 'Соборные послания',
+    prophecy: 'Пророчество',
+  },
   books: 'Книги',
   currentRef: (name: string) => `${name}. Перейти к…`,
   jumpPlaceholder: 'Перейти к… например: Флп 2:5',
