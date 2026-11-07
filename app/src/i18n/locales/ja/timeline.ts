@@ -34,7 +34,7 @@ export const jaTl = {
   noLinesFor: (q: string) => `「${q}」に一致する年表はありません。`,
   noEvents: 'この検索と絞り込みに一致する出来事はありません。',
   noLines: 'この絞り込みに一致する年表はありません。',
-  footer: '出典: Theographic（CC BY-SA 4.0）。日付は出典の年代に従います。タイトルや名称の日本語訳は Sensus プロジェクトによる翻案です。',
+  footer: '出典: Theographic（CC BY-SA 4.0）。日付は出典の年代に従います。',
 
   lineTitleOf: (count: number) => `${count} 件の出来事`,
   inSource: (name: string) => `出典: ${name}`,

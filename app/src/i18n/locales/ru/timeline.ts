@@ -43,7 +43,7 @@ export const ruTl = {
   noLinesFor: (q: string) => `Нет линий по запросу «${q}».`,
   noEvents: 'Нет событий по этому поиску и фильтрам.',
   noLines: 'Нет линий времени по этим фильтрам.',
-  footer: 'Источник: Theographic (CC BY-SA 4.0). Даты следуют хронологии источника; названия и имена на русском языке — адаптация проекта Sensus.',
+  footer: 'Источник: Theographic (CC BY-SA 4.0). Даты следуют хронологии источника.',
 
   lineTitleOf: (count: number) => `${count} ${ruPlural(count, 'событие', 'события', 'событий')}`,
   inSource: (name: string) => `в источнике: ${name}`,

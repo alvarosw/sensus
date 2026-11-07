@@ -34,7 +34,7 @@ export const zhTl = {
   noLinesFor: (q: string) => `没有与“${q}”相关的时间线。`,
   noEvents: '没有符合此搜索和筛选条件的事件。',
   noLines: '没有符合这些筛选条件的时间线。',
-  footer: '来源：Theographic（CC BY-SA 4.0）。日期依据来源的年代体系；标题和中文名称为 Sensus 项目的改编。',
+  footer: '来源：Theographic（CC BY-SA 4.0）。日期依据来源的年代体系。',
 
   lineTitleOf: (count: number) => `${count} 个事件`,
   inSource: (name: string) => `来源：${name}`,
