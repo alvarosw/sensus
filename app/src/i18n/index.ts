@@ -2,7 +2,7 @@
 // seu strings.ts (ver localized.ts). O pt daqui é a fonte do tipo de StringKey; o inglês fica em locales/en/shell.ts.
 import { currentLang } from './lang-store';
 import { resolveKey, type LocaleTables } from './localized';
-import { enShell } from './locales/en/shell';
+import { shellTables } from './locales/all';
 
 export { currentBcp47, currentLang, useLang, useLangStore } from './lang-store';
 export { localized, resolveKey, type LocaleTables } from './localized';
@@ -178,9 +178,7 @@ const pt = {
 
 export type StringKey = keyof typeof pt;
 
-const en: Record<StringKey, string> = enShell;
-
-const SHELL: LocaleTables<Record<StringKey, string>> = { pt, en };
+const SHELL: LocaleTables<Record<StringKey, string>> = { pt, ...shellTables };
 
 /** Traduz uma chave no idioma atual (fallback: inglês, português), substituindo {variaveis}. */
 export function t(key: StringKey, vars?: Record<string, string | number>): string {

@@ -1,5 +1,5 @@
 import { localized } from '../../i18n';
-import { enTl, enTlEraShort } from '../../i18n/locales/en/timeline';
+import { tlTables, tlEraShortTables } from '../../i18n/locales/all';
 // Textos da linha do tempo (pt-BR). Títulos de eventos e nomes de linhas vêm da fonte, em inglês (pendência no BACKLOG).
 
 const ptTl = {
@@ -119,7 +119,7 @@ const ptTl = {
   returnPill: 'Voltar à linha do tempo',
   dismissReturn: 'Dispensar',
 };
-export const TL = localized<typeof ptTl>({ pt: ptTl, en: enTl });
+export const TL = localized<typeof ptTl>({ pt: ptTl, ...tlTables });
 
 const ptTlEraShort: Record<string, string> = {
   primordios: 'Criação',
@@ -133,4 +133,4 @@ const ptTlEraShort: Record<string, string> = {
   'vida-de-jesus': 'Jesus',
   igreja: 'Igreja',
 };
-export const TL_ERA_SHORT = localized<typeof ptTlEraShort>({ pt: ptTlEraShort, en: enTlEraShort });
+export const TL_ERA_SHORT = localized<typeof ptTlEraShort>({ pt: ptTlEraShort, ...tlEraShortTables });

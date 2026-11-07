@@ -1,5 +1,5 @@
 import { localized } from '../../i18n';
-import { enStudy } from '../../i18n/locales/en/study';
+import { studyTables } from '../../i18n/locales/all';
 // Textos da folha de estudo (pt-BR). Mantidos aqui para não colidir com a tabela global em i18n.
 import { testamentLabel, type Testament } from '@sensus/core';
 
@@ -126,4 +126,4 @@ const ptStudy = {
   // Aplicação
   applicationHint: 'A aplicação vem só da IA e é sempre marcada como inferência.',
 };
-export const STUDY = localized<typeof ptStudy>({ pt: ptStudy, en: enStudy });
+export const STUDY = localized<typeof ptStudy>({ pt: ptStudy, ...studyTables });

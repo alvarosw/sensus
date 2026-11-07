@@ -1,5 +1,5 @@
 import { localized } from '../i18n';
-import { enSettings } from '../i18n/locales/en/settings';
+import { settingsTables } from '../i18n/locales/all';
 // Textos das telas de Configurações (pt-BR). Mesmas frases da proposta aprovada (docs/design/settings-proposal.html).
 const ptSettingsCopy = {
   title: 'Configurações',
@@ -132,4 +132,4 @@ const ptSettingsCopy = {
   noSources: 'Nenhuma fonte encontrada no banco.',
   sourceCount: (n: number) => `${n} ${n === 1 ? 'fonte' : 'fontes'}`,
 };
-export const SETTINGS_COPY = localized<typeof ptSettingsCopy>({ pt: ptSettingsCopy, en: enSettings });
+export const SETTINGS_COPY = localized<typeof ptSettingsCopy>({ pt: ptSettingsCopy, ...settingsTables });

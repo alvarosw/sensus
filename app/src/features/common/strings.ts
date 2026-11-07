@@ -1,5 +1,5 @@
 import { localized } from '../../i18n';
-import { enChat, enSrc, enToast, enSettingsCommon } from '../../i18n/locales/en/common';
+import { chatTables, srcTables, toastTables, settingsCommonTables } from '../../i18n/locales/all';
 // Textos (pt-BR) do chat, das prévias/painéis de fonte, do aviso e das configurações.
 // Ficam aqui porque i18n/index.ts é compartilhado com outras telas.
 import { testamentLabel, type Testament } from '@sensus/core';
@@ -33,7 +33,7 @@ const ptChat = {
   fallbackQuestions: ['Qual é a ideia central deste trecho?', 'O que as fontes dizem sobre este trecho?'],
   close: 'Fechar',
 };
-export const CHAT = localized<typeof ptChat>({ pt: ptChat, en: enChat });
+export const CHAT = localized<typeof ptChat>({ pt: ptChat, ...chatTables });
 
 const ptSrc = {
   open: 'Abrir fonte completa',
@@ -107,12 +107,12 @@ const ptSrc = {
   },
   entityTypes: { person: 'Pessoa', place: 'Lugar', event: 'Evento', group: 'Grupo', other: 'Entidade' },
 };
-export const SRC = localized<typeof ptSrc>({ pt: ptSrc, en: enSrc });
+export const SRC = localized<typeof ptSrc>({ pt: ptSrc, ...srcTables });
 
 const ptToast = {
   action: 'Desfazer',
 };
-export const TOAST = localized<typeof ptToast>({ pt: ptToast, en: enToast });
+export const TOAST = localized<typeof ptToast>({ pt: ptToast, ...toastTables });
 
 const ptSettings = {
   appearance: 'Aparência',
@@ -122,4 +122,4 @@ const ptSettings = {
   system: 'Sistema',
   demoHint: 'Demonstração offline: respostas gravadas, sem chave nem rede.',
 };
-export const SETTINGS = localized<typeof ptSettings>({ pt: ptSettings, en: enSettingsCommon });
+export const SETTINGS = localized<typeof ptSettings>({ pt: ptSettings, ...settingsCommonTables });

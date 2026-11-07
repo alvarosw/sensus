@@ -1,0 +1,81 @@
+// RASCUNHO (ur): ainda é a cópia do inglês; traduzir. Origem: inglês de app/src/data/strings.ts (dados de estudo: download, situação e remoção).
+export const urData = {
+  title: 'Study data',
+  rowTitle: 'Study data',
+
+  setupLead:
+    'The Bible text is already in the app and works without a download. The study data brings what supports the analysis of each passage:',
+  includes: [
+    'Commentaries from classic and modern authors',
+    'Bible dictionaries and topical index',
+    'Lexicon and morphology of Greek and Hebrew',
+    'Cross-references, people, places and maps',
+    'Textual variants of the New Testament',
+  ],
+  sizeLine: (download: string, installed: string) =>
+    `${download} to download · takes about ${installed} · Wi‑Fi recommended`,
+  sizeUnknown: 'Size shown when connected',
+  download: 'Download now',
+  later: 'Later',
+  cancel: 'Cancel',
+  resume: 'Continue',
+  discard: 'Discard download',
+  retry: 'Try again',
+  close: 'Close',
+  continue: 'Continue',
+  done: 'Done. The study data is installed.',
+
+  progress: (pct: number) => `Downloading… ${pct}%`,
+  progressOf: (done: string, total: string) => `${done} of ${total}`,
+  phases: {
+    checking: 'Checking the data…',
+    verifying: 'Checking the file…',
+    extracting: 'Unpacking…',
+    installing: 'Installing…',
+  },
+  paused: {
+    user: 'Download paused. The bytes already downloaded are kept.',
+    network: 'The connection dropped. The bytes already downloaded are kept; tap Continue when you like.',
+    interrupted: 'The download was interrupted when the app closed. The bytes already downloaded are kept.',
+  },
+  errors: {
+    manifest: 'Could not check the data. Check the connection and try again.',
+    network: 'The connection dropped during the download. Try again.',
+    space: (need: string) => `Not enough space on the device. About ${need} free is needed.`,
+    'app-too-old': 'This version of the app does not support this data. Update Sensus.',
+    schema: 'This version of the app does not support this data. Update Sensus.',
+    checksum: 'The downloaded file failed the check. Try again.',
+    corrupt: 'The downloaded file is incomplete. Try again.',
+    install: 'Could not install the data. The text is still available. Try again.',
+    unsupported: 'The study data is downloaded in the installed app.',
+  },
+
+  studyTitle: 'Download the study data',
+  studyBody: (size: string) =>
+    `Commentaries, dictionaries, lexicon and references for this passage become available after the download (${size}). The text stays here.`,
+  studyNotNow: 'Not now',
+
+  statusLabel: 'Status',
+  statusFull: 'Complete',
+  statusReader: 'Not installed',
+  version: 'Data version',
+  updatedAt: 'Updated on',
+  installedSize: 'Taking up on the device',
+  check: 'Check for update',
+  checking: 'Checking…',
+  upToDate: 'You already have the latest version.',
+  updateAvailable: (version: string, size: string) => `New version ${version} (${size} to download).`,
+  unknownVersion: 'The installed version was not identified. Downloading again updates the data.',
+  checkFailed: 'Could not check right now. Check the connection.',
+  redownload: 'Download again',
+  update: 'Update',
+  remove: 'Remove study data',
+  removeTitle: 'Remove study data?',
+  removeBody:
+    'The text stays available. Commentaries, dictionaries and lexicon stop appearing until you download again.',
+  removeConfirm: 'Remove',
+  settingsNote: 'After the download the data stays on the device and does not use the network.',
+  rowDownloading: (pct: number) => `Downloading… ${pct}%`,
+  rowNotInstalled: (size: string) => `Not installed · ${size} to download`,
+  rowInstalled: (version: string | null) => (version ? `Complete · version ${version}` : 'Complete'),
+};

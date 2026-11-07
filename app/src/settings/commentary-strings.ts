@@ -1,5 +1,5 @@
 import { localized } from '../i18n';
-import { enCommentary } from '../i18n/locales/en/commentary';
+import { commentaryTables } from '../i18n/locales/all';
 // Textos pt-BR da preferência de comentários: linha de Configurações, tela de tradições e aviso na folha de estudo.
 const ptCommentary = {
   rowTitle: 'Interpretação e comentários',
@@ -18,4 +18,4 @@ const ptCommentary = {
   manyTraditions: (a: string, b: string, more: number) => `${a.charAt(0).toUpperCase()}${a.slice(1)}, ${b} e mais ${more}`,
   hiddenSources: (n: number) => (n === 1 ? '1 fonte oculta' : `${n} fontes ocultas`),
 };
-export const COMMENTARY_STRINGS = localized<typeof ptCommentary>({ pt: ptCommentary, en: enCommentary });
+export const COMMENTARY_STRINGS = localized<typeof ptCommentary>({ pt: ptCommentary, ...commentaryTables });

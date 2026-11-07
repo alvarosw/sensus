@@ -1,5 +1,5 @@
 import { localized } from '../i18n';
-import { enData } from '../i18n/locales/en/data';
+import { dataTables } from '../i18n/locales/all';
 // Textos da área de dados de estudo (pt-BR). Mesmo tom das demais telas: frases curtas, sem jargão.
 const ptDataCopy = {
   title: 'Dados de estudo',
@@ -79,4 +79,4 @@ const ptDataCopy = {
   rowNotInstalled: (size: string) => `Não instalados · ${size} para baixar`,
   rowInstalled: (version: string | null) => (version ? `Completos · versão ${version}` : 'Completos'),
 };
-export const DATA_COPY = localized<typeof ptDataCopy>({ pt: ptDataCopy, en: enData });
+export const DATA_COPY = localized<typeof ptDataCopy>({ pt: ptDataCopy, ...dataTables });

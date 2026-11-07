@@ -1,7 +1,7 @@
 // Textos das Bíblias baixadas (pt-BR): Configurações > Bíblias, Aparência e o seletor do leitor.
 import type { DataError } from '../download-machine';
 import { localized } from '../../i18n';
-import { enBibles } from '../../i18n/locales/en/bibles';
+import { biblesTables } from '../../i18n/locales/all';
 
 const ptBibles = {
   title: 'Bíblias',
@@ -59,4 +59,4 @@ const ptBibles = {
   textHelp: 'Também muda no leitor, pelo botão da Bíblia na barra superior. Só aparecem as Bíblias instaladas.',
   textMore: 'Para baixar mais, abra Configurações > Bíblias.',
 };
-export const BIBLE_COPY = localized<typeof ptBibles>({ pt: ptBibles, en: enBibles });
+export const BIBLE_COPY = localized<typeof ptBibles>({ pt: ptBibles, ...biblesTables });

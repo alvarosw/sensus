@@ -1,5 +1,5 @@
 import { localized } from '../../i18n';
-import { enMaps } from '../../i18n/locales/en/maps';
+import { mapsTables } from '../../i18n/locales/all';
 // Textos dos mapas (pt-BR). Nomes de lugares vêm do banco, em inglês, e não passam por aqui.
 import type { ConfidenceBand } from '@sensus/core';
 import { ATTRIBUTION } from './styles/sensus-map-style';
@@ -33,7 +33,14 @@ const ptMaps = {
   place: 'Lugar',
   placeHint: 'Toque em um marcador para ver o lugar, a identificação e as passagens.',
 };
-export const MAPS = localized<typeof ptMaps>({ pt: ptMaps, en: { ...enMaps, attribution: ptMaps.attribution } });
+// A atribuição do mapa é texto de licença: igual em todos os idiomas.
+const withAttribution = (t: (typeof mapsTables)[keyof typeof mapsTables]) => ({ ...t, attribution: ptMaps.attribution });
+export const MAPS = localized<typeof ptMaps>({
+  pt: ptMaps,
+  ...(Object.fromEntries(Object.entries(mapsTables).map(([l, t]) => [l, withAttribution(t)])) as {
+    [L in keyof typeof mapsTables]: typeof ptMaps;
+  }),
+});
 
 /** Atribuições dos mapas exibidas em "Sobre e licenças" (ver DATA_LICENSES.md, seção de mapas). */
 export const MAP_ATTRIBUTIONS: readonly string[] = [
