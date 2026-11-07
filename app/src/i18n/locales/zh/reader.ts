@@ -1,5 +1,17 @@
 // Chinês simplificado de app/src/features/reader/strings.ts. A revisar por falante nativo.
 export const zhReader = {
+  bookCategory: {
+    law: '律法书',
+    'history-ot': '历史书',
+    poetry: '诗歌智慧书',
+    'major-prophets': '大先知书',
+    'minor-prophets': '小先知书',
+    gospels: '福音书',
+    'history-nt': '使徒行传',
+    pauline: '保罗书信',
+    general: '普通书信',
+    prophecy: '预言书',
+  },
   books: '书卷',
   currentRef: (name: string) => `${name}。前往…`,
   jumpPlaceholder: '前往… 例如：腓 2:5',

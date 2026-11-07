@@ -14,6 +14,8 @@ export interface BibleRowProps {
   installed: boolean;
   /** Instalada, mas o catálogo tem versão mais nova: oferece baixar de novo (troca atômica, ver install.ts). */
   update?: boolean;
+  /** Versão nova do catálogo, para a frase "Versão X disponível" (só com update). */
+  updateVersion?: string;
   badge: boolean;
   first: boolean;
   machine: MachineState;
@@ -22,7 +24,7 @@ export interface BibleRowProps {
   onRemove: () => void;
 }
 
-export function BibleRow({ info, installed, update = false, badge, first, machine, onInstall, onCancel, onRemove }: BibleRowProps) {
+export function BibleRow({ info, installed, update = false, updateVersion, badge, first, machine, onInstall, onCancel, onRemove }: BibleRowProps) {
   const { c } = useTheme();
   const meta = [langName(info.lang), info.license ? BIBLE_COPY.license(info.license) : null, info.sizeBytes ? BIBLE_COPY.size(formatMB(info.sizeBytes)) : null]
     .filter((x): x is string => !!x)
@@ -43,6 +45,7 @@ export function BibleRow({ info, installed, update = false, badge, first, machin
         info={info}
         installed={installed}
         update={update}
+        updateVersion={updateVersion}
         machine={machine}
         onInstall={onInstall}
         onCancel={onCancel}
@@ -52,7 +55,7 @@ export function BibleRow({ info, installed, update = false, badge, first, machin
   );
 }
 
-function Actions({ info, installed, update, machine, onInstall, onCancel, onRemove }: Omit<BibleRowProps, 'first' | 'badge' | 'machine'> & { machine: MachineState }) {
+function Actions({ info, installed, update, updateVersion, machine, onInstall, onCancel, onRemove }: Omit<BibleRowProps, 'first' | 'badge' | 'machine'> & { machine: MachineState }) {
   const { c } = useTheme();
   const id = info.id;
   const { phase } = machine;
@@ -64,12 +67,13 @@ function Actions({ info, installed, update, machine, onInstall, onCancel, onRemo
     </View>
   );
   if (installed && !update) return installedLine;
-  // Instalada com versão nova: a linha mostra a instalação e o botão de baixar; o progresso segue abaixo.
+  // Instalada com versão nova: a linha mostra a instalação e o botão de atualizar; o progresso segue abaixo.
   if (installed && update && (phase === 'idle' || phase === 'done')) {
     return (
       <View style={{ gap: 8 }}>
         {installedLine}
-        <FormButton testID={`bible-update-${id}`} label={BIBLE_COPY.install} onPress={onInstall} />
+        {updateVersion ? <Txt v="meta" color="muted">{BIBLE_COPY.updateAvailable(updateVersion)}</Txt> : null}
+        <FormButton testID={`bible-update-${id}`} label={BIBLE_COPY.update} onPress={onInstall} />
       </View>
     );
   }

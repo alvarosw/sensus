@@ -1,5 +1,17 @@
 // Bengali de app/src/features/reader/strings.ts. A revisar por falante nativo.
 export const bnReader = {
+  bookCategory: {
+    law: 'ব্যবস্থা',
+    'history-ot': 'ঐতিহাসিক গ্রন্থ',
+    poetry: 'কাব্যগ্রন্থ',
+    'major-prophets': 'বড় ভাববাদী গ্রন্থ',
+    'minor-prophets': 'ছোট ভাববাদী গ্রন্থ',
+    gospels: 'সুসমাচার',
+    'history-nt': 'প্রেরিতদের কার্যবিবরণ',
+    pauline: 'পৌলের পত্র',
+    general: 'সাধারণ পত্র',
+    prophecy: 'ভাববাণী',
+  },
   books: 'বই',
   currentRef: (name: string) => `${name}। যান…`,
   jumpPlaceholder: 'যান… যেমন ফিলি 2:5',

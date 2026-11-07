@@ -3,6 +3,15 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const enStudy = {
+  threadLens: {
+    literario: 'Where we are',
+    lingua: 'The word that moves the passage',
+    texto: 'The manuscripts differ',
+    intertexto: 'Echoes in other texts',
+    historico: 'People, places and context',
+    interpretacao: 'How the church read it',
+    aplicacao: 'And for us',
+  },
   sheet: 'Study of the selected passage',
   expand: 'Expand study',
   collapse: 'Reduce study',
@@ -57,8 +66,6 @@ export const enStudy = {
 
   // Texto
   translations: 'Translations and original',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'Original',
   originalHint: (nt: string, at: string) =>
     `Original: ${nt} for the NT, ${at} for the OT. Tap a word to see its morphology.`,

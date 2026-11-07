@@ -1,5 +1,17 @@
 // Hindi de app/src/features/reader/strings.ts. A revisar por falante nativo.
 export const hiReader = {
+  bookCategory: {
+    law: 'व्यवस्था',
+    'history-ot': 'ऐतिहासिक पुस्तकें',
+    poetry: 'काव्य-ग्रंथ',
+    'major-prophets': 'बड़े भविष्यवक्ता',
+    'minor-prophets': 'छोटे भविष्यवक्ता',
+    gospels: 'सुसमाचार',
+    'history-nt': 'प्रेरितों के काम',
+    pauline: 'पौलुस के पत्र',
+    general: 'सामान्य पत्र',
+    prophecy: 'भविष्यवाणी',
+  },
   books: 'पुस्तकें',
   currentRef: (name: string) => `${name}. यहाँ जाएँ…`,
   jumpPlaceholder: 'यहाँ जाएँ… उदा. फिलि 2:5',

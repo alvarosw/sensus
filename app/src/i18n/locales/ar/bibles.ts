@@ -17,6 +17,8 @@ export const arBibles = {
   refresh: 'تحديث القائمة',
 
   install: 'تنزيل',
+  update: 'تحديث',
+  updateAvailable: (v: string) => `الإصدار ${v} متاح`,
   installed: 'مثبتة',
   cancel: 'إلغاء',
   resume: 'متابعة',

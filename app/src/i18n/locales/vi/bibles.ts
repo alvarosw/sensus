@@ -16,6 +16,8 @@ export const viBibles = {
   refresh: 'Làm mới danh sách',
 
   install: 'Tải về',
+  update: 'Cập nhật',
+  updateAvailable: (v: string) => `Có phiên bản ${v}`,
   installed: 'Đã cài',
   cancel: 'Hủy',
   resume: 'Tiếp tục',

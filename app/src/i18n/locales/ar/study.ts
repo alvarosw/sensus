@@ -3,6 +3,15 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 import { arPlural } from '../../plural';
 export const arStudy = {
+  threadLens: {
+    literario: 'أين نحن',
+    lingua: 'الكلمة التي تحرك المقطع',
+    texto: 'المخطوطات تختلف',
+    intertexto: 'أصداء في نصوص أخرى',
+    historico: 'أشخاص وأماكن وسياق',
+    interpretacao: 'كيف قرأت الكنيسة',
+    aplicacao: 'وماذا عنّا',
+  },
   sheet: 'دراسة المقطع المحدد',
   expand: 'توسيع الدراسة',
   collapse: 'تصغير الدراسة',
@@ -57,8 +66,6 @@ export const arStudy = {
 
   // Texto
   translations: 'الترجمات والأصل',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'الأصل',
   originalHint: (nt: string, at: string) =>
     `الأصل: ${nt} للعهد الجديد، و${at} للعهد القديم. اضغط على كلمة لعرض صرفها.`,

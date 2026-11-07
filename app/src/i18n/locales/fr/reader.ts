@@ -1,5 +1,17 @@
 // Français de app/src/features/reader/strings.ts. A revisar por falante nativo.
 export const frReader = {
+  bookCategory: {
+    law: 'Loi',
+    'history-ot': 'Historiques',
+    poetry: 'Poétiques',
+    'major-prophets': 'Grands prophètes',
+    'minor-prophets': 'Petits prophètes',
+    gospels: 'Évangiles',
+    'history-nt': 'Histoire',
+    pauline: 'Épîtres pauliniennes',
+    general: 'Épîtres générales',
+    prophecy: 'Prophétie',
+  },
   books: 'Livres',
   currentRef: (name: string) => `${name}. Aller à…`,
   jumpPlaceholder: 'Aller à… ex. : Ph 2:5',

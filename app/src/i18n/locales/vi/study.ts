@@ -3,6 +3,15 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const viStudy = {
+  threadLens: {
+    literario: 'Chúng ta đang ở đâu',
+    lingua: 'Từ khóa thúc đẩy đoạn này',
+    texto: 'Các bản chép tay khác nhau',
+    intertexto: 'Vang vọng trong các bản văn khác',
+    historico: 'Con người, địa danh và bối cảnh',
+    interpretacao: 'Hội thánh đã đọc thế nào',
+    aplicacao: 'Và cho chúng ta',
+  },
   sheet: 'Nghiên cứu phân đoạn đã chọn',
   expand: 'Mở rộng nghiên cứu',
   collapse: 'Thu gọn nghiên cứu',
@@ -57,8 +66,6 @@ export const viStudy = {
 
   // Texto
   translations: 'Bản dịch và nguyên văn',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'Nguyên văn',
   originalHint: (nt: string, at: string) =>
     `Nguyên văn: ${nt} cho Tân Ước, ${at} cho Cựu Ước. Chạm vào một từ để xem hình thái học.`,

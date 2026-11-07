@@ -3,6 +3,15 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const idStudy = {
+  threadLens: {
+    literario: 'Di mana kita berada',
+    lingua: 'Kata yang menggerakkan bagian ini',
+    texto: 'Naskah-naskah berbeda',
+    intertexto: 'Gema dalam teks lain',
+    historico: 'Orang, tempat, dan konteks',
+    interpretacao: 'Bagaimana gereja membacanya',
+    aplicacao: 'Dan bagi kita',
+  },
   sheet: 'Studi perikop yang dipilih',
   expand: 'Perluas studi',
   collapse: 'Ciutkan studi',
@@ -57,8 +66,6 @@ export const idStudy = {
 
   // Texto
   translations: 'Terjemahan dan teks asli',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'Asli',
   originalHint: (nt: string, at: string) =>
     `Asli: ${nt} untuk PB, ${at} untuk PL. Ketuk sebuah kata untuk melihat morfologinya.`,

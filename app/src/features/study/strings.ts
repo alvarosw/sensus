@@ -59,8 +59,6 @@ const ptStudy = {
 
   // Texto
   translations: 'Traduções e original',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'Original',
   originalHint: (nt: string, at: string) => `Original: ${nt} para o NT, ${at} para o AT. Toque numa palavra para ver morfologia.`,
   variantsTitle: 'Variantes entre edições',
@@ -136,5 +134,15 @@ const ptStudy = {
   literaryEmpty: 'Sem contexto literário nesta fonte.',
   sheetBackHalf: 'Voltar para a meia altura',
   sheetToggleHeight: 'Alternar altura do estudo',
+  // títulos dos passos do fio (thread.ts)
+  threadLens: {
+    literario: 'Onde estamos',
+    lingua: 'A palavra que move o trecho',
+    texto: 'Os manuscritos divergem',
+    intertexto: 'Ecos em outros textos',
+    historico: 'Pessoas, lugares e contexto',
+    interpretacao: 'Como a igreja leu',
+    aplicacao: 'E para nós',
+  },
 };
 export const STUDY = localized<typeof ptStudy>({ pt: ptStudy, ...studyTables });

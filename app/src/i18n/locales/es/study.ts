@@ -3,6 +3,15 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const esStudy = {
+  threadLens: {
+    literario: 'Dónde estamos',
+    lingua: 'La palabra que mueve el pasaje',
+    texto: 'Los manuscritos divergen',
+    intertexto: 'Ecos en otros textos',
+    historico: 'Personas, lugares y contexto',
+    interpretacao: 'Cómo la iglesia lo leyó',
+    aplicacao: 'Y para nosotros',
+  },
   sheet: 'Estudio del pasaje seleccionado',
   expand: 'Expandir estudio',
   collapse: 'Reducir estudio',
@@ -57,8 +66,6 @@ export const esStudy = {
 
   // Texto
   translations: 'Traducciones y original',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'Original',
   originalHint: (nt: string, at: string) =>
     `Original: ${nt} para el NT, ${at} para el AT. Toca una palabra para ver su morfología.`,

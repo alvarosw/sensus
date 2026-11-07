@@ -1,5 +1,17 @@
 // Inglês de app/src/features/reader/strings.ts (leitor e barra superior).
 export const enReader = {
+  bookCategory: {
+    law: 'Law',
+    'history-ot': 'History',
+    poetry: 'Poetry',
+    'major-prophets': 'Major Prophets',
+    'minor-prophets': 'Minor Prophets',
+    gospels: 'Gospels',
+    'history-nt': 'History',
+    pauline: 'Pauline Letters',
+    general: 'General Letters',
+    prophecy: 'Prophecy',
+  },
   books: 'Books',
   currentRef: (name: string) => `${name}. Go to…`,
   jumpPlaceholder: 'Go to… e.g. phil 2:5',

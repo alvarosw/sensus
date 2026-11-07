@@ -1,5 +1,17 @@
 // Japonês de app/src/features/reader/strings.ts. A revisar por falante nativo.
 export const jaReader = {
+  bookCategory: {
+    law: '律法',
+    'history-ot': '歴史書',
+    poetry: '詩歌書',
+    'major-prophets': '大預言書',
+    'minor-prophets': '小預言書',
+    gospels: '福音書',
+    'history-nt': '使徒の働き',
+    pauline: 'パウロの手紙',
+    general: '公同書簡',
+    prophecy: '預言書',
+  },
   books: '書巻',
   currentRef: (name: string) => `${name}。移動…`,
   jumpPlaceholder: '移動… 例: ピリ 2:5',

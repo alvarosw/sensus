@@ -212,3 +212,17 @@ export const studyTables = { en: enStudy, es: esStudy, fr: frStudy, de: deStudy,
 export const tlTables = { en: enTl, es: esTl, fr: frTl, de: deTl, ru: ruTl, zh: zhTl, ja: jaTl, hi: hiTl, bn: bnTl, ur: urTl, ar: arTl, id: idTl, vi: viTl };
 export const tlEraShortTables = { en: enTlEraShort, es: esTlEraShort, fr: frTlEraShort, de: deTlEraShort, ru: ruTlEraShort, zh: zhTlEraShort, ja: jaTlEraShort, hi: hiTlEraShort, bn: bnTlEraShort, ur: urTlEraShort, ar: arTlEraShort, id: idTlEraShort, vi: viTlEraShort };
 export const trTables = { en: enTr, es: esTr, fr: frTr, de: deTr, ru: ruTr, zh: zhTr, ja: jaTr, hi: hiTr, bn: bnTr, ur: urTr, ar: arTr, id: idTr, vi: viTr };
+import { enMorph } from './en/morph';
+import { esMorph } from './es/morph';
+import { frMorph } from './fr/morph';
+import { deMorph } from './de/morph';
+import { ruMorph } from './ru/morph';
+import { zhMorph } from './zh/morph';
+import { jaMorph } from './ja/morph';
+import { hiMorph } from './hi/morph';
+import { bnMorph } from './bn/morph';
+import { urMorph } from './ur/morph';
+import { arMorph } from './ar/morph';
+import { idMorph } from './id/morph';
+import { viMorph } from './vi/morph';
+export const morphTables = { en: enMorph, es: esMorph, fr: frMorph, de: deMorph, ru: ruMorph, zh: zhMorph, ja: jaMorph, hi: hiMorph, bn: bnMorph, ur: urMorph, ar: arMorph, id: idMorph, vi: viMorph };

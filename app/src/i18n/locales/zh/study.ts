@@ -3,6 +3,15 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const zhStudy = {
+  threadLens: {
+    literario: '我们在哪里',
+    lingua: '推动这段经文的词',
+    texto: '抄本有分歧',
+    intertexto: '其他经文中的回响',
+    historico: '人物、地点与背景',
+    interpretacao: '教会如何解读',
+    aplicacao: '对我们的意义',
+  },
   sheet: '所选经文的研读',
   expand: '展开研读',
   collapse: '收起研读',
@@ -56,8 +65,6 @@ export const zhStudy = {
 
   // Texto
   translations: '译文与原文',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: '原文',
   originalHint: (nt: string, at: string) => `原文：新约为 ${nt}，旧约为 ${at}。点按一个词即可查看词法。`,
   variantsTitle: '版本之间的异文',

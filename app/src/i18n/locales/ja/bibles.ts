@@ -16,6 +16,8 @@ export const jaBibles = {
   refresh: '一覧を更新',
 
   install: 'ダウンロード',
+  update: '更新',
+  updateAvailable: (v: string) => `バージョン ${v} が利用可能です`,
   installed: 'インストール済み',
   cancel: 'キャンセル',
   resume: '再開',

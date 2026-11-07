@@ -1,5 +1,17 @@
 // Vietnamita de app/src/features/reader/strings.ts. A revisar por falante nativo.
 export const viReader = {
+  bookCategory: {
+    law: 'Luật pháp',
+    'history-ot': 'Lịch sử',
+    poetry: 'Thi ca',
+    'major-prophets': 'Đại tiên tri',
+    'minor-prophets': 'Tiểu tiên tri',
+    gospels: 'Phúc âm',
+    'history-nt': 'Công vụ',
+    pauline: 'Thư Phao-lô',
+    general: 'Thư chung',
+    prophecy: 'Tiên tri',
+  },
   books: 'Sách',
   currentRef: (name: string) => `${name}. Đi tới…`,
   jumpPlaceholder: 'Đi tới… ví dụ: Phi-líp 2:5',

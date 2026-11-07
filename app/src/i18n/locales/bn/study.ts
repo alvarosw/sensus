@@ -3,6 +3,15 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const bnStudy = {
+  threadLens: {
+    literario: 'আমরা কোথায় আছি',
+    lingua: 'যে শব্দ অংশটিকে এগিয়ে নেয়',
+    texto: 'পাণ্ডুলিপিগুলো ভিন্ন',
+    intertexto: 'অন্য পাঠে প্রতিধ্বনি',
+    historico: 'মানুষ, স্থান ও প্রেক্ষাপট',
+    interpretacao: 'মণ্ডলী কীভাবে পড়েছে',
+    aplicacao: 'এবং আমাদের জন্য',
+  },
   sheet: 'নির্বাচিত অংশের অধ্যয়ন',
   expand: 'অধ্যয়ন বড় করুন',
   collapse: 'অধ্যয়ন ছোট করুন',
@@ -56,8 +65,6 @@ export const bnStudy = {
 
   // পাঠ
   translations: 'অনুবাদ ও মূল',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'মূল',
   originalHint: (nt: string, at: string) =>
     `মূল: NT-এর জন্য ${nt}, OT-এর জন্য ${at}। রূপতত্ত্ব দেখতে একটি শব্দে ট্যাপ করুন।`,

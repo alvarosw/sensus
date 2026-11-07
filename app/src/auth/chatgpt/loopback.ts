@@ -128,7 +128,7 @@ function listenOn(
           socket.end();
         };
         onRequest(target, respond, () => {
-          respond(httpResponse('404 Not Found', 'text/plain; charset=utf-8', 'Nao encontrado.'));
+          respond(httpResponse('404 Not Found', 'text/plain; charset=utf-8', t('auth.notFound')));
         });
       });
       socket.on('error', () => undefined);

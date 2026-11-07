@@ -1,7 +1,7 @@
 // Montagem do fio: ordem e títulos fixos, omissão sem dados, escolha da evidência de cada passo.
 import { describe, expect, it } from 'vitest';
 import { isProperNameToken, type Block, type Commentary, type PanelData, type Source, type StructuredSummary, type Token, type VerseText, type XRef } from '@sensus/core';
-import { buildThread, THREAD_TITLES, type ThreadAi } from './thread';
+import { buildThread, threadTitle, type ThreadAi } from './thread';
 import { normalizeForm } from './keyword';
 
 const RANGE = { start: 50002005, end: 50002008 };
@@ -138,7 +138,7 @@ describe('buildThread', () => {
       'Como a igreja leu',
       'E para nós',
     ]);
-    expect(steps.map((s) => THREAD_TITLES[s.lens])).toEqual(steps.map((s) => s.title));
+    expect(steps.map((s) => threadTitle(s.lens))).toEqual(steps.map((s) => s.title));
   });
 
   it('sem IA configurada, o passo Aplicação some e os demais continuam com evidência', () => {
