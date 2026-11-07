@@ -1,5 +1,5 @@
-// Primeira abertura: leva o app à apresentação antes de qualquer oferta (a de dados inclusive). Fica fora da pilha, que
-// remonta ao trocar o idioma; por isso a key={lang} na raiz faz este gate rodar de novo, e o passo segue no store.
+// Primeira abertura: leva o app à apresentação antes de qualquer oferta (a de dados inclusive). Roda uma vez, na
+// montagem: durante a apresentação a pilha não remonta ao trocar o idioma (ver _layout.tsx), e o passo segue no store.
 // Enquanto a navegação não acontece, um véu escuro (a cor da abertura) cobre a tela: o leitor não pisca por baixo.
 import { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';

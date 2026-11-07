@@ -17,10 +17,14 @@ import { StepFinale } from './StepFinale';
 import { advance, back, ONBOARDING_DONE, skip, type OnboardingMove, type OnboardingStep } from './onboarding-model';
 import { useOnboarding } from './onboarding-store';
 
-/** Concluir: grava a apresentação como vista e volta ao leitor (fecha as telas abertas por cima dele). */
+/**
+ * Concluir: grava a apresentação como vista. Na primeira vez, isso muda a chave da pilha (_layout.tsx), que remonta no
+ * idioma escolhido e abre no leitor; ao rever pela Configuração, só fecha a apresentação.
+ */
 function finish(): void {
+  const firstRun = !useAppPrefs.getState().onboardingDone;
   useAppPrefs.getState().setOnboardingDone(true);
-  router.dismissTo('/');
+  if (!firstRun) router.dismissTo('/');
 }
 
 export function OnboardingFlow() {

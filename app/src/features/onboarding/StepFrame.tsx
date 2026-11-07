@@ -23,12 +23,12 @@ export function StepFrame({ step, ctx, onBack, onSkip, children }: StepFrameProp
   const canBack = back(step, ctx) !== step;
 
   return (
-    <View style={{ flex: 1, backgroundColor: c.bg, paddingTop: insets.top }}>
-      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 16, minHeight: 52 }}>
+    <View style={{ flex: 1, backgroundColor: c.bg, paddingTop: insets.top, paddingBottom: insets.bottom }}>
+      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 16, minHeight: 68 }}>
         <View style={{ minWidth: 88, alignItems: 'flex-start' }}>
           {canBack ? <LinkButton testID="onb-back" label={SETTINGS_COPY.back} onPress={onBack} /> : null}
         </View>
-        <CandeiaGlow size={28} testID="onb-glow" />
+        <CandeiaGlow size={52} testID="onb-glow" />
         <View style={{ minWidth: 88, alignItems: 'flex-end' }}>
           <LinkButton testID="onb-skip" label={ONBOARDING_COPY.skip} onPress={onSkip} />
         </View>

@@ -52,13 +52,17 @@ function AppStack() {
   const theme = useTheme();
   // Trocar o idioma remonta as telas (os textos leem o idioma na hora); banco e preferências ficam de pé.
   const lang = useLang();
+  // Durante a apresentação, a pilha não remonta ao trocar o idioma: o fluxo se redesenha sozinho (useLang), e uma
+  // navegação do gate no meio da remontagem derrubava o app. Ao concluir, a chave muda e a pilha remonta uma vez.
+  const onboardingDone = useAppPrefs((s) => s.onboardingDone);
+  const stackKey = onboardingDone ? lang : 'apresentacao';
   return (
     <SettingsProvider>
       <DbProvider>
         <StatusBar style={theme.scheme === 'dark' ? 'light' : 'dark'} />
         <DbGate>
           <Stack
-            key={lang}
+            key={stackKey}
             screenOptions={{
               headerStyle: { backgroundColor: theme.surface },
               headerTintColor: theme.accent,
@@ -76,9 +80,8 @@ function AppStack() {
             {/* Primeira vez (ver features/onboarding): sem cabeçalho e sem gesto de voltar que saia do fluxo. */}
             <Stack.Screen name="onboarding" options={{ headerShown: false, gestureEnabled: false }} />
           </Stack>
-          {/* Depois da pilha: a apresentação e a oferta de dados abrem quando a navegação já está montada. A key remonta
-              o gate junto com a pilha ao trocar o idioma, para a apresentação voltar ao passo atual. */}
-          <OnboardingGate key={lang} />
+          {/* Depois da pilha: a apresentação e a oferta de dados abrem quando a navegação já está montada. */}
+          <OnboardingGate />
           <DataSetupGate />
         </DbGate>
         <AttentionModal />
