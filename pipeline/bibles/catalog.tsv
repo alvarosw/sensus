@@ -1,0 +1,16 @@
+id	ebible	abbr	name	lang	rank	license	license_url	attribution	bundled
+engwebp	engwebp	WEB	World English Bible	en	1	Public Domain		"World English Bible (WEB), domínio público (eBible.org). ""World English Bible"" é marca do eBible.org; texto alterado não deve usar o nome."	0
+kjv		KJV	King James Version (SWORD)	en	2	GPL	https://www.crosswire.org/	Texto KJV do módulo SWORD 'KJV' (CrossWire Bible Society); texto de domínio público.	1
+engasv	eng-asv	ASV	American Standard Version (1901)	en	3	Public Domain		American Standard Version (1901), domínio público (eBible.org).	0
+blivre		BLivre	Bíblia Livre	pt	1	CC-BY-3.0-BR	http://creativecommons.org/licenses/by/3.0/br/	Todas as Escrituras em português citadas são da Bíblia Livre (BLIVRE), Copyright © Diego Santos, Mario Sérgio, e Marco Teles, http://sites.google.com/site/biblialivre/ - fevereiro de 2018. Licença Creative Commons Atribuição 3.0 Brasil.	1
+spablm	spablm	BLM	Santa Biblia libre para el mundo	es	1	Public Domain		Santa Biblia libre para el mundo, domínio público (eBible.org).	0
+spavbl	spavbl	VBL	Versión Biblia Libre	es	2	CC-BY-SA-4.0	https://creativecommons.org/licenses/by-sa/4.0/	Versión Biblia Libre, copyright © 2018-2020 Jonathan Gallagher y Shelly Barrios de Avila, licença CC BY-SA 4.0 (eBible.org).	0
+frasbl	frasbl	SBL	Sainte Bible libre pour le monde	fr	1	CC0-1.0	https://creativecommons.org/publicdomain/zero/1.0/	Sainte Bible libre pour le monde, domínio público (CC0 1.0) (eBible.org).	0
+deu1912	deu1912	LB1912	Lutherbibel 1912	de	1	Public Domain		Lutherbibel 1912, domínio público (eBible.org).	0
+deuelo	deuelo	ELO	Elberfelder 1905 (não revisada)	de	2	Public Domain		Elberfelder 1905 (não revisada), domínio público (eBible.org).	0
+arbvd	arb-vd	VD	Van Dyck	ar	1	Public Domain		Van Dyck (Smith-Van Dyke), domínio público (eBible.org).	0
+hin2017	hin2017	IRV-HI	IRV Hindi 2019	hi	1	CC-BY-SA-4.0	https://creativecommons.org/licenses/by-sa/4.0/	Indian Revised Version, hindi (2019), copyright © 2017-2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org).	0
+benobcv	benobcv	OBCV	Open Bengali Contemporary Version	bn	1	CC-BY-SA-4.0	https://creativecommons.org/licenses/by-sa/4.0/	Open Bengali Contemporary Version, Copyright © 2007, 2017, 2019 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org).	0
+urdoucv	urdoucv	OUCV	Urdu Contemporary Version (aberta)	ur	1	CC-BY-SA-4.0	https://creativecommons.org/licenses/by-sa/4.0/	Urdu Contemporary Version (Biblica), copyright © 1999, 2005, 2022, 2024 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org).	0
+urdirv	urd	IRV-UR	IRV Urdu 2019	ur	2	CC-BY-SA-4.0	https://creativecommons.org/licenses/by-sa/4.0/	Indian Revised Version, urdu (2019), copyright © 2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org).	0
+jpnm	jpnm	FB	Freedom Bible (japonês)	ja	1	Public Domain		"Freedom Bible (japonês), sem direitos autorais declarados pelo eBible.org (""この聖書翻訳には著作権が設定されていません"")."	0
