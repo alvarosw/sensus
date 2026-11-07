@@ -1,0 +1,31 @@
+// Chinês simplificado de app/src/features/maps/strings.ts. A revisar por falante nativo. As atribuições (MAP_ATTRIBUTIONS) ficam em pt, como licença.
+import type { ConfidenceBand } from '@sensus/core';
+
+export const zhMaps = {
+  title: '地图',
+  loading: '正在加载地图…',
+  loadError: '无法加载地图。请检查网络连接。',
+  noPlaces: '此段经文中没有带坐标的地点。',
+  scopeSelection: '所选',
+  scopeUnit: '经文段落',
+  scopeBook: '卷',
+  placesCount: (n: number) => `${n} 个地点`,
+  passageTitle: '经文中的地点',
+  openMap: '在地图上查看',
+  fit: '适应视图',
+  legendTitle: '识别可信度',
+  bands: { high: '高', mid: '中', low: '低', none: '未评估' } as Record<ConfidenceBand, string>,
+  bandRange: { high: '≥ 0.8', mid: '0.5–0.8', low: '< 0.5', none: '来源未评估' } as Record<ConfidenceBand, string>,
+  confidence: '可信度',
+  identification: '识别',
+  coords: '坐标',
+  openPlace: '打开地点',
+  passages: '经文',
+  candidates: '其他现代比定',
+  homonyms: '同名的其他地点',
+  sourcesOf: '来源',
+  selectedHint: '点按标记以查看地点。',
+  close: '关闭',
+  place: '地点',
+  placeHint: '点按标记以查看地点、识别结果和相关经文。',
+};

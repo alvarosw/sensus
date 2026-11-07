@@ -8,8 +8,9 @@ import type { ReactNode } from 'react';
 import { router } from 'expo-router';
 import { DbProvider, useDbState } from '@/data/db-context';
 import { useDataStore } from '@/data/data-store';
+import { useBibles } from '@/data/bibles/bibles-store';
 import { shouldPromptFirstRun } from '@/data/plan';
-import { t } from '@/i18n';
+import { t, useLang } from '@/i18n';
 import { SettingsProvider } from '@/settings/settings-context';
 import { AttentionModal } from '@/settings/AttentionModal';
 import { useAppPrefs } from '@/settings/app-prefs';
@@ -48,12 +49,15 @@ function RootProviders() {
 
 function AppStack() {
   const theme = useTheme();
+  // Trocar o idioma remonta as telas (os textos leem o idioma na hora); banco e preferências ficam de pé.
+  const lang = useLang();
   return (
     <SettingsProvider>
       <DbProvider>
         <StatusBar style={theme.scheme === 'dark' ? 'light' : 'dark'} />
         <DbGate>
           <Stack
+            key={lang}
             screenOptions={{
               headerStyle: { backgroundColor: theme.surface },
               headerTintColor: theme.accent,
@@ -91,6 +95,7 @@ function DataSetupGate() {
 
   useEffect(() => {
     useDataStore.getState().load();
+    useBibles.getState().load();
     void useDataStore.getState().refreshManifest();
   }, []);
 
@@ -114,7 +119,8 @@ function DbGate({ children }: { children: ReactNode }) {
     return <LoadingView message={t('db.loading')} />;
   }
   if (state.status === 'error') {
-    return <ErrorView message={t('db.error')} detail={state.message} />;
+    // O texto técnico do erro (mensagem de desenvolvedor) só aparece em desenvolvimento; ao usuário, só a frase traduzida.
+    return <ErrorView message={t('db.error')} detail={__DEV__ ? state.message : undefined} />;
   }
   return <>{children}</>;
 }

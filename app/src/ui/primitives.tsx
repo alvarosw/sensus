@@ -10,6 +10,7 @@ import {
   type ViewStyle,
 } from 'react-native';
 import { useTheme } from './theme';
+import { useUiDirection } from './direction';
 
 export function Card({ children, style }: { children: ReactNode; style?: StyleProp<ViewStyle> }) {
   const theme = useTheme();
@@ -29,10 +30,11 @@ export function Card({ children, style }: { children: ReactNode; style?: StylePr
 export function Heading({ children, level = 2 }: { children: ReactNode; level?: 1 | 2 | 3 }) {
   const theme = useTheme();
   const size = level === 1 ? 22 : level === 2 ? 17 : 14;
+  const dir = useUiDirection({ variant: 'lensTitle' });
   return (
     <Text
       accessibilityRole="header"
-      style={{ color: theme.text, fontSize: size, fontWeight: '700', lineHeight: size * 1.35 }}
+      style={[{ color: theme.text, fontSize: size, fontWeight: '700', lineHeight: size * 1.35 }, dir]}
     >
       {children}
     </Text>
@@ -41,8 +43,9 @@ export function Heading({ children, level = 2 }: { children: ReactNode; level?: 
 
 export function Muted({ children, style }: { children: ReactNode; style?: StyleProp<TextStyle> }) {
   const theme = useTheme();
+  const dir = useUiDirection({ variant: 'bodySm' });
   return (
-    <Text style={[{ color: theme.textMuted, fontSize: 13, lineHeight: 18 }, style]}>{children}</Text>
+    <Text style={[{ color: theme.textMuted, fontSize: 13, lineHeight: 18 }, dir, style]}>{children}</Text>
   );
 }
 

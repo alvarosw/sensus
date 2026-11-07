@@ -9,6 +9,7 @@ import { TIMELINE_ERAS, type NameFields, type TimelineLine, type TimelineLineEve
 import { fontFamilies, useTheme } from '@/design';
 import type { TitledEvent } from '@/translate/timeline-translate';
 import { clampView, tickStep, xOfYear, yearAtX, yearText, zoomView, type Bounds } from './model';
+import { TL } from './strings';
 import { kindColor } from './parts';
 
 /** Uma faixa já pronta para desenhar (ver ParallelView: eventos visíveis e selo). */
@@ -181,11 +182,11 @@ export function ParallelChart(props: ChartProps) {
   };
 
   return (
-    <View style={{ flex: 1 }} onLayout={onLayout} accessibilityLabel={`${lanes.length} linhas`}>
+    <View style={{ flex: 1 }} onLayout={onLayout} accessibilityLabel={TL.linesCount(lanes.length)}>
       {W > 0 && H > 0 && (
         <ScrollView style={{ flex: 1 }} contentContainerStyle={{ height: CH }} showsVerticalScrollIndicator={CH > H}>
           <GestureDetector gesture={gesture}>
-            <View testID="tl-chart" style={{ width: W, height: CH }} accessible accessibilityRole="image" accessibilityLabel={`Linhas do tempo em paralelo, ${yearText(view.lo)} a ${yearText(view.hi)}`}>
+            <View testID="tl-chart" style={{ width: W, height: CH }} accessible accessibilityRole="image" accessibilityLabel={TL.parallelLabel(yearText(view.lo), yearText(view.hi))}>
               <Svg width={W} height={CH}>
                 <Rect x={0} y={0} width={W} height={CH} fill={c.bg} />
                 {/* Eras: fundo alternado; a lacuna fica sem preenchimento. */}

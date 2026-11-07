@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Text, type StyleProp, type TextStyle } from 'react-native';
 import { readingFont, useTheme } from './theme';
+import { useUiDirection } from './direction';
 
 /** Texto de leitura (versículos, verbetes, comentários). */
 export function Body({
@@ -15,6 +16,7 @@ export function Body({
   style?: StyleProp<TextStyle>;
 }) {
   const theme = useTheme();
+  const dir = useUiDirection({ variant: reading ? 'scripture' : 'body' });
   return (
     <Text
       numberOfLines={lines}
@@ -25,6 +27,7 @@ export function Body({
           lineHeight: reading ? 26 : 22,
           fontFamily: reading ? readingFont : undefined,
         },
+        dir,
         style,
       ]}
     >
@@ -36,24 +39,29 @@ export function Body({
 /** Linha pequena de metadados (origem, referência, tradição). */
 export function Meta({ children, style }: { children: ReactNode; style?: StyleProp<TextStyle> }) {
   const theme = useTheme();
+  const dir = useUiDirection({ variant: 'meta' });
   return (
-    <Text style={[{ color: theme.textMuted, fontSize: 12, lineHeight: 16 }, style]}>{children}</Text>
+    <Text style={[{ color: theme.textMuted, fontSize: 12, lineHeight: 16 }, dir, style]}>{children}</Text>
   );
 }
 
 /** Subtítulo dentro de uma seção. */
 export function Label({ children }: { children: ReactNode }) {
   const theme = useTheme();
+  const dir = useUiDirection({ variant: 'eyebrow' });
   return (
     <Text
       accessibilityRole="header"
-      style={{
-        color: theme.accent,
-        fontSize: 12,
-        fontWeight: '700',
-        textTransform: 'uppercase',
-        letterSpacing: 0.6,
-      }}
+      style={[
+        {
+          color: theme.accent,
+          fontSize: 12,
+          fontWeight: '700',
+          textTransform: 'uppercase',
+          letterSpacing: 0.6,
+        },
+        dir,
+      ]}
     >
       {children}
     </Text>

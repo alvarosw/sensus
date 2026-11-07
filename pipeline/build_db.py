@@ -35,6 +35,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from sensus.refs import BOOKS, book_num  # noqa: E402
 from sensus.staging import SCHEMA, STAGING, ROOT  # noqa: E402
+from sensus.registry import SOURCES_TS, missing_sources, staged_sources  # noqa: E402
 
 SCHEMA_PHYSICAL = Path(__file__).resolve().parent / "schema_physical.sql"
 # Versão do esquema (meta.schema_version). Acompanha SUPPORTED_SCHEMA_VERSION em app/src/data/edition.ts:
@@ -83,11 +84,22 @@ def main():
     ap.add_argument("--sources", default="")
     ap.add_argument("--data-version", default=datetime.now(timezone.utc).strftime("%Y.%m.%d"),
                     help="versão dos dados (AAAA.MM.DD por padrão); vai para meta.data_version")
+    ap.add_argument("--allow-missing", action="store_true",
+                    help="monta o banco completo mesmo faltando fontes do registro (só para testes locais)")
     args = ap.parse_args()
 
     books = {book_num(b) for b in args.books.split(",") if b}
     only = {s for s in args.sources.split(",") if s}
     in_books = (lambda v: v // 1_000_000 in books) if books else (lambda v: True)
+
+    # Banco completo sem filtro tem de ter todas as fontes do registro do núcleo (ver sensus/registry.py).
+    if args.edition == "full" and not only and not books and not args.allow_missing:
+        missing = missing_sources(staged_sources(STAGING), SOURCES_TS.read_text(encoding="utf-8"))
+        if missing:
+            sys.exit(
+                f"Faltam {len(missing)} fontes do registro em data/staging: {', '.join(missing)}.\n"
+                "Rode os ingestores dessas fontes (ou use --allow-missing para um banco de teste)."
+            )
 
     out = Path(args.out) if args.out else default_out(args.edition)
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -98,7 +110,9 @@ def main():
     db.executescript(SCHEMA.read_text())
     db.executemany("INSERT INTO book VALUES (?,?,?,?,?,?)", [b[:6] for b in BOOKS])
 
-    dirs = sorted(d for d in STAGING.iterdir() if d.is_dir() and (not only or d.name in only))
+    # Só pastas com source.json são fontes (data/staging/bibles, dos pacotes de Bíblia, fica de fora).
+    dirs = sorted(d for d in STAGING.iterdir()
+                  if d.is_dir() and (d / "source.json").exists() and (not only or d.name in only))
     if args.edition == "reader":
         dirs = [d for d in dirs if d.name in READER_TEXT_SOURCES + READER_PARAGRAPH_SOURCES]
     for d in dirs:

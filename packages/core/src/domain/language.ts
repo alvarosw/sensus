@@ -3,6 +3,7 @@
 import { BOOK_TABLE, splitVid } from '../refs';
 import type { Token, VerseRange, Vid } from '../types';
 import { LAST_VERSE, bookStartVid, packVid } from './vid';
+import { DEFAULT_APP_LANG, fallbackChain, type AppLang } from './locale';
 
 export type Lang = 'grc' | 'hbo' | 'arc';
 export type Corpus = 'gnt' | 'hot';
@@ -177,8 +178,31 @@ export function editionLegend(editions: readonly string[]): string {
     .join(' · ');
 }
 
-export function testamentLabel(testament: Testament): 'AT' | 'NT' {
-  return testament === 'OT' ? 'AT' : 'NT';
+/** Rótulos do testamento por idioma (fora de pt e en, a revisar por falante nativo). Sem linha: inglês (fallbackChain). */
+const TESTAMENT_LABELS: Partial<Record<AppLang, Record<Testament, string>>> = {
+  pt: { OT: 'AT', NT: 'NT' },
+  en: { OT: 'OT', NT: 'NT' },
+  es: { OT: 'AT', NT: 'NT' },
+  fr: { OT: 'AT', NT: 'NT' },
+  de: { OT: 'AT', NT: 'NT' },
+  ru: { OT: 'ВЗ', NT: 'НЗ' },
+  zh: { OT: '旧约', NT: '新约' },
+  ja: { OT: '旧約', NT: '新約' },
+  hi: { OT: 'पुराना नियम', NT: 'नया नियम' },
+  bn: { OT: 'পুরাতন নিয়ম', NT: 'নূতন নিয়ম' },
+  ur: { OT: 'عہد نامہ قدیم', NT: 'عہد نامہ جدید' },
+  ar: { OT: 'العهد القديم', NT: 'العهد الجديد' },
+  id: { OT: 'PL', NT: 'PB' },
+  vi: { OT: 'Cựu Ước', NT: 'Tân Ước' },
+};
+
+/** Rótulo curto do testamento: "AT"/"NT" em pt (padrão), "OT"/"NT" em inglês. */
+export function testamentLabel(testament: Testament, lang: AppLang = DEFAULT_APP_LANG): string {
+  for (const l of fallbackChain(lang)) {
+    const row = TESTAMENT_LABELS[l];
+    if (row) return row[testament];
+  }
+  return testament;
 }
 
 /** Corpus de um cite_id de token ("tok:gnt:50002007:30" -> "gnt"); null para outros ids. */

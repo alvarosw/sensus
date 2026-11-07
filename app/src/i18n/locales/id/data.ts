@@ -1,0 +1,81 @@
+// Indonésio de app/src/data/strings.ts. A revisar por falante nativo.
+export const idData = {
+  title: 'Data studi',
+  rowTitle: 'Data studi',
+
+  setupLead:
+    'Teks Alkitab sudah ada di aplikasi dan berfungsi tanpa unduhan. Data studi berisi bahan yang mendukung analisis setiap perikop:',
+  includes: [
+    'Komentar dari penulis klasik dan modern',
+    'Kamus Alkitab dan indeks topik',
+    'Leksikon dan morfologi bahasa Yunani dan Ibrani',
+    'Referensi silang, tokoh, tempat, dan peta',
+    'Varian tekstual Perjanjian Baru',
+  ],
+  sizeLine: (download: string, installed: string) =>
+    `${download} untuk diunduh · memakan sekitar ${installed} · disarankan Wi‑Fi`,
+  sizeUnknown: 'Ukuran ditampilkan saat terhubung',
+  download: 'Unduh sekarang',
+  later: 'Nanti',
+  cancel: 'Batal',
+  resume: 'Lanjutkan',
+  discard: 'Buang unduhan',
+  retry: 'Coba lagi',
+  close: 'Tutup',
+  continue: 'Lanjutkan',
+  done: 'Selesai. Data studi sudah terpasang.',
+
+  progress: (pct: number) => `Mengunduh… ${pct}%`,
+  progressOf: (done: string, total: string) => `${done} dari ${total}`,
+  phases: {
+    checking: 'Memeriksa data…',
+    verifying: 'Memeriksa berkas…',
+    extracting: 'Mengekstrak…',
+    installing: 'Memasang…',
+  },
+  paused: {
+    user: 'Unduhan dijeda. Data yang sudah diunduh disimpan.',
+    network: 'Koneksi terputus. Data yang sudah diunduh disimpan; ketuk Lanjutkan kapan saja.',
+    interrupted: 'Unduhan terhenti saat aplikasi ditutup. Data yang sudah diunduh disimpan.',
+  },
+  errors: {
+    manifest: 'Data tidak dapat diperiksa. Periksa koneksi lalu coba lagi.',
+    network: 'Koneksi terputus saat mengunduh. Coba lagi.',
+    space: (need: string) => `Ruang penyimpanan perangkat tidak cukup. Diperlukan sekitar ${need} kosong.`,
+    'app-too-old': 'Versi aplikasi ini tidak mendukung data ini. Perbarui Sensus.',
+    schema: 'Versi aplikasi ini tidak mendukung data ini. Perbarui Sensus.',
+    checksum: 'Berkas yang diunduh tidak lolos pemeriksaan. Coba lagi.',
+    corrupt: 'Berkas yang diunduh belum lengkap. Coba lagi.',
+    install: 'Data tidak dapat dipasang. Teks tetap tersedia. Coba lagi.',
+    unsupported: 'Data studi diunduh di aplikasi yang terpasang.',
+  },
+
+  studyTitle: 'Unduh data studi',
+  studyBody: (size: string) =>
+    `Komentar, kamus, leksikon, dan referensi untuk perikop ini tersedia setelah diunduh (${size}). Teks tetap di sini.`,
+  studyNotNow: 'Jangan sekarang',
+
+  statusLabel: 'Status',
+  statusFull: 'Lengkap',
+  statusReader: 'Belum terpasang',
+  version: 'Versi data',
+  updatedAt: 'Diperbarui pada',
+  installedSize: 'Memakan ruang di perangkat',
+  check: 'Periksa pembaruan',
+  checking: 'Memeriksa…',
+  upToDate: 'Anda sudah memiliki versi terbaru.',
+  updateAvailable: (version: string, size: string) => `Versi baru ${version} (${size} untuk diunduh).`,
+  unknownVersion: 'Versi yang terpasang tidak dapat diidentifikasi. Mengunduh ulang akan memperbarui data.',
+  checkFailed: 'Tidak dapat memeriksa sekarang. Periksa koneksi Anda.',
+  redownload: 'Unduh ulang',
+  update: 'Perbarui',
+  remove: 'Hapus data studi',
+  removeTitle: 'Hapus data studi?',
+  removeBody:
+    'Teks tetap tersedia. Komentar, kamus, dan leksikon tidak akan muncul sampai Anda mengunduh ulang.',
+  removeConfirm: 'Hapus',
+  settingsNote: 'Setelah diunduh, data disimpan di perangkat dan tidak menggunakan jaringan.',
+  rowDownloading: (pct: number) => `Mengunduh… ${pct}%`,
+  rowNotInstalled: (size: string) => `Belum terpasang · ${size} untuk diunduh`,
+  rowInstalled: (version: string | null) => (version ? `Lengkap · versi ${version}` : 'Lengkap'),
+};

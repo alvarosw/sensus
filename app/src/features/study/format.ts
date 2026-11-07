@@ -1,6 +1,7 @@
 // Formatação e seleção de dados para a folha de estudo (referências, tradições, morfologia, palavras-chave).
 import {
   BOOK_TABLE,
+  isPatristicCompilation,
   commentatorOf,
   formatReference,
   isBaseTextToken,
@@ -19,6 +20,8 @@ import {
   type Token,
   type Vid,
 } from '@sensus/core';
+import { currentLang } from '../../i18n/lang-store';
+import { STUDY } from './strings';
 
 /**
  * Referência com travessão: "Filipenses 1:30–2:1" ou "Filipenses 4:23 – Colossenses 1:1". Nome do livro e
@@ -26,7 +29,7 @@ import {
  */
 export function refTitle(start: Vid, end: Vid, books: readonly Book[]): string {
   const table = books.length > 0 ? (books as Book[]) : BOOK_TABLE;
-  return formatReference({ start, end }, table)
+  return formatReference({ start, end }, table, currentLang())
     .replace(/(?<=\d)-(?=\d)/g, '–')
     .replace(/ - /g, ' – ')
     .replace(/(?<=\p{L}) (?=\d)/gu, '\u00A0');
@@ -48,8 +51,8 @@ export interface CommentaryView {
 }
 
 export function viewCommentary(c: Commentary, source: Source | undefined): CommentaryView {
-  const patristic = c.source_id === 'patristic';
-  const author = commentatorOf(source, c);
+  const patristic = isPatristicCompilation(c.source_id);
+  const author = commentatorOf(source, c, currentLang());
   let body = c.text;
   if (patristic) {
     const parts = c.text.split(/\n{2,}/);
@@ -58,8 +61,8 @@ export function viewCommentary(c: Commentary, source: Source | undefined): Comme
   return {
     commentary: c,
     author,
-    column: patristic ? 'Patrística' : author,
-    tradition: traditionLabel(source?.tradition),
+    column: patristic ? STUDY.patristic : author,
+    tradition: traditionLabel(source?.tradition, currentLang()),
     body: body.trim(),
     intro: isIntroCommentary(c),
   };

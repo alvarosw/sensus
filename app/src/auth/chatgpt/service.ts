@@ -1,5 +1,5 @@
 // Sign in with ChatGPT no app: login (loopback), troca de código, renovação, saída e listagem de modelos.
-// Os textos de erro vêm do núcleo (pt-BR). Nenhum token é registrado em log ou exibido.
+// Os textos de erro mostrados ao usuário passam por t() (chaves auth.* em i18n). Nenhum token é registrado em log ou exibido.
 import * as WebBrowser from 'expo-web-browser';
 import { AppState } from 'react-native';
 import {
@@ -23,6 +23,7 @@ import {
   type Jwks,
   type ChatGPTModel,
 } from '@sensus/core';
+import { t } from '@/i18n';
 import { expoCrypto } from './crypto';
 import {
   accountKey,
@@ -125,11 +126,11 @@ async function getJwks(): Promise<Jwks> {
   try {
     res = await fetch(SIWC.jwksUrl);
   } catch (err) {
-    throw new SiwcError('Sem conexão para verificar a identidade.', 'jwks_unavailable', undefined, describeNetworkError(err, 'jwks'));
+    throw new SiwcError(t('auth.jwksNoConnection'), 'jwks_unavailable', undefined, describeNetworkError(err, 'jwks'));
   }
-  if (!res.ok) throw new SiwcError('Chaves de verificação indisponíveis.', 'jwks_unavailable', res.status);
+  if (!res.ok) throw new SiwcError(t('auth.jwksUnavailable'), 'jwks_unavailable', res.status);
   const body = (await res.json()) as Partial<Jwks>;
-  if (!Array.isArray(body.keys)) throw new SiwcError('Chaves de verificação em formato inesperado.', 'jwks_unavailable');
+  if (!Array.isArray(body.keys)) throw new SiwcError(t('auth.jwksFormat'), 'jwks_unavailable');
   const jwks = { keys: body.keys };
   jwksCache = { at: Date.now(), jwks };
   return jwks;
@@ -144,7 +145,7 @@ async function postTokenRequest(spec: HttpRequestSpec, grant: 'authorization_cod
     res = await fetch(spec.url, { method: spec.method, headers: spec.headers, body: spec.body });
   } catch (err) {
     const step = grant === 'refresh_token' ? 'renovação' : 'troca do código';
-    throw new SiwcError('Sem conexão com o ChatGPT.', 'network', undefined, describeNetworkError(err, step));
+    throw new SiwcError(t('auth.networkDown'), 'network', undefined, describeNetworkError(err, step));
   }
   let json: unknown = null;
   try {
@@ -153,15 +154,15 @@ async function postTokenRequest(spec: HttpRequestSpec, grant: 'authorization_cod
     json = null;
   }
   if (res.ok) return json;
-  if (res.status >= 500) throw new SiwcError('O ChatGPT está indisponível no momento.', 'server', res.status);
+  if (res.status >= 500) throw new SiwcError(t('auth.serverDown'), 'server', res.status);
   const err = json && typeof json === 'object' ? (json as { error?: unknown }).error : undefined;
   const code = typeof err === 'string' ? err : '';
-  if (code === 'invalid_client') throw new SiwcError('Cliente ChatGPT recusado.', 'invalid_client', res.status);
+  if (code === 'invalid_client') throw new SiwcError(t('auth.clientRefused'), 'invalid_client', res.status);
   if (grant === 'refresh_token' && (code === 'invalid_grant' || code === 'invalid_refresh_token' || code === 'token_expired' || code.startsWith('refresh_token_'))) {
-    throw new SiwcError('Sessão do ChatGPT expirada.', 'refresh_invalid', res.status);
+    throw new SiwcError(t('auth.sessionExpired'), 'refresh_invalid', res.status);
   }
-  if (code === 'invalid_grant') throw new SiwcError('Código de login inválido ou usado.', 'invalid_grant', res.status);
-  throw new SiwcError(`Falha ao obter o token (HTTP ${res.status}).`, 'token_response', res.status);
+  if (code === 'invalid_grant') throw new SiwcError(t('auth.codeUsed'), 'invalid_grant', res.status);
+  throw new SiwcError(t('auth.tokenFailed', { status: res.status }), 'token_response', res.status);
 }
 
 // ---- login ---------------------------------------------------------------------------------------
@@ -280,7 +281,7 @@ export async function signInWithChatGPT(opts: { reconsent?: boolean } = {}): Pro
   });
 
   if (prior && claims.sub !== prior.sub) {
-    throw new SiwcError('Esta conta do ChatGPT é diferente da salva. Saia da conta atual antes de trocar.', 'client_id_mismatch');
+    throw new SiwcError(t('auth.accountMismatch'), 'client_id_mismatch');
   }
 
   const planEnabled = hasPlanScope(tokens.scopes);
@@ -327,7 +328,7 @@ async function refreshAccount(key: string): Promise<StoredAccount> {
   const run = (async (): Promise<StoredAccount> => {
     const acc = await readActiveAccount();
     if (!acc || acc.key !== key || !acc.refreshToken || acc.signedOut) {
-      throw new LLMError('Entre com o ChatGPT nas configurações para usar o plano.', 'reauth');
+      throw new LLMError(t('auth.loginRequired'), 'reauth');
     }
     try {
       const json = await postTokenRequest(
@@ -347,7 +348,7 @@ async function refreshAccount(key: string): Promise<StoredAccount> {
           jwks: await getJwks(),
           crypto: expoCrypto,
         });
-        if (claims.sub !== acc.sub) throw new SiwcError('A identidade da renovação não confere.', 'id_token_invalid');
+        if (claims.sub !== acc.sub) throw new SiwcError(t('auth.identityMismatch'), 'id_token_invalid');
       }
       // Access, refresh, expiração e escopos são trocados juntos (o refresh rotaciona).
       const next = await updateAccount(key, {
@@ -361,7 +362,7 @@ async function refreshAccount(key: string): Promise<StoredAccount> {
         signedOut: false,
         savedAt: nowMs,
       });
-      if (!next) throw new LLMError('Conta ChatGPT não encontrada. Entre de novo.', 'reauth');
+      if (!next) throw new LLMError(t('auth.accountNotFound'), 'reauth');
       notify();
       return next;
     } catch (err) {
@@ -369,14 +370,14 @@ async function refreshAccount(key: string): Promise<StoredAccount> {
         // Refresh não utilizável: limpa os tokens e pede novo login (o client_id salvo é reutilizado).
         await updateAccount(key, { accessToken: '', refreshToken: null, idToken: null, expiresAt: 0, needsReauth: true });
         notify();
-        throw new LLMError('A sessão do ChatGPT expirou. Entre de novo nas configurações.', 'reauth');
+        throw new LLMError(t('auth.sessionExpiredRelogin'), 'reauth');
       }
       if (err instanceof SiwcError && (err.code === 'network' || err.code === 'server')) {
         // Falha de rede ou da infraestrutura: mantém as credenciais.
-        throw new LLMError('Sem conexão com o ChatGPT para renovar a sessão. Tente de novo.', 'network');
+        throw new LLMError(t('auth.refreshNetwork'), 'network');
       }
       if (err instanceof LLMError) throw err;
-      throw new LLMError('Não foi possível renovar a sessão do ChatGPT. Entre de novo.', 'reauth');
+      throw new LLMError(t('auth.refreshFailed'), 'reauth');
     }
   })();
 
@@ -392,7 +393,7 @@ async function refreshAccount(key: string): Promise<StoredAccount> {
 export async function getChatGPTAccessToken(opts: { forceRefresh?: boolean } = {}): Promise<string> {
   const acc = await readActiveAccount();
   if (!acc || acc.signedOut || !acc.accessToken) {
-    throw new LLMError('Entre com o ChatGPT nas configurações para usar o plano.', 'reauth');
+    throw new LLMError(t('auth.loginRequired'), 'reauth');
   }
   if (!opts.forceRefresh && acc.expiresAt - SIWC.refreshSkewMs > Date.now()) return acc.accessToken;
   const next = await refreshAccount(acc.key);

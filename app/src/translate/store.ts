@@ -1,12 +1,24 @@
-// Estado da tradução automática: ligada/desligada, oferta respondida e situação do modelo no aparelho.
+// Estado da tradução automática: ligada/desligada, oferta respondida e situação do modelo no aparelho. O modelo que a
+// Configuração gerencia é o par inglês -> idioma do app (modelPairOf); os pares de outras línguas (Bíblia em espanhol)
+// baixam o modelo na primeira tradução, pelo próprio motor.
 import { create } from 'zustand';
+import { modelPairOf, type TranslationPair } from '@sensus/core';
+import { currentLang, useLangStore } from '@/i18n/lang-store';
 import { clearTranslationCache } from './engine';
-import { downloadModel, modelReady, removeModel, translationSupported } from './native';
+import { downloadModel, modelReady, removeModels, translationSupported } from './native';
 import { readTranslatePrefs, writeTranslatePrefs } from './storage';
 import { claimOfferOwner } from './offer-session';
 
-/** unknown: ainda não verificado; missing: não baixado; downloading; ready: pronto; error: última tentativa falhou. */
-export type ModelStatus = 'unknown' | 'missing' | 'downloading' | 'ready' | 'error';
+/**
+ * unknown: ainda não verificado; missing: não baixado; downloading; ready: pronto; error: última tentativa falhou;
+ * on-demand: o app está em inglês, não há modelo próprio para baixar (cada outro idioma baixa o seu na primeira vez).
+ */
+export type ModelStatus = 'unknown' | 'missing' | 'downloading' | 'ready' | 'error' | 'on-demand';
+
+/** Par do modelo que a Configuração mostra: inglês -> idioma do app (null com o app em inglês). */
+export function currentModelPair(): TranslationPair | null {
+  return modelPairOf(currentLang());
+}
 
 interface TranslateState {
   loaded: boolean;
@@ -23,12 +35,14 @@ interface TranslateState {
   claimOffer(id: number): void;
   model: ModelStatus;
   load(): Promise<void>;
-  /** Liga (baixa o modelo se faltar) ou desliga (mantém o modelo). */
+  /** Liga (baixa o modelo do idioma do app se faltar) ou desliga (mantém o modelo). */
   setEnabled(on: boolean): Promise<void>;
   /** Resposta à oferta da primeira vez: "Ativar" liga; "Agora não" só registra a escolha. */
   answerOffer(accept: boolean): Promise<void>;
+  /** Baixa o modelo do idioma do app (botão da Configuração). */
+  downloadModel(): Promise<void>;
   refreshModel(): Promise<void>;
-  /** Apaga o modelo e desliga a tradução (para não baixar de novo sem aviso). */
+  /** Apaga os modelos baixados (exceto o inglês) e desliga a tradução (para não baixar de novo sem aviso). */
   removeModel(): Promise<void>;
 }
 
@@ -41,16 +55,24 @@ export const useTranslate = create<TranslateState>()((set, get) => {
   };
 
   const download = (): Promise<void> => {
+    const pair = currentModelPair();
+    if (!pair) return Promise.resolve();
     if (!downloading) {
       set({ model: 'downloading' });
-      downloading = downloadModel()
-        .then(() => set({ model: 'ready' }))
+      const target = pair.to;
+      downloading = downloadModel(pair)
+        .then(() => {
+          // o idioma pode ter trocado durante o download: só marca pronto se ainda é o mesmo
+          if (currentModelPair()?.to === target) set({ model: 'ready' });
+        })
         .catch(() => {
           set({ model: 'error' });
           throw new Error('download-failed');
         })
         .finally(() => {
           downloading = null;
+          // o idioma trocou durante o download: confere de novo o modelo do idioma atual (senão a situação fica presa)
+          if (currentModelPair()?.to !== target) void get().refreshModel();
         });
     }
     return downloading;
@@ -77,12 +99,18 @@ export const useTranslate = create<TranslateState>()((set, get) => {
     },
 
     refreshModel: async () => {
+      const pair = currentModelPair();
+      if (!pair) {
+        set({ model: 'on-demand' });
+        return;
+      }
       if (!translationSupported || downloading) return;
       try {
-        const ready = await modelReady();
-        set({ model: ready ? 'ready' : 'missing' });
+        const ready = await modelReady(pair);
+        // o idioma pode ter trocado enquanto o aparelho respondia: só vale a resposta do idioma atual
+        if (currentModelPair()?.to === pair.to) set({ model: ready ? 'ready' : 'missing' });
       } catch {
-        set({ model: 'missing' });
+        if (currentModelPair()?.to === pair.to) set({ model: 'missing' });
       }
     },
 
@@ -95,7 +123,8 @@ export const useTranslate = create<TranslateState>()((set, get) => {
       }
       if (!translationSupported) return;
       try {
-        if (get().model !== 'ready') await download();
+        const status = get().model;
+        if (status !== 'ready' && status !== 'on-demand') await download();
         set({ enabled: true });
       } catch {
         // sem modelo não há como traduzir: a opção volta a desligada e a Configuração mostra o erro
@@ -113,16 +142,30 @@ export const useTranslate = create<TranslateState>()((set, get) => {
       await get().setEnabled(true);
     },
 
+    downloadModel: async () => {
+      try {
+        await download();
+      } catch {
+        // o estado de erro já está em `model`; a Configuração mostra a mensagem
+      }
+    },
+
     removeModel: async () => {
-      await removeModel();
+      await removeModels();
       clearTranslationCache();
-      set({ enabled: false, offerAnswered: true, model: 'missing' });
+      set({ enabled: false, offerAnswered: true });
       persist();
+      await get().refreshModel();
     },
   };
 });
 
-/** Carrega preferências uma vez (chamado pelos componentes que mostram texto em inglês). */
+// Trocar o idioma do app muda o par do modelo: a situação e o download valem para o idioma atual.
+useLangStore.subscribe((state, prev) => {
+  if (state.lang !== prev.lang && useTranslate.getState().loaded) void useTranslate.getState().refreshModel();
+});
+
+/** Carrega preferências uma vez (chamado pelos componentes que mostram texto em outro idioma). */
 export function ensureTranslateLoaded(): void {
   void useTranslate.getState().load();
 }

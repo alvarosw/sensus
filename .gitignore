@@ -25,3 +25,5 @@ dist/
 # worktrees e ajustes locais do Claude Code
 .claude/worktrees/
 .claude/settings.local.json
+pipeline/bibles/out/
+data/staging-pendente/

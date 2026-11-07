@@ -7,6 +7,7 @@ import { DownloadStatus } from '@/data/DownloadStatus';
 import { useDataStore, useUpdateState } from '@/data/data-store';
 import { formatMB } from '@/data/plan';
 import { DATA_COPY } from '@/data/strings';
+import { currentBcp47 } from '@/i18n';
 import { isActive } from '@/data/download-machine';
 
 function Line({ label, value }: { label: string; value: string }) {
@@ -22,7 +23,7 @@ function Line({ label, value }: { label: string; value: string }) {
 function formatDate(iso: string | null): string {
   if (!iso) return '—';
   const d = new Date(iso);
-  return Number.isNaN(d.getTime()) ? '—' : d.toLocaleDateString('pt-BR');
+  return Number.isNaN(d.getTime()) ? '—' : d.toLocaleDateString(currentBcp47());
 }
 
 export default function DataSettingsScreen() {

@@ -147,26 +147,29 @@ async function unitDivisionSource(db: Db, book: number, textSourceId: string): P
  * Início: última divisão em/antes de range.start (ou início do livro). Fim: o versículo antes da
  * primeira divisão depois de range.end (ou último versículo do livro), e nunca antes de range.end.
  * Assim, uma seleção que cruza parágrafos gera uma unidade que os abrange todos.
+ * `db` é o banco principal (parágrafos do original); `textDb` é o banco do texto `sourceId` (ver Repo).
  */
-export async function literaryUnit(db: Db, sourceId: string, range: VerseRange): Promise<VerseRange> {
+export async function literaryUnit(db: Db, textDb: Db, sourceId: string, range: VerseRange): Promise<VerseRange> {
   const book = splitVid(range.start).book;
   const bookStart = book * 1_000_000;
   const bookEnd = (book + 1) * 1_000_000;
   const div = await unitDivisionSource(db, book, sourceId);
+  // As divisões do original estão no banco principal; as da própria tradução, no banco dela.
+  const divDb = div.id === sourceId ? textDb : db;
   const kindClause = div.paragraphsOnly ? " AND kind = 'paragraph'" : '';
   const lead = await first<{ vid: number }>(
-    db,
+    divDb,
     `SELECT vid FROM text_division WHERE source_id = ?${kindClause} AND vid <= ? AND vid >= ? ORDER BY vid DESC LIMIT 1`,
     [div.id, range.start, bookStart],
   );
   const next = await first<{ vid: number }>(
-    db,
+    divDb,
     `SELECT vid FROM text_division WHERE source_id = ?${kindClause} AND vid > ? AND vid < ? ORDER BY vid LIMIT 1`,
     [div.id, range.end, bookEnd],
   );
   const limit = next ? next.vid : bookEnd;
   const last = await first<{ vid: number | null }>(
-    db,
+    textDb,
     `SELECT MAX(vid) AS vid FROM verse_text WHERE source_id = ? AND vid >= ? AND vid < ?`,
     [sourceId, range.end, limit],
   );
@@ -176,9 +179,13 @@ export async function literaryUnit(db: Db, sourceId: string, range: VerseRange):
   };
 }
 
-/** Referências cruzadas com origem no intervalo, por peso decrescente, com o texto dos alvos. */
+/**
+ * Referências cruzadas com origem no intervalo, por peso decrescente, com o texto dos alvos.
+ * `db` tem as referências; `textDb` é o banco do texto `textSourceId` (ver Repo).
+ */
 export async function xrefs(
   db: Db,
+  textDb: Db,
   range: VerseRange,
   limit: number,
   textSourceId: string = DEFAULT_TEXT_SOURCE,
@@ -194,7 +201,7 @@ export async function xrefs(
     rows.map(async (x) => ({
       ...x,
       texts: await verseTexts(
-        db,
+        textDb,
         textSourceId,
         { start: x.to_start_vid, end: x.to_end_vid },
         MAX_XREF_TARGET_VERSES,

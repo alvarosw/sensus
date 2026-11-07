@@ -1,0 +1,81 @@
+// Alemão de app/src/data/strings.ts. A revisar por falante nativo.
+export const deData = {
+  title: 'Studiendaten',
+  rowTitle: 'Studiendaten',
+
+  setupLead:
+    'Der Bibeltext ist bereits in der App und funktioniert ohne Download. Die Studiendaten enthalten das, worauf die Analyse jeder Textstelle beruht:',
+  includes: [
+    'Kommentare klassischer und moderner Autoren',
+    'Bibellexika und Themenregister',
+    'Lexikon und Morphologie des Griechischen und Hebräischen',
+    'Querverweise, Personen, Orte und Karten',
+    'Textvarianten des Neuen Testaments',
+  ],
+  sizeLine: (download: string, installed: string) =>
+    `${download} zum Herunterladen · belegt etwa ${installed} · WLAN empfohlen`,
+  sizeUnknown: 'Größe wird bei der Verbindung angezeigt',
+  download: 'Jetzt herunterladen',
+  later: 'Später',
+  cancel: 'Abbrechen',
+  resume: 'Fortsetzen',
+  discard: 'Download verwerfen',
+  retry: 'Erneut versuchen',
+  close: 'Schließen',
+  continue: 'Weiter',
+  done: 'Fertig. Die Studiendaten sind installiert.',
+
+  progress: (pct: number) => `Wird heruntergeladen… ${pct} %`,
+  progressOf: (done: string, total: string) => `${done} von ${total}`,
+  phases: {
+    checking: 'Daten werden geprüft…',
+    verifying: 'Datei wird geprüft…',
+    extracting: 'Wird entpackt…',
+    installing: 'Wird installiert…',
+  },
+  paused: {
+    user: 'Download pausiert. Die bereits heruntergeladenen Daten bleiben erhalten.',
+    network: 'Die Verbindung wurde unterbrochen. Die bereits heruntergeladenen Daten bleiben erhalten; tippe auf Fortsetzen, wann immer du möchtest.',
+    interrupted: 'Der Download wurde beim Schließen der App unterbrochen. Die bereits heruntergeladenen Daten bleiben erhalten.',
+  },
+  errors: {
+    manifest: 'Die Daten konnten nicht geprüft werden. Prüfe deine Verbindung und versuche es erneut.',
+    network: 'Die Verbindung wurde während des Downloads unterbrochen. Versuche es erneut.',
+    space: (need: string) => `Auf dem Gerät ist nicht genug Speicherplatz frei. Etwa ${need} werden benötigt.`,
+    'app-too-old': 'Diese Version der App unterstützt diese Daten nicht. Aktualisiere Sensus.',
+    schema: 'Diese Version der App unterstützt diese Daten nicht. Aktualisiere Sensus.',
+    checksum: 'Die heruntergeladene Datei hat die Prüfung nicht bestanden. Versuche es erneut.',
+    corrupt: 'Die heruntergeladene Datei ist unvollständig. Versuche es erneut.',
+    install: 'Die Daten konnten nicht installiert werden. Der Text bleibt verfügbar. Versuche es erneut.',
+    unsupported: 'Die Studiendaten werden in der installierten App heruntergeladen.',
+  },
+
+  studyTitle: 'Studiendaten herunterladen',
+  studyBody: (size: string) =>
+    `Kommentare, Wörterbücher, Lexikon und Verweise zu dieser Textstelle stehen nach dem Download zur Verfügung (${size}). Der Text bleibt hier.`,
+  studyNotNow: 'Nicht jetzt',
+
+  statusLabel: 'Status',
+  statusFull: 'Vollständig',
+  statusReader: 'Nicht installiert',
+  version: 'Version der Daten',
+  updatedAt: 'Aktualisiert am',
+  installedSize: 'Belegter Speicher auf dem Gerät',
+  check: 'Nach Update suchen',
+  checking: 'Wird geprüft…',
+  upToDate: 'Du hast bereits die neueste Version.',
+  updateAvailable: (version: string, size: string) => `Neue Version ${version} (${size} zum Herunterladen).`,
+  unknownVersion: 'Die installierte Version konnte nicht erkannt werden. Ein erneuter Download aktualisiert die Daten.',
+  checkFailed: 'Im Moment konnte nicht geprüft werden. Prüfe deine Verbindung.',
+  redownload: 'Erneut herunterladen',
+  update: 'Aktualisieren',
+  remove: 'Studiendaten entfernen',
+  removeTitle: 'Studiendaten entfernen?',
+  removeBody:
+    'Der Text bleibt verfügbar. Kommentare, Wörterbücher und Lexikon werden nicht mehr angezeigt, bis du sie erneut herunterlädst.',
+  removeConfirm: 'Entfernen',
+  settingsNote: 'Nach dem Download bleiben die Daten auf dem Gerät und benötigen kein Netzwerk.',
+  rowDownloading: (pct: number) => `Wird heruntergeladen… ${pct} %`,
+  rowNotInstalled: (size: string) => `Nicht installiert · ${size} zum Herunterladen`,
+  rowInstalled: (version: string | null) => (version ? `Vollständig · Version ${version}` : 'Vollständig'),
+};

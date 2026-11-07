@@ -1,5 +1,7 @@
+import { localized } from '../../i18n';
+import { readerTables } from '../../i18n/locales/all';
 // Textos do leitor e da barra superior (pt-BR). i18n/index.ts é compartilhado com outras telas.
-export const READER = {
+const ptReader = {
   books: 'Livros',
   currentRef: (name: string) => `${name}. Ir para…`,
   jumpPlaceholder: 'Ir para… ex.: fp 2:5',
@@ -31,5 +33,19 @@ export const READER = {
   settings: 'Configurações',
   close: 'Fechar',
   back: 'Voltar aos livros',
-} as const;
+  // categorias dos livros no seletor (categories.ts)
+  bookCategory: {
+    law: 'Lei',
+    'history-ot': 'Históricos',
+    poetry: 'Poéticos',
+    'major-prophets': 'Profetas maiores',
+    'minor-prophets': 'Profetas menores',
+    gospels: 'Evangelhos',
+    'history-nt': 'Histórico',
+    pauline: 'Cartas paulinas',
+    general: 'Cartas gerais',
+    prophecy: 'Profecia',
+  },
+};
+export const READER = localized<typeof ptReader>({ pt: ptReader, ...readerTables });
 

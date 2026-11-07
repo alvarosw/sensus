@@ -2,7 +2,8 @@
 // (verificando, lento, falhou, funciona). Copy e regras da verificação em verify-save.ts.
 import { ActivityIndicator, Pressable, View } from 'react-native';
 import { fontFamilies, LinkButton, Pill, radius, Tag, Txt, useTheme } from '@/design';
-import { offersQuickPicks, suggestionsFor, VERIFY_COPY, type VerifyState } from './verify-save';
+import { offersQuickPicks, seconds, SLOW_AFTER_MS, suggestionsFor, type VerifyState } from './verify-save';
+import { SETTINGS_COPY } from './strings';
 import { TIER_LABEL, type RecommendedModel } from './recommended';
 
 /** Grupo "Recomendados": nome, etiqueta de tipo e nota. Escolher um aplica o modelo e o corpo extra dele. */
@@ -103,8 +104,8 @@ export function VerifyPanel({
     const row = (
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
         <ActivityIndicator size="small" color={c.muted} />
-        <Txt v="bodySm" color="muted" testID="verify-progress">{VERIFY_COPY.verifying}</Txt>
-        <LinkButton testID="verify-cancel" label={VERIFY_COPY.cancel} onPress={onCancel} />
+        <Txt v="bodySm" color="muted" testID="verify-progress">{SETTINGS_COPY.verifyModel.verifying}</Txt>
+        <LinkButton testID="verify-cancel" label={SETTINGS_COPY.verifyModel.cancel} onPress={onCancel} />
       </View>
     );
     if (!state.slow) return <View testID="verify-panel" style={{ gap: 6 }}>{row}</View>;
@@ -113,7 +114,7 @@ export function VerifyPanel({
         {row}
         {warnBox(
           <>
-            <Txt v="bodySm" tint={c.warnText} testID="verify-slow-text">{VERIFY_COPY.slowPending}</Txt>
+            <Txt v="bodySm" tint={c.warnText} testID="verify-slow-text">{SETTINGS_COPY.verifyModel.slowPending(seconds(SLOW_AFTER_MS))}</Txt>
             {quick}
           </>,
         )}
@@ -122,7 +123,7 @@ export function VerifyPanel({
   }
 
   if (state.phase === 'failed') {
-    const title = state.purpose === 'save' ? VERIFY_COPY.failedSave : VERIFY_COPY.failedCheck;
+    const title = state.purpose === 'save' ? SETTINGS_COPY.verifyModel.failedSave : SETTINGS_COPY.verifyModel.failedCheck;
     return (
       <View testID="verify-panel" style={{ gap: 8, borderWidth: 1, borderColor: c.danger, borderRadius: radius.lg, padding: 12 }}>
         <Txt v="bodySm" bold tint={c.danger} testID="verify-failed-title">{title}</Txt>
@@ -139,14 +140,14 @@ export function VerifyPanel({
 
   if (state.phase === 'passed') {
     if (state.purpose === 'save') {
-      return <Txt v="bodySm" tint={c.srcText} testID="verify-result">{VERIFY_COPY.savingVerified}</Txt>;
+      return <Txt v="bodySm" tint={c.srcText} testID="verify-result">{SETTINGS_COPY.verifyModel.savingVerified}</Txt>;
     }
-    if (!state.slow) return <Txt v="bodySm" tint={c.srcText} testID="verify-result">{VERIFY_COPY.okCheck}</Txt>;
+    if (!state.slow) return <Txt v="bodySm" tint={c.srcText} testID="verify-result">{SETTINGS_COPY.verifyModel.okCheck}</Txt>;
     return (
       <View testID="verify-panel">
         {warnBox(
           <>
-            <Txt v="bodySm" tint={c.warnText} testID="verify-slow-text">{VERIFY_COPY.slowDone(state.elapsedMs)}</Txt>
+            <Txt v="bodySm" tint={c.warnText} testID="verify-slow-text">{SETTINGS_COPY.verifyModel.slowDone(seconds(state.elapsedMs))}</Txt>
             {quick}
           </>,
         )}
@@ -155,12 +156,12 @@ export function VerifyPanel({
   }
 
   // saved
-  if (!state.slow) return <Txt v="bodySm" tint={c.srcText} testID="verify-result">{VERIFY_COPY.saved}</Txt>;
+  if (!state.slow) return <Txt v="bodySm" tint={c.srcText} testID="verify-result">{SETTINGS_COPY.verifyModel.saved}</Txt>;
   return (
     <View testID="verify-panel">
       {warnBox(
         <>
-          <Txt v="bodySm" tint={c.warnText} testID="verify-slow-text">{VERIFY_COPY.savedSlow}</Txt>
+          <Txt v="bodySm" tint={c.warnText} testID="verify-slow-text">{SETTINGS_COPY.verifyModel.savedSlow}</Txt>
           {quick}
         </>,
       )}

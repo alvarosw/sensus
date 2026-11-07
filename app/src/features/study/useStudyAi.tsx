@@ -13,7 +13,7 @@ import {
   type RichTextContext,
 } from '@sensus/core';
 import { streamChat } from '@/ai/client';
-import { APP_LOCALE } from '@/i18n';
+import { currentBcp47 } from '@/i18n';
 import { useSettings } from '@/settings/settings-context';
 import { useStudy, type LensKey } from '@/state/study';
 import type { PassagePanel } from './usePassagePanel';
@@ -111,7 +111,7 @@ export function useStudyAiFeed(range: Range, unitRange: Range | null, unitPanel:
       }
     }
     const focus = unitRange.start === range.start && unitRange.end === range.end ? undefined : { start: range.start, end: range.end };
-    runStream(provider, key, summaryMessages(unitPanel.context, { language: APP_LOCALE, focus }));
+    runStream(provider, key, summaryMessages(unitPanel.context, { language: currentBcp47(), focus }));
   }, [provider, key, unitRange, unitPanel.context, range.start, range.end]);
 
   useEffect(() => {
@@ -174,7 +174,7 @@ export function useStudyAiFeed(range: Range, unitRange: Range | null, unitPanel:
       const claim = opts?.claim?.trim();
       // O texto do ponto detalhado fica ao lado da geração para o rótulo do bloco.
       claimLabels.set(k, claim ?? '');
-      runStream(provider, k, deepenMessages(unitPanel.context, lens, { language: APP_LOCALE, claim: claim || undefined }));
+      runStream(provider, k, deepenMessages(unitPanel.context, lens, { language: currentBcp47(), claim: claim || undefined }));
     },
     [provider, unitPanel.context, key],
   );

@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import type { Book } from '@sensus/core';
 import { Card, CardTop, fontFamilies, LinkButton, MeterBar, MorphPill, space, Tag, Txt, TypeMark, useTheme } from '@/design';
 import { bareWord, refShort } from '@/features/common/format';
-import { morphChipsOf } from '@/features/common/morph-pt';
+import { morphChipsOf } from '@/features/common/morph';
 import { STUDY } from '../strings';
 import type { KeyWord } from '../format';
 

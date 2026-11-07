@@ -1,5 +1,7 @@
+import { localized } from '../i18n';
+import { settingsTables } from '../i18n/locales/all';
 // Textos das telas de Configurações (pt-BR). Mesmas frases da proposta aprovada (docs/design/settings-proposal.html).
-export const SETTINGS_COPY = {
+const ptSettingsCopy = {
   title: 'Configurações',
   back: 'Voltar',
   aiTitle: 'Assistente de IA',
@@ -10,6 +12,13 @@ export const SETTINGS_COPY = {
   rowAi: 'Assistente de IA',
   rowLook: 'Aparência e leitura',
   rowAbout: 'Sobre e licenças',
+  rowLanguage: 'Idioma',
+  langTitle: 'Idioma',
+  tierBalanced: 'Equilibrado',
+  tierFast: 'Rápido',
+  tierPrecise: 'Preciso',
+  demoLabel: 'Demonstração (offline)',
+  langInUse: 'Em uso',
   gearNote: 'Entrada: o botão "Configurações" ganha a engrenagem à esquerda do rótulo.',
 
   // Assistente: seções
@@ -95,6 +104,7 @@ export const SETTINGS_COPY = {
 
   // Aparência e leitura
   secTheme: 'Tema',
+  textLabel: 'texto',
   themeSystem: 'Sistema',
   themeLight: 'Claro',
   themeDark: 'Escuro',
@@ -125,4 +135,87 @@ export const SETTINGS_COPY = {
   sourceLabel: 'Origem',
   noSources: 'Nenhuma fonte encontrada no banco.',
   sourceCount: (n: number) => `${n} ${n === 1 ? 'fonte' : 'fontes'}`,
-} as const;
+
+  // Assistente de IA: linhas e cartão ChatGPT (ai-status.ts)
+  aiStatus: {
+    reauth: 'Atenção · entrar de novo no ChatGPT',
+    notEligible: 'Atenção · conta sem plano para o Sensus',
+    limitReached: (when: string) => `Limite atingido · ${when}`,
+    returnsAt: (time: string) => `volta às ${time}`,
+    retryAt: (time: string) => `nova tentativa às ${time}`,
+    notConfigured: 'Não configurado',
+    noMethod: 'Nenhum método disponível',
+    chatgptReserve: 'ChatGPT · reserva na chave de API',
+    chatgptActive: 'ChatGPT · plano ativo',
+    keyLabel: (label: string) => `Chave de API (${label})`,
+    noneLead: 'Nenhum',
+    keyMissing: 'Falta a chave de API.',
+    chatgptNotReady: 'O ChatGPT não está pronto, e este modo não usa a chave.',
+    untilTime: (time: string) => `até ${time}.`,
+    connectOrKey: 'Conecte o ChatGPT ou salve uma chave de API.',
+    reserveKey: (label: string) => `Reserva: chave de API (${label}).`,
+    noReserve: 'Sem reserva.',
+    keyUntilThenChatGPT: (time: string) => `até ${time}; depois, ChatGPT.`,
+    keyNote: 'Enquanto isso, o Sensus não usa sua chave de API nessas perguntas.',
+    retryKey: 'Até lá, as perguntas usam sua chave de API.',
+    plan: 'Use o plano Go, Plus ou Pro do seu ChatGPT. Requer um desses planos.',
+    signOut: 'Desconectar ChatGPT',
+    signIn: 'Entrar com ChatGPT',
+    reconnect: 'Entrar de novo',
+    retryPlan: 'Tentar de novo',
+    grant: 'Liberar o plano',
+    resumePlan: 'Tentar o plano de novo',
+    attention: 'Atenção',
+    disconnected: 'Desconectado',
+    limitPill: 'Limite atingido',
+    activePill: 'Plano ativo',
+    sessionExpiredLine: 'Sua sessão com o ChatGPT expirou ou foi recusada. Entre de novo para voltar a usar o plano.',
+    notEligibleLine: 'Esta conta não tem o plano para o Sensus. Requer Go, Plus ou Pro.',
+    connectHint: 'Entre com ChatGPT ou informe uma chave de API para ter resumos e perguntas.',
+    grantLine: 'Permissão do plano não concedida. Libere o uso do plano para o Sensus.',
+    limitKnown: (time: string) => `Limite do plano atingido. Volta às ${time}.`,
+    limitRetry: (time: string) => `Limite do plano atingido. Nova tentativa às ${time}, a cada 10 min até voltar.`,
+    noKeyToAnswer: 'Até lá, não há chave de API salva para responder.',
+    accountConnected: 'Conta conectada',
+  },
+
+  // Verificação do modelo e mensagens de falha (verify-save.ts)
+  verifyModel: {
+    verifying: 'Verificando modelo…',
+    slowPending: (s: number) => `Demorando mais de ${s} s. Um modelo mais rápido costuma responder em segundos.`,
+    slowDone: (s: number) => `Funciona, mas está lento (respondeu em ${s} s). Um modelo mais rápido costuma responder em segundos.`,
+    okCheck: '✓ Disponível para respostas.',
+    saved: 'Configurações salvas.',
+    reused: '✓ Verificado há pouco. Salvo sem nova verificação.',
+    savedSlow: 'Salvo. Funciona, mas está lento. Um modelo mais rápido costuma responder em segundos.',
+    failedSave: 'Não salvo: o modelo não passou na verificação.',
+    savingVerified: '✓ Verificado. Salvando…',
+    failedCheck: 'Modelo não verificado.',
+    cancel: 'Cancelar',
+    timeout: (s: number) => `O provedor não respondeu em ${s} s. A conexão não foi salva.`,
+    midway: 'O provedor parou de responder no meio do caminho.',
+    keyRejected: (status: number) => `Chave de API rejeitada pelo provedor (HTTP ${status}).`,
+    modelMissing: (model: string, status: number) => `O modelo ${model} não foi encontrado no provedor (HTTP ${status}). Confira o nome do modelo.`,
+    noConnection: 'Não foi possível conectar ao provedor.',
+    rateLimit: 'O provedor recusou por limite de requisições (HTTP 429).',
+    serverDown: (status: number) => `O provedor está indisponível agora (HTTP ${status}).`,
+    badFormat: 'O provedor respondeu em um formato inesperado.',
+    modelDenied: (status: number) => `Este modelo não está disponível para esta chave ou conta (HTTP ${status}). A chave é aceita pelo provedor.`,
+    keyInvalid: (status: number) => `Chave de API inválida ou sem acesso (HTTP ${status}).`,
+    unknownFailure: 'Falha desconhecida.',
+    /** O que fazer a seguir, por motivo de falha. */
+    suggest: {
+      auth: ['Confira a chave de API; cole de novo se preciso.', 'Veja se a chave está ativa no site do provedor.'],
+      model_unavailable: ['Escolha um dos modelos recomendados ou outro da lista.', 'Confira o nome do modelo.'],
+      timeout: ['Tente de novo.', 'Um modelo mais rápido costuma responder em segundos.'],
+      network: ['Verifique a conexão com a internet.', 'Confira a URL base.'],
+      rate_limit: ['Aguarde alguns minutos e tente de novo.'],
+      server: ['Tente de novo em instantes.', 'Ou escolha outro modelo.'],
+      config: ['Preencha a URL base e o modelo.'],
+      protocol: ['Confira a URL base: ela deve ser uma API compatível com a da OpenAI.'],
+      save: ['A conexão foi verificada, mas não pôde ser gravada. Tente de novo.'],
+      other: ['Tente de novo.', 'Confira a URL base, a chave e o modelo.'],
+    },
+  },
+};
+export const SETTINGS_COPY = localized<typeof ptSettingsCopy>({ pt: ptSettingsCopy, ...settingsTables });

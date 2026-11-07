@@ -24,13 +24,14 @@ import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { PopButton } from '@/ui/Buttons';
 import { loadLexicon, loadXrefText, type CiteDetail } from '../common/cites';
 import { useBooks, useCite } from '../common/hooks';
-import { morphPills } from '../common/morph-pt';
+import { morphPills } from '../common/morph';
 import { useLast, usePresence } from '../common/motion';
 import { SRC } from '../common/strings';
 import { wordView, type WordView } from '../common/word-view';
 import { useAutoTranslate } from '@/translate/useAutoTranslate';
 import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
 import { useSourceLang } from '@/translate/source-lang';
+import { currentLang } from '@/i18n/lang-store';
 
 export function SourcePopover() {
   const { c } = useTheme();
@@ -180,7 +181,7 @@ function ResolvedBody({ detail, onClose }: { detail: CiteDetail; onClose: () => 
             <Txt v="bodySm" bold style={{ fontSize: 13 }}>{detail.label}</Txt>
           )}
           {detail.labelRef ? <Txt v="bodySm" bold style={{ fontSize: 13 }}>{detail.labelRef}</Txt> : null}
-          {tradition ? <Tag label={traditionLabel(tradition)} /> : null}
+          {tradition ? <Tag label={traditionLabel(tradition, currentLang())} /> : null}
         </View>
         {source ? <Txt v="meta" color="muted" style={{ fontFamily: fontFamilies.ui }}>{source.title}</Txt> : null}
         <Body detail={detail} repo={repo} />

@@ -80,3 +80,23 @@ Pendências registradas durante o desenvolvimento. Prioridade: **P1** (próximo)
   e não comercial. **Se o app algum dia for comercializado, remover esta fonte.** O "About" do módulo
   menciona expiração de copyright dos volumes 5–6 em 2006/2007; revisar.
 - Créditos obrigatórios (CC BY): STEPBible/Tyndale House, OpenBible.info, Bíblia Livre.
+
+## Idiomas, Bíblias e fontes (entrega de novembro de 2026)
+
+Contratos em [design/idiomas-biblias-fontes.md](design/idiomas-biblias-fontes.md); ideias em [IDEAS.md](IDEAS.md).
+
+- **P1 — Revisão das traduções da interface por falantes nativos** (12 idiomas além de pt e en; rótulos de tradições,
+  testamentos, livros e morfologia também).
+- **P1 — Release das Bíblias** (`bibles-<versão>` com os pacotes de `pipeline/package_bibles.py`) e
+  `bibles-manifest.json` na `main`; sem isso o catálogo do app fica vazio.
+- **P2 — Escrita bidirecional:** em árabe e urdu, intervalos como "6:14–28" aparecem invertidos; isolar números
+  (LRI/PDI) nos rótulos de referência. Textos de fonte em inglês com variante `body` saem alinhados à direita (usar
+  `content`). Espelhar o layout é a fase 2.
+- **P2 — Mensagens de erro do núcleo** (`LLMError` em `packages/core`) só em pt: devolver códigos e traduzir no app.
+- **P2 — Nomes `namePt`/`descriptionPt`/`ptNames`** guardam o idioma do app: renomear.
+- **P2 — Referências montadas no núcleo** (`panel.reference`, `variants.ref`) ainda em pt quando aparecem na tela.
+- **P2 — Haskell** (Daniel, o Profeta; O Vidente de Patmos): fora do banco até limpar as citações de margem do scan.
+- **P2 — Indonésio sem Bíblia** (nenhuma completa e livre encontrada); **vietnamita 1925** entra em 2030 (regra BR).
+- **P3 — Reina-Valera 1909 completa** (o módulo SWORD tem licença contraditória; o eBible tem 18 versículos vazios).
+- **P3 — Títulos pt das obras adventistas novas** são tradução nossa (só *O Desejado de Todas as Nações* é título de
+  edição brasileira): conferir.

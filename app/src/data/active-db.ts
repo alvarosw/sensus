@@ -3,13 +3,20 @@
 //    assets/sensus.db quando o built_at difere de src/data/bundled-db.json (scripts/sync-db.mjs).
 //  - 'sensus-full.db': a edição completa baixada (ver download-engine.ts). Quando existe e é válida, tem prioridade.
 // A troca é atômica do ponto de vista do app: o novo arquivo é validado antes e só depois a conexão é trocada.
+// A preferência de comentários (ver settings/app-prefs.ts) é aplicada a cada Repo criado. Quando ela muda, o banco
+// é publicado de novo com um Repo novo sobre a mesma conexão: quem depende do repositório (consultas em cache) refaz.
 import * as SQLite from 'expo-sqlite';
-import { Directory, File, Paths } from 'expo-file-system';
-import { Repo } from '@sensus/core';
+import { File } from 'expo-file-system';
+import { ALL_COMMENTARIES, DEFAULT_APP_LANG, Repo, type AppLang, type CommentaryPreference } from '@sensus/core';
+import { useLangStore } from '@/i18n/lang-store';
 import bundledDb from '../../assets/sensus.db';
 import bundled from './bundled-db.json';
 import { checkFullDatabase, editionOf, type Edition } from './edition';
 import { createExpoSqlDriver } from './driver';
+import { sqliteDirectory } from './sqlite-paths';
+import { bibleDriver, openInstalledBibles } from './bibles/bible-db';
+
+export { sqliteDirectory };
 
 export const READER_DB_NAME = 'sensus.db';
 export const FULL_DB_NAME = 'sensus-full.db';
@@ -28,6 +35,8 @@ type Listener = (active: ActiveDb) => void;
 
 let current: ActiveDb | null = null;
 const listeners = new Set<Listener>();
+let commentaryPref: CommentaryPreference = ALL_COMMENTARIES;
+let nameLang: AppLang = DEFAULT_APP_LANG;
 
 export function currentActive(): ActiveDb | null {
   return current;
@@ -38,11 +47,6 @@ export function subscribeActive(listener: Listener): () => void {
   return () => {
     listeners.delete(listener);
   };
-}
-
-/** Pasta do SQLite (a mesma que o expo-sqlite usa por padrão: <files>/SQLite). */
-export function sqliteDirectory(): Directory {
-  return new Directory(Paths.document, 'SQLite');
 }
 
 export function fullDbFile(name: string = FULL_DB_NAME): File {
@@ -113,12 +117,15 @@ async function openInstalledFull(): Promise<{ db: SQLite.SQLiteDatabase; meta: R
 }
 
 function publish(next: { db: SQLite.SQLiteDatabase; meta: Record<string, string>; name: string }): ActiveDb {
+  // As Bíblias baixadas leem o texto do banco delas (ver bibles/bible-db.ts); valem em qualquer edição.
+  const repo = new Repo(createExpoSqlDriver(next.db), { textDriver: bibleDriver, nameLang });
+  repo.setCommentaryPreference(commentaryPref);
   const active: ActiveDb = {
     edition: editionOf(next.meta),
     name: next.name,
     meta: next.meta,
     db: next.db,
-    repo: new Repo(createExpoSqlDriver(next.db)),
+    repo,
   };
   const previous = current;
   current = active;
@@ -130,8 +137,43 @@ function publish(next: { db: SQLite.SQLiteDatabase; meta: Record<string, string>
   return active;
 }
 
+/**
+ * Preferência de comentários de todo o app. Se o banco já está aberto e a preferência mudou, publica de novo com um
+ * Repo novo (mesma conexão): as telas que dependem do repositório recarregam suas consultas.
+ */
+export function setActiveCommentaryPreference(pref: CommentaryPreference): void {
+  const changed = JSON.stringify(pref) !== JSON.stringify(commentaryPref);
+  commentaryPref = pref;
+  if (!current || !changed) return;
+  publish({ db: current.db, meta: current.meta, name: current.name });
+}
+
+/**
+ * Idioma dos nomes e descrições do app (ver Repo.nameLang). Quando muda, publica de novo com um Repo novo sobre a mesma
+ * conexão, como na preferência de comentários: as consultas em cache refazem.
+ */
+export function setActiveNameLang(lang: AppLang): void {
+  if (lang === nameLang) return;
+  nameLang = lang;
+  if (!current) return;
+  publish({ db: current.db, meta: current.meta, name: current.name });
+}
+
+// O idioma do app escolhe o idioma dos nomes: a troca de idioma (lang-store) chega aqui sem depender de tela.
+useLangStore.subscribe((state) => setActiveNameLang(state.lang));
+
+/**
+ * Publica de novo o banco ativo com um Repo novo (mesma conexão), para as consultas em cache refazerem. Usado quando
+ * uma Bíblia baixada é instalada, atualizada ou removida (o texto dela mudou fora do Repo).
+ */
+export function republishActive(): void {
+  if (current) publish({ db: current.db, meta: current.meta, name: current.name });
+}
+
 /** Abre o banco que deve estar ativo: o completo instalado, se houver; senão o de leitura. */
 export async function openActiveDatabase(): Promise<ActiveDb> {
+  // Antes do Repo: as conexões das Bíblias baixadas precisam existir quando a primeira consulta de texto rodar.
+  await openInstalledBibles();
   const full = await openInstalledFull();
   if (full) return publish({ ...full, name: FULL_DB_NAME });
   return publish({ ...(await openReader()), name: READER_DB_NAME });

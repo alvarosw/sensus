@@ -2,6 +2,6 @@
   "name": "sensus-translate",
   "version": "0.1.0",
   "private": true,
-  "description": "Tradução inglês para português no aparelho (Google ML Kit) para o app Sensus.",
+  "description": "Tradução no aparelho (Google ML Kit) entre os idiomas do app Sensus.",
   "license": "AGPL-3.0-or-later"
 }

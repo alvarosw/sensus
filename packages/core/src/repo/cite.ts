@@ -1,11 +1,26 @@
 // Resolve um cite_id ao registro de origem (ver repo/index.ts).
 import type { CitableRecord, Commentary, DictionaryEntry, Entity, LexiconEntry, Token, VerseText, XRef } from '../types';
+import { type CommentaryPreference, ALL_COMMENTARIES } from '../domain/source-prefs';
 import { type Db, first, COMMENTARY_COLS, DICTIONARY_COLS, ENTITY_COLS, LEXICON_COLS, TOKEN_COLS, VERSE_COLS, XREF_COLS } from './sql';
 import { attachNames } from './names';
 import { attachDescriptions } from './entity-text';
+import { isCommentaryVisible } from './commentary';
+import type { AppLang } from '../domain/locale';
+import { ENTITY_NAME_LANG } from '../domain/names';
 
-/** Resolve um cite_id ao registro de origem. Retorna null se o prefixo ou o id não existir. */
-export async function resolveCite(db: Db, citeId: string): Promise<CitableRecord | null> {
+/**
+ * Resolve um cite_id ao registro de origem. Retorna null se o prefixo ou o id não existir. Comentário escondido pela
+ * preferência também devolve null (a IA não o recebe, então não deve conseguir abri-lo).
+ * `textDbOf` dá o banco de cada fonte de texto (ver Repo): um versículo `txt:<fonte>:<vid>` de Bíblia baixada sai do
+ * banco dela. Sem ele, tudo vai a `db`.
+ */
+export async function resolveCite(
+  db: Db,
+  citeId: string,
+  pref: CommentaryPreference = ALL_COMMENTARIES,
+  lang: AppLang = ENTITY_NAME_LANG,
+  textDbOf: (sourceId: string) => Db = () => db,
+): Promise<CitableRecord | null> {
   const colon = citeId.indexOf(':');
   if (colon <= 0) return null;
   switch (citeId.slice(0, colon)) {
@@ -15,7 +30,7 @@ export async function resolveCite(db: Db, citeId: string): Promise<CitableRecord
       const m = /^txt:(.+):(\d+)$/.exec(citeId);
       if (!m) return null;
       const record = await first<VerseText>(
-        db,
+        textDbOf(m[1]!),
         `SELECT ${VERSE_COLS} FROM verse_text WHERE source_id = ? AND vid = ? AND cite_id = ?`,
         [m[1]!, Number(m[2]), citeId],
       );
@@ -37,7 +52,8 @@ export async function resolveCite(db: Db, citeId: string): Promise<CitableRecord
     }
     case 'com': {
       const record = await first<Commentary>(db, `SELECT ${COMMENTARY_COLS} FROM commentary WHERE cite_id = ?`, [citeId]);
-      return record ? { table: 'commentary', record } : null;
+      if (!record || !(await isCommentaryVisible(db, record, pref))) return null;
+      return { table: 'commentary', record };
     }
     case 'dic': {
       const record = await first<DictionaryEntry>(db, `SELECT ${DICTIONARY_COLS} FROM dictionary_entry WHERE cite_id = ?`, [citeId]);
@@ -57,8 +73,8 @@ export async function resolveCite(db: Db, citeId: string): Promise<CitableRecord
     case 'ent': {
       const row = await first<Entity>(db, `SELECT ${ENTITY_COLS} FROM entity WHERE cite_id = ?`, [citeId]);
       if (!row) return null;
-      const [named] = await attachNames(db, [row], (r) => r.cite_id);
-      const [record] = await attachDescriptions(db, [named!], (r) => r.cite_id);
+      const [named] = await attachNames(db, [row], (r) => r.cite_id, lang);
+      const [record] = await attachDescriptions(db, [named!], (r) => r.cite_id, lang);
       return { table: 'entity', record: record! };
     }
     default:

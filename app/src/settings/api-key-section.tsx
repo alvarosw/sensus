@@ -7,6 +7,7 @@ import { Pressable, TextInput, View } from 'react-native';
 import { orderModelListings, type ModelListing } from '@sensus/core';
 import { Card, fontFamilies, Icon, LinkButton, ListGroup, Pill, RadioOption, radius, Txt, useTheme } from '@/design';
 import { FormButton } from '@/ui/Buttons';
+import { t } from '@/i18n';
 import { checkProviderModel, listProviderModels } from '@/ai/client';
 import { LLMError, type ProviderConfig } from '@sensus/core';
 import { DEMO_PROVIDER_CONFIG } from '@/ai/demo-provider';
@@ -22,7 +23,6 @@ import {
   isSaveBusy,
   isVerifying,
   keyProbeOf,
-  VERIFY_COPY,
   VERIFY_IDLE,
   verifyReducer,
   verifySignature,
@@ -351,7 +351,7 @@ export function ApiKeySection() {
           first={i === 0}
           selected={id === presetId}
           title={APP_PRESETS[id].label}
-          help={id === DEMO_PRESET_ID ? 'offline, sem chave nem rede' : id === 'custom' ? 'compatível com OpenAI' : hostOf(APP_PRESETS[id].baseUrl)}
+          help={id === DEMO_PRESET_ID ? t('settings.presetOffline') : id === 'custom' ? t('settings.presetCustom') : hostOf(APP_PRESETS[id].baseUrl)}
           mono={id !== DEMO_PRESET_ID}
           onPress={() => selectPreset(id)}
         />
@@ -520,7 +520,7 @@ export function ApiKeySection() {
         />
         <FormButton
           testID="settings-save"
-          label={verify.phase === 'verifying' ? VERIFY_COPY.verifying : verify.phase === 'passed' && saveBusy ? COPY.saving : COPY.save}
+          label={verify.phase === 'verifying' ? COPY.verifyModel.verifying : verify.phase === 'passed' && saveBusy ? COPY.saving : COPY.save}
           disabled={saveBusy}
           onPress={onSave}
         />

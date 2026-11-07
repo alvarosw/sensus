@@ -64,6 +64,12 @@ const NOVAS: Array<{ id: string; kind: string; tradition: string }> = [
   { id: 'egw-steps', kind: 'commentary', tradition: 'adventist' },
   { id: 'egw-thoughts', kind: 'commentary', tradition: 'adventist' },
   { id: 'smith-daniel', kind: 'commentary', tradition: 'adventist' },
+  { id: 'egw-desire-of-ages', kind: 'commentary', tradition: 'adventist' },
+  { id: 'waggoner-galatians', kind: 'commentary', tradition: 'adventist' },
+  { id: 'waggoner-christ', kind: 'commentary', tradition: 'adventist' },
+  { id: 'andrews-sabbath', kind: 'commentary', tradition: 'adventist' },
+  { id: 'smith-us-prophecy', kind: 'commentary', tradition: 'adventist' },
+  { id: 'smith-sanctuary', kind: 'commentary', tradition: 'adventist' },
 ];
 
 const ROLE_OF_KIND: Record<string, string[]> = {
@@ -128,5 +134,14 @@ describe('registro de fontes e tradições (domain/sources)', () => {
   it('fonte fora do registro: rótulo pelo título do banco, ou pelo id sem título', () => {
     expect(sourceShort('fonte-nova', 'Uma fonte nova de estudo')).toBe('Uma fonte nova de estudo');
     expect(sourceShort('fonte-nova')).toBe('fonte-nova');
+  });
+});
+
+describe('nome dos Pais da Igreja por idioma', () => {
+  const com = { source_id: 'patristic', text: 'John Chrysostom — Homily 7 on Philippians\n\nText.' } as Commentary;
+  it('pt: nome em português; outros idiomas: o nome como a fonte escreve', () => {
+    expect(commentatorOf({ id: 'patristic' } as Source, com)).toBe('Crisóstomo');
+    expect(commentatorOf({ id: 'patristic' } as Source, com, 'en')).toBe('John Chrysostom');
+    expect(commentatorOf({ id: 'patristic' } as Source, com, 'ja')).toBe('John Chrysostom');
   });
 });

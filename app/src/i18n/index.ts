@@ -1,11 +1,11 @@
-// Tabela de textos da interface. Somente pt-BR por enquanto; toda string de UI
-// passa por t(). Para outro idioma, criar outra tabela com as mesmas chaves.
+// Textos compartilhados da interface (raiz, banco, Configurações e tela de estado). Cada área com textos próprios tem
+// seu strings.ts (ver localized.ts). O pt daqui é a fonte do tipo de StringKey; o inglês fica em locales/en/shell.ts.
+import { currentLang } from './lang-store';
+import { resolveKey, type LocaleTables } from './localized';
+import { shellTables } from './locales/all';
 
-/** Locale de exibição (formatação de datas, etc.). */
-export const APP_LOCALE = 'pt-BR';
-
-/** Código de idioma usado como destino em links de tradução (Google Translate). */
-export const APP_LANG = 'pt';
+export { currentBcp47, currentLang, useLang, useLangStore } from './lang-store';
+export { localized, resolveKey, type LocaleTables } from './localized';
 
 const pt = {
   'app.name': 'Sensus',
@@ -174,13 +174,65 @@ const pt = {
   'settings.status': 'Estado atual: {state}',
   'settings.stateReady': 'pronto para gerar resumos',
   'settings.stateMissing': 'sem chave configurada',
-} as const;
+  // Textos movidos de ui/, design/, auth/ e features/ (passo C).
+  'claim.actions': 'Ações deste parágrafo',
+  'auth.doneTitle': 'Pronto! Volte ao Sensus',
+  'auth.doneBody': 'Você já pode fechar esta página.',
+  'auth.openApp': 'Abrir o Sensus',
+  'auth.tooLarge': 'Requisição grande demais.',
+  'auth.portBusy': 'Não foi possível abrir a porta de retorno (1455-1459). Feche outros apps que a usem e tente de novo.',
+  'auth.loginTimeout': 'O login com o ChatGPT demorou demais. Tente de novo.',
+  'auth.notFound': 'Não encontrado.',
+  'auth.jwksNoConnection': 'Sem conexão para verificar a identidade.',
+  'auth.jwksUnavailable': 'Chaves de verificação indisponíveis.',
+  'auth.jwksFormat': 'Chaves de verificação em formato inesperado.',
+  'auth.networkDown': 'Sem conexão com o ChatGPT.',
+  'auth.serverDown': 'O ChatGPT está indisponível no momento.',
+  'auth.clientRefused': 'Cliente ChatGPT recusado.',
+  'auth.sessionExpired': 'Sessão do ChatGPT expirada.',
+  'auth.codeUsed': 'Código de login inválido ou usado.',
+  'auth.tokenFailed': 'Falha ao obter o token (HTTP {status}).',
+  'auth.accountMismatch': 'Esta conta do ChatGPT é diferente da salva. Saia da conta atual antes de trocar.',
+  'auth.loginRequired': 'Entre com o ChatGPT nas configurações para usar o plano.',
+  'auth.identityMismatch': 'A identidade da renovação não confere.',
+  'auth.accountNotFound': 'Conta ChatGPT não encontrada. Entre de novo.',
+  'auth.sessionExpiredRelogin': 'A sessão do ChatGPT expirou. Entre de novo nas configurações.',
+  'auth.refreshNetwork': 'Sem conexão com o ChatGPT para renovar a sessão. Tente de novo.',
+  'auth.refreshFailed': 'Não foi possível renovar a sessão do ChatGPT. Entre de novo.',
+  'auth.nativeOnly': 'Disponível no app instalado (build de desenvolvimento).',
+  'rich.tokenIs': 'O token citado é {expected}',
+  'rich.whereFrom': 'De onde vem isso? ({count})',
+  'rich.noSources': 'Sem fontes neste parágrafo.',
+  'rich.deepenPoint': 'Detalhar este ponto',
+  'rich.askAbout': 'Perguntar sobre isto',
+  'rich.openPreview': 'Abrir prévia',
+  'maps.androidOnly': 'Mapa interativo disponível no aplicativo Android.',
+  'settings.presetOffline': 'offline, sem chave nem rede',
+  'settings.presetCustom': 'compatível com OpenAI',
+  'attention.title': 'Sua conexão com o ChatGPT precisa de atenção',
+  'attention.reauth': 'Sua sessão com o ChatGPT expirou ou foi recusada. Entre de novo nas Configurações para voltar a usar o plano. Enquanto isso, o Sensus não usa sua chave de API nessas perguntas.',
+  'attention.notEligible': 'Esta conta do ChatGPT não tem o plano para o Sensus (requer Go, Plus ou Pro). Nas Configurações, tente o plano de novo ou desconecte. Enquanto isso, o Sensus não usa sua chave de API nessas perguntas.',
+  'attention.openSettings': 'Abrir Configurações',
+  'attention.later': 'Agora não',
+  'common.exitTitle': 'Sair do Sensus?',
+  'common.exitMessage': 'Seu estudo aberto será perdido.',
+  'lens.visao': 'Visão geral',
+  'lens.texto': 'Texto',
+  'lens.literario': 'Literário',
+  'lens.historico': 'Histórico',
+  'lens.lingua': 'Língua',
+  'lens.intertexto': 'Intertexto',
+  'lens.interpretacao': 'Interpretação',
+  'lens.aplicacao': 'Aplicação',
+};
 
 export type StringKey = keyof typeof pt;
 
-/** Traduz uma chave, substituindo {variaveis}. */
+const SHELL: LocaleTables<Record<StringKey, string>> = { pt, ...shellTables };
+
+/** Traduz uma chave no idioma atual (fallback: inglês, português), substituindo {variaveis}. */
 export function t(key: StringKey, vars?: Record<string, string | number>): string {
-  let text: string = pt[key];
+  let text = String(resolveKey(SHELL, currentLang(), key) ?? key);
   if (vars) {
     for (const [name, value] of Object.entries(vars)) {
       text = text.split(`{${name}}`).join(String(value));

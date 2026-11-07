@@ -50,6 +50,7 @@ Cambridge. Licença CC BY 4.0: credite "STEP Bible" com link para www.STEPBible.
 | `stepbible-tbesh` | TBESH, léxico hebraico | Definições baseadas em BDB (abreviado). |
 | `stepbible-tflsj` | TFLSJ, LSJ formatado | Base Liddell-Scott-Jones (domínio público), formatada pela Tyndale House. |
 | `stepbible-tipnr` | TIPNR, nomes próprios | Coordenadas via OpenBible.info, ver item 4 de "Verificar". |
+| `tvtms` | Translators Versification Traditions with Methodology for Standardisation (TVTMS), seção Expanded | Não entra no banco: regra de alinhamento da numeração das Bíblias à KJV (`pipeline/bibles/tvtms.py`). Arquivo bruto em `data/raw/bibles/tvtms/`, fora do git. Crédito incluído na atribuição das Bíblias alinhadas. |
 
 ### 2.3 CC BY 4.0 — OpenBible.info
 
@@ -122,12 +123,36 @@ Estate. Ver item 12. Não são comentários versículo a versículo: só parágr
 | `egw-thoughts` | Ellen G. White (1827-1915) | Thoughts from the Mount of Blessing (1896; impressão de 1928, copyright 1900 e 1928) | archive.org `thoughtsfrommoun0000unse` (Cincinnati Bible College & Seminary) | Comentário do Sermão do Monte. Legendas de ilustração (título em maiúsculas, citação e "— Page N") removidas, com o OCR solto ao redor; o parágrafo cortado por elas volta a ser um só. Parágrafos com marca de OCR ruim ou sem correspondência descartados (`strict_ocr`). Seções de Mateus 5–7: a epígrafe de cada seção (igual ou quase igual ao texto da KJV) liga os parágrafos da seção ao versículo (`sermon_sections`). Regra de aspas abaixo. |
 | `smith-daniel` | Uriah Smith (1832-1903) | Daniel and the Revelation (1897; edição de 1907, copyright 1907 da viúva) | archive.org `danielrevelation0000smit` (Claremont School of Theology) | Estudo versículo a versículo, não de Ellen G. White. Notas de cabeçalho de página e sumário removidos. Aspas do OCR restauradas (regra abaixo). Parágrafos com sinais de OCR ruim (`|`, `\`, `i`/`j` solto, `,1` colado) e com "Tt" (por "It") descartados. |
 
-**Examinadas e não incluídas (adventistas e outras):** *The Desire of Ages* (os scans de 1898 trazem aviso de direitos
-de 1940, de edição revisada; titularidade não confirmada); *Ministry of Healing* (1905) e *Education* (1903), em
-archive.org: o texto vem com uma linha por parágrafo, e a frase é cortada no fim da linha (mediana de 34 a 89
-caracteres), então os parágrafos não podem ser reconstruídos sem alterar o texto (a edição de 1905 com aviso de 1942 não
-serve); Geneva Bible Translation Notes e Family Bible Notes (sem `DistributionLicense` no `.conf`; o scan de 1599 no
-archive.org não traz licença); Darby Translation Notes (índice não alinhado à versificação).
+**Segunda leva (domínio público; autores falecidos antes de 1923, obras publicadas de 1873 a 1905).** Mesma regra de
+parágrafo com referência explícita. Títulos pt: *O Desejado de Todas as Nações* é o nome da edição brasileira; os
+demais são tradução nossa do título inglês, sem conferir edição brasileira. Citações de margem ou de nota (parágrafo só com texto da Escritura, conferido pela KJV) saem do comentário: com a referência casada, ou sem ela quando quase todo o texto está na Bíblia (regra `citacoes`). Ver item 12.
+
+| Fonte (id) | Autor | Título e edição | Origem do texto | Condições |
+|---|---|---|---|---|
+| `egw-desire-of-ages` | Ellen G. White (1827-1915) | The Desire of Ages (1898, Pacific Press) | archive.org `desireofages00whit` | Scan sem aviso de 1940 nem de 1964 (os de `desireofages0000elle_w5v8` e `_z5c9` trazem, e não são usados). Rodapés de referência (`^^Zech. 9:16, 17.`) saem do texto e ligam ao parágrafo da página (`page_notes`). "This chapter is based on…" (nota editorial) sai. Parágrafos com `©` (OCR) descartados. |
+| `waggoner-galatians` | E. J. Waggoner (1855-1916) | The Glad Tidings (1900, Pacific Press; copyright 1900) | Project Gutenberg #63636 | Comentário de Gálatas. Sumário do Gutenberg (capítulos com página) removido. A citação em bloco é da Revised Version, que não casa com a KJV: a ligação é só por referência explícita. |
+| `waggoner-christ` | E. J. Waggoner (1855-1916) | Christ and His Righteousness (1893, Echo Publishing) | archive.org `christ-and-his-righteousness-1893-echo-publishing` | Cabeçalhos de página removidos. Parágrafos com `©` ou `|` (OCR) descartados. |
+| `andrews-sabbath` | John Nevins Andrews (1829-1883) | History of the Sabbath and First Day of the Week (1873) | Project Gutenberg #68714 | Notas de rodapé ligadas pelo marcador, como em `egw-patriarchs`. Sumário e índice do Gutenberg fora do texto. |
+| `smith-us-prophecy` | Uriah Smith (1832-1903) | The United States in the Light of Prophecy (1874) | Project Gutenberg #12364 | Comentário de Apocalipse 13 e Daniel 7. Sem capítulos numerados no texto. |
+| `smith-sanctuary` | Uriah Smith (1832-1903) | The Sanctuary and the Twenty-three Hundred Days of Daniel VIII, 14 (1877) | archive.org `sanctuarytwentyt0000smit` | Dn 8:14 e o santuário. Cabeçalhos "THE SANCTUARY." removidos. O índice remissivo e o catálogo do editor (com anúncios) saem do texto, a partir do cabeçalho "INDEX. 349" (`skip`). Parágrafos com `©` descartados. |
+
+Fora do banco por enquanto: `haskell-daniel` e `haskell-seer` (Stephen N. Haskell, 1855-1922; *The Story of Daniel the
+Prophet*, 1901, e *The Story of the Seer of Patmos*, 1905, Review and Herald, archive.org). Domínio público, mas o
+scan mistura citações bíblicas de margem, perguntas de estudo e fragmentos de OCR no comentário; entram quando a
+limpeza passar na amostragem.
+
+**Examinadas e não incluídas (adventistas e outras):** *Ministry of Healing* (1905/1909): o scan de 1909 não tem
+referência explícita em parágrafo, e o de 1905 traz aviso de 1942 (edição revisada); não está no Gutenberg. *Education*
+(1903): no Gutenberg (#62102), as referências são linhas curtas de lista (cerca de 35), sem comentário; no archive.org,
+uma linha por parágrafo. *Early Writings* (1893, archive.org): 73 referências. *Testimonies* (1901): poucas referências
+explícitas no volume lido. *The Great Empires of Prophecy* (Jones, 1898, archive.org): OCR com barras verticais
+(cerca de 100 referências). *Bates*, *The Opening Heavens* e *Seventh Day Sabbath* (Gutenberg): 4 e 2 parágrafos com
+referência. *The Complete Testimony of the Fathers* (Andrews, Gutenberg #55818): tema patrístico, 53 referências.
+*The State of the Dead* (Smith, 1873): sem referência explícita. *Sketches from the Life of Paul* e *Looking Unto Jesus*:
+não encontradas em Gutenberg nem em archive.org.
+
+**Examinadas e não incluídas (outras):** Geneva Bible Translation Notes e Family Bible Notes (sem `DistributionLicense` no
+`.conf`; o scan de 1599 no archive.org não traz licença); Darby Translation Notes (índice não alinhado à versificação).
 Ver item 12 para as demais.
 
 **Dicionários**
@@ -161,6 +186,39 @@ O estilo (claro e escuro) é gerado pelo app a partir dos tokens de cor; não co
 
 Atribuição mostrada: "© OpenStreetMap contributors · © OpenMapTiles · OpenFreeMap" (`features/maps/strings.ts`).
 Mapa do mundo antigo (AWMC): não incluído; ver `docs/BACKLOG.md`, seção App.
+
+### 2.9 Bíblias do repositório de Bíblias (pacotes sob demanda)
+
+Cada pacote `bible-<id>-<versão>.zip` traz um SQLite só com o texto de uma tradução (`verse_text`,
+`text_division`, `book_name`) e a licença e atribuição gravadas em `meta`. Pesquisa, critérios e Bíblias
+recusadas em `docs/BIBLES_LICENSES.md`. Origem de todas: eBible.org (USFM), página de licença em
+`https://ebible.org/find/details.php?id=<código>`, salvo Berean (titular) e SWORD. Toda Bíblia alinhada pela
+TVTMS traz o crédito da §2.2 na atribuição.
+
+| Fonte (id) | Título | Licença | Atribuição exigida | Condições |
+|---|---|---|---|---|
+| `engwebp` | World English Bible | Domínio público | World English Bible (WEB), domínio público (eBible.org). | "World English Bible" é marca do eBible: texto alterado não leva o nome. |
+| `engasv` | American Standard Version (1901) | Domínio público | American Standard Version (1901), domínio público (eBible.org). |  |
+| `engbsb` | Berean Standard Bible | Domínio público (dedicada em 30/04/2023) | Berean Standard Bible, domínio público (dedicada em 30/04/2023; eBible.org). | Declaração do titular (berean.bible/terms.htm); confirmar antes da release. |
+| `spablm` | Santa Biblia libre para el mundo | Domínio público | Santa Biblia libre para el mundo, domínio público (eBible.org). |  |
+| `spavbl` | Versión Biblia Libre | CC BY-SA 4.0 | Versión Biblia Libre, copyright © 2018-2020 Jonathan Gallagher y Shelly Barrios de Avila, licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `frasbl` | Sainte Bible libre pour le monde | CC0 1.0 | Sainte Bible libre pour le monde, domínio público (CC0 1.0) (eBible.org). |  |
+| `fralsg` | Louis Segond 1910 | Domínio público | Louis Segond 1910, domínio público (eBible.org). |  |
+| `frajnd` | Bible J. N. Darby | Domínio público | Bible J. N. Darby, texto em domínio público (eBible.org). |  |
+| `deu1912` | Lutherbibel 1912 | Domínio público | Lutherbibel 1912, domínio público (eBible.org). |  |
+| `deuelo` | Elberfelder 1905 (não revisada) | Domínio público | Elberfelder 1905 (não revisada), domínio público (eBible.org). |  |
+| `arbvd` | Van Dyck (Smith-Van Dyke) | Domínio público | Van Dyck (Smith-Van Dyke), domínio público (eBible.org). |  |
+| `hin2017` | IRV Hindi 2019 | CC BY-SA 4.0 | Indian Revised Version, hindi (2019), copyright © 2017-2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `hincv` | Hindi Contemporary Version | CC BY-SA 4.0 | Hindi Contemporary Version, copyright © 1978, 2009, 2016, 2019 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `benobcv` | Open Bengali Contemporary Version | CC BY-SA 4.0 | Open Bengali Contemporary Version, Copyright © 2007, 2017, 2019 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `benirv` | IRV Bengali 2019 | CC BY-SA 4.0 | Indian Revised Version, bengali (2019), copyright © 2018-2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `urdoucv` | Urdu Contemporary Version (aberta) | CC BY-SA 4.0 | Urdu Contemporary Version (Biblica), copyright © 1999, 2005, 2022, 2024 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `urdirv` | IRV Urdu 2019 | CC BY-SA 4.0 | Indian Revised Version, urdu (2019), copyright © 2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `jpnm` | Freedom Bible (japonês) | Domínio público (sem direitos declarados) | Freedom Bible (japonês), sem direitos autorais declarados pelo eBible.org. | Declaração do eBible; ver `docs/BIBLES_LICENSES.md`. |
+| `cmncbs` | 当代译本开放资源（简体） | CC BY-SA 4.0 | 当代译本开放资源（简体）, Copyright © 1979, 2005, 2007, 2011, 2022 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `cmncbt` | 當代譯本開放資源（繁體） | CC BY-SA 4.0 | 當代譯本開放資源（繁體）, Copyright © 1979, 2005, 2007, 2012, 2023 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `vieovcb` | Kinh Thánh Hiện Đại (VCB) | CC BY-SA 4.0 | Kinh Thánh Hiện Đại (VCB), copyright © 1982, 1987, 1994, 2005, 2015 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `russyn` | Синодальный перевод (Sinodal, 1876) | Domínio público | Синодальный перевод (1876), domínio público (eBible.org). | Módulo SWORD `RusSynodal` também declara domínio público. Alinhada pela TVTMS e checada por texto (`docs/BIBLES_LICENSES.md`, §8). |
 
 ## 3. Verificar antes de distribuir
 
@@ -209,6 +267,10 @@ Mapa do mundo antigo (AWMC): não incluído; ver `docs/BACKLOG.md`, seção App.
     (d) `egw-great-controversy` usa a edição do Gutenberg (1911), que tem poucas citações no corpo. A edição de
     1895 (Digital Library of India, dli.ernet.236787) tem muito mais citações, mas o OCR troca palavras ("tho" por
     "the", "bo" por "be") em cerca de um terço dos parágrafos com referência. Não foi usada.
+    (e) As regras de rodapé de referência (`page_notes`) e de título de seção (`titulos_secao`) e de citação de margem (`citacoes`) valem só para a segunda
+    leva. `smith-daniel`, `egw-thoughts` e as demais fontes adventistas antigas continuam como estavam, para o que já
+    está publicado não mudar. Em `smith-daniel`, notas de rodapé colocadas no meio do parágrafo ainda podem aparecer no
+    texto; conferir antes de uma próxima release.
 
 ## 4. Ferramentas e modelos de terceiros (não são dados do banco)
 

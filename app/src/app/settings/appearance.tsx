@@ -1,9 +1,11 @@
 // Aparência e leitura: tema (sistema, claro, escuro) e padrões do leitor (texto BLivre/KJV e grego TR).
 import { ScrollView, Switch, View } from 'react-native';
-import { sourceAbbr, textSources } from '@sensus/core';
-import { Card, Segmented, Txt, useTheme, type SchemePreference } from '@/design';
-import { useAppPrefs, type TextSourceId } from '@/settings/app-prefs';
+import { Card, ListGroup, RadioOption, Segmented, Txt, useTheme, type SchemePreference } from '@/design';
+import { useAppPrefs } from '@/settings/app-prefs';
 import { SETTINGS_COPY as COPY } from '@/settings/strings';
+import { useBibles } from '@/data/bibles/bibles-store';
+import { bibleRowInfo } from '@/data/bibles/bible-model';
+import { BIBLE_COPY } from '@/data/bibles/strings';
 import { TranslateSettingsCard } from '@/translate/SettingsCard';
 import { TR } from '@/translate/strings';
 
@@ -23,6 +25,8 @@ export default function AppearanceScreen() {
   const setTheme = useAppPrefs((s) => s.setTheme);
   const setTextSource = useAppPrefs((s) => s.setTextSource);
   const setGreekDefault = useAppPrefs((s) => s.setGreekDefault);
+  const installed = useBibles((s) => s.installed);
+  const catalog = useBibles((s) => s.catalog);
 
   const chooseTheme = (p: SchemePreference) => {
     setPreference(p);
@@ -51,13 +55,24 @@ export default function AppearanceScreen() {
         <Card style={{ gap: 14 }}>
           <View style={{ gap: 8 }}>
             <Txt v="eyebrow" color="muted">{COPY.textDefault}</Txt>
-            <Segmented<TextSourceId>
-              testID="text-source"
-              value={textSource}
-              onChange={setTextSource}
-              options={textSources().map((id) => ({ key: id, label: sourceAbbr(id) }))}
-            />
-            <Txt v="bodySm" color="muted">{COPY.textHelp}</Txt>
+            <ListGroup testID="text-source">
+              {installed.map((id, i) => {
+                const info = bibleRowInfo(id, catalog);
+                return (
+                  <RadioOption
+                    key={id}
+                    testID={`text-source-${id}`}
+                    first={i === 0}
+                    selected={id === textSource}
+                    title={info.name}
+                    help={info.abbr}
+                    onPress={() => setTextSource(id)}
+                  />
+                );
+              })}
+            </ListGroup>
+            <Txt v="bodySm" color="muted">{BIBLE_COPY.textHelp}</Txt>
+            <Txt v="bodySm" color="muted">{BIBLE_COPY.textMore}</Txt>
           </View>
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
             <View style={{ flex: 1, gap: 2 }}>

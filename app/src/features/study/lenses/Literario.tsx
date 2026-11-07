@@ -77,7 +77,7 @@ export function LiterarioLens({ onLayout }: LensProps) {
                           <Txt v="meta" color="muted">{`${p.sources[d.source_id]?.title ?? d.source_id} · ${refShort(d.vid, d.vid, books, true)}`}</Txt>
                         </View>
                         <Txt v="bodySm">
-                          {d.title ?? `${d.kind === 'heading' ? STUDY.heading : STUDY.paragraphStart} ${splitVid(d.vid).verse === 1 ? `(capítulo ${splitVid(d.vid).chapter})` : ''}`.trim()}
+                          {d.title ?? `${d.kind === 'heading' ? STUDY.heading : STUDY.paragraphStart} ${splitVid(d.vid).verse === 1 ? STUDY.chapterMark(splitVid(d.vid).chapter) : ''}`.trim()}
                         </Txt>
                       </Card>
                     ))}
@@ -101,7 +101,7 @@ export function LiterarioLens({ onLayout }: LensProps) {
                   </Cards>
                 </>
               )}
-              {divs.length === 0 && lit.bookIntro.length === 0 && before.length + after.length === 0 && <Empty text="Sem contexto literário nesta fonte." />}
+              {divs.length === 0 && lit.bookIntro.length === 0 && before.length + after.length === 0 && <Empty text={STUDY.literaryEmpty} />}
             </View>
           );
         }}

@@ -10,7 +10,7 @@ import {
   type RichTextContext,
 } from '@sensus/core';
 import { streamChat } from '@/ai/client';
-import { APP_LOCALE } from '@/i18n';
+import { currentBcp47 } from '@/i18n';
 import { useStudy, type Attachment, type ChatTurn } from '@/state/study';
 import { CHAT } from '../common/strings';
 
@@ -62,7 +62,7 @@ async function execute(id: string, provider: ProviderConfig): Promise<void> {
     { text: meta.contextText },
     historyBefore(id),
     turn.question,
-    { attachments: toChatAttachments(turn.attachments), language: APP_LOCALE },
+    { attachments: toChatAttachments(turn.attachments), language: currentBcp47() },
   );
 
   const controller = new AbortController();

@@ -2,22 +2,25 @@
 import type { StateCreator } from 'zustand';
 import type { SectionKey } from '@sensus/core';
 import type { StudyState } from './index';
+import { t } from '../../i18n';
 
 /** Lentes da folha: visão geral + seções do resumo. */
 export type LensKey = 'visao' | SectionKey;
 export const LENS_KEYS: readonly LensKey[] = ['visao', 'texto', 'literario', 'historico', 'lingua', 'intertexto', 'interpretacao', 'aplicacao'];
+/** Nomes das lentes no idioma do app (getters: o idioma é lido no acesso). */
 export const LENS_LABELS: Record<LensKey, string> = {
-  visao: 'Visão geral',
-  texto: 'Texto',
-  literario: 'Literário',
-  historico: 'Histórico',
-  lingua: 'Língua',
-  intertexto: 'Intertexto',
-  interpretacao: 'Interpretação',
-  aplicacao: 'Aplicação',
+  get visao() { return t('lens.visao'); },
+  get texto() { return t('lens.texto'); },
+  get literario() { return t('lens.literario'); },
+  get historico() { return t('lens.historico'); },
+  get lingua() { return t('lens.lingua'); },
+  get intertexto() { return t('lens.intertexto'); },
+  get interpretacao() { return t('lens.interpretacao'); },
+  get aplicacao() { return t('lens.aplicacao'); },
 };
 
-export type CompareSource = 'blivre' | 'kjv' | 'original';
+/** Coluna da comparação da lente Texto: id de uma Bíblia instalada, ou 'original' (ver lens-model compareOptions). */
+export type CompareSource = string;
 
 export interface LensesSlice {
   /** Lente visível (sincronizada com o trilho e a rolagem). */

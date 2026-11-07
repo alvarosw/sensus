@@ -23,7 +23,7 @@ import { loadConcordance, loadLexicon, loadSources } from '../common/cites';
 import { refShort } from '../common/format';
 import { useBooks, useCite } from '../common/hooks';
 import { hebrewMorphPt } from '../common/morph-hb';
-import { morphParts } from '../common/morph-pt';
+import { morphParts } from '../common/morph';
 import { SRC } from '../common/strings';
 import { wordView } from '../common/word-view';
 import { useAutoTranslate } from '@/translate/useAutoTranslate';

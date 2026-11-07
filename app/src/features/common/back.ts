@@ -4,6 +4,7 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { Alert, BackHandler, Keyboard, Platform } from 'react-native';
 import { useFocusEffect } from 'expo-router';
+import { t } from '@/i18n';
 import { backAction, closeTopLayer, registerBackLayer, topBackLayer } from './back-registry';
 
 export { closeTopLayer } from './back-registry';
@@ -46,7 +47,7 @@ export function useBackLayer(id: string, open: boolean, close: () => void, prior
  * Instale na tela base (index). Ativo só enquanto a tela está em foco: em outras rotas
  * (ex.: configurações) o "voltar" segue a navegação normal.
  */
-export function useRootBackHandler(exitTitle = 'Sair do Sensus?', exitMessage = 'Seu estudo aberto será perdido.') {
+export function useRootBackHandler(exitTitle = t('common.exitTitle'), exitMessage = t('common.exitMessage')) {
   useFocusEffect(
     useCallback(() => {
       if (Platform.OS !== 'android') return undefined;

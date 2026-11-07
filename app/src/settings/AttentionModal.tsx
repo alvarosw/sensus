@@ -3,14 +3,13 @@ import { Modal, Pressable, View } from 'react-native';
 import { router } from 'expo-router';
 import { Card, Txt, useTheme } from '@/design';
 import { FormButton } from '@/ui/Buttons';
+import { t } from '@/i18n';
 import { useAttention, type AttentionReason } from './attention';
 
-const COPY: Record<AttentionReason, string> = {
-  reauth:
-    'Sua sessão com o ChatGPT expirou ou foi recusada. Entre de novo nas Configurações para voltar a usar o plano. Enquanto isso, o Sensus não usa sua chave de API nessas perguntas.',
-  not_eligible:
-    'Esta conta do ChatGPT não tem o plano para o Sensus (requer Go, Plus ou Pro). Nas Configurações, tente o plano de novo ou desconecte. Enquanto isso, o Sensus não usa sua chave de API nessas perguntas.',
-};
+/** Motivo do aviso no idioma do app (lido ao renderizar, não na carga do módulo). */
+function copyOf(reason: AttentionReason): string {
+  return reason === 'reauth' ? t('attention.reauth') : t('attention.notEligible');
+}
 
 export function AttentionModal() {
   const { c } = useTheme();
@@ -33,11 +32,11 @@ export function AttentionModal() {
       >
         <Pressable accessibilityRole="alert" onPress={() => undefined} testID="attention-modal">
           <Card style={{ gap: 14, backgroundColor: c.surface }}>
-            <Txt v="lensTitle">Sua conexão com o ChatGPT precisa de atenção</Txt>
-            <Txt v="bodySm" color="muted" testID="attention-reason">{reason ? COPY[reason] : ''}</Txt>
+            <Txt v="lensTitle">{t('attention.title')}</Txt>
+            <Txt v="bodySm" color="muted" testID="attention-reason">{reason ? copyOf(reason) : ''}</Txt>
             <View style={{ gap: 8 }}>
-              <FormButton testID="attention-open-settings" label="Abrir Configurações" onPress={openSettings} />
-              <FormButton testID="attention-later" variant="secondary" label="Agora não" onPress={dismiss} />
+              <FormButton testID="attention-open-settings" label={t('attention.openSettings')} onPress={openSettings} />
+              <FormButton testID="attention-later" variant="secondary" label={t('attention.later')} onPress={dismiss} />
             </View>
           </Card>
         </Pressable>

@@ -1,4 +1,4 @@
-// Tradução automática de um texto em inglês para a tela (política 'item' de useTranslatable). Mostra o original
+// Tradução automática de um texto da fonte para a tela (política 'item' de useTranslatable). Mostra o original
 // enquanto traduz. Mantida como fina camada sobre useTranslatable: o formato do retorno é o que as telas já usam.
 
 import { useTranslatable } from './useTranslatable';
@@ -6,7 +6,7 @@ import { useTranslatable } from './useTranslatable';
 export interface AutoTranslation {
   /** Texto a mostrar agora: a tradução, ou o original (oferta, desligada, em andamento, falha ou "Ver original"). */
   display: string;
-  /** O texto em inglês, sempre disponível. */
+  /** O texto original, sempre disponível. */
   original: string;
   /** A tela mostra a tradução. */
   translated: boolean;
@@ -25,12 +25,14 @@ export interface AutoTranslation {
   toggleOriginal(): void;
   answerOffer(accept: boolean): void;
   retry(): void;
+  /** Nomes dos idiomas do par (origem e app) para as frases; null sem par de tradução. */
+  names: { from: string; to: string } | null;
 }
 
 /** Estado que a linha de nota (AutoTranslateNote) usa: o mesmo para um texto só e para um bloco com vários. */
 export type TranslationNoteState = Pick<
   AutoTranslation,
-  'offer' | 'loading' | 'failed' | 'available' | 'translated' | 'showOriginal' | 'toggleOriginal' | 'answerOffer' | 'retry'
+  'offer' | 'loading' | 'failed' | 'available' | 'translated' | 'showOriginal' | 'toggleOriginal' | 'answerOffer' | 'retry' | 'names'
 >;
 
 export function useAutoTranslate(text: string | null | undefined, lang: string | null | undefined): AutoTranslation {
@@ -49,5 +51,6 @@ export function useAutoTranslate(text: string | null | undefined, lang: string |
     toggleOriginal: tr.toggleOriginal,
     answerOffer: tr.answerOffer,
     retry: tr.retry,
+    names: tr.names,
   };
 }

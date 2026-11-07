@@ -183,7 +183,7 @@ function Sheet({ topInset, active }: { topInset: number; active: boolean }) {
         pointerEvents={detent === 'full' && active ? 'auto' : 'none'}
         style={[StyleSheet.absoluteFill, { backgroundColor: c.scrim, zIndex: 6 }, scrimStyle]}
       >
-        <Pressable testID="sheet-scrim" accessibilityLabel="Voltar para a meia altura" style={StyleSheet.absoluteFill} onPress={() => setDetent('half')} />
+        <Pressable testID="sheet-scrim" accessibilityLabel={STUDY.sheetBackHalf} style={StyleSheet.absoluteFill} onPress={() => setDetent('half')} />
       </Animated.View>
       {mounted && avail > 0 && (
         <Animated.View
@@ -226,7 +226,7 @@ function Grab({ onPress }: { onPress: () => void }) {
     <Pressable
       testID="sheet-grab"
       accessibilityRole="button"
-      accessibilityLabel="Alternar altura do estudo"
+      accessibilityLabel={STUDY.sheetToggleHeight}
       onPress={onPress}
       style={{ height: size.handle, alignItems: 'center', justifyContent: 'center' }}
     >

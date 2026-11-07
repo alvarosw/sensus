@@ -1,13 +1,17 @@
+import { localized } from '../../i18n';
+import { studyTables } from '../../i18n/locales/all';
 // Textos da folha de estudo (pt-BR). Mantidos aqui para não colidir com a tabela global em i18n.
 import { testamentLabel, type Testament } from '@sensus/core';
 
-export const STUDY = {
+const ptStudy = {
   sheet: 'Estudo do trecho selecionado',
   expand: 'Expandir estudo',
   collapse: 'Reduzir estudo',
   close: 'Limpar seleção',
-  verse: 'versículo',
-  verses: 'versículos',
+  /** Contagem de versículos da seleção: 1 versículo, 2 versículos. */
+  verseCount: (n: number) => `${n} ${n === 1 ? 'versículo' : 'versículos'}`,
+  /** Abreviação para a lente Texto ("3 vv"). */
+  versesAbbr: (n: number) => `${n} vv`,
   crosses: (a: string, b: string) => `atravessa ${a} → ${b}`,
   pericope: (r: string) => `Perícope ${r}`,
   pericopeWhole: 'Perícope inteira',
@@ -15,8 +19,8 @@ export const STUDY = {
   railLabel: 'Lentes do estudo',
 
   factComentaristas: 'comentaristas',
-  factVariante: (slash: string) => `variante ${slash}`,
-  factVariantes: (slash: string) => `variantes ${slash}`,
+  factVariantes: (n: number, slash: string) => `${n === 1 ? 'variante' : 'variantes'} ${slash}`,
+  variantCount: (n: number) => `${n} ${n === 1 ? 'variante' : 'variantes'}`,
   factXrefs: 'refs. cruzadas',
   factHapax: (t: Testament) => `hápax no ${testamentLabel(t)}`,
   /** Contagem de versículos no testamento da palavra; 1 vira "versículo", o resto "vv.". */
@@ -55,8 +59,6 @@ export const STUDY = {
 
   // Texto
   translations: 'Traduções e original',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'Original',
   originalHint: (nt: string, at: string) => `Original: ${nt} para o NT, ${at} para o AT. Toque numa palavra para ver morfologia.`,
   variantsTitle: 'Variantes entre edições',
@@ -80,7 +82,9 @@ export const STUDY = {
 
   // Histórico
   place: 'Lugar',
-  places: 'Lugares',
+  placesHeading: (n: number): string => (n > 1 ? 'Lugares' : 'Lugar'),
+  placesAndEntries: (places: number, entries: number) =>
+    `${places} ${places === 1 ? 'lugar' : 'lugares'} · ${entries} ${entries === 1 ? 'verbete' : 'verbetes'}`,
   peopleGroups: 'Pessoas e grupos',
   dictionaries: 'Dicionários e enciclopédias',
   seeEntity: 'Ver entidade',
@@ -123,4 +127,22 @@ export const STUDY = {
 
   // Aplicação
   applicationHint: 'A aplicação vem só da IA e é sempre marcada como inferência.',
+  // Textos movidos de lentes e folha (passo C).
+  xrefsCount: (n: number) => `${n} ${n === 1 ? 'referência' : 'referências'}`,
+  commentariesCount: (n: number) => `${n} ${n === 1 ? 'comentário' : 'comentários'}`,
+  chapterMark: (n: number) => `(capítulo ${n})`,
+  literaryEmpty: 'Sem contexto literário nesta fonte.',
+  sheetBackHalf: 'Voltar para a meia altura',
+  sheetToggleHeight: 'Alternar altura do estudo',
+  // títulos dos passos do fio (thread.ts)
+  threadLens: {
+    literario: 'Onde estamos',
+    lingua: 'A palavra que move o trecho',
+    texto: 'Os manuscritos divergem',
+    intertexto: 'Ecos em outros textos',
+    historico: 'Pessoas, lugares e contexto',
+    interpretacao: 'Como a igreja leu',
+    aplicacao: 'E para nós',
+  },
 };
+export const STUDY = localized<typeof ptStudy>({ pt: ptStudy, ...studyTables });

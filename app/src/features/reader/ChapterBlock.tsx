@@ -11,6 +11,7 @@ import type { FlowBlock } from './verse-flow';
 import type { ChapterData } from './chapters';
 import { LINE, type ReaderGeometry } from './geometry';
 import { READER } from './strings';
+import { bookName } from './chapters';
 
 const WJ = '⁠'; // junta o marcador inline ao texto vizinho (sem quebra de linha entre eles)
 const SUP = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
@@ -82,18 +83,18 @@ export const ChapterBlock = memo(function ChapterBlock({ data, geo, sourceName, 
         <View>
           {prev && (
             <Text style={{ fontFamily: fontFamilies.ui, fontSize: 12, color: c.muted, textAlign: 'center', paddingTop: 10, paddingBottom: 18, letterSpacing: 0.24 }}>
-              {READER.bookEdge(prev.name_pt, prev.chapters)}
+              {READER.bookEdge(bookName(prev.num), prev.chapters)}
             </Text>
           )}
           <Text accessibilityRole="header" style={{ ...type.bookTitle, color: c.text, textAlign: 'center', marginTop: prev ? 4 : 0, marginBottom: 2 }}>
-            {book.name_pt}
+            {bookName(book.num)}
           </Text>
           <Text style={{ fontFamily: fontFamilies.ui, fontSize: 12, lineHeight: 18, color: c.muted, textAlign: 'center', marginBottom: 18 }}>
             {READER.bookSub(sourceName)}
           </Text>
         </View>
       )}
-      <ChapterMarker book={book.name_pt} chapter={data.chapter} onY={(y) => geo.setMarker(data.idx, y)} first={first} geo={geo} idx={data.idx} />
+      <ChapterMarker book={bookName(book.num)} chapter={data.chapter} onY={(y) => geo.setMarker(data.idx, y)} first={first} geo={geo} idx={data.idx} />
       {items.map((it) =>
         it.kind === 'heading' ? (
           <Text key={it.key} style={{ fontFamily: fontFamilies.readItalic, fontSize: 15.5, lineHeight: 24, color: c.muted, paddingHorizontal: gutter.reader, marginBottom: 8 }}>

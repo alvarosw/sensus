@@ -34,7 +34,10 @@ Pronto: `npx vitest run <arquivo>` passa.
 
 - Componentes até ~300 linhas; acima disso, separe.
 - Só tokens e componentes de `app/src/design` e `app/src/ui` (`docs/DESIGN_SYSTEM.md`); claro e escuro.
-- Textos em `strings.ts` da feature, em pt-BR; strings que dependem de testamento/língua recebem `Testament`/`Lang`.
+- Textos em `strings.ts` da feature (objeto pt) e nos outros 13 idiomas em `app/src/i18n/locales/<idioma>/<área>.ts`,
+  no mesmo commit; strings que dependem de testamento/língua recebem `Testament`/`Lang`; plural por função
+  (`verseCount(n)`), nunca `n === 1 ? a : b` na tela. Árabe e urdu: texto da direita para a esquerda.
+- Datas, números e o idioma pedido à IA: `currentBcp47()`, nunca `'pt-BR'` fixo.
 - Estado: no store da própria feature; `useStudy` só se for compartilhado entre leitor, folha e chat.
 - Texto em inglês vindo de fonte: tradução automática pelo mecanismo do app, decidindo por `isTranslatableSource`.
 

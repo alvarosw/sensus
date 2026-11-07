@@ -33,15 +33,10 @@ export const THREAD_ORDER: readonly ThreadLensKey[] = [
   'aplicacao',
 ];
 
-export const THREAD_TITLES: Record<ThreadLensKey, string> = {
-  literario: 'Onde estamos',
-  lingua: 'A palavra que move o trecho',
-  texto: 'Os manuscritos divergem',
-  intertexto: 'Ecos em outros textos',
-  historico: 'Pessoas, lugares e contexto',
-  interpretacao: 'Como a igreja leu',
-  aplicacao: 'E para nós',
-};
+/** Título do passo do fio para a lente, no idioma do app. */
+export function threadTitle(lens: ThreadLensKey): string {
+  return STUDY.threadLens[lens];
+}
 
 /** Quantos nomes do histórico e de comentaristas aparecem antes de "e mais N". */
 const MAX_NAMES = 3;
@@ -108,11 +103,11 @@ export function buildThread({ panel, range, books, ai }: ThreadInput): ThreadSte
   const steps: ThreadStep[] = [];
   for (const lens of THREAD_ORDER) {
     if (lens === 'aplicacao') {
-      if (hasAi) steps.push({ lens, title: THREAD_TITLES[lens], evidence: null });
+      if (hasAi) steps.push({ lens, title: threadTitle(lens), evidence: null });
       continue;
     }
     const ev = evidence[lens];
-    if (ev) steps.push({ lens, title: THREAD_TITLES[lens], evidence: ev });
+    if (ev) steps.push({ lens, title: threadTitle(lens), evidence: ev });
   }
   return steps;
 }

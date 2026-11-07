@@ -1,0 +1,81 @@
+// Vietnamita de app/src/data/strings.ts. A revisar por falante nativo.
+export const viData = {
+  title: 'Dữ liệu học',
+  rowTitle: 'Dữ liệu học',
+
+  setupLead:
+    'Văn bản Kinh Thánh đã có sẵn trong ứng dụng và hoạt động mà không cần tải. Dữ liệu học cung cấp những gì hỗ trợ phân tích từng phân đoạn:',
+  includes: [
+    'Chú giải của các tác giả cổ điển và hiện đại',
+    'Từ điển Kinh Thánh và mục lục chủ đề',
+    'Từ điển và hình thái học tiếng Hy Lạp và tiếng Hê-bơ-rơ',
+    'Tham chiếu chéo, nhân vật, địa danh và bản đồ',
+    'Dị bản văn bản của Tân Ước',
+  ],
+  sizeLine: (download: string, installed: string) =>
+    `${download} để tải · chiếm khoảng ${installed} · nên dùng Wi‑Fi`,
+  sizeUnknown: 'Dung lượng hiển thị khi kết nối',
+  download: 'Tải ngay',
+  later: 'Để sau',
+  cancel: 'Hủy',
+  resume: 'Tiếp tục',
+  discard: 'Hủy bản tải',
+  retry: 'Thử lại',
+  close: 'Đóng',
+  continue: 'Tiếp tục',
+  done: 'Xong. Dữ liệu học đã được cài đặt.',
+
+  progress: (pct: number) => `Đang tải… ${pct}%`,
+  progressOf: (done: string, total: string) => `${done} trên ${total}`,
+  phases: {
+    checking: 'Đang kiểm tra dữ liệu…',
+    verifying: 'Đang kiểm tra tệp…',
+    extracting: 'Đang giải nén…',
+    installing: 'Đang cài đặt…',
+  },
+  paused: {
+    user: 'Đã tạm dừng tải. Dữ liệu đã tải được giữ lại.',
+    network: 'Kết nối bị ngắt. Dữ liệu đã tải được giữ lại; chạm Tiếp tục khi bạn muốn.',
+    interrupted: 'Quá trình tải bị dừng khi ứng dụng đóng. Dữ liệu đã tải được giữ lại.',
+  },
+  errors: {
+    manifest: 'Không thể kiểm tra dữ liệu. Hãy kiểm tra kết nối và thử lại.',
+    network: 'Kết nối bị ngắt trong khi tải. Hãy thử lại.',
+    space: (need: string) => `Thiết bị không đủ dung lượng. Cần khoảng ${need} trống.`,
+    'app-too-old': 'Phiên bản ứng dụng này không hỗ trợ dữ liệu này. Hãy cập nhật Sensus.',
+    schema: 'Phiên bản ứng dụng này không hỗ trợ dữ liệu này. Hãy cập nhật Sensus.',
+    checksum: 'Tệp đã tải không vượt qua kiểm tra. Hãy thử lại.',
+    corrupt: 'Tệp đã tải chưa đầy đủ. Hãy thử lại.',
+    install: 'Không thể cài đặt dữ liệu. Văn bản vẫn có sẵn. Hãy thử lại.',
+    unsupported: 'Dữ liệu học được tải trong ứng dụng đã cài đặt.',
+  },
+
+  studyTitle: 'Tải dữ liệu học',
+  studyBody: (size: string) =>
+    `Chú giải, từ điển, từ vựng và tham chiếu của phân đoạn này sẽ có sau khi tải (${size}). Văn bản vẫn ở đây.`,
+  studyNotNow: 'Để sau',
+
+  statusLabel: 'Tình trạng',
+  statusFull: 'Đầy đủ',
+  statusReader: 'Chưa cài',
+  version: 'Phiên bản dữ liệu',
+  updatedAt: 'Cập nhật ngày',
+  installedSize: 'Dung lượng trên thiết bị',
+  check: 'Kiểm tra cập nhật',
+  checking: 'Đang kiểm tra…',
+  upToDate: 'Bạn đã có phiên bản mới nhất.',
+  updateAvailable: (version: string, size: string) => `Phiên bản mới ${version} (${size} để tải).`,
+  unknownVersion: 'Không xác định được phiên bản đã cài. Tải lại sẽ cập nhật dữ liệu.',
+  checkFailed: 'Hiện không thể kiểm tra. Hãy kiểm tra kết nối.',
+  redownload: 'Tải lại',
+  update: 'Cập nhật',
+  remove: 'Xóa dữ liệu học',
+  removeTitle: 'Xóa dữ liệu học?',
+  removeBody:
+    'Văn bản vẫn có sẵn. Chú giải, từ điển và từ vựng sẽ không hiện cho đến khi bạn tải lại.',
+  removeConfirm: 'Xóa',
+  settingsNote: 'Sau khi tải, dữ liệu được lưu trên thiết bị và không dùng mạng.',
+  rowDownloading: (pct: number) => `Đang tải… ${pct}%`,
+  rowNotInstalled: (size: string) => `Chưa cài · ${size} để tải`,
+  rowInstalled: (version: string | null) => (version ? `Đầy đủ · phiên bản ${version}` : 'Đầy đủ'),
+};

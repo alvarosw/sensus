@@ -3,6 +3,7 @@
 // Fonte nova: uma entrada em SOURCES (e, se a tradição for nova, em TRADITIONS) + linha em DATA_LICENSES.md.
 // O teste packages/core/test/domain-sources.test.ts falha se faltar rótulo.
 import type { Commentary, Source } from '../types';
+import { appLangInfo, DEFAULT_APP_LANG, fallbackChain, isAppLang, type AppLang } from './locale';
 
 export type SourceRole =
   | 'text' // tradução corrida (BLivre, KJV)
@@ -98,6 +99,16 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'egw-steps': { short: 'Caminho a Cristo', commentator: 'Ellen G. White · Caminho a Cristo', role: 'commentary', lang: 'en' },
   'egw-thoughts': { short: 'O Maior Discurso de Cristo', commentator: 'Ellen G. White · O Maior Discurso de Cristo', role: 'commentary', lang: 'en' },
   'smith-daniel': { short: 'Daniel e Apocalipse', commentator: 'Uriah Smith · Daniel e Apocalipse', role: 'commentary', lang: 'en' },
+  // Segunda leva (pipeline/ingest/adventist_pd.py). Títulos pt: O Desejado de Todas as Nações é o nome da edição
+  // brasileira; os demais são traduções do título inglês, sem conferir edição brasileira.
+  'egw-desire-of-ages': { short: 'O Desejado de Todas as Nações', commentator: 'Ellen G. White · O Desejado de Todas as Nações', role: 'commentary', lang: 'en' },
+  // Haskell (Daniel, o Profeta; O Vidente de Patmos): fora do build até a limpeza das citações de margem do scan
+  // (ver pipeline/ingest/adventist_pd.py, PENDENTES). Voltar aqui junto com a staging.
+  'waggoner-galatians': { short: 'As Boas Novas', commentator: 'E. J. Waggoner · As Boas Novas', role: 'commentary', lang: 'en' },
+  'waggoner-christ': { short: 'Cristo e Sua Justiça', commentator: 'E. J. Waggoner · Cristo e Sua Justiça', role: 'commentary', lang: 'en' },
+  'andrews-sabbath': { short: 'História do Sábado', commentator: 'J. N. Andrews · História do Sábado', role: 'commentary', lang: 'en' },
+  'smith-us-prophecy': { short: 'Estados Unidos na Profecia', commentator: 'Uriah Smith · Estados Unidos na Profecia', role: 'commentary', lang: 'en' },
+  'smith-sanctuary': { short: 'O Santuário e os 2.300 Dias', commentator: 'Uriah Smith · O Santuário e os 2.300 Dias', role: 'commentary', lang: 'en' },
 };
 
 /** Ordem de preferência das fontes de lugares (menor = melhor) para escolher a identificação moderna. */
@@ -109,21 +120,25 @@ export function placeSourceRank(sourceId: string): number {
   return i < 0 ? 9 : i;
 }
 
-/** Rótulos pt-BR das tradições (o valor vem do pipeline, campo `source.tradition`). */
-export const TRADITIONS: Readonly<Record<string, { pt: string }>> = {
-  reformed: { pt: 'reformada' },
-  'reformed-baptist': { pt: 'batista reformada' },
-  presbyterian: { pt: 'presbiteriana' },
-  methodist: { pt: 'metodista' },
-  baptist: { pt: 'batista' },
-  dispensational: { pt: 'dispensacionalista' },
-  patristic: { pt: 'patrística' },
-  adventist: { pt: 'adventista' },
-  catholic: { pt: 'católica' },
-  lutheran: { pt: 'luterana' },
-  anglican: { pt: 'anglicana' },
-  congregational: { pt: 'congregacional' },
-  restoration: { pt: 'restauracionista' },
+/**
+ * Rótulos das tradições por idioma (o valor vem do pipeline, campo `source.tradition`). `pt` é obrigatório; idioma
+ * sem rótulo cai no inglês e depois no português (traditionLabel). Rótulos fora de pt e en: a revisar por falante
+ * nativo (docs/design/idiomas-biblias-fontes.md §0).
+ */
+export const TRADITIONS: Readonly<Record<string, { pt: string } & Partial<Record<AppLang, string>>>> = {
+  reformed: { pt: 'reformada', en: 'Reformed', zh: '改革宗', hi: 'रिफॉर्म्ड', es: 'reformada', ar: 'مُصلَحة', fr: 'réformée', bn: 'রিফর্মড', ru: 'реформатская', id: 'Reformed', ur: 'ریفارمڈ', de: 'reformiert', ja: '改革派', vi: 'Cải cách' },
+  'reformed-baptist': { pt: 'batista reformada', en: 'Reformed Baptist', zh: '改革宗浸信会', hi: 'रिफॉर्म्ड बैपटिस्ट', es: 'bautista reformada', ar: 'معمدانية مُصلَحة', fr: 'baptiste réformée', bn: 'রিফর্মড ব্যাপটিস্ট', ru: 'реформатско-баптистская', id: 'Baptis Reformed', ur: 'ریفارمڈ بپٹسٹ', de: 'reformiert-baptistisch', ja: '改革派バプテスト', vi: 'Báp-tít Cải cách' },
+  presbyterian: { pt: 'presbiteriana', en: 'Presbyterian', zh: '长老会', hi: 'प्रेस्बिटेरियन', es: 'presbiteriana', ar: 'مشيخية', fr: 'presbytérienne', bn: 'প্রেসবিটেরিয়ান', ru: 'пресвитерианская', id: 'Presbiterian', ur: 'پریسبیٹیرین', de: 'presbyterianisch', ja: '長老派', vi: 'Trưởng Lão' },
+  methodist: { pt: 'metodista', en: 'Methodist', zh: '卫理公会', hi: 'मेथोडिस्ट', es: 'metodista', ar: 'ميثودية', fr: 'méthodiste', bn: 'মেথডিস্ট', ru: 'методистская', id: 'Metodis', ur: 'میتھوڈسٹ', de: 'methodistisch', ja: 'メソジスト', vi: 'Giám Lý' },
+  baptist: { pt: 'batista', en: 'Baptist', zh: '浸信会', hi: 'बैपटिस्ट', es: 'bautista', ar: 'معمدانية', fr: 'baptiste', bn: 'ব্যাপটিস্ট', ru: 'баптистская', id: 'Baptis', ur: 'بپٹسٹ', de: 'baptistisch', ja: 'バプテスト', vi: 'Báp-tít' },
+  dispensational: { pt: 'dispensacionalista', en: 'Dispensationalist', zh: '时代论', hi: 'डिस्पेंसेशनल', es: 'dispensacionalista', ar: 'تدبيرية', fr: 'dispensationaliste', bn: 'ডিসপেনসেশনাল', ru: 'диспенсационалистская', id: 'Dispensasional', ur: 'ڈسپنسیشنل', de: 'dispensationalistisch', ja: 'ディスペンセーション主義', vi: 'Thời kỳ luận' },
+  patristic: { pt: 'patrística', en: 'Patristic', zh: '教父', hi: 'पैट्रिस्टिक', es: 'patrística', ar: 'آبائية', fr: 'patristique', bn: 'প্যাট্রিস্টিক', ru: 'патристическая', id: 'Patristik', ur: 'آبائے کلیسیا', de: 'patristisch', ja: '教父', vi: 'Giáo phụ' },
+  adventist: { pt: 'adventista', en: 'Adventist', zh: '复临派', hi: 'एडवेंटिस्ट', es: 'adventista', ar: 'سبتية أدفنتستية', fr: 'adventiste', bn: 'অ্যাডভেন্টিস্ট', ru: 'адвентистская', id: 'Advent', ur: 'ایڈونٹسٹ', de: 'adventistisch', ja: 'アドベンチスト', vi: 'Cơ Đốc Phục Lâm' },
+  catholic: { pt: 'católica', en: 'Catholic', zh: '天主教', hi: 'कैथोलिक', es: 'católica', ar: 'كاثوليكية', fr: 'catholique', bn: 'ক্যাথলিক', ru: 'католическая', id: 'Katolik', ur: 'کیتھولک', de: 'katholisch', ja: 'カトリック', vi: 'Công giáo' },
+  lutheran: { pt: 'luterana', en: 'Lutheran', zh: '路德宗', hi: 'लूथरन', es: 'luterana', ar: 'لوثرية', fr: 'luthérienne', bn: 'লুথেরান', ru: 'лютеранская', id: 'Lutheran', ur: 'لوتھرن', de: 'lutherisch', ja: 'ルター派', vi: 'Luther' },
+  anglican: { pt: 'anglicana', en: 'Anglican', zh: '圣公会', hi: 'एंग्लिकन', es: 'anglicana', ar: 'أنجليكانية', fr: 'anglicane', bn: 'অ্যাংলিকান', ru: 'англиканская', id: 'Anglikan', ur: 'اینگلیکن', de: 'anglikanisch', ja: '聖公会', vi: 'Anh giáo' },
+  congregational: { pt: 'congregacional', en: 'Congregational', zh: '公理会', hi: 'कॉन्ग्रिगेशनल', es: 'congregacionalista', ar: 'تجمعية', fr: 'congrégationaliste', bn: 'কংগ্রিগেশনাল', ru: 'конгрегационалистская', id: 'Kongregasional', ur: 'کانگریگیشنل', de: 'kongregationalistisch', ja: '会衆派', vi: 'Giáo đoàn' },
+  restoration: { pt: 'restauracionista', en: 'Restorationist', zh: '复原运动', hi: 'पुनर्स्थापन आंदोलन', es: 'restauracionista', ar: 'حركة الاسترداد', fr: 'restaurationniste', bn: 'পুনরুদ্ধার আন্দোলন', ru: 'реставрационистская', id: 'Gerakan Pemulihan', ur: 'بحالی تحریک', de: 'restaurationistisch', ja: '回復運動', vi: 'Phong trào Phục hồi' },
 };
 
 /** Pais da Igreja: nome no primeiro trecho do comentário ("John Chrysostom — Homily...") -> nome em português. */
@@ -181,14 +196,21 @@ export function sourceLong(id: string): string {
   return own(SOURCES, id)?.long ?? sourceShort(id);
 }
 
+/** A fonte é a compilação dos Pais da Igreja (vários autores; o nome de cada um vem do próprio texto)? */
+export function isPatristicCompilation(id: string | null | undefined): boolean {
+  return id === 'patristic';
+}
+
 /**
  * Nome do comentarista de um comentário. Pais da Igreja: o nome vem do primeiro trecho do texto. Demais: o
  * comentarista do registro; fonte fora do registro, o autor (ou título) do banco, sem o que vem entre parênteses.
  */
-export function commentatorOf(source: Source | undefined, commentary: Commentary): string {
-  if (source?.id === 'patristic') {
+export function commentatorOf(source: Source | undefined, commentary: Commentary, lang: AppLang = DEFAULT_APP_LANG): string {
+  if (isPatristicCompilation(source?.id)) {
     const firstLine = commentary.text.split('\n')[0] ?? '';
     const candidate = firstLine.split(/\s+[—–-]\s+|:/)[0]?.trim() ?? '';
+    // Fora do português, o nome como a fonte escreve (inglês), que é a forma mais reconhecível entre os idiomas.
+    if (lang !== DEFAULT_APP_LANG && candidate) return candidate.slice(0, 40);
     return (
       PATRISTIC_FATHERS[candidate.toLowerCase()] ??
       (candidate ? candidate.slice(0, 40) : own(SOURCES, 'patristic')?.commentator ?? 'Padres da Igreja')
@@ -201,10 +223,19 @@ export function commentatorOf(source: Source | undefined, commentary: Commentary
   return author.replace(/\s*\(.*$/, '').split(/[,;]/)[0]!.trim().slice(0, 40);
 }
 
-/** Rótulo pt-BR da tradição; tradição fora do registro segue como veio. */
-export function traditionLabel(id: string | null | undefined): string {
+/**
+ * Rótulo da tradição no idioma pedido (padrão pt). Sem rótulo nesse idioma, cai no inglês e depois no português;
+ * tradição fora do registro segue como veio.
+ */
+export function traditionLabel(id: string | null | undefined, lang: AppLang = DEFAULT_APP_LANG): string {
   if (!id) return '';
-  return own(TRADITIONS, id)?.pt ?? id;
+  const entry = own(TRADITIONS, id);
+  if (!entry) return id;
+  for (const l of fallbackChain(lang)) {
+    const text = entry[l];
+    if (text) return text;
+  }
+  return entry.pt;
 }
 
 /** Código principal de um idioma BCP-47 em minúsculas ("en-US" -> "en"); null sem idioma. */
@@ -222,18 +253,49 @@ export function sourceLangOf(id: string | null | undefined, fallback?: string | 
   return langBase(registered ?? fallback);
 }
 
-/** O idioma é inglês: o que a tradução automática (inglês -> português) pode traduzir. */
-export function isTranslatableLang(lang: string | null | undefined): boolean {
-  return langBase(lang) === 'en';
+/** Par de idiomas de uma tradução automática: de qual língua (origem) para qual (o idioma do app). */
+export interface TranslationPair {
+  from: AppLang;
+  to: AppLang;
 }
 
 /**
- * A fonte pode ser traduzida automaticamente? Decide pelo idioma registrado da fonte, nunca pelo id nem por suposição
- * (a linha do tempo, por exemplo, pergunta por `theographic`). `fallback` é o idioma do banco, só para fonte fora do
- * registro.
+ * Traduz um texto de `sourceLang` para o idioma do app? Verdadeiro quando as bases diferem e os dois idiomas têm
+ * modelo no ML Kit (campo `mlkit` de APP_LANGS). Origem fora dos 14 idiomas do app (grego, hebraico, aramaico) nunca
+ * é traduzida. Sem `appLang` (chamadas antigas), vale o comportamento de antes: inglês para português.
  */
-export function isTranslatableSource(id: string | null | undefined, fallback?: string | null): boolean {
-  return isTranslatableLang(sourceLangOf(id, fallback));
+export function needsTranslation(sourceLang: string | null | undefined, appLang?: AppLang | null): boolean {
+  const from = langBase(sourceLang);
+  if (appLang === undefined || appLang === null) return from === 'en';
+  if (!from || !isAppLang(from) || !isAppLang(appLang) || from === appLang) return false;
+  return appLangInfo(from).mlkit !== null && appLangInfo(appLang).mlkit !== null;
+}
+
+/** Par da tradução (origem -> idioma do app), ou null quando não há o que traduzir (ver needsTranslation). */
+export function translationPair(sourceLang: string | null | undefined, appLang: AppLang): TranslationPair | null {
+  if (!needsTranslation(sourceLang, appLang)) return null;
+  return { from: langBase(sourceLang) as AppLang, to: appLang };
+}
+
+/** Idioma pivô dos modelos de tradução: o inglês (o modelo dele é compartilhado por todos os pares). */
+export const MODEL_PIVOT: AppLang = 'en';
+
+/** Par do modelo que a Configuração gerencia: inglês -> idioma do app. Null quando o app já está em inglês. */
+export function modelPairOf(appLang: AppLang): TranslationPair | null {
+  return appLang === MODEL_PIVOT ? null : { from: MODEL_PIVOT, to: appLang };
+}
+
+/**
+ * A fonte pode ser traduzida automaticamente para o idioma do app? Decide pelo idioma registrado da fonte, nunca pelo
+ * id nem por suposição (a linha do tempo, por exemplo, pergunta por `theographic`). `fallback` é o idioma do banco, só
+ * para fonte fora do registro. Sem `appLang`, vale o inglês para português (ver needsTranslation).
+ */
+export function isTranslatableSource(
+  id: string | null | undefined,
+  fallback?: string | null,
+  appLang?: AppLang | null,
+): boolean {
+  return needsTranslation(sourceLangOf(id, fallback), appLang);
 }
 
 /** Ids das fontes de texto corrido que o leitor oferece (BLivre, KJV), na ordem do registro. */

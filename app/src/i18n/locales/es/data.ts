@@ -1,0 +1,81 @@
+// Espanhol de app/src/data/strings.ts. A revisar por falante nativo.
+export const esData = {
+  title: 'Datos de estudio',
+  rowTitle: 'Datos de estudio',
+
+  setupLead:
+    'El texto bíblico ya está en la app y funciona sin descargar nada. Los datos de estudio traen lo que sostiene el análisis de cada pasaje:',
+  includes: [
+    'Comentarios de autores clásicos y modernos',
+    'Diccionarios bíblicos e índice temático',
+    'Léxico y morfología del griego y del hebreo',
+    'Referencias cruzadas, personas, lugares y mapas',
+    'Variantes textuales del Nuevo Testamento',
+  ],
+  sizeLine: (download: string, installed: string) =>
+    `${download} para descargar · ocupa unos ${installed} · se recomienda Wi‑Fi`,
+  sizeUnknown: 'Tamaño indicado al conectarte',
+  download: 'Descargar ahora',
+  later: 'Más tarde',
+  cancel: 'Cancelar',
+  resume: 'Reanudar',
+  discard: 'Descartar descarga',
+  retry: 'Intentar de nuevo',
+  close: 'Cerrar',
+  continue: 'Continuar',
+  done: 'Listo. Los datos de estudio están instalados.',
+
+  progress: (pct: number) => `Descargando… ${pct}%`,
+  progressOf: (done: string, total: string) => `${done} de ${total}`,
+  phases: {
+    checking: 'Verificando los datos…',
+    verifying: 'Verificando el archivo…',
+    extracting: 'Descomprimiendo…',
+    installing: 'Instalando…',
+  },
+  paused: {
+    user: 'Descarga en pausa. Los bytes ya descargados se conservan.',
+    network: 'Se cortó la conexión. Los bytes ya descargados se conservan; toca Reanudar cuando quieras.',
+    interrupted: 'La descarga se interrumpió al cerrar la app. Los bytes ya descargados se conservan.',
+  },
+  errors: {
+    manifest: 'No se pudieron verificar los datos. Revisa la conexión e inténtalo de nuevo.',
+    network: 'Se cortó la conexión durante la descarga. Inténtalo de nuevo.',
+    space: (need: string) => `No hay espacio suficiente en el dispositivo. Se necesitan unos ${need} libres.`,
+    'app-too-old': 'Esta versión de la app no admite estos datos. Actualiza Sensus.',
+    schema: 'Esta versión de la app no admite estos datos. Actualiza Sensus.',
+    checksum: 'El archivo descargado no pasó la verificación. Inténtalo de nuevo.',
+    corrupt: 'El archivo descargado está incompleto. Inténtalo de nuevo.',
+    install: 'No se pudieron instalar los datos. El texto sigue disponible. Inténtalo de nuevo.',
+    unsupported: 'Los datos de estudio se descargan en la app instalada.',
+  },
+
+  studyTitle: 'Descarga los datos de estudio',
+  studyBody: (size: string) =>
+    `Los comentarios, diccionarios, léxico y referencias de este pasaje estarán disponibles después de la descarga (${size}). El texto sigue aquí.`,
+  studyNotNow: 'Ahora no',
+
+  statusLabel: 'Estado',
+  statusFull: 'Completos',
+  statusReader: 'No instalados',
+  version: 'Versión de los datos',
+  updatedAt: 'Actualizados el',
+  installedSize: 'Ocupan en el dispositivo',
+  check: 'Buscar actualización',
+  checking: 'Verificando…',
+  upToDate: 'Ya tienes la versión más reciente.',
+  updateAvailable: (version: string, size: string) => `Nueva versión ${version} (${size} para descargar).`,
+  unknownVersion: 'No se pudo identificar la versión instalada. Descargar otra vez actualiza los datos.',
+  checkFailed: 'No se pudo verificar ahora. Revisa la conexión.',
+  redownload: 'Descargar de nuevo',
+  update: 'Actualizar',
+  remove: 'Quitar datos de estudio',
+  removeTitle: '¿Quitar datos de estudio?',
+  removeBody:
+    'El texto sigue disponible. Los comentarios, diccionarios y el léxico dejan de aparecer hasta que vuelvas a descargarlos.',
+  removeConfirm: 'Quitar',
+  settingsNote: 'Después de la descarga, los datos quedan en el dispositivo y no usan la red.',
+  rowDownloading: (pct: number) => `Descargando… ${pct}%`,
+  rowNotInstalled: (size: string) => `No instalados · ${size} para descargar`,
+  rowInstalled: (version: string | null) => (version ? `Completos · versión ${version}` : 'Completos'),
+};

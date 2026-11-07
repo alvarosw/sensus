@@ -8,6 +8,7 @@ import { useStudy } from '@/state/study';
 import { useReaderNav } from '@/state/reader-nav';
 import { READER } from './strings';
 import { analyzeQuery } from './reference';
+import { bookName } from './chapters';
 
 export function JumpPopover({ onClose }: { onClose: () => void }) {
   const { c } = useTheme();
@@ -87,7 +88,7 @@ export function JumpPopover({ onClose }: { onClose: () => void }) {
               key={n}
               testID={`jump-ch-${n}`}
               accessibilityRole="button"
-              accessibilityLabel={READER.chapterAria(book.name_pt, n)}
+              accessibilityLabel={READER.chapterAria(bookName(book.num), n)}
               onPress={() => go(n)}
               style={({ pressed }) => ({ width: 40, height: 34, borderRadius: radius.md, backgroundColor: c.surfaceAlt, alignItems: 'center', justifyContent: 'center', opacity: pressed ? 0.6 : 1 })}
             >

@@ -9,7 +9,8 @@ import {
   type ProviderOverrides,
   type ProviderPreset,
 } from '@sensus/core';
-import { DEMO_LABEL, DEMO_PRESET_ID, DEMO_PROVIDER_CONFIG } from '../ai/demo-provider';
+import { DEMO_PRESET_ID, DEMO_PROVIDER_CONFIG } from '../ai/demo-provider';
+import { SETTINGS_COPY } from './strings';
 
 export { DEMO_PRESET_ID };
 export type AppPresetId = PresetId | typeof DEMO_PRESET_ID;
@@ -17,7 +18,10 @@ export type AppProviderPreset = Omit<ProviderPreset, 'id'> & { id: AppPresetId }
 
 export const DEMO_PRESET: AppProviderPreset = {
   id: DEMO_PRESET_ID,
-  label: DEMO_LABEL,
+  // Rótulo no idioma do app (DEMO_LABEL, do provedor, fica em pt para o próprio provedor).
+  get label() {
+    return SETTINGS_COPY.demoLabel;
+  },
   kind: 'openai-compatible',
   baseUrl: DEMO_PROVIDER_CONFIG.baseUrl,
   defaultModel: DEMO_PROVIDER_CONFIG.model,

@@ -3,6 +3,7 @@
 // checkProviderModel) e `saved` (depois de gravar). Um id por tentativa: resultado de tentativa antiga
 // (cancelada ou trocada) é ignorado. Testado em verify-save.test.ts.
 import { LLMError } from '@sensus/core';
+import { SETTINGS_COPY } from './strings';
 
 /** Sem resposta por este tempo, a verificação mostra o aviso de lentidão (salvar continua possível). */
 export const SLOW_AFTER_MS = 8_000;
@@ -57,7 +58,8 @@ export type VerifyEvent =
 
 export const VERIFY_IDLE: VerifyState = { phase: 'idle' };
 
-const seconds = (ms: number) => Math.max(1, Math.round(ms / 1000));
+/** Milissegundos em segundos inteiros (mínimo 1), para as frases da verificação. */
+export const seconds = (ms: number) => Math.max(1, Math.round(ms / 1000));
 
 function failedState(state: { id: number; purpose: VerifyPurpose; startedAt: number }, failure: VerifyFailure, at: number): VerifyState {
   return { phase: 'failed', id: state.id, purpose: state.purpose, failure, elapsedMs: at - state.startedAt };
@@ -133,7 +135,7 @@ export function offersQuickPicks(state: VerifyState): boolean {
 export function timeoutFailure(ms: number): VerifyFailure {
   return {
     reason: 'timeout',
-    message: `O provedor não respondeu em ${seconds(ms)} s. A conexão não foi salva.`,
+    message: SETTINGS_COPY.verifyModel.timeout(seconds(ms)),
   };
 }
 
@@ -152,43 +154,43 @@ export function failureOf(error: unknown, model: string, probe: KeyProbe = 'unkn
         if (probe === 'valid') return modelDenied(status ?? fallbackStatus);
         if (probe === 'invalid') return invalidKey(status ?? fallbackStatus);
         if (error.code === 'auth') {
-          return { reason: 'auth', message: `Chave de API rejeitada pelo provedor (HTTP ${status ?? 401}).` };
+          return { reason: 'auth', message: SETTINGS_COPY.verifyModel.keyRejected(status ?? 401) };
         }
         return {
           reason: 'model_unavailable',
-          message: `O modelo ${model} não foi encontrado no provedor (HTTP ${status ?? 404}). Confira o nome do modelo.`,
+          message: SETTINGS_COPY.verifyModel.modelMissing(model, status ?? 404),
         };
       }
       case 'timeout':
-        return { reason: 'timeout', message: 'O provedor parou de responder no meio do caminho.' };
+        return { reason: 'timeout', message: SETTINGS_COPY.verifyModel.midway };
       case 'network':
-        return { reason: 'network', message: 'Não foi possível conectar ao provedor.' };
+        return { reason: 'network', message: SETTINGS_COPY.verifyModel.noConnection };
       case 'rate_limit':
-        return { reason: 'rate_limit', message: 'O provedor recusou por limite de requisições (HTTP 429).' };
+        return { reason: 'rate_limit', message: SETTINGS_COPY.verifyModel.rateLimit };
       case 'server':
-        return { reason: 'server', message: `O provedor está indisponível agora (HTTP ${status ?? 500}).` };
+        return { reason: 'server', message: SETTINGS_COPY.verifyModel.serverDown(status ?? 500) };
       case 'config':
         return { reason: 'config', message: error.message };
       case 'protocol':
-        return { reason: 'protocol', message: 'O provedor respondeu em um formato inesperado.' };
+        return { reason: 'protocol', message: SETTINGS_COPY.verifyModel.badFormat };
       default:
         return { reason: 'other', message: error.message };
     }
   }
   const text = error instanceof Error ? error.message : String(error);
-  return { reason: 'other', message: text || 'Falha desconhecida.' };
+  return { reason: 'other', message: text || SETTINGS_COPY.verifyModel.unknownFailure };
 }
 
 /** O provedor aceita a chave (listagem funciona), mas não este modelo: sem acesso ou inexistente. */
 function modelDenied(status: number): VerifyFailure {
   return {
     reason: 'model_unavailable',
-    message: `Este modelo não está disponível para esta chave ou conta (HTTP ${status}). A chave é aceita pelo provedor.`,
+    message: SETTINGS_COPY.verifyModel.modelDenied(status),
   };
 }
 
 function invalidKey(status: number): VerifyFailure {
-  return { reason: 'auth', message: `Chave de API inválida ou sem acesso (HTTP ${status}).` };
+  return { reason: 'auth', message: SETTINGS_COPY.verifyModel.keyInvalid(status) };
 }
 
 /** Pelo resultado da listagem de modelos (com a mesma chave): aceita, recusada ou inconclusiva. */
@@ -220,43 +222,7 @@ export function canReusePass(pass: { signature: string; at: number } | null, sig
   return age >= 0 && age <= KEY_REUSE_MS;
 }
 
-/** Sugestões por motivo (o que o usuário pode fazer a seguir). */
+/** Sugestões por motivo (o que o usuário pode fazer a seguir), no idioma do app. */
 export function suggestionsFor(reason: FailureReason): string[] {
-  switch (reason) {
-    case 'auth':
-      return ['Confira a chave de API; cole de novo se preciso.', 'Veja se a chave está ativa no site do provedor.'];
-    case 'model_unavailable':
-      return ['Escolha um dos modelos recomendados ou outro da lista.', 'Confira o nome do modelo.'];
-    case 'timeout':
-      return ['Tente de novo.', 'Um modelo mais rápido costuma responder em segundos.'];
-    case 'network':
-      return ['Verifique a conexão com a internet.', 'Confira a URL base.'];
-    case 'rate_limit':
-      return ['Aguarde alguns minutos e tente de novo.'];
-    case 'server':
-      return ['Tente de novo em instantes.', 'Ou escolha outro modelo.'];
-    case 'config':
-      return ['Preencha a URL base e o modelo.'];
-    case 'protocol':
-      return ['Confira a URL base: ela deve ser uma API compatível com a da OpenAI.'];
-    case 'save':
-      return ['A conexão foi verificada, mas não pôde ser gravada. Tente de novo.'];
-    case 'other':
-      return ['Tente de novo.', 'Confira a URL base, a chave e o modelo.'];
-  }
+  return [...SETTINGS_COPY.verifyModel.suggest[reason]];
 }
-
-/** Títulos de estado (pt-BR), usados pela tela. */
-export const VERIFY_COPY = {
-  verifying: 'Verificando modelo…',
-  slowPending: `Demorando mais de ${seconds(SLOW_AFTER_MS)} s. Um modelo mais rápido costuma responder em segundos.`,
-  slowDone: (ms: number) => `Funciona, mas está lento (respondeu em ${seconds(ms)} s). Um modelo mais rápido costuma responder em segundos.`,
-  okCheck: '✓ Disponível para respostas.',
-  saved: 'Configurações salvas.',
-  reused: '✓ Verificado há pouco. Salvo sem nova verificação.',
-  savedSlow: 'Salvo. Funciona, mas está lento. Um modelo mais rápido costuma responder em segundos.',
-  failedSave: 'Não salvo: o modelo não passou na verificação.',
-  savingVerified: '✓ Verificado. Salvando…',
-  failedCheck: 'Modelo não verificado.',
-  cancel: 'Cancelar',
-} as const;
