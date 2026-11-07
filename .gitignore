@@ -26,3 +26,4 @@ dist/
 .claude/worktrees/
 .claude/settings.local.json
 pipeline/bibles/out/
+data/staging-pendente/
