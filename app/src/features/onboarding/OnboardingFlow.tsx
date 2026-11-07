@@ -28,8 +28,9 @@ function finish(): void {
 }
 
 export function OnboardingFlow() {
-  // Re-renderiza ao trocar o idioma (os textos leem o idioma na hora).
-  useLang();
+  // Ao trocar o idioma, o conteúdo do passo remonta (key={lang}): o React Compiler memoriza os elementos que só leem
+  // textos de módulo (ex.: <Txt>{ONBOARDING_COPY.langTitle}</Txt>), e só remontar os recalcula. O passo segue no store.
+  const lang = useLang();
   const dataInstalled = useDataStore((s) => s.edition === 'full');
   const step = useOnboarding((s) => s.step);
   const ctx = { dataInstalled };
@@ -53,10 +54,10 @@ export function OnboardingFlow() {
     }, [step, dataInstalled]),
   );
 
-  if (step === 'abertura') return <StepOpening onNext={next} />;
-  if (step === 'fim') return <StepFinale onDone={next} />;
+  if (step === 'abertura') return <StepOpening key={lang} onNext={next} />;
+  if (step === 'fim') return <StepFinale key={lang} onDone={next} />;
   return (
-    <StepFrame step={step} ctx={ctx} onBack={prev} onSkip={() => move(skip())}>
+    <StepFrame key={lang} step={step} ctx={ctx} onBack={prev} onSkip={() => move(skip())}>
       {renderMiddle(step, next)}
     </StepFrame>
   );
