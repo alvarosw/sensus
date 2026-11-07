@@ -123,12 +123,12 @@ Estate. Ver item 12. Não são comentários versículo a versículo: só parágr
 
 **Segunda leva (domínio público; autores falecidos antes de 1923, obras publicadas de 1873 a 1905).** Mesma regra de
 parágrafo com referência explícita. Títulos pt: *O Desejado de Todas as Nações* é o nome da edição brasileira; os
-demais são tradução nossa do título inglês, sem conferir edição brasileira. Ver item 12.
+demais são tradução nossa do título inglês, sem conferir edição brasileira. Citações de margem ou de nota (parágrafo só com texto da Escritura, conferido pela KJV) saem do comentário: com a referência casada, ou sem ela quando quase todo o texto está na Bíblia (regra `citacoes`). Ver item 12.
 
 | Fonte (id) | Autor | Título e edição | Origem do texto | Condições |
 |---|---|---|---|---|
 | `egw-desire-of-ages` | Ellen G. White (1827-1915) | The Desire of Ages (1898, Pacific Press) | archive.org `desireofages00whit` | Scan sem aviso de 1940 nem de 1964 (os de `desireofages0000elle_w5v8` e `_z5c9` trazem, e não são usados). Rodapés de referência (`^^Zech. 9:16, 17.`) saem do texto e ligam ao parágrafo da página (`page_notes`). "This chapter is based on…" (nota editorial) sai. Parágrafos com `©` (OCR) descartados. |
-| `haskell-daniel` | Stephen N. Haskell (1855-1922) | The Story of Daniel the Prophet (1901, Review and Herald) | archive.org `the-story-of-daniel-the-prophet-1901-review-and-herald-orig` | Comentário versículo a versículo. Títulos de seção "(Chapter 11:3-13)" ligam os parágrafos da seção aos versículos de Daniel 11 (`section_book`). Rodapés de referência como acima. Parágrafos com `©` descartados. |
+| `haskell-daniel` | Stephen N. Haskell (1855-1922) | The Story of Daniel the Prophet (1901, Review and Herald) | archive.org `the-story-of-daniel-the-prophet-1901-review-and-herald-orig` | Comentário versículo a versículo. Títulos de seção "(Chapter 11:3-13)" saem do texto (não ligam versículo). Citações de margem só com texto da Escritura saem. Rodapés de referência como acima. Parágrafos com `©` descartados. |
 | `haskell-seer` | Stephen N. Haskell (1855-1922) | The Story of the Seer of Patmos (1905, Review and Herald) | archive.org `storyofseerofpat01hask` | Rodapés de referência como acima. Parágrafos com `©` descartados. |
 | `waggoner-galatians` | E. J. Waggoner (1855-1916) | The Glad Tidings (1900, Pacific Press; copyright 1900) | Project Gutenberg #63636 | Comentário de Gálatas. Sumário do Gutenberg (capítulos com página) removido. A citação em bloco é da Revised Version, que não casa com a KJV: a ligação é só por referência explícita. |
 | `waggoner-christ` | E. J. Waggoner (1855-1916) | Christ and His Righteousness (1893, Echo Publishing) | archive.org `christ-and-his-righteousness-1893-echo-publishing` | Cabeçalhos de página removidos. Parágrafos com `©` ou `|` (OCR) descartados. |
@@ -229,7 +229,7 @@ Mapa do mundo antigo (AWMC): não incluído; ver `docs/BACKLOG.md`, seção App.
     (d) `egw-great-controversy` usa a edição do Gutenberg (1911), que tem poucas citações no corpo. A edição de
     1895 (Digital Library of India, dli.ernet.236787) tem muito mais citações, mas o OCR troca palavras ("tho" por
     "the", "bo" por "be") em cerca de um terço dos parágrafos com referência. Não foi usada.
-    (e) As regras de rodapé de referência (`page_notes`) e de título de seção (`section_book`) valem só para a segunda
+    (e) As regras de rodapé de referência (`page_notes`) e de título de seção (`titulos_secao`) e de citação de margem (`citacoes`) valem só para a segunda
     leva. `smith-daniel`, `egw-thoughts` e as demais fontes adventistas antigas continuam como estavam, para o que já
     está publicado não mudar. Em `smith-daniel`, notas de rodapé colocadas no meio do parágrafo ainda podem aparecer no
     texto; conferir antes de uma próxima release.

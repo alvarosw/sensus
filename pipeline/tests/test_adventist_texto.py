@@ -12,12 +12,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from sensus.adventist_texto import (  # noqa: E402
-    BASED_ON, CHAPTER_HEAD, REF_LINE, SECTION_HEAD, next_chapter, roman_value, section_span, tira_notas, to_roman,
+    BASED_ON, CHAPTER_HEAD, REF_LINE, SECTION_HEAD, e_citacao_biblica, e_citacao_por_quadros, palavras_do_texto, quadros, next_chapter, roman_value, tira_notas, to_roman,
 )
-from sensus.refs import vid  # noqa: E402
 
-DANIEL = 27  # AT, hebraico
-GALATIANS = 48  # NT, grego
 
 
 class RomanosTest(unittest.TestCase):
@@ -69,18 +66,75 @@ class CapituloEmSequenciaTest(unittest.TestCase):
 
 
 class TituloDeSecaoTest(unittest.TestCase):
-    def test_intervalo_de_versiculos_de_daniel(self):
-        m = SECTION_HEAD.search("THE HISTORY OF GREECE (Chapter 11: 3-13)")
-        self.assertIsNotNone(m)
-        self.assertEqual(section_span(DANIEL, m), (vid(DANIEL, 11, 3), vid(DANIEL, 11, 13)))
-
-    def test_versiculos_separados_por_virgula(self):
-        m = SECTION_HEAD.search("THE HISTORY OF THE DECREES (Chapter 11:1, 2)")
-        self.assertEqual(section_span(DANIEL, m), (vid(DANIEL, 11, 1), vid(DANIEL, 11, 2)))
+    def test_titulo_com_versiculos_e_reconhecido_para_sair(self):
+        # Sai do texto; não liga versículo (seções largas demais, ver adventist_pd.build_work).
+        self.assertIsNotNone(SECTION_HEAD.search("THE HISTORY OF GREECE (Chapter 11: 3-13)"))
+        self.assertIsNotNone(SECTION_HEAD.search("THE HISTORY OF THE DECREES (Chapter 11:1, 2)"))
 
     def test_titulo_so_de_capitulo_nao_e_secao(self):
         # "(Chapter 5)" não diz versículo: não liga parágrafo nenhum.
         self.assertIsNone(SECTION_HEAD.search("THE HANDWRITING ON THE WALL (Chapter 5)"))
+
+
+# Versículos da KJV (texto completo), para a palavra da Escritura nas citações de margem.
+NEH_13_10_13 = (
+    "And I perceived that the portions of the Levites had not been given them: for the Levites and the singers, "
+    "that did the work, were fled every one to his field. Then contended I with the rulers, and said, Why is the "
+    "house of God forsaken? And I gathered them together, and set them in their place. Then brought all Judah the "
+    "tithe of the corn and the new wine and the oil unto the treasuries. And I made treasurers over the treasuries, "
+    "Shelemiah the priest, and Zadok the scribe, and of the Levites, Pedaiah: and next to them was Hanan the son of "
+    "Zaccur, the son of Mattaniah: for they were counted faithful, and their office was to distribute unto their "
+    "brethren.")
+EZRA_9_2 = (
+    "For they have taken of their daughters for themselves, and for their sons: so that the holy seed have mingled "
+    "themselves with the people of those lands: yea, the hand of the princes and rulers hath been chief in this "
+    "trespass.")
+
+
+class CitacaoDeMargemTest(unittest.TestCase):
+    def test_citacao_so_da_escritura_sai(self):
+        # Margem de Haskell (Daniel 1901): "... treasuries, Neh. 13; 10-13." sem comentário nenhum.
+        texto = ("And I perceived that the portions of the Levites had not been given them; then brought all Judah "
+                 "the tithe of the corn and the new wine and the oil unto the treasuries, Neh. 13; 10-13.")
+        self.assertTrue(e_citacao_biblica(texto, palavras_do_texto(NEH_13_10_13)))
+
+    def test_citacao_de_margem_do_at(self):
+        texto = ("the holy seed have mingled themselves with the people of those lands: yea, the hand of the princes "
+                 "and rulers hath been chief in this trespass, Ezra 9:1, 2.")
+        self.assertTrue(e_citacao_biblica(texto, palavras_do_texto(EZRA_9_2)))
+
+    def test_comentario_com_citacao_no_meio_fica(self):
+        # Prosa do autor com a referência: as palavras fora da Escritura passam do limite, e o parágrafo fica.
+        texto = ("The Lord shows us here that the sanctuary of the Levites was neglected, and the reformation of "
+                 "that day was a type of the cleansing of the sanctuary in our time. Neh. 13; 10-13.")
+        self.assertFalse(e_citacao_biblica(texto, palavras_do_texto(NEH_13_10_13)))
+
+    def test_sem_versiculo_nao_e_citacao(self):
+        self.assertFalse(e_citacao_biblica("portions of the Levites had not been given them", set()))
+
+
+
+DANIEL_5_23 = (
+    "But hast lifted up thyself against the Lord of heaven; and they have brought the vessels of his house before "
+    "thee, and thou, and thy lords, thy wives, and thy concubines, have drunk wine in them; and thou hast praised the "
+    "gods of silver, and gold, of brass, iron, wood, and stone, which see not, nor hear, nor know: and the God in "
+    "whose hand thy breath is, and whose are all thy ways, hast thou not glorified:")
+
+
+def _quadros_de(texto):
+    return {hash(q) for q in quadros(palavras_do_texto(texto))}
+
+
+class CitacaoPorQuadrosTest(unittest.TestCase):
+    def test_citacao_sem_referencia_propria_sai(self):
+        # Margem com erro de OCR numa palavra ("lifed" por "lifted"): continua sendo a Escritura.
+        texto = DANIEL_5_23.replace("lifted", "lifed")
+        self.assertTrue(e_citacao_por_quadros(palavras_do_texto(texto), _quadros_de(DANIEL_5_23)))
+
+    def test_comentario_fica(self):
+        texto = ("This scene shows that the proud king had despised the lessons of his father, and that heaven "
+                 "keeps a record of every act of pride.")
+        self.assertFalse(e_citacao_por_quadros(palavras_do_texto(texto), _quadros_de(DANIEL_5_23)))
 
 
 class NotasDeRodapeTest(unittest.TestCase):

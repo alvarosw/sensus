@@ -14,6 +14,7 @@ Regras:
 - Nota de rodapé só de referência ("4 Isa. 53:7.") vai para o parágrafo de prosa anterior. Em Gutenberg
   com notas numeradas ("Footnote 844:" e marcador "[844]"), a nota vai para o parágrafo que tem o marcador.
 - Apêndice e índices (back matter) não entram.
+- Citação de margem ou de nota (parágrafo só com texto da Escritura) não é comentário: sai, com contagem (`citacoes`).
 - Cabeçalhos de página, ilustrações, marcas de digitalização e o cabeçalho/rodapé do Project
   Gutenberg são removidos antes da divisão em parágrafos.
 - Texto em inglês, como nas demais fontes de comentário.
@@ -34,8 +35,7 @@ Segunda leva (autores falecidos entre 1872 e 1922; publicações de 1873 a 1905)
 - egw-desire-of-ages: The Desire of Ages (archive.org desireofages00whit, Pacific Press, 1898). Sem aviso de 1940
   nem de 1964 (os scans desireofages0000elle_w5v8 e _z5c9 trazem, e não entram).
 - haskell-daniel, haskell-seer: Stephen N. Haskell, The Story of Daniel the Prophet (R&H, 1901) e The Story of the
-  Seer of Patmos (R&H, 1905), archive.org. Títulos de seção "(Chapter 11:3-13)" ligam os parágrafos da seção a
-  esses versículos do livro indicado (`section_book`).
+  Seer of Patmos (R&H, 1905), archive.org. Títulos de seção "(Chapter 11:3-13)" saem do texto (`titulos_secao`).
 - waggoner-galatians: E. J. Waggoner, The Glad Tidings (Gutenberg #63636; 1900), comentário de Gálatas.
 - waggoner-christ: E. J. Waggoner, Christ and His Righteousness (archive.org, 1893).
 - andrews-sabbath: J. N. Andrews, History of the Sabbath (Gutenberg #68714; 1873).
@@ -66,6 +66,7 @@ Uso:
     cd pipeline && .venv/bin/python -I ingest/adventist_pd.py [egw-steps,egw-acts]
 """
 
+import functools
 import hashlib
 import json
 import re
@@ -73,7 +74,7 @@ import sys
 import urllib.request
 from collections import Counter
 from difflib import SequenceMatcher
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -82,8 +83,8 @@ from sensus.staging import RAW, STAGING, StagingWriter, cite_com  # noqa: E402
 from ingest.refparse import VERSES, find_refs  # noqa: E402
 from sensus.refs import BOOK_BY_NUM  # noqa: E402
 from sensus.adventist_texto import (  # noqa: E402
-    BASED_ON, CHAPTER_HEAD, REF_LINE, ROMAN, ROMAN_OCR, SECTION_HEAD, next_chapter, section_span,
-    tira_notas, to_roman,
+    BASED_ON, CHAPTER_HEAD, REF_LINE, ROMAN, ROMAN_OCR, SECTION_HEAD, e_citacao_biblica, next_chapter,
+    e_citacao_por_quadros, palavras_do_texto, quadros, tira_notas, to_roman,
 )
 
 UA = "Mozilla/5.0 (sensus-ingest; local research pipeline)"
@@ -141,9 +142,12 @@ class Work:
     # Capítulos numerados em sequência (cabeçalho "CHAPTER ..." com número romano, palavra ou OCR ruim): o
     # número é o anterior + 1, ou +2 se o romano lido confirma um capítulo perdido (ver next_chapter).
     chapter_seq: bool = False
-    # Título de seção "(Chapter 11:3-13)": os parágrafos seguintes, até o próximo título, ligam-se a esses
-    # versículos do livro indicado (ex.: 27 = Daniel). Como a epígrafe de Mt 5–7, mas pelo título da obra.
-    section_book: int | None = None
+    # Título de seção "(Chapter 11:3-13)": sai do texto (é título, não prosa). Não liga versículo: o título
+    # cobre seções largas demais, e a referência explícita do próprio parágrafo basta.
+    titulos_secao: bool = False
+    # Citação de margem e de nota (parágrafo só com texto da Escritura e referência) sai do comentário. Ligada
+    # só nas obras da segunda leva (ver SEGUNDA_LEVA).
+    citacoes: bool = False
     # Regex de caracteres de OCR ruim (ex.: "©" de scan): parágrafo com esse sinal sai, como em strict_ocr.
     ocr_junk: str | None = None
     # Notas de rodapé só de referência ficam antes do cabeçalho da página ("^^Zech. 9:16, 17."). Com esta marca, a
@@ -222,8 +226,7 @@ WORKS = [
          "desireofages00whit_djvu.txt", "archive", r"THE DESIRE OF AGES", CHAPTER_HEAD,
          "Internet Archive desireofages00whit (edição de 1898; o scan não traz aviso de 1940 nem de 1964)",
          chapter_seq=True, ocr_junk=r"©", page_notes=True),
-    # Stephen N. Haskell (1855-1922): comentário versículo a versículo de Daniel. Títulos de seção "(Chapter 11:3-13)"
-    # são os versículos do próprio livro de Daniel (27).
+    # Stephen N. Haskell (1855-1922): comentário de Daniel. Títulos de seção "(Chapter 11:3-13)" saem do texto.
     Work("haskell-daniel", "The Story of Daniel the Prophet", "Daniel the Prophet",
          "Review and Herald, 1901 (copyright 1901)",
          "https://archive.org/details/the-story-of-daniel-the-prophet-1901-review-and-herald-orig",
@@ -235,7 +238,7 @@ WORKS = [
          pd=("Domínio público: autor falecido em 1922 e obra publicada em 1901 (domínio público nos EUA); "
              "no Brasil, autor falecido há mais de 70 anos."),
          furniture=r"\d*\s*(?:STORY\s+)?OF DANIEL THE PROPHET\.?\s*\d*|\d*\s*STORY\s*\d*",
-         chapter_seq=True, section_book=27, ocr_junk=r"©", page_notes=True),
+         chapter_seq=True, titulos_secao=True, ocr_junk=r"©", page_notes=True),
     Work("haskell-seer", "The Story of the Seer of Patmos", "Seer of Patmos",
          "Review and Herald, 1905",
          "https://archive.org/details/storyofseerofpat01hask",
@@ -302,6 +305,12 @@ WORKS = [
          # Índice remissivo e catálogo do editor (com anúncios) ficam no fim, depois de "INDEX. 349": saem.
          skip=(r"^\s*INDEX[.,]?\s*\d+\s*$", r"\Z")),
 ]
+
+
+# Obras da segunda leva: citação de margem e de nota sai do comentário (campo `citacoes`).
+SEGUNDA_LEVA = ("egw-desire-of-ages", "haskell-daniel", "haskell-seer", "waggoner-galatians",
+                "waggoner-christ", "andrews-sabbath", "smith-us-prophecy", "smith-sanctuary")
+WORKS = [replace(w, citacoes=w.source_id in SEGUNDA_LEVA) for w in WORKS]
 
 
 RUNNING_CHAPTER = re.compile(r"^\s*\d*\s*CHAPTER\.?\s+(\d{1,2}),\s+VERSES?\b.*$")
@@ -461,6 +470,48 @@ def strip_notes(para: str) -> tuple[str, list]:
     return texto, refs
 
 
+@functools.cache
+def kjv_palavras() -> dict[int, frozenset]:
+    """Palavras de cada versículo da KJV (staging de sword_kjv), para reconhecer citação da Escritura."""
+    out: dict[int, frozenset] = {}
+    with open(STAGING / "kjv" / "verse_text.jsonl", encoding="utf-8") as f:
+        for line in f:
+            r = json.loads(line)
+            ws = palavras_do_texto(r["text"])
+            out[r["vid"]] = frozenset(ws)
+    return out
+
+
+@functools.cache
+def kjv_quadros() -> frozenset:
+    """hash() das sequências de 4 palavras da KJV, lidas em ordem de versículo (ver e_citacao_por_quadros)."""
+    rows = []
+    with open(STAGING / "kjv" / "verse_text.jsonl", encoding="utf-8") as f:
+        for line in f:
+            r = json.loads(line)
+            rows.append((r["vid"], palavras_do_texto(r["text"])))
+    seq: list[str] = []
+    for _, ws in sorted(rows):
+        seq += ws
+    return frozenset(hash(q) for q in quadros(seq))
+
+
+def citacao_de_margem(texto: str, refs: list) -> bool:
+    """Parágrafo com referência cujo texto é só o da KJV nos versículos referidos (ver e_citacao_biblica).
+
+    Só pela referência: sem ela, o texto pode ser a narrativa do autor com a Escritura em suas palavras (ex.: a
+    história de Daniel em Haskell), e não sai.
+    """
+    if not refs:
+        return False
+    kjv = kjv_palavras()
+    escritura: set[str] = set()
+    for s, e in refs:
+        for v in range(s, e + 1):
+            escritura |= kjv.get(v, frozenset())
+    return e_citacao_biblica(texto, escritura)
+
+
 def paragraphs(body: str, work: Work):
     """Gera (capítulo ou None, parágrafo) na ordem do livro.
 
@@ -490,7 +541,8 @@ def paragraphs(body: str, work: Work):
         if out and re.match(r"[\"“‘'\s]*[a-z,.;:)\]]", text):
             j = len(out) - 1
             if work.page_notes:  # pula a nota de rodapé só de referência, que fica no lugar dela
-                j = next((k for k in range(len(out) - 1, -1, -1) if is_prose(out[k][1])), j)
+                j = next((k for k in range(len(out) - 1, -1, -1) if is_prose(out[k][1]) and not (
+                    work.citacoes and citacao_de_margem(out[k][1], list(find_refs(out[k][1]))))), j)
             merged = out[j][1] + " " + text
             if work.origin == "archive":  # hífen que caiu entre duas partes (página em branco no meio)
                 merged = re.sub(r"(?<=[a-z])- (?=[a-z])", "", merged)
@@ -769,12 +821,9 @@ def build_work(work: Work):
             stats["seções (epígrafe igual ao texto de Mt 5–7 na KJV)"] += 1
             if not para:
                 continue
-        if work.section_book is not None and len(para) <= 160:
-            sec = SECTION_HEAD.search(para)
-            if sec:  # título "(Chapter 11:3-13)": o que vem depois liga-se a esses versículos de Daniel
-                section = section_span(work.section_book, sec)
-                stats["títulos de seção com versículos (\"(Chapter c:v)\")"] += 1
-                continue
+        if work.titulos_secao and len(para) <= 160 and SECTION_HEAD.search(para):
+            stats["títulos de seção \"(Chapter c:v)\" saídos do texto"] += 1
+            continue
         key = para_key(para)
         if key in drops:
             stats["descartadas: OCR não recuperável (corrections/)"] += 1
@@ -788,6 +837,9 @@ def build_work(work: Work):
             para, notes_refs = strip_notes(para)
         refs = list(find_refs(para))
         refs += [r for r in notes_refs if r not in refs]
+        if work.citacoes and refs and citacao_de_margem(para, refs):
+            stats["descartadas: citação bíblica de margem ou de nota (só texto da Escritura)"] += 1
+            continue
         for n in marks:
             refs += [r for r in fn_refs.get(n, []) if r not in refs]
         if not refs and not is_prose(para):
@@ -795,8 +847,17 @@ def build_work(work: Work):
         if not is_prose(para):
             if last_prose is not None and not BARE_PHIL.search(para) and not (
                     work.origin == "archive" and has_ocr_junk(para)):
-                last_prose["refs"] += [r for r in refs if r not in last_prose["refs"]]
-                stats["notas só de referência anexadas ao parágrafo anterior"] += 1
+                if work.citacoes and citacao_de_margem(last_prose["para"], refs):
+                    # Citação de margem com a referência na linha seguinte: o parágrafo anterior é a citação.
+                    last_prose["quote"] = True
+                elif work.citacoes and not last_prose["refs"] and e_citacao_por_quadros(
+                        palavras_do_texto(last_prose["para"]), kjv_quadros()):
+                    # Sem referência própria e com a Escritura quase toda: a referência da margem não casa com o
+                    # texto citado (ex.: Dn 5:23 com a margem de Jó), mas o parágrafo é só citação.
+                    last_prose["quote"] = True
+                else:
+                    last_prose["refs"] += [r for r in refs if r not in last_prose["refs"]]
+                    stats["notas só de referência anexadas ao parágrafo anterior"] += 1
             else:
                 stats["descartadas: nota ambígua ou com OCR ruim, sem parágrafo anterior"] += len(refs)
             continue
@@ -813,6 +874,9 @@ def build_work(work: Work):
         items.append(item)
         last_prose = item
     for it in items:
+        if it.get("quote"):
+            stats["descartadas: citação bíblica de margem (referência na linha seguinte)"] += 1
+            continue
         head = f"{work.author} — {work.short}"
         if it["chapter"]:
             head += f", cap. {it['chapter']}"
@@ -861,8 +925,8 @@ def ingest(work: Work) -> None:
             tradition="adventist",
             notes=(
                 "Só parágrafos que citam versículos explicitamente geram linhas (uma por referência "
-                "inequívoca). Onde a obra tem títulos de seção com versículos, o parágrafo da seção também "
-                "se liga a esses versículos. O cabeçalho do verbete traz autor, obra e capítulo. Referências "
+                "inequívoca). Citações de margem só com texto da Escritura saem. O cabeçalho do verbete traz "
+                "autor, obra e capítulo. Referências "
                 "ambíguas (Phil. sem capítulo:versículo) descartadas. Texto em inglês."
             ),
         )
