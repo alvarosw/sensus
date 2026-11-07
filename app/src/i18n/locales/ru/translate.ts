@@ -1,6 +1,6 @@
 // Russo de app/src/translate/strings.ts. A revisar por falante nativo.
 export const ruTr = {
-  offerQuestion: 'Переводить тексты на английском автоматически?',
+  offerQuestion: (from: string, to: string) => `Автоматически переводить тексты с языка «${from}» на «${to}»?`,
   offerHelp: '(загружает около 30 МБ, работает офлайн)',
   offerYes: 'Включить',
   offerNo: 'Не сейчас',
@@ -11,7 +11,7 @@ export const ruTr = {
   failed: 'Не удалось перевести сейчас.',
   retry: 'Повторить',
   settingsSection: 'Автоматический перевод',
-  settingsToggle: 'Переводить тексты на английском автоматически',
+  settingsToggle: 'Автоматически переводить тексты',
   settingsHelp: 'Перевод выполняется на устройстве; он может содержать ошибки. Нажмите «Показать оригинал».',
   unavailable: 'Недоступно на этом устройстве (автоперевод работает на Android и iPhone).',
   modelMissing: 'Не загружена',
@@ -27,10 +27,13 @@ export const ruTr = {
   timelineNote: 'Названия переведены автоматически',
   timelinePartialNote: 'Некоторые тексты переведены автоматически',
   timelineShowOriginal: 'Показать оригинал',
-  timelineOriginalNote: 'Показан оригинал на английском',
+  timelineOriginalNote: (name: string) => `Показан оригинал (${name})`,
   timelineShowTranslation: 'Показать перевод',
   // Descrição em português da fonte (entity_text): sem aviso de tradução; "Ver original" mostra o inglês.
   descriptionShowOriginal: 'Показать оригинал',
-  descriptionShowPt: 'Показать на португальском',
-  descriptionOriginalNote: 'Показан оригинал на английском',
+  descriptionShowPt: (name: string) => `Показать: ${name}`,
+  descriptionOriginalNote: (name: string) => `Показан оригинал (${name})`,
+  settingsPair: (from: string, to: string) => `Языки: ${from} → ${to}`,
+  modelOnDemand: 'Загружается, когда нужен для текста',
+  downloadModel: 'Загрузить модель',
 };

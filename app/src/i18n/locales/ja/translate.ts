@@ -1,6 +1,6 @@
 // Japonês da tradução automática (app/src/translate/strings.ts). A revisar por falante nativo.
 export const jaTr = {
-  offerQuestion: '英語のテキストを自動翻訳しますか？',
+  offerQuestion: (from: string, to: string) => `${from}のテキストを${to}に自動翻訳しますか？`,
   offerHelp: '（約 30 MB をダウンロード、オフラインで動作）',
   offerYes: '有効にする',
   offerNo: 'あとで',
@@ -11,7 +11,7 @@ export const jaTr = {
   failed: '今は翻訳できませんでした。',
   retry: '再試行',
   settingsSection: '自動翻訳',
-  settingsToggle: '英語のテキストを自動翻訳する',
+  settingsToggle: 'テキストを自動翻訳する',
   settingsHelp: '自動翻訳は端末内で行われ、誤りを含むことがあります。「原文を表示」で確認できます。',
   unavailable: 'この端末では利用できません（自動翻訳は Android と iPhone で動作します）。',
   modelMissing: '未ダウンロード',
@@ -27,10 +27,13 @@ export const jaTr = {
   timelineNote: 'タイトルは自動翻訳されています',
   timelinePartialNote: '一部のテキストは自動翻訳されています',
   timelineShowOriginal: '原文を表示',
-  timelineOriginalNote: '英語の原文を表示しています',
+  timelineOriginalNote: (name: string) => `原文を表示中（${name}）`,
   timelineShowTranslation: '訳文を表示',
   // Descrição em português da fonte (entity_text): sem aviso de tradução; "Ver original" mostra o inglês.
   descriptionShowOriginal: '原文を表示',
-  descriptionShowPt: 'ポルトガル語で表示',
-  descriptionOriginalNote: '英語の原文を表示しています',
+  descriptionShowPt: (name: string) => `${name}で表示`,
+  descriptionOriginalNote: (name: string) => `原文を表示中（${name}）`,
+  settingsPair: (from: string, to: string) => `言語: ${from} → ${to}`,
+  modelOnDemand: 'テキストで必要になったときにダウンロード',
+  downloadModel: 'モデルをダウンロード',
 };

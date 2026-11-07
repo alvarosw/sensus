@@ -7,7 +7,8 @@
 // é publicado de novo com um Repo novo sobre a mesma conexão: quem depende do repositório (consultas em cache) refaz.
 import * as SQLite from 'expo-sqlite';
 import { File } from 'expo-file-system';
-import { ALL_COMMENTARIES, Repo, type CommentaryPreference } from '@sensus/core';
+import { ALL_COMMENTARIES, DEFAULT_APP_LANG, Repo, type AppLang, type CommentaryPreference } from '@sensus/core';
+import { useLangStore } from '@/i18n/lang-store';
 import bundledDb from '../../assets/sensus.db';
 import bundled from './bundled-db.json';
 import { checkFullDatabase, editionOf, type Edition } from './edition';
@@ -35,6 +36,7 @@ type Listener = (active: ActiveDb) => void;
 let current: ActiveDb | null = null;
 const listeners = new Set<Listener>();
 let commentaryPref: CommentaryPreference = ALL_COMMENTARIES;
+let nameLang: AppLang = DEFAULT_APP_LANG;
 
 export function currentActive(): ActiveDb | null {
   return current;
@@ -116,7 +118,7 @@ async function openInstalledFull(): Promise<{ db: SQLite.SQLiteDatabase; meta: R
 
 function publish(next: { db: SQLite.SQLiteDatabase; meta: Record<string, string>; name: string }): ActiveDb {
   // As Bíblias baixadas leem o texto do banco delas (ver bibles/bible-db.ts); valem em qualquer edição.
-  const repo = new Repo(createExpoSqlDriver(next.db), { textDriver: bibleDriver });
+  const repo = new Repo(createExpoSqlDriver(next.db), { textDriver: bibleDriver, nameLang });
   repo.setCommentaryPreference(commentaryPref);
   const active: ActiveDb = {
     edition: editionOf(next.meta),
@@ -145,6 +147,20 @@ export function setActiveCommentaryPreference(pref: CommentaryPreference): void 
   if (!current || !changed) return;
   publish({ db: current.db, meta: current.meta, name: current.name });
 }
+
+/**
+ * Idioma dos nomes e descrições do app (ver Repo.nameLang). Quando muda, publica de novo com um Repo novo sobre a mesma
+ * conexão, como na preferência de comentários: as consultas em cache refazem.
+ */
+export function setActiveNameLang(lang: AppLang): void {
+  if (lang === nameLang) return;
+  nameLang = lang;
+  if (!current) return;
+  publish({ db: current.db, meta: current.meta, name: current.name });
+}
+
+// O idioma do app escolhe o idioma dos nomes: a troca de idioma (lang-store) chega aqui sem depender de tela.
+useLangStore.subscribe((state) => setActiveNameLang(state.lang));
 
 /** Abre o banco que deve estar ativo: o completo instalado, se houver; senão o de leitura. */
 export async function openActiveDatabase(): Promise<ActiveDb> {

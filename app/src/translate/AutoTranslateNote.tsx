@@ -1,4 +1,4 @@
-// Linha discreta sob um texto em inglês: oferta da primeira vez, carregando, falha ou "Tradução automática · Ver original".
+// Linha discreta sob um texto em outro idioma (o da fonte): oferta da primeira vez, carregando, falha ou "Tradução automática · Ver original".
 import { ActivityIndicator, View } from 'react-native';
 import { LinkButton, Tag, Txt, useTheme } from '@/design';
 import type { TranslationNoteState } from './useAutoTranslate';
@@ -11,7 +11,7 @@ export function AutoTranslateNote({ tr, testID }: { tr: TranslationNoteState; te
     return (
       <View testID={testID ? `${testID}-offer` : undefined} style={{ gap: 2, paddingTop: 2 }}>
         <Txt v="meta" color="muted" style={{ fontSize: 12, lineHeight: 17 }}>
-          {`${TR.offerQuestion} ${TR.offerHelp}`}
+          {`${TR.offerQuestion(tr.names?.from ?? '', tr.names?.to ?? '')} ${TR.offerHelp}`}
         </Txt>
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', columnGap: 8 }}>
           <LinkButton testID={testID ? `${testID}-yes` : undefined} label={TR.offerYes} onPress={() => tr.answerOffer(true)} />

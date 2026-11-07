@@ -1,6 +1,6 @@
 // Vietnamita de app/src/translate/strings.ts. A revisar por falante nativo.
 export const viTr = {
-  offerQuestion: 'Tự động dịch các văn bản tiếng Anh?',
+  offerQuestion: (from: string, to: string) => `Tự động dịch văn bản từ ${from} sang ${to}?`,
   offerHelp: '(tải ~30 MB, hoạt động ngoại tuyến)',
   offerYes: 'Bật',
   offerNo: 'Để sau',
@@ -11,7 +11,7 @@ export const viTr = {
   failed: 'Hiện không thể dịch.',
   retry: 'Thử lại',
   settingsSection: 'Dịch tự động',
-  settingsToggle: 'Tự động dịch các văn bản tiếng Anh',
+  settingsToggle: 'Tự động dịch văn bản',
   settingsHelp: 'Dịch tự động trên thiết bị; có thể có lỗi. Chạm Xem bản gốc để đối chiếu.',
   unavailable: 'Không khả dụng trên thiết bị này (dịch tự động hoạt động trên Android và iPhone).',
   modelMissing: 'Chưa tải',
@@ -27,10 +27,13 @@ export const viTr = {
   timelineNote: 'Tiêu đề đã dịch tự động',
   timelinePartialNote: 'Một số văn bản đã dịch tự động',
   timelineShowOriginal: 'Xem bản gốc',
-  timelineOriginalNote: 'Đang hiện bản gốc tiếng Anh',
+  timelineOriginalNote: (name: string) => `Đang hiển thị bản gốc (${name})`,
   timelineShowTranslation: 'Xem bản dịch',
   // Descrição em português da fonte (entity_text): sem aviso de tradução; "Ver original" mostra o inglês.
   descriptionShowOriginal: 'Xem bản gốc',
-  descriptionShowPt: 'Xem bằng tiếng Bồ Đào Nha',
-  descriptionOriginalNote: 'Đang hiện bản gốc tiếng Anh',
+  descriptionShowPt: (name: string) => `Xem bằng ${name}`,
+  descriptionOriginalNote: (name: string) => `Đang hiển thị bản gốc (${name})`,
+  settingsPair: (from: string, to: string) => `Ngôn ngữ: ${from} → ${to}`,
+  modelOnDemand: 'Tải xuống khi một văn bản cần',
+  downloadModel: 'Tải mô hình',
 };

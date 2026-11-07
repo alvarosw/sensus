@@ -9,11 +9,17 @@ import { useTimelineTranslation } from './timeline-translate';
 import { TR } from './strings';
 
 export function TimelineTranslationNote({ testID, counts }: { testID?: string; counts: NoteCounts }) {
-  const { active, showOriginal, toggle } = useTimelineTranslation();
+  const { active, showOriginal, toggle, names } = useTimelineTranslation();
   const kind = timelineNoteKind({ active, showOriginal, ...counts });
   if (kind === 'none') return null;
   const text =
-    kind === 'machine' ? TR.timelineNote : kind === 'partial' ? TR.timelinePartialNote : kind === 'original' ? TR.timelineOriginalNote : null;
+    kind === 'machine'
+      ? TR.timelineNote
+      : kind === 'partial'
+        ? TR.timelinePartialNote
+        : kind === 'original'
+          ? TR.timelineOriginalNote(names?.from ?? '')
+          : null;
   return (
     <View testID={testID} style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', columnGap: 8, paddingHorizontal: 4 }}>
       {text ? (

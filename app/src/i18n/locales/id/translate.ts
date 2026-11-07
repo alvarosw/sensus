@@ -1,6 +1,6 @@
 // Indonésio de app/src/translate/strings.ts. A revisar por falante nativo.
 export const idTr = {
-  offerQuestion: 'Terjemahkan teks berbahasa Inggris secara otomatis?',
+  offerQuestion: (from: string, to: string) => `Terjemahkan teks dari ${from} ke ${to} secara otomatis?`,
   offerHelp: '(unduh ~30 MB, berfungsi luring)',
   offerYes: 'Aktifkan',
   offerNo: 'Jangan sekarang',
@@ -11,7 +11,7 @@ export const idTr = {
   failed: 'Tidak dapat menerjemahkan sekarang.',
   retry: 'Coba lagi',
   settingsSection: 'Terjemahan otomatis',
-  settingsToggle: 'Terjemahkan teks berbahasa Inggris secara otomatis',
+  settingsToggle: 'Terjemahkan teks secara otomatis',
   settingsHelp: 'Terjemahan otomatis di perangkat; dapat mengandung kesalahan. Ketuk Lihat asli untuk membandingkan.',
   unavailable: 'Tidak tersedia di perangkat ini (terjemahan otomatis berfungsi di Android dan iPhone).',
   modelMissing: 'Belum diunduh',
@@ -28,10 +28,13 @@ export const idTr = {
   timelineNote: 'Judul diterjemahkan otomatis',
   timelinePartialNote: 'Sebagian teks diterjemahkan otomatis',
   timelineShowOriginal: 'Lihat asli',
-  timelineOriginalNote: 'Menampilkan teks asli bahasa Inggris',
+  timelineOriginalNote: (name: string) => `Menampilkan teks asli (${name})`,
   timelineShowTranslation: 'Lihat terjemahan',
   // Descrição em português da fonte (entity_text): sem aviso de tradução; "Ver original" mostra o inglês.
   descriptionShowOriginal: 'Lihat asli',
-  descriptionShowPt: 'Lihat dalam bahasa Portugis',
-  descriptionOriginalNote: 'Menampilkan teks asli bahasa Inggris',
+  descriptionShowPt: (name: string) => `Lihat dalam ${name}`,
+  descriptionOriginalNote: (name: string) => `Menampilkan teks asli (${name})`,
+  settingsPair: (from: string, to: string) => `Bahasa: ${from} → ${to}`,
+  modelOnDemand: 'Diunduh saat sebuah teks memerlukannya',
+  downloadModel: 'Unduh model',
 };

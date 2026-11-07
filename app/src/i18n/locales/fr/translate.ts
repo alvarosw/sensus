@@ -1,6 +1,6 @@
 // Français de app/src/translate/strings.ts. A revisar por falante nativo.
 export const frTr = {
-  offerQuestion: 'Traduire automatiquement les textes en anglais ?',
+  offerQuestion: (from: string, to: string) => `Traduire automatiquement les textes de ${from} vers ${to} ?`,
   offerHelp: '(télécharge environ 30 Mo, fonctionne hors ligne)',
   offerYes: 'Activer',
   offerNo: 'Pas maintenant',
@@ -11,7 +11,7 @@ export const frTr = {
   failed: 'Impossible de traduire pour le moment.',
   retry: 'Réessayer',
   settingsSection: 'Traduction automatique',
-  settingsToggle: 'Traduire automatiquement les textes en anglais',
+  settingsToggle: 'Traduire les textes automatiquement',
   settingsHelp: 'Traduction automatique sur l’appareil ; elle peut contenir des erreurs. Touchez Voir l’original.',
   unavailable: 'Non disponible sur cet appareil (la traduction automatique fonctionne sur Android et iPhone).',
   modelMissing: 'Non téléchargé',
@@ -27,10 +27,13 @@ export const frTr = {
   timelineNote: 'Titres traduits automatiquement',
   timelinePartialNote: 'Certains textes traduits automatiquement',
   timelineShowOriginal: 'Voir l’original',
-  timelineOriginalNote: 'Affichage de l’original en anglais',
+  timelineOriginalNote: (name: string) => `Affichage de l’original (${name})`,
   timelineShowTranslation: 'Voir la traduction',
   // Descrição em português da fonte (entity_text): sem aviso de tradução; "Ver original" mostra o inglês.
   descriptionShowOriginal: 'Voir l’original',
-  descriptionShowPt: 'Voir en portugais',
-  descriptionOriginalNote: 'Affichage de l’original en anglais',
+  descriptionShowPt: (name: string) => `Voir en ${name}`,
+  descriptionOriginalNote: (name: string) => `Affichage de l’original (${name})`,
+  settingsPair: (from: string, to: string) => `Langues : ${from} → ${to}`,
+  modelOnDemand: 'Téléchargé quand un texte en a besoin',
+  downloadModel: 'Télécharger le modèle',
 };

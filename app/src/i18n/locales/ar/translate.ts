@@ -1,6 +1,6 @@
 // Árabe de app/src/translate/strings.ts. A revisar por falante nativo.
 export const arTr = {
-  offerQuestion: 'هل تُترجم النصوص الإنجليزية تلقائيًا؟',
+  offerQuestion: (from: string, to: string) => `هل تريد ترجمة النصوص تلقائيًا من ${from} إلى ${to}؟`,
   offerHelp: '(تُنزَّل نحو 30 MB، وتعمل دون اتصال)',
   offerYes: 'تفعيل',
   offerNo: 'ليس الآن',
@@ -11,7 +11,7 @@ export const arTr = {
   failed: 'تعذّر الترجمة الآن.',
   retry: 'حاول مرة أخرى',
   settingsSection: 'الترجمة التلقائية',
-  settingsToggle: 'ترجمة النصوص الإنجليزية تلقائيًا',
+  settingsToggle: 'ترجمة النصوص تلقائيًا',
   settingsHelp: 'ترجمة تلقائية على الجهاز؛ قد تحتوي على أخطاء. اضغط على عرض الأصل للمقارنة.',
   unavailable: 'غير متاحة على هذا الجهاز (الترجمة التلقائية تعمل على Android وiPhone).',
   modelMissing: 'غير مُنزَّل',
@@ -27,10 +27,13 @@ export const arTr = {
   timelineNote: 'عناوين مترجمة تلقائيًا',
   timelinePartialNote: 'بعض النصوص مترجمة تلقائيًا',
   timelineShowOriginal: 'عرض الأصل',
-  timelineOriginalNote: 'عرض الأصل الإنجليزي',
+  timelineOriginalNote: (name: string) => `يُعرض الأصل (${name})`,
   timelineShowTranslation: 'عرض الترجمة',
   // Descrição em português da fonte (entity_text): sem aviso de tradução; "Ver original" mostra o inglês.
   descriptionShowOriginal: 'عرض الأصل',
-  descriptionShowPt: 'عرض بالبرتغالية',
-  descriptionOriginalNote: 'عرض الأصل الإنجليزي',
+  descriptionShowPt: (name: string) => `عرض بـ${name}`,
+  descriptionOriginalNote: (name: string) => `يُعرض الأصل (${name})`,
+  settingsPair: (from: string, to: string) => `اللغات: ${from} → ${to}`,
+  modelOnDemand: 'يُنزَّل عندما يحتاجه نص',
+  downloadModel: 'تنزيل النموذج',
 };

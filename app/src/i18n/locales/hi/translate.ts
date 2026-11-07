@@ -1,6 +1,6 @@
 // Hindi de app/src/translate/strings.ts. A revisar por falante nativo.
 export const hiTr = {
-  offerQuestion: 'अंग्रेज़ी पाठ अपने-आप अनुवादित करें?',
+  offerQuestion: (from: string, to: string) => `क्या ${from} के पाठों का ${to} में अपने-आप अनुवाद करें?`,
   offerHelp: '(लगभग 30 MB डाउनलोड होता है, ऑफ़लाइन काम करता है)',
   offerYes: 'चालू करें',
   offerNo: 'अभी नहीं',
@@ -11,7 +11,7 @@ export const hiTr = {
   failed: 'अभी अनुवाद नहीं हो सका।',
   retry: 'फिर से कोशिश करें',
   settingsSection: 'स्वचालित अनुवाद',
-  settingsToggle: 'अंग्रेज़ी पाठ अपने-आप अनुवादित करें',
+  settingsToggle: 'पाठों का अपने-आप अनुवाद करें',
   settingsHelp: 'अनुवाद डिवाइस पर होता है; इसमें त्रुटियाँ हो सकती हैं। मूल देखें दबाएँ।',
   unavailable: 'इस डिवाइस पर उपलब्ध नहीं (स्वचालित अनुवाद Android और iPhone पर काम करता है)।',
   modelMissing: 'डाउनलोड नहीं हुआ',
@@ -27,9 +27,12 @@ export const hiTr = {
   timelineNote: 'अपने-आप अनुवादित शीर्षक',
   timelinePartialNote: 'कुछ पाठ मशीन से अनुवादित',
   timelineShowOriginal: 'मूल देखें',
-  timelineOriginalNote: 'अंग्रेज़ी मूल दिखाया जा रहा है',
+  timelineOriginalNote: (name: string) => `मूल दिखाया जा रहा है (${name})`,
   timelineShowTranslation: 'अनुवाद देखें',
   descriptionShowOriginal: 'मूल देखें',
-  descriptionShowPt: 'पुर्तगाली में देखें',
-  descriptionOriginalNote: 'अंग्रेज़ी मूल दिखाया जा रहा है',
+  descriptionShowPt: (name: string) => `${name} में देखें`,
+  descriptionOriginalNote: (name: string) => `मूल दिखाया जा रहा है (${name})`,
+  settingsPair: (from: string, to: string) => `भाषाएँ: ${from} → ${to}`,
+  modelOnDemand: 'किसी पाठ को ज़रूरत होने पर डाउनलोड होगा',
+  downloadModel: 'मॉडल डाउनलोड करें',
 };

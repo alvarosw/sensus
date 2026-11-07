@@ -1,6 +1,6 @@
 // Espanhol de app/src/translate/strings.ts. A revisar por falante nativo.
 export const esTr = {
-  offerQuestion: '¿Traducir automáticamente los textos en inglés?',
+  offerQuestion: (from: string, to: string) => `¿Traducir automáticamente los textos de ${from} a ${to}?`,
   offerHelp: '(descarga unos 30 MB, funciona sin conexión)',
   offerYes: 'Activar',
   offerNo: 'Ahora no',
@@ -11,7 +11,7 @@ export const esTr = {
   failed: 'No se pudo traducir ahora.',
   retry: 'Intentar de nuevo',
   settingsSection: 'Traducción automática',
-  settingsToggle: 'Traducir automáticamente los textos en inglés',
+  settingsToggle: 'Traducir textos automáticamente',
   settingsHelp: 'Traducción automática en el dispositivo; puede contener errores. Toca Ver original.',
   unavailable: 'No disponible en este dispositivo (la traducción automática funciona en Android y en iPhone).',
   modelMissing: 'No descargado',
@@ -28,10 +28,13 @@ export const esTr = {
   timelineNote: 'Títulos traducidos automáticamente',
   timelinePartialNote: 'Algunos textos traducidos automáticamente',
   timelineShowOriginal: 'Ver original',
-  timelineOriginalNote: 'Mostrando el original en inglés',
+  timelineOriginalNote: (name: string) => `Mostrando el original (${name})`,
   timelineShowTranslation: 'Ver traducción',
   // Descrição em português da fonte (entity_text): sem aviso de tradução; "Ver original" mostra o inglês.
   descriptionShowOriginal: 'Ver original',
-  descriptionShowPt: 'Ver en portugués',
-  descriptionOriginalNote: 'Mostrando el original en inglés',
+  descriptionShowPt: (name: string) => `Ver en ${name}`,
+  descriptionOriginalNote: (name: string) => `Mostrando el original (${name})`,
+  settingsPair: (from: string, to: string) => `Idiomas: ${from} → ${to}`,
+  modelOnDemand: 'Se descarga cuando un texto lo necesita',
+  downloadModel: 'Descargar modelo',
 };

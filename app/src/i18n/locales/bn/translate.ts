@@ -1,6 +1,6 @@
 // Bengali de app/src/translate/strings.ts. A revisar por falante nativo.
 export const bnTr = {
-  offerQuestion: 'ইংরেজি লেখা স্বয়ংক্রিয়ভাবে অনুবাদ করবেন?',
+  offerQuestion: (from: string, to: string) => `${from} থেকে ${to}-তে লেখা স্বয়ংক্রিয়ভাবে অনুবাদ করবেন?`,
   offerHelp: '(প্রায় 30 MB ডাউনলোড হয়, অফলাইনে কাজ করে)',
   offerYes: 'চালু করুন',
   offerNo: 'এখন নয়',
@@ -11,7 +11,7 @@ export const bnTr = {
   failed: 'এখন অনুবাদ করা যায়নি।',
   retry: 'আবার চেষ্টা করুন',
   settingsSection: 'স্বয়ংক্রিয় অনুবাদ',
-  settingsToggle: 'ইংরেজি লেখা স্বয়ংক্রিয়ভাবে অনুবাদ করুন',
+  settingsToggle: 'লেখা স্বয়ংক্রিয়ভাবে অনুবাদ করুন',
   settingsHelp: 'অনুবাদ ডিভাইসেই হয়; এতে ভুল থাকতে পারে। মূল দেখুন-এ ট্যাপ করুন।',
   unavailable: 'এই ডিভাইসে পাওয়া যায় না (স্বয়ংক্রিয় অনুবাদ Android ও iPhone-এ কাজ করে)।',
   modelMissing: 'ডাউনলোড হয়নি',
@@ -28,9 +28,12 @@ export const bnTr = {
   timelineNote: 'স্বয়ংক্রিয়ভাবে অনূদিত শিরোনাম',
   timelinePartialNote: 'কিছু লেখা যন্ত্রে অনূদিত',
   timelineShowOriginal: 'মূল দেখুন',
-  timelineOriginalNote: 'ইংরেজি মূল দেখানো হচ্ছে',
+  timelineOriginalNote: (name: string) => `মূল দেখানো হচ্ছে (${name})`,
   timelineShowTranslation: 'অনুবাদ দেখুন',
   descriptionShowOriginal: 'মূল দেখুন',
-  descriptionShowPt: 'পর্তুগিজে দেখুন',
-  descriptionOriginalNote: 'ইংরেজি মূল দেখানো হচ্ছে',
+  descriptionShowPt: (name: string) => `${name}-তে দেখুন`,
+  descriptionOriginalNote: (name: string) => `মূল দেখানো হচ্ছে (${name})`,
+  settingsPair: (from: string, to: string) => `ভাষা: ${from} → ${to}`,
+  modelOnDemand: 'কোনো লেখার প্রয়োজন হলে ডাউনলোড হবে',
+  downloadModel: 'মডেল ডাউনলোড করুন',
 };

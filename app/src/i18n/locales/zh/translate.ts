@@ -1,6 +1,6 @@
 // Chinês simplificado da tradução automática (app/src/translate/strings.ts). A revisar por falante nativo.
 export const zhTr = {
-  offerQuestion: '是否自动翻译英文文本？',
+  offerQuestion: (from: string, to: string) => `自动将${from}文本翻译为${to}吗？`,
   offerHelp: '（下载约 30 MB，可离线使用）',
   offerYes: '开启',
   offerNo: '暂时不要',
@@ -11,7 +11,7 @@ export const zhTr = {
   failed: '目前无法翻译。',
   retry: '重试',
   settingsSection: '自动翻译',
-  settingsToggle: '自动翻译英文文本',
+  settingsToggle: '自动翻译文本',
   settingsHelp: '在设备上进行自动翻译；可能有误，点按“查看原文”即可对照。',
   unavailable: '此设备不支持（自动翻译可在 Android 和 iPhone 上使用）。',
   modelMissing: '未下载',
@@ -27,10 +27,13 @@ export const zhTr = {
   timelineNote: '标题为自动翻译',
   timelinePartialNote: '部分文本为自动翻译',
   timelineShowOriginal: '查看原文',
-  timelineOriginalNote: '正在显示英文原文',
+  timelineOriginalNote: (name: string) => `正在显示原文（${name}）`,
   timelineShowTranslation: '查看译文',
   // Descrição em português da fonte (entity_text): sem aviso de tradução; "Ver original" mostra o inglês.
   descriptionShowOriginal: '查看原文',
-  descriptionShowPt: '查看葡萄牙语',
-  descriptionOriginalNote: '正在显示英文原文',
+  descriptionShowPt: (name: string) => `以${name}查看`,
+  descriptionOriginalNote: (name: string) => `正在显示原文（${name}）`,
+  settingsPair: (from: string, to: string) => `语言：${from} → ${to}`,
+  modelOnDemand: '需要翻译文本时下载',
+  downloadModel: '下载模型',
 };

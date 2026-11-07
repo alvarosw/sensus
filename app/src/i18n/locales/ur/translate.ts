@@ -1,6 +1,6 @@
 // Urdu de app/src/translate/strings.ts. A revisar por falante nativo.
 export const urTr = {
-  offerQuestion: 'انگریزی متن خودکار طور پر ترجمہ کریں؟',
+  offerQuestion: (from: string, to: string) => `کیا ${from} کی تحریروں کا ${to} میں خودکار ترجمہ کریں؟`,
   offerHelp: '(تقریباً 30 MB ڈاؤن لوڈ ہوتا ہے، آف لائن کام کرتا ہے)',
   offerYes: 'آن کریں',
   offerNo: 'ابھی نہیں',
@@ -11,7 +11,7 @@ export const urTr = {
   failed: 'ابھی ترجمہ نہیں ہو سکا۔',
   retry: 'دوبارہ کوشش کریں',
   settingsSection: 'خودکار ترجمہ',
-  settingsToggle: 'انگریزی متن خودکار طور پر ترجمہ کریں',
+  settingsToggle: 'تحریروں کا خودکار ترجمہ کریں',
   settingsHelp: 'ترجمہ آلے پر ہوتا ہے؛ اس میں غلطیاں ہو سکتی ہیں۔ اصل دیکھیں پر تھپتھپائیں۔',
   unavailable: 'اس آلے پر دستیاب نہیں (خودکار ترجمہ Android اور iPhone پر کام کرتا ہے)۔',
   modelMissing: 'ڈاؤن لوڈ نہیں ہوا',
@@ -28,9 +28,12 @@ export const urTr = {
   timelineNote: 'خودکار طور پر ترجمہ شدہ عنوانات',
   timelinePartialNote: 'کچھ متن مشین سے ترجمہ شدہ',
   timelineShowOriginal: 'اصل دیکھیں',
-  timelineOriginalNote: 'انگریزی اصل دکھایا جا رہا ہے',
+  timelineOriginalNote: (name: string) => `اصل دکھایا جا رہا ہے (${name})`,
   timelineShowTranslation: 'ترجمہ دیکھیں',
   descriptionShowOriginal: 'اصل دیکھیں',
-  descriptionShowPt: 'پرتگالی میں دیکھیں',
-  descriptionOriginalNote: 'انگریزی اصل دکھایا جا رہا ہے',
+  descriptionShowPt: (name: string) => `${name} میں دیکھیں`,
+  descriptionOriginalNote: (name: string) => `اصل دکھایا جا رہا ہے (${name})`,
+  settingsPair: (from: string, to: string) => `زبانیں: ${from} → ${to}`,
+  modelOnDemand: 'کسی تحریر کو ضرورت ہونے پر ڈاؤن لوڈ ہوگا',
+  downloadModel: 'ماڈل ڈاؤن لوڈ کریں',
 };
