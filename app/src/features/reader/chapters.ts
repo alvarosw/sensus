@@ -53,10 +53,18 @@ export interface ChapterData {
   last: Vid;
 }
 
-const cache = new Map<string, Promise<ChapterData>>();
+// Cache por Repo: instalar, atualizar ou remover uma Bíblia publica um Repo novo (republishActive), e o texto daquela
+// fonte muda. Um cache só por fonte guardava o capítulo vazio lido antes de a Bíblia existir (o leitor montado por
+// baixo da apresentação) e o leitor ficava carregando até reabrir o app.
+const caches = new WeakMap<Repo, Map<string, Promise<ChapterData>>>();
 
-/** Versículos do capítulo na fonte dada, em blocos (parágrafos e títulos). Em cache por fonte. */
+/** Versículos do capítulo na fonte dada, em blocos (parágrafos e títulos). Em cache por Repo e fonte. */
 export function loadChapter(repo: Repo, source: string, idx: number): Promise<ChapterData> {
+  let cache = caches.get(repo);
+  if (!cache) {
+    cache = new Map();
+    caches.set(repo, cache);
+  }
   const key = `${source}:${idx}`;
   let p = cache.get(key);
   if (!p) {
@@ -79,8 +87,9 @@ export function loadChapter(repo: Repo, source: string, idx: number): Promise<Ch
         last: body[body.length - 1]?.vid ?? makeVid(book, chapter, LAST_VERSE),
       };
     })();
-    p.catch(() => cache.delete(key));
-    cache.set(key, p);
+    const c = cache;
+    p.catch(() => c.delete(key));
+    c.set(key, p);
   }
   return p;
 }
