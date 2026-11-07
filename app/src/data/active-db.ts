@@ -6,12 +6,16 @@
 // A preferência de comentários (ver settings/app-prefs.ts) é aplicada a cada Repo criado. Quando ela muda, o banco
 // é publicado de novo com um Repo novo sobre a mesma conexão: quem depende do repositório (consultas em cache) refaz.
 import * as SQLite from 'expo-sqlite';
-import { Directory, File, Paths } from 'expo-file-system';
+import { File } from 'expo-file-system';
 import { ALL_COMMENTARIES, Repo, type CommentaryPreference } from '@sensus/core';
 import bundledDb from '../../assets/sensus.db';
 import bundled from './bundled-db.json';
 import { checkFullDatabase, editionOf, type Edition } from './edition';
 import { createExpoSqlDriver } from './driver';
+import { sqliteDirectory } from './sqlite-paths';
+import { bibleDriver, openInstalledBibles } from './bibles/bible-db';
+
+export { sqliteDirectory };
 
 export const READER_DB_NAME = 'sensus.db';
 export const FULL_DB_NAME = 'sensus-full.db';
@@ -41,11 +45,6 @@ export function subscribeActive(listener: Listener): () => void {
   return () => {
     listeners.delete(listener);
   };
-}
-
-/** Pasta do SQLite (a mesma que o expo-sqlite usa por padrão: <files>/SQLite). */
-export function sqliteDirectory(): Directory {
-  return new Directory(Paths.document, 'SQLite');
 }
 
 export function fullDbFile(name: string = FULL_DB_NAME): File {
@@ -116,7 +115,8 @@ async function openInstalledFull(): Promise<{ db: SQLite.SQLiteDatabase; meta: R
 }
 
 function publish(next: { db: SQLite.SQLiteDatabase; meta: Record<string, string>; name: string }): ActiveDb {
-  const repo = new Repo(createExpoSqlDriver(next.db));
+  // As Bíblias baixadas leem o texto do banco delas (ver bibles/bible-db.ts); valem em qualquer edição.
+  const repo = new Repo(createExpoSqlDriver(next.db), { textDriver: bibleDriver });
   repo.setCommentaryPreference(commentaryPref);
   const active: ActiveDb = {
     edition: editionOf(next.meta),
@@ -148,6 +148,8 @@ export function setActiveCommentaryPreference(pref: CommentaryPreference): void 
 
 /** Abre o banco que deve estar ativo: o completo instalado, se houver; senão o de leitura. */
 export async function openActiveDatabase(): Promise<ActiveDb> {
+  // Antes do Repo: as conexões das Bíblias baixadas precisam existir quando a primeira consulta de texto rodar.
+  await openInstalledBibles();
   const full = await openInstalledFull();
   if (full) return publish({ ...full, name: FULL_DB_NAME });
   return publish({ ...(await openReader()), name: READER_DB_NAME });

@@ -15,6 +15,7 @@ import {
   pickLang,
   testamentLabel,
   traditionLabel,
+  TRADITIONS,
 } from '../src/index';
 
 describe('idiomas da interface', () => {
@@ -73,18 +74,20 @@ describe('idiomas da interface', () => {
 });
 
 describe('rótulos do núcleo por idioma (padrão pt)', () => {
-  it('testamento: AT/NT em pt, OT/NT em inglês, outros idiomas pelo inglês', () => {
+  it('testamento: AT/NT em pt, OT/NT em inglês, rótulo próprio nos demais idiomas', () => {
     expect(testamentLabel('OT')).toBe('AT');
     expect(testamentLabel('NT')).toBe('NT');
     expect(testamentLabel('OT', 'en')).toBe('OT');
-    expect(testamentLabel('OT', 'de')).toBe('OT');
+    expect(testamentLabel('OT', 'de')).toBe('AT');
+    expect(testamentLabel('NT', 'ru')).toBe('НЗ');
   });
 
-  it('tradição: pt por padrão, en pelo idioma inglês e fallback para os demais', () => {
+  it('tradição: pt por padrão, en pelo idioma inglês, rótulo próprio nos demais', () => {
     expect(traditionLabel('reformed')).toBe('reformada');
     expect(traditionLabel('reformed', 'pt')).toBe('reformada');
     expect(traditionLabel('reformed', 'en')).toBe('Reformed');
-    expect(traditionLabel('reformed', 'de')).toBe('Reformed');
+    expect(traditionLabel('reformed', 'de')).toBe('reformiert');
+    expect(traditionLabel('adventist', 'es')).toBe('adventista');
     expect(traditionLabel('reformed-baptist', 'en')).toBe('Reformed Baptist');
     expect(traditionLabel('fora-do-registro', 'en')).toBe('fora-do-registro');
     expect(traditionLabel(null, 'en')).toBe('');
@@ -112,5 +115,16 @@ describe('rótulos do núcleo por idioma (padrão pt)', () => {
     expect(formatReference(r(50002005, 51001001), BOOK_TABLE, 'en')).toBe('Philippians 2:5 - Colossians 1:1');
     expect(formatReference(r(50002000, 50002000), BOOK_TABLE, 'en')).toBe('Philippians 2 (introduction)');
     expect(formatReference(r(50002000, 50002000))).toBe('Filipenses 2 (introdução)');
+  });
+});
+
+describe('rótulos completos nos 14 idiomas', () => {
+  it('toda tradição do registro e os dois testamentos têm rótulo em cada idioma (sem cair no fallback)', () => {
+    for (const { code } of APP_LANGS) {
+      for (const [id, labels] of Object.entries(TRADITIONS)) {
+        expect(labels[code], `${id} em ${code}`).toBeTruthy();
+      }
+      if (code !== 'en') expect(testamentLabel('OT', code)).not.toBe(code === 'pt' ? 'OT' : '');
+    }
   });
 });

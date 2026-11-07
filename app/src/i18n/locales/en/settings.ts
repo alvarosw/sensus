@@ -110,6 +110,7 @@ export const enSettings = {
 
   // Aparência e leitura
   secTheme: 'Theme',
+  textLabel: 'text',
   themeSystem: 'System',
   themeLight: 'Light',
   themeDark: 'Dark',

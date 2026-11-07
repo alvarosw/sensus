@@ -5,6 +5,7 @@ import { fontFamilies, HeaderBackButton, useTheme } from '@/design';
 import { SETTINGS_COPY as COPY } from '@/settings/strings';
 import { DATA_COPY } from '@/data/strings';
 import { COMMENTARY_STRINGS } from '@/settings/commentary-strings';
+import { BIBLE_COPY } from '@/data/bibles/strings';
 
 export default function SettingsLayout() {
   const { c } = useTheme();
@@ -26,6 +27,7 @@ export default function SettingsLayout() {
       <Stack.Screen name="commentaries" options={{ title: COMMENTARY_STRINGS.title }} />
       <Stack.Screen name="language" options={{ title: COPY.langTitle }} />
       <Stack.Screen name="data" options={{ title: DATA_COPY.title }} />
+      <Stack.Screen name="bibles" options={{ title: BIBLE_COPY.title }} />
       <Stack.Screen name="about" options={{ title: COPY.aboutTitle }} />
       <Stack.Screen name="sources" options={{ title: COPY.sourcesTitle }} />
     </Stack>

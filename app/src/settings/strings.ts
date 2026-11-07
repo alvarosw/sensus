@@ -100,6 +100,7 @@ const ptSettingsCopy = {
 
   // Aparência e leitura
   secTheme: 'Tema',
+  textLabel: 'texto',
   themeSystem: 'Sistema',
   themeLight: 'Claro',
   themeDark: 'Escuro',

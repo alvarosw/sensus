@@ -2,7 +2,7 @@
 import { ScrollView, View } from 'react-native';
 import { router } from 'expo-router';
 import Constants from 'expo-constants';
-import { sourceAbbr } from '@sensus/core';
+import { appLangInfo, bibleAbbr } from '@sensus/core';
 import { describePreference } from '@/settings/commentary-model';
 import { ListGroup, ListRow, useTheme } from '@/design';
 import { useSettings } from '@/settings/settings-context';
@@ -14,8 +14,9 @@ import { COMMENTARY_STRINGS } from '@/settings/commentary-strings';
 import { useDataStore } from '@/data/data-store';
 import { dataRowSubtitle } from '@/data/view';
 import { DATA_COPY } from '@/data/strings';
-import { appLangInfo } from '@sensus/core';
 import { useLang } from '@/i18n';
+import { useBibles } from '@/data/bibles/bibles-store';
+import { BIBLE_COPY } from '@/data/bibles/strings';
 
 export default function SettingsScreen() {
   const { c } = useTheme();
@@ -27,6 +28,8 @@ export default function SettingsScreen() {
   const theme = useAppPrefs((s) => s.theme);
   const textSource = useAppPrefs((s) => s.textSource);
   const commentaryPrefs = useAppPrefs((s) => s.commentaryPrefs);
+  const catalog = useBibles((s) => s.catalog);
+  const biblesInstalled = useBibles((s) => s.installed.length);
   const version = Constants.expoConfig?.version ?? '';
   const dataMachine = useDataStore((s) => s.machine);
   const dataEdition = useDataStore((s) => s.edition);
@@ -48,8 +51,14 @@ export default function SettingsScreen() {
         <ListRow
           testID="settings-row-look"
           title={COPY.rowLook}
-          subtitle={`${themeLabel[theme]} · texto ${sourceAbbr(textSource)}`}
+          subtitle={`${themeLabel[theme]} · ${COPY.textLabel} ${bibleAbbr(textSource, catalog)}`}
           onPress={() => router.push('/settings/appearance')}
+        />
+        <ListRow
+          testID="settings-row-bibles"
+          title={BIBLE_COPY.rowTitle}
+          subtitle={BIBLE_COPY.rowSubtitle(biblesInstalled)}
+          onPress={() => router.push('/settings/bibles')}
         />
         <ListRow
           testID="settings-row-commentaries"
