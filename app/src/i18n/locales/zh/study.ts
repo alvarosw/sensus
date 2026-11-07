@@ -56,8 +56,6 @@ export const zhStudy = {
 
   // Texto
   translations: '译文与原文',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: '原文',
   originalHint: (nt: string, at: string) => `原文：新约为 ${nt}，旧约为 ${at}。点按一个词即可查看词法。`,
   variantsTitle: '版本之间的异文',

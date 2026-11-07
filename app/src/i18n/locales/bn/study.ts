@@ -56,8 +56,6 @@ export const bnStudy = {
 
   // পাঠ
   translations: 'অনুবাদ ও মূল',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'মূল',
   originalHint: (nt: string, at: string) =>
     `মূল: NT-এর জন্য ${nt}, OT-এর জন্য ${at}। রূপতত্ত্ব দেখতে একটি শব্দে ট্যাপ করুন।`,

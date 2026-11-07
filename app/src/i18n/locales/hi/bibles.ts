@@ -16,6 +16,8 @@ export const hiBibles = {
   refresh: 'सूची ताज़ा करें',
 
   install: 'डाउनलोड करें',
+  update: 'अपडेट करें',
+  updateAvailable: (v: string) => `संस्करण ${v} उपलब्ध है`,
   installed: 'स्थापित',
   cancel: 'रद्द करें',
   resume: 'जारी रखें',

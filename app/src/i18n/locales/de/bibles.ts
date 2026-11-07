@@ -16,6 +16,8 @@ export const deBibles = {
   refresh: 'Liste aktualisieren',
 
   install: 'Herunterladen',
+  update: 'Aktualisieren',
+  updateAvailable: (v: string) => `Version ${v} verfügbar`,
   installed: 'Installiert',
   cancel: 'Abbrechen',
   resume: 'Fortsetzen',

@@ -57,8 +57,6 @@ export const viStudy = {
 
   // Texto
   translations: 'Bản dịch và nguyên văn',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'Nguyên văn',
   originalHint: (nt: string, at: string) =>
     `Nguyên văn: ${nt} cho Tân Ước, ${at} cho Cựu Ước. Chạm vào một từ để xem hình thái học.`,

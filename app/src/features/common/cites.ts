@@ -1,6 +1,7 @@
 // Resolução de cite_ids para prévias e painéis: registro + fonte + rótulos, com cache por Repo.
 // Usa só a API pública do Repo (resolveCite, lexicon, concordance, entities, verseTexts).
 import {
+  bibleCiteShort,
   bookRange,
   chapterRange,
   commentatorOf,
@@ -12,6 +13,7 @@ import {
   sourceShort,
   titleCaseHeadword,
   type Book,
+  type BibleCatalog,
   type CitableRecord,
   type LexiconEntry,
   type Repo,
@@ -21,6 +23,7 @@ import {
 } from '@sensus/core';
 import { sourceTypeOf, type SourceTypeColors } from '@/design';
 import { loadSources } from '@/data/sources';
+import { useBibles } from '@/data/bibles/bibles-store';
 import { serial } from '@/data/serial';
 import { SRC } from './strings';
 
@@ -80,7 +83,7 @@ function wordOf(surface: string): string {
   return surface.normalize('NFC').replace(/^[\p{P}\p{S}\s]+|[\p{P}\p{S}\s]+$/gu, '');
 }
 
-function build(record: CitableRecord, citeId: string, source: Source | undefined, books: Book[]): CiteDetail {
+function build(record: CitableRecord, citeId: string, source: Source | undefined, books: Book[], catalog: BibleCatalog | null): CiteDetail {
   const kind = sourceTypeOf(citeId);
   const base = { citeId, record, source, kind, labelRef: '', ranges: [] as CiteDetail['ranges'] };
   switch (record.table) {
@@ -89,7 +92,7 @@ function build(record: CitableRecord, citeId: string, source: Source | undefined
       return {
         ...base,
         typeLabel: SRC.typeLabels.txt,
-        label: `${sourceShort(r.source_id, source?.title)} ${formatShortRef(r.vid, r.vid, books, true)}`,
+        label: `${bibleCiteShort(r.source_id, catalog)} ${formatShortRef(r.vid, r.vid, books, true)}`,
         text: r.text,
         vid: r.vid,
         ranges: [{ start: r.vid, end: r.vid }],
@@ -175,7 +178,7 @@ export function loadCite(repo: Repo, citeId: string): Promise<CiteDetail | null>
     p = (async () => {
       const [record, sources, books] = await Promise.all([serial(() => repo.resolveCite(citeId)), loadSources(repo), loadBooks(repo)]);
       if (!record) return null;
-      return build(record, citeId, sources.get(record.record.source_id), books);
+      return build(record, citeId, sources.get(record.record.source_id), books, useBibles.getState().catalog);
     })();
     // Falha de leitura não fica em cache.
     p.catch(() => c.cites.delete(citeId));

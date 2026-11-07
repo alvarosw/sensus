@@ -59,8 +59,6 @@ const ptStudy = {
 
   // Texto
   translations: 'Traduções e original',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'Original',
   originalHint: (nt: string, at: string) => `Original: ${nt} para o NT, ${at} para o AT. Toque numa palavra para ver morfologia.`,
   variantsTitle: 'Variantes entre edições',

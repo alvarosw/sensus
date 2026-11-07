@@ -16,6 +16,8 @@ export const frBibles = {
   refresh: 'Actualiser la liste',
 
   install: 'Télécharger',
+  update: 'Mettre à jour',
+  updateAvailable: (v: string) => `Version ${v} disponible`,
   installed: 'Installée',
   cancel: 'Annuler',
   resume: 'Reprendre',

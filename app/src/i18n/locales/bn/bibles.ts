@@ -16,6 +16,8 @@ export const bnBibles = {
   refresh: 'তালিকা রিফ্রেশ করুন',
 
   install: 'ডাউনলোড করুন',
+  update: 'আপডেট করুন',
+  updateAvailable: (v: string) => `সংস্করণ ${v} উপলব্ধ`,
   installed: 'ইনস্টল করা',
   cancel: 'বাতিল',
   resume: 'চালিয়ে যান',

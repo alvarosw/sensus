@@ -57,8 +57,6 @@ export const enStudy = {
 
   // Texto
   translations: 'Translations and original',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'Original',
   originalHint: (nt: string, at: string) =>
     `Original: ${nt} for the NT, ${at} for the OT. Tap a word to see its morphology.`,

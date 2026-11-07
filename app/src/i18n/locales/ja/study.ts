@@ -57,8 +57,6 @@ export const jaStudy = {
 
   // Texto
   translations: '訳と原語',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: '原語',
   originalHint: (nt: string, at: string) =>
     `原語: 新約は ${nt}、旧約は ${at}。語をタップすると形態を表示します。`,

@@ -16,6 +16,8 @@ export const idBibles = {
   refresh: 'Perbarui daftar',
 
   install: 'Unduh',
+  update: 'Perbarui',
+  updateAvailable: (v: string) => `Versi ${v} tersedia`,
   installed: 'Terpasang',
   cancel: 'Batal',
   resume: 'Lanjutkan',

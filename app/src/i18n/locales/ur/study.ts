@@ -57,8 +57,6 @@ export const urStudy = {
 
   // متن
   translations: 'تراجم اور اصل',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'اصل',
   originalHint: (nt: string, at: string) =>
     `اصل: NT کے لیے ${nt}، OT کے لیے ${at}۔ صرف و نحو دیکھنے کے لیے کسی لفظ پر تھپتھپائیں۔`,

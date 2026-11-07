@@ -20,6 +20,8 @@ const ptBibles = {
   refresh: 'Atualizar lista',
 
   install: 'Baixar',
+  update: 'Atualizar',
+  updateAvailable: (v: string) => `Versão ${v} disponível`,
   installed: 'Instalada',
   cancel: 'Cancelar',
   resume: 'Continuar',

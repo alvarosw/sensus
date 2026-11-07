@@ -16,6 +16,8 @@ export const zhBibles = {
   refresh: '刷新列表',
 
   install: '下载',
+  update: '更新',
+  updateAvailable: (v: string) => `有新版本 ${v}`,
   installed: '已安装',
   cancel: '取消',
   resume: '继续',

@@ -57,8 +57,6 @@ export const arStudy = {
 
   // Texto
   translations: 'الترجمات والأصل',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'الأصل',
   originalHint: (nt: string, at: string) =>
     `الأصل: ${nt} للعهد الجديد، و${at} للعهد القديم. اضغط على كلمة لعرض صرفها.`,

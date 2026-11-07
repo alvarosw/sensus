@@ -1,7 +1,7 @@
 // Repositório de Bíblias baixáveis: formato do catálogo (bibles-manifest.json na raiz do repositório), validação
 // e recomendação por idioma. Puro: a rede, o download e os arquivos ficam em app/src/data/bibles.
 // Contrato: docs/design/idiomas-biblias-fontes.md §2. Bíblias já registradas (BLivre, KJV) vêm de SOURCES.
-import { SOURCES, langBase, type SourceTestament } from './sources';
+import { SOURCES, langBase, sourceShort, type SourceTestament } from './sources';
 
 /** Esquema do pacote SQLite de cada Bíblia (meta.schema_version). Sobe junto com o pipeline se o layout mudar. */
 export const BIBLE_SCHEMA_VERSION = 1;
@@ -202,4 +202,12 @@ export function bibleAbbr(id: string, catalog: BibleCatalog | null): string {
   const registered = Object.hasOwn(SOURCES, id) ? SOURCES[id]?.abbr : undefined;
   if (registered) return registered;
   return findBible(catalog, id)?.abbr ?? id;
+}
+
+/**
+ * Rótulo curto de uma Bíblia dentro de uma citação ("Bíblia Livre Fp 2:5", "RVR1909 Fp 2:5"). A do banco principal
+ * usa o nome curto do registro; a baixada não tem linha na tabela de fontes e usa a sigla do catálogo.
+ */
+export function bibleCiteShort(id: string, catalog: BibleCatalog | null): string {
+  return Object.hasOwn(SOURCES, id) ? sourceShort(id) : bibleAbbr(id, catalog);
 }

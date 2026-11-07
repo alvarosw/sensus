@@ -16,6 +16,8 @@ export const enBibles = {
   refresh: 'Refresh list',
 
   install: 'Download',
+  update: 'Update',
+  updateAvailable: (v: string) => `Version ${v} available`,
   installed: 'Installed',
   cancel: 'Cancel',
   resume: 'Resume',

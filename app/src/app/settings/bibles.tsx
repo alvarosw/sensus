@@ -65,6 +65,7 @@ export default function BiblesScreen() {
         info={info}
         installed={installed.includes(entry.id)}
         update={bibleHasUpdate(entry, versions[entry.id])}
+        updateVersion={entry.version}
         badge={badge}
         first={first}
         machine={machines[entry.id] ?? { phase: 'idle', bytes: 0, total: 0, attempt: 1 }}

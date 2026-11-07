@@ -16,6 +16,8 @@ export const esBibles = {
   refresh: 'Actualizar lista',
 
   install: 'Descargar',
+  update: 'Actualizar',
+  updateAvailable: (v: string) => `Versión ${v} disponible`,
   installed: 'Instalada',
   cancel: 'Cancelar',
   resume: 'Reanudar',

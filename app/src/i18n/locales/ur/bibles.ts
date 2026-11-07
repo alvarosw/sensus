@@ -16,6 +16,8 @@ export const urBibles = {
   refresh: 'فہرست تازہ کریں',
 
   install: 'ڈاؤن لوڈ کریں',
+  update: 'اپ ڈیٹ کریں',
+  updateAvailable: (v: string) => `ورژن ${v} دستیاب ہے`,
   installed: 'انسٹال شدہ',
   cancel: 'منسوخ کریں',
   resume: 'جاری رکھیں',

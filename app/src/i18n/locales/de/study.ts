@@ -57,8 +57,6 @@ export const deStudy = {
 
   // Texto
   translations: 'Übersetzungen und Urtext',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'Original',
   originalHint: (nt: string, at: string) =>
     `Original: ${nt} für das NT, ${at} für das AT. Tippe auf ein Wort, um seine Morphologie zu sehen.`,

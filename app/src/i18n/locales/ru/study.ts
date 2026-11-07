@@ -58,8 +58,6 @@ export const ruStudy = {
 
   // Texto
   translations: 'Переводы и оригинал',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'Оригинал',
   originalHint: (nt: string, at: string) =>
     `Оригинал: ${nt} для НЗ, ${at} для ВЗ. Нажмите на слово, чтобы увидеть морфологию.`,

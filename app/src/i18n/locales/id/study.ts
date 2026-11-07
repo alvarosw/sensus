@@ -57,8 +57,6 @@ export const idStudy = {
 
   // Texto
   translations: 'Terjemahan dan teks asli',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'Asli',
   originalHint: (nt: string, at: string) =>
     `Asli: ${nt} untuk PB, ${at} untuk PL. Ketuk sebuah kata untuk melihat morfologinya.`,

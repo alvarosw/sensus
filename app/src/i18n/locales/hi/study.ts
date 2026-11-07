@@ -57,8 +57,6 @@ export const hiStudy = {
 
   // पाठ
   translations: 'अनुवाद और मूल',
-  cmpBlivre: 'Bíblia Livre',
-  cmpKjv: 'KJV',
   cmpOriginal: 'मूल',
   originalHint: (nt: string, at: string) =>
     `मूल: NT के लिए ${nt}, OT के लिए ${at}। रूप-विज्ञान देखने के लिए किसी शब्द पर दबाएँ।`,

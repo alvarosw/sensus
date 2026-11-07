@@ -1,7 +1,7 @@
 // Catálogo de Bíblias baixáveis: validação, recomendação por idioma e sigla. Catálogo de exemplo com pt, en, es,
 // zh-Hans e zh-Hant (o idioma do app decide a recomendada; as demais vêm agrupadas por idioma).
 import { describe, expect, it } from 'vitest';
-import { BibleCatalogError, bibleAbbr, parseBibleCatalog, recommendBibles, type BibleCatalog } from '../src/index';
+import { BibleCatalogError, bibleAbbr, bibleCiteShort, parseBibleCatalog, recommendBibles, type BibleCatalog } from '../src/index';
 
 const SHA = 'a'.repeat(64);
 
@@ -139,5 +139,18 @@ describe('bibleAbbr', () => {
     expect(bibleAbbr('rvr1909', catalog)).toBe('RVR1909');
     expect(bibleAbbr('rvr1909', null)).toBe('rvr1909');
     expect(bibleAbbr('inexistente', catalog)).toBe('inexistente');
+  });
+});
+
+describe('bibleCiteShort', () => {
+  const catalog = exemplo();
+
+  it('Bíblia do registro usa o nome curto (Bíblia Livre), não a sigla', () => {
+    expect(bibleCiteShort('blivre', catalog)).toBe('Bíblia Livre');
+  });
+
+  it('Bíblia baixada usa a sigla do catálogo; sem catálogo, o id', () => {
+    expect(bibleCiteShort('rvr1909', catalog)).toBe('RVR1909');
+    expect(bibleCiteShort('rvr1909', null)).toBe('rvr1909');
   });
 });

@@ -17,6 +17,8 @@ export const ruBibles = {
   refresh: 'Обновить список',
 
   install: 'Загрузить',
+  update: 'Обновить',
+  updateAvailable: (v: string) => `Доступна версия ${v}`,
   installed: 'Установлена',
   cancel: 'Отмена',
   resume: 'Продолжить',
