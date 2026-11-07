@@ -50,6 +50,7 @@ Cambridge. Licença CC BY 4.0: credite "STEP Bible" com link para www.STEPBible.
 | `stepbible-tbesh` | TBESH, léxico hebraico | Definições baseadas em BDB (abreviado). |
 | `stepbible-tflsj` | TFLSJ, LSJ formatado | Base Liddell-Scott-Jones (domínio público), formatada pela Tyndale House. |
 | `stepbible-tipnr` | TIPNR, nomes próprios | Coordenadas via OpenBible.info, ver item 4 de "Verificar". |
+| `tvtms` | Translators Versification Traditions with Methodology for Standardisation (TVTMS), seção Expanded | Não entra no banco: regra de alinhamento da numeração das Bíblias à KJV (`pipeline/bibles/tvtms.py`). Arquivo bruto em `data/raw/bibles/tvtms/`, fora do git. Crédito incluído na atribuição das Bíblias alinhadas. |
 
 ### 2.3 CC BY 4.0 — OpenBible.info
 
@@ -191,23 +192,32 @@ Mapa do mundo antigo (AWMC): não incluído; ver `docs/BACKLOG.md`, seção App.
 Cada pacote `bible-<id>-<versão>.zip` traz um SQLite só com o texto de uma tradução (`verse_text`,
 `text_division`, `book_name`) e a licença e atribuição gravadas em `meta`. Pesquisa, critérios e Bíblias
 recusadas em `docs/BIBLES_LICENSES.md`. Origem de todas: eBible.org (USFM), página de licença em
-`https://ebible.org/find/details.php?id=<código>`.
+`https://ebible.org/find/details.php?id=<código>`, salvo Berean (titular) e SWORD. Toda Bíblia alinhada pela
+TVTMS traz o crédito da §2.2 na atribuição.
 
 | Fonte (id) | Título | Licença | Atribuição exigida | Condições |
 |---|---|---|---|---|
 | `engwebp` | World English Bible | Domínio público | World English Bible (WEB), domínio público (eBible.org). | "World English Bible" é marca do eBible: texto alterado não leva o nome. |
-| `engasv` | American Standard Version (1901) | Domínio público | American Standard Version (1901), domínio público (eBible.org). | |
-| `spablm` | Santa Biblia libre para el mundo | Domínio público | Santa Biblia libre para el mundo, domínio público (eBible.org). | |
+| `engasv` | American Standard Version (1901) | Domínio público | American Standard Version (1901), domínio público (eBible.org). |  |
+| `engbsb` | Berean Standard Bible | Domínio público (dedicada em 30/04/2023) | Berean Standard Bible, domínio público (dedicada em 30/04/2023; eBible.org). | Declaração do titular (berean.bible/terms.htm); confirmar antes da release. |
+| `spablm` | Santa Biblia libre para el mundo | Domínio público | Santa Biblia libre para el mundo, domínio público (eBible.org). |  |
 | `spavbl` | Versión Biblia Libre | CC BY-SA 4.0 | Versión Biblia Libre, copyright © 2018-2020 Jonathan Gallagher y Shelly Barrios de Avila, licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
-| `frasbl` | Sainte Bible libre pour le monde | CC0 1.0 | Sainte Bible libre pour le monde, domínio público (CC0 1.0) (eBible.org). | |
-| `deu1912` | Lutherbibel 1912 | Domínio público | Lutherbibel 1912, domínio público (eBible.org). | |
-| `deuelo` | Elberfelder 1905 (não revisada) | Domínio público | Elberfelder 1905 (não revisada), domínio público (eBible.org). | |
-| `arbvd` | Van Dyck (Smith-Van Dyke) | Domínio público | Van Dyck (Smith-Van Dyke), domínio público (eBible.org). | |
+| `frasbl` | Sainte Bible libre pour le monde | CC0 1.0 | Sainte Bible libre pour le monde, domínio público (CC0 1.0) (eBible.org). |  |
+| `fralsg` | Louis Segond 1910 | Domínio público | Louis Segond 1910, domínio público (eBible.org). |  |
+| `frajnd` | Bible J. N. Darby | Domínio público | Bible J. N. Darby, texto em domínio público (eBible.org). |  |
+| `deu1912` | Lutherbibel 1912 | Domínio público | Lutherbibel 1912, domínio público (eBible.org). |  |
+| `deuelo` | Elberfelder 1905 (não revisada) | Domínio público | Elberfelder 1905 (não revisada), domínio público (eBible.org). |  |
+| `arbvd` | Van Dyck (Smith-Van Dyke) | Domínio público | Van Dyck (Smith-Van Dyke), domínio público (eBible.org). |  |
 | `hin2017` | IRV Hindi 2019 | CC BY-SA 4.0 | Indian Revised Version, hindi (2019), copyright © 2017-2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `hincv` | Hindi Contemporary Version | CC BY-SA 4.0 | Hindi Contemporary Version, copyright © 1978, 2009, 2016, 2019 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
 | `benobcv` | Open Bengali Contemporary Version | CC BY-SA 4.0 | Open Bengali Contemporary Version, Copyright © 2007, 2017, 2019 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `benirv` | IRV Bengali 2019 | CC BY-SA 4.0 | Indian Revised Version, bengali (2019), copyright © 2018-2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
 | `urdoucv` | Urdu Contemporary Version (aberta) | CC BY-SA 4.0 | Urdu Contemporary Version (Biblica), copyright © 1999, 2005, 2022, 2024 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
 | `urdirv` | IRV Urdu 2019 | CC BY-SA 4.0 | Indian Revised Version, urdu (2019), copyright © 2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
 | `jpnm` | Freedom Bible (japonês) | Domínio público (sem direitos declarados) | Freedom Bible (japonês), sem direitos autorais declarados pelo eBible.org. | Declaração do eBible; ver `docs/BIBLES_LICENSES.md`. |
+| `cmncbs` | 当代译本开放资源（简体） | CC BY-SA 4.0 | 当代译本开放资源（简体）, Copyright © 1979, 2005, 2007, 2011, 2022 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `cmncbt` | 當代譯本開放資源（繁體） | CC BY-SA 4.0 | 當代譯本開放資源（繁體）, Copyright © 1979, 2005, 2007, 2012, 2023 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `vieovcb` | Kinh Thánh Hiện Đại (VCB) | CC BY-SA 4.0 | Kinh Thánh Hiện Đại (VCB), copyright © 1982, 1987, 1994, 2005, 2015 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
 
 ## 3. Verificar antes de distribuir
 

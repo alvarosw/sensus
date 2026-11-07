@@ -4,7 +4,9 @@ Contrato: docs/design/idiomas-biblias-fontes.md, §2 (Repositório de Bíblias).
 meta / verse_text / text_division / book_name. A lista e os metadados vêm de pipeline/bibles/catalog.tsv; o
 texto vem do staging (data/staging/bibles/<id>/, feito por pipeline/ingest/ebible.py).
 
-Antes de empacotar, cada Bíblia é comparada com a KJV (pipeline/bibles/versification.py). Abaixo de 99,5% dos
+Antes de empacotar, cada Bíblia é alinhada à KJV pela TVTMS (pipeline/bibles/tvtms.py: numeração das tradições
+hebraica, latina e grega; títulos de salmo viram cabeçalho do v.1) e comparada com a KJV
+(pipeline/bibles/versification.py, com as 16 omissões do texto crítico fora da conta). Abaixo de 99,5% dos
 capítulos com a mesma contagem de versículos, o empacotamento para com erro: a Bíblia sai do catálogo.
 
 Saídas:
@@ -29,6 +31,7 @@ PIPELINE = Path(__file__).resolve().parent
 sys.path.insert(0, str(PIPELINE))
 sys.path.insert(0, str(PIPELINE / "bibles"))
 
+import tvtms as TV  # noqa: E402
 import versification as V  # noqa: E402
 from sensus.staging import ROOT, STAGING  # noqa: E402
 
@@ -37,6 +40,10 @@ MANIFEST = ROOT / "bibles-manifest.json"
 DIST = ROOT / "dist" / "bibles"
 GITHUB_REPO = "alvarosw/sensus"
 SCHEMA_VERSION = 1
+# Crédito exigido pela CC BY 4.0 da TVTMS para Bíblias cuja numeração foi alinhada por ela (ver tvtms.py).
+TVTMS_CREDITO = ("Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for "
+                 "Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; "
+                 "licença CC BY 4.0.")
 CATALOG_VERSION = "2026.11.06"
 ENTRY_PREFIX = "bible-"
 # Amostras do critério de conferência (versículo, esperado no início do texto em inglês ou no original da Bíblia).
@@ -45,7 +52,7 @@ BUNDLED_URLS = {
     "blivre": "https://ebible.org/find/details.php?id=porbr2018",
     "kjv": "https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/KJV.zip",
 }
-SAMPLES = [("Jo 3:16", 43003016), ("Sl 23:1", 19023001), ("Dn 8:14", 27008014)]
+SAMPLES = [("Jo 3:16", 43003016), ("Sl 23:1", 19023001), ("Sl 51:1", 19051001), ("Dn 8:14", 27008014)]
 
 SCHEMA_SQL = """
 CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
@@ -135,17 +142,44 @@ def manifest_for(entries: list[dict], version: str) -> dict:
     return {"catalog_version": version, "schema_version": SCHEMA_VERSION, "bibles": entries}
 
 
-def check_versification(bible_id: str, kjv: dict[int, str]) -> dict:
-    """Compara a Bíblia com a KJV. Levanta erro se não atingir o limiar (a Bíblia não entra no catálogo)."""
-    verses = {r["vid"]: r["text"] for r in load_jsonl(STAGING / "bibles" / bible_id / "verse_text.jsonl")}
-    report = V.compare(verses, kjv)
+def check_versification(bible_id: str, kjv: dict[int, str], index: dict) -> dict:
+    """Alinha a Bíblia à KJV (TVTMS) e compara a contagem. Levanta erro se não atingir o limiar.
+
+    Devolve os versículos já na numeração KJV, as divisões reencaminhadas (bridge, paragraph) e os títulos
+    (heading) de cada versículo KJV. Títulos e divisões de vid que cai fora da numeração não são gravados.
+    """
+    base = STAGING / "bibles" / bible_id
+    verses = {r["vid"]: r["text"] for r in load_jsonl(base / "verse_text.jsonl")}
+    divs = load_jsonl(base / "text_division.jsonl")
+    heads: dict[int, str] = {}
+    for d in divs:
+        if d["kind"] == "heading" and d.get("title"):
+            heads[d["vid"]] = f"{heads[d['vid']]} {d['title']}" if d["vid"] in heads else d["title"]
+    res = TV.reversify(verses, heads, index, frozenset(kjv))
+    report = V.compare(res.numbered, kjv)
     if not V.passes(report):
         pct = 100 * report["match"] / max(report["chapters"], 1)
         raise RuntimeError(
             f"{bible_id}: {report['match']}/{report['chapters']} capítulos ({pct:.2f}%) com a contagem da KJV; "
             f"mínimo {100 * V.LIMIAR_CAPITULOS:.1f}%. Diferenças: {report['bad'][:8]}"
         )
-    return {"verses": verses, "report": report}
+    out_divs, seen = [], set()
+    for d in divs:
+        if d["kind"] == "heading":
+            continue
+        vi = res.target.get(d["vid"], d["vid"])
+        if vi not in res.numbered or (vi, d["kind"]) in seen:
+            continue
+        seen.add((vi, d["kind"]))
+        out_divs.append({"vid": vi, "kind": d["kind"], "title": d.get("title")})
+    lost_heads = 0
+    for vi, title in sorted(res.heads.items()):
+        if vi in res.numbered and title.strip():
+            out_divs.append({"vid": vi, "kind": "heading", "title": title})
+        else:
+            lost_heads += 1
+    return {"verses": res.numbered, "report": report, "divisions": out_divs, "applied": res.applied,
+            "dropped": res.dropped, "lost_heads": lost_heads}
 
 
 def main():
@@ -157,6 +191,7 @@ def main():
 
     only = {s for s in args.only.split(",") if s}
     kjv = {r["vid"]: r["text"] for r in load_jsonl(STAGING / "kjv" / "verse_text.jsonl")}
+    index = TV.index_rules(TV.load_rules_file()[0])
     built_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
     entries = []
     failures = []
@@ -179,14 +214,16 @@ def main():
             print(f"{bid}: no banco principal (bundled), sem pacote")
             continue
         try:
-            checked = check_versification(bid, kjv)
+            checked = check_versification(bid, kjv, index)
+            if any(a != "identidade" for a in checked["applied"]):
+                entry["attribution"] = f"{row['attribution']} {TVTMS_CREDITO}"
             staging_dir = STAGING / "bibles" / bid
             source = json.loads((staging_dir / "source.json").read_text(encoding="utf-8"))
             books = json.loads((staging_dir / "books.json").read_text(encoding="utf-8"))
-            divisions = load_jsonl(staging_dir / "text_division.jsonl")
+            divisions = checked["divisions"]
             db_path = work / f"bible-{bid}.db"
             build_sqlite(db_path, bible_id=bid, version=args.version, lang=row["lang"], license_=row["license"],
-                         attribution=row["attribution"], verses=checked["verses"], divisions=divisions,
+                         attribution=entry["attribution"], verses=checked["verses"], divisions=divisions,
                          books=books, built_at=built_at)
             zip_name = f"{ENTRY_PREFIX}{bid}-{args.version}.zip"
             zip_path = DIST / zip_name
@@ -203,10 +240,14 @@ def main():
             print(f"{bid}: {len(books)} livros, {len(checked['verses']) - len(rep['empty'])} versículos com texto "
                   f"({len(rep['empty'])} numerados sem texto), capítulos iguais à KJV "
                   f"{rep['match']}/{rep['chapters']}, zip {zip_path.stat().st_size / 1e6:.2f} MB")
+            print(f"    TVTMS: {dict(checked['applied'].most_common(6))}; fora do cânon: {len(checked['dropped'])}; "
+                  f"títulos sem versículo: {checked['lost_heads']}")
             if args.samples:
+                titles = {d["vid"]: d["title"] for d in checked["divisions"] if d["kind"] == "heading"}
                 for ref, v in SAMPLES:
                     text = checked["verses"].get(v, "")
-                    print(f"    {ref}: {text[:110] or '(sem texto)'}")
+                    head = f" [título: {titles[v][:60]}]" if v in titles else ""
+                    print(f"    {ref}: {text[:110] or '(sem texto)'}{head}")
         except RuntimeError as e:
             failures.append(str(e))
             print(f"{bid}: NÃO EMPACOTADA: {e}")
