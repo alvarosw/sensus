@@ -1,6 +1,6 @@
 // Bíblia: a recomendada do idioma do app (card, com "Baixar agora" e progresso) e as demais do idioma, em lista curta.
 // BLivre e KJV já vêm no app. Continuar ou Depois seguem sem baixar nada.
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { ScrollView, View } from 'react-native';
 import { recommendBibles, type BibleEntry } from '@sensus/core';
 import { ListGroup, Txt, useTheme } from '@/design';
@@ -11,6 +11,7 @@ import { useBibles } from '@/data/bibles/bibles-store';
 import { bibleHasUpdate, bibleRowInfo } from '@/data/bibles/bible-model';
 import { IDLE_STATE } from '@/data/download-machine';
 import { DATA_COPY } from '@/data/strings';
+import { useAppPrefs } from '@/settings/app-prefs';
 import { ONBOARDING_COPY } from './strings';
 
 const OTHERS_SHOWN = 3;
@@ -36,6 +37,18 @@ export function StepBible({ onNext }: { onNext: () => void }) {
   const others = rec?.recommended.slice(1, 1 + OTHERS_SHOWN) ?? [];
   const topReady = top !== null && installed.includes(top.id);
 
+  // A Bíblia baixada neste passo vira o texto do leitor ao terminar de instalar: quem escolhe a Bíblia do seu idioma
+  // espera ler nela ao entrar no app.
+  const chosen = useRef<string | null>(null);
+  const setTextSource = useAppPrefs((s) => s.setTextSource);
+  useEffect(() => {
+    const id = chosen.current;
+    if (id && installed.includes(id) && (machines[id]?.phase ?? 'idle') === 'done') {
+      chosen.current = null;
+      setTextSource(id);
+    }
+  }, [installed, machines, setTextSource]);
+
   const rowFor = (entry: BibleEntry, first: boolean, badge: boolean) => (
     <BibleRow
       key={entry.id}
@@ -46,7 +59,10 @@ export function StepBible({ onNext }: { onNext: () => void }) {
       badge={badge}
       first={first}
       machine={machines[entry.id] ?? IDLE_STATE}
-      onInstall={() => install(entry.id)}
+      onInstall={() => {
+        chosen.current = entry.id;
+        install(entry.id);
+      }}
       onCancel={() => cancel(entry.id)}
     />
   );
