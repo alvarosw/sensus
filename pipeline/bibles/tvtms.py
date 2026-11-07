@@ -303,10 +303,11 @@ class Result(NamedTuple):
     target: dict[int, int]       # vid da Bíblia -> vid KJV do primeiro destino (para divisões)
     applied: Counter             # ações aplicadas (identidade incluída)
     dropped: list                # vids da Bíblia sem destino no cânon
+    choice: dict                 # vid da Bíblia -> (destinos, ação), como foi escolhido
 
 
 def reversify(verses: dict[int, str], heads: dict[int, str], index: dict[int, list[Rule]],
-              canon: frozenset[int] | None = None) -> Result:
+              canon: frozenset[int] | None = None, overrides: dict | None = None) -> Result:
     """Aplica a TVTMS: devolve a numeração e os textos na versificação KJV.
 
     `verses`: vid da Bíblia -> texto (incluindo versículos numerados sem texto).
@@ -314,8 +315,10 @@ def reversify(verses: dict[int, str], heads: dict[int, str], index: dict[int, li
     `canon`: vids da KJV. Depois de alinhar, o que cai fora dela (ex.: acréscimos gregos de Ester numerados como
     capítulos 11-16) sai da numeração e dos títulos; antes do alinhamento tudo entra, porque a LXX precisa dos
     versículos "extras" para mapear (Sl 9:22 -> 10:1).
+    `overrides`: vid da Bíblia -> (destinos, ação), escolhidos antes da regra da TVTMS (ver title_as_verse).
     """
     view = BibleView(verses)
+    choice: dict = {}
     numbered: dict[int, str] = {}
     out_heads: dict[int, str] = {}
     target: dict[int, int] = {}
@@ -328,19 +331,24 @@ def reversify(verses: dict[int, str], heads: dict[int, str], index: dict[int, li
         d[key] = f"{d[key]}{sep}{text}" if d.get(key) else text
 
     for b in sorted(verses):
-        chosen = None
-        for rule in index.get(b, ()):
-            if all(view.holds(c) for c in rule.tests):
-                chosen = rule
-                break
-        text = verses[b]
-        if chosen is None:
-            targets = ((b, False),)
-            action = "identidade"
+        if overrides and b in overrides:
+            targets, action = overrides[b]
         else:
-            targets = chosen.targets
-            action = chosen.action
+            chosen = None
+            for rule in index.get(b, ()):
+                if all(view.holds(c) for c in rule.tests):
+                    chosen = rule
+                    break
+            if chosen is None:
+                targets, action = ((b, False),), "identidade"
+            else:
+                targets, action = chosen.targets, chosen.action
+        choice[b] = (targets, action)
+        text = verses[b]
         applied[action] += 1
+        if not targets:
+            dropped.append(b)
+            continue
         # Destino de título: o texto vira cabeçalho do v.1 da KJV, sem número de versículo.
         if is_title_action(action) or all(t for _, t in targets):
             tv = targets[0][0]
@@ -368,4 +376,146 @@ def reversify(verses: dict[int, str], heads: dict[int, str], index: dict[int, li
         out_heads = {k: t for k, t in out_heads.items() if k in canon}
         target = {k: t for k, t in target.items() if t in canon}
         dropped.extend(fora)
-    return Result(numbered, out_heads, target, applied, dropped)
+    return Result(numbered, out_heads, target, applied, dropped, choice)
+
+
+# ---- título como versículo (regra derivada, testada por comprimento de texto) -------------------------------
+
+MERGE_PEN, SPLIT_PEN, ABSENT_PEN, TITLE_PEN, EXTRA_PEN = 3.0, 3.0, 6.0, 2.0, 10.0
+TITLE_MARGIN = 2.0  # quanto o título pode custar a mais que o v.1 como versículo e ainda ser adotado
+
+
+def letters(text: str) -> int:
+    """Número de letras e dígitos: sinal de comprimento que não depende do idioma."""
+    return len(re.findall(r"\w", text))
+
+
+def align_chapter(b_len: list[int], k_len: list[int], title_first: bool, title_k: int = 0,
+                  force_title: bool = False):
+    """Alinha versículos da Bíblia a versículos da KJV de um capítulo pelo comprimento (estilo Gale-Church).
+
+    Movimentos: um-para-um, fusão (2 da Bíblia -> 1 da KJV), divisão (1 -> 2), título (1º da Bíblia sem
+    versículo na KJV, só se `title_first`), ausente (KJV sem versículo na Bíblia) e extra. Custo de cada
+    par: (b - c*k)^2 / (c*k + 1), com c = razão entre os comprimentos totais.
+    Devolve (custo, movimentos em ordem).
+    """
+    n, m = len(b_len), len(k_len)
+    body = b_len[1:] if title_first else b_len
+    c = (sum(body) or 1) / (sum(k_len) or 1)
+
+    def g(b: int, k: int) -> float:
+        mu = c * k
+        return (b - mu) ** 2 / (mu + 1.0)
+
+    title_cost = g(b_len[0], title_k) if (title_first and title_k and n) else TITLE_PEN
+
+    INF = float("inf")
+    D = [[INF] * (m + 1) for _ in range(n + 1)]
+    BP: list[list] = [[None] * (m + 1) for _ in range(n + 1)]
+    D[0][0] = 0.0
+    for i in range(n + 1):
+        for j in range(m + 1):
+            cur = D[i][j]
+            if cur == INF:
+                continue
+            if force_title and i == 0 and j == 0 and n > 0:
+                # Hipótese do título: o primeiro versículo da Bíblia é o título, sem alternativa.
+                D[1][0] = min(D[1][0], title_cost)
+                BP[1][0] = (0, 0, ("title", 0))
+                continue
+            if force_title and i == 0:
+                continue
+
+            def relax(ni: int, nj: int, cost: float, mv: tuple) -> None:
+                if cur + cost < D[ni][nj]:
+                    D[ni][nj] = cur + cost
+                    BP[ni][nj] = (i, j, mv)
+
+            if i < n and j < m:
+                relax(i + 1, j + 1, g(b_len[i], k_len[j]), ("one", i, j))
+            if i + 1 < n and j < m:
+                relax(i + 2, j + 1, g(b_len[i] + b_len[i + 1], k_len[j]) + MERGE_PEN, ("merge", i, j))
+            if i < n and j + 1 < m:
+                relax(i + 1, j + 2, g(b_len[i], k_len[j] + k_len[j + 1]) + SPLIT_PEN, ("split", i, j))
+            if i == 0 and title_first and n > 0:
+                relax(1, j, title_cost, ("title", 0))
+            if j < m:
+                relax(i, j + 1, ABSENT_PEN, ("absent", j))
+            if i < n and not (i == 0 and title_first):
+                relax(i + 1, j, EXTRA_PEN, ("extra", i))
+    moves = []
+    i, j = n, m
+    while (i, j) != (0, 0):
+        pi, pj, mv = BP[i][j]
+        moves.append(mv)
+        i, j = pi, pj
+    return D[n][m], list(reversed(moves))
+
+
+def title_as_verse(verses: dict[int, str], heads: dict[int, str], kjv: dict[int, str],
+                   index: dict[int, list[Rule]], canon: frozenset[int] | None = None):
+    """Regra 'título como versículo' para salmos: o v.1 da Bíblia é o título (sem cabeçalho próprio) e os demais
+    versículos deslocam uma posição (ex.: Sinodal, Sl 13 e 87).
+
+    Só age quando a KJV marca título no capítulo (linha em branco antes do v.1) e a TVTMS não já pôs o v.1 no
+    título. Compara duas hipóteses pelo comprimento do texto: v.1 como versículo e v.1 como título (forçado). Adota
+    a do título se ela cobre todos os versículos sem fusão extra, com um único título, e custa no máximo
+    TITLE_MARGIN a mais. Só para capítulos que a TVTMS leva a um único capítulo da KJV. Devolve (overrides para
+    reversify, relatório [(capítulo, custo sem título, custo com título, adotado)]).
+    """
+    base = reversify(verses, heads, index, canon)
+    by_chapter: dict[int, list[int]] = defaultdict(list)
+    for b in sorted(verses):
+        if b // 1_000_000 == 19:
+            by_chapter[b // 1000].append(b)
+    overrides: dict = {}
+    report = []
+    for ck, bvids in sorted(by_chapter.items()):
+        if bvids[0] % 1000 != 1 or bvids[0] in heads:
+            continue  # sem v.1, ou com título já separado (cabeçalho): nada a decidir
+        if is_title_action(base.choice[bvids[0]][1]):
+            continue  # a TVTMS já põe o v.1 no título (ex.: Sl 5 da LSG: título em dois versículos)
+        firsts = [base.choice[b][0][0] for b in bvids
+                  if base.choice[b][0] and not is_title_action(base.choice[b][1])]
+        chap_of = Counter(tg[0] // 1000 for tg in firsts if not tg[1])
+        if not chap_of:
+            continue
+        if len(chap_of) != 1:
+            continue  # a LXX junta capítulos (Sl 9/10...): a TVTMS já decide, e o alinhamento fica de fora
+        C = chap_of.most_common(1)[0][0]
+        kv = sorted(v for v in kjv if v // 1000 == C)
+        if not kv:
+            continue
+        b_len = [letters(verses[b]) for b in bvids]
+        k_len = [letters(kjv[v]) for v in kv]
+        cost0, _ = align_chapter(b_len, k_len, False)
+        # A KJV marca o título do salmo com linha em branco antes do v.1 ("título\n\nversículo"): é o sinal
+        # independente de que o capítulo tem título; sem ele, o título como versículo não existe.
+        head_txt, sep, rest = kjv[kv[0]].partition("\n\n")
+        if not sep:
+            report.append((ck, round(cost0, 1), None, False))
+            continue
+        k1 = [letters(rest)] + k_len[1:]
+        cost1, moves = align_chapter(b_len, k1, True, title_k=letters(head_txt), force_title=True)
+        # Só adota se cada versículo da Bíblia tem destino e cada versículo da KJV é coberto (nada 'ausente' nem
+        # 'extra') e se o custo com o título não passa do custo sem ele pela folga TITLE_MARGIN. Sem essas
+        # garantias, o alinhamento por comprimento deixa texto de fora.
+        kinds = {mv[0] for mv in moves}
+        adopt = cost1 <= cost0 + TITLE_MARGIN and not kinds & {"absent", "extra"} and sum(mv[0] == "title" for mv in moves) == 1
+        report.append((ck, round(cost0, 1), round(cost1, 1), adopt))
+        if not adopt:
+            continue
+        for mv in moves:
+            kind = mv[0]
+            if kind == "one":
+                overrides[bvids[mv[1]]] = (((kv[mv[2]], False),), "alinhamento por comprimento")
+            elif kind == "merge":
+                for i in (mv[1], mv[1] + 1):
+                    overrides[bvids[i]] = (((kv[mv[2]], False),), "alinhamento por comprimento")
+            elif kind == "split":
+                overrides[bvids[mv[1]]] = (((kv[mv[2]], False), (kv[mv[2] + 1], False)), "alinhamento por comprimento")
+            elif kind == "title":
+                overrides[bvids[0]] = (((kv[0], True),), "Psalm title")
+            elif kind == "extra":
+                overrides[bvids[mv[1]]] = ((), "fora do alinhamento")
+    return overrides, report

@@ -142,5 +142,41 @@ class OmissionAndBridgeCountTest(unittest.TestCase):
         self.assertEqual(V.compare(bib, kjv)["bad"], [])
 
 
+class LengthAlignmentTest(unittest.TestCase):
+    """Alinhamento por comprimento (usado quando a TVTMS não decide o título) e checagens de texto e de título."""
+
+    def test_one_to_one_costs_nothing_and_merge_is_found(self):
+        cost, moves = T.align_chapter([10, 20, 30], [10, 20, 30], False)
+        self.assertLess(cost, 1e-6)
+        self.assertEqual(moves, [("one", 0, 0), ("one", 1, 1), ("one", 2, 2)])
+        _, moves = T.align_chapter([10, 22], [11], False)
+        self.assertEqual(moves[0][0], "merge")
+
+    def test_title_as_separate_verse_is_adopted_and_shift_follows(self):
+        index, _, _ = load_index()
+        # Capítulo de salmo: v.1 = título (sem cabeçalho próprio), v.2..v.5 = versículos da KJV 1..4.
+        kjv = {vid(SL, 90, 1): "Prayer of Moses.\n\n" + "a " * 40, vid(SL, 90, 2): "b " * 30,
+               vid(SL, 90, 3): "c " * 30, vid(SL, 90, 4): "d " * 30}
+        verses = {vid(SL, 90, 1): "Molitva " * 3, vid(SL, 90, 2): "a " * 40,
+                  vid(SL, 90, 3): "b " * 30, vid(SL, 90, 4): "c " * 30, vid(SL, 90, 5): "d " * 30}
+        overrides, report = T.title_as_verse(verses, {}, kjv, index, frozenset(kjv))
+        self.assertTrue(any(r[3] for r in report), report)
+        self.assertEqual(overrides[vid(SL, 90, 1)][1], "Psalm title")
+        self.assertEqual(overrides[vid(SL, 90, 2)][0][0][0], vid(SL, 90, 1))
+
+    def test_text_check_flags_a_shifted_psalm_and_not_an_aligned_one(self):
+        kjv = {vid(SL, 50, n): "x" * (n * 10) for n in range(1, 9)}
+        good = {v: kjv[v] for v in kjv}
+        shifted = {vid(SL, 50, n): kjv[vid(SL, 50, n + 1)] if n < 8 else "" for n in range(1, 9)}
+        self.assertEqual(V.text_check(good, kjv), [])
+        self.assertTrue(V.text_check(shifted, kjv))
+
+    def test_title_check_compares_kjv_title_with_heading(self):
+        kjv = {vid(SL, 3, 1): "Psalm of David.\n\nLord, how.", vid(SL, 4, 1): "Hear me."}
+        self.assertIn(3, [f["chapter"] for f in V.title_check({}, kjv)])
+        self.assertEqual(V.title_check({vid(SL, 3, 1): "Salmo."}, kjv), [])
+        self.assertIn(4, [f["chapter"] for f in V.title_check({vid(SL, 4, 1): "Salmo."}, kjv)])
+
+
 if __name__ == "__main__":
     unittest.main()

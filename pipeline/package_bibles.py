@@ -155,7 +155,8 @@ def check_versification(bible_id: str, kjv: dict[int, str], index: dict) -> dict
     for d in divs:
         if d["kind"] == "heading" and d.get("title"):
             heads[d["vid"]] = f"{heads[d['vid']]} {d['title']}" if d["vid"] in heads else d["title"]
-    res = TV.reversify(verses, heads, index, frozenset(kjv))
+    overrides, _ = TV.title_as_verse(verses, heads, kjv, index, frozenset(kjv))
+    res = TV.reversify(verses, heads, index, frozenset(kjv), overrides)
     report = V.compare(res.numbered, kjv)
     if not V.passes(report):
         pct = 100 * report["match"] / max(report["chapters"], 1)
@@ -179,7 +180,9 @@ def check_versification(bible_id: str, kjv: dict[int, str], index: dict) -> dict
         else:
             lost_heads += 1
     return {"verses": res.numbered, "report": report, "divisions": out_divs, "applied": res.applied,
-            "dropped": res.dropped, "lost_heads": lost_heads}
+            "dropped": res.dropped, "lost_heads": lost_heads,
+            # Checagens de texto e de título (informativas: acusam, não bloqueiam; ver versification.py).
+            "text_findings": V.text_check(res.numbered, kjv), "title_findings": V.title_check(res.heads, kjv)}
 
 
 def main():
@@ -242,6 +245,9 @@ def main():
                   f"{rep['match']}/{rep['chapters']}, zip {zip_path.stat().st_size / 1e6:.2f} MB")
             print(f"    TVTMS: {dict(checked['applied'].most_common(6))}; fora do cânon: {len(checked['dropped'])}; "
                   f"títulos sem versículo: {checked['lost_heads']}")
+            tf, hf = checked["text_findings"], checked["title_findings"]
+            print(f"    checagem de texto (Sl): {len(tf)} salmo(s) acusado(s) {[f['chapter'] for f in tf]}; "
+                  f"título: {len(hf)} divergência(s) {[f['chapter'] for f in hf][:12]}")
             if args.samples:
                 titles = {d["vid"]: d["title"] for d in checked["divisions"] if d["kind"] == "heading"}
                 for ref, v in SAMPLES:
