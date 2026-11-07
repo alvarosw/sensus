@@ -99,7 +99,7 @@ function SourceBody({ detail }: { detail: CiteDetail }) {
     <View style={{ gap: 12 }}>
       <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
         <TypeMark kind={detail.kind} label={detail.typeLabel} />
-        {source?.tradition ? <Tag label={traditionLabel(source.tradition)} /> : null}
+        {source?.tradition ? <Tag label={traditionLabel(source.tradition, currentLang())} /> : null}
       </View>
       <Txt v="panelTitle" testID="panel-title">{detail.label}</Txt>
       {source ? <Txt v="bodySm" color="muted" style={{ fontSize: 13 }}>{source.title}</Txt> : null}

@@ -12,7 +12,7 @@ export interface TraditionGroup {
 }
 
 /** Fontes de comentário do banco, agrupadas por tradição (ordem pelo rótulo). Fonte sem tradição fica de fora. */
-export function commentaryGroups(sources: readonly Source[]): TraditionGroup[] {
+export function commentaryGroups(sources: readonly Source[], lang: AppLang = 'pt'): TraditionGroup[] {
   const byTradition = new Map<string, Source[]>();
   for (const s of sources) {
     if (s.kind !== 'commentary' || !s.tradition) continue;
@@ -23,10 +23,10 @@ export function commentaryGroups(sources: readonly Source[]): TraditionGroup[] {
   return [...byTradition.entries()]
     .map(([tradition, list]) => ({
       tradition,
-      label: traditionLabel(tradition),
-      sources: [...list].sort((a, b) => sourceShort(a.id, a.title).localeCompare(sourceShort(b.id, b.title), 'pt-BR')),
+      label: traditionLabel(tradition, lang),
+      sources: [...list].sort((a, b) => sourceShort(a.id, a.title).localeCompare(sourceShort(b.id, b.title))),
     }))
-    .sort((a, b) => a.label.localeCompare(b.label, 'pt-BR'));
+    .sort((a, b) => a.label.localeCompare(b.label));
 }
 
 /**

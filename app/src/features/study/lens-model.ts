@@ -15,6 +15,7 @@ import {
 import { chv } from '../common/format';
 import type { CommentaryView } from './format';
 import { STUDY } from './strings';
+import { currentLang } from '../../i18n/lang-store';
 
 /** Coluna da comparação da lente Texto: o id de uma Bíblia instalada, ou 'original' (o testamento do trecho). */
 export type CompareKey = string;
@@ -77,7 +78,7 @@ export function historicalParts(h: Historical): HistoricalParts {
 
 /** Tradição pt-BR do filtro ativo (null = todas). */
 export function activeTraditionOf(tradition: string | null): string | null {
-  return tradition ? traditionLabel(tradition) : null;
+  return tradition ? traditionLabel(tradition, currentLang()) : null;
 }
 
 export function commentaryTraditions(views: readonly CommentaryView[]): string[] {

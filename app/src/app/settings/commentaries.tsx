@@ -9,6 +9,7 @@ import { commentaryGroups, toggleHiddenSource, toggleTradition } from '@/setting
 import { COMMENTARY_STRINGS as T } from '@/settings/commentary-strings';
 import { SourceSwitchRow, TraditionChip } from '@/settings/commentary-parts';
 import { useSources } from '@/settings/use-sources';
+import { useLang } from '@/i18n';
 
 function Section({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -24,7 +25,8 @@ export default function CommentariesScreen() {
   const { sources, error } = useSources();
   const pref = useAppPrefs((s) => s.commentaryPrefs);
   const setPrefs = useAppPrefs((s) => s.setCommentaryPrefs);
-  const groups = useMemo(() => commentaryGroups(sources ?? []), [sources]);
+  const lang = useLang();
+  const groups = useMemo(() => commentaryGroups(sources ?? [], lang), [sources, lang]);
   const allOn = pref.traditions === null;
   const update = (next: Partial<typeof pref>) => setPrefs({ ...pref, ...next });
 
