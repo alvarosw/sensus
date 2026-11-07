@@ -174,6 +174,7 @@ export const viShell = {
   'auth.tooLarge': 'Yêu cầu quá lớn.',
   'auth.portBusy': 'Không mở được cổng quay lại (1455-1459). Hãy đóng các ứng dụng khác đang dùng cổng này rồi thử lại.',
   'auth.loginTimeout': 'Đăng nhập ChatGPT quá lâu. Hãy thử lại.',
+  'auth.notFound': 'Không tìm thấy.',
   'auth.nativeOnly': 'Có trong ứng dụng đã cài (bản dựng phát triển).',
   'rich.tokenIs': 'Token được trích là {expected}',
   'rich.whereFrom': 'Điều này lấy từ đâu? ({count})',

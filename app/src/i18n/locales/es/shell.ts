@@ -174,6 +174,7 @@ export const esShell = {
   'auth.tooLarge': 'Solicitud demasiado grande.',
   'auth.portBusy': 'No se pudo abrir el puerto de retorno (1455-1459). Cierra otras apps que lo usen e inténtalo de nuevo.',
   'auth.loginTimeout': 'El inicio de sesión con ChatGPT tardó demasiado. Inténtalo de nuevo.',
+  'auth.notFound': 'No encontrado.',
   'auth.nativeOnly': 'Disponible en la app instalada (compilación de desarrollo).',
   'rich.tokenIs': 'El token citado es {expected}',
   'rich.whereFrom': '¿De dónde viene esto? ({count})',

@@ -182,6 +182,7 @@ const pt = {
   'auth.tooLarge': 'Requisição grande demais.',
   'auth.portBusy': 'Não foi possível abrir a porta de retorno (1455-1459). Feche outros apps que a usem e tente de novo.',
   'auth.loginTimeout': 'O login com o ChatGPT demorou demais. Tente de novo.',
+  'auth.notFound': 'Não encontrado.',
   'auth.nativeOnly': 'Disponível no app instalado (build de desenvolvimento).',
   'rich.tokenIs': 'O token citado é {expected}',
   'rich.whereFrom': 'De onde vem isso? ({count})',

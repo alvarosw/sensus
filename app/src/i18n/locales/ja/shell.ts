@@ -173,6 +173,7 @@ export const jaShell = {
   'auth.tooLarge': 'リクエストが大きすぎます。',
   'auth.portBusy': '戻り用ポート（1455-1459）を開けませんでした。このポートを使っている他のアプリを閉じて、もう一度お試しください。',
   'auth.loginTimeout': 'ChatGPT へのログインに時間がかかりすぎました。もう一度お試しください。',
+  'auth.notFound': '見つかりません。',
   'auth.nativeOnly': 'インストール済みのアプリで利用できます（開発ビルド）。',
   'rich.tokenIs': '引用されたトークンは {expected} です',
   'rich.whereFrom': 'これの出典は？（{count}）',

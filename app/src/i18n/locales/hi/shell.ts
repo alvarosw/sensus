@@ -174,6 +174,7 @@ export const hiShell = {
   'auth.tooLarge': 'अनुरोध बहुत बड़ा है।',
   'auth.portBusy': 'वापसी पोर्ट (1455-1459) नहीं खुल सका। उसे इस्तेमाल करने वाले दूसरे ऐप बंद करके फिर कोशिश करें।',
   'auth.loginTimeout': 'ChatGPT लॉगिन में बहुत देर लगी। फिर से कोशिश करें।',
+  'auth.notFound': 'नहीं मिला।',
   'auth.nativeOnly': 'इंस्टॉल किए गए ऐप में उपलब्ध (डेवलपमेंट बिल्ड)।',
   'rich.tokenIs': 'उद्धृत टोकन है {expected}',
   'rich.whereFrom': 'यह कहाँ से है? ({count})',

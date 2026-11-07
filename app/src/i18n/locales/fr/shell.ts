@@ -174,6 +174,7 @@ export const frShell = {
   'auth.tooLarge': 'Requête trop volumineuse.',
   'auth.portBusy': 'Impossible d’ouvrir le port de retour (1455-1459). Fermez les autres applications qui l’utilisent et réessayez.',
   'auth.loginTimeout': 'La connexion à ChatGPT a pris trop de temps. Réessayez.',
+  'auth.notFound': 'Introuvable.',
   'auth.nativeOnly': 'Disponible dans l’application installée (version de développement).',
   'rich.tokenIs': 'Le jeton cité est {expected}',
   'rich.whereFrom': 'D’où vient cela ? ({count})',

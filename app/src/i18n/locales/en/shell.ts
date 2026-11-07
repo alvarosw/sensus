@@ -174,6 +174,7 @@ export const enShell = {
   'auth.tooLarge': 'Request too large.',
   'auth.portBusy': 'Could not open the return port (1455-1459). Close other apps that use it and try again.',
   'auth.loginTimeout': 'The ChatGPT sign-in took too long. Try again.',
+  'auth.notFound': 'Not found.',
   'auth.nativeOnly': 'Available in the installed app (development build).',
   'rich.tokenIs': 'The cited token is {expected}',
   'rich.whereFrom': 'Where does this come from? ({count})',

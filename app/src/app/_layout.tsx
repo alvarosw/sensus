@@ -119,7 +119,8 @@ function DbGate({ children }: { children: ReactNode }) {
     return <LoadingView message={t('db.loading')} />;
   }
   if (state.status === 'error') {
-    return <ErrorView message={t('db.error')} detail={state.message} />;
+    // O texto técnico do erro (mensagem de desenvolvedor) só aparece em desenvolvimento; ao usuário, só a frase traduzida.
+    return <ErrorView message={t('db.error')} detail={__DEV__ ? state.message : undefined} />;
   }
   return <>{children}</>;
 }

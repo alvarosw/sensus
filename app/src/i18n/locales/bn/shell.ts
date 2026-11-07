@@ -174,6 +174,7 @@ export const bnShell = {
   'auth.tooLarge': 'অনুরোধ খুব বড়।',
   'auth.portBusy': 'ফেরার পোর্ট (1455-1459) খোলা যায়নি। এটি ব্যবহার করা অন্য অ্যাপ বন্ধ করে আবার চেষ্টা করুন।',
   'auth.loginTimeout': 'ChatGPT লগইনে অনেক সময় লেগেছে। আবার চেষ্টা করুন।',
+  'auth.notFound': 'পাওয়া যায়নি।',
   'auth.nativeOnly': 'ইনস্টল করা অ্যাপে পাওয়া যায় (ডেভেলপমেন্ট বিল্ড)।',
   'rich.tokenIs': 'উদ্ধৃত টোকেনটি {expected}',
   'rich.whereFrom': 'এটি কোথা থেকে এসেছে? ({count})',

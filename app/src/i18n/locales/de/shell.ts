@@ -174,6 +174,7 @@ export const deShell = {
   'auth.tooLarge': 'Anfrage zu groß.',
   'auth.portBusy': 'Der Rückkehr-Port (1455-1459) konnte nicht geöffnet werden. Schließen Sie andere Apps, die ihn nutzen, und versuchen Sie es erneut.',
   'auth.loginTimeout': 'Die Anmeldung bei ChatGPT hat zu lange gedauert. Versuchen Sie es erneut.',
+  'auth.notFound': 'Nicht gefunden.',
   'auth.nativeOnly': 'Verfügbar in der installierten App (Entwicklungsversion).',
   'rich.tokenIs': 'Das zitierte Token ist {expected}',
   'rich.whereFrom': 'Woher stammt das? ({count})',

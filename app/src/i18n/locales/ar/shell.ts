@@ -174,6 +174,7 @@ export const arShell = {
   'auth.tooLarge': 'الطلب كبير جدًا.',
   'auth.portBusy': 'تعذّر فتح منفذ العودة (1455-1459). أغلق التطبيقات الأخرى التي تستخدمه وحاول مرة أخرى.',
   'auth.loginTimeout': 'استغرق تسجيل الدخول إلى ChatGPT وقتًا طويلًا. حاول مرة أخرى.',
+  'auth.notFound': 'غير موجود.',
   'auth.nativeOnly': 'متاح في التطبيق المثبّت (نسخة التطوير).',
   'rich.tokenIs': 'الرمز المقتبس هو {expected}',
   'rich.whereFrom': 'من أين جاء هذا؟ ({count})',

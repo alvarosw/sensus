@@ -174,6 +174,7 @@ export const urShell = {
   'auth.tooLarge': 'درخواست بہت بڑی ہے۔',
   'auth.portBusy': 'واپسی کا پورٹ (1455-1459) نہیں کھل سکا۔ دوسری ایپس جو اسے استعمال کر رہی ہیں بند کریں اور دوبارہ کوشش کریں۔',
   'auth.loginTimeout': 'ChatGPT لاگ اِن میں بہت دیر لگی۔ دوبارہ کوشش کریں۔',
+  'auth.notFound': 'نہیں ملا۔',
   'auth.nativeOnly': 'انسٹال شدہ ایپ میں دستیاب (ڈیولپمنٹ بلڈ)۔',
   'rich.tokenIs': 'حوالہ دیا گیا ٹوکن {expected} ہے',
   'rich.whereFrom': 'یہ کہاں سے ہے؟ ({count})',

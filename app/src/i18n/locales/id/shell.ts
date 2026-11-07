@@ -174,6 +174,7 @@ export const idShell = {
   'auth.tooLarge': 'Permintaan terlalu besar.',
   'auth.portBusy': 'Port pengembalian (1455-1459) tidak bisa dibuka. Tutup aplikasi lain yang memakainya lalu coba lagi.',
   'auth.loginTimeout': 'Login ChatGPT terlalu lama. Coba lagi.',
+  'auth.notFound': 'Tidak ditemukan.',
   'auth.nativeOnly': 'Tersedia di aplikasi yang terpasang (build pengembangan).',
   'rich.tokenIs': 'Token yang dikutip adalah {expected}',
   'rich.whereFrom': 'Dari mana ini berasal? ({count})',

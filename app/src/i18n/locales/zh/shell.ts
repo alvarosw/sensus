@@ -173,6 +173,7 @@ export const zhShell = {
   'auth.tooLarge': '请求太大。',
   'auth.portBusy': '无法打开返回端口（1455-1459）。请关闭其他占用该端口的应用后重试。',
   'auth.loginTimeout': 'ChatGPT 登录耗时过长，请重试。',
+  'auth.notFound': '未找到。',
   'auth.nativeOnly': '仅在已安装的应用中可用（开发版本）。',
   'rich.tokenIs': '所引词元为 {expected}',
   'rich.whereFrom': '这些内容出自哪里？（{count}）',
