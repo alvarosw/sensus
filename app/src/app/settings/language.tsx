@@ -20,7 +20,7 @@ export default function LanguageScreen() {
             testID={`language-${info.code}`}
             first={i === 0}
             title={info.endonym}
-            subtitle={info.code === lang ? COPY.langInUse : info.bcp47}
+            subtitle={info.code === lang ? COPY.langInUse : undefined}
             onPress={() => {
               if (info.code !== lang) setAppLang(info.code);
             }}
