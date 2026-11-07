@@ -6,6 +6,8 @@
 //  - timelineLines / timelineEvents: favoritos da linha do tempo (cite_ids de linhas e de marcadores);
 //    timelineCombos: combinações do paralelo criadas pelo usuário (favoritas, sem limite; recentes, as últimas cinco).
 //    As prontas do app não são gravadas (ver combos.ts).
+//  - commentaryPrefs: tradições e fontes de comentário escondidas (domain/source-prefs.ts). Vale no estudo inteiro:
+//    é aplicada ao Repo do banco ativo (active-db.ts) ao carregar, a cada mudança e quando o banco troca.
 // Os valores de aparência são aplicados ao estado do leitor (state/study.ts) ao carregar e a cada mudança.
 import { create } from 'zustand';
 import { useStudy } from '@/state/study';
@@ -13,6 +15,8 @@ import type { SchemePreference } from '@/design';
 import { textSources } from '@sensus/core';
 import { readAppPrefs, writeAppPrefs, type StoredAppPrefs } from './provider-store';
 import { favoriteCombo, newComboId, parseCombos, recordRecent, removeCombo, unfavoriteCombo, type UserCombo } from '@sensus/core';
+import { ALL_COMMENTARIES, parseCommentaryPreference, type CommentaryPreference } from '@sensus/core';
+import { setActiveCommentaryPreference } from '@/data/active-db';
 
 /** Id de uma fonte de texto corrido (ver `textSources()` no núcleo). */
 export type TextSourceId = string;
@@ -29,6 +33,7 @@ export const DEFAULT_APP_PREFS = {
   timelineLines: [] as string[],
   timelineEvents: [] as string[],
   timelineCombos: [] as UserCombo[],
+  commentaryPrefs: ALL_COMMENTARIES,
 };
 
 interface AppPrefsState {
@@ -42,6 +47,8 @@ interface AppPrefsState {
   timelineEvents: string[];
   /** Combinações do paralelo do usuário (ver combos.ts): a mais recente primeiro. */
   timelineCombos: UserCombo[];
+  /** Tradições e fontes de comentário que o leitor vê (ver domain/source-prefs.ts). */
+  commentaryPrefs: CommentaryPreference;
   load(): Promise<void>;
   setTheme(theme: SchemePreference): void;
   /** Grava o texto padrão e aplica ao leitor agora. */
@@ -56,6 +63,8 @@ interface AppPrefsState {
   favoriteCombo(lines: string[], name: string): void;
   unfavoriteCombo(id: string): void;
   removeCombo(id: string): void;
+  /** Grava a preferência de comentários e aplica ao banco ativo agora (as consultas em cache são refeitas). */
+  setCommentaryPrefs(pref: CommentaryPreference): void;
 }
 
 interface PersistedPrefs {
@@ -65,6 +74,7 @@ interface PersistedPrefs {
   timelineLines: string[];
   timelineEvents: string[];
   timelineCombos: UserCombo[];
+  commentaryPrefs: CommentaryPreference;
 }
 
 function persist(p: PersistedPrefs): void {
@@ -89,8 +99,8 @@ function toggleId(list: string[], id: string): string[] {
 
 export const useAppPrefs = create<AppPrefsState>()((set, get) => {
   const current = (): PersistedPrefs => {
-    const { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos } = get();
-    return { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos };
+    const { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs } = get();
+    return { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs };
   };
   return {
     loaded: false,
@@ -104,8 +114,10 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       const timelineLines = idList(stored?.timelineLines);
       const timelineEvents = idList(stored?.timelineEvents);
       const timelineCombos = parseCombos(stored?.timelineCombos);
-      set({ loaded: true, theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos });
+      const commentaryPrefs = parseCommentaryPreference(stored?.commentaryPrefs);
+      set({ loaded: true, theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs });
       useStudy.setState({ textSource, greek: greekDefault });
+      setActiveCommentaryPreference(commentaryPrefs);
     },
     toggleTimelineLine: (id) => {
       const timelineLines = toggleId(get().timelineLines, id);
@@ -151,6 +163,12 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       set({ greekDefault });
       persist({ ...current(), greekDefault });
       useStudy.setState({ greek: greekDefault });
+    },
+    setCommentaryPrefs: (raw) => {
+      const commentaryPrefs = parseCommentaryPreference(raw);
+      set({ commentaryPrefs });
+      persist({ ...current(), commentaryPrefs });
+      setActiveCommentaryPreference(commentaryPrefs);
     },
   };
 });

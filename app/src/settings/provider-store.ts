@@ -102,6 +102,8 @@ export interface StoredAppPrefs {
   timelineEvents?: unknown;
   /** Combinações do paralelo do usuário (lista de objetos; ver packages/core/src/timeline-combos.ts). */
   timelineCombos?: unknown;
+  /** Preferência de comentários (tradições e fontes escondidas; ver domain/source-prefs.ts). Lida com parse tolerante. */
+  commentaryPrefs?: unknown;
 }
 
 const APP_PREFS_FILE_NAME = 'app-prefs.json';
