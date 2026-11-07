@@ -14,6 +14,7 @@ import { t, useLang } from '@/i18n';
 import { SettingsProvider } from '@/settings/settings-context';
 import { AttentionModal } from '@/settings/AttentionModal';
 import { useAppPrefs } from '@/settings/app-prefs';
+import { OnboardingGate } from '@/features/onboarding';
 import { LoadingView, ErrorView } from '@/ui/state';
 import { useTheme } from '@/ui/theme';
 
@@ -72,8 +73,12 @@ function AppStack() {
             {/* Pilha própria em timeline/_layout.tsx (tela inicial, lista de linha, Bíblia inteira, paralelo). */}
             <Stack.Screen name="timeline" options={{ headerShown: false }} />
             <Stack.Screen name="data-setup" options={{ headerShown: false }} />
+            {/* Primeira vez (ver features/onboarding): sem cabeçalho e sem gesto de voltar que saia do fluxo. */}
+            <Stack.Screen name="onboarding" options={{ headerShown: false, gestureEnabled: false }} />
           </Stack>
-          {/* Depois da pilha: a oferta abre a tela de dados quando a navegação já está montada. */}
+          {/* Depois da pilha: a apresentação e a oferta de dados abrem quando a navegação já está montada. A key remonta
+              o gate junto com a pilha ao trocar o idioma, para a apresentação voltar ao passo atual. */}
+          <OnboardingGate key={lang} />
           <DataSetupGate />
         </DbGate>
         <AttentionModal />
@@ -85,6 +90,7 @@ function AppStack() {
 /**
  * Abre a tela de dados de estudo uma vez por execução quando ela faz sentido (ver shouldPromptFirstRun):
  * primeira abertura sem os dados completos, ou dados instalados mais antigos que o manifesto.
+ * Numa instalação nova a apresentação já oferece os dados (passo 6): a oferta fica calada nesta execução.
  */
 function DataSetupGate() {
   const edition = useDataStore((s) => s.edition);
@@ -92,6 +98,7 @@ function DataSetupGate() {
   const manifest = useDataStore((s) => s.manifest);
   const deferredVersion = useDataStore((s) => s.deferredVersion);
   const shown = useRef(false);
+  const suppressed = useRef(!useAppPrefs.getState().onboardingDone);
 
   useEffect(() => {
     useDataStore.getState().load();
@@ -104,7 +111,7 @@ function DataSetupGate() {
     shouldPromptFirstRun({ activeEdition: edition, installedVersion, manifest, deferredVersion });
 
   useEffect(() => {
-    if (!prompt || shown.current) return;
+    if (!prompt || shown.current || suppressed.current) return;
     shown.current = true;
     router.push('/data-setup');
   }, [prompt]);

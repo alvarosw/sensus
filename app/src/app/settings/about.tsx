@@ -6,6 +6,7 @@ import { Card, ListGroup, ListRow, Txt, useTheme } from '@/design';
 import { useSources, licenseGroupOf } from '@/settings/use-sources';
 import { SETTINGS_COPY as COPY } from '@/settings/strings';
 import { MAP_ATTRIBUTIONS } from '@/features/maps/strings';
+import { ONBOARDING_COPY, reviewOnboarding } from '@/features/onboarding';
 
 function Line({ label, value }: { label: string; value: string }) {
   const { c } = useTheme();
@@ -49,9 +50,9 @@ export default function AboutScreen() {
       </View>
 
       <ListGroup>
+        <ListRow testID="settings-row-onboarding" first title={ONBOARDING_COPY.revisit} onPress={reviewOnboarding} />
         <ListRow
           testID="settings-row-sources"
-          first
           title={COPY.sourcesTitle}
           subtitle={sources === null ? COPY.sourcesLoading : COPY.sourcesCount(count)}
           onPress={() => router.push('/settings/sources')}

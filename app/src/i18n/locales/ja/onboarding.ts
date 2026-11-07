@@ -1,0 +1,23 @@
+// Japonês de app/src/features/onboarding/strings.ts. A revisar por falante nativo.
+export const jaOnboarding = {
+  hint: 'ランプをドラッグして本文を照らしましょう',
+  start: 'はじめる',
+  skip: 'スキップ',
+  finale: 'Sensus を始める',
+  stepCount: (n: number, total: number) => `ステップ ${n} / ${total}`,
+  langTitle: '言語を選択',
+  langHelp: 'Sensus は本文と推奨の表示にこの言語を使います。あとから設定で変更できます。',
+  bibleTitle: '読む聖書',
+  bibleHelp: '本文の訳を選んでください。Bíblia Livre と KJV はすでにアプリに入っています。',
+  bibleRecommended: 'この言語のおすすめ',
+  bibleOthers: 'この言語のほかの聖書',
+  bibleNone: 'この言語には、おすすめの無料の聖書がまだありません。ほかの聖書は設定で見られます。',
+  bibleOffline: '今は聖書の一覧を読み込めませんでした。あとで設定からダウンロードできます。',
+  traditionsTitle: '神学的な立場',
+  traditionsHelp: '学びで見たい注解や解釈はどれですか？',
+  traditionsNote: 'これはいつでも設定で変更できます。',
+  aiTitle: '質問のためのアシスタント',
+  aiBody: 'AI は各箇所を要約し、Sensus の資料を引用して質問に答えます。AI が生成した内容は端末に保存されません。',
+  aiConfigure: '今すぐ設定',
+  revisit: '紹介をもう一度見る',
+};

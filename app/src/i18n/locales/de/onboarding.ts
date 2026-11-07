@@ -1,0 +1,23 @@
+// Alemão de app/src/features/onboarding/strings.ts. A revisar por falante nativo.
+export const deOnboarding = {
+  hint: 'Ziehe die Lampe, um den Text zu erleuchten',
+  start: 'Starten',
+  skip: 'Überspringen',
+  finale: 'Sensus öffnen',
+  stepCount: (n: number, total: number) => `Schritt ${n} von ${total}`,
+  langTitle: 'Sprache wählen',
+  langHelp: 'Sensus verwendet diese Sprache für Texte und Empfehlungen. Du kannst sie später in den Einstellungen ändern.',
+  bibleTitle: 'Eine Bibel zum Lesen',
+  bibleHelp: 'Wähle die Übersetzung des Textes. Bíblia Livre und KJV sind schon in der App enthalten.',
+  bibleRecommended: 'Für deine Sprache empfohlen',
+  bibleOthers: 'Weitere in dieser Sprache',
+  bibleNone: 'Für diese Sprache gibt es noch keine empfohlene freie Bibel. Weitere findest du in den Einstellungen.',
+  bibleOffline: 'Die Liste der Bibeln konnte gerade nicht geladen werden. Du kannst später in den Einstellungen eine herunterladen.',
+  traditionsTitle: 'Theologische Richtung',
+  traditionsHelp: 'Welche Kommentare und Deutungen möchtest du in deinem Studium sehen?',
+  traditionsNote: 'Du kannst das in den Einstellungen ändern.',
+  aiTitle: 'Ein Assistent für deine Fragen',
+  aiBody: 'Die KI fasst jeden Abschnitt zusammen und beantwortet deine Fragen mit Quellenangaben aus Sensus. Was sie erzeugt, wird nicht auf dem Gerät gespeichert.',
+  aiConfigure: 'Jetzt einrichten',
+  revisit: 'Einführung noch einmal ansehen',
+};

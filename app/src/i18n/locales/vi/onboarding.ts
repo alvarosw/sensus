@@ -1,0 +1,23 @@
+// Vietnamita de app/src/features/onboarding/strings.ts. A revisar por falante nativo.
+export const viOnboarding = {
+  hint: 'Kéo ngọn đèn để soi sáng bản văn',
+  start: 'Bắt đầu',
+  skip: 'Bỏ qua',
+  finale: 'Vào Sensus',
+  stepCount: (n: number, total: number) => `Bước ${n} / ${total}`,
+  langTitle: 'Chọn ngôn ngữ',
+  langHelp: 'Sensus sẽ dùng ngôn ngữ này cho văn bản và gợi ý. Bạn có thể đổi sau trong Cài đặt.',
+  bibleTitle: 'Một bản Kinh Thánh để đọc',
+  bibleHelp: 'Chọn bản dịch cho phần văn bản. Bíblia Livre và KJV đã có sẵn trong ứng dụng.',
+  bibleRecommended: 'Gợi ý cho ngôn ngữ của bạn',
+  bibleOthers: 'Các bản khác cùng ngôn ngữ',
+  bibleNone: 'Hiện chưa có bản Kinh Thánh miễn phí được gợi ý cho ngôn ngữ này. Bạn có thể xem các bản khác trong Cài đặt.',
+  bibleOffline: 'Chưa thể tải danh sách Kinh Thánh lúc này. Bạn có thể tải một bản sau trong Cài đặt.',
+  traditionsTitle: 'Khuynh hướng thần học',
+  traditionsHelp: 'Bạn muốn xem những chú giải và cách giải nghĩa nào trong lúc học?',
+  traditionsNote: 'Bạn có thể đổi điều này trong Cài đặt.',
+  aiTitle: 'Trợ lý để hỏi đáp',
+  aiBody: 'AI tóm tắt từng đoạn và trả lời câu hỏi của bạn, có trích nguồn của Sensus. Nội dung AI tạo ra không được lưu trên thiết bị.',
+  aiConfigure: 'Thiết lập ngay',
+  revisit: 'Xem lại phần giới thiệu',
+};

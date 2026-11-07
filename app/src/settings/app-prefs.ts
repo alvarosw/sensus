@@ -9,6 +9,7 @@
 //    As prontas do app não são gravadas (ver combos.ts).
 //  - commentaryPrefs: tradições e fontes de comentário escondidas (domain/source-prefs.ts). Vale no estudo inteiro:
 //    é aplicada ao Repo do banco ativo (active-db.ts) ao carregar, a cada mudança e quando o banco troca.
+//  - onboardingDone: a apresentação de primeira vez já foi concluída (regra de quem vê em onboarding-pref.ts).
 // Os valores de aparência são aplicados ao estado do leitor (state/study.ts) ao carregar e a cada mudança.
 import { create } from 'zustand';
 import { useStudy } from '@/state/study';
@@ -24,6 +25,7 @@ import { favoriteCombo, newComboId, parseCombos, recordRecent, removeCombo, unfa
 import { ALL_COMMENTARIES, parseCommentaryPreference, type CommentaryPreference } from '@sensus/core';
 import { setActiveCommentaryPreference } from '@/data/active-db';
 import { DEFAULT_APP_LANG, appLangFromDevice, isAppLang, type AppLang } from '@sensus/core';
+import { shouldShowOnboarding } from './onboarding-pref';
 
 /** Id de uma fonte de texto corrido (ver `textSources()` no núcleo). */
 export type TextSourceId = string;
@@ -41,6 +43,7 @@ export const DEFAULT_APP_PREFS = {
   timelineEvents: [] as string[],
   timelineCombos: [] as UserCombo[],
   commentaryPrefs: ALL_COMMENTARIES,
+  onboardingDone: false,
 };
 
 interface AppPrefsState {
@@ -60,6 +63,10 @@ interface AppPrefsState {
   commentaryPrefs: CommentaryPreference;
   load(): Promise<void>;
   setTheme(theme: SchemePreference): void;
+  /** Apresentação de primeira vez concluída (ou pulada); ver settings/onboarding-pref.ts. */
+  onboardingDone: boolean;
+  /** Grava se a apresentação de primeira vez já foi concluída (ou pulada). */
+  setOnboardingDone(done: boolean): void;
   /** Grava o texto padrão e aplica ao leitor agora. */
   setTextSource(source: TextSourceId): void;
   /** Depois de remover uma Bíblia: se a padrão saiu, volta para a recomendada instalada do idioma (ou BLivre). */
@@ -87,6 +94,7 @@ interface PersistedPrefs {
   timelineEvents: string[];
   timelineCombos: UserCombo[];
   commentaryPrefs: CommentaryPreference;
+  onboardingDone: boolean;
 }
 
 function persist(p: PersistedPrefs): void {
@@ -120,10 +128,10 @@ function toggleId(list: string[], id: string): string[] {
 
 export const useAppPrefs = create<AppPrefsState>()((set, get) => {
   const current = (): PersistedPrefs => {
-    const { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs } = get();
+    const { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone } = get();
     return {
       appLang: useLangStore.getState().lang,
-      theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs,
+      theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone,
     };
   };
   return {
@@ -152,12 +160,15 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       const timelineEvents = idList(stored?.timelineEvents);
       const timelineCombos = parseCombos(stored?.timelineCombos);
       const commentaryPrefs = parseCommentaryPreference(stored?.commentaryPrefs);
+      // Apresentação: instalação nova a mostra; quem já usava o app (chave ausente) não vê, e a chave é gravada.
+      const storedOnboarding = typeof stored?.onboardingDone === 'boolean' ? stored.onboardingDone : undefined;
+      const onboardingDone = !shouldShowOnboarding({ hasStoredPrefs: stored !== null, onboardingDone: storedOnboarding });
       useLangStore.getState().setLang(appLang);
-      set({ loaded: true, theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs });
+      set({ loaded: true, theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone });
       useStudy.setState({ textSource, greek: greekDefault });
       setActiveCommentaryPreference(commentaryPrefs);
-      // Primeira execução ou arquivo antigo: grava já o idioma decidido, para ele não mudar sozinho depois.
-      if (!isAppLang(storedLang)) persist(current());
+      // Primeira execução ou arquivo antigo: grava já o idioma e a apresentação decididos, para não mudarem sozinhos depois.
+      if (!isAppLang(storedLang) || storedOnboarding === undefined) persist(current());
     },
     toggleTimelineLine: (id) => {
       const timelineLines = toggleId(get().timelineLines, id);
@@ -188,6 +199,10 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       const timelineCombos = removeCombo(get().timelineCombos, id);
       set({ timelineCombos });
       persist({ ...current(), timelineCombos });
+    },
+    setOnboardingDone: (onboardingDone) => {
+      set({ onboardingDone });
+      persist({ ...current(), onboardingDone });
     },
     setTheme: (theme) => {
       set({ theme });

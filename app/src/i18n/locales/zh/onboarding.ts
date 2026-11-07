@@ -1,0 +1,23 @@
+// Chinês simplificado de app/src/features/onboarding/strings.ts. A revisar por falante nativo.
+export const zhOnboarding = {
+  hint: '拖动油灯，照亮经文',
+  start: '开始',
+  skip: '跳过',
+  finale: '进入 Sensus',
+  stepCount: (n: number, total: number) => `第 ${n} 步，共 ${total} 步`,
+  langTitle: '选择语言',
+  langHelp: 'Sensus 将以此语言显示文字和推荐内容。之后可以在设置中更改。',
+  bibleTitle: '选一部圣经阅读',
+  bibleHelp: '选择经文的译本。Bíblia Livre 和 KJV 已内置在应用中。',
+  bibleRecommended: '为您的语言推荐',
+  bibleOthers: '本语言的其他译本',
+  bibleNone: '目前还没有适合这种语言的推荐免费圣经。您可以在设置中查看其他译本。',
+  bibleOffline: '暂时无法加载圣经列表。以后可以在设置中下载。',
+  traditionsTitle: '神学传统',
+  traditionsHelp: '您希望在研经中看到哪些注释和解经？',
+  traditionsNote: '您可以在设置中更改。',
+  aiTitle: '提问助手',
+  aiBody: 'AI 会概括每段经文，并引用 Sensus 的资料回答您的问题。AI 生成的内容不会保存在设备上。',
+  aiConfigure: '立即设置',
+  revisit: '重新查看介绍',
+};

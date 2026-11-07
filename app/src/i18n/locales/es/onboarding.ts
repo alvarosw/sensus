@@ -1,0 +1,23 @@
+// Espanhol de app/src/features/onboarding/strings.ts. A revisar por falante nativo.
+export const esOnboarding = {
+  hint: 'Arrastra la lámpara para iluminar el texto',
+  start: 'Empezar',
+  skip: 'Omitir',
+  finale: 'Entrar en Sensus',
+  stepCount: (n: number, total: number) => `Paso ${n} de ${total}`,
+  langTitle: 'Elige el idioma',
+  langHelp: 'Sensus usará este idioma en los textos y en las recomendaciones. Puedes cambiarlo después en Configuración.',
+  bibleTitle: 'Una Biblia para leer',
+  bibleHelp: 'Elige la traducción del texto. La Bíblia Livre y la KJV ya vienen en la app.',
+  bibleRecommended: 'Recomendada para tu idioma',
+  bibleOthers: 'Otras de este idioma',
+  bibleNone: 'Todavía no hay una Biblia libre recomendada para este idioma. Puedes ver otras en Configuración.',
+  bibleOffline: 'No se pudo cargar la lista de Biblias ahora. Puedes descargar una más tarde, en Configuración.',
+  traditionsTitle: 'Corriente teológica',
+  traditionsHelp: '¿Qué comentarios e interpretaciones quieres ver en tu estudio?',
+  traditionsNote: 'Puedes cambiar esto en Configuración.',
+  aiTitle: 'Un asistente para preguntar',
+  aiBody: 'La IA resume cada pasaje y responde a tus preguntas citando las fuentes de Sensus. Nada de lo que genera se guarda en el dispositivo.',
+  aiConfigure: 'Configurar ahora',
+  revisit: 'Ver la presentación otra vez',
+};
