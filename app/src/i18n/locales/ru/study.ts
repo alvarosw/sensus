@@ -128,4 +128,10 @@ export const ruStudy = {
 
   // Aplicação
   applicationHint: 'Применение создаётся только ИИ и всегда помечается как вывод.',
+  xrefsCount: (n: number) => `${n} ${ruPlural(n, 'ссылка', 'ссылки', 'ссылок')}`,
+  commentariesCount: (n: number) => `${n} ${ruPlural(n, 'комментарий', 'комментария', 'комментариев')}`,
+  chapterMark: (n: number) => `(глава ${n})`,
+  literaryEmpty: 'В этом источнике нет литературного контекста.',
+  sheetBackHalf: 'Вернуться к половине высоты',
+  sheetToggleHeight: 'Переключить высоту изучения',
 };

@@ -127,4 +127,10 @@ export const jaStudy = {
 
   // Aplicação
   applicationHint: '応用は AI のみによるもので、常に推論として表示されます。',
+  xrefsCount: (n: number) => `${n} 件の参照`,
+  commentariesCount: (n: number) => `${n} 件の注解`,
+  chapterMark: (n: number) => `（第 ${n} 章）`,
+  literaryEmpty: 'この出典には文学的文脈がありません。',
+  sheetBackHalf: '半分の高さに戻す',
+  sheetToggleHeight: '学習パネルの高さを切り替え',
 };

@@ -130,4 +130,10 @@ export const idStudy = {
 
   // Aplicação
   applicationHint: 'Aplikasi hanya berasal dari AI dan selalu ditandai sebagai inferensi.',
+  xrefsCount: (n: number) => `${n} rujukan silang`,
+  commentariesCount: (n: number) => `${n} komentar`,
+  chapterMark: (n: number) => `(pasal ${n})`,
+  literaryEmpty: 'Tidak ada konteks sastra dalam sumber ini.',
+  sheetBackHalf: 'Kembali ke setengah tinggi',
+  sheetToggleHeight: 'Ubah tinggi studi',
 };

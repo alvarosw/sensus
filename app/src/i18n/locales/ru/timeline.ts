@@ -118,6 +118,8 @@ export const ruTl = {
   verseStart: 'Начало текста',
   returnPill: 'Вернуться к хронологии',
   dismissReturn: 'Скрыть',
+  parallelLabel: (lo: string, hi: string) => `Параллельные линии времени, ${lo} — ${hi}`,
+  linesCount: (n: number) => `${n} ${ruPlural(n, 'линия', 'линии', 'линий')}`,
 };
 
 export const ruTlEraShort: Record<string, string> = {

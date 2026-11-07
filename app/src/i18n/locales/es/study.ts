@@ -127,4 +127,10 @@ export const esStudy = {
 
   // Aplicação
   applicationHint: 'La aplicación solo viene de la IA y siempre se marca como inferencia.',
+  xrefsCount: (n: number) => `${n} ${n === 1 ? 'referencia' : 'referencias'}`,
+  commentariesCount: (n: number) => `${n} ${n === 1 ? 'comentario' : 'comentarios'}`,
+  chapterMark: (n: number) => `(capítulo ${n})`,
+  literaryEmpty: 'Sin contexto literario en esta fuente.',
+  sheetBackHalf: 'Volver a media altura',
+  sheetToggleHeight: 'Cambiar altura del estudio',
 };

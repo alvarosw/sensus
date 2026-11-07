@@ -116,6 +116,8 @@ export const zhTl = {
   verseStart: '正文开头',
   returnPill: '返回时间线',
   dismissReturn: '关闭',
+  parallelLabel: (lo: string, hi: string) => `并行时间线，${lo} 至 ${hi}`,
+  linesCount: (n: number) => `${n} 条线`,
 };
 
 export const zhTlEraShort: Record<string, string> = {

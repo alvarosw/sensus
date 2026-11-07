@@ -118,6 +118,9 @@ const ptTl = {
   verseStart: 'Começo do texto',
   returnPill: 'Voltar à linha do tempo',
   dismissReturn: 'Dispensar',
+  /** Rótulo de acessibilidade do gráfico em paralelo. */
+  parallelLabel: (lo: string, hi: string) => `Linhas do tempo em paralelo, ${lo} a ${hi}`,
+  linesCount: (n: number) => `${n} ${n === 1 ? 'linha' : 'linhas'}`,
 };
 export const TL = localized<typeof ptTl>({ pt: ptTl, ...tlTables });
 

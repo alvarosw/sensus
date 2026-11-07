@@ -127,4 +127,10 @@ export const deStudy = {
 
   // Aplicação
   applicationHint: 'Die Anwendung stammt nur von der KI und ist immer als Schlussfolgerung gekennzeichnet.',
+  xrefsCount: (n: number) => `${n} ${n === 1 ? 'Verweis' : 'Verweise'}`,
+  commentariesCount: (n: number) => `${n} ${n === 1 ? 'Kommentar' : 'Kommentare'}`,
+  chapterMark: (n: number) => `(Kapitel ${n})`,
+  literaryEmpty: 'Kein literarischer Kontext in dieser Quelle.',
+  sheetBackHalf: 'Zurück zur halben Höhe',
+  sheetToggleHeight: 'Studienhöhe umschalten',
 };

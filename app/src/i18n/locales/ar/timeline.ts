@@ -128,6 +128,8 @@ export const arTl = {
   verseStart: 'بداية النص',
   returnPill: 'العودة إلى الخط الزمني',
   dismissReturn: 'تجاهل',
+  parallelLabel: (lo: string, hi: string) => `خطوط زمنية متوازية، من ${lo} إلى ${hi}`,
+  linesCount: (n: number) => `${n} ${arPlural(n, 'خط', 'خطّان', 'خطوط', 'خط')}`,
 };
 
 export const arTlEraShort: Record<string, string> = {

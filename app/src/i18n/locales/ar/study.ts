@@ -127,4 +127,10 @@ export const arStudy = {
 
   // Aplicação
   applicationHint: 'التطبيق يأتي من الذكاء الاصطناعي وحده ويُعرض دائمًا كاستنتاج.',
+  xrefsCount: (n: number) => `${n} ${arPlural(n, 'إحالة', 'إحالتان', 'إحالات', 'إحالة')}`,
+  commentariesCount: (n: number) => `${n} ${arPlural(n, 'تعليق', 'تعليقان', 'تعليقات', 'تعليق')}`,
+  chapterMark: (n: number) => `(الإصحاح ${n})`,
+  literaryEmpty: 'لا يوجد سياق أدبي في هذا المصدر.',
+  sheetBackHalf: 'العودة إلى منتصف الارتفاع',
+  sheetToggleHeight: 'تبديل ارتفاع الدراسة',
 };

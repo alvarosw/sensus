@@ -118,6 +118,8 @@ export const enTl = {
   verseStart: 'Start of the text',
   returnPill: 'Back to the timeline',
   dismissReturn: 'Dismiss',
+  parallelLabel: (lo: string, hi: string) => `Timelines in parallel, ${lo} to ${hi}`,
+  linesCount: (n: number) => `${n} ${n === 1 ? 'line' : 'lines'}`,
 };
 
 export const enTlEraShort: Record<string, string> = {

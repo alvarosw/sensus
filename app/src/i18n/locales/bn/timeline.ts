@@ -118,6 +118,8 @@ export const bnTl = {
   verseStart: 'পাঠের শুরু',
   returnPill: 'কালানুক্রমে ফিরুন',
   dismissReturn: 'বাদ দিন',
+  parallelLabel: (lo: string, hi: string) => `সমান্তরাল সময়রেখা, ${lo} থেকে ${hi}`,
+  linesCount: (n: number) => `${n}টি রেখা`,
 };
 
 export const bnTlEraShort: Record<string, string> = {

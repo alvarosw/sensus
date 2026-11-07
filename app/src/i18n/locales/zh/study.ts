@@ -125,4 +125,10 @@ export const zhStudy = {
 
   // Aplicação
   applicationHint: '应用部分仅由 AI 生成，并始终标注为推断。',
+  xrefsCount: (n: number) => `${n} 条交叉引用`,
+  commentariesCount: (n: number) => `${n} 条注释`,
+  chapterMark: (n: number) => `（第 ${n} 章）`,
+  literaryEmpty: '此来源没有文学语境。',
+  sheetBackHalf: '返回半屏高度',
+  sheetToggleHeight: '切换学习面板高度',
 };

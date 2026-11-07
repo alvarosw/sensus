@@ -118,6 +118,8 @@ export const hiTl = {
   verseStart: 'पाठ का आरंभ',
   returnPill: 'कालरेखा पर वापस',
   dismissReturn: 'बंद करें',
+  parallelLabel: (lo: string, hi: string) => `समानांतर समयरेखाएँ, ${lo} से ${hi}`,
+  linesCount: (n: number) => `${n} ${n === 1 ? 'रेखा' : 'रेखाएँ'}`,
 };
 
 export const hiTlEraShort: Record<string, string> = {

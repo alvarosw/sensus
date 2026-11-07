@@ -127,4 +127,10 @@ export const hiStudy = {
 
   // अनुप्रयोग
   applicationHint: 'व्यावहारिक अनुप्रयोग केवल AI से आता है और हमेशा अनुमान के रूप में चिह्नित होता है।',
+  xrefsCount: (n: number) => `${n} संदर्भ`,
+  commentariesCount: (n: number) => `${n} ${n === 1 ? 'टिप्पणी' : 'टिप्पणियाँ'}`,
+  chapterMark: (n: number) => `(अध्याय ${n})`,
+  literaryEmpty: 'इस स्रोत में साहित्यिक संदर्भ नहीं है।',
+  sheetBackHalf: 'आधी ऊँचाई पर वापस जाएँ',
+  sheetToggleHeight: 'अध्ययन की ऊँचाई बदलें',
 };

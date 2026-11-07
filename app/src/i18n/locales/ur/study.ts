@@ -127,4 +127,10 @@ export const urStudy = {
 
   // اطلاق
   applicationHint: 'اطلاق صرف AI سے آتا ہے اور ہمیشہ قیاس کے طور پر نشان زد ہوتا ہے۔',
+  xrefsCount: (n: number) => `${n} ${n === 1 ? 'حوالہ' : 'حوالے'}`,
+  commentariesCount: (n: number) => `${n} ${n === 1 ? 'تفسیر' : 'تفاسیر'}`,
+  chapterMark: (n: number) => `(باب ${n})`,
+  literaryEmpty: 'اس ماخذ میں ادبی سیاق نہیں ہے۔',
+  sheetBackHalf: 'آدھی اونچائی پر واپس جائیں',
+  sheetToggleHeight: 'مطالعے کی اونچائی بدلیں',
 };

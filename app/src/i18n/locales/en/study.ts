@@ -127,4 +127,10 @@ export const enStudy = {
 
   // Aplicação
   applicationHint: 'Application comes only from the AI and is always marked as inference.',
+  xrefsCount: (n: number) => `${n} ${n === 1 ? 'cross-reference' : 'cross-references'}`,
+  commentariesCount: (n: number) => `${n} ${n === 1 ? 'commentary' : 'commentaries'}`,
+  chapterMark: (n: number) => `(chapter ${n})`,
+  literaryEmpty: 'No literary context in this source.',
+  sheetBackHalf: 'Back to half height',
+  sheetToggleHeight: 'Toggle study height',
 };

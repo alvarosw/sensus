@@ -118,6 +118,8 @@ export const urTl = {
   verseStart: 'متن کا آغاز',
   returnPill: 'زمانی ترتیب پر واپس',
   dismissReturn: 'بند کریں',
+  parallelLabel: (lo: string, hi: string) => `متوازی ٹائم لائنز، ${lo} سے ${hi}`,
+  linesCount: (n: number) => `${n} ${n === 1 ? 'لکیر' : 'لکیریں'}`,
 };
 
 export const urTlEraShort: Record<string, string> = {

@@ -126,4 +126,10 @@ export const bnStudy = {
 
   // প্রয়োগ
   applicationHint: 'প্রয়োগ শুধু AI থেকে আসে এবং সবসময় অনুমান হিসেবে চিহ্নিত থাকে।',
+  xrefsCount: (n: number) => `${n}টি সূত্র`,
+  commentariesCount: (n: number) => `${n}টি ভাষ্য`,
+  chapterMark: (n: number) => `(অধ্যায় ${n})`,
+  literaryEmpty: 'এই উৎসে সাহিত্যিক প্রেক্ষাপট নেই।',
+  sheetBackHalf: 'অর্ধেক উচ্চতায় ফিরুন',
+  sheetToggleHeight: 'পাঠের উচ্চতা বদলান',
 };

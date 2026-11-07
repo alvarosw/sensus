@@ -130,4 +130,10 @@ export const viStudy = {
 
   // Aplicação
   applicationHint: 'Phần ứng dụng chỉ đến từ AI và luôn được đánh dấu là suy luận.',
+  xrefsCount: (n: number) => `${n} tham chiếu chéo`,
+  commentariesCount: (n: number) => `${n} chú giải`,
+  chapterMark: (n: number) => `(chương ${n})`,
+  literaryEmpty: 'Nguồn này không có ngữ cảnh văn học.',
+  sheetBackHalf: 'Quay lại chiều cao một nửa',
+  sheetToggleHeight: 'Đổi chiều cao phần nghiên cứu',
 };

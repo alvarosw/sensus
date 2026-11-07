@@ -129,5 +129,12 @@ const ptStudy = {
 
   // Aplicação
   applicationHint: 'A aplicação vem só da IA e é sempre marcada como inferência.',
+  // Textos movidos de lentes e folha (passo C).
+  xrefsCount: (n: number) => `${n} ${n === 1 ? 'referência' : 'referências'}`,
+  commentariesCount: (n: number) => `${n} ${n === 1 ? 'comentário' : 'comentários'}`,
+  chapterMark: (n: number) => `(capítulo ${n})`,
+  literaryEmpty: 'Sem contexto literário nesta fonte.',
+  sheetBackHalf: 'Voltar para a meia altura',
+  sheetToggleHeight: 'Alternar altura do estudo',
 };
 export const STUDY = localized<typeof ptStudy>({ pt: ptStudy, ...studyTables });

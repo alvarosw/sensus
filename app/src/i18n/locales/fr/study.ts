@@ -127,4 +127,10 @@ export const frStudy = {
 
   // Aplicação
   applicationHint: 'L’application ne vient que de l’IA et est toujours marquée comme inférence.',
+  xrefsCount: (n: number) => `${n} ${n <= 1 ? 'référence' : 'références'}`,
+  commentariesCount: (n: number) => `${n} ${n <= 1 ? 'commentaire' : 'commentaires'}`,
+  chapterMark: (n: number) => `(chapitre ${n})`,
+  literaryEmpty: 'Pas de contexte littéraire dans cette source.',
+  sheetBackHalf: 'Revenir à mi-hauteur',
+  sheetToggleHeight: 'Changer la hauteur de l’étude',
 };
