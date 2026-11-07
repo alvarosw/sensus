@@ -23,7 +23,6 @@ import {
   isSaveBusy,
   isVerifying,
   keyProbeOf,
-  VERIFY_COPY,
   VERIFY_IDLE,
   verifyReducer,
   verifySignature,
@@ -521,7 +520,7 @@ export function ApiKeySection() {
         />
         <FormButton
           testID="settings-save"
-          label={verify.phase === 'verifying' ? VERIFY_COPY.verifying : verify.phase === 'passed' && saveBusy ? COPY.saving : COPY.save}
+          label={verify.phase === 'verifying' ? COPY.verifyModel.verifying : verify.phase === 'passed' && saveBusy ? COPY.saving : COPY.save}
           disabled={saveBusy}
           onPress={onSave}
         />

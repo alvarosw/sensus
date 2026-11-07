@@ -3,11 +3,11 @@
 // Não decide a política de escolha: isso é de route.ts (chooseRoute), já refletido em `provider`.
 // Testada em ai-status.test.ts.
 import type { ProviderConfig } from '@sensus/core';
+import { SETTINGS_COPY } from './strings';
 import { isPaused, type ChatGPTPause, type ProviderMode } from './route';
 import type { ChatGPTAttention } from './settings-context';
 
-export const CHATGPT_RETRY_TEXT = 'Até lá, as perguntas usam sua chave de API.';
-export const NO_KEY_FALLBACK_TEXT = 'Enquanto isso, o Sensus não usa sua chave de API nessas perguntas.';
+const AI = () => SETTINGS_COPY.aiStatus;
 
 export interface AiSnapshot {
   mode: ProviderMode;
@@ -52,37 +52,37 @@ export type AiWarn = 'attention' | 'paused' | 'no_method' | 'not_configured' | n
 /** Linha "Assistente de IA" da lista principal. `warn` ≠ null vira o alerta âmbar. */
 export function aiSummary(s: AiSnapshot): { subtitle: string; warn: AiWarn } {
   const attention = attentionOf(s);
-  if (attention === 'reauth') return { subtitle: 'Atenção · entrar de novo no ChatGPT', warn: 'attention' };
-  if (attention === 'not_eligible') return { subtitle: 'Atenção · conta sem plano para o Sensus', warn: 'attention' };
+  if (attention === 'reauth') return { subtitle: AI().reauth, warn: 'attention' };
+  if (attention === 'not_eligible') return { subtitle: AI().notEligible, warn: 'attention' };
   if (pausedNow(s) && s.pause) {
-    const when = s.pause.known ? `volta às ${clockText(s.pause.until)}` : `nova tentativa às ${clockText(s.pause.until)}`;
-    return { subtitle: `Limite atingido · ${when}`, warn: 'paused' };
+    const when = s.pause.known ? AI().returnsAt(clockText(s.pause.until)) : AI().retryAt(clockText(s.pause.until));
+    return { subtitle: AI().limitReached(when), warn: 'paused' };
   }
   if (!s.provider) {
     const connected = !!s.account?.connected;
-    if (!connected && !s.keySaved) return { subtitle: 'Não configurado', warn: 'not_configured' };
-    return { subtitle: 'Nenhum método disponível', warn: 'no_method' };
+    if (!connected && !s.keySaved) return { subtitle: AI().notConfigured, warn: 'not_configured' };
+    return { subtitle: AI().noMethod, warn: 'no_method' };
   }
   if (s.provider.kind === 'chatgpt') {
-    return { subtitle: s.provider.fallback ? 'ChatGPT · reserva na chave de API' : 'ChatGPT · plano ativo', warn: null };
+    return { subtitle: s.provider.fallback ? AI().chatgptReserve : AI().chatgptActive, warn: null };
   }
-  return { subtitle: `Chave de API (${s.keyLabel})`, warn: null };
+  return { subtitle: AI().keyLabel(s.keyLabel), warn: null };
 }
 
 /** Linha "Em uso agora" (lead em negrito, depois o resto). Diz qual caminho responde neste momento. */
 export function inUseLine(s: AiSnapshot): { lead: string; rest: string } {
   const p = s.provider;
   if (!p) {
-    if (s.mode === 'key') return { lead: 'Nenhum', rest: 'Falta a chave de API.' };
-    if (s.mode === 'chatgpt') return { lead: 'Nenhum', rest: 'O ChatGPT não está pronto, e este modo não usa a chave.' };
-    if (pausedNow(s) && s.pause) return { lead: 'Nenhum', rest: `até ${clockText(s.pause.until)}.` };
-    return { lead: 'Nenhum', rest: 'Conecte o ChatGPT ou salve uma chave de API.' };
+    if (s.mode === 'key') return { lead: AI().noneLead, rest: AI().keyMissing };
+    if (s.mode === 'chatgpt') return { lead: AI().noneLead, rest: AI().chatgptNotReady };
+    if (pausedNow(s) && s.pause) return { lead: AI().noneLead, rest: AI().untilTime(clockText(s.pause.until)) };
+    return { lead: AI().noneLead, rest: AI().connectOrKey };
   }
   if (p.kind === 'chatgpt') {
-    return { lead: 'ChatGPT', rest: p.fallback ? `Reserva: chave de API (${s.keyLabel}).` : 'Sem reserva.' };
+    return { lead: 'ChatGPT', rest: p.fallback ? AI().reserveKey(s.keyLabel) : AI().noReserve };
   }
-  const rest = pausedNow(s) && s.pause ? `até ${clockText(s.pause.until)}; depois, ChatGPT.` : '';
-  return { lead: `Chave de API (${s.keyLabel})`, rest };
+  const rest = pausedNow(s) && s.pause ? AI().keyUntilThenChatGPT(clockText(s.pause.until)) : '';
+  return { lead: AI().keyLabel(s.keyLabel), rest };
 }
 
 export type ChatGPTAction = 'signIn' | 'reconnect' | 'grant' | 'retryPlan' | 'resumeChatGPT' | 'signOut';
@@ -104,67 +104,65 @@ export function chatgptView(s: AiSnapshot): ChatGPTView {
   const linked = !!acc?.connected;
   const session = !!acc?.hasSession;
   const attention = attentionOf(s);
-  const keyNote = s.mode === 'key' ? [] : [{ text: NO_KEY_FALLBACK_TEXT, muted: true }];
-  const plan = 'Use o plano Go, Plus ou Pro do seu ChatGPT. Requer um desses planos.';
-  const signOut = { action: 'signOut' as const, label: 'Desconectar ChatGPT', variant: 'ghost' as const };
+  const keyNote = s.mode === 'key' ? [] : [{ text: AI().keyNote, muted: true }];
+  const plan = AI().plan;
+  const signOut = { action: 'signOut' as const, label: AI().signOut, variant: 'ghost' as const };
 
   if (attention === 'reauth') {
     return {
-      pill: { label: 'Atenção', tone: 'warn' },
-      lines: [{ text: 'Sua sessão com o ChatGPT expirou ou foi recusada. Entre de novo para voltar a usar o plano.', muted: false }, ...keyNote],
+      pill: { label: AI().attention, tone: 'warn' },
+      lines: [{ text: AI().sessionExpiredLine, muted: false }, ...keyNote],
       models: false,
-      actions: [{ action: 'reconnect', label: 'Entrar de novo', variant: 'primary' }, signOut],
+      actions: [{ action: 'reconnect', label: AI().reconnect, variant: 'primary' }, signOut],
     };
   }
   if (attention === 'not_eligible') {
     return {
-      pill: { label: 'Atenção', tone: 'warn' },
-      lines: [{ text: 'Esta conta não tem o plano para o Sensus. Requer Go, Plus ou Pro.', muted: false }, ...keyNote],
+      pill: { label: AI().attention, tone: 'warn' },
+      lines: [{ text: AI().notEligibleLine, muted: false }, ...keyNote],
       models: false,
-      actions: [{ action: 'retryPlan', label: 'Tentar de novo', variant: 'secondary' }, signOut],
+      actions: [{ action: 'retryPlan', label: AI().retryPlan, variant: 'secondary' }, signOut],
     };
   }
   if (!linked || !session) {
     if (s.keySaved) {
       return {
-        pill: { label: 'Desconectado', tone: 'muted' },
+        pill: { label: AI().disconnected, tone: 'muted' },
         lines: [{ text: plan, muted: false }],
         models: false,
-        actions: [{ action: 'signIn', label: 'Entrar com ChatGPT', variant: 'primary' }],
+        actions: [{ action: 'signIn', label: AI().signIn, variant: 'primary' }],
       };
     }
     return {
-      pill: { label: 'Não configurado', tone: 'warn' },
-      lines: [{ text: 'Entre com ChatGPT ou informe uma chave de API para ter resumos e perguntas.', muted: false }],
+      pill: { label: AI().notConfigured, tone: 'warn' },
+      lines: [{ text: AI().connectHint, muted: false }],
       models: false,
-      actions: [{ action: 'signIn', label: 'Entrar com ChatGPT', variant: 'primary' }],
+      actions: [{ action: 'signIn', label: AI().signIn, variant: 'primary' }],
     };
   }
   if (acc && !acc.planEnabled) {
     return {
-      pill: { label: 'Atenção', tone: 'warn' },
-      lines: [{ text: 'Permissão do plano não concedida. Libere o uso do plano para o Sensus.', muted: false }],
+      pill: { label: AI().attention, tone: 'warn' },
+      lines: [{ text: AI().grantLine, muted: false }],
       models: false,
-      actions: [{ action: 'grant', label: 'Liberar o plano', variant: 'secondary' }, signOut],
+      actions: [{ action: 'grant', label: AI().grant, variant: 'secondary' }, signOut],
     };
   }
   if (pausedNow(s) && s.pause) {
-    const text = s.pause.known
-      ? `Limite do plano atingido. Volta às ${clockText(s.pause.until)}.`
-      : `Limite do plano atingido. Nova tentativa às ${clockText(s.pause.until)}, a cada 10 min até voltar.`;
+    const text = s.pause.known ? AI().limitKnown(clockText(s.pause.until)) : AI().limitRetry(clockText(s.pause.until));
     return {
-      pill: { label: 'Limite atingido', tone: 'warn' },
+      pill: { label: AI().limitPill, tone: 'warn' },
       lines: [
         { text, muted: false, warn: true },
-        { text: s.keySaved ? CHATGPT_RETRY_TEXT : 'Até lá, não há chave de API salva para responder.', muted: true },
+        { text: s.keySaved ? AI().retryKey : AI().noKeyToAnswer, muted: true },
       ],
       models: false,
-      actions: [{ action: 'resumeChatGPT', label: 'Tentar o plano de novo', variant: 'secondary' }, signOut],
+      actions: [{ action: 'resumeChatGPT', label: AI().resumePlan, variant: 'secondary' }, signOut],
     };
   }
   return {
-    pill: { label: 'Plano ativo', tone: 'ok' },
-    lines: [{ text: acc?.email ?? 'Conta conectada', muted: true }],
+    pill: { label: AI().activePill, tone: 'ok' },
+    lines: [{ text: acc?.email ?? AI().accountConnected, muted: true }],
     models: true,
     actions: [signOut],
   };
