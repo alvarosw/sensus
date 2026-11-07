@@ -71,6 +71,8 @@ export const useTranslate = create<TranslateState>()((set, get) => {
         })
         .finally(() => {
           downloading = null;
+          // o idioma trocou durante o download: confere de novo o modelo do idioma atual (senão a situação fica presa)
+          if (currentModelPair()?.to !== target) void get().refreshModel();
         });
     }
     return downloading;

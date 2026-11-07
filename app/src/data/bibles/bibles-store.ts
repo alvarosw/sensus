@@ -7,6 +7,7 @@ import { canStart, IDLE_STATE, isActive, reduce, type MachineEvent, type Machine
 import { DEFAULT_BIBLE_CATALOG_URL, fetchBibleCatalog, readCachedCatalog } from './catalog';
 import { installedBibleVersion, installedIds, removeBibleFile } from './bible-db';
 import { installBible } from './install';
+import { republishActive } from '../active-db';
 import { create } from 'zustand';
 
 interface BiblesState {
@@ -100,6 +101,8 @@ export const useBibles = create<BiblesState>()((set, get) => {
         const phase = get().machines[id]?.phase;
         if (phase && isActive(phase)) dispatch(id, { type: 'fail', error: 'install' });
         refreshInstalled();
+        // texto novo (instalação ou atualização): consultas em cache do Repo refazem
+        if (get().machines[id]?.phase === 'done') republishActive();
       });
     },
 
@@ -114,6 +117,7 @@ export const useBibles = create<BiblesState>()((set, get) => {
       await removeBibleFile(id);
       set((s) => ({ machines: { ...s.machines, [id]: { ...IDLE_STATE } } }));
       refreshInstalled();
+      republishActive();
     },
   };
 });

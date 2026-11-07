@@ -205,10 +205,12 @@ export function isPatristicCompilation(id: string | null | undefined): boolean {
  * Nome do comentarista de um comentário. Pais da Igreja: o nome vem do primeiro trecho do texto. Demais: o
  * comentarista do registro; fonte fora do registro, o autor (ou título) do banco, sem o que vem entre parênteses.
  */
-export function commentatorOf(source: Source | undefined, commentary: Commentary): string {
+export function commentatorOf(source: Source | undefined, commentary: Commentary, lang: AppLang = DEFAULT_APP_LANG): string {
   if (isPatristicCompilation(source?.id)) {
     const firstLine = commentary.text.split('\n')[0] ?? '';
     const candidate = firstLine.split(/\s+[—–-]\s+|:/)[0]?.trim() ?? '';
+    // Fora do português, o nome como a fonte escreve (inglês), que é a forma mais reconhecível entre os idiomas.
+    if (lang !== DEFAULT_APP_LANG && candidate) return candidate.slice(0, 40);
     return (
       PATRISTIC_FATHERS[candidate.toLowerCase()] ??
       (candidate ? candidate.slice(0, 40) : own(SOURCES, 'patristic')?.commentator ?? 'Padres da Igreja')

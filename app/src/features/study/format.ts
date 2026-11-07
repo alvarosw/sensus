@@ -52,7 +52,7 @@ export interface CommentaryView {
 
 export function viewCommentary(c: Commentary, source: Source | undefined): CommentaryView {
   const patristic = isPatristicCompilation(c.source_id);
-  const author = commentatorOf(source, c);
+  const author = commentatorOf(source, c, currentLang());
   let body = c.text;
   if (patristic) {
     const parts = c.text.split(/\n{2,}/);

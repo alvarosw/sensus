@@ -136,3 +136,12 @@ describe('registro de fontes e tradições (domain/sources)', () => {
     expect(sourceShort('fonte-nova')).toBe('fonte-nova');
   });
 });
+
+describe('nome dos Pais da Igreja por idioma', () => {
+  const com = { source_id: 'patristic', text: 'John Chrysostom — Homily 7 on Philippians\n\nText.' } as Commentary;
+  it('pt: nome em português; outros idiomas: o nome como a fonte escreve', () => {
+    expect(commentatorOf({ id: 'patristic' } as Source, com)).toBe('Crisóstomo');
+    expect(commentatorOf({ id: 'patristic' } as Source, com, 'en')).toBe('John Chrysostom');
+    expect(commentatorOf({ id: 'patristic' } as Source, com, 'ja')).toBe('John Chrysostom');
+  });
+});

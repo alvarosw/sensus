@@ -162,6 +162,14 @@ export function setActiveNameLang(lang: AppLang): void {
 // O idioma do app escolhe o idioma dos nomes: a troca de idioma (lang-store) chega aqui sem depender de tela.
 useLangStore.subscribe((state) => setActiveNameLang(state.lang));
 
+/**
+ * Publica de novo o banco ativo com um Repo novo (mesma conexão), para as consultas em cache refazerem. Usado quando
+ * uma Bíblia baixada é instalada, atualizada ou removida (o texto dela mudou fora do Repo).
+ */
+export function republishActive(): void {
+  if (current) publish({ db: current.db, meta: current.meta, name: current.name });
+}
+
 /** Abre o banco que deve estar ativo: o completo instalado, se houver; senão o de leitura. */
 export async function openActiveDatabase(): Promise<ActiveDb> {
   // Antes do Repo: as conexões das Bíblias baixadas precisam existir quando a primeira consulta de texto rodar.
