@@ -154,6 +154,24 @@ def parse_usfm(text: str) -> dict:
     return out
 
 
+def bridges(bnum: int, ranges: list, have: set) -> tuple[list[dict], list[dict]]:
+    """Pontes de versículos (\\v 3-4): o texto fica no primeiro versículo, com a divisão 'bridge' (rótulo "3-4").
+
+    Os demais versículos da ponte continuam numerados, sem texto: a Bíblia tem a numeração, então a ponte não é
+    lacuna de versificação. `ranges` = [(capítulo, versículo, "3-4")]; `have` = vids já lidos (não são repetidos).
+    Devolve (versículos vazios a acrescentar, divisões bridge).
+    """
+    verses, divs = [], []
+    for c, v, rng in ranges:
+        first, last = (int(x) for x in rng.split("-"))
+        divs.append({"vid": vid(bnum, c, v), "kind": "bridge", "title": rng})
+        for n in range(first + 1, last + 1):
+            if vid(bnum, c, n) not in have:
+                verses.append({"vid": vid(bnum, c, n), "text": ""})
+                have.add(vid(bnum, c, n))
+    return verses, divs
+
+
 def fetch(url: str, dest: Path) -> None:
     """Baixa url para dest, só se ainda não existir (idempotente)."""
     if dest.exists() and dest.stat().st_size > 0:
@@ -213,8 +231,10 @@ def ingest(entry: dict) -> dict:
             if not t:
                 problems.append(f"{b['code']} {c}:{v} vazio")
             verse_rows.append({"vid": vi, "text": t})
-        for c, v, end in b["ranges"]:
-            problems.append(f"{b['code']} {c}:{v} faixa de versículos ({end})")
+        have = {r["vid"] for r in verse_rows if r["vid"] // 1_000_000 == bnum}
+        extra_verses, bridge_divs = bridges(bnum, b["ranges"], have)
+        verse_rows.extend(extra_verses)
+        div_rows.extend(bridge_divs)
         for c, v, t in b["heads"]:
             vi = vid(bnum, c, v)
             key = (vi, "heading")

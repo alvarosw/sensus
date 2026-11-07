@@ -12,6 +12,7 @@ sys.path.insert(0, str(PIPELINE))
 sys.path.insert(0, str(PIPELINE / "ingest"))
 
 import ebible  # noqa: E402
+from sensus.refs import vid  # noqa: E402
 
 USFM = r"""\id PHP - Teste
 \toc1 The Letter to the Philippians
@@ -86,6 +87,23 @@ class CleanTest(unittest.TestCase):
 class SplitVerseMarkersTest(unittest.TestCase):
     def test_verse_in_the_middle_of_a_poetry_line_starts_a_new_line(self):
         self.assertEqual(ebible.split_verse_markers("\\q1 \\v 5 texto"), ["\\q1", "\\v 5 texto"])
+
+
+class BridgeTest(unittest.TestCase):
+    """Ponte de versículos (\\v 3-4): divisão 'bridge' no primeiro versículo; os demais continuam numerados."""
+
+    def test_bridge_division_and_numbered_empty_verse(self):
+        verses, divs = ebible.bridges(40, [(13, 3, "3-4")], {vid(40, 13, 3)})
+        self.assertEqual(divs, [{"vid": vid(40, 13, 3), "kind": "bridge", "title": "3-4"}])
+        self.assertEqual(verses, [{"vid": vid(40, 13, 4), "text": ""}])
+
+    def test_verse_already_present_is_not_repeated(self):
+        verses, _ = ebible.bridges(40, [(13, 3, "3-4")], {vid(40, 13, 3), vid(40, 13, 4)})
+        self.assertEqual(verses, [])
+
+    def test_wider_bridge_numbers_every_verse_it_covers(self):
+        verses, _ = ebible.bridges(40, [(1, 1, "1-3")], set())
+        self.assertEqual([r["vid"] for r in verses], [vid(40, 1, 2), vid(40, 1, 3)])
 
 
 if __name__ == "__main__":
