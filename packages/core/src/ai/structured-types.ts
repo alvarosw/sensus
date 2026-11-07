@@ -18,7 +18,10 @@ export const SECTION_KEYS: readonly SectionKey[] = [
   'texto', 'literario', 'historico', 'lingua', 'intertexto', 'interpretacao', 'aplicacao',
 ];
 
-/** Nome da seção para a interface (pt-BR). */
+/**
+ * Nome da seção no texto dos prompts (pt-BR: o pedido ao modelo é em português). A interface não usa este mapa: o
+ * nome na tela sai de LENS_LABELS (state/study, i18n). Quem reconhece um pedido (demo-provider) casa pela chave.
+ */
 export const SECTION_LABELS: Record<SectionKey, string> = {
   texto: 'Texto',
   literario: 'Contexto literário',

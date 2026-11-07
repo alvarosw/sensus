@@ -177,7 +177,7 @@ export function deepenMessages(
   const label = lens === 'visao' ? 'Visão geral' : SECTION_LABELS[lens];
   const hint = lens === 'visao' ? VISAO_HINT : SECTION_HINTS[lens];
   const lines = [
-    `Aprofunde a lente "${label}" desta passagem: ${hint}.`,
+    `Aprofunde a lente "${label}" (chave: ${lens}) desta passagem: ${hint}.`,
     'Use somente o contexto. Explique com detalhe, cite cada afirmação factual com [[cite_id]] e explique termos técnicos.',
   ];
   if (opts.claim?.trim()) {

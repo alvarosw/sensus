@@ -9,7 +9,6 @@
 import {
   CHAT_CONTEXT_PREFIX,
   SECTION_KEYS,
-  SECTION_LABELS,
   type ChatMessage,
   type ChatRequest,
   type LLMProvider,
@@ -68,10 +67,10 @@ export function classifyRequest(messages: readonly ChatMessage[]): DemoRequest {
     const cut = lastUser.indexOf(ANSWER_SUFFIX);
     return { kind: 'answer', reference, question: (cut >= 0 ? lastUser.slice(0, cut) : lastUser).trim() };
   }
-  // "Aprofunde a seção|lente "<rótulo>" ..." (o termo mudou no núcleo; só depende de "Aprofunde" + rótulo entre aspas).
+  // "Aprofunde a lente "<rótulo>" (chave: <seção>) ..." (o rótulo pode mudar; a chave é a que casa com a seção).
   if (/^Aprofunde\b/.test(lastUser)) {
-    const label = /"([^"]+)"/.exec(lastUser)?.[1];
-    const section = SECTION_KEYS.find((k) => SECTION_LABELS[k] === label) ?? null;
+    const key = /\(chave: (\w+)\)/.exec(lastUser)?.[1];
+    const section = SECTION_KEYS.find((k) => k === key) ?? null;
     return { kind: 'section', reference, section };
   }
   return { kind: 'summary', reference };
