@@ -1,119 +1,72 @@
-// Classe hebraica em português a partir de token.morph_desc do TAHOT, por exemplo:
+// Classe hebraica no idioma do app a partir de token.morph_desc do TAHOT, por exemplo:
 // "Consecutive Conjunction + Verb : Hiphil (Causative/declarative, Active) Consecutive Imperfect (Past/present Indicative) Third Singular Masculine"
-// Determinística: cada termo conhecido vira o equivalente em português. Se sobrar algum termo fora do mapa,
-// complete = false e quem chama mostra o original (a tradução automática entra como reserva).
+// Determinística: cada termo conhecido vira o equivalente no idioma (MORPH, morph-strings.ts). Se sobrar algum termo fora
+// do mapa, complete = false e quem chama mostra o original (a tradução automática entra como reserva).
+import { MORPH } from './morph-strings';
+
+/** Tabela de termos vista como dicionário (chaves de origem). */
+const T = (table: object): Record<string, string> => table as Record<string, string>;
 
 export interface HebrewMorph {
-  /** Classe em português (vazio quando complete = false). */
+  /** Classe no idioma do app (vazio quando complete = false). */
   text: string;
   /** Todos os termos foram traduzidos pelo mapa. */
   complete: boolean;
 }
 
 /**
- * Hastes (binyanim). As formas aramaicas (Esdras, Daniel, Jr 10:11) saem com a marca "aramaico": a equivalente
- * hebraica quando há uma clara (Peal = Qal), senão a forma transliterada.
+ * Hastes (binyanim) do TAHOT: a grafia de origem leva à haste hebraica. As formas aramaicas (Esdras, Daniel, Jr 10:11)
+ * saem com a marca "aramaico": a equivalente hebraica quando há uma clara (Peal = Qal), senão a forma transliterada.
  */
-const STEM_PT: Record<string, string> = {
-  Qal: 'Qal',
-  Niphal: 'Niphal',
-  Piel: 'Piel',
-  Pual: 'Pual',
-  Hiphil: 'Hiphil',
-  Hophal: 'Hophal',
-  Hithpael: 'Hithpael',
+const STEM_SRC: Record<string, readonly [stem: string, aramaic: boolean]> = {
+  Qal: ['Qal', false],
+  Niphal: ['Niphal', false],
+  Piel: ['Piel', false],
+  Pual: ['Pual', false],
+  Hiphil: ['Hiphil', false],
+  Hophal: ['Hophal', false],
+  Hithpael: ['Hithpael', false],
   // o TAHOT grafa a mesma haste de duas formas
-  Hitpael: 'Hithpael',
-  Peal: 'Qal aramaico',
-  Peil: 'Pual aramaico',
-  Pael: 'Piel aramaico',
-  Haphel: 'Hiphil aramaico',
-  Aphel: 'Hiphil aramaico',
-  Hitpaal: 'Hithpael aramaico',
-  Hitpeel: 'Hithpael aramaico',
-  Hothpaal: 'Hithpael aramaico',
-  Shaphel: 'Shafel aramaico',
-  Ishtaphel: 'Hishtafel aramaico',
-  Hishtaphel: 'Hishtafel aramaico',
-  Tiphil: 'Tifil aramaico',
-  Nithpael: 'Nitpael aramaico',
-};
-
-/** Glosas entre parênteses da haste: "(Simple, Active)", "(Causative/declarative, Active)"... */
-const STEM_GLOSS_PT: Record<string, string> = {
-  Simple: 'simples',
-  'Causative/declarative': 'causativa/declarativa',
-  'Intensive/resultive/transtive': 'intensiva/resultativa/transitiva',
-  'Reflexive/iterative': 'reflexiva/iterativa',
-  Active: 'ativa',
-  Passive: 'passiva',
-};
-
-/** Tempos e formas verbais. */
-const TENSE_PT: Record<string, string> = {
-  Perfect: 'perfeito',
-  Imperfect: 'imperfeito',
-  'Consecutive Perfect': 'perfeito consecutivo',
-  'Consecutive Imperfect': 'imperfeito consecutivo',
-  Imperative: 'imperativo',
-  Participle: 'particípio',
-  'Participle passive': 'particípio passivo',
-  'Infinitive Construct': 'infinitivo construto',
-  'Infinitive Absolute': 'infinitivo absoluto',
-};
-
-/** Classes de palavra que não são verbo (com o parêntese, quando há, tratado em headPt). */
-const HEAD_PT: Record<string, string> = {
-  Noun: 'substantivo',
-  'Proper Noun': 'substantivo próprio',
-  Adjective: 'adjetivo',
-  'Numerical Adjective': 'adjetivo numeral',
-  'Numerical position Adjective': 'adjetivo numeral ordinal',
-  Pronoun: 'pronome',
-  'Interrogative Pronoun': 'pronome interrogativo',
-  Preposition: 'preposição',
-  Conjunction: 'conjunção',
-  'Consecutive Conjunction': 'conjunção consecutiva',
-  'Definite article': 'artigo definido',
-  'Object indicator': 'marcador de objeto',
-  Suffix: 'sufixo pronominal',
-  'Directional Suffix': 'sufixo direcional',
-  'Paragogic Nun': 'nun paragógico',
-  'Paragogic Hé': 'hé paragógico',
-  'Interrogative Particle': 'partícula interrogativa',
-  'Relative Particle': 'partícula relativa',
-  'Conditional Particle': 'partícula condicional',
-  'Negative Particle': 'partícula negativa',
-  'Demonstrative Particle': 'partícula demonstrativa',
-  Interjection: 'interjeição',
-  Adverb: 'advérbio',
+  Hitpael: ['Hithpael', false],
+  Peal: ['Qal', true],
+  Peil: ['Pual', true],
+  Pael: ['Piel', true],
+  Haphel: ['Hiphil', true],
+  Aphel: ['Hiphil', true],
+  Hitpaal: ['Hithpael', true],
+  Hitpeel: ['Hithpael', true],
+  Hothpaal: ['Hithpael', true],
+  Shaphel: ['Shafel', true],
+  Ishtaphel: ['Hishtafel', true],
+  Hishtaphel: ['Hishtafel', true],
+  Tiphil: ['Tifil', true],
+  Nithpael: ['Nitpael', true],
 };
 
 /** Atributos (número, gênero, estado, pessoa, uso do nome), do termo mais longo ao mais curto. */
-const ATTR_PT: readonly (readonly [string, string])[] = [
-  ['Either gender', 'qualquer gênero'],
-  ['First', '1ª pessoa'],
-  ['Second', '2ª pessoa'],
-  ['Third', '3ª pessoa'],
-  ['Singular', 'singular'],
-  ['Plural', 'plural'],
-  ['Dual', 'dual'],
-  ['Masculine', 'masculino'],
-  ['Feminine', 'feminino'],
-  ['individual', 'indivíduo'],
-  ['Construct', 'estado construto'],
-  ['Absolute', 'estado absoluto'],
-  ['Definite', 'estado determinado'],
-  ['Title', 'título'],
-  ['Gentilic', 'gentílico'],
-  ['Location', 'lugar'],
-  ['Aramaic', 'aramaico'],
+const ATTR_SRC: readonly string[] = [
+  'Either gender', 'First', 'Second', 'Third', 'Singular', 'Plural', 'Dual', 'Masculine', 'Feminine', 'individual',
+  'Construct', 'Absolute', 'Definite', 'Title', 'Gentilic', 'Location', 'Aramaic',
+];
+
+/** Usos do nome que vão depois de vírgula ("substantivo próprio, título"), não entre espaços. */
+const USAGE_SRC = /^(Title|Location|Gentilic|individual)\b/;
+
+/** Tempos e formas verbais do TAHOT (chaves de origem; o texto sai de MORPH.hbTense). */
+const TENSE_SRC = ['Perfect', 'Imperfect', 'Consecutive Perfect', 'Consecutive Imperfect', 'Imperative', 'Participle', 'Participle passive', 'Infinitive Construct', 'Infinitive Absolute'];
+/** Classes sem verbo do TAHOT (o texto sai de MORPH.hbHead). */
+const HEAD_SRC = [
+  'Noun', 'Proper Noun', 'Adjective', 'Numerical Adjective', 'Numerical position Adjective', 'Pronoun', 'Interrogative Pronoun',
+  'Preposition', 'Conjunction', 'Consecutive Conjunction', 'Definite article', 'Object indicator', 'Suffix', 'Directional Suffix',
+  'Paragogic Nun', 'Paragogic Hé', 'Interrogative Particle', 'Relative Particle', 'Conditional Particle', 'Negative Particle',
+  'Demonstrative Particle', 'Interjection', 'Adverb',
 ];
 
 const byLengthDesc = (a: string, b: string): number => b.length - a.length;
-const STEMS = Object.keys(STEM_PT).sort(byLengthDesc);
-const TENSES = Object.keys(TENSE_PT).sort(byLengthDesc);
-const HEADS = Object.keys(HEAD_PT).sort(byLengthDesc);
+const STEMS = Object.keys(STEM_SRC).sort(byLengthDesc);
+const TENSES = [...TENSE_SRC].sort(byLengthDesc);
+const HEADS = [...HEAD_SRC].sort(byLengthDesc);
+const ATTRS = [...ATTR_SRC].sort(byLengthDesc);
 
 /** Consome um termo do início (com fronteira de palavra); devolve o resto sem espaços à esquerda. */
 function takeWord(s: string, words: readonly string[]): { word: string; rest: string } | null {
@@ -129,20 +82,20 @@ function takeParen(s: string): { content: string | null; rest: string } {
   return m ? { content: m[1]!, rest: s.slice(m[0].length) } : { content: null, rest: s };
 }
 
-/** Atributos separados por espaço ("Third Singular Masculine") em português; null se sobrar termo desconhecido. */
+/** Atributos separados por espaço ("Third Singular Masculine") no idioma do app; null se sobrar termo desconhecido. */
 function attrsPt(text: string): string | null {
   const out: string[] = [];
   let rest = text.trim();
   while (rest) {
-    const hit = ATTR_PT.find(([en]) => rest === en || rest.startsWith(`${en} `));
+    const hit = ATTRS.find((en) => rest === en || rest.startsWith(`${en} `));
     if (!hit) return null;
-    out.push(hit[1]);
-    rest = rest.slice(hit[0].length).trimStart();
+    out.push(T(MORPH.hbAttr)[hit]!);
+    rest = rest.slice(hit.length).trimStart();
   }
   return out.join(' ');
 }
 
-/** Grupos de um parêntese ("Singular Masculine, Construct") em português; null se algum grupo falhar. */
+/** Grupos de um parêntese ("Singular Masculine, Construct") no idioma do app; null se algum grupo falhar. */
 function groupsPt(content: string): string | null {
   const groups = content.split(',').map((g) => attrsPt(g.trim()));
   return groups.every((g): g is string => g !== null && g !== '') ? groups.join(', ') : null;
@@ -154,8 +107,8 @@ function groupsPt(content: string): string | null {
  */
 function moodPt(content: string): string | null | undefined {
   if (!/Indicative|Jussive|Cohortative/.test(content)) return undefined;
-  if (content === 'Future/present Jussive') return 'jussivo';
-  if (content === 'Future/present Cohortative') return 'coortativo';
+  if (content === 'Future/present Jussive') return MORPH.hbWords.jussive;
+  if (content === 'Future/present Cohortative') return MORPH.hbWords.cohortative;
   if (/Indicative/.test(content)) return '';
   return null;
 }
@@ -165,9 +118,11 @@ function stemPt(s: string): { text: string; rest: string } | null {
   const hit = takeWord(s, STEMS);
   if (!hit) return null;
   const paren = takeParen(hit.rest);
-  let text = STEM_PT[hit.word]!;
+  const [stem, aramaic] = STEM_SRC[hit.word]!;
+  let text = T(MORPH.hbStem)[stem]!;
+  if (aramaic) text += ` ${MORPH.hbAttr.Aramaic}`;
   if (paren.content !== null) {
-    const gloss = paren.content.split(',').map((g) => STEM_GLOSS_PT[g.trim()]);
+    const gloss = paren.content.split(',').map((g) => Object.hasOwn(MORPH.hbGloss, g.trim()) ? T(MORPH.hbGloss)[g.trim()] : undefined);
     if (gloss.some((g) => g === undefined)) return null;
     text += ` (${gloss.join(', ')})`;
   }
@@ -177,23 +132,23 @@ function stemPt(s: string): { text: string; rest: string } | null {
 /** Forma verbal: [Verb : haste] [Conjunction] tempo [(modo ou atributos)] [pessoa, número, gênero]. */
 function verbPt(s: string): string | null {
   let rest = s;
-  let head = 'verbo';
+  let head: string = MORPH.hbWords.verb;
   if (/^Verb\s*:/.test(rest)) {
     const stem = stemPt(rest.replace(/^Verb\s*:\s*/, ''));
     if (!stem) return null;
-    head = `verbo ${stem.text}`;
+    head = `${MORPH.hbWords.verb} ${stem.text}`;
     rest = stem.rest;
   }
   // tempo com conjunção ("conjunção + imperfeito") e modo ("imperfeito jussivo") formam um bloco; o resto vem depois
   const tenseWords: string[] = [];
   const conj = takeWord(rest, ['Conjunction']);
   if (conj) {
-    tenseWords.push('conjunção');
+    tenseWords.push(MORPH.hbWords.conj);
     rest = conj.rest;
   }
   const tense = takeWord(rest, TENSES);
   if (tense) {
-    tenseWords.push(TENSE_PT[tense.word]!);
+    tenseWords.push(T(MORPH.hbTense)[tense.word]!);
     rest = tense.rest;
   }
   let tenseBlock = tenseWords.join(' + ');
@@ -226,13 +181,13 @@ function headPt(s: string): string | null {
   if (!hit) return null;
   const paren = takeParen(hit.rest);
   if (paren.rest) return null;
-  const base = HEAD_PT[hit.word]!;
+  const base = T(MORPH.hbHead)[hit.word]!;
   if (paren.content === null || paren.content === 'Hebrew') return base;
-  if (hit.word === 'Preposition' && paren.content === 'Definite') return 'preposição com artigo';
+  if (hit.word === 'Preposition' && paren.content === 'Definite') return MORPH.hbHead.prepDefinite!;
   const groups = groupsPt(paren.content);
   if (groups === null) return null;
   // uso do nome ("substantivo próprio, título") separa com vírgula; número, gênero e estado vêm depois do nome
-  return /^(título|lugar|gentílico|indivíduo)/.test(groups) ? `${base}, ${groups}` : `${base} ${groups}`;
+  return USAGE_SRC.test(paren.content) ? `${base}, ${groups}` : `${base} ${groups}`;
 }
 
 /** Um segmento (separado por " + "): forma verbal (com ou sem "Verb :") ou classe sem verbo. */
@@ -248,7 +203,7 @@ function capitalize(s: string): string {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-/** Classe hebraica em português; complete = false quando algum termo não está no mapa (use o original ou a tradução). */
+/** Classe hebraica no idioma do app; complete = false quando algum termo não está no mapa (use o original ou a tradução). */
 export function hebrewMorphPt(desc: string | null | undefined): HebrewMorph {
   if (!desc || !desc.trim()) return { text: '', complete: true };
   // "Conjunction+Imperfect" (sem espaços) é uma só forma verbal

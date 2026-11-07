@@ -26,7 +26,7 @@ import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { useCite } from '../common/hooks';
 import { useStudy } from '@/state/study';
 import { t } from '@/i18n';
-import { morphLabelsPt } from '../common/morph-pt';
+import { morphLabelsPt } from '../common/morph';
 
 /** Dados de uma afirmação, entregues às ações do menu ⋯. */
 export interface ClaimMenuInfo {

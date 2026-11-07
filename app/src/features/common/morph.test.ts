@@ -1,7 +1,7 @@
 // Dicionário único de morfologia em português: o painel (morphParts) e o card (morphLabelsPt) usam o mesmo termo com o
 // mesmo rótulo. Casos do grego do NT (TAGNT) e do hebraico/aramaico do AT.
 import { describe, expect, it } from 'vitest';
-import { morphChipsOf, morphLabelsPt, morphParts, morphPills, morphTerm } from './morph-pt';
+import { morphChipsOf, morphLabelsPt, morphParts, morphPills, morphTerm } from './morph';
 
 describe('morfologia pt: um dicionário', () => {
   it('grego do NT: o card e o painel dão o mesmo rótulo a cada termo', () => {

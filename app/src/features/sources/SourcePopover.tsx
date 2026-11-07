@@ -24,7 +24,7 @@ import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { PopButton } from '@/ui/Buttons';
 import { loadLexicon, loadXrefText, type CiteDetail } from '../common/cites';
 import { useBooks, useCite } from '../common/hooks';
-import { morphPills } from '../common/morph-pt';
+import { morphPills } from '../common/morph';
 import { useLast, usePresence } from '../common/motion';
 import { SRC } from '../common/strings';
 import { wordView, type WordView } from '../common/word-view';
