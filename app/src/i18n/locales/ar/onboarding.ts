@@ -1,0 +1,23 @@
+// Árabe de app/src/features/onboarding/strings.ts. A revisar por falante nativo.
+export const arOnboarding = {
+  hint: 'اسحب السراج لتضيء النص',
+  start: 'ابدأ',
+  skip: 'تخطَّ',
+  finale: 'ادخل إلى Sensus',
+  stepCount: (n: number, total: number) => `الخطوة ${n} من ${total}`,
+  langTitle: 'اختر اللغة',
+  langHelp: 'سيستخدم Sensus هذه اللغة للنصوص والتوصيات. يمكنك تغييرها لاحقًا في الإعدادات.',
+  bibleTitle: 'كتاب مقدس للقراءة',
+  bibleHelp: 'اختر ترجمة النص. Bíblia Livre وKJV موجودتان في التطبيق بالفعل.',
+  bibleRecommended: 'موصى بها للغتك',
+  bibleOthers: 'ترجمات أخرى بهذه اللغة',
+  bibleNone: 'لا توجد حاليًا ترجمة حرة موصى بها بهذه اللغة. يمكنك الاطلاع على غيرها في الإعدادات.',
+  bibleOffline: 'تعذّر تحميل قائمة الكتب المقدسة الآن. يمكنك تنزيل واحدة لاحقًا من الإعدادات.',
+  traditionsTitle: 'التيار اللاهوتي',
+  traditionsHelp: 'أي الشروح والتفاسير تريد أن تراها في دراستك؟',
+  traditionsNote: 'يمكنك تغيير ذلك في الإعدادات.',
+  aiTitle: 'مساعد للأسئلة',
+  aiBody: 'يلخّص الذكاء الاصطناعي كل مقطع ويجيب عن أسئلتك مستشهدًا بمصادر Sensus. لا يُحفظ على الجهاز أي شيء يولّده.',
+  aiConfigure: 'اضبطه الآن',
+  revisit: 'راجع المقدمة مرة أخرى',
+};

@@ -1,0 +1,23 @@
+// Francês de app/src/features/onboarding/strings.ts. A revisar por falante nativo.
+export const frOnboarding = {
+  hint: 'Faites glisser la lampe pour éclairer le texte',
+  start: 'Commencer',
+  skip: 'Passer',
+  finale: 'Entrer dans Sensus',
+  stepCount: (n: number, total: number) => `Étape ${n} sur ${total}`,
+  langTitle: 'Choisissez la langue',
+  langHelp: 'Sensus utilisera cette langue pour les textes et les recommandations. Vous pourrez la changer plus tard dans les Réglages.',
+  bibleTitle: 'Une Bible à lire',
+  bibleHelp: 'Choisissez la traduction du texte. La Bíblia Livre et la KJV sont déjà dans l’application.',
+  bibleRecommended: 'Recommandée pour votre langue',
+  bibleOthers: 'Autres dans cette langue',
+  bibleNone: 'Il n’existe pas encore de Bible libre recommandée pour cette langue. Vous pouvez voir d’autres Bibles dans les Réglages.',
+  bibleOffline: 'Impossible de charger la liste des Bibles pour le moment. Vous pourrez en télécharger une plus tard, dans les Réglages.',
+  traditionsTitle: 'Courant théologique',
+  traditionsHelp: 'Quels commentaires et interprétations voulez-vous voir dans votre étude ?',
+  traditionsNote: 'Vous pouvez changer cela dans les Réglages.',
+  aiTitle: 'Un assistant pour vos questions',
+  aiBody: 'L’IA résume chaque passage et répond à vos questions en citant les sources de Sensus. Rien de ce qu’elle génère n’est enregistré sur l’appareil.',
+  aiConfigure: 'Configurer maintenant',
+  revisit: 'Revoir la présentation',
+};

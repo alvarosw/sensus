@@ -1,0 +1,23 @@
+// Bengali de app/src/features/onboarding/strings.ts. A revisar por falante nativo.
+export const bnOnboarding = {
+  hint: 'প্রদীপটি টেনে পাঠ আলোকিত করুন',
+  start: 'শুরু করুন',
+  skip: 'এড়িয়ে যান',
+  finale: 'Sensus-এ প্রবেশ করুন',
+  stepCount: (n: number, total: number) => `ধাপ ${n} / ${total}`,
+  langTitle: 'ভাষা বেছে নিন',
+  langHelp: 'Sensus লেখা ও সুপারিশের জন্য এই ভাষা ব্যবহার করবে। পরে সেটিংসে বদলাতে পারবেন।',
+  bibleTitle: 'পড়ার জন্য একটি বাইবেল',
+  bibleHelp: 'পাঠের অনুবাদ বেছে নিন। Bíblia Livre ও KJV আগে থেকেই অ্যাপে আছে।',
+  bibleRecommended: 'আপনার ভাষার জন্য সুপারিশ',
+  bibleOthers: 'এই ভাষার অন্যান্য',
+  bibleNone: 'এই ভাষার জন্য এখনও সুপারিশকৃত বিনামূল্যের বাইবেল নেই। সেটিংসে অন্যগুলো দেখতে পারেন।',
+  bibleOffline: 'এখন বাইবেলের তালিকা লোড করা যায়নি। পরে সেটিংস থেকে একটি ডাউনলোড করতে পারবেন।',
+  traditionsTitle: 'ধর্মতাত্ত্বিক ধারা',
+  traditionsHelp: 'আপনার পাঠে কোন ভাষ্য ও ব্যাখ্যা দেখতে চান?',
+  traditionsNote: 'সেটিংসে এটি বদলাতে পারবেন।',
+  aiTitle: 'প্রশ্নের জন্য একজন সহকারী',
+  aiBody: 'AI প্রতিটি অংশের সারাংশ দেয় এবং Sensus-এর সূত্র উদ্ধৃত করে আপনার প্রশ্নের উত্তর দেয়। AI যা তৈরি করে তা ডিভাইসে সংরক্ষিত হয় না।',
+  aiConfigure: 'এখনই সেট করুন',
+  revisit: 'পরিচিতি আবার দেখুন',
+};

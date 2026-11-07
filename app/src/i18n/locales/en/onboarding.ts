@@ -1,0 +1,23 @@
+// Inglês de app/src/features/onboarding/strings.ts. A revisar por falante nativo.
+export const enOnboarding = {
+  hint: 'Drag the lamp to light up the text',
+  start: 'Start',
+  skip: 'Skip',
+  finale: 'Enter Sensus',
+  stepCount: (n: number, total: number) => `Step ${n} of ${total}`,
+  langTitle: 'Choose your language',
+  langHelp: 'Sensus will use this language for the texts and recommendations. You can change it later in Settings.',
+  bibleTitle: 'A Bible to read',
+  bibleHelp: 'Choose the translation of the text. Bíblia Livre and KJV already come with the app.',
+  bibleRecommended: 'Recommended for your language',
+  bibleOthers: 'Others in this language',
+  bibleNone: 'There is no recommended free Bible for this language yet. You can look at others in Settings.',
+  bibleOffline: 'Could not load the list of Bibles right now. You can download one later, in Settings.',
+  traditionsTitle: 'Theological tradition',
+  traditionsHelp: 'Which commentaries and interpretations do you want to see in your study?',
+  traditionsNote: 'You can change this in Settings.',
+  aiTitle: 'An assistant for your questions',
+  aiBody: 'The AI summarizes each passage and answers your questions, citing Sensus sources. Nothing the AI generates is saved on the device.',
+  aiConfigure: 'Set up now',
+  revisit: 'Review the introduction',
+};

@@ -1,0 +1,23 @@
+// Urdu de app/src/features/onboarding/strings.ts. A revisar por falante nativo.
+export const urOnboarding = {
+  hint: 'چراغ کو کھینچ کر متن روشن کریں',
+  start: 'شروع کریں',
+  skip: 'چھوڑ دیں',
+  finale: 'Sensus میں داخل ہوں',
+  stepCount: (n: number, total: number) => `مرحلہ ${n} از ${total}`,
+  langTitle: 'زبان منتخب کریں',
+  langHelp: 'Sensus متن اور تجاویز کے لیے یہی زبان استعمال کرے گا۔ بعد میں ترتیبات میں بدل سکتے ہیں۔',
+  bibleTitle: 'پڑھنے کے لیے ایک بائبل',
+  bibleHelp: 'متن کا ترجمہ منتخب کریں۔ Bíblia Livre اور KJV ایپ میں پہلے ہی موجود ہیں۔',
+  bibleRecommended: 'آپ کی زبان کے لیے تجویز کردہ',
+  bibleOthers: 'اس زبان کی دوسری',
+  bibleNone: 'اس زبان کے لیے ابھی کوئی تجویز کردہ مفت بائبل نہیں ہے۔ دوسری بائبلیں ترتیبات میں دیکھ سکتے ہیں۔',
+  bibleOffline: 'اس وقت بائبل کی فہرست لوڈ نہیں ہو سکی۔ بعد میں ترتیبات سے ایک ڈاؤن لوڈ کر سکتے ہیں۔',
+  traditionsTitle: 'الہیاتی روایت',
+  traditionsHelp: 'آپ اپنے مطالعے میں کون سی تفاسیر اور تشریحات دیکھنا چاہتے ہیں؟',
+  traditionsNote: 'آپ یہ ترتیبات میں بدل سکتے ہیں۔',
+  aiTitle: 'سوالات کے لیے ایک معاون',
+  aiBody: 'AI ہر حصے کا خلاصہ کرتا ہے اور Sensus کے ماخذ کا حوالہ دے کر آپ کے سوالات کے جواب دیتا ہے۔ AI جو کچھ بناتا ہے وہ آلے میں محفوظ نہیں ہوتا۔',
+  aiConfigure: 'ابھی ترتیب دیں',
+  revisit: 'تعارف دوبارہ دیکھیں',
+};

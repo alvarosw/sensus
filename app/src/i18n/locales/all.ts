@@ -196,6 +196,19 @@ import { urTr } from './ur/translate';
 import { arTr } from './ar/translate';
 import { idTr } from './id/translate';
 import { viTr } from './vi/translate';
+import { enOnboarding } from './en/onboarding';
+import { esOnboarding } from './es/onboarding';
+import { frOnboarding } from './fr/onboarding';
+import { deOnboarding } from './de/onboarding';
+import { ruOnboarding } from './ru/onboarding';
+import { zhOnboarding } from './zh/onboarding';
+import { jaOnboarding } from './ja/onboarding';
+import { hiOnboarding } from './hi/onboarding';
+import { bnOnboarding } from './bn/onboarding';
+import { urOnboarding } from './ur/onboarding';
+import { arOnboarding } from './ar/onboarding';
+import { idOnboarding } from './id/onboarding';
+import { viOnboarding } from './vi/onboarding';
 
 export const biblesTables = { en: enBibles, es: esBibles, fr: frBibles, de: deBibles, ru: ruBibles, zh: zhBibles, ja: jaBibles, hi: hiBibles, bn: bnBibles, ur: urBibles, ar: arBibles, id: idBibles, vi: viBibles };
 export const commentaryTables = { en: enCommentary, es: esCommentary, fr: frCommentary, de: deCommentary, ru: ruCommentary, zh: zhCommentary, ja: jaCommentary, hi: hiCommentary, bn: bnCommentary, ur: urCommentary, ar: arCommentary, id: idCommentary, vi: viCommentary };
@@ -212,6 +225,7 @@ export const studyTables = { en: enStudy, es: esStudy, fr: frStudy, de: deStudy,
 export const tlTables = { en: enTl, es: esTl, fr: frTl, de: deTl, ru: ruTl, zh: zhTl, ja: jaTl, hi: hiTl, bn: bnTl, ur: urTl, ar: arTl, id: idTl, vi: viTl };
 export const tlEraShortTables = { en: enTlEraShort, es: esTlEraShort, fr: frTlEraShort, de: deTlEraShort, ru: ruTlEraShort, zh: zhTlEraShort, ja: jaTlEraShort, hi: hiTlEraShort, bn: bnTlEraShort, ur: urTlEraShort, ar: arTlEraShort, id: idTlEraShort, vi: viTlEraShort };
 export const trTables = { en: enTr, es: esTr, fr: frTr, de: deTr, ru: ruTr, zh: zhTr, ja: jaTr, hi: hiTr, bn: bnTr, ur: urTr, ar: arTr, id: idTr, vi: viTr };
+export const onboardingTables = { en: enOnboarding, es: esOnboarding, fr: frOnboarding, de: deOnboarding, ru: ruOnboarding, zh: zhOnboarding, ja: jaOnboarding, hi: hiOnboarding, bn: bnOnboarding, ur: urOnboarding, ar: arOnboarding, id: idOnboarding, vi: viOnboarding };
 import { enMorph } from './en/morph';
 import { esMorph } from './es/morph';
 import { frMorph } from './fr/morph';

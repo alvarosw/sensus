@@ -1,0 +1,23 @@
+// Hindi de app/src/features/onboarding/strings.ts. A revisar por falante nativo.
+export const hiOnboarding = {
+  hint: 'दीपक को खींचकर पाठ को रोशन करें',
+  start: 'शुरू करें',
+  skip: 'छोड़ें',
+  finale: 'Sensus में प्रवेश करें',
+  stepCount: (n: number, total: number) => `चरण ${n} / ${total}`,
+  langTitle: 'भाषा चुनें',
+  langHelp: 'Sensus पाठ और सुझावों के लिए यही भाषा इस्तेमाल करेगा। बाद में सेटिंग्स में बदल सकते हैं।',
+  bibleTitle: 'पढ़ने के लिए एक बाइबल',
+  bibleHelp: 'पाठ का अनुवाद चुनें। Bíblia Livre और KJV पहले से ऐप में हैं।',
+  bibleRecommended: 'आपकी भाषा के लिए सुझाई गई',
+  bibleOthers: 'इस भाषा की अन्य',
+  bibleNone: 'इस भाषा के लिए अभी कोई सुझाई गई मुफ़्त बाइबल नहीं है। अन्य बाइबल सेटिंग्स में देख सकते हैं।',
+  bibleOffline: 'अभी बाइबलों की सूची लोड नहीं हो सकी। बाद में सेटिंग्स से एक डाउनलोड कर सकते हैं।',
+  traditionsTitle: 'धार्मिक परंपरा',
+  traditionsHelp: 'अपने अध्ययन में कौन-सी टिप्पणियाँ और व्याख्याएँ देखना चाहते हैं?',
+  traditionsNote: 'यह आप सेटिंग्स में बदल सकते हैं।',
+  aiTitle: 'सवालों के लिए एक सहायक',
+  aiBody: 'AI हर अंश का सार बताता है और Sensus के स्रोतों का हवाला देकर आपके सवालों के जवाब देता है। AI जो कुछ बनाता है, वह डिवाइस पर सेव नहीं होता।',
+  aiConfigure: 'अभी सेट करें',
+  revisit: 'परिचय फिर से देखें',
+};

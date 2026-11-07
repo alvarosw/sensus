@@ -1,0 +1,23 @@
+// Indonésio de app/src/features/onboarding/strings.ts. A revisar por falante nativo.
+export const idOnboarding = {
+  hint: 'Geser pelita untuk menerangi teks',
+  start: 'Mulai',
+  skip: 'Lewati',
+  finale: 'Masuk ke Sensus',
+  stepCount: (n: number, total: number) => `Langkah ${n} dari ${total}`,
+  langTitle: 'Pilih bahasa',
+  langHelp: 'Sensus akan memakai bahasa ini untuk teks dan rekomendasi. Anda dapat mengubahnya nanti di Pengaturan.',
+  bibleTitle: 'Alkitab untuk dibaca',
+  bibleHelp: 'Pilih terjemahan teksnya. Bíblia Livre dan KJV sudah ada di aplikasi.',
+  bibleRecommended: 'Direkomendasikan untuk bahasa Anda',
+  bibleOthers: 'Lainnya dalam bahasa ini',
+  bibleNone: 'Belum ada Alkitab bebas yang direkomendasikan untuk bahasa ini. Anda dapat melihat yang lain di Pengaturan.',
+  bibleOffline: 'Daftar Alkitab belum dapat dimuat sekarang. Anda bisa mengunduh satu nanti di Pengaturan.',
+  traditionsTitle: 'Aliran teologis',
+  traditionsHelp: 'Komentar dan tafsir mana yang ingin Anda lihat dalam studi?',
+  traditionsNote: 'Anda dapat mengubahnya di Pengaturan.',
+  aiTitle: 'Asisten untuk bertanya',
+  aiBody: 'AI merangkum setiap bagian dan menjawab pertanyaan Anda dengan mengutip sumber Sensus. Tidak ada hasil AI yang disimpan di perangkat.',
+  aiConfigure: 'Atur sekarang',
+  revisit: 'Lihat pengenalan lagi',
+};
