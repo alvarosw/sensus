@@ -13,6 +13,7 @@ import {
   timelineEventOf,
   timelineMembers,
 } from './timeline-sql';
+import type { AppLang } from '../domain/locale';
 
 /** Quantos eventos de contexto entram antes e depois do trecho na linha do tempo. */
 const TIMELINE_CONTEXT = 2;
@@ -22,7 +23,7 @@ const TIMELINE_CONTEXT = 2;
  * mais até 2 eventos de contexto antes e 2 depois na cronologia global (inRange=false), para situar o trecho.
  * Sem eventos no intervalo, devolve lista vazia (sem contexto). Banco sem eventos (ex.: o leitor) também dá vazia.
  */
-export async function timelineEvents(db: Db, range: VerseRange): Promise<TimelineEvent[]> {
+export async function timelineEvents(db: Db, range: VerseRange, lang: AppLang): Promise<TimelineEvent[]> {
   const inRange = await all<EventRow>(
     db,
     `${EVENT_SELECT} WHERE e.type = 'event'
@@ -55,7 +56,7 @@ export async function timelineEvents(db: Db, range: VerseRange): Promise<Timelin
     .map((row) => timelineEventOf(row))
     .filter((e): e is TimelineLineEvent => e !== null)
     .map((e) => ({ ...e, inRange: false }));
-  return attachEventNames(db, [...events, ...context].sort(bySortKey));
+  return attachEventNames(db, [...events, ...context].sort(bySortKey), lang);
 }
 
 /** Agregado das linhas (ver timelineLines), com filtro opcional pelo nome: a base da lista e da busca. */
@@ -74,16 +75,16 @@ export function timelineLinesWhere(db: Db, nameTerms: readonly string[], ptIds: 
 }
 
 /** Linhas do tempo da cronologia completa: períodos, pessoas e lugares com ao menos um evento, mais frequentes primeiro. */
-export async function timelineLines(db: Db): Promise<TimelineLine[]> {
+export async function timelineLines(db: Db, lang: AppLang): Promise<TimelineLine[]> {
   const lines = (await timelineLinesWhere(db, [])).map(lineOf);
-  return attachNames(db, lines, (l) => l.id);
+  return attachNames(db, lines, (l) => l.id, lang);
 }
 
 /**
  * Eventos de uma linha do tempo (id = TimelineLine.id), em ordem de sortKey, com participantes e o primeiro e o
  * último versículo do evento. Linha inexistente devolve lista vazia.
  */
-export async function timelineLineEvents(db: Db, lineId: string): Promise<TimelineLineEvent[]> {
+export async function timelineLineEvents(db: Db, lineId: string, lang: AppLang): Promise<TimelineLineEvent[]> {
   const m = timelineMembers();
   const rows = await all<EventRow>(
     db,
@@ -96,16 +97,16 @@ export async function timelineLineEvents(db: Db, lineId: string): Promise<Timeli
     rows
       .map((row) => timelineEventOf(row))
       .filter((e): e is TimelineLineEvent => e !== null)
-      .sort(bySortKey),
+      .sort(bySortKey), lang
   );
 }
 
 /** Um evento pelo cite_id (ex.: o evento do trecho, para abrir a cronologia nele). Null se não for evento válido. */
-export async function timelineEvent(db: Db, citeId: string): Promise<TimelineLineEvent | null> {
+export async function timelineEvent(db: Db, citeId: string, lang: AppLang): Promise<TimelineLineEvent | null> {
   const row = await first<EventRow>(db, `${EVENT_SELECT} WHERE e.type = 'event' AND e.cite_id = ?`, [citeId]);
   const event = row ? timelineEventOf(row) : null;
   if (!event) return null;
-  const [named] = await attachEventNames(db, [event]);
+  const [named] = await attachEventNames(db, [event], lang);
   return named!;
 }
 
@@ -113,14 +114,14 @@ export async function timelineEvent(db: Db, citeId: string): Promise<TimelineLin
  * Todos os eventos da cronologia, em ordem (são poucas centenas). Base da busca que casa a tradução já em cache:
  * a busca no banco só enxerga o original.
  */
-export async function timelineAllEvents(db: Db): Promise<TimelineLineEvent[]> {
+export async function timelineAllEvents(db: Db, lang: AppLang): Promise<TimelineLineEvent[]> {
   const rows = await all<EventRow>(db, `${EVENT_SELECT} WHERE e.type = 'event'`);
   return attachEventNames(
     db,
     rows
       .map((row) => timelineEventOf(row))
       .filter((e): e is TimelineLineEvent => e !== null)
-      .sort(bySortKey),
+      .sort(bySortKey), lang
   );
 }
 
@@ -128,7 +129,7 @@ export async function timelineAllEvents(db: Db): Promise<TimelineLineEvent[]> {
  * Linhas do tempo em que cada evento aparece (chave: cite_id do evento). Eventos sem linha não entram no mapa.
  * Usado na prévia ("Também em") e na busca.
  */
-export async function timelineMemberships(db: Db, eventIds: readonly string[]): Promise<Map<string, TimelineLineRef[]>> {
+export async function timelineMemberships(db: Db, eventIds: readonly string[], lang: AppLang): Promise<Map<string, TimelineLineRef[]>> {
   const out = new Map<string, TimelineLineRef[]>();
   for (const part of chunks([...new Set(eventIds)], 400)) {
     const m = timelineMembers();
@@ -147,7 +148,7 @@ export async function timelineMemberships(db: Db, eventIds: readonly string[]): 
     }
   }
   // Nome pt de cada linha (pessoa ou lugar); a chave do mapa segue o cite_id do evento.
-  const names = await ptNames(db, [...out.values()].flat().map((r) => r.id));
+  const names = await ptNames(db, [...out.values()].flat().map((r) => r.id), lang);
   for (const list of out.values()) for (const r of list) r.namePt = names.get(r.id) ?? null;
   return out;
 }

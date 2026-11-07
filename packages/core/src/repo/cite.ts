@@ -5,12 +5,19 @@ import { type Db, first, COMMENTARY_COLS, DICTIONARY_COLS, ENTITY_COLS, LEXICON_
 import { attachNames } from './names';
 import { attachDescriptions } from './entity-text';
 import { isCommentaryVisible } from './commentary';
+import type { AppLang } from '../domain/locale';
+import { ENTITY_NAME_LANG } from '../domain/names';
 
 /**
  * Resolve um cite_id ao registro de origem. Retorna null se o prefixo ou o id não existir. Comentário escondido pela
  * preferência também devolve null (a IA não o recebe, então não deve conseguir abri-lo).
  */
-export async function resolveCite(db: Db, citeId: string, pref: CommentaryPreference = ALL_COMMENTARIES): Promise<CitableRecord | null> {
+export async function resolveCite(
+  db: Db,
+  citeId: string,
+  pref: CommentaryPreference = ALL_COMMENTARIES,
+  lang: AppLang = ENTITY_NAME_LANG,
+): Promise<CitableRecord | null> {
   const colon = citeId.indexOf(':');
   if (colon <= 0) return null;
   switch (citeId.slice(0, colon)) {
@@ -63,8 +70,8 @@ export async function resolveCite(db: Db, citeId: string, pref: CommentaryPrefer
     case 'ent': {
       const row = await first<Entity>(db, `SELECT ${ENTITY_COLS} FROM entity WHERE cite_id = ?`, [citeId]);
       if (!row) return null;
-      const [named] = await attachNames(db, [row], (r) => r.cite_id);
-      const [record] = await attachDescriptions(db, [named!], (r) => r.cite_id);
+      const [named] = await attachNames(db, [row], (r) => r.cite_id, lang);
+      const [record] = await attachDescriptions(db, [named!], (r) => r.cite_id, lang);
       return { table: 'entity', record: record! };
     }
     default:

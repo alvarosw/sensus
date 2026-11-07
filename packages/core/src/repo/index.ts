@@ -29,6 +29,8 @@ import * as timeline from './timeline';
 import * as timelineSearch from './timeline-search';
 import * as cite from './cite';
 import { ALL_COMMENTARIES, parseCommentaryPreference, type CommentaryPreference } from '../domain/source-prefs';
+import type { AppLang } from '../domain/locale';
+import { ENTITY_NAME_LANG } from '../domain/names';
 
 export { DEFAULT_TEXT_SOURCE } from './text';
 export type { XRefWithTexts } from './text';
@@ -43,16 +45,37 @@ export interface RepoOptions {
    * e alvos de referências cruzadas). Sem a opção, tudo vai ao banco principal.
    */
   textDriver?: (sourceId: string) => SqlDriver | null;
+  /**
+   * Idioma dos nomes e descrições em outra língua que a fonte (tabelas entity_name e entity_text). Padrão pt, o único
+   * que o banco traz hoje. Sem linhas nesse idioma, as consultas devolvem null e vale o texto da fonte (inglês).
+   */
+  nameLang?: AppLang;
 }
 
 export class Repo {
   /** Preferência de comentários: filtra toda consulta que devolve comentários (ver setCommentaryPreference). */
   private commentaryPref: CommentaryPreference = ALL_COMMENTARIES;
+  /** Idioma dos nomes e descrições (ver RepoOptions.nameLang). */
+  private nameLang: AppLang;
 
   constructor(
     private readonly driver: SqlDriver,
     private readonly options: RepoOptions = {},
-  ) {}
+  ) {
+    this.nameLang = options.nameLang ?? ENTITY_NAME_LANG;
+  }
+
+  /**
+   * Idioma dos nomes e descrições que as consultas devolvem (pessoas, lugares, linha do tempo, citações). Quem guarda o
+   * repositório troca quando o idioma do app muda (ver app/src/data/active-db.ts).
+   */
+  setNameLang(lang: AppLang): void {
+    this.nameLang = lang;
+  }
+
+  getNameLang(): AppLang {
+    return this.nameLang;
+  }
 
   /** Driver do banco que guarda o texto da fonte: o dela (se houver `textDriver`) ou o principal. */
   private textDb(sourceId: string): SqlDriver {
@@ -165,52 +188,52 @@ export class Repo {
 
   /** Pessoas, lugares e grupos ligados a versículos do intervalo, com o total de referências de cada um. */
   entities(range: VerseRange): Promise<entities.EntityHit[]> {
-    return entities.entities(this.driver, range);
+    return entities.entities(this.driver, range, this.nameLang);
   }
 
   /** Lugares com coordenadas ligados a versículos do intervalo: uma linha por (lugar, versículo). */
   placesInRange(range: VerseRange): Promise<entities.PlaceVerseHit[]> {
-    return entities.placesInRange(this.driver, range);
+    return entities.placesInRange(this.driver, range, this.nameLang);
   }
 
   /** Linha do tempo do trecho: eventos no intervalo mais 2 de contexto antes e depois. */
   timelineEvents(range: VerseRange): Promise<TimelineEvent[]> {
-    return timeline.timelineEvents(this.driver, range);
+    return timeline.timelineEvents(this.driver, range, this.nameLang);
   }
 
   /** Linhas do tempo da cronologia completa, mais frequentes primeiro. */
   timelineLines(): Promise<TimelineLine[]> {
-    return timeline.timelineLines(this.driver);
+    return timeline.timelineLines(this.driver, this.nameLang);
   }
 
   /** Eventos de uma linha do tempo (id = TimelineLine.id), em ordem de sortKey. */
   timelineLineEvents(lineId: string): Promise<TimelineLineEvent[]> {
-    return timeline.timelineLineEvents(this.driver, lineId);
+    return timeline.timelineLineEvents(this.driver, lineId, this.nameLang);
   }
 
   /** Um evento pelo cite_id. Null se não for evento válido. */
   timelineEvent(citeId: string): Promise<TimelineLineEvent | null> {
-    return timeline.timelineEvent(this.driver, citeId);
+    return timeline.timelineEvent(this.driver, citeId, this.nameLang);
   }
 
   /** Todos os eventos da cronologia, em ordem (base da busca sobre a tradução em cache). */
   timelineAllEvents(): Promise<TimelineLineEvent[]> {
-    return timeline.timelineAllEvents(this.driver);
+    return timeline.timelineAllEvents(this.driver, this.nameLang);
   }
 
   /** Linhas do tempo em que cada evento aparece (chave: cite_id do evento). */
   timelineMemberships(eventIds: readonly string[]): Promise<Map<string, TimelineLineRef[]>> {
-    return timeline.timelineMemberships(this.driver, eventIds);
+    return timeline.timelineMemberships(this.driver, eventIds, this.nameLang);
   }
 
   /** Busca na cronologia completa (linhas e eventos). */
   timelineSearch(query: string): Promise<TimelineSearchResult> {
-    return timelineSearch.timelineSearch(this.driver, query);
+    return timelineSearch.timelineSearch(this.driver, query, this.nameLang);
   }
 
   /** Linhas do tempo para o seletor "+ Linha", no máximo `limit`. */
   timelineSearchLines(query: string, limit = 30): Promise<TimelineLine[]> {
-    return timelineSearch.timelineSearchLines(this.driver, query, limit);
+    return timelineSearch.timelineSearchLines(this.driver, query, this.nameLang, limit);
   }
 
   /** Posições cronológicas (sortKey) de todos os eventos. */
@@ -225,6 +248,6 @@ export class Repo {
 
   /** Resolve um cite_id ao registro de origem. Retorna null se o prefixo ou o id não existir. */
   resolveCite(citeId: string): Promise<CitableRecord | null> {
-    return cite.resolveCite(this.driver, citeId, this.commentaryPref);
+    return cite.resolveCite(this.driver, citeId, this.commentaryPref, this.nameLang);
   }
 }
