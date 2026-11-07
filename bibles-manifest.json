@@ -1,0 +1,326 @@
+{
+  "catalog_version": "2026.11.06",
+  "schema_version": 1,
+  "bibles": [
+    {
+      "id": "engwebp",
+      "abbr": "WEB",
+      "name": "World English Bible",
+      "lang": "en",
+      "license": "Public Domain",
+      "license_url": null,
+      "attribution": "World English Bible (WEB), domínio público (eBible.org). \"World English Bible\" é marca do eBible.org; texto alterado não deve usar o nome.",
+      "url": "https://ebible.org/find/details.php?id=engwebp",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 1,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-engwebp-2026.11.06.zip",
+        "sha256": "afebebd810b0215465251ef1f9d30ae6d2dd0f105adc780a8679f1d063562cd0",
+        "size": 2376431,
+        "uncompressed_size": 7663616
+      }
+    },
+    {
+      "id": "kjv",
+      "abbr": "KJV",
+      "name": "King James Version (SWORD)",
+      "lang": "en",
+      "license": "GPL",
+      "license_url": "https://www.crosswire.org/",
+      "attribution": "Texto KJV do módulo SWORD 'KJV' (CrossWire Bible Society); texto de domínio público.",
+      "url": "https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/KJV.zip",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 2,
+      "bundled": true
+    },
+    {
+      "id": "engasv",
+      "abbr": "ASV",
+      "name": "American Standard Version (1901)",
+      "lang": "en",
+      "license": "Public Domain",
+      "license_url": null,
+      "attribution": "American Standard Version (1901), domínio público (eBible.org).",
+      "url": "https://ebible.org/find/details.php?id=eng-asv",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 3,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-engasv-2026.11.06.zip",
+        "sha256": "3edcfa505d46f3f1f3b9de6196970de883442f1cf7136c5ba40a74a0342264dd",
+        "size": 2344890,
+        "uncompressed_size": 7491584
+      }
+    },
+    {
+      "id": "blivre",
+      "abbr": "BLivre",
+      "name": "Bíblia Livre",
+      "lang": "pt",
+      "license": "CC-BY-3.0-BR",
+      "license_url": "http://creativecommons.org/licenses/by/3.0/br/",
+      "attribution": "Todas as Escrituras em português citadas são da Bíblia Livre (BLIVRE), Copyright © Diego Santos, Mario Sérgio, e Marco Teles, http://sites.google.com/site/biblialivre/ - fevereiro de 2018. Licença Creative Commons Atribuição 3.0 Brasil.",
+      "url": "https://ebible.org/find/details.php?id=porbr2018",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 1,
+      "bundled": true
+    },
+    {
+      "id": "spablm",
+      "abbr": "BLM",
+      "name": "Santa Biblia libre para el mundo",
+      "lang": "es",
+      "license": "Public Domain",
+      "license_url": null,
+      "attribution": "Santa Biblia libre para el mundo, domínio público (eBible.org).",
+      "url": "https://ebible.org/find/details.php?id=spablm",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 1,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-spablm-2026.11.06.zip",
+        "sha256": "859c61acbe185ec051cd9fd175642276438ba25052e6ed2044dc907538e21ab6",
+        "size": 2426753,
+        "uncompressed_size": 7512064
+      }
+    },
+    {
+      "id": "spavbl",
+      "abbr": "VBL",
+      "name": "Versión Biblia Libre",
+      "lang": "es",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Versión Biblia Libre, copyright © 2018-2020 Jonathan Gallagher y Shelly Barrios de Avila, licença CC BY-SA 4.0 (eBible.org).",
+      "url": "https://ebible.org/find/details.php?id=spavbl",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 2,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-spavbl-2026.11.06.zip",
+        "sha256": "f6830c2449bea6216f8efdd17ede3c91b35e735225f64a0d466614578c923c49",
+        "size": 2573912,
+        "uncompressed_size": 7925760
+      }
+    },
+    {
+      "id": "frasbl",
+      "abbr": "SBL",
+      "name": "Sainte Bible libre pour le monde",
+      "lang": "fr",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "attribution": "Sainte Bible libre pour le monde, domínio público (CC0 1.0) (eBible.org).",
+      "url": "https://ebible.org/find/details.php?id=frasbl",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 1,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-frasbl-2026.11.06.zip",
+        "sha256": "2efaad71870accd24ed3347cfabe8803e5cbdda42d4d3ff3518117bcc92b3827",
+        "size": 2525421,
+        "uncompressed_size": 7872512
+      }
+    },
+    {
+      "id": "deu1912",
+      "abbr": "LB1912",
+      "name": "Lutherbibel 1912",
+      "lang": "de",
+      "license": "Public Domain",
+      "license_url": null,
+      "attribution": "Lutherbibel 1912, domínio público (eBible.org).",
+      "url": "https://ebible.org/find/details.php?id=deu1912",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 1,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-deu1912-2026.11.06.zip",
+        "sha256": "13b1fdc5c108b784ed32895006dda04bbbbf62e6ea20f1820ae172d4b223b402",
+        "size": 2397140,
+        "uncompressed_size": 7294976
+      }
+    },
+    {
+      "id": "deuelo",
+      "abbr": "ELO",
+      "name": "Elberfelder 1905 (não revisada)",
+      "lang": "de",
+      "license": "Public Domain",
+      "license_url": null,
+      "attribution": "Elberfelder 1905 (não revisada), domínio público (eBible.org).",
+      "url": "https://ebible.org/find/details.php?id=deuelo",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 2,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-deuelo-2026.11.06.zip",
+        "sha256": "45570da14cca5c07de21673d44d4c9a33ce2c529a61dd79f9d6a3ce79f72f799",
+        "size": 2446671,
+        "uncompressed_size": 7462912
+      }
+    },
+    {
+      "id": "arbvd",
+      "abbr": "VD",
+      "name": "Van Dyck",
+      "lang": "ar",
+      "license": "Public Domain",
+      "license_url": null,
+      "attribution": "Van Dyck (Smith-Van Dyke), domínio público (eBible.org).",
+      "url": "https://ebible.org/find/details.php?id=arb-vd",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 1,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-arbvd-2026.11.06.zip",
+        "sha256": "b0a2fb2439ee209ade73605dd494f77f0e83c3cea254a333ac7c46b60546d8d5",
+        "size": 2735269,
+        "uncompressed_size": 11067392
+      }
+    },
+    {
+      "id": "hin2017",
+      "abbr": "IRV-HI",
+      "name": "IRV Hindi 2019",
+      "lang": "hi",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Indian Revised Version, hindi (2019), copyright © 2017-2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org).",
+      "url": "https://ebible.org/find/details.php?id=hin2017",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 1,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-hin2017-2026.11.06.zip",
+        "sha256": "38fa295e4dce2cf1dd21f1abb01e4dc320f9516c6d34baecc990551e72db22de",
+        "size": 2972920,
+        "uncompressed_size": 13852672
+      }
+    },
+    {
+      "id": "benobcv",
+      "abbr": "OBCV",
+      "name": "Open Bengali Contemporary Version",
+      "lang": "bn",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Open Bengali Contemporary Version, Copyright © 2007, 2017, 2019 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org).",
+      "url": "https://ebible.org/find/details.php?id=benobcv",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 1,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-benobcv-2026.11.06.zip",
+        "sha256": "ddcee2fc8601eeb11da531d4d637be4fe22878058c3b6c984702bbd1f6a235bb",
+        "size": 3068015,
+        "uncompressed_size": 14950400
+      }
+    },
+    {
+      "id": "urdoucv",
+      "abbr": "OUCV",
+      "name": "Urdu Contemporary Version (aberta)",
+      "lang": "ur",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Urdu Contemporary Version (Biblica), copyright © 1999, 2005, 2022, 2024 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org).",
+      "url": "https://ebible.org/find/details.php?id=urdoucv",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 1,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-urdoucv-2026.11.06.zip",
+        "sha256": "40d6910d91aa9608df74b81a7b8e833e86679493ea8a01aad6f9378d519c99f3",
+        "size": 3018449,
+        "uncompressed_size": 11689984
+      }
+    },
+    {
+      "id": "urdirv",
+      "abbr": "IRV-UR",
+      "name": "IRV Urdu 2019",
+      "lang": "ur",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Indian Revised Version, urdu (2019), copyright © 2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org).",
+      "url": "https://ebible.org/find/details.php?id=urd",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 2,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-urdirv-2026.11.06.zip",
+        "sha256": "1be3196131a10269ea19648bc77ecd8b7c7e66a7671d9074b348e9c76f45ae1e",
+        "size": 2858692,
+        "uncompressed_size": 13377536
+      }
+    },
+    {
+      "id": "jpnm",
+      "abbr": "FB",
+      "name": "Freedom Bible (japonês)",
+      "lang": "ja",
+      "license": "Public Domain",
+      "license_url": null,
+      "attribution": "Freedom Bible (japonês), sem direitos autorais declarados pelo eBible.org (\"この聖書翻訳には著作権が設定されていません\").",
+      "url": "https://ebible.org/find/details.php?id=jpnm",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 1,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-jpnm-2026.11.06.zip",
+        "sha256": "8b81363e146e3b2108a16027e3cdd941e6d7018b17468c35d7fc577c6b5dfe3c",
+        "size": 2451384,
+        "uncompressed_size": 8384512
+      }
+    }
+  ]
+}
