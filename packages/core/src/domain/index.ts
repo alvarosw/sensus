@@ -10,3 +10,5 @@ export * from './word';
 export * from './sources';
 export * from './source-prefs';
 export * from './names';
+export * from './locale';
+export * from './book-names.generated';

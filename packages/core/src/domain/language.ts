@@ -3,6 +3,7 @@
 import { BOOK_TABLE, splitVid } from '../refs';
 import type { Token, VerseRange, Vid } from '../types';
 import { LAST_VERSE, bookStartVid, packVid } from './vid';
+import { DEFAULT_APP_LANG, fallbackChain, type AppLang } from './locale';
 
 export type Lang = 'grc' | 'hbo' | 'arc';
 export type Corpus = 'gnt' | 'hot';
@@ -177,8 +178,19 @@ export function editionLegend(editions: readonly string[]): string {
     .join(' · ');
 }
 
-export function testamentLabel(testament: Testament): 'AT' | 'NT' {
-  return testament === 'OT' ? 'AT' : 'NT';
+/** Rótulos do testamento por idioma. Idioma sem linha aqui cai no inglês (fallbackChain). */
+const TESTAMENT_LABELS: Partial<Record<AppLang, Record<Testament, string>>> = {
+  pt: { OT: 'AT', NT: 'NT' },
+  en: { OT: 'OT', NT: 'NT' },
+};
+
+/** Rótulo curto do testamento: "AT"/"NT" em pt (padrão), "OT"/"NT" em inglês. */
+export function testamentLabel(testament: Testament, lang: AppLang = DEFAULT_APP_LANG): string {
+  for (const l of fallbackChain(lang)) {
+    const row = TESTAMENT_LABELS[l];
+    if (row) return row[testament];
+  }
+  return testament;
 }
 
 /** Corpus de um cite_id de token ("tok:gnt:50002007:30" -> "gnt"); null para outros ids. */

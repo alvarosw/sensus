@@ -1,11 +1,11 @@
-// Tabela de textos da interface. Somente pt-BR por enquanto; toda string de UI
-// passa por t(). Para outro idioma, criar outra tabela com as mesmas chaves.
+// Textos compartilhados da interface (raiz, banco, Configurações e tela de estado). Cada área com textos próprios tem
+// seu strings.ts (ver localized.ts). O pt daqui é a fonte do tipo de StringKey; o inglês fica em locales/en/shell.ts.
+import { currentLang } from './lang-store';
+import { resolveKey, type LocaleTables } from './localized';
+import { enShell } from './locales/en/shell';
 
-/** Locale de exibição (formatação de datas, etc.). */
-export const APP_LOCALE = 'pt-BR';
-
-/** Código de idioma usado como destino em links de tradução (Google Translate). */
-export const APP_LANG = 'pt';
+export { currentBcp47, currentLang, useLang, useLangStore } from './lang-store';
+export { localized, resolveKey, type LocaleTables } from './localized';
 
 const pt = {
   'app.name': 'Sensus',
@@ -174,13 +174,17 @@ const pt = {
   'settings.status': 'Estado atual: {state}',
   'settings.stateReady': 'pronto para gerar resumos',
   'settings.stateMissing': 'sem chave configurada',
-} as const;
+};
 
 export type StringKey = keyof typeof pt;
 
-/** Traduz uma chave, substituindo {variaveis}. */
+const en: Record<StringKey, string> = enShell;
+
+const SHELL: LocaleTables<Record<StringKey, string>> = { pt, en };
+
+/** Traduz uma chave no idioma atual (fallback: inglês, português), substituindo {variaveis}. */
 export function t(key: StringKey, vars?: Record<string, string | number>): string {
-  let text: string = pt[key];
+  let text = String(resolveKey(SHELL, currentLang(), key) ?? key);
   if (vars) {
     for (const [name, value] of Object.entries(vars)) {
       text = text.split(`{${name}}`).join(String(value));

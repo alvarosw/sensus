@@ -1,5 +1,7 @@
+import { localized } from '../i18n';
+import { enSettings } from '../i18n/locales/en/settings';
 // Textos das telas de Configurações (pt-BR). Mesmas frases da proposta aprovada (docs/design/settings-proposal.html).
-export const SETTINGS_COPY = {
+const ptSettingsCopy = {
   title: 'Configurações',
   back: 'Voltar',
   aiTitle: 'Assistente de IA',
@@ -10,6 +12,9 @@ export const SETTINGS_COPY = {
   rowAi: 'Assistente de IA',
   rowLook: 'Aparência e leitura',
   rowAbout: 'Sobre e licenças',
+  rowLanguage: 'Idioma',
+  langTitle: 'Idioma',
+  langInUse: 'Em uso',
   gearNote: 'Entrada: o botão "Configurações" ganha a engrenagem à esquerda do rótulo.',
 
   // Assistente: seções
@@ -125,4 +130,5 @@ export const SETTINGS_COPY = {
   sourceLabel: 'Origem',
   noSources: 'Nenhuma fonte encontrada no banco.',
   sourceCount: (n: number) => `${n} ${n === 1 ? 'fonte' : 'fontes'}`,
-} as const;
+};
+export const SETTINGS_COPY = localized<typeof ptSettingsCopy>({ pt: ptSettingsCopy, en: enSettings });

@@ -1,8 +1,10 @@
+import { localized } from '../../i18n';
+import { enMaps } from '../../i18n/locales/en/maps';
 // Textos dos mapas (pt-BR). Nomes de lugares vêm do banco, em inglês, e não passam por aqui.
 import type { ConfidenceBand } from '@sensus/core';
 import { ATTRIBUTION } from './styles/sensus-map-style';
 
-export const MAPS = {
+const ptMaps = {
   title: 'Mapa',
   attribution: ATTRIBUTION,
   loading: 'Carregando o mapa…',
@@ -30,7 +32,8 @@ export const MAPS = {
   close: 'Fechar',
   place: 'Lugar',
   placeHint: 'Toque em um marcador para ver o lugar, a identificação e as passagens.',
-} as const;
+};
+export const MAPS = localized<typeof ptMaps>({ pt: ptMaps, en: { ...enMaps, attribution: ptMaps.attribution } });
 
 /** Atribuições dos mapas exibidas em "Sobre e licenças" (ver DATA_LICENSES.md, seção de mapas). */
 export const MAP_ATTRIBUTIONS: readonly string[] = [

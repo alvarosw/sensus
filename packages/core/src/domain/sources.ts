@@ -3,6 +3,7 @@
 // Fonte nova: uma entrada em SOURCES (e, se a tradição for nova, em TRADITIONS) + linha em DATA_LICENSES.md.
 // O teste packages/core/test/domain-sources.test.ts falha se faltar rótulo.
 import type { Commentary, Source } from '../types';
+import { DEFAULT_APP_LANG, fallbackChain, type AppLang } from './locale';
 
 export type SourceRole =
   | 'text' // tradução corrida (BLivre, KJV)
@@ -109,21 +110,24 @@ export function placeSourceRank(sourceId: string): number {
   return i < 0 ? 9 : i;
 }
 
-/** Rótulos pt-BR das tradições (o valor vem do pipeline, campo `source.tradition`). */
-export const TRADITIONS: Readonly<Record<string, { pt: string }>> = {
-  reformed: { pt: 'reformada' },
-  'reformed-baptist': { pt: 'batista reformada' },
-  presbyterian: { pt: 'presbiteriana' },
-  methodist: { pt: 'metodista' },
-  baptist: { pt: 'batista' },
-  dispensational: { pt: 'dispensacionalista' },
-  patristic: { pt: 'patrística' },
-  adventist: { pt: 'adventista' },
-  catholic: { pt: 'católica' },
-  lutheran: { pt: 'luterana' },
-  anglican: { pt: 'anglicana' },
-  congregational: { pt: 'congregacional' },
-  restoration: { pt: 'restauracionista' },
+/**
+ * Rótulos das tradições por idioma (o valor vem do pipeline, campo `source.tradition`). `pt` é obrigatório; `en` cobre
+ * os demais idiomas por fallback (traditionLabel).
+ */
+export const TRADITIONS: Readonly<Record<string, { pt: string; en?: string }>> = {
+  reformed: { pt: 'reformada', en: 'Reformed' },
+  'reformed-baptist': { pt: 'batista reformada', en: 'Reformed Baptist' },
+  presbyterian: { pt: 'presbiteriana', en: 'Presbyterian' },
+  methodist: { pt: 'metodista', en: 'Methodist' },
+  baptist: { pt: 'batista', en: 'Baptist' },
+  dispensational: { pt: 'dispensacionalista', en: 'Dispensationalist' },
+  patristic: { pt: 'patrística', en: 'Patristic' },
+  adventist: { pt: 'adventista', en: 'Adventist' },
+  catholic: { pt: 'católica', en: 'Catholic' },
+  lutheran: { pt: 'luterana', en: 'Lutheran' },
+  anglican: { pt: 'anglicana', en: 'Anglican' },
+  congregational: { pt: 'congregacional', en: 'Congregational' },
+  restoration: { pt: 'restauracionista', en: 'Restorationist' },
 };
 
 /** Pais da Igreja: nome no primeiro trecho do comentário ("John Chrysostom — Homily...") -> nome em português. */
@@ -201,10 +205,19 @@ export function commentatorOf(source: Source | undefined, commentary: Commentary
   return author.replace(/\s*\(.*$/, '').split(/[,;]/)[0]!.trim().slice(0, 40);
 }
 
-/** Rótulo pt-BR da tradição; tradição fora do registro segue como veio. */
-export function traditionLabel(id: string | null | undefined): string {
+/**
+ * Rótulo da tradição no idioma pedido (padrão pt). Sem rótulo nesse idioma, cai no inglês e depois no português;
+ * tradição fora do registro segue como veio.
+ */
+export function traditionLabel(id: string | null | undefined, lang: AppLang = DEFAULT_APP_LANG): string {
   if (!id) return '';
-  return own(TRADITIONS, id)?.pt ?? id;
+  const entry = own(TRADITIONS, id);
+  if (!entry) return id;
+  for (const l of fallbackChain(lang)) {
+    const text = l === 'pt' ? entry.pt : l === 'en' ? entry.en : undefined;
+    if (text) return text;
+  }
+  return entry.pt;
 }
 
 /** Código principal de um idioma BCP-47 em minúsculas ("en-US" -> "en"); null sem idioma. */

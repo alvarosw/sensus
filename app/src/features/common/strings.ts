@@ -1,8 +1,10 @@
+import { localized } from '../../i18n';
+import { enChat, enSrc, enToast, enSettingsCommon } from '../../i18n/locales/en/common';
 // Textos (pt-BR) do chat, das prévias/painéis de fonte, do aviso e das configurações.
 // Ficam aqui porque i18n/index.ts é compartilhado com outras telas.
 import { testamentLabel, type Testament } from '@sensus/core';
 
-export const CHAT = {
+const ptChat = {
   title: 'Perguntas',
   subtitle: 'fica só nesta sessão',
   minimize: 'Minimizar perguntas',
@@ -30,9 +32,10 @@ export const CHAT = {
   retry: 'Tentar de novo',
   fallbackQuestions: ['Qual é a ideia central deste trecho?', 'O que as fontes dizem sobre este trecho?'],
   close: 'Fechar',
-} as const;
+};
+export const CHAT = localized<typeof ptChat>({ pt: ptChat, en: enChat });
 
-export const SRC = {
+const ptSrc = {
   open: 'Abrir fonte completa',
   openWord: 'Análise completa',
   ask: 'Perguntar sobre isto',
@@ -103,17 +106,20 @@ export const SRC = {
     group: 'Grupo',
   },
   entityTypes: { person: 'Pessoa', place: 'Lugar', event: 'Evento', group: 'Grupo', other: 'Entidade' },
-} as const;
+};
+export const SRC = localized<typeof ptSrc>({ pt: ptSrc, en: enSrc });
 
-export const TOAST = {
+const ptToast = {
   action: 'Desfazer',
-} as const;
+};
+export const TOAST = localized<typeof ptToast>({ pt: ptToast, en: enToast });
 
-export const SETTINGS = {
+const ptSettings = {
   appearance: 'Aparência',
   theme: 'Tema',
   light: 'Claro',
   dark: 'Escuro',
   system: 'Sistema',
   demoHint: 'Demonstração offline: respostas gravadas, sem chave nem rede.',
-} as const;
+};
+export const SETTINGS = localized<typeof ptSettings>({ pt: ptSettings, en: enSettingsCommon });

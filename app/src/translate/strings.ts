@@ -1,5 +1,7 @@
+import { localized } from '../i18n';
+import { enTr } from '../i18n/locales/en/translate';
 // Textos da tradução automática (pt-BR). Ficam aqui para não mexer nos arquivos de texto das telas.
-export const TR = {
+const ptTr = {
   offerQuestion: 'Traduzir textos em inglês automaticamente?',
   offerHelp: '(baixa ~30 MB, funciona offline)',
   offerYes: 'Ativar',
@@ -33,4 +35,5 @@ export const TR = {
   descriptionShowOriginal: 'Ver original',
   descriptionShowPt: 'Ver em português',
   descriptionOriginalNote: 'Mostrando o original em inglês',
-} as const;
+};
+export const TR = localized<typeof ptTr>({ pt: ptTr, en: enTr });
