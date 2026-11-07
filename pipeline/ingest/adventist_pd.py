@@ -312,6 +312,11 @@ SEGUNDA_LEVA = ("egw-desire-of-ages", "haskell-daniel", "haskell-seer", "waggone
                 "waggoner-christ", "andrews-sabbath", "smith-us-prophecy", "smith-sanctuary")
 WORKS = [replace(w, citacoes=w.source_id in SEGUNDA_LEVA) for w in WORKS]
 
+# Fora da execução padrão e do banco: nas obras de Haskell, citações bíblicas de margem curtas, perguntas de estudo e
+# fragmentos de OCR ainda passam como comentário (amostra de novembro de 2026: ~1 em 3 trechos). Rodar à mão
+# (`adventist_pd.py haskell-daniel`) só para trabalhar na limpeza; a fonte volta ao registro do núcleo quando passar.
+PENDENTES = ("haskell-daniel", "haskell-seer")
+
 
 RUNNING_CHAPTER = re.compile(r"^\s*\d*\s*CHAPTER\.?\s+(\d{1,2}),\s+VERSES?\b.*$")
 
@@ -942,6 +947,8 @@ def main():
     only = set(sys.argv[1].split(",")) if len(sys.argv) > 1 else None
     for work in WORKS:
         if only and work.source_id not in only:
+            continue
+        if not only and work.source_id in PENDENTES:
             continue
         ingest(work)
 

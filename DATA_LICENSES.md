@@ -129,13 +129,16 @@ demais são tradução nossa do título inglês, sem conferir edição brasileir
 | Fonte (id) | Autor | Título e edição | Origem do texto | Condições |
 |---|---|---|---|---|
 | `egw-desire-of-ages` | Ellen G. White (1827-1915) | The Desire of Ages (1898, Pacific Press) | archive.org `desireofages00whit` | Scan sem aviso de 1940 nem de 1964 (os de `desireofages0000elle_w5v8` e `_z5c9` trazem, e não são usados). Rodapés de referência (`^^Zech. 9:16, 17.`) saem do texto e ligam ao parágrafo da página (`page_notes`). "This chapter is based on…" (nota editorial) sai. Parágrafos com `©` (OCR) descartados. |
-| `haskell-daniel` | Stephen N. Haskell (1855-1922) | The Story of Daniel the Prophet (1901, Review and Herald) | archive.org `the-story-of-daniel-the-prophet-1901-review-and-herald-orig` | Comentário versículo a versículo. Títulos de seção "(Chapter 11:3-13)" saem do texto (não ligam versículo). Citações de margem só com texto da Escritura saem. Rodapés de referência como acima. Parágrafos com `©` descartados. |
-| `haskell-seer` | Stephen N. Haskell (1855-1922) | The Story of the Seer of Patmos (1905, Review and Herald) | archive.org `storyofseerofpat01hask` | Rodapés de referência como acima. Parágrafos com `©` descartados. |
 | `waggoner-galatians` | E. J. Waggoner (1855-1916) | The Glad Tidings (1900, Pacific Press; copyright 1900) | Project Gutenberg #63636 | Comentário de Gálatas. Sumário do Gutenberg (capítulos com página) removido. A citação em bloco é da Revised Version, que não casa com a KJV: a ligação é só por referência explícita. |
 | `waggoner-christ` | E. J. Waggoner (1855-1916) | Christ and His Righteousness (1893, Echo Publishing) | archive.org `christ-and-his-righteousness-1893-echo-publishing` | Cabeçalhos de página removidos. Parágrafos com `©` ou `|` (OCR) descartados. |
 | `andrews-sabbath` | John Nevins Andrews (1829-1883) | History of the Sabbath and First Day of the Week (1873) | Project Gutenberg #68714 | Notas de rodapé ligadas pelo marcador, como em `egw-patriarchs`. Sumário e índice do Gutenberg fora do texto. |
 | `smith-us-prophecy` | Uriah Smith (1832-1903) | The United States in the Light of Prophecy (1874) | Project Gutenberg #12364 | Comentário de Apocalipse 13 e Daniel 7. Sem capítulos numerados no texto. |
 | `smith-sanctuary` | Uriah Smith (1832-1903) | The Sanctuary and the Twenty-three Hundred Days of Daniel VIII, 14 (1877) | archive.org `sanctuarytwentyt0000smit` | Dn 8:14 e o santuário. Cabeçalhos "THE SANCTUARY." removidos. O índice remissivo e o catálogo do editor (com anúncios) saem do texto, a partir do cabeçalho "INDEX. 349" (`skip`). Parágrafos com `©` descartados. |
+
+Fora do banco por enquanto: `haskell-daniel` e `haskell-seer` (Stephen N. Haskell, 1855-1922; *The Story of Daniel the
+Prophet*, 1901, e *The Story of the Seer of Patmos*, 1905, Review and Herald, archive.org). Domínio público, mas o
+scan mistura citações bíblicas de margem, perguntas de estudo e fragmentos de OCR no comentário; entram quando a
+limpeza passar na amostragem.
 
 **Examinadas e não incluídas (adventistas e outras):** *Ministry of Healing* (1905/1909): o scan de 1909 não tem
 referência explícita em parágrafo, e o de 1905 traz aviso de 1942 (edição revisada); não está no Gutenberg. *Education*

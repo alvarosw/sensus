@@ -102,8 +102,8 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   // Segunda leva (pipeline/ingest/adventist_pd.py). Títulos pt: O Desejado de Todas as Nações é o nome da edição
   // brasileira; os demais são traduções do título inglês, sem conferir edição brasileira.
   'egw-desire-of-ages': { short: 'O Desejado de Todas as Nações', commentator: 'Ellen G. White · O Desejado de Todas as Nações', role: 'commentary', lang: 'en' },
-  'haskell-daniel': { short: 'Daniel, o Profeta', commentator: 'Stephen N. Haskell · Daniel, o Profeta', role: 'commentary', lang: 'en' },
-  'haskell-seer': { short: 'O Vidente de Patmos', commentator: 'Stephen N. Haskell · O Vidente de Patmos', role: 'commentary', lang: 'en' },
+  // Haskell (Daniel, o Profeta; O Vidente de Patmos): fora do build até a limpeza das citações de margem do scan
+  // (ver pipeline/ingest/adventist_pd.py, PENDENTES). Voltar aqui junto com a staging.
   'waggoner-galatians': { short: 'As Boas Novas', commentator: 'E. J. Waggoner · As Boas Novas', role: 'commentary', lang: 'en' },
   'waggoner-christ': { short: 'Cristo e Sua Justiça', commentator: 'E. J. Waggoner · Cristo e Sua Justiça', role: 'commentary', lang: 'en' },
   'andrews-sabbath': { short: 'História do Sábado', commentator: 'J. N. Andrews · História do Sábado', role: 'commentary', lang: 'en' },
