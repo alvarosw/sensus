@@ -4,8 +4,10 @@ import { describe, expect, it } from 'vitest';
 import { parseBibleCatalog, type BibleCatalog } from '@sensus/core';
 import {
   bibleFileName,
+  bibleHasUpdate,
   bibleIdOfFile,
   bibleRowInfo,
+  compareBibleVersions,
   bibleStagedFileName,
   checkBibleMeta,
   installedBibleIds,
@@ -153,5 +155,36 @@ describe('bibleRowInfo', () => {
   it('Bíblia instalada que saiu do catálogo: sigla e nome do id', () => {
     const info = bibleRowInfo('antiga', catalog());
     expect(info).toMatchObject({ abbr: 'antiga', name: 'antiga', bundled: false, downloadable: false, license: null });
+  });
+});
+
+describe('versões e atualização de Bíblia instalada', () => {
+  it('compara versões número a número (11 é mais nova que 9) e aceita trechos a mais', () => {
+    expect(compareBibleVersions('2026.11.06', '2026.11.06')).toBe(0);
+    expect(compareBibleVersions('2026.11.07', '2026.11.06')).toBeGreaterThan(0);
+    expect(compareBibleVersions('2026.9.1', '2026.11.1')).toBeLessThan(0);
+    expect(compareBibleVersions('2026.11', '2026.11.06')).toBeLessThan(0);
+    expect(compareBibleVersions('2026.11.06.1', '2026.11.06')).toBeGreaterThan(0);
+    expect(compareBibleVersions('2026.11.06-b', '2026.11.06-a')).toBeGreaterThan(0);
+  });
+
+  it('há atualização só com versão do catálogo mais nova que a instalada', () => {
+    const cat = catalog();
+    const rvr = cat.bibles.find((b) => b.id === 'rvr1909');
+    expect(bibleHasUpdate(rvr, '2026.11.05')).toBe(true);
+    expect(bibleHasUpdate(rvr, '2026.11.06')).toBe(false);
+    // Instalada mais nova que o catálogo (ex.: catálogo voltou): não oferece downgrade.
+    expect(bibleHasUpdate(rvr, '2026.12.01')).toBe(false);
+  });
+
+  it('versão instalada desconhecida, Bíblia sem pacote ou ausente do catálogo não geram atualização', () => {
+    const cat = catalog();
+    const nvi = cat.bibles.find((b) => b.id === 'nvi');
+    const blivre = cat.bibles.find((b) => b.id === 'blivre');
+    expect(bibleHasUpdate(nvi, null)).toBe(false);
+    expect(bibleHasUpdate(nvi, undefined)).toBe(false);
+    expect(bibleHasUpdate(nvi, '0')).toBe(true);
+    expect(bibleHasUpdate(blivre, '0')).toBe(false);
+    expect(bibleHasUpdate(null, '0')).toBe(false);
   });
 });

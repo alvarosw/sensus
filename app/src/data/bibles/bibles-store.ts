@@ -5,7 +5,7 @@ import Constants from 'expo-constants';
 import { findBible, textSources, type BibleCatalog } from '@sensus/core';
 import { canStart, IDLE_STATE, isActive, reduce, type MachineEvent, type MachineState } from '../download-machine';
 import { DEFAULT_BIBLE_CATALOG_URL, fetchBibleCatalog, readCachedCatalog } from './catalog';
-import { installedIds, removeBibleFile } from './bible-db';
+import { installedBibleVersion, installedIds, removeBibleFile } from './bible-db';
 import { installBible } from './install';
 import { create } from 'zustand';
 
@@ -20,6 +20,8 @@ interface BiblesState {
   installed: string[];
   /** Máquina de cada instalação em andamento ou com erro (ausente = ociosa). */
   machines: Record<string, MachineState>;
+  /** Versão de cada Bíblia baixada instalada (meta.version do banco); ausente se não souber ler. */
+  versions: Record<string, string>;
   load(): void;
   /** Atualiza o catálogo pela rede. Devolve false se falhou (o cache continua valendo). */
   refreshCatalog(): Promise<boolean>;
@@ -36,7 +38,17 @@ function catalogUrl(): string {
 }
 
 export const useBibles = create<BiblesState>()((set, get) => {
-  const refreshInstalled = () => set({ installed: installedIds(get().catalog) });
+  const refreshInstalled = () => {
+    set({ installed: installedIds(get().catalog) });
+    void refreshVersions();
+  };
+  // Só as baixadas (com pacote no catálogo) têm versão a conferir; BLivre e KJV vêm com o app.
+  const refreshVersions = async () => {
+    const catalog = get().catalog;
+    const ids = get().installed.filter((id) => findBible(catalog, id)?.package);
+    const pairs = await Promise.all(ids.map(async (id) => [id, await installedBibleVersion(id)] as const));
+    set({ versions: Object.fromEntries(pairs.filter((p): p is readonly [string, string] => p[1] !== null)) });
+  };
   const dispatch = (id: string, e: MachineEvent) =>
     set((s) => ({ machines: { ...s.machines, [id]: reduce(s.machines[id] ?? IDLE_STATE, e) } }));
 
@@ -47,6 +59,7 @@ export const useBibles = create<BiblesState>()((set, get) => {
     checking: false,
     installed: [],
     machines: {},
+    versions: {},
 
     load: () => {
       if (get().loaded) return;

@@ -1,5 +1,6 @@
 // Configurações > Bíblias: instaladas (com remover; BLivre e KJV não saem), recomendadas para o idioma do app (a de
 // rank 1 leva o selo) e as demais, agrupadas por idioma. Cada uma baixa, mostra progresso e tenta de novo em erro.
+// Instalada com versão mais nova no catálogo, oferece baixar de novo (a troca é atômica, ver install.ts).
 import { useEffect } from 'react';
 import { Alert, ScrollView, View } from 'react-native';
 import { findBible, recommendBibles, type BibleEntry } from '@sensus/core';
@@ -8,7 +9,7 @@ import { FormButton } from '@/ui/Buttons';
 import { useAppPrefs } from '@/settings/app-prefs';
 import { BibleRow } from '@/data/bibles/BibleRow';
 import { useBibles } from '@/data/bibles/bibles-store';
-import { bibleRowInfo, langName, type BibleRowInfo } from '@/data/bibles/bible-model';
+import { bibleHasUpdate, bibleRowInfo, langName, type BibleRowInfo } from '@/data/bibles/bible-model';
 import { bibleUiLang } from '@/data/bibles/ui-lang';
 import { BIBLE_COPY } from '@/data/bibles/strings';
 
@@ -29,6 +30,7 @@ export default function BiblesScreen() {
   const checking = useBibles((s) => s.checking);
   const installed = useBibles((s) => s.installed);
   const machines = useBibles((s) => s.machines);
+  const versions = useBibles((s) => s.versions);
   const refreshCatalog = useBibles((s) => s.refreshCatalog);
   const install = useBibles((s) => s.install);
   const cancel = useBibles((s) => s.cancel);
@@ -62,6 +64,7 @@ export default function BiblesScreen() {
         key={entry.id}
         info={info}
         installed={installed.includes(entry.id)}
+        update={bibleHasUpdate(entry, versions[entry.id])}
         badge={badge}
         first={first}
         machine={machines[entry.id] ?? { phase: 'idle', bytes: 0, total: 0, attempt: 1 }}

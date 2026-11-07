@@ -45,6 +45,19 @@ export async function openBible(id: string): Promise<void> {
   open.set(id, { db, driver: createExpoSqlDriver(db) });
 }
 
+/** Versão do banco instalado (meta.version), ou null se a Bíblia não está instalada ou não abre. */
+export async function installedBibleVersion(id: string): Promise<string | null> {
+  try {
+    await openBible(id);
+    const handle = open.get(id);
+    if (!handle) return null;
+    const row = await handle.db.getFirstAsync<{ value: string }>("SELECT value FROM meta WHERE key = 'version'");
+    return row?.value ?? null;
+  } catch {
+    return null;
+  }
+}
+
 export async function closeBible(id: string): Promise<void> {
   const handle = open.get(id);
   if (!handle) return;

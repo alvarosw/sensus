@@ -11,12 +11,15 @@ import { ENTITY_NAME_LANG } from '../domain/names';
 /**
  * Resolve um cite_id ao registro de origem. Retorna null se o prefixo ou o id não existir. Comentário escondido pela
  * preferência também devolve null (a IA não o recebe, então não deve conseguir abri-lo).
+ * `textDbOf` dá o banco de cada fonte de texto (ver Repo): um versículo `txt:<fonte>:<vid>` de Bíblia baixada sai do
+ * banco dela. Sem ele, tudo vai a `db`.
  */
 export async function resolveCite(
   db: Db,
   citeId: string,
   pref: CommentaryPreference = ALL_COMMENTARIES,
   lang: AppLang = ENTITY_NAME_LANG,
+  textDbOf: (sourceId: string) => Db = () => db,
 ): Promise<CitableRecord | null> {
   const colon = citeId.indexOf(':');
   if (colon <= 0) return null;
@@ -27,7 +30,7 @@ export async function resolveCite(
       const m = /^txt:(.+):(\d+)$/.exec(citeId);
       if (!m) return null;
       const record = await first<VerseText>(
-        db,
+        textDbOf(m[1]!),
         `SELECT ${VERSE_COLS} FROM verse_text WHERE source_id = ? AND vid = ? AND cite_id = ?`,
         [m[1]!, Number(m[2]), citeId],
       );

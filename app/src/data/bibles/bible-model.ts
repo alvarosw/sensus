@@ -13,6 +13,7 @@ import {
   sourceLong,
   textSources,
   type BibleCatalog,
+  type BibleEntry,
 } from '@sensus/core';
 
 const FILE_RE = /^bible-([a-z0-9][a-z0-9-]{1,39})\.db$/;
@@ -71,6 +72,34 @@ export function resolveTextSource(input: {
     if (pick) return pick.id;
   }
   return DEFAULT_TEXT_SOURCE;
+}
+
+/**
+ * Compara versões ("2026.11.06", "2026.9.1"): número a número, pelo valor (9 < 11); outros trechos, em ordem de texto.
+ * Negativo se `a` é mais antiga, positivo se é mais nova, zero se são iguais. Sem trecho sobrando, a mais curta é a antiga.
+ */
+export function compareBibleVersions(a: string, b: string): number {
+  const pa = a.split(/[.-]/);
+  const pb = b.split(/[.-]/);
+  for (let i = 0; ; i++) {
+    const x = pa[i];
+    const y = pb[i];
+    if (x === undefined && y === undefined) return 0;
+    if (x === undefined) return -1;
+    if (y === undefined) return 1;
+    if (x === y) continue;
+    if (/^\d+$/.test(x) && /^\d+$/.test(y)) return Number(x) - Number(y);
+    return x < y ? -1 : 1;
+  }
+}
+
+/**
+ * Há versão nova para atualizar? Só para Bíblia do catálogo com pacote (baixável), instalada com versão conhecida, e
+ * quando o catálogo traz versão mais nova que a instalada (meta.version do banco).
+ */
+export function bibleHasUpdate(entry: BibleEntry | null | undefined, installedVersion: string | null | undefined): boolean {
+  if (!entry?.package || !installedVersion) return false;
+  return compareBibleVersions(entry.version, installedVersion) > 0;
 }
 
 export type BibleMetaCheck = 'ok' | 'corrupt' | 'schema' | 'mismatch';

@@ -4,7 +4,7 @@
 import { readFileSync } from 'node:fs';
 import { DatabaseSync } from 'node:sqlite';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { Repo } from '../src/index';
+import { buildPanel, Repo } from '../src/index';
 import { createFixtureDb, driverFor, insert, source } from './fixtures';
 import { seedOldTestament, VID_1KGS_15_15 } from './fixtures-ot';
 
@@ -116,5 +116,62 @@ describe('Repo com textDriver', () => {
     const fallback = new Repo(driverFor(main), { textDriver: () => null });
     const [v] = await fallback.verseTexts('blivre', { start: VID_FP_2_4, end: VID_FP_2_4 });
     expect(v?.source_id).toBe('blivre');
+  });
+});
+
+describe('concordância e citações com textDriver', () => {
+  it('amostras da concordância vêm do banco da Bíblia baixada (NT grego, Fp 2:5, G5426)', async () => {
+    const c = await repo.concordance('G5426', BIBLE, 3);
+    expect(c.count).toBe((await plain.concordance('G5426', 'blivre', 3)).count);
+    expect(c.samples.map((s) => s.vid)).toEqual([VID_FP_2_5]);
+    expect(c.samples[0]?.source_id).toBe(BIBLE);
+    expect(c.samples[0]?.text).toBe('Haya, pues, en vosotros este sentir');
+  });
+
+  it('amostras da concordância no AT hebraico (1Rs 15:15, H0935)', async () => {
+    const c = await repo.concordance('H0935', BIBLE, 10);
+    expect(c.count).toBeGreaterThan(1);
+    expect(c.count).toBe((await plain.concordance('H0935', 'blivre', 10)).count);
+    expect(c.samples.map((s) => s.vid)).toEqual([VID_1KGS_15_15]);
+    expect(c.samples[0]?.text).toBe('Metió en el tesoro de la casa de Jehová');
+  });
+
+  it('a busca pula vids sem texto na Bíblia e continua até encher o limite (G1722: Fp 1:1 não tem texto)', async () => {
+    // G1722 ocorre em Fp 1:1 (50001001), Fp 2:5 e Fp 2:6; a Bíblia baixada só tem 2:5 e 2:6.
+    expect((await repo.concordance('G1722', BIBLE, 1)).samples.map((s) => s.vid)).toEqual([VID_FP_2_5]);
+    expect((await repo.concordance('G1722', BIBLE, 5)).samples.map((s) => s.vid)).toEqual([VID_FP_2_5, VID_FP_2_6]);
+  });
+
+  it('exclude tira o intervalo dos exemplos, mas não do total', async () => {
+    const c = await repo.concordance('G1722', BIBLE, 5, { start: VID_FP_2_5, end: VID_FP_2_5 });
+    expect(c.samples.map((s) => s.vid)).toEqual([VID_FP_2_6]);
+    expect(c.count).toBe((await repo.concordance('G1722', BIBLE, 5)).count);
+  });
+
+  it('resolveCite de txt: da Bíblia baixada lê o banco dela (NT e AT)', async () => {
+    const nt = await repo.resolveCite(`txt:${BIBLE}:${VID_FP_2_5}`);
+    expect(nt).toEqual({ table: 'verse_text', record: expect.objectContaining({ source_id: BIBLE, text: 'Haya, pues, en vosotros este sentir' }) });
+    const at = await repo.resolveCite(`txt:${BIBLE}:${VID_1KGS_15_15}`);
+    expect(at).toEqual({ table: 'verse_text', record: expect.objectContaining({ text: 'Metió en el tesoro de la casa de Jehová' }) });
+  });
+
+  it('sem textDriver, txt: de Bíblia baixada não resolve (o principal não a tem)', async () => {
+    expect(await plain.resolveCite(`txt:${BIBLE}:${VID_FP_2_5}`)).toBeNull();
+  });
+});
+
+describe('painel com a Bíblia escolhida', () => {
+  it('textSource da Bíblia baixada alimenta contexto e a comparação (translationSources)', async () => {
+    const range = { start: VID_FP_2_5, end: VID_FP_2_5 };
+    const panel = await buildPanel(repo, range, { textSource: BIBLE, translationSources: ['blivre', BIBLE] });
+    expect(panel.layers.text.translations.map((t) => t.source_id).sort()).toEqual(['blivre', BIBLE]);
+    expect(panel.layers.literary.before.map((v) => v.text)).toEqual(['No mirando cada uno a lo suyo propio']);
+    // Exclui o próprio intervalo: G1722 fica com Fp 2:6 (a Bíblia baixada não tem Fp 1:1).
+    expect(panel.layers.language.concordance.G1722?.samples.map((s) => [s.source_id, s.vid])).toEqual([[BIBLE, VID_FP_2_6]]);
+  });
+
+  it('sem translationSources, as traduções são as do banco principal', async () => {
+    const panel = await buildPanel(plain, { start: VID_FP_2_5, end: VID_FP_2_5 });
+    expect(panel.layers.text.translations.every((t) => t.source_id === 'blivre' || t.source_id === 'kjv')).toBe(true);
   });
 });

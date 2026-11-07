@@ -1,5 +1,5 @@
 // Painel determinístico + contexto serializado para a IA, por intervalo (com cache em memória).
-// Usado pela folha de estudo e pelo chat: o mesmo intervalo reaproveita a mesma consulta.
+// Usado pela folha de estudo e pelo chat: o mesmo intervalo e as mesmas fontes reaproveitam a mesma consulta.
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   buildPanel,
@@ -13,6 +13,8 @@ import {
   type Vid,
 } from '@sensus/core';
 import { useRepo } from '@/data/db-context';
+import { useBibles } from '@/data/bibles/bibles-store';
+import { useStudy } from '@/state/study';
 import { loadBooks } from '../common/cites';
 
 export interface PassagePanel {
@@ -45,17 +47,17 @@ const cache = new Map<string, Promise<Loaded>>();
 const repoIds = new WeakMap<Repo, number>();
 let nextRepoId = 1;
 
-function keyOf(repo: Repo, start: Vid, end: Vid): string {
+function keyOf(repo: Repo, start: Vid, end: Vid, textSource: string, trans: string): string {
   let id = repoIds.get(repo);
   if (id === undefined) {
     id = nextRepoId++;
     repoIds.set(repo, id);
   }
-  return `${id}:${start}-${end}`;
+  return `${id}:${start}-${end}:${textSource}:${trans}`;
 }
 
-function load(repo: Repo, start: Vid, end: Vid): Promise<Loaded> {
-  const key = keyOf(repo, start, end);
+function load(repo: Repo, start: Vid, end: Vid, textSource: string, trans: string): Promise<Loaded> {
+  const key = keyOf(repo, start, end, textSource, trans);
   const hit = cache.get(key);
   if (hit) {
     // LRU: reinsere como o mais recente.
@@ -64,7 +66,8 @@ function load(repo: Repo, start: Vid, end: Vid): Promise<Loaded> {
     return hit;
   }
   const p = (async (): Promise<Loaded> => {
-    const [books, panel] = await Promise.all([loadBooks(repo), buildPanel(repo, { start, end })]);
+    const translationSources = trans ? trans.split(',') : [];
+    const [books, panel] = await Promise.all([loadBooks(repo), buildPanel(repo, { start, end }, { textSource, translationSources })]);
     const context = serializePanel(panel);
     const richCtx = buildRichTextContext(context, panel, books);
     return { panel, context, richCtx, unit: panel.layers.literary.unit ?? null, books };
@@ -78,27 +81,32 @@ function load(repo: Repo, start: Vid, end: Vid): Promise<Loaded> {
 /**
  * Painel do intervalo (null = nada a carregar). Mantém o resultado anterior em `loading` apenas
  * dentro do mesmo intervalo; ao trocar de intervalo os campos voltam a null até o novo chegar.
+ * O texto é a Bíblia escolhida no leitor (contexto, concordância, referências); a comparação traz todas as instaladas.
+ * Trocar uma dessas escolhas recarrega o painel.
  */
 export function usePassagePanel(range: { start: Vid; end: Vid } | null): PassagePanel {
   const repo = useRepo();
   const start = range?.start ?? null;
   const end = range?.end ?? null;
+  const textSource = useStudy((s) => s.textSource);
+  const installed = useBibles((s) => s.installed);
+  const trans = installed.join(',');
   const [nonce, setNonce] = useState(0);
   const [state, setState] = useState<{ key: string; loaded?: Loaded; error?: string } | null>(null);
-  const key = start !== null && end !== null ? `${keyOf(repo, start, end)}#${nonce}` : null;
+  const key = start !== null && end !== null ? `${keyOf(repo, start, end, textSource, trans)}#${nonce}` : null;
 
   useEffect(() => {
     if (key === null || start === null || end === null) return;
     let alive = true;
-    if (nonce > 0) cache.delete(keyOf(repo, start, end));
-    load(repo, start, end).then(
+    if (nonce > 0) cache.delete(keyOf(repo, start, end, textSource, trans));
+    load(repo, start, end, textSource, trans).then(
       (loaded) => alive && setState({ key, loaded }),
       (e: unknown) => alive && setState({ key, error: e instanceof Error ? e.message : String(e) }),
     );
     return () => {
       alive = false;
     };
-  }, [repo, key, start, end, nonce]);
+  }, [repo, key, start, end, nonce, textSource, trans]);
 
   const reload = useCallback(() => setNonce((n) => n + 1), []);
   return useMemo<PassagePanel>(() => {
