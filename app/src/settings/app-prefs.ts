@@ -1,6 +1,6 @@
 // Preferências de aparência e leitura, persistidas no aparelho (sem segredos).
 //  - theme: sistema | claro | escuro (o provider de tema é atualizado pela tela de Aparência);
-//  - textSource: texto corrido padrão (BLivre ou KJV). FONTE DA VERDADE. O botão do leitor também grava aqui, e
+//  - textSource: Bíblia do texto corrido (BLivre, KJV ou uma baixada e instalada; ver data/bibles). FONTE DA VERDADE. O botão do leitor também grava aqui, e
 //    o estado de estudo (`useStudy.textSource`) é só um espelho, escrito apenas por este arquivo (load e setTextSource);
 //  - greekDefault: grego (TR) sob os versículos ao abrir o app. O botão Αα só muda a sessão.
 //  - timelineLines / timelineEvents: favoritos da linha do tempo (cite_ids de linhas e de marcadores);
@@ -10,8 +10,11 @@
 import { create } from 'zustand';
 import { useStudy } from '@/state/study';
 import type { SchemePreference } from '@/design';
-import { textSources } from '@sensus/core';
 import { readAppPrefs, writeAppPrefs, type StoredAppPrefs } from './provider-store';
+import { readCachedCatalog } from '@/data/bibles/catalog';
+import { installedIds } from '@/data/bibles/bible-db';
+import { resolveTextSource } from '@/data/bibles/bible-model';
+import { bibleUiLang } from '@/data/bibles/ui-lang';
 import { favoriteCombo, newComboId, parseCombos, recordRecent, removeCombo, unfavoriteCombo, type UserCombo } from '@sensus/core';
 
 /** Id de uma fonte de texto corrido (ver `textSources()` no núcleo). */
@@ -46,6 +49,8 @@ interface AppPrefsState {
   setTheme(theme: SchemePreference): void;
   /** Grava o texto padrão e aplica ao leitor agora. */
   setTextSource(source: TextSourceId): void;
+  /** Depois de remover uma Bíblia: se a padrão saiu, volta para a recomendada instalada do idioma (ou BLivre). */
+  syncTextSource(): void;
   /** Grava o grego padrão e aplica ao leitor agora. */
   setGreekDefault(on: boolean): void;
   toggleTimelineLine(id: string): void;
@@ -98,8 +103,13 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
     load: async () => {
       const stored = await readAppPrefs().catch(() => null);
       const theme = stored && THEMES.includes(stored.theme as SchemePreference) ? (stored.theme as SchemePreference) : DEFAULT_APP_PREFS.theme;
-      const textSource =
-        stored && textSources().includes(stored.textSource as TextSourceId) ? (stored.textSource as TextSourceId) : DEFAULT_APP_PREFS.textSource;
+      const catalog = readCachedCatalog();
+      const textSource = resolveTextSource({
+        stored: typeof stored?.textSource === 'string' ? stored.textSource : null,
+        installed: installedIds(catalog),
+        catalog,
+        lang: bibleUiLang(),
+      });
       const greekDefault = typeof stored?.greekDefault === 'boolean' ? stored.greekDefault : DEFAULT_APP_PREFS.greekDefault;
       const timelineLines = idList(stored?.timelineLines);
       const timelineEvents = idList(stored?.timelineEvents);
@@ -146,6 +156,12 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       set({ textSource });
       persist({ ...current(), textSource });
       useStudy.getState().setTextSource(textSource);
+    },
+    syncTextSource: () => {
+      const { textSource } = get();
+      const catalog = readCachedCatalog();
+      const next = resolveTextSource({ stored: textSource, installed: installedIds(catalog), catalog, lang: bibleUiLang() });
+      if (next !== textSource) get().setTextSource(next);
     },
     setGreekDefault: (greekDefault) => {
       set({ greekDefault });

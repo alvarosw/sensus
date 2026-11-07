@@ -34,7 +34,8 @@ function useRangeEdges(range: Range, textSource: string, books: readonly Book[])
   const [state, setState] = useState<{ key: string; edges: RangeEdges } | null>(null);
   useEffect(() => {
     let alive = true;
-    const src = textSource === 'kjv' ? 'kjv' : 'blivre';
+    // A fonte do texto (BLivre, KJV ou uma Bíblia baixada): o Repo acha o banco dela.
+    const src = textSource;
     (async () => {
       const first = splitVid(range.start).book;
       const last = splitVid(range.end).book;

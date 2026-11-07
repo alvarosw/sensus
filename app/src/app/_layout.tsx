@@ -8,6 +8,7 @@ import type { ReactNode } from 'react';
 import { router } from 'expo-router';
 import { DbProvider, useDbState } from '@/data/db-context';
 import { useDataStore } from '@/data/data-store';
+import { useBibles } from '@/data/bibles/bibles-store';
 import { shouldPromptFirstRun } from '@/data/plan';
 import { t } from '@/i18n';
 import { SettingsProvider } from '@/settings/settings-context';
@@ -91,6 +92,7 @@ function DataSetupGate() {
 
   useEffect(() => {
     useDataStore.getState().load();
+    useBibles.getState().load();
     void useDataStore.getState().refreshManifest();
   }, []);
 

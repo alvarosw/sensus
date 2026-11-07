@@ -2,7 +2,7 @@
 import { ScrollView, View } from 'react-native';
 import { router } from 'expo-router';
 import Constants from 'expo-constants';
-import { sourceAbbr } from '@sensus/core';
+import { bibleAbbr } from '@sensus/core';
 import { ListGroup, ListRow, useTheme } from '@/design';
 import { useSettings } from '@/settings/settings-context';
 import { aiSummary } from '@/settings/ai-status';
@@ -12,6 +12,8 @@ import { SETTINGS_COPY as COPY } from '@/settings/strings';
 import { useDataStore } from '@/data/data-store';
 import { dataRowSubtitle } from '@/data/view';
 import { DATA_COPY } from '@/data/strings';
+import { useBibles } from '@/data/bibles/bibles-store';
+import { BIBLE_COPY } from '@/data/bibles/strings';
 
 const THEME_LABEL = { system: COPY.themeSystem, light: COPY.themeLight, dark: COPY.themeDark } as const;
 
@@ -21,6 +23,8 @@ export default function SettingsScreen() {
   const ai = aiSummary(useAiSnapshot());
   const theme = useAppPrefs((s) => s.theme);
   const textSource = useAppPrefs((s) => s.textSource);
+  const catalog = useBibles((s) => s.catalog);
+  const biblesInstalled = useBibles((s) => s.installed.length);
   const version = Constants.expoConfig?.version ?? '';
   const dataMachine = useDataStore((s) => s.machine);
   const dataEdition = useDataStore((s) => s.edition);
@@ -42,8 +46,14 @@ export default function SettingsScreen() {
         <ListRow
           testID="settings-row-look"
           title={COPY.rowLook}
-          subtitle={`${THEME_LABEL[theme]} · texto ${sourceAbbr(textSource)}`}
+          subtitle={`${THEME_LABEL[theme]} · texto ${bibleAbbr(textSource, catalog)}`}
           onPress={() => router.push('/settings/appearance')}
+        />
+        <ListRow
+          testID="settings-row-bibles"
+          title={BIBLE_COPY.rowTitle}
+          subtitle={BIBLE_COPY.rowSubtitle(biblesInstalled)}
+          onPress={() => router.push('/settings/bibles')}
         />
         <ListRow
           testID="settings-row-data"
