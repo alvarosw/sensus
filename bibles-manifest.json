@@ -1,5 +1,5 @@
 {
-  "catalog_version": "2026.11.06",
+  "catalog_version": "2026.11.07",
   "schema_version": 1,
   "bibles": [
     {
@@ -33,13 +33,18 @@
       "license_url": "https://www.crosswire.org/",
       "attribution": "Texto KJV do módulo SWORD 'KJV' (CrossWire Bible Society); texto de domínio público.",
       "url": "https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/KJV.zip",
-      "version": "2026.11.06",
+      "version": "2026.11.07",
       "testaments": [
         "OT",
         "NT"
       ],
       "rank": 2,
-      "bundled": true
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.07/bible-kjv-2026.11.07.zip",
+        "sha256": "59c8fb3dcc0e34b6afdfa9b1efec8eeaec2d6c60f519c6b71a808f2365a0a97e",
+        "size": 2282186,
+        "uncompressed_size": 6758400
+      }
     },
     {
       "id": "engasv",
@@ -72,13 +77,18 @@
       "license_url": "http://creativecommons.org/licenses/by/3.0/br/",
       "attribution": "Todas as Escrituras em português citadas são da Bíblia Livre (BLIVRE), Copyright © Diego Santos, Mario Sérgio, e Marco Teles, http://sites.google.com/site/biblialivre/ - fevereiro de 2018. Licença Creative Commons Atribuição 3.0 Brasil.",
       "url": "https://ebible.org/find/details.php?id=porbr2018",
-      "version": "2026.11.06",
+      "version": "2026.11.07",
       "testaments": [
         "OT",
         "NT"
       ],
       "rank": 1,
-      "bundled": true
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.07/bible-blivre-2026.11.07.zip",
+        "sha256": "f5f80d1c320affced95cfe49041f5967a180cf0e298ca5deadba7679a203cbc0",
+        "size": 2320518,
+        "uncompressed_size": 6991872
+      }
     },
     {
       "id": "spablm",
