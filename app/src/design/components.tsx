@@ -15,6 +15,7 @@ import {
   type ViewStyle,
 } from 'react-native';
 import { useTheme } from './theme';
+import { useUiDirection } from '../ui/direction';
 import { Icon, type IconName } from './icons';
 import {
   fontFamilies,
@@ -42,12 +43,15 @@ export interface TxtProps extends TextProps {
   bold?: boolean;
   italic?: boolean;
   center?: boolean;
+  /** Texto de fonte ou bíblico: segue a língua do conteúdo, sem a direção da interface (ui/direction). */
+  content?: boolean;
   style?: StyleProp<TextStyle>;
 }
 
 /** Texto tipado. `v` escolhe o papel tipográfico (tokens.type). */
-export function Txt({ v = 'body', color = 'text', tint, bold, italic, center, style, ...rest }: TxtProps) {
+export function Txt({ v = 'body', color = 'text', tint, bold, italic, center, content, style, ...rest }: TxtProps) {
   const { c } = useTheme();
+  const dir = useUiDirection({ variant: v, content, center });
   const t = type[v];
   const family = bold ? boldFamily(t.fontFamily) : italic ? italicFamily(t.fontFamily) : t.fontFamily;
   return (
@@ -56,6 +60,7 @@ export function Txt({ v = 'body', color = 'text', tint, bold, italic, center, st
       style={[
         t as TextStyle,
         { color: tint ?? c[color], fontFamily: family },
+        dir,
         center && { textAlign: 'center' },
         style,
       ]}
