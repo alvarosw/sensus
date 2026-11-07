@@ -38,3 +38,41 @@ class WantedTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+from sensus.registry import missing_sources, registered_sources  # noqa: E402
+
+SAMPLE_TS = """
+const OT_NT = ['OT', 'NT'];
+export const SOURCES: Readonly<Record<string, SourceInfo>> = {
+  // ---- textos
+  blivre: { short: 'Bíblia Livre', role: 'text', testaments: OT_NT },
+  'sword-kd': { short: 'Keil e Delitzsch', commentator: 'Keil e Delitzsch', role: 'commentary' },
+  'egw-great-controversy': {
+    short: 'Grande Conflito',
+    role: 'commentary',
+  },
+};
+
+export const TRADITIONS = {
+  reformed: { pt: 'reformada' },
+};
+"""
+
+
+class RegistryTest(unittest.TestCase):
+    def test_reads_only_sources_block(self):
+        self.assertEqual(registered_sources(SAMPLE_TS), {"blivre", "sword-kd", "egw-great-controversy"})
+
+    def test_missing_lists_registered_without_staging(self):
+        self.assertEqual(missing_sources({"blivre", "sword-kd", "extra"}, SAMPLE_TS), ["egw-great-controversy"])
+
+    def test_nothing_missing(self):
+        self.assertEqual(missing_sources({"blivre", "sword-kd", "egw-great-controversy"}, SAMPLE_TS), [])
+
+    def test_real_registry_is_parsed(self):
+        from sensus.registry import SOURCES_TS
+        ids = registered_sources(SOURCES_TS.read_text(encoding="utf-8"))
+        # Textos, comentários adventistas e do lote 1 precisam estar no registro lido.
+        for sid in ("blivre", "kjv", "tagnt", "egw-great-controversy", "smith-daniel", "sword-abbott"):
+            self.assertIn(sid, ids)
