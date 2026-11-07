@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { APP_LANGS, BOOK_NAMES, BOOK_TABLE, formatReference, makeVid, type AppLang } from '../src/index';
+import { APP_LANGS, BOOK_NAMES, BOOK_TABLE, bookAbbrOf, formatReference, makeVid, type AppLang } from '../src/index';
 
 // Abreviações de pt-BR (já em uso no núcleo): congeladas aqui para pegar qualquer mudança sem querer.
 const PT_ABBR = [
@@ -93,5 +93,19 @@ describe('referências nos idiomas (Gn 1:1, Jo 3:16, Ap 22:21)', () => {
 
   it('todo idioma com tabela tem amostra', () => {
     expect(Object.keys(SAMPLES).sort()).toEqual(OTHER_LANGS.slice().sort());
+  });
+});
+
+describe('abreviação e introdução em todos os idiomas', () => {
+  it('bookAbbrOf lê a tabela do idioma pedido (não só pt e en)', () => {
+    expect(bookAbbrOf(43, 'pt')).toBe(BOOK_NAMES.pt![42]!.abbr);
+    for (const lang of ['es', 'de', 'ru', 'zh', 'ar'] as const) {
+      expect(bookAbbrOf(43, lang)).toBe(BOOK_NAMES[lang]![42]!.abbr);
+    }
+  });
+
+  it('introdução do capítulo no idioma: NT grego (Fp 2) e AT hebraico (1Rs 15)', () => {
+    expect(formatReference({ start: 50002000, end: 50002000 }, BOOK_TABLE, 'es')).toContain('(introducción)');
+    expect(formatReference({ start: 11015000, end: 11015000 }, BOOK_TABLE, 'de')).toContain('(Einleitung)');
   });
 });

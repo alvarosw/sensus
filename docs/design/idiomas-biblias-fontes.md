@@ -41,9 +41,9 @@ export function fallbackChain(lang: AppLang): AppLang[];
 
 Rótulos do núcleo que hoje são pt-BR (`testamentLabel`, `traditionLabel`, nomes de livros em `refs.ts`,
 abreviações) passam a receber `lang: AppLang = 'pt'` como último parâmetro. O padrão `'pt'` mantém as chamadas
-atuais funcionando. Os nomes de livros por idioma vêm do arquivo gerado
-`packages/core/src/domain/book-names.generated.ts` (gerado pelo pipeline das Bíblias, a partir dos cabeçalhos
-`\toc1/\toc2/\toc3` da Bíblia recomendada de cada idioma; ver §2):
+atuais funcionando. Os nomes de livros por idioma ficam em
+`packages/core/src/domain/book-names.ts`, revisado à mão pelas convenções de cada idioma e conferido contra os
+cabeçalhos `\toc1/\toc2/\toc3` das Bíblias do catálogo (`pipeline/bibles/book_names.py` extrai a referência):
 
 ```ts
 export const BOOK_NAMES: Readonly<Partial<Record<AppLang, readonly { name: string; short: string; abbr: string }[]>>>;

@@ -1,4 +1,7 @@
-"""Gera book-names.generated.ts: nomes dos 66 livros por idioma do app (contrato, §1 de idiomas-biblias-fontes.md).
+"""Extrai dos cabeçalhos USFM (\\toc1/\\toc2/\\toc3) os nomes dos 66 livros por idioma, como referência para revisão.
+
+A tabela do núcleo (packages/core/src/domain/book-names.ts) é revisada à mão a partir das convenções de cada idioma;
+este script não a sobrescreve (grava em pipeline/bibles/out/, fora do repositório).
 
 Fonte dos nomes:
   - pt e en: os nomes que o núcleo já usa (pipeline/sensus/refs.py, espelhado em packages/core/src/refs.ts);
@@ -11,7 +14,7 @@ O arquivo sai em pipeline/bibles/out/ por padrão. O destino final é packages/c
 locale.ts estiver na main.
 
 Uso (a partir de pipeline/):
-    python3 bibles/book_names.py [--out bibles/out/book-names.generated.ts]
+    python3 bibles/book_names.py [--out bibles/out/book-names.ts]
 """
 
 import argparse
@@ -27,7 +30,7 @@ from sensus.refs import BOOKS  # noqa: E402
 from sensus.staging import STAGING  # noqa: E402
 
 CATALOG = PIPELINE / "bibles" / "catalog.tsv"
-DEFAULT_OUT = PIPELINE / "bibles" / "out" / "book-names.generated.ts"
+DEFAULT_OUT = PIPELINE / "bibles" / "out" / "book-names.ts"
 NUM_BOOKS = 66
 CORE_LANGS = ("pt", "en")  # nomes vêm de sensus/refs.py
 

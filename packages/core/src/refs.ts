@@ -2,7 +2,7 @@
 import { LAST_VERSE, MAX_BOOK, packVid, unpackVid } from './domain/vid';
 import type { Book, Vid, VerseRange } from './types';
 import { DEFAULT_APP_LANG, pickLang, type AppLang } from './domain/locale';
-import { BOOK_NAMES } from './domain/book-names.generated';
+import { BOOK_NAMES } from './domain/book-names';
 
 /** Último número de versículo ("capítulo inteiro", ex.: makeVid(b, c, LAST_VERSE)) e último livro: valores no domínio. */
 export { LAST_VERSE, MAX_BOOK };
@@ -174,12 +174,19 @@ export function bookNameOf(book: Book | undefined, num: number, lang: AppLang = 
 
 /** Abreviação de um livro no idioma pedido (padrão pt); cai no inglês. Vazia se nenhum idioma tem o livro. */
 export function bookAbbrOf(num: number, lang: AppLang = DEFAULT_APP_LANG): string {
-  const row = (l: AppLang) => BOOK_NAMES[l]?.[num - 1];
-  return pickLang({ pt: row('pt')?.abbr, en: row('en')?.abbr }, lang) ?? '';
+  const abbrs: Partial<Record<AppLang, string>> = {};
+  for (const l of Object.keys(BOOK_NAMES) as AppLang[]) {
+    const abbr = BOOK_NAMES[l]?.[num - 1]?.abbr;
+    if (abbr) abbrs[l] = abbr;
+  }
+  return pickLang(abbrs, lang) ?? '';
 }
 
 /** Palavra "introdução" (versículo 0 do capítulo) no idioma pedido. */
-const INTRO_WORD: Partial<Record<AppLang, string>> = { pt: 'introdução', en: 'introduction' };
+const INTRO_WORD: Readonly<Record<AppLang, string>> = {
+  pt: 'introdução', en: 'introduction', es: 'introducción', fr: 'introduction', de: 'Einleitung', ru: 'введение',
+  zh: '引言', ja: '序論', hi: 'परिचय', bn: 'ভূমিকা', ur: 'تعارف', ar: 'مقدمة', id: 'pengantar', vi: 'giới thiệu',
+};
 
 /**
  * Formata um intervalo: "Filipenses 2:5-8", "Filipenses 2:5-3:1", "Filipenses 2", "Filipenses 2-3", "Filipenses" (livro
