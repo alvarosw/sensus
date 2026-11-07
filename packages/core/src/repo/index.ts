@@ -148,14 +148,14 @@ export class Repo {
     return language.lexicon(this.driver, strongBases);
   }
 
-  /** Concordância de um strong_base (ver language.concordance). */
+  /** Concordância de um strong_base: total pelo principal; exemplos do texto `textSourceId` (ver language.concordance). */
   concordance(
     strongBase: string,
     textSourceId: string,
     limit: number,
     exclude?: VerseRange,
   ): Promise<language.Concordance> {
-    return language.concordance(this.driver, strongBase, textSourceId, limit, exclude);
+    return language.concordance(this.driver, strongBase, textSourceId, limit, exclude, this.textDb(textSourceId));
   }
 
   /** Comentários visíveis pela preferência que se sobrepõem ao intervalo, mais as introduções de capítulo e livro. */
@@ -248,6 +248,6 @@ export class Repo {
 
   /** Resolve um cite_id ao registro de origem. Retorna null se o prefixo ou o id não existir. */
   resolveCite(citeId: string): Promise<CitableRecord | null> {
-    return cite.resolveCite(this.driver, citeId, this.commentaryPref, this.nameLang);
+    return cite.resolveCite(this.driver, citeId, this.commentaryPref, this.nameLang, (id) => this.textDb(id));
   }
 }

@@ -47,8 +47,13 @@ export const DEFAULT_PANEL_LIMITS: PanelLimits = {
 };
 
 export interface PanelOptions {
-  /** Fonte de texto para contexto literário e alvos de referências cruzadas. */
+  /** Fonte de texto para contexto literário, concordância e alvos de referências cruzadas. */
   textSource?: string;
+  /**
+   * Fontes cujos versículos entram em `layers.text.translations` (a comparação da lente Texto). Padrão: as de texto do
+   * banco principal. Uma Bíblia baixada entra pelo id (o Repo acha o banco dela).
+   */
+  translationSources?: readonly string[];
   /** Versículos antes e depois do intervalo. */
   contextVerses?: number;
   limits?: Partial<PanelLimits>;
@@ -68,13 +73,13 @@ export async function buildPanel(repo: Repo, range: VerseRange, opts: PanelOptio
 
   const [books, sources] = await Promise.all([repo.books(), repo.sources()]);
   const sourceMap = new Map<string, Source>(sources.map((s) => [s.id, s] as const));
-  const textSources = sources.filter((s) => s.kind === 'text');
+  const translationIds = opts.translationSources ?? sources.filter((s) => s.kind === 'text').map((s) => s.id);
   const startBook = books.find((b) => b.num === splitVid(r.start).book);
 
   const unit = await repo.literaryUnit(textSource, r);
   const [translationLists, tokens, neighbors, divisions, entities, dictionary, topics, commentarySplit, xrefs, bookIntro, events] =
     await Promise.all([
-      Promise.all(textSources.map((s) => repo.verseTexts(s.id, r))),
+      Promise.all(translationIds.map((id) => repo.verseTexts(id, r))),
       repo.tokens(r),
       repo.neighbors(textSource, r, contextVerses, unit),
       repo.divisions(textSource, r),
