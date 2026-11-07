@@ -35,7 +35,7 @@ export const enTl = {
   noEvents: 'No event matches this search and these filters.',
   noLines: 'No timeline matches these filters.',
   footer:
-    'Source: Theographic (CC BY-SA 4.0). Dates follow the source chronology; titles and names in Portuguese are the Sensus project’s adaptation.',
+    'Source: Theographic (CC BY-SA 4.0). Dates follow the source chronology.',
 
   lineTitleOf: (count: number) => `${count} ${count === 1 ? 'event' : 'events'}`,
   inSource: (name: string) => `in the source: ${name}`,

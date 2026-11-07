@@ -35,7 +35,7 @@ export const deTl = {
   noEvents: 'Kein Ereignis passt zu dieser Suche und diesen Filtern.',
   noLines: 'Keine Zeitleiste passt zu diesen Filtern.',
   footer:
-    'Quelle: Theographic (CC BY-SA 4.0). Die Daten folgen der Chronologie der Quelle; Titel und Namen auf Deutsch sind eine Anpassung des Sensus-Projekts.',
+    'Quelle: Theographic (CC BY-SA 4.0). Die Daten folgen der Chronologie der Quelle.',
 
   lineTitleOf: (count: number) => `${count} ${count === 1 ? 'Ereignis' : 'Ereignisse'}`,
   inSource: (name: string) => `in der Quelle: ${name}`,
