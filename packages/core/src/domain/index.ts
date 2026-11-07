@@ -9,3 +9,4 @@ export * from './script';
 export * from './word';
 export * from './sources';
 export * from './names';
+export * from './bibles';
