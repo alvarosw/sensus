@@ -119,8 +119,11 @@ async function extract(entry: BibleEntry, pkg: BiblePackage, zip: File): Promise
     throw new StepFailure('corrupt');
   }
 
-  const dbs = dir.list().filter((e): e is File => e instanceof File && e.name.endsWith('.db'));
-  const extracted = dbs.length === 1 ? dbs[0] : undefined;
+  // O pacote traz um banco só, com o nome do contrato (bible-<id>.db). Abre pelo nome, como o banco completo faz:
+  // no build nativo, os itens de Directory.list() não passam em `instanceof File`, e a busca pela lista falhava.
+  const named = new File(dir, bibleFileName(entry.id));
+  const listed = named.exists ? [] : dir.list().filter((e): e is File => e instanceof File && e.name.endsWith('.db'));
+  const extracted = named.exists ? named : listed.length === 1 ? listed[0] : undefined;
   if (!extracted || extracted.size !== pkg.uncompressed_size) throw new StepFailure('corrupt');
 
   const stagedName = bibleStagedFileName(entry.id);
