@@ -54,6 +54,16 @@ class VersificationTest(unittest.TestCase):
         rep = V.compare(bib, self.kjv)
         self.assertEqual(rep["bad"], [(40, 1, 3, 4, 0)])
 
+    def test_critical_omissions_are_sixteen_and_john_is_not_job(self):
+        self.assertEqual(len(V.OMISSOES_TEXTO_CRITICO), 16)
+        self.assertIn(vid(43, 5, 4), V.OMISSOES_TEXTO_CRITICO)  # João 5:4 (Jn), não Jó 5:4
+        self.assertNotIn(vid(18, 5, 4), V.OMISSOES_TEXTO_CRITICO)
+
+    def test_critical_omission_missing_or_empty_does_not_count(self):
+        kjv = {**chapter(40, 17, 27), **chapter(40, 18, 35)}
+        for bib_v in ({k: t for k, t in kjv.items() if k != vid(40, 17, 21)}, {**kjv, vid(40, 17, 21): ""}):
+            self.assertEqual(V.compare(bib_v, kjv)["bad"], [])
+
     def test_threshold_is_995_per_cent_of_chapters(self):
         # KJV sintética com os 1189 capítulos do cânon, dois versículos cada.
         from sensus.refs import BOOKS
