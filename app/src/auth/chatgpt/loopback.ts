@@ -3,6 +3,7 @@
 // Só aceita GET em /auth/callback; responde uma página HTML curta e encerra.
 import { NativeModules, Platform } from 'react-native';
 import { SIWC, loopbackRedirectUri } from '@sensus/core';
+import { currentBcp47, t } from '@/i18n';
 
 /** Portas tentadas em ordem. O redirect exato (com a porta escolhida) vai no authorize e na troca. */
 const PORTS = [1455, 1456, 1457, 1458, 1459] as const;
@@ -10,7 +11,7 @@ const MAX_REQUEST_BYTES = 16 * 1024;
 
 export class ChatGPTNativeUnavailableError extends Error {
   constructor() {
-    super('Disponível no app instalado (build de desenvolvimento).');
+    super(t('auth.nativeOnly'));
     this.name = 'ChatGPTNativeUnavailableError';
   }
 }
@@ -51,26 +52,38 @@ export function isChatGPTNativeAvailable(): boolean {
   return loadTcpModule() !== null;
 }
 
-/** HTML ASCII (entidades nomeadas) para que Content-Length seja o tamanho em bytes. */
-const CALLBACK_PAGE = [
-  '<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">',
-  '<meta name="viewport" content="width=device-width,initial-scale=1">',
-  '<title>Sensus</title>',
-  '<style>body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;',
-  'background:#F4F1EA;color:#2B2A26;font-family:system-ui,sans-serif}',
-  'main{text-align:center;padding:24px}a{color:#6B4F2A;font-weight:600}</style></head>',
-  '<body><main><h1>Pronto! Volte ao Sensus</h1>',
-  '<p>Voc&ecirc; j&aacute; pode fechar esta p&aacute;gina.</p>',
-  '<p><a href="sensus://settings">Abrir o Sensus</a></p></main>',
-  '<script>setTimeout(function(){location.href="sensus://settings";},400);</script>',
-  '</body></html>',
-].join('');
+/** Página de retorno no idioma do app. O Content-Length é contado em bytes (utf8Length), não em caracteres. */
+function callbackPage(): string {
+  return [
+    `<!doctype html><html lang="${currentBcp47()}"><head><meta charset="utf-8">`,
+    '<meta name="viewport" content="width=device-width,initial-scale=1">',
+    '<title>Sensus</title>',
+    '<style>body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;',
+    'background:#F4F1EA;color:#2B2A26;font-family:system-ui,sans-serif}',
+    'main{text-align:center;padding:24px}a{color:#6B4F2A;font-weight:600}</style></head>',
+    `<body><main><h1>${t('auth.doneTitle')}</h1>`,
+    `<p>${t('auth.doneBody')}</p>`,
+    `<p><a href="sensus://settings">${t('auth.openApp')}</a></p></main>`,
+    '<script>setTimeout(function(){location.href="sensus://settings";},400);</script>',
+    '</body></html>',
+  ].join('');
+}
+
+/** Tamanho em bytes de um texto UTF-8 (o Content-Length é em bytes). */
+function utf8Length(s: string): number {
+  let n = 0;
+  for (const ch of s) {
+    const c = ch.codePointAt(0) ?? 0;
+    n += c < 0x80 ? 1 : c < 0x800 ? 2 : c < 0x10000 ? 3 : 4;
+  }
+  return n;
+}
 
 function httpResponse(status: string, contentType: string, body: string): string {
   return [
     `HTTP/1.1 ${status}`,
     `Content-Type: ${contentType}`,
-    `Content-Length: ${body.length}`,
+    `Content-Length: ${utf8Length(body)}`,
     'Cache-Control: no-store',
     "Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'",
     'Connection: close',
@@ -100,7 +113,7 @@ function listenOn(
         buffer += String(data);
         if (buffer.length > MAX_REQUEST_BYTES) {
           handled = true;
-          socket.write(httpResponse('431 Request Header Fields Too Large', 'text/plain; charset=utf-8', 'Requisição grande demais.'));
+          socket.write(httpResponse('431 Request Header Fields Too Large', 'text/plain; charset=utf-8', t('auth.tooLarge')));
           socket.end();
           return;
         }
@@ -147,7 +160,7 @@ export async function startLoopbackCallback(timeoutMs = 5 * 60_000): Promise<Loo
       fail();
       return;
     }
-    respond(httpResponse('200 OK', 'text/html; charset=utf-8', CALLBACK_PAGE));
+    respond(httpResponse('200 OK', 'text/html; charset=utf-8', callbackPage()));
     resolveTarget(raw);
   };
 
@@ -163,11 +176,11 @@ export async function startLoopbackCallback(timeoutMs = 5 * 60_000): Promise<Loo
     }
   }
   if (!server) {
-    throw new Error('Não foi possível abrir a porta de retorno (1455-1459). Feche outros apps que a usem e tente de novo.');
+    throw new Error(t('auth.portBusy'));
   }
 
   const srv = server;
-  const timer = setTimeout(() => rejectTarget(new Error('O login com o ChatGPT demorou demais. Tente de novo.')), timeoutMs);
+  const timer = setTimeout(() => rejectTarget(new Error(t('auth.loginTimeout'))), timeoutMs);
   return {
     redirectUri: loopbackRedirectUri(port),
     target: target.finally(() => clearTimeout(timer)),

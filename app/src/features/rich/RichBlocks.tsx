@@ -25,6 +25,7 @@ import {
 import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { useCite } from '../common/hooks';
 import { useStudy } from '@/state/study';
+import { t } from '@/i18n';
 import { morphLabelsPt } from '../common/morph-pt';
 
 /** Dados de uma afirmação, entregues às ações do menu ⋯. */
@@ -226,7 +227,7 @@ function ClaimView({
   );
   const warning = useMemo(() => {
     const expected = [...new Set(claim.morphConflicts.map((m) => m.expected))];
-    return expected.length > 0 ? expected.map((e) => `O token citado é ${e}`).join(' · ') : undefined;
+    return expected.length > 0 ? expected.map((e) => t('rich.tokenIs', { expected: e })).join(' · ') : undefined;
   }, [claim.morphConflicts]);
 
   const showMore = ctx.menu && !caret;
@@ -302,11 +303,11 @@ function ClaimMenu({
     <View style={{ gap: space[4] }}>
       <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space[3] }}>
         {info.citeIds.length > 0 && (
-          <MenuChip testID={`claim-src-${info.claimKey}`} label={`De onde vem isso? (${info.citeIds.length})`} active={sourcesOpen} onPress={onToggleSources} />
+          <MenuChip testID={`claim-src-${info.claimKey}`} label={t('rich.whereFrom', { count: info.citeIds.length })} active={sourcesOpen} onPress={onToggleSources} />
         )}
         <MenuChip
           testID={`claim-deepen-${info.claimKey}`}
-          label="Detalhar este ponto"
+          label={t('rich.deepenPoint')}
           onPress={() => {
             onDone();
             ctx.onDeepen(info);
@@ -314,14 +315,14 @@ function ClaimMenu({
         />
         <MenuChip
           testID={`claim-ask-${info.claimKey}`}
-          label="Perguntar sobre isto"
+          label={t('rich.askAbout')}
           onPress={() => {
             onDone();
             ctx.onAsk(info);
           }}
         />
       </View>
-      {info.citeIds.length === 0 && <Txt v="meta" color="muted">Sem fontes neste parágrafo.</Txt>}
+      {info.citeIds.length === 0 && <Txt v="meta" color="muted">{t('rich.noSources')}</Txt>}
       {sourcesOpen && info.citeIds.length > 0 && (
         <View style={{ gap: space[3] }}>
           {info.citeIds.map((id) => (
@@ -366,9 +367,9 @@ function MiniSource({ citeId, onOpen }: { citeId: string; onOpen: (id: string) =
       ) : loading ? (
         <Txt v="bodySm" color="muted">…</Txt>
       ) : (
-        <Txt v="bodySm" color="muted">Fonte não encontrada.</Txt>
+        <Txt v="bodySm" color="muted">{t('common.noSource')}</Txt>
       )}
-      <LinkButton label="Abrir prévia" onPress={() => onOpen(citeId)} testID={`mini-src-${citeId}`} />
+      <LinkButton label={t('rich.openPreview')} onPress={() => onOpen(citeId)} testID={`mini-src-${citeId}`} />
     </Card>
   );
 }
@@ -484,7 +485,7 @@ function Inlines({
           parts.push(
             <Text key={`${i}-${a}`} style={{ backgroundColor: c.inf }}>
               {label ? (
-                <Text style={{ fontFamily: fontFamilies.uiBold, fontSize: 10, letterSpacing: 0.6, color: c.infBorder }}>INFERÊNCIA  </Text>
+                <Text style={{ fontFamily: fontFamilies.uiBold, fontSize: 10, letterSpacing: 0.6, color: c.infBorder }}>{t('study.inference').toUpperCase()}  </Text>
               ) : null}
               {label ? piece.slice(label[0].length) : piece}
             </Text>,

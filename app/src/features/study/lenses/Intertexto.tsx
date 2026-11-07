@@ -21,7 +21,7 @@ export function IntertextoLens({ onLayout }: LensProps) {
     <LensShell
       lens="intertexto"
       title={SECTION_LABEL.intertexto}
-      count={panel ? `${xrefs.length} referências` : undefined}
+      count={panel ? STUDY.xrefsCount(xrefs.length) : undefined}
       sourcesN={xrefs.length > SHOWN ? xrefs.length : 0}
       onLayout={onLayout}
     >

@@ -1,7 +1,8 @@
 // Peças comuns às lentes da folha: corpo com carregamento e erro, cartões, "anexar ao chat" e rótulos de seção.
 import type { ReactNode } from 'react';
 import { View, type LayoutChangeEvent } from 'react-native';
-import { SECTION_LABELS, sourceShort, type PanelData } from '@sensus/core';
+import { sourceShort, type PanelData } from '@sensus/core';
+import { t } from '@/i18n';
 import { LinkButton, Skeleton, Txt, space } from '@/design';
 import { useStudy, type LensKey } from '@/state/study';
 import type { StudyData } from '../useStudyData';
@@ -16,15 +17,16 @@ export const SHOWN = 3;
 /** Linhas da linha do tempo antes de "Ver todos" (inclui os eventos de contexto). */
 export const TIMELINE_SHOWN = 8;
 
+/** Título de cada lente no idioma do app (getters: o idioma é lido no acesso). */
 export const SECTION_LABEL: Record<LensKey, string> = {
-  visao: 'Visão geral',
-  texto: SECTION_LABELS.texto,
-  literario: SECTION_LABELS.literario,
-  historico: SECTION_LABELS.historico,
-  lingua: SECTION_LABELS.lingua,
-  intertexto: SECTION_LABELS.intertexto,
-  interpretacao: SECTION_LABELS.interpretacao,
-  aplicacao: SECTION_LABELS.aplicacao,
+  get visao() { return t('lens.visao'); },
+  get texto() { return t('lens.texto'); },
+  get literario() { return t('lens.literario'); },
+  get historico() { return t('lens.historico'); },
+  get lingua() { return t('lens.lingua'); },
+  get intertexto() { return t('lens.intertexto'); },
+  get interpretacao() { return t('lens.interpretacao'); },
+  get aplicacao() { return t('lens.aplicacao'); },
 };
 
 export function shortOf(panel: PanelData, sourceId: string): string {

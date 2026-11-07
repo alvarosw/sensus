@@ -16,6 +16,7 @@ import {
 } from 'react-native';
 import { useTheme } from './theme';
 import { useUiDirection } from '../ui/direction';
+import { t } from '../i18n';
 import { Icon, type IconName } from './icons';
 import {
   fontFamilies,
@@ -470,13 +471,13 @@ export function ClaimFrame({
           inference && { backgroundColor: c.inf, borderLeftWidth: 3, borderLeftColor: c.infBorder, borderTopRightRadius: radius.md, borderBottomRightRadius: radius.md, paddingVertical: 8, paddingLeft: 10, paddingRight: 30 },
         ]}
       >
-        {inference && <Txt v="eyebrow" tint={c.infBorder} style={{ fontSize: 10.5, marginBottom: 2 }}>Inferência</Txt>}
+        {inference && <Txt v="eyebrow" tint={c.infBorder} style={{ fontSize: 10.5, marginBottom: 2 }}>{t('study.inference')}</Txt>}
         {children}
         {onMore && (
           <Pressable
             testID={testID ? `${testID}-more` : undefined}
             accessibilityRole="button"
-            accessibilityLabel="Ações deste parágrafo"
+            accessibilityLabel={t('claim.actions')}
             onPress={onMore}
             hitSlop={8}
             style={({ pressed }) => ({ position: 'absolute', right: inference ? 4 : 0, top: inference ? 6 : 2, width: 24, height: 24, borderRadius: 6, alignItems: 'center', justifyContent: 'center', backgroundColor: pressed ? c.chip : 'transparent' })}
