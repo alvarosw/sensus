@@ -9,6 +9,7 @@ import { TL } from '@/features/timeline';
 import { READER } from './strings';
 import { abbrOf } from './abbrev';
 import { groupBooks } from './categories';
+import { bookName } from './chapters';
 
 export function BookPicker({
   visible,
@@ -85,7 +86,7 @@ export function BookPicker({
           {book && (
             <IconButton testID="books-back" icon="back" label={READER.back} onPress={() => setBook(null)} />
           )}
-          <Txt v="sheetTitle" accessibilityRole="header" style={{ flex: 1 }} numberOfLines={1}>{book ? book.name_pt : READER.pickBook}</Txt>
+          <Txt v="sheetTitle" accessibilityRole="header" style={{ flex: 1 }} numberOfLines={1}>{book ? bookName(book.num) : READER.pickBook}</Txt>
           <IconButton testID="books-close" icon="close" label={READER.close} onPress={onClose} />
         </View>
 
@@ -101,7 +102,7 @@ export function BookPicker({
                       key={n}
                       testID={`picker-ch-${n}`}
                       accessibilityRole="button"
-                      accessibilityLabel={READER.chapterAria(book.name_pt, n)}
+                      accessibilityLabel={READER.chapterAria(bookName(book.num), n)}
                       accessibilityState={{ selected: current }}
                       onPress={() => onPick(book, n)}
                       style={({ pressed }) => ({
@@ -169,7 +170,7 @@ export function BookPicker({
                           key={b.num}
                           testID={`picker-book-${b.num}`}
                           accessibilityRole="button"
-                          accessibilityLabel={b.name_pt}
+                          accessibilityLabel={bookName(b.num)}
                           accessibilityState={{ selected: current }}
                           onPress={() => (b.chapters === 1 ? onPick(b, 1) : setBook(b))}
                           style={({ pressed }) => ({
@@ -195,9 +196,9 @@ export function BookPicker({
                             numberOfLines={1}
                             ellipsizeMode="tail"
                             color={current ? 'accent' : 'text'}
-                            style={b.name_pt.length > 11 ? { fontSize: 11.5, lineHeight: 15 } : undefined}
+                            style={bookName(b.num).length > 11 ? { fontSize: 11.5, lineHeight: 15 } : undefined}
                           >
-                            {b.name_pt}
+                            {bookName(b.num)}
                           </Txt>
                           <Txt v="meta" color="muted" style={{ fontSize: 10.5, lineHeight: 13 }}>{abbrOf(b.num)}</Txt>
                         </Pressable>

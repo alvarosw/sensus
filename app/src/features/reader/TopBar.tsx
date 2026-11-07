@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Platform, Pressable, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { BOOK_TABLE, bibleAbbr } from '@sensus/core';
+import { bibleAbbr } from '@sensus/core';
 import { Icon, TopBarButton, fontFamilies, size, type, useTheme } from '@/design';
 import { useStudy } from '@/state/study';
 import { useReaderNav } from '@/state/reader-nav';
@@ -10,6 +10,7 @@ import { useBibles } from '@/data/bibles/bibles-store';
 import { BIBLE_COPY } from '@/data/bibles/strings';
 import { READER } from './strings';
 import { BibleSourcePicker } from './BibleSourcePicker';
+import { bookName } from './chapters';
 
 export function TopBar({ jumpOpen, booksOpen, onBooks, onJump }: { jumpOpen: boolean; booksOpen: boolean; onBooks: () => void; onJump: () => void }) {
   const { c } = useTheme();
@@ -19,7 +20,7 @@ export function TopBar({ jumpOpen, booksOpen, onBooks, onJump }: { jumpOpen: boo
   const textSource = useStudy((s) => s.textSource);
   const catalog = useBibles((s) => s.catalog);
   const [sourceOpen, setSourceOpen] = useState(false);
-  const name = BOOK_TABLE[position.book - 1]?.name_pt ?? '';
+  const name = bookName(position.book);
   const label = bibleAbbr(textSource, catalog);
 
   const toggleGreek = () => {

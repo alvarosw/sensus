@@ -3,7 +3,7 @@
 // prévia de cada evento. A lista começa no evento do trecho. Nada navega sem "Ler no texto" (ver EventPreview).
 import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Pressable, ScrollView, View, type LayoutChangeEvent } from 'react-native';
-import { splitVid } from '@sensus/core';
+import { splitVid, bookNameOf } from '@sensus/core';
 import { refShort } from '@/features/common/format';
 import { useBooks } from '@/features/common/hooks';
 import { Txt, size, space, useTheme } from '@/design';
@@ -28,6 +28,7 @@ import {
   type VerseSpan,
 } from './context-model';
 import { ContextRuler, RULER_MIN_GAP, RULER_W, type RulerTick } from './ContextRuler';
+import { currentLang } from '@/i18n/lang-store';
 
 /** Folga acima do evento de destino quando a lista rola até ele. */
 const ANCHOR_GAP = 16;
@@ -51,7 +52,7 @@ function ContextBody({ span, initialScope }: { span: VerseSpan; initialScope: Co
   const { start, end } = span;
   const trecho = useMemo<VerseSpan>(() => ({ start, end }), [start, end]);
   const book = splitVid(start).book;
-  const bookName = books.find((b) => b.num === book)?.name_pt ?? '';
+  const bookName = bookNameOf(books.find((b) => b.num === book), book, currentLang());
 
   const [scope, setScope] = useState<ContextScope>(initialScope);
   // Grupos que o leitor abriu ou fechou; sem toque, vale o padrão (aberto só o que contém o trecho).

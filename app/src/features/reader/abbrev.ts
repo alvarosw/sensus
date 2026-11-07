@@ -2,7 +2,8 @@
 // Resolução (bookByAbbr): 1) forma exata com acentos ("Jó" é Jó, "Jo" é João);
 // 2) forma sem acentos e sem espaços ("1co" é 1 Coríntios); 3) nome do livro via resolveBook do núcleo.
 // Obs.: "Jn" é Jonas (pt-BR), não João; João é "Jo".
-import { BOOK_ABBREVIATIONS, BOOK_TABLE, normalizeKey, resolveBook, type Book } from '@sensus/core';
+import { BOOK_ABBREVIATIONS, BOOK_TABLE, bookAbbrOf, normalizeKey, resolveBook, type Book } from '@sensus/core';
+import { currentLang } from '../../i18n/lang-store';
 
 /** Abreviações pt-BR na ordem canônica: as do núcleo (BOOK_ABBREVIATIONS), para não haver duas listas. */
 export const BOOK_ABBR_PT: readonly string[] = BOOK_TABLE.map((b) => BOOK_ABBREVIATIONS[b.osis] ?? b.name_pt);
@@ -19,9 +20,10 @@ BOOK_ABBR_PT.forEach((abbr, i) => {
   if (!LOOSE.has(key) || !hasDiacritics(abbr)) LOOSE.set(key, num);
 });
 
-/** Abreviação pt-BR de um livro pelo número. */
+/** Abreviação de um livro pelo número, no idioma do app (pt: a lista acima). */
 export function abbrOf(num: number): string {
-  return BOOK_ABBR_PT[num - 1] ?? '';
+  const lang = currentLang();
+  return lang === 'pt' ? (BOOK_ABBR_PT[num - 1] ?? '') : bookAbbrOf(num, lang);
 }
 
 /** Resolve abreviação ou nome (pt/en) para o livro. */

@@ -1,7 +1,8 @@
 // Capítulos como unidade do leitor contínuo: índice linear (livro, capítulo) ↔ posição na Bíblia,
 // carregamento dos versículos e agrupamento em parágrafos/títulos (text_division).
-import { BOOK_TABLE, DEFAULT_TEXT_SOURCE, LAST_VERSE, chapterRange, makeVid, splitVid, type Repo, type Vid } from '@sensus/core';
+import { BOOK_TABLE, DEFAULT_TEXT_SOURCE, LAST_VERSE, chapterRange, makeVid, splitVid, type Repo, type Vid, bookNameOf } from '@sensus/core';
 import { buildFlow, type FlowBlock } from './verse-flow';
+import { currentLang } from '../../i18n/lang-store';
 
 const FIRST_IDX: number[] = []; // índice (0-based) do capítulo 1 de cada livro, por número do livro
 let total = 0;
@@ -37,8 +38,9 @@ export function vidChapterIndex(vid: Vid): number {
   return chapterIndex(p.book, Math.max(p.chapter, 1));
 }
 
+/** Nome do livro no idioma do app (pt: o nome do núcleo; demais: BOOK_NAMES). */
 export function bookName(book: number): string {
-  return BOOK_TABLE[book - 1]?.name_pt ?? '';
+  return bookNameOf(BOOK_TABLE[book - 1], book, currentLang());
 }
 
 export interface ChapterData {

@@ -29,7 +29,7 @@ import { STUDY } from './strings';
  */
 export function refTitle(start: Vid, end: Vid, books: readonly Book[]): string {
   const table = books.length > 0 ? (books as Book[]) : BOOK_TABLE;
-  return formatReference({ start, end }, table)
+  return formatReference({ start, end }, table, currentLang())
     .replace(/(?<=\d)-(?=\d)/g, '–')
     .replace(/ - /g, ' – ')
     .replace(/(?<=\p{L}) (?=\d)/gu, '\u00A0');
