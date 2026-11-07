@@ -1,8 +1,5 @@
+import { arPlural } from '../../plural';
 // Árabe de app/src/features/timeline/strings.ts. A revisar por falante nativo. Títulos de eventos vêm da fonte, em inglês.
-// Plural árabe: 1 singular, 2 dual, 3 a 10 plural, 11 ou mais singular.
-const arPl = (n: number, one: string, two: string, few: string, many: string): string =>
-  n === 1 ? one : n === 2 ? two : n >= 3 && n <= 10 ? few : many;
-
 export const arTl = {
   title: 'الخط الزمني',
   back: 'رجوع',
@@ -27,7 +24,7 @@ export const arTl = {
   overview: 'نظرة عامة',
   bibleCard: 'الكتاب المقدس كاملًا',
   bibleCardSub: (events: number, range: string) =>
-    `10 عصور · ${events} ${arPl(events, 'حدث', 'حدثان', 'أحداث', 'حدث')} · ${range}`,
+    `10 عصور · ${events} ${arPlural(events, 'حدث', 'حدثان', 'أحداث', 'حدث')} · ${range}`,
   parallelCard: 'بالتوازي',
   parallelCardSub: 'كل الخطوط جنبًا إلى جنب مع إمكانية التكبير',
   periods: 'الفترات',
@@ -42,7 +39,7 @@ export const arTl = {
   footer:
     'المصدر: Theographic (CC BY-SA 4.0). تتبع التواريخ التسلسل الزمني للمصدر.',
 
-  lineTitleOf: (count: number) => arPl(count, 'حدث واحد', 'حدثان', `${count} أحداث`, `${count} حدث`),
+  lineTitleOf: (count: number) => arPlural(count, 'حدث واحد', 'حدثان', `${count} أحداث`, `${count} حدث`),
   inSource: (name: string) => `في المصدر: ${name}`,
   lineFilter: 'تصفية في هذا الخط',
   onlyMarks: '★ العلامات فقط',
@@ -61,8 +58,8 @@ export const arTl = {
   close: 'إغلاق',
 
   biblePlainTitle: 'الكتاب المقدس كاملًا',
-  eraEvents: (n: number) => `${n} ${arPl(n, 'حدث', 'حدثان', 'أحداث', 'حدث')}`,
-  sourceTotal: (n: number) => `${n} ${arPl(n, 'حدث', 'حدثان', 'أحداث', 'حدث')} في المصدر.`,
+  eraEvents: (n: number) => `${n} ${arPlural(n, 'حدث', 'حدثان', 'أحداث', 'حدث')}`,
+  sourceTotal: (n: number) => `${n} ${arPlural(n, 'حدث', 'حدثان', 'أحداث', 'حدث')} في المصدر.`,
   gapTitle: 'الفترة بين العهدين',
   gapBody: 'لا يحتوي المصدر على أحداث في هذه الفترة.',
   bibleFoot: 'أسماء العصور وحدودها اقتراح؛ الأعداد والكثافة تأتي من قاعدة البيانات.',
@@ -121,7 +118,7 @@ export const arTl = {
   contextTitle: 'الخط الزمني للمقطع',
   scopeBook: 'السفر',
   scopeBible: 'الكتاب المقدس كاملًا',
-  groupEvents: (n: number) => arPl(n, 'حدث واحد', 'حدثان', `${n} أحداث`, `${n} حدث`),
+  groupEvents: (n: number) => arPlural(n, 'حدث واحد', 'حدثان', `${n} أحداث`, `${n} حدث`),
   inTrecho: 'في هذا المقطع',
   rulerLabel: 'مسطرة السنوات',
   rulerJump: (year: string) => `الانتقال إلى ${year}`,
@@ -131,6 +128,8 @@ export const arTl = {
   verseStart: 'بداية النص',
   returnPill: 'العودة إلى الخط الزمني',
   dismissReturn: 'تجاهل',
+  parallelLabel: (lo: string, hi: string) => `خطوط زمنية متوازية، من ${lo} إلى ${hi}`,
+  linesCount: (n: number) => `${n} ${arPlural(n, 'خط', 'خطّان', 'خطوط', 'خط')}`,
 };
 
 export const arTlEraShort: Record<string, string> = {

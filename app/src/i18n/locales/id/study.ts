@@ -7,8 +7,8 @@ export const idStudy = {
   expand: 'Perluas studi',
   collapse: 'Ciutkan studi',
   close: 'Hapus pilihan',
-  verse: 'ayat',
-  verses: 'ayat',
+  verseCount: (n: number) => `${n} ayat`,
+  versesAbbr: (n: number) => `${n} ayat`,
   crosses: (a: string, b: string) => `melintasi ${a} → ${b}`,
   pericope: (r: string) => `Perikop ${r}`,
   pericopeWhole: 'Seluruh perikop',
@@ -16,8 +16,8 @@ export const idStudy = {
   railLabel: 'Lensa studi',
 
   factComentaristas: 'pemberi komentar',
-  factVariante: (slash: string) => `varian ${slash}`,
-  factVariantes: (slash: string) => `varian ${slash}`,
+  factVariantes: (n: number, slash: string) => `varian ${slash}`,
+  variantCount: (n: number) => `${n} varian`,
   factXrefs: 'ref. silang',
   factHapax: (t: Testament) => `hapax di ${testamentLabel(t, 'id')}`,
   /** Contagem de versículos no testamento da palavra; 1 vira "versículo", o resto "vv.". */
@@ -83,7 +83,8 @@ export const idStudy = {
 
   // Histórico
   place: 'Tempat',
-  places: 'Tempat-tempat',
+  placesHeading: (n: number) => n > 1 ? 'Tempat-tempat' : 'Tempat',
+  placesAndEntries: (places: number, entries: number) => `${places} tempat · ${entries} entri`,
   peopleGroups: 'Orang dan kelompok',
   dictionaries: 'Kamus dan ensiklopedia',
   seeEntity: 'Lihat entitas',
@@ -129,4 +130,10 @@ export const idStudy = {
 
   // Aplicação
   applicationHint: 'Aplikasi hanya berasal dari AI dan selalu ditandai sebagai inferensi.',
+  xrefsCount: (n: number) => `${n} rujukan silang`,
+  commentariesCount: (n: number) => `${n} komentar`,
+  chapterMark: (n: number) => `(pasal ${n})`,
+  literaryEmpty: 'Tidak ada konteks sastra dalam sumber ini.',
+  sheetBackHalf: 'Kembali ke setengah tinggi',
+  sheetToggleHeight: 'Ubah tinggi studi',
 };

@@ -1,24 +1,15 @@
 // Russo de app/src/features/study/strings.ts. A revisar por falante nativo.
 import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
-
-// Plural russo: 1 / 2-4 / 5+ (os números 11 a 14 seguem a terceira forma).
-const ruPlural = (n: number, one: string, few: string, many: string) => {
-  const m10 = n % 10;
-  const m100 = n % 100;
-  if (m10 === 1 && m100 !== 11) return one;
-  if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few;
-  return many;
-};
+import { ruPlural } from '../../plural';
 
 export const ruStudy = {
   sheet: 'Изучение выбранного фрагмента',
   expand: 'Развернуть изучение',
   collapse: 'Свернуть изучение',
   close: 'Снять выделение',
-  // Usados em `${n} ${n === 1 ? verse : verses}` no SheetHead (ver nota no relatório).
-  verse: 'стих',
-  verses: 'стихов',
+  verseCount: (n: number) => `${n} ${ruPlural(n, 'стих', 'стиха', 'стихов')}`,
+  versesAbbr: (n: number) => `${n} ст.`,
   crosses: (a: string, b: string) => `переходит ${a} → ${b}`,
   pericope: (r: string) => `Перикопа ${r}`,
   pericopeWhole: 'Вся перикопа',
@@ -26,8 +17,8 @@ export const ruStudy = {
   railLabel: 'Линзы изучения',
 
   factComentaristas: 'комментаторы',
-  factVariante: (slash: string) => `вариант ${slash}`,
-  factVariantes: (slash: string) => `варианты ${slash}`,
+  factVariantes: (n: number, slash: string) => `${ruPlural(n, 'вариант', 'варианта', 'вариантов')} ${slash}`,
+  variantCount: (n: number) => `${n} ${ruPlural(n, 'вариант', 'варианта', 'вариантов')}`,
   factXrefs: 'перекрёстные ссылки',
   factHapax: (t: Testament) => `гапакс в ${testamentLabel(t, 'ru')}`,
   /** Contagem de versículos no testamento da palavra. */
@@ -93,7 +84,8 @@ export const ruStudy = {
 
   // Histórico
   place: 'Место',
-  places: 'Места',
+  placesHeading: (n: number) => ruPlural(n, 'Место', 'Места', 'Мест'),
+  placesAndEntries: (places: number, entries: number) => `${places} ${ruPlural(places, 'место', 'места', 'мест')} · ${entries} ${ruPlural(entries, 'статья', 'статьи', 'статей')}`,
   peopleGroups: 'Люди и группы',
   dictionaries: 'Словари и энциклопедии',
   seeEntity: 'Смотреть сущность',
@@ -136,4 +128,10 @@ export const ruStudy = {
 
   // Aplicação
   applicationHint: 'Применение создаётся только ИИ и всегда помечается как вывод.',
+  xrefsCount: (n: number) => `${n} ${ruPlural(n, 'ссылка', 'ссылки', 'ссылок')}`,
+  commentariesCount: (n: number) => `${n} ${ruPlural(n, 'комментарий', 'комментария', 'комментариев')}`,
+  chapterMark: (n: number) => `(глава ${n})`,
+  literaryEmpty: 'В этом источнике нет литературного контекста.',
+  sheetBackHalf: 'Вернуться к половине высоты',
+  sheetToggleHeight: 'Переключить высоту изучения',
 };

@@ -1,14 +1,6 @@
 // Russo de app/src/features/maps/strings.ts. A revisar por falante nativo. As atribuições (MAP_ATTRIBUTIONS) ficam em pt, como licença.
 import type { ConfidenceBand } from '@sensus/core';
-
-// Plural russo: 1 / 2-4 / 5+ (os números 11 a 14 seguem a terceira forma).
-const ruPlural = (n: number, one: string, few: string, many: string) => {
-  const m10 = n % 10;
-  const m100 = n % 100;
-  if (m10 === 1 && m100 !== 11) return one;
-  if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few;
-  return many;
-};
+import { ruPlural } from '../../plural';
 
 export const ruMaps = {
   title: 'Карта',

@@ -7,8 +7,8 @@ export const hiStudy = {
   expand: 'अध्ययन विस्तृत करें',
   collapse: 'अध्ययन सिकोड़ें',
   close: 'चयन हटाएँ',
-  verse: 'पद',
-  verses: 'पद',
+  verseCount: (n: number) => `${n} पद`,
+  versesAbbr: (n: number) => `${n} पद`,
   crosses: (a: string, b: string) => `${a} → ${b} तक फैला है`,
   pericope: (r: string) => `पेरिकोप ${r}`,
   pericopeWhole: 'पूरा पेरिकोप',
@@ -16,8 +16,8 @@ export const hiStudy = {
   railLabel: 'अध्ययन के लेंस',
 
   factComentaristas: 'टीकाकार',
-  factVariante: (slash: string) => `भेद ${slash}`,
-  factVariantes: (slash: string) => `भेद ${slash}`,
+  factVariantes: (n: number, slash: string) => `भेद ${slash}`,
+  variantCount: (n: number) => `${n} भेद`,
   factXrefs: 'क्रॉस-संदर्भ',
   factHapax: (t: Testament) => `${testamentLabel(t, 'hi')} में हैपैक्स`,
   /** Contagem de versículos no testamento da palavra; 1 vira "versículo", o resto "vv.". */
@@ -83,7 +83,8 @@ export const hiStudy = {
 
   // ऐतिहासिक
   place: 'स्थान',
-  places: 'स्थान',
+  placesHeading: (_n: number) => 'स्थान',
+  placesAndEntries: (places: number, entries: number) => `${places} स्थान · ${entries} प्रविष्टियाँ`,
   peopleGroups: 'व्यक्ति और समूह',
   dictionaries: 'शब्दकोश और विश्वकोश',
   seeEntity: 'इकाई देखें',
@@ -126,4 +127,10 @@ export const hiStudy = {
 
   // अनुप्रयोग
   applicationHint: 'व्यावहारिक अनुप्रयोग केवल AI से आता है और हमेशा अनुमान के रूप में चिह्नित होता है।',
+  xrefsCount: (n: number) => `${n} संदर्भ`,
+  commentariesCount: (n: number) => `${n} ${n === 1 ? 'टिप्पणी' : 'टिप्पणियाँ'}`,
+  chapterMark: (n: number) => `(अध्याय ${n})`,
+  literaryEmpty: 'इस स्रोत में साहित्यिक संदर्भ नहीं है।',
+  sheetBackHalf: 'आधी ऊँचाई पर वापस जाएँ',
+  sheetToggleHeight: 'अध्ययन की ऊँचाई बदलें',
 };

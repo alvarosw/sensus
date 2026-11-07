@@ -15,6 +15,8 @@ import {
   type ViewStyle,
 } from 'react-native';
 import { useTheme } from './theme';
+import { useUiDirection } from '../ui/direction';
+import { t } from '../i18n';
 import { Icon, type IconName } from './icons';
 import {
   fontFamilies,
@@ -42,12 +44,15 @@ export interface TxtProps extends TextProps {
   bold?: boolean;
   italic?: boolean;
   center?: boolean;
+  /** Texto de fonte ou bíblico: segue a língua do conteúdo, sem a direção da interface (ui/direction). */
+  content?: boolean;
   style?: StyleProp<TextStyle>;
 }
 
 /** Texto tipado. `v` escolhe o papel tipográfico (tokens.type). */
-export function Txt({ v = 'body', color = 'text', tint, bold, italic, center, style, ...rest }: TxtProps) {
+export function Txt({ v = 'body', color = 'text', tint, bold, italic, center, content, style, ...rest }: TxtProps) {
   const { c } = useTheme();
+  const dir = useUiDirection({ variant: v, content, center });
   const t = type[v];
   const family = bold ? boldFamily(t.fontFamily) : italic ? italicFamily(t.fontFamily) : t.fontFamily;
   return (
@@ -56,6 +61,7 @@ export function Txt({ v = 'body', color = 'text', tint, bold, italic, center, st
       style={[
         t as TextStyle,
         { color: tint ?? c[color], fontFamily: family },
+        dir,
         center && { textAlign: 'center' },
         style,
       ]}
@@ -465,13 +471,13 @@ export function ClaimFrame({
           inference && { backgroundColor: c.inf, borderLeftWidth: 3, borderLeftColor: c.infBorder, borderTopRightRadius: radius.md, borderBottomRightRadius: radius.md, paddingVertical: 8, paddingLeft: 10, paddingRight: 30 },
         ]}
       >
-        {inference && <Txt v="eyebrow" tint={c.infBorder} style={{ fontSize: 10.5, marginBottom: 2 }}>Inferência</Txt>}
+        {inference && <Txt v="eyebrow" tint={c.infBorder} style={{ fontSize: 10.5, marginBottom: 2 }}>{t('study.inference')}</Txt>}
         {children}
         {onMore && (
           <Pressable
             testID={testID ? `${testID}-more` : undefined}
             accessibilityRole="button"
-            accessibilityLabel="Ações deste parágrafo"
+            accessibilityLabel={t('claim.actions')}
             onPress={onMore}
             hitSlop={8}
             style={({ pressed }) => ({ position: 'absolute', right: inference ? 4 : 0, top: inference ? 6 : 2, width: 24, height: 24, borderRadius: 6, alignItems: 'center', justifyContent: 'center', backgroundColor: pressed ? c.chip : 'transparent' })}

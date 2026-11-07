@@ -7,8 +7,8 @@ export const urStudy = {
   expand: 'مطالعہ بڑا کریں',
   collapse: 'مطالعہ چھوٹا کریں',
   close: 'انتخاب صاف کریں',
-  verse: 'آیت',
-  verses: 'آیات',
+  verseCount: (n: number) => `${n} ${n === 1 ? 'آیت' : 'آیات'}`,
+  versesAbbr: (n: number) => `${n} ${n === 1 ? 'آیت' : 'آیات'}`,
   crosses: (a: string, b: string) => `${a} → ${b} تک پھیلا ہوا`,
   pericope: (r: string) => `پیریکوپ ${r}`,
   pericopeWhole: 'پورا پیریکوپ',
@@ -16,12 +16,12 @@ export const urStudy = {
   railLabel: 'مطالعے کے زاویے',
 
   factComentaristas: 'مفسرین',
-  factVariante: (slash: string) => `اختلاف ${slash}`,
-  factVariantes: (slash: string) => `اختلافات ${slash}`,
+  factVariantes: (n: number, slash: string) => `${n === 1 ? 'اختلاف' : 'اختلافات'} ${slash}`,
+  variantCount: (n: number) => `${n} ${n === 1 ? 'اختلاف' : 'اختلافات'}`,
   factXrefs: 'حوالہ جاتی ربط',
   factHapax: (t: Testament) => `${testamentLabel(t, 'ur')} میں ہیپیکس`,
   /** Contagem de versículos no testamento da palavra; 1 vira "versículo", o resto "vv.". */
-  factVv: (n: number, t: Testament) => `${testamentLabel(t, 'ur')} میں ${n} آیات`,
+  factVv: (n: number, t: Testament) => `${testamentLabel(t, 'ur')} میں ${n} ${n === 1 ? 'آیت' : 'آیات'}`,
   factNoData: 'کوئی ڈیٹا نہیں',
 
   deepen: 'تفصیل',
@@ -83,7 +83,8 @@ export const urStudy = {
 
   // تاریخی
   place: 'مقام',
-  places: 'مقامات',
+  placesHeading: (n: number) => n > 1 ? 'مقامات' : 'مقام',
+  placesAndEntries: (places: number, entries: number) => `${places} ${places === 1 ? 'مقام' : 'مقامات'} · ${entries} ${entries === 1 ? 'اندراج' : 'اندراجات'}`,
   peopleGroups: 'شخصیات اور گروہ',
   dictionaries: 'لغات اور انسائیکلوپیڈیا',
   seeEntity: 'ہستی دیکھیں',
@@ -126,4 +127,10 @@ export const urStudy = {
 
   // اطلاق
   applicationHint: 'اطلاق صرف AI سے آتا ہے اور ہمیشہ قیاس کے طور پر نشان زد ہوتا ہے۔',
+  xrefsCount: (n: number) => `${n} ${n === 1 ? 'حوالہ' : 'حوالے'}`,
+  commentariesCount: (n: number) => `${n} ${n === 1 ? 'تفسیر' : 'تفاسیر'}`,
+  chapterMark: (n: number) => `(باب ${n})`,
+  literaryEmpty: 'اس ماخذ میں ادبی سیاق نہیں ہے۔',
+  sheetBackHalf: 'آدھی اونچائی پر واپس جائیں',
+  sheetToggleHeight: 'مطالعے کی اونچائی بدلیں',
 };

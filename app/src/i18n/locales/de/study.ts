@@ -7,8 +7,8 @@ export const deStudy = {
   expand: 'Studium erweitern',
   collapse: 'Studium verkleinern',
   close: 'Auswahl aufheben',
-  verse: 'Vers',
-  verses: 'Verse',
+  verseCount: (n: number) => `${n} ${n === 1 ? 'Vers' : 'Verse'}`,
+  versesAbbr: (n: number) => `${n} V.`,
   crosses: (a: string, b: string) => `reicht über ${a} → ${b}`,
   pericope: (r: string) => `Perikope ${r}`,
   pericopeWhole: 'Ganze Perikope',
@@ -16,8 +16,8 @@ export const deStudy = {
   railLabel: 'Perspektiven des Studiums',
 
   factComentaristas: 'Kommentatoren',
-  factVariante: (slash: string) => `Variante ${slash}`,
-  factVariantes: (slash: string) => `Varianten ${slash}`,
+  factVariantes: (n: number, slash: string) => `${n === 1 ? 'Variante' : 'Varianten'} ${slash}`,
+  variantCount: (n: number) => `${n} ${n === 1 ? 'Variante' : 'Varianten'}`,
   factXrefs: 'Querverw.',
   factHapax: (t: Testament) => `Hapax · ${testamentLabel(t, 'de')}`,
   /** Contagem de versículos no testamento da palavra; 1 vira "versículo", o resto "vv.". */
@@ -83,7 +83,8 @@ export const deStudy = {
 
   // Histórico
   place: 'Ort',
-  places: 'Orte',
+  placesHeading: (n: number) => n > 1 ? 'Orte' : 'Ort',
+  placesAndEntries: (places: number, entries: number) => `${places} ${places === 1 ? 'Ort' : 'Orte'} · ${entries} ${entries === 1 ? 'Eintrag' : 'Einträge'}`,
   peopleGroups: 'Personen und Gruppen',
   dictionaries: 'Wörterbücher und Enzyklopädien',
   seeEntity: 'Entität ansehen',
@@ -126,4 +127,10 @@ export const deStudy = {
 
   // Aplicação
   applicationHint: 'Die Anwendung stammt nur von der KI und ist immer als Schlussfolgerung gekennzeichnet.',
+  xrefsCount: (n: number) => `${n} ${n === 1 ? 'Verweis' : 'Verweise'}`,
+  commentariesCount: (n: number) => `${n} ${n === 1 ? 'Kommentar' : 'Kommentare'}`,
+  chapterMark: (n: number) => `(Kapitel ${n})`,
+  literaryEmpty: 'Kein literarischer Kontext in dieser Quelle.',
+  sheetBackHalf: 'Zurück zur halben Höhe',
+  sheetToggleHeight: 'Studienhöhe umschalten',
 };

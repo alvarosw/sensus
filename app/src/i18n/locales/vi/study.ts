@@ -7,8 +7,8 @@ export const viStudy = {
   expand: 'Mở rộng nghiên cứu',
   collapse: 'Thu gọn nghiên cứu',
   close: 'Xóa lựa chọn',
-  verse: 'câu',
-  verses: 'câu',
+  verseCount: (n: number) => `${n} câu`,
+  versesAbbr: (n: number) => `${n} câu`,
   crosses: (a: string, b: string) => `trải qua ${a} → ${b}`,
   pericope: (r: string) => `Phân đoạn ${r}`,
   pericopeWhole: 'Toàn bộ phân đoạn',
@@ -16,8 +16,8 @@ export const viStudy = {
   railLabel: 'Lăng kính nghiên cứu',
 
   factComentaristas: 'chú giải',
-  factVariante: (slash: string) => `dị bản ${slash}`,
-  factVariantes: (slash: string) => `dị bản ${slash}`,
+  factVariantes: (n: number, slash: string) => `dị bản ${slash}`,
+  variantCount: (n: number) => `${n} dị bản`,
   factXrefs: 'tham chiếu chéo',
   factHapax: (t: Testament) => `hapax trong ${testamentLabel(t, 'vi')}`,
   /** Contagem de versículos no testamento da palavra; 1 vira "versículo", o resto "vv.". */
@@ -83,7 +83,8 @@ export const viStudy = {
 
   // Histórico
   place: 'Địa danh',
-  places: 'Địa danh',
+  placesHeading: (_n: number) => 'Địa điểm',
+  placesAndEntries: (places: number, entries: number) => `${places} địa điểm · ${entries} mục`,
   peopleGroups: 'Người và nhóm người',
   dictionaries: 'Từ điển và bách khoa',
   seeEntity: 'Xem thực thể',
@@ -129,4 +130,10 @@ export const viStudy = {
 
   // Aplicação
   applicationHint: 'Phần ứng dụng chỉ đến từ AI và luôn được đánh dấu là suy luận.',
+  xrefsCount: (n: number) => `${n} tham chiếu chéo`,
+  commentariesCount: (n: number) => `${n} chú giải`,
+  chapterMark: (n: number) => `(chương ${n})`,
+  literaryEmpty: 'Nguồn này không có ngữ cảnh văn học.',
+  sheetBackHalf: 'Quay lại chiều cao một nửa',
+  sheetToggleHeight: 'Đổi chiều cao phần nghiên cứu',
 };

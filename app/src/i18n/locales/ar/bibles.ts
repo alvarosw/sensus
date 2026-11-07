@@ -1,12 +1,9 @@
+import { arPlural } from '../../plural';
 // Árabe de app/src/data/bibles/strings.ts. A revisar por falante nativo.
-// Plural árabe: 1 singular, 2 dual, 3 a 10 plural, 11 ou mais singular.
-const arPl = (n: number, one: string, two: string, few: string, many: string): string =>
-  n === 1 ? one : n === 2 ? two : n >= 3 && n <= 10 ? few : many;
-
 export const arBibles = {
   title: 'الترجمات',
   rowTitle: 'الترجمات',
-  rowSubtitle: (n: number) => arPl(n, 'ترجمة واحدة مثبتة', 'ترجمتان مثبتتان', `${n} ترجمات مثبتة`, `${n} ترجمة مثبتة`),
+  rowSubtitle: (n: number) => arPlural(n, 'ترجمة واحدة مثبتة', 'ترجمتان مثبتتان', `${n} ترجمات مثبتة`, `${n} ترجمة مثبتة`),
 
   installedTitle: 'المثبتة',
   recommendedTitle: (lang: string) => `موصى بها للغة ${lang}`,

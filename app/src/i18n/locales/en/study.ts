@@ -7,8 +7,8 @@ export const enStudy = {
   expand: 'Expand study',
   collapse: 'Reduce study',
   close: 'Clear selection',
-  verse: 'verse',
-  verses: 'verses',
+  verseCount: (n: number) => `${n} ${n === 1 ? 'verse' : 'verses'}`,
+  versesAbbr: (n: number) => `${n} vv`,
   crosses: (a: string, b: string) => `crosses ${a} → ${b}`,
   pericope: (r: string) => `Pericope ${r}`,
   pericopeWhole: 'Whole pericope',
@@ -16,8 +16,8 @@ export const enStudy = {
   railLabel: 'Study lenses',
 
   factComentaristas: 'commentators',
-  factVariante: (slash: string) => `variant ${slash}`,
-  factVariantes: (slash: string) => `variants ${slash}`,
+  factVariantes: (n: number, slash: string) => `${n === 1 ? 'variant' : 'variants'} ${slash}`,
+  variantCount: (n: number) => `${n} ${n === 1 ? 'variant' : 'variants'}`,
   factXrefs: 'cross-refs',
   factHapax: (t: Testament) => `hapax in the ${testamentLabel(t, 'en')}`,
   /** Contagem de versículos no testamento da palavra; 1 vira "versículo", o resto "vv.". */
@@ -83,7 +83,8 @@ export const enStudy = {
 
   // Histórico
   place: 'Place',
-  places: 'Places',
+  placesHeading: (n: number) => n > 1 ? 'Places' : 'Place',
+  placesAndEntries: (places: number, entries: number) => `${places} ${places === 1 ? 'place' : 'places'} · ${entries} ${entries === 1 ? 'entry' : 'entries'}`,
   peopleGroups: 'People and groups',
   dictionaries: 'Dictionaries and encyclopedias',
   seeEntity: 'See entity',
@@ -126,4 +127,10 @@ export const enStudy = {
 
   // Aplicação
   applicationHint: 'Application comes only from the AI and is always marked as inference.',
+  xrefsCount: (n: number) => `${n} ${n === 1 ? 'cross-reference' : 'cross-references'}`,
+  commentariesCount: (n: number) => `${n} ${n === 1 ? 'commentary' : 'commentaries'}`,
+  chapterMark: (n: number) => `(chapter ${n})`,
+  literaryEmpty: 'No literary context in this source.',
+  sheetBackHalf: 'Back to half height',
+  sheetToggleHeight: 'Toggle study height',
 };

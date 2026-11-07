@@ -46,7 +46,7 @@ export function InterpretacaoLens({ onLayout }: LensProps) {
     <LensShell
       lens="interpretacao"
       title={SECTION_LABEL.interpretacao}
-      count={panel ? `${views.length} comentários` : undefined}
+      count={panel ? STUDY.commentariesCount(views.length) : undefined}
       sourcesN={filtered.length > SHOWN ? filtered.length : 0}
       onLayout={onLayout}
     >

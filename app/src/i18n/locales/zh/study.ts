@@ -7,8 +7,8 @@ export const zhStudy = {
   expand: '展开研读',
   collapse: '收起研读',
   close: '清除选择',
-  verse: '节',
-  verses: '节',
+  verseCount: (n: number) => `${n} 节`,
+  versesAbbr: (n: number) => `${n} 节`,
   crosses: (a: string, b: string) => `跨越 ${a} → ${b}`,
   pericope: (r: string) => `经文段落 ${r}`,
   pericopeWhole: '整个经文段落',
@@ -16,8 +16,8 @@ export const zhStudy = {
   railLabel: '研读视角',
 
   factComentaristas: '注释者',
-  factVariante: (slash: string) => `异文 ${slash}`,
-  factVariantes: (slash: string) => `异文 ${slash}`,
+  factVariantes: (n: number, slash: string) => `异文 ${slash}`,
+  variantCount: (n: number) => `${n} 异文`,
   factXrefs: '交叉引用',
   factHapax: (t: Testament) => `${testamentLabel(t, 'zh')}中的罕用词`,
   /** Contagem de versículos no testamento da palavra. */
@@ -81,7 +81,8 @@ export const zhStudy = {
 
   // Histórico
   place: '地点',
-  places: '地点',
+  placesHeading: (_n: number) => '地点',
+  placesAndEntries: (places: number, entries: number) => `${places} 个地点 · ${entries} 条词条`,
   peopleGroups: '人物与群体',
   dictionaries: '辞典与百科全书',
   seeEntity: '查看实体',
@@ -124,4 +125,10 @@ export const zhStudy = {
 
   // Aplicação
   applicationHint: '应用部分仅由 AI 生成，并始终标注为推断。',
+  xrefsCount: (n: number) => `${n} 条交叉引用`,
+  commentariesCount: (n: number) => `${n} 条注释`,
+  chapterMark: (n: number) => `（第 ${n} 章）`,
+  literaryEmpty: '此来源没有文学语境。',
+  sheetBackHalf: '返回半屏高度',
+  sheetToggleHeight: '切换学习面板高度',
 };

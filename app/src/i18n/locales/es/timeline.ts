@@ -118,6 +118,8 @@ export const esTl = {
   verseStart: 'Inicio del texto',
   returnPill: 'Volver a la línea de tiempo',
   dismissReturn: 'Descartar',
+  parallelLabel: (lo: string, hi: string) => `Líneas de tiempo en paralelo, ${lo} a ${hi}`,
+  linesCount: (n: number) => `${n} ${n === 1 ? 'línea' : 'líneas'}`,
 };
 
 export const esTlEraShort: Record<string, string> = {

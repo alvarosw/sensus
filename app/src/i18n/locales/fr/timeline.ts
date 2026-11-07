@@ -118,6 +118,8 @@ export const frTl = {
   verseStart: 'Début du texte',
   returnPill: 'Retour à la chronologie',
   dismissReturn: 'Ignorer',
+  parallelLabel: (lo: string, hi: string) => `Frises en parallèle, ${lo} à ${hi}`,
+  linesCount: (n: number) => `${n} ${n <= 1 ? 'ligne' : 'lignes'}`,
 };
 
 export const frTlEraShort: Record<string, string> = {

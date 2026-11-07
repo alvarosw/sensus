@@ -2,10 +2,7 @@
 // Mesmas chaves e assinaturas do pt; o TypeScript confere na chamada de `localized` (strings.ts).
 import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
-// Plural árabe: 1 singular, 2 dual, 3 a 10 plural, 11 ou mais singular.
-const arPl = (n: number, one: string, two: string, few: string, many: string): string =>
-  n === 1 ? one : n === 2 ? two : n >= 3 && n <= 10 ? few : many;
-
+import { arPlural } from '../../plural';
 export const arChat = {
   title: 'الأسئلة',
   subtitle: 'تبقى في هذه الجلسة فقط',
@@ -14,7 +11,7 @@ export const arChat = {
   selectTitle: 'نص الرد',
   selectClose: 'إغلاق النص',
   openBubble: 'فتح الأسئلة',
-  unread: (n: number) => `الأسئلة: ${n} ${arPl(n, 'رد جديد', 'ردّان جديدان', 'ردود جديدة', 'رد جديد')}`,
+  unread: (n: number) => `الأسئلة: ${n} ${arPlural(n, 'رد جديد', 'ردّان جديدان', 'ردود جديدة', 'رد جديد')}`,
   placeholder: 'اسأل عن المقطع…',
   placeholderAttached: 'اسأل عن المرفق…',
   send: 'إرسال',
@@ -75,7 +72,7 @@ export const arSrc = {
   askSource: 'اسأل عن هذا المصدر',
   askEntity: 'اسأل عن هذا الكيان',
   concordance: (n: number, testament: Testament | null) =>
-    `فهرس الكلمات · ${n} ${arPl(n, 'آية', 'آيتان', 'آيات', 'آية')}${testament ? ` في ${testamentLabel(testament, 'ar')}` : ''}`,
+    `فهرس الكلمات · ${n} ${arPlural(n, 'آية', 'آيتان', 'آيات', 'آية')}${testament ? ` في ${testamentLabel(testament, 'ar')}` : ''}`,
   hapax: 'لفظة فريدة',
   moreOccurrences: (n: number) => `+ ${n} ورود`,
   noOccurrences: 'لا توجد مرات ورود في النص الأساسي.',

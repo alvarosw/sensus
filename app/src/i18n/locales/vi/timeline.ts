@@ -117,6 +117,8 @@ export const viTl = {
   verseStart: 'Đầu văn bản',
   returnPill: 'Quay lại dòng thời gian',
   dismissReturn: 'Bỏ qua',
+  parallelLabel: (lo: string, hi: string) => `Các dòng thời gian song song, ${lo} đến ${hi}`,
+  linesCount: (n: number) => `${n} dòng`,
 };
 
 export const viTlEraShort: Record<string, string> = {

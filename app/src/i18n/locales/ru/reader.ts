@@ -1,3 +1,4 @@
+import { ruPlural } from '../../plural';
 // Russo de app/src/features/reader/strings.ts. A revisar por falante nativo.
 export const ruReader = {
   books: 'Книги',
@@ -33,11 +34,3 @@ export const ruReader = {
   back: 'К книгам',
 };
 
-// Plural russo: 1 / 2-4 / 5+ (os números 11 a 14 seguem a terceira forma).
-const ruPlural = (n: number, one: string, few: string, many: string) => {
-  const m10 = n % 10;
-  const m100 = n % 100;
-  if (m10 === 1 && m100 !== 11) return one;
-  if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few;
-  return many;
-};

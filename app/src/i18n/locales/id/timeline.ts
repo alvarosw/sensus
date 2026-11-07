@@ -117,6 +117,8 @@ export const idTl = {
   verseStart: 'Awal teks',
   returnPill: 'Kembali ke lini masa',
   dismissReturn: 'Tutup',
+  parallelLabel: (lo: string, hi: string) => `Garis waktu paralel, ${lo} sampai ${hi}`,
+  linesCount: (n: number) => `${n} garis`,
 };
 
 export const idTlEraShort: Record<string, string> = {

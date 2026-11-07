@@ -116,6 +116,8 @@ export const jaTl = {
   verseStart: '本文の先頭',
   returnPill: '年表に戻る',
   dismissReturn: '閉じる',
+  parallelLabel: (lo: string, hi: string) => `並行する年表、${lo} から ${hi}`,
+  linesCount: (n: number) => `${n} 本`,
 };
 
 export const jaTlEraShort: Record<string, string> = {

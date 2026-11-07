@@ -118,6 +118,8 @@ export const deTl = {
   verseStart: 'Anfang des Textes',
   returnPill: 'Zurück zur Zeitleiste',
   dismissReturn: 'Ausblenden',
+  parallelLabel: (lo: string, hi: string) => `Zeitlinien parallel, ${lo} bis ${hi}`,
+  linesCount: (n: number) => `${n} ${n === 1 ? 'Linie' : 'Linien'}`,
 };
 
 export const deTlEraShort: Record<string, string> = {
