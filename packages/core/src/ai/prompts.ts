@@ -48,16 +48,29 @@ export function summaryCacheKey(unit: VerseRange): string {
   return `summary:${SUMMARY_PROMPT_VERSION}:${unit.start}-${unit.end}`;
 }
 
+/** Nome de cada idioma do app em português (o prompt é pt-BR), pelo BCP-47 e pelo código principal. */
 const LANGUAGE_NAMES: Readonly<Record<string, string>> = {
   'pt-BR': 'português do Brasil',
   pt: 'português do Brasil',
   en: 'inglês',
   'en-US': 'inglês',
+  'zh-Hans': 'chinês simplificado',
+  zh: 'chinês simplificado',
+  hi: 'hindi',
   es: 'espanhol',
+  ar: 'árabe',
+  fr: 'francês',
+  bn: 'bengali',
+  ru: 'russo',
+  id: 'indonésio',
+  ur: 'urdu',
+  de: 'alemão',
+  ja: 'japonês',
+  vi: 'vietnamita',
 };
 
 function languageName(tag: string): string {
-  return LANGUAGE_NAMES[tag] ?? tag;
+  return LANGUAGE_NAMES[tag] ?? LANGUAGE_NAMES[tag.split(/[-_]/)[0] ?? ''] ?? tag;
 }
 
 /** Prompt de sistema. O texto é pt-BR; a língua da resposta segue `language`, o idioma do app. */

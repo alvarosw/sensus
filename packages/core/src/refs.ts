@@ -1,6 +1,8 @@
 // Ids de versículo (vid), nomes de livros e referências bíblicas em pt-BR.
 import { LAST_VERSE, MAX_BOOK, packVid, unpackVid } from './domain/vid';
 import type { Book, Vid, VerseRange } from './types';
+import { DEFAULT_APP_LANG, pickLang, type AppLang } from './domain/locale';
+import { BOOK_NAMES } from './domain/book-names.generated';
 
 /** Último número de versículo ("capítulo inteiro", ex.: makeVid(b, c, LAST_VERSE)) e último livro: valores no domínio. */
 export { LAST_VERSE, MAX_BOOK };
@@ -157,12 +159,35 @@ function pointLabel(p: VidParts, name: string): string {
 }
 
 /**
- * Formata um intervalo em pt-BR: "Filipenses 2:5-8", "Filipenses 2:5-3:1", "Filipenses 2",
- * "Filipenses 2-3", "Filipenses" (livro inteiro), "Filipenses 2:5 - Colossenses 1:1".
+ * Nome de um livro no idioma pedido. 'pt' (padrão) usa o nome do próprio livro (o do banco ou da tabela); os demais,
+ * BOOK_NAMES; idioma sem nome cai no inglês. Livro ausente em pt: "Livro N".
  */
-export function formatReference(range: VerseRange, books: BookSource = BOOK_TABLE): string {
+export function bookNameOf(book: Book | undefined, num: number, lang: AppLang = DEFAULT_APP_LANG): string {
+  if (lang === DEFAULT_APP_LANG) return book?.name_pt ?? `Livro ${num}`;
+  const names: Partial<Record<AppLang, string>> = {};
+  for (const l of Object.keys(BOOK_NAMES) as AppLang[]) {
+    const name = BOOK_NAMES[l]?.[num - 1]?.name;
+    if (name) names[l] = name;
+  }
+  return pickLang(names, lang) ?? book?.name_pt ?? `Livro ${num}`;
+}
+
+/** Abreviação de um livro no idioma pedido (padrão pt); cai no inglês. Vazia se nenhum idioma tem o livro. */
+export function bookAbbrOf(num: number, lang: AppLang = DEFAULT_APP_LANG): string {
+  const row = (l: AppLang) => BOOK_NAMES[l]?.[num - 1];
+  return pickLang({ pt: row('pt')?.abbr, en: row('en')?.abbr }, lang) ?? '';
+}
+
+/** Palavra "introdução" (versículo 0 do capítulo) no idioma pedido. */
+const INTRO_WORD: Partial<Record<AppLang, string>> = { pt: 'introdução', en: 'introduction' };
+
+/**
+ * Formata um intervalo: "Filipenses 2:5-8", "Filipenses 2:5-3:1", "Filipenses 2", "Filipenses 2-3", "Filipenses" (livro
+ * inteiro), "Filipenses 2:5 - Colossenses 1:1". Padrão pt-BR; `lang` troca os nomes dos livros e a palavra de introdução.
+ */
+export function formatReference(range: VerseRange, books: BookSource = BOOK_TABLE, lang: AppLang = DEFAULT_APP_LANG): string {
   const map = bookMap(books);
-  const nameOf = (num: number): string => map.get(num)?.name_pt ?? `Livro ${num}`;
+  const nameOf = (num: number): string => bookNameOf(map.get(num), num, lang);
   const s = splitVid(range.start);
   const e = splitVid(range.end);
 
@@ -178,7 +203,7 @@ export function formatReference(range: VerseRange, books: BookSource = BOOK_TABL
   if (s.chapter === 1 && wholeStart && wholeEnd && e.chapter >= lastChapter) return name;
 
   if (s.chapter === e.chapter) {
-    if (s.verse === 0 && e.verse === 0) return `${name} ${s.chapter} (introdução)`;
+    if (s.verse === 0 && e.verse === 0) return `${name} ${s.chapter} (${pickLang(INTRO_WORD, lang) ?? INTRO_WORD.pt})`;
     if (wholeStart && wholeEnd) return `${name} ${s.chapter}`;
     if (s.verse === e.verse) return `${name} ${s.chapter}:${s.verse}`;
     return `${name} ${s.chapter}:${Math.max(s.verse, 1)}-${e.verse}`;
@@ -190,8 +215,8 @@ export function formatReference(range: VerseRange, books: BookSource = BOOK_TABL
 }
 
 /** Um único versículo: "Filipenses 2:5". */
-export function formatVerse(vid: Vid, books: BookSource = BOOK_TABLE): string {
-  return formatReference({ start: vid, end: vid }, books);
+export function formatVerse(vid: Vid, books: BookSource = BOOK_TABLE, lang: AppLang = DEFAULT_APP_LANG): string {
+  return formatReference({ start: vid, end: vid }, books, lang);
 }
 
 // ---- parsing -------------------------------------------------------------------
