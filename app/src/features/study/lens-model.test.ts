@@ -7,6 +7,7 @@ import {
   commentaryHitIndex,
   commentaryMatrix,
   commentaryTraditions,
+  compareOptions,
   compareRows,
   dedupePlaces,
   filterCommentaries,
@@ -14,6 +15,7 @@ import {
   historicalParts,
   literaryNeighborhood,
   passageDivisions,
+  resolveCompare,
   selectedVids,
 } from './lens-model';
 
@@ -134,6 +136,40 @@ describe('comparação da lente Texto (NT grego e AT hebraico)', () => {
       { vid: FP_2_6, kind: 'empty' },
     ]);
     expect(compareRows([FP_2_5], 'kjv', translations, originals)).toEqual([{ vid: FP_2_5, kind: 'empty' }]);
+  });
+
+  it('Bíblia baixada: a coluna é a dela, no NT (Fp 2:5) e no AT (1Rs 15:15)', () => {
+    const baixada = [
+      { source_id: 'rvr1909', vid: FP_2_5, text: 'Haya, pues, en vosotros este sentir' },
+      { source_id: 'rvr1909', vid: RS_15_15, text: 'Metió en el tesoro de la casa de Jehová' },
+    ];
+    expect(compareRows([FP_2_5, RS_15_15], 'rvr1909', baixada, originals)).toEqual([
+      { vid: FP_2_5, kind: 'text', text: 'Haya, pues, en vosotros este sentir' },
+      { vid: RS_15_15, kind: 'text', text: 'Metió en el tesoro de la casa de Jehová' },
+    ]);
+  });
+});
+
+describe('ordem das colunas da comparação', () => {
+  it('a Bíblia do leitor vem primeiro, depois as demais instaladas, e o original por último', () => {
+    expect(compareOptions(['blivre', 'kjv', 'rvr1909', 'lsg1910'], 'rvr1909')).toEqual(['rvr1909', 'blivre', 'kjv', 'lsg1910', 'original']);
+    expect(compareOptions(['blivre', 'kjv'], 'blivre')).toEqual(['blivre', 'kjv', 'original']);
+  });
+
+  it('leitor fora das instaladas: as instaladas seguem na ordem dada', () => {
+    expect(compareOptions(['blivre', 'kjv'], 'rvr1909')).toEqual(['blivre', 'kjv', 'original']);
+  });
+
+  it('sem Bíblias instaladas, só o original', () => {
+    expect(compareOptions([], 'blivre')).toEqual(['original']);
+  });
+
+  it('coluna escolhida que sumiu cai na primeira da lista', () => {
+    const options = compareOptions(['blivre', 'rvr1909'], 'rvr1909');
+    expect(resolveCompare('rvr1909', options)).toBe('rvr1909');
+    expect(resolveCompare('lsg1910', options)).toBe('rvr1909');
+    expect(resolveCompare('original', ['original'])).toBe('original');
+    expect(resolveCompare('kjv', [])).toBe('original');
   });
 });
 

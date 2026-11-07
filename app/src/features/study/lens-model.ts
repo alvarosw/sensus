@@ -15,8 +15,10 @@ import {
 import { chv } from '../common/format';
 import type { CommentaryView } from './format';
 
-/** Fonte da coluna de comparação da lente Texto: traduções corridas ou o original do testamento do trecho. */
-export type CompareKey = 'blivre' | 'kjv' | 'original';
+/** Coluna da comparação da lente Texto: o id de uma Bíblia instalada, ou 'original' (o testamento do trecho). */
+export type CompareKey = string;
+
+export const ORIGINAL_COMPARE: CompareKey = 'original';
 
 type Historical = PanelData['layers']['historical'];
 type Literary = PanelData['layers']['literary'];
@@ -158,6 +160,21 @@ export function passageDivisions<T extends { vid: Vid }>(divisions: readonly T[]
   return divisions.filter((d) => d.vid >= range.start && d.vid <= range.end);
 }
 
+/**
+ * Colunas da comparação, na ordem da tela: a Bíblia do leitor primeiro (se estiver instalada), as demais instaladas na
+ * ordem dada e, por último, o original (grego ou hebraico, conforme o trecho).
+ */
+export function compareOptions(installed: readonly string[], reader: string): CompareKey[] {
+  const rest = installed.filter((id) => id !== reader);
+  const translations = installed.includes(reader) ? [reader, ...rest] : rest;
+  return [...translations, ORIGINAL_COMPARE];
+}
+
+/** A coluna escolhida, se ainda está na lista; senão a primeira (a Bíblia do leitor, ou o original sem Bíblias). */
+export function resolveCompare(compare: CompareKey, options: readonly CompareKey[]): CompareKey {
+  return options.includes(compare) ? compare : (options[0] ?? ORIGINAL_COMPARE);
+}
+
 /** Uma linha da comparação: texto de tradução, palavras do original (com a direção da escrita) ou nada a mostrar. */
 export type CompareRow =
   | { vid: Vid; kind: 'text'; text: string }
@@ -177,7 +194,7 @@ export function compareRows(
   const byVid = new Map<string, string>();
   for (const t of translations) byVid.set(`${t.source_id}:${t.vid}`, t.text);
   return vids.map((vid): CompareRow => {
-    if (compare === 'original') {
+    if (compare === ORIGINAL_COMPARE) {
       const tokens = originals.get(vid);
       if (!tokens || tokens.length === 0) return { vid, kind: 'empty' };
       return { vid, kind: 'original', tokens: [...tokens], dir: dirOf(scriptOf(tokens[0]!.surface)) };

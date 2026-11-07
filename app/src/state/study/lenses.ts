@@ -17,7 +17,8 @@ export const LENS_LABELS: Record<LensKey, string> = {
   aplicacao: 'Aplicação',
 };
 
-export type CompareSource = 'blivre' | 'kjv' | 'original';
+/** Coluna da comparação da lente Texto: id de uma Bíblia instalada, ou 'original' (ver lens-model compareOptions). */
+export type CompareSource = string;
 
 export interface LensesSlice {
   /** Lente visível (sincronizada com o trilho e a rolagem). */

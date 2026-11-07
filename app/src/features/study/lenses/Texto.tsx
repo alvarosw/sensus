@@ -1,14 +1,16 @@
-// Lente Texto: traduções lado a lado (BLivre, KJV) ou o original do testamento do trecho (TR no NT, WLC no AT),
-// e as variantes entre edições (só onde o trecho tem corpus com mais de uma edição-base: o NT grego).
+// Lente Texto: traduções lado a lado (a Bíblia do leitor primeiro, depois as demais instaladas) ou o original do
+// testamento do trecho (TR no NT, WLC no AT), e as variantes entre edições (só onde o trecho tem corpus com mais de
+// uma edição-base: o NT grego).
 import { useMemo } from 'react';
 import { Text, View } from 'react-native';
-import { editionVariantsOfRange, originalTextOf, originalTokensByVid, sourceShort, variantSites, type PanelData, type Token, type Vid } from '@sensus/core';
+import { bibleAbbr, editionVariantsOfRange, originalTextOf, originalTokensByVid, sourceShort, variantSites, type PanelData, type Token, type Vid } from '@sensus/core';
 import { Empty, fontFamilies, Greek, LinkButton, Segmented, SubHeader, Txt, space, useTheme } from '@/design';
 import { useStudy } from '@/state/study';
+import { useBibles } from '@/data/bibles/bibles-store';
 import { bareWord, chv } from '@/features/common/format';
 import { LensShell } from '../LensShell';
 import { VariantCard } from '../cards';
-import { compareRows, selectedVids, textoCountLabel, type CompareRow } from '../lens-model';
+import { compareOptions, compareRows, ORIGINAL_COMPARE, resolveCompare, selectedVids, textoCountLabel, type CompareKey, type CompareRow } from '../lens-model';
 import { STUDY } from '../strings';
 import { useStudyData } from '../useStudyData';
 import { Body, Cards, SECTION_LABEL, useExpanded, type LensProps } from './shared';
@@ -40,8 +42,7 @@ function CompareLine({ row, onWord }: { row: CompareRow; onWord: (t: Token) => v
   );
 }
 
-function CompareText({ panel, vids }: { panel: PanelData; vids: Vid[] }) {
-  const compare = useStudy((s) => s.compare);
+function CompareText({ panel, vids, compare }: { panel: PanelData; vids: Vid[]; compare: CompareKey }) {
   const pushPanel = useStudy((s) => s.pushPanel);
   const expanded = useStudy((s) => !!s.expanded['texto-cmp']);
   const toggle = useStudy((s) => s.toggleExpanded);
@@ -59,7 +60,7 @@ function CompareText({ panel, vids }: { panel: PanelData; vids: Vid[] }) {
           <LinkButton label={expanded ? STUDY.seeLess : `${STUDY.seeAll} ${vids.length}`} onPress={() => toggle('texto-cmp')} />
         </View>
       )}
-      {compare === 'original' && (
+      {compare === ORIGINAL_COMPARE && (
         <Txt v="meta" color="muted" style={{ fontSize: 11 }}>
           {STUDY.originalHint(sourceShort(originalTextOf('NT')), sourceShort(originalTextOf('OT')))}
         </Txt>
@@ -70,7 +71,10 @@ function CompareText({ panel, vids }: { panel: PanelData; vids: Vid[] }) {
 
 export function TextoLens({ onLayout }: LensProps) {
   const data = useStudyData();
-  const compare = useStudy((s) => s.compare);
+  const installed = useBibles((s) => s.installed);
+  const catalog = useBibles((s) => s.catalog);
+  const options = useMemo(() => compareOptions(installed, data.textSource), [installed, data.textSource]);
+  const compare = resolveCompare(useStudy((s) => s.compare), options);
   const setCompare = useStudy((s) => s.setCompare);
   const expanded = useExpanded('texto');
   const { panel, range, books } = data;
@@ -97,13 +101,9 @@ export function TextoLens({ onLayout }: LensProps) {
               testID="compare-seg"
               value={compare}
               onChange={setCompare}
-              options={[
-                { key: 'blivre', label: STUDY.cmpBlivre },
-                { key: 'kjv', label: STUDY.cmpKjv },
-                { key: 'original', label: STUDY.cmpOriginal },
-              ]}
+              options={options.map((key) => ({ key, label: key === ORIGINAL_COMPARE ? STUDY.cmpOriginal : bibleAbbr(key, catalog) }))}
             />
-            <CompareText panel={p} vids={vids} />
+            <CompareText panel={p} vids={vids} compare={compare} />
             {editions && <SubHeader label={STUDY.variantsTitle} />}
             {editions && (shown.length === 0 ? (
               <Empty text={STUDY.variantsEmpty(editions.list)} />
