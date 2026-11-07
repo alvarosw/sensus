@@ -12,6 +12,8 @@ import { BIBLE_COPY } from './strings';
 export interface BibleRowProps {
   info: BibleRowInfo;
   installed: boolean;
+  /** Instalada, mas o catálogo tem versão mais nova: oferece baixar de novo (troca atômica, ver install.ts). */
+  update?: boolean;
   badge: boolean;
   first: boolean;
   machine: MachineState;
@@ -20,7 +22,7 @@ export interface BibleRowProps {
   onRemove: () => void;
 }
 
-export function BibleRow({ info, installed, badge, first, machine, onInstall, onCancel, onRemove }: BibleRowProps) {
+export function BibleRow({ info, installed, update = false, badge, first, machine, onInstall, onCancel, onRemove }: BibleRowProps) {
   const { c } = useTheme();
   const meta = [langName(info.lang), info.license ? BIBLE_COPY.license(info.license) : null, info.sizeBytes ? BIBLE_COPY.size(formatMB(info.sizeBytes)) : null]
     .filter((x): x is string => !!x)
@@ -40,6 +42,7 @@ export function BibleRow({ info, installed, badge, first, machine, onInstall, on
       <Actions
         info={info}
         installed={installed}
+        update={update}
         machine={machine}
         onInstall={onInstall}
         onCancel={onCancel}
@@ -49,21 +52,29 @@ export function BibleRow({ info, installed, badge, first, machine, onInstall, on
   );
 }
 
-function Actions({ info, installed, machine, onInstall, onCancel, onRemove }: Omit<BibleRowProps, 'first' | 'badge' | 'machine'> & { machine: MachineState }) {
+function Actions({ info, installed, update, machine, onInstall, onCancel, onRemove }: Omit<BibleRowProps, 'first' | 'badge' | 'machine'> & { machine: MachineState }) {
   const { c } = useTheme();
   const id = info.id;
+  const { phase } = machine;
 
-  if (installed) {
+  const installedLine = (
+    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
+      <StatusPill testID={`bible-installed-${id}`} label={BIBLE_COPY.installed} tone="ok" />
+      {info.bundled ? null : <LinkButton testID={`bible-remove-${id}`} tone="danger" label={BIBLE_COPY.remove} onPress={onRemove} />}
+    </View>
+  );
+  if (installed && !update) return installedLine;
+  // Instalada com versão nova: a linha mostra a instalação e o botão de baixar; o progresso segue abaixo.
+  if (installed && update && (phase === 'idle' || phase === 'done')) {
     return (
-      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
-        <StatusPill testID={`bible-installed-${id}`} label={BIBLE_COPY.installed} tone="ok" />
-        {info.bundled ? null : <LinkButton testID={`bible-remove-${id}`} tone="danger" label={BIBLE_COPY.remove} onPress={onRemove} />}
+      <View style={{ gap: 8 }}>
+        {installedLine}
+        <FormButton testID={`bible-update-${id}`} label={BIBLE_COPY.install} onPress={onInstall} />
       </View>
     );
   }
   if (!info.downloadable) return null;
 
-  const { phase } = machine;
   if (phase === 'downloading') {
     const pct = percentOf(machine);
     return (
