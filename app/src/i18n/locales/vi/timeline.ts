@@ -35,7 +35,7 @@ export const viTl = {
   noEvents: 'Không có sự kiện nào với tìm kiếm và bộ lọc này.',
   noLines: 'Không có dòng thời gian nào với bộ lọc này.',
   footer:
-    'Nguồn: Theographic (CC BY-SA 4.0). Ngày tháng theo niên biểu của nguồn; tiêu đề và tên tiếng Việt là bản điều chỉnh của dự án Sensus.',
+    'Nguồn: Theographic (CC BY-SA 4.0). Niên đại theo trình tự thời gian của nguồn.',
 
   lineTitleOf: (count: number) => `${count} sự kiện`,
   inSource: (name: string) => `trong nguồn: ${name}`,
