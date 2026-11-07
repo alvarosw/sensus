@@ -99,6 +99,16 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'egw-steps': { short: 'Caminho a Cristo', commentator: 'Ellen G. White · Caminho a Cristo', role: 'commentary', lang: 'en' },
   'egw-thoughts': { short: 'O Maior Discurso de Cristo', commentator: 'Ellen G. White · O Maior Discurso de Cristo', role: 'commentary', lang: 'en' },
   'smith-daniel': { short: 'Daniel e Apocalipse', commentator: 'Uriah Smith · Daniel e Apocalipse', role: 'commentary', lang: 'en' },
+  // Segunda leva (pipeline/ingest/adventist_pd.py). Títulos pt: O Desejado de Todas as Nações é o nome da edição
+  // brasileira; os demais são traduções do título inglês, sem conferir edição brasileira.
+  'egw-desire-of-ages': { short: 'O Desejado de Todas as Nações', commentator: 'Ellen G. White · O Desejado de Todas as Nações', role: 'commentary', lang: 'en' },
+  'haskell-daniel': { short: 'Daniel, o Profeta', commentator: 'Stephen N. Haskell · Daniel, o Profeta', role: 'commentary', lang: 'en' },
+  'haskell-seer': { short: 'O Vidente de Patmos', commentator: 'Stephen N. Haskell · O Vidente de Patmos', role: 'commentary', lang: 'en' },
+  'waggoner-galatians': { short: 'As Boas Novas', commentator: 'E. J. Waggoner · As Boas Novas', role: 'commentary', lang: 'en' },
+  'waggoner-christ': { short: 'Cristo e Sua Justiça', commentator: 'E. J. Waggoner · Cristo e Sua Justiça', role: 'commentary', lang: 'en' },
+  'andrews-sabbath': { short: 'História do Sábado', commentator: 'J. N. Andrews · História do Sábado', role: 'commentary', lang: 'en' },
+  'smith-us-prophecy': { short: 'Estados Unidos na Profecia', commentator: 'Uriah Smith · Estados Unidos na Profecia', role: 'commentary', lang: 'en' },
+  'smith-sanctuary': { short: 'O Santuário e os 2.300 Dias', commentator: 'Uriah Smith · O Santuário e os 2.300 Dias', role: 'commentary', lang: 'en' },
 };
 
 /** Ordem de preferência das fontes de lugares (menor = melhor) para escolher a identificação moderna. */

@@ -64,6 +64,14 @@ const NOVAS: Array<{ id: string; kind: string; tradition: string }> = [
   { id: 'egw-steps', kind: 'commentary', tradition: 'adventist' },
   { id: 'egw-thoughts', kind: 'commentary', tradition: 'adventist' },
   { id: 'smith-daniel', kind: 'commentary', tradition: 'adventist' },
+  { id: 'egw-desire-of-ages', kind: 'commentary', tradition: 'adventist' },
+  { id: 'haskell-daniel', kind: 'commentary', tradition: 'adventist' },
+  { id: 'haskell-seer', kind: 'commentary', tradition: 'adventist' },
+  { id: 'waggoner-galatians', kind: 'commentary', tradition: 'adventist' },
+  { id: 'waggoner-christ', kind: 'commentary', tradition: 'adventist' },
+  { id: 'andrews-sabbath', kind: 'commentary', tradition: 'adventist' },
+  { id: 'smith-us-prophecy', kind: 'commentary', tradition: 'adventist' },
+  { id: 'smith-sanctuary', kind: 'commentary', tradition: 'adventist' },
 ];
 
 const ROLE_OF_KIND: Record<string, string[]> = {

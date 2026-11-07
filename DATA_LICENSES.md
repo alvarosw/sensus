@@ -122,12 +122,33 @@ Estate. Ver item 12. Não são comentários versículo a versículo: só parágr
 | `egw-thoughts` | Ellen G. White (1827-1915) | Thoughts from the Mount of Blessing (1896; impressão de 1928, copyright 1900 e 1928) | archive.org `thoughtsfrommoun0000unse` (Cincinnati Bible College & Seminary) | Comentário do Sermão do Monte. Legendas de ilustração (título em maiúsculas, citação e "— Page N") removidas, com o OCR solto ao redor; o parágrafo cortado por elas volta a ser um só. Parágrafos com marca de OCR ruim ou sem correspondência descartados (`strict_ocr`). Seções de Mateus 5–7: a epígrafe de cada seção (igual ou quase igual ao texto da KJV) liga os parágrafos da seção ao versículo (`sermon_sections`). Regra de aspas abaixo. |
 | `smith-daniel` | Uriah Smith (1832-1903) | Daniel and the Revelation (1897; edição de 1907, copyright 1907 da viúva) | archive.org `danielrevelation0000smit` (Claremont School of Theology) | Estudo versículo a versículo, não de Ellen G. White. Notas de cabeçalho de página e sumário removidos. Aspas do OCR restauradas (regra abaixo). Parágrafos com sinais de OCR ruim (`|`, `\`, `i`/`j` solto, `,1` colado) e com "Tt" (por "It") descartados. |
 
-**Examinadas e não incluídas (adventistas e outras):** *The Desire of Ages* (os scans de 1898 trazem aviso de direitos
-de 1940, de edição revisada; titularidade não confirmada); *Ministry of Healing* (1905) e *Education* (1903), em
-archive.org: o texto vem com uma linha por parágrafo, e a frase é cortada no fim da linha (mediana de 34 a 89
-caracteres), então os parágrafos não podem ser reconstruídos sem alterar o texto (a edição de 1905 com aviso de 1942 não
-serve); Geneva Bible Translation Notes e Family Bible Notes (sem `DistributionLicense` no `.conf`; o scan de 1599 no
-archive.org não traz licença); Darby Translation Notes (índice não alinhado à versificação).
+**Segunda leva (domínio público; autores falecidos antes de 1923, obras publicadas de 1873 a 1905).** Mesma regra de
+parágrafo com referência explícita. Títulos pt: *O Desejado de Todas as Nações* é o nome da edição brasileira; os
+demais são tradução nossa do título inglês, sem conferir edição brasileira. Citações de margem ou de nota (parágrafo só com texto da Escritura, conferido pela KJV) saem do comentário: com a referência casada, ou sem ela quando quase todo o texto está na Bíblia (regra `citacoes`). Ver item 12.
+
+| Fonte (id) | Autor | Título e edição | Origem do texto | Condições |
+|---|---|---|---|---|
+| `egw-desire-of-ages` | Ellen G. White (1827-1915) | The Desire of Ages (1898, Pacific Press) | archive.org `desireofages00whit` | Scan sem aviso de 1940 nem de 1964 (os de `desireofages0000elle_w5v8` e `_z5c9` trazem, e não são usados). Rodapés de referência (`^^Zech. 9:16, 17.`) saem do texto e ligam ao parágrafo da página (`page_notes`). "This chapter is based on…" (nota editorial) sai. Parágrafos com `©` (OCR) descartados. |
+| `haskell-daniel` | Stephen N. Haskell (1855-1922) | The Story of Daniel the Prophet (1901, Review and Herald) | archive.org `the-story-of-daniel-the-prophet-1901-review-and-herald-orig` | Comentário versículo a versículo. Títulos de seção "(Chapter 11:3-13)" saem do texto (não ligam versículo). Citações de margem só com texto da Escritura saem. Rodapés de referência como acima. Parágrafos com `©` descartados. |
+| `haskell-seer` | Stephen N. Haskell (1855-1922) | The Story of the Seer of Patmos (1905, Review and Herald) | archive.org `storyofseerofpat01hask` | Rodapés de referência como acima. Parágrafos com `©` descartados. |
+| `waggoner-galatians` | E. J. Waggoner (1855-1916) | The Glad Tidings (1900, Pacific Press; copyright 1900) | Project Gutenberg #63636 | Comentário de Gálatas. Sumário do Gutenberg (capítulos com página) removido. A citação em bloco é da Revised Version, que não casa com a KJV: a ligação é só por referência explícita. |
+| `waggoner-christ` | E. J. Waggoner (1855-1916) | Christ and His Righteousness (1893, Echo Publishing) | archive.org `christ-and-his-righteousness-1893-echo-publishing` | Cabeçalhos de página removidos. Parágrafos com `©` ou `|` (OCR) descartados. |
+| `andrews-sabbath` | John Nevins Andrews (1829-1883) | History of the Sabbath and First Day of the Week (1873) | Project Gutenberg #68714 | Notas de rodapé ligadas pelo marcador, como em `egw-patriarchs`. Sumário e índice do Gutenberg fora do texto. |
+| `smith-us-prophecy` | Uriah Smith (1832-1903) | The United States in the Light of Prophecy (1874) | Project Gutenberg #12364 | Comentário de Apocalipse 13 e Daniel 7. Sem capítulos numerados no texto. |
+| `smith-sanctuary` | Uriah Smith (1832-1903) | The Sanctuary and the Twenty-three Hundred Days of Daniel VIII, 14 (1877) | archive.org `sanctuarytwentyt0000smit` | Dn 8:14 e o santuário. Cabeçalhos "THE SANCTUARY." removidos. O índice remissivo e o catálogo do editor (com anúncios) saem do texto, a partir do cabeçalho "INDEX. 349" (`skip`). Parágrafos com `©` descartados. |
+
+**Examinadas e não incluídas (adventistas e outras):** *Ministry of Healing* (1905/1909): o scan de 1909 não tem
+referência explícita em parágrafo, e o de 1905 traz aviso de 1942 (edição revisada); não está no Gutenberg. *Education*
+(1903): no Gutenberg (#62102), as referências são linhas curtas de lista (cerca de 35), sem comentário; no archive.org,
+uma linha por parágrafo. *Early Writings* (1893, archive.org): 73 referências. *Testimonies* (1901): poucas referências
+explícitas no volume lido. *The Great Empires of Prophecy* (Jones, 1898, archive.org): OCR com barras verticais
+(cerca de 100 referências). *Bates*, *The Opening Heavens* e *Seventh Day Sabbath* (Gutenberg): 4 e 2 parágrafos com
+referência. *The Complete Testimony of the Fathers* (Andrews, Gutenberg #55818): tema patrístico, 53 referências.
+*The State of the Dead* (Smith, 1873): sem referência explícita. *Sketches from the Life of Paul* e *Looking Unto Jesus*:
+não encontradas em Gutenberg nem em archive.org.
+
+**Examinadas e não incluídas (outras):** Geneva Bible Translation Notes e Family Bible Notes (sem `DistributionLicense` no
+`.conf`; o scan de 1599 no archive.org não traz licença); Darby Translation Notes (índice não alinhado à versificação).
 Ver item 12 para as demais.
 
 **Dicionários**
@@ -232,6 +253,10 @@ recusadas em `docs/BIBLES_LICENSES.md`. Origem de todas: eBible.org (USFM), pág
     (d) `egw-great-controversy` usa a edição do Gutenberg (1911), que tem poucas citações no corpo. A edição de
     1895 (Digital Library of India, dli.ernet.236787) tem muito mais citações, mas o OCR troca palavras ("tho" por
     "the", "bo" por "be") em cerca de um terço dos parágrafos com referência. Não foi usada.
+    (e) As regras de rodapé de referência (`page_notes`) e de título de seção (`titulos_secao`) e de citação de margem (`citacoes`) valem só para a segunda
+    leva. `smith-daniel`, `egw-thoughts` e as demais fontes adventistas antigas continuam como estavam, para o que já
+    está publicado não mudar. Em `smith-daniel`, notas de rodapé colocadas no meio do parágrafo ainda podem aparecer no
+    texto; conferir antes de uma próxima release.
 
 ## 4. Ferramentas e modelos de terceiros (não são dados do banco)
 
