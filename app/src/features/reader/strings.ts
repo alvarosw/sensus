@@ -1,5 +1,7 @@
+import { localized } from '../../i18n';
+import { enReader } from '../../i18n/locales/en/reader';
 // Textos do leitor e da barra superior (pt-BR). i18n/index.ts é compartilhado com outras telas.
-export const READER = {
+const ptReader = {
   books: 'Livros',
   currentRef: (name: string) => `${name}. Ir para…`,
   jumpPlaceholder: 'Ir para… ex.: fp 2:5',
@@ -31,5 +33,6 @@ export const READER = {
   settings: 'Configurações',
   close: 'Fechar',
   back: 'Voltar aos livros',
-} as const;
+};
+export const READER = localized<typeof ptReader>({ pt: ptReader, en: enReader });
 
