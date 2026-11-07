@@ -21,7 +21,8 @@ export interface BibleRowProps {
   machine: MachineState;
   onInstall: () => void;
   onCancel: () => void;
-  onRemove: () => void;
+  /** Sem esta ação, a linha não mostra "Remover" (ex.: passo de Bíblia do onboarding). */
+  onRemove?: () => void;
 }
 
 export function BibleRow({ info, installed, update = false, updateVersion, badge, first, machine, onInstall, onCancel, onRemove }: BibleRowProps) {
@@ -63,7 +64,7 @@ function Actions({ info, installed, update, updateVersion, machine, onInstall, o
   const installedLine = (
     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
       <StatusPill testID={`bible-installed-${id}`} label={BIBLE_COPY.installed} tone="ok" />
-      {info.bundled ? null : <LinkButton testID={`bible-remove-${id}`} tone="danger" label={BIBLE_COPY.remove} onPress={onRemove} />}
+      {info.bundled || !onRemove ? null : <LinkButton testID={`bible-remove-${id}`} tone="danger" label={BIBLE_COPY.remove} onPress={onRemove} />}
     </View>
   );
   if (installed && !update) return installedLine;
