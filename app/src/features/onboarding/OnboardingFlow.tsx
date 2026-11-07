@@ -23,8 +23,18 @@ import { useOnboarding } from './onboarding-store';
  */
 function finish(): void {
   const firstRun = !useAppPrefs.getState().onboardingDone;
-  useAppPrefs.getState().setOnboardingDone(true);
-  if (!firstRun) router.dismissTo('/');
+  if (!firstRun) {
+    router.dismissTo('/');
+    return;
+  }
+  // Primeiro sai da apresentação (a pilha remontada restauraria a rota atual); depois, com a navegação assentada,
+  // grava como vista, o que muda a chave da pilha e a remonta no idioma escolhido. Navegar durante a remontagem
+  // derruba o app (ver _layout.tsx).
+  router.replace('/');
+  setTimeout(() => {
+    useOnboarding.getState().go('abertura');
+    useAppPrefs.getState().setOnboardingDone(true);
+  }, 300);
 }
 
 export function OnboardingFlow() {
