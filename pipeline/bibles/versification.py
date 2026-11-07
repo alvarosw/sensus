@@ -14,13 +14,14 @@ Funções puras (sem I/O). O carregamento dos arquivos fica em pipeline/package_
 Rodar os testes a partir da raiz do repositório: cd pipeline && python3 -m unittest discover tests
 """
 
+import re
 import sys
 from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from sensus.refs import parse_ref  # noqa: E402
+from sensus.refs import parse_ref, split_vid  # noqa: E402
 
 LIMIAR_CAPITULOS = 0.995
 
@@ -84,3 +85,83 @@ def passes(report: dict, limiar: float = LIMIAR_CAPITULOS) -> bool:
     if report["chapters"] == 0:
         return False
     return report["match"] / report["chapters"] >= limiar
+
+
+def _pearson(xs: list[float], ys: list[float]) -> float:
+    n = len(xs)
+    if n < 3:
+        return 0.0
+    mx, my = sum(xs) / n, sum(ys) / n
+    sxy = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
+    sxx = sum((x - mx) ** 2 for x in xs)
+    syy = sum((y - my) ** 2 for y in ys)
+    if sxx == 0 or syy == 0:
+        return 0.0
+    return sxy / (sxx * syy) ** 0.5
+
+
+def text_check(texts: dict[int, str], kjv: dict[int, str], book: int = 19, min_verses: int = 6) -> list[dict]:
+    """Checagem de TEXTO por salmo, independente da língua: o comprimento (letras) de cada versículo alinhado
+    deve acompanhar o comprimento do mesmo versículo da KJV.
+
+    Para cada capítulo, correlaciona o comprimento do texto alinhado no v.k com o da KJV no v.k+d, para d em
+    (-1, 0, 1). Se outro deslocamento explica melhor o texto, o capítulo é acusado de deslocado. Também acusa
+    o primeiro e o último versículo cujo comprimento sai da faixa de 1/4 a 4 vezes o esperado pela razão do
+    capítulo. Devolve a lista de achados (vazia = nada a apontar).
+    """
+    from collections import defaultdict
+
+    def letters(t: str) -> int:
+        return len(re.findall(r"\w", t))
+
+    by_ch: dict[int, list[int]] = defaultdict(list)
+    for v in kjv:
+        if v // 1_000_000 == book:
+            by_ch[v // 1000].append(v)
+    findings = []
+    for ck, kv in sorted(by_ch.items()):
+        kv.sort()
+        if len(kv) < min_verses:
+            continue
+        # Título do salmo (antes da linha em branco, na KJV) não é versículo: não entra no comprimento.
+        k = [letters(kjv[v].partition("\n\n")[2] if i == 0 else kjv[v]) for i, v in enumerate(kv)]
+        b = [letters(texts.get(v, "")) for v in kv]
+        corr = {}
+        for d in (-1, 0, 1):
+            # Pares só onde os dois têm texto: versículo sem texto (fundido ou ausente) não diz nada sobre o deslocamento.
+            pairs = [(b[i + d], k[i]) for i in range(len(kv))
+                     if 0 <= i + d < len(kv) and b[i + d] and k[i]]
+            corr[d] = _pearson([p[0] for p in pairs], [p[1] for p in pairs])
+        best = max(corr, key=lambda d: corr[d])
+        ck_ratio = (sum(b) or 1) / (sum(k) or 1)
+        motivo = []
+        if best != 0 and corr[best] - corr[0] > 0.2:
+            motivo.append(f"texto combina melhor com a KJV deslocado em {best:+d} versículo(s)")
+        if corr[0] < 0.3:
+            motivo.append("correlação de comprimento baixa")
+        for pos, idx in (("primeiro", 0), ("último", len(kv) - 1)):
+            esperado = ck_ratio * k[idx]
+            if k[idx] and esperado and not (0.5 <= b[idx] / esperado <= 2):
+                motivo.append(f"{pos} versículo com comprimento fora da faixa")
+        if motivo:
+            bk, c, _ = split_vid(ck * 1000 + 1)
+            findings.append({"book": bk, "chapter": c, "corr": {d: round(x, 2) for d, x in corr.items()},
+                             "motivos": motivo})
+    return findings
+
+
+def title_check(heads: dict[int, str], kjv: dict[int, str], book: int = 19) -> list[dict]:
+    """Checagem de TÍTULO por salmo: a KJV marca o título com linha em branco antes do v.1 ("título\\n\\nverso").
+    Todo salmo com título na KJV deve ter cabeçalho no v.1 correspondente, e salmo sem título na KJV não deve ter.
+    Acusa os dois casos: título que não aparece (ex.: título que virou texto do v.1) e cabeçalho sobrando."""
+    findings = []
+    for v in sorted(kjv):
+        if v // 1_000_000 != book or v % 1000 != 1:
+            continue
+        com_titulo = "\n\n" in kjv[v]
+        tem_cabecalho = bool(heads.get(v, "").strip())
+        if com_titulo and not tem_cabecalho:
+            findings.append({"book": book, "chapter": v // 1000 % 1000, "motivo": "KJV tem título e a Bíblia não tem cabeçalho no v.1"})
+        elif tem_cabecalho and not com_titulo:
+            findings.append({"book": book, "chapter": v // 1000 % 1000, "motivo": "Bíblia tem cabeçalho e a KJV não tem título"})
+    return findings
