@@ -8,10 +8,10 @@ import { refShort } from '@/features/common/format';
 import { useBooks } from '@/features/common/hooks';
 import { Txt, space, useTheme } from '@/design';
 import { matchesTranslatedText } from '@sensus/core';
-import { cachedTranslation } from '@/translate/engine';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
 import {
   useTimelineActive,
+  useTimelineCached,
   useTimelineName,
   useTimelineNames,
   useTimelineNoteCounts,
@@ -44,6 +44,7 @@ export function LineList({ lineId }: { lineId: string }) {
 
   const lineName = useTimelineName(line);
   const tlActive = useTimelineActive();
+  const cached = useTimelineCached();
   const version = useTimelineVersion();
   // Filtro: original, e a tradução quando ela já está no cache.
   const shown = useMemo(
@@ -51,11 +52,11 @@ export function LineList({ lineId }: { lineId: string }) {
       (events ?? []).filter(
         (e) =>
           (!onlyMarks || favEventSet.has(e.cite_id)) &&
-          (matchesEventText(e, text) || (tlActive && matchesTranslatedText(text, e.title, cachedTranslation(e.title)))),
+          (matchesEventText(e, text) || (tlActive && matchesTranslatedText(text, e.title, cached(e.title)))),
       ),
     // version: a tradução chegou ao cache; o filtro considera a tradução nova.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [events, onlyMarks, favEventSet, text, tlActive, version],
+    [events, onlyMarks, favEventSet, text, tlActive, version, cached],
   );
   const trTitle = useTimelineTitles(shown);
   const participants = useMemo(() => shown.flatMap((e) => e.participants), [shown]);

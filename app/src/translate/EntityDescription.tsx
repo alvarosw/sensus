@@ -3,7 +3,7 @@
 // de antes (AutoTranslateNote). A escolha do texto é shownDescription (domínio).
 import { useState } from 'react';
 import { View } from 'react-native';
-import { shownDescription, type DescriptionFields } from '@sensus/core';
+import { ENTITY_TEXT_LANG, appLangInfo, shownDescription, type DescriptionFields } from '@sensus/core';
 import { LinkButton, Txt } from '@/design';
 import { AutoTranslateNote } from './AutoTranslateNote';
 import { useAutoTranslate } from './useAutoTranslate';
@@ -63,12 +63,12 @@ export function EntityDescription({
         <View testID={noteTestID} style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', columnGap: 8, paddingTop: 2 }}>
           {english ? (
             <Txt v="meta" color="muted" style={{ fontSize: 12, lineHeight: 17 }}>
-              {TR.descriptionOriginalNote}
+              {TR.descriptionOriginalNote(tr.names?.from ?? '')}
             </Txt>
           ) : null}
           <LinkButton
             testID={noteTestID ? `${noteTestID}-toggle` : undefined}
-            label={english ? TR.descriptionShowPt : TR.descriptionShowOriginal}
+            label={english ? TR.descriptionShowPt(appLangInfo(ENTITY_TEXT_LANG).endonym) : TR.descriptionShowOriginal}
             onPress={() => setEnglish((v) => !v)}
           />
         </View>

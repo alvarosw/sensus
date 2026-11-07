@@ -2,11 +2,13 @@
 //  - 'item': o bloco (texto, painel, cabeçalho) traduz os próprios textos, oferece a tradução uma vez por sessão e
 //    tem "Ver original" próprio;
 //  - 'global': a tela inteira (linha do tempo) entra no lote compartilhado por quadro, sem oferta, com um "Ver original".
-// O idioma vem do registro de fontes (sourceId) ou do banco (lang, para fonte fora do registro). Cache só em memória:
-// nada traduzido é gravado no aparelho. As decisões ficam em policy.ts (puras, testadas).
+// O idioma de origem vem do registro de fontes (sourceId) ou do banco (lang, para fonte fora do registro); o destino é
+// o idioma do app. Sem par (mesma língua, origem grega ou hebraica), nada é traduzido: sem oferta e sem nota. Cache só
+// em memória, por par: nada traduzido é gravado no aparelho. As decisões ficam em policy.ts (puras, testadas).
 import { useEffect, useState } from 'react';
-import { isTranslatableSource, needsTranslation } from '@sensus/core';
-import { cachedTranslation, translateMany } from './engine';
+import { appLangInfo, isAppLang, langBase, sourceLangOf, translationPair, type TranslationPair } from '@sensus/core';
+import { useLang } from '@/i18n/lang-store';
+import { cachedTranslation, pairKey, translateMany } from './engine';
 import { askGlobal, isGlobalFailed, retryGlobal, useGlobalView } from './global-batch';
 import {
   batchFromKey,
@@ -20,6 +22,12 @@ import {
   type TranslatePolicy,
 } from './policy';
 import { ensureTranslateLoaded, useTranslate } from './store';
+
+/** Nome de um idioma para as frases (endônimo; o código, se não for um dos 14 idiomas do app). */
+function endonymOf(code: string): string {
+  const base = langBase(code) ?? code;
+  return isAppLang(base) ? appLangInfo(base).endonym : base;
+}
 
 export interface TranslatableOptions {
   /** Fonte dos textos: o idioma é o do registro de fontes (`SOURCES`). */
@@ -51,6 +59,10 @@ export interface Translatable {
   toggleOriginal(): void;
   answerOffer(accept: boolean): void;
   retry(): void;
+  /** Par de idiomas da tradução (origem -> idioma do app); null quando não há o que traduzir. */
+  pair: TranslationPair | null;
+  /** Nomes dos dois idiomas do par (endônimos), para as frases da oferta e das notas; null sem par. */
+  names: { from: string; to: string } | null;
 }
 
 let panelSeq = 0;
@@ -60,7 +72,11 @@ export function useTranslatable(
   opts: TranslatableOptions,
 ): Translatable {
   const { policy } = opts;
-  const translatable = opts.sourceId ? isTranslatableSource(opts.sourceId, opts.lang) : needsTranslation(opts.lang);
+  const appLang = useLang();
+  const sourceLang = opts.sourceId ? sourceLangOf(opts.sourceId, opts.lang) : opts.lang;
+  const pair = translationPair(sourceLang, appLang);
+  const translatable = pair !== null;
+  const pk = pair ? pairKey(pair) : '';
 
   const todo = batchTexts(typeof texts === 'string' || texts == null ? [texts] : texts);
   const key = batchKey(todo);
@@ -95,13 +111,13 @@ export function useTranslatable(
   const showOriginal = policy === 'global' ? globalShowOriginal : localShowOriginal;
 
   // quantos textos já têm tradução no cache (recontado a cada render: o cache muda fora do React)
-  const cachedCount = active ? list.filter((t) => cachedTranslation(t) !== null).length : 0;
+  const cachedCount = active && pair ? list.filter((t) => cachedTranslation(t, pair) !== null).length : 0;
   const allCached = active && cachedCount === list.length;
 
   useEffect(() => {
-    if (policy !== 'item' || !active || allCached) return;
+    if (policy !== 'item' || !active || allCached || !pair) return;
     let alive = true;
-    translateMany(list).then(
+    translateMany(list, pair).then(
       () => {
         if (alive) setDone({ key, error: false });
       },
@@ -114,12 +130,12 @@ export function useTranslatable(
     };
     // o lote depende do conteúdo (key), não da identidade do array; attempt reabre depois de uma falha
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [policy, active, key, allCached, attempt]);
+  }, [policy, active, key, pk, allCached, attempt]);
 
   useEffect(() => {
-    if (policy === 'global' && active) askGlobal(list);
+    if (policy === 'global' && active && pair) askGlobal(list, pair);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [policy, active, key]);
+  }, [policy, active, key, pk]);
 
   // A oferta aparece em um só bloco por sessão: o primeiro que a mostra a reivindica.
   const offer = isOfferShown(policy, {
@@ -139,17 +155,17 @@ export function useTranslatable(
   const item = batchPhase({ active, allCached, result });
 
   // global: pendências e falhas dos textos desta tela
-  const globalMissing = policy === 'global' && active ? list.filter((t) => cachedTranslation(t) === null) : [];
+  const globalMissing = policy === 'global' && active && pair ? list.filter((t) => cachedTranslation(t, pair) === null) : [];
   const global = {
-    loading: globalMissing.some((t) => !isGlobalFailed(t)),
-    failed: globalMissing.some((t) => isGlobalFailed(t)),
+    loading: globalMissing.some((t) => pair !== null && !isGlobalFailed(t, pair)),
+    failed: globalMissing.some((t) => pair !== null && isGlobalFailed(t, pair)),
   };
 
   const available = cachedCount > 0;
   const translated = available && !showOriginal;
 
   return {
-    show: (text) => (!active || showOriginal || !text.trim() ? text : (cachedTranslation(text) ?? text)),
+    show: (text) => (!active || !pair || showOriginal || !text.trim() ? text : (cachedTranslation(text, pair) ?? text)),
     eligible,
     active,
     available,
@@ -165,9 +181,11 @@ export function useTranslatable(
     answerOffer: (accept) => {
       void answerOffer(accept);
     },
+    pair,
+    names: pair ? { from: endonymOf(pair.from), to: endonymOf(pair.to) } : null,
     retry: () => {
       if (policy === 'global') {
-        retryGlobal(list);
+        if (pair) retryGlobal(list, pair);
       } else {
         setDone(null);
         setAttempt((n) => n + 1);

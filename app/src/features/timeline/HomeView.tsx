@@ -5,9 +5,15 @@ import { useMemo, useState, type ReactNode } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import { matchesTranslatedText, type TimelineLine, type TimelineLineEvent, type TimelineLineRef } from '@sensus/core';
-import { cachedTranslation } from '@/translate/engine';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
-import { useTimelineActive, useTimelineTitle, useTimelineNames, useTimelineNoteCounts, useTimelineVersion } from '@/translate/timeline-translate';
+import {
+  useTimelineActive,
+  useTimelineCached,
+  useTimelineTitle,
+  useTimelineNames,
+  useTimelineNoteCounts,
+  useTimelineVersion,
+} from '@/translate/timeline-translate';
 import { Txt, radius, space, useTheme } from '@/design';
 import { useAppPrefs } from '@/settings/app-prefs';
 import { eraById, eventYear, filterEvents, filterLines, spanText, type KindFilter } from './model';
@@ -55,6 +61,7 @@ function HomeBody({ eventId }: { eventId?: string }) {
   const favEvents = useEventsByIds(favEventIds);
   const allEvents = useAllTimelineEvents();
   const tlActive = useTimelineActive();
+  const cached = useTimelineCached();
   const version = useTimelineVersion();
 
   // Busca: além do banco (original), o que casa a tradução já em cache (linhas e eventos ainda não buscados).
@@ -63,11 +70,11 @@ function HomeBody({ eventId }: { eventId?: string }) {
   const searchEvents = useMemo(() => {
     const db = hits?.events ?? [];
     if (!searching || !tlActive || !allEvents) return db;
-    const extra = allEvents.filter((e) => !db.some((x) => x.cite_id === e.cite_id) && matchesTranslatedText(q, e.title, cachedTranslation(e.title)));
+    const extra = allEvents.filter((e) => !db.some((x) => x.cite_id === e.cite_id) && matchesTranslatedText(q, e.title, cached(e.title)));
     return [...db, ...extra];
     // version: a tradução chegou ao cache; recalcula a busca por ela.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hits, searching, tlActive, allEvents, q, version]);
+  }, [hits, searching, tlActive, allEvents, q, version, cached]);
 
   // Visão geral: intervalo da Bíblia inteira a partir das linhas (primeiro e último ano de todas).
   const span = useMemo(() => (all.length ? { from: Math.min(...all.map((l) => l.from)), to: Math.max(...all.map((l) => l.to)) } : null), [all]);

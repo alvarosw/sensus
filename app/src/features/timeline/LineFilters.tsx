@@ -2,8 +2,7 @@
 // Lugares), era e ★ Favoritos. Também a busca de linhas que junta o banco com as traduções já em cache.
 import { useMemo } from 'react';
 import { matchesTranslatedText, TIMELINE_ERAS, type TimelineLine, type TimelineSearchResult } from '@sensus/core';
-import { cachedTranslation } from '@/translate/engine';
-import { useTimelineActive, useTimelineVersion } from '@/translate/timeline-translate';
+import { useTimelineActive, useTimelineCached, useTimelineVersion } from '@/translate/timeline-translate';
 import type { KindFilter } from './model';
 import { TL, TL_ERA_SHORT } from './strings';
 import { Chip, ChipRow } from './parts';
@@ -18,15 +17,16 @@ export const FILTER_ERAS = TIMELINE_ERAS.filter((e) => !e.gap);
 export function useLineMatches(query: string, lines: readonly TimelineLine[], hits: TimelineSearchResult | null): TimelineLine[] {
   const q = query.trim();
   const tlActive = useTimelineActive();
+  const cached = useTimelineCached();
   const version = useTimelineVersion();
   return useMemo(() => {
     const db = hits?.lines ?? [];
     if (!q || !tlActive) return db;
-    const extra = lines.filter((l) => !db.some((x) => x.id === l.id) && matchesTranslatedText(q, l.name, cachedTranslation(l.name)));
+    const extra = lines.filter((l) => !db.some((x) => x.id === l.id) && matchesTranslatedText(q, l.name, cached(l.name)));
     return [...db, ...extra];
     // version: a tradução chegou ao cache; recalcula a busca por ela.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hits, q, tlActive, lines, version]);
+  }, [hits, q, tlActive, lines, version, cached]);
 }
 
 /** Linha de pílulas: tipo (com ★ Favoritos) e linha de eras. `prefix` separa os testIDs de cada tela. */

@@ -25,12 +25,14 @@ export interface AutoTranslation {
   toggleOriginal(): void;
   answerOffer(accept: boolean): void;
   retry(): void;
+  /** Nomes dos idiomas do par (origem e app) para as frases; null sem par de tradução. */
+  names: { from: string; to: string } | null;
 }
 
 /** Estado que a linha de nota (AutoTranslateNote) usa: o mesmo para um texto só e para um bloco com vários. */
 export type TranslationNoteState = Pick<
   AutoTranslation,
-  'offer' | 'loading' | 'failed' | 'available' | 'translated' | 'showOriginal' | 'toggleOriginal' | 'answerOffer' | 'retry'
+  'offer' | 'loading' | 'failed' | 'available' | 'translated' | 'showOriginal' | 'toggleOriginal' | 'answerOffer' | 'retry' | 'names'
 >;
 
 export function useAutoTranslate(text: string | null | undefined, lang: string | null | undefined): AutoTranslation {
@@ -49,5 +51,6 @@ export function useAutoTranslate(text: string | null | undefined, lang: string |
     toggleOriginal: tr.toggleOriginal,
     answerOffer: tr.answerOffer,
     retry: tr.retry,
+    names: tr.names,
   };
 }

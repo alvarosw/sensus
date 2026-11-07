@@ -34,17 +34,32 @@ function usePreferPt(): boolean {
 export function useTimelineNoteCounts(input: { names?: readonly NameFields[]; titles?: readonly TitledEvent[] }): NoteCounts {
   // assina o cache: quando um lote chega, a tela recalcula quantos textos já estão traduzidos
   useTimelineVersion();
+  const tr = useTranslatable([], GLOBAL);
   const items = [
     ...(input.titles ?? []).map((t) => ({ text: t.title, pt: shownEventTitle(t, true).pt })),
     ...(input.names ?? []).map((n) => ({ text: n.name, pt: shownEntityName(n, true).pt })),
   ];
-  return noteCounts(items, (text) => cachedTranslation(text) !== null);
+  return noteCounts(items, (text) => tr.pair !== null && cachedTranslation(text, tr.pair) !== null);
 }
 
-/** Estado para a tela: configurada, mostrando o original ou a tradução, e o "Ver original". */
-export function useTimelineTranslation(): { active: boolean; showOriginal: boolean; toggle: () => void } {
+/**
+ * Tradução já no cache para um texto da linha do tempo (par de idiomas do app), ou null. Use-a onde a busca casa o
+ * texto traduzido (o cache é assinado pela versão do lote, ver useTimelineVersion).
+ */
+export function useTimelineCached(): (text: string) => string | null {
   const tr = useTranslatable([], GLOBAL);
-  return { active: tr.active, showOriginal: tr.showOriginal, toggle: tr.toggleOriginal };
+  return (text) => (tr.pair !== null ? cachedTranslation(text, tr.pair) : null);
+}
+
+/** Estado para a tela: configurada, mostrando o original ou a tradução, o "Ver original" e os nomes dos idiomas. */
+export function useTimelineTranslation(): {
+  active: boolean;
+  showOriginal: boolean;
+  toggle: () => void;
+  names: { from: string; to: string } | null;
+} {
+  const tr = useTranslatable([], GLOBAL);
+  return { active: tr.active, showOriginal: tr.showOriginal, toggle: tr.toggleOriginal, names: tr.names };
 }
 
 /** Versão do cache de tradução: muda quando um lote chega (para memorizações que dependem da tradução). */
