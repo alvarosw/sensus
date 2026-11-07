@@ -35,7 +35,7 @@ export const urTl = {
   noEvents: 'اس تلاش اور فلٹرز سے کوئی واقعہ نہیں ملا۔',
   noLines: 'ان فلٹرز سے کوئی زمانی ترتیب نہیں ملی۔',
   footer:
-    'ماخذ: Theographic (CC BY-SA 4.0)۔ تاریخیں ماخذ کی زمانی ترتیب کے مطابق ہیں؛ عنوانات اور نام Sensus منصوبے کی تطبیق ہیں۔',
+    'ماخذ: Theographic (CC BY-SA 4.0)۔ تاریخیں ماخذ کی زمانی ترتیب کے مطابق ہیں۔',
 
   lineTitleOf: (count: number) => `${count} ${count === 1 ? 'واقعہ' : 'واقعات'}`,
   inSource: (name: string) => `ماخذ میں: ${name}`,

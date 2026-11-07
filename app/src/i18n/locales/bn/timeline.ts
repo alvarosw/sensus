@@ -35,7 +35,7 @@ export const bnTl = {
   noEvents: 'এই অনুসন্ধান ও ফিল্টারে কোনো ঘটনা মেলেনি।',
   noLines: 'এই ফিল্টারে কোনো কালানুক্রম নেই।',
   footer:
-    'উৎস: Theographic (CC BY-SA 4.0)। তারিখগুলো উৎসের কালক্রম অনুসরণ করে; বাংলায় শিরোনাম ও নাম Sensus প্রকল্পের রূপান্তর।',
+    'উৎস: Theographic (CC BY-SA 4.0)। তারিখগুলো উৎসের কালক্রম অনুসরণ করে।',
 
   lineTitleOf: (count: number) => `${count}টি ঘটনা`,
   inSource: (name: string) => `উৎসে: ${name}`,
