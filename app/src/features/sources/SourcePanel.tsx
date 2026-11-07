@@ -5,7 +5,7 @@ import { googleTranslateLinks, traditionLabel, type Source, type Vid } from '@se
 import { Empty, LinkButton, Skeleton, SubHeader, Tag, Txt, TypeMark, useTheme } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useAsync } from '@/data/use-async';
-import { APP_LANG } from '@/i18n';
+import { currentLang } from '@/i18n';
 import { useStudy } from '@/state/study';
 import { askAbout, showInText } from '../common/actions';
 import { loadSources, loadXrefText, type CiteDetail } from '../common/cites';
@@ -90,7 +90,7 @@ function SourceBody({ detail }: { detail: CiteDetail }) {
   const tr = useAutoTranslate(text || null, textLang);
   const translateOn = useTranslate((s) => s.enabled);
   const links = useMemo(
-    () => (textLang === 'en' && text ? googleTranslateLinks(text, APP_LANG, 'en') : []),
+    () => (textLang === 'en' && text ? googleTranslateLinks(text, currentLang(), 'en') : []),
     [textLang, text],
   );
   const refs: Vid[] = detail.ranges.map((r) => r.start);

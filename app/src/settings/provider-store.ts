@@ -94,6 +94,8 @@ export function writeProviderPrefs(prefs: StoredProviderPrefs): void {
 
 /** Preferências de leitura e aparência (não secretas): arquivo JSON no diretório de documentos. */
 export interface StoredAppPrefs {
+  /** Idioma da interface (código do AppLang). Ausente em arquivos antigos: vale o português. */
+  appLang?: unknown;
   theme?: unknown;
   textSource?: unknown;
   greekDefault?: unknown;

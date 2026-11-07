@@ -12,13 +12,16 @@ import { SETTINGS_COPY as COPY } from '@/settings/strings';
 import { useDataStore } from '@/data/data-store';
 import { dataRowSubtitle } from '@/data/view';
 import { DATA_COPY } from '@/data/strings';
-
-const THEME_LABEL = { system: COPY.themeSystem, light: COPY.themeLight, dark: COPY.themeDark } as const;
+import { appLangInfo } from '@sensus/core';
+import { useLang } from '@/i18n';
 
 export default function SettingsScreen() {
   const { c } = useTheme();
   const { loaded } = useSettings();
   const ai = aiSummary(useAiSnapshot());
+  const lang = useLang();
+  // Dentro da função: os textos mudam com o idioma (um const de módulo ficaria no idioma do primeiro acesso).
+  const themeLabel = { system: COPY.themeSystem, light: COPY.themeLight, dark: COPY.themeDark } as const;
   const theme = useAppPrefs((s) => s.theme);
   const textSource = useAppPrefs((s) => s.textSource);
   const version = Constants.expoConfig?.version ?? '';
@@ -42,8 +45,14 @@ export default function SettingsScreen() {
         <ListRow
           testID="settings-row-look"
           title={COPY.rowLook}
-          subtitle={`${THEME_LABEL[theme]} · texto ${sourceAbbr(textSource)}`}
+          subtitle={`${themeLabel[theme]} · texto ${sourceAbbr(textSource)}`}
           onPress={() => router.push('/settings/appearance')}
+        />
+        <ListRow
+          testID="settings-row-language"
+          title={COPY.rowLanguage}
+          subtitle={appLangInfo(lang).endonym}
+          onPress={() => router.push('/settings/language')}
         />
         <ListRow
           testID="settings-row-data"
