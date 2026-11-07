@@ -161,6 +161,29 @@ O estilo (claro e escuro) é gerado pelo app a partir dos tokens de cor; não co
 Atribuição mostrada: "© OpenStreetMap contributors · © OpenMapTiles · OpenFreeMap" (`features/maps/strings.ts`).
 Mapa do mundo antigo (AWMC): não incluído; ver `docs/BACKLOG.md`, seção App.
 
+### 2.9 Bíblias do repositório de Bíblias (pacotes sob demanda)
+
+Cada pacote `bible-<id>-<versão>.zip` traz um SQLite só com o texto de uma tradução (`verse_text`,
+`text_division`, `book_name`) e a licença e atribuição gravadas em `meta`. Pesquisa, critérios e Bíblias
+recusadas em `docs/BIBLES_LICENSES.md`. Origem de todas: eBible.org (USFM), página de licença em
+`https://ebible.org/find/details.php?id=<código>`.
+
+| Fonte (id) | Título | Licença | Atribuição exigida | Condições |
+|---|---|---|---|---|
+| `engwebp` | World English Bible | Domínio público | World English Bible (WEB), domínio público (eBible.org). | "World English Bible" é marca do eBible: texto alterado não leva o nome. |
+| `engasv` | American Standard Version (1901) | Domínio público | American Standard Version (1901), domínio público (eBible.org). | |
+| `spablm` | Santa Biblia libre para el mundo | Domínio público | Santa Biblia libre para el mundo, domínio público (eBible.org). | |
+| `spavbl` | Versión Biblia Libre | CC BY-SA 4.0 | Versión Biblia Libre, copyright © 2018-2020 Jonathan Gallagher y Shelly Barrios de Avila, licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `frasbl` | Sainte Bible libre pour le monde | CC0 1.0 | Sainte Bible libre pour le monde, domínio público (CC0 1.0) (eBible.org). | |
+| `deu1912` | Lutherbibel 1912 | Domínio público | Lutherbibel 1912, domínio público (eBible.org). | |
+| `deuelo` | Elberfelder 1905 (não revisada) | Domínio público | Elberfelder 1905 (não revisada), domínio público (eBible.org). | |
+| `arbvd` | Van Dyck (Smith-Van Dyke) | Domínio público | Van Dyck (Smith-Van Dyke), domínio público (eBible.org). | |
+| `hin2017` | IRV Hindi 2019 | CC BY-SA 4.0 | Indian Revised Version, hindi (2019), copyright © 2017-2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `benobcv` | Open Bengali Contemporary Version | CC BY-SA 4.0 | Open Bengali Contemporary Version, Copyright © 2007, 2017, 2019 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `urdoucv` | Urdu Contemporary Version (aberta) | CC BY-SA 4.0 | Urdu Contemporary Version (Biblica), copyright © 1999, 2005, 2022, 2024 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `urdirv` | IRV Urdu 2019 | CC BY-SA 4.0 | Indian Revised Version, urdu (2019), copyright © 2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `jpnm` | Freedom Bible (japonês) | Domínio público (sem direitos declarados) | Freedom Bible (japonês), sem direitos autorais declarados pelo eBible.org. | Declaração do eBible; ver `docs/BIBLES_LICENSES.md`. |
+
 ## 3. Verificar antes de distribuir
 
 1. **RWP (`sword-rwp`).** Manter ou excluir é decisão do responsável. Se mantido, o app precisa exibir
