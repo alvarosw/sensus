@@ -1,34 +1,43 @@
-// RASCUNHO (ru): ainda é a cópia do inglês; traduzir. Origem: inglês de app/src/features/reader/strings.ts (leitor e barra superior).
+// Russo de app/src/features/reader/strings.ts. A revisar por falante nativo.
 export const ruReader = {
-  books: 'Books',
-  currentRef: (name: string) => `${name}. Go to…`,
-  jumpPlaceholder: 'Go to… e.g. phil 2:5',
-  jumpLabel: 'Go to reference',
-  jumpNote: 'Continuous scrolling: the next chapter loads when you reach the end.',
-  jumpUnknown: 'I do not recognize that reference.',
-  greek: 'Original (NT Textus Receptus, OT Westminster Leningrad) under the selected verses',
-  greekOn: 'Original under the selected verses',
-  greekOff: 'Original hidden',
-  textSource: (label: string) => `Text source: ${label}. Switch`,
-  verse: (n: number) => `Verse ${n}`,
-  reduced: (ref: string) => `Selection reduced to ${ref}`,
-  undo: 'Undo',
-  handleStart: 'Start of selection',
-  handleEnd: 'End of selection',
-  bookEdge: (book: string, chapter: number) => `↑ ${book} ${chapter} · keep scrolling up`,
-  bookSub: (source: string) => `${source} · continuous scrolling`,
-  endOfBible: 'End of the Scriptures',
-  unpin: 'Unpin',
-  loading: 'Loading the text…',
-  loadError: 'Could not load the text.',
-  retry: 'Try again',
+  books: 'Книги',
+  currentRef: (name: string) => `${name}. Перейти к…`,
+  jumpPlaceholder: 'Перейти к… например: Флп 2:5',
+  jumpLabel: 'Перейти к ссылке',
+  jumpNote: 'Непрерывная прокрутка: следующая глава загружается, когда вы дойдёте до конца.',
+  jumpUnknown: 'Не распознаю эту ссылку.',
+  greek: 'Оригинал (TR для НЗ, WLC для ВЗ) под выделенными стихами',
+  greekOn: 'Оригинал под выделенными стихами',
+  greekOff: 'Оригинал скрыт',
+  textSource: (label: string) => `Источник текста: ${label}. Переключить`,
+  verse: (n: number) => `Стих ${n}`,
+  reduced: (ref: string) => `Выделение сокращено до ${ref}`,
+  undo: 'Отменить',
+  handleStart: 'Начало выделения',
+  handleEnd: 'Конец выделения',
+  bookEdge: (book: string, chapter: number) => `↑ ${book} ${chapter} · продолжайте прокручивать вверх`,
+  bookSub: (source: string) => `${source} · непрерывная прокрутка`,
+  endOfBible: 'Конец Писания',
+  unpin: 'Открепить',
+  loading: 'Загрузка текста…',
+  loadError: 'Не удалось загрузить текст.',
+  retry: 'Повторить',
   // seletor de livros
-  pickBook: 'Books',
-  testamentOT: 'OT',
-  testamentNT: 'NT',
-  chaptersOf: (n: number) => `${n} ${n === 1 ? 'chapter' : 'chapters'}`,
+  pickBook: 'Книги',
+  testamentOT: 'ВЗ',
+  testamentNT: 'НЗ',
+  chaptersOf: (n: number) => `${n} ${ruPlural(n, 'глава', 'главы', 'глав')}`,
   chapterAria: (name: string, n: number) => `${name} ${n}`,
-  settings: 'Settings',
-  close: 'Close',
-  back: 'Back to books',
+  settings: 'Настройки',
+  close: 'Закрыть',
+  back: 'К книгам',
+};
+
+// Plural russo: 1 / 2-4 / 5+ (os números 11 a 14 seguem a terceira forma).
+const ruPlural = (n: number, one: string, few: string, many: string) => {
+  const m10 = n % 10;
+  const m100 = n % 100;
+  if (m10 === 1 && m100 !== 11) return one;
+  if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few;
+  return many;
 };
