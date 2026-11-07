@@ -1,4 +1,4 @@
-// Tradução automática de um texto em inglês para a tela (política 'item' de useTranslatable). Mostra o original
+// Tradução automática de um texto da fonte para a tela (política 'item' de useTranslatable). Mostra o original
 // enquanto traduz. Mantida como fina camada sobre useTranslatable: o formato do retorno é o que as telas já usam.
 
 import { useTranslatable } from './useTranslatable';
@@ -6,7 +6,7 @@ import { useTranslatable } from './useTranslatable';
 export interface AutoTranslation {
   /** Texto a mostrar agora: a tradução, ou o original (oferta, desligada, em andamento, falha ou "Ver original"). */
   display: string;
-  /** O texto em inglês, sempre disponível. */
+  /** O texto original, sempre disponível. */
   original: string;
   /** A tela mostra a tradução. */
   translated: boolean;

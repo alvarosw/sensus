@@ -1,5 +1,5 @@
 // Nomes de entidades em português (tabela entity_name, ver repo/names.ts). O domínio decide qual nome a tela mostra:
-// feature nenhuma compara língua ou fonte à mão. Nome pt é texto de fonte em português: não passa pela tradução.
+// feature nenhuma compara língua ou fonte à mão. Nome no idioma do app é texto da fonte: não passa pela tradução (ver Repo.nameLang).
 
 /** Língua da tabela entity_name. Hoje só português; o banco traz uma linha por (entidade, língua). */
 export const ENTITY_NAME_LANG = 'pt';

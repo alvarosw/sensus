@@ -1,4 +1,4 @@
-// Linha discreta sob um texto em inglês: oferta da primeira vez, carregando, falha ou "Tradução automática · Ver original".
+// Linha discreta sob um texto em outro idioma (o da fonte): oferta da primeira vez, carregando, falha ou "Tradução automática · Ver original".
 import { ActivityIndicator, View } from 'react-native';
 import { LinkButton, Tag, Txt, useTheme } from '@/design';
 import type { TranslationNoteState } from './useAutoTranslate';

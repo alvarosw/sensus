@@ -40,7 +40,7 @@ export interface TranslatableOptions {
 export interface Translatable {
   /** Texto a mostrar para um dos originais: a tradução pronta, ou o próprio original. */
   show(text: string): string;
-  /** Há textos traduzíveis (fonte em inglês e aparelho compatível). */
+  /** Há textos traduzíveis (a língua da fonte é diferente da do app e o aparelho é compatível). */
   eligible: boolean;
   /** Tradução configurada e pronta: ligada e carregada (no global, também com o modelo pronto). */
   active: boolean;
