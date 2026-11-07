@@ -543,7 +543,8 @@ export function ListRow({
   testID,
 }: {
   title: string;
-  subtitle: string;
+  /** Linha de apoio; sem ela, a linha mostra só o título. */
+  subtitle?: string;
   onPress: () => void;
   warn?: boolean;
   first?: boolean;
@@ -555,7 +556,7 @@ export function ListRow({
     <Pressable
       testID={testID}
       accessibilityRole="button"
-      accessibilityLabel={warn ? `${title}. ${subtitle}` : title}
+      accessibilityLabel={warn && subtitle ? `${title}. ${subtitle}` : title}
       onPress={onPress}
       style={({ pressed }) => ({
         flexDirection: 'row',
@@ -573,7 +574,7 @@ export function ListRow({
       {warn ? <Icon name="alert" size={20} color={c.warnText} /> : null}
       <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
         <Txt v="body" bold tint={fg}>{title}</Txt>
-        <Txt v="bodySm" bold={!!warn} tint={warn ? c.warnText : c.muted}>{subtitle}</Txt>
+        {subtitle ? <Txt v="bodySm" bold={!!warn} tint={warn ? c.warnText : c.muted}>{subtitle}</Txt> : null}
       </View>
       <Icon name="chevronRight" size={18} color={warn ? c.warnText : c.muted} />
     </Pressable>
