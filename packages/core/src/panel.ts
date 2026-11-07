@@ -72,7 +72,7 @@ export async function buildPanel(repo: Repo, range: VerseRange, opts: PanelOptio
   const startBook = books.find((b) => b.num === splitVid(r.start).book);
 
   const unit = await repo.literaryUnit(textSource, r);
-  const [translationLists, tokens, neighbors, divisions, entities, dictionary, topics, commentaries, xrefs, bookIntro, events] =
+  const [translationLists, tokens, neighbors, divisions, entities, dictionary, topics, commentarySplit, xrefs, bookIntro, events] =
     await Promise.all([
       Promise.all(textSources.map((s) => repo.verseTexts(s.id, r))),
       repo.tokens(r),
@@ -81,7 +81,7 @@ export async function buildPanel(repo: Repo, range: VerseRange, opts: PanelOptio
       repo.entities(r),
       repo.dictionaryEntries(r, ['dictionary']),
       repo.dictionaryEntries(r, ['topical']),
-      repo.commentaries(r),
+      repo.commentariesAndHidden(r),
       repo.xrefs(r, limits.xrefs, textSource),
       startBook ? repo.bookIntro(startBook) : Promise.resolve([]),
       repo.timelineEvents(r),
@@ -133,6 +133,7 @@ export async function buildPanel(repo: Repo, range: VerseRange, opts: PanelOptio
   note(rankedTopics);
   note(rankedEntities);
   note(events);
+  const commentaries = commentarySplit.visible;
   note(commentaries);
   note(boundedBookIntro);
 
@@ -166,6 +167,7 @@ export async function buildPanel(repo: Repo, range: VerseRange, opts: PanelOptio
       },
       interpretation: {
         commentaries: commentaries.slice(0, limits.commentaries),
+        hiddenCommentaries: commentarySplit.hidden,
       },
     },
     sources: usedSources,

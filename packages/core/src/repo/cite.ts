@@ -1,10 +1,15 @@
 // Resolve um cite_id ao registro de origem (ver repo/index.ts).
 import type { CitableRecord, Commentary, DictionaryEntry, Entity, LexiconEntry, Token, VerseText, XRef } from '../types';
+import { type CommentaryPreference, ALL_COMMENTARIES } from '../domain/source-prefs';
 import { type Db, first, COMMENTARY_COLS, DICTIONARY_COLS, ENTITY_COLS, LEXICON_COLS, TOKEN_COLS, VERSE_COLS, XREF_COLS } from './sql';
 import { attachNames } from './names';
+import { isCommentaryVisible } from './commentary';
 
-/** Resolve um cite_id ao registro de origem. Retorna null se o prefixo ou o id não existir. */
-export async function resolveCite(db: Db, citeId: string): Promise<CitableRecord | null> {
+/**
+ * Resolve um cite_id ao registro de origem. Retorna null se o prefixo ou o id não existir. Comentário escondido pela
+ * preferência também devolve null (a IA não o recebe, então não deve conseguir abri-lo).
+ */
+export async function resolveCite(db: Db, citeId: string, pref: CommentaryPreference = ALL_COMMENTARIES): Promise<CitableRecord | null> {
   const colon = citeId.indexOf(':');
   if (colon <= 0) return null;
   switch (citeId.slice(0, colon)) {
@@ -36,7 +41,8 @@ export async function resolveCite(db: Db, citeId: string): Promise<CitableRecord
     }
     case 'com': {
       const record = await first<Commentary>(db, `SELECT ${COMMENTARY_COLS} FROM commentary WHERE cite_id = ?`, [citeId]);
-      return record ? { table: 'commentary', record } : null;
+      if (!record || !(await isCommentaryVisible(db, record, pref))) return null;
+      return { table: 'commentary', record };
     }
     case 'dic': {
       const record = await first<DictionaryEntry>(db, `SELECT ${DICTIONARY_COLS} FROM dictionary_entry WHERE cite_id = ?`, [citeId]);

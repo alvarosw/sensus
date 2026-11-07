@@ -266,6 +266,8 @@ export interface PanelData {
     /** 6. História da interpretação. */
     interpretation: {
       commentaries: Commentary[];
+      /** Comentários do trecho que a preferência de comentários escondeu (0 sem preferência). */
+      hiddenCommentaries?: number;
     };
   };
   /** Todas as fontes referenciadas no painel, por id. */
