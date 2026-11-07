@@ -56,6 +56,7 @@ todas passa pelo alinhamento. Contagem: capítulos iguais à KJV / 1189.
 | ur | `urdoucv` | Urdu Contemporary Version (aberta) | CC BY-SA 4.0 | https://creativecommons.org/licenses/by-sa/4.0/ | "Urdu Contemporary Version (Biblica), copyright © 1999, 2005, 2022, 2024 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org)." | Incluída, rank 1 | 1185/1189 (99,66%). |
 | ur | `urdirv` | IRV Urdu 2019 | CC BY-SA 4.0 | https://creativecommons.org/licenses/by-sa/4.0/ | "Indian Revised Version, urdu (2019), copyright © 2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org)." | Incluída, rank 2 | 1189/1189. |
 | ja | `jpnm` | Freedom Bible (japonês) | Domínio público (sem direitos declarados) | https://ebible.org/find/details.php?id=jpnm | "Freedom Bible (japonês), sem direitos autorais declarados pelo eBible.org." | Incluída, rank 1 | O eBible declara "この聖書翻訳には著作権が設定されていません" (sem direitos autorais definidos). 1188/1189. |
+| ru | `russyn` | Синодальный перевод (Sinodal, 1876) | Domínio público | https://ebible.org/find/details.php?id=russyn | "Синодальный перевод (1876), domínio público (eBible.org)." | **Incluída (nova), rank 1** | Licença OK (eBible; módulo SWORD `RusSynodal` também declara domínio público). Antes recusada: a TVTMS e a checagem de texto de Sl (ver §8) mostram o alinhamento correto nos salmos conferidos. 1186/1189 (99,75%). Títulos da Sinodal que não estão na KJV (superscrições da LXX, ex.: "Аллилуия.") entram como cabeçalho sem correspondente na KJV. |
 | zh | `cmncbs` | 当代译本开放资源（简体） (Contemporary Chinese Version, simplificado) | CC BY-SA 4.0 | https://creativecommons.org/licenses/by-sa/4.0/ | "当代译本开放资源（简体）, Copyright © 1979, 2005, 2007, 2011, 2022 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org)." | **Incluída (nova), rank 1** | Antes recusada (90,66%): fusões `\v 3-4` etc. Com as pontes: 1189/1189. |
 | zh | `cmncbt` | 當代譯本開放資源（繁體） (tradicional) | CC BY-SA 4.0 | https://creativecommons.org/licenses/by-sa/4.0/ | "當代譯本開放資源（繁體）, Copyright © 1979, 2005, 2007, 2012, 2023 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org)." | **Incluída (nova), rank 2** | Mesmo texto da simplificada, em tradicional. 1189/1189. |
 | vi | `vieovcb` | Kinh Thánh Hiện Đại (VCB) | CC BY-SA 4.0 | https://creativecommons.org/licenses/by-sa/4.0/ | "Kinh Thánh Hiện Đại (VCB), copyright © 1982, 1987, 1994, 2005, 2015 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org)." | **Incluída (nova), rank 1** | Antes recusada (99,24%): as omissões do texto crítico (Mc 7:16 etc.) saem da conta, e 3 Jo 1:15 e Ap 12:18 são alinhados pela TVTMS: 1188/1189. |
@@ -71,7 +72,6 @@ todas passa pelo alinhamento. Contagem: capítulos iguais à KJV / 1189.
 | fr | `fraLSG` | — | — | — | — | Incluída como `fralsg` | Ver §2. |
 | de | `deutkw` | Textbibel (Kautzsch e Weizsäcker, 1906) | Domínio público | https://ebible.org/find/details.php?id=deutkw | "Textbibel (Kautzsch e Weizsäcker), domínio público (eBible.org)." | Recusada (versificação) | Após a TVTMS: 1179/1189 (99,16%). Restam Ex 5, Dt 5, 2Sm 21, Is 31 e 38, Jn 1, Mt 14, Jo 10 e 15, 1Cr 14, com numeração hebraica não resolvida. A de (Lutherbibel, Elberfelder) já cobre o idioma. |
 | de | `deuelbbk` | Elberfelder (bibelkommentare.de) | CC BY-NC-ND 4.0 | http://creativecommons.org/licenses/by-nc-nd/4.0/ | "copyright © 2019 Verbreitung des christlichen Glaubens e.V." | Recusada (NC, ND) | Não comercial e sem derivados. |
-| ru | `russyn` | Синодальный перевод (Sinodal) | Domínio público | https://ebible.org/find/details.php?id=russyn | "Синодальный перевод, domínio público (eBible.org)." | **Recusada na conferência de texto** (ver Para decisão, item 3) | Licença OK e 1186/1189 (99,75%) pela TVTMS, mas o alinhamento errou o texto de Sl 13, 87 e 90 (e 89, mesmo caso): o título, que a Sinodal numera como v.1 próprio, ficou no v.1 da KJV e o texto do v.1 caiu no v.2. Numeração por contagem não detecta isso; por isso não entrou. |
 | ru | `rusfb` | Библия свободы (Freedom Bible) | Domínio público | https://ebible.org/find/details.php?id=rusfb | — | Recusada (completude e rascunho) | 36 livros e o próprio texto diz ser "черновой вариант" (rascunho). |
 | zh | `cu89s` / `cu89t` | 新标点和合本 (simplificado / tradicional) | eBible: domínio público; a revisão de 1989 é de titularidade incerta (a Hong Kong Bible Society aparece como agente de direitos) | https://ebible.org/find/details.php?id=cmn-cu89s | — | **Para decisão** (item 2) | Titularidade incerta. Além disso, 94,53% de versificação antes da TVTMS. |
 | zh | `ChiUn` / `ChiUns` (SWORD) | 和合本 (繁體字 / 简体字) | SWORD: "Public Domain"; About: "最早於1919年出版" | http://bible.fhl.net | — | **Não usada** (item 2) | O SWORD declara a edição de 1919, mas o texto tem a pontuação moderna (a edição de 1919 não tinha pontuação): 30800 de 31102 versículos com pontuação, e Jo 3:16 com "不致灭亡", leitura da revisão de 1989. |
@@ -106,10 +106,10 @@ todas passa pelo alinhamento. Contagem: capítulos iguais à KJV / 1189.
 | ja | Freedom Bible | Coberto |
 | zh | Contemporary Chinese Version (simplificado e tradicional), CC BY-SA 4.0 | Coberto (não é a União de 1919 nem a de 1989) |
 | vi | Kinh Thánh Hiện Đại (VCB), CC BY-SA 4.0 | Coberto |
-| ru | — | **Sem Bíblia aprovada** (Sinodal recusada na conferência de texto; item 3) |
+| ru | Синодальный перевод (Sinodal), domínio público | Coberto |
 | id | — | **Sem Bíblia aprovada** (nenhuma completa e livre encontrada; item 6) |
 
-Doze de catorze idiomas têm pelo menos uma Bíblia empacotada.
+Treze de catorze idiomas têm pelo menos uma Bíblia empacotada. Só o indonésio fica sem Bíblia.
 
 ## 5. Omissões, pontes e títulos: como ficam no pacote
 
@@ -130,13 +130,8 @@ Doze de catorze idiomas têm pelo menos uma Bíblia empacotada.
 2. **Chinês: CUV 1919 não encontrada.** O eBible `cu89s/cu89t` é a revisão de 1989 (titularidade incerta). O SWORD
    `ChiUn`/`ChiUns` diz ser de 1919, mas o texto tem a pontuação moderna e a leitura da revisão de 1989: não é usado.
    Falta uma fonte da edição de 1919 sem pontuação, com licença comprovada (ex.: transcrição em domínio público).
-3. **Russo Sinodal (`russyn`): decidir.** A TVTMS deixa 99,75% dos capítulos iguais à KJV, mas o texto de Sl 13, 87,
-   89 e 90 ficou deslocado em um versículo (o título, que a Sinodal numera como v.1 próprio, cai no v.1 da KJV). Os
-   testes de contagem não veem isso. Opções: (a) corrigir a decisão de tradição desses salmos e revisar o pacote;
-   (b) aceitar com esses quatro salmos sem texto; (c) continuar sem Bíblia russa.
-4. **Reina-Valera 1909 (SWORD `SpaRV1909`):** o módulo traz cópia completa (sem os versículos vazios do eBible), mas
-   o `.conf` declara "Copyrighted; Permission to distribute granted to CrossWire", enquanto o "About" diz que o texto
-   é de domínio público. Não foi ingerida. Se o responsável aceitar a declaração do "About", entra como domínio público.
+3. **Sinodal (`russyn`): incluída, com ressalva de títulos.** Conferida à mão: Sl 3:1, 13:1, 51:1, 87:1, 90:1, 119:176 e 146:1 estão certos, e a checagem de texto acusa Sl 13, 82, 87 e 120, todos revisados à mão sem deslocamento. Há divergências de cabeçalho (27 salmos, sobretudo 90–150) em que a Sinodal traz superscrições da LXX que a KJV não tem; o texto dos versículos não está afetado. Se o responsável preferir, excluir a Sinodal do catálogo volta a deixar o russo sem Bíblia.
+4. **Reina-Valera 1909 (SWORD `SpaRV1909`): fica de fora.** O módulo declara "Copyrighted; Permission to distribute granted to CrossWire" e o "About" diz que o texto é de domínio público. Licença contraditória: não entra.
 5. **Berean Standard Bible (`engbsb`):** incluída pelo critério (domínio público declarado em 30/04/2023). Confirmar a
    declaração no site do titular antes da próxima release.
 6. **Indonésio:** não há Bíblia completa e livre encontrada (TSI incompleta; AYT NC; IndBIS vazia). Klinkert (1879) e
@@ -154,3 +149,23 @@ Doze de catorze idiomas têm pelo menos uma Bíblia empacotada.
 - O pacote SQLite de cada Bíblia grava `license` e `attribution` na tabela `meta`.
 - Versículos sem texto na tradução (variantes textuais, como At 8:37) não entram no pacote; o app mostra a lacuna.
 - Os 16 versículos do texto crítico não são acrescentados às traduções que não os têm.
+
+
+## 8. Checagem de texto e de título (salmos)
+
+Além da contagem (1189 capítulos), cada Bíblia alinhada pela TVTMS passa por duas checagens informativas (`pipeline/bibles/versification.py`, `text_check` e `title_check`). Elas não usam o idioma:
+
+- **Texto:** o comprimento (letras) de cada versículo alinhado deve acompanhar o da KJV no mesmo versículo. Acusa um capítulo quando outro deslocamento (−1 ou +1) explica melhor o texto, quando a correlação é baixa, ou quando o primeiro/último versículo sai da faixa de 0,5 a 2 vezes o esperado.
+- **Título:** a KJV marca o título com linha em branco antes do v.1. Acusa salmo com título na KJV e sem cabeçalho no v.1 da Bíblia, e o inverso.
+
+Resultado (salmos acusados / conferidos à mão):
+
+| Bíblia | Acusados (texto) | Título: divergências | Leitura à mão |
+|---|---|---|---|
+| `russyn` (Sinodal) | 4: 13, 82, 87, 120 | 27 | 13, 87 e 120 certos (87: texto de 87:1–2 fundido no v.1, como documentado); 82 certo nos versículos 1–2 |
+| `fralsg` (LSG 1910) | 7: 13, 58, 66, 114, 120, 121, 129 | 54 (títulos fundidos ao v.1) | Todos falsos positivos: título no próprio texto do v.1, ou versículo curto |
+| `frajnd` (Darby) | 6: 13, 60, 87, 113, 120, 121 | 54 | Todos falsos positivos (título fundido; Sl 113 com "Louez Jah" correto) |
+
+As regras da TVTMS e a regra 'título como versículo' (`title_as_verse`) mudam a numeração de LSG e Darby em zero versículos. Na Sinodal mudam 10 versículos em Sl 13, 87 e 90, que foram conferidos à mão.
+
+Limitação: o texto fundido (ex.: Sl 89:6 da Sinodal, que cobre Sl 90:5–6) fica no primeiro versículo da KJV. A checagem por comprimento não separa esse trecho; é aceito pela regra documentada em §5.

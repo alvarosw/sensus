@@ -194,6 +194,7 @@ TVTMS traz o crédito da §2.2 na atribuição.
 | `cmncbs` | 当代译本开放资源（简体） | CC BY-SA 4.0 | 当代译本开放资源（简体）, Copyright © 1979, 2005, 2007, 2011, 2022 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
 | `cmncbt` | 當代譯本開放資源（繁體） | CC BY-SA 4.0 | 當代譯本開放資源（繁體）, Copyright © 1979, 2005, 2007, 2012, 2023 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
 | `vieovcb` | Kinh Thánh Hiện Đại (VCB) | CC BY-SA 4.0 | Kinh Thánh Hiện Đại (VCB), copyright © 1982, 1987, 1994, 2005, 2015 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). | **Share-alike.** |
+| `russyn` | Синодальный перевод (Sinodal, 1876) | Domínio público | Синодальный перевод (1876), domínio público (eBible.org). | Módulo SWORD `RusSynodal` também declara domínio público. Alinhada pela TVTMS e checada por texto (`docs/BIBLES_LICENSES.md`, §8). |
 
 ## 3. Verificar antes de distribuir
 

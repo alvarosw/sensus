@@ -19,7 +19,7 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-engwebp-2026.11.06.zip",
-        "sha256": "86cf850da6698e3c700318046e15b5bd302c7b1a04e120911bcfa9b4708ddd23",
+        "sha256": "1ca54231edb3d226405c96a7a6deb5280a8dba04f234e05433a138b5766074d8",
         "size": 2376022,
         "uncompressed_size": 7663616
       }
@@ -58,8 +58,8 @@
       "rank": 3,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-engasv-2026.11.06.zip",
-        "sha256": "51db14673dfbc57ceea57085733a0343bcb3df3ff875209de3e102270aa468cd",
-        "size": 2345058,
+        "sha256": "9757d513ed7e30db5261e4dfda327b051607253465e53d36b8a1fe17516ae516",
+        "size": 2345055,
         "uncompressed_size": 7491584
       }
     },
@@ -97,7 +97,7 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-spablm-2026.11.06.zip",
-        "sha256": "612e954f233df62158bd7a2c85a88041040ec801dac5406db86a62c0c8069680",
+        "sha256": "f7c1d9e12cfd65f68da5e2aa7b9954976cf5ddde682174bf67707d41627b372a",
         "size": 2426328,
         "uncompressed_size": 7512064
       }
@@ -119,7 +119,7 @@
       "rank": 2,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-spavbl-2026.11.06.zip",
-        "sha256": "81bf7e68de2c6324079cb7050f84b5c95510cfc8bdf5792d8956809e9e05c74d",
+        "sha256": "7778c8d6c21873f9573cc99f6804d09814bb59049ea2374d75290279e705b5e6",
         "size": 2574179,
         "uncompressed_size": 7925760
       }
@@ -141,7 +141,7 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-frasbl-2026.11.06.zip",
-        "sha256": "13ceb910c5cc72d0946f0dbaedcdb08c2999ee926bdbdb6a563aeefca7685ab1",
+        "sha256": "8743f698c627a293b09f7861b0915091061715df398476e25dc9c30a4703f29b",
         "size": 2524977,
         "uncompressed_size": 7872512
       }
@@ -163,7 +163,7 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-deu1912-2026.11.06.zip",
-        "sha256": "ee028c3f68bb6cdbce776a8a00992a6afc6bb4688bb2fcaaf367010169ee2f50",
+        "sha256": "939868c2b3f0f9e65717338a514d829d513f5f52951c883b9a773a11f101b25a",
         "size": 2397416,
         "uncompressed_size": 7294976
       }
@@ -185,7 +185,7 @@
       "rank": 2,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-deuelo-2026.11.06.zip",
-        "sha256": "f051eccb08dbef7611d46648df67be1589c84a414b5b47f8900701b2cb5d2e37",
+        "sha256": "a9093d888be15acc8cf867dea26d18f15031f544ce4fcc8c6d9908ab3c6f1633",
         "size": 2446869,
         "uncompressed_size": 7462912
       }
@@ -207,7 +207,7 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-arbvd-2026.11.06.zip",
-        "sha256": "d1aa3def00f7e265c99954182c7ba7803ae63987f90f6c3440136e77a313ba32",
+        "sha256": "a4b3d90ee22ed0bbcae3e6b3525986e30d2fcbd0f1878c27f660e58def3d7441",
         "size": 2727961,
         "uncompressed_size": 11063296
       }
@@ -229,7 +229,7 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-hin2017-2026.11.06.zip",
-        "sha256": "b22585a618fb2cf3d32ae05cb7016bb9c8acad7fd40ca2224c75b8dd4dfd5f32",
+        "sha256": "f8f1f66be9ea75d137f7532a0d49e35c08d4f59f0bfb9b36e40ce0419fa6bba1",
         "size": 2959926,
         "uncompressed_size": 13848576
       }
@@ -251,8 +251,8 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-benobcv-2026.11.06.zip",
-        "sha256": "e1d91354bd2f6f3f6a975236e3312e1d260a09aad6e11806c76cc34420bab9ba",
-        "size": 3047039,
+        "sha256": "f3d4eaf285ef3282b801a261855e74b233ce510207bcd5cdd19b52ad658a08a7",
+        "size": 3047040,
         "uncompressed_size": 14925824
       }
     },
@@ -273,8 +273,8 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-urdoucv-2026.11.06.zip",
-        "sha256": "76f5d0c16d0ea6e302aa914562ae23c34d7e225a7886a91735767811e1f8d255",
-        "size": 2997996,
+        "sha256": "2b543279e7685dcdcbdfd17f44189b341a1481b01738da2fff5785a9df0d93af",
+        "size": 2997994,
         "uncompressed_size": 11669504
       }
     },
@@ -295,8 +295,8 @@
       "rank": 2,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-urdirv-2026.11.06.zip",
-        "sha256": "30664b16e87737444383d126c7ec833913130855418066d3b6f3379ffe2486b1",
-        "size": 2851796,
+        "sha256": "6f940e30b244271c744721947044a9e8a6000add343eb50b7632c588fde1bc8a",
+        "size": 2851863,
         "uncompressed_size": 13373440
       }
     },
@@ -317,7 +317,7 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-jpnm-2026.11.06.zip",
-        "sha256": "e8ecf290b3a52996dd2978ae471302aa1de8a6f6b421743c43ed9adfe9d361e5",
+        "sha256": "077d88e0c665b77a463856206abc08244ac07260af2ad77eadb91ad74d143288",
         "size": 2451028,
         "uncompressed_size": 8380416
       }
@@ -339,8 +339,8 @@
       "rank": 4,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-engbsb-2026.11.06.zip",
-        "sha256": "657c0f9c9c7b392e207c739cbd08e457ed4580ba8f7e556c3d41bc7689ee4c82",
-        "size": 2524650,
+        "sha256": "7e9b2ba596ddf727707978d9bd95d71f236f14f87552202acf0e7ebe1d1056d8",
+        "size": 2524648,
         "uncompressed_size": 7860224
       }
     },
@@ -361,7 +361,7 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-vieovcb-2026.11.06.zip",
-        "sha256": "bd18df33106a2388f44b072e7487979861dc8265bf9fb411387edf15904feaf3",
+        "sha256": "1aca077b95e2ddeb3ff79fb1d7d61123412763659fe69c3cc5e7a98544697f65",
         "size": 2638286,
         "uncompressed_size": 8773632
       }
@@ -383,7 +383,7 @@
       "rank": 2,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-hincv-2026.11.06.zip",
-        "sha256": "e2b7a541971a713ff0875786f4904018d0b7a5cfc5a67b60f8f51615b0aea64c",
+        "sha256": "f172cd4df79d54420d43707c9d45113e7b80348e45be6e557deb5f26bd730a3e",
         "size": 3119881,
         "uncompressed_size": 14585856
       }
@@ -405,7 +405,7 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-cmncbs-2026.11.06.zip",
-        "sha256": "e331338086393fcfe905c203a3989335f350e1868e1c1d10df08a9193bc0811d",
+        "sha256": "f25322cfc2b680b68d531c37f98a998dbca7a43430e493ec771006a1d3317cfa",
         "size": 2332695,
         "uncompressed_size": 6668288
       }
@@ -427,7 +427,7 @@
       "rank": 2,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-cmncbt-2026.11.06.zip",
-        "sha256": "1553fba4af300c1cd2a95ee6d0ea116d8eef7d689d83ea08dcb1e790a3273238",
+        "sha256": "96313fbb48f895fefda41a61405e2f379dcdb30714511b4b152026f4710c6a37",
         "size": 2335971,
         "uncompressed_size": 6668288
       }
@@ -449,7 +449,7 @@
       "rank": 2,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-benirv-2026.11.06.zip",
-        "sha256": "c43da8d6aa9dfcf3fe3e90b2fbde6143433d492c4df45c2b5cd80b3d6955c5eb",
+        "sha256": "45f767630bb30f55627497553104ad6af53f9acbeedaf70c4f68e7fad957047c",
         "size": 2849880,
         "uncompressed_size": 13897728
       }
@@ -471,7 +471,7 @@
       "rank": 2,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-fralsg-2026.11.06.zip",
-        "sha256": "910576ec2920955ff67b6c08ae6b97f9b89e95913926cd07619a654cb63c199c",
+        "sha256": "f5c6f52fb2dc352f5496cafabf2931de52905b6d88db122d8f635c2ba113c8e4",
         "size": 2488229,
         "uncompressed_size": 7688192
       }
@@ -493,9 +493,31 @@
       "rank": 3,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-frajnd-2026.11.06.zip",
-        "sha256": "4de181a9bb808a5696241774b693c1e19a6df17025cab4ff844680584129a7f5",
-        "size": 2479026,
+        "sha256": "8f497ca37523b9fe224ff6c34a794ab6709d4b56722bdaba71f0f5280c273892",
+        "size": 2479023,
         "uncompressed_size": 7839744
+      }
+    },
+    {
+      "id": "russyn",
+      "abbr": "SYN",
+      "name": "Синодальный перевод",
+      "lang": "ru",
+      "license": "Public Domain",
+      "license_url": null,
+      "attribution": "Синодальный перевод (1876), domínio público (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
+      "url": "https://ebible.org/find/details.php?id=russyn",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 1,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-russyn-2026.11.06.zip",
+        "sha256": "5f34ba92dbe371c862d861222c8412ffa64d80ce1dc78b7c0ddca7f52b5a9fae",
+        "size": 2598184,
+        "uncompressed_size": 9383936
       }
     }
   ]
