@@ -76,15 +76,15 @@ function SourceBody({ detail }: { detail: CiteDetail }) {
   const books = useBooks();
   const { source, record } = detail;
 
+  // Texto de versículo (xref) vem da Bíblia principal (e no idioma dela), não da fonte da ligação.
+  const textSource = useStudy((s) => s.textSource);
   const xr = useAsync<string>(async () => {
     if (record.table !== 'xref') return '';
-    const verses = await loadXrefText(repo, record.record.to_start_vid, record.record.to_end_vid);
+    const verses = await loadXrefText(repo, textSource, record.record.to_start_vid, record.record.to_end_vid);
     return verses.map((v) => v.text).join('\n\n');
-  }, [repo, detail.citeId]);
+  }, [repo, detail.citeId, textSource]);
 
   const text = fullTextOf(detail, xr.data ?? '');
-  // Texto de versículo (xref) vem da Bíblia escolhida (blivre = pt, kjv = en), não da fonte da ligação.
-  const textSource = useStudy((s) => s.textSource);
   const textSourceLang = useSourceLang(textSource);
   const textLang = record.table === 'xref' ? textSourceLang : (source?.lang ?? null);
   const tr = useAutoTranslate(text || null, textLang);

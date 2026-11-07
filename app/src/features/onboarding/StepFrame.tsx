@@ -1,4 +1,5 @@
-// Moldura dos passos do meio: candeia pequena no topo, Voltar e Pular, e os pontos de progresso (docs/design/onboarding.md).
+// Moldura dos passos do meio: candeia pequena no topo, Voltar e Pular (quando cabem; ver onboarding-model), e os pontos
+// de progresso (docs/design/onboarding.md).
 import type { ReactNode } from 'react';
 import { View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -6,7 +7,7 @@ import { CandeiaGlow } from './candeia';
 import { LinkButton, useTheme } from '@/design';
 import { SETTINGS_COPY } from '@/settings/strings';
 import { ONBOARDING_COPY } from './strings';
-import { back, progressOf, type OnboardingContext, type OnboardingStep } from './onboarding-model';
+import { back, canSkip, progressOf, type OnboardingContext, type OnboardingStep } from './onboarding-model';
 
 export interface StepFrameProps {
   step: OnboardingStep;
@@ -30,7 +31,7 @@ export function StepFrame({ step, ctx, onBack, onSkip, children }: StepFrameProp
         </View>
         <CandeiaGlow size={52} testID="onb-glow" />
         <View style={{ minWidth: 88, alignItems: 'flex-end' }}>
-          <LinkButton testID="onb-skip" label={ONBOARDING_COPY.skip} onPress={onSkip} />
+          {canSkip(step, ctx) ? <LinkButton testID="onb-skip" label={ONBOARDING_COPY.skip} onPress={onSkip} /> : null}
         </View>
       </View>
       {progress ? (

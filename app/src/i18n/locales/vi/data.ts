@@ -4,7 +4,7 @@ export const viData = {
   rowTitle: 'Dữ liệu học',
 
   setupLead:
-    'Văn bản Kinh Thánh đã có sẵn trong ứng dụng và hoạt động mà không cần tải. Dữ liệu học cung cấp những gì hỗ trợ phân tích từng phân đoạn:',
+    'Dữ liệu học cung cấp những gì hỗ trợ phân tích từng phân đoạn:',
   includes: [
     'Chú giải của các tác giả cổ điển và hiện đại',
     'Từ điển Kinh Thánh và mục lục chủ đề',

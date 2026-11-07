@@ -14,7 +14,7 @@ import { t, useLang } from '@/i18n';
 import { SettingsProvider } from '@/settings/settings-context';
 import { AttentionModal } from '@/settings/AttentionModal';
 import { useAppPrefs } from '@/settings/app-prefs';
-import { OnboardingGate } from '@/features/onboarding';
+import { OnboardingGate, onboardingPending } from '@/features/onboarding';
 import { LoadingView, ErrorView } from '@/ui/state';
 import { useTheme } from '@/ui/theme';
 
@@ -93,7 +93,8 @@ function AppStack() {
 /**
  * Abre a tela de dados de estudo uma vez por execução quando ela faz sentido (ver shouldPromptFirstRun):
  * primeira abertura sem os dados completos, ou dados instalados mais antigos que o manifesto.
- * Numa instalação nova a apresentação já oferece os dados (passo 6): a oferta fica calada nesta execução.
+ * Numa instalação nova a apresentação já oferece os dados (passo 6), e sem Bíblia baixada o passo de Bíblia vem antes:
+ * nesses casos a oferta fica calada nesta execução.
  */
 function DataSetupGate() {
   const edition = useDataStore((s) => s.edition);
@@ -101,7 +102,7 @@ function DataSetupGate() {
   const manifest = useDataStore((s) => s.manifest);
   const deferredVersion = useDataStore((s) => s.deferredVersion);
   const shown = useRef(false);
-  const suppressed = useRef(!useAppPrefs.getState().onboardingDone);
+  const suppressed = useRef(onboardingPending());
 
   useEffect(() => {
     useDataStore.getState().load();

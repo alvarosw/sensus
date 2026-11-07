@@ -4,7 +4,7 @@ export const deData = {
   rowTitle: 'Studiendaten',
 
   setupLead:
-    'Der Bibeltext ist bereits in der App und funktioniert ohne Download. Die Studiendaten enthalten das, worauf die Analyse jeder Textstelle beruht:',
+    'Die Studiendaten enthalten das, worauf die Analyse jeder Textstelle beruht:',
   includes: [
     'Kommentare klassischer und moderner Autoren',
     'Bibellexika und Themenregister',

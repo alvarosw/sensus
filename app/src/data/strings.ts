@@ -6,7 +6,7 @@ const ptDataCopy = {
   rowTitle: 'Dados de estudo',
 
   setupLead:
-    'O texto bíblico já está no app e funciona sem download. Os dados de estudo trazem o que sustenta a análise de cada trecho:',
+    'Os dados de estudo trazem o que sustenta a análise de cada trecho:',
   includes: [
     'Comentários de autores clássicos e modernos',
     'Dicionários bíblicos e índice temático',

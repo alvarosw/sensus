@@ -11,19 +11,32 @@ export type OnboardingMove = OnboardingStep | typeof ONBOARDING_DONE;
 export interface OnboardingContext {
   /** Banco completo já instalado (edição 'full'): o passo de dados não aparece. */
   dataInstalled: boolean;
+  /** Há pelo menos uma Bíblia baixada. Nenhuma vem com o app: sem ela, o passo de Bíblia não deixa seguir. */
+  hasBible: boolean;
+  /**
+   * Só o passo de Bíblia: quem já viu a apresentação e está sem nenhuma Bíblia (atualizou de uma versão que trazia
+   * BLivre e KJV no app, ou apagou os arquivos). Sem voltar, sem pular e sem pontos de progresso.
+   */
+  bibleOnly?: boolean;
 }
 
-/** Passos que este aparelho mostra, na ordem. O de dados some quando os dados completos já estão instalados. */
+/**
+ * Passos que este aparelho mostra, na ordem. O de dados some quando os dados completos já estão instalados; no modo
+ * só Bíblia, é só o de Bíblia.
+ */
 export function stepsFor(ctx: OnboardingContext): OnboardingStep[] {
+  if (ctx.bibleOnly) return ['biblia'];
   return ONBOARDING_STEPS.filter((s) => s !== 'dados' || !ctx.dataInstalled);
 }
 
 /**
- * Próximo passo visível depois de `step`. Se `step` é o último ('fim'), o movimento é concluir.
+ * Próximo passo visível depois de `step`. Se `step` é o último ('fim'), o movimento é concluir. Do passo de Bíblia
+ * sem nenhuma baixada, não sai.
  * Funciona mesmo quando `step` já não está na lista (ex.: os dados ficaram instalados enquanto o passo estava aberto).
  */
 export function advance(step: OnboardingStep, ctx: OnboardingContext): OnboardingMove {
   if (step === 'fim') return ONBOARDING_DONE;
+  if (step === 'biblia' && !ctx.hasBible) return 'biblia';
   const visible = stepsFor(ctx);
   const after = ONBOARDING_STEPS.slice(ONBOARDING_STEPS.indexOf(step) + 1);
   return after.find((s) => visible.includes(s)) ?? ONBOARDING_DONE;
@@ -36,9 +49,15 @@ export function back(step: OnboardingStep, ctx: OnboardingContext): OnboardingSt
   return before.find((s) => visible.includes(s)) ?? step;
 }
 
-/** Pular conclui a apresentação em qualquer passo (o botão só aparece nos passos do meio). */
-export function skip(): OnboardingMove {
-  return ONBOARDING_DONE;
+/** Pular conclui a apresentação; sem Bíblia baixada, leva ao passo de Bíblia (o app não abre sem texto). */
+export function skip(ctx: OnboardingContext): OnboardingMove {
+  return ctx.hasBible ? ONBOARDING_DONE : 'biblia';
+}
+
+/** O botão Pular aparece? Nos passos do meio, menos no de Bíblia enquanto não há nenhuma, e nunca no modo só Bíblia. */
+export function canSkip(step: OnboardingStep, ctx: OnboardingContext): boolean {
+  if (ctx.bibleOnly || !isMiddleStep(step)) return false;
+  return step !== 'biblia' || ctx.hasBible;
 }
 
 /** Os passos do meio (sem abertura e fim) têm pontos de progresso e o botão Pular. */
@@ -48,7 +67,7 @@ export function isMiddleStep(step: OnboardingStep): boolean {
 
 /** Posição do passo entre os do meio (base 1) e o total deles. Null nos passos sem progresso. */
 export function progressOf(step: OnboardingStep, ctx: OnboardingContext): { index: number; total: number } | null {
-  if (!isMiddleStep(step)) return null;
+  if (!isMiddleStep(step) || ctx.bibleOnly) return null;
   const middle = stepsFor(ctx).filter(isMiddleStep);
   const at = middle.indexOf(step);
   // passo que já não está na lista (dados instalados enquanto aberto): conta como o último do meio

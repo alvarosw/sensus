@@ -39,6 +39,11 @@ function readDataManifestOverride(): string | null {
   return process.env.SENSUS_DATA_MANIFEST_URL || null;
 }
 
+/** Catálogo de Bíblias local, para testar pacotes ainda não publicados (ver docs/RELEASING.md). Não é segredo. */
+function readBibleCatalogOverride(): string | null {
+  return process.env.SENSUS_BIBLE_CATALOG_URL || null;
+}
+
 /**
  * Lê o .env da raiz do monorepo, somente com o opt-in SENSUS_DEV_PROVIDER=1.
  * Usado como fallback quando o usuário ainda não salvou um provedor no app.
@@ -59,6 +64,7 @@ function readDevProvider(): DevProvider | null {
 export default (): ExpoConfig => {
   const devProvider = readDevProvider();
   const dataManifestUrl = readDataManifestOverride();
+  const bibleCatalogUrl = readBibleCatalogOverride();
   return {
     name: 'Sensus',
     slug: 'sensus',
@@ -141,6 +147,7 @@ export default (): ExpoConfig => {
       // Só com a chave injetada: o runtime (settings-context.tsx) exige devProviderOptIn para usá-la.
       ...(devProvider ? { devProvider, devProviderOptIn: true } : {}),
       ...(dataManifestUrl ? { dataManifestUrl } : {}),
+      ...(bibleCatalogUrl ? { bibleCatalogUrl } : {}),
     },
   };
 };

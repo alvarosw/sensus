@@ -12,7 +12,7 @@ Ferramentas para ver o app sem celular. Todos os comandos partem de `app/`.
 ## Web com o banco real
 
 `npx expo start --web --port <p>` renderiza o app com `assets/sensus.db` via expo-sqlite na web. Esse arquivo é a cópia
-do banco que o `sync-db` empacotou: o leitor (`npm run sync-db ../data/sensus-reader.db`, ~17 MB, sem tokens,
+do banco que o `sync-db` empacotou: o leitor (`npm run sync-db ../data/sensus-reader.db`, ~8 MB, sem traduções, tokens,
 léxico, comentários nem dicionários) ou o completo (`npm run sync-db`, ~456 MB, só para teste de painel). README, seção 1b
 (wa-sqlite + OPFS num Worker). Pontos de atenção:
 

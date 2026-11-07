@@ -103,8 +103,8 @@ Contratos em [design/idiomas-biblias-fontes.md](design/idiomas-biblias-fontes.md
 
 ## Onboarding (candeia)
 
-- **P2 — Botão de seguir fixo no rodapé** dos passos longos (idioma): hoje "Continuar" fica no fim da lista e pede
-  rolagem.
+- **P2 — Botão de seguir fixo no rodapé** do passo de idioma (o de Bíblia já tem): hoje "Continuar" fica no fim da
+  lista e pede rolagem.
 - **P2 — Árabe e urdu:** marcadores de lista à esquerda (o layout não espelha) e a linha de tamanho dos dados com
   números embaralhados (isolar números com LRI/PDI).
 - **P2 — IRV Urdu (`urdirv`)** está em escrita devanágari, não na escrita árabe do urdu: tirar do urdu (ou marcar como

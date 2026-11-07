@@ -31,6 +31,22 @@ npm run release:github          # confira e rode o comando impresso
 
 Commite a versão **antes** do build: o build precisa estar no histórico.
 
+## Bíblias (pacotes e catálogo)
+
+Nenhuma Bíblia vem no APK: o app lê o catálogo `bibles-manifest.json` da `main` e baixa os pacotes da release
+`bibles-<versão>` do GitHub. Ordem ao publicar Bíblias novas ou atualizadas:
+
+1. `cd pipeline && python3 package_bibles.py --version <AAAA.MM.DD> [--only id1,id2]` (com `--only`, as outras
+   entradas do manifesto continuam apontando para a release em que foram publicadas).
+2. `gh release create bibles-<AAAA.MM.DD> dist/bibles/bible-*-<AAAA.MM.DD>.zip` (só os zips desta versão).
+3. Commit do `bibles-manifest.json` na `main` e push: os apps instalados passam a ver as entradas novas.
+
+Os pacotes precisam estar na release **antes** do manifesto chegar à `main`, e antes de publicar um app que dependa
+deles (a 1.5.0 em diante exige baixar uma Bíblia na apresentação). Para testar um catálogo local no emulador:
+`SENSUS_BIBLE_CATALOG_URL=http://localhost:<porta>/bibles-manifest.json` no build de teste (o `app.config.ts` grava
+o endereço em `extra`; nunca no build publicado), com
+`adb reverse tcp:<porta> tcp:<porta>`.
+
 ## Configuração única
 
 1. Ferramentas: Node LTS, JDK 17 e Android SDK com NDK (para o build local). Em `~/.bashrc`, `ANDROID_HOME`

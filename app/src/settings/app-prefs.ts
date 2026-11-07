@@ -1,8 +1,10 @@
 // Preferências de aparência e leitura, persistidas no aparelho (sem segredos).
 //  - appLang: idioma da interface (um dos 14 de domain/locale.ts). Ausente = pt; sem arquivo = idioma do aparelho;
 //  - theme: sistema | claro | escuro (o provider de tema é atualizado pela tela de Aparência);
-//  - textSource: Bíblia do texto corrido (BLivre, KJV ou uma baixada e instalada; ver data/bibles). FONTE DA VERDADE. O botão do leitor também grava aqui, e
-//    o estado de estudo (`useStudy.textSource`) é só um espelho, escrito apenas por este arquivo (load e setTextSource);
+//  - textSource: a Bíblia principal, do texto corrido (uma baixada e instalada; ver data/bibles). FONTE DA VERDADE.
+//    Muda pela lista de Bíblias e pelo botão do leitor; a primeira baixada vira a principal sozinha (syncTextSource a
+//    cada mudança das instaladas). O
+//    estado de estudo (`useStudy.textSource`) é só um espelho, escrito apenas por este arquivo (load e setTextSource);
 //  - greekDefault: grego (TR) sob os versículos ao abrir o app. O botão Αα só muda a sessão.
 //  - timelineLines / timelineEvents: favoritos da linha do tempo (cite_ids de linhas e de marcadores);
 //    timelineCombos: combinações do paralelo criadas pelo usuário (favoritas, sem limite; recentes, as últimas cinco).
@@ -19,6 +21,7 @@ import { useLangStore } from '@/i18n/lang-store';
 import { readAppPrefs, writeAppPrefs, type StoredAppPrefs } from './provider-store';
 import { readCachedCatalog } from '@/data/bibles/catalog';
 import { installedIds } from '@/data/bibles/bible-db';
+import { useBibles } from '@/data/bibles/bibles-store';
 import { resolveTextSource } from '@/data/bibles/bible-model';
 import { bibleUiLang } from '@/data/bibles/ui-lang';
 import { favoriteCombo, newComboId, parseCombos, recordRecent, removeCombo, unfavoriteCombo, type UserCombo } from '@sensus/core';
@@ -27,7 +30,7 @@ import { setActiveCommentaryPreference } from '@/data/active-db';
 import { DEFAULT_APP_LANG, appLangFromDevice, isAppLang, type AppLang } from '@sensus/core';
 import { shouldShowOnboarding } from './onboarding-pref';
 
-/** Id de uma fonte de texto corrido (ver `textSources()` no núcleo). */
+/** Id de uma Bíblia (do catálogo de Bíblias baixáveis). */
 export type TextSourceId = string;
 
 const THEMES: readonly SchemePreference[] = ['system', 'light', 'dark'];
@@ -232,4 +235,9 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       setActiveCommentaryPreference(commentaryPrefs);
     },
   };
+});
+
+// Instaladas mudaram (baixou, removeu): a principal segue válida. A primeira baixada vira a principal.
+useBibles.subscribe((s, prev) => {
+  if (s.installed !== prev.installed && useAppPrefs.getState().loaded) useAppPrefs.getState().syncTextSource();
 });

@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   advance,
   back,
+  canSkip,
   ONBOARDING_DONE,
   progressOf,
   skip,
@@ -9,8 +10,10 @@ import {
   type OnboardingContext,
 } from './onboarding-model';
 
-const WITH_DATA: OnboardingContext = { dataInstalled: true };
-const WITHOUT_DATA: OnboardingContext = { dataInstalled: false };
+const WITH_DATA: OnboardingContext = { dataInstalled: true, hasBible: true };
+const WITHOUT_DATA: OnboardingContext = { dataInstalled: false, hasBible: true };
+const NO_BIBLE: OnboardingContext = { dataInstalled: false, hasBible: false };
+const BIBLE_ONLY: OnboardingContext = { dataInstalled: false, hasBible: false, bibleOnly: true };
 
 describe('passos', () => {
   it('sem dados completos, os sete passos na ordem', () => {
@@ -45,7 +48,35 @@ describe('passos', () => {
   });
 
   it('pular conclui a apresentação', () => {
-    expect(skip()).toBe(ONBOARDING_DONE);
+    expect(skip(WITHOUT_DATA)).toBe(ONBOARDING_DONE);
+  });
+});
+
+describe('Bíblia obrigatória', () => {
+  it('sem Bíblia baixada, o passo de Bíblia não avança; com ela, segue', () => {
+    expect(advance('biblia', NO_BIBLE)).toBe('biblia');
+    expect(advance('biblia', WITHOUT_DATA)).toBe('tradicoes');
+    expect(advance('idioma', NO_BIBLE)).toBe('biblia');
+  });
+
+  it('pular sem Bíblia leva ao passo de Bíblia', () => {
+    expect(skip(NO_BIBLE)).toBe('biblia');
+  });
+
+  it('o Pular some do passo de Bíblia enquanto não há nenhuma', () => {
+    expect(canSkip('biblia', NO_BIBLE)).toBe(false);
+    expect(canSkip('idioma', NO_BIBLE)).toBe(true);
+    expect(canSkip('biblia', WITHOUT_DATA)).toBe(true);
+    expect(canSkip('abertura', WITHOUT_DATA)).toBe(false);
+  });
+
+  it('modo só Bíblia: um passo, sem voltar, pular nem progresso; com a Bíblia baixada, conclui', () => {
+    expect(stepsFor(BIBLE_ONLY)).toEqual(['biblia']);
+    expect(back('biblia', BIBLE_ONLY)).toBe('biblia');
+    expect(canSkip('biblia', { ...BIBLE_ONLY, hasBible: true })).toBe(false);
+    expect(progressOf('biblia', BIBLE_ONLY)).toBeNull();
+    expect(advance('biblia', BIBLE_ONLY)).toBe('biblia');
+    expect(advance('biblia', { ...BIBLE_ONLY, hasBible: true })).toBe(ONBOARDING_DONE);
   });
 });
 

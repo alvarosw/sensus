@@ -4,7 +4,7 @@ export const enData = {
   rowTitle: 'Study data',
 
   setupLead:
-    'The Bible text is already in the app and works without a download. The study data brings what supports the analysis of each passage:',
+    'The study data brings what supports the analysis of each passage:',
   includes: [
     'Commentaries from classic and modern authors',
     'Bible dictionaries and topical index',

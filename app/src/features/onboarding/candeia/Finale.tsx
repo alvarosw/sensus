@@ -1,5 +1,5 @@
 // Fecho do onboarding: a candeia acesa no escuro; a luz cresce a partir da chama até inundar a tela e assenta nas
-// cores do tema do app (claro ou escuro). Então o versículo e a referência aparecem, e o botão leva para dentro.
+// cores do tema do app (claro ou escuro). Então a mensagem de conclusão e o convite aparecem, e o botão leva para dentro.
 import { useEffect, useState } from 'react';
 import { Pressable, Text, View, type LayoutChangeEvent, type TextStyle } from 'react-native';
 import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withTiming } from 'react-native-reanimated';
@@ -11,8 +11,10 @@ import { FloodLight } from './LightArt';
 import { themed } from './palette';
 
 export interface CandeiaFinaleProps {
-  verse: string;
-  reference: string;
+  /** Conclusão ("Tudo pronto"). */
+  title: string;
+  /** Convite para começar a estudar. */
+  body: string;
   ctaLabel: string;
   onDone: () => void;
   rtl?: boolean;
@@ -30,7 +32,7 @@ const LAMP = 92;
 const FLOOD_DP = 400;
 
 /** Fecho: a luz cresce até encher a tela; botão para entrar no app. */
-export function CandeiaFinale({ verse, reference, ctaLabel, onDone, rtl = false, testID }: CandeiaFinaleProps) {
+export function CandeiaFinale({ title, body, ctaLabel, onDone, rtl = false, testID }: CandeiaFinaleProps) {
   const { c, scheme } = useTheme();
   const th = themed[scheme];
   const reduce = useReducedMotion();
@@ -89,11 +91,18 @@ export function CandeiaFinale({ verse, reference, ctaLabel, onDone, rtl = false,
   };
 
   const dir: TextStyle = rtl ? { writingDirection: 'rtl' } : { writingDirection: 'ltr' };
-  const verseStyle: TextStyle = {
+  const titleStyle: TextStyle = {
     fontFamily: fontFamilies.read,
-    fontSize: 23,
-    lineHeight: 36,
+    fontSize: 30,
+    lineHeight: 40,
     color: c.text,
+    textAlign: 'center',
+  };
+  const bodyStyle: TextStyle = {
+    fontFamily: fontFamilies.read,
+    fontSize: 18,
+    lineHeight: 29,
+    color: c.muted,
     textAlign: 'center',
   };
 
@@ -126,16 +135,9 @@ export function CandeiaFinale({ verse, reference, ctaLabel, onDone, rtl = false,
         <View style={{ alignItems: 'center' }} onLayout={onLamp}>
           <CandeiaGlow size={LAMP} />
         </View>
-        <Animated.View style={[{ marginTop: 34, gap: 18 }, contentStyle]}>
-          <Text style={[verseStyle, dir]}>{verse}</Text>
-          <Text
-            style={[
-              { fontFamily: fontFamilies.uiSemibold, fontSize: 12.5, letterSpacing: 1.6, color: c.muted, textAlign: 'center', textTransform: 'uppercase' },
-              dir,
-            ]}
-          >
-            {reference}
-          </Text>
+        <Animated.View style={[{ marginTop: 34, gap: 14 }, contentStyle]}>
+          <Text accessibilityRole="header" style={[titleStyle, dir]}>{title}</Text>
+          <Text style={[bodyStyle, dir]}>{body}</Text>
         </Animated.View>
         <View style={{ flex: 1.3 }} />
         <Animated.View style={[{ alignItems: 'center' }, ctaStyle]} pointerEvents={ready ? 'auto' : 'none'}>

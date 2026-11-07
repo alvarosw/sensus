@@ -2,7 +2,9 @@
 
 Contrato: docs/design/idiomas-biblias-fontes.md, §2 (Repositório de Bíblias). Cada pacote tem o esquema lógico
 meta / verse_text / text_division / book_name. A lista e os metadados vêm de pipeline/bibles/catalog.tsv; o
-texto vem do staging (data/staging/bibles/<id>/, feito por pipeline/ingest/ebible.py).
+texto vem do staging (data/staging/bibles/<id>/, feito por pipeline/ingest/ebible.py). Linha sem código eBible
+(BLivre e KJV) usa o staging das fontes do banco principal (data/staging/<id>/, ingestores blivre.py e
+sword_kjv.py), que já está na numeração da KJV: entra sem TVTMS. Nenhuma Bíblia vem dentro do app.
 
 Antes de empacotar, cada Bíblia é alinhada à KJV pela TVTMS (pipeline/bibles/tvtms.py: numeração das tradições
 hebraica, latina e grega; títulos de salmo viram cabeçalho do v.1) e comparada com a KJV
@@ -15,6 +17,9 @@ Saídas:
 
 Uso (a partir de pipeline/):
     python3 package_bibles.py [--version 2026.11.06] [--only engwebp,frasbl] [--samples]
+
+Com --only, as entradas geradas substituem as de mesmo id no manifesto existente (as demais ficam como estão, com
+os pacotes da release em que foram publicadas).
 """
 
 import argparse
@@ -31,6 +36,7 @@ PIPELINE = Path(__file__).resolve().parent
 sys.path.insert(0, str(PIPELINE))
 sys.path.insert(0, str(PIPELINE / "bibles"))
 
+import book_names  # noqa: E402
 import tvtms as TV  # noqa: E402
 import versification as V  # noqa: E402
 from sensus.staging import ROOT, STAGING  # noqa: E402
@@ -47,11 +53,6 @@ TVTMS_CREDITO = ("Numeração alinhada à KJV com a TVTMS (Translators Versifica
 CATALOG_VERSION = "2026.11.06"
 ENTRY_PREFIX = "bible-"
 # Amostras do critério de conferência (versículo, esperado no início do texto em inglês ou no original da Bíblia).
-# Origem das Bíblias que já estão no banco principal (ingestores blivre.py e sword_kjv.py).
-BUNDLED_URLS = {
-    "blivre": "https://ebible.org/find/details.php?id=porbr2018",
-    "kjv": "https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/KJV.zip",
-}
 SAMPLES = [("Jo 3:16", 43003016), ("Sl 23:1", 19023001), ("Sl 51:1", 19051001), ("Dn 8:14", 27008014)]
 
 SCHEMA_SQL = """
@@ -138,8 +139,31 @@ def package_entry(bible_id: str, version: str) -> dict:
 
 
 def manifest_for(entries: list[dict], version: str) -> dict:
-    """Manifesto no formato do contrato. Entradas `bundled` não têm package."""
+    """Manifesto no formato do contrato."""
     return {"catalog_version": version, "schema_version": SCHEMA_VERSION, "bibles": entries}
+
+
+def merge_manifest(previous: dict, entries: list[dict], order: list[str], version: str) -> dict:
+    """Junta as entradas novas ao manifesto anterior: a nova vence a de mesmo id; a ordem é a do catalog.tsv."""
+    by_id = {e["id"]: e for e in previous.get("bibles", [])}
+    by_id.update({e["id"]: e for e in entries})
+    ordered = [by_id[i] for i in order if i in by_id]
+    return manifest_for(ordered, version)
+
+
+def main_source_bible(bible_id: str, lang: str) -> dict:
+    """Bíblia de uma fonte do banco principal (data/staging/<id>/): versículos e divisões já na numeração da KJV.
+
+    Os nomes dos livros são os do núcleo (bibles/book_names.py), em português ou em inglês.
+    """
+    base = STAGING / bible_id
+    verses = {r["vid"]: r["text"] for r in load_jsonl(base / "verse_text.jsonl")}
+    div_file = base / "text_division.jsonl"
+    divisions = [{"vid": d["vid"], "kind": d["kind"], "title": d.get("title")}
+                 for d in (load_jsonl(div_file) if div_file.exists() else [])]
+    books = book_names.core_names("pt" if lang.split("-")[0] == "pt" else "en")
+    source = json.loads((base / "source.json").read_text(encoding="utf-8"))
+    return {"verses": verses, "divisions": divisions, "books": books, "url": source["url"]}
 
 
 def check_versification(bible_id: str, kjv: dict[int, str], index: dict) -> dict:
@@ -210,28 +234,27 @@ def main():
             "license_url": row["license_url"] or None, "attribution": row["attribution"],
             "url": None, "version": args.version, "testaments": ["OT", "NT"], "rank": int(row["rank"]),
         }
-        if row["bundled"] == "1":
-            entry["bundled"] = True
-            entry["url"] = BUNDLED_URLS[bid]
-            entries.append(entry)
-            print(f"{bid}: no banco principal (bundled), sem pacote")
-            continue
         try:
-            checked = check_versification(bid, kjv, index)
-            if any(a != "identidade" for a in checked["applied"]):
-                entry["attribution"] = f"{row['attribution']} {TVTMS_CREDITO}"
-            staging_dir = STAGING / "bibles" / bid
-            source = json.loads((staging_dir / "source.json").read_text(encoding="utf-8"))
-            books = json.loads((staging_dir / "books.json").read_text(encoding="utf-8"))
-            divisions = checked["divisions"]
+            if row["ebible"]:
+                checked = check_versification(bid, kjv, index)
+                if any(a != "identidade" for a in checked["applied"]):
+                    entry["attribution"] = f"{row['attribution']} {TVTMS_CREDITO}"
+                staging_dir = STAGING / "bibles" / bid
+                source = json.loads((staging_dir / "source.json").read_text(encoding="utf-8"))
+                books = json.loads((staging_dir / "books.json").read_text(encoding="utf-8"))
+                verses, divisions, source_url = checked["verses"], checked["divisions"], source["url"]
+            else:
+                main = main_source_bible(bid, row["lang"])
+                checked = None
+                verses, divisions, books, source_url = main["verses"], main["divisions"], main["books"], main["url"]
             db_path = work / f"bible-{bid}.db"
             build_sqlite(db_path, bible_id=bid, version=args.version, lang=row["lang"], license_=row["license"],
-                         attribution=entry["attribution"], verses=checked["verses"], divisions=divisions,
+                         attribution=entry["attribution"], verses=verses, divisions=divisions,
                          books=books, built_at=built_at)
             zip_name = f"{ENTRY_PREFIX}{bid}-{args.version}.zip"
             zip_path = DIST / zip_name
             write_zip(db_path, zip_path)
-            entry["url"] = source["url"]
+            entry["url"] = source_url
             entry["package"] = {
                 **package_entry(bid, args.version),
                 "sha256": sha256_of(zip_path),
@@ -239,6 +262,10 @@ def main():
                 "uncompressed_size": db_path.stat().st_size,
             }
             entries.append(entry)
+            if checked is None:
+                print(f"{bid}: staging do banco principal, {len(verses)} versículos, {len(divisions)} divisões, "
+                      f"zip {zip_path.stat().st_size / 1e6:.2f} MB")
+                continue
             rep = checked["report"]
             print(f"{bid}: {len(books)} livros, {len(checked['verses']) - len(rep['empty'])} versículos com texto "
                   f"({len(rep['empty'])} numerados sem texto), capítulos iguais à KJV "
@@ -261,10 +288,13 @@ def main():
     if failures:
         print(f"{len(failures)} Bíblia(s) fora do catálogo por versificação ou texto; manifesto não gravado.")
         sys.exit(1)
-    manifest = manifest_for(entries, args.version)
-    if not only:
-        MANIFEST.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-        print(f"manifesto: {MANIFEST} ({len(entries)} entradas)")
+    if only:
+        previous = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
+        manifest = merge_manifest(previous, entries, [r["id"] for r in load_catalog()], args.version)
+    else:
+        manifest = manifest_for(entries, args.version)
+    MANIFEST.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"manifesto: {MANIFEST} ({len(manifest['bibles'])} entradas, {len(entries)} geradas agora)")
 
 
 if __name__ == "__main__":

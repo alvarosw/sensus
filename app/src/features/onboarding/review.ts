@@ -4,6 +4,6 @@ import { router } from 'expo-router';
 import { useOnboarding } from './onboarding-store';
 
 export function reviewOnboarding(): void {
-  useOnboarding.getState().go('abertura');
+  useOnboarding.getState().reset();
   router.push('/onboarding');
 }

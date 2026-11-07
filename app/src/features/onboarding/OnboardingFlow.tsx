@@ -4,6 +4,7 @@ import { useCallback } from 'react';
 import { BackHandler, Platform } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
 import { useDataStore } from '@/data/data-store';
+import { useBibles } from '@/data/bibles/bibles-store';
 import { useAppPrefs } from '@/settings/app-prefs';
 import { useLang } from '@/i18n';
 import { StepFrame } from './StepFrame';
@@ -32,7 +33,7 @@ function finish(): void {
   // derruba o app (ver _layout.tsx).
   router.replace('/');
   setTimeout(() => {
-    useOnboarding.getState().go('abertura');
+    useOnboarding.getState().reset();
     useAppPrefs.getState().setOnboardingDone(true);
   }, 300);
 }
@@ -42,14 +43,17 @@ export function OnboardingFlow() {
   // textos de módulo (ex.: <Txt>{ONBOARDING_COPY.langTitle}</Txt>), e só remontar os recalcula. O passo segue no store.
   const lang = useLang();
   const dataInstalled = useDataStore((s) => s.edition === 'full');
+  const hasBible = useBibles((s) => s.installed.length > 0);
   const step = useOnboarding((s) => s.step);
-  const ctx = { dataInstalled };
+  const bibleOnly = useOnboarding((s) => s.bibleOnly);
+  const ctx = { dataInstalled, hasBible, bibleOnly };
 
   const move = (m: OnboardingMove) => {
     if (m === ONBOARDING_DONE) finish();
     else useOnboarding.getState().go(m);
   };
   const next = () => move(advance(step, ctx));
+  const skipTo = () => move(skip(ctx));
   const prev = () => useOnboarding.getState().go(back(step, ctx));
 
   useFocusEffect(
@@ -61,24 +65,24 @@ export function OnboardingFlow() {
       });
       return () => sub.remove();
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [step, dataInstalled]),
+    }, [step, dataInstalled, hasBible, bibleOnly]),
   );
 
   if (step === 'abertura') return <StepOpening key={lang} onNext={next} />;
   if (step === 'fim') return <StepFinale key={lang} onDone={next} />;
   return (
-    <StepFrame key={lang} step={step} ctx={ctx} onBack={prev} onSkip={() => move(skip())}>
-      {renderMiddle(step, next)}
+    <StepFrame key={lang} step={step} ctx={ctx} onBack={prev} onSkip={skipTo}>
+      {renderMiddle(step, next, bibleOnly)}
     </StepFrame>
   );
 }
 
-function renderMiddle(step: OnboardingStep, onNext: () => void) {
+function renderMiddle(step: OnboardingStep, onNext: () => void, bibleOnly: boolean) {
   switch (step) {
     case 'idioma':
       return <StepLanguage onNext={onNext} />;
     case 'biblia':
-      return <StepBible onNext={onNext} />;
+      return <StepBible onNext={onNext} required={bibleOnly} />;
     case 'tradicoes':
       return <StepTraditions onNext={onNext} />;
     case 'ia':

@@ -9,13 +9,20 @@ Primeira abertura do Sensus. Ideia em [IDEAS.md](../IDEAS.md) ("Onboarding"); co
    passa. Primeiro a candeia faz sozinha um caminho lento sobre o texto (revela palavra a palavra); depois o leitor
    pode arrastá-la. Quando o versículo inteiro foi iluminado, surgem o nome "Sensus" e o botão "Começar".
 2. **Idioma.** Lista dos 14 idiomas pelo endônimo, com o do aparelho marcado. Trocar aplica na hora.
-3. **Bíblia.** As recomendadas do idioma (catálogo); "Baixar agora" ou "Depois". BLivre e KJV já vêm no app.
+3. **Bíblia (obrigatório).** Nenhuma Bíblia vem com o app: o passo pede pelo menos uma. A lista é a mesma de
+   Configurações > Bíblias (`data/bibles/BiblePicker`): as recomendadas do idioma do app e do inglês, mais as baixadas,
+   e o botão "Ver todas as Bíblias" com as demais agrupadas por idioma (idioma do app, inglês, espanhol, demais). Cada
+   item baixa pelo ícone à direita (lixeira quando baixada); tocar numa baixada a torna a principal (borda e rótulo
+   "Principal"). A primeira baixada vira a principal sozinha. "Continuar" fica fixo embaixo e só libera com uma Bíblia;
+   "Pular" some deste passo enquanto não há nenhuma e, nos outros, leva a ele.
 4. **Vertente teológica.** "Todas as tradições" (padrão) ou escolher uma ou mais. Grava a mesma preferência da tela
    "Interpretação e comentários". Frase curta: "Você pode mudar isso em Configurações."
 5. **Assistente de IA.** O que a IA faz no Sensus (resume e responde citando as fontes), e "Configurar agora" (abre
    Configurações > Assistente de IA) ou "Depois".
 6. **Dados de estudo.** O mesmo conteúdo da tela atual `data-setup`: baixar agora (Wi-Fi recomendado) ou depois.
-7. **Fim.** A luz se espalha e o app abre no leitor.
+7. **Fim.** A luz se espalha e aparece a conclusão ("Tudo pronto") com um convite a começar ("Sua candeia está acesa.
+   Abra um capítulo, toque num versículo e veja o que cada palavra guarda."); o botão "Começar a estudar" abre o
+   leitor. O versículo fica só na abertura.
 
 Em todos os passos: uma candeia pequena acesa no topo (CandeiaGlow), "Pular" no canto, progresso discreto (pontos),
 voltar. Claro e escuro. Árabe e urdu: texto da direita para a esquerda (fase 1, sem espelhar layout).
@@ -27,6 +34,9 @@ alcançável por leitor de tela (o versículo é um texto real, não imagem).
 - Instalação nova: sim (antes da oferta de dados de estudo, que vira o passo 6).
 - Quem já usa o app (preferências gravadas sem `onboardingDone`): não; grava `onboardingDone: true` na primeira
   carga. Configurações > Sobre ganha "Rever a apresentação".
+- Quem já viu a apresentação e está sem nenhuma Bíblia baixada (atualizou de uma versão que trazia BLivre e KJV no
+  APK): só o passo de Bíblia ("Escolha sua Bíblia"), sem voltar nem pular, antes de qualquer outra oferta
+  (`OnboardingGate`, modo `bibleOnly` do modelo).
 
 ## Divisão do código
 

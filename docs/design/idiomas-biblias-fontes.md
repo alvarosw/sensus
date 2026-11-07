@@ -14,7 +14,7 @@ paralelo sem conflito. Regras gerais continuam em [ARCHITECTURE.md](../ARCHITECT
 | Direita para esquerda (ar, ur) | Fase 1: texto com `writingDirection: 'rtl'` e alinhamento à direita; sem espelhar o layout | Espelhar (`I18nManager.forceRTL`) exige reiniciar o app e revisar geometria (alças, linha do tempo). Fica como próximo passo. |
 | Traduções da interface | Preparadas com auxílio de IA, revisadas por amostragem; marcadas como "a revisar por falante nativo" | Mesmo critério das descrições pt. É código do app, não conteúdo gerado em tempo de uso. |
 | Troca de idioma | Remonta a árvore a partir da raiz (`key={lang}`) | Os módulos de strings leem o idioma na hora do acesso; remontar basta, sem reiniciar o app. |
-| Bíblias | Pacotes SQLite separados, baixados sob demanda; BLivre e KJV continuam no banco principal | O banco principal não cresce com cada Bíblia; cada pacote tem 3–6 MB. |
+| Bíblias | Pacotes SQLite separados, baixados sob demanda; nenhuma vem no APK (BLivre e KJV também são pacotes desde o catálogo 2026.11.07) | O banco principal não cresce com cada Bíblia; cada pacote tem 2–6 MB. O APK fica ~9 MB menor, e a apresentação pede pelo menos uma Bíblia. |
 | Filtro de fontes | Vale para comentários (papel `commentary`) em todo o app: lentes, painel da IA, citações | Um ponto só (Repo), para a IA nunca ver uma fonte que o leitor escondeu. |
 
 ## 1. Idiomas (`packages/core/src/domain/locale.ts`)
@@ -116,13 +116,14 @@ CREATE TABLE book_name (book INTEGER PRIMARY KEY, name TEXT NOT NULL, short TEXT
       "package": { "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-rvr1909-2026.11.06.zip",
                    "sha256": "…", "size": 0, "uncompressed_size": 0 }
     },
-    { "id": "blivre", "abbr": "BLivre", "name": "Bíblia Livre", "lang": "pt", "bundled": true, "rank": 1, … }
+    { "id": "blivre", "abbr": "BLivre", "name": "Bíblia Livre", "lang": "pt", "rank": 1, "package": { … }, … }
   ]
 }
 ```
 
-`bundled: true` = já está no banco principal, sem `package`. `rank` = ordem de recomendação dentro do idioma
-(1 = recomendada).
+`rank` = ordem de recomendação dentro do idioma (1 = recomendada). `bundled: true` (catálogos até 2026.11.06) marcava
+BLivre e KJV dentro do banco principal, sem `package`; o app ainda aceita o campo, mas trata a entrada só como não
+baixável. BLivre e KJV saem do staging das fontes do banco principal (`data/staging/<id>/`), já na numeração da KJV.
 
 ### Núcleo (`packages/core/src/domain/bibles.ts`)
 
@@ -132,6 +133,10 @@ export interface BibleCatalog { catalog_version: string; schema_version: number;
 export function parseBibleCatalog(input: unknown): BibleCatalog;          // valida; lança erro com mensagem
 /** Bíblias do idioma do app primeiro (por rank), depois as demais agrupadas por idioma. */
 export function recommendBibles(catalog: BibleCatalog, lang: AppLang): { recommended: BibleEntry[]; others: BibleEntry[] };
+/** Lista completa por idioma: idioma do app, inglês, espanhol, demais pelo código. */
+export function bibleLanguageGroups(catalog: BibleCatalog, appLang: string): BibleLangGroup[];
+/** Lista curta: recomendadas do idioma do app e do inglês, depois as instaladas. */
+export function suggestedBibles(catalog: BibleCatalog, appLang: string, installed: readonly string[]): BibleEntry[];
 export function bibleAbbr(id: string, catalog: BibleCatalog | null): string;  // registro → catálogo → id
 ```
 
@@ -142,12 +147,14 @@ Repo: `new Repo(driver, { textDriver?: (sourceId) => SqlDriver | null })`. As fu
 
 - `app/src/data/bibles/`: catálogo (busca + cache), instalação (download com sha256, mesmo padrão de
   `download-engine.ts`), remoção, lista de instaladas, abertura dos `bible-<id>.db` e o `textDriver` do Repo.
-- Configurações → "Bíblias": instaladas (com remover) e catálogo, com a seção "Recomendadas para <idioma>" no topo
-  (`recommendBibles`) e o selo "Recomendada" no rank 1.
-- Seletor do leitor (`TopBar` / Aparência): lista as instaladas (BLivre, KJV e as baixadas), não mais o
-  alternador BLivre↔KJV.
-- Preferência `textSource` aceita qualquer id instalado; se a Bíblia escolhida for removida, volta para a
-  recomendada instalada do idioma, ou BLivre.
+- Configurações → "Bíblias" e o passo de Bíblia da apresentação usam a mesma lista (`BiblePicker`): a curta
+  (`suggestedBibles`) e, pelo botão "Ver todas as Bíblias", as demais por idioma (`bibleLanguageGroups`). Cada item
+  baixa pelo ícone (progresso no anel, que para o download), vira lixeira quando baixado e, tocado, vira a principal
+  (borda e rótulo "Principal"). A única baixada não sai (`canRemoveBible`).
+- Seletor do leitor (`TopBar` / Aparência): lista as instaladas, não mais o alternador BLivre↔KJV.
+- Preferência `textSource` (a principal) aceita qualquer id instalado; a primeira baixada vira a principal sozinha
+  (app-prefs reage às instaladas); se a principal for removida, vai para a recomendada instalada do idioma, ou a
+  primeira instalada. Referências cruzadas, concordância e o resumo literário leem o texto da principal.
 
 ## 3. Preferência de fontes de interpretação
 
