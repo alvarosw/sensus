@@ -178,10 +178,22 @@ export function editionLegend(editions: readonly string[]): string {
     .join(' · ');
 }
 
-/** Rótulos do testamento por idioma. Idioma sem linha aqui cai no inglês (fallbackChain). */
+/** Rótulos do testamento por idioma (fora de pt e en, a revisar por falante nativo). Sem linha: inglês (fallbackChain). */
 const TESTAMENT_LABELS: Partial<Record<AppLang, Record<Testament, string>>> = {
   pt: { OT: 'AT', NT: 'NT' },
   en: { OT: 'OT', NT: 'NT' },
+  es: { OT: 'AT', NT: 'NT' },
+  fr: { OT: 'AT', NT: 'NT' },
+  de: { OT: 'AT', NT: 'NT' },
+  ru: { OT: 'ВЗ', NT: 'НЗ' },
+  zh: { OT: '旧约', NT: '新约' },
+  ja: { OT: '旧約', NT: '新約' },
+  hi: { OT: 'पुराना नियम', NT: 'नया नियम' },
+  bn: { OT: 'পুরাতন নিয়ম', NT: 'নূতন নিয়ম' },
+  ur: { OT: 'عہد نامہ قدیم', NT: 'عہد نامہ جدید' },
+  ar: { OT: 'العهد القديم', NT: 'العهد الجديد' },
+  id: { OT: 'PL', NT: 'PB' },
+  vi: { OT: 'Cựu Ước', NT: 'Tân Ước' },
 };
 
 /** Rótulo curto do testamento: "AT"/"NT" em pt (padrão), "OT"/"NT" em inglês. */

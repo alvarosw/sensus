@@ -111,23 +111,24 @@ export function placeSourceRank(sourceId: string): number {
 }
 
 /**
- * Rótulos das tradições por idioma (o valor vem do pipeline, campo `source.tradition`). `pt` é obrigatório; `en` cobre
- * os demais idiomas por fallback (traditionLabel).
+ * Rótulos das tradições por idioma (o valor vem do pipeline, campo `source.tradition`). `pt` é obrigatório; idioma
+ * sem rótulo cai no inglês e depois no português (traditionLabel). Rótulos fora de pt e en: a revisar por falante
+ * nativo (docs/design/idiomas-biblias-fontes.md §0).
  */
-export const TRADITIONS: Readonly<Record<string, { pt: string; en?: string }>> = {
-  reformed: { pt: 'reformada', en: 'Reformed' },
-  'reformed-baptist': { pt: 'batista reformada', en: 'Reformed Baptist' },
-  presbyterian: { pt: 'presbiteriana', en: 'Presbyterian' },
-  methodist: { pt: 'metodista', en: 'Methodist' },
-  baptist: { pt: 'batista', en: 'Baptist' },
-  dispensational: { pt: 'dispensacionalista', en: 'Dispensationalist' },
-  patristic: { pt: 'patrística', en: 'Patristic' },
-  adventist: { pt: 'adventista', en: 'Adventist' },
-  catholic: { pt: 'católica', en: 'Catholic' },
-  lutheran: { pt: 'luterana', en: 'Lutheran' },
-  anglican: { pt: 'anglicana', en: 'Anglican' },
-  congregational: { pt: 'congregacional', en: 'Congregational' },
-  restoration: { pt: 'restauracionista', en: 'Restorationist' },
+export const TRADITIONS: Readonly<Record<string, { pt: string } & Partial<Record<AppLang, string>>>> = {
+  reformed: { pt: 'reformada', en: 'Reformed', zh: '改革宗', hi: 'रिफॉर्म्ड', es: 'reformada', ar: 'مُصلَحة', fr: 'réformée', bn: 'রিফর্মড', ru: 'реформатская', id: 'Reformed', ur: 'ریفارمڈ', de: 'reformiert', ja: '改革派', vi: 'Cải cách' },
+  'reformed-baptist': { pt: 'batista reformada', en: 'Reformed Baptist', zh: '改革宗浸信会', hi: 'रिफॉर्म्ड बैपटिस्ट', es: 'bautista reformada', ar: 'معمدانية مُصلَحة', fr: 'baptiste réformée', bn: 'রিফর্মড ব্যাপটিস্ট', ru: 'реформатско-баптистская', id: 'Baptis Reformed', ur: 'ریفارمڈ بپٹسٹ', de: 'reformiert-baptistisch', ja: '改革派バプテスト', vi: 'Báp-tít Cải cách' },
+  presbyterian: { pt: 'presbiteriana', en: 'Presbyterian', zh: '长老会', hi: 'प्रेस्बिटेरियन', es: 'presbiteriana', ar: 'مشيخية', fr: 'presbytérienne', bn: 'প্রেসবিটেরিয়ান', ru: 'пресвитерианская', id: 'Presbiterian', ur: 'پریسبیٹیرین', de: 'presbyterianisch', ja: '長老派', vi: 'Trưởng Lão' },
+  methodist: { pt: 'metodista', en: 'Methodist', zh: '卫理公会', hi: 'मेथोडिस्ट', es: 'metodista', ar: 'ميثودية', fr: 'méthodiste', bn: 'মেথডিস্ট', ru: 'методистская', id: 'Metodis', ur: 'میتھوڈسٹ', de: 'methodistisch', ja: 'メソジスト', vi: 'Giám Lý' },
+  baptist: { pt: 'batista', en: 'Baptist', zh: '浸信会', hi: 'बैपटिस्ट', es: 'bautista', ar: 'معمدانية', fr: 'baptiste', bn: 'ব্যাপটিস্ট', ru: 'баптистская', id: 'Baptis', ur: 'بپٹسٹ', de: 'baptistisch', ja: 'バプテスト', vi: 'Báp-tít' },
+  dispensational: { pt: 'dispensacionalista', en: 'Dispensationalist', zh: '时代论', hi: 'डिस्पेंसेशनल', es: 'dispensacionalista', ar: 'تدبيرية', fr: 'dispensationaliste', bn: 'ডিসপেনসেশনাল', ru: 'диспенсационалистская', id: 'Dispensasional', ur: 'ڈسپنسیشنل', de: 'dispensationalistisch', ja: 'ディスペンセーション主義', vi: 'Thời kỳ luận' },
+  patristic: { pt: 'patrística', en: 'Patristic', zh: '教父', hi: 'पैट्रिस्टिक', es: 'patrística', ar: 'آبائية', fr: 'patristique', bn: 'প্যাট্রিস্টিক', ru: 'патристическая', id: 'Patristik', ur: 'آبائے کلیسیا', de: 'patristisch', ja: '教父', vi: 'Giáo phụ' },
+  adventist: { pt: 'adventista', en: 'Adventist', zh: '复临派', hi: 'एडवेंटिस्ट', es: 'adventista', ar: 'سبتية أدفنتستية', fr: 'adventiste', bn: 'অ্যাডভেন্টিস্ট', ru: 'адвентистская', id: 'Advent', ur: 'ایڈونٹسٹ', de: 'adventistisch', ja: 'アドベンチスト', vi: 'Cơ Đốc Phục Lâm' },
+  catholic: { pt: 'católica', en: 'Catholic', zh: '天主教', hi: 'कैथोलिक', es: 'católica', ar: 'كاثوليكية', fr: 'catholique', bn: 'ক্যাথলিক', ru: 'католическая', id: 'Katolik', ur: 'کیتھولک', de: 'katholisch', ja: 'カトリック', vi: 'Công giáo' },
+  lutheran: { pt: 'luterana', en: 'Lutheran', zh: '路德宗', hi: 'लूथरन', es: 'luterana', ar: 'لوثرية', fr: 'luthérienne', bn: 'লুথেরান', ru: 'лютеранская', id: 'Lutheran', ur: 'لوتھرن', de: 'lutherisch', ja: 'ルター派', vi: 'Luther' },
+  anglican: { pt: 'anglicana', en: 'Anglican', zh: '圣公会', hi: 'एंग्लिकन', es: 'anglicana', ar: 'أنجليكانية', fr: 'anglicane', bn: 'অ্যাংলিকান', ru: 'англиканская', id: 'Anglikan', ur: 'اینگلیکن', de: 'anglikanisch', ja: '聖公会', vi: 'Anh giáo' },
+  congregational: { pt: 'congregacional', en: 'Congregational', zh: '公理会', hi: 'कॉन्ग्रिगेशनल', es: 'congregacionalista', ar: 'تجمعية', fr: 'congrégationaliste', bn: 'কংগ্রিগেশনাল', ru: 'конгрегационалистская', id: 'Kongregasional', ur: 'کانگریگیشنل', de: 'kongregationalistisch', ja: '会衆派', vi: 'Giáo đoàn' },
+  restoration: { pt: 'restauracionista', en: 'Restorationist', zh: '复原运动', hi: 'पुनर्स्थापन आंदोलन', es: 'restauracionista', ar: 'حركة الاسترداد', fr: 'restaurationniste', bn: 'পুনরুদ্ধার আন্দোলন', ru: 'реставрационистская', id: 'Gerakan Pemulihan', ur: 'بحالی تحریک', de: 'restaurationistisch', ja: '回復運動', vi: 'Phong trào Phục hồi' },
 };
 
 /** Pais da Igreja: nome no primeiro trecho do comentário ("John Chrysostom — Homily...") -> nome em português. */
@@ -214,7 +215,7 @@ export function traditionLabel(id: string | null | undefined, lang: AppLang = DE
   const entry = own(TRADITIONS, id);
   if (!entry) return id;
   for (const l of fallbackChain(lang)) {
-    const text = l === 'pt' ? entry.pt : l === 'en' ? entry.en : undefined;
+    const text = entry[l];
     if (text) return text;
   }
   return entry.pt;

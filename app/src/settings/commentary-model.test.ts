@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type { Source } from '@sensus/core';
-import { commentaryGroups, toggleHiddenSource, toggleTradition, visibleTradition } from './commentary-model';
+import { commentaryGroups, describePreference, toggleHiddenSource, toggleTradition, visibleTradition } from './commentary-model';
 
 const src = (id: string, kind: string, tradition: string | null, title = id): Source =>
   ({ id, kind, title, tradition, author: null, lang: 'en', license: 'Public Domain' }) as unknown as Source;
@@ -60,5 +60,34 @@ describe('fontes escondidas e tradição visível', () => {
     expect(visibleTradition('adventista', ['adventista', 'luterana'])).toBe('adventista');
     expect(visibleTradition('reformada', ['adventista', 'luterana'])).toBeNull();
     expect(visibleTradition(null, ['adventista'])).toBeNull();
+  });
+});
+
+describe('describePreference (resumo da linha de Configurações)', () => {
+  // Tabela pt fixa no teste, para não depender do idioma do store.
+  const pt = {
+    allTraditions: 'Todas as tradições',
+    onlyTradition: (a: string) => `Só ${a}`,
+    twoTraditions: (a: string, b: string) => `${a.charAt(0).toUpperCase()}${a.slice(1)} e ${b}`,
+    manyTraditions: (a: string, b: string, more: number) => `${a.charAt(0).toUpperCase()}${a.slice(1)}, ${b} e mais ${more}`,
+    hiddenSources: (n: number) => (n === 1 ? '1 fonte oculta' : `${n} fontes ocultas`),
+  };
+
+  it('todas, uma, duas e mais de duas tradições, com rótulos do núcleo', () => {
+    expect(describePreference({ traditions: null, hiddenSources: [] }, 'pt', pt)).toBe('Todas as tradições');
+    expect(describePreference({ traditions: ['adventist'], hiddenSources: [] }, 'pt', pt)).toBe('Só adventista');
+    expect(describePreference({ traditions: ['adventist', 'reformed'], hiddenSources: [] }, 'pt', pt)).toBe('Adventista e reformada');
+    expect(describePreference({ traditions: ['adventist', 'reformed', 'patristic', 'lutheran'], hiddenSources: [] }, 'pt', pt)).toBe(
+      'Adventista, reformada e mais 2',
+    );
+  });
+
+  it('fontes ocultas no singular e no plural', () => {
+    expect(describePreference({ traditions: null, hiddenSources: ['egw-steps'] }, 'pt', pt)).toBe('Todas as tradições · 1 fonte oculta');
+    expect(describePreference({ traditions: ['adventist'], hiddenSources: ['a', 'b', 'c'] }, 'pt', pt)).toBe('Só adventista · 3 fontes ocultas');
+  });
+
+  it('rótulo da tradição segue o idioma pedido', () => {
+    expect(describePreference({ traditions: ['adventist'], hiddenSources: [] }, 'es', { ...pt, onlyTradition: (a) => `Solo ${a}` })).toBe('Solo adventista');
   });
 });

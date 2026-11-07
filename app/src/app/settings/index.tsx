@@ -2,7 +2,8 @@
 import { ScrollView, View } from 'react-native';
 import { router } from 'expo-router';
 import Constants from 'expo-constants';
-import { describePreference, sourceAbbr } from '@sensus/core';
+import { sourceAbbr } from '@sensus/core';
+import { describePreference } from '@/settings/commentary-model';
 import { ListGroup, ListRow, useTheme } from '@/design';
 import { useSettings } from '@/settings/settings-context';
 import { aiSummary } from '@/settings/ai-status';
@@ -53,7 +54,7 @@ export default function SettingsScreen() {
         <ListRow
           testID="settings-row-commentaries"
           title={COMMENTARY_STRINGS.rowTitle}
-          subtitle={describePreference(commentaryPrefs)}
+          subtitle={describePreference(commentaryPrefs, lang)}
           onPress={() => router.push('/settings/commentaries')}
         />
         <ListRow

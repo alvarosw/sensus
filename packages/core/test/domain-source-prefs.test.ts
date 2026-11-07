@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
   ALL_COMMENTARIES,
-  describePreference,
   isCommentaryAllowed,
   parseCommentaryPreference,
   type CommentaryPreference,
@@ -58,19 +57,5 @@ describe('preferência de comentários (domínio)', () => {
       hiddenSources: ['egw-steps'],
     });
     expect(parseCommentaryPreference({ traditions: [], hiddenSources: [] })).toEqual(ALL_COMMENTARIES);
-  });
-
-  it('describePreference: todas, uma, duas e mais de duas tradições (rótulos pt-BR do registro)', () => {
-    expect(describePreference(ALL_COMMENTARIES)).toBe('Todas as tradições');
-    expect(describePreference({ traditions: ['adventist'], hiddenSources: [] })).toBe('Só adventista');
-    expect(describePreference({ traditions: ['adventist', 'reformed'], hiddenSources: [] })).toBe('Adventista e reformada');
-    expect(describePreference({ traditions: ['adventist', 'reformed', 'patristic', 'lutheran'], hiddenSources: [] })).toBe(
-      'Adventista, reformada e mais 2',
-    );
-  });
-
-  it('describePreference: fontes ocultas acrescentam o total no singular e no plural', () => {
-    expect(describePreference({ traditions: null, hiddenSources: ['egw-steps'] })).toBe('Todas as tradições · 1 fonte oculta');
-    expect(describePreference({ traditions: ['adventist'], hiddenSources: ['a', 'b', 'c'] })).toBe('Só adventista · 3 fontes ocultas');
   });
 });

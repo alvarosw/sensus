@@ -1,6 +1,7 @@
 // Regras puras da tela de tradições (sem React, sem banco): agrupar as fontes de comentário do banco ativo por
 // tradição e alternar tradições e fontes escondidas. Quem grava é app-prefs; aqui só se calcula o próximo valor.
-import { sourceShort, traditionLabel, type Source } from '@sensus/core';
+import { sourceShort, traditionLabel, type AppLang, type CommentaryPreference, type Source } from '@sensus/core';
+import { COMMENTARY_STRINGS } from './commentary-strings';
 
 export interface TraditionGroup {
   /** Id da tradição no registro (ex.: 'adventist'). */
@@ -46,4 +47,27 @@ export function toggleHiddenSource(hidden: readonly string[], sourceId: string):
 /** Tradição do filtro de estudo ainda visível: se a preferência escondeu a tradição escolhida, não há filtro. */
 export function visibleTradition(active: string | null, visible: readonly string[]): string | null {
   return active !== null && visible.includes(active) ? active : null;
+}
+
+/**
+ * Resumo da preferência para a linha de Configurações, no idioma pedido: "Todas as tradições", "Só adventista",
+ * "Adventista e reformada", "Adventista, reformada e mais 2"; fontes ocultas acrescentam "· 3 fontes ocultas".
+ * `strings` é a tabela do idioma atual (COMMENTARY_STRINGS); os rótulos das tradições vêm do núcleo.
+ */
+export function describePreference(
+  pref: CommentaryPreference,
+  lang: AppLang,
+  strings: Pick<typeof COMMENTARY_STRINGS, 'allTraditions' | 'onlyTradition' | 'twoTraditions' | 'manyTraditions' | 'hiddenSources'> = COMMENTARY_STRINGS,
+): string {
+  const names = (pref.traditions ?? []).map((t) => traditionLabel(t, lang));
+  const base =
+    names.length === 0
+      ? strings.allTraditions
+      : names.length === 1
+        ? strings.onlyTradition(names[0]!)
+        : names.length === 2
+          ? strings.twoTraditions(names[0]!, names[1]!)
+          : strings.manyTraditions(names[0]!, names[1]!, names.length - 2);
+  const n = pref.hiddenSources.length;
+  return n === 0 ? base : `${base} · ${strings.hiddenSources(n)}`;
 }

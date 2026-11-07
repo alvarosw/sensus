@@ -1,7 +1,6 @@
 // Preferência de comentários: quais tradições e quais fontes de comentário o leitor quer ver no estudo inteiro
 // (lentes, painel e contexto da IA). Regra pura; quem aplica é o Repo (filtro na consulta), nunca a tela sozinha.
-// Rótulos das tradições vêm de `traditionLabel` (registro de fontes), nunca de literais aqui.
-import { traditionLabel } from './sources';
+// O resumo em texto (linha de Configurações) fica no app, em cada idioma (app/src/settings/commentary-model.ts).
 
 export interface CommentaryPreference {
   /** Tradições aceitas (ids do registro, ex.: 'adventist'); null = todas. Lista vazia equivale a null. */
@@ -40,25 +39,4 @@ export function parseCommentaryPreference(input: unknown): CommentaryPreference 
     traditions: traditions.length > 0 ? traditions : null,
     hiddenSources: stringList(raw.hiddenSources),
   };
-}
-
-/**
- * Resumo da preferência para a linha de Configurações: "Todas as tradições", "Só adventista",
- * "Adventista e reformada", "Adventista, reformada e mais 2"; fontes escondidas acrescentam "· 3 fontes ocultas".
- */
-export function describePreference(pref: CommentaryPreference): string {
-  const base = describeTraditions(pref.traditions);
-  const n = pref.hiddenSources.length;
-  if (n === 0) return base;
-  return `${base} · ${n} ${n === 1 ? 'fonte oculta' : 'fontes ocultas'}`;
-}
-
-function describeTraditions(traditions: readonly string[] | null): string {
-  if (!traditions || traditions.length === 0) return 'Todas as tradições';
-  const names = traditions.map((t) => traditionLabel(t));
-  if (names.length === 1) return `Só ${names[0]}`;
-  const [first, ...rest] = names;
-  const head = `${first!.charAt(0).toUpperCase()}${first!.slice(1)}`;
-  if (names.length === 2) return `${head} e ${rest[0]}`;
-  return `${head}, ${rest[0]} e mais ${names.length - 2}`;
 }
