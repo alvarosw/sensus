@@ -78,7 +78,7 @@ export function PeekContent({ onLayout }: { onLayout: (e: LayoutChangeEvent) => 
               <Fact
                 testID="fact-texto"
                 value={facts.variants.count}
-                label={facts.variants.count === 1 ? STUDY.factVariante(facts.variants.editions) : STUDY.factVariantes(facts.variants.editions)}
+                label={STUDY.factVariantes(facts.variants.count, facts.variants.editions)}
                 onPress={() => goToLens('texto')}
               />
             )}

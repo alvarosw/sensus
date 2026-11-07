@@ -14,6 +14,7 @@ import {
 } from '@sensus/core';
 import { chv } from '../common/format';
 import type { CommentaryView } from './format';
+import { STUDY } from './strings';
 
 /** Fonte da coluna de comparação da lente Texto: traduções corridas ou o original do testamento do trecho. */
 export type CompareKey = 'blivre' | 'kjv' | 'original';
@@ -149,8 +150,8 @@ export function literaryNeighborhood(lit: Pick<Literary, 'before' | 'after'>, ra
  * versículos; com variantes, traz a contagem delas.
  */
 export function textoCountLabel(vids: number, variantCount: number | null): string {
-  if (variantCount === null) return `${vids} vv`;
-  return `${vids} vv · ${variantCount} ${variantCount === 1 ? 'variante' : 'variantes'}`;
+  if (variantCount === null) return STUDY.versesAbbr(vids);
+  return `${STUDY.versesAbbr(vids)} · ${STUDY.variantCount(variantCount)}`;
 }
 
 /** Divisões (títulos e parágrafos do original) que começam dentro do trecho. */

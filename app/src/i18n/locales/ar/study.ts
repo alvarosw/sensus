@@ -1,17 +1,14 @@
 // Árabe de app/src/features/study/strings.ts. A revisar por falante nativo.
 import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
-// Plural árabe: 1 singular, 2 dual, 3 a 10 plural, 11 ou mais singular.
-const arPl = (n: number, one: string, two: string, few: string, many: string): string =>
-  n === 1 ? one : n === 2 ? two : n >= 3 && n <= 10 ? few : many;
-
+import { arPlural } from '../../plural';
 export const arStudy = {
   sheet: 'دراسة المقطع المحدد',
   expand: 'توسيع الدراسة',
   collapse: 'تصغير الدراسة',
   close: 'مسح التحديد',
-  verse: 'آية',
-  verses: 'آيات',
+  verseCount: (n: number) => `${n} ${arPlural(n, 'آية', 'آيتان', 'آيات', 'آية')}`,
+  versesAbbr: (n: number) => `${n} ${arPlural(n, 'آية', 'آيتان', 'آيات', 'آية')}`,
   crosses: (a: string, b: string) => `يمتد من ${a} إلى ${b}`,
   pericope: (r: string) => `الفقرة الكتابية ${r}`,
   pericopeWhole: 'الفقرة الكتابية كاملة',
@@ -19,12 +16,12 @@ export const arStudy = {
   railLabel: 'عدسات الدراسة',
 
   factComentaristas: 'المفسّرون',
-  factVariante: (slash: string) => `قراءة بديلة ${slash}`,
-  factVariantes: (slash: string) => `قراءات بديلة ${slash}`,
+  factVariantes: (n: number, slash: string) => `${arPlural(n, 'قراءة بديلة', 'قراءتان بديلتان', 'قراءات بديلة', 'قراءة بديلة')} ${slash}`,
+  variantCount: (n: number) => `${n} ${arPlural(n, 'قراءة بديلة', 'قراءتان بديلتان', 'قراءات بديلة', 'قراءة بديلة')}`,
   factXrefs: 'شواهد مرجعية',
   factHapax: (t: Testament) => `لفظة فريدة في ${testamentLabel(t, 'ar')}`,
   /** Contagem de versículos no testamento da palavra; 1 vira "versículo", o resto "vv.". */
-  factVv: (n: number, t: Testament) => `${n} ${arPl(n, 'آية', 'آيتان', 'آيات', 'آية')} في ${testamentLabel(t, 'ar')}`,
+  factVv: (n: number, t: Testament) => `${n} ${arPlural(n, 'آية', 'آيتان', 'آيات', 'آية')} في ${testamentLabel(t, 'ar')}`,
   factNoData: 'لا توجد بيانات',
 
   deepen: 'تفصيل',
@@ -55,7 +52,7 @@ export const arStudy = {
 
   // Visão geral (o fio)
   threadTitle: 'خيط هذا المقطع',
-  stepsCount: (n: number) => arPl(n, 'خطوة واحدة', 'خطوتان', `${n} خطوات`, `${n} خطوة`),
+  stepsCount: (n: number) => arPlural(n, 'خطوة واحدة', 'خطوتان', `${n} خطوات`, `${n} خطوة`),
   andMore: (n: number) => `و${n} أخرى`,
 
   // Texto
@@ -86,7 +83,8 @@ export const arStudy = {
 
   // Histórico
   place: 'المكان',
-  places: 'الأماكن',
+  placesHeading: (n: number) => n > 1 ? 'الأماكن' : 'المكان',
+  placesAndEntries: (places: number, entries: number) => `${places} ${arPlural(places, 'مكان', 'مكانان', 'أماكن', 'مكان')} · ${entries} ${arPlural(entries, 'مدخل', 'مدخلان', 'مداخل', 'مدخل')}`,
   peopleGroups: 'الأشخاص والجماعات',
   dictionaries: 'القواميس والموسوعات',
   seeEntity: 'عرض الكيان',
@@ -101,7 +99,7 @@ export const arStudy = {
   // Língua
   word: 'الكلمة',
   hapax: 'لفظة فريدة',
-  commentMentions: (n: number) => `مذكورة في ${n} ${arPl(n, 'تفسير', 'تفسيران', 'تفاسير', 'تفسير')}`,
+  commentMentions: (n: number) => `مذكورة في ${n} ${arPlural(n, 'تفسير', 'تفسيران', 'تفاسير', 'تفسير')}`,
   lexiconConcordance: 'المعجم وفهرس الكلمات',
   languageEmpty: 'لا توجد كلمات من النص الأصلي لهذه الآيات.',
   inText: 'في النص',

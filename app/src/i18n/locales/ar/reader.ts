@@ -1,8 +1,5 @@
+import { arPlural } from '../../plural';
 // Árabe de app/src/features/reader/strings.ts. A revisar por falante nativo.
-// Plural árabe: 1 singular, 2 dual, 3 a 10 plural, 11 ou mais singular.
-const arPl = (n: number, one: string, two: string, few: string, many: string): string =>
-  n === 1 ? one : n === 2 ? two : n >= 3 && n <= 10 ? few : many;
-
 export const arReader = {
   books: 'الأسفار',
   currentRef: (name: string) => `${name}. الانتقال إلى…`,
@@ -30,7 +27,7 @@ export const arReader = {
   pickBook: 'الأسفار',
   testamentOT: 'العهد القديم',
   testamentNT: 'العهد الجديد',
-  chaptersOf: (n: number) => arPl(n, 'أصحاح واحد', 'أصحاحان', `${n} أصحاحات`, `${n} أصحاح`),
+  chaptersOf: (n: number) => arPlural(n, 'أصحاح واحد', 'أصحاحان', `${n} أصحاحات`, `${n} أصحاح`),
   chapterAria: (name: string, n: number) => `${name} ${n}`,
   settings: 'الإعدادات',
   close: 'إغلاق',

@@ -1,9 +1,6 @@
 // Árabe de app/src/features/maps/strings.ts. A revisar por falante nativo. As atribuições (MAP_ATTRIBUTIONS) ficam em pt, como licença.
 import type { ConfidenceBand } from '@sensus/core';
-// Plural árabe: 1 singular, 2 dual, 3 a 10 plural, 11 ou mais singular.
-const arPl = (n: number, one: string, two: string, few: string, many: string): string =>
-  n === 1 ? one : n === 2 ? two : n >= 3 && n <= 10 ? few : many;
-
+import { arPlural } from '../../plural';
 export const arMaps = {
   title: 'الخريطة',
   loading: 'جارٍ تحميل الخريطة…',
@@ -12,7 +9,7 @@ export const arMaps = {
   scopeSelection: 'التحديد',
   scopeUnit: 'الفقرة الكتابية',
   scopeBook: 'السفر',
-  placesCount: (n: number) => arPl(n, 'مكان واحد', 'مكانان', `${n} أماكن`, `${n} مكان`),
+  placesCount: (n: number) => arPlural(n, 'مكان واحد', 'مكانان', `${n} أماكن`, `${n} مكان`),
   passageTitle: 'أماكن المقطع',
   openMap: 'عرض على الخريطة',
   fit: 'ملاءمة',

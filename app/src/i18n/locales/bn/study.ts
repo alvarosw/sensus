@@ -7,8 +7,8 @@ export const bnStudy = {
   expand: 'অধ্যয়ন বড় করুন',
   collapse: 'অধ্যয়ন ছোট করুন',
   close: 'নির্বাচন মুছুন',
-  verse: 'পদ',
-  verses: 'পদ',
+  verseCount: (n: number) => `${n} পদ`,
+  versesAbbr: (n: number) => `${n} পদ`,
   crosses: (a: string, b: string) => `${a} → ${b} পর্যন্ত বিস্তৃত`,
   pericope: (r: string) => `পেরিকোপ ${r}`,
   pericopeWhole: 'পুরো পেরিকোপ',
@@ -16,8 +16,8 @@ export const bnStudy = {
   railLabel: 'অধ্যয়নের দৃষ্টিকোণ',
 
   factComentaristas: 'ভাষ্যকার',
-  factVariante: (slash: string) => `পাঠ-ভেদ ${slash}`,
-  factVariantes: (slash: string) => `পাঠ-ভেদ ${slash}`,
+  factVariantes: (n: number, slash: string) => `পাঠ-ভেদ ${slash}`,
+  variantCount: (n: number) => `${n} পাঠ-ভেদ`,
   factXrefs: 'ক্রস-রেফারেন্স',
   factHapax: (t: Testament) => `${testamentLabel(t, 'bn')}-এ হ্যাপাক্স`,
   factVv: (n: number, t: Testament) => `${testamentLabel(t, 'bn')}-এ ${n}টি পদ`,
@@ -82,7 +82,8 @@ export const bnStudy = {
 
   // ঐতিহাসিক
   place: 'স্থান',
-  places: 'স্থান',
+  placesHeading: (_n: number) => 'স্থান',
+  placesAndEntries: (places: number, entries: number) => `${places}টি স্থান · ${entries}টি এন্ট্রি`,
   peopleGroups: 'ব্যক্তি ও দল',
   dictionaries: 'অভিধান ও বিশ্বকোষ',
   seeEntity: 'সত্তা দেখুন',

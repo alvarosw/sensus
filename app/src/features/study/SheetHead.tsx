@@ -26,7 +26,7 @@ export function SheetHead({ detent }: { detent: Detent }) {
         <Txt v="sheetTitle" testID="sheet-title" numberOfLines={2}>{title}</Txt>
         <View style={{ flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', gap: 6, marginTop: 2 }}>
           {count !== null && (
-            <Txt v="meta" color="muted" style={{ fontWeight: '400' }}>{`${count} ${count === 1 ? STUDY.verse : STUDY.verses}`}</Txt>
+            <Txt v="meta" color="muted" style={{ fontWeight: '400' }}>{STUDY.verseCount(count)}</Txt>
           )}
           {crosses && <Tag tone="tint" label={STUDY.crosses(String(a.chapter), String(b.chapter))} />}
           {crossesBook && <Tag tone="tint" label={STUDY.crosses(refShort(range.start, range.start, books, true).split(' ')[0]!, refShort(range.end, range.end, books, true).split(' ')[0]!)} />}

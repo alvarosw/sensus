@@ -7,8 +7,8 @@ export const jaStudy = {
   expand: '学びを展開',
   collapse: '学びを折りたたむ',
   close: '選択を解除',
-  verse: '節',
-  verses: '節',
+  verseCount: (n: number) => `${n} 節`,
+  versesAbbr: (n: number) => `${n} 節`,
   crosses: (a: string, b: string) => `${a} → ${b} にまたがる`,
   pericope: (r: string) => `ペリコペ ${r}`,
   pericopeWhole: 'ペリコペ全体',
@@ -16,8 +16,8 @@ export const jaStudy = {
   railLabel: '学びのレンズ',
 
   factComentaristas: '注解者',
-  factVariante: (slash: string) => `異読 ${slash}`,
-  factVariantes: (slash: string) => `異読 ${slash}`,
+  factVariantes: (n: number, slash: string) => `異読 ${slash}`,
+  variantCount: (n: number) => `${n} 異読`,
   factXrefs: '相互参照',
   factHapax: (t: Testament) => `${testamentLabel(t, 'ja')}のハパックス`,
   /** Contagem de versículos no testamento da palavra. */
@@ -83,7 +83,8 @@ export const jaStudy = {
 
   // Histórico
   place: '地名',
-  places: '地名',
+  placesHeading: (_n: number) => '地名',
+  placesAndEntries: (places: number, entries: number) => `${places} 地名 · ${entries} 項目`,
   peopleGroups: '人物と集団',
   dictionaries: '辞典と事典',
   seeEntity: '実体を見る',

@@ -1,8 +1,5 @@
+import { arPlural } from '../../plural';
 // Árabe de app/src/settings/strings.ts. A revisar por falante nativo.
-// Plural árabe: 1 singular, 2 dual, 3 a 10 plural, 11 ou mais singular.
-const arPl = (n: number, one: string, two: string, few: string, many: string): string =>
-  n === 1 ? one : n === 2 ? two : n >= 3 && n <= 10 ? few : many;
-
 export const arSettings = {
   title: 'الإعدادات',
   back: 'رجوع',
@@ -97,7 +94,7 @@ export const arSettings = {
   needModel: 'أدخل النموذج.',
   saveError: (message: string) => `تعذّر الحفظ: ${message}`,
   testOk: (count: number) =>
-    `الاتصال ناجح. ${arPl(count, 'نموذج دردشة متاح واحد', 'نموذجا دردشة متاحان', `${count} نماذج دردشة متاحة`, `${count} نموذج دردشة متاح`)}.`,
+    `الاتصال ناجح. ${arPlural(count, 'نموذج دردشة متاح واحد', 'نموذجا دردشة متاحان', `${count} نماذج دردشة متاحة`, `${count} نموذج دردشة متاح`)}.`,
   testFail: (message: string) => `فشل الاتصال: ${message}`,
   needKeyToTest: 'أدخل مفتاح API قبل الاختبار.',
 
@@ -124,7 +121,7 @@ export const arSettings = {
   appLicense: 'ترخيص التطبيق',
   secAttribution: 'الإسنادات',
   sourcesCount: (n: number) =>
-    arPl(
+    arPlural(
       n,
       'مصدر واحد في قاعدة البيانات الحالية',
       'مصدران في قاعدة البيانات الحالية',
@@ -145,5 +142,5 @@ export const arSettings = {
   licenseLabel: 'الترخيص',
   sourceLabel: 'المصدر',
   noSources: 'لم يُعثر على أي مصدر في قاعدة البيانات.',
-  sourceCount: (n: number) => arPl(n, 'مصدر', 'مصدران', `${n} مصادر`, `${n} مصدر`),
+  sourceCount: (n: number) => arPlural(n, 'مصدر', 'مصدران', `${n} مصادر`, `${n} مصدر`),
 };

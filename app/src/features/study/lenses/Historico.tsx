@@ -25,7 +25,7 @@ export function HistoricoLens({ onLayout }: LensProps) {
     <LensShell
       lens="historico"
       title={SECTION_LABEL.historico}
-      count={parts ? `${parts.places.length} ${parts.places.length === 1 ? 'lugar' : 'lugares'} · ${parts.dic.length} verbetes` : undefined}
+      count={parts ? STUDY.placesAndEntries(parts.places.length, parts.dic.length) : undefined}
       sourcesN={total > SHOWN ? total : 0}
       onLayout={onLayout}
     >
@@ -60,7 +60,7 @@ export function HistoricoLens({ onLayout }: LensProps) {
               {places.length > 0 && <PassageMapCard range={data.range} unit={data.unit} />}
               {places.length > 0 && (
                 <>
-                  <SubHeader label={places.length > 1 ? STUDY.places : STUDY.place} />
+                  <SubHeader label={STUDY.placesHeading(places.length)} />
                   <Cards>
                     {places.map((e) => (
                       <PlaceCard

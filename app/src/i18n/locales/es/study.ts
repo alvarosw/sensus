@@ -7,8 +7,8 @@ export const esStudy = {
   expand: 'Expandir estudio',
   collapse: 'Reducir estudio',
   close: 'Quitar selección',
-  verse: 'versículo',
-  verses: 'versículos',
+  verseCount: (n: number) => `${n} ${n === 1 ? 'versículo' : 'versículos'}`,
+  versesAbbr: (n: number) => `${n} vv`,
   crosses: (a: string, b: string) => `cruza ${a} → ${b}`,
   pericope: (r: string) => `Perícopa ${r}`,
   pericopeWhole: 'Perícopa completa',
@@ -16,8 +16,8 @@ export const esStudy = {
   railLabel: 'Lentes del estudio',
 
   factComentaristas: 'comentaristas',
-  factVariante: (slash: string) => `variante ${slash}`,
-  factVariantes: (slash: string) => `variantes ${slash}`,
+  factVariantes: (n: number, slash: string) => `${n === 1 ? 'variante' : 'variantes'} ${slash}`,
+  variantCount: (n: number) => `${n} ${n === 1 ? 'variante' : 'variantes'}`,
   factXrefs: 'refs. cruzadas',
   factHapax: (t: Testament) => `hapax en el ${testamentLabel(t, 'es')}`,
   /** Contagem de versículos no testamento da palavra; 1 vira "versículo", o resto "vv.". */
@@ -83,7 +83,8 @@ export const esStudy = {
 
   // Histórico
   place: 'Lugar',
-  places: 'Lugares',
+  placesHeading: (n: number) => n > 1 ? 'Lugares' : 'Lugar',
+  placesAndEntries: (places: number, entries: number) => `${places} ${places === 1 ? 'lugar' : 'lugares'} · ${entries} ${entries === 1 ? 'entrada' : 'entradas'}`,
   peopleGroups: 'Personas y grupos',
   dictionaries: 'Diccionarios y enciclopedias',
   seeEntity: 'Ver entidad',
