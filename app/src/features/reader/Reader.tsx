@@ -5,7 +5,9 @@ import { createContext, memo, useCallback, useContext, useEffect, useMemo, useRe
 import { ActivityIndicator, FlatList, Platform, View, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent, type ViewProps } from 'react-native';
 import { useSharedValue } from 'react-native-reanimated';
 import { useLocalSearchParams } from 'expo-router';
-import { BOOK_TABLE, makeVid, originalTokensByVid, sourceLong, splitVid, type Token, type Vid } from '@sensus/core';
+import { BOOK_TABLE, makeVid, originalTokensByVid, splitVid, type Token, type Vid } from '@sensus/core';
+import { bibleRowInfo } from '@/data/bibles/bible-model';
+import { useBibles } from '@/data/bibles/bibles-store';
 import { LinkButton, Txt, motion, useTheme, type Detent } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useStudy } from '@/state/study';
@@ -67,6 +69,7 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
   const params = useLocalSearchParams<{ start?: string; end?: string; go?: string }>();
 
   const textSource = useStudy((s) => s.textSource);
+  const bibleCatalog = useBibles((s) => s.catalog);
   const greekOn = useStudy((s) => s.greek);
   const selection = useStudy((s) => s.selection);
   const detent = useStudy((s) => s.detent);
@@ -512,7 +515,8 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
     return out;
   }, [win, chapters]);
 
-  const sourceName = sourceLong(loadedSource);
+  // Nome pelo catálogo (Bíblias baixadas não estão no registro de fontes do núcleo); sem catálogo, o registro.
+  const sourceName = bibleRowInfo(loadedSource, bibleCatalog).name;
   const extra = useMemo(
     () => ({ shown, greekTokens: greekOn ? greekTokens : null, flashVid, scheme, loadedSource }),
     [shown, greekOn, greekTokens, flashVid, scheme, loadedSource],
