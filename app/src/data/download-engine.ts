@@ -10,7 +10,8 @@ import { appMeetsMinimum, parseManifest, type DataManifest } from './manifest';
 import { SUPPORTED_SCHEMA_VERSION } from './edition';
 import { chunkRanges, hasSpace, rangeHeader, spaceNeeded, type ByteRange } from './plan';
 import { MAX_ATTEMPTS, type DataError, type MachineEvent } from './download-machine';
-import { createSha256Stream, sameDigest } from './sha256';
+import { sameDigest } from './sha256';
+import { sha256OfFile } from './file-sha256';
 import { activateFullDatabase, clearSidecars, discardStagedDatabase, fullDbFile, probeStagedFullDatabase, removeFullDatabase, STAGED_DB_NAME, FULL_DB_NAME, StagedDatabaseError } from './active-db';
 import { readDataState, writeDataState } from './data-state';
 
@@ -18,7 +19,6 @@ const MANIFEST_TIMEOUT_MS = 15_000;
 /** Esperas entre tentativas de uma faixa (3 tentativas no total) antes de pausar por rede. */
 const RETRY_DELAYS_MS = [1500, 4000];
 const PARTIAL_NAME = 'sensus-full.zip.part';
-const HASH_BLOCK = 1024 * 1024;
 const PROGRESS_EVERY_MS = 200;
 
 export interface EngineContext {
@@ -122,23 +122,9 @@ async function partialMatches(m: DataManifest): Promise<boolean> {
   return sameDigest(await hashPartial(), m.full.sha256);
 }
 
-/** sha256 do parcial em blocos, cedendo a thread entre eles (a UI segue responsiva). */
-async function hashPartial(): Promise<string> {
-  const f = partialFile();
-  const h = f.open(FileMode.ReadOnly);
-  try {
-    h.offset = 0;
-    const stream = createSha256Stream();
-    for (;;) {
-      const block = h.readBytes(HASH_BLOCK);
-      if (block.byteLength === 0) break;
-      stream.update(block);
-      await new Promise<void>((r) => setTimeout(r, 0));
-    }
-    return stream.hexDigest();
-  } finally {
-    h.close();
-  }
+/** sha256 do parcial (em blocos, ver file-sha256.ts). */
+function hashPartial(): Promise<string> {
+  return sha256OfFile(partialFile());
 }
 
 // ---- manifesto ---------------------------------------------------------------------------------------
@@ -161,7 +147,7 @@ export async function fetchManifest(url: string, signal?: AbortSignal): Promise<
 
 // ---- download em faixas ------------------------------------------------------------------------------
 
-function sleep(ms: number, signal: AbortSignal): Promise<void> {
+export function sleep(ms: number, signal: AbortSignal): Promise<void> {
   return new Promise((resolve, reject) => {
     if (signal.aborted) return reject(abortError());
     const t = setTimeout(() => {
@@ -176,7 +162,7 @@ function sleep(ms: number, signal: AbortSignal): Promise<void> {
   });
 }
 
-function abortError(): Error {
+export function abortError(): Error {
   const e = new Error('cancelado');
   e.name = 'AbortError';
   return e;
@@ -217,7 +203,7 @@ async function fetchRangeOnce(url: string, range: ByteRange, total: number, ctx:
 }
 
 /** Erro de escrita local: sem espaço vira 'space'; outros, 'install'. */
-function localFailure(e: unknown): StepFailure {
+export function localFailure(e: unknown): StepFailure {
   const msg = e instanceof Error ? e.message.toLowerCase() : '';
   return new StepFailure(msg.includes('space') || msg.includes('enospc') ? 'space' : 'install');
 }

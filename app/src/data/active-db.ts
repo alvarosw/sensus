@@ -4,12 +4,16 @@
 //  - 'sensus-full.db': a edição completa baixada (ver download-engine.ts). Quando existe e é válida, tem prioridade.
 // A troca é atômica do ponto de vista do app: o novo arquivo é validado antes e só depois a conexão é trocada.
 import * as SQLite from 'expo-sqlite';
-import { Directory, File, Paths } from 'expo-file-system';
+import { File } from 'expo-file-system';
 import { Repo } from '@sensus/core';
 import bundledDb from '../../assets/sensus.db';
 import bundled from './bundled-db.json';
 import { checkFullDatabase, editionOf, type Edition } from './edition';
 import { createExpoSqlDriver } from './driver';
+import { sqliteDirectory } from './sqlite-paths';
+import { bibleDriver, openInstalledBibles } from './bibles/bible-db';
+
+export { sqliteDirectory };
 
 export const READER_DB_NAME = 'sensus.db';
 export const FULL_DB_NAME = 'sensus-full.db';
@@ -38,11 +42,6 @@ export function subscribeActive(listener: Listener): () => void {
   return () => {
     listeners.delete(listener);
   };
-}
-
-/** Pasta do SQLite (a mesma que o expo-sqlite usa por padrão: <files>/SQLite). */
-export function sqliteDirectory(): Directory {
-  return new Directory(Paths.document, 'SQLite');
 }
 
 export function fullDbFile(name: string = FULL_DB_NAME): File {
@@ -118,7 +117,8 @@ function publish(next: { db: SQLite.SQLiteDatabase; meta: Record<string, string>
     name: next.name,
     meta: next.meta,
     db: next.db,
-    repo: new Repo(createExpoSqlDriver(next.db)),
+    // As Bíblias baixadas leem o texto do banco delas (ver bibles/bible-db.ts); valem em qualquer edição.
+    repo: new Repo(createExpoSqlDriver(next.db), { textDriver: bibleDriver }),
   };
   const previous = current;
   current = active;
@@ -132,6 +132,8 @@ function publish(next: { db: SQLite.SQLiteDatabase; meta: Record<string, string>
 
 /** Abre o banco que deve estar ativo: o completo instalado, se houver; senão o de leitura. */
 export async function openActiveDatabase(): Promise<ActiveDb> {
+  // Antes do Repo: as conexões das Bíblias baixadas precisam existir quando a primeira consulta de texto rodar.
+  await openInstalledBibles();
   const full = await openInstalledFull();
   if (full) return publish({ ...full, name: FULL_DB_NAME });
   return publish({ ...(await openReader()), name: READER_DB_NAME });
