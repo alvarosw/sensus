@@ -35,8 +35,25 @@ export type { Concordance } from './language';
 export type { DictionaryHit, DictionaryKind } from './dictionary';
 export type { EntityHit, PlaceVerseHit } from './entities';
 
+export interface RepoOptions {
+  /**
+   * Banco de um texto que não está no principal (Bíblia baixada). Devolve o driver da fonte, ou null para usar o
+   * principal. Só as consultas de texto passam por aqui (verseTexts, chapter, neighbors, divisões, unidade literária
+   * e alvos de referências cruzadas). Sem a opção, tudo vai ao banco principal.
+   */
+  textDriver?: (sourceId: string) => SqlDriver | null;
+}
+
 export class Repo {
-  constructor(private readonly driver: SqlDriver) {}
+  constructor(
+    private readonly driver: SqlDriver,
+    private readonly options: RepoOptions = {},
+  ) {}
+
+  /** Driver do banco que guarda o texto da fonte: o dela (se houver `textDriver`) ou o principal. */
+  private textDb(sourceId: string): SqlDriver {
+    return this.options.textDriver?.(sourceId) ?? this.driver;
+  }
 
   books(): Promise<Book[]> {
     return text.books(this.driver);
@@ -52,11 +69,11 @@ export class Repo {
 
   /** Versículos de uma fonte de texto dentro do intervalo, em ordem. */
   verseTexts(sourceId: string, range: VerseRange, limit?: number): Promise<VerseText[]> {
-    return text.verseTexts(this.driver, sourceId, range, limit);
+    return text.verseTexts(this.textDb(sourceId), sourceId, range, limit);
   }
 
   chapter(sourceId: string, book: number, chapter: number): Promise<VerseText[]> {
-    return text.chapter(this.driver, sourceId, book, chapter);
+    return text.chapter(this.textDb(sourceId), sourceId, book, chapter);
   }
 
   /**
@@ -69,17 +86,17 @@ export class Repo {
     count: number,
     unit?: VerseRange,
   ): Promise<{ before: VerseText[]; after: VerseText[] }> {
-    return text.neighbors(this.driver, sourceId, range, count, unit);
+    return text.neighbors(this.textDb(sourceId), sourceId, range, count, unit);
   }
 
   /** Divisões relevantes para o intervalo (lead, dentro e next). Ver text.divisions. */
   divisions(sourceId: string, range: VerseRange): Promise<TextDivision[]> {
-    return text.divisions(this.driver, sourceId, range);
+    return text.divisions(this.textDb(sourceId), sourceId, range);
   }
 
   /** Unidade literária que contém o intervalo (ver PanelData.layers.literary.unit). */
   literaryUnit(sourceId: string, range: VerseRange): Promise<VerseRange> {
-    return text.literaryUnit(this.driver, sourceId, range);
+    return text.literaryUnit(this.driver, this.textDb(sourceId), sourceId, range);
   }
 
   /** Palavras do texto original no intervalo (corpus 'gnt' ou 'hot' opcional). */
@@ -122,7 +139,7 @@ export class Repo {
 
   /** Referências cruzadas com origem no intervalo, por peso decrescente, com o texto dos alvos. */
   xrefs(range: VerseRange, limit: number, textSourceId: string = text.DEFAULT_TEXT_SOURCE): Promise<text.XRefWithTexts[]> {
-    return text.xrefs(this.driver, range, limit, textSourceId);
+    return text.xrefs(this.driver, this.textDb(textSourceId), range, limit, textSourceId);
   }
 
   /** Pessoas, lugares e grupos ligados a versículos do intervalo, com o total de referências de cada um. */
