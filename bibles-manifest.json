@@ -9,7 +9,7 @@
       "lang": "en",
       "license": "Public Domain",
       "license_url": null,
-      "attribution": "World English Bible (WEB), domínio público (eBible.org). \"World English Bible\" é marca do eBible.org; texto alterado não deve usar o nome.",
+      "attribution": "World English Bible (WEB), domínio público (eBible.org). \"World English Bible\" é marca do eBible.org; texto alterado não deve usar o nome. Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
       "url": "https://ebible.org/find/details.php?id=engwebp",
       "version": "2026.11.06",
       "testaments": [
@@ -19,8 +19,8 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-engwebp-2026.11.06.zip",
-        "sha256": "afebebd810b0215465251ef1f9d30ae6d2dd0f105adc780a8679f1d063562cd0",
-        "size": 2376431,
+        "sha256": "86cf850da6698e3c700318046e15b5bd302c7b1a04e120911bcfa9b4708ddd23",
+        "size": 2376022,
         "uncompressed_size": 7663616
       }
     },
@@ -48,7 +48,7 @@
       "lang": "en",
       "license": "Public Domain",
       "license_url": null,
-      "attribution": "American Standard Version (1901), domínio público (eBible.org).",
+      "attribution": "American Standard Version (1901), domínio público (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
       "url": "https://ebible.org/find/details.php?id=eng-asv",
       "version": "2026.11.06",
       "testaments": [
@@ -58,8 +58,8 @@
       "rank": 3,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-engasv-2026.11.06.zip",
-        "sha256": "3edcfa505d46f3f1f3b9de6196970de883442f1cf7136c5ba40a74a0342264dd",
-        "size": 2344890,
+        "sha256": "51db14673dfbc57ceea57085733a0343bcb3df3ff875209de3e102270aa468cd",
+        "size": 2345058,
         "uncompressed_size": 7491584
       }
     },
@@ -87,7 +87,7 @@
       "lang": "es",
       "license": "Public Domain",
       "license_url": null,
-      "attribution": "Santa Biblia libre para el mundo, domínio público (eBible.org).",
+      "attribution": "Santa Biblia libre para el mundo, domínio público (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
       "url": "https://ebible.org/find/details.php?id=spablm",
       "version": "2026.11.06",
       "testaments": [
@@ -97,8 +97,8 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-spablm-2026.11.06.zip",
-        "sha256": "859c61acbe185ec051cd9fd175642276438ba25052e6ed2044dc907538e21ab6",
-        "size": 2426753,
+        "sha256": "612e954f233df62158bd7a2c85a88041040ec801dac5406db86a62c0c8069680",
+        "size": 2426328,
         "uncompressed_size": 7512064
       }
     },
@@ -109,7 +109,7 @@
       "lang": "es",
       "license": "CC-BY-SA-4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "attribution": "Versión Biblia Libre, copyright © 2018-2020 Jonathan Gallagher y Shelly Barrios de Avila, licença CC BY-SA 4.0 (eBible.org).",
+      "attribution": "Versión Biblia Libre, copyright © 2018-2020 Jonathan Gallagher y Shelly Barrios de Avila, licença CC BY-SA 4.0 (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
       "url": "https://ebible.org/find/details.php?id=spavbl",
       "version": "2026.11.06",
       "testaments": [
@@ -119,8 +119,8 @@
       "rank": 2,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-spavbl-2026.11.06.zip",
-        "sha256": "f6830c2449bea6216f8efdd17ede3c91b35e735225f64a0d466614578c923c49",
-        "size": 2573912,
+        "sha256": "81bf7e68de2c6324079cb7050f84b5c95510cfc8bdf5792d8956809e9e05c74d",
+        "size": 2574179,
         "uncompressed_size": 7925760
       }
     },
@@ -131,7 +131,7 @@
       "lang": "fr",
       "license": "CC0-1.0",
       "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "attribution": "Sainte Bible libre pour le monde, domínio público (CC0 1.0) (eBible.org).",
+      "attribution": "Sainte Bible libre pour le monde, domínio público (CC0 1.0) (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
       "url": "https://ebible.org/find/details.php?id=frasbl",
       "version": "2026.11.06",
       "testaments": [
@@ -141,8 +141,8 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-frasbl-2026.11.06.zip",
-        "sha256": "2efaad71870accd24ed3347cfabe8803e5cbdda42d4d3ff3518117bcc92b3827",
-        "size": 2525421,
+        "sha256": "13ceb910c5cc72d0946f0dbaedcdb08c2999ee926bdbdb6a563aeefca7685ab1",
+        "size": 2524977,
         "uncompressed_size": 7872512
       }
     },
@@ -153,7 +153,7 @@
       "lang": "de",
       "license": "Public Domain",
       "license_url": null,
-      "attribution": "Lutherbibel 1912, domínio público (eBible.org).",
+      "attribution": "Lutherbibel 1912, domínio público (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
       "url": "https://ebible.org/find/details.php?id=deu1912",
       "version": "2026.11.06",
       "testaments": [
@@ -163,8 +163,8 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-deu1912-2026.11.06.zip",
-        "sha256": "13b1fdc5c108b784ed32895006dda04bbbbf62e6ea20f1820ae172d4b223b402",
-        "size": 2397140,
+        "sha256": "ee028c3f68bb6cdbce776a8a00992a6afc6bb4688bb2fcaaf367010169ee2f50",
+        "size": 2397416,
         "uncompressed_size": 7294976
       }
     },
@@ -175,7 +175,7 @@
       "lang": "de",
       "license": "Public Domain",
       "license_url": null,
-      "attribution": "Elberfelder 1905 (não revisada), domínio público (eBible.org).",
+      "attribution": "Elberfelder 1905 (não revisada), domínio público (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
       "url": "https://ebible.org/find/details.php?id=deuelo",
       "version": "2026.11.06",
       "testaments": [
@@ -185,8 +185,8 @@
       "rank": 2,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-deuelo-2026.11.06.zip",
-        "sha256": "45570da14cca5c07de21673d44d4c9a33ce2c529a61dd79f9d6a3ce79f72f799",
-        "size": 2446671,
+        "sha256": "f051eccb08dbef7611d46648df67be1589c84a414b5b47f8900701b2cb5d2e37",
+        "size": 2446869,
         "uncompressed_size": 7462912
       }
     },
@@ -197,7 +197,7 @@
       "lang": "ar",
       "license": "Public Domain",
       "license_url": null,
-      "attribution": "Van Dyck (Smith-Van Dyke), domínio público (eBible.org).",
+      "attribution": "Van Dyck (Smith-Van Dyke), domínio público (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
       "url": "https://ebible.org/find/details.php?id=arb-vd",
       "version": "2026.11.06",
       "testaments": [
@@ -207,9 +207,9 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-arbvd-2026.11.06.zip",
-        "sha256": "b0a2fb2439ee209ade73605dd494f77f0e83c3cea254a333ac7c46b60546d8d5",
-        "size": 2735269,
-        "uncompressed_size": 11067392
+        "sha256": "d1aa3def00f7e265c99954182c7ba7803ae63987f90f6c3440136e77a313ba32",
+        "size": 2727961,
+        "uncompressed_size": 11063296
       }
     },
     {
@@ -219,7 +219,7 @@
       "lang": "hi",
       "license": "CC-BY-SA-4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "attribution": "Indian Revised Version, hindi (2019), copyright © 2017-2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org).",
+      "attribution": "Indian Revised Version, hindi (2019), copyright © 2017-2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
       "url": "https://ebible.org/find/details.php?id=hin2017",
       "version": "2026.11.06",
       "testaments": [
@@ -229,9 +229,9 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-hin2017-2026.11.06.zip",
-        "sha256": "38fa295e4dce2cf1dd21f1abb01e4dc320f9516c6d34baecc990551e72db22de",
-        "size": 2972920,
-        "uncompressed_size": 13852672
+        "sha256": "b22585a618fb2cf3d32ae05cb7016bb9c8acad7fd40ca2224c75b8dd4dfd5f32",
+        "size": 2959926,
+        "uncompressed_size": 13848576
       }
     },
     {
@@ -241,7 +241,7 @@
       "lang": "bn",
       "license": "CC-BY-SA-4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "attribution": "Open Bengali Contemporary Version, Copyright © 2007, 2017, 2019 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org).",
+      "attribution": "Open Bengali Contemporary Version, Copyright © 2007, 2017, 2019 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
       "url": "https://ebible.org/find/details.php?id=benobcv",
       "version": "2026.11.06",
       "testaments": [
@@ -251,9 +251,9 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-benobcv-2026.11.06.zip",
-        "sha256": "ddcee2fc8601eeb11da531d4d637be4fe22878058c3b6c984702bbd1f6a235bb",
-        "size": 3068015,
-        "uncompressed_size": 14950400
+        "sha256": "e1d91354bd2f6f3f6a975236e3312e1d260a09aad6e11806c76cc34420bab9ba",
+        "size": 3047039,
+        "uncompressed_size": 14925824
       }
     },
     {
@@ -263,7 +263,7 @@
       "lang": "ur",
       "license": "CC-BY-SA-4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "attribution": "Urdu Contemporary Version (Biblica), copyright © 1999, 2005, 2022, 2024 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org).",
+      "attribution": "Urdu Contemporary Version (Biblica), copyright © 1999, 2005, 2022, 2024 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
       "url": "https://ebible.org/find/details.php?id=urdoucv",
       "version": "2026.11.06",
       "testaments": [
@@ -273,9 +273,9 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-urdoucv-2026.11.06.zip",
-        "sha256": "40d6910d91aa9608df74b81a7b8e833e86679493ea8a01aad6f9378d519c99f3",
-        "size": 3018449,
-        "uncompressed_size": 11689984
+        "sha256": "76f5d0c16d0ea6e302aa914562ae23c34d7e225a7886a91735767811e1f8d255",
+        "size": 2997996,
+        "uncompressed_size": 11669504
       }
     },
     {
@@ -285,7 +285,7 @@
       "lang": "ur",
       "license": "CC-BY-SA-4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "attribution": "Indian Revised Version, urdu (2019), copyright © 2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org).",
+      "attribution": "Indian Revised Version, urdu (2019), copyright © 2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
       "url": "https://ebible.org/find/details.php?id=urd",
       "version": "2026.11.06",
       "testaments": [
@@ -295,9 +295,9 @@
       "rank": 2,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-urdirv-2026.11.06.zip",
-        "sha256": "1be3196131a10269ea19648bc77ecd8b7c7e66a7671d9074b348e9c76f45ae1e",
-        "size": 2858692,
-        "uncompressed_size": 13377536
+        "sha256": "30664b16e87737444383d126c7ec833913130855418066d3b6f3379ffe2486b1",
+        "size": 2851796,
+        "uncompressed_size": 13373440
       }
     },
     {
@@ -307,7 +307,7 @@
       "lang": "ja",
       "license": "Public Domain",
       "license_url": null,
-      "attribution": "Freedom Bible (japonês), sem direitos autorais declarados pelo eBible.org (\"この聖書翻訳には著作権が設定されていません\").",
+      "attribution": "Freedom Bible (japonês), sem direitos autorais declarados pelo eBible.org (\"この聖書翻訳には著作権が設定されていません\"). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
       "url": "https://ebible.org/find/details.php?id=jpnm",
       "version": "2026.11.06",
       "testaments": [
@@ -317,9 +317,185 @@
       "rank": 1,
       "package": {
         "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-jpnm-2026.11.06.zip",
-        "sha256": "8b81363e146e3b2108a16027e3cdd941e6d7018b17468c35d7fc577c6b5dfe3c",
-        "size": 2451384,
-        "uncompressed_size": 8384512
+        "sha256": "e8ecf290b3a52996dd2978ae471302aa1de8a6f6b421743c43ed9adfe9d361e5",
+        "size": 2451028,
+        "uncompressed_size": 8380416
+      }
+    },
+    {
+      "id": "engbsb",
+      "abbr": "BSB",
+      "name": "Berean Standard Bible",
+      "lang": "en",
+      "license": "Public Domain",
+      "license_url": "https://berean.bible/terms.htm",
+      "attribution": "Berean Standard Bible, domínio público (dedicada em 30/04/2023; eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
+      "url": "https://ebible.org/find/details.php?id=engbsb",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 4,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-engbsb-2026.11.06.zip",
+        "sha256": "657c0f9c9c7b392e207c739cbd08e457ed4580ba8f7e556c3d41bc7689ee4c82",
+        "size": 2524650,
+        "uncompressed_size": 7860224
+      }
+    },
+    {
+      "id": "vieovcb",
+      "abbr": "VCB",
+      "name": "Kinh Thánh Hiện Đại (VCB)",
+      "lang": "vi",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Kinh Thánh Hiện Đại (VCB), copyright © 1982, 1987, 1994, 2005, 2015 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
+      "url": "https://ebible.org/find/details.php?id=vieovcb",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 1,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-vieovcb-2026.11.06.zip",
+        "sha256": "bd18df33106a2388f44b072e7487979861dc8265bf9fb411387edf15904feaf3",
+        "size": 2638286,
+        "uncompressed_size": 8773632
+      }
+    },
+    {
+      "id": "hincv",
+      "abbr": "CV-HI",
+      "name": "Hindi Contemporary Version",
+      "lang": "hi",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Hindi Contemporary Version, copyright © 1978, 2009, 2016, 2019 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
+      "url": "https://ebible.org/find/details.php?id=hincv",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 2,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-hincv-2026.11.06.zip",
+        "sha256": "e2b7a541971a713ff0875786f4904018d0b7a5cfc5a67b60f8f51615b0aea64c",
+        "size": 3119881,
+        "uncompressed_size": 14585856
+      }
+    },
+    {
+      "id": "cmncbs",
+      "abbr": "CBS",
+      "name": "当代译本开放资源（简体）",
+      "lang": "zh",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "当代译本开放资源（简体）, copyright © 1979, 2005, 2007, 2011, 2022 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
+      "url": "https://ebible.org/find/details.php?id=cmncbs",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 1,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-cmncbs-2026.11.06.zip",
+        "sha256": "e331338086393fcfe905c203a3989335f350e1868e1c1d10df08a9193bc0811d",
+        "size": 2332695,
+        "uncompressed_size": 6668288
+      }
+    },
+    {
+      "id": "cmncbt",
+      "abbr": "CBT",
+      "name": "當代譯本開放資源（繁體）",
+      "lang": "zh",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "當代譯本開放資源（繁體）, copyright © 1979, 2005, 2007, 2012, 2023 Biblica, Inc., licença CC BY-SA 4.0 (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
+      "url": "https://ebible.org/find/details.php?id=cmncbt",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 2,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-cmncbt-2026.11.06.zip",
+        "sha256": "1553fba4af300c1cd2a95ee6d0ea116d8eef7d689d83ea08dcb1e790a3273238",
+        "size": 2335971,
+        "uncompressed_size": 6668288
+      }
+    },
+    {
+      "id": "benirv",
+      "abbr": "IRV-BN",
+      "name": "IRV Bengali 2019",
+      "lang": "bn",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "Indian Revised Version, bengali (2019), copyright © 2018-2019 Bridge Connectivity Solutions, licença CC BY-SA 4.0 (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
+      "url": "https://ebible.org/find/details.php?id=benirv",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 2,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-benirv-2026.11.06.zip",
+        "sha256": "c43da8d6aa9dfcf3fe3e90b2fbde6143433d492c4df45c2b5cd80b3d6955c5eb",
+        "size": 2849880,
+        "uncompressed_size": 13897728
+      }
+    },
+    {
+      "id": "fralsg",
+      "abbr": "LSG",
+      "name": "Louis Segond 1910",
+      "lang": "fr",
+      "license": "Public Domain",
+      "license_url": null,
+      "attribution": "Louis Segond 1910, domínio público (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
+      "url": "https://ebible.org/find/details.php?id=fraLSG",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 2,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-fralsg-2026.11.06.zip",
+        "sha256": "910576ec2920955ff67b6c08ae6b97f9b89e95913926cd07619a654cb63c199c",
+        "size": 2488229,
+        "uncompressed_size": 7688192
+      }
+    },
+    {
+      "id": "frajnd",
+      "abbr": "JND",
+      "name": "Bible J. N. Darby",
+      "lang": "fr",
+      "license": "Public Domain",
+      "license_url": null,
+      "attribution": "Bible J. N. Darby, texto em domínio público (eBible.org). Numeração alinhada à KJV com a TVTMS (Translators Versification Traditions with Methodology for Standardisation), STEP Bible (www.STEPBible.org), baseada em trabalho da Tyndale House, Cambridge; licença CC BY 4.0.",
+      "url": "https://ebible.org/find/details.php?id=frajnd",
+      "version": "2026.11.06",
+      "testaments": [
+        "OT",
+        "NT"
+      ],
+      "rank": 3,
+      "package": {
+        "url": "https://github.com/alvarosw/sensus/releases/download/bibles-2026.11.06/bible-frajnd-2026.11.06.zip",
+        "sha256": "4de181a9bb808a5696241774b693c1e19a6df17025cab4ff844680584129a7f5",
+        "size": 2479026,
+        "uncompressed_size": 7839744
       }
     }
   ]
