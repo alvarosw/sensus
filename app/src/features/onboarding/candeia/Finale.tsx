@@ -22,6 +22,12 @@ export interface CandeiaFinaleProps {
 const EASE_OUT = Easing.bezier(0.2, 0.8, 0.2, 1);
 const EASE_IN_OUT = Easing.bezier(0.5, 0, 0.2, 1);
 const LAMP = 92;
+/**
+ * Lado (dp) do desenho da luz que inunda a tela. O tamanho final vem de transform de escala: no Android o
+ * react-native-svg desenha cada SVG num bitmap do tamanho do componente, e um SVG do tamanho da diagonal da tela
+ * (~8 mil pixels de lado) derrubava o app ("trying to draw too large bitmap").
+ */
+const FLOOD_DP = 400;
 
 /** Fecho: a luz cresce até encher a tela; botão para entrar no app. */
 export function CandeiaFinale({ verse, reference, ctaLabel, onDone, rtl = false, testID }: CandeiaFinaleProps) {
@@ -53,9 +59,14 @@ export function CandeiaFinale({ verse, reference, ctaLabel, onDone, rtl = false,
   // A luz nasce na chama e precisa cobrir até o canto mais distante.
   const diag = box ? Math.hypot(box.w, box.h) * 1.6 : 0;
   // O raio cresce devagar no começo (a área cresce com o quadrado do raio): a luz parece se espalhar, não saltar.
+  // Escala que leva o desenho pequeno (FLOOD_DP) ao diâmetro necessário (2 × diag).
+  const floodScale = useSharedValue(1);
+  useEffect(() => {
+    if (diag > 0) floodScale.value = (diag * 2) / FLOOD_DP;
+  }, [diag, floodScale]);
   const floodStyle = useAnimatedStyle(() => ({
     opacity: flood.value < 0.02 ? flood.value * 50 : 1,
-    transform: [{ scale: 0.03 + 0.97 * Math.pow(flood.value, 1.5) }],
+    transform: [{ scale: floodScale.value * (0.03 + 0.97 * Math.pow(flood.value, 1.5)) }],
   }));
   const settleStyle = useAnimatedStyle(() => ({ opacity: settle.value }));
   const contentStyle = useAnimatedStyle(() => ({
@@ -91,12 +102,12 @@ export function CandeiaFinale({ verse, reference, ctaLabel, onDone, rtl = false,
       {box && lamp && (
         <>
           <Animated.View
-            style={[{ position: 'absolute', left: lamp.x - diag, top: lamp.y - diag }, floodStyle]}
+            style={[{ position: 'absolute', left: lamp.x - FLOOD_DP / 2, top: lamp.y - FLOOD_DP / 2 }, floodStyle]}
             pointerEvents="none"
           >
             <FloodLight
               id={`candeiaFlood-${scheme}`}
-              size={diag * 2}
+              size={FLOOD_DP}
               inner={c.bg}
               edge={th.wave}
               spread={th.waveSpread}
