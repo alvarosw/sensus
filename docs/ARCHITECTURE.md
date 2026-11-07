@@ -50,6 +50,11 @@ Toda decisão abaixo tem **um** dono. Feature nenhuma reimplementa:
 | Como se chama esta fonte? Qual a tradição dela? | registro de fontes (`SOURCES`, `TRADITIONS`, `sourceShort`, `traditionLabel`) |
 | Que texto original mostrar neste testamento? | `CORPUS[corpus].interlinearText` |
 | Em que escrita está esta palavra? | `scriptOf`, `SCRIPT_WORD_RE` |
+| Quais idiomas o app tem? Qual o BCP-47, o endônimo, a direção, o código do motor de tradução? | `APP_LANGS`, `appLangInfo`, `fallbackChain` (`locale`) |
+| Nome e abreviação de um livro neste idioma? | `bookNameOf`, `bookAbbrOf`, `BOOK_NAMES` |
+| Este texto precisa de tradução automática para o idioma do app? | `needsTranslation`, `isTranslatableSource` |
+| Que Bíblias recomendar neste idioma? | `parseBibleCatalog`, `recommendBibles`, `bibleAbbr` (`bibles`) |
+| O leitor aceita este comentário (tradição e fonte)? | `isCommentaryAllowed` (`source-prefs`); quem aplica é o Repo |
 
 **Literais de domínio proibidos fora de `domain/` e `repo/`** (o teste de arquitetura procura): `startsWith('H')` /
 `startsWith('G')` em Strong, `'gnt'`/`'hot'` como decisão, `% 1000` e `* 1_000_000` em vid, `'stepbible-…'`,
@@ -64,7 +69,7 @@ Cada feature em `app/src/features/<nome>/`:
 index.ts            API pública (o que outras features e rotas podem usar)
 <nome>-model.ts     regras puras da feature (sem React, sem banco), com <nome>-model.test.ts
 <Tela>.tsx          componentes; só compõem dados e modelo
-strings.ts          textos pt-BR
+strings.ts          textos: o objeto pt (fonte do tipo) + `localized({ pt, ...xTables })` com os outros 13 idiomas
 ```
 
 1. **Modelo puro + teste antes da tela.** Exemplos a seguir: `timeline/model.ts`, `timeline/parallel-lanes.ts`,
@@ -74,9 +79,14 @@ strings.ts          textos pt-BR
 3. **Arquivo de tela até ~300 linhas.** Acima disso, separar subcomponentes e modelo.
 4. **Estado**: o store de cada feature fica na feature. `useStudy` só guarda o que é compartilhado entre leitor,
    folha e chat.
-5. **Tradução automática**: decidir se um texto é traduzível pelo núcleo (`isTranslatableSource`), nunca por
+5. **Idiomas da interface** (14): todo texto de tela passa por um `strings.ts` (ou `t()`); cada idioma tem o seu
+   arquivo em `app/src/i18n/locales/<idioma>/<área>.ts`, ligado em `locales/all.ts`. Texto novo entra nos 14 idiomas
+   no mesmo commit; plural por função (`verseCount(n)`), nunca `n === 1 ? a : b` na tela. O TypeScript cobra chaves e
+   assinaturas; `app/src/i18n/locales.test.ts` acusa texto deixado em inglês. Contrato em
+   [design/idiomas-biblias-fontes.md](design/idiomas-biblias-fontes.md).
+6. **Tradução automática**: decidir se um texto é traduzível pelo núcleo (`isTranslatableSource`), nunca por
    suposição sobre a fonte.
-6. **Fonte de dados nova**: ingestor + entrada no registro de fontes + linha em `DATA_LICENSES.md`
+7. **Fonte de dados nova**: ingestor + entrada no registro de fontes + linha em `DATA_LICENSES.md`
    (skill `nova-fonte`). O teste do registro falha se faltar rótulo ou tradição.
 
 ## 4. Contrato pipeline × núcleo
@@ -90,7 +100,7 @@ strings.ts          textos pt-BR
 
 | Onde | O que mora ali |
 |---|---|
-| `packages/core/src/domain/` | `language` (Lang, Corpus, Testament, `CORPUS`, original por testamento, legenda das edições), `strong`, `lexicon` (`LEXICONS`, `pickLexicon`), `morph` (conteúdo, verbo, nome próprio por língua), `vid` (aritmética de vid), `script` (escrita e direção), `word` (`wordFacts`), `sources` (registro de fontes e tradições, idioma traduzível) |
+| `packages/core/src/domain/` | `language` (Lang, Corpus, Testament, `CORPUS`, original por testamento, legenda das edições), `strong`, `lexicon` (`LEXICONS`, `pickLexicon`), `morph` (conteúdo, verbo, nome próprio por língua), `vid` (aritmética de vid), `script` (escrita e direção), `word` (`wordFacts`), `sources` (registro de fontes e tradições, idioma traduzível), `locale` (14 idiomas), `book-names` (livros por idioma), `bibles` (catálogo de Bíblias baixáveis), `source-prefs` (preferência de comentários) |
 | `packages/core/src/repo/` | consultas ao banco por área (`text`, `language`, `commentary`, `dictionary`, `entities`, `timeline*`, `cite`); `Repo` é a fachada |
 | `packages/core/src/` | painel (`panel.ts`), IA (`ai/`), linha do tempo e combinações (`timeline*.ts`), tradução (segmentos e lotes) |
 | `app/src/ui/` | componentes sem domínio (inclui `Buttons`) |
