@@ -28,6 +28,7 @@ import * as entities from './entities';
 import * as timeline from './timeline';
 import * as timelineSearch from './timeline-search';
 import * as cite from './cite';
+import { ALL_COMMENTARIES, parseCommentaryPreference, type CommentaryPreference } from '../domain/source-prefs';
 
 export { DEFAULT_TEXT_SOURCE } from './text';
 export type { XRefWithTexts } from './text';
@@ -36,7 +37,22 @@ export type { DictionaryHit, DictionaryKind } from './dictionary';
 export type { EntityHit, PlaceVerseHit } from './entities';
 
 export class Repo {
+  /** Preferência de comentários: filtra toda consulta que devolve comentários (ver setCommentaryPreference). */
+  private commentaryPref: CommentaryPreference = ALL_COMMENTARIES;
+
   constructor(private readonly driver: SqlDriver) {}
+
+  /**
+   * Define quais tradições e fontes de comentário este repositório entrega (lentes, painel, IA e citações).
+   * Vale para as consultas seguintes; quem guarda o repositório decide quando trocar (ver app/src/data/active-db.ts).
+   */
+  setCommentaryPreference(pref: CommentaryPreference): void {
+    this.commentaryPref = parseCommentaryPreference(pref);
+  }
+
+  getCommentaryPreference(): CommentaryPreference {
+    return this.commentaryPref;
+  }
 
   books(): Promise<Book[]> {
     return text.books(this.driver);
@@ -102,9 +118,14 @@ export class Repo {
     return language.concordance(this.driver, strongBase, textSourceId, limit, exclude);
   }
 
-  /** Comentários que se sobrepõem ao intervalo, mais os de introdução do(s) capítulo(s) e livro(s). */
+  /** Comentários visíveis pela preferência que se sobrepõem ao intervalo, mais as introduções de capítulo e livro. */
   commentaries(range: VerseRange): Promise<Commentary[]> {
-    return commentary.commentaries(this.driver, range);
+    return commentary.commentaries(this.driver, range, this.commentaryPref);
+  }
+
+  /** Como `commentaries`, mais quantos comentários do trecho a preferência escondeu (aviso na folha de estudo). */
+  commentariesAndHidden(range: VerseRange): Promise<commentary.CommentarySplit> {
+    return commentary.commentarySplit(this.driver, range, this.commentaryPref);
   }
 
   /** Verbetes cujas referências se sobrepõem ao intervalo, com o tipo da fonte. */
@@ -187,6 +208,6 @@ export class Repo {
 
   /** Resolve um cite_id ao registro de origem. Retorna null se o prefixo ou o id não existir. */
   resolveCite(citeId: string): Promise<CitableRecord | null> {
-    return cite.resolveCite(this.driver, citeId);
+    return cite.resolveCite(this.driver, citeId, this.commentaryPref);
   }
 }

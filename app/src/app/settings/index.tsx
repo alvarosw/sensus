@@ -2,13 +2,14 @@
 import { ScrollView, View } from 'react-native';
 import { router } from 'expo-router';
 import Constants from 'expo-constants';
-import { sourceAbbr } from '@sensus/core';
+import { describePreference, sourceAbbr } from '@sensus/core';
 import { ListGroup, ListRow, useTheme } from '@/design';
 import { useSettings } from '@/settings/settings-context';
 import { aiSummary } from '@/settings/ai-status';
 import { useAiSnapshot } from '@/settings/use-ai-snapshot';
 import { useAppPrefs } from '@/settings/app-prefs';
 import { SETTINGS_COPY as COPY } from '@/settings/strings';
+import { COMMENTARY_STRINGS } from '@/settings/commentary-strings';
 import { useDataStore } from '@/data/data-store';
 import { dataRowSubtitle } from '@/data/view';
 import { DATA_COPY } from '@/data/strings';
@@ -21,6 +22,7 @@ export default function SettingsScreen() {
   const ai = aiSummary(useAiSnapshot());
   const theme = useAppPrefs((s) => s.theme);
   const textSource = useAppPrefs((s) => s.textSource);
+  const commentaryPrefs = useAppPrefs((s) => s.commentaryPrefs);
   const version = Constants.expoConfig?.version ?? '';
   const dataMachine = useDataStore((s) => s.machine);
   const dataEdition = useDataStore((s) => s.edition);
@@ -44,6 +46,12 @@ export default function SettingsScreen() {
           title={COPY.rowLook}
           subtitle={`${THEME_LABEL[theme]} · texto ${sourceAbbr(textSource)}`}
           onPress={() => router.push('/settings/appearance')}
+        />
+        <ListRow
+          testID="settings-row-commentaries"
+          title={COMMENTARY_STRINGS.rowTitle}
+          subtitle={describePreference(commentaryPrefs)}
+          onPress={() => router.push('/settings/commentaries')}
         />
         <ListRow
           testID="settings-row-data"

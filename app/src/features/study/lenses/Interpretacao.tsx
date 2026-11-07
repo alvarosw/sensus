@@ -1,9 +1,12 @@
 // Lente Interpretação: comentários por tradição e autor, matriz de versículos × autores e filtros.
 import { useMemo, useState } from 'react';
 import { View } from 'react-native';
+import { router } from 'expo-router';
 import { isIntroVid, type Commentary } from '@sensus/core';
 import { Empty, LinkButton, SubHeader, Txt, space } from '@/design';
 import { useStudy } from '@/state/study';
+import { COMMENTARY_STRINGS } from '@/settings/commentary-strings';
+import { visibleTradition } from '@/settings/commentary-model';
 import { chv, refShort } from '@/features/common/format';
 import { CommentaryCard, CommentaryMatrix, FilterPill } from '../cards';
 import { activeTraditionOf, commentaryHitIndex, commentaryMatrix, commentaryTraditions, filterCommentaries } from '../lens-model';
@@ -24,13 +27,16 @@ export function InterpretacaoLens({ onLayout }: LensProps) {
   const setTradition = useStudy((s) => s.setTradition);
   const [author, setAuthor] = useState<string | null>(null);
   const { panel, range, books, tokenByKey } = data;
+  // Comentários que a preferência de comentários escondeu neste trecho (aviso quando a lente fica vazia).
+  const hidden = panel?.layers.interpretation.hiddenCommentaries ?? 0;
 
   const views = useMemo<CommentaryView[]>(
     () => (panel ? panel.layers.interpretation.commentaries.map((c) => viewCommentary(c, panel.sources[c.source_id])).filter((v) => !v.intro) : []),
     [panel],
   );
   const traditions = useMemo(() => commentaryTraditions(views), [views]);
-  const activeTradition = activeTraditionOf(tradition);
+  // Tradição escolhida que a preferência escondeu não filtra nada (a lista de chips já não a mostra).
+  const activeTradition = visibleTradition(activeTraditionOf(tradition), traditions);
   const filtered = useMemo(() => filterCommentaries(views, activeTradition, author), [views, activeTradition, author]);
   const shown = expanded ? filtered : filtered.slice(0, SHOWN);
   const matrix = useMemo(() => commentaryMatrix(views, range), [views, range]);
@@ -47,7 +53,15 @@ export function InterpretacaoLens({ onLayout }: LensProps) {
       <Body data={data}>
         {() =>
           views.length === 0 ? (
-            <Empty text={STUDY.commentsEmpty} />
+            <View style={{ gap: space[3] }}>
+              <Empty text={STUDY.commentsEmpty} />
+              {hidden > 0 ? (
+                <View testID="comments-hidden-notice" style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', gap: space[3] }}>
+                  <Txt v="meta" color="muted">{COMMENTARY_STRINGS.hiddenNotice}</Txt>
+                  <LinkButton testID="comments-hidden-adjust" label={COMMENTARY_STRINGS.adjust} onPress={() => router.push('/settings/commentaries')} />
+                </View>
+              ) : null}
+            </View>
           ) : (
             <View style={{ gap: space[6] }}>
               <SubHeader label={STUDY.whoComments} />

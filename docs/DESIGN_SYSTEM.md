@@ -63,9 +63,10 @@ de `useTheme()` e dos tokens.
 
 ## Configurações
 
-Rotas em `app/src/app/settings/` (pilha própria, `_layout.tsx`): `index` (lista principal, três linhas),
-`ai` (Assistente de IA), `appearance` (Aparência e leitura), `about` (Sobre e licenças) e `sources` (Fontes e
-licenças, uma tela abaixo). `/settings` continua valendo. A proposta aprovada é
+Rotas em `app/src/app/settings/` (pilha própria, `_layout.tsx`): `index` (lista principal), `ai` (Assistente de
+IA), `appearance` (Aparência e leitura), `commentaries` (Interpretação e comentários: tradições e fontes de comentário
+escondidas, em todo o app; regra em `packages/core/src/domain/source-prefs.ts`, textos em
+`app/src/settings/commentary-strings.ts`), `about` (Sobre e licenças) e `sources` (Fontes e licenças, uma tela abaixo). `/settings` continua valendo. A proposta aprovada é
 [`docs/design/settings-proposal.html`](design/settings-proposal.html).
 
 - Textos em `app/src/settings/strings.ts`. Estado do assistente em `app/src/settings/ai-status.ts` (função pura,

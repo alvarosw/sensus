@@ -3,9 +3,11 @@
 //    assets/sensus.db quando o built_at difere de src/data/bundled-db.json (scripts/sync-db.mjs).
 //  - 'sensus-full.db': a edição completa baixada (ver download-engine.ts). Quando existe e é válida, tem prioridade.
 // A troca é atômica do ponto de vista do app: o novo arquivo é validado antes e só depois a conexão é trocada.
+// A preferência de comentários (ver settings/app-prefs.ts) é aplicada a cada Repo criado. Quando ela muda, o banco
+// é publicado de novo com um Repo novo sobre a mesma conexão: quem depende do repositório (consultas em cache) refaz.
 import * as SQLite from 'expo-sqlite';
 import { Directory, File, Paths } from 'expo-file-system';
-import { Repo } from '@sensus/core';
+import { ALL_COMMENTARIES, Repo, type CommentaryPreference } from '@sensus/core';
 import bundledDb from '../../assets/sensus.db';
 import bundled from './bundled-db.json';
 import { checkFullDatabase, editionOf, type Edition } from './edition';
@@ -28,6 +30,7 @@ type Listener = (active: ActiveDb) => void;
 
 let current: ActiveDb | null = null;
 const listeners = new Set<Listener>();
+let commentaryPref: CommentaryPreference = ALL_COMMENTARIES;
 
 export function currentActive(): ActiveDb | null {
   return current;
@@ -113,12 +116,14 @@ async function openInstalledFull(): Promise<{ db: SQLite.SQLiteDatabase; meta: R
 }
 
 function publish(next: { db: SQLite.SQLiteDatabase; meta: Record<string, string>; name: string }): ActiveDb {
+  const repo = new Repo(createExpoSqlDriver(next.db));
+  repo.setCommentaryPreference(commentaryPref);
   const active: ActiveDb = {
     edition: editionOf(next.meta),
     name: next.name,
     meta: next.meta,
     db: next.db,
-    repo: new Repo(createExpoSqlDriver(next.db)),
+    repo,
   };
   const previous = current;
   current = active;
@@ -128,6 +133,17 @@ function publish(next: { db: SQLite.SQLiteDatabase; meta: Record<string, string>
   }
   for (const listener of listeners) listener(active);
   return active;
+}
+
+/**
+ * Preferência de comentários de todo o app. Se o banco já está aberto e a preferência mudou, publica de novo com um
+ * Repo novo (mesma conexão): as telas que dependem do repositório recarregam suas consultas.
+ */
+export function setActiveCommentaryPreference(pref: CommentaryPreference): void {
+  const changed = JSON.stringify(pref) !== JSON.stringify(commentaryPref);
+  commentaryPref = pref;
+  if (!current || !changed) return;
+  publish({ db: current.db, meta: current.meta, name: current.name });
 }
 
 /** Abre o banco que deve estar ativo: o completo instalado, se houver; senão o de leitura. */
