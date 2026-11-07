@@ -5,7 +5,7 @@
 // O idioma vem do registro de fontes (sourceId) ou do banco (lang, para fonte fora do registro). Cache só em memória:
 // nada traduzido é gravado no aparelho. As decisões ficam em policy.ts (puras, testadas).
 import { useEffect, useState } from 'react';
-import { isTranslatableLang, isTranslatableSource } from '@sensus/core';
+import { isTranslatableSource, needsTranslation } from '@sensus/core';
 import { cachedTranslation, translateMany } from './engine';
 import { askGlobal, isGlobalFailed, retryGlobal, useGlobalView } from './global-batch';
 import {
@@ -60,7 +60,7 @@ export function useTranslatable(
   opts: TranslatableOptions,
 ): Translatable {
   const { policy } = opts;
-  const translatable = opts.sourceId ? isTranslatableSource(opts.sourceId, opts.lang) : isTranslatableLang(opts.lang);
+  const translatable = opts.sourceId ? isTranslatableSource(opts.sourceId, opts.lang) : needsTranslation(opts.lang);
 
   const todo = batchTexts(typeof texts === 'string' || texts == null ? [texts] : texts);
   const key = batchKey(todo);

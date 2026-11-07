@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { isTranslatableLang, isTranslatableSource, langBase, sourceLangOf } from '../src/index';
+import {
+  isTranslatableSource,
+  langBase,
+  modelPairOf,
+  needsTranslation,
+  sourceLangOf,
+  translationPair,
+} from '../src/index';
 
 describe('idioma e tradução pelo registro de fontes', () => {
   it('langBase normaliza o código principal do idioma', () => {
@@ -10,13 +17,53 @@ describe('idioma e tradução pelo registro de fontes', () => {
     expect(langBase(null)).toBeNull();
   });
 
-  it('inglês é traduzível; português e línguas originais não', () => {
-    expect(isTranslatableLang('en')).toBe(true);
-    expect(isTranslatableLang('en-GB')).toBe(true);
-    expect(isTranslatableLang('pt')).toBe(false);
-    expect(isTranslatableLang('grc')).toBe(false);
-    expect(isTranslatableLang('hbo')).toBe(false);
-    expect(isTranslatableLang(undefined)).toBe(false);
+  it('sem idioma do app: inglês é traduzido (para português); o resto não', () => {
+    expect(needsTranslation('en')).toBe(true);
+    expect(needsTranslation('en-GB')).toBe(true);
+    expect(needsTranslation('pt')).toBe(false);
+    expect(needsTranslation('grc')).toBe(false);
+    expect(needsTranslation('hbo')).toBe(false);
+    expect(needsTranslation(undefined)).toBe(false);
+  });
+
+  it('com o idioma do app: inglês vira o idioma escolhido (pt, es, zh)', () => {
+    expect(needsTranslation('en', 'pt')).toBe(true);
+    expect(needsTranslation('en', 'es')).toBe(true);
+    expect(needsTranslation('en', 'zh')).toBe(true);
+    expect(translationPair('en', 'es')).toEqual({ from: 'en', to: 'es' });
+  });
+
+  it('mesma base nunca traduz: pt no app pt, en no app en, zh-Hans no app zh', () => {
+    expect(needsTranslation('pt', 'pt')).toBe(false);
+    expect(needsTranslation('en', 'en')).toBe(false);
+    expect(needsTranslation('zh-Hant', 'zh')).toBe(false);
+    expect(translationPair('en', 'en')).toBeNull();
+  });
+
+  it('origem em outro idioma dos 14 também é traduzida (Bíblia em espanhol, app em inglês)', () => {
+    expect(needsTranslation('es', 'en')).toBe(true);
+    expect(needsTranslation('es', 'pt')).toBe(true);
+    expect(translationPair('es', 'en')).toEqual({ from: 'es', to: 'en' });
+    expect(needsTranslation('es', 'es')).toBe(false);
+  });
+
+  it('origem grega ou hebraica nunca é traduzida, em nenhum idioma do app', () => {
+    for (const app of ['pt', 'en', 'es', 'zh'] as const) {
+      expect(needsTranslation('grc', app)).toBe(false);
+      expect(needsTranslation('hbo', app)).toBe(false);
+      expect(needsTranslation('arc', app)).toBe(false);
+    }
+  });
+
+  it('o par precisa dos dois modelos: origem e destino com mlkit (os 14 têm); códigos de fora dos 14 não', () => {
+    expect(needsTranslation('en', 'pt')).toBe(true);
+    expect(needsTranslation('ko', 'pt')).toBe(false);
+    expect(needsTranslation('en', 'ko' as 'pt')).toBe(false);
+  });
+
+  it('modelPairOf: inglês -> idioma do app; app em inglês não tem modelo próprio', () => {
+    expect(modelPairOf('pt')).toEqual({ from: 'en', to: 'pt' });
+    expect(modelPairOf('en')).toBeNull();
   });
 
   it('a fonte registrada decide: theographic (inglês) é traduzível, blivre (português) não', () => {
@@ -39,5 +86,15 @@ describe('idioma e tradução pelo registro de fontes', () => {
     expect(isTranslatableSource('fonte-nova')).toBe(false);
     expect(isTranslatableSource(null)).toBe(false);
     expect(isTranslatableSource(null, 'en')).toBe(true);
+  });
+
+  it('com idioma do app: a regra vale para a fonte registrada e para a do banco', () => {
+    expect(isTranslatableSource('theographic', null, 'es')).toBe(true);
+    expect(isTranslatableSource('theographic', null, 'en')).toBe(false);
+    expect(isTranslatableSource('kjv', null, 'pt')).toBe(true);
+    expect(isTranslatableSource('blivre', null, 'en')).toBe(true);
+    expect(isTranslatableSource('blivre', null, 'pt')).toBe(false);
+    expect(isTranslatableSource('tagnt', null, 'zh')).toBe(false);
+    expect(isTranslatableSource('fonte-nova', 'es', 'zh')).toBe(true);
   });
 });

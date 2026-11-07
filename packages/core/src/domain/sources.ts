@@ -3,7 +3,7 @@
 // Fonte nova: uma entrada em SOURCES (e, se a tradição for nova, em TRADITIONS) + linha em DATA_LICENSES.md.
 // O teste packages/core/test/domain-sources.test.ts falha se faltar rótulo.
 import type { Commentary, Source } from '../types';
-import { DEFAULT_APP_LANG, fallbackChain, type AppLang } from './locale';
+import { appLangInfo, DEFAULT_APP_LANG, fallbackChain, isAppLang, type AppLang } from './locale';
 
 export type SourceRole =
   | 'text' // tradução corrida (BLivre, KJV)
@@ -236,18 +236,49 @@ export function sourceLangOf(id: string | null | undefined, fallback?: string | 
   return langBase(registered ?? fallback);
 }
 
-/** O idioma é inglês: o que a tradução automática (inglês -> português) pode traduzir. */
-export function isTranslatableLang(lang: string | null | undefined): boolean {
-  return langBase(lang) === 'en';
+/** Par de idiomas de uma tradução automática: de qual língua (origem) para qual (o idioma do app). */
+export interface TranslationPair {
+  from: AppLang;
+  to: AppLang;
 }
 
 /**
- * A fonte pode ser traduzida automaticamente? Decide pelo idioma registrado da fonte, nunca pelo id nem por suposição
- * (a linha do tempo, por exemplo, pergunta por `theographic`). `fallback` é o idioma do banco, só para fonte fora do
- * registro.
+ * Traduz um texto de `sourceLang` para o idioma do app? Verdadeiro quando as bases diferem e os dois idiomas têm
+ * modelo no ML Kit (campo `mlkit` de APP_LANGS). Origem fora dos 14 idiomas do app (grego, hebraico, aramaico) nunca
+ * é traduzida. Sem `appLang` (chamadas antigas), vale o comportamento de antes: inglês para português.
  */
-export function isTranslatableSource(id: string | null | undefined, fallback?: string | null): boolean {
-  return isTranslatableLang(sourceLangOf(id, fallback));
+export function needsTranslation(sourceLang: string | null | undefined, appLang?: AppLang | null): boolean {
+  const from = langBase(sourceLang);
+  if (appLang === undefined || appLang === null) return from === 'en';
+  if (!from || !isAppLang(from) || !isAppLang(appLang) || from === appLang) return false;
+  return appLangInfo(from).mlkit !== null && appLangInfo(appLang).mlkit !== null;
+}
+
+/** Par da tradução (origem -> idioma do app), ou null quando não há o que traduzir (ver needsTranslation). */
+export function translationPair(sourceLang: string | null | undefined, appLang: AppLang): TranslationPair | null {
+  if (!needsTranslation(sourceLang, appLang)) return null;
+  return { from: langBase(sourceLang) as AppLang, to: appLang };
+}
+
+/** Idioma pivô dos modelos de tradução: o inglês (o modelo dele é compartilhado por todos os pares). */
+export const MODEL_PIVOT: AppLang = 'en';
+
+/** Par do modelo que a Configuração gerencia: inglês -> idioma do app. Null quando o app já está em inglês. */
+export function modelPairOf(appLang: AppLang): TranslationPair | null {
+  return appLang === MODEL_PIVOT ? null : { from: MODEL_PIVOT, to: appLang };
+}
+
+/**
+ * A fonte pode ser traduzida automaticamente para o idioma do app? Decide pelo idioma registrado da fonte, nunca pelo
+ * id nem por suposição (a linha do tempo, por exemplo, pergunta por `theographic`). `fallback` é o idioma do banco, só
+ * para fonte fora do registro. Sem `appLang`, vale o inglês para português (ver needsTranslation).
+ */
+export function isTranslatableSource(
+  id: string | null | undefined,
+  fallback?: string | null,
+  appLang?: AppLang | null,
+): boolean {
+  return needsTranslation(sourceLangOf(id, fallback), appLang);
 }
 
 /** Ids das fontes de texto corrido que o leitor oferece (BLivre, KJV), na ordem do registro. */
