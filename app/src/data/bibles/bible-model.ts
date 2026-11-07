@@ -11,7 +11,6 @@ import {
   recommendBibles,
   sourceLangOf,
   sourceLong,
-  textSources,
   type BibleCatalog,
   type BibleEntry,
 } from '@sensus/core';
@@ -34,14 +33,14 @@ export function bibleIdOfFile(name: string): string | null {
 }
 
 /**
- * Ids instalados: as do banco principal (sempre, na ordem dada) e as baixadas, pelos nomes de arquivo. As baixadas
- * seguem a ordem do catálogo; quem não está no catálogo vai por último, em ordem de id.
+ * Ids instalados: as Bíblias baixadas, pelos nomes de arquivo (nenhuma vem com o app). Seguem a ordem do catálogo;
+ * quem não está no catálogo vai por último, em ordem de id.
  */
-export function installedBibleIds(fileNames: readonly string[], bundled: readonly string[], catalog: BibleCatalog | null): string[] {
+export function installedBibleIds(fileNames: readonly string[], catalog: BibleCatalog | null): string[] {
   const downloaded = new Set<string>();
   for (const name of fileNames) {
     const id = bibleIdOfFile(name);
-    if (id && !bundled.includes(id)) downloaded.add(id);
+    if (id) downloaded.add(id);
   }
   const position = (id: string): number => {
     const i = catalog?.bibles.findIndex((b) => b.id === id) ?? -1;
@@ -52,12 +51,13 @@ export function installedBibleIds(fileNames: readonly string[], bundled: readonl
     const pb = position(b);
     return pa === pb ? a.localeCompare(b) : pa - pb;
   });
-  return [...bundled, ...sorted];
+  return sorted;
 }
 
 /**
- * Texto padrão válido. A escolhida, se ainda estiver instalada; senão a recomendada instalada do idioma (rank
- * mais baixo entre as instaladas); senão BLivre. Puro: quem chama decide quando aplicar.
+ * Bíblia principal válida (o texto do leitor). A escolhida, se ainda estiver instalada; senão a recomendada instalada
+ * do idioma (rank mais baixo entre as instaladas); senão a primeira instalada (a primeira baixada vira a principal);
+ * sem nenhuma instalada, BLivre, que só os dados completos trazem. Puro: quem chama decide quando aplicar.
  */
 export function resolveTextSource(input: {
   stored: string | null;
@@ -71,7 +71,12 @@ export function resolveTextSource(input: {
     const pick = recommendBibles(catalog, lang).recommended.find((b) => installed.includes(b.id));
     if (pick) return pick.id;
   }
-  return DEFAULT_TEXT_SOURCE;
+  return installed[0] ?? DEFAULT_TEXT_SOURCE;
+}
+
+/** Pode remover? Nunca a única instalada: sem Bíblia, o leitor fica sem texto. */
+export function canRemoveBible(id: string, installed: readonly string[]): boolean {
+  return installed.includes(id) && installed.length > 1;
 }
 
 /**
@@ -115,7 +120,6 @@ export function checkBibleMeta(meta: Readonly<Record<string, string>>, expected:
   return 'ok';
 }
 
-/** Nomes dos idiomas que aparecem como títulos de grupo (código base; os demais viram o próprio código). */
 /**
  * Nome do idioma para a tela, escrito nele mesmo ("Español", "中文（简体）"), como nos seletores de idioma. Idioma fora
  * dos 14 do app aparece pelo código em maiúsculas.
@@ -125,7 +129,7 @@ export function langName(lang: string): string {
   return isAppLang(base) ? appLangInfo(base).endonym : base.toUpperCase();
 }
 
-/** O que a linha de uma Bíblia precisa, vinda do catálogo ou (para as do banco principal) do registro de fontes. */
+/** O que a linha de uma Bíblia precisa, vinda do catálogo ou (instalada fora dele) do registro de fontes. */
 export interface BibleRowInfo {
   id: string;
   abbr: string;
@@ -134,15 +138,12 @@ export interface BibleRowInfo {
   lang: string;
   license: string | null;
   sizeBytes: number | null;
-  /** Vem com o app: não pode ser removida. */
-  bundled: boolean;
   /** Tem pacote no catálogo (pode ser baixada). */
   downloadable: boolean;
 }
 
 export function bibleRowInfo(id: string, catalog: BibleCatalog | null): BibleRowInfo {
   const entry = findBible(catalog, id);
-  const bundled = textSources().includes(id) || entry?.bundled === true;
   if (entry) {
     return {
       id,
@@ -151,7 +152,6 @@ export function bibleRowInfo(id: string, catalog: BibleCatalog | null): BibleRow
       lang: entry.lang,
       license: entry.license,
       sizeBytes: entry.package?.size ?? null,
-      bundled,
       downloadable: entry.package !== undefined,
     };
   }
@@ -162,7 +162,6 @@ export function bibleRowInfo(id: string, catalog: BibleCatalog | null): BibleRow
     lang: sourceLangOf(id) ?? '',
     license: null,
     sizeBytes: null,
-    bundled,
     downloadable: false,
   };
 }

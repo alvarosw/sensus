@@ -100,3 +100,14 @@ Contratos em [design/idiomas-biblias-fontes.md](design/idiomas-biblias-fontes.md
 - **P3 — Reina-Valera 1909 completa** (o módulo SWORD tem licença contraditória; o eBible tem 18 versículos vazios).
 - **P3 — Títulos pt das obras adventistas novas** são tradução nossa (só *O Desejado de Todas as Nações* é título de
   edição brasileira): conferir.
+
+## Onboarding (candeia)
+
+- **P2 — Botão de seguir fixo no rodapé** do passo de idioma (o de Bíblia já tem): hoje "Continuar" fica no fim da
+  lista e pede rolagem.
+- **P2 — Árabe e urdu:** marcadores de lista à esquerda (o layout não espelha) e a linha de tamanho dos dados com
+  números embaralhados (isolar números com LRI/PDI).
+- **P2 — IRV Urdu (`urdirv`)** está em escrita devanágari, não na escrita árabe do urdu: tirar do urdu (ou marcar como
+  hindustani em devanágari) no catálogo.
+- **P3 — `Scene.tsx` da candeia tem ~700 linhas** (física, caminho e véu num callback por quadro, por desempenho):
+  separar em módulos sem perder o callback único.

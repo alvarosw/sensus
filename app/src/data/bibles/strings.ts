@@ -1,4 +1,5 @@
-// Textos das Bíblias baixadas (pt-BR): Configurações > Bíblias, Aparência e o seletor do leitor.
+// Textos das Bíblias baixadas (pt-BR): lista de Bíblias (Configurações > Bíblias e o passo de Bíblia da
+// apresentação), Aparência e o seletor do leitor.
 import type { DataError } from '../download-machine';
 import { localized } from '../../i18n';
 import { biblesTables } from '../../i18n/locales/all';
@@ -8,11 +9,20 @@ const ptBibles = {
   rowTitle: 'Bíblias',
   rowSubtitle: (n: number) => (n === 1 ? '1 instalada' : `${n} instaladas`),
 
-  installedTitle: 'Instaladas',
-  recommendedTitle: (lang: string) => `Recomendadas para ${lang}`,
-  othersTitle: 'Outros idiomas',
+  suggestedTitle: 'Recomendadas e baixadas',
+  allTitle: 'Todas as Bíblias',
+  showAll: 'Ver todas as Bíblias',
+  hideAll: 'Mostrar menos',
   recommended: 'Recomendada',
-  bundledNote: 'Vêm com o app e não podem ser removidas.',
+  principal: 'Principal',
+  principalHint: 'A principal é a do texto do leitor. Toque numa Bíblia baixada para torná-la a principal.',
+  setPrincipalA11y: (name: string) => `Usar ${name} como principal`,
+  downloadA11y: (name: string) => `Baixar ${name}`,
+  removeA11y: (name: string) => `Remover ${name}`,
+  cancelA11y: (name: string) => `Parar o download de ${name}`,
+  retryA11y: (name: string) => `Baixar ${name} de novo`,
+  keepOneTitle: 'Mantenha uma Bíblia',
+  keepOneBody: 'O Sensus precisa de pelo menos uma Bíblia baixada. Baixe outra antes de remover esta.',
   catalogCached: 'Mostrando a última lista salva. Atualize quando puder.',
   catalogError: 'Não foi possível atualizar a lista de Bíblias. Confira a conexão.',
   catalogEmpty: 'Nenhuma Bíblia disponível para baixar agora.',
@@ -29,6 +39,7 @@ const ptBibles = {
   remove: 'Remover',
   removeTitle: (abbr: string) => `Remover ${abbr}?`,
   removeBody: 'O texto desta Bíblia sai do aparelho. Para usar de novo, baixe outra vez.',
+  removePrincipalBody: (next: string) => `O texto desta Bíblia sai do aparelho, e ${next} vira a principal.`,
   removeConfirm: 'Remover',
   license: (license: string) => `Licença: ${license}`,
   size: (size: string) => `${size} para baixar`,
@@ -48,7 +59,7 @@ const ptBibles = {
     schema: 'Esta versão do app não lê esta Bíblia. Atualize o Sensus.',
     checksum: 'O arquivo baixado não passou na conferência. Tente de novo.',
     corrupt: 'O arquivo baixado está incompleto. Tente de novo.',
-    install: 'Não foi possível instalar. O texto continua disponível. Tente de novo.',
+    install: 'Não foi possível instalar. Tente de novo.',
     unsupported: 'Esta Bíblia só pode ser baixada no app instalado.',
   } satisfies Record<DataError, string>,
 

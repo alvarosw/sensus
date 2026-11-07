@@ -106,6 +106,8 @@ export interface StoredAppPrefs {
   timelineCombos?: unknown;
   /** Preferência de comentários (tradições e fontes escondidas; ver domain/source-prefs.ts). Lida com parse tolerante. */
   commentaryPrefs?: unknown;
+  /** Apresentação de primeira vez concluída. Ausente em arquivos antigos: quem já usava o app não a vê. */
+  onboardingDone?: unknown;
 }
 
 const APP_PREFS_FILE_NAME = 'app-prefs.json';

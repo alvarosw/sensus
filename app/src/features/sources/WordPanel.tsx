@@ -91,9 +91,10 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
   const [showLsj, setShowLsj] = useState(false);
 
   const lexicon = useAsync(() => (strongBase ? loadLexicon(repo, strongBase) : Promise.resolve([])), [repo, strongBase]);
+  const textSource = useStudy((s) => s.textSource);
   const concordance = useAsync(
-    () => (strongBase ? loadConcordance(repo, strongBase) : Promise.resolve({ count: 0, vids: [] as Vid[] })),
-    [repo, strongBase],
+    () => (strongBase ? loadConcordance(repo, strongBase, textSource) : Promise.resolve({ count: 0, vids: [] as Vid[] })),
+    [repo, strongBase, textSource],
   );
   const sources = useAsync(() => loadSources(repo), [repo]);
 

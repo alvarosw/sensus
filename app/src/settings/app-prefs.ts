@@ -1,14 +1,17 @@
 // Preferências de aparência e leitura, persistidas no aparelho (sem segredos).
 //  - appLang: idioma da interface (um dos 14 de domain/locale.ts). Ausente = pt; sem arquivo = idioma do aparelho;
 //  - theme: sistema | claro | escuro (o provider de tema é atualizado pela tela de Aparência);
-//  - textSource: Bíblia do texto corrido (BLivre, KJV ou uma baixada e instalada; ver data/bibles). FONTE DA VERDADE. O botão do leitor também grava aqui, e
-//    o estado de estudo (`useStudy.textSource`) é só um espelho, escrito apenas por este arquivo (load e setTextSource);
+//  - textSource: a Bíblia principal, do texto corrido (uma baixada e instalada; ver data/bibles). FONTE DA VERDADE.
+//    Muda pela lista de Bíblias e pelo botão do leitor; a primeira baixada vira a principal sozinha (syncTextSource a
+//    cada mudança das instaladas). O
+//    estado de estudo (`useStudy.textSource`) é só um espelho, escrito apenas por este arquivo (load e setTextSource);
 //  - greekDefault: grego (TR) sob os versículos ao abrir o app. O botão Αα só muda a sessão.
 //  - timelineLines / timelineEvents: favoritos da linha do tempo (cite_ids de linhas e de marcadores);
 //    timelineCombos: combinações do paralelo criadas pelo usuário (favoritas, sem limite; recentes, as últimas cinco).
 //    As prontas do app não são gravadas (ver combos.ts).
 //  - commentaryPrefs: tradições e fontes de comentário escondidas (domain/source-prefs.ts). Vale no estudo inteiro:
 //    é aplicada ao Repo do banco ativo (active-db.ts) ao carregar, a cada mudança e quando o banco troca.
+//  - onboardingDone: a apresentação de primeira vez já foi concluída (regra de quem vê em onboarding-pref.ts).
 // Os valores de aparência são aplicados ao estado do leitor (state/study.ts) ao carregar e a cada mudança.
 import { create } from 'zustand';
 import { useStudy } from '@/state/study';
@@ -18,14 +21,16 @@ import { useLangStore } from '@/i18n/lang-store';
 import { readAppPrefs, writeAppPrefs, type StoredAppPrefs } from './provider-store';
 import { readCachedCatalog } from '@/data/bibles/catalog';
 import { installedIds } from '@/data/bibles/bible-db';
+import { useBibles } from '@/data/bibles/bibles-store';
 import { resolveTextSource } from '@/data/bibles/bible-model';
 import { bibleUiLang } from '@/data/bibles/ui-lang';
 import { favoriteCombo, newComboId, parseCombos, recordRecent, removeCombo, unfavoriteCombo, type UserCombo } from '@sensus/core';
 import { ALL_COMMENTARIES, parseCommentaryPreference, type CommentaryPreference } from '@sensus/core';
 import { setActiveCommentaryPreference } from '@/data/active-db';
 import { DEFAULT_APP_LANG, appLangFromDevice, isAppLang, type AppLang } from '@sensus/core';
+import { shouldShowOnboarding } from './onboarding-pref';
 
-/** Id de uma fonte de texto corrido (ver `textSources()` no núcleo). */
+/** Id de uma Bíblia (do catálogo de Bíblias baixáveis). */
 export type TextSourceId = string;
 
 const THEMES: readonly SchemePreference[] = ['system', 'light', 'dark'];
@@ -41,6 +46,7 @@ export const DEFAULT_APP_PREFS = {
   timelineEvents: [] as string[],
   timelineCombos: [] as UserCombo[],
   commentaryPrefs: ALL_COMMENTARIES,
+  onboardingDone: false,
 };
 
 interface AppPrefsState {
@@ -60,6 +66,10 @@ interface AppPrefsState {
   commentaryPrefs: CommentaryPreference;
   load(): Promise<void>;
   setTheme(theme: SchemePreference): void;
+  /** Apresentação de primeira vez concluída (ou pulada); ver settings/onboarding-pref.ts. */
+  onboardingDone: boolean;
+  /** Grava se a apresentação de primeira vez já foi concluída (ou pulada). */
+  setOnboardingDone(done: boolean): void;
   /** Grava o texto padrão e aplica ao leitor agora. */
   setTextSource(source: TextSourceId): void;
   /** Depois de remover uma Bíblia: se a padrão saiu, volta para a recomendada instalada do idioma (ou BLivre). */
@@ -87,6 +97,7 @@ interface PersistedPrefs {
   timelineEvents: string[];
   timelineCombos: UserCombo[];
   commentaryPrefs: CommentaryPreference;
+  onboardingDone: boolean;
 }
 
 function persist(p: PersistedPrefs): void {
@@ -120,10 +131,10 @@ function toggleId(list: string[], id: string): string[] {
 
 export const useAppPrefs = create<AppPrefsState>()((set, get) => {
   const current = (): PersistedPrefs => {
-    const { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs } = get();
+    const { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone } = get();
     return {
       appLang: useLangStore.getState().lang,
-      theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs,
+      theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone,
     };
   };
   return {
@@ -152,12 +163,15 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       const timelineEvents = idList(stored?.timelineEvents);
       const timelineCombos = parseCombos(stored?.timelineCombos);
       const commentaryPrefs = parseCommentaryPreference(stored?.commentaryPrefs);
+      // Apresentação: instalação nova a mostra; quem já usava o app (chave ausente) não vê, e a chave é gravada.
+      const storedOnboarding = typeof stored?.onboardingDone === 'boolean' ? stored.onboardingDone : undefined;
+      const onboardingDone = !shouldShowOnboarding({ hasStoredPrefs: stored !== null, onboardingDone: storedOnboarding });
       useLangStore.getState().setLang(appLang);
-      set({ loaded: true, theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs });
+      set({ loaded: true, theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone });
       useStudy.setState({ textSource, greek: greekDefault });
       setActiveCommentaryPreference(commentaryPrefs);
-      // Primeira execução ou arquivo antigo: grava já o idioma decidido, para ele não mudar sozinho depois.
-      if (!isAppLang(storedLang)) persist(current());
+      // Primeira execução ou arquivo antigo: grava já o idioma e a apresentação decididos, para não mudarem sozinhos depois.
+      if (!isAppLang(storedLang) || storedOnboarding === undefined) persist(current());
     },
     toggleTimelineLine: (id) => {
       const timelineLines = toggleId(get().timelineLines, id);
@@ -189,6 +203,10 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       set({ timelineCombos });
       persist({ ...current(), timelineCombos });
     },
+    setOnboardingDone: (onboardingDone) => {
+      set({ onboardingDone });
+      persist({ ...current(), onboardingDone });
+    },
     setTheme: (theme) => {
       set({ theme });
       persist({ ...current(), theme });
@@ -217,4 +235,9 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       setActiveCommentaryPreference(commentaryPrefs);
     },
   };
+});
+
+// Instaladas mudaram (baixou, removeu): a principal segue válida. A primeira baixada vira a principal.
+useBibles.subscribe((s, prev) => {
+  if (s.installed !== prev.installed && useAppPrefs.getState().loaded) useAppPrefs.getState().syncTextSource();
 });

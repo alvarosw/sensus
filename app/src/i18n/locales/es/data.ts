@@ -4,7 +4,7 @@ export const esData = {
   rowTitle: 'Datos de estudio',
 
   setupLead:
-    'El texto bíblico ya está en la app y funciona sin descargar nada. Los datos de estudio traen lo que sostiene el análisis de cada pasaje:',
+    'Los datos de estudio traen lo que sostiene el análisis de cada pasaje:',
   includes: [
     'Comentarios de autores clásicos y modernos',
     'Diccionarios bíblicos e índice temático',

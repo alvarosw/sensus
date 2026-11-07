@@ -216,11 +216,11 @@ function Body({ detail, repo }: { detail: CiteDetail; repo: ReturnType<typeof us
       return { view: wordView(record.record, record.record.strong_base, entries), xr: null };
     }
     if (record.table === 'xref') {
-      const verses = await loadXrefText(repo, record.record.to_start_vid, record.record.to_end_vid);
+      const verses = await loadXrefText(repo, textSource, record.record.to_start_vid, record.record.to_end_vid);
       return { view: null, xr: verses.map((v) => v.text).join(' ') };
     }
     return { view: null, xr: null };
-  }, [repo, detail.citeId]);
+  }, [repo, detail.citeId, textSource]);
 
   // Tradução automática do trecho mostrado: o idioma vem da fonte (lexicon, Bíblia escolhida ou a própria fonte).
   const lex = extra.data?.view?.lex.primary ?? null;

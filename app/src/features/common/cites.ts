@@ -5,7 +5,6 @@ import {
   bookRange,
   chapterRange,
   commentatorOf,
-  DEFAULT_TEXT_SOURCE,
   formatShortRef,
   isIntroVid,
   shownDescription,
@@ -61,6 +60,7 @@ interface RepoCache {
   books?: Promise<Book[]>;
   cites: Map<string, Promise<CiteDetail | null>>;
   lexicon: Map<string, Promise<LexiconEntry[]>>;
+  /** Por Bíblia e Strong (`textSource:strongBase`). */
   concordance: Map<string, Promise<{ count: number; vids: Vid[] }>>;
   passages: Map<string, Promise<Vid[]>>;
 }
@@ -201,22 +201,26 @@ export function loadLexicon(repo: Repo, strongBase: string): Promise<LexiconEntr
 
 const CONCORDANCE_LIMIT = 80;
 
-/** Total de versículos com a palavra (NT para G…, AT para H…) e até 80 deles (ordem do texto). */
-export function loadConcordance(repo: Repo, strongBase: string): Promise<{ count: number; vids: Vid[] }> {
+/**
+ * Total de versículos com a palavra (NT para G…, AT para H…) e até 80 deles (ordem do texto), que existem na Bíblia
+ * principal `textSource` (os exemplos vêm do texto dela).
+ */
+export function loadConcordance(repo: Repo, strongBase: string, textSource: string): Promise<{ count: number; vids: Vid[] }> {
   const c = cacheOf(repo);
-  let p = c.concordance.get(strongBase);
+  const key = `${textSource}:${strongBase}`;
+  let p = c.concordance.get(key);
   if (!p) {
-    p = serial(() => repo.concordance(strongBase, DEFAULT_TEXT_SOURCE, CONCORDANCE_LIMIT))
+    p = serial(() => repo.concordance(strongBase, textSource, CONCORDANCE_LIMIT))
       .then((r) => ({ count: r.count, vids: r.samples.map((s) => s.vid) }));
-    p.catch(() => c.concordance.delete(strongBase));
-    c.concordance.set(strongBase, p);
+    p.catch(() => c.concordance.delete(key));
+    c.concordance.set(key, p);
   }
   return p;
 }
 
-/** Texto do destino de uma referência cruzada (até 12 versículos, juntos). */
-export async function loadXrefText(repo: Repo, start: Vid, end: Vid): Promise<VerseText[]> {
-  return serial(() => repo.verseTexts(DEFAULT_TEXT_SOURCE, { start, end }, 12));
+/** Texto do destino de uma referência cruzada na Bíblia principal (até 12 versículos, juntos). */
+export async function loadXrefText(repo: Repo, textSource: string, start: Vid, end: Vid): Promise<VerseText[]> {
+  return serial(() => repo.verseTexts(textSource, { start, end }, 12));
 }
 
 /**

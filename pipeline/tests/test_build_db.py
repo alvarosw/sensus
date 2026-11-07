@@ -31,8 +31,16 @@ class WantedTest(unittest.TestCase):
         self.assertTrue(build_db.wanted("full", "sword-barnes", "commentary"))
 
     def test_reader_keeps_only_reader_tables(self):
-        self.assertTrue(build_db.wanted("reader", "blivre", "verse_text"))
+        self.assertTrue(build_db.wanted("reader", "hbo-wlc", "verse_text"))
+        self.assertTrue(build_db.wanted("reader", "grc-tr", "verse_text"))
         self.assertFalse(build_db.wanted("reader", "blivre", "commentary"))
+
+    def test_reader_has_no_translation_text(self):
+        # Nenhuma Bíblia vem no APK; de blivre só as divisões (edição-base do leitor).
+        for src in ("blivre", "kjv", "engwebp"):
+            self.assertFalse(build_db.wanted("reader", src, "verse_text"))
+        self.assertTrue(build_db.wanted("reader", "blivre", "text_division"))
+        self.assertFalse(build_db.wanted("reader", "kjv", "text_division"))
         self.assertFalse(build_db.wanted("reader", "sword-barnes", "verse_text"))
 
 

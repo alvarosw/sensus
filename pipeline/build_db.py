@@ -11,8 +11,10 @@ Edições:
   full    (padrão) todas as fontes de data/staging, todos os livros. É o banco que o app baixa no
           primeiro uso (ver pipeline/package_data.py para o ZIP publicado).
   reader  subconjunto mínimo empacotado no APK, para o app funcionar offline antes do download:
-          livros, fontes de texto (blivre, kjv, grc-tr, hbo-wlc), divisões de blivre e só os
-          parágrafos de tagnt/tahot. As demais tabelas existem vazias, para o SQL do app não falhar.
+          livros, os originais (grc-tr, hbo-wlc), as divisões de blivre (edição-base das divisões do
+          leitor, sem o texto) e só os parágrafos de tagnt/tahot. Nenhuma tradução vem no APK: a Bíblia
+          do texto corrido é baixada (package_bibles.py). As demais tabelas existem vazias, para o SQL do
+          app não falhar.
 
 Duas etapas:
   1. Carga lógica: staging -> tabelas descritas em pipeline/schema.sql.
@@ -45,7 +47,9 @@ SCHEMA_VERSION = "3"
 PAGE_SIZE = 4096
 
 EDITIONS = ("full", "reader")
-READER_TEXT_SOURCES = ("blivre", "kjv", "grc-tr", "hbo-wlc")
+READER_TEXT_SOURCES = ("grc-tr", "hbo-wlc")
+# Fontes de que o reader leva só as divisões (sem texto): blivre é a edição-base das divisões do leitor.
+READER_DIVISION_SOURCES = ("blivre",)
 # Do original, só os parágrafos (perícopes da unidade literária); o restante (tokens) fica de fora.
 READER_PARAGRAPH_SOURCES = ("tagnt", "tahot")
 READER_TABLES = {"verse_text", "text_division"}
@@ -72,7 +76,7 @@ def wanted(edition: str, source_id: str, table: str) -> bool:
         return False
     if table == "verse_text":
         return source_id in READER_TEXT_SOURCES
-    return source_id in READER_TEXT_SOURCES or source_id in READER_PARAGRAPH_SOURCES
+    return source_id in READER_TEXT_SOURCES + READER_DIVISION_SOURCES + READER_PARAGRAPH_SOURCES
 
 
 def main():
@@ -114,7 +118,7 @@ def main():
     dirs = sorted(d for d in STAGING.iterdir()
                   if d.is_dir() and (d / "source.json").exists() and (not only or d.name in only))
     if args.edition == "reader":
-        dirs = [d for d in dirs if d.name in READER_TEXT_SOURCES + READER_PARAGRAPH_SOURCES]
+        dirs = [d for d in dirs if d.name in READER_TEXT_SOURCES + READER_DIVISION_SOURCES + READER_PARAGRAPH_SOURCES]
     for d in dirs:
         meta = json.loads((d / "source.json").read_text())
         db.execute(f"INSERT INTO source ({','.join(meta)}) VALUES ({','.join('?' * len(meta))})", list(meta.values()))

@@ -134,12 +134,26 @@ class SqlitePackageTest(unittest.TestCase):
         )
 
     def test_manifest_shape(self):
-        m = P.manifest_for([{"id": "blivre", "bundled": True}], "2026.11.06")
+        m = P.manifest_for([{"id": "blivre", "package": {"url": "u"}}], "2026.11.06")
         self.assertEqual(set(m), {"catalog_version", "schema_version", "bibles"})
         self.assertEqual(m["schema_version"], 1)
-        self.assertTrue(m["bibles"][0]["bundled"])
-        self.assertNotIn("package", m["bibles"][0])
         json.dumps(m)
+
+    def test_merge_replaces_by_id_and_keeps_catalog_order(self):
+        old = {"bibles": [{"id": "engwebp", "version": "a"}, {"id": "kjv", "version": "a", "bundled": True},
+                          {"id": "blivre", "version": "a", "bundled": True}]}
+        new = [{"id": "blivre", "version": "b"}, {"id": "kjv", "version": "b"}]
+        m = P.merge_manifest(old, new, ["engwebp", "kjv", "blivre"], "b")
+        self.assertEqual([e["id"] for e in m["bibles"]], ["engwebp", "kjv", "blivre"])
+        self.assertEqual([e["version"] for e in m["bibles"]], ["a", "b", "b"])
+        self.assertNotIn("bundled", m["bibles"][1])
+        self.assertEqual(m["catalog_version"], "b")
+
+    def test_catalog_has_no_bundled_bible(self):
+        # Nenhuma Bíblia vem dentro do app: toda linha do catálogo vira pacote.
+        rows = P.load_catalog()
+        self.assertNotIn("bundled", rows[0])
+        self.assertIn("blivre", [r["id"] for r in rows])
 
 
 class BookNamesTest(unittest.TestCase):

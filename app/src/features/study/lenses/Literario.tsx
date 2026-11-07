@@ -38,6 +38,7 @@ export function LiterarioLens({ onLayout }: LensProps) {
   const expanded = useExpanded('literario');
   const { range, books, tokenByKey } = data;
   const setSelection = useStudy((s) => s.setSelection);
+  const textSource = useStudy((s) => s.textSource);
 
   return (
     <LensShell lens="literario" title={SECTION_LABEL.literario} onLayout={onLayout} sourcesN={0}>
@@ -45,7 +46,7 @@ export function LiterarioLens({ onLayout }: LensProps) {
         {(p) => {
           const lit = p.layers.literary;
           const { before, after } = literaryNeighborhood(lit, range);
-          const first = p.layers.text.translations.find((v) => v.vid === range.start && v.source_id === 'blivre') ?? p.layers.text.translations.find((v) => v.vid === range.start);
+          const first = p.layers.text.translations.find((v) => v.vid === range.start && v.source_id === textSource) ?? p.layers.text.translations.find((v) => v.vid === range.start);
           const divs = passageDivisions(lit.divisions, range);
           const divShown = expanded ? divs : divs.slice(0, SHOWN);
           const intro = expanded ? lit.bookIntro : lit.bookIntro.slice(0, 1);

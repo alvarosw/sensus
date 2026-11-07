@@ -4,7 +4,7 @@ export const idData = {
   rowTitle: 'Data studi',
 
   setupLead:
-    'Teks Alkitab sudah ada di aplikasi dan berfungsi tanpa unduhan. Data studi berisi bahan yang mendukung analisis setiap perikop:',
+    'Data studi berisi bahan yang mendukung analisis setiap perikop:',
   includes: [
     'Komentar dari penulis klasik dan modern',
     'Kamus Alkitab dan indeks topik',

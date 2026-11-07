@@ -14,6 +14,7 @@ import { t, useLang } from '@/i18n';
 import { SettingsProvider } from '@/settings/settings-context';
 import { AttentionModal } from '@/settings/AttentionModal';
 import { useAppPrefs } from '@/settings/app-prefs';
+import { OnboardingGate, onboardingPending } from '@/features/onboarding';
 import { LoadingView, ErrorView } from '@/ui/state';
 import { useTheme } from '@/ui/theme';
 
@@ -51,13 +52,17 @@ function AppStack() {
   const theme = useTheme();
   // Trocar o idioma remonta as telas (os textos leem o idioma na hora); banco e preferências ficam de pé.
   const lang = useLang();
+  // Durante a apresentação, a pilha não remonta ao trocar o idioma: o fluxo se redesenha sozinho (useLang), e uma
+  // navegação do gate no meio da remontagem derrubava o app. Ao concluir, a chave muda e a pilha remonta uma vez.
+  const onboardingDone = useAppPrefs((s) => s.onboardingDone);
+  const stackKey = onboardingDone ? lang : 'apresentacao';
   return (
     <SettingsProvider>
       <DbProvider>
         <StatusBar style={theme.scheme === 'dark' ? 'light' : 'dark'} />
         <DbGate>
           <Stack
-            key={lang}
+            key={stackKey}
             screenOptions={{
               headerStyle: { backgroundColor: theme.surface },
               headerTintColor: theme.accent,
@@ -72,8 +77,11 @@ function AppStack() {
             {/* Pilha própria em timeline/_layout.tsx (tela inicial, lista de linha, Bíblia inteira, paralelo). */}
             <Stack.Screen name="timeline" options={{ headerShown: false }} />
             <Stack.Screen name="data-setup" options={{ headerShown: false }} />
+            {/* Primeira vez (ver features/onboarding): sem cabeçalho e sem gesto de voltar que saia do fluxo. */}
+            <Stack.Screen name="onboarding" options={{ headerShown: false, gestureEnabled: false }} />
           </Stack>
-          {/* Depois da pilha: a oferta abre a tela de dados quando a navegação já está montada. */}
+          {/* Depois da pilha: a apresentação e a oferta de dados abrem quando a navegação já está montada. */}
+          <OnboardingGate />
           <DataSetupGate />
         </DbGate>
         <AttentionModal />
@@ -85,6 +93,8 @@ function AppStack() {
 /**
  * Abre a tela de dados de estudo uma vez por execução quando ela faz sentido (ver shouldPromptFirstRun):
  * primeira abertura sem os dados completos, ou dados instalados mais antigos que o manifesto.
+ * Numa instalação nova a apresentação já oferece os dados (passo 6), e sem Bíblia baixada o passo de Bíblia vem antes:
+ * nesses casos a oferta fica calada nesta execução.
  */
 function DataSetupGate() {
   const edition = useDataStore((s) => s.edition);
@@ -92,6 +102,7 @@ function DataSetupGate() {
   const manifest = useDataStore((s) => s.manifest);
   const deferredVersion = useDataStore((s) => s.deferredVersion);
   const shown = useRef(false);
+  const [suppressed] = useState(onboardingPending);
 
   useEffect(() => {
     useDataStore.getState().load();
@@ -104,7 +115,7 @@ function DataSetupGate() {
     shouldPromptFirstRun({ activeEdition: edition, installedVersion, manifest, deferredVersion });
 
   useEffect(() => {
-    if (!prompt || shown.current) return;
+    if (!prompt || shown.current || suppressed) return;
     shown.current = true;
     router.push('/data-setup');
   }, [prompt]);

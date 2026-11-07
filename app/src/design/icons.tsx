@@ -17,7 +17,10 @@ export type IconName =
   | 'search'
   | 'gear'
   | 'alert'
-  | 'check';
+  | 'check'
+  | 'download'
+  | 'trash'
+  | 'retry';
 
 // Engrenagem (contorno com furo central), a mesma da proposta de Configurações.
 const GEAR_PATH =
@@ -68,5 +71,16 @@ export function Icon({ name, size = 16, color }: { name: IconName; size?: number
       );
     case 'check':
       return <Svg width={size} height={size} viewBox="0 0 24 24"><Path d="M5 12.5l4.5 4.5L19 7.5" {...common} strokeWidth={2.6} /></Svg>;
+    case 'download':
+      return <Svg width={size} height={size} viewBox="0 0 24 24"><Path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 19.5h14" {...common} /></Svg>;
+    case 'trash':
+      return (
+        <Svg width={size} height={size} viewBox="0 0 24 24">
+          <Path d="M4.5 6.5h15M9.5 6.5V4.5h5v2M6.5 6.5l.9 12.6a1.5 1.5 0 001.5 1.4h6.2a1.5 1.5 0 001.5-1.4l.9-12.6" {...common} />
+          <Path d="M10 10.5v6M14 10.5v6" {...common} />
+        </Svg>
+      );
+    case 'retry':
+      return <Svg width={size} height={size} viewBox="0 0 24 24"><Path d="M19.5 12a7.5 7.5 0 11-2.2-5.3M19.5 4v4.5H15" {...common} /></Svg>;
   }
 }

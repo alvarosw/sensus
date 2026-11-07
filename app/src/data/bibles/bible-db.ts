@@ -1,9 +1,8 @@
 // Bíblias baixadas: conexões abertas e lista das instaladas. Cada Bíblia é um banco SQLite próprio (bible-<id>.db) na
-// pasta do SQLite do app. O Repo pergunta por ela pelo textDriver (active-db.ts); BLivre e KJV ficam no banco
-// principal e não têm arquivo aqui.
+// pasta do SQLite do app. O Repo pergunta por ela pelo textDriver (active-db.ts). Nenhuma Bíblia vem com o app.
 import * as SQLite from 'expo-sqlite';
 import { File } from 'expo-file-system';
-import { textSources, type BibleCatalog, type SqlDriver } from '@sensus/core';
+import type { BibleCatalog, SqlDriver } from '@sensus/core';
 import { createExpoSqlDriver } from '../driver';
 import { sqliteDirectory } from '../sqlite-paths';
 import { bibleFileName, bibleIdOfFile, installedBibleIds } from './bible-model';
@@ -26,12 +25,12 @@ function sqliteFileNames(): string[] {
   }
 }
 
-/** Ids instalados agora (síncrono, sem abrir nada): as do banco principal e as baixadas. */
+/** Ids instalados agora (síncrono, sem abrir nada): as Bíblias baixadas. */
 export function installedIds(catalog: BibleCatalog | null): string[] {
-  return installedBibleIds(sqliteFileNames(), textSources(), catalog);
+  return installedBibleIds(sqliteFileNames(), catalog);
 }
 
-/** Driver de uma Bíblia baixada que está aberta. Null para as do banco principal (ver Repo, textDriver). */
+/** Driver de uma Bíblia baixada que está aberta. Null se não está (o Repo usa o banco principal; ver textDriver). */
 export function bibleDriver(id: string): SqlDriver | null {
   return open.get(id)?.driver ?? null;
 }

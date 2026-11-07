@@ -36,7 +36,10 @@ export interface BibleEntry {
   testaments: SourceTestament[];
   /** Ordem de recomendação dentro do idioma (1 = recomendada). */
   rank: number;
-  /** true = já está no banco principal (BLivre, KJV): sem pacote, não removível. */
+  /**
+   * Catálogos antigos (até 2026.11.06): true = vinha no banco principal (BLivre, KJV), sem pacote. Nenhuma Bíblia vem
+   * mais com o app; a entrada assim só não é baixável.
+   */
   bundled?: boolean;
   package?: BiblePackage;
 }
@@ -192,6 +195,49 @@ export function recommendBibles(catalog: BibleCatalog, lang: string): BibleRecom
   }
   const others = [...groups].map(([code, bibles]) => ({ lang: code, bibles: bibles.sort(byRank) }));
   return { recommended: recommended.sort(byRank), others };
+}
+
+/** Idiomas que seguem o do app na lista completa de Bíblias: inglês, depois espanhol (os de mais Bíblias livres). */
+export const BIBLE_FALLBACK_LANGS: readonly string[] = ['en', 'es'];
+
+/** Quantas recomendadas a lista curta mostra (idioma do app e inglês). */
+const SUGGESTED_COUNT = 2;
+
+/**
+ * Lista completa para escolher uma Bíblia: grupos por idioma (código base), na ordem idioma do app, inglês, espanhol
+ * e os demais pelo código. Dentro de cada grupo, por rank.
+ */
+export function bibleLanguageGroups(catalog: BibleCatalog, appLang: string): BibleLangGroup[] {
+  const groups = new Map<string, BibleEntry[]>();
+  for (const b of catalog.bibles) {
+    const base = langBase(b.lang) ?? b.lang;
+    const list = groups.get(base);
+    if (list) list.push(b);
+    else groups.set(base, [b]);
+  }
+  const first = [langBase(appLang) ?? appLang, ...BIBLE_FALLBACK_LANGS];
+  const position = (code: string): number => {
+    const i = first.indexOf(code);
+    return i < 0 ? first.length : i;
+  };
+  return [...groups]
+    .map(([lang, bibles]) => ({ lang, bibles: [...bibles].sort(byRank) }))
+    .sort((a, b) => position(a.lang) - position(b.lang) || a.lang.localeCompare(b.lang));
+}
+
+/**
+ * Lista curta de Bíblias (passo de Bíblia e Configurações): as recomendadas do idioma do app e do inglês (a de rank
+ * mais baixo de cada; com o app em inglês, as duas primeiras do inglês) e depois as instaladas que não são essas, na
+ * ordem da lista completa. Instalada fora do catálogo não entra: quem chama a mostra pelo registro de fontes.
+ */
+export function suggestedBibles(catalog: BibleCatalog, appLang: string, installed: readonly string[]): BibleEntry[] {
+  const groups = bibleLanguageGroups(catalog, appLang);
+  const langs = [...new Set([langBase(appLang) ?? appLang, BIBLE_FALLBACK_LANGS[0]!])];
+  const perLang = Math.ceil(SUGGESTED_COUNT / langs.length);
+  const out: BibleEntry[] = [];
+  for (const lang of langs) out.push(...(groups.find((g) => g.lang === lang)?.bibles.slice(0, perLang) ?? []));
+  for (const g of groups) for (const b of g.bibles) if (installed.includes(b.id) && !out.includes(b)) out.push(b);
+  return out;
 }
 
 /**

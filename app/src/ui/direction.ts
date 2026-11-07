@@ -9,7 +9,6 @@ import { useLang } from '../i18n';
 /** Papéis de texto (tokens.type) que mostram conteúdo: nunca recebem a direção da interface. */
 const CONTENT_VARIANTS: ReadonlySet<string> = new Set([
   'scripture',
-  'bookTitle',
   'chapterNumber',
   'verseNumber',
   'excerpt',

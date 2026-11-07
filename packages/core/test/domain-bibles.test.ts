@@ -1,7 +1,16 @@
 // Catálogo de Bíblias baixáveis: validação, recomendação por idioma e sigla. Catálogo de exemplo com pt, en, es,
 // zh-Hans e zh-Hant (o idioma do app decide a recomendada; as demais vêm agrupadas por idioma).
 import { describe, expect, it } from 'vitest';
-import { BibleCatalogError, bibleAbbr, bibleCiteShort, parseBibleCatalog, recommendBibles, type BibleCatalog } from '../src/index';
+import {
+  BibleCatalogError,
+  bibleAbbr,
+  bibleCiteShort,
+  bibleLanguageGroups,
+  parseBibleCatalog,
+  recommendBibles,
+  suggestedBibles,
+  type BibleCatalog,
+} from '../src/index';
 
 const SHA = 'a'.repeat(64);
 
@@ -124,6 +133,51 @@ describe('recommendBibles', () => {
 
   it('idioma com região (en-US) usa o código base', () => {
     expect(recommendBibles(exemplo(), 'en-US').recommended.map((b) => b.id)).toEqual(['en-web', 'kjv']);
+  });
+});
+
+describe('bibleLanguageGroups', () => {
+  it('app em português: pt, inglês, espanhol e os demais pelo código', () => {
+    const g = bibleLanguageGroups(exemplo(), 'pt-BR');
+    expect(g.map((x) => x.lang)).toEqual(['pt', 'en', 'es', 'de', 'ru', 'zh']);
+    expect(g[0]!.bibles.map((b) => b.id)).toEqual(['blivre', 'nvi']);
+  });
+
+  it('app em espanhol: o espanhol sobe para o topo e o inglês segue', () => {
+    expect(bibleLanguageGroups(exemplo(), 'es').map((x) => x.lang).slice(0, 3)).toEqual(['es', 'en', 'de']);
+  });
+
+  it('app em idioma sem Bíblia (hindi): inglês e espanhol na frente', () => {
+    expect(bibleLanguageGroups(exemplo(), 'hi').map((x) => x.lang).slice(0, 2)).toEqual(['en', 'es']);
+  });
+
+  it('zh-Hans e zh-Hant no mesmo grupo, por rank', () => {
+    const g = bibleLanguageGroups(exemplo(), 'zh-Hans');
+    expect(g[0]).toEqual(expect.objectContaining({ lang: 'zh' }));
+    expect(g[0]!.bibles.map((b) => b.id)).toEqual(['cuv-hant', 'cuv-hans']);
+  });
+});
+
+describe('suggestedBibles', () => {
+  it('recomendadas do idioma do app e do inglês, sem nada instalado', () => {
+    expect(suggestedBibles(exemplo(), 'pt', []).map((b) => b.id)).toEqual(['blivre', 'en-web']);
+  });
+
+  it('as instaladas entram depois, na ordem da lista completa, sem repetir', () => {
+    expect(suggestedBibles(exemplo(), 'pt', ['ru-synod', 'rvr1909', 'blivre']).map((b) => b.id)).toEqual([
+      'blivre',
+      'en-web',
+      'rvr1909',
+      'ru-synod',
+    ]);
+  });
+
+  it('app em inglês: as duas primeiras do inglês', () => {
+    expect(suggestedBibles(exemplo(), 'en', []).map((b) => b.id)).toEqual(['en-web', 'kjv']);
+  });
+
+  it('idioma sem Bíblia: só a do inglês; instalada fora do catálogo não entra', () => {
+    expect(suggestedBibles(exemplo(), 'hi', ['sumiu']).map((b) => b.id)).toEqual(['en-web']);
   });
 });
 

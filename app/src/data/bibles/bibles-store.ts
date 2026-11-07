@@ -2,11 +2,12 @@
 // de IO ficam em install.ts, catalog.ts e bible-db.ts; a preferência do texto padrão fica em settings/app-prefs.ts.
 import { Platform } from 'react-native';
 import Constants from 'expo-constants';
-import { findBible, textSources, type BibleCatalog } from '@sensus/core';
+import { findBible, type BibleCatalog } from '@sensus/core';
 import { canStart, IDLE_STATE, isActive, reduce, type MachineEvent, type MachineState } from '../download-machine';
 import { DEFAULT_BIBLE_CATALOG_URL, fetchBibleCatalog, readCachedCatalog } from './catalog';
 import { installedBibleVersion, installedIds, removeBibleFile } from './bible-db';
 import { installBible } from './install';
+import { canRemoveBible } from './bible-model';
 import { republishActive } from '../active-db';
 import { create } from 'zustand';
 
@@ -17,7 +18,7 @@ interface BiblesState {
   /** A última tentativa de atualizar falhou. O catálogo do cache, se houver, continua na tela. */
   catalogError: boolean;
   checking: boolean;
-  /** Ids instalados: banco principal e baixadas, na ordem da lista. */
+  /** Ids das Bíblias baixadas, na ordem do catálogo (nenhuma vem com o app). */
   installed: string[];
   /** Máquina de cada instalação em andamento ou com erro (ausente = ociosa). */
   machines: Record<string, MachineState>;
@@ -43,7 +44,7 @@ export const useBibles = create<BiblesState>()((set, get) => {
     set({ installed: installedIds(get().catalog) });
     void refreshVersions();
   };
-  // Só as baixadas (com pacote no catálogo) têm versão a conferir; BLivre e KJV vêm com o app.
+  // Só as que têm pacote no catálogo têm versão a conferir.
   const refreshVersions = async () => {
     const catalog = get().catalog;
     const ids = get().installed.filter((id) => findBible(catalog, id)?.package);
@@ -111,8 +112,8 @@ export const useBibles = create<BiblesState>()((set, get) => {
     },
 
     remove: async (id) => {
-      // BLivre e KJV vêm com o app: não são removidas.
-      if (textSources().includes(id) || !get().installed.includes(id)) return;
+      // A única instalada não sai: sem Bíblia, o leitor fica sem texto.
+      if (!canRemoveBible(id, get().installed)) return;
       if (isActive((get().machines[id] ?? IDLE_STATE).phase)) return;
       await removeBibleFile(id);
       set((s) => ({ machines: { ...s.machines, [id]: { ...IDLE_STATE } } }));

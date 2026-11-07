@@ -9,6 +9,7 @@ import {
   bibleRowInfo,
   compareBibleVersions,
   bibleStagedFileName,
+  canRemoveBible,
   checkBibleMeta,
   installedBibleIds,
   langName,
@@ -50,26 +51,26 @@ describe('nomes de arquivo', () => {
 });
 
 describe('installedBibleIds', () => {
-  it('lista do banco principal primeiro e as baixadas na ordem do catálogo', () => {
-    const files = ['bible-lsg1910.db', 'sensus.db', 'bible-rvr1909.db', 'bible-rvr1909.db-wal'];
-    expect(installedBibleIds(files, ['blivre', 'kjv'], catalog())).toEqual(['blivre', 'kjv', 'rvr1909', 'lsg1910']);
+  it('só as baixadas, na ordem do catálogo (nenhuma vem com o app)', () => {
+    const files = ['bible-lsg1910.db', 'sensus.db', 'bible-rvr1909.db', 'bible-rvr1909.db-wal', 'bible-blivre.db'];
+    expect(installedBibleIds(files, catalog())).toEqual(['blivre', 'rvr1909', 'lsg1910']);
   });
 
-  it('sem catálogo, as baixadas seguem por id; não repete as do banco principal', () => {
+  it('sem catálogo, seguem por id', () => {
     const files = ['bible-rvr1909.db', 'bible-blivre.db', 'bible-aaa.db'];
-    expect(installedBibleIds(files, ['blivre', 'kjv'], null)).toEqual(['blivre', 'kjv', 'aaa', 'rvr1909']);
+    expect(installedBibleIds(files, null)).toEqual(['aaa', 'blivre', 'rvr1909']);
   });
 
-  it('sem arquivos baixados, só o banco principal', () => {
-    expect(installedBibleIds([], ['blivre', 'kjv'], catalog())).toEqual(['blivre', 'kjv']);
+  it('sem arquivos baixados, nenhuma', () => {
+    expect(installedBibleIds(['sensus.db'], catalog())).toEqual([]);
   });
 });
 
-describe('resolveTextSource (preferência textSource)', () => {
+describe('resolveTextSource (Bíblia principal)', () => {
   const cat = catalog();
   const installed = ['blivre', 'kjv', 'rvr1909'];
 
-  it('mantém a escolhida enquanto estiver instalada (qualquer id instalado, não só BLivre e KJV)', () => {
+  it('mantém a escolhida enquanto estiver instalada', () => {
     expect(resolveTextSource({ stored: 'rvr1909', installed, catalog: cat, lang: 'pt' })).toBe('rvr1909');
     expect(resolveTextSource({ stored: 'kjv', installed, catalog: cat, lang: 'pt' })).toBe('kjv');
   });
@@ -79,21 +80,32 @@ describe('resolveTextSource (preferência textSource)', () => {
     expect(resolveTextSource({ stored: 'lsg1910', installed, catalog: cat, lang: 'es' })).toBe('rvr1909');
   });
 
-  it('Bíblia removida sem recomendada instalada do idioma: BLivre', () => {
-    expect(resolveTextSource({ stored: 'nvi', installed: ['blivre', 'kjv'], catalog: cat, lang: 'pt' })).toBe('blivre');
-    expect(resolveTextSource({ stored: 'rvr1909', installed: ['blivre', 'kjv'], catalog: cat, lang: 'es' })).toBe('blivre');
+  it('sem recomendada instalada do idioma: a primeira instalada', () => {
+    expect(resolveTextSource({ stored: 'nvi', installed: ['kjv', 'blivre'], catalog: cat, lang: 'de' })).toBe('kjv');
+    expect(resolveTextSource({ stored: 'blivre', installed: ['rvr1909'], catalog: null, lang: 'pt' })).toBe('rvr1909');
   });
 
-  it('sem preferência gravada ou sem catálogo: BLivre (ou a recomendada instalada, se houver catálogo)', () => {
-    expect(resolveTextSource({ stored: null, installed, catalog: cat, lang: 'pt' })).toBe('blivre');
-    expect(resolveTextSource({ stored: 'rvr1909', installed, catalog: null, lang: 'es' })).toBe('rvr1909');
-    expect(resolveTextSource({ stored: 'rvr1909', installed: ['blivre', 'kjv'], catalog: null, lang: 'es' })).toBe('blivre');
-    expect(resolveTextSource({ stored: null, installed, catalog: null, lang: 'es' })).toBe('blivre');
+  it('a primeira baixada vira a principal (preferência antiga de quem não tem nenhuma instalada)', () => {
+    expect(resolveTextSource({ stored: 'blivre', installed: ['lsg1910'], catalog: cat, lang: 'pt' })).toBe('lsg1910');
+  });
+
+  it('nenhuma instalada: BLivre (só os dados completos trazem o texto dela)', () => {
+    expect(resolveTextSource({ stored: 'rvr1909', installed: [], catalog: cat, lang: 'es' })).toBe('blivre');
+    expect(resolveTextSource({ stored: null, installed: [], catalog: null, lang: 'en' })).toBe('blivre');
   });
 
   it('a escolha da recomendada respeita a ordem de rank entre as instaladas do idioma', () => {
     // nvi (rank 2) e blivre (rank 1), ambas pt: sem a blivre instalada, a nvi é a recomendada instalada
     expect(resolveTextSource({ stored: null, installed: ['kjv', 'nvi'], catalog: cat, lang: 'pt' })).toBe('nvi');
+    expect(resolveTextSource({ stored: null, installed, catalog: cat, lang: 'pt' })).toBe('blivre');
+  });
+});
+
+describe('canRemoveBible', () => {
+  it('remove qualquer instalada, menos a única', () => {
+    expect(canRemoveBible('kjv', ['kjv', 'blivre'])).toBe(true);
+    expect(canRemoveBible('kjv', ['kjv'])).toBe(false);
+    expect(canRemoveBible('nvi', ['kjv', 'blivre'])).toBe(false);
   });
 });
 
@@ -132,11 +144,9 @@ describe('langName', () => {
 });
 
 describe('bibleRowInfo', () => {
-  it('BLivre e KJV: nome e sigla do registro, sempre instaladas (não removíveis)', () => {
-    const blivre = bibleRowInfo('blivre', null);
-    expect(blivre).toMatchObject({ abbr: 'BLivre', name: 'Bíblia Livre', lang: 'pt', bundled: true, downloadable: false });
-    const kjv = bibleRowInfo('kjv', catalog());
-    expect(kjv).toMatchObject({ abbr: 'KJV', name: 'King James Version', lang: 'en', bundled: true });
+  it('fora do catálogo, BLivre e KJV usam nome e sigla do registro', () => {
+    expect(bibleRowInfo('blivre', null)).toMatchObject({ abbr: 'BLivre', name: 'Bíblia Livre', lang: 'pt', downloadable: false });
+    expect(bibleRowInfo('kjv', catalog())).toMatchObject({ abbr: 'KJV', name: 'King James Version', lang: 'en' });
   });
 
   it('Bíblia do catálogo: dados e tamanho do pacote', () => {
@@ -147,14 +157,17 @@ describe('bibleRowInfo', () => {
       lang: 'es',
       license: 'Public Domain',
       sizeBytes: 3_000_000,
-      bundled: false,
       downloadable: true,
     });
   });
 
+  it('entrada antiga sem pacote (bundled) não é baixável', () => {
+    expect(bibleRowInfo('blivre', catalog())).toMatchObject({ abbr: 'BLivre', downloadable: false });
+  });
+
   it('Bíblia instalada que saiu do catálogo: sigla e nome do id', () => {
     const info = bibleRowInfo('antiga', catalog());
-    expect(info).toMatchObject({ abbr: 'antiga', name: 'antiga', bundled: false, downloadable: false, license: null });
+    expect(info).toMatchObject({ abbr: 'antiga', name: 'antiga', downloadable: false, license: null });
   });
 });
 

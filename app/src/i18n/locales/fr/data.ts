@@ -4,7 +4,7 @@ export const frData = {
   rowTitle: 'Données d’étude',
 
   setupLead:
-    'Le texte biblique est déjà dans l’application et fonctionne sans téléchargement. Les données d’étude apportent ce qui soutient l’analyse de chaque passage :',
+    'Les données d’étude apportent ce qui soutient l’analyse de chaque passage :',
   includes: [
     'Commentaires d’auteurs classiques et modernes',
     'Dictionnaires bibliques et index thématique',

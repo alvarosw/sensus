@@ -3,7 +3,7 @@ export const zhData = {
   title: '研读数据',
   rowTitle: '研读数据',
 
-  setupLead: '圣经正文已在应用中，无需下载即可使用。研读数据提供支撑每段经文分析的内容：',
+  setupLead: '研读数据提供支撑每段经文分析的内容：',
   includes: [
     '古典与现代作者的注释',
     '圣经辞典与主题索引',
