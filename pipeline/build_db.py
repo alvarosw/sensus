@@ -98,7 +98,9 @@ def main():
     db.executescript(SCHEMA.read_text())
     db.executemany("INSERT INTO book VALUES (?,?,?,?,?,?)", [b[:6] for b in BOOKS])
 
-    dirs = sorted(d for d in STAGING.iterdir() if d.is_dir() and (not only or d.name in only))
+    # "bibles" é a pasta das Bíblias do repositório de Bíblias (pipeline/package_bibles.py), não uma fonte do banco.
+    dirs = sorted(d for d in STAGING.iterdir()
+                  if d.is_dir() and d.name != "bibles" and (not only or d.name in only))
     if args.edition == "reader":
         dirs = [d for d in dirs if d.name in READER_TEXT_SOURCES + READER_PARAGRAPH_SOURCES]
     for d in dirs:

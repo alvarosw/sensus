@@ -57,9 +57,10 @@ class StagingWriter:
     source_id é preenchido automaticamente nas tabelas que o possuem.
     """
 
-    def __init__(self, source_id: str):
+    def __init__(self, source_id: str, folder: str = ""):
+        # folder: subpasta de data/staging (ex.: "bibles" para as Bíblias do repositório de Bíblias).
         self.source_id = source_id
-        self.dir = STAGING / source_id
+        self.dir = (STAGING / folder if folder else STAGING) / source_id
         self.dir.mkdir(parents=True, exist_ok=True)
         for f in self.dir.glob("*.jsonl"):
             f.unlink()
