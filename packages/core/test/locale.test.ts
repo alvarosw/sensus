@@ -16,6 +16,7 @@ import {
   testamentLabel,
   traditionLabel,
   TRADITIONS,
+  type AppLang,
 } from '../src/index';
 
 describe('idiomas da interface', () => {
@@ -99,7 +100,9 @@ describe('rótulos do núcleo por idioma (padrão pt)', () => {
     expect(BOOK_NAMES.en?.map((b) => b.name)).toEqual(BOOK_TABLE.map((b) => b.name_en));
     expect(bookNameOf(BOOK_TABLE[49], 50)).toBe('Filipenses');
     expect(bookNameOf(BOOK_TABLE[49], 50, 'en')).toBe('Philippians');
-    expect(bookNameOf(BOOK_TABLE[49], 50, 'ja')).toBe('Philippians');
+    // idioma sem tabela cai no inglês (todos os 14 já têm tabela; 'xx' simula um código desconhecido)
+    expect(bookNameOf(BOOK_TABLE[49], 50, 'xx' as AppLang)).toBe('Philippians');
+    expect(bookNameOf(BOOK_TABLE[49], 50, 'ja')).toBe('フィリピの信徒への手紙');
     expect(bookAbbrOf(50)).toBe('Fp');
     expect(bookAbbrOf(50, 'en')).toBe('Phil');
   });
