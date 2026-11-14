@@ -13,3 +13,4 @@ export * from './names';
 export * from './locale';
 export * from './book-names';
 export * from './bibles';
+export * from './l10n';

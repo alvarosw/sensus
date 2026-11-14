@@ -2,6 +2,7 @@
 import type { Book, PanelData, Token } from '../types';
 import { LAST_VERSE, splitVid } from '../refs';
 import { commentatorOf, sourceShort } from '../domain/sources';
+import { titleCaseHeadword } from '../domain/l10n';
 import type { CiteIndex, CiteIndexEntry, RichTextContext } from './structured-types';
 import type { SerializedContext } from './context';
 
@@ -54,19 +55,6 @@ export function formatShortRef(
   }
   const endPart = e.verse >= LAST_VERSE ? `${e.chapter}` : `${e.chapter}:${e.verse}`;
   return `${prefix}${s.chapter}:${s.verse}–${endPart}`;
-}
-
-/** Título em caixa de título para cabeçalhos de verbete: "CHRIST, OFFICES OF" -> "Christ, Offices of". */
-export function titleCaseHeadword(headword: string): string {
-  const small = new Set(['of', 'the', 'and', 'to', 'in', 'a', 'an', 'on', 'for', 'de', 'do', 'da', 'e']);
-  return headword
-    .toLowerCase()
-    .split(' ')
-    .map((word, i) => {
-      if (i > 0 && small.has(word)) return word;
-      return word.replace(/^([\p{L}])/u, (c) => c.toUpperCase());
-    })
-    .join(' ');
 }
 
 /** Rótulo de palavra original: a forma sem pontuação de borda. */
