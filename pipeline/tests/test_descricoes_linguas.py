@@ -19,7 +19,7 @@ from sensus.book_abbr import abreviaturas  # noqa: E402
 from sensus.descricoes_pt import (  # noqa: E402
     GRAMATICA_PT, ler_glossario, ler_gramatica, ref_pt, traduz_descricao, traduz_paragrafo,
 )
-from sensus.flexao import elisao_fr, genitivo_bn, genitivo_ru  # noqa: E402
+from sensus.flexao import elisao_fr, eufonia_es, genitivo_bn, genitivo_ru  # noqa: E402
 import aplica_descricoes as aplica  # noqa: E402
 import descricoes as ingestor  # noqa: E402
 
@@ -208,6 +208,27 @@ class Chines(unittest.TestCase):
     def test_nome_sem_forma_chinesa_falha(self):
         # Nas escritas não latinas, nome citado sem forma local faz a descrição falhar.
         self.assertIsNone(traduz_descricao(BARTIMEU, ZH_GLOS, {}, ZH_GRAM, abreviaturas("zh")))
+
+
+# ---- espanhol: eufonia das conjunções (y -> e, o -> u) ----------------------------------------------------------------
+
+class EufoniaEspanhol(unittest.TestCase):
+    def test_at_y_vira_e_antes_de_i(self):
+        # Êx 4:14 (Arão): pai de Nadabe, Abiú, Eleazar e Itamar.
+        g = {**ES_GRAM, "pos": "eufonia_es"}
+        self.assertEqual(traduz_paragrafo("father of Nadab, Abihu, Eleazar and Ithamar.", ES_GLOS, ES_NOMES, g),
+                         "padre de Nadab, Abiú, Eleazar e Itamar.")
+
+    def test_nt_o_vira_u_antes_de_o(self):
+        # Mt 1:9 (Ozias, Ὀζίας): 'o' antes de 'O' vira 'u'; antes de outra vogal fica.
+        self.assertEqual(eufonia_es("Se le llama Uzías o Ozías (Ὀζίας)"), "Se le llama Uzías u Ozías (Ὀζίας)")
+        self.assertEqual(eufonia_es("Se le llama Timeo o Bartimeo"), "Se le llama Timeo o Bartimeo")
+
+    def test_hi_e_hie(self):
+        self.assertEqual(eufonia_es("hijo de Abiú y Hiram"), "hijo de Abiú e Hiram")
+        self.assertEqual(eufonia_es("Leví y Hierápolis"), "Leví y Hierápolis")
+        self.assertEqual(eufonia_es("Hori o Horeo"), "Hori u Horeo")
+        self.assertEqual(eufonia_es("hijo de Isaí"), "hijo de Isaí")
 
 
 # ---- francês: elisão do 'de' -------------------------------------------------------------------------------------------

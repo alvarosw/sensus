@@ -4,6 +4,7 @@ genitivo_ru é conservador: só nome de uma palavra, em cirílico, com desinênc
 None e a descrição cai na tradução automática (não se chuta uma forma errada).
 genitivo_bn: sufixo genitivo bengali ('র' depois de vogal; 'ের' depois de consoante, na grafia com sinal dependente).
 elisao_fr: 'de Abraão' -> "d'Abraão" (só antes de vogal; 'h' fica como está, por cautela com h aspirado).
+eufonia_es: 'y' -> 'e' antes de i/hi e 'o' -> 'u' antes de o/ho ('Eleazar e Itamar').
 
 Regra nova = função pura com teste, com caso de AT hebraico e de NT grego (ver pipeline/tests).
 """
@@ -66,3 +67,14 @@ _FR_DE = re.compile(r"\b([dD])e ([" + re.escape(_FR_VOGAL) + r"])")
 def elisao_fr(texto: str) -> str:
     """Elisão do 'de' antes de vogal: "de Abraham" -> "d'Abraham"; "De Élie" -> "D'Élie"."""
     return _FR_DE.sub(lambda m: m.group(1) + "'" + m.group(2), texto)
+
+
+# Espanhol: 'y' soa /i/ antes de i- e hi- (não antes de hia-, hie-, hio-, hiu-, que soam /j/); 'o' antes de o- e ho-.
+_ES_Y = re.compile(r"(?<=\s)y (?=[IiÍí]|[Hh][IiÍí](?![aeiouáéíóú]))")
+_ES_O = re.compile(r"(?<=\s)o (?=[OoÓó]|[Hh][OoÓó])")
+
+
+def eufonia_es(texto: str) -> str:
+    """Conjunções do espanhol diante do mesmo som: 'Eleazar y Itamar' -> 'Eleazar e Itamar'; 'Ozni o Oznite' ->
+    'Ozni u Oznite'. 'y Hierro' e 'o Abiú' ficam como estão."""
+    return _ES_O.sub("u ", _ES_Y.sub("e ", texto))
