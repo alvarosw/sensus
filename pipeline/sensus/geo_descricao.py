@@ -9,10 +9,14 @@ O ingestor (ingest/openbible-geo.py) escreve a descrição com frases de fórmul
   N other candidate modern location(s) in the dataset.
 Lugar sem localização moderna ('No modern location is associated…') não é analisado: fica sem tradução por regra.
 
-Nome moderno e texto da identificação ficam como na fonte (inglês), como no pt. Tipo, geometria, fonte e votos vêm do
-glossário geo da língua (corrections/<xx>/glossario-geo.tsv, seções tipo, geometria, voto, fonte); o texto das frases
-vem da gramática da língua (chaves geo_*, em corrections/<xx>/gramatica-descricoes.tsv). Termo ou chave que falta:
-Falha, e a descrição cai na tradução automática (ou no TSV revisado, se houver).
+Nome moderno e texto da identificação ficam como na fonte (inglês) no pt. Nas outras línguas, com a opção
+geo_omitir_ingles = sim (gramática), o inglês some: a identificação entre aspas que for frase em inglês ('another name
+for Acco', 'in the Valley of Siddim') sai com a frase inteira, e o nome moderno em inglês ('Jezreel Valley', 'near the
+mouth of the Jordan River') sai, trocando geo_melhor por geo_melhor_sem_nome (o tipo já diz o que é). Nome próprio
+simples ('Tel Avdon', 'Abarim') fica. Tipo, geometria, fonte e votos vêm do glossário geo da língua
+(corrections/<xx>/glossario-geo.tsv, seções tipo, geometria, voto, fonte); o texto das frases vem da gramática da língua
+(chaves geo_*, em corrections/<xx>/gramatica-descricoes.tsv). Termo ou chave que falta: Falha, e a descrição cai na
+tradução automática (ou no TSV revisado, se houver).
 """
 
 import re
@@ -23,15 +27,30 @@ from sensus.descricoes_pt import Falha, Gramatica, modelo_de, preenche
 SECOES_GEO = ("tipo", "geometria", "voto", "fonte")
 
 # Chaves da gramática usadas só pela descrição geo (EXEMPLO_EN mostra a frase de origem para o agente).
-CHAVES_GEO = ("geo_melhor", "geo_identificacao", "geo_votos", "geo_voto", "geo_tempo", "geo_outros")
+CHAVES_GEO = ("geo_melhor", "geo_melhor_sem_nome", "geo_identificacao", "geo_votos", "geo_voto", "geo_tempo",
+              "geo_outros", "geo_omitir_ingles")
 EXEMPLO_EN = {
     "geo_melhor": "Best modern identification: {nome} ({tipo}, {geometria} geometry); association score {score}/1000.",
+    "geo_melhor_sem_nome": "Best modern identification ({tipo}, {geometria} geometry); association score {score}/1000.",
     "geo_identificacao": 'Identification: "{texto}" ({fonte}).',
     "geo_votos": "Votes: {votos}.",
     "geo_voto": "{voto} {n}",
     "geo_tempo": "Time-weighted score {tempo}/1000.",
     "geo_outros": "{n} other candidate modern location(s) in the dataset.",
+    "geo_omitir_ingles": "sim (omite o inglês: nome moderno e identificação em inglês; ver geo_descricao.py)",
 }
+
+# Palavras inglesas que denunciam frase, não nome próprio ('another name for', 'in the Valley of', 'near the mouth').
+_PALAVRAS_INGLESAS = frozenset((
+    "a", "an", "the", "of", "in", "on", "at", "to", "from", "by", "for", "with", "and", "or", "near", "along",
+    "between", "another", "name", "south", "north", "east", "west", "is", "was", "possibly", "probably", "ancient",
+    "modern",
+))
+# Substantivos ingleses de acidente geográfico: 'Jezreel Valley', 'Barada River' (o tipo já diz 'vale', 'rio').
+_SUBSTANTIVOS_INGLESES = frozenset((
+    "river", "valley", "mountain", "mountains", "lake", "sea", "spring", "springs", "hill", "hills", "brook", "plain", "desert", "ridge", "stream", "creek", "mount", "island", "bay", "gulf", "canyon", "ruins", "pool", "pools",
+    "well", "wells", "fountain",
+))
 
 
 @dataclass(frozen=True)
@@ -90,15 +109,28 @@ def _termo(glos: dict, secao: str, chave: str) -> str:
     return glos[secao][chave]
 
 
+def e_ingles(texto: str) -> bool:
+    """True se o texto é frase ou nome em inglês: traz palavra de ligação inglesa ou substantivo geográfico inglês.
+    Vale para palavra inicial maiúscula também ('The Stone Pavement'). Nome de origem semítica não tem essas palavras."""
+    return any(p.lower() in _PALAVRAS_INGLESAS or p.lower() in _SUBSTANTIVOS_INGLESES
+               for p in re.findall(r"[A-Za-z]+", texto))
+
+
 def _renderiza(geo: Geo, glos: dict, gram: Gramatica) -> str:
     lista_sep = modelo_de(gram, "lista_sep")
-    partes = [preenche(modelo_de(gram, "geo_melhor"), {
-        "nome": geo.nome,
+    omitir = gram.get("geo_omitir_ingles", "nao") == "sim"
+    campos = {
         "tipo": _termo(glos, "tipo", geo.tipo),
         "geometria": _termo(glos, "geometria", geo.geometria),
         "score": str(geo.score),
-    })]
-    if geo.identificacao is not None:
+    }
+    if omitir and " " in geo.nome and e_ingles(geo.nome):
+        cabeca = modelo_de(gram, "geo_melhor_sem_nome")
+    else:
+        cabeca = modelo_de(gram, "geo_melhor")
+        campos["nome"] = geo.nome
+    partes = [preenche(cabeca, campos)]
+    if geo.identificacao is not None and not (omitir and e_ingles(geo.identificacao)):
         partes.append(preenche(modelo_de(gram, "geo_identificacao"), {
             "texto": geo.identificacao,
             "fonte": _termo(glos, "fonte", geo.fonte or ""),

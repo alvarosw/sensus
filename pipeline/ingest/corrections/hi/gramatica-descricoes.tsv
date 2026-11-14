@@ -42,3 +42,5 @@ geo_votos	मत: {votos}।
 geo_voto	{voto} {n}
 geo_tempo	समय-भारित स्कोर {tempo}/1000।
 geo_outros	{n} अन्य संभावित आधुनिक स्थान डेटासेट में।
+geo_melhor_sem_nome	सबसे अच्छी आधुनिक पहचान ({tipo}, ज्यामिति: {geometria}); संबंध स्कोर {score}/1000।
+geo_omitir_ingles	sim

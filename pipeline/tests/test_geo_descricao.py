@@ -12,7 +12,7 @@ from pathlib import Path
 PIPELINE = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PIPELINE))
 
-from sensus.geo_descricao import Geo, analisa, renderiza  # noqa: E402
+from sensus.geo_descricao import Geo, analisa, e_ingles, renderiza  # noqa: E402
 from sensus.descricoes_pt import ler_glossario  # noqa: E402
 
 ABARIM = ("Best modern identification: Abarim (mountain range, polygon geometry); association score 1000/1000. "
@@ -24,11 +24,22 @@ CAFARNAUM = ("Best modern identification: Tell Hum (settlement, point geometry);
 HAMONAH = ("Best modern identification: Abarim (mountain range, polygon geometry); association score 229/1000. "
            'Identification: "in the Valley of Hamon-gog" (ancient). Time-weighted score 1000/1000. '
            "3 other candidate modern location(s) in the dataset.")
+# Nome moderno em inglês de frase (dado real de Mt/Mc: 'near the mouth of the Jordan River') e nome com substantivo
+# geográfico inglês ('Jezreel Valley', 'Barada River'): com geo_omitir_ingles, saem.
+PERTO_JORDAO = ("Best modern identification: near the mouth of the Jordan River (settlement, point geometry); "
+                'association score 660/1000. Identification: "near the mouth of the Jordan River" (modern). '
+                "Time-weighted score 660/1000.")
+JEZREEL = ("Best modern identification: Jezreel Valley (valley, polygon geometry); association score 900/1000. "
+           'Identification: "Jezreel Valley" (modern). Time-weighted score 900/1000.')
+OUTRA_NAME_FOR = ("Best modern identification: Tall el Hammam (settlement, point geometry); association score 511/1000. "
+                  'Identification: "another name for Shittim" (ancient). Votes: confidence_likely 3. '
+                  "Time-weighted score 761/1000. 2 other candidate modern location(s) in the dataset.")
 
 GLOS_ES = ler_glossario(
     "secao\tingles\tportugues\tnota\tgenero\n"
     "tipo\tmountain range\tcordillera\t\t\n"
     "tipo\tsettlement\tasentamiento\t\t\n"
+    "tipo\tvalley\tvalle\t\t\n"
     "geometria\tpolygon\tpolígono\t\t\n"
     "geometria\tpoint\tpunto\t\t\n"
     "fonte\tmodern\tmoderno\t\t\n"
@@ -50,6 +61,13 @@ GRAM_ES = {
     "geo_voto": "{voto} {n}",
     "geo_tempo": "Puntuación ponderada por tiempo {tempo}/1000.",
     "geo_outros": "{n} otra(s) ubicación(es) moderna(s) candidata(s) en el conjunto de datos.",
+}
+# Espanhol sem inglês: a opção liga a omissão e a cabeça sem nome (geo_melhor_sem_nome).
+GRAM_ES_SEM_INGLES = {
+    **GRAM_ES,
+    "geo_omitir_ingles": "sim",
+    "geo_melhor_sem_nome": "Mejor identificación moderna ({tipo}, geometría {geometria}); "
+                           "puntuación de asociación {score}/1000.",
 }
 
 
@@ -115,6 +133,67 @@ class RenderizaTest(unittest.TestCase):
     def test_sem_votos_nao_sai_a_frase_de_votos(self):
         t = renderiza(analisa(ABARIM), GLOS_ES, GRAM_ES)
         self.assertNotIn("Votos", t)
+
+
+class SemInglesTest(unittest.TestCase):
+    """geo_omitir_ingles = sim: nome moderno e identificação em inglês saem; nome próprio simples fica."""
+
+    def test_sem_a_opcao_o_ingles_continua(self):
+        self.assertIn("near the mouth of the Jordan River", renderiza(analisa(PERTO_JORDAO), GLOS_ES, GRAM_ES))
+
+    def test_nt_nome_em_frase_inglesa_sai_e_fica_o_tipo(self):
+        self.assertEqual(
+            renderiza(analisa(PERTO_JORDAO), GLOS_ES, GRAM_ES_SEM_INGLES),
+            "Mejor identificación moderna (asentamiento, geometría punto); puntuación de asociación 660/1000. "
+            "Puntuación ponderada por tiempo 660/1000.",
+        )
+
+    def test_nome_com_substantivo_ingles_sai(self):
+        self.assertEqual(
+            renderiza(analisa(JEZREEL), GLOS_ES, GRAM_ES_SEM_INGLES),
+            "Mejor identificación moderna (valle, geometría polígono); puntuación de asociación 900/1000. "
+            "Puntuación ponderada por tiempo 900/1000.",
+        )
+
+    def test_at_identificacao_em_frase_inglesa_sai_e_o_nome_fica(self):
+        self.assertEqual(
+            renderiza(analisa(HAMONAH), GLOS_ES, GRAM_ES_SEM_INGLES),
+            "Mejor identificación moderna: Abarim (cordillera, geometría polígono); puntuación de asociación 229/1000. "
+            "Puntuación ponderada por tiempo 1000/1000. "
+            "3 otra(s) ubicación(es) moderna(s) candidata(s) en el conjunto de datos.",
+        )
+
+    def test_identificacao_another_name_for_sai_com_votos(self):
+        self.assertEqual(
+            renderiza(analisa(OUTRA_NAME_FOR), GLOS_ES, GRAM_ES_SEM_INGLES),
+            "Mejor identificación moderna: Tall el Hammam (asentamiento, geometría punto); "
+            "puntuación de asociación 511/1000. Votos: confianza: probable 3. "
+            "Puntuación ponderada por tiempo 761/1000. "
+            "2 otra(s) ubicación(es) moderna(s) candidata(s) en el conjunto de datos.",
+        )
+
+    def test_nomes_proprios_simples_ficam(self):
+        # AT (Abarim) e NT (Tell Hum, Cafarnaum): nome e identificação de origem semítica não mudam.
+        for texto in (ABARIM, CAFARNAUM):
+            with self.subTest(texto[:20]):
+                self.assertEqual(renderiza(analisa(texto), GLOS_ES, GRAM_ES_SEM_INGLES),
+                                 renderiza(analisa(texto), GLOS_ES, GRAM_ES))
+
+    def test_cabeca_sem_nome_sem_modelo_nao_traduz(self):
+        falhas: list[str] = []
+        gram = {**GRAM_ES, "geo_omitir_ingles": "sim"}
+        self.assertIsNone(renderiza(analisa(PERTO_JORDAO), GLOS_ES, gram, falhas))
+        self.assertEqual(falhas, ["geo_melhor_sem_nome"])
+
+    def test_e_ingles(self):
+        self.assertTrue(e_ingles("another name for Acco"))
+        self.assertTrue(e_ingles("in the Valley of Siddim"))
+        self.assertTrue(e_ingles("Jezreel Valley"))
+        self.assertFalse(e_ingles("Tel Abel Beth Maacah"))
+        self.assertFalse(e_ingles("Tell Hum"))
+        self.assertFalse(e_ingles("Duleilat esh Sharqiyeh"))
+        # 'wadi' é termo árabe (usado em inglês), não palavra inglesa: 'Wadi el Melek' é nome que fica.
+        self.assertFalse(e_ingles("Wadi el Melek"))
 
 
 if __name__ == "__main__":

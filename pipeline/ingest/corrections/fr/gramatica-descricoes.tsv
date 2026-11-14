@@ -31,3 +31,5 @@ geo_votos	Votes : {votos}.
 geo_voto	{voto} {n}
 geo_tempo	Score pondéré dans le temps : {tempo}/1000.
 geo_outros	{n} autre(s) localisation(s) moderne(s) candidate(s) dans le jeu de données.
+geo_melhor_sem_nome	Meilleure identification moderne ({tipo}, géométrie {geometria}) ; score d'association {score}/1000.
+geo_omitir_ingles	sim
