@@ -1,0 +1,153 @@
+# Notas da revisão de nomes por agentes de IA (uma linha por nome_en + candidato, ou nome_en + tipo).
+# Conferidas no texto da Bíblia da língua e na tradução inglesa. Só registro: o ingestor não lê este arquivo.
+nome_en	tipo	nome_id	origem	nota
+Abila	place	Abilene	revisado	rev. IA: LAI Luk.3.1 (região)
+Abila Lysaniou	place	Abilene	revisado	rev. IA: LAI Luk.3.1 (região)
+Adasa	place		sem	rev. IA: sem nome fixo na LAI
+Adramyttium	place	Adramitium	revisado	rev. IA: LAI Kis.27.2
+Adulis	place		sem	rev. IA: sem nome fixo na LAI
+Al-taschith	other	Al-Tasjit	revisado	rev. IA: LAI, título do Sl.57
+Alamoth	other	Alamot	revisado	rev. IA: LAI 1Taw.15.20
+Ama	place		sem	rev. IA: sem nome fixo na LAI
+Amate	place		sem	rev. IA: sem nome fixo na LAI
+Amaw	place		sem	rev. IA: sem nome fixo na LAI
+Amminadib	person	Aminadab	revisado	rev. IA: LAI Kid.6.12
+Angle	place	Gerbang Penjuru	revisado	rev. IA: LAI 2Taw.26.9
+Apostles	group	Rasul-rasul	revisado	rev. IA: LAI
+Apostles (Post-Ascension)	group	Rasul-rasul sesudah kenaikan	revisado	rev. IA: LAI, Kis.1
+Apostles (The Eleven)	group	Rasul-rasul yang sebelas	revisado	rev. IA: LAI, Kis.1
+Arabah	place	Araba	revisado	rev. IA: LAI Ul.1.1
+Aram-naharaim	place	Aram-Naharaim	revisado	rev. IA: LAI, título do Sl.60
+Aram-zobah	place	Aram-Zoba	revisado	rev. IA: LAI, título do Sl.60
+Aramitess	person	Orang Aram	revisado	rev. IA: LAI 1Taw.7.14
+Arbela	place		sem	rev. IA: sem nome fixo na LAI
+Arsinoe	place		sem	rev. IA: sem nome fixo na LAI
+Asen	person	Asna	revisado	rev. IA: LAI Neh.7.50 (nome da lista)
+Ashdod's	place	Asdod	revisado	rev. IA: LAI
+Atroth-beth-joab	place	Atrot-Bet-Yoab	revisado	rev. IA: LAI 1Taw.2.54
+Bajith	place	Bait	revisado	rev. IA: LAI Yes.15.2
+Barsabas Justus	person	Yusuf Barsabas yang disebut Yustus	revisado	rev. IA: LAI Kis.1.23
+Batanea	place	Batanea	revisado	rev. IA: LAI
+Beeroth Bene-jaakan	place	Beerot Bene-Yaakan	revisado	rev. IA: LAI Ul.10.6
+Belamon	place		sem	rev. IA: sem nome fixo na LAI
+Benjamin's Gate	place	Gerbang Benyamin	revisado	rev. IA: LAI Yer.37.13
+Beth-Ashtoreth	place	Bet-Asytoret	revisado	rev. IA: LAI 1Sam.31.10
+Beth-eked	place	Bet-Eked	revisado	rev. IA: LAI 2Raj.10.12
+Beth-haggan	place	Bet-Hagan	revisado	rev. IA: LAI 2Raj.9.27
+Beth-horon_Lower	place	Bet-Horon Bawah	revisado	rev. IA: LAI Yos.10.10
+Beth-horon_Upper	place	Bet-Horon Atas	revisado	rev. IA: LAI Yos.16.5
+Beth-merhak	place	Bet-Merhak	revisado	rev. IA: LAI 2Sam.15.17
+Bether 2	place		sem	rev. IA: sem nome fixo na LAI
+Bether_Mountain	place	Gunung Beter	revisado	rev. IA: LAI Kid.2.17
+Bethlehem Ephrathah	place	Betlehem Efrata	revisado	rev. IA: LAI Mi.5.1
+Beyond the River	place	Seberang Sungai	revisado	rev. IA: LAI Ezr.4.10
+Booths_Festival	other	Hari Raya Pondok Daun	revisado	rev. IA: LAI Yoh.7.2
+Caesarea Philippi	place	Kaisarea Filipi	revisado	rev. IA: LAI Mat.16.13
+Caesarea_Philippi	place	Kaisarea Filipi	revisado	rev. IA: LAI Mat.16.13
+Caleb Ephrathah	place	Kaleb Efrata	revisado	rev. IA: LAI 1Taw.2.24
+Caleb_Ephrathah	place	Kaleb Efrata	revisado	rev. IA: LAI 1Taw.2.24
+Canaanite_woman	person	Perempuan Kanaan	revisado	rev. IA: LAI Mat.15.22
+Canaanitish woman	person	Perempuan Kanaan	revisado	rev. IA: LAI Mat.15.22
+Carthage	place	Kartago	revisado	rev. IA: LAI Kis.27 (cidade)
+Chalcis	place		sem	rev. IA: sem nome fixo na LAI
+Charmande	place		sem	rev. IA: sem nome fixo na LAI
+Chief Priests	group	Imam-imam kepala	revisado	rev. IA: LAI Mat.2.4
+Chronicles	other	Tawarikh	revisado	rev. IA: LAI
+City of Salt	place	Kota Garam	revisado	rev. IA: LAI Yos.15.62
+City_of_Salt	place	Kota Garam	revisado	rev. IA: LAI Yos.15.62
+Claudius Lysias	person	Klaudius Lisias	revisado	rev. IA: LAI Kis.23.26
+Concubine the Aramitess	person	Gundik orang Aram	revisado	rev. IA: LAI 1Taw.7.14
+Daughter of Herodias	person	Anak perempuan Herodias	revisado	rev. IA: LAI Mat.14.6
+Daughter of Lot - Older	person	Anak perempuan Lot yang sulung	revisado	rev. IA: LAI Kej.19.31
+Daughter of Lot - Younger	person	Anak perempuan Lot yang bungsu	revisado	rev. IA: LAI Kej.19.34
+Daughter of Machir	person	Anak perempuan Makhir	revisado	rev. IA: LAI 1Taw.2.21
+Daughter of Meshullam	person	Anak perempuan Mesulam	revisado	rev. IA: LAI Neh.6.18
+Daughter of Pharaoh	person	Anak perempuan Firaun	revisado	rev. IA: LAI Kel.2.5
+Daughter of Putiel	person	Anak perempuan Putiel	revisado	rev. IA: LAI Kel.6.25
+Daughter of Shuah	person	Anak perempuan Syua	revisado	rev. IA: LAI Kej.38.2
+Dedication_Festival	other	Pesta Pentahbisan	revisado	rev. IA: LAI Yoh.10.22
+Dehavites	group		sem	rev. IA: sem nome fixo na LAI
+Destiny	other	Meni	revisado	rev. IA: LAI Yes.65.11
+Disciples of John	group	Murid-murid Yohanes	revisado	rev. IA: LAI Mat.9.14
+Diviners' Oak	place		sem	rev. IA: sem nome fixo na LAI
+Diviners'_Oak	place		sem	rev. IA: sem nome fixo na LAI
+Diviners’ Oak	place		sem	rev. IA: sem nome fixo na LAI
+East	place	Negeri Timur	revisado	rev. IA: LAI Kej.25.6
+Egypt's	place	Mesir	revisado	rev. IA: LAI
+Elkosh	place	Elkosh	revisado	rev. IA: LAI Nah.1.1
+Enaim	place	Enaim	revisado	rev. IA: LAI Kej.38.14
+Eridu	place		sem	rev. IA: sem nome fixo na LAI
+Etruria	place		sem	rev. IA: sem nome fixo na LAI
+Eznites	group		sem	rev. IA: sem nome fixo na LAI
+Fair Havens	place	Pelabuhan Baik	revisado	rev. IA: LAI Kis.27.8
+Fair_Havens	place	Pelabuhan Baik	revisado	rev. IA: LAI Kis.27.8
+Forest	place	Hutan	revisado	rev. IA: LAI 1Raj.7.2 (Hutan Libanon)
+Fortune	other	Untung	revisado	rev. IA: LAI Yes.65.11
+Foundation_Gate	place	Gerbang Dasar	revisado	rev. IA: LAI 2Taw.23.5
+Gadara	place	Gadara	revisado	rev. IA: LAI Mat.8.28
+Gate of the Children of the People	place	Gerbang Bani Rakyat	revisado	rev. IA: LAI Yer.17.19
+Gath-padalla	place		sem	rev. IA: sem nome fixo na LAI
+Genealogy of Jesus	group	Silsilah Yesus	revisado	rev. IA: LAI Mat.1
+Gerasa	place	Gerasa	revisado	rev. IA: LAI Mat.8.28
+Gergesa	place	Gergesa	revisado	rev. IA: LAI
+Geruth Chimham	place	Gerut-Kimham	revisado	rev. IA: LAI Yer.41.17
+Geruth_Chimham	place	Gerut-Kimham	revisado	rev. IA: LAI Yer.41.17
+Gittith	other	Gitit	revisado	rev. IA: LAI, título do Sl.8
+God	person	Allah	revisado	rev. IA: LAI Kej.1.1
+Goiim	group	Goyim	revisado	rev. IA: LAI Kej.14.1
+Goiim	place	Goyim	revisado	rev. IA: LAI Kej.14.1
+Goiim 1	place	Goyim 1	revisado	rev. IA: sufixo mantido
+Goiim 2	place	Goyim 2	revisado	rev. IA: sufixo mantido
+Gulloth-mayim	place	Gulot-Mayim	revisado	rev. IA: LAI Yos.15.19
+Gutium	place		sem	rev. IA: sem nome fixo na LAI
+Hakkephirim	place	Kefirim	revisado	rev. IA: LAI Neh.6.2
+Halahha	place		sem	rev. IA: sem nome fixo na LAI
+Ham	place	Ham	revisado	rev. IA: LAI Kej.5.32
+Ham 1	place	Ham 1	revisado	rev. IA: sufixo mantido
+Hammelech	person		sem	rev. IA: sem nome próprio fixo na LAI (é título de rei)
+Hamon-gog_Valley	place	Lembah Hamon-Gog	revisado	rev. IA: LAI Yeh.39.11
+Harhar	place		sem	rev. IA: sem nome fixo na LAI
+Hatti	place		sem	rev. IA: sem nome fixo na LAI
+Hazerim	place	Hazerim	revisado	rev. IA: LAI Ul.2.23
+Helech	place		sem	rev. IA: sem nome fixo na LAI
+Heracleopolis Magna	place		sem	rev. IA: sem nome fixo na LAI
+Heracleopolis Parva	place		sem	rev. IA: sem nome fixo na LAI
+Heres	place	Heres	revisado	rev. IA: LAI Hak.8.13
+Herod Agrippa I	person	Herodes Agripa I	revisado	rev. IA: LAI Kis.12.1
+Herod Antipas	person	Herodes Antipas	revisado	rev. IA: LAI Mat.14.1
+Herodian	group	Pengikut Herodes	revisado	rev. IA: LAI Mat.22.16
+Herod’s palace	place	Istana Herodes	revisado	rev. IA: LAI
+Highway	place	Jalan Raja	revisado	rev. IA: LAI Bil.20.17
+Hilakku	place		sem	rev. IA: sem nome fixo na LAI
+Holy Place	place	Ruang Kudus	revisado	rev. IA: LAI Kel.26.33
+Holy Place 1	place	Ruang Kudus 1	revisado	rev. IA: sufixo mantido
+Holy Place 2	place	Ruang Kudus 2	revisado	rev. IA: sufixo mantido
+Holy Spirit	person	Roh Kudus	revisado	rev. IA: LAI Kej.1.2
+Holy_Place	place	Ruang Kudus	revisado	rev. IA: LAI Kel.26.33
+Hophra	person	Hofra	revisado	rev. IA: LAI Yer.37.5
+Horesh	place	Horesa	revisado	rev. IA: LAI 1Sam.23.15
+House of the Forest of Lebanon	place	Gedung Hutan Libanon	revisado	rev. IA: LAI 1Raj.7.2
+Jaar	place	Yaar	revisado	rev. IA: LAI Mz.132.6
+Janen	place		sem	rev. IA: sem nome fixo na LAI
+Janua	place		sem	rev. IA: sem nome fixo na LAI
+Jemnath	place		sem	rev. IA: sem nome fixo na LAI
+Jerusalem's	place	Yerusalem	revisado	rev. IA: LAI
+Jerusalem_wives	person	Perempuan-perempuan Yerusalem	revisado	rev. IA: LAI 2Sam.5.13
+Jesus Christ	person	Yesus Kristus	revisado	rev. IA: LAI Kej.49.10
+John Mark	person	Yohanes Markus	revisado	rev. IA: LAI Kis.12.12
+John the Apostle	person	Yohanes, rasul	revisado	rev. IA: LAI Mat.4.21
+John the Baptist	person	Yohanes Pembaptis	revisado	rev. IA: LAI Mat.3.1
+Jonath-elem-rechokim	other	Yonat-Elem-Rehokim	revisado	rev. IA: LAI, título do Sl.56
+Judas Barsabas	person	Yudas Barsabas	revisado	rev. IA: LAI Kis.15.22
+Judas Iscariot	person	Yudas Iskariot	revisado	rev. IA: LAI Mat.10.4
+Judgment	place	Balai Pengadilan	revisado	rev. IA: LAI 1Raj.7.7
+King's_Highway	place	Jalan Raja	revisado	rev. IA: LAI Bil.20.17
+King’s Highway	place	Jalan Raja	revisado	rev. IA: LAI Bil.20.17
+Kumidi	place		sem	rev. IA: sem nome fixo na LAI
+LORD	other	TUHAN	revisado	rev. IA: LAI
+Laash	place		sem	rev. IA: sem nome fixo na LAI
+Lebanon_Valley	place	Lembah Libanon	revisado	rev. IA: LAI Yos.11.17
+Lebbaeus Thaddaeus	person	Lebeus Tadeus	revisado	rev. IA: LAI Mat.10.3
+Line of Cain	group	Keturunan Kain	revisado	rev. IA: LAI Kej.4
+Lower Beth-horon	place	Bet-Horon Bawah	revisado	rev. IA: LAI Yos.16.3
+Lower Gulloth	place	Gulot Bawah	revisado	rev. IA: LAI Yos.15.19
