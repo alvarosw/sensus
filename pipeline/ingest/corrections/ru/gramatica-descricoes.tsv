@@ -33,3 +33,5 @@ geo_votos	Голоса: {votos}.
 geo_voto	{voto} — {n}
 geo_tempo	Балл с учётом времени: {tempo}/1000.
 geo_outros	Других современных местоположений-кандидатов: {n}.
+geo_melhor_sem_nome	Лучшее современное отождествление ({tipo}, геометрия: {geometria}); балл ассоциации: {score}/1000.
+geo_omitir_ingles	sim

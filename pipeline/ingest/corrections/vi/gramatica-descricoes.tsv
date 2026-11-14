@@ -31,3 +31,5 @@ geo_votos	Phiếu: {votos}.
 geo_voto	{voto} {n}
 geo_tempo	Điểm có trọng số theo thời gian: {tempo}/1000.
 geo_outros	{n} địa điểm hiện đại ứng viên khác trong tập dữ liệu.
+geo_melhor_sem_nome	Định danh hiện đại tốt nhất ({tipo}, hình học {geometria}); điểm liên kết {score}/1000.
+geo_omitir_ingles	sim

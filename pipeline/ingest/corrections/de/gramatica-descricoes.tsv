@@ -36,3 +36,5 @@ geo_votos	Stimmen: {votos}.
 geo_voto	{voto}: {n}
 geo_tempo	Zeitgewichteter Wert: {tempo}/1000.
 geo_outros	Weitere mögliche moderne Orte: {n}.
+geo_melhor_sem_nome	Beste moderne Identifizierung ({tipo}, Geometrie: {geometria}); Zuordnungswert {score}/1000.
+geo_omitir_ingles	sim

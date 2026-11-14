@@ -37,3 +37,5 @@ geo_votos	Votos: {votos}.
 geo_voto	{voto} {n}
 geo_tempo	Puntuación ponderada por tiempo {tempo}/1000.
 geo_outros	{n} otra(s) ubicación(es) moderna(s) candidata(s) en el conjunto de datos.
+geo_melhor_sem_nome	Mejor identificación moderna ({tipo}, geometría {geometria}); puntuación de asociación {score}/1000.
+geo_omitir_ingles	sim

@@ -3,7 +3,8 @@
 genitivo_ru é conservador: só nome de uma palavra, em cirílico, com desinência que não deixa dúvida. O resto devolve
 None e a descrição cai na tradução automática (não se chuta uma forma errada).
 genitivo_bn: sufixo genitivo bengali ('র' depois de vogal; 'ের' depois de consoante, na grafia com sinal dependente).
-elisao_fr: 'de Abraão' -> "d'Abraão" (só antes de vogal; 'h' fica como está, por cautela com h aspirado).
+elisao_fr: 'de Abraão' -> "d'Abraão"; 'de Hénoc' -> "d'Hénoc" (antes de vogal e de H maiúsculo com vogal, nomes de h mudo;
+o h minúsculo fica, por cautela com h aspirado).
 eufonia_es: 'y' -> 'e' antes de i/hi e 'o' -> 'u' antes de o/ho ('Eleazar e Itamar').
 
 Regra nova = função pura com teste, com caso de AT hebraico e de NT grego (ver pipeline/tests).
@@ -61,12 +62,15 @@ def genitivo_bn(nome: str) -> str:
 
 
 _FR_VOGAL = "AEIOUÂÀÄÉÈÊËÎÏÔÖÙÛÜŸÆŒaeiouâàäéèêëîïôöùûüÿæœ"
-_FR_DE = re.compile(r"\b([dD])e ([" + re.escape(_FR_VOGAL) + r"])")
+# 'de' antes de vogal, ou antes de H maiúsculo seguido de vogal (nome próprio com h mudo: d'Hénoc, d'Hérode, d'Hébron).
+# O h minúsculo fica como está (palavra comum, em que o h pode ser aspirado).
+_FR_DE = re.compile(r"\b([dD])e (?=[" + re.escape(_FR_VOGAL) + r"]|H[" + re.escape(_FR_VOGAL) + r"])")
 
 
 def elisao_fr(texto: str) -> str:
-    """Elisão do 'de' antes de vogal: "de Abraham" -> "d'Abraham"; "De Élie" -> "D'Élie"."""
-    return _FR_DE.sub(lambda m: m.group(1) + "'" + m.group(2), texto)
+    """Elisão do 'de' antes de vogal ou de H maiúsculo com vogal: "de Abraham" -> "d'Abraham"; "de Hénoc" ->
+    "d'Hénoc"; "De Élie" -> "D'Élie"; "de hauteur" fica."""
+    return _FR_DE.sub(lambda m: m.group(1) + "'", texto)
 
 
 # Espanhol: 'y' soa /i/ antes de i- e hi- (não antes de hia-, hie-, hio-, hiu-, que soam /j/); 'o' antes de o- e ho-.

@@ -246,6 +246,16 @@ class Frances(unittest.TestCase):
         self.assertEqual(traduz_paragrafo("a son of Timaeus;", FR_GLOS, {"Timaeus": "Timée"}, FR_GRAM),
                          "fils de Timée;")
 
+    def test_at_elisao_antes_de_h_maiusculo_de_nome(self):
+        # Gn 4:17 (Enoque, Hénoc em francês): 'de H' é nome de h mudo, então 'd''.
+        self.assertEqual(traduz_paragrafo("a son of Enoch;", FR_GLOS, {"Enoch": "Hénoc"}, FR_GRAM),
+                         "fils d'Hénoc;")
+
+    def test_nt_elisao_antes_de_herodes(self):
+        # Mt 2:1 (Herodes, Hérode em francês).
+        self.assertEqual(traduz_paragrafo("a son of Herod;", FR_GLOS, {"Herod": "Hérode"}, FR_GRAM),
+                         "fils d'Hérode;")
+
     def test_pos_desconhecido_e_erro_de_gramatica(self):
         with self.assertRaises(ValueError):
             traduz_paragrafo("a son of Abraham;", FR_GLOS, {}, gram(pos="inventado"))
@@ -289,7 +299,12 @@ class FlexaoTest(unittest.TestCase):
     def test_elisao_fr(self):
         self.assertEqual(elisao_fr("fils de Abraham"), "fils d'Abraham")
         self.assertEqual(elisao_fr("De Élie"), "D'Élie")
-        self.assertEqual(elisao_fr("de Hébron"), "de Hébron")
+        self.assertEqual(elisao_fr("de Hébron"), "d'Hébron")
+        self.assertEqual(elisao_fr("de Hénoc"), "d'Hénoc")
+        self.assertEqual(elisao_fr("De Hérode"), "D'Hérode")
+        self.assertEqual(elisao_fr("de Hanoch"), "d'Hanoch")
+        self.assertEqual(elisao_fr("de hauteur"), "de hauteur")  # h minúsculo não elide
+        self.assertEqual(elisao_fr("de Hl"), "de Hl")  # H sem vogal depois não elide
         self.assertEqual(elisao_fr("fils de la femme"), "fils de la femme")
 
 
