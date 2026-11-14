@@ -71,13 +71,13 @@ Destiny	other	Meni	revisado	rev. IA: LAI Yes.65.11
 Disciples of John	group	Murid-murid Yohanes	revisado	rev. IA: LAI Mat.9.14
 Diviners' Oak	place		sem	rev. IA: sem nome fixo na LAI
 Diviners'_Oak	place		sem	rev. IA: sem nome fixo na LAI
-Diviners’ Oak	place		sem	rev. IA: sem nome fixo na LAI
+Diviners’ Oak	place		sem	rev. IA: sem nome fixo na LAI TB
 East	place	Negeri Timur	revisado	rev. IA: LAI Kej.25.6
 Egypt's	place	Mesir	revisado	rev. IA: LAI
 Elkosh	place	Elkosh	revisado	rev. IA: LAI Nah.1.1
 Enaim	place	Enaim	revisado	rev. IA: LAI Kej.38.14
-Eridu	place		sem	rev. IA: sem nome fixo na LAI
-Etruria	place		sem	rev. IA: sem nome fixo na LAI
+Eridu	place		sem	rev. IA: sem nome fixo na LAI TB
+Etruria	place	Etruria	revisado	rev. IA: transliteração, sem versículo
 Eznites	group		sem	rev. IA: sem nome fixo na LAI
 Fair Havens	place	Pelabuhan Baik	revisado	rev. IA: LAI Kis.27.8
 Fair_Havens	place	Pelabuhan Baik	revisado	rev. IA: LAI Kis.27.8
@@ -110,7 +110,7 @@ Harhar	place		sem	rev. IA: sem nome fixo na LAI
 Hatti	place		sem	rev. IA: sem nome fixo na LAI
 Hazerim	place	Hazerim	revisado	rev. IA: LAI Ul.2.23
 Helech	place		sem	rev. IA: sem nome fixo na LAI
-Heracleopolis Magna	place		sem	rev. IA: sem nome fixo na LAI
+Heracleopolis Magna	place		sem	rev. IA: sem nome fixo na LAI TB
 Heracleopolis Parva	place		sem	rev. IA: sem nome fixo na LAI
 Heres	place	Heres	revisado	rev. IA: LAI Hak.8.13
 Herod Agrippa I	person	Herodes Agripa I	revisado	rev. IA: LAI Kis.12.1
@@ -230,7 +230,7 @@ Saparda	place		sem	rev. IA: sem nome fixo na LAI
 Saparre	place		sem	rev. IA: sem nome fixo na LAI
 Scribes	group	Ahli-ahli Taurat	revisado	rev. IA: LAI Mat.2.4
 Scythia	place	Skitia	revisado	rev. IA: LAI Kol.3.11
-Second Quarter	place		sem	rev. IA: sem nome fixo na LAI
+Second Quarter	place		sem	rev. IA: sem nome fixo confiável na LAI TB
 Second_Quarter	place		sem	rev. IA: sem nome fixo na LAI
 Sergius Paulus	person	Sergius Paulus	revisado	rev. IA: LAI Kis.13.7
 Sergius_Paulus	person	Sergius Paulus	revisado	rev. IA: LAI Kis.13.7
@@ -365,14 +365,14 @@ wife_of_Heli	person	Istri Heli	revisado	rev. IA: LAI Luk.1.5
 En-haddah	place	En-Hada	revisado	rev. IA: LAI Yos.19.21
 Ramah 3	place	Rama 3	revisado	rev. IA: sufixo mantido
 Valley of Shittim	place	Lembah Akasia	revisado	rev. IA: LAI Yl.3.18 (Sitim)
-Shion	place		sem	rev. IA: sem nome fixo confiável na LAI
+Shion	place		sem	rev. IA: sem nome fixo na LAI TB
 Buz	place	Buz	revisado	rev. IA: LAI Kej.22.21
 Beth-ezel	place	Bet-Ezel	revisado	rev. IA: LAI Mi.1.11
 Gederah 3	place	Gederot 3	revisado	rev. IA: LAI Yos.15.41
 Sepharad	place	Sefarad	revisado	rev. IA: LAI Ob.1.20
 Valley of Aven	place	Lembah Aven	revisado	rev. IA: LAI Am.1.5
 Hauran	place	Hauran	revisado	rev. IA: LAI Yeh.47.16
-Brook of the Willows	place		sem	rev. IA: sem nome fixo confiável na LAI (Yes.15.7)
+Brook of the Willows	place		sem	rev. IA: sem nome fixo na LAI TB
 Bene-jaakan	place	Bene-Yaakan	revisado	rev. IA: LAI Bil.33.31
 Chitlish	place	Kitlis	revisado	rev. IA: LAI Yos.15.40
 Tel-abib	place	Tel-Abib	revisado	rev. IA: LAI Yeh.3.15
@@ -500,10 +500,152 @@ Valley of Zephathah	place	Lembah Zefata	revisado	rev. IA: LAI 2Taw.14.10
 Avvim	place	Awim	revisado	rev. IA: LAI Ul.2.23
 Zeredah 2	place	Zeredah 2	revisado	rev. IA: sufixo mantido
 Manahath	place	Manahat	revisado	rev. IA: LAI Kej.36.23
-Sea of Egypt	place		sem	rev. IA: sem nome fixo na LAI
+Sea of Egypt	place	Laut Mesir	revisado	rev. IA: LAI TB, fora do indtsi
 Cun	place	Kun	revisado	rev. IA: LAI 1Taw.18.8
 Elishah	place	Elisa	revisado	rev. IA: LAI Kej.10.4
 Valley of Beracah	place	Lembah Berakha	revisado	rev. IA: LAI 2Taw.20.26
 Gederoth	place	Gederot	revisado	rev. IA: LAI Yos.15.41
 Abdon	place	Abdon	revisado	rev. IA: LAI Yos.21.30
 Madmen	place	Madmen	revisado	rev. IA: LAI Yer.48.2
+Haradah	place	Harada	revisado	rev. IA: LAI TB, fora do indtsi
+Gate of the Foundation	place	Pintu Gerbang Dasar	revisado	rev. IA: LAI TB, fora do indtsi
+Abronah	place	Abrona	revisado	rev. IA: LAI TB, fora do indtsi
+Gurbaal	place	Gur-Baal	revisado	rev. IA: LAI TB, fora do indtsi
+Gamad	place	Gamad	revisado	rev. IA: LAI TB, fora do indtsi
+Hazar-gaddah	place	Hazar-Gada	revisado	rev. IA: LAI TB, fora do indtsi
+Misgab	place	Misgab	revisado	rev. IA: LAI TB, fora do indtsi
+Beth-meon	place	Bet-Meon	revisado	rev. IA: LAI TB, fora do indtsi
+Yiron	place	Yiron	revisado	rev. IA: LAI TB, fora do indtsi
+Ulai	place	Ulai	revisado	rev. IA: LAI TB, fora do indtsi
+Shaphir	place	Safir	revisado	rev. IA: LAI TB, fora do indtsi
+Hammoth-dor	place	Hamot-Dor	revisado	rev. IA: LAI TB, fora do indtsi
+Cabbon	place	Kabon	revisado	rev. IA: LAI TB, fora do indtsi
+Bealoth 2	place	Baalot 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Gomer	place	Gomer	revisado	rev. IA: LAI TB, fora do indtsi
+Zemaraim	place	Zemaraim	revisado	rev. IA: LAI TB, fora do indtsi
+Goshen 3	place	Gosyen 3	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Teman	place	Teman	revisado	rev. IA: LAI TB, fora do indtsi
+Adithaim	place	Aditaim	revisado	rev. IA: LAI TB, fora do indtsi
+Bamah	place	Bama	revisado	rev. IA: LAI TB, fora do indtsi
+Beth-eden	place	Bet-Eden	revisado	rev. IA: LAI TB, fora do indtsi
+Nimrod	place	Nimrod	revisado	rev. IA: LAI TB, fora do indtsi
+Edrei 2	place	Edrei 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Madmannah	place	Madmana	revisado	rev. IA: LAI TB, fora do indtsi
+Beth-marcaboth	place	Bet-Markabot	revisado	rev. IA: LAI TB, fora do indtsi
+Pau	place	Pau	revisado	rev. IA: LAI TB, fora do indtsi
+Holon 1	place	Holon 1	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Hazazon-tamar 2	place	Hazazon-Tamar 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Sharuhen	place	Syaruhen	revisado	rev. IA: LAI TB, fora do indtsi
+Helbon	place	Helbon	revisado	rev. IA: LAI TB, fora do indtsi
+Balah	place	Bala	revisado	rev. IA: LAI TB, fora do indtsi
+Bozrah 2	place	Bozra 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Rhodes 2	place	Rodos 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Jeruel	place	Yeruel	revisado	rev. IA: LAI TB, fora do indtsi
+Elonbeth-hanan	place	Elon-Bet-Hanan	revisado	rev. IA: LAI TB, fora do indtsi
+Mount Esau	place	Gunung Esau	revisado	rev. IA: LAI TB, fora do indtsi
+Merathaim	place	Merataim	revisado	rev. IA: LAI TB, fora do indtsi
+En-gannim 2	place	En-Ganim 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Kiriathaim 2	place	Kiryataim 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Shilhim	place	Silhim	revisado	rev. IA: LAI TB, fora do indtsi
+Bethul	place	Betul	revisado	rev. IA: LAI TB, fora do indtsi
+Parvaim	place	Parwaim	revisado	rev. IA: LAI TB, fora do indtsi
+Zalmon	place	Zalmon	revisado	rev. IA: LAI TB, fora do indtsi
+Terah	place	Terah	revisado	rev. IA: LAI TB, fora do indtsi
+Beth-le-aphrah	place	Bet-Le-Afra	revisado	rev. IA: LAI TB, fora do indtsi
+Chilmad	place	Kilmad	revisado	rev. IA: LAI TB, fora do indtsi
+Thebes	place	No	revisado	rev. IA: LAI TB, fora do indtsi
+Dimnah	place	Dimna	revisado	rev. IA: LAI TB, fora do indtsi
+Baal-hermon	place	Baal-Hermon	revisado	rev. IA: LAI TB, fora do indtsi
+Ashnah 2	place	Asna 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Horem	place	Horem	revisado	rev. IA: LAI TB, fora do indtsi
+Leb-kamai	place	Leb-Kamai	revisado	rev. IA: LAI TB, fora do indtsi
+Lehem	place	Lehem	revisado	rev. IA: LAI TB, fora do indtsi
+Punon	place	Punon	revisado	rev. IA: LAI TB, fora do indtsi
+Naaran	place	Naaran	revisado	rev. IA: LAI TB, fora do indtsi
+Etam 3	place	Etam 3	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Valley of Succoth	place	Lembah Sukot	revisado	rev. IA: LAI TB, fora do indtsi
+Beth-anoth	place	Bet-Anot	revisado	rev. IA: LAI TB, fora do indtsi
+Pelusium	place	Pelusium	revisado	rev. IA: LAI TB, fora do indtsi
+Shoa	place	Soa	revisado	rev. IA: LAI TB, fora do indtsi
+Sharon 2	place	Saron 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Mithkah	place	Mitka	revisado	rev. IA: LAI TB, fora do indtsi
+Migdol 2	place	Migdol 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+New Gate	place	Pintu Gerbang Baru	revisado	rev. IA: LAI TB, fora do indtsi
+Gedor 3	place	Gedor 3	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Netaim	place	Netaim	revisado	rev. IA: LAI TB, fora do indtsi
+Hashmonah	place	Hasmona	revisado	rev. IA: LAI TB, fora do indtsi
+Jokmeam 2	place	Yokmeam 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Ziph 2	place	Zif 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Mount Moriah	place	Gunung Moria	revisado	rev. IA: LAI TB, fora do indtsi
+Mount Bashan	place	Gunung Basan	revisado	rev. IA: LAI TB, fora do indtsi
+Hazer-hatticon	place	Hazar-Hatikon	revisado	rev. IA: LAI TB, fora do indtsi
+Avith	place	Awit	revisado	rev. IA: LAI TB, fora do indtsi
+Nezib	place	Nezib	revisado	rev. IA: LAI TB, fora do indtsi
+Hazar-susah	place	Hazar-Susa	revisado	rev. IA: LAI TB, fora do indtsi
+Jokmeam 1	place	Yokmeam 1	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Gath-rimmon 2	place	Gat-Rimon 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Amana	place	Amana	revisado	rev. IA: LAI TB, fora do indtsi
+Sheshach	place	Syesakh	revisado	rev. IA: LAI TB, fora do indtsi
+Sibraim	place	Sibraim	revisado	rev. IA: LAI TB, fora do indtsi
+Hamath-zobah	place	Hamat-Zoba	revisado	rev. IA: LAI TB, fora do indtsi
+Hara	place	Hara	revisado	rev. IA: LAI TB, fora do indtsi
+Ayyah	place	Ayya	revisado	rev. IA: LAI TB, fora do indtsi
+Bath-rabbim	place	Bat-Rabim	revisado	rev. IA: LAI TB, fora do indtsi
+Hammath 2	place	Hamat 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Tahath	place	Tahat	revisado	rev. IA: LAI TB, fora do indtsi
+En-gannim 1	place	En-Ganim 1	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Middle Gate	place	Pintu Gerbang Tengah	revisado	rev. IA: LAI TB, fora do indtsi
+Adadah	place	Adada	revisado	rev. IA: LAI TB, fora do indtsi
+Beth-ashbea	place	Bet-Asbea	revisado	rev. IA: LAI TB, fora do indtsi
+Anaharath	place	Anaharat	revisado	rev. IA: LAI TB, fora do indtsi
+Mount Ephraim	place	Pegunungan Efraim	revisado	rev. IA: LAI TB, fora do indtsi
+Dimonah	place	Dimona	revisado	rev. IA: LAI TB, fora do indtsi
+Makheloth	place	Makhelot	revisado	rev. IA: LAI TB, fora do indtsi
+Anim	place	Anim	revisado	rev. IA: LAI TB, fora do indtsi
+Gibeah 4	place	Gibea 4	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Zior	place	Zior	revisado	rev. IA: LAI TB, fora do indtsi
+Makaz	place	Makas	revisado	rev. IA: LAI TB, fora do indtsi
+Ithnan	place	Yitnan	revisado	rev. IA: LAI TB, fora do indtsi
+Gederothaim	place	Gederotaim	revisado	rev. IA: LAI TB, fora do indtsi
+Lebaoth	place	Lebaot	revisado	rev. IA: LAI TB, fora do indtsi
+Naamah 2	place	Naama 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Rimmon-perez	place	Rimon-Perez	revisado	rev. IA: LAI TB, fora do indtsi
+Beth-pazzez	place	Bet-Pazez	revisado	rev. IA: LAI TB, fora do indtsi
+Bileam	place	Bileam	revisado	rev. IA: LAI TB, fora do indtsi
+Beth-diblathaim	place	Bet-Diblataim	revisado	rev. IA: LAI TB, fora do indtsi
+Bether 1	place	Beter 1	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Hazor-hadattah	place	Hazor-Hadata	revisado	rev. IA: LAI TB, fora do indtsi
+Ebez	place	Ebes	revisado	rev. IA: LAI TB, fora do indtsi
+Chesil	place	Kesil	revisado	rev. IA: LAI TB, fora do indtsi
+Taralah	place	Tarala	revisado	rev. IA: LAI TB, fora do indtsi
+Anem	place	Anem	revisado	rev. IA: LAI TB, fora do indtsi
+Gibea	place	Gibea	revisado	rev. IA: LAI TB, fora do indtsi
+Iim	place	Iim	revisado	rev. IA: LAI TB, fora do indtsi
+Sea of Jazer	place	Laut Yazer	revisado	rev. IA: LAI TB, fora do indtsi
+Heshmon	place	Hesmon	revisado	rev. IA: LAI TB, fora do indtsi
+Ramah 9	place	Rama 9	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Eneglaim	place	En-Eglaim	revisado	rev. IA: LAI TB, fora do indtsi
+Gareb	place	Gareb	revisado	rev. IA: LAI TB, fora do indtsi
+Alemeth	place	Alemet	revisado	rev. IA: LAI TB, fora do indtsi
+Tadmor	place	Tadmor	revisado	rev. IA: LAI TB, fora do indtsi
+Jezreel 1	place	Yizreel 1	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Nibshan	place	Nibsan	revisado	rev. IA: LAI TB, fora do indtsi
+Ramoth 1	place	Ramot 1	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Almon	place	Almon	revisado	rev. IA: LAI TB, fora do indtsi
+Beth-tappuah	place	Bet-Tapuah	revisado	rev. IA: LAI TB, fora do indtsi
+Tahpanhes	place	Tahpanhes	revisado	rev. IA: LAI TB, fora do indtsi
+Kedesh 3	place	Kedes 3	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Ain 3	place	Ain 3	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Karnaim	place	Karnaim	revisado	rev. IA: LAI TB, fora do indtsi
+Minni	place	Minni	revisado	rev. IA: LAI TB, fora do indtsi
+Geba 4	place	Geba 4	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Adoraim	place	Adoraim	revisado	rev. IA: LAI TB, fora do indtsi
+Haeleph	place	Haeleph	revisado	rev. IA: LAI TB, fora do indtsi
+Remeth	place	Remet	revisado	rev. IA: LAI TB, fora do indtsi
+Dinhabah	place	Dinhaba	revisado	rev. IA: LAI TB, fora do indtsi
+Timnah 2	place	Timna 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Aphekah	place	Afeka	revisado	rev. IA: LAI TB, fora do indtsi
+Hazor 2	place	Hazor 2	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Maarath	place	Maarat	revisado	rev. IA: LAI TB, fora do indtsi
+Naamah 1	place	Naama 1	revisado	rev. IA: LAI TB, fora do indtsi (sufixo mantido)
+Canneh	place	Kane	revisado	rev. IA: LAI TB, fora do indtsi
