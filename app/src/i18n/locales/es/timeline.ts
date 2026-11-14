@@ -35,7 +35,7 @@ export const esTl = {
   noEvents: 'Ningún evento coincide con esta búsqueda y estos filtros.',
   noLines: 'Ninguna línea de tiempo coincide con estos filtros.',
   footer:
-    'Fuente: Theographic (CC BY-SA 4.0). Las fechas siguen la cronología de la fuente; títulos, nombres y descripciones en español son adaptación del proyecto Sensus, con ayuda de IA.',
+    'Fuente: Theographic (CC BY-SA 4.0). Las fechas siguen la cronología de la fuente; títulos, nombres y descripciones en español son adaptación del proyecto Sensus.',
 
   lineTitleOf: (count: number) => `${count} ${count === 1 ? 'evento' : 'eventos'}`,
   inSource: (name: string) => `en la fuente: ${name}`,
