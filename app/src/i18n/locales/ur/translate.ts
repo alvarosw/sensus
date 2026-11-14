@@ -36,4 +36,7 @@ export const urTr = {
   settingsPair: (from: string, to: string) => `زبانیں: ${from} → ${to}`,
   modelOnDemand: 'کسی تحریر کو ضرورت ہونے پر ڈاؤن لوڈ ہوگا',
   downloadModel: 'ماڈل ڈاؤن لوڈ کریں',
+  downloadButton: 'ترجمہ ڈاؤن لوڈ کریں',
+  downloadHint: 'آلے پر خودکار ترجمہ: متن ایپ سے باہر نہیں جاتا اور آف لائن کام کرتا ہے۔',
+  downloadFailed: 'ڈاؤن لوڈ نہیں ہو سکا۔ کنکشن چیک کریں اور دوبارہ کوشش کریں۔',
 };

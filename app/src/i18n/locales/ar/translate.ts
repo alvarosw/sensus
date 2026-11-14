@@ -36,4 +36,7 @@ export const arTr = {
   settingsPair: (from: string, to: string) => `اللغات: ${from} → ${to}`,
   modelOnDemand: 'يُنزَّل عندما يحتاجه نص',
   downloadModel: 'تنزيل النموذج',
+  downloadButton: 'تنزيل الترجمة',
+  downloadHint: 'ترجمة آلية على الجهاز: لا يغادر النص التطبيق وتعمل دون اتصال.',
+  downloadFailed: 'تعذّر التنزيل. تحقّق من الاتصال وحاول مرة أخرى.',
 };

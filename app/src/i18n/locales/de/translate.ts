@@ -37,4 +37,7 @@ export const deTr = {
   settingsPair: (from: string, to: string) => `Sprachen: ${from} → ${to}`,
   modelOnDemand: 'Wird geladen, wenn ein Text es braucht',
   downloadModel: 'Modell herunterladen',
+  downloadButton: 'Übersetzung herunterladen',
+  downloadHint: 'Automatische Übersetzung auf dem Gerät: Der Text bleibt in der App und funktioniert offline.',
+  downloadFailed: 'Download nicht möglich. Prüfe die Verbindung und versuche es erneut.',
 };

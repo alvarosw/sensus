@@ -36,4 +36,7 @@ export const ruTr = {
   settingsPair: (from: string, to: string) => `Языки: ${from} → ${to}`,
   modelOnDemand: 'Загружается, когда нужен для текста',
   downloadModel: 'Загрузить модель',
+  downloadButton: 'Скачать перевод',
+  downloadHint: 'Автоматический перевод на устройстве: текст не покидает приложение, работает без сети.',
+  downloadFailed: 'Не удалось скачать. Проверьте подключение и попробуйте снова.',
 };

@@ -37,4 +37,7 @@ export const esTr = {
   settingsPair: (from: string, to: string) => `Idiomas: ${from} → ${to}`,
   modelOnDemand: 'Se descarga cuando un texto lo necesita',
   downloadModel: 'Descargar modelo',
+  downloadButton: 'Descargar traducción',
+  downloadHint: 'Traducción automática en el dispositivo: el texto no sale de la app y funciona sin conexión.',
+  downloadFailed: 'No se pudo descargar. Revisa la conexión e inténtalo de nuevo.',
 };

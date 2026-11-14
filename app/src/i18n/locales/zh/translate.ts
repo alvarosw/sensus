@@ -36,4 +36,7 @@ export const zhTr = {
   settingsPair: (from: string, to: string) => `语言：${from} → ${to}`,
   modelOnDemand: '需要翻译文本时下载',
   downloadModel: '下载模型',
+  downloadButton: '下载翻译',
+  downloadHint: '在设备上自动翻译：文本不会离开应用，可离线使用。',
+  downloadFailed: '无法下载。请检查网络连接后重试。',
 };

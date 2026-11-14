@@ -35,11 +35,15 @@ export interface TranslatableOptions {
   /** Idioma conhecido (fonte fora do registro, lido do banco). Com `sourceId` registrado, o registro vence. */
   lang?: string | null;
   policy: TranslatePolicy;
+  /** false: o bloco nunca mostra nem reivindica a oferta (textos curtos, ver useShortTexts). */
+  offer?: boolean;
 }
 
 export interface Translatable {
   /** Texto a mostrar para um dos originais: a tradução pronta, ou o próprio original. */
   show(text: string): string;
+  /** Tradução pronta para mostrar (null: inativa, "Ver original" ou sem cache). */
+  machine(text: string): string | null;
   /** Há textos traduzíveis (a língua da fonte é diferente da do app e o aparelho é compatível). */
   eligible: boolean;
   /** Tradução configurada e pronta: ligada e carregada (no global, também com o modelo pronto). */
@@ -145,6 +149,7 @@ export function useTranslatable(
     offerAnswered,
     owner: offerOwner,
     panelId,
+    allowed: opts.offer !== false,
   });
   useEffect(() => {
     if (offer && offerOwner === null) claimOffer(panelId);
@@ -166,6 +171,7 @@ export function useTranslatable(
 
   return {
     show: (text) => (!active || !pair || showOriginal || !text.trim() ? text : (cachedTranslation(text, pair) ?? text)),
+    machine: (text) => (!active || !pair || showOriginal || !text.trim() ? null : cachedTranslation(text, pair)),
     eligible,
     active,
     available,

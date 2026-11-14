@@ -36,4 +36,7 @@ export const viTr = {
   settingsPair: (from: string, to: string) => `Ngôn ngữ: ${from} → ${to}`,
   modelOnDemand: 'Tải xuống khi một văn bản cần',
   downloadModel: 'Tải mô hình',
+  downloadButton: 'Tải bản dịch',
+  downloadHint: 'Dịch tự động trên thiết bị: văn bản không rời khỏi ứng dụng và hoạt động ngoại tuyến.',
+  downloadFailed: 'Không tải được. Hãy kiểm tra kết nối và thử lại.',
 };

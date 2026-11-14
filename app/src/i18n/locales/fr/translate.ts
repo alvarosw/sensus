@@ -36,4 +36,7 @@ export const frTr = {
   settingsPair: (from: string, to: string) => `Langues : ${from} → ${to}`,
   modelOnDemand: 'Téléchargé quand un texte en a besoin',
   downloadModel: 'Télécharger le modèle',
+  downloadButton: 'Télécharger la traduction',
+  downloadHint: 'Traduction automatique sur l’appareil : le texte reste dans l’app et fonctionne hors ligne.',
+  downloadFailed: 'Téléchargement impossible. Vérifiez la connexion et réessayez.',
 };

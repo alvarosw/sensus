@@ -36,4 +36,7 @@ export const bnTr = {
   settingsPair: (from: string, to: string) => `ভাষা: ${from} → ${to}`,
   modelOnDemand: 'কোনো লেখার প্রয়োজন হলে ডাউনলোড হবে',
   downloadModel: 'মডেল ডাউনলোড করুন',
+  downloadButton: 'অনুবাদ ডাউনলোড করুন',
+  downloadHint: 'ডিভাইসেই স্বয়ংক্রিয় অনুবাদ: লেখা অ্যাপের বাইরে যায় না, অফলাইনেও চলে।',
+  downloadFailed: 'ডাউনলোড করা যায়নি। সংযোগ দেখে আবার চেষ্টা করুন।',
 };

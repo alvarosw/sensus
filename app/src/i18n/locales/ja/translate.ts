@@ -36,4 +36,7 @@ export const jaTr = {
   settingsPair: (from: string, to: string) => `言語: ${from} → ${to}`,
   modelOnDemand: 'テキストで必要になったときにダウンロード',
   downloadModel: 'モデルをダウンロード',
+  downloadButton: '翻訳をダウンロード',
+  downloadHint: '端末上で自動翻訳します。テキストはアプリの外に送られず、オフラインでも使えます。',
+  downloadFailed: 'ダウンロードできませんでした。接続を確認して、もう一度お試しください。',
 };

@@ -6,6 +6,7 @@ import {
   batchTexts,
   globalAskList,
   isActive,
+  isDownloadShown,
   isEligible,
   isOfferShown,
   noteCounts,
@@ -50,11 +51,31 @@ describe('oferta da primeira vez', () => {
     expect(isOfferShown('item', { ...base, owner: 7 })).toBe(true);
   });
 
+  it('allowed false (texto curto) nunca mostra nem reivindica a oferta', () => {
+    expect(isOfferShown('item', { ...base, owner: null, allowed: false })).toBe(false);
+    expect(isOfferShown('item', { ...base, allowed: true })).toBe(true);
+  });
+
   it('nunca aparece no global (linha do tempo) nem depois de respondida ou ligada', () => {
     expect(isOfferShown('global', base)).toBe(false);
     expect(isOfferShown('item', { ...base, offerAnswered: true })).toBe(false);
     expect(isOfferShown('item', { ...base, enabled: true })).toBe(false);
     expect(isOfferShown('item', { ...base, eligible: false })).toBe(false);
+  });
+});
+
+describe('botão Baixar tradução', () => {
+  const base = { eligible: true, loaded: true, enabled: false, offer: false };
+
+  it('aparece com texto traduzível e tradução desligada, mesmo depois de "Agora não"', () => {
+    expect(isDownloadShown(base)).toBe(true);
+  });
+
+  it('some quando a tradução está ligada, quando a oferta está no bloco, sem preferências ou sem texto traduzível', () => {
+    expect(isDownloadShown({ ...base, enabled: true })).toBe(false);
+    expect(isDownloadShown({ ...base, offer: true })).toBe(false);
+    expect(isDownloadShown({ ...base, eligible: false })).toBe(false);
+    expect(isDownloadShown({ ...base, loaded: false })).toBe(false);
   });
 });
 

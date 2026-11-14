@@ -52,11 +52,21 @@ export function isOfferShown(
     offerAnswered: boolean;
     owner: number | null;
     panelId: number;
+    /** false: o bloco nunca mostra nem reivindica a oferta (textos curtos, ver useShortTexts). */
+    allowed?: boolean;
   },
 ): boolean {
-  if (policy !== 'item') return false;
+  if (input.allowed === false || policy !== 'item') return false;
   const base = input.eligible && input.loaded && !input.enabled && !input.offerAnswered;
   return base && (input.owner === null || input.owner === input.panelId);
+}
+
+/**
+ * Botão "Baixar tradução": texto traduzível, preferências carregadas, tradução desligada e sem a oferta no mesmo bloco.
+ * Fica depois de "Agora não".
+ */
+export function isDownloadShown(i: { eligible: boolean; loaded: boolean; enabled: boolean; offer: boolean }): boolean {
+  return i.eligible && i.loaded && !i.enabled && !i.offer;
 }
 
 /** Resultado do último lote deste bloco: ainda não chegou, chegou, ou falhou. */

@@ -35,4 +35,7 @@ export const hiTr = {
   settingsPair: (from: string, to: string) => `भाषाएँ: ${from} → ${to}`,
   modelOnDemand: 'किसी पाठ को ज़रूरत होने पर डाउनलोड होगा',
   downloadModel: 'मॉडल डाउनलोड करें',
+  downloadButton: 'अनुवाद डाउनलोड करें',
+  downloadHint: 'डिवाइस पर स्वचालित अनुवाद: पाठ ऐप से बाहर नहीं जाता और ऑफ़लाइन काम करता है।',
+  downloadFailed: 'डाउनलोड नहीं हो सका। कनेक्शन जाँचें और फिर से कोशिश करें।',
 };

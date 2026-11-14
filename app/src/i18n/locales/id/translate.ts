@@ -37,4 +37,7 @@ export const idTr = {
   settingsPair: (from: string, to: string) => `Bahasa: ${from} → ${to}`,
   modelOnDemand: 'Diunduh saat sebuah teks memerlukannya',
   downloadModel: 'Unduh model',
+  downloadButton: 'Unduh terjemahan',
+  downloadHint: 'Terjemahan otomatis di perangkat: teks tidak keluar dari aplikasi dan berfungsi luring.',
+  downloadFailed: 'Tidak dapat mengunduh. Periksa koneksi dan coba lagi.',
 };
