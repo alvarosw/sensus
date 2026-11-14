@@ -1,0 +1,825 @@
+# Notas da revisão de nomes por agentes de IA (uma linha por nome_en + candidato, ou nome_en + tipo).
+# Conferidas no texto da Bíblia da língua e na tradução inglesa. Só registro: o ingestor não lê este arquivo.
+nome_en	candidato	nome_es	origem	nota
+Mahol	Mahol	Mahol	revisado	rev. IA: 1Kgs.4.31; forma Mahol conferida (RV1960)
+Shenazar	Senazar	Senazar	revisado	rev. IA: 1Chr.3.18; forma Senazar conferida (RV1960)
+Isaac	Isaac	Isaac	revisado	rev. IA: Gen.17.19; forma Isaac conferida (RV1960)
+Eliphalet	Elifelet	Elifelet	revisado	rev. IA: 2Sam.5.16; forma Elifelet conferida (RV1960)
+Chilion	Quelión	Quelión	revisado	rev. IA: Ruth.1.2; forma Quelión conferida (RV1960)
+Bethany	Betania	Betania	revisado	rev. IA: Matt.21.17; forma Betania conferida (RV1960)
+Becher	Bequer	Bequer	revisado	rev. IA: Gen.46.21; forma Bequer conferida (RV1960)
+Rekem	Requem	Requem	revisado	rev. IA: Num.31.8; forma Requem conferida (RV1960)
+Jeribai	Jeribai	Jeribai	revisado	rev. IA: 1Chr.11.46; forma Jeribai conferida (RV1960)
+Libnah	Libna	Libna	revisado	rev. IA: Josh.10.29; forma Libna conferida (RV1960)
+Cleophas	Cleofas	Cleofas	revisado	rev. IA: Luke.24.18; forma Cleofas conferida (RV1960)
+Malchiram	Malquiram	Malquiram	revisado	rev. IA: 1Chr.3.18; forma Malquiram conferida (RV1960)
+Nebuchadnezzar	Nabucodonosor	Nabucodonosor	revisado	rev. IA: 2Kgs.24.1; forma Nabucodonosor conferida (RV1960)
+Jonadab	Jonadab	Jonadab	revisado	rev. IA: 2Sam.13.3; forma Jonadab conferida (RV1960)
+Gareb	Gareb	Gareb	revisado	rev. IA: 2Sam.23.38; forma Gareb conferida (RV1960)
+Apollonia	Apolonia	Apolonia	revisado	rev. IA: Acts.17.1; forma Apolonia conferida (RV1960)
+Gad	Gad	Gad	revisado	rev. IA: Gen.30.11; forma Gad conferida (RV1960)
+Parbar	Parbar	Parbar	revisado	rev. IA: 1Chr.26.18; forma Parbar conferida (RV1960)
+Nicolaus	Nicolás	Nicolás	revisado	rev. IA: Acts.6.5; forma Nicolás conferida (RV1960)
+Jachan	Jacán	Jacán	revisado	rev. IA: 1Chr.5.13; forma Jacán conferida (RV1960)
+Zereth	Zeret	Zeret	revisado	rev. IA: 1Chr.4.7; forma Zeret conferida (RV1960)
+Gath	Gat	Gat	revisado	rev. IA: Josh.11.22; forma Gat conferida (RV1960)
+Neriah	Nerías	Nerías	revisado	rev. IA: Jer.32.12; forma Nerías conferida (RV1960)
+Pelatiah	Pelatías	Pelatías	revisado	rev. IA: 1Chr.3.21; forma Pelatías conferida (RV1960)
+Amram	Amram	Amram	revisado	rev. IA: Exod.6.18; forma Amram conferida (RV1960)
+Uzziel	Uziel	Uziel	revisado	rev. IA: Exod.6.18; forma Uziel conferida (RV1960)
+Zaza	Zaza	Zaza	revisado	rev. IA: 1Chr.2.33; forma Zaza conferida (RV1960)
+Tarshish	Tarsis	Tarsis	revisado	rev. IA: Gen.10.4; forma Tarsis conferida (RV1960)
+Shittim	Sitim	Sitim	revisado	rev. IA: Num.25.1; forma Sitim conferida (RV1960)
+Ashbel	Asbel	Asbel	revisado	rev. IA: Gen.46.21; forma Asbel conferida (RV1960)
+Jerusha	Jerusa	Jerusa	revisado	rev. IA: 2Kgs.15.33; forma Jerusa conferida (RV1960)
+Rabbith	Rabit	Rabit	revisado	rev. IA: Josh.19.20; forma Rabit conferida (RV1960)
+Ananias	Ananías	Ananías	revisado	rev. IA: Acts.5.1; forma Ananías conferida (RV1960)
+Patmos	Patmos	Patmos	revisado	rev. IA: Rev.1.9; forma Patmos conferida (RV1960)
+Kir	Kir	Kir	revisado	rev. IA: Isa.15.1; forma Kir conferida (RV1960)
+Ahishar	Ahisar	Ahisar	revisado	rev. IA: 1Kgs.4.6; forma Ahisar conferida (RV1960)
+Mesha	Mesa	Mesa	revisado	rev. IA: Gen.10.30; forma Mesa conferida (RV1960)
+Shishak	Sisac	Sisac	revisado	rev. IA: 1Kgs.11.40; forma Sisac conferida (RV1960)
+Sheshan	Sesán	Sesán	revisado	rev. IA: 1Chr.2.31; forma Sesán conferida (RV1960)
+Jabin	Jabín	Jabín	revisado	rev. IA: Josh.11.1; forma Jabín conferida (RV1960)
+Arnon	Arnón	Arnón	revisado	rev. IA: Num.21.13; forma Arnón conferida (RV1960)
+Elonbeth-hanan	Elón-bet-hanán	Elón-bet-hanán	revisado	rev. IA: 1Kgs.4.9; forma Elón-bet-hanán conferida (RV1960)
+Zepho	Zefo	Zefo	revisado	rev. IA: Gen.36.11; forma Zefo conferida (RV1960)
+Elead	Elead	Elead	revisado	rev. IA: 1Chr.7.21; forma Elead conferida (RV1960)
+Pileha	Pilha	Pilha	revisado	rev. IA: Neh.10.24; forma Pilha conferida (RV1960)
+Cyrene	Cirene	Cirene	revisado	rev. IA: Matt.27.32; forma Cirene conferida (RV1960)
+Zelzah	Zelza	Selsa	revisado	rev. IA: 1Sam.10.2; candidato Zelza trocado pela forma RV1960 Selsa
+Ziz	Ziz	Sis	revisado	rev. IA: 2Chr.20.16; candidato Ziz trocado pela forma RV1960 Sis
+Reaia	Reaías	Reaía	revisado	rev. IA: 1Chr.5.5; candidato Reaías trocado pela forma RV1960 Reaía
+Zeboim	Seboim	Seboim	revisado	rev. IA: Neh.11.34; forma Seboim conferida (RV1960)
+Felix	Félix	Félix	revisado	rev. IA: Acts.23.24; forma Félix conferida (RV1960)
+Elienai	Elienai	Elienai	revisado	rev. IA: 1Chr.8.20; forma Elienai conferida (RV1960)
+Beth-rehob	Bet-rehob	Bet-rehob	revisado	rev. IA: Judg.18.28; forma Bet-rehob conferida (RV1960)
+Noah	Noa	Noa	revisado	rev. IA: Num.26.33; forma Noa conferida (RV1960)
+Kishion	Quisión	Quisión	revisado	rev. IA: Josh.19.20; forma Quisión conferida (RV1960)
+Elioenai	Elioenai	Elioenai	revisado	rev. IA: 1Chr.3.23; forma Elioenai conferida (RV1960)
+Helkai	Helcai	Helcai	revisado	rev. IA: Neh.12.15; forma Helcai conferida (RV1960)
+Epher	Efer	Efer	revisado	rev. IA: Gen.25.4; forma Efer conferida (RV1960)
+Mirmah	Mirma	Mirma	revisado	rev. IA: 1Chr.8.10; forma Mirma conferida (RV1960)
+Hapharaim	Hafaraim	Hafaraim	revisado	rev. IA: Josh.19.19; forma Hafaraim conferida (RV1960)
+Mezahab	Mezaab	Mezaab	revisado	rev. IA: Gen.36.39; forma Mezaab conferida (RV1960)
+Ziphah	Zifa	Zifa	revisado	rev. IA: 1Chr.4.16; forma Zifa conferida (RV1960)
+Shaaraim	Saaraim	Saaraim	revisado	rev. IA: Josh.15.36; forma Saaraim conferida (RV1960)
+Decapolis	Decápolis	Decápolis	revisado	rev. IA: Matt.4.25; forma Decápolis conferida (RV1960)
+Dekar	Deker	Decar	revisado	rev. IA: 1Kgs.4.9; candidato Deker trocado pela forma RV1960 Decar
+Taralah	Taralá	Tarala	revisado	rev. IA: Josh.18.27; candidato Taralá trocado pela forma RV1960 Tarala
+Humtah	Humta	Humta	revisado	rev. IA: Josh.15.54; forma Humta conferida (RV1960)
+Jeatherai	Jeaterai	Jeatrai	revisado	rev. IA: 1Chr.6.21; candidato Jeaterai trocado pela forma RV1960 Jeatrai
+Nimrim	Nimrim	Nimrim	revisado	rev. IA: Isa.15.6; forma Nimrim conferida (RV1960)
+Punon	Punón	Punón	revisado	rev. IA: Num.33.42; forma Punón conferida (RV1960)
+Jedidah	Yedidá	Jedida	revisado	rev. IA: 2Kgs.22.1; candidato Yedidá trocado pela forma RV1960 Jedida
+Baal-gad	Baal-gad	Baal-gad	revisado	rev. IA: Josh.11.17; forma Baal-gad conferida (RV1960)
+Gatam	Gatam	Gatam	revisado	rev. IA: Gen.36.11; forma Gatam conferida (RV1960)
+Shechaniah	Secanías	Secanías	revisado	rev. IA: 1Chr.3.21; forma Secanías conferida (RV1960)
+Mattenai	Matenai	Matenai	revisado	rev. IA: Ezra.10.33; forma Matenai conferida (RV1960)
+Eglath-shelishiyah	Eglat-selisiyá	Eglat-selisiya	revisado	rev. IA: Jer.48.34; candidato Eglat-selisiyá trocado pela forma RV1960 Eglat-selisiya
+Mishal	Miseal	Miseal	revisado	rev. IA: Josh.19.26; forma Miseal conferida (RV1960)
+Mearah	Meará	Mehara	revisado	rev. IA: Josh.13.4; candidato Meará trocado pela forma RV1960 Mehara
+Beth-ezel	Bet-ezel	Bet-esel	revisado	rev. IA: Mic.1.11; candidato Bet-ezel trocado pela forma RV1960 Bet-esel
+Ashkelon	Ascalón	Ascalón	revisado	rev. IA: Judg.1.18; forma Ascalón conferida (RV1960)
+Bebai	Bebai	Bebai	revisado	rev. IA: Ezra.2.11; forma Bebai conferida (RV1960)
+Ludim	Ludim	Ludim	revisado	rev. IA: Gen.10.13; forma Ludim conferida (RV1960)
+Heres	Heres	Heres	revisado	rev. IA: Judg.8.13; forma Heres conferida (RV1960)
+Arphaxad	Arfaxad	Arfaxad	revisado	rev. IA: Gen.10.22; forma Arfaxad conferida (RV1960)
+Jeshanah	Jesana	Jesana	revisado	rev. IA: 2Chr.13.19; forma Jesana conferida (RV1960)
+Dagon	Dagón	Dagón	revisado	rev. IA: Judg.16.23; forma Dagón conferida (RV1960)
+Cana	Caná	Caná	revisado	rev. IA: John.2.1; forma Caná conferida (RV1960)
+Athaliah	Atalías	Atalías	revisado	rev. IA: 1Chr.8.26; forma Atalías conferida (RV1960)
+Goliath	Goliat	Goliat	revisado	rev. IA: 1Sam.17.4; forma Goliat conferida (RV1960)
+Asia	Asia	Asia	revisado	rev. IA: Acts.2.9; forma Asia conferida (RV1960)
+Neariah	Nearías	Nearías	revisado	rev. IA: 1Chr.3.22; forma Nearías conferida (RV1960)
+Gibeah	Gabaa	Gabaa	revisado	rev. IA: Judg.19.12; forma Gabaa conferida (RV1960)
+Jezebel	Jezabel	Jezabel	revisado	rev. IA: 1Kgs.16.31; forma Jezabel conferida (RV1960)
+Ithnan	Itnán	Itnán	revisado	rev. IA: Josh.15.23; forma Itnán conferida (RV1960)
+Jared	Jared	Jared	revisado	rev. IA: Gen.5.15; forma Jared conferida (RV1960)
+Zenas	Zenas	Zenas	revisado	rev. IA: Titus.3.13; forma Zenas conferida (RV1960)
+Elasah	Elasá	Elasa	revisado	rev. IA: Jer.29.3; candidato Elasá trocado pela forma RV1960 Elasa
+Phut	Fut	Fut	revisado	rev. IA: Gen.10.6; forma Fut conferida (RV1960)
+Col-hozeh	Colhoze	Colhoze	revisado	rev. IA: Neh.3.15; forma Colhoze conferida (RV1960)
+Naamah	Naamá	Naama	revisado	rev. IA: 1Kgs.14.21; candidato Naamá trocado pela forma RV1960 Naama
+Abel	Bet	Abel	revisado	rev. IA: 1Sam.6.18; candidato Bet trocado pela forma RV1960 Abel
+Adramyttium	Aristarco	Adramitio	revisado	rev. IA: Acts.27.2; candidato Aristarco trocado pela forma RV1960 Adramitio
+Al-taschith	Acaso		sem	rev. IA: Ps.58.1; sem forma tradicional segura na RV1960
+Allon	Jabneel	Alón	revisado	rev. IA: Josh.19.33; candidato Jabneel trocado pela forma RV1960 Alón
+Amaw	Balaam		sem	rev. IA: Num.22.5; sem forma tradicional segura na RV1960
+Amorite	También	Amorreo	revisado	rev. IA: Amos.2.10; candidato También trocado pela forma RV1960 Amorreo
+Amorites	Salimos	Amorreos	revisado	rev. IA: Deut.1.19; candidato Salimos trocado pela forma RV1960 Amorreos
+Apharasthchite	Setar-boznai	Afarsaquitas	revisado	rev. IA: Ezra.5.6; candidato Setar-boznai trocado pela forma RV1960 Afarsaquitas
+Aram-naharaim	Restáuranos	Aram-naharaim	revisado	rev. IA: Ps.60.1; candidato Restáuranos trocado pela forma RV1960 Aram-naharaim
+Aram-zobah	Restáuranos	Aram de Soba	revisado	rev. IA: Ps.60.1; candidato Restáuranos trocado pela forma RV1960 Aram de Soba
+Aramitess	Asriel	Aramea	revisado	rev. IA: 1Chr.7.14; candidato Asriel trocado pela forma RV1960 Aramea
+Archites	Ahitófel	Arquitas	revisado	rev. IA: 1Chr.27.33; candidato Ahitófel trocado pela forma RV1960 Arquitas
+Aroer	Hotam	Aroer	revisado	rev. IA: 1Chr.11.44; candidato Hotam trocado pela forma RV1960 Aroer
+Artemis	Varones	Diana	revisado	rev. IA: Acts.19.35; candidato Varones trocado pela forma RV1960 Diana
+Asen	Harif		sem	rev. IA: Neh.7.24; sem forma tradicional segura na RV1960
+Atroth-beth-joab	Atrot	Atrot-bet-joab	revisado	rev. IA: 1Chr.2.54; candidato Atrot trocado pela forma RV1960 Atrot-bet-joab
+Avvim	Sihor	Aveos	revisado	rev. IA: Josh.13.3; candidato Sihor trocado pela forma RV1960 Aveos
+Ayyah	Naarán	Aía	revisado	rev. IA: 1Chr.7.28; candidato Naarán trocado pela forma RV1960 Aía
+Baharum	Eliaba	Bahurim	revisado	rev. IA: 1Chr.11.33; candidato Eliaba trocado pela forma RV1960 Bahurim
+Bajith	Subió	Bayit	revisado	rev. IA: Isa.15.2; candidato Subió trocado pela forma RV1960 Bayit
+Bathsheba	Betsabé	Betsabé	revisado	rev. IA: 2Sam.11.3; forma Betsabé conferida (RV1960)
+Bear	Mayor	Osa Mayor	revisado	rev. IA: Job.38.32; candidato Mayor trocado pela forma RV1960 Osa Mayor
+Beer-lahai-roi	Lahai	Beer-lahai-roi	revisado	rev. IA: Gen.16.14; candidato Lahai trocado pela forma RV1960 Beer-lahai-roi
+Behemoth	He	Behemot	revisado	rev. IA: Job.40.15; candidato He trocado pela forma RV1960 Behemot
+Ben-hur	Hur	Ben-hur	revisado	rev. IA: 1Kgs.4.8; candidato Hur trocado pela forma RV1960 Ben-hur
+Beth-Ashtoreth	Astarot		sem	rev. IA: 1Sam.31.10; sem forma tradicional segura na RV1960
+Beth-eked	Prendedlos		sem	rev. IA: 2Kgs.10.14; sem forma tradicional segura na RV1960
+Beth-haggan	Ibleam		sem	rev. IA: 2Kgs.9.27; sem forma tradicional segura na RV1960
+Buzites	Baraquel	Buzitas	revisado	rev. IA: Job.32.2; candidato Baraquel trocado pela forma RV1960 Buzitas
+Cherethites	Bicri	Cereteos	revisado	rev. IA: 2Sam.20.7; candidato Bicri trocado pela forma RV1960 Cereteos
+Cherethites	Hicimos	Cereteos	revisado	rev. IA: 1Sam.30.14; candidato Hicimos trocado pela forma RV1960 Cereteos
+Chronicles	Ocozías		sem	rev. IA: 2Kgs.1.18; sem forma tradicional segura na RV1960
+Cnidus	Gnido	Gnido	revisado	rev. IA: Acts.27.7; forma Gnido conferida (RV1960)
+Corban	Cualquier	Corbán	revisado	rev. IA: Mark.7.11; candidato Cualquier trocado pela forma RV1960 Corbán
+Cush	Dios	Cus	revisado	rev. IA: Ps.7.1; candidato Dios trocado pela forma RV1960 Cus
+Cushi	Reciba	Cusi	revisado	rev. IA: 2Sam.18.31; candidato Reciba trocado pela forma RV1960 Cusi
+Dalphon	Mataron	Dalfón	revisado	rev. IA: Esth.9.7; candidato Mataron trocado pela forma RV1960 Dalfón
+Dehavites	Erech	Dehaveos	revisado	rev. IA: Ezra.4.9; candidato Erech trocado pela forma RV1960 Dehaveos
+Dinaites	Simsai	Dineos	revisado	rev. IA: Ezra.4.9; candidato Simsai trocado pela forma RV1960 Dineos
+East	Era		sem	rev. IA: 1Kgs.4.30; sem forma tradicional segura na RV1960
+East	Zeba		sem	rev. IA: Judg.8.10; sem forma tradicional segura na RV1960
+Ecbatana	Acmeta	Acmeta	revisado	rev. IA: Ezra.6.2; forma Acmeta conferida (RV1960)
+Eder	Migdal-eder	Edar	revisado	rev. IA: Gen.35.21; candidato Migdal-eder trocado pela forma RV1960 Edar
+Egypt	Lehabim	Egipto	revisado	rev. IA: Gen.10.13; candidato Lehabim trocado pela forma RV1960 Egipto
+Ehud	Jeús	Aod	revisado	rev. IA: 1Chr.7.10; candidato Jeús trocado pela forma RV1960 Aod
+Ephron	Neftoa	Efrón	revisado	rev. IA: Josh.18.15; candidato Neftoa trocado pela forma RV1960 Efrón
+Epicurean	Parece	Epicúreos	revisado	rev. IA: Acts.17.18; candidato Parece trocado pela forma RV1960 Epicúreos
+Eznites	Estos	Eznita	revisado	rev. IA: 2Sam.23.8; candidato Estos trocado pela forma RV1960 Eznita
+Field	Jerusalén	Campo del Lavador	revisado	rev. IA: 2Kgs.18.17; candidato Jerusalén trocado pela forma RV1960 Campo del Lavador
+Forest	Bosque		sem	rev. IA: Isa.22.8; sem forma tradicional segura na RV1960
+Freedmen	Cirene	Libertos	revisado	rev. IA: Acts.6.9; candidato Cirene trocado pela forma RV1960 Libertos
+Gadara	Cuando	Gadara	revisado	rev. IA: Matt.8.28; candidato Cuando trocado pela forma RV1960 Gadara
+Galilee	Goyim	Galilea	revisado	rev. IA: Josh.12.23; candidato Goyim trocado pela forma RV1960 Galilea
+Garmite	Naham	Garmita	revisado	rev. IA: 1Chr.4.19; candidato Naham trocado pela forma RV1960 Garmita
+Garmites	Naham	Garmitas	revisado	rev. IA: 1Chr.4.19; candidato Naham trocado pela forma RV1960 Garmitas
+Gath	Así	Gat	revisado	rev. IA: 1Chr.13.13; candidato Así trocado pela forma RV1960 Gat
+Gederah	Jeremías	Gedera	revisado	rev. IA: 1Chr.12.4; candidato Jeremías trocado pela forma RV1960 Gedera
+Gerasa	Galilea	Gerasa	revisado	rev. IA: Luke.8.26; candidato Galilea trocado pela forma RV1960 Gerasa
+Gibeah	Finees	Gabaa	revisado	rev. IA: Josh.24.33; candidato Finees trocado pela forma RV1960 Gabaa
+Gibeath-elohim	Dios	Collado de Dios	revisado	rev. IA: 1Sam.10.5; candidato Dios trocado pela forma RV1960 Collado de Dios
+Gilo	Ajitófel	Gilo	revisado	rev. IA: 2Sam.23.34; candidato Ajitófel trocado pela forma RV1960 Gilo
+Girgashites	Pasasteis	Gergeseos	revisado	rev. IA: Josh.24.11; candidato Pasasteis trocado pela forma RV1960 Gergeseos
+Girzites	Egipto	Gezritas	revisado	rev. IA: 1Sam.27.8; candidato Egipto trocado pela forma RV1960 Gezritas
+Gittith	Yahvé		sem	rev. IA: Ps.8.1; sem forma tradicional segura na RV1960
+Gizonites	Jonatán	Gizonitas	revisado	rev. IA: 1Chr.11.34; candidato Jonatán trocado pela forma RV1960 Gizonitas
+Gulloth-mayim	Ella		sem	rev. IA: Josh.15.19; sem forma tradicional segura na RV1960
+Gurbaal	Gur	Gur-baal	revisado	rev. IA: 2Chr.26.7; candidato Gur trocado pela forma RV1960 Gur-baal
+Hachmonites	Adino	Hacmonitas	revisado	rev. IA: 2Sam.23.8; candidato Adino trocado pela forma RV1960 Hacmonitas
+Haggai	Ageo	Hageo	revisado	rev. IA: Hag.1.1; candidato Ageo trocado pela forma RV1960 Hageo
+Hakkephirim	Gesem		sem	rev. IA: Neh.6.2; sem forma tradicional segura na RV1960
+Hammelech	Abdeel		sem	rev. IA: Jer.36.26; sem forma tradicional segura na RV1960
+Hararites	Sarar	Araritas	revisado	rev. IA: 2Sam.23.33; candidato Sarar trocado pela forma RV1960 Araritas
+Haruphites	Semarías	Harufitas	revisado	rev. IA: 1Chr.12.5; candidato Semarías trocado pela forma RV1960 Harufitas
+Hazerim	Gaza		sem	rev. IA: Deut.2.23; sem forma tradicional segura na RV1960
+Hebrews	ES	Hebreos	revisado	rev. IA: Luke.23.38; candidato ES trocado pela forma RV1960 Hebreos
+Helech	Ellos		sem	rev. IA: Ezek.27.11; sem forma tradicional segura na RV1960
+Heliopolis	Egipto	On	revisado	rev. IA: Gen.41.45; candidato Egipto trocado pela forma RV1960 On
+Heliopolis	Potifera	On	revisado	rev. IA: Gen.41.45; candidato Potifera trocado pela forma RV1960 On
+Hermes	Bernabé	Mercurio	revisado	rev. IA: Acts.14.12; candidato Bernabé trocado pela forma RV1960 Mercurio
+Herodian	Enviaron	Herodianos	revisado	rev. IA: Mark.12.13; candidato Enviaron trocado pela forma RV1960 Herodianos
+Highway	Déjame		sem	rev. IA: Num.21.22; sem forma tradicional segura na RV1960
+Hivite	Enviaré	Heveo	revisado	rev. IA: Exod.23.28; candidato Enviaré trocado pela forma RV1960 Heveo
+Hivites	Pasasteis	Heveos	revisado	rev. IA: Josh.24.11; candidato Pasasteis trocado pela forma RV1960 Heveos
+Horesh	Ambos	Hores	revisado	rev. IA: 1Sam.23.18; candidato Ambos trocado pela forma RV1960 Hores
+Horonaim	Absalón	Horonaim	revisado	rev. IA: 2Sam.13.34; candidato Absalón trocado pela forma RV1960 Horonaim
+Horonites	Tobías	Horonitas	revisado	rev. IA: Neh.2.10; candidato Tobías trocado pela forma RV1960 Horonitas
+Hushathites	Husat	Husatitas	revisado	rev. IA: 2Sam.23.27; candidato Husat trocado pela forma RV1960 Husatitas
+Ichabod	Ahitub	Icabod	revisado	rev. IA: 1Sam.14.3; candidato Ahitub trocado pela forma RV1960 Icabod
+Ithrites	Quiriat	Itritas	revisado	rev. IA: 1Chr.2.53; candidato Quiriat trocado pela forma RV1960 Itritas
+Iyim	Ije-abarim	Ije-abarim	revisado	rev. IA: Num.33.45; forma Ije-abarim conferida (RV1960)
+Jaar	Efrata	Jaar	revisado	rev. IA: Ps.132.6; candidato Efrata trocado pela forma RV1960 Jaar
+James	Andrés	Jacobo	revisado	rev. IA: Matt.10.2; candidato Andrés trocado pela forma RV1960 Jacobo
+James	Salomé	Jacobo	revisado	rev. IA: Mark.15.40; candidato Salomé trocado pela forma RV1960 Jacobo
+Janen	Nahaliel		sem	rev. IA: Num.21.19; sem forma tradicional segura na RV1960
+Jaziz	Todos	Jaziz	revisado	rev. IA: 1Chr.27.31; candidato Todos trocado pela forma RV1960 Jaziz
+Jebusite	Jerusalén	Jebuseo	revisado	rev. IA: Josh.15.8; candidato Jerusalén trocado pela forma RV1960 Jebuseo
+Jebusites	Jebús	Jebuseos	revisado	rev. IA: Judg.19.11; candidato Jebús trocado pela forma RV1960 Jebuseos
+Jehezkel	Hezequiel	Hezequiel	revisado	rev. IA: 1Chr.24.16; forma Hezequiel conferida (RV1960)
+Jehudijah	Jecutiel	Jehudaía	revisado	rev. IA: 1Chr.4.18; candidato Jecutiel trocado pela forma RV1960 Jehudaía
+Jemnath	Ecrón		sem	rev. IA: Josh.15.46; sem forma tradicional segura na RV1960
+Jeshimon	Maón	Jesimón	revisado	rev. IA: 1Sam.23.24; candidato Maón trocado pela forma RV1960 Jesimón
+Jonath-elem-rechokim	Ten		sem	rev. IA: Ps.56.1; sem forma tradicional segura na RV1960
+Judaism	Dios	Judaísmo	revisado	rev. IA: Gal.1.13; candidato Dios trocado pela forma RV1960 Judaísmo
+Judgment	Hizo		sem	rev. IA: 1Kgs.7.7; sem forma tradicional segura na RV1960
+Kadesh	Tajtim-hodsi	Cades	revisado	rev. IA: 2Sam.24.6; candidato Tajtim-hodsi trocado pela forma RV1960 Cades
+Karnaim	No	Karnaim	revisado	rev. IA: Amos.6.13; candidato No trocado pela forma RV1960 Karnaim
+Kedesh-naphtali	Cedes	Cedes de Neftalí	revisado	rev. IA: Judg.4.6; candidato Cedes trocado pela forma RV1960 Cedes de Neftalí
+Kenites	Cedes	Ceneos	revisado	rev. IA: Judg.4.11; candidato Cedes trocado pela forma RV1960 Ceneos
+Kiyyun	Antes	Quiún	revisado	rev. IA: Amos.5.26; candidato Antes trocado pela forma RV1960 Quiún
+Kue	Coa	Coa	revisado	rev. IA: 2Chr.1.16; forma Coa conferida (RV1960)
+LORD	Oré		sem	rev. IA: Deut.9.26; sem forma tradicional segura na RV1960
+Lehem	Jasubilehem	Jasubi-lehem	revisado	rev. IA: 1Chr.4.22; candidato Jasubilehem trocado pela forma RV1960 Jasubi-lehem
+Maareh-geba	Baal-tamar		sem	rev. IA: Judg.20.33; sem forma tradicional segura na RV1960
+Mahalab	Aczib		sem	rev. IA: Josh.19.29; sem forma tradicional segura na RV1960
+Mahalath	El	Mahalat	revisado	rev. IA: Gen.36.4; candidato El trocado pela forma RV1960 Mahalat
+Mahavites	Josavías	Mahavitas	revisado	rev. IA: 1Chr.11.46; candidato Josavías trocado pela forma RV1960 Mahavitas
+Manasseh	Moisés	Manasés	revisado	rev. IA: Num.32.33; candidato Moisés trocado pela forma RV1960 Manasés
+Maranatha	Jesucristo	Maranata	revisado	rev. IA: 1Cor.16.22; candidato Jesucristo trocado pela forma RV1960 Maranata
+Maskil	Las	Masquil	revisado	rev. IA: Ps.89.1; candidato Las trocado pela forma RV1960 Masquil
+Mazzaroth	Mayor		sem	rev. IA: Job.38.32; sem forma tradicional segura na RV1960
+Mecherathites	Hefer	Mequeratitas	revisado	rev. IA: 1Chr.11.36; candidato Hefer trocado pela forma RV1960 Mequeratitas
+Meholathites	Merab	Meholatitas	revisado	rev. IA: 1Sam.18.19; candidato Merab trocado pela forma RV1960 Meholatitas
+Melzar	Misael	Melsar	revisado	rev. IA: Dan.1.11; candidato Misael trocado pela forma RV1960 Melsar
+Menuhoth	Haroeh	Manahetitas	revisado	rev. IA: 1Chr.2.52; candidato Haroeh trocado pela forma RV1960 Manahetitas
+Meronoth	Melatías	Meronot	revisado	rev. IA: Neh.3.7; candidato Melatías trocado pela forma RV1960 Meronot
+Meronothites	Melatías	Meronotitas	revisado	rev. IA: Neh.3.7; candidato Melatías trocado pela forma RV1960 Meronotitas
+Meunites	Amón	Meunim	revisado	rev. IA: 2Chr.20.1; candidato Amón trocado pela forma RV1960 Meunim
+Mezobaites	Obed	Mesobaítas	revisado	rev. IA: 1Chr.11.47; candidato Obed trocado pela forma RV1960 Mesobaítas
+Miktam	Líbrame	Mictam	revisado	rev. IA: Ps.59.1; candidato Líbrame trocado pela forma RV1960 Mictam
+Mishraites	Quiriat	Misraítas	revisado	rev. IA: 1Chr.2.53; candidato Quiriat trocado pela forma RV1960 Misraítas
+Mithnites	Josafat	Mitnitas	revisado	rev. IA: 1Chr.11.43; candidato Josafat trocado pela forma RV1960 Mitnitas
+Mortar	Hondonada	Mactes	revisado	rev. IA: Zeph.1.11; candidato Hondonada trocado pela forma RV1960 Mactes
+Muth-labben	Daré	Mut-labén	revisado	rev. IA: Ps.9.1; candidato Daré trocado pela forma RV1960 Mut-labén
+Naamah	Zofar	Naama	revisado	rev. IA: Job.2.11; candidato Zofar trocado pela forma RV1960 Naama
+Naamathites	Entonces	Naamatitas	revisado	rev. IA: Job.11.1; candidato Entonces trocado pela forma RV1960 Naamatitas
+Naphath	Taanac		sem	rev. IA: Josh.17.11; sem forma tradicional segura na RV1960
+Naphoth-dor	Dor	Dor	revisado	rev. IA: Josh.11.2; forma Dor conferida (RV1960)
+Nazirites	Consagrará	Nazareos	revisado	rev. IA: Num.6.12; candidato Consagrará trocado pela forma RV1960 Nazareos
+Nehelam	Semaías	Nehelam	revisado	rev. IA: Jer.29.24; candidato Semaías trocado pela forma RV1960 Nehelam
+Nehelamites	Semaías	Nehelamitas	revisado	rev. IA: Jer.29.24; candidato Semaías trocado pela forma RV1960 Nehelamitas
+Nero	César	Nerón	revisado	rev. IA: Phil.4.22; candidato César trocado pela forma RV1960 Nerón
+Nicolaitans	Así	Nicolaítas	revisado	rev. IA: Rev.2.15; candidato Así trocado pela forma RV1960 Nicolaítas
+Nohah	Benjamín	Noha	revisado	rev. IA: Gen.46.21; candidato Benjamín trocado pela forma RV1960 Noha
+Nohah	Manahat	Noha	revisado	rev. IA: 1Chr.8.6; candidato Manahat trocado pela forma RV1960 Noha
+North	Por		sem	rev. IA: Dan.11.11; sem forma tradicional segura na RV1960
+Pacatiana	Amén	Pacatiana	revisado	rev. IA: 1Tim.6.21; candidato Amén trocado pela forma RV1960 Pacatiana
+Pelethites	Benaía	Peleteos	revisado	rev. IA: 2Sam.8.18; candidato Benaía trocado pela forma RV1960 Peleteos
+Pelonites	Heles	Pelonitas	revisado	rev. IA: 2Sam.23.26; candidato Heles trocado pela forma RV1960 Pelonitas
+Pelusium	Sin	Sin	revisado	rev. IA: Ezek.30.15; forma Sin conferida (RV1960)
+Perizzites	Pasasteis	Ferezeos	revisado	rev. IA: Josh.24.11; candidato Pasasteis trocado pela forma RV1960 Ferezeos
+Pharaoh	Echaréis	Faraón	revisado	rev. IA: Exod.1.22; candidato Echaréis trocado pela forma RV1960 Faraón
+Pharaoh	Zanoa	Faraón	revisado	rev. IA: 1Chr.4.18; candidato Zanoa trocado pela forma RV1960 Faraón
+Philistine	Caftorim	Filisteos	revisado	rev. IA: Gen.10.14; candidato Caftorim trocado pela forma RV1960 Filisteos
+Pillars	Hizo		sem	rev. IA: 1Kgs.7.6; sem forma tradicional segura na RV1960
+Place	Calavera	Lugar de la Calavera	revisado	rev. IA: Matt.27.33; candidato Calavera trocado pela forma RV1960 Lugar de la Calavera
+Plain	Zoar		sem	rev. IA: Deut.34.3; sem forma tradicional segura na RV1960
+Pool	Colhoze		sem	rev. IA: Neh.3.15; sem forma tradicional segura na RV1960
+Pool	Pasé		sem	rev. IA: Neh.2.14; sem forma tradicional segura na RV1960
+Puthites	Jearim	Futeos	revisado	rev. IA: 1Chr.2.53; candidato Jearim trocado pela forma RV1960 Futeos
+Pyrrhus	Sópater		sem	rev. IA: Acts.20.4; sem forma tradicional segura na RV1960
+Ramah	A	Ramá	revisado	rev. IA: Josh.19.29; candidato A trocado pela forma RV1960 Ramá
+Ramathites	Zabdi	Ramatitas	revisado	rev. IA: 1Chr.27.27; candidato Zabdi trocado pela forma RV1960 Ramatitas
+Rapha	Saf	Rafa	revisado	rev. IA: 2Sam.21.18; candidato Saf trocado pela forma RV1960 Rafa
+Rhodes	Dedán	Rodas	revisado	rev. IA: Ezek.27.15; candidato Dedán trocado pela forma RV1960 Rodas
+River	He		sem	rev. IA: Num.22.5; sem forma tradicional segura na RV1960
+River	Rehobot		sem	rev. IA: Gen.36.37; sem forma tradicional segura na RV1960
+River	Vine		sem	rev. IA: Neh.2.9; sem forma tradicional segura na RV1960
+Rock	Pero		sem	rev. IA: 1Sam.23.24; sem forma tradicional segura na RV1960
+Rocks	Entonces		sem	rev. IA: 1Sam.24.2; sem forma tradicional segura na RV1960
+Sahar	Damasco		sem	rev. IA: Ezek.27.18; sem forma tradicional segura na RV1960
+Salome	Herodías	Salomé	revisado	rev. IA: Matt.14.6; candidato Herodías trocado pela forma RV1960 Salomé
+Scythians	Cristo	Escitas	revisado	rev. IA: Col.3.11; candidato Cristo trocado pela forma RV1960 Escitas
+Secundus	Segundo	Segundo	revisado	rev. IA: Acts.20.4; forma Segundo conferida (RV1960)
+Sela	Los	Sela	revisado	rev. IA: 2Chr.25.12; candidato Los trocado pela forma RV1960 Sela
+Shelah	Siloé	Siloé	revisado	rev. IA: Neh.3.15; forma Siloé conferida (RV1960)
+Shiggaion	Sálvame	Sigaión	revisado	rev. IA: Ps.7.1; candidato Sálvame trocado pela forma RV1960 Sigaión
+Shilonites	Siloni	Silonitas	revisado	rev. IA: Neh.11.5; candidato Siloni trocado pela forma RV1960 Silonitas
+Shimeathite	Hamat	Simeateos	revisado	rev. IA: 1Chr.2.55; candidato Hamat trocado pela forma RV1960 Simeateos
+Shiphmites	Simei	Sifmitas	revisado	rev. IA: 1Chr.27.27; candidato Simei trocado pela forma RV1960 Sifmitas
+Shuhites	Fueron	Suhitas	revisado	rev. IA: Job.42.9; candidato Fueron trocado pela forma RV1960 Suhitas
+Shulammites	Vuelve	Sulamita	revisado	rev. IA: Song.6.13; candidato Vuelve trocado pela forma RV1960 Sulamita
+Shumathites	Quiriat	Sumateos	revisado	rev. IA: 1Chr.2.53; candidato Quiriat trocado pela forma RV1960 Sumateos
+Shunammites	Abisag	Sunamita	revisado	rev. IA: 1Kgs.1.3; candidato Abisag trocado pela forma RV1960 Sunamita
+Sikkuth	Antes	Sicut	revisado	rev. IA: Amos.5.26; candidato Antes trocado pela forma RV1960 Sicut
+Skull	Calavera	Calavera	revisado	rev. IA: Luke.23.33; forma Calavera conferida (RV1960)
+South	No		sem	rev. IA: Zech.7.7; sem forma tradicional segura na RV1960
+South	Por		sem	rev. IA: Dan.11.11; sem forma tradicional segura na RV1960
+South	Sur		sem	rev. IA: Matt.12.42; sem forma tradicional segura na RV1960
+Stoic	Y	Estoicos	revisado	rev. IA: Acts.17.18; candidato Y trocado pela forma RV1960 Estoicos
+Straight	Derecha	Derecha	revisado	rev. IA: Acts.9.11; forma Derecha conferida (RV1960)
+Sucathite	Hamat	Sucateos	revisado	rev. IA: 1Chr.2.55; candidato Hamat trocado pela forma RV1960 Sucateos
+Sukkiim	Egipto	Suquienos	revisado	rev. IA: 2Chr.12.3; candidato Egipto trocado pela forma RV1960 Suquienos
+Tabbur-erez	Gaal		sem	rev. IA: Judg.9.37; sem forma tradicional segura na RV1960
+Tarpelite	Erech	Tarpelitas	revisado	rev. IA: Ezra.4.9; candidato Erech trocado pela forma RV1960 Tarpelitas
+There	Yahvé	Jehová-sama	revisado	rev. IA: Ezek.48.35; candidato Yahvé trocado pela forma RV1960 Jehová-sama
+Throne	Hizo		sem	rev. IA: 1Kgs.7.7; sem forma tradicional segura na RV1960
+Tigris	Asiria	Hidekel	revisado	rev. IA: Gen.2.14; candidato Asiria trocado pela forma RV1960 Hidekel
+Tirathite	Jabes	Tirateos	revisado	rev. IA: 1Chr.2.55; candidato Jabes trocado pela forma RV1960 Tirateos
+Tishbe	Israel	Tisbe	revisado	rev. IA: 1Kgs.17.1; candidato Israel trocado pela forma RV1960 Tisbe
+Tizites	Jediael	Tizitas	revisado	rev. IA: 1Chr.11.45; candidato Jediael trocado pela forma RV1960 Tizitas
+Tower	Hornos		sem	rev. IA: Neh.3.11; sem forma tradicional segura na RV1960
+Tower	Ovejas		sem	rev. IA: Neh.3.1; sem forma tradicional segura na RV1960
+Unnamed#1	Eliud		sem	rev. IA: Matt.1.15; sem forma tradicional segura na RV1960
+Unnamed#1	Yahvé		sem	rev. IA: 1Kgs.2.27; sem forma tradicional segura na RV1960
+Unnamed#2	Eliud		sem	rev. IA: Matt.1.15; sem forma tradicional segura na RV1960
+Unnamed#2	Yahvé		sem	rev. IA: 1Kgs.2.27; sem forma tradicional segura na RV1960
+Unnamed#3	Eliud		sem	rev. IA: Matt.1.15; sem forma tradicional segura na RV1960
+Unnamed#3	Yahvé		sem	rev. IA: 1Kgs.2.27; sem forma tradicional segura na RV1960
+Unnamed#4	Eliud		sem	rev. IA: Matt.1.15; sem forma tradicional segura na RV1960
+Unnamed#4	Yahvé		sem	rev. IA: 1Kgs.2.27; sem forma tradicional segura na RV1960
+Unnamed#5	Eliud		sem	rev. IA: Matt.1.15; sem forma tradicional segura na RV1960
+Unnamed#6	Eliud		sem	rev. IA: Matt.1.15; sem forma tradicional segura na RV1960
+Unnamed#7	Eliud		sem	rev. IA: Matt.1.15; sem forma tradicional segura na RV1960
+Unnamed#8	Eliud		sem	rev. IA: Matt.1.15; sem forma tradicional segura na RV1960
+Unnamed#9	Eliud		sem	rev. IA: Matt.1.15; sem forma tradicional segura na RV1960
+Uzal	Vedán	Uzal	revisado	rev. IA: Ezek.27.19; candidato Vedán trocado pela forma RV1960 Uzal
+Weeks	Pentecostés	Fiesta de las Semanas	revisado	rev. IA: Acts.2.1; candidato Pentecostés trocado pela forma RV1960 Fiesta de las Semanas
+Willows	Sauces		sem	rev. IA: Isa.15.7; sem forma tradicional segura na RV1960
+Zeus	Mercurio	Júpiter	revisado	rev. IA: Acts.14.12; candidato Mercurio trocado pela forma RV1960 Júpiter
+Zorathites	Atrot	Zoratitas	revisado	rev. IA: 1Chr.2.54; candidato Atrot trocado pela forma RV1960 Zoratitas
+Zuzim	Karnaim	Zuzitas	revisado	rev. IA: Gen.14.5; candidato Karnaim trocado pela forma RV1960 Zuzitas
+Abel-maim	Maim	Abel-maim	revisado	rev. IA: 2Chr.16.4; candidato Maim trocado pela forma RV1960 Abel-maim
+Abiah	Abías	Abías	revisado	rev. IA: 1Sam.8.2; forma Abías conferida (RV1960)
+Abiel	Abiel	Abiel	revisado	rev. IA: 1Sam.9.1; forma Abiel conferida (RV1960)
+Abilene	Abilinia	Abilinia	revisado	rev. IA: Luke.3.1; forma Abilinia conferida (RV1960)
+Achaicus	Acáico	Acaico	revisado	rev. IA: 1Cor.16.17; candidato Acáico trocado pela forma RV1960 Acaico
+Achsa	Acsa	Acsa	revisado	rev. IA: 1Chr.2.49; forma Acsa conferida (RV1960)
+Adam	Adán	Adán	revisado	rev. IA: Gen.2.19; forma Adán conferida (RV1960)
+Addan	Adán	Addán	revisado	rev. IA: Ezra.2.59; candidato Adán trocado pela forma RV1960 Addán
+Addar	Adar	Adar	revisado	rev. IA: Josh.15.3; forma Adar conferida (RV1960)
+Ader	Eder	Ader	revisado	rev. IA: 1Chr.8.15; candidato Eder trocado pela forma RV1960 Ader
+Adoniram	Adoniram	Adoniram	revisado	rev. IA: 1Kgs.4.6; forma Adoniram conferida (RV1960)
+Adoram	Adoram	Adoram	revisado	rev. IA: 2Sam.20.24; forma Adoram conferida (RV1960)
+Adria	Adriático	Adriático	revisado	rev. IA: Acts.27.27; forma Adriático conferida (RV1960)
+Agabus	Ágabo	Agabo	revisado	rev. IA: Acts.11.28; candidato Ágabo trocado pela forma RV1960 Agabo
+Agag	Agag	Agag	revisado	rev. IA: Num.24.7; forma Agag conferida (RV1960)
+Ahab	Acab	Acab	revisado	rev. IA: 1Kgs.16.28; forma Acab conferida (RV1960)
+Ahaz	Acaz	Acaz	revisado	rev. IA: 2Kgs.15.38; forma Acaz conferida (RV1960)
+Ahiah	Ahías	Ahías	revisado	rev. IA: 1Kgs.4.3; forma Ahías conferida (RV1960)
+Ahiram	Ahiram	Ahiram	revisado	rev. IA: Num.26.38; forma Ahiram conferida (RV1960)
+Ahitub	Ajitub	Ahitob	revisado	rev. IA: Ezra.7.2; candidato Ajitub trocado pela forma RV1960 Ahitob
+Ahoah	Ahoá	Ahoa	revisado	rev. IA: 1Chr.8.4; candidato Ahoá trocado pela forma RV1960 Ahoa
+Akeldama	Acéldama	Acéldama	revisado	rev. IA: Acts.1.19; forma Acéldama conferida (RV1960)
+Alameth	Alemet	Alemet	revisado	rev. IA: 1Chr.7.8; forma Alemet conferida (RV1960)
+Alamoth	Alamot	Alamot	revisado	rev. IA: 1Chr.15.20; forma Alamot conferida (RV1960)
+Allon-bacuth	Bacut	Alón-bacut	revisado	rev. IA: Gen.35.8; candidato Bacut trocado pela forma RV1960 Alón-bacut
+Alphaeus	Alfeo	Alfeo	revisado	rev. IA: Matt.10.3; forma Alfeo conferida (RV1960)
+Amad	Amad	Amad	revisado	rev. IA: Josh.19.26; forma Amad conferida (RV1960)
+Amasiah	Amasías	Amasías	revisado	rev. IA: 2Chr.17.16; forma Amasías conferida (RV1960)
+Amminadib	Aminadab	Aminadab	revisado	rev. IA: Song.6.12; forma Aminadab conferida (RV1960)
+Amon	Amón	Amón	revisado	rev. IA: 1Kgs.22.26; forma Amón conferida (RV1960)
+Ananiah	Ananías	Ananías	revisado	rev. IA: Neh.3.23; forma Ananías conferida (RV1960)
+Angle	Ángulo		sem	rev. IA: 2Chr.26.9; sem forma tradicional segura na RV1960
+Anna	Ana	Ana	revisado	rev. IA: Luke.2.36; forma Ana conferida (RV1960)
+Aphik	Afec	Afec	revisado	rev. IA: Judg.1.31; forma Afec conferida (RV1960)
+Ara	Ara	Ara	revisado	rev. IA: 1Chr.7.38; forma Ara conferida (RV1960)
+Arabia	Arabia	Arabia	revisado	rev. IA: 1Kgs.10.15; forma Arabia conferida (RV1960)
+Arba	Arba	Arba	revisado	rev. IA: Josh.14.15; forma Arba conferida (RV1960)
+Archippus	Arquipo	Arquipo	revisado	rev. IA: Col.4.17; forma Arquipo conferida (RV1960)
+Arumah	Aruma	Aruma	revisado	rev. IA: Judg.9.41; forma Aruma conferida (RV1960)
+Ashteroth-karnaim	Karnaim	Astarot Karnaim	revisado	rev. IA: Gen.14.5; candidato Karnaim trocado pela forma RV1960 Astarot Karnaim
+Asshur	Asiria	Asiria	revisado	rev. IA: Gen.10.11; forma Asiria conferida (RV1960)
+Asshur	Asur	Asur	revisado	rev. IA: Gen.10.22; forma Asur conferida (RV1960)
+Assos	Asón	Asón	revisado	rev. IA: Acts.20.13; forma Asón conferida (RV1960)
+Atroth-shophan	Sofán	Atarot-sofán	revisado	rev. IA: Num.32.35; candidato Sofán trocado pela forma RV1960 Atarot-sofán
+Augustus	Augusto	Augusto	revisado	rev. IA: Luke.2.1; forma Augusto conferida (RV1960)
+Aven	Avén	Avén	revisado	rev. IA: Hos.10.8; forma Avén conferida (RV1960)
+Azal	Azel	Azal	revisado	rev. IA: Zech.14.5; candidato Azel trocado pela forma RV1960 Azal
+Azarael	Azarel	Azarael	revisado	rev. IA: Neh.12.36; candidato Azarel trocado pela forma RV1960 Azarael
+Azariah	Sadrac	Azarías	revisado	rev. IA: Dan.1.7; candidato Sadrac trocado pela forma RV1960 Azarías
+Azariahu	Azarías	Azarías	revisado	rev. IA: 2Chr.21.2; forma Azarías conferida (RV1960)
+Azotus	Azoto	Azoto	revisado	rev. IA: Acts.8.40; forma Azoto conferida (RV1960)
+Baal-hanan	Hanán	Baal-hanán	revisado	rev. IA: Gen.36.38; candidato Hanán trocado pela forma RV1960 Baal-hanán
+Baal-hermon	Hermón	Baal-hermón	revisado	rev. IA: 1Chr.5.23; candidato Hermón trocado pela forma RV1960 Baal-hermón
+Baal-meon	Baal-meón	Baal-meón	revisado	rev. IA: Ezek.25.9; forma Baal-meón conferida (RV1960)
+Baal-peor	Baal-peor	Baal-peor	revisado	rev. IA: Hos.9.10; forma Baal-peor conferida (RV1960)
+Baal-zebub	Zebub	Baal-zebub	revisado	rev. IA: 2Kgs.1.2; candidato Zebub trocado pela forma RV1960 Baal-zebub
+Baalath-beer	Baalat-beer	Baalat-beer	revisado	rev. IA: Josh.19.8; forma Baalat-beer conferida (RV1960)
+Baale-judah	Baale	Baala de Judá	revisado	rev. IA: 2Sam.6.2; candidato Baale trocado pela forma RV1960 Baala de Judá
+Baalhanan	Hanán	Baal-hanán	revisado	rev. IA: Gen.36.38; candidato Hanán trocado pela forma RV1960 Baal-hanán
+Baana	Baana	Baana	revisado	rev. IA: 1Kgs.4.12; forma Baana conferida (RV1960)
+Babylonia	Babilonia	Babilonia	revisado	rev. IA: Ezra.1.11; forma Babilonia conferida (RV1960)
+Bamoth-baal	Bamot-baal	Bamot-baal	revisado	rev. IA: Josh.13.17; forma Bamot-baal conferida (RV1960)
+Bartimaeus	Bartimeo	Bartimeo	revisado	rev. IA: Mark.10.46; forma Bartimeo conferida (RV1960)
+Basemath	Basemat	Basemat	revisado	rev. IA: 1Kgs.4.15; forma Basemat conferida (RV1960)
+Basmath	Basemat	Basemat	revisado	rev. IA: 1Kgs.4.15; forma Basemat conferida (RV1960)
+Bath-shua	Súa	Bet-súa	revisado	rev. IA: Gen.38.2; candidato Súa trocado pela forma RV1960 Bet-súa
+Ben	Ben	Ben	revisado	rev. IA: 1Chr.15.18; forma Ben conferida (RV1960)
+Ben-Geber	Geber	Ben-geber	revisado	rev. IA: 1Kgs.4.13; candidato Geber trocado pela forma RV1960 Ben-geber
+Ben-abinadab	Abinadab	Ben-abinadab	revisado	rev. IA: 1Kgs.4.11; candidato Abinadab trocado pela forma RV1960 Ben-abinadab
+Ben-deker	Deker	Ben-decar	revisado	rev. IA: 1Kgs.4.9; candidato Deker trocado pela forma RV1960 Ben-decar
+Ben-hail	Hail	Ben-hail	revisado	rev. IA: 2Chr.17.7; candidato Hail trocado pela forma RV1960 Ben-hail
+Ben-hanan	Hanán	Ben-hanán	revisado	rev. IA: 1Chr.4.20; candidato Hanán trocado pela forma RV1960 Ben-hanán
+Ben-hesed	Hesed	Ben-hesed	revisado	rev. IA: 1Kgs.4.10; candidato Hesed trocado pela forma RV1960 Ben-hesed
+Ben-zoheth	Zohet	Ben-zohet	revisado	rev. IA: 1Chr.4.20; candidato Zohet trocado pela forma RV1960 Ben-zohet
+Benhail	Hail	Ben-hail	revisado	rev. IA: 2Chr.17.7; candidato Hail trocado pela forma RV1960 Ben-hail
+Berothah	Berotá	Berota	revisado	rev. IA: Ezek.47.16; candidato Berotá trocado pela forma RV1960 Berota
+Beth-ashbea	Asbea	Bet-asbea	revisado	rev. IA: 1Chr.4.21; candidato Asbea trocado pela forma RV1960 Bet-asbea
+Beth-aven	Bet-avén	Bet-avén	revisado	rev. IA: Hos.4.15; forma Bet-avén conferida (RV1960)
+Beth-azmaveth	Bet-azmavet	Bet-azmavet	revisado	rev. IA: Neh.7.28; forma Bet-azmavet conferida (RV1960)
+Beth-biri	Biri	Bet-birai	revisado	rev. IA: 1Chr.4.31; candidato Biri trocado pela forma RV1960 Bet-birai
+Beth-eden	Edén	Bet-edén	revisado	rev. IA: Amos.1.5; candidato Edén trocado pela forma RV1960 Bet-edén
+Beth-gader	Gader	Bet-gader	revisado	rev. IA: 1Chr.2.51; candidato Gader trocado pela forma RV1960 Bet-gader
+Beth-gilgal	Gilgal	Bet-gilgal	revisado	rev. IA: Neh.12.29; candidato Gilgal trocado pela forma RV1960 Bet-gilgal
+Beth-haran	Harán	Bet-arán	revisado	rev. IA: Num.32.36; candidato Harán trocado pela forma RV1960 Bet-arán
+Beth-horon	Horón	Bet-horón	revisado	rev. IA: 1Sam.13.18; candidato Horón trocado pela forma RV1960 Bet-horón
+Beth-maacah	Abel-bet-maaca	Bet-maaca	revisado	rev. IA: 2Sam.20.14; candidato Abel-bet-maaca trocado pela forma RV1960 Bet-maaca
+Beth-millo	Milo	Bet-milo	revisado	rev. IA: Judg.9.6; candidato Milo trocado pela forma RV1960 Bet-milo
+Beth-nimrah	Bet-nimra	Bet-nimra	revisado	rev. IA: Josh.13.27; forma Bet-nimra conferida (RV1960)
+Beth-peor	Bet-peor	Bet-peor	revisado	rev. IA: Josh.13.20; forma Bet-peor conferida (RV1960)
+Beth-rapha	Rafa	Bet-rafa	revisado	rev. IA: 1Chr.4.12; candidato Rafa trocado pela forma RV1960 Bet-rafa
+Beth-shan	Bet-san	Bet-sán	revisado	rev. IA: 1Sam.31.10; candidato Bet-san trocado pela forma RV1960 Bet-sán
+Beth-shemesh	Bet-semes	Bet-semes	revisado	rev. IA: Josh.15.10; forma Bet-semes conferida (RV1960)
+Beth-zur	Bet-sur	Bet-sur	revisado	rev. IA: Neh.3.16; forma Bet-sur conferida (RV1960)
+Bethel	Betul	Betul	revisado	rev. IA: Josh.19.4; forma Betul conferida (RV1960)
+Blastus	Blasto	Blasto	revisado	rev. IA: Acts.12.20; forma Blasto conferida (RV1960)
+Capernaum	Capernaum	Capernaum	revisado	rev. IA: Matt.4.13; forma Capernaum conferida (RV1960)
+Caphtor	Caftor	Caftor	revisado	rev. IA: Gen.10.14; forma Caftor conferida (RV1960)
+Caphtorim	Caftorim	Caftorim	revisado	rev. IA: Gen.10.14; forma Caftorim conferida (RV1960)
+Carpus	Carpo	Carpo	revisado	rev. IA: 2Tim.4.13; forma Carpo conferida (RV1960)
+Chaldea	Caldea	Caldea	revisado	rev. IA: Jer.50.10; forma Caldea conferida (RV1960)
+Chesulloth	Quesulot	Quesulot	revisado	rev. IA: Josh.19.18; forma Quesulot conferida (RV1960)
+Chinnereth	Cineret	Cineret	revisado	rev. IA: Num.34.11; forma Cineret conferida (RV1960)
+Chinneroth	Cinerot	Cinerot	revisado	rev. IA: 1Kgs.15.20; forma Cinerot conferida (RV1960)
+Claudius	Claudio	Claudio	revisado	rev. IA: Acts.11.28; forma Claudio conferida (RV1960)
+Clement	Clemente	Clemente	revisado	rev. IA: Phil.4.3; forma Clemente conferida (RV1960)
+Corinth	Corinto	Corinto	revisado	rev. IA: Acts.18.1; forma Corinto conferida (RV1960)
+Crispus	Crispo	Crispo	revisado	rev. IA: Acts.18.8; forma Crispo conferida (RV1960)
+Cush	Cus	Cus	revisado	rev. IA: Gen.2.13; forma Cus conferida (RV1960)
+Cyprus	Chipre	Chipre	revisado	rev. IA: Acts.4.36; forma Chipre conferida (RV1960)
+Delaiah	Dalaías	Dalaía	revisado	rev. IA: 1Chr.3.24; candidato Dalaías trocado pela forma RV1960 Dalaía
+Diblathaim	Almón-diblataim	Diblataim	revisado	rev. IA: Num.33.46; candidato Almón-diblataim trocado pela forma RV1960 Diblataim
+Dimnah	Dimna	Dimna	revisado	rev. IA: Josh.21.35; forma Dimna conferida (RV1960)
+Eder	Edar	Edar	revisado	rev. IA: Josh.15.21; forma Edar conferida (RV1960)
+El-bethel	Betel	El-bet-el	revisado	rev. IA: Gen.35.7; candidato Betel trocado pela forma RV1960 El-bet-el
+El-paran	Parán	El-parán	revisado	rev. IA: Gen.14.6; candidato Parán trocado pela forma RV1960 El-parán
+Ela	Ela	Ela	revisado	rev. IA: 1Kgs.4.18; forma Ela conferida (RV1960)
+Elasah	Elasa	Elasa	revisado	rev. IA: Ezra.10.22; forma Elasa conferida (RV1960)
+Eleasah	Eleasá	Elasa	revisado	rev. IA: 1Chr.9.43; candidato Eleasá trocado pela forma RV1960 Elasa
+Eliadah	Eliada	Eliada	revisado	rev. IA: 1Kgs.11.23; forma Eliada conferida (RV1960)
+Eliah	Elías	Elías	revisado	rev. IA: 1Chr.8.27; forma Elías conferida (RV1960)
+Eliehoenai	Elioenai	Elioenai	revisado	rev. IA: 1Chr.26.3; forma Elioenai conferida (RV1960)
+Elpalet	Elfelet	Elpelet	revisado	rev. IA: 1Chr.14.5; candidato Elfelet trocado pela forma RV1960 Elpelet
+Emim	Emim	Emitas	revisado	rev. IA: Deut.2.10; candidato Emim trocado pela forma RV1960 Emitas
+Emmaus	Emaús	Emaús	revisado	rev. IA: Luke.24.13; forma Emaús conferida (RV1960)
+En-rogel	En-rogel	En-rogel	revisado	rev. IA: Josh.15.7; forma En-rogel conferida (RV1960)
+Epaenetus	Epeneto	Epeneto	revisado	rev. IA: Rom.16.5; forma Epeneto conferida (RV1960)
+Ephes-dammim	Efes-damim	Efes-damim	revisado	rev. IA: 1Sam.17.1; forma Efes-damim conferida (RV1960)
+Ephesus	Éfeso	Éfeso	revisado	rev. IA: Acts.18.19; forma Éfeso conferida (RV1960)
+Erastus	Erasto	Erasto	revisado	rev. IA: Acts.19.22; forma Erasto conferida (RV1960)
+Eshtemoh	Estemoa	Estemoa	revisado	rev. IA: Josh.15.50; forma Estemoa conferida (RV1960)
+Ethiopia	Etiopía	Etiopía	revisado	rev. IA: Esth.1.1; forma Etiopía conferida (RV1960)
+Eubulus	Eubulo	Eubulo	revisado	rev. IA: 2Tim.4.21; forma Eubulo conferida (RV1960)
+Euodias	Evodia	Evodia	revisado	rev. IA: Phil.4.2; forma Evodia conferida (RV1960)
+Euphrates	Éufrates	Éufrates	revisado	rev. IA: Gen.2.14; forma Éufrates conferida (RV1960)
+Eutychus	Eutico	Eutico	revisado	rev. IA: Acts.20.9; forma Eutico conferida (RV1960)
+Eve	Eva	Eva	revisado	rev. IA: Gen.3.20; forma Eva conferida (RV1960)
+Ezrah	Esdras	Esdras	revisado	rev. IA: 1Chr.4.17; forma Esdras conferida (RV1960)
+Galeed	Galaad	Galaad	revisado	rev. IA: Gen.31.47; forma Galaad conferida (RV1960)
+Gamad	Arvad	Gamadeos	revisado	rev. IA: Ezek.27.11; candidato Arvad trocado pela forma RV1960 Gamadeos
+Geliloth	Gelilot	Gelilot	revisado	rev. IA: Josh.18.17; forma Gelilot conferida (RV1960)
+Gershom	Gersón	Gersón	revisado	rev. IA: Exod.2.22; forma Gersón conferida (RV1960)
+Gibeah	Gibeat	Gabaa	revisado	rev. IA: Josh.18.28; candidato Gibeat trocado pela forma RV1960 Gabaa
+Gibeath-haaraloth	Aralot	Collado de Aralot	revisado	rev. IA: Josh.5.3; candidato Aralot trocado pela forma RV1960 Collado de Aralot
+Gibeon	Gabaón	Gabaón	revisado	rev. IA: Josh.9.3; forma Gabaón conferida (RV1960)
+God	Hago		sem	rev. IA: Dan.6.26; sem forma tradicional segura na RV1960
+Greece	Grecia	Grecia	revisado	rev. IA: Dan.8.21; forma Grecia conferida (RV1960)
+Hadar	Hadad	Hadar	revisado	rev. IA: Gen.25.15; candidato Hadad trocado pela forma RV1960 Hadar
+Hagri	Hagri	Hagri	revisado	rev. IA: 1Chr.11.38; forma Hagri conferida (RV1960)
+Hahiroth	Pi-hahirot	Pi-hahirot	revisado	rev. IA: Num.33.8; forma Pi-hahirot conferida (RV1960)
+Hamath-zobah	Soba	Hamat de Soba	revisado	rev. IA: 1Chr.18.3; candidato Soba trocado pela forma RV1960 Hamat de Soba
+Hammath	Hamat	Hamat	revisado	rev. IA: Josh.19.35; forma Hamat conferida (RV1960)
+Hananiah	Ananías	Hananías	revisado	rev. IA: Jer.36.12; candidato Ananías trocado pela forma RV1960 Hananías
+Happizzez	Afses	Afses	revisado	rev. IA: 1Chr.24.15; forma Afses conferida (RV1960)
+Hazar-susim	Susim	Hazar-susim	revisado	rev. IA: 1Chr.4.31; candidato Susim trocado pela forma RV1960 Hazar-susim
+Hazazon-tamar	Hazazón	Hazezon-tamar	revisado	rev. IA: 2Chr.20.2; candidato Hazazón trocado pela forma RV1960 Hazezon-tamar
+Heleb	Heleb	Heleb	revisado	rev. IA: 2Sam.23.29; forma Heleb conferida (RV1960)
+Helkath-hazzurim	Hazzurim	Helcat-hazurim	revisado	rev. IA: 2Sam.2.16; candidato Hazzurim trocado pela forma RV1960 Helcat-hazurim
+Hemam	Homam	Homam	revisado	rev. IA: 1Chr.1.39; forma Homam conferida (RV1960)
+Hemath	Hamat	Hamat	revisado	rev. IA: 1Chr.2.55; forma Hamat conferida (RV1960)
+Henoch	Hanoc	Hanoc	revisado	rev. IA: Gen.25.4; forma Hanoc conferida (RV1960)
+Heth	Het	Het	revisado	rev. IA: Gen.10.15; forma Het conferida (RV1960)
+Hezeki	Hizqui	Hizqui	revisado	rev. IA: 1Chr.8.17; forma Hizqui conferida (RV1960)
+Hizkiah	Ezequías	Ezequías	revisado	rev. IA: 1Chr.3.23; forma Ezequías conferida (RV1960)
+Hizkijah	Ezequías	Ezequías	revisado	rev. IA: Neh.10.17; forma Ezequías conferida (RV1960)
+Hodaiah	Hodavías	Hodavías	revisado	rev. IA: 1Chr.3.24; forma Hodavías conferida (RV1960)
+Hodevah	Hodeva	Hodeva	revisado	rev. IA: Neh.7.43; forma Hodeva conferida (RV1960)
+Hophra	Hofra	Hofra	revisado	rev. IA: Jer.44.30; forma Hofra conferida (RV1960)
+Hori	Hori	Hori	revisado	rev. IA: Gen.36.22; forma Hori conferida (RV1960)
+Hosea	Oseas	Oseas	revisado	rev. IA: Hos.1.1; forma Oseas conferida (RV1960)
+Hoshaiah	Oseas	Osaías	revisado	rev. IA: Neh.12.32; candidato Oseas trocado pela forma RV1960 Osaías
+Hothan	Hotam	Hotam	revisado	rev. IA: 1Chr.11.44; forma Hotam conferida (RV1960)
+Huram	Huram	Huram	revisado	rev. IA: 1Chr.8.5; forma Huram conferida (RV1960)
+Huram	Huram-abí	Hiram	revisado	rev. IA: 2Chr.2.13; candidato Huram-abí trocado pela forma RV1960 Hiram
+Hushah	Husa	Husa	revisado	rev. IA: 2Sam.23.27; forma Husa conferida (RV1960)
+Huz	Uz	Uz	revisado	rev. IA: Gen.22.21; forma Uz conferida (RV1960)
+Hymenaeus	Himeneo	Himeneo	revisado	rev. IA: 1Tim.1.20; forma Himeneo conferida (RV1960)
+Imna	Imna	Imna	revisado	rev. IA: 1Chr.7.35; forma Imna conferida (RV1960)
+Ir-moab	Moab	Ciudad de Moab	revisado	rev. IA: Num.22.36; candidato Moab trocado pela forma RV1960 Ciudad de Moab
+Ir-nahash	Nahas	Ir-nahas	revisado	rev. IA: 1Chr.4.12; candidato Nahas trocado pela forma RV1960 Ir-nahas
+Ishiah	Isías	Isías	revisado	rev. IA: 1Chr.7.3; forma Isías conferida (RV1960)
+Ishijah	Isías	Isías	revisado	rev. IA: Ezra.10.31; forma Isías conferida (RV1960)
+Ishvah	Isúa	Isúa	revisado	rev. IA: Gen.46.17; forma Isúa conferida (RV1960)
+Ishvi	Isúi	Isúi	revisado	rev. IA: Gen.46.17; forma Isúi conferida (RV1960)
+Isshijah	Isías	Isías	revisado	rev. IA: Ezra.10.31; forma Isías conferida (RV1960)
+Ivvah	Iva	Iva	revisado	rev. IA: 2Kgs.18.34; forma Iva conferida (RV1960)
+Jaaziel	Jaaziel	Jaaziel	revisado	rev. IA: 1Chr.15.18; forma Jaaziel conferida (RV1960)
+Jabesh-gilead	Jabes-galaad	Jabes-galaad	revisado	rev. IA: Judg.21.8; forma Jabes-galaad conferida (RV1960)
+Jabez	Jabes	Jabes	revisado	rev. IA: 1Chr.2.55; forma Jabes conferida (RV1960)
+Jabneh	Jabnia	Jabnia	revisado	rev. IA: 2Chr.26.6; forma Jabnia conferida (RV1960)
+Jacob	Jacob	Jacob	revisado	rev. IA: Gen.25.26; forma Jacob conferida (RV1960)
+Jaddai	Jadu	Jadau	revisado	rev. IA: Ezra.10.43; candidato Jadu trocado pela forma RV1960 Jadau
+Jahzah	Jahaza	Jahaza	revisado	rev. IA: 1Chr.6.78; forma Jahaza conferida (RV1960)
+Jahzeiah	Jazahías	Jahazías	revisado	rev. IA: Ezra.10.15; candidato Jazahías trocado pela forma RV1960 Jahazías
+Jairus	Jairo	Jairo	revisado	rev. IA: Mark.5.22; forma Jairo conferida (RV1960)
+James	Judas	Jacobo	revisado	rev. IA: Matt.13.55; candidato Judas trocado pela forma RV1960 Jacobo
+Javan	Javán	Javán	revisado	rev. IA: Gen.10.2; forma Javán conferida (RV1960)
+Jegar-sahadutha	Sahaduta	Jegar Sahaduta	revisado	rev. IA: Gen.31.47; candidato Sahaduta trocado pela forma RV1960 Jegar Sahaduta
+Jehiel	Jehieli	Jehieli	revisado	rev. IA: 1Chr.26.21; forma Jehieli conferida (RV1960)
+Jehiel	Jeiel	Jeiel	revisado	rev. IA: 1Chr.11.44; forma Jeiel conferida (RV1960)
+Jehizkiah	Ezequías	Ezequías	revisado	rev. IA: 2Chr.28.12; forma Ezequías conferida (RV1960)
+Jehohanan	Johanán	Johanán	revisado	rev. IA: 1Chr.26.3; forma Johanán conferida (RV1960)
+Jehoiachin	Joaquín	Joaquín	revisado	rev. IA: 2Kgs.24.6; forma Joaquín conferida (RV1960)
+Jehoiarib	Joiarib	Joiarib	revisado	rev. IA: 1Chr.24.7; forma Joiarib conferida (RV1960)
+Jehonathan	Jonatán	Jonatán	revisado	rev. IA: 1Chr.27.25; forma Jonatán conferida (RV1960)
+Jehosheba	Josaba	Josaba	revisado	rev. IA: 2Kgs.11.2; forma Josaba conferida (RV1960)
+Jehuel	Jehiel	Jehiel	revisado	rev. IA: 2Chr.29.14; forma Jehiel conferida (RV1960)
+Jehush	Jeús	Jeús	revisado	rev. IA: 1Chr.8.39; forma Jeús conferida (RV1960)
+Jerimoth	Jeremot	Jerimot	revisado	rev. IA: 1Chr.7.8; candidato Jeremot trocado pela forma RV1960 Jerimot
+Jesaiah	Jesaías	Jesaías	revisado	rev. IA: 1Chr.3.21; forma Jesaías conferida (RV1960)
+Jesiah	Isías	Isías	revisado	rev. IA: 1Chr.12.6; forma Isías conferida (RV1960)
+Jethro	Jetro	Jetro	revisado	rev. IA: Exod.3.1; forma Jetro conferida (RV1960)
+Jeuel	Jeiel	Jeiel	revisado	rev. IA: 2Chr.29.13; forma Jeiel conferida (RV1960)
+Jezoar	Izhar	Jezoar	revisado	rev. IA: 1Chr.4.7; candidato Izhar trocado pela forma RV1960 Jezoar
+Joahaz	Joa	Joacaz	revisado	rev. IA: 2Chr.34.8; candidato Joa trocado pela forma RV1960 Joacaz
+Joda	Judá	Judá	revisado	rev. IA: Luke.3.26; forma Judá conferida (RV1960)
+John	Jonás	Jonás	revisado	rev. IA: Matt.16.17; forma Jonás conferida (RV1960)
+Joiada	Joiada	Joiada	revisado	rev. IA: Neh.3.6; forma Joiada conferida (RV1960)
+Joiakim	Joacim	Joiacim	revisado	rev. IA: Neh.12.10; candidato Joacim trocado pela forma RV1960 Joiacim
+Jonas	Jonás	Jonás	revisado	rev. IA: John.1.42; forma Jonás conferida (RV1960)
+Josabad	Jozabad	Josabad	revisado	rev. IA: 1Chr.12.4; candidato Jozabad trocado pela forma RV1960 Josabad
+Jose	Joreim	Josué	revisado	rev. IA: Luke.3.29; candidato Joreim trocado pela forma RV1960 Josué
+Josech	José	José	revisado	rev. IA: Luke.3.26; forma José conferida (RV1960)
+Joses	José	José	revisado	rev. IA: Matt.13.55; forma José conferida (RV1960)
+Joshah	Josías	Josías	revisado	rev. IA: 1Chr.4.34; forma Josías conferida (RV1960)
+Joshaphat	Josafat	Josafat	revisado	rev. IA: 1Chr.11.43; forma Josafat conferida (RV1960)
+Jozadak	Josadac	Josadac	revisado	rev. IA: Ezra.10.18; forma Josadac conferida (RV1960)
+Juda	Judá	Judá	revisado	rev. IA: Luke.3.26; forma Judá conferida (RV1960)
+Jude	Judas	Judas	revisado	rev. IA: Matt.13.55; forma Judas conferida (RV1960)
+Julius	Julio	Julio	revisado	rev. IA: Acts.27.1; forma Julio conferida (RV1960)
+Jushab-hesed	Jusab	Jusab-hesed	revisado	rev. IA: 1Chr.3.20; candidato Jusab trocado pela forma RV1960 Jusab-hesed
+Justus	Justo	Justo	revisado	rev. IA: Acts.18.7; forma Justo conferida (RV1960)
+Kadesh-barnea	Cades-barnea	Cades-barnea	revisado	rev. IA: Josh.10.41; forma Cades-barnea conferida (RV1960)
+Kain	Caín	Caín	revisado	rev. IA: Josh.15.57; forma Caín conferida (RV1960)
+Kir	Quir	Kir	revisado	rev. IA: 2Kgs.3.25; candidato Quir trocado pela forma RV1960 Kir
+Kir-hareseth	Quir-hareset	Kir-hareset	revisado	rev. IA: Isa.16.7; candidato Quir-hareset trocado pela forma RV1960 Kir-hareset
+Kiriath-huzoth	Quiriat	Quiriat-huzot	revisado	rev. IA: Num.22.39; candidato Quiriat trocado pela forma RV1960 Quiriat-huzot
+Kiriath-jearim	Quiriat-jearim	Quiriat-jearim	revisado	rev. IA: Josh.9.17; forma Quiriat-jearim conferida (RV1960)
+Kiriathaim	Quiriataim	Quiriataim	revisado	rev. IA: Josh.13.19; forma Quiriataim conferida (RV1960)
+Kitron	Quitrón	Quitrón	revisado	rev. IA: Judg.1.30; forma Quitrón conferida (RV1960)
+Korah	Coré	Coré	revisado	rev. IA: Gen.36.5; forma Coré conferida (RV1960)
+Kore	Coré	Coré	revisado	rev. IA: 1Chr.9.19; forma Coré conferida (RV1960)
+Ladan	Ladán	Laadán	revisado	rev. IA: 1Chr.7.26; candidato Ladán trocado pela forma RV1960 Laadán
+Laishah	Lais	Lais	revisado	rev. IA: Isa.10.30; forma Lais conferida (RV1960)
+Lasharon	Sarón	Sarón	revisado	rev. IA: Josh.12.18; forma Sarón conferida (RV1960)
+Leb-kamai	Camai	Leb-camai	revisado	rev. IA: Jer.51.1; candidato Camai trocado pela forma RV1960 Leb-camai
+Lebo-hamath	Hamat	Lebo-hamat	revisado	rev. IA: Num.13.21; candidato Hamat trocado pela forma RV1960 Lebo-hamat
+Levi	Leví	Leví	revisado	rev. IA: Gen.29.34; forma Leví conferida (RV1960)
+Libni	Libni	Libni	revisado	rev. IA: Num.3.18; forma Libni conferida (RV1960)
+Libya	Libia	Libia	revisado	rev. IA: Jer.46.9; forma Libia conferida (RV1960)
+Linus	Lino	Lino	revisado	rev. IA: 2Tim.4.21; forma Lino conferida (RV1960)
+Lo-debar	Lo-debar	Lodebar	revisado	rev. IA: 2Sam.17.27; candidato Lo-debar trocado pela forma RV1960 Lodebar
+Lois	Loida	Loida	revisado	rev. IA: 2Tim.1.5; forma Loida conferida (RV1960)
+Lucifer	Lucero	Lucero	revisado	rev. IA: Isa.14.12; forma Lucero conferida (RV1960)
+Lucius	Lucio	Lucio	revisado	rev. IA: Acts.13.1; forma Lucio conferida (RV1960)
+Luke	Lucas	Lucas	revisado	rev. IA: Col.4.14; forma Lucas conferida (RV1960)
+Maacath	Maaca	Maaca	revisado	rev. IA: Josh.13.13; forma Maaca conferida (RV1960)
+Madmannah	Madmana	Madmana	revisado	rev. IA: Josh.15.31; forma Madmana conferida (RV1960)
+Magadan	Magdala	Magdala	revisado	rev. IA: Matt.15.39; forma Magdala conferida (RV1960)
+Mahalath	Mahalat	Mahalat	revisado	rev. IA: Gen.28.9; forma Mahalat conferida (RV1960)
+Mahaneh-dan	Dan	Mahaneh-dan	revisado	rev. IA: Judg.13.25; candidato Dan trocado pela forma RV1960 Mahaneh-dan
+Mahseiah	Maasías	Maasías	revisado	rev. IA: Jer.32.12; forma Maasías conferida (RV1960)
+Malcam	Malcam	Malcam	revisado	rev. IA: 1Chr.8.9; forma Malcam conferida (RV1960)
+Malchus	Malco	Malco	revisado	rev. IA: John.18.10; forma Malco conferida (RV1960)
+Mash	Mas	Mas	revisado	rev. IA: Gen.10.23; forma Mas conferida (RV1960)
+Massah	Masah	Masah	revisado	rev. IA: Exod.17.7; forma Masah conferida (RV1960)
+Massah	Massah	Masah	revisado	rev. IA: Deut.33.8; candidato Massah trocado pela forma RV1960 Masah
+Mattathias	Matatías	Matatías	revisado	rev. IA: Luke.3.25; forma Matatías conferida (RV1960)
+Matthan	Matán	Matán	revisado	rev. IA: Matt.1.15; forma Matán conferida (RV1960)
+Melchiah	Malquías	Malquías	revisado	rev. IA: Jer.21.1; forma Malquías conferida (RV1960)
+Melita	Malta	Malta	revisado	rev. IA: Acts.28.1; forma Malta conferida (RV1960)
+Menan	Mainán	Mainán	revisado	rev. IA: Luke.3.31; forma Mainán conferida (RV1960)
+Menna	Melea	Mainán	revisado	rev. IA: Luke.3.31; candidato Melea trocado pela forma RV1960 Mainán
+Meribah-kadesh	Cades	Meriba de Cades	revisado	rev. IA: Deut.32.51; candidato Cades trocado pela forma RV1960 Meriba de Cades
+Meshech-Tubal	Mesec	Mesec y Tubal	revisado	rev. IA: Ezek.32.26; candidato Mesec trocado pela forma RV1960 Mesec y Tubal
+Miamin	Mijamín	Mijamín	revisado	rev. IA: Ezra.10.25; forma Mijamín conferida (RV1960)
+Mica	Micaía	Micaía	revisado	rev. IA: Neh.10.11; forma Micaía conferida (RV1960)
+Micha	Micaía	Micaía	revisado	rev. IA: Neh.10.11; forma Micaía conferida (RV1960)
+Michaiah	Micaías	Micaías	revisado	rev. IA: 2Kgs.22.12; forma Micaías conferida (RV1960)
+Michmas	Micmas	Micmas	revisado	rev. IA: Ezra.2.27; forma Micmas conferida (RV1960)
+Miletus	Mileto	Mileto	revisado	rev. IA: Acts.20.15; forma Mileto conferida (RV1960)
+Mishael	Misael	Misael	revisado	rev. IA: Exod.6.22; forma Misael conferida (RV1960)
+Mithredath	Mitrídates	Mitrídates	revisado	rev. IA: Ezra.1.8; forma Mitrídates conferida (RV1960)
+Mizpeh	Mizpa	Mizpa	revisado	rev. IA: Josh.15.38; forma Mizpa conferida (RV1960)
+Moadiah	Moadías	Moadías	revisado	rev. IA: Neh.12.17; forma Moadías conferida (RV1960)
+Moresheth	Moreset	Moreset	revisado	rev. IA: Mic.1.1; forma Moreset conferida (RV1960)
+Moresheth-gath	Moreset-gat	Moreset-gat	revisado	rev. IA: Mic.1.14; forma Moreset-gat conferida (RV1960)
+Mozah	Moza	Mozah	revisado	rev. IA: Josh.18.26; candidato Moza trocado pela forma RV1960 Mozah
+Muppim	Mupim	Mupim	revisado	rev. IA: Gen.46.21; forma Mupim conferida (RV1960)
+Myra	Mira	Mira	revisado	rev. IA: Acts.27.5; forma Mira conferida (RV1960)
+Nagge	Nagai	Nagai	revisado	rev. IA: Luke.3.25; forma Nagai conferida (RV1960)
+Naphath-dor	Tafat		sem	rev. IA: 1Kgs.4.11; sem forma tradicional segura na RV1960
+Neah	Nea	Nea	revisado	rev. IA: Josh.19.13; forma Nea conferida (RV1960)
+Negeb	Négueb	Neguev	revisado	rev. IA: Gen.20.1; candidato Négueb trocado pela forma RV1960 Neguev
+Nereus	Nereo	Nereo	revisado	rev. IA: Rom.16.15; forma Nereo conferida (RV1960)
+Netophah	Netofa	Netofa	revisado	rev. IA: 2Sam.23.28; forma Netofa conferida (RV1960)
+Nile	Nilo	Nilo	revisado	rev. IA: Exod.17.5; forma Nilo conferida (RV1960)
+Nympha	Ninfas	Ninfas	revisado	rev. IA: Col.4.15; forma Ninfas conferida (RV1960)
+Olivet	Olivar	Olivar	revisado	rev. IA: Acts.1.12; forma Olivar conferida (RV1960)
+On	On	On	revisado	rev. IA: Gen.41.45; forma On conferida (RV1960)
+Ophni	Ofni	Ofni	revisado	rev. IA: Josh.18.24; forma Ofni conferida (RV1960)
+Orpah	Orfa	Orfa	revisado	rev. IA: Ruth.1.4; forma Orfa conferida (RV1960)
+Pahath-moab	Pahat	Pahat-moab	revisado	rev. IA: Ezra.2.6; candidato Pahat trocado pela forma RV1960 Pahat-moab
+Parthians	Partos	Partos	revisado	rev. IA: Acts.2.9; forma Partos conferida (RV1960)
+Peniel	Peniel	Peniel	revisado	rev. IA: Gen.32.30; forma Peniel conferida (RV1960)
+Perez-uzza	Pérez	Pérez-uza	revisado	rev. IA: 1Chr.13.11; candidato Pérez trocado pela forma RV1960 Pérez-uza
+Perez-uzzah	Fares-uza	Pérez-uza	revisado	rev. IA: 2Sam.6.8; candidato Fares-uza trocado pela forma RV1960 Pérez-uza
+Perez-uzzah	Pérez	Pérez-uza	revisado	rev. IA: 1Chr.13.11; candidato Pérez trocado pela forma RV1960 Pérez-uza
+Pharaoh	Faraón	Faraón	revisado	rev. IA: Gen.12.15; forma Faraón conferida (RV1960)
+Pharisee	Fariseo	Fariseo	revisado	rev. IA: Matt.23.26; forma Fariseo conferida (RV1960)
+Pharosh	Paros	Paros	revisado	rev. IA: Ezra.8.3; forma Paros conferida (RV1960)
+Philetus	Fileto	Fileto	revisado	rev. IA: 2Tim.2.17; forma Fileto conferida (RV1960)
+Philippi	Filipos	Filipos	revisado	rev. IA: Acts.16.12; forma Filipos conferida (RV1960)
+Philistia	Filistea	Filistea	revisado	rev. IA: Exod.15.14; forma Filistea conferida (RV1960)
+Phoenix	Fenice	Fenice	revisado	rev. IA: Acts.27.12; forma Fenice conferida (RV1960)
+Phygellus	Figelo	Figelo	revisado	rev. IA: 2Tim.1.15; forma Figelo conferida (RV1960)
+Phygelus	Figelo	Figelo	revisado	rev. IA: 2Tim.1.15; forma Figelo conferida (RV1960)
+Pirathon	Piratón	Piratón	revisado	rev. IA: Judg.12.15; forma Piratón conferida (RV1960)
+Pochereth	Poqueret-haze-bayim	Poqueret-hazebaim	revisado	rev. IA: Ezra.2.57; candidato Poqueret-haze-bayim trocado pela forma RV1960 Poqueret-hazebaim
+Pontus	Ponto	Ponto	revisado	rev. IA: Acts.2.9; forma Ponto conferida (RV1960)
+Ptolemais	Tolemaida	Tolemaida	revisado	rev. IA: Acts.21.7; forma Tolemaida conferida (RV1960)
+Puah	Fúa	Fúa	revisado	rev. IA: Gen.46.13; forma Fúa conferida (RV1960)
+Publius	Publio	Publio	revisado	rev. IA: Acts.28.7; forma Publio conferida (RV1960)
+Pudens	Pudente	Pudente	revisado	rev. IA: 2Tim.4.21; forma Pudente conferida (RV1960)
+Purah	Fura	Fura	revisado	rev. IA: Judg.7.10; forma Fura conferida (RV1960)
+Put	Fut	Fut	revisado	rev. IA: Gen.10.6; forma Fut conferida (RV1960)
+Quartus	Cuarto	Cuarto	revisado	rev. IA: Rom.16.23; forma Cuarto conferida (RV1960)
+Raamses	Ramsés	Ramesés	revisado	rev. IA: Exod.1.11; candidato Ramsés trocado pela forma RV1960 Ramesés
+Rachab	Rahab	Rahab	revisado	rev. IA: Matt.1.5; forma Rahab conferida (RV1960)
+Rakem	Requem	Requem	revisado	rev. IA: 1Chr.7.16; forma Requem conferida (RV1960)
+Ramathaim-zophim	Ramataim	Ramataim de Zofim	revisado	rev. IA: 1Sam.1.1; candidato Ramataim trocado pela forma RV1960 Ramataim de Zofim
+Ramoth	Jeremot	Ramot	revisado	rev. IA: Ezra.10.29; candidato Jeremot trocado pela forma RV1960 Ramot
+Regem-melech	Regem	Regem-melec	revisado	rev. IA: Zech.7.2; candidato Regem trocado pela forma RV1960 Regem-melec
+Rehoboth-Ir	Rehobot	Rehobot	revisado	rev. IA: Gen.10.11; forma Rehobot conferida (RV1960)
+Rephaim	Refaim	Refaim	revisado	rev. IA: Deut.3.13; forma Refaim conferida (RV1960)
+Rhegium	Regio	Regio	revisado	rev. IA: Acts.28.13; forma Regio conferida (RV1960)
+Rhoda	Rode	Rode	revisado	rev. IA: Acts.12.13; forma Rode conferida (RV1960)
+Rimmon	Dimna	Rimón	revisado	rev. IA: Josh.21.35; candidato Dimna trocado pela forma RV1960 Rimón
+Rimmono	Rimón	Rimono	revisado	rev. IA: 1Chr.6.77; candidato Rimón trocado pela forma RV1960 Rimono
+River	Yahvé		sem	rev. IA: Josh.24.14; sem forma tradicional segura na RV1960
+Rome	Roma	Roma	revisado	rev. IA: Acts.2.10; forma Roma conferida (RV1960)
+Rufus	Rufo	Rufo	revisado	rev. IA: Mark.15.21; forma Rufo conferida (RV1960)
+Sabbath	Estaba	Sábado	revisado	rev. IA: Luke.13.10; candidato Estaba trocado pela forma RV1960 Sábado
+Sadducee	Aquel	Saduceos	revisado	rev. IA: Matt.22.23; candidato Aquel trocado pela forma RV1960 Saduceos
+Sadoc	Sadoc	Sadoc	revisado	rev. IA: Matt.1.14; forma Sadoc conferida (RV1960)
+Salathiel	Salatiel	Salatiel	revisado	rev. IA: Luke.3.27; forma Salatiel conferida (RV1960)
+Salmone	Salmón	Salmón	revisado	rev. IA: Acts.27.7; forma Salmón conferida (RV1960)
+Salt	Sal	Ciudad de la Sal	revisado	rev. IA: Josh.15.62; candidato Sal trocado pela forma RV1960 Ciudad de la Sal
+Samgar	Samgar-nebo	Samgar-nebo	revisado	rev. IA: Jer.39.3; forma Samgar-nebo conferida (RV1960)
+Satan	Satanás	Satanás	revisado	rev. IA: 1Chr.21.1; forma Satanás conferida (RV1960)
+Seba	Seba	Seba	revisado	rev. IA: Gen.10.7; forma Seba conferida (RV1960)
+Senaah	Senaa	Senaa	revisado	rev. IA: Ezra.2.35; forma Senaa conferida (RV1960)
+Sepharad	Sefarad	Sefarad	revisado	rev. IA: Obad.1.20; forma Sefarad conferida (RV1960)
+Shaalbim	Saalbim	Saalbim	revisado	rev. IA: 1Kgs.4.9; forma Saalbim conferida (RV1960)
+Shahazumah	Sahasim	Sahazima	revisado	rev. IA: Josh.19.22; candidato Sahasim trocado pela forma RV1960 Sahazima
+Shama	Sama	Sama	revisado	rev. IA: 1Chr.11.44; forma Sama conferida (RV1960)
+Shamariah	Semarías	Semarías	revisado	rev. IA: 2Chr.11.19; forma Semarías conferida (RV1960)
+Shamma	Sama	Sama	revisado	rev. IA: 1Chr.7.37; forma Sama conferida (RV1960)
+Shammah	Samá	Sama	revisado	rev. IA: 1Sam.17.13; candidato Samá trocado pela forma RV1960 Sama
+Sharuhen	Saruhen	Saruhén	revisado	rev. IA: Josh.19.6; candidato Saruhen trocado pela forma RV1960 Saruhén
+Shaul	Saúl	Saúl	revisado	rev. IA: Gen.36.37; forma Saúl conferida (RV1960)
+Shavsha	Savsa	Savsa	revisado	rev. IA: 1Chr.18.16; forma Savsa conferida (RV1960)
+Sheba	Sabá	Sabá	revisado	rev. IA: Gen.10.7; forma Sabá conferida (RV1960)
+Sheminith	Seminit	Seminit	revisado	rev. IA: 1Chr.15.21; forma Seminit conferida (RV1960)
+Shephathiah	Sefatías	Sefatías	revisado	rev. IA: 1Chr.9.8; forma Sefatías conferida (RV1960)
+Shephelah	Sefela	Sefela	revisado	rev. IA: Josh.9.1; forma Sefela conferida (RV1960)
+Shephelah	Sefelá	Sefela	revisado	rev. IA: 2Chr.26.10; candidato Sefelá trocado pela forma RV1960 Sefela
+Shibah	Seba	Seba	revisado	rev. IA: Gen.26.33; forma Seba conferida (RV1960)
+Shiloah	Siloé	Siloé	revisado	rev. IA: Isa.8.6; forma Siloé conferida (RV1960)
+Shimea	Simea	Simea	revisado	rev. IA: 1Chr.6.30; forma Simea conferida (RV1960)
+Shimeon	Simeón	Simeón	revisado	rev. IA: Ezra.10.31; forma Simeón conferida (RV1960)
+Shimhi	Simei	Simei	revisado	rev. IA: 1Chr.8.21; forma Simei conferida (RV1960)
+Shimon	Simón	Simón	revisado	rev. IA: 1Chr.4.20; forma Simón conferida (RV1960)
+Shubael	Subael	Subael	revisado	rev. IA: 1Chr.24.20; forma Subael conferida (RV1960)
+Shuhah	Súa	Súa	revisado	rev. IA: 1Chr.4.11; forma Súa conferida (RV1960)
+Shunem	Sunem	Sunem	revisado	rev. IA: Josh.19.18; forma Sunem conferida (RV1960)
+Shupham	Hufam	Sufam	revisado	rev. IA: Num.26.39; candidato Hufam trocado pela forma RV1960 Sufam
+Sihon	Sijón	Sehón	revisado	rev. IA: Deut.2.32; candidato Sijón trocado pela forma RV1960 Sehón
+Siloam	Siloé	Siloé	revisado	rev. IA: Neh.3.15; forma Siloé conferida (RV1960)
+Simeon	Simón	Simón	revisado	rev. IA: Acts.13.1; forma Simón conferida (RV1960)
+Simri	Simri	Simri	revisado	rev. IA: 1Chr.26.10; forma Simri conferida (RV1960)
+Sin	Sin	Sin	revisado	rev. IA: Exod.16.1; forma Sin conferida (RV1960)
+Soco	Soco	Soco	revisado	rev. IA: 1Chr.4.18; forma Soco conferida (RV1960)
+Spain	España	España	revisado	rev. IA: Rom.15.24; forma España conferida (RV1960)
+Suah	Súa	Súa	revisado	rev. IA: 1Chr.7.36; forma Súa conferida (RV1960)
+Sur	Sur	Sur	revisado	rev. IA: 2Kgs.11.6; forma Sur conferida (RV1960)
+Syene	Sevene	Sevene	revisado	rev. IA: Ezek.29.10; forma Sevene conferida (RV1960)
+Syrtis	Sirte	Sirte	revisado	rev. IA: Acts.27.17; forma Sirte conferida (RV1960)
+Tamah	Tema	Tema	revisado	rev. IA: Ezra.2.53; forma Tema conferida (RV1960)
+Tehaphnehes	Tafnes	Tafnes	revisado	rev. IA: Ezek.30.18; forma Tafnes conferida (RV1960)
+Temah	Tema	Tema	revisado	rev. IA: Ezra.2.53; forma Tema conferida (RV1960)
+Tertius	Tercio	Tercio	revisado	rev. IA: Rom.16.22; forma Tercio conferida (RV1960)
+Tharshish	Tarsis	Tarsis	revisado	rev. IA: 1Chr.7.10; forma Tarsis conferida (RV1960)
+Thebes	Tebas	Tebas	revisado	rev. IA: Jer.46.25; forma Tebas conferida (RV1960)
+Tiberius	Tiberio	Tiberio	revisado	rev. IA: Luke.3.1; forma Tiberio conferida (RV1960)
+Tiglath-pileser	Tiglat-pileser	Tiglat-pileser	revisado	rev. IA: 2Kgs.15.29; forma Tiglat-pileser conferida (RV1960)
+Tilgath-pilneser	Pileser	Tiglat-pileser	revisado	rev. IA: 1Chr.5.6; candidato Pileser trocado pela forma RV1960 Tiglat-pileser
+Timaeus	Timeo	Timeo	revisado	rev. IA: Mark.10.46; forma Timeo conferida (RV1960)
+Timnah	Timná	Timná	revisado	rev. IA: 2Chr.28.18; forma Timná conferida (RV1960)
+Timnath-heres	Timnat-heres	Timnat-heres	revisado	rev. IA: Judg.2.9; forma Timnat-heres conferida (RV1960)
+Tishbe	Jezabel	Tisbe	revisado	rev. IA: 2Kgs.9.36; candidato Jezabel trocado pela forma RV1960 Tisbe
+Titus	Tito	Tito	revisado	rev. IA: 2Cor.2.13; forma Tito conferida (RV1960)
+Tobijah	Tobías	Tobías	revisado	rev. IA: 2Chr.17.8; forma Tobías conferida (RV1960)
+Tohu	Tohu	Tohu	revisado	rev. IA: 1Sam.1.1; forma Tohu conferida (RV1960)
+Tubal-cain	Tubal	Tubal-caín	revisado	rev. IA: Gen.4.22; candidato Tubal trocado pela forma RV1960 Tubal-caín
+Tychicus	Tíquico	Tíquico	revisado	rev. IA: Acts.20.4; forma Tíquico conferida (RV1960)
+Tyrannus	Tirano	Tiranno	revisado	rev. IA: Acts.19.9; candidato Tirano trocado pela forma RV1960 Tiranno
+Tyre	Tiro	Tiro	revisado	rev. IA: Josh.19.29; forma Tiro conferida (RV1960)
+Urbanus	Urbano	Urbano	revisado	rev. IA: Rom.16.9; forma Urbano conferida (RV1960)
+Uzzen-sheerah	Seera	Uzen-seera	revisado	rev. IA: 1Chr.7.24; candidato Seera trocado pela forma RV1960 Uzen-seera
+Uzzia	Uzías	Uzías	revisado	rev. IA: 1Chr.11.44; forma Uzías conferida (RV1960)
+Vophsi	Vapsi	Vapsi	revisado	rev. IA: Num.13.14; forma Vapsi conferida (RV1960)
+Zacchaeus	Zaqueo	Zaqueo	revisado	rev. IA: Luke.19.2; forma Zaqueo conferida (RV1960)
+Zacchur	Zacur	Zacur	revisado	rev. IA: 1Chr.4.26; forma Zacur conferida (RV1960)
+Zaccur	Zabbud	Zabud	revisado	rev. IA: Ezra.8.14; candidato Zabbud trocado pela forma RV1960 Zabud
+Zachariah	Zacarías	Zacarías	revisado	rev. IA: 2Kgs.14.29; forma Zacarías conferida (RV1960)
+Zacharias	Zacarías	Zacarías	revisado	rev. IA: 2Chr.24.20; forma Zacarías conferida (RV1960)
+Zalmon	Salmón	Salmón	revisado	rev. IA: 2Sam.23.28; forma Salmón conferida (RV1960)
+Zaphon	Sion	Zafón	revisado	rev. IA: Ps.48.2; candidato Sion trocado pela forma RV1960 Zafón
+Zaphon	Zafón	Zafón	revisado	rev. IA: Josh.13.27; forma Zafón conferida (RV1960)
+Zarephath	Sarepta	Sarepta	revisado	rev. IA: 1Kgs.17.9; forma Sarepta conferida (RV1960)
+Zatthu	Zatu	Zatu	revisado	rev. IA: Neh.10.14; forma Zatu conferida (RV1960)
+Zephath	Zefat	Sefat	revisado	rev. IA: Judg.1.17; candidato Zefat trocado pela forma RV1960 Sefat
+Zerahiah	Zeraías	Zeraías	revisado	rev. IA: 1Chr.6.6; forma Zeraías conferida (RV1960)
+Ziddim	Sidim	Sidim	revisado	rev. IA: Josh.19.35; forma Sidim conferida (RV1960)
+Zidkijah	Sedequías	Sedequías	revisado	rev. IA: Neh.10.1; forma Sedequías conferida (RV1960)
+Zidon	Sidón	Sidón	revisado	rev. IA: Gen.10.15; forma Sidón conferida (RV1960)
+Zipporah	Séfora	Séfora	revisado	rev. IA: Exod.2.21; forma Séfora conferida (RV1960)
+Zizah	Zina	Zina	revisado	rev. IA: 1Chr.23.10; forma Zina conferida (RV1960)
+Zobah-Hamath	Soba	Hamat de Soba	revisado	rev. IA: 1Chr.18.3; candidato Soba trocado pela forma RV1960 Hamat de Soba
+Zorobabel	Zorobabel	Zorobabel	revisado	rev. IA: Luke.3.27; forma Zorobabel conferida (RV1960)
+Beautiful Gate	puerta Beautiful	Puerta la Hermosa	revisado	rev. IA: Acts.3.2; candidato puerta Beautiful trocado pela forma RV1960 Puerta la Hermosa
+Brook Eshcol	arroyo Escol	Arroyo de Escol	revisado	rev. IA: Num.13.23; candidato arroyo Escol trocado pela forma RV1960 Arroyo de Escol
+East Square	plaza East	Plaza oriental	revisado	rev. IA: 2Chr.29.4; candidato plaza East trocado pela forma RV1960 Plaza oriental
+Hall of Judgment	sala de Judgment	Pórtico del juicio	revisado	rev. IA: 1Kgs.7.7; candidato sala de Judgment trocado pela forma RV1960 Pórtico del juicio
+Hall of Pillars	sala de Pillars	Pórtico de columnas	revisado	rev. IA: 1Kgs.7.6; candidato sala de Pillars trocado pela forma RV1960 Pórtico de columnas
+Hall of the Throne	sala de Throne	Pórtico del trono	revisado	rev. IA: 1Kgs.7.7; candidato sala de Throne trocado pela forma RV1960 Pórtico del trono
+Hill Mizar	collado Mizar	Monte de Mizar	revisado	rev. IA: Ps.42.6; candidato collado Mizar trocado pela forma RV1960 Monte de Mizar
+Jordan Valley	valle Jordán	Llanura del Jordán	revisado	rev. IA: Gen.13.10; candidato valle Jordán trocado pela forma RV1960 Llanura del Jordán
+Lower Pool	estanque Lower	Estanque de abajo	revisado	rev. IA: Isa.22.9; candidato estanque Lower trocado pela forma RV1960 Estanque de abajo
+Mizpeh Valley	valle Mizpa	Valle de Mizpa	revisado	rev. IA: ; candidato valle Mizpa trocado pela forma RV1960 Valle de Mizpa
+Mount Ephraim	monte Efraín	Monte de Efraín	revisado	rev. IA: Jer.4.15; candidato monte Efraín trocado pela forma RV1960 Monte de Efraín
+North Gate	puerta North	Puerta del Norte	revisado	rev. IA: 1Chr.26.14; candidato puerta North trocado pela forma RV1960 Puerta del Norte
+Old Pool	estanque Old	Estanque viejo	revisado	rev. IA: Isa.22.11; candidato estanque Old trocado pela forma RV1960 Estanque viejo
+People's Gate	puerta People	Puerta del Pueblo	revisado	rev. IA: ; candidato puerta People trocado pela forma RV1960 Puerta del Pueblo
+Plain of Aven	llanura de Avén	Valle de Avén	revisado	rev. IA: Amos.1.5; candidato llanura de Avén trocado pela forma RV1960 Valle de Avén
+Preparation Festival	fiesta Preparation		sem	rev. IA: sem ref.; sem forma tradicional segura na RV1960
+River of Arnon	río de Arnón	Arroyo de Arnón	revisado	rev. IA: Deut.2.24; candidato río de Arnón trocado pela forma RV1960 Arroyo de Arnón
+Rock of Escape	roca de Escape	Sela-hama-lecot	revisado	rev. IA: 1Sam.23.28; candidato roca de Escape trocado pela forma RV1960 Sela-hama-lecot
+Sea of the Philistines	mar de Philistines	Mar de los filisteos	revisado	rev. IA: Exod.23.31; candidato mar de Philistines trocado pela forma RV1960 Mar de los filisteos
+South Gate	puerta South	Puerta del Sur	revisado	rev. IA: 1Chr.26.15; candidato puerta South trocado pela forma RV1960 Puerta del Sur
+Straight Gate	puerta Derecha	Calle Derecha	revisado	rev. IA: Acts.9.11; candidato puerta Derecha trocado pela forma RV1960 Calle Derecha
+Tower of Eder	torre de Eder	Migdal-edar	revisado	rev. IA: ; candidato torre de Eder trocado pela forma RV1960 Migdal-edar
+Tribe of Judah	tribu de Judá	Tribu de Judá	revisado	rev. IA: Prov.25.1; candidato tribu de Judá trocado pela forma RV1960 Tribu de Judá
+Upper Pool	estanque Upper	Estanque de arriba	revisado	rev. IA: 2Kgs.18.17; candidato estanque Upper trocado pela forma RV1960 Estanque de arriba
+Valley of Baca	valle de Baca	Valle de Baca	revisado	rev. IA: Ps.84.6; candidato valle de Baca trocado pela forma RV1960 Valle de Baca
+Valley of Decision	valle de Decision	Valle de la decisión	revisado	rev. IA: Joel.3.14; candidato valle de Decision trocado pela forma RV1960 Valle de la decisión
+Valley of Mizpeh	valle de Mizpa	Valle de Mizpa	revisado	rev. IA: Josh.11.8; candidato valle de Mizpa trocado pela forma RV1960 Valle de Mizpa
+Booths Festival	Fiesta de los Tabernáculos	Fiesta de los Tabernáculos	revisado	rev. IA: ; forma Fiesta de los Tabernáculos conferida (RV1960)
+Broad Wall	muro Ancho	Muro ancho	revisado	rev. IA: Neh.3.8; candidato muro Ancho trocado pela forma RV1960 Muro ancho
+Brook of Egypt	torrente de Egipto	Torrente de Egipto	revisado	rev. IA: Num.34.5; candidato torrente de Egipto trocado pela forma RV1960 Torrente de Egipto
+Brook of the Willows	Torrente de los Sauces	Torrente de los Sauces	revisado	rev. IA: Isa.15.7; forma Torrente de los Sauces conferida (RV1960)
+City of the Lord	Ciudad de Yahvé	Ciudad de Jehová	revisado	rev. IA: Isa.60.14; candidato Ciudad de Yahvé trocado pela forma RV1960 Ciudad de Jehová
+Corner Gate	puerta del Ángulo	Puerta del Ángulo	revisado	rev. IA: 2Kgs.14.13; candidato puerta del Ángulo trocado pela forma RV1960 Puerta del Ángulo
+Dung Gate	puerta del Muladar	Puerta del Muladar	revisado	rev. IA: Neh.2.13; candidato puerta del Muladar trocado pela forma RV1960 Puerta del Muladar
+East Gate	puerta de los Tiestos	Puerta Oriental	revisado	rev. IA: Jer.19.2; candidato puerta de los Tiestos trocado pela forma RV1960 Puerta Oriental
+Fish Gate	puerta del Pescado	Puerta del Pescado	revisado	rev. IA: 2Chr.33.14; candidato puerta del Pescado trocado pela forma RV1960 Puerta del Pescado
+Foundation Gate	puerta del Cimiento	Puerta del Cimiento	revisado	rev. IA: ; candidato puerta del Cimiento trocado pela forma RV1960 Puerta del Cimiento
+Gate Miphkad	puerta del Juicio	Puerta del Juicio	revisado	rev. IA: Neh.3.31; candidato puerta del Juicio trocado pela forma RV1960 Puerta del Juicio
+Gate of Yeshanah	puerta del Pescado	Puerta Vieja	revisado	rev. IA: Neh.12.39; candidato puerta del Pescado trocado pela forma RV1960 Puerta Vieja
+Gate of the Foundation	puerta del Cimiento	Puerta del Fundamento	revisado	rev. IA: 2Chr.23.5; candidato puerta del Cimiento trocado pela forma RV1960 Puerta del Fundamento
+Gate of the Guard	puerta de la Cárcel	Puerta de la Cárcel	revisado	rev. IA: Neh.12.39; candidato puerta de la Cárcel trocado pela forma RV1960 Puerta de la Cárcel
+Great Sea	mar Grande	Mar Grande	revisado	rev. IA: Ezek.47.10; candidato mar Grande trocado pela forma RV1960 Mar Grande
+Guard Gate	puerta de la Cárcel	Puerta de la Guardia	revisado	rev. IA: ; candidato puerta de la Cárcel trocado pela forma RV1960 Puerta de la Guardia
+Hermon Mount	monte Hermón	Monte Hermón	revisado	rev. IA: ; candidato monte Hermón trocado pela forma RV1960 Monte Hermón
+Horse Gate	puerta de los Caballos	Puerta de los Caballos	revisado	rev. IA: 2Chr.23.15; candidato puerta de los Caballos trocado pela forma RV1960 Puerta de los Caballos
+House of the Forest	Casa del Bosque	Casa del Bosque del Líbano	revisado	rev. IA: ; candidato Casa del Bosque trocado pela forma RV1960 Casa del Bosque del Líbano
+King's Valley	Valle del Rey	Valle del Rey	revisado	rev. IA: ; forma Valle del Rey conferida (RV1960)
+Middle Gate	puerta del Medio	Puerta del Medio	revisado	rev. IA: Jer.39.3; candidato puerta del Medio trocado pela forma RV1960 Puerta del Medio
+Mount Carmel	monte Carmelo	Monte Carmelo	revisado	rev. IA: 1Kgs.18.19; candidato monte Carmelo trocado pela forma RV1960 Monte Carmelo
+Mount Hermon	monte Hermón	Monte Hermón	revisado	rev. IA: Deut.3.8; candidato monte Hermón trocado pela forma RV1960 Monte Hermón
+Mount Horeb	monte Horeb	Monte Horeb	revisado	rev. IA: Exod.33.6; candidato monte Horeb trocado pela forma RV1960 Monte Horeb
+Mount Seir	monte de Seir	Monte de Seir	revisado	rev. IA: Josh.15.10; candidato monte de Seir trocado pela forma RV1960 Monte de Seir
+Mount Tabor	monte Tabor	Monte Tabor	revisado	rev. IA: Judg.4.6; candidato monte Tabor trocado pela forma RV1960 Monte Tabor
+Muster Gate	puerta del Juicio	Puerta del Juicio	revisado	rev. IA: Neh.3.31; candidato puerta del Juicio trocado pela forma RV1960 Puerta del Juicio
+Nebo Mount	monte Nebo	Monte Nebo	revisado	rev. IA: ; candidato monte Nebo trocado pela forma RV1960 Monte Nebo
+Old Gate	puerta Vieja	Puerta Vieja	revisado	rev. IA: Neh.3.6; candidato puerta Vieja trocado pela forma RV1960 Puerta Vieja
+Potsherd Gate	puerta de los Tiestos	Puerta de los Tiestos	revisado	rev. IA: Jer.19.2; candidato puerta de los Tiestos trocado pela forma RV1960 Puerta de los Tiestos
+Red Sea	Mar Rojo	Mar Rojo	revisado	rev. IA: Exod.10.19; forma Mar Rojo conferida (RV1960)
+Salt Sea	Mar Salado	Mar Salado	revisado	rev. IA: Gen.14.3; forma Mar Salado conferida (RV1960)
+Sea of the Plain	mar del Arabá	Mar del Arabá	revisado	rev. IA: Josh.3.16; candidato mar del Arabá trocado pela forma RV1960 Mar del Arabá
+Seir Mount	monte de Seír	Monte de Seir	revisado	rev. IA: ; candidato monte de Seír trocado pela forma RV1960 Monte de Seir
+Sheep Gate	puerta de las Ovejas	Puerta de las Ovejas	revisado	rev. IA: Neh.3.1; candidato puerta de las Ovejas trocado pela forma RV1960 Puerta de las Ovejas
+Tabor Mount	monte Tabor	Monte Tabor	revisado	rev. IA: ; candidato monte Tabor trocado pela forma RV1960 Monte Tabor
+Tower of the Hundred	torre de Hananel	Torre de Hamea	revisado	rev. IA: Neh.3.1; candidato torre de Hananel trocado pela forma RV1960 Torre de Hamea
+Travelers Valley	valle de los Viajeros	Valle de los que pasan	revisado	rev. IA: ; candidato valle de los Viajeros trocado pela forma RV1960 Valle de los que pasan
+Valley of Hinnom	valle de Hinom	Valle de Hinom	revisado	rev. IA: Josh.15.8; candidato valle de Hinom trocado pela forma RV1960 Valle de Hinom
+Valley of Slaughter	Valle de la Matanza	Valle de la Matanza	revisado	rev. IA: Jer.7.32; forma Valle de la Matanza conferida (RV1960)
+Valley of the Passengers	valle de los Viajeros	Valle de los que pasan	revisado	rev. IA: Ezek.39.11; candidato valle de los Viajeros trocado pela forma RV1960 Valle de los que pasan
+Water Gate	puerta de las Aguas	Puerta de las Aguas	revisado	rev. IA: Neh.3.26; candidato puerta de las Aguas trocado pela forma RV1960 Puerta de las Aguas
+Way of Holiness	Camino de Santidad	Camino de Santidad	revisado	rev. IA: Isa.35.8; forma Camino de Santidad conferida (RV1960)
+West Gate	puerta de Salequet	Puerta de Salequet	revisado	rev. IA: 1Chr.26.16; candidato puerta de Salequet trocado pela forma RV1960 Puerta de Salequet
