@@ -126,6 +126,8 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'strong-systematic': { short: 'Strong', commentator: 'A. H. Strong', role: 'commentary', lang: 'en' },
   // Institutas (pipeline/ingest/doutrina_pd.py), tradução de John Allen; o comentarista leva a obra, como as EGW.
   'calvin-institutes': { short: 'Institutas', commentator: 'João Calvino · Institutas', role: 'commentary', lang: 'en' },
+  // Comentários escaneados, versículo a versículo (pipeline/ingest/comentario_escaneado.py; archive.org, NOT_IN_COPYRIGHT).
+  'broadus-matthew': { short: 'Broadus', commentator: 'John A. Broadus', role: 'commentary', lang: 'en' },
 };
 
 /** Ordem de preferência das fontes de lugares (menor = melhor) para escolher a identificação moderna. */

@@ -163,6 +163,15 @@ sumário e índices (a partir de "Index Of") ficam fora. O cabeçalho do verbete
 | `strong-systematic` | Augustus Hopkins Strong (1836-1921), batista | Systematic Theology (The Judson Press, 1907; revisada e ampliada; três volumes) | Project Gutenberg #44035 (vol. 1, *The Doctrine of God*), #44555 (vol. 2, *The Doctrine of Man*) e #45283 (vol. 3, *The Doctrine of Salvation*) | Domínio público: autor falecido em 1921 e obra publicada em 1907 (domínio público nos EUA); no Brasil, autor falecido há mais de 70 anos. Cabeçalho e rodapé do Gutenberg removidos. Notas em bloco recuado entram como parágrafos. Texto em inglês. |
 | `calvin-institutes` | João Calvino (1509-1564) | Institutes of the Christian Religion, tradução de John Allen (sexta edição americana revisada e corrigida, Presbyterian Board of Publication, Filadélfia; 1813 no volume 1) | Project Gutenberg #45001 (livros I a III) e #64392 (livros IV e V) | Domínio público: autor falecido em 1564; tradução publicada em 1813 (domínio público nos EUA); no Brasil, autor falecido há mais de 70 anos. Cabeçalho e rodapé do Gutenberg removidos. Notas de rodapé com referência (`(n)` no volume 1, `[n]` no volume 2) valem para o parágrafo que tem a marca; notas só com texto (latim, nomes de autores) não geram linha. Referências em capítulo romano minúsculo (`Prov. xxix. 18`, `Rom. viii. 30`; `refparse.find_refs(romano=True)`). Prefácio do tradutor e dedicatória antes do Livro I ficam fora (contagem). Texto em inglês. |
 
+**Comentários escaneados (domínio público; versículo a versículo).** Digitalizações do archive.org marcadas como
+NOT_IN_COPYRIGHT, conferidas na página do item (data e autor). Ingestor: `pipeline/ingest/comentario_escaneado.py`, uma
+obra por vez. Cada comentário de versículo (ou intervalo) vira uma linha; o texto começa com "Autor — Obra:". Parágrafo
+com lixo de OCR (sinal de linha, barra de coluna, sílaba sem vogal) sai inteiro, com a contagem por motivo no build.
+
+| Fonte (id) | Autor | Título e edição | Origem do texto | Condições |
+|---|---|---|---|---|
+| `broadus-matthew` | John A. Broadus (1827-1895), batista | Commentary on the Gospel of Matthew (An American Commentary on the New Testament; American Baptist Publication Society, c1886) | archive.org `commentonmatthew00broauoft` (Robarts, University of Toronto) | Domínio público: autor falecido em 1895 e obra de 1886 (domínio público nos EUA e no Brasil: autor falecido há mais de 70 anos). Marcador "N." com dois espaços no início do parágrafo. Notas numeradas com outro espaçamento não viram versículo. Parágrafos em duas colunas (barra "\|") e com símbolos de OCR saem. A cobertura é parcial (ver contagem no build). Texto em inglês. |
+
 **Examinadas e não incluídas (adventistas e outras):** *Ministry of Healing* (1905/1909): o scan de 1909 não tem
 referência explícita em parágrafo, e o de 1905 traz aviso de 1942 (edição revisada); não está no Gutenberg. *Education*
 (1903): no Gutenberg (#62102), as referências são linhas curtas de lista (cerca de 35), sem comentário; no archive.org,
