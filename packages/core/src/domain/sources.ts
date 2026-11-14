@@ -120,6 +120,8 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'maclaren-expositions': { short: 'Maclaren', commentator: 'Alexander Maclaren', role: 'commentary', lang: 'en' },
   // Doutrina (pipeline/ingest/doutrina_pd.py): teologia sistemática em domínio público, por referência explícita.
   'strong-systematic': { short: 'Strong', commentator: 'A. H. Strong', role: 'commentary', lang: 'en' },
+  // Institutas (pipeline/ingest/doutrina_pd.py), tradução de John Allen; o comentarista leva a obra, como as EGW.
+  'calvin-institutes': { short: 'Institutas', commentator: 'João Calvino · Institutas', role: 'commentary', lang: 'en' },
 };
 
 /** Ordem de preferência das fontes de lugares (menor = melhor) para escolher a identificação moderna. */

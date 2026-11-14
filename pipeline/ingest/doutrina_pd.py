@@ -51,6 +51,10 @@ class Volume:
     ebook: int          # eBook do Project Gutenberg
     rotulo: str         # conteúdo do volume (para o log)
     fim: str            # regex (linha inteira) que encerra o corpo: índice ou notas do volume
+    # Notas de rodapé: marca no texto (regex com grupo 1 = número da nota) e formato das notas depois de `fim`.
+    # "linha": "    12 Rom. viii. 30." (uma nota por entrada, com continuação indentada); "bloco": "Footnote 12:" e o texto.
+    marca: str | None = None
+    notas: str | None = None
 
 
 @dataclass(frozen=True)
@@ -65,6 +69,7 @@ class Obra:
     pd: str             # trecho da atribuição sobre o domínio público
     tradition: str      # chave de TRADITIONS (packages/core/src/domain/sources.ts)
     volumes: tuple[Volume, ...]
+    romano: bool = False  # lê referências em capítulo romano minúsculo ("Rom. viii. 30"; refparse, romano=True)
 
 
 OBRAS = {
@@ -85,6 +90,26 @@ OBRAS = {
             Volume(45283, "vol. 3, The Doctrine of Salvation", r"^Index Of"),
         ),
     ),
+    "calvin-institutes": Obra(
+        source_id="calvin-institutes",
+        title="Institutes of the Christian Religion",
+        short="Institutes of the Christian Religion",
+        author="John Calvin (1509-1564)",
+        edition=("Presbyterian Board of Publication, Filadélfia, sexta edição americana revisada e corrigida "
+                 "(1813 no volume 1); tradução de John Allen"),
+        url="https://www.gutenberg.org/ebooks/45001",
+        rights="Project Gutenberg eBooks #45001 (vol. 1) e #64392 (vol. 2)",
+        pd=("Domínio público: autor falecido em 1564; tradução de John Allen publicada em 1813 (domínio público nos "
+            "EUA); no Brasil, autor falecido há mais de 70 anos."),
+        tradition="reformed",
+        volumes=(
+            # Volume 1 (livros I a III): notas no fim, depois de "FOOTNOTES", com a marca "(n)" no texto.
+            Volume(45001, "vol. 1, livros I a III", r"^FOOTNOTES\s*$", marca=r"\((\d{1,4})\)", notas="linha"),
+            # Volume 2 (livros IV e V): notas depois de "END OF THE INSTITUTES.", com a marca "[n]" no texto.
+            Volume(64392, "vol. 2, livros IV e V", r"^END OF THE INSTITUTES\.", marca=r"\[(\d{1,4})\]", notas="bloco"),
+        ),
+        romano=True,
+    ),
 }
 
 
@@ -97,6 +122,98 @@ def corpo_do_volume(texto: str, volume: Volume) -> str:
     corpo = texto[inicio.end() if inicio else 0:fim.start() if fim else len(texto)]
     m = re.search(volume.fim, corpo, re.M)
     return corpo[:m.start()] if m else corpo
+
+
+_NOTA_LINHA = re.compile(r"^ {1,5}(\d{1,4}) +(\S.*)$")  # entrada: recuo de até 5 espaços; continuação tem 6
+_NOTA_BLOCO = re.compile(r"^Footnote (\d{1,4}):\s*$")
+
+
+def _notas_em_bloco(texto: str, romano: bool) -> dict[int, list[tuple[int, int]]]:
+    """Notas "Footnote N:" do volume 2: cada uma é o cabeçalho e, logo depois, o bloco com o texto.
+
+    No Gutenberg, as notas 1 a 1403 ficam no corpo, depois de cada capítulo, e só as últimas ficam depois de
+    "END OF THE INSTITUTES.". Por isso o volume inteiro é varrido, e `blocos_sem_notas` tira essas notas do corpo.
+    """
+    inicio = START.search(texto)
+    fim = END.search(texto)
+    out: dict[int, list[tuple[int, int]]] = {}
+    atual = None
+    for linhas in blocos(texto[inicio.end() if inicio else 0:fim.start() if fim else len(texto)]):
+        h = _NOTA_BLOCO.match(linhas[0]) if len(linhas) == 1 else None
+        if h:
+            atual = int(h.group(1))
+            continue
+        if atual is not None:
+            refs = find_refs(" ".join(linha.strip() for linha in linhas), romano=romano)
+            if refs:
+                out[atual] = refs
+            atual = None
+    return out
+
+
+def blocos_sem_notas(lista: list[list[str]]) -> list[list[str]]:
+    """Tira do corpo as notas "Footnote N:" (cabeçalho e bloco de texto seguinte)."""
+    out, pula = [], False
+    for linhas in lista:
+        if pula:
+            pula = False
+            continue
+        if len(linhas) == 1 and _NOTA_BLOCO.match(linhas[0]):
+            pula = True
+            continue
+        out.append(linhas)
+    return out
+
+
+def notas_do_volume(texto: str, volume: Volume, romano: bool) -> dict[int, list[tuple[int, int]]]:
+    """Referências de cada nota de rodapé do volume (número -> pares de vid). Nota sem referência fica de fora."""
+    if volume.notas is None:
+        return {}
+    if volume.notas == "bloco":
+        return _notas_em_bloco(texto, romano)
+    inicio = START.search(texto)
+    fim = END.search(texto)
+    resto = texto[inicio.end() if inicio else 0:fim.start() if fim else len(texto)]
+    m = re.search(volume.fim, resto, re.M)
+    if not m:
+        return {}
+    entradas: dict[int, list[str]] = {}
+    atual = None
+    for linha in resto[m.end():].split("\n"):
+        if volume.notas == "linha":
+            h = _NOTA_LINHA.match(linha)
+            if h:
+                atual = int(h.group(1))
+                entradas[atual] = [h.group(2)]
+                continue
+        else:
+            h = _NOTA_BLOCO.match(linha)
+            if h:
+                atual = int(h.group(1))
+                entradas[atual] = []
+                continue
+        if atual is not None and linha.strip():
+            entradas[atual].append(linha.strip())
+    out = {}
+    for n, partes in entradas.items():
+        refs = find_refs(" ".join(partes), romano=romano)
+        if refs:
+            out[n] = refs
+    return out
+
+
+def tira_marcas(texto: str, volume: Volume, notas: dict) -> tuple[str, list[int]]:
+    """Tira a marca de nota (ex.: "(118)") que tem nota com referência; devolve o texto e os números tirados."""
+    usadas: list[int] = []
+
+    def troca(m):
+        n = int(m.group(1))
+        if n in notas:
+            usadas.append(n)
+            return ""
+        return m.group(0)
+
+    return re.sub(volume.marca, troca, texto) if volume.marca else texto, usadas
 
 
 def cabecalho(linhas: list[str]) -> tuple[str, str] | None:
@@ -141,7 +258,12 @@ def linhas_da_obra(textos: list[tuple[Volume, str]], obra: Obra) -> tuple[list[t
     rows: list[tuple[int, int, str]] = []
     for volume, bruto in textos:
         estado = {"parte": None, "capitulo": None, "secao": None}
-        for linhas in blocos(corpo_do_volume(bruto, volume)):
+        notas = notas_do_volume(bruto, volume, romano=obra.romano)
+        stats["notas com referência"] += len(notas)
+        lista = blocos(corpo_do_volume(bruto, volume))
+        if volume.notas == "bloco":
+            lista = blocos_sem_notas(lista)
+        for linhas in lista:
             h = cabecalho(linhas)
             if h is not None:
                 nivel, rotulo = h
@@ -159,8 +281,11 @@ def linhas_da_obra(textos: list[tuple[Volume, str]], obra: Obra) -> tuple[list[t
                 stats["prefácio e sumário (fora)"] += 1
                 continue
             stats["parágrafos"] += 1
-            texto = paragrafo(linhas)
-            refs = find_refs(texto)
+            texto, marcas = tira_marcas(paragrafo(linhas), volume, notas)
+            refs = find_refs(texto, romano=obra.romano)
+            for n in marcas:  # a nota do rodapé vale para o parágrafo que a marca
+                refs += [r for r in notas[n] if r not in refs]
+                stats["marcas de nota ligadas"] += 1
             if not refs:
                 stats["sem referência"] += 1
                 continue
@@ -220,7 +345,8 @@ def ingest(obra: Obra) -> None:
             ),
             tradition=obra.tradition,
             notes=(
-                "Só parágrafos com referência bíblica explícita geram linhas (uma por referência). O cabeçalho do "
+                "Só parágrafos com referência bíblica explícita geram linhas (uma por referência). Nota de rodapé com "
+                "referência vale para o parágrafo que tem a marca dela no texto. O cabeçalho do "
                 "verbete traz autor, obra e a parte e o capítulo do parágrafo. Prefácio, sumário e índices ficam fora. "
                 "Texto em inglês."
             ),

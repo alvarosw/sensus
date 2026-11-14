@@ -77,6 +77,7 @@ const NOVAS: Array<{ id: string; kind: string; tradition: string }> = [
   { id: 'bible-readings', kind: 'commentary', tradition: 'adventist' },
   { id: 'maclaren-expositions', kind: 'commentary', tradition: 'baptist' },
   { id: 'strong-systematic', kind: 'commentary', tradition: 'baptist' },
+  { id: 'calvin-institutes', kind: 'commentary', tradition: 'reformed' },
 ];
 
 const ROLE_OF_KIND: Record<string, string[]> = {
