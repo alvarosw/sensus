@@ -105,7 +105,7 @@ domínio público (DistributionLicense=Public Domain).* A atribuição completa 
 | `sword-luther` | Martinho Lutero (1483-1546) e outros | Luther's Commentary on Selected Bible Passages | v1.1 | PD pelo `.conf`. O About cita edições de 1892 a 1932 (Lenker, Hay, Holman); conferir cada parte. Ver item 12. |
 | `sword-pnt` | B. W. Johnson (séc. XIX) | The People's New Testament, com notas explicativas | v1.1 | PD. |
 | `sword-tfg` | J. W. McGarvey (1829-1915) e Philip Y. Pendleton | The Fourfold Gospel e Commentary on Acts | v1.5 | PD. Módulo RawCom (texto sem compressão). Sem marcas de referência cruzada GBF. |
-| `sword-tdavid` | Charles Haddon Spurgeon (1834-1892) | The Treasury of David (Salmos; sete volumes, o último em 1885) | v2.1 | PD (`DistributionLicense=Public Domain`). Só Salmos. O módulo guarda o comentário de cada Salmo inteiro no versículo 1 (sem divisão por versículo no banco; "Verse N." fica no texto). |
+| `sword-tdavid` | Charles Haddon Spurgeon (1834-1892) | The Treasury of David (Salmos; sete volumes, o último em 1885) | v2.1 | PD (`DistributionLicense=Public Domain`). Só Salmos. Comentário dividido por versículo (`pipeline/ingest/tdavid.py`): as seções do módulo (EXPOSITION, notas, dicas) são cortadas nos marcadores "Verse N.", "Verses N-M." e "Ver. N", e cada parágrafo vai para o versículo ou intervalo indicado. A visão geral e o texto antes do primeiro marcador ficam no versículo 1. As listas bibliográficas "WORKS UPON THE … PSALM" (de outros autores) saem. |
 
 **Adventistas (domínio público)**
 

@@ -20,6 +20,7 @@ from ingest.sword_common import (  # noqa: E402
     BASE_URL, conf_plain, download, extract, open_module, raw_entries, read_conf, strip_contacts,
     strip_emails, strip_markup,
 )
+from ingest import tdavid  # noqa: E402
 
 # (módulo SWORD, zip no repositório, tradição, autor)
 MODULES = [
@@ -116,6 +117,19 @@ def build_rows(entries):
             yield row
 
 
+def tdavid_rows(entries):
+    """Módulo TDavid: a introdução do livro como em build_rows; cada Salmo (texto no versículo 1) dividido por
+    versículo, com ingest/tdavid.py. O módulo não tem outros slots com texto."""
+    entries = list(entries)
+    yield from build_rows([(v, t) for v, t in entries if v % 1000 == 0])
+    for v, t in entries:
+        if v % 1000 == 0 or not t:
+            continue
+        if v % 1000 != 1:
+            raise RuntimeError(f"TDavid: texto fora do versículo 1 do Salmo: {v}")
+        yield from tdavid.psalm_rows(v, t)
+
+
 def ingest(name: str, zip_name: str, tradition: str, author: str) -> None:
     source_id = f"sword-{name.lower()}"
     zip_path = download(zip_name, source_id)
@@ -161,7 +175,8 @@ def ingest(name: str, zip_name: str, tradition: str, author: str) -> None:
         )
         seen: set[str] = set()
         n_verse_rows = n_intro_rows = 0
-        for start, end, text in build_rows(entries):
+        rows = tdavid_rows(entries) if name == "TDavid" else build_rows(entries)
+        for start, end, text in rows:
             base = cite_com(source_id, start, end)
             cid, k = base, 2
             while cid in seen:
