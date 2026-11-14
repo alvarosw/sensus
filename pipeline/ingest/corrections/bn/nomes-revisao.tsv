@@ -1,0 +1,103 @@
+# Notas da revisão de nomes por agentes de IA (uma linha por nome_en + candidato, ou nome_en + tipo).
+# Conferidas no texto da Bíblia da língua e na tradução inglesa. Só registro: o ingestor não lê este arquivo.
+nome_en	candidato	nome_bn	origem	nota
+Naphtali	নপ্তালি	নপ্তালি	revisado	rev. IA: Gen.30.8 conferido
+Gidom	গিদোম		sem	rev. IA: Judg.20.45 sem forma segura no texto da língua
+Shibboleth	শিব্বোলেৎ	শিব্বোলেৎ	revisado	rev. IA: Judg.12.6 conferido
+Lo-ruhamah	রুহামা	রুহামা	revisado	rev. IA: Hos.1.6 conferido
+Methuselah	মথূশেলহ	মথূশেলহ	revisado	rev. IA: Gen.5.21 conferido
+Binnui	বিন্নূয়ি	বিন্নূয়ি	revisado	rev. IA: Ezra.8.33 conferido
+Abiram	অবীরাম	অবীরাম	revisado	rev. IA: Num.16.1 conferido
+Obadiah	ওবদিয়	ওবদিয়	revisado	rev. IA: 1Kgs.18.3 conferido
+Tigris	টাইগ্রীস	টাইগ্রীস	revisado	rev. IA: Dan.10.4 conferido
+Zurishaddai	সূরীশদ্দয়	সূরীশদ্দয়	revisado	rev. IA: Num.1.6 conferido
+Zebul	সবূল	সবূল	revisado	rev. IA: Judg.9.28 conferido
+Nahamani	নহমানি	নহমানি	revisado	rev. IA: Neh.7.7 conferido
+Adin	আদীন	আদীন	revisado	rev. IA: Ezra.2.15 conferido
+Ahikam	অহীকাম	অহীকাম	revisado	rev. IA: 2Kgs.22.12 conferido
+Adino	আদীনো	আদীনো	revisado	rev. IA: 2Sam.23.8 conferido
+Karka	কর্ক্কা		sem	rev. IA: Josh.15.3 sem forma segura no texto da língua
+Birsha	বির্সা	বির্সা	revisado	rev. IA: Gen.14.2 conferido
+Harim	হারীম	হারীম	revisado	rev. IA: 1Chr.24.8 conferido
+Conaniah	কনানিয়	কনানিয়	revisado	rev. IA: 2Chr.31.12 conferido
+Ocran	অক্রণ	অক্রণ	revisado	rev. IA: Num.1.13 conferido
+Sitnah	সিটনা	সিটনা	revisado	rev. IA: Gen.26.21 conferido
+Hagar	হাগার	হাগার	revisado	rev. IA: Gen.16.1 conferido
+Jehoahaz	যিহোয়াহস	যিহোয়াহস	revisado	rev. IA: 2Kgs.10.35 conferido
+Benjamin	বিন্যামীন	বিন্যামীন	revisado	rev. IA: Gen.35.24 conferido
+Ira	ঈরাও	ঈরা	revisado	rev. IA: 2Sam.20.26 conferido; candidato corrigido
+Tabeal	টাবেল	টাবেল	revisado	rev. IA: Isa.7.6 conferido
+Biztha	বিস্থা	বিস্থা	revisado	rev. IA: Esth.1.10 conferido
+Joshua	যিহোশূয়	যিহোশূয়	revisado	rev. IA: Exod.17.10 conferido
+Naboth	নাবোত	নাবোত	revisado	rev. IA: 1Kgs.21.1 conferido
+Shuppim	শুপ্পীম	শুপ্পীম	revisado	rev. IA: 1Chr.7.12 conferido
+Ezion-geber	ইৎসিয়োন		sem	rev. IA: Num.33.35 sem forma segura no texto da língua
+Nehemiah	নহিমিয়	নহিমিয়	revisado	rev. IA: Ezra.2.2 conferido
+Jesse	যিশয়	যিশয়	revisado	rev. IA: Ruth.4.17 conferido
+Maaziah	মাসিয়	মাসিয়	revisado	rev. IA: 1Chr.24.18 conferido
+Zimri	সিম্রি	সিম্রি	revisado	rev. IA: Num.25.14 conferido
+Behemoth	বহেমো		sem	rev. IA: Job.40.15 sem forma segura no texto da língua
+Zaanannim	সানন্নীম	সানন্নীম	revisado	rev. IA: Josh.19.33 conferido
+Cabul	কাবূ	কাবূল	revisado	rev. IA: Josh.19.27 conferido; candidato corrigido
+Ithlah	যিৎলা	যিৎলা	revisado	rev. IA: Josh.19.42 conferido
+Nephilim	নেফিলিম	নফীলীম	revisado	rev. IA: Num.13.33 conferido; candidato corrigido
+Jezebel	ঈষেবল	ঈষেবল	revisado	rev. IA: 1Kgs.16.31 conferido
+Manoah	মানোহ	মানোহ	revisado	rev. IA: Judg.13.2 conferido
+Elisabeth	ইলীশাবেৎ	ইলীশাবেৎ	revisado	rev. IA: Luke.1.5 conferido
+Bamah	বামা		sem	rev. IA: Ezek.20.29 sem forma segura no texto da língua
+Hormah	হর্মা	হর্মা	revisado	rev. IA: Num.14.45 conferido
+Hanan	হানান	হানান	revisado	rev. IA: 1Chr.8.38 conferido
+Paruah	পারূহ	পারূহ	revisado	rev. IA: 1Kgs.4.17 conferido
+Abronah	অব্রোণা	অব্রোণা	revisado	rev. IA: Num.33.34 conferido
+Jozabad	যোষাবাদ	যোষাবাদ	revisado	rev. IA: Neh.11.16 conferido
+Maoch	মায়োক	মায়োক	revisado	rev. IA: 1Sam.27.2 conferido
+Casiphia	কাসিফিয়া	কাসিফিয়া	revisado	rev. IA: Ezra.8.17 conferido
+Jahzah	যাহসা	যাহসা	revisado	rev. IA: 1Chr.6.78 conferido
+Zidon	সীদন	সীদোন	revisado	rev. IA: Gen.10.15 conferido; candidato corrigido
+Joiada	যোয়াদা	যোয়াদা	revisado	rev. IA: Neh.12.10 conferido
+Azel	আৎসেল	আৎসেল	revisado	rev. IA: 1Chr.8.37 conferido
+Uri	ঊরি	ঊরি	revisado	rev. IA: Exod.31.2 conferido
+Chemosh	কমোশ	কমোশ	revisado	rev. IA: Num.21.29 conferido
+Berothah	বরোথা		sem	rev. IA: Ezek.47.16 sem forma segura no texto da língua
+Shihor	সীহোর	সীহোর	revisado	rev. IA: Josh.13.3 conferido
+Ezra	ইষ্রা	ইষ্রা	revisado	rev. IA: 1Chr.4.17 conferido
+Jehoiada	যিহোয়াদা	যিহোয়াদা	revisado	rev. IA: 2Sam.8.18 conferido
+Amphipolis	আম্ফিপলি	আম্ফিপলি	revisado	rev. IA: Acts.17.1 conferido
+Mesha	মেষা	মেষা	revisado	rev. IA: Gen.10.30 conferido
+Chorazin	কোরাসীন	কোরাসীন	revisado	rev. IA: Matt.11.21 conferido
+Jonadab	যোনাদব	যোনাদব	revisado	rev. IA: 2Sam.13.3 conferido
+Omar	ওমার	ওমার	revisado	rev. IA: Gen.36.11 conferido
+Saron	শারোণ	শারোণ	revisado	rev. IA: 1Chr.27.29 conferido
+Nob	নোবে	নোব	revisado	rev. IA: 1Sam.21.1 conferido
+Binnui	বিন্নূয়ী	বিন্নূয়ি	revisado	rev. IA: Ezra.10.30 conferido; candidato corrigido
+Sopater	সোপাত্র	সোপাত্র	revisado	rev. IA: Acts.20.4 conferido
+Abijah	অবিয়	অবিয়	revisado	rev. IA: 1Sam.8.2 conferido
+Zibia	সিবিয়	সিবিয়	revisado	rev. IA: 1Chr.8.9 conferido
+Phicol	ফীখোল	ফীখোল	revisado	rev. IA: Gen.21.22 conferido
+Hilkiah	হিল্কিয়	হিল্কিয়	revisado	rev. IA: 2Kgs.18.18 conferido
+Zair	সায়ীরে	সায়ীর	revisado	rev. IA: 2Kgs.8.21 conferido; candidato corrigido
+Jedaiah	যিদয়িয়	যিদয়িয়	revisado	rev. IA: 1Chr.4.37 conferido
+Ebed-melech	মেলক		sem	rev. IA: Jer.38.7 sem forma segura no texto da língua
+Rachel	রাহেল	রাহেল	revisado	rev. IA: Gen.29.6 conferido
+Shelemiah	শেলিমিয়	শেলিমিয়	revisado	rev. IA: Ezra.10.39 conferido
+Josiah	যোশিয়	যোশিয়	revisado	rev. IA: 1Kgs.13.2 conferido
+Lazarus	লাসার	লাসার	revisado	rev. IA: Luke.16.20 conferido
+Humtah	হুমটা		sem	rev. IA: Josh.15.54 sem forma segura no texto da língua
+Barnabas	বার্ণবা	বার্ণবা	revisado	rev. IA: Acts.4.36 conferido
+Naioth	নায়োতে	নায়োত	revisado	rev. IA: 1Sam.19.18 conferido
+Phurah	ফুরা	ফুরা	revisado	rev. IA: Judg.7.10 conferido
+Bariah	বারীহ	বারীহ	revisado	rev. IA: 1Chr.3.22 conferido
+Guni	গূনি	গূনি	revisado	rev. IA: Gen.46.24 conferido
+Gareb	গারেব	গারেব	revisado	rev. IA: 2Sam.23.38 conferido
+Berachah	বরাখা	বরাখা	revisado	rev. IA: 1Chr.12.3 conferido
+Tamar	তামর	তামর	revisado	rev. IA: Gen.38.6 conferido
+Anub	আনূব	আনূব	revisado	rev. IA: 1Chr.4.8 conferido
+Mizpeh	মিস্পীতে		sem	rev. IA: 1Sam.22.3 sem forma segura no texto da língua
+Decapolis	দিকাপলি	দিকাপলি	revisado	rev. IA: Matt.4.25 conferido
+Hashmonah	হশ্মোনা	হশ্মোনা	revisado	rev. IA: Num.33.29 conferido
+Hena	হেনা	হেনা	revisado	rev. IA: 2Kgs.18.34 conferido
+Ahitub	অহীটূব	অহীটূব	revisado	rev. IA: 1Sam.14.3 conferido
+Zadok	সাদোক	সাদোক	revisado	rev. IA: 2Sam.8.17 conferido
+Philistia	পলেষ্টীয়	পলেষ্টীয়	revisado	rev. IA: Gen.21.32 conferido
+Chilion	কিলিয়োন	কিলিয়োন	revisado	rev. IA: Ruth.1.2 conferido
+Sukkiim	সুক্কীয়	সুক্কীয়	revisado	rev. IA: 2Chr.12.3 conferido

@@ -1,0 +1,40 @@
+# Glossário de cabeças de nomes compostos em inglês -> formas em bengali (BBS/IRV, benirv). Usado por
+# pipeline/ingest/nomes.py --lang bn. Colunas:
+#   cabeca   palavra ou expressão inglesa que encabeça o nome (como no glossário pt)
+#   formas   formas bengali com o marcador {n} no lugar do núcleo, separadas por '|'. Só valem as frases achadas
+#            no texto da Bíblia (o ingestor só usa a forma do glossário quando a frase não aparece no texto).
+cabeca	formas
+Mount	{n} পর্বত
+Mount of	{n} পর্বত
+Gate	{n} দ্বার
+Gate of	{n} দ্বার
+Valley	{n} উপত্যকা
+Valley of	{n} উপত্যকা
+Vale of	{n} উপত্যকা
+Sea	{n} সাগর
+Sea of	{n} সাগর
+Tribe of	{n} গোষ্ঠী
+Tower of	{n} দুর্গ
+City of	{n} নগর
+Hall of	{n} দালান
+Brook	{n} নদী
+Brook of	{n} নদী
+River of	{n} নদী
+Wilderness	{n} মরুভূমি
+Wilderness of	{n} মরুভূমি
+Stone	{n} পাথর
+Pool	{n} পুকুর
+Festival	{n} পর্ব
+Way of	{n} পথ
+Waters of	{n} জল
+Wall	{n} প্রাচীর
+Spring	{n} ঝরনা
+Rock of	{n} শৈল
+Plain of	{n} সমভূমি
+Plains	{n} সমভূমি
+Forum	{n} চত্বর
+Forum of	{n} চত্বর
+Square	{n} চত্বর
+Forest	{n} বন
+House of	{n} গৃহ
+Hill	{n} পাহাড়
