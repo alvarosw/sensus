@@ -12,8 +12,8 @@ comp_cidade	de la ville de {nome}
 comp_perto	près de {nome}
 comp_de	de {nome}
 comp_em	en {nome}
-citacao	Appelé {lista}
-citacao_apenas	Appelé uniquement {lista}
+citacao	Noms : {lista}
+citacao_apenas	Nom unique : {lista}
 original	 ({original})
 conector_e	 et 
 conector_ou	 ou 
