@@ -1,0 +1,59 @@
+# Glossário geo em russo (openbible-geo, por regra; pipeline/sensus/geo_descricao.py). Colunas:
+#   secao      tipo | geometria | voto | fonte
+#   ingles     termo como aparece na descrição da fonte (exato)
+#   portugues  tradução usada na frase (aqui: russo)
+#   nota       observação para o revisor (opcional)
+#   genero     vazio (ver gramatica-descricoes)
+# geometria: o modelo geo_melhor já diz 'геометрия: {geometria}', por isso os valores ficam no nominativo.
+secao	ingles	portugues	nota	genero
+tipo	settlement	поселение
+tipo	region	регион
+tipo	mountain	гора
+tipo	wadi	вади
+tipo	river	река
+tipo	spring	родник
+tipo	hill	холм
+tipo	island	остров
+tipo	valley	долина
+tipo	body of water	водоём
+tipo	well	колодец
+tipo	probability center radial	радиальный центр вероятности
+tipo	road	дорога
+tipo	mountain range	горная цепь
+tipo	structure	сооружение
+tipo	mouth of river	устье реки
+tipo	pool	пруд
+tipo	cliff	утёс
+tipo	cave	пещера
+tipo	field	поле
+tipo	mountain pass	горный перевал
+tipo	mountain ridge	горный хребет
+tipo	wall	стена
+tipo	forest	лес
+tipo	harbor	гавань
+tipo	garden	сад
+tipo	promontory	мыс
+geometria	point	точка
+geometria	polygon	полигон
+geometria	path	путь
+fonte	modern	современная
+fonte	ancient	древняя
+voto	confidence_possible	уверенность: возможно
+voto	confidence_likely	уверенность: вероятно
+voto	confidence_yes	уверенность: да
+voto	confidence_mostlikely	уверенность: весьма вероятно
+voto	confidence_unlikely	уверенность: маловероятно
+voto	confidence_no	уверенность: нет
+voto	confidence_map	уверенность: по карте
+voto	authority_usually	авторитет: обычно
+voto	authority_scholar	авторитет: специалисты
+voto	authority_traditional	авторитет: традиция
+voto	authority_parallel	авторитет: параллель
+voto	authority_preserved	авторитет: сохранившееся название
+voto	authority_variant	авторитет: вариант
+voto	authority_old	авторитет: старое
+voto	unknown	неизвестно
+voto	uncertain	неопределённо
+voto	identified_been	отождествлено: было
+voto	identified_is	отождествлено: является
+voto	identified_adjective	отождествлено: прилагательное

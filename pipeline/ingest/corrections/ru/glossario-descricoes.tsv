@@ -1,0 +1,108 @@
+# Glossário das descrições em russo (TIPNR, pipeline/sensus/descricoes_pt.py). Colunas:
+#   secao      cargo | tempo | tribo | lugar | relacao | nome
+#   ingles     termo como aparece na descrição da fonte (exato, com maiúsculas)
+#   portugues  tradução usada na frase (aqui: russo)
+#   nota       observação para o revisor (opcional)
+#   genero     m, f ou n (gênero do cargo; a gramática russa não tem variante .f, a coluna fica para conferência)
+# tribo: genitivo ('из колена Иуды'); relacao: nominativo (a flexão do nome é do genitivo_ru).
+secao	ingles	portugues	nota	genero
+cargo	man	мужчина		m
+cargo	woman	женщина		f
+cargo	location	местность		f
+cargo	high priest	первосвященник		m
+cargo	priest	священник		m
+cargo	warrior	воин		m
+cargo	warriors	воины		m
+cargo	musician	музыкант		m
+cargo	prophet	пророк		m
+cargo	prophetess	пророчица		f
+cargo	king	царь		m
+cargo	queen	царица		f
+cargo	group	группа		f
+cargo	male deity	мужское божество		n
+cargo	female deity	женское божество		n
+cargo	deity	божество		n
+cargo	people	народ		m
+cargo	woman or town	женщина или город
+cargo	town	город		m
+cargo	emperor	император		m
+cargo	prince	князь		m
+cargo	apostle	апостол		m
+cargo	angel	ангел		m
+cargo	concubine	наложница		f
+cargo	chief	вождь		m
+cargo	steward	управитель		m
+cargo	servant	слуга		m
+cargo	ruler	правитель		m
+cargo	musical piece	музыкальное произведение		n
+cargo	judge	судья		m
+cargo	Judge	судья		m
+cargo	city	город		m
+cargo	gigantic man	великан		m
+cargo	Pharaoh	фараон		m
+cargo	festival	праздник		m
+cargo	governor	наместник		m
+tempo	at the time of the Patriarchs	времён патриархов
+tempo	at the time of Egypt and Wilderness	времён Египта и пустыни
+tempo	at the time of Exile and Return	времён изгнания и возвращения
+tempo	at the time of Divided Monarchy	времён разделённого царства
+tempo	at the time of United Monarchy	времён объединённого царства
+tempo	at the time of the New Testament	времён Нового Завета
+tempo	at the time of the Exodus	времён Исхода
+tempo	before Israel's Monarchy	до царства Израиля
+tempo	at the time before the Flood	времён до Потопа
+tempo	before the Flood	до Потопа
+tempo	at the time of Judges	времён судей
+tribo	Levi	Левия
+tribo	Judah	Иуды
+tribo	Asher	Асира
+tribo	Benjamin	Вениамина
+tribo	Ephraim	Ефрема
+tribo	Manasseh	Манассии
+tribo	Simeon	Симеона
+tribo	Issachar	Иссахара
+tribo	Zebulun	Завулона
+tribo	Naphtali	Неффалима
+tribo	Reuben	Рувима
+tribo	Gad	Гада
+tribo	Dan	Дана
+relacao	son of	сын
+relacao	daughter of	дочь
+relacao	brother of	брат
+relacao	sister of	сестра
+relacao	half-brother of	сводный брат
+relacao	half-sister of	сводная сестра
+relacao	wife of	жена
+relacao	husband of	муж
+relacao	mother of	мать
+relacao	father of	отец
+relacao	founder of	основатель
+relacao	concubine of	наложница
+relacao	descendant of	потомок
+nome	Pharaoh	Фараон
+nome	Asia	Азия
+nome	Christ	Христос
+lugar	in Asia	в Азии
+lugar	of Egypt	из Египта
+lugar	of the Cushites	из кушитов
+lugar	of the Arabs	из арабов
+lugar	of the Edomites	из едомитян
+lugar	of the Midianites	из мадианитян
+lugar	of the Syrians	из сирийцев
+lugar	of the Gomerians	из гомеритов
+lugar	of the Ammonites	из аммонитян
+lugar	of the Greeks	из греков
+lugar	of the Ishmaelites	из измаильтян
+lugar	of the Moabites	из моавитян
+lugar	of the Egyptians	из египтян
+lugar	of the Philistines	из филистимлян
+lugar	of the Hittites	из хеттеев
+lugar	of the Canaanites	из ханаанеев
+lugar	of the Amalekites	из амаликитян
+lugar	of the Jebusites	из иевусеев
+lugar	of the Assyrians	из ассирийцев
+lugar	of the Babylonians	из вавилонян
+lugar	of the Chaldeans	из халдеев
+lugar	of the Persians	из персов
+lugar	of the Hebrews	из евреев
+lugar	of the Israelites	из израильтян

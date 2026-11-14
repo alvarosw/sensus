@@ -1,0 +1,35 @@
+# Gramática das descrições em russo (TIPNR e openbible-geo por regra; pipeline/sensus/descricoes_pt.py).
+# Colunas: chave, modelo. Campos {nome} são trocados pelo valor; {pont.;}, {pont..}, {pont.,} são os sinais da língua.
+# Sem variante .f: nenhum modelo concorda com o gênero do cargo (cargo + 'из колена' / 'времён' não flexionam).
+# Chaves ausentes de propósito: comp_de, comp_em, comp_perto, comp_perto_sufixo e comp_cidade. Esses complementos
+# trazem um nome próprio que precisa de caso (genitivo, prepositivo, instrumental) e a regra só flexiona os nomes das
+# relações (genitivo_ru). Sem a chave, a descrição cai na tradução automática, como manda a regra.
+# flexao_relacao = genitivo_ru: os nomes das relações (сын, брат…) saem no genitivo; nome que a flexão não decide falha.
+chave	modelo
+mencao_primeira	впервые упоминается в {ref}
+mencao_unica	встречается только в {ref}
+frase_cargo_comp	{cargo} {comp}
+frase_tempo_com_comp	{frase}{pont.,} {tempo}
+frase_tempo_sem_comp	{frase} {tempo}
+cabecalho	{frase}{pont.;} {mencao}{pont..}
+comp_territorio_tribo	на территории колена {tribo}{perto}
+comp_tribo	из колена {tribo}
+citacao	Также называется {lista}
+citacao_apenas	Упоминается только как {lista}
+original	 ({original})
+conector_e	 и 
+conector_ou	 или 
+lista_sep	, 
+pont.;	;
+pont..	.
+pont.,	,
+maiuscula_inicial	sim
+nome_ingles_permitido	nao
+flexao_relacao	genitivo_ru
+pos	nenhum
+geo_melhor	Лучшее современное отождествление: {nome} ({tipo}, геометрия: {geometria}); балл ассоциации: {score}/1000.
+geo_identificacao	Идентификация: «{texto}» ({fonte}).
+geo_votos	Голоса: {votos}.
+geo_voto	{voto} — {n}
+geo_tempo	Балл с учётом времени: {tempo}/1000.
+geo_outros	Других современных местоположений-кандидатов: {n}.
