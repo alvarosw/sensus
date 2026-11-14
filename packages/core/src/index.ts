@@ -4,7 +4,6 @@ export * from './domain';
 export * from './refs';
 export * from './repo';
 export * from './panel';
-export * from './translate';
 export * from './ai/provider';
 export * from './ai/openai-responses';
 export * from './ai/reset';

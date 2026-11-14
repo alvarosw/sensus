@@ -115,8 +115,6 @@ export const urShell = {
   'source.record': 'ریکارڈ',
   'source.details': 'ماخذ کی تفصیل',
   'source.reference': 'حوالہ',
-  'source.translate': 'ترجمہ کریں',
-  'source.translatePart': 'ترجمہ کریں (حصہ {part} از {total})',
   'source.openUrl': 'اصل ماخذ کھولیں',
   'source.notFound': 'ریکارڈ نہیں ملا۔',
   'source.field.title': 'عنوان',

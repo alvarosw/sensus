@@ -4,8 +4,6 @@ import {
   chapterRange,
   formatReference,
   formatVerse,
-  googleTranslateLinks,
-  GOOGLE_TRANSLATE_MAX_URL,
   makeVid,
   parseRef,
   resolveBook,
@@ -81,32 +79,5 @@ describe('resolveBook e parseRef', () => {
 
   it('usa a tabela de livros embutida por padrão', () => {
     expect(BOOK_TABLE).toHaveLength(66);
-  });
-});
-
-describe('googleTranslateLinks', () => {
-  it('gera uma URL com os parâmetros de idioma e texto', () => {
-    const [url] = googleTranslateLinks('Olá mundo', 'en');
-    expect(url).toBe('https://translate.google.com/?sl=auto&tl=en&text=Ol%C3%A1%20mundo&op=translate');
-  });
-
-  it('quebra textos longos em URLs abaixo do limite, sem perder palavras', () => {
-    const paragraphs = Array.from({ length: 6 }, (_, p) =>
-      Array.from({ length: 200 }, (_, w) => `palavra${p}-${w}`).join(' '),
-    );
-    const text = paragraphs.join('\n\n');
-    const urls = googleTranslateLinks(text, 'en', 'pt');
-
-    expect(urls.length).toBeGreaterThan(1);
-    for (const url of urls) {
-      expect(url.length).toBeLessThanOrEqual(GOOGLE_TRANSLATE_MAX_URL);
-      expect(url.startsWith('https://translate.google.com/?sl=pt&tl=en&text=')).toBe(true);
-    }
-    const decoded = urls.map((u) => new URL(u).searchParams.get('text') ?? '');
-    expect(decoded.join(' ').replace(/\s+/g, ' ')).toBe(text.replace(/\s+/g, ' '));
-  });
-
-  it('retorna lista vazia para texto vazio', () => {
-    expect(googleTranslateLinks('   ', 'en')).toEqual([]);
   });
 });

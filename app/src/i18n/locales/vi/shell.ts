@@ -115,8 +115,6 @@ export const viShell = {
   'source.record': 'Bản ghi',
   'source.details': 'Chi tiết nguồn',
   'source.reference': 'Tham chiếu',
-  'source.translate': 'Dịch',
-  'source.translatePart': 'Dịch (phần {part} trên {total})',
   'source.openUrl': 'Mở nguồn gốc',
   'source.notFound': 'Không tìm thấy bản ghi.',
   'source.field.title': 'Tiêu đề',

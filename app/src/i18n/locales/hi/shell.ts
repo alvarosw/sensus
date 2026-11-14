@@ -115,8 +115,6 @@ export const hiShell = {
   'source.record': 'रिकॉर्ड',
   'source.details': 'स्रोत का विवरण',
   'source.reference': 'संदर्भ',
-  'source.translate': 'अनुवाद करें',
-  'source.translatePart': 'अनुवाद करें (भाग {part} / {total})',
   'source.openUrl': 'मूल स्रोत खोलें',
   'source.notFound': 'रिकॉर्ड नहीं मिला।',
   'source.field.title': 'शीर्षक',

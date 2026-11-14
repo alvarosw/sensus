@@ -115,8 +115,6 @@ export const jaShell = {
   'source.record': '記録',
   'source.details': '資料の詳細',
   'source.reference': '参照',
-  'source.translate': '翻訳',
-  'source.translatePart': '翻訳（{part}/{total}部）',
   'source.openUrl': '出典を開く',
   'source.notFound': '記録が見つかりません。',
   'source.field.title': 'タイトル',

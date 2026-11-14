@@ -122,8 +122,6 @@ const pt = {
   'source.record': 'Registro',
   'source.details': 'Detalhes da fonte',
   'source.reference': 'Referência',
-  'source.translate': 'Traduzir',
-  'source.translatePart': 'Traduzir (parte {part} de {total})',
   'source.openUrl': 'Abrir origem',
   'source.notFound': 'Registro não encontrado.',
   'source.field.title': 'Título',

@@ -115,8 +115,6 @@ export const frShell = {
   'source.record': 'Notice',
   'source.details': 'Détails de la source',
   'source.reference': 'Référence',
-  'source.translate': 'Traduire',
-  'source.translatePart': 'Traduire (partie {part} sur {total})',
   'source.openUrl': 'Ouvrir l’origine',
   'source.notFound': 'Notice introuvable.',
   'source.field.title': 'Titre',

@@ -115,8 +115,6 @@ export const deShell = {
   'source.record': 'Eintrag',
   'source.details': 'Quellendetails',
   'source.reference': 'Verweis',
-  'source.translate': 'Übersetzen',
-  'source.translatePart': 'Übersetzen (Teil {part} von {total})',
   'source.openUrl': 'Ursprung öffnen',
   'source.notFound': 'Eintrag nicht gefunden.',
   'source.field.title': 'Titel',

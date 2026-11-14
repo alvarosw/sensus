@@ -115,8 +115,6 @@ export const idShell = {
   'source.record': 'Catatan',
   'source.details': 'Detail sumber',
   'source.reference': 'Rujukan',
-  'source.translate': 'Terjemahkan',
-  'source.translatePart': 'Terjemahkan (bagian {part} dari {total})',
   'source.openUrl': 'Buka asal',
   'source.notFound': 'Catatan tidak ditemukan.',
   'source.field.title': 'Judul',

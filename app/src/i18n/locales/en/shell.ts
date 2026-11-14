@@ -115,8 +115,6 @@ export const enShell = {
   'source.record': 'Record',
   'source.details': 'Source details',
   'source.reference': 'Reference',
-  'source.translate': 'Translate',
-  'source.translatePart': 'Translate (part {part} of {total})',
   'source.openUrl': 'Open origin',
   'source.notFound': 'Record not found.',
   'source.field.title': 'Title',

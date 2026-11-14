@@ -115,8 +115,6 @@ export const bnShell = {
   'source.record': 'রেকর্ড',
   'source.details': 'উৎসের বিবরণ',
   'source.reference': 'উল্লেখ',
-  'source.translate': 'অনুবাদ করুন',
-  'source.translatePart': 'অনুবাদ করুন (অংশ {part}/{total})',
   'source.openUrl': 'মূল উৎস খুলুন',
   'source.notFound': 'রেকর্ড পাওয়া যায়নি।',
   'source.field.title': 'শিরোনাম',

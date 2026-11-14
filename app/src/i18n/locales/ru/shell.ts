@@ -116,8 +116,6 @@ export const ruShell = {
   'source.record': 'Запись',
   'source.details': 'Сведения об источнике',
   'source.reference': 'Ссылка',
-  'source.translate': 'Перевести',
-  'source.translatePart': 'Перевести (часть {part} из {total})',
   'source.openUrl': 'Открыть первоисточник',
   'source.notFound': 'Запись не найдена.',
   'source.field.title': 'Название',

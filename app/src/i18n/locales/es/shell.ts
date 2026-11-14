@@ -115,8 +115,6 @@ export const esShell = {
   'source.record': 'Registro',
   'source.details': 'Detalles de la fuente',
   'source.reference': 'Referencia',
-  'source.translate': 'Traducir',
-  'source.translatePart': 'Traducir (parte {part} de {total})',
   'source.openUrl': 'Abrir origen',
   'source.notFound': 'Registro no encontrado.',
   'source.field.title': 'Título',

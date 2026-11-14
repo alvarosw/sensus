@@ -115,8 +115,6 @@ export const arShell = {
   'source.record': 'السجل',
   'source.details': 'تفاصيل المصدر',
   'source.reference': 'المرجع',
-  'source.translate': 'ترجمة',
-  'source.translatePart': 'ترجمة (الجزء {part} من {total})',
   'source.openUrl': 'فتح الأصل',
   'source.notFound': 'السجل غير موجود.',
   'source.field.title': 'العنوان',

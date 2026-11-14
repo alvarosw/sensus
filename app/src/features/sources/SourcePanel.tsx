@@ -1,8 +1,7 @@
-// Painel de fonte (tela cheia): texto completo, referências, licença e tradução de fontes em inglês.
-import { useMemo } from 'react';
-import { Linking, Pressable, View } from 'react-native';
-import { googleTranslateLinks, traditionLabel, type Source, type Vid } from '@sensus/core';
-import { Empty, LinkButton, Skeleton, SubHeader, Tag, Txt, TypeMark, useTheme } from '@/design';
+// Painel de fonte (tela cheia): texto completo, referências, licença e tradução automática de fontes em outra língua.
+import { View } from 'react-native';
+import { traditionLabel, type Source, type Vid } from '@sensus/core';
+import { Empty, LinkButton, Skeleton, SubHeader, Tag, Txt, TypeMark } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useAsync } from '@/data/use-async';
 import { currentLang } from '@/i18n';
@@ -13,7 +12,7 @@ import { useBooks, useCite } from '../common/hooks';
 import { SRC } from '../common/strings';
 import { useAutoTranslate } from '@/translate/useAutoTranslate';
 import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
-import { useTranslate } from '@/translate/store';
+import { DownloadTranslation } from '@/translate/DownloadTranslation';
 import { useSourceLang } from '@/translate/source-lang';
 import { LicenseBlock, RefChips } from '../common/PanelParts';
 
@@ -71,7 +70,6 @@ function fullTextOf(d: CiteDetail, xrText: string): string {
 }
 
 function SourceBody({ detail }: { detail: CiteDetail }) {
-  const { c } = useTheme();
   const repo = useRepo();
   const books = useBooks();
   const { source, record } = detail;
@@ -88,11 +86,6 @@ function SourceBody({ detail }: { detail: CiteDetail }) {
   const textSourceLang = useSourceLang(textSource);
   const textLang = record.table === 'xref' ? textSourceLang : (source?.lang ?? null);
   const tr = useAutoTranslate(text || null, textLang);
-  const translateOn = useTranslate((s) => s.enabled);
-  const links = useMemo(
-    () => (textLang === 'en' && text ? googleTranslateLinks(text, currentLang(), 'en') : []),
-    [textLang, text],
-  );
   const refs: Vid[] = detail.ranges.map((r) => r.start);
 
   return (
@@ -111,6 +104,7 @@ function SourceBody({ detail }: { detail: CiteDetail }) {
         <View style={{ gap: 6 }}>
           <Txt v="fullText" testID="panel-fulltext" selectable>{tr.display}</Txt>
           <AutoTranslateNote tr={tr} testID="panel-tr" />
+          <DownloadTranslation tr={tr} testID="panel-download-tr" />
         </View>
       ) : null}
 
@@ -123,35 +117,6 @@ function SourceBody({ detail }: { detail: CiteDetail }) {
             books={books}
             onPress={(vid) => showInText(vid)}
           />
-        </>
-      ) : null}
-
-      {links.length > 0 && (!translateOn || tr.failed) ? (
-        <>
-          <SubHeader label={SRC.translate} />
-          <Txt v="meta" color="muted" style={{ fontSize: 12 }}>{SRC.translateHint}</Txt>
-          <View style={{ gap: 6 }}>
-            {links.map((link, i) => (
-              <Pressable
-                key={link}
-                testID={`translate-${i}`}
-                accessibilityRole="link"
-                onPress={() => Linking.openURL(link)}
-                style={({ pressed }) => ({
-                  borderWidth: 1,
-                  borderColor: c.border,
-                  borderRadius: 10,
-                  paddingVertical: 8,
-                  paddingHorizontal: 12,
-                  opacity: pressed ? 0.7 : 1,
-                })}
-              >
-                <Txt v="button" color="accent">
-                  {links.length > 1 ? SRC.translatePart(i + 1, links.length) : SRC.translate}
-                </Txt>
-              </Pressable>
-            ))}
-          </View>
         </>
       ) : null}
 

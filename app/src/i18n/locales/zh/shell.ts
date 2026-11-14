@@ -115,8 +115,6 @@ export const zhShell = {
   'source.record': '记录',
   'source.details': '来源详情',
   'source.reference': '引用',
-  'source.translate': '翻译',
-  'source.translatePart': '翻译（第 {part} / {total} 部分）',
   'source.openUrl': '打开出处',
   'source.notFound': '未找到记录。',
   'source.field.title': '标题',
