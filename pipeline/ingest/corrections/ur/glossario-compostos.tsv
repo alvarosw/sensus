@@ -1,0 +1,48 @@
+# Glossário de cabeças de nomes compostos em inglês -> formas em urdu (Urdu Revised/Geo, urdoucv). Usado por
+# pipeline/ingest/nomes.py --lang ur. Colunas:
+#   cabeca   palavra ou expressão inglesa que encabeça o nome (como no glossário pt)
+#   formas   formas urdu com o marcador {n} no lugar do núcleo, separadas por '|'. Escrita urdu (nastaliq), sem a
+#            marca ؔ. Só valem as frases achadas no texto da Bíblia da língua.
+cabeca	formas
+Mount	کوہ {n}|{n} کا پہاڑ|{n} کے پہاڑ|پہاڑ {n}
+Mount of	{n} کا پہاڑ|{n} کے پہاڑ|کوہ {n}|پہاڑ {n}
+Valley	وادی {n}|{n} کی وادی|{n} کی وادی
+Valley of	وادی {n}|{n} کی وادی|{n} کی وادی
+Vale	وادی {n}|{n} کی وادی
+Vale of	{n} کی وادی|وادی {n}
+Tribe of	{n} کا قبیلہ|قبیلہ {n}|{n} کے قبیلہ
+Gate	دروازہ {n}|{n} کا دروازہ|{n} کے دروازے
+Gate of	{n} کا دروازہ|دروازہ {n}|{n} کے دروازے
+Sea	سمندر {n}|{n} کا سمندر
+Sea of	{n} کی جھیل|{n} کا سمندر|سمندر {n}
+Tower	برج {n}|{n} کا برج|{n} کا مینار
+Tower of	{n} کا برج|برج {n}
+City	شہر {n}|{n} کا شہر
+City of	{n} کا شہر|شہر {n}
+Brook	نالہ {n}|ندی {n}|{n} کا نالہ
+Brook of	{n} کا نالہ|نالہ {n}|ندی {n}
+Wilderness	بیابان {n}|{n} کا بیابان|{n} کا صحرا
+Wilderness of	{n} کا بیابان|بیابان {n}
+Plain	میدان {n}|{n} کا میدان
+Plain of	{n} کا میدان|میدان {n}
+Plains	میدان {n}|{n} کے میدان
+Pool	تالاب {n}|{n} کا تالاب|حوض {n}
+Pool of	{n} کا تالاب|تالاب {n}
+Hall	ایوان {n}|{n} کا ایوان
+Hall of	{n} کا ایوان|ایوان {n}
+Spring	چشمہ {n}|{n} کا چشمہ
+Rock	چٹان {n}|{n} کی چٹان
+Rock of	{n} کی چٹان|چٹان {n}
+Stone	پتھر {n}|{n} کا پتھر
+Way of	{n} کا راستہ|راستہ {n}
+Waters	{n} کا پانی|پانی {n}
+Waters of	{n} کا پانی|پانی {n}
+Forest	جنگل {n}|{n} کا جنگل
+Forest of	{n} کا جنگل|جنگل {n}
+Forum	{n} کا بازار|بازار {n}
+Forum of	{n} کا بازار|بازار {n}
+Festival	تہوار {n}|{n} کی عید|عید {n}
+Wall	فصیل {n}|{n} کی فصیل
+Square	چوک {n}|{n} کا چوک
+House of	{n} کا گھر|گھر {n}
+Hill	پہاڑی {n}|{n} کی پہاڑی
