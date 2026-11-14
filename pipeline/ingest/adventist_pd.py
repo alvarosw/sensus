@@ -42,6 +42,8 @@ Segunda leva (autores falecidos entre 1872 e 1922; publicações de 1873 a 1905)
 - smith-us-prophecy: Uriah Smith, The United States in the Light of Prophecy (Gutenberg #12364; 1874).
 - smith-sanctuary: Uriah Smith, The Sanctuary and the Twenty-three Hundred Days of Daniel VIII, 14 (archive.org
   sanctuarytwentyt0000smit; 1877).
+- haskell-cross: Stephen N. Haskell, The Cross and Its Shadow (archive.org StephenN.HaskellTheCrossAndItsShadow1914;
+  Bible Training School, 1914). Publicado em 1914, fora da faixa de datas desta leva (ver DATA_LICENSES.md).
 Nos scans com notas de rodapé de referência (`page_notes`), a nota vai para o parágrafo da página e a
 continuação da página volta ao parágrafo de prosa, sem colar na nota.
 
@@ -250,6 +252,20 @@ WORKS = [
              "no Brasil, autor falecido há mais de 70 anos."),
          furniture=r"\d*\s*(?:STORY\s+OF\s+THE\s+)?SEER OF PATMOS\.?\s*\d*|\d*\s*STORY\s*\d*",
          chapter_seq=True, ocr_junk=r"©", page_notes=True),
+    # Stephen N. Haskell (1833-1922): The Cross and Its Shadow (1914), scan do Center for Adventist Research (Andrews).
+    # Sem outra digitalização de domínio público para o alinhamento de OCR (a de 1990 é reimpressão posterior).
+    Work("haskell-cross", "The Cross and Its Shadow", "The Cross and Its Shadow",
+         "Bible Training School, South Lancaster, 1914 (copyright 1914)",
+         "https://archive.org/details/StephenN.HaskellTheCrossAndItsShadow1914",
+         "https://archive.org/download/StephenN.HaskellTheCrossAndItsShadow1914/"
+         "1914_haskell_theCrossAndItsShadow_djvu.txt",
+         "1914_haskell_theCrossAndItsShadow_djvu.txt", "archive", r"THE CROSS AND ITS SHADOW", CHAPTER_HEAD,
+         "Internet Archive StephenN.HaskellTheCrossAndItsShadow1914 (Center for Adventist Research, Andrews University)",
+         author="Stephen N. Haskell (1833-1922)",
+         pd=("Domínio público: autor falecido em 1922 e obra publicada em 1914 (domínio público nos EUA); "
+             "no Brasil, autor falecido há mais de 70 anos."),
+         furniture=r"\d*\s*THE CROSS AND ITS SHADOW\.?\s*\d*|\d*\s*Digitized by the Center for Adventist Research\s*\d*",
+         chapter_seq=True, ocr_junk=r"©", page_notes=True),
     # E. J. Waggoner (1855-1916): Gálatas (comentário em capítulos, com o texto citado em bloco).
     Work("waggoner-galatians", "The Glad Tidings", "The Glad Tidings",
          "Pacific Press, 1900 (copyright 1900)",
@@ -308,7 +324,7 @@ WORKS = [
 
 
 # Obras da segunda leva: citação de margem e de nota sai do comentário (campo `citacoes`).
-SEGUNDA_LEVA = ("egw-desire-of-ages", "haskell-daniel", "haskell-seer", "waggoner-galatians",
+SEGUNDA_LEVA = ("egw-desire-of-ages", "haskell-daniel", "haskell-seer", "haskell-cross", "waggoner-galatians",
                 "waggoner-christ", "andrews-sabbath", "smith-us-prophecy", "smith-sanctuary")
 WORKS = [replace(w, citacoes=w.source_id in SEGUNDA_LEVA) for w in WORKS]
 

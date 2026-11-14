@@ -110,6 +110,7 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'andrews-sabbath': { short: 'História do Sábado', commentator: 'J. N. Andrews · História do Sábado', role: 'commentary', lang: 'en' },
   'smith-us-prophecy': { short: 'Estados Unidos na Profecia', commentator: 'Uriah Smith · Estados Unidos na Profecia', role: 'commentary', lang: 'en' },
   'smith-sanctuary': { short: 'O Santuário e os 2.300 Dias', commentator: 'Uriah Smith · O Santuário e os 2.300 Dias', role: 'commentary', lang: 'en' },
+  'haskell-cross': { short: 'A Cruz e Sua Sombra', commentator: 'Stephen N. Haskell · A Cruz e Sua Sombra', role: 'commentary', lang: 'en' },
 };
 
 /** Ordem de preferência das fontes de lugares (menor = melhor) para escolher a identificação moderna. */
