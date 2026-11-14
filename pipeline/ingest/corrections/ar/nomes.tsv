@@ -35,10 +35,12 @@ Akkub	حجابة	عقوب	revisado	baixa	2	1	1.00	عقوب
 Akkub	وألياشيب	وألياشيب	sem	baixa	2	1	1.00	ألياشيب
 Akkub	وابين	وابين	sem	baixa	2	5	0.20	عقوب
 Al-taschith	احتمت	احتمت	sem	baixa	1	4	0.25	المصائب
+Al-taschith	الله نحمدك اسمك	الله نحمدك اسمك	auto	baixa	1	4	0.25	الله ارحمني
 Alamoth	ألياب	ألياب	sem	baixa	1	3	0.33	الضيقات
 Alexander	فأشار	إسكندر	revisado	baixa	2	1	1.00	إسكندر
 Allon-bacuth	باكوت	ألون باكوت	revisado	baixa	3	1	1.00	اكوت
 Amalek	عماليق	عماليق	revisado	baixa	4	31	0.81	أراحك
+Amaw	بلعام	بلعام	auto	baixa	3	1	1.00	قائلا
 Amaw	لعام	لعام	sem	baixa	3	1	1.00	بلعام
 Amminadib	جعلتني	عميناداب	revisado	baixa	1	1	1.00	ين
 Ammon	عمون	عمون	revisado	baixa	3	125	0.78	أكمنة
@@ -53,8 +55,11 @@ Apharasthchite	الأفرسكيين	الأفرستكيين	revisado	baixa	1	3	0.
 Aphek	أفيق	أفيق	revisado	baixa	10	11	0.82	وأفيق
 Apollyon	أبوليون	أبوليون	revisado	baixa	1	1	1.00	باليونانية
 Aram-naharaim	اقتحمتنا	أرام النهرين	revisado	baixa	2	1	1.00	أرجعنا
+Aram-naharaim	الله رفضتنا اقتحمتنا	الله رفضتنا اقتحمتنا	auto	baixa	2	1	1.00	اقتحمتنا
 Aram-zobah	أرجعنا	أرام صوبة	revisado	baixa	1	1	1.00	اقتحمتنا
+Aram-zobah	الله رفضتنا اقتحمتنا	الله رفضتنا اقتحمتنا	auto	baixa	1	1	1.00	أرجعنا
 Archites	الأركي	الأركيين	revisado	baixa	1	6	0.83	الأركيين
+Areopagus	أريوس	أريوس	auto	baixa	3	4	0.50	باغوس
 Areopagus	اغوس	أريوس باغوس	revisado	baixa	3	4	0.50	أريوس
 Aretas	الحارث	الحارث	revisado	baixa	2	1	1.00	يحرس
 Ariel	أسدي	أرئيل	revisado	baixa	1	2	1.00	الأفعال
@@ -85,6 +90,7 @@ Baal-hazor	حاصور	بعل حاصور	revisado	baixa	3	1	1.00	الزمان
 Baal-hermon	حرمون	بعل حرمون	revisado	baixa	2	1	1.00	باشان
 Baal-meon	شبام	بعل معون	revisado	baixa	1	6	0.17	وبالع
 Baal-meon	وبالع	وبالع	sem	baixa	2	4	0.25	المدن
+Baal-peor	أباده الرب	أباده الرب	auto	baixa	2	3	0.33	بعل فغور
 Baal-peor	ببعل	بعل فغور	revisado	baixa	2	3	0.67	بعل
 Baal-zebub	التشبي	بعل زبوب	revisado	baixa	2	4	0.25	أليس
 Baal-zephon	صفون	بعل صفون	revisado	baixa	3	3	1.00	بعل
@@ -93,12 +99,16 @@ Baalath-beer	وبعلوت	وبعلوت	sem	baixa	1	5	0.40	بعلة
 Baale-judah	بالاسم	بعلة يهوذا	revisado	baixa	2	1	1.00	الجالس
 Baharum	البحرومي	البحرومي	sem	baixa	1	1	1.00	إليحبا
 Bajith	لبكاء	لبكاء	sem	baixa	1	1	1.00	للبكاء
+Bajith	للبكاء	للبكاء	auto	baixa	1	1	1.00	البيت
+Bakbakkar	بقبقر	بقبقر	auto	baixa	2	1	1.00	وبقبقر
 Bakbakkar	وبقبقر	بقبقر	revisado	baixa	2	1	1.00	قبقر
 Bakbuk	بقبوق	بقبوق	revisado	baixa	2	2	1.00	حقوفا
+Bakbukiah	بقبقيا	بقبقيا	auto	baixa	2	3	1.00	وبقبقيا
 Bakbukiah	وبقبقيا	بقبقيا	revisado	baixa	2	3	1.00	قبقيا
 Bamoth-baal	وباموت	باموت بعل	revisado	baixa	3	3	0.33	اموت
 Barkos	برقوس	برقوس	revisado	baixa	2	2	1.00	رقوس
 Bath-shua	أماته	بنت شوع	revisado	baixa	1	2	0.50	الثلاثة
+Bath-shua	بنت شوع	بنت شوع	auto	baixa	1	2	0.50	بنت شوع الكنعانية
 Bealoth	وبعلوت	بعلوت	revisado	baixa	4	2	1.00	علوت
 Bear	والجبار	الدب	revisado	baixa	1	2	0.50	الجبار
 Beer-elim	إيليم	بئر إيليم	revisado	baixa	3	1	1.00	أجلايم
@@ -107,17 +117,22 @@ Beeroth	وبئيروت	بئيروت	revisado	baixa	3	11	0.36	بئيروت
 Beersheba	تسبى	بئر سبع	revisado	baixa	1	23	0.04	بئر
 Bela	وبالع	بالع	revisado	baixa	2	1	1.00	وبعل
 Ben	وبين	وبين	sem	baixa	2	1	1.00	وبنايا
+Ben-Geber	ابن جابر	ابن جابر	auto	baixa	1	1	1.00	جابر
 Ben-Geber	جابر	بن جابر	revisado	baixa	1	1	1.00	بأسوار
+Ben-deker	ابن دقر	ابن دقر	auto	baixa	1	1	1.00	دقر
 Ben-deker	دقر	بن دقر	revisado	baixa	1	1	1.00	ابن
 Ben-hesed	حسد	بن حسد	revisado	baixa	1	1	1.00	ابن
 Ben-hur	ابن	بن حور	revisado	baixa	1	1	1.00	حور
 Ben-zoheth	وبنزوحيت	بنزوحيت	revisado	baixa	2	1	1.00	نزوحيت
 Bene-berak	برق	بني براق	revisado	baixa	3	1	1.00	وبني
+Bene-berak	بني برق	بني برق	auto	baixa	3	1	1.00	بني برق جت
 Bene-jaakan	يعقان	بني يعقان	revisado	baixa	3	3	1.00	بني
 Beno	بنو	بنو	sem	baixa	2	2	1.00	ابن
+Beon	بعون	بعون	auto	baixa	2	1	1.00	وبعون
 Beon	وبعون	بعون	revisado	baixa	2	1	1.00	وحشبون
 Besor	البسور	بسور	revisado	baixa	3	3	1.00	يعبروا
 Betah	باطح	باطح	sem	baixa	2	1	1.00	بيروثاي
+Beth-Ashtoreth	بيت عشتاروث	بيت عشتاروث	auto	baixa	1	1	1.00	بيت عشتاروث سمروا
 Beth-Ashtoreth	عشتاروث	بيت عشتاروث	revisado	baixa	1	1	1.00	سور
 Beth-anath	عناة	بيت عنة	revisado	baixa	3	2	1.00	يرأون
 Beth-anoth	ألتقون	بيت عنوت	revisado	baixa	3	1	1.00	وألتقون
@@ -127,26 +142,37 @@ Beth-baal-meon	وباموت	بيت بعل معون	revisado	baixa	1	1	1.00	مع�
 Beth-dagon	داجون	بيت داجون	revisado	baixa	6	2	1.00	ومقيدة
 Beth-eden	عدن	بيت عدن	revisado	baixa	3	1	1.00	بيت
 Beth-eked	بيت	بيت عقد	revisado	baixa	3	2	1.00	عقد
+Beth-eked	بيت عقد	بيت عقد	auto	baixa	3	2	1.00	بئر بيت عقد
 Beth-emek	بيت	بيت عمق	revisado	baixa	3	1	1.00	ابول
+Beth-emek	بيت العامق	بيت العامق	auto	baixa	3	1	1.00	بيت العامق نعيئيل
+Beth-ezel	بيت هأيصل	بيت هأيصل	auto	baixa	3	1	1.00	نوح بيت هأيصل
 Beth-ezel	هأيصل	هأيصل	sem	baixa	3	1	1.00	بيت
 Beth-gader	جادير	بيت جادر	revisado	baixa	2	1	1.00	حاريف
 Beth-gamul	جامول	بيت جامول	revisado	baixa	3	1	1.00	قريتايم
 Beth-gilgal	الجلجال	بيت جلجال	revisado	baixa	2	1	1.00	ضياعا
+Beth-haccherem	بيت هكاريم	بيت هكاريم	auto	baixa	3	2	1.00	بيت هكاريم هو
 Beth-haccherem	هكاريم	بيت هكاريم	revisado	baixa	3	2	1.00	رممه
 Beth-haggan	البستان	بيت هجان	revisado	baixa	3	1	1.00	طارده
+Beth-haggan	بيت البستان	بيت البستان	auto	baixa	3	1	1.00	طريق بيت البستان
 Beth-hoglah	حجلة	بيت حجلة	revisado	baixa	3	3	1.00	بيت
 Beth-le-aphrah	عفرة	بيت لعفرة	revisado	baixa	2	1	1.00	التراب
 Beth-lebaoth	لباوت	بيت لباوت	revisado	baixa	3	1	1.00	باوت
 Beth-marcaboth	مركبوت	بيت مركبوت	revisado	baixa	2	2	0.50	المركبوت
 Beth-meon	معون	بيت معون	revisado	baixa	2	1	1.00	بيت
 Beth-merhak	أثره	أثره	sem	baixa	1	1	1.00	البيت
+Beth-merhak	أثره وقفوا	أثره وقفوا	auto	baixa	1	1	1.00	الشعب في أثره
 Beth-millo	إلأ	إلأ	sem	baixa	3	3	0.33	أبيمالك
+Beth-millo	فاجتمع جميع أهل	فاجتمع جميع أهل	auto	baixa	3	3	0.33	حيث ينزل
+Beth-pazzez	بيت فصيص	بيت فصيص	auto	baixa	3	1	1.00	حدة بيت فصيص
 Beth-pazzez	صيص	بيت فصيص	revisado	baixa	3	1	1.00	فصيص
+Beth-pelet	بيت فالط	بيت فالط	auto	baixa	3	2	1.00	حشمون بيت فالط
 Beth-pelet	وبيت	بيت فالط	revisado	baixa	3	2	1.00	الط
+Beth-peor	بيت فغور	بيت فغور	auto	baixa	3	4	1.00	بيت فغور لم
 Beth-peor	قبره	بيت فغور	revisado	baixa	3	4	0.25	بيت
 Beth-rehob	بيت	بيت رحوب	revisado	baixa	3	4	0.50	لبيت
 Beth-shemesh	شمس	بيت شمس	revisado	baixa	6	3	1.00	شحصيمة
 Beth-tappuah	أفيقة	بيت تفوح	revisado	baixa	3	1	1.00	وأفيقة
+Beth-tappuah	بيت تفوح أفيقة	بيت تفوح أفيقة	auto	baixa	3	1	1.00	بيت تفوح
 Beth-togarmah	توجرمة	بيت توجرمة	revisado	baixa	3	2	1.00	البغال
 Beth-zur	صور	بيت صور	revisado	baixa	3	4	1.00	وبيت
 Bethany	عبرة	بيت عنيا	revisado	baixa	2	1	1.00	ان
@@ -157,12 +183,14 @@ Bethlehem	لحم	بيت لحم	revisado	baixa	7	58	0.83	وبيت
 Bethphage	فاجي	بيت فاجي	revisado	baixa	3	3	1.00	قربوا
 Bethuel	بتوئيل	بتوئيل	revisado	baixa	4	10	0.80	وبتوئيل
 Bezek	بازق	بازق	revisado	baixa	6	3	1.00	ازق
+Bidkar	لبدقر	لبدقر	auto	baixa	1	1	1.00	واذكر
 Binnui	بنوي	بنوي	revisado	baixa	4	2	1.00	بن
 Binnui	وبنوي	بنوي	revisado	baixa	5	4	1.00	وبصلئيل
 Bithron	أبنير	أبنير	sem	baixa	1	1	1.00	عبروا
 Bocheru	وبكرو	بكرو	revisado	baixa	2	2	1.00	كرو
 Bohan	بوهن	بوهن	revisado	baixa	2	2	1.00	بن
 Bukki	بقي	بقي	revisado	baixa	4	4	0.75	بني
+Buz	بوزا	بوزا	auto	baixa	2	1	1.00	وبوزا
 Buz	وبوز	بوز	revisado	baixa	3	1	1.00	وز
 Buz	وبوزا	وبوزا	sem	baixa	2	1	1.00	عوصا
 Buzites	البوزي	البوزي	revisado	baixa	1	2	1.00	وخشيت
@@ -171,10 +199,12 @@ Canneh	حران	كنة	revisado	baixa	2	1	1.00	وكنة
 Cappadocia	وكبدوكية	كبدوكية	revisado	baixa	3	2	1.00	بدوكية
 Cauda	كلودي	كلودا	revisado	baixa	2	1	1.00	الجهد
 Chaldea	الكلدانيين	الكلدانيين	revisado	baixa	3	91	0.76	كلداني
+Chelluh	كلوهي	كلوهي	auto	baixa	1	1	1.00	وكلوهي
 Chelluh	وكلوهي	كلوهي	revisado	baixa	1	1	1.00	لوهي
 Chephar-ammoni	العموني	كفر العموني	revisado	baixa	2	1	1.00	العفني
 Chephar-haammoni	العموني	كفر العموني	revisado	baixa	1	1	1.00	العفني
 Cherethites	الكريتيين	الكريتيين	revisado	baixa	1	3	1.00	أخربك
+Cherethites	بكري	بكري	auto	baixa	1	9	0.11	كرسي
 Cherethites	كري	كري	sem	baixa	1	9	0.11	بكري
 Chesulloth	الكسلوت	كسلوت	revisado	baixa	2	1	1.00	والكسلوت
 Chinnereth	كنارة	كنارة	revisado	baixa	1	1	1.00	نارة
@@ -212,6 +242,7 @@ Dinaites	الدينيين	الدينيين	revisado	baixa	1	1	1.00	الدهوي�
 Dizahab	وذي	ذي ذهب	revisado	baixa	3	1	1.00	ذي
 Dodo	دودو	دودو	revisado	baixa	6	6	0.83	عد
 Doeg	دواغ	دواغ	revisado	baixa	2	5	0.80	لدواغ
+Dorcas	تلميذة	تلميذة	auto	baixa	1	3	0.33	بطرس
 Dorcas	طرس	طرس	sem	baixa	1	3	0.67	تلميذة
 East	المشرق	المشرق	sem	baixa	2	6	1.00	شاطئ
 Ebed-melech	ملك	عبد ملك	revisado	baixa	2	6	1.00	عبد
@@ -226,9 +257,12 @@ Eder	عيدر	عيدر	sem	baixa	3	1	1.00	وعيدر
 Edom	أدوم	أدوم	revisado	baixa	3	119	0.74	هدمنا
 Eglah	عجلة	عجلة	revisado	baixa	2	2	1.00	هؤلاء
 Eglath-shelishiyah	ثلاثية	ثلاثية	sem	baixa	3	2	1.00	ألعالة
+Eglath-shelishiyah	كعجلة ثلاثية	كعجلة ثلاثية	auto	baixa	3	2	1.00	ثلاثية
 Egypt	غي	مصر	revisado	baixa	3	715	0.00	غضته
+Egypt	فوط	فوط	auto	baixa	1	4	0.50	مصرايم
 Egypt	هابيم	هابيم	sem	baixa	1	4	0.50	وديم
 Ehud	أهود	أهود	revisado	baixa	2	1	1.00	وأهود
+El-bethel	إيل بيت إيل	إيل بيت إيل	auto	baixa	2	1	1.00	إيل بيت
 El-bethel	بيت	إيل بيت إيل	revisado	baixa	2	1	1.00	إيل
 Ela	أيلا	إيلا	revisado	baixa	1	1	1.00	نيامين
 Elah	أيلا	إيلة	revisado	baixa	1	1	1.00	نيامين
@@ -257,10 +291,14 @@ En-gannim	جنيم	عين جنيم	revisado	baixa	2	2	1.00	ويرموت
 En-gannim	عينام	عين جنيم	revisado	baixa	3	1	1.00	وعينام
 En-haddah	حدة	حدة	sem	baixa	3	1	1.00	ورمة
 En-hakkore	الكفة	الكفة	sem	baixa	3	1	1.00	منها
+En-hakkore	منها ماء فشرب	منها ماء فشرب	auto	baixa	3	1	1.00	الكفة
 En-rimmon	يرموث	عين رمون	revisado	baixa	2	1	1.00	ويرموث
 En-rogel	روجل	عين روجل	revisado	baixa	3	6	0.67	نزل
+En-rogel	عين روجل	عين روجل	auto	baixa	3	6	0.67	روجل
 En-tappuah	المكمتة	عين تفوح	revisado	baixa	1	1	1.00	منسى
 En-tappuah	قانة	قانة	sem	baixa	1	2	0.50	منسى
+En-tappuah	كان تخم منسى	كان تخم منسى	auto	baixa	1	1	1.00	منسى من أشير
+En-tappuah	منسى شمالي	منسى شمالي	auto	baixa	1	2	0.50	كان تخم منسى
 Engedi	جدي	عين جدي	revisado	baixa	3	7	0.86	اغية
 Enoch	حنوك	حنوك	revisado	baixa	2	2	1.00	لحنوك
 Epaenetus	أبينتوس	أبينتوس	revisado	baixa	2	1	1.00	الكنيسة
@@ -296,6 +334,7 @@ Ezem	عاصم	عاصم	revisado	baixa	3	3	1.00	وعاصم
 Ezer	عازر	عازر	revisado	baixa	4	2	1.00	الرأس
 Ezer	وعازر	وعازر	sem	baixa	4	2	1.00	عازر
 Ezer	وعزر	وعزر	sem	baixa	2	1	1.00	عزر
+Eznites	بشبث	بشبث	auto	baixa	1	1	1.00	يشيب
 Eznites	شبث	شبث	sem	baixa	1	1	1.00	بشبث
 Field	في	في	sem	baixa	1	3	0.67	إلى
 Forest	ستر	ستر	sem	baixa	1	1	1.00	فتنظر
@@ -310,8 +349,10 @@ Garmites	الجرمي	الجرميين	revisado	baixa	1	1	1.00	المعكي
 Gath	الجتي	جت	revisado	baixa	1	2	1.00	تابوت
 Gath	لغزة	لغزة	sem	baixa	3	44	0.02	عادته
 Gath	ماشيتهم	جت	revisado	baixa	1	2	0.50	جت
+Gath-rimmon	جت رمون	جت رمون	auto	baixa	5	4	1.00	مسارحها جت رمون
 Gath-rimmon	رمون	جت رمون	revisado	baixa	5	4	1.00	أيلون
 Ge-harashim	سرايا	سرايا	sem	baixa	2	2	0.50	وسرايا
+Ge-harashim	عفرة سرايا	عفرة سرايا	auto	baixa	2	2	0.50	عفرة سرايا لد
 Geba	باب	جبع	revisado	baixa	1	2	1.00	كالعربة
 Geba	بناها	جبع	revisado	baixa	3	17	0.06	بعشا
 Geba	جبع	جبع	revisado	baixa	3	2	1.00	أمره
@@ -323,6 +364,7 @@ Gederah	جديرة	جديرة	revisado	baixa	3	4	0.25	وجديرة
 Gederah	يرميا	يرميا	sem	baixa	1	1	1.00	الجديري
 Gederoth	جديروت	جديروت	revisado	baixa	3	2	1.00	وجديروت
 Genubath	جنوبث	جنوبث	revisado	baixa	2	1	1.00	أخت
+Gerasa	كورة	كورة	auto	baixa	2	4	1.00	هائجان
 Gerasa	ورة	ورة	sem	baixa	2	4	1.00	كورة
 Gershon	جرشون	جرشون	revisado	baixa	2	34	0.50	لجرشون
 Gesham	شاعف	شاعف	sem	baixa	1	1	1.00	جيشان
@@ -332,7 +374,9 @@ Gether	جاثر	جاثر	revisado	baixa	2	2	1.00	وجاثر
 Gethsemane	جثسيماني	جثسيماني	revisado	baixa	3	2	1.00	اسمها
 Geuel	جأوئيل	جأوئيل	revisado	baixa	2	1	1.00	بن
 Gibeath-elohim	جبعة	جبعة الله	revisado	baixa	3	1	1.00	تأتي
+Gibeath-elohim	جبعة الله	جبعة الله	auto	baixa	3	1	1.00	جبعة الله حيث
 Gibeath-haaraloth	إسرائيل	إسرائيل	sem	baixa	2	1	1.00	القلف
+Gibeath-haaraloth	إسرائيل في تل	إسرائيل في تل	auto	baixa	2	1	1.00	ختن بني إسرائيل
 Gilo	الجيلوني	الجيلوني	revisado	baixa	1	1	1.00	أليفلط
 Giloh	جيلوه	جيلوه	revisado	baixa	3	3	0.67	وجيلوه
 Gimzo	حمزو	جمزو	revisado	baixa	3	1	1.00	وحمزو
@@ -354,6 +398,7 @@ Greece	أخبرك	اليونان	revisado	baixa	2	7	0.14	أحارب
 Greece	تجارك	اليونان	revisado	baixa	1	11	0.09	أخبرك
 Gudgodah	الجدجود	جدجود	revisado	baixa	1	1	1.00	ماء
 Gulloth-mayim	الينابيع	الينابيع	sem	baixa	1	2	1.00	والينابيع
+Gulloth-mayim	فقالت أعطني	فقالت أعطني	auto	baixa	1	2	0.50	فقالت له أعطني
 Guni	جوني	جوني	revisado	baixa	4	4	1.00	وجوني
 Gur	هرب	جور	revisado	baixa	3	1	1.00	جور
 Gurbaal	بعل	بعل	sem	baixa	3	1	1.00	العرب
@@ -385,24 +430,31 @@ Hammoth-dor	حموت	حمّوت دور	revisado	baixa	2	1	1.00	وحموت
 Hammuel	حموئيل	حموئيل	revisado	baixa	1	1	1.00	مشماع
 Hamuel	حموئيل	حموئيل	revisado	baixa	1	1	1.00	مشماع
 Happizzez	حيزير	هفصيص	revisado	baixa	1	1	1.00	هفصيص
+Happizzez	لحيزير	لحيزير	auto	baixa	1	1	1.00	لهفصيص
 Hararites	الهراري	الهراري	revisado	baixa	1	4	1.00	الأراري
 Harhur	حرحور	حرحور	revisado	baixa	2	2	1.00	حقوفا
 Harmon	تخرجن	تخرجن	sem	baixa	3	1	1.00	الحصن
 Harod	حرود	حرود	revisado	baixa	1	1	1.00	الذي
 Haroeh	الصرعيين	الصرعيين	sem	baixa	1	2	0.50	عشائر
 Harosheth-hagoyim	الأمم	حروشث الأمم	revisado	baixa	3	3	1.00	اراق
+Harosheth-hagoyim	فدعا سيسرا جميع	فدعا سيسرا جميع	auto	baixa	3	3	0.33	السيف لم
 Haruphites	الحروفي	الحروفي	revisado	baixa	1	1	1.00	يريموث
+Hasenuah	بنيامين	بنيامين	auto	baixa	1	1	1.00	هسنوأة
 Hasenuah	نيامين	نيامين	sem	baixa	1	1	1.00	بنيامين
 Hashub	حشوب	حشوب	revisado	baixa	3	3	1.00	وحشوب
 Hazar-enan	عينان	حصر عينان	revisado	baixa	3	4	1.00	زفرون
 Hazar-gaddah	جدة	حصر جدة	revisado	baixa	3	1	1.00	حصر
 Hazar-shual	شوعال	حصر شوعال	revisado	baixa	3	4	1.00	حصر
+Hazar-susah	المركبوت حصر	المركبوت حصر	auto	baixa	2	1	1.00	سوسة
 Hazar-susah	حصر	حصر سوسة	revisado	baixa	3	2	1.00	سوسة
+Hazar-susah	حصر سوسيم	حصر سوسيم	auto	baixa	1	2	0.50	حصر سوسيم بيت
 Hazar-susim	سوسيم	حصر سوسيم	revisado	baixa	2	1	1.00	شعرايم
 Hazarmaveth	حضرموت	حضرموت	revisado	baixa	2	2	1.00	وحضرموت
 Hazelelponi	هصللفوني	هصلَلفوني	revisado	baixa	1	1	1.00	يدباش
 Hazer-hatticon	سبرائم	حصر هتيكون	revisado	baixa	3	1	1.00	وسبرائم
+Hazer-hatticon	سبرائم التي بين	سبرائم التي بين	auto	baixa	3	1	1.00	الوسطى التي
 Hazerim	الكفتوريون	الكفتوريون	sem	baixa	1	1	1.00	أبادهم
+Hazo	كاسد	كاسد	auto	baixa	2	1	1.00	فلداش
 Hazor-hadattah	حدتة	حاصور حدتة	revisado	baixa	3	1	1.00	وحدتة
 Hazzelelponi	هصللفوني	هصلَلفوني	revisado	baixa	1	1	1.00	يدباش
 Heber	حابر	حابر	revisado	baixa	8	12	0.83	وحابر
@@ -440,6 +492,7 @@ Hodesh	خودش	خودش	sem	baixa	2	1	1.00	ظبيا
 Hodiah	اليهودية	هوديا	revisado	baixa	2	1	1.00	قعيلة
 Hoglah	حجلة	حجلة	revisado	baixa	2	4	1.00	وحجلة
 Holon	حولون	حولون	revisado	baixa	6	4	0.75	وحولون
+Horem	حوريم	حوريم	auto	baixa	3	1	1.00	وحوريم
 Horem	وحوريم	حوريم	revisado	baixa	3	1	1.00	حوريم
 Horesh	شدد	حورش	revisado	baixa	3	4	0.25	وشدد
 Horonaim	راءه	حورونايم	revisado	baixa	1	1	1.00	وراءه
@@ -453,6 +506,7 @@ Hukkok	خرج	حوقوق	revisado	baixa	3	1	1.00	هناك
 Hukok	حقوق	حوقوق	revisado	baixa	2	1	1.00	رحوب
 Hul	وحول	حول	revisado	baixa	2	2	1.00	حول
 Huppah	حفة	حفة	revisado	baixa	2	1	1.00	لحفة
+Huppah	لحفة	لحفة	auto	baixa	2	1	1.00	ليشبآب
 Huppim	حفيم	حفيم	revisado	baixa	3	5	0.60	شفيم
 Hushathites	الحوشاتي	الحوشاتي	revisado	baixa	1	5	0.60	سبكاي
 Huz	عوصا	عوص	revisado	baixa	1	1	1.00	وزا
@@ -461,11 +515,12 @@ Iddo	حجي	عدو	revisado	baixa	2	4	0.50	لليهود
 Iddo	عدو	عدو	revisado	baixa	3	4	0.75	وعدو
 Ikkesh	عقيش	عقيش	revisado	baixa	2	3	1.00	أبيعزر
 India	الهند	الهند	revisado	baixa	3	2	1.00	دعي
+Ir-moab	مدينة موآب	مدينة موآب	auto	baixa	1	1	1.00	جاء خرج لاستقباله
 Ithrites	اليثري	اليثري	revisado	baixa	1	3	1.00	عيرا
 Izhar	صرث	يصهار	revisado	baixa	1	1	1.00	صوحر
 Jaakobah	يعقوبا	يعقوبا	auto	baixa	2	1	1.00	ويعقوبا
 Jaar	جدناه	جدناه	auto	baixa	1	1	1.00	وجدناه
-Jaare-oregim	أرجيم	أرجيم	auto	baixa	1	2	0.50	يعري
+Jaare-oregim	يعري أرجيم	يعري أرجيم	auto	baixa	1	2	0.50	أرجيم
 Jaasau	يعسو	يعسو	auto	baixa	1	1	1.00	ويعسو
 Jaasu	يعسو	يعسو	auto	baixa	1	1	1.00	ويعسو
 Jabbok	يبوق	يبوق	auto	baixa	3	7	0.71	اليبوق
@@ -477,23 +532,21 @@ Jahdo	يحدو	يحدو	auto	baixa	2	1	1.00	جلعاد
 Jahzeiah	يحزيا	يحزيا	auto	baixa	1	1	1.00	قاما
 Jakeh	أكال	أكال	auto	baixa	2	1	1.00	متقية
 James	أم	أم	auto	baixa	1	8	0.50	وأم
-James	باوس	باوس	auto	baixa	1	5	0.20	تداوس
+James	العلية	العلية	auto	baixa	1	2	0.50	ويهوذا
+James	تداوس	تداوس	auto	baixa	1	5	0.40	لباوس
 James	وأم	وأم	auto	baixa	1	15	0.07	يوسي
-James	يها	يها	auto	baixa	1	2	0.50	العلية
 James	يوسي	يوسي	auto	baixa	1	11	0.18	ويفرز
 Janen	متانة	متانة	auto	baixa	1	1	1.00	إلى
 Jebusite	اليبوسي	اليبوسي	auto	baixa	2	3	1.00	واليبوسي
-Jebusites	اليبوسيين	اليبوسيين	auto	baixa	1	37	0.59	يبوسي
-Jegar-sahadutha	سهدوثا	سهدوثا	auto	baixa	1	1	1.00	يجر
+Jebusites	اليبوسيين	اليبوسيين	auto	baixa	1	37	0.59	كيبوسي
 Jehaleleel	يهللئيل	يهللئيل	auto	baixa	1	1	1.00	زيفة
 Jehalelel	يهللئيل	يهللئيل	auto	baixa	1	1	1.00	يوآخ
 Jehallelel	يهللئيل	يهللئيل	auto	baixa	2	2	1.00	زيفة
-Jehezekel	يحزقيئيل	يحزقيئيل	auto	baixa	1	1	1.00	ليحزقيئيل
-Jehezkel	يحزقيئيل	يحزقيئيل	auto	baixa	1	1	1.00	ليحزقيئيل
-Jehohanan	جانبه	جانبه	auto	baixa	2	1	1.00	وبجانبه
+Jehezekel	ليحزقيئيل	ليحزقيئيل	auto	baixa	1	1	1.00	لفقحيا
+Jehezkel	ليحزقيئيل	ليحزقيئيل	auto	baixa	1	1	1.00	لفقحيا
+Jehohanan	جانبه	جانبه	auto	baixa	2	1	1.00	بجانبه
 Jehoshabeath	يهوشبع	يهوشبع	auto	baixa	1	2	0.50	خبأته
 Jehud	ويهود	ويهود	auto	baixa	3	1	1.00	يهود
-Jehudijah	ثية	ثية	auto	baixa	2	1	1.00	اليهودية
 Jehuel	يحيئيل	يحيئيل	auto	baixa	1	1	1.00	عزيئيل
 Jehush	يعوش	يعوش	auto	baixa	1	1	1.00	ويعوش
 Jekabzeel	يقبصئيل	يقبصئيل	auto	baixa	2	1	1.00	وضياعها
@@ -505,11 +558,12 @@ Jerah	يارح	يارح	auto	baixa	2	2	1.00	ويارح
 Jeremoth	راموث	راموث	auto	baixa	1	1	1.00	وراموث
 Jericho	جرحوه	جرحوه	auto	baixa	1	5	0.20	أريحا
 Jeruel	يروئيل	يروئيل	auto	baixa	3	1	1.00	صيص
-Jerusalem	سألتهم	سألتهم	auto	baixa	3	1074	0.00	يروشا
+Jerusalem	ليرسل	ليرسل	auto	baixa	1	888	0.00	شاليم
+Jerusalem	يروشا	يروشا	auto	baixa	2	955	0.00	يروشة
 Jeshimon	يمين	يمين	auto	baixa	3	6	0.33	الزيفيون
-Jeshua	يشوع	يشوع	auto	baixa	17	19	1.00	الط
+Jeshua	يشوع	يشوع	auto	baixa	17	19	1.00	فالط
 Jesus	يسوع	يسوع	auto	baixa	1	1160	0.77	يستقصى
-Jeuel	يعوئيل	يعوئيل	auto	baixa	2	1	1.00	ني
+Jeuel	يعوئيل	يعوئيل	auto	baixa	2	1	1.00	مئة
 Jeuel	يعيئيل	يعيئيل	auto	baixa	2	2	1.00	ويعيئيل
 Jeuz	يعوص	يعوص	auto	baixa	2	1	1.00	ويعوص
 Jezoar	صرث	صرث	auto	baixa	1	1	1.00	صوحر
@@ -518,7 +572,7 @@ Joah	يوآخ	يوآخ	auto	baixa	11	11	0.64	عزريا
 Joed	يوعيد	يوعيد	auto	baixa	2	1	1.00	إيثيئيل
 Joha	يشفة	يشفة	auto	baixa	2	1	1.00	يوخا
 Joktheel	يقتئيل	يقتئيل	auto	baixa	4	2	1.00	ويقتئيل
-Jonath-elem-rechokim	يتهممني	يتهممني	auto	baixa	1	1	1.00	يضايقني
+Jonath-elem-rechokim	الإنسان يتهممني	الإنسان يتهممني	auto	baixa	1	1	1.00	يتهممني اليوم كله
 Jordan	الأردن	الأردن	auto	baixa	3	204	0.82	أردن
 Jose	يوسي	يوسي	auto	baixa	1	1	1.00	أليعازر
 Josech	يوسف	يوسف	auto	baixa	1	1	1.00	شمعي
@@ -530,13 +584,13 @@ Judaism	تقليدات	تقليدات	auto	baixa	1	2	0.50	اليهودية
 Jude	يهوذا	يهوذا	auto	baixa	2	3	1.00	ويهوذا
 Judea	اليهودية	اليهودية	auto	baixa	4	59	0.76	يدخلوها
 Judgment	حيث	حيث	auto	baixa	1	1	1.00	يقضي
-Jushab-hesed	يوشب	يوشب	auto	baixa	2	1	1.00	ويوشب
 Kabzeel	قبصئيل	قبصئيل	auto	baixa	3	4	0.50	قبصيئيل
 Kadesh	حدشي	حدشي	auto	baixa	1	1	1.00	أرض
 Kadmonites	القدمونيين	القدمونيين	auto	baixa	1	1	1.00	والقدمونيين
 Karka	القرقع	القرقع	auto	baixa	3	1	1.00	أدار
 Karkor	قرقر	قرقر	auto	baixa	3	1	1.00	مخترطي
 Karnaim	قرونا	قرونا	auto	baixa	1	1	1.00	الفرحون
+Kattath	قطة	قطة	auto	baixa	2	1	1.00	اثنتا
 Kedemoth	قديموت	قديموت	auto	baixa	3	4	1.00	وقديموت
 Kedesh	قادش	قادش	auto	baixa	9	12	1.00	وقادش
 Kemuel	قموئيل	قموئيل	auto	baixa	6	3	1.00	وقموئيل
@@ -544,78 +598,64 @@ Kenath	أخربنا	أخربنا	auto	baixa	1	4	0.25	وأخربنا
 Kenath	قناة	قناة	auto	baixa	2	2	1.00	مدينة
 Kenites	أخيش	أخيش	auto	baixa	1	10	0.10	خيم
 Kenizzites	القنزيين	القنزيين	auto	baixa	1	1	1.00	والقنزيين
-Keren-happuch	قرن	قرن	auto	baixa	2	1	1.00	الثانية
+Keren-happuch	قرن	قرن	auto	baixa	2	1	1.00	اسم الثانية
 Kerioth	قريوت	قريوت	auto	baixa	2	3	1.00	ويموت
-Kerioth-hezron	وقريوت	وقريوت	auto	baixa	3	1	1.00	قريوت
 Keros	قيروس	قيروس	auto	baixa	2	2	1.00	سيعها
 Keturah	قطورة	قطورة	auto	baixa	2	4	1.00	زمران
 Kidron	قدرون	قدرون	auto	baixa	3	16	0.69	ذرى
-Kir-hareseth	حارسة	حارسة	auto	baixa	2	5	0.40	حجارتها
-Kiriath-arba	أربع	أربع	auto	baixa	1	7	1.00	قرية
-Kiriath-arim	عاريم	عاريم	auto	baixa	1	1	1.00	كفيرة
-Kiriath-baal	الربة	الربة	auto	baixa	1	2	0.50	يعاريم
-Kiriath-huzoth	قرية	قرية	auto	baixa	3	1	1.00	أتيا
-Kiriath-jearim	يعاريم	يعاريم	auto	baixa	3	22	0.82	عاريم
-Kiriath-sannah	وقرية	وقرية	auto	baixa	1	1	1.00	دنة
-Kiriath-sepher	قرية	قرية	auto	baixa	1	4	1.00	عكسة
+Kiriath-huzoth	قرية حصوت	قرية حصوت	auto	baixa	3	1	1.00	أتيا إلى قرية
 Kishion	قشيون	قشيون	auto	baixa	3	3	0.67	وقشيون
 Kitron	قطرون	قطرون	auto	baixa	3	3	0.33	يطرد
 Kiyyun	خيمة	خيمة	auto	baixa	1	1	1.00	نجم
-Koa	اة	اة	auto	baixa	3	1	1.00	شهراء
-Kohath	قهات	قهات	auto	baixa	2	42	0.69	وقهات
+Koa	شهراء	شهراء	auto	baixa	3	1	1.00	لاة
+Kohath	قهات	قهات	auto	baixa	2	42	0.69	كانت
 Korah	أمراء	أمراء	auto	baixa	4	5	0.40	امرأة
 Korah	راقم	راقم	auto	baixa	2	1	1.00	وراقم
 Kore	قوري	قوري	auto	baixa	4	4	0.75	حراس
 Koz	قوص	قوص	auto	baixa	1	1	1.00	وقوص
 Koz	هقوص	هقوص	auto	baixa	2	4	1.00	اسمهم
-Kue	مخرج	مخرج	auto	baixa	3	2	1.00	الخيل
+Kue	مخرج	مخرج	auto	baixa	3	2	1.00	كان
 Lakkum	أدامي	أدامي	auto	baixa	3	1	1.00	تخمهم
-Leb-kamai	مهلكة	مهلكة	auto	baixa	2	1	1.00	القائمين
-Lebo-hamath	حماة	حماة	auto	baixa	2	12	0.92	أمتاي
+Leb-kamai	مهلكة	مهلكة	auto	baixa	2	1	1.00	الرب هأنذا أوقظ
 Lemuel	لموئيل	لموئيل	auto	baixa	2	2	1.00	للملوك
-Likhi	ولقحي	ولقحي	auto	baixa	2	1	1.00	أخيان
-Lud	ولود	ولود	auto	baixa	5	6	0.83	ود
+Likhi	لقحي	لقحي	auto	baixa	2	1	1.00	ولقحي
 Luke	عليكم	عليكم	auto	baixa	1	4	0.50	للخدمة
 Luke	للخدمة	للخدمة	auto	baixa	1	3	0.33	عليكم
 Maacath	والمعكي	والمعكي	auto	baixa	1	1	1.00	المعكي
-Maareh-geba	تامار	تامار	auto	baixa	3	1	1.00	ثار
+Maareh-geba	تامار ثار	تامار ثار	auto	baixa	3	1	1.00	مكانه من عراء
 Magadan	مجدل	مجدل	auto	baixa	2	1	1.00	السفينة
 Magadan	وأمراض	وأمراض	auto	baixa	1	14	0.07	مضى
 Mahalab	المحصنة	المحصنة	auto	baixa	2	1	1.00	البحر
 Mahalath	بالنهار	بالنهار	auto	baixa	1	2	0.50	الجاهل
-Mahalath	سمة	سمة	auto	baixa	1	6	0.83	محلة
+Mahalath	سمة	سمة	auto	baixa	1	6	0.83	بسمة
 Mahavites	محويم	محويم	auto	baixa	1	1	1.00	ويثمة
-Maher-shalal-hash-baz	شلال	شلال	auto	baixa	2	2	1.00	حاش
 Makheloth	مقهيلوت	مقهيلوت	auto	baixa	3	2	1.00	تاحت
 Maoch	معوك	معوك	auto	baixa	1	2	0.50	عبداك
 Maon	معون	معون	auto	baixa	5	6	0.83	ومعون
 Mareal	مرعلة	مرعلة	auto	baixa	3	1	1.00	مقابل
 Mark	مرقس	مرقس	auto	baixa	1	10	0.80	معهما
-Matthew	رثولماوس	رثولماوس	auto	baixa	2	8	0.38	توما
+Matthew	توما	توما	auto	baixa	2	8	0.50	برثولماوس
 Mazzaroth	المنازل	المنازل	auto	baixa	1	1	1.00	أوقاتها
-Me-jarkon	ومياه	ومياه	auto	baixa	3	1	1.00	الرقون
+Me-jarkon	مياه اليرقون	مياه اليرقون	auto	baixa	3	1	1.00	ومياه
 Mecherathites	المكيراتي	المكيراتي	auto	baixa	1	1	1.00	وأخيا
 Meholathites	المحولي	المحولي	auto	baixa	1	2	1.00	أعطيت
 Melchisedec	ملكي	ملكي	auto	baixa	1	11	1.00	وملكي
 Melchizedek	ملكي	ملكي	auto	baixa	1	11	1.00	وملكي
-Melzar	السقاة	السقاة	auto	baixa	2	2	1.00	مشروبهم
+Melzar	السقاة	السقاة	auto	baixa	2	2	1.00	لاه
 Memphis	تحفنحيس	تحفنحيس	auto	baixa	3	8	0.25	وتحفنيس
 Meronoth	الميرونوثي	الميرونوثي	auto	baixa	1	2	1.00	ملطيا
 Meronothites	الميرونوثي	الميرونوثي	auto	baixa	1	2	1.00	ملطيا
-Mesha	ميشع	ميشع	auto	baixa	2	1	1.00	صوفها
-Meshech-Tubal	توبال	توبال	auto	baixa	2	1	1.00	وتوبال
+Mesha	ميشع	ميشع	auto	baixa	2	1	1.00	بصوفها
 Meshullemeth	مشلمة	مشلمة	auto	baixa	2	1	1.00	سنتين
 Mesopotamia	يستأجروا	يستأجروا	auto	baixa	3	7	0.14	رشعتايم
-Metheg-ammah	زمام	زمام	auto	baixa	2	1	1.00	القصبة
+Metheg-ammah	زمام	زمام	auto	baixa	2	1	1.00	زمام القصبة
 Meunites	المعونيين	المعونيين	auto	baixa	1	3	0.67	والمعونيين
 Mezahab	ماء	ماء	auto	baixa	3	2	1.00	مهيطبئيل
 Mezobaites	مصوبايا	مصوبايا	auto	baixa	1	1	1.00	ويعسيئيل
-Migdal-gad	ومجدل	ومجدل	auto	baixa	3	1	1.00	مجدل
 Mikloth	مقلوث	مقلوث	auto	baixa	4	4	1.00	ومقلوث
 Miktam	اقتحمتنا	اقتحمتنا	auto	baixa	1	6	0.17	يا
 Mishraites	المشراعي	المشراعي	auto	baixa	1	1	1.00	والمشراعي
 Mispereth	مسفارث	مسفارث	auto	baixa	1	2	0.50	مسفار
-Misrephoth-maim	مسرفوت	مسرفوت	auto	baixa	3	2	1.00	مايم
 Mithnites	المثني	المثني	auto	baixa	1	1	1.00	يوشافاط
 Mizpah	المصفاة	المصفاة	auto	baixa	7	58	0.64	ملطيا
 Mizpah	شاهدة	شاهدة	auto	baixa	1	3	0.33	سهدوثا
@@ -624,15 +664,15 @@ Mizpeh	مصفاة	مصفاة	auto	baixa	2	1	1.00	وأمي
 Mizpeh	والمصفاة	والمصفاة	auto	baixa	3	1	1.00	المصفاة
 Moreh	مورة	مورة	auto	baixa	6	3	1.00	عبر
 Moresheth	المورشتي	المورشتي	auto	baixa	2	3	0.67	عر
-Moresheth-gath	مورشة	مورشة	auto	baixa	2	3	0.33	لمورشة
-Mortar	مكتيش	مكتيش	auto	baixa	3	1	1.00	اد
+Moresheth-gath	لمورشة	لمورشة	auto	baixa	2	3	0.33	لمورشة جت تصير
+Mortar	مكتيش	مكتيش	auto	baixa	3	1	1.00	باد
 Moserah	موسير	موسير	auto	baixa	2	1	1.00	إسرائيل
-Muth-labben	عجائبك	عجائبك	auto	baixa	1	1	1.00	قلبي
+Muth-labben	أحمد الرب	أحمد الرب	auto	baixa	1	1	1.00	بجميع عجائبك
 Naamah	النعماتي	النعماتي	auto	baixa	1	4	1.00	التيماني
 Naamathites	النعماتي	النعماتي	auto	baixa	1	4	1.00	التيماني
 Nagge	نجاي	نجاي	auto	baixa	1	1	1.00	ناحوم
-Naphath-dor	طافة	طافة	auto	baixa	1	1	1.00	مرتفعات
-Naphoth-dor	دور	دور	auto	baixa	2	4	1.00	نروت
+Naphath-dor	طافة بنت	طافة بنت	auto	baixa	1	1	1.00	مرتفعات دور
+Naphoth-dor	مرتفعات دور	مرتفعات دور	auto	baixa	2	4	0.75	مرتفعات دور غربا
 Nazareth	الناصري	الناصري	auto	baixa	1	30	0.57	ناصرة
 Nazirites	أوصيتم	أوصيتم	auto	baixa	1	15	0.07	نذيرين
 Neco	نخو	نخو	auto	baixa	1	10	0.80	تنكر
@@ -641,17 +681,19 @@ Nehelamites	النحلامي	النحلامي	auto	baixa	1	3	1.00	لشمعيا
 Nekoda	نقودا	نقودا	auto	baixa	4	4	1.00	رصين
 Nemuel	نموئيل	نموئيل	auto	baixa	2	1	1.00	خاصما
 Nepheg	نافج	نافج	auto	baixa	4	4	1.00	ونافج
-Nephilim	في	في	auto	baixa	1	2	1.00	ني
+Nephilim	في	في	auto	baixa	1	2	1.00	لهم
 Nereus	نيريوس	نيريوس	auto	baixa	2	1	1.00	ونيريوس
-Nergal-sar-ezer	شراصر	شراصر	auto	baixa	2	2	1.00	نرجل
-Nergal-sharezer	شراصر	شراصر	auto	baixa	1	2	1.00	نرجل
+Nergal-sar-ezer	نرجل شراصر رئيس	نرجل شراصر رئيس	auto	baixa	2	2	1.00	نرجل شراصر سمجر
+Nergal-sharezer	نرجل شراصر رئيس	نرجل شراصر رئيس	auto	baixa	1	2	1.00	نرجل شراصر
 Nero	روحك	روحك	auto	baixa	1	2	0.50	من
 Nicolaitans	النقولاويين	النقولاويين	auto	baixa	1	2	1.00	أيضا
 Nobah	نوبح	نوبح	auto	baixa	5	2	1.00	قناة
 Nogah	نافج	نافج	auto	baixa	2	2	1.00	ونافج
-Nohah	نيامين	نيامين	auto	baixa	1	1	1.00	لجهة
+Nohah	لجهة	لجهة	auto	baixa	1	1	1.00	جهة
 Nophah	نوفح	نوفح	auto	baixa	2	1	1.00	رميناهم
+North	وبنت	وبنت	auto	baixa	1	10	0.10	وآنيتهم
 Obed	عوبيد	عوبيد	auto	baixa	10	11	1.00	وعوبيد
+Obed-edom	عوبيد أدوم	عوبيد أدوم	auto	baixa	1	16	0.81	لعوبيد أدوم
 Oboth	أوبوت	أوبوت	auto	baixa	3	4	1.00	ثم
 Oded	عوديد	عوديد	auto	baixa	4	3	1.00	جدد
 Og	أخذنا	أخذنا	auto	baixa	2	22	0.05	أذرع
@@ -659,10 +701,9 @@ Ohel	أوهل	أوهل	auto	baixa	2	1	1.00	وأوهل
 Oholah	أهولة	أهولة	auto	baixa	1	4	1.00	على
 Olivet	الزيتون	الزيتون	auto	baixa	1	3	1.00	ويبيت
 Olympas	أولمباس	أولمباس	auto	baixa	2	1	1.00	وأولمباس
-Omega	ماء	ماء	auto	baixa	1	4	0.25	رغامس
-On	أون	أون	auto	baixa	1	1	1.00	وأون
+Omega	ماء	ماء	auto	baixa	1	4	0.25	برغامس
+On	أون	أون	auto	baixa	3	8	0.50	فعنيح
 On	بن	بن	auto	baixa	1	3	0.67	أون
-On	عنيح	عنيح	auto	baixa	2	7	0.14	اهن
 Ophel	علاه	علاه	auto	baixa	3	5	0.20	وعلاه
 Oreb	غراب	غراب	auto	baixa	2	4	0.75	غرابا
 Oren	أورن	أورن	auto	baixa	2	1	1.00	وأورن
@@ -671,110 +712,109 @@ Orpah	عرفة	عرفة	auto	baixa	2	2	1.00	راعوث
 Osnappar	أسنفر	أسنفر	auto	baixa	1	1	1.00	وسائر
 Ozem	أوصم	أوصم	auto	baixa	4	2	1.00	وأوصم
 Pacatiana	الإيمان	الإيمان	auto	baixa	1	1	1.00	آمين
-Pahath-moab	موآب	موآب	auto	baixa	6	6	1.00	وثمان
 Pallu	الحنوكيين	الحنوكيين	auto	baixa	2	5	0.20	الفلويين
-Paruah	اروح	اروح	auto	baixa	2	1	1.00	فاروح
-Paseah	اسيح	اسيح	auto	baixa	3	3	1.00	فاسيح
+Parthians	فرتيون	فرتيون	auto	baixa	1	1	1.00	النهرين
+Paruah	فاروح	فاروح	auto	baixa	2	1	1.00	يساكر
 Paseah	فاسح	فاسح	auto	baixa	2	1	1.00	وفاسح
-Pashhur	وفشحور	وفشحور	auto	baixa	1	1	1.00	فشحور
-Pashur	وفشحور	وفشحور	auto	baixa	1	1	1.00	فشحور
+Paseah	فاسيح	فاسيح	auto	baixa	3	3	1.00	أقفاله
 Passover	اسحبوا	اسحبوا	auto	baixa	1	73	0.01	الفصح
-Pau	اعو	اعو	auto	baixa	3	2	0.50	اعي
+Pau	فاعو	فاعو	auto	baixa	3	2	0.50	فاعي
 Paul	أعلمه	أعلمه	auto	baixa	2	182	0.01	حاول
 Pavement	جباثا	جباثا	auto	baixa	1	1	1.00	البلاط
-Pedahel	دهئيل	دهئيل	auto	baixa	2	1	1.00	فدهئيل
+Pedahel	فدهئيل	فدهئيل	auto	baixa	2	1	1.00	الرئيس
 Pekah	معكة	معكة	auto	baixa	2	11	0.09	تركوا
-Pekahiah	قحيا	قحيا	auto	baixa	2	3	1.00	فقحيا
-Pekod	فقود	فقود	auto	baixa	2	2	1.00	قود
+Pekahiah	فقحيا	فقحيا	auto	baixa	2	3	1.00	الأيام
+Pekod	فقود	فقود	auto	baixa	2	2	1.00	اخرب
+Pelaliah	فلليا	فلليا	auto	baixa	2	1	1.00	عدايا
 Pelet	فلط	فلط	auto	baixa	2	1	1.00	وفلط
 Pelet	وفالط	وفالط	auto	baixa	2	1	1.00	فالط
-Peleth	الت	الت	auto	baixa	4	2	1.00	فالت
+Peleth	فالت	فالت	auto	baixa	4	2	1.00	قهات
 Pelethites	الجتيين	الجتيين	auto	baixa	1	7	0.14	ليتبعوا
 Pelonites	الفلوني	الفلوني	auto	baixa	1	4	0.75	حالص
-Pelusium	لتمزيق	لتمزيق	auto	baixa	3	2	0.50	للتمزيق
-Peninnah	ننة	ننة	auto	baixa	2	2	1.00	نيها
-Penuel	نوئيل	نوئيل	auto	baixa	2	6	0.83	فنوئيل
-Penuel	وفنوئيل	وفنوئيل	auto	baixa	4	2	1.00	فنوئيل
+Pelusium	للتمزيق	للتمزيق	auto	baixa	3	2	0.50	سين
+Peniel	فنوئيل	فنوئيل	auto	baixa	1	6	0.83	فنيئيل
+Peninnah	فننة	فننة	auto	baixa	2	2	1.00	بنيها
 Peresh	شارش	شارش	auto	baixa	2	1	1.00	رش
-Perez-uzza	عزا	عزا	auto	baixa	2	1	1.00	سمى
-Perez-uzzah	سمى	سمى	auto	baixa	2	2	1.00	عزة
-Perga	رجة	رجة	auto	baixa	3	3	1.00	برجة
+Perez-uzza	فارص عزا	فارص عزا	auto	baixa	2	1	1.00	الموضع فارص عزا
+Perez-uzzah	فارص عزا	فارص عزا	auto	baixa	1	2	0.50	فارص عزة
+Perez-uzzah	فارص عزة	فارص عزة	auto	baixa	1	1	1.00	الموضع فارص عزة
+Perga	برجة	برجة	auto	baixa	3	3	1.00	أقلع
+Pergamum	برغامس	برغامس	auto	baixa	3	2	1.00	تراه
 Perizzites	الفرزيين	الفرزيين	auto	baixa	1	23	0.83	والفرزيين
-Peter	طرس	طرس	auto	baixa	1	179	0.80	بطرس
+Persia	رئيسات	رئيسات	auto	baixa	2	27	0.04	شيثار
+Persia	كشريعة	كشريعة	auto	baixa	1	33	0.06	رئيسات
 Pethahiah	التاسعة	التاسعة	auto	baixa	2	1	1.00	لفقحيا
-Pethahiah	وفتحيا	وفتحيا	auto	baixa	6	3	1.00	فتحيا
-Pethor	تور	تور	auto	baixa	3	2	1.00	فتور
-Pethuel	ثوئيل	ثوئيل	auto	baixa	2	1	1.00	فثوئيل
-Phanuel	فنوئيل	فنوئيل	auto	baixa	2	1	1.00	نوئيل
+Pethahiah	وفتحيا	وفتحيا	auto	baixa	6	3	1.00	تحيا
+Pethor	فتور	فتور	auto	baixa	3	2	1.00	استأجروا
+Pethuel	فثوئيل	فثوئيل	auto	baixa	2	1	1.00	قول
+Phanuel	فنوئيل	فنوئيل	auto	baixa	2	1	1.00	كانت
 Pharaoh	المرضوضة	المرضوضة	auto	baixa	2	5	0.40	فرعون
 Pharaoh	وامرأته	وامرأته	auto	baixa	2	1	1.00	امرأته
 Pharaoh	وفرعون	وفرعون	auto	baixa	2	1	1.00	فرعون
-Phebe	فيبي	فيبي	auto	baixa	1	1	1.00	يبي
-Phenice	فينكس	فينكس	auto	baixa	1	1	1.00	ينكس
-Phoebe	فيبي	فيبي	auto	baixa	1	2	1.00	يبي
-Phoenix	فينكس	فينكس	auto	baixa	2	1	1.00	ينكس
+Pharaoh-nechoh	فرعون نخو	فرعون نخو	auto	baixa	1	7	0.43	فأخذه نخو
+Phebe	فيبي	فيبي	auto	baixa	1	1	1.00	في
+Phenice	فينكس	فينكس	auto	baixa	1	1	1.00	في
+Phoebe	فيبي	فيبي	auto	baixa	1	2	1.00	تبت
+Phoenix	فينكس	فينكس	auto	baixa	2	1	1.00	ليشتوا
 Pileha	فلحا	فلحا	auto	baixa	1	1	1.00	وفلحا
 Pilha	فلحا	فلحا	auto	baixa	1	1	1.00	وفلحا
 Pillars	أسكفة	أسكفة	auto	baixa	1	1	1.00	وأسكفة
-Pirathon	رعتون	رعتون	auto	baixa	3	5	0.20	فرعتون
+Pirathon	فرعتون	فرعتون	auto	baixa	3	5	0.20	جاعش
 Pispa	فسفة	فسفة	auto	baixa	1	1	1.00	وفسفة
 Pispah	فسفة	فسفة	auto	baixa	1	1	1.00	وفسفة
 Place	جلجثة	جلجثة	auto	baixa	2	3	1.00	إلى
 Pleiades	الثريا	الثريا	auto	baixa	1	3	1.00	والجبار
-Pochereth	وخرة	وخرة	auto	baixa	1	2	1.00	فوخرة
-Pochereth-hazzebaim	الظباء	الظباء	auto	baixa	1	2	1.00	وخرة
-Pool	شلون	شلون	auto	baixa	1	1	1.00	لحوزة
+Pochereth	فوخرة	فوخرة	auto	baixa	1	2	1.00	حطيل
+Pochereth-hazzebaim	فوخرة الظباء	فوخرة الظباء	auto	baixa	1	2	1.00	بنو فوخرة الظباء
+Pool	شلون	شلون	auto	baixa	1	1	1.00	كلحوزة
 Pool	لعبور	لعبور	auto	baixa	1	1	1.00	لم
-Poti-pherah	فارع	فارع	auto	baixa	1	3	1.00	وطي
+Poti-pherah	فوطي فارع كاهن	فوطي فارع كاهن	auto	baixa	1	3	1.00	فوطي فارع
 Potiphera	فارع	فارع	auto	baixa	1	3	1.00	وطي
-Prochorus	روخورس	روخورس	auto	baixa	2	1	1.00	وبروخورس
-Puah	فوة	فوة	auto	baixa	2	3	1.00	تولاع
-Puah	واة	واة	auto	baixa	2	1	1.00	فواة
-Puah	وعة	وعة	auto	baixa	2	1	1.00	فوعة
-Pudens	ينس	ينس	auto	baixa	2	1	1.00	وديس
+Prochorus	بروخورس	بروخورس	auto	baixa	2	1	1.00	وبروخورس
+Puah	فواة	فواة	auto	baixa	2	1	1.00	شامير
+Puah	فوة	فوة	auto	baixa	2	3	0.67	تولاع
+Puah	فوعة	فوعة	auto	baixa	2	1	1.00	شفرة
+Publius	بوبليوس	بوبليوس	auto	baixa	2	2	1.00	بولس
+Pudens	ينس	ينس	auto	baixa	2	1	1.00	لينس
 Pul	فول	فول	auto	baixa	1	1	1.00	وفول
 Punon	ونون	ونون	auto	baixa	3	2	1.00	فونون
 Purah	فورة	فورة	auto	baixa	1	2	1.00	وفورة
 Put	فوط	فوط	auto	baixa	3	9	0.78	وفوط
-Puteoli	وطيولي	وطيولي	auto	baixa	3	1	1.00	بوطيولي
+Puteoli	بوطيولي	بوطيولي	auto	baixa	3	1	1.00	الثاني
 Puthites	الفوتي	الفوتي	auto	baixa	1	1	1.00	الشماتي
+Putiel	فوطيئيل	فوطيئيل	auto	baixa	2	1	1.00	له
 Pyrrhus	غايوس	غايوس	auto	baixa	1	1	1.00	البيري
-Rab-mag	شراصر	شراصر	auto	baixa	2	2	1.00	ابل
+Rab-mag	رؤساء ملك	رؤساء ملك	auto	baixa	2	2	1.00	رئيس المجوس
 Raca	رقا	رقا	auto	baixa	1	1	1.00	أخيه
-Rakkath	رقة	رقة	auto	baixa	2	1	1.00	نارة
+Rakkath	رقة	رقة	auto	baixa	2	1	1.00	ورقة
 Rakkon	الرقون	الرقون	auto	baixa	3	1	1.00	اليرقون
-Ramath-lehi	اللحي	اللحي	auto	baixa	3	1	1.00	رمت
-Ramath-mizpeh	رامة	رامة	auto	baixa	2	1	1.00	المصفاة
 Ramathites	الرامي	الرامي	auto	baixa	1	1	1.00	الشفمي
 Reba	رابع	رابع	auto	baixa	2	2	1.00	ورابع
 Regem	رجم	رجم	auto	baixa	2	1	1.00	ويوثام
-Regem-melech	ملك	ملك	auto	baixa	2	1	1.00	ورجم
 Rehoboth	رحوبوت	رحوبوت	auto	baixa	7	4	1.00	أرحب
-Rehoboth-Ir	ورحوبوت	ورحوبوت	auto	baixa	1	1	1.00	رحوبوت
-Rehum	رحوم	رحوم	auto	baixa	8	11	0.73	حريم
+Rehum	رحوم	رحوم	auto	baixa	8	11	0.73	رعميا
 Remeth	وراموت	وراموت	auto	baixa	1	2	0.50	راموت
 Remeth	ورمة	ورمة	auto	baixa	2	1	1.00	رمة
 Reuben	رأوبين	رأوبين	auto	baixa	2	86	0.83	كرأوبين
 Rhegium	ريغيون	ريغيون	auto	baixa	3	1	1.00	ريح
 Rhodes	أدوا	أدوا	auto	baixa	1	1	1.00	هديتك
 Rimmon	ودمنة	ودمنة	auto	baixa	1	1	1.00	دمنة
-Rimmon-perez	رمون	رمون	auto	baixa	3	2	1.00	ارص
+Rimmon-perez	رمون فارص	رمون فارص	auto	baixa	3	2	1.00	رمون فارص نزلوا
 Rimmono	رمونو	رمونو	auto	baixa	2	1	1.00	من
 River	داريوس	داريوس	auto	baixa	1	16	0.12	رحوم
 River	رحوبوت	رحوبوت	auto	baixa	1	2	1.00	شأول
 River	ريحه	ريحه	auto	baixa	1	10	0.10	ليدعوه
 River	ليدعوه	ليدعوه	auto	baixa	1	1	1.00	يدعوه
-Rock	رية	رية	auto	baixa	1	4	0.50	رمل
+Rock	رمل	رمل	auto	baixa	1	4	0.25	رجاله
 Rocks	صخور	صخور	auto	baixa	1	1	1.00	أخذ
 Rohgah	رهجة	رهجة	auto	baixa	2	1	1.00	ورهجة
-Romamti-ezer	روممتي	روممتي	auto	baixa	2	2	1.00	لروممتي
-Rome	رومية	رومية	auto	baixa	3	34	0.35	تبشيركم
+Rome	رومية	رومية	auto	baixa	3	34	0.35	لتبشيركم
 Sadducee	شيعة	شيعة	auto	baixa	1	14	0.07	سألوه
 Sadoc	أخيم	أخيم	auto	baixa	1	1	1.00	صادوق
 Sahar	صنائعك	صنائعك	auto	baixa	3	1	1.00	تاجرتك
 Sallu	سلو	سلو	auto	baixa	6	4	0.75	هسنوأة
 Salome	صار	صار	auto	baixa	1	1	1.00	الوسط
-Samgar-nebo	سمجر	سمجر	auto	baixa	1	1	1.00	وسمجر
+Samgar-nebo	سمجر نبو	سمجر نبو	auto	baixa	1	1	1.00	شراصر سمجر نبو
 Secu	سيخو	سيخو	auto	baixa	3	1	1.00	سأل
 Segub	سجوب	سجوب	auto	baixa	4	3	1.00	صغيره
 Serah	سارح	سارح	auto	baixa	2	3	1.00	وسارح
@@ -785,7 +825,6 @@ Shammua	شموع	شموع	auto	baixa	6	5	0.80	أسماؤهم
 Sharezer	شرآصر	شرآصر	auto	baixa	2	2	1.00	وشرآصر
 Sharezer	شراصر	شراصر	auto	baixa	1	1	1.00	أرسل
 Shaveh	شوى	شوى	auto	baixa	1	2	1.00	عشتاروث
-Shear-jashub	شآر	شآر	auto	baixa	2	1	1.00	ياشوب
 Shebuel	شبوئيل	شبوئيل	auto	baixa	2	5	0.60	شوبائيل
 Shema	عزاز	عزاز	auto	baixa	2	1	1.00	شامع
 Shemed	مشعام	مشعام	auto	baixa	1	1	1.00	وشامر
@@ -796,12 +835,10 @@ Shephelah	فلاحون	فلاحون	auto	baixa	3	19	0.05	السهل
 Shepho	شفو	شفو	auto	baixa	2	2	0.50	وشفو
 Shiggaion	ونجني	ونجني	auto	baixa	1	1	1.00	نجني
 Shigionoth	الشجوية	الشجوية	auto	baixa	1	1	1.00	صلاة
-Shihor-libnath	لبنة	لبنة	auto	baixa	3	1	1.00	شيحور
 Shilonites	الشيلوني	الشيلوني	auto	baixa	1	1	1.00	حزايا
-Shimea	شمعي	شمعي	auto	baixa	2	1	1.00	رخيا
+Shimea	شمعي	شمعي	auto	baixa	2	1	1.00	آساف
 Shimeathite	شمعاتيم	شمعاتيم	auto	baixa	1	1	1.00	وشمعاتيم
 Shimeon	وشمعون	وشمعون	auto	baixa	2	1	1.00	شمعون
-Shimron-meron	شمرون	شمرون	auto	baixa	2	1	1.00	مرأون
 Shiphmites	الشفمي	الشفمي	auto	baixa	1	1	1.00	شمعي
 Shobek	شوبيق	شوبيق	auto	baixa	2	1	1.00	وشوبيق
 Shoham	شوهم	شوهم	auto	baixa	2	1	1.00	وشوهم
@@ -822,15 +859,14 @@ Sopater	سوباترس	سوباترس	auto	baixa	2	2	0.50	سوسيباترس
 South	تسلطه	تسلطه	auto	baixa	1	12	0.08	تسلط
 South	ستقوم	ستقوم	auto	baixa	2	3	0.67	ومستريحة
 South	ومستريحة	ومستريحة	auto	baixa	1	1	1.00	مستريحة
+Spain	اسبانيا	اسبانيا	auto	baixa	3	2	1.00	فسأمضي
 Stoic	الأبيكوريين	الأبيكوريين	auto	baixa	1	1	1.00	يبشرهم
 Straight	طرسوسيا	طرسوسيا	auto	baixa	1	1	1.00	المستقيم
 Suah	وشوعال	وشوعال	auto	baixa	2	1	1.00	شوعال
 Sucathite	سوكاتيم	سوكاتيم	auto	baixa	1	1	1.00	وسوكاتيم
-Succoth-benoth	سكوث	سكوث	auto	baixa	1	1	1.00	كوث
-Tabbur-erez	آتية	آتية	auto	baixa	1	1	1.00	لوطة
+Tabbur-erez	الأرض فرقة	الأرض فرقة	auto	baixa	1	1	1.00	آتية عن طريق
 Tahath	تحث	تحث	auto	baixa	6	3	1.00	شوتالح
-Tahpenes	تحفنيس	تحفنيس	auto	baixa	2	2	1.00	ان
-Tahtim-hodshi	تحتيم	تحتيم	auto	baixa	1	1	1.00	حدشي
+Tahpenes	تحفنيس	تحفنيس	auto	baixa	2	2	1.00	ابنه
 Tahtimhodshi	تحتيم	تحتيم	auto	baixa	1	1	1.00	حدشي
 Tappuah	شامع	شامع	auto	baixa	2	1	1.00	تفوح
 Tappuah	عينام	عينام	auto	baixa	3	1	1.00	تفوح
@@ -838,43 +874,37 @@ Tappuah	قانة	قانة	auto	baixa	3	4	0.25	أما
 Tarpelite	الطرفليين	الطرفليين	auto	baixa	1	1	1.00	والطرفليين
 Tebah	تاحش	تاحش	auto	baixa	2	1	1.00	طابح
 Tekoa	عيطام	عيطام	auto	baixa	3	14	0.07	تظاهري
-Tel-melah	وتل	وتل	auto	baixa	3	2	1.00	تل
 Temah	تامح	تامح	auto	baixa	1	2	0.50	ثامح
 Temeni	والتيماني	والتيماني	auto	baixa	2	1	1.00	التيماني
-Thebes	تروس	تروس	auto	baixa	3	6	0.17	فتروس
+Thebes	فتروس	فتروس	auto	baixa	3	6	0.17	للتمزيق
 There	عشر	عشر	auto	baixa	1	1	1.00	المحيط
 Throne	حيث	حيث	auto	baixa	1	1	1.00	بأرز
-Tiglath-pileser	تغلث	تغلث	auto	baixa	1	9	0.44	فلاسر
+Tiglath-pileser	تغلث فلاسر	تغلث فلاسر	auto	baixa	1	9	0.33	تلغث فلناسر
 Tigris	الجاري	الجاري	auto	baixa	2	2	0.50	العشرين
-Tilgath-pilneser	تلغث	تلغث	auto	baixa	1	6	0.33	فلناسر
-Timnath-heres	تمنة	تمنة	auto	baixa	3	3	1.00	جاعش
-Timnath-serah	تمنة	تمنة	auto	baixa	1	2	1.00	جاعش
 Tirathite	ترعاتيم	ترعاتيم	auto	baixa	1	1	1.00	شمعاتيم
 Tizites	التيصي	التيصي	auto	baixa	1	1	1.00	يديعئيل
 Tohu	توح	توح	auto	baixa	1	3	0.33	توحو
 Tola	تولع	تولع	auto	baixa	2	1	1.00	تخليص
-Tower	وبرج	وبرج	auto	baixa	2	4	0.50	رج
+Tower	وبرج	وبرج	auto	baixa	2	4	0.50	برج
 Tower	وتعمر	وتعمر	auto	baixa	1	4	0.25	تعمر
 Trogyllium	تروجيليون	تروجيليون	auto	baixa	3	1	1.00	ميليتس
-Tubal-cain	توبال	توبال	auto	baixa	2	1	1.00	آلة
 Uel	أوئيل	أوئيل	auto	baixa	2	1	1.00	وأوئيل
 Unnamed#1	أليود	أليود	auto	baixa	1	1	1.00	وأليود
-Unnamed#1	اهنا	اهنا	auto	baixa	1	1	1.00	إتمام
+Unnamed#1	إتمام	إتمام	auto	baixa	1	1	1.00	لإتمام
 Unnamed#2	أليود	أليود	auto	baixa	1	1	1.00	وأليود
-Unnamed#2	اهنا	اهنا	auto	baixa	1	1	1.00	إتمام
+Unnamed#2	إتمام	إتمام	auto	baixa	1	1	1.00	لإتمام
 Unnamed#3	أليود	أليود	auto	baixa	1	1	1.00	وأليود
-Unnamed#3	اهنا	اهنا	auto	baixa	1	1	1.00	إتمام
+Unnamed#3	إتمام	إتمام	auto	baixa	1	1	1.00	لإتمام
 Unnamed#4	أليود	أليود	auto	baixa	1	1	1.00	وأليود
-Unnamed#4	اهنا	اهنا	auto	baixa	1	1	1.00	إتمام
+Unnamed#4	إتمام	إتمام	auto	baixa	1	1	1.00	لإتمام
 Unnamed#5	أليود	أليود	auto	baixa	1	1	1.00	وأليود
 Unnamed#6	أليود	أليود	auto	baixa	1	1	1.00	وأليود
 Unnamed#7	أليود	أليود	auto	baixa	1	1	1.00	وأليود
 Unnamed#8	أليود	أليود	auto	baixa	1	1	1.00	وأليود
 Unnamed#9	أليود	أليود	auto	baixa	1	1	1.00	وأليود
 Urbane	أوربانوس	أوربانوس	auto	baixa	1	1	1.00	معنا
-Uz	عوصا	عوصا	auto	baixa	1	1	1.00	وزا
+Uz	عوصا	عوصا	auto	baixa	1	1	1.00	بوزا
 Uzal	غزلا	غزلا	auto	baixa	3	1	1.00	مشغول
-Uzzen-sheerah	شيرة	شيرة	auto	baixa	3	1	1.00	أزين
 Weeks	يتجاوز	يتجاوز	auto	baixa	1	8	0.12	ذكورك
 Willows	وذخائرهم	وذخائرهم	auto	baixa	1	1	1.00	وادي
 Zaccur	الذكور	الذكور	auto	baixa	1	1	1.00	زبود
@@ -889,12 +919,11 @@ Zemarite	الصماري	الصماري	auto	baixa	1	2	1.00	والصماري
 Zemarites	الصماري	الصماري	auto	baixa	1	2	1.00	والصماري
 Zepho	صفو	صفو	auto	baixa	2	3	0.33	صفي
 Zerah	زارح	زارح	auto	baixa	12	31	0.71	عشيرة
-Zereth-shahar	صارث	صارث	auto	baixa	3	1	1.00	وصارث
+Zereth-shahar	سبمة صارث	سبمة صارث	auto	baixa	3	1	1.00	صارث
 Zeus	زفس	زفس	auto	baixa	1	2	1.00	هرمس
 Zipporah	صفورة	صفورة	auto	baixa	2	3	1.00	صرفها
-Zobah-Hamath	صوبة	صوبة	auto	baixa	1	1	1.00	سلطته
 Zohar	صوحر	صوحر	auto	baixa	2	2	1.00	مغارة
-Zoheth	زوحيت	زوحيت	auto	baixa	2	1	1.00	نزوحيت
+Zoheth	زوحيت	زوحيت	auto	baixa	2	1	1.00	بنزوحيت
 Zophah	صوفح	صوفح	auto	baixa	2	2	1.00	شالش
 Zorathites	الشماتي	الشماتي	auto	baixa	1	3	0.33	المشراعي
 Zuzim	الزوزيين	الزوزيين	auto	baixa	1	1	1.00	والزوزيين
@@ -903,9 +932,10 @@ Abda	عبدا	عبدا	auto	media	2	1	1.00	أدونيرام
 Abdeel	عبدئيل	عبدئيل	auto	media	2	1	1.00	يقبضوا
 Abdi	عبدي	عبدي	auto	media	6	3	1.00	أيثان
 Abel	آبل	آبل	auto	media	1	3	1.00	سؤالا
-Abel-mizraim	مصرايم	مصرايم	auto	media	2	1	1.00	للمصريين
-Abel-shittim	شطيم	شطيم	auto	media	2	1	1.00	آبل
-Abi-albon	أبيئيل	أبيئيل	auto	media	1	2	0.50	علبون
+Abel-keramim	آبل الكروم	آبل الكروم	auto	media	3	1	1.00	الكروم ضربة عظيمة
+Abel-maim	المياه جميع	المياه جميع	auto	media	1	1	1.00	آبل المياه جميع
+Abel-meholah	آبل محولة	آبل محولة	auto	media	3	3	1.00	حافة آبل محولة
+Abi-albon	أبو علبون	أبو علبون	auto	media	1	2	0.50	أبيئيل العرباتي
 Abiah	أبيا	أبيا	auto	media	1	2	1.00	ابنا
 Abiah	وأبيا	وأبيا	auto	media	1	1	1.00	أبيا
 Abiel	أبيئيل	أبيئيل	auto	media	3	7	0.43	أفيح
@@ -916,14 +946,17 @@ Achsa	عكسة	عكسة	auto	media	1	1	1.00	شاعف
 Adah	عادة	عادة	auto	media	2	3	1.00	اسمعا
 Adah	عدا	عدا	auto	media	2	6	0.83	أليفاز
 Adam	آدم	آدم	auto	media	2	27	0.96	لآدم
-Adami-nekeb	أدامي	أدامي	auto	media	3	1	1.00	وأدامي
+Adami-nekeb	أدامي	أدامي	auto	media	3	1	1.00	أدامي الناقب
 Addon	أدون	أدون	auto	media	2	2	0.50	وأدون
 Adiel	عديئيل	عديئيل	auto	media	5	4	0.75	وعديئيل
 Adino	الذين	الذين	auto	media	2	1	1.00	ثمان
+Adoni-bezek	أدوني بازق	أدوني بازق	auto	media	2	3	1.00	أدوني
+Adoni-zedek	أدوني صادق ملك	أدوني صادق ملك	auto	media	2	2	1.00	أدوني صادق
 Adonikam	أدونيقام	أدونيقام	auto	media	2	3	1.00	أسماؤهم
 Adoniram	أدونيرام	أدونيرام	auto	media	1	5	0.40	وأدونيرام
 Adoram	أدورام	أدورام	auto	media	1	5	0.40	أدونيرام
 Adramyttium	أدراميتينية	أدراميتينية	auto	media	3	1	1.00	مارين
+Adriel	لعدرئيل	لعدرئيل	auto	media	2	2	0.50	لعدريئيل
 Aharhel	أخرحيل	أخرحيل	auto	media	2	1	1.00	هارم
 Aher	أحير	أحير	auto	media	2	1	1.00	عير
 Ahi	وأخي	وأخي	auto	media	2	1	1.00	أخي
@@ -932,13 +965,13 @@ Ahihud	أخيحود	أخيحود	auto	media	2	1	1.00	وأخيحود
 Ahihud	أخيهود	أخيهود	auto	media	2	1	1.00	أشير
 Ahimelech	أخيمالك	أخيمالك	auto	media	6	19	0.79	لأخيمالك
 Ahimoth	أخيموت	أخيموت	auto	media	1	2	0.50	وأخيموت
-Ahiram	أحيرام	أحيرام	auto	media	2	3	0.33	لأحيرام
+Ahiram	لأحيرام	لأحيرام	auto	media	2	3	0.33	الأحيراميين
 Aholah	أهولة	أهولة	auto	media	1	4	1.00	أهوليبة
 Ahumai	أخوماي	أخوماي	auto	media	2	1	1.00	ورآيا
 Aiah	أية	أية	auto	media	3	6	1.00	سرية
 Ain	عين	عين	auto	media	7	7	0.86	ينحدر
 Ajah	أية	أية	auto	media	1	2	1.00	عليان
-Akan	أران	أران	auto	media	2	2	0.50	لهان
+Akan	أران	أران	auto	media	2	2	0.50	وأران
 Akeldama	الدم	الدم	auto	media	3	4	0.25	دما
 Akrabbim	عقربيم	عقربيم	auto	media	3	3	1.00	مخارجه
 Alemeth	علامث	علامث	auto	media	1	1	1.00	وعلامث
@@ -949,8 +982,8 @@ Alexandria	إسكندرية	إسكندرية	auto	media	3	4	0.50	الإسكند�
 Allammelech	ألملك	ألملك	auto	media	3	1	1.00	وألملك
 Allon	ألون	ألون	auto	media	2	2	0.50	الناقب
 Allon	الناقب	الناقب	auto	media	2	1	1.00	حالف
+Allon-bacuth	ألون باكوت	ألون باكوت	auto	media	3	1	1.00	اسمها ألون باكوت
 Almon	وعلمون	وعلمون	auto	media	2	1	1.00	علمون
-Almon-diblathaim	دبلاتايم	دبلاتايم	auto	media	2	2	1.00	علمون
 Alpha	الياء	الياء	auto	media	1	4	1.00	والياء
 Alphaeus	حلفى	حلفى	auto	media	3	7	0.71	العلية
 Alush	ألوش	ألوش	auto	media	3	2	1.00	للشعب
@@ -963,14 +996,14 @@ Amos	عاموص	عاموص	auto	media	2	1	1.00	ناحوم
 Amphipolis	أمفيبوليس	أمفيبوليس	auto	media	3	1	1.00	فاجتازا
 Ampliatus	أمبلياس	أمبلياس	auto	media	1	1	1.00	الرب
 Anammelech	عنملك	عنملك	auto	media	2	1	1.00	وعنملك
-Ananiah	عننيا	عننيا	auto	media	2	1	1.00	نيامين
+Ananiah	عننيا	عننيا	auto	media	2	1	1.00	بنيامين
 Ananiah	عننية	عننية	auto	media	3	1	1.00	وعننية
 Anath	عناة	عناة	auto	media	2	2	1.00	استراحت
 Anathoth	عناثوث	عناثوث	auto	media	7	20	0.75	وعناثوث
 Andronicus	أندرونكوس	أندرونكوس	auto	media	2	1	1.00	يونياس
 Anem	عانيم	عانيم	auto	media	2	1	1.00	وعانيم
 Aner	عانير	عانير	auto	media	2	1	1.00	مسارحها
-Anna	حنة	حنة	auto	media	2	1	1.00	انت
+Anna	حنة	حنة	auto	media	2	1	1.00	أيام
 Anthothijah	عنثوثيا	عنثوثيا	auto	media	1	1	1.00	وعنثوثيا
 Antioch	أنطاكية	أنطاكية	auto	media	6	22	0.77	أنطاكيا
 Antothijah	عنثوثيا	عنثوثيا	auto	media	1	1	1.00	وعنثوثيا
@@ -978,23 +1011,22 @@ Anub	عانوب	عانوب	auto	media	2	1	1.00	هارم
 Apelles	أبلس	أبلس	auto	media	2	1	1.00	المزكى
 Aphekah	أفيقة	أفيقة	auto	media	2	1	1.00	وأفيقة
 Aphik	وأفيق	وأفيق	auto	media	2	1	1.00	أفيق
-Aphses	هفصيص	هفصيص	auto	media	1	1	1.00	لهفصيص
+Aphses	لهفصيص	لهفصيص	auto	media	1	1	1.00	السابعة
 Apollonia	أبولونية	أبولونية	auto	media	3	1	1.00	وأبولونية
 Ar	عار	عار	auto	media	3	7	0.86	بعار
 Arabia	أعرابي	أعرابي	auto	media	1	19	0.11	العربية
 Arabia	العرب	العرب	auto	media	1	6	0.83	الأعتدة
 Arabia	العربية	العربية	auto	media	2	6	0.33	العرب
 Aram	أرام	أرام	auto	media	8	16	0.62	وأرام
-Aram-maacah	أرام	أرام	auto	media	2	1	1.00	معكة
 Aramitess	الأرامية	الأرامية	auto	media	1	1	1.00	سريته
 Arba	أربع	أربع	auto	media	2	3	1.00	الحرب
 Archelaus	أرخيلاوس	أرخيلاوس	auto	media	2	1	1.00	اليهودية
-Archippus	أرخبس	أرخبس	auto	media	2	2	1.00	لأرخبس
+Archippus	أرخبس	أرخبس	auto	media	2	2	0.50	لأرخبس
 Ard	أرد	أرد	auto	media	4	2	1.00	وأرد
 Arieh	أرية	أرية	auto	media	2	1	1.00	أرجوب
 Aristobulus	أرستوبولوس	أرستوبولوس	auto	media	2	1	1.00	أبلس
 Arnan	أرنان	أرنان	auto	media	2	1	1.00	رفايا
-Arod	أرود	أرود	auto	media	2	2	0.50	أرودي
+Arod	أرودي	أرودي	auto	media	2	2	0.50	لأرود
 Arubboth	أربوت	أربوت	auto	media	3	1	1.00	حافر
 Arumah	أرومة	أرومة	auto	media	3	3	0.33	الإقامة
 Asareel	أسرئيل	أسرئيل	auto	media	1	1	1.00	وأسرئيل
@@ -1005,6 +1037,7 @@ Ashhur	أشحور	أشحور	auto	media	1	2	1.00	لأشحور
 Ashpenaz	أشفنز	أشفنز	auto	media	2	1	1.00	الشرفاء
 Ashriel	إشريئيل	إشريئيل	auto	media	1	1	1.00	سريته
 Ashtaroth	عشتاروث	عشتاروث	auto	media	3	8	0.62	عشتاروت
+Ashteroth-karnaim	عشتاروث قرنايم	عشتاروث قرنايم	auto	media	3	2	0.50	عشتاروث قرنايم الزوزيين
 Ashtoreth	عشتورث	عشتورث	auto	media	2	3	1.00	لعشتورث
 Ashur	أشحور	أشحور	auto	media	1	2	1.00	لأشحور
 Ashvath	عشوة	عشوة	auto	media	2	1	1.00	وعشوة
@@ -1017,6 +1050,8 @@ Assos	أسوس	أسوس	auto	media	3	2	1.00	السفينة
 Ataroth	عطاروت	عطاروت	auto	media	7	4	1.00	وعطاروت
 Ater	آطير	آطير	auto	media	6	5	0.60	أطير
 Athens	أثينا	أثينا	auto	media	3	8	0.50	استحسنا
+Atroth-beth-joab	عطروت بيت يوآب	عطروت بيت يوآب	auto	media	2	1	1.00	عطروت بيت
+Atroth-shophan	عطروت شوفان	عطروت شوفان	auto	media	3	1	1.00	عطروت شوفان يعزير
 Augustus	أوغسطس	أوغسطس	auto	media	2	5	0.80	عزمت
 Aven	آون	آون	auto	media	2	1	1.00	الشوك
 Avva	عوا	عوا	auto	media	2	1	1.00	وعوا
@@ -1029,171 +1064,165 @@ Azariah	عزرياهو	عزرياهو	auto	media	2	1	1.00	وعزرياهو
 Azariahu	عزرياهو	عزرياهو	auto	media	1	1	1.00	وعزرياهو
 Azazel	عزازيل	عزازيل	auto	media	3	3	1.00	لعزازيل
 Azaziah	عززيا	عززيا	auto	media	6	3	1.00	وعززيا
-Azel	آصيل	آصيل	auto	media	2	4	1.00	وآصيل
+Azel	آصيل	آصيل	auto	media	2	4	1.00	لآصيل
 Azmon	عصمون	عصمون	auto	media	3	3	1.00	صين
 Azor	عازور	عازور	auto	media	2	2	1.00	وعازور
 Azriel	عزرئيل	عزرئيل	auto	media	4	2	1.00	لزبولون
 Azubah	عزوبة	عزوبة	auto	media	4	4	1.00	اسم
 Baal	ببعل	ببعل	auto	media	2	71	0.10	لبعل
-Baal	بعل	بعل	auto	media	3	2	1.00	عل
-Baal	وبعل	وبعل	auto	media	2	2	1.00	البكر
-Baal-berith	بريث	بريث	auto	media	1	3	1.00	ريث
-Baal-gad	الصاعد	الصاعد	auto	media	2	3	0.67	الأقرع
-Baal-hanan	حانان	حانان	auto	media	2	5	1.00	اللذين
-Baal-perazim	راصيم	راصيم	auto	media	3	2	1.00	فراصيم
-Baal-shalishah	شليشة	شليشة	auto	media	3	1	1.00	باكورة
-Baal-tamar	تامار	تامار	auto	media	3	1	1.00	ثار
-Baalah	وبعلة	وبعلة	auto	media	3	1	1.00	علة
-Baalath	وبعلة	وبعلة	auto	media	6	3	1.00	علة
+Baal	بعل	بعل	auto	media	3	2	1.00	رآيا
+Baal	وبعل	وبعل	auto	media	2	2	1.00	بعل
+Baal-gad	بعل جاد	بعل جاد	auto	media	2	3	1.00	الصاعد
+Baal-hamon	بعل هامون	بعل هامون	auto	media	2	1	1.00	بعل هامون دفع
+Baal-hazor	بعل حاصور	بعل حاصور	auto	media	3	1	1.00	بعل حاصور التي
+Baal-hermon	بعل حرمون	بعل حرمون	auto	media	2	1	1.00	بعل حرمون سنير
+Baal-meon	بعل معون	بعل معون	auto	media	3	6	0.67	بالع بن
+Baal-perazim	بعل فراصيم	بعل فراصيم	auto	media	3	2	1.00	بعل فراصيم ضربهم
+Baal-zebub	بعل زبوب	بعل زبوب	auto	media	2	4	1.00	بعل زبوب إله
+Baal-zephon	بعل صفون	بعل صفون	auto	media	3	3	1.00	قبالة بعل صفون
+Baalath	بعلة	بعلة	auto	media	6	3	1.00	وبعلة
+Baalath-beer	بعلة بئر	بعلة بئر	auto	media	3	5	0.20	بعلة بئر رامة
+Baale-judah	بعلة يهوذا	بعلة يهوذا	auto	media	2	1	1.00	الله الذي يدعى
 Baalhanan	حانان	حانان	auto	media	2	5	1.00	بعل
 Baanah	بعنا	بعنا	auto	media	1	1	1.00	عنا
-Baanah	وبعنة	وبعنة	auto	media	4	5	0.80	بعنة
-Baara	وبعرا	وبعرا	auto	media	2	1	1.00	عرا
 Babel	بابل	بابل	auto	media	2	2	1.00	بلبل
-Babylon	بابل	بابل	auto	media	5	316	0.83	ابل
+Babylon	بابل	بابل	auto	media	5	316	0.84	ببابل
 Babylonia	بابل	بابل	auto	media	2	15	0.53	الآنية
-Bahurim	بحوريم	بحوريم	auto	media	3	7	0.71	حوريم
+Bahurim	بحوريم	بحوريم	auto	media	3	7	0.71	ارجع
 Bamah	اسمها	اسمها	auto	media	2	1	1.00	المرتفعة
-Bani	ناني	ناني	auto	media	1	1	1.00	وباني
-Bar-jesus	باريشوع	باريشوع	auto	media	1	2	0.50	اريشوع
-Barachel	برخئيل	برخئيل	auto	media	2	2	1.00	رخئيل
-Bartholomew	وبرثولماوس	وبرثولماوس	auto	media	2	4	1.00	رثولماوس
-Baruch	وباروخ	وباروخ	auto	media	2	1	1.00	اروخ
-Bashemath	بسمة	بسمة	auto	media	1	6	0.67	سمة
-Bath-rabbim	ربيم	ربيم	auto	media	3	1	1.00	كبرج
-Bathsheba	بثشبع	بثشبع	auto	media	2	12	0.83	ثشبع
+Bamoth-baal	باموت بعل	باموت بعل	auto	media	3	3	0.33	باموت بعل بيت
+Bar-jesus	باريشوع	باريشوع	auto	media	1	2	0.50	اسمه باريشوع
+Barachel	برخئيل	برخئيل	auto	media	2	2	1.00	أليهو
+Bartholomew	برثولماوس	برثولماوس	auto	media	2	4	1.00	وبرثولماوس
+Bashemath	بسمة	بسمة	auto	media	1	6	0.83	سمة
+Bathsheba	بثشبع	بثشبع	auto	media	2	12	0.83	بثشوع
 Bazluth	بصلوت	بصلوت	auto	media	2	2	0.50	بصليت
-Bealiah	وبعليا	وبعليا	auto	media	2	1	1.00	عليا
-Bebai	وبيباي	وبيباي	auto	media	2	1	1.00	يباي
-Becher	باكر	باكر	auto	media	2	1	1.00	لباكر
-Becher	وباكر	وباكر	auto	media	2	3	0.67	باكر
+Bealoth	بعلوت	بعلوت	auto	media	4	2	1.00	وبعلوت
+Becher	باكر	باكر	auto	media	4	4	1.00	وباكر
 Bechorath	بكورة	بكورة	auto	media	1	1	1.00	كورة
 Becorath	بكورة	بكورة	auto	media	1	1	1.00	كورة
-Bedeiah	وبيديا	وبيديا	auto	media	2	1	1.00	يديا
+Bedeiah	بيديا	بيديا	auto	media	2	1	1.00	وبيديا
 Beer	بئر	بئر	auto	media	5	2	1.00	البئر
-Beera	وبئيرا	وبئيرا	auto	media	2	1	1.00	ئيرا
-Beerah	بئيرة	بئيرة	auto	media	2	1	1.00	ئيرة
-Beeri	بئيري	بئيري	auto	media	2	1	1.00	ئيري
+Beer-elim	بئر إيليم	بئر إيليم	auto	media	3	1	1.00	بئر إيليم لولتها
+Beer-lahai-roi	بئر لحي رئي	بئر لحي رئي	auto	media	3	3	1.00	لحي رئي
+Beera	بئيرا	بئيرا	auto	media	2	1	1.00	وبئيرا
+Beerah	بئيرة	بئيرة	auto	media	2	1	1.00	سباه
+Beeri	بئيري	بئيري	auto	media	2	1	1.00	إسرائيل
 Beeri	بيري	بيري	auto	media	2	1	1.00	يري
+Beeroth	بئيروت	بئيروت	auto	media	3	11	0.45	وبئيروت
 Beersheba	شبعة	شبعة	auto	media	3	33	0.03	تسبى
-Beeshterah	وبعشترة	وبعشترة	auto	media	2	1	1.00	عشترة
-Behemoth	بهيموث	بهيموث	auto	media	1	1	1.00	هيموث
+Behemoth	بهيموث	بهيموث	auto	media	1	1	1.00	مثل
 Bel	بيل	بيل	auto	media	1	3	1.00	ابتلعه
-Ben-abinadab	أبيناداب	أبيناداب	auto	media	1	1	1.00	ابن
-Ben-ammi	بني	بني	auto	media	2	2	0.50	ابنا
-Ben-hanan	حانان	حانان	auto	media	2	1	1.00	وابنا
-Benaiah	بناياهو	بناياهو	auto	media	2	23	0.35	ناياهو
-Beninu	وبنينو	وبنينو	auto	media	2	1	1.00	نينو
-Benjamin	وبنيامين	وبنيامين	auto	media	6	3	1.00	نيامين
-Bera	وبرشاع	وبرشاع	auto	media	2	1	1.00	بارع
-Berea	بيرية	بيرية	auto	media	3	6	0.33	يرية
-Berechiah	وبرخيا	وبرخيا	auto	media	6	3	1.00	رخيا
-Bered	وبارد	وبارد	auto	media	3	1	1.00	ارد
-Bered	وبرد	وبرد	auto	media	2	1	1.00	رد
-Beri	وبيري	وبيري	auto	media	2	1	1.00	يري
-Bernice	وبرنيكي	وبرنيكي	auto	media	2	3	1.00	رنيكي
-Berothah	بيروثاي	بيروثاي	auto	media	1	3	0.33	وبيروثة
-Berothah	وبيروثة	وبيروثة	auto	media	2	1	1.00	يروثة
-Berothai	بيروثاي	بيروثاي	auto	media	2	1	1.00	يروثاي
-Besodeiah	بسوديا	بسوديا	auto	media	2	1	1.00	سوديا
-Beten	وباطن	وباطن	auto	media	3	1	1.00	اطن
-Beth-arabah	العربة	العربة	auto	media	3	6	0.67	وصمارايم
-Beth-arbel	أربئيل	أربئيل	auto	media	3	1	1.00	وتخرب
-Beth-barah	بارة	بارة	auto	media	3	2	0.50	ارة
-Beth-biri	برئي	برئي	auto	media	3	1	1.00	رئي
-Beth-car	كار	كار	auto	media	3	1	1.00	ار
-Beth-diblathaim	دبلتايم	دبلتايم	auto	media	2	1	1.00	ديبون
-Beth-haram	هارام	هارام	auto	media	3	2	0.50	هاران
-Beth-haran	هاران	هاران	auto	media	1	1	1.00	نمرة
-Beth-jeshimoth	يشيموت	يشيموت	auto	media	3	4	0.75	بشيموت
-Beth-maacah	معكة	معكة	auto	media	1	2	1.00	فاجتمعوا
-Beth-nimrah	نمرة	نمرة	auto	media	3	3	1.00	بقية
-Beth-rapha	رافا	رافا	auto	media	2	1	1.00	تحنة
-Beth-shemesh	بيتشمس	بيتشمس	auto	media	3	19	0.32	يتشمس
-Beth-shittah	شطة	شطة	auto	media	3	1	1.00	بصاحبه
-Bethel	وبتول	وبتول	auto	media	1	3	0.33	تول
+Ben	بين	بين	auto	media	2	1	1.00	وبين
+Ben-hesed	ابن حسد	ابن حسد	auto	media	1	1	1.00	حسد
+Ben-hur	ابن حور	ابن حور	auto	media	1	1	1.00	أسماؤهم ابن حور
+Ben-zoheth	بنزوحيت	بنزوحيت	auto	media	2	1	1.00	وبنزوحيت
+Bene-jaakan	بني يعقان	بني يعقان	auto	media	3	3	1.00	يعقان
+Beninu	بنينو	بنينو	auto	media	2	1	1.00	وبنينو
+Bera	برشاع	برشاع	auto	media	2	1	1.00	وبرشاع
+Berea	بيرية	بيرية	auto	media	3	6	0.33	بكلمة
+Bered	بارد	بارد	auto	media	3	1	1.00	وبارد
+Bered	وبرد	وبرد	auto	media	2	1	1.00	برد
+Beri	بيري	بيري	auto	media	2	1	1.00	وبيري
+Bernice	برنيكي	برنيكي	auto	media	2	3	1.00	وبرنيكي
+Berothah	بيروثة	بيروثة	auto	media	3	3	0.33	وبيروثة
+Berothai	بيروثاي	بيروثاي	auto	media	2	1	1.00	باطح
+Besodeiah	بسوديا	بسوديا	auto	media	2	1	1.00	سقفاه
+Beten	وباطن	وباطن	auto	media	3	1	1.00	باطن
+Beth-anath	بيت عناة	بيت عناة	auto	media	3	2	1.00	بيت عناة تحت
+Beth-anoth	بيت عنوت	بيت عنوت	auto	media	3	1	1.00	معارة بيت عنوت
+Beth-arabah	بيت العربة	بيت العربة	auto	media	3	6	0.50	بيت العربة صعد
+Beth-arbel	بيت أربئيل	بيت أربئيل	auto	media	3	1	1.00	أربئيل
+Beth-ashbea	بيت أشبيع	بيت أشبيع	auto	media	3	1	1.00	أشبيع
+Beth-azmaveth	بيت عزموت	بيت عزموت	auto	media	2	3	0.33	رجال بيت عزموت
+Beth-baal-meon	بيت بعل معون	بيت بعل معون	auto	media	1	1	1.00	بيت بعل
+Beth-biri	بيت برئي	بيت برئي	auto	media	3	1	1.00	برئي
+Beth-dagon	بيت داجون	بيت داجون	auto	media	6	2	1.00	بيت داجون نعمة
+Beth-eden	بيت عدن	بيت عدن	auto	media	3	1	1.00	بيت عدن يسبى
+Beth-gader	بيت جادير	بيت جادير	auto	media	2	1	1.00	أبو بيت جادير
+Beth-gamul	بيت جامول	بيت جامول	auto	media	3	1	1.00	جامول
+Beth-gilgal	بيت الجلجال	بيت الجلجال	auto	media	2	1	1.00	جبع عزموت لأن
+Beth-hoglah	بيت حجلة	بيت حجلة	auto	media	3	3	1.00	بيت حجلة عبر
+Beth-jeshimoth	بيت يشيموت	بيت يشيموت	auto	media	3	4	0.75	يشيموت
+Beth-le-aphrah	بيت عفرة	بيت عفرة	auto	media	2	1	1.00	تبكوا في عكاء
+Beth-lebaoth	بيت لباوت	بيت لباوت	auto	media	3	1	1.00	لباوت
+Beth-maacah	بيت معكة	بيت معكة	auto	media	1	2	1.00	آبل بيت معكة
+Beth-marcaboth	بيت مركبوت	بيت مركبوت	auto	media	2	2	0.50	بيت المركبوت
+Beth-meon	بيت معون	بيت معون	auto	media	2	1	1.00	بيت جامول
+Beth-rehob	بيت رحوب	بيت رحوب	auto	media	3	4	0.25	لبيت رحوب
+Beth-shemesh	بيت شمس	بيت شمس	auto	media	6	3	1.00	بيت شمس كانت
+Beth-shemesh	بيتشمس	بيتشمس	auto	media	3	19	0.37	بيت شمس
+Beth-shittah	بيت شطة	بيت شطة	auto	media	3	1	1.00	شطة
+Beth-togarmah	بيت توجرمة	بيت توجرمة	auto	media	3	2	1.00	جيوشه بيت توجرمة
+Beth-zur	بيت صور	بيت صور	auto	media	3	4	1.00	أبو بيت صور
+Bethel	بتول	بتول	auto	media	1	3	0.33	وبتول
 Bethesda	حسدا	حسدا	auto	media	3	1	1.00	باب
-Bethul	وبتول	وبتول	auto	media	2	1	1.00	تول
-Betonim	وبطونيم	وبطونيم	auto	media	3	1	1.00	طونيم
-Bezai	وبيصاي	وبيصاي	auto	media	2	1	1.00	يصاي
-Bezaleel	وبصلئيل	وبصلئيل	auto	media	1	1	1.00	صلئيل
-Bezalel	وبصلئيل	وبصلئيل	auto	media	1	1	1.00	صلئيل
-Bezer	باصر	باصر	auto	media	3	5	0.80	اصر
-Bezer	وباصر	وباصر	auto	media	2	1	1.00	اصر
-Bidkar	بدقر	بدقر	auto	media	1	1	1.00	لبدقر
-Bildad	بلدد	بلدد	auto	media	2	5	0.60	وبلدد
-Bileam	وبلعام	وبلعام	auto	media	2	1	1.00	لعام
-Bilgah	بلجة	بلجة	auto	media	4	4	0.50	لبلجة
+Bethul	بتول	بتول	auto	media	2	1	1.00	وبتول
+Betonim	بطونيم	بطونيم	auto	media	3	1	1.00	وبطونيم
+Bezer	باصر	باصر	auto	media	5	6	0.83	وباصر
+Bileam	وبلعام	وبلعام	auto	media	2	1	1.00	بلعام
+Bilgah	بلجة	بلجة	auto	media	2	3	0.33	بلجاي
+Bilgah	لبلجة	لبلجة	auto	media	2	1	1.00	الخامسة
 Binea	بنعة	بنعة	auto	media	2	2	0.50	ينعا
-Birzaith	برزاوث	برزاوث	auto	media	1	1	1.00	رزاوث
-Biziothiah	وبزيوتية	وبزيوتية	auto	media	3	1	1.00	زيوتية
-Bor-ashan	عاشان	عاشان	auto	media	3	1	1.00	حرمة
-Bozez	بوصيص	بوصيص	auto	media	3	1	1.00	وصيص
-Bozkath	بصقة	بصقة	auto	media	3	2	0.50	وبصقة
+Birzaith	برزاوث	برزاوث	auto	media	1	1	1.00	بريعة
+Bocheru	بكرو	بكرو	auto	media	2	2	1.00	وبكرو
+Bor-ashan	كور عاشان	كور عاشان	auto	media	3	1	1.00	عاشان
+Bozez	بوصيص	بوصيص	auto	media	3	1	1.00	سنه
+Bozkath	بصقة	بصقة	auto	media	3	2	1.00	وبصقة
 Bukkiah	بقيا	بقيا	auto	media	2	2	1.00	لبقيا
-Bul	بول	بول	auto	media	1	1	1.00	ول
-Bunah	بونة	بونة	auto	media	2	1	1.00	ونة
-Bunni	بوني	بوني	auto	media	2	1	1.00	وني
-Bunni	شبنيا	شبنيا	auto	media	2	1	1.00	وباني
-Bunni	وبني	وبني	auto	media	2	1	1.00	يباي
-Buz	بوز	بوز	auto	media	2	1	1.00	وز
-Buzi	بوزي	بوزي	auto	media	2	1	1.00	وزي
-Cabbon	وكبون	وكبون	auto	media	3	1	1.00	بون
-Calah	وكالح	وكالح	auto	media	3	2	1.00	الح
-Calcol	وكلكول	وكلكول	auto	media	3	2	1.00	لكول
-Calneh	كلنة	كلنة	auto	media	3	4	0.25	كلنو
-Calneh	وكلنة	وكلنة	auto	media	1	1	1.00	لنة
-Calno	كلنو	كلنو	auto	media	1	1	1.00	لنو
+Bul	بول	بول	auto	media	1	1	1.00	سبع
+Bunah	بونة	بونة	auto	media	2	1	1.00	بنو
+Bunni	باني	باني	auto	media	2	1	1.00	شبنيا
+Bunni	بوني	بوني	auto	media	2	1	1.00	بن
+Bunni	وبني	وبني	auto	media	2	1	1.00	بني
+Buz	بوز	بوز	auto	media	5	2	1.00	وبوز
+Buzi	بوزي	بوزي	auto	media	2	1	1.00	حزقيال
+Cabbon	كبون	كبون	auto	media	3	1	1.00	وكبون
+Calcol	كلكول	كلكول	auto	media	3	2	1.00	وكلكول
+Calneh	كلنة	كلنة	auto	media	4	4	0.50	وكلنة
+Calno	كلنو	كلنو	auto	media	1	1	1.00	أليست
 Cana	قانا	قانا	auto	media	2	4	1.00	آخران
-Candace	كنداكة	كنداكة	auto	media	1	1	1.00	لكنداكة
-Capernaum	كفرناحوم	كفرناحوم	auto	media	3	18	0.83	فرناحوم
-Caphthorim	وكفتوريم	وكفتوريم	auto	media	1	2	1.00	فتوريم
+Candace	لكنداكة	لكنداكة	auto	media	1	1	1.00	خزائنها
+Capernaum	كفرناحوم	كفرناحوم	auto	media	3	18	0.83	ياكفرناحوم
 Caphtor	كفتور	كفتور	auto	media	3	13	0.23	فتور
-Caphtorim	وكفتوريم	وكفتوريم	auto	media	1	3	0.67	فتوريم
-Carcas	وكركس	وكركس	auto	media	1	1	1.00	ركس
-Carkas	وكركس	وكركس	auto	media	1	1	1.00	ركس
+Cappadocia	كبدوكية	كبدوكية	auto	media	3	2	1.00	وكبدوكية
 Carmel	الكرمل	الكرمل	auto	media	1	14	0.43	الكرملي
-Carmel	كرمل	كرمل	auto	media	2	24	0.21	الكرمل
-Carmi	كرمي	كرمي	auto	media	2	3	1.00	رمي
-Carpus	كاربس	كاربس	auto	media	1	1	1.00	اربس
-Casluhim	وكسلوحيم	وكسلوحيم	auto	media	2	2	1.00	سلوحيم
-Cenchreae	كنخريا	كنخريا	auto	media	3	3	1.00	نخريا
-Chalcol	وكلكول	وكلكول	auto	media	1	1	1.00	لكول
-Chedorlaomer	كدرلعومر	كدرلعومر	auto	media	2	5	0.80	درلعومر
-Chelub	كلوب	كلوب	auto	media	2	1	1.00	لوب
-Chelub	وكلوب	وكلوب	auto	media	2	1	1.00	لوب
-Cheluhi	وكلوهي	وكلوهي	auto	media	1	1	1.00	لوهي
-Chenaanah	كنعنة	كنعنة	auto	media	2	4	1.00	نعنة
-Chenaanah	وكنعنة	وكنعنة	auto	media	2	1	1.00	نعنة
-Chenaniah	كننيا	كننيا	auto	media	1	1	1.00	ننيا
-Chenaniah	وكننيا	وكننيا	auto	media	2	3	0.67	ننيا
-Cherub	كروب	كروب	auto	media	3	3	0.67	روب
-Chesalon	كسالون	كسالون	auto	media	3	1	1.00	سالون
-Chesed	وكاسد	وكاسد	auto	media	2	1	1.00	اسد
+Carmel	كرمل	كرمل	auto	media	2	24	0.29	ككرمل
+Carpus	كاربس	كاربس	auto	media	1	1	1.00	أحضره
+Casluhim	كسلوحيم	كسلوحيم	auto	media	2	2	1.00	وكسلوحيم
+Cenchreae	كنخريا	كنخريا	auto	media	3	3	1.00	بأختنا
+Chalcol	كلكول	كلكول	auto	media	1	1	1.00	وكلكول
+Chelub	كلوب	كلوب	auto	media	4	2	1.00	وكلوب
+Cheluhi	كلوهي	كلوهي	auto	media	1	1	1.00	وكلوهي
+Chenaniah	كننيا	كننيا	auto	media	3	3	1.00	وكننيا
+Chephar-ammoni	كفر العموني	كفر العموني	auto	media	2	1	1.00	كفر العموني العفني
+Chephar-haammoni	كفر العموني	كفر العموني	auto	media	1	1	1.00	كفر العموني العفني
+Cherub	كروب	كروب	auto	media	3	3	0.67	حرشا
+Chesalon	كسالون	كسالون	auto	media	3	1	1.00	نزل
+Chesed	كاسد	كاسد	auto	media	2	1	1.00	وكاسد
 Chesulloth	كسلوت	كسلوت	auto	media	1	3	0.33	الكسلوت
-Chilion	وكليون	وكليون	auto	media	2	3	0.67	كليون
-Chilmad	وكلمد	وكلمد	auto	media	3	1	1.00	لمد
-Chinnereth	كنروت	كنروت	auto	media	2	13	0.31	نروت
-Chinneroth	كنروت	كنروت	auto	media	2	3	0.67	نروت
+Chilion	كليون	كليون	auto	media	2	3	0.67	وكليون
+Chinnereth	كنروت	كنروت	auto	media	2	13	0.31	كنارة
+Chinneroth	كنروت	كنروت	auto	media	2	3	0.67	عيون
 Chios	خيوس	خيوس	auto	media	3	1	1.00	ميليتس
-Chislon	كسلون	كسلون	auto	media	2	1	1.00	سلون
-Chorazin	كورزين	كورزين	auto	media	3	2	1.00	ورزين
-Claudius	كلوديوس	كلوديوس	auto	media	2	11	0.18	لوديوس
-Conaniah	كوننيا	كوننيا	auto	media	1	3	0.67	وننيا
-Conaniah	وكوننيا	وكوننيا	auto	media	1	1	1.00	وننيا
-Cononiah	كوننيا	كوننيا	auto	media	1	2	1.00	وننيا
-Coos	كوس	كوس	auto	media	1	1	1.00	وس
+Chislon	كسلون	كسلون	auto	media	2	1	1.00	بنيامين
+Chisloth-tabor	كسلوت تابور	كسلوت تابور	auto	media	2	1	1.00	كسلوت تابور خرج
+Chorazin	كورزين	كورزين	auto	media	3	2	1.00	جالستين
+Claudius	كلوديوس	كلوديوس	auto	media	2	11	0.18	أكيلا
+Conaniah	كوننيا	كوننيا	auto	media	2	3	1.00	وكوننيا
+Cononiah	كوننيا	كوننيا	auto	media	1	2	1.00	يسمخيا
+Coos	كوس	كوس	auto	media	1	1	1.00	رودس
 Corban	قربان	قربان	auto	media	1	2	0.50	الخزانة
-Corinth	كورنثوس	كورنثوس	auto	media	3	15	0.47	ورنثوس
-Cos	كوس	كوس	auto	media	2	1	1.00	وس
-Cozeba	كزيبا	كزيبا	auto	media	2	1	1.00	زيبا
-Crescens	وكريسكيس	وكريسكيس	auto	media	2	1	1.00	ريسكيس
-Crete	كريت	كريت	auto	media	2	9	0.56	ريت
-Crispus	ريسبس	ريسبس	auto	media	2	2	1.00	كريسبس
+Corinth	كورنثوس	كورنثوس	auto	media	3	15	0.47	الكورنثيين
+Cos	كوس	كوس	auto	media	2	1	1.00	رودس
+Cozeba	كزيبا	كزيبا	auto	media	2	1	1.00	ساراف
+Crescens	كريسكيس	كريسكيس	auto	media	2	1	1.00	وكريسكيس
+Crete	كريت	كريت	auto	media	2	9	0.56	تركتك
+Crispus	كريسبس	كريسبس	auto	media	2	2	1.00	وكريسبس
 Cun	خون	خون	auto	media	2	1	1.00	وخون
-Cush	كوش	كوش	auto	media	6	50	0.52	وش
-Cuth	كوث	كوث	auto	media	2	2	0.50	سكوث
-Cyrenius	كيرينيوس	كيرينيوس	auto	media	1	1	1.00	يرينيوس
+Cush	كوش	كوش	auto	media	6	50	0.58	وكوش
+Cuth	كوث	كوث	auto	media	2	2	1.00	سكوث
+Cyrenius	كيرينيوس	كيرينيوس	auto	media	1	1	1.00	جرى
 Daberath	دبرة	دبرة	auto	media	3	3	0.67	ودبرة
 Dalaiah	دلايا	دلايا	auto	media	1	1	1.00	ودلايا
 Dalphon	دلفون	دلفون	auto	media	2	1	1.00	ودلفون
@@ -1202,7 +1231,7 @@ Demetrius	ديمتريوس	ديمتريوس	auto	media	2	3	1.00	لأرطاميس
 Derbe	دربة	دربة	auto	media	3	5	0.60	ودربة
 Diana	إهانة	إهانة	auto	media	1	5	0.20	مدينة
 Dibon	ديمون	ديمون	auto	media	1	1	1.00	الناجين
-Dibon-gad	ديبون	ديبون	auto	media	1	2	1.00	جاد
+Dibon-gad	ديبون جاد	ديبون جاد	auto	media	1	2	1.00	ديبون
 Diklah	دقلة	دقلة	auto	media	2	2	1.00	ودقلة
 Dimnah	ودمنة	ودمنة	auto	media	3	3	0.33	دمنة
 Dionysius	ديونيسيوس	ديونيسيوس	auto	media	2	1	1.00	دامرس
@@ -1221,14 +1250,14 @@ Eder	عدر	عدر	auto	media	2	1	1.00	رحل
 Eglaim	أجلايم	أجلايم	auto	media	3	1	1.00	إيليم
 Ehi	إيحي	إيحي	auto	media	1	2	0.50	وإيحي
 Eker	كر	كر	auto	media	2	1	1.00	بكر
-El-paran	اران	اران	auto	media	3	1	1.00	فاران
+El-paran	فاران	فاران	auto	media	3	1	1.00	بطمة فاران
 Eldaah	ألدعة	ألدعة	auto	media	2	2	1.00	وألدعة
 Elead	ألعاد	ألعاد	auto	media	2	1	1.00	وألعاد
 Eleadah	ألعادا	ألعادا	auto	media	1	1	1.00	وألعادا
 Eleasah	ألعاسة	ألعاسة	auto	media	2	3	0.33	وألعاسة
 Eleasah	إلعاسة	إلعاسة	auto	media	2	2	1.00	وإلعاسة
 Eliada	أليداع	أليداع	auto	media	1	1	1.00	سيده
-Eliada	علياداع	علياداع	auto	media	2	3	0.33	ألياداع
+Eliada	بعلياداع	بعلياداع	auto	media	2	3	0.33	ألياداع
 Eliadah	أليداع	أليداع	auto	media	1	1	1.00	سيده
 Eliah	وإيليا	وإيليا	auto	media	2	2	1.00	إيليا
 Eliahba	أليحبا	أليحبا	auto	media	2	2	0.50	إليحبا
@@ -1242,45 +1271,50 @@ Elika	أليقا	أليقا	auto	media	2	1	1.00	وأليقا
 Elim	إيليم	إيليم	auto	media	3	4	1.00	اليوم
 Elioenai	عيناي	عيناي	auto	media	1	1	1.00	ويهوحانان
 Eliphalet	أليفلط	أليفلط	auto	media	1	3	1.00	وأليفلط
-Elishama	علياداع	علياداع	auto	media	1	2	0.50	وأليشمع
-Elishama	وأليشمع	وأليشمع	auto	media	1	3	1.00	أليشمع
+Elishama	وأليشمع	وأليشمع	auto	media	2	3	1.00	أليشمع
 Elisheba	أليشابع	أليشابع	auto	media	2	1	1.00	وألعازار
 Elishua	أليشامع	أليشامع	auto	media	2	3	0.33	وأليشامع
 Eliud	أليود	أليود	auto	media	2	2	1.00	وأليود
 Elmadam	ألمودام	ألمودام	auto	media	1	1	1.00	أدي
 Elmodam	ألمودام	ألمودام	auto	media	1	1	1.00	أدي
 Elnaam	ألنعم	ألنعم	auto	media	2	1	1.00	الموآبي
+Elonbeth-hanan	أيلون بيت حانان	أيلون بيت حانان	auto	media	3	1	1.00	بيت حانان
 Eltolad	ألتولد	ألتولد	auto	media	3	3	0.67	وألتولد
 Eluzai	إلعوزاي	إلعوزاي	auto	media	2	1	1.00	وإلعوزاي
 Elymas	عليم	عليم	auto	media	1	2	0.50	الإيمان
 Emmaus	عمواس	عمواس	auto	media	3	3	0.33	اسمها
-En-gannim	عانيم	عانيم	auto	media	1	3	0.33	وعانيم
-En-hazor	حاصور	حاصور	auto	media	3	1	1.00	وقادش
-En-mishpat	مشفاط	مشفاط	auto	media	1	1	1.00	تامار
-En-shemesh	شمس	شمس	auto	media	3	2	1.00	نزل
+En-dor	عين دور	عين دور	auto	media	3	3	1.00	دور
+En-gannim	عين جنيم	عين جنيم	auto	media	6	4	0.75	عينام
+En-haddah	عين حدة	عين حدة	auto	media	3	1	1.00	حدة
+En-hazor	عين حاصور	عين حاصور	auto	media	3	1	1.00	إذرعي عين حاصور
+En-mishpat	عين مشفاط	عين مشفاط	auto	media	1	1	1.00	مشفاط
+En-rimmon	عين رمون	عين رمون	auto	media	2	1	1.00	عين رمون صرعة
+En-shemesh	عين شمس	عين شمس	auto	media	3	2	1.00	شمس
 Enam	عينام	عينام	auto	media	3	1	1.00	وعينام
 Eneglaim	عجلايم	عجلايم	auto	media	3	1	1.00	أنواعه
 Epaphras	أبفراس	أبفراس	auto	media	2	3	1.00	المأسور
 Epaphroditus	أبفرودتس	أبفرودتس	auto	media	2	3	1.00	استفضلت
 Ephai	عيفاي	عيفاي	auto	media	2	1	1.00	قاريح
 Epher	عفر	عفر	auto	media	2	2	1.00	وعفر
-Ephes-dammim	دميم	دميم	auto	media	3	3	0.67	فس
+Ephes-dammim	أفس دميم	أفس دميم	auto	media	1	1	1.00	دميم
+Ephes-dammim	فس دميم	فس دميم	auto	media	2	3	0.33	أفس دميم
 Ephrath	أفراتة	أفراتة	auto	media	2	3	1.00	فماتت
-Eran	عيران	عيران	auto	media	2	2	0.50	لعيران
+Eran	لعيران	لعيران	auto	media	2	2	0.50	العيرانيين
 Erastus	أراستس	أراستس	auto	media	2	3	0.67	أرسطوس
-Eri	عيري	عيري	auto	media	2	2	1.00	لعيري
+Eri	عيري	عيري	auto	media	2	2	0.50	لعيري
 Eshan	أشعان	أشعان	auto	media	3	1	1.00	وأشعان
 Eshcol	أشكول	أشكول	auto	media	2	2	1.00	وأشكول
 Eshton	أشتون	أشتون	auto	media	2	2	1.00	وأشتون
 Etam	عيطام	عيطام	auto	media	3	1	1.00	وعيطام
-Eth-kazin	قاصين	قاصين	auto	media	3	1	1.00	خرج
+Eth-kazin	عت قاصين	عت قاصين	auto	media	3	1	1.00	قاصين
 Etham	إيثام	إيثام	auto	media	3	4	1.00	ثم
 Ethan	أيثان	أيثان	auto	media	3	4	0.75	وأيثان
-Ethan	إيثان	إيثان	auto	media	2	2	0.50	ان
+Ethan	إيثان	إيثان	auto	media	2	2	0.50	هيمان
 Ethanim	أيثانيم	أيثانيم	auto	media	1	1	1.00	العيد
 Ethbaal	أثبعل	أثبعل	auto	media	2	1	1.00	حتى
 Evi	أوي	أوي	auto	media	2	2	0.50	وحور
-Ezbon	أصبون	أصبون	auto	media	3	3	0.67	وبنو
+Evil-merodach	أويل مرودخ	أويل مرودخ	auto	media	2	2	1.00	رفع أويل مرودخ
+Ezbon	أصبون	أصبون	auto	media	3	3	0.67	بنو
 Fortunatus	فرتوناتوس	فرتوناتوس	auto	media	2	2	0.50	وفرتوناتوس
 Gaal	أهل	أهل	auto	media	2	9	0.22	أعالي
 Gaash	جاعش	جاعش	auto	media	3	4	1.00	حارس
@@ -1299,7 +1333,7 @@ Gallio	غاليون	غاليون	auto	media	2	3	1.00	اليهود
 Gamul	جامول	جامول	auto	media	2	1	1.00	لجامول
 Gareb	جارب	جارب	auto	media	5	3	1.00	مقابله
 Gatam	جعثام	جعثام	auto	media	2	3	1.00	وجعثام
-Gath-hepher	حافر	حافر	auto	media	3	2	1.00	أمتاي
+Gath-hepher	حافر	حافر	auto	media	3	2	1.00	جت حافر
 Gazez	جازيز	جازيز	auto	media	4	1	1.00	وجازيز
 Gazzam	جزام	جزام	auto	media	2	2	1.00	عزا
 Gebal	جبال	جبال	auto	media	3	4	0.25	بناؤو
@@ -1320,13 +1354,13 @@ Gidom	جدعوم	جدعوم	auto	media	3	1	1.00	وشدوا
 Gilalai	جللاي	جللاي	auto	media	2	1	1.00	وجللاي
 Gilboa	جلبوع	جلبوع	auto	media	2	3	1.00	جلعاد
 Ginath	جينة	جينة	auto	media	2	2	1.00	نصفين
-Ginnethon	جنثون	جنثون	auto	media	2	3	0.67	وجنثون
+Ginnethon	جنثون	جنثون	auto	media	2	3	0.33	لجنثون
 Gishpa	جشفا	جشفا	auto	media	1	1	1.00	وجشفا
 Gispa	جشفا	جشفا	auto	media	1	1	1.00	وجشفا
 God	غض	غض	auto	media	1	8587	0.00	غد
 Golan	جولان	جولان	auto	media	3	4	1.00	وجولان
 Habor	وخابور	وخابور	auto	media	3	3	1.00	خابور
-Hachmoni	حكموني	حكموني	auto	media	2	1	1.00	ني
+Hachmoni	حكموني	حكموني	auto	media	2	1	1.00	بني
 Hadad	داود	داود	auto	media	2	5	0.20	هدد
 Hadoram	هدورام	هدورام	auto	media	2	2	1.00	وهدورام
 Haeleph	آلف	آلف	auto	media	3	1	1.00	وآلف
@@ -1339,18 +1373,20 @@ Hahiroth	الحيروث	الحيروث	auto	media	1	1	1.00	مارة
 Hakkatan	هقاطان	هقاطان	auto	media	2	1	1.00	الذكور
 Halah	هارا	هارا	auto	media	3	4	0.25	حلح
 Hali	حلي	حلي	auto	media	3	1	1.00	وحلي
+Hamath-zobah	حماة صوبة	حماة صوبة	auto	media	2	2	0.50	حماة صوبة قوي
 Hammath	حمة	حمة	auto	media	4	2	1.00	شمعاتيم
-Hammelech	الملك	الملك	auto	media	2	2	1.00	بحبال
+Hammelech	الملك	الملك	auto	media	2	2	1.00	ألقوه
+Hammoth-dor	حموت دور	حموت دور	auto	media	2	1	1.00	مسرحها حموت دور
 Hamonah	همونة	همونة	auto	media	3	1	1.00	المدينة
-Hamul	حامول	حامول	auto	media	2	3	1.00	وحامول
+Hamul	حامول	حامول	auto	media	2	3	0.67	وحامول
 Hamutal	حميطل	حميطل	auto	media	2	3	0.67	حموطل
 Hanameel	حنمئيل	حنمئيل	auto	media	1	4	1.00	أنها
 Hanamel	حنمئيل	حنمئيل	auto	media	1	4	1.00	أنها
-Hananiah	اية	اية	auto	media	1	18	0.17	حننيا
+Hananiah	حننيا	حننيا	auto	media	29	41	0.68	أرنان
 Hanes	حانيس	حانيس	auto	media	3	1	1.00	أن
 Haniel	حنيئيل	حنيئيل	auto	media	1	1	1.00	وحنيئيل
-Hannathon	حناتون	حناتون	auto	media	3	1	1.00	انت
-Hanniel	حنيئيل	حنيئيل	auto	media	3	2	1.00	ني
+Hannathon	حناتون	حناتون	auto	media	3	1	1.00	كانت
+Hanniel	حنيئيل	حنيئيل	auto	media	3	2	1.00	بني
 Harbona	حربونا	حربونا	auto	media	2	2	1.00	وحربونا
 Harbonah	حربونا	حربونا	auto	media	1	1	1.00	ارتفاعها
 Hareph	حاريف	حاريف	auto	media	2	1	1.00	وحاريف
@@ -1362,18 +1398,22 @@ Haruz	حاروص	حاروص	auto	media	2	1	1.00	اسم
 Hashabneiah	حشبنيا	حشبنيا	auto	media	2	2	1.00	يدايا
 Hashmonah	حشمونة	حشمونة	auto	media	3	2	1.00	من
 Hashubah	حشوبة	حشوبة	auto	media	2	1	1.00	وحشوبة
-Hassenaah	هسناءة	هسناءة	auto	media	1	1	1.00	ناه
+Hassenaah	هسناءة	هسناءة	auto	media	1	1	1.00	بناه
 Hasupha	حسوفا	حسوفا	auto	media	2	2	1.00	صيحا
 Hauran	حوران	حوران	auto	media	3	2	1.00	الأردن
-Hazar-addar	أدار	أدار	auto	media	3	1	1.00	حصر
-Hazazon-tamar	تامار	تامار	auto	media	3	2	1.00	الساكنين
+Hazar-enan	حصر عينان	حصر عينان	auto	media	3	4	1.00	حماة حصر عينان
+Hazar-gaddah	حصر جدة	حصر جدة	auto	media	3	1	1.00	جدة
+Hazar-shual	حصر شوعال	حصر شوعال	auto	media	3	4	1.00	حصر شوعال بئر
+Hazar-susim	حصر سوسيم	حصر سوسيم	auto	media	2	1	1.00	حصر سوسيم بيت
+Hazazon-tamar	حصون تامار	حصون تامار	auto	media	3	2	1.00	حصون تامار هي
 Hazeroth	ارتحل	ارتحل	auto	media	3	6	0.33	حضيروت
 Haziel	حزيئيل	حزيئيل	auto	media	2	1	1.00	وحزيئيل
-Hazo	اسد	اسد	auto	media	2	1	1.00	فلداش
+Hazor-hadattah	حاصور حدتة	حاصور حدتة	auto	media	3	1	1.00	حاصور حدتة قريوت
 Helam	حيلام	حيلام	auto	media	3	2	1.00	للقاء
 Helbon	حلبون	حلبون	auto	media	3	1	1.00	الأبيض
 Heli	هالي	هالي	auto	media	2	1	1.00	ثلاثين
-Helkai	حلقاي	حلقاي	auto	media	2	1	1.00	ولمرايوث
+Helkai	حلقاي	حلقاي	auto	media	2	1	1.00	لمرايوث
+Helkath-hazzurim	حلقث هصوريم	حلقث هصوريم	auto	media	3	1	1.00	حلقث هصوريم التي
 Hemam	هومام	هومام	auto	media	1	2	0.50	هيمام
 Hemath	شمعاتيم	شمعاتيم	auto	media	1	1	1.00	حمة
 Heresh	حرش	حرش	auto	media	2	1	1.00	وحرش
@@ -1385,7 +1425,7 @@ Heshmon	حشمون	حشمون	auto	media	3	1	1.00	وحشمون
 Heth	حث	حث	auto	media	2	58	0.17	حثا
 Hethlon	حثلون	حثلون	auto	media	3	2	1.00	لدان
 Hezion	حزيون	حزيون	auto	media	2	1	1.00	خزائن
-Hezir	حيزير	حيزير	auto	media	2	1	1.00	لحيزير
+Hezir	لحيزير	لحيزير	auto	media	2	1	1.00	لهفصيص
 Hierapolis	هيرابوليس	هيرابوليس	auto	media	3	1	1.00	غيرة
 Hilen	حيلين	حيلين	auto	media	1	1	1.00	وحيلين
 Hirah	حيرة	حيرة	auto	media	2	2	1.00	وحيرة
@@ -1402,7 +1442,7 @@ Hodiah	هوديا	هوديا	auto	media	3	7	0.71	وهوديا
 Hoham	هوهام	هوهام	auto	media	2	1	1.00	فرآم
 Homam	هومام	هومام	auto	media	1	2	0.50	هيمام
 Hophra	حفرع	حفرع	auto	media	1	18	0.06	فرعون
-Hor-haggidgad	الجدجاد	الجدجاد	auto	media	3	3	0.67	الجدجود
+Hor-haggidgad	حور الجدجاد	حور الجدجاد	auto	media	3	3	0.67	الجدجاد
 Horam	هورام	هورام	auto	media	2	1	1.00	شاردا
 Hori	حوري	حوري	auto	media	4	10	0.30	ابن
 Horonaim	حورونايم	حورونايم	auto	media	3	5	0.80	نمريم
@@ -1410,17 +1450,17 @@ Hosah	حوسة	حوسة	auto	media	2	4	1.00	وحوسة
 Hosah	حوصة	حوصة	auto	media	3	1	1.00	المحصنة
 Hoshaiah	هوشعيا	هوشعيا	auto	media	4	3	1.00	سار
 Hotham	حوثام	حوثام	auto	media	3	3	0.67	وحوثام
-Hothir	هوثير	هوثير	auto	media	2	2	1.00	وهوثير
-Huldah	خلدة	خلدة	auto	media	2	2	1.00	لموها
+Hothir	هوثير	هوثير	auto	media	2	2	0.50	وهوثير
+Huldah	خلدة	خلدة	auto	media	2	2	1.00	كلموها
 Hurai	حوراي	حوراي	auto	media	1	2	0.50	هداي
 Huram	حورام	حورام	auto	media	1	1	1.00	رجلا
 Huram	وحورام	وحورام	auto	media	1	3	0.33	حورام
 Huri	حوري	حوري	auto	media	2	1	1.00	يحدو
 Hushah	حوشة	حوشة	auto	media	2	6	0.17	وعازر
 Husham	حوشام	حوشام	auto	media	2	4	1.00	اسم
-Hushim	حوشيم	حوشيم	auto	media	6	6	0.67	شوحام
+Hushim	حوشيم	حوشيم	auto	media	6	6	0.67	عشائرهم
 Hymenaeus	هيمينايس	هيمينايس	auto	media	2	2	1.00	يجدفا
-Iddo	إدو	إدو	auto	media	2	1	1.00	سفيا
+Iddo	إدو	إدو	auto	media	2	1	1.00	بخدام
 Iddo	يدو	يدو	auto	media	2	1	1.00	جلعاد
 Iddo	يعدو	يعدو	auto	media	2	3	0.33	عدو
 Idumea	صيداء	صيداء	auto	media	3	1	1.00	وصيداء
@@ -1429,12 +1469,9 @@ Ijon	عيون	عيون	auto	media	2	3	1.00	يانوح
 Ijon	يعن	يعن	auto	media	1	4	0.25	عيون
 Illyricum	إلليريكون	إلليريكون	auto	media	3	1	1.00	التبشير
 Ir	عير	عير	auto	media	2	1	1.00	أحير
-Ir-moab	موآب	موآب	auto	media	1	1	1.00	جاء
-Ir-nahash	ناحاش	ناحاش	auto	media	2	1	1.00	تحنة
-Ir-shemesh	شمس	شمس	auto	media	2	1	1.00	وعير
+Ir-nahash	مدينة ناحاش	مدينة ناحاش	auto	media	2	1	1.00	ناحاش
 Irpeel	يرفئيل	يرفئيل	auto	media	3	1	1.00	ويرفئيل
 Iru	عيرو	عيرو	auto	media	2	1	1.00	وأيلة
-Ishbi-benob	يشبي	يشبي	auto	media	2	1	1.00	ويشبي
 Ishhod	إيشهود	إيشهود	auto	media	1	1	1.00	وأبيعزر
 Ishiah	يشيا	يشيا	auto	media	1	1	1.00	يزرحيا
 Ishijah	يشيا	يشيا	auto	media	1	1	1.00	ويشيا
@@ -1446,7 +1483,6 @@ Isshijah	يشيا	يشيا	auto	media	1	1	1.00	ويشيا
 Isuah	يشوة	يشوة	auto	media	1	2	1.00	ويشوة
 Isui	يشوي	يشوي	auto	media	1	3	1.00	ويشوي
 Ituraea	إيطورية	إيطورية	auto	media	2	1	1.00	اليا
-Iye-abarim	عباريم	عباريم	auto	media	3	3	0.67	البرية
 Jaaziel	يعزئيل	يعزئيل	auto	media	2	3	0.33	ويعزئيل
 Jabez	يعبيص	يعبيص	auto	media	5	3	1.00	ركاب
 Jabneel	يبنئيل	يبنئيل	auto	media	6	3	0.67	ويبنئيل
@@ -1454,8 +1490,9 @@ Jabneh	يبنة	يبنة	auto	media	1	1	1.00	حارب
 Jacob	أركب	أركب	auto	media	1	1009	0.00	أركبك
 Jaddua	ويوياداع	ويوياداع	auto	media	2	2	1.00	يوياداع
 Jagur	ياجور	ياجور	auto	media	3	1	1.00	وياجور
-Jahzerah	يحزيرة	يحزيرة	auto	media	2	1	1.00	شحور
+Jahzerah	يحزيرة	يحزيرة	auto	media	2	1	1.00	عدايا
 Jair	ياعور	ياعور	auto	media	1	2	0.50	يعري
+Jakim	لياقيم	لياقيم	auto	media	2	1	1.00	لألياشيب
 Jambres	يمبريس	يمبريس	auto	media	2	1	1.00	ويمبريس
 Jamlech	يمليك	يمليك	auto	media	2	1	1.00	ويمليك
 Janim	ينوم	ينوم	auto	media	3	1	1.00	وينوم
@@ -1464,7 +1501,7 @@ Jannai	ينا	ينا	auto	media	1	1	1.00	متثات
 Jannes	ينيس	ينيس	auto	media	2	1	1.00	أناس
 Janoah	تآنة	تآنة	auto	media	3	2	0.50	ينوحة
 Janoah	يانوح	يانوح	auto	media	3	1	1.00	ويانوح
-Japhlet	يفليط	يفليط	auto	media	2	3	0.67	مهال
+Japhlet	يفليط	يفليط	auto	media	2	3	0.67	بمهال
 Jarha	يرحع	يرحع	auto	media	2	2	1.00	ليرحع
 Jaroah	ياروح	ياروح	auto	media	2	1	1.00	يشيشاي
 Jashobeam	يشبعام	يشبعام	auto	media	4	4	0.75	ويشبعام
@@ -1472,6 +1509,7 @@ Javan	ياوان	ياوان	auto	media	4	34	0.21	وياوان
 Jebus	يبوس	يبوس	auto	media	2	7	0.57	وجبعة
 Jecamiah	يقميا	يقميا	auto	media	1	1	1.00	ويقميا
 Jeduthun	يدوثون	يدوثون	auto	media	4	17	0.59	يحمد
+Jegar-sahadutha	يجر سهدوثا	يجر سهدوثا	auto	media	1	1	1.00	يجر سهدوثا أما
 Jehiel	ويعوئيل	ويعوئيل	auto	media	1	1	1.00	يعوئيل
 Jehiel	يوئيل	يوئيل	auto	media	1	6	0.33	ويوئيل
 Jehizkiah	يحزقيا	يحزقيا	auto	media	2	1	1.00	ويحزقيا
@@ -1480,8 +1518,8 @@ Jehoaddan	يهوعدان	يهوعدان	auto	media	2	2	1.00	ابن
 Jehoahaz	يهوآحاز	يهوآحاز	auto	media	2	8	0.50	يوآحاز
 Jehoahaz	يهوأحاز	يهوأحاز	auto	media	2	14	0.79	يوآش
 Jehoiachin	يهوياكين	يهوياكين	auto	media	2	22	0.36	يوياكين
-Jehoiada	يوياداع	يوياداع	auto	media	1	1	1.00	سوديا
-Jehoiarib	ليهوياريب	ليهوياريب	auto	media	2	1	1.00	يهوياريب
+Jehoiada	يوياداع	يوياداع	auto	media	1	1	1.00	بسوديا
+Jehoiarib	ليهوياريب	ليهوياريب	auto	media	2	1	1.00	ليدعيا
 Jehonathan	يهوناثان	يهوناثان	auto	media	5	3	1.00	ويهوناثان
 Jehoram	يهورام	يهورام	auto	media	4	22	0.73	يورام
 Jehoshaphat	ويوشافاط	ويوشافاط	auto	media	1	1	1.00	يوشافاط
@@ -1490,6 +1528,7 @@ Jehozadak	يوصاداق	يوصاداق	auto	media	1	12	0.33	يهوصاداق
 Jehubbah	يحبة	يحبة	auto	media	2	1	1.00	ويحبة
 Jehucal	يهوخل	يهوخل	auto	media	1	2	0.50	يوخل
 Jehudi	يهودي	يهودي	auto	media	2	3	1.00	يده
+Jehudijah	اليهودية	اليهودية	auto	media	2	1	1.00	بثية
 Jeiel	ويعوئيل	ويعوئيل	auto	media	1	1	1.00	يعوئيل
 Jekamiah	يقميا	يقميا	auto	media	1	1	1.00	ويقميا
 Jekamiah	يقمية	يقمية	auto	media	2	1	1.00	ويقمية
@@ -1505,8 +1544,8 @@ Jerubbesheth	يربوشث	يربوشث	auto	media	1	1	1.00	بقطعة
 Jerusha	يروشا	يروشا	auto	media	1	2	0.50	يروشة
 Jerushah	يروشا	يروشا	auto	media	1	2	0.50	يروشة
 Jesaiah	يشعيا	يشعيا	auto	media	2	2	1.00	ويشعيا
-Jesharelah	يشرئيلة	يشرئيلة	auto	media	1	2	0.50	ليشرئيلة
-Jeshebeab	يشبآب	يشبآب	auto	media	2	1	1.00	ليشبآب
+Jesharelah	ليشرئيلة	ليشرئيلة	auto	media	1	2	0.50	أشرئيلة
+Jeshebeab	ليشبآب	ليشبآب	auto	media	2	1	1.00	عشرة
 Jesher	ياشر	ياشر	auto	media	2	1	1.00	يريعوث
 Jeshohaiah	يشوحايا	يشوحايا	auto	media	2	1	1.00	ويشوحايا
 Jesiah	يشيا	يشيا	auto	media	1	1	1.00	ويشيا
@@ -1530,7 +1569,7 @@ Joda	يهوذا	يهوذا	auto	media	1	1	1.00	متاثيا
 Joelah	يوعيلة	يوعيلة	auto	media	2	1	1.00	ويوعيلة
 Joezer	يوعزر	يوعزر	auto	media	2	1	1.00	ويوعزر
 Jogbehah	يجبهة	يجبهة	auto	media	3	2	1.00	ويجبهة
-Jogli	يجلي	يجلي	auto	media	2	1	1.00	قي
+Jogli	يجلي	يجلي	auto	media	2	1	1.00	بقي
 Joha	يوحا	يوحا	auto	media	2	1	1.00	ويوحا
 Johanan	ويهوحانان	ويهوحانان	auto	media	1	1	1.00	يهوحانان
 Johanan	يهوحانان	يهوحانان	auto	media	3	2	1.00	يحزقيا
@@ -1551,7 +1590,7 @@ Jorkeam	يرقعام	يرقعام	auto	media	2	1	1.00	راقم
 Josabad	يوزاباد	يوزاباد	auto	media	1	1	1.00	ويوزاباد
 Joshah	يوشا	يوشا	auto	media	2	1	1.00	ويوشا
 Joshaviah	يوشويا	يوشويا	auto	media	2	1	1.00	ويوشويا
-Joshbekashah	يشبقاشة	يشبقاشة	auto	media	2	2	1.00	ليشبقاشة
+Joshbekashah	يشبقاشة	يشبقاشة	auto	media	2	2	0.50	ليشبقاشة
 Joshibiah	يوشبيا	يوشبيا	auto	media	1	1	1.00	عسيئيل
 Josiah	جناحيها	جناحيها	auto	media	1	4	0.50	يدعيا
 Josibiah	يوشبيا	يوشبيا	auto	media	1	1	1.00	عسيئيل
@@ -1564,65 +1603,73 @@ Judas	يهوذا	يهوذا	auto	media	7	31	0.94	أزاغ
 Judea	يهوذا	يهوذا	auto	media	1	2	1.00	إذا
 Julius	يوليوس	يوليوس	auto	media	2	2	1.00	ليحصل
 Junia	يونياس	يونياس	auto	media	2	1	1.00	ويونياس
-Justus	يوستس	يوستس	auto	media	2	1	1.00	يته
+Jushab-hesed	يوشب حسد	يوشب حسد	auto	media	2	1	1.00	حسديا يوشب حسد
+Justus	يوستس	يوستس	auto	media	2	1	1.00	بيته
 Juttah	يطة	يطة	auto	media	3	3	0.33	ويطة
+Kadesh-barnea	قادش برنيع	قادش برنيع	auto	media	2	24	0.42	قادش برنيع حتى
 Kain	قاين	قاين	auto	media	3	2	0.50	القاين
 Kallai	قلاي	قلاي	auto	media	2	1	1.00	سلاي
 Kamon	قامون	قامون	auto	media	3	1	1.00	دفن
 Kanah	قانا	قانا	auto	media	1	5	0.80	قانة
-Kanah	قانة	قانة	auto	media	5	3	1.00	وكانت
+Kanah	قانة	قانة	auto	media	5	3	1.00	كانت
 Karnaim	قرنايم	قرنايم	auto	media	1	1	1.00	قريتايم
 Kartah	قرتة	قرتة	auto	media	2	2	0.50	وقرتة
 Kartan	قرتان	قرتان	auto	media	3	1	1.00	وقرتان
-Kattath	اثنتا	اثنتا	auto	media	2	1	1.00	قطة
 Kedemah	قدمة	قدمة	auto	media	2	3	0.67	وقدمة
-Kedesh-naphtali	نفتالي	نفتالي	auto	media	2	1	1.00	ازحف
+Kedesh-naphtali	قادش نفتالي	قادش نفتالي	auto	media	2	1	1.00	قادش نفتالي قالت
 Kehelathah	قهيلاتة	قهيلاتة	auto	media	3	2	1.00	نزلوا
 Kelaiah	قلايا	قلايا	auto	media	2	1	1.00	وقلايا
 Kelita	قليطا	قليطا	auto	media	2	2	1.00	وقليطا
 Kenaz	قناز	قناز	auto	media	7	14	0.79	وقناز
+Kerioth-hezron	قريوت حصرون	قريوت حصرون	auto	media	3	1	1.00	قريوت حصرون هي
 Kezia	قصيعة	قصيعة	auto	media	1	1	1.00	سمى
 Keziah	قصيعة	قصيعة	auto	media	1	1	1.00	سمى
 Kibzaim	قبصايم	قبصايم	auto	media	3	2	0.50	وقبصايم
 Kinah	قينة	قينة	auto	media	3	1	1.00	وقينة
+Kir	قير	قير	auto	media	5	11	0.91	كبني
+Kir-hareseth	قير حارس	قير حارس	auto	media	1	5	0.60	قير حارسة
+Kir-hareseth	قير حارسة	قير حارسة	auto	media	1	2	1.00	قير حارسة حجارتها
+Kiriath-arim	قرية عاريم	قرية عاريم	auto	media	1	1	1.00	بنو قرية عاريم
+Kiriath-baal	قرية بعل	قرية بعل	auto	media	1	2	1.00	قرية بعل هي
+Kiriath-jearim	قرية يعاريم	قرية يعاريم	auto	media	3	22	0.77	هي قرية يعاريم
+Kiriath-sannah	قرية سنة	قرية سنة	auto	media	1	1	1.00	قرية سنة هي
+Kiriath-sepher	قرية سفر	قرية سفر	auto	media	1	4	1.00	يضرب قرية سفر
 Kiriathaim	قريتايم	قريتايم	auto	media	6	10	0.70	وقريتايم
 Kishi	قيشي	قيشي	auto	media	2	2	0.50	قوشيا
-Kittim	تيم	تيم	auto	media	4	4	1.00	وكتيم
-Kolaiah	قولايا	قولايا	auto	media	4	2	1.00	دايا
-Korah	خورا	خورا	auto	media	2	38	0.03	بخورا
-LORD	الرداءة	الرداءة	auto	media	1	843	0.00	للرضا
-Laadah	ولعدة	ولعدة	auto	media	2	1	1.00	عدة
-Laadan	لعدان	لعدان	auto	media	1	9	0.44	للعدان
+Kolaiah	قولايا	قولايا	auto	media	4	2	1.00	فدايا
+Korah	بخورا	بخورا	auto	media	2	38	0.03	أخبرونا
+LORD	الرداءة	الرداءة	auto	media	1	843	0.00	لأقرض
 Lael	لايل	لايل	auto	media	2	1	1.00	ألياساف
 Lahmi	لحمي	لحمي	auto	media	2	2	0.50	النساجين
 Lamech	لامك	لامك	auto	media	4	11	1.00	للامك
-Laodicea	لاودكية	لاودكية	auto	media	3	7	0.71	اودكية
-Lapidoth	لفيدوت	لفيدوت	auto	media	1	1	1.00	فيدوت
-Lappidoth	لفيدوت	لفيدوت	auto	media	1	1	1.00	فيدوت
+Laodicea	لاودكية	لاودكية	auto	media	3	7	0.71	فيلادلفيا
+Lapidoth	لفيدوت	لفيدوت	auto	media	1	1	1.00	قاضية
+Lappidoth	لفيدوت	لفيدوت	auto	media	1	1	1.00	قاضية
 Lasea	لسائية	لسائية	auto	media	3	1	1.00	تجاوزناها
 Lasharon	لشارون	لشارون	auto	media	3	1	1.00	شارون
-Lebaoth	ولباوت	ولباوت	auto	media	3	1	1.00	باوت
+Lebaoth	لباوت	لباوت	auto	media	3	1	1.00	ولباوت
 Lebonah	لبونة	لبونة	auto	media	3	1	1.00	بونة
-Lecah	ليكة	ليكة	auto	media	1	1	1.00	يكة
-Legion	لجئون	لجئون	auto	media	1	2	1.00	جئون
-Lehem	لحم	لحم	auto	media	2	1	1.00	حم
+Lecah	ليكة	ليكة	auto	media	1	1	1.00	لعدة
+Legion	لجئون	لجئون	auto	media	1	2	1.00	لأن
+Lehem	لحم	لحم	auto	media	2	1	1.00	الأمور
 Lehi	لحي	لحي	auto	media	3	4	0.75	عليه
 Leshem	لشم	لشم	auto	media	1	1	1.00	شم
-Letushim	ولطوشيم	ولطوشيم	auto	media	2	1	1.00	طوشيم
-Leummim	ولأميم	ولأميم	auto	media	2	1	1.00	أميم
-Levi	لاوي	لاوي	auto	media	6	331	0.20	اوي
+Letushim	لطوشيم	لطوشيم	auto	media	2	1	1.00	ولطوشيم
+Leummim	لأميم	لأميم	auto	media	2	1	1.00	ولأميم
+Levi	لاوي	لاوي	auto	media	6	331	0.22	للاوي
 Libni	اللبنيين	اللبنيين	auto	media	1	9	0.22	لبني
-Libni	ولبني	ولبني	auto	media	2	1	1.00	بني
-Libya	ليبية	ليبية	auto	media	3	10	0.10	يبية
-Lo-ammi	لوعمي	لوعمي	auto	media	2	1	1.00	وعمي
-Lo-debar	لودبار	لودبار	auto	media	3	5	0.60	ودبار
-Lo-ruhamah	لورحامة	لورحامة	auto	media	2	2	1.00	ورحامة
+Libni	لبني	لبني	auto	media	2	1	1.00	ولبني
+Libya	ليبية	ليبية	auto	media	3	10	0.10	القيروان
+Lo-ammi	لوعمي	لوعمي	auto	media	2	1	1.00	اسمه لوعمي
+Lo-debar	لودبار	لودبار	auto	media	3	5	0.60	عميئيل من لودبار
+Lo-ruhamah	لورحامة	لورحامة	auto	media	2	2	1.00	لورحامة حبلت
 Lod	لدة	لدة	auto	media	2	7	0.43	لود
-Lod	لود	لود	auto	media	1	4	0.50	ولود
-Lois	لوئيس	لوئيس	auto	media	2	1	1.00	وئيس
-Lot	لوط	لوط	auto	media	2	34	0.65	للوط
-Lucifer	كيف	كيف	auto	media	2	1	1.00	يف
-Lucius	ولوكيوس	ولوكيوس	auto	media	2	2	1.00	وكيوس
+Lod	لود	لود	auto	media	1	4	1.00	ولود
+Lois	لوئيس	لوئيس	auto	media	2	1	1.00	العديم
+Lot	لوط	لوط	auto	media	2	34	0.74	للوط
+Lucifer	كيف	كيف	auto	media	2	1	1.00	الأرض
+Lucius	لوكيوس	لوكيوس	auto	media	2	2	1.00	ولوكيوس
+Lud	لود	لود	auto	media	5	6	0.83	ولود
 Luhith	لوحيت	لوحيت	auto	media	3	2	0.50	اللوحيث
 Maaziah	ومعزيا	ومعزيا	auto	media	1	3	0.33	معزيا
 Macedonia	مكدونية	مكدونية	auto	media	3	27	0.74	بمكدونية
@@ -1633,15 +1680,16 @@ Magdiel	مجديئيل	مجديئيل	auto	media	2	2	1.00	أمير
 Magpiash	مجفيعاش	مجفيعاش	auto	media	2	1	1.00	ومجفيعاش
 Mahalah	ومحلة	ومحلة	auto	media	1	1	1.00	محلة
 Mahalath	محلة	محلة	auto	media	2	1	1.00	أليآب
-Mahaneh-dan	دان	دان	auto	media	4	2	1.00	محلة
-Mahazioth	محزيوث	محزيوث	auto	media	2	2	1.00	لمحزيوث
+Mahaneh-dan	محلة دان	محلة دان	auto	media	4	2	1.00	المكان محلة دان
+Mahazioth	محزيوث	محزيوث	auto	media	2	2	0.50	لمحزيوث
+Maher-shalal-hash-baz	شلال حاش بز	شلال حاش بز	auto	media	2	2	1.00	مهير شلال حاش
 Mahlah	محلة	محلة	auto	media	3	5	1.00	حجلة
 Mahlon	محلون	محلون	auto	media	2	4	1.00	ومحلون
 Mahol	ماحول	ماحول	auto	media	2	1	1.00	هيمان
 Makaz	ماقص	ماقص	auto	media	3	1	1.00	شمس
-Mallothi	ملوثي	ملوثي	auto	media	2	2	1.00	لملوثي
+Mallothi	ملوثي	ملوثي	auto	media	2	2	0.50	لملوثي
 Manaen	مناين	مناين	auto	media	2	1	1.00	ومناين
-Manahath	مناحة	مناحة	auto	media	5	5	0.60	ومناحة
+Manahath	مناحة	مناحة	auto	media	5	5	0.60	آباء
 Maranatha	ماران	ماران	auto	media	1	1	1.00	أناثيما
 Maskil	مرعاك	مرعاك	auto	media	1	14	0.07	الإيل
 Masrekah	مسريقة	مسريقة	auto	media	3	2	1.00	مكانه
@@ -1651,7 +1699,7 @@ Media	مادي	مادي	auto	media	3	22	0.77	ومادي
 Mehetabeel	مهيطبئيل	مهيطبئيل	auto	media	1	1	1.00	مغلق
 Mehetabel	مهيطبئيل	مهيطبئيل	auto	media	3	3	1.00	مطرد
 Mehujael	محويائيل	محويائيل	auto	media	2	1	1.00	ومحويائيل
-Mehuman	مهومان	مهومان	auto	media	2	1	1.00	لمهومان
+Mehuman	لمهومان	لمهومان	auto	media	2	1	1.00	ما
 Mehunim	معونيم	معونيم	auto	media	1	2	1.00	نفوسيم
 Melchi	ملكي	ملكي	auto	media	4	2	1.00	لاوي
 Melchiah	ملكيا	ملكيا	auto	media	1	2	1.00	وجدليا
@@ -1666,14 +1714,13 @@ Mephibosheth	مفيبوشث	مفيبوشث	auto	media	4	15	0.80	لمفيبوشث
 Merab	ميرب	ميرب	auto	media	2	4	0.75	امرأة
 Mered	مرد	مرد	auto	media	2	2	1.00	ومرد
 Meres	مرس	مرس	auto	media	2	1	1.00	ومرس
-Meribah-kadesh	مريبة	مريبة	auto	media	1	3	0.67	مريبوث
 Merodach	مرودخ	مرودخ	auto	media	1	1	1.00	أسمعوا
-Merodach-baladan	بلادان	بلادان	auto	media	2	2	1.00	لادان
 Merom	ميروم	ميروم	auto	media	2	2	1.00	معه
 Meroz	ميروز	ميروز	auto	media	3	1	1.00	معونة
 Mesha	ميشا	ميشا	auto	media	5	2	1.00	سفار
 Mesha	ميشاع	ميشاع	auto	media	2	1	1.00	مريشة
 Meshach	ميشخ	ميشخ	auto	media	1	18	0.78	وميشخ
+Meshech-Tubal	ماشك توبال كل	ماشك توبال كل	auto	media	2	1	1.00	ماشك توبال
 Meshezabeel	مشيزبئيل	مشيزبئيل	auto	media	3	3	1.00	مشلام
 Meshezabel	مشيزبئيل	مشيزبئيل	auto	media	3	3	1.00	ومشيزبئيل
 Meshillemith	مشليميت	مشليميت	auto	media	2	2	0.50	مشليموث
@@ -1682,19 +1729,19 @@ Meshobab	مشوباب	مشوباب	auto	media	2	1	1.00	ومشوباب
 Methusael	متوشائيل	متوشائيل	auto	media	1	1	1.00	ومتوشائيل
 Methushael	متوشائيل	متوشائيل	auto	media	1	1	1.00	ومتوشائيل
 Meunim	معونيم	معونيم	auto	media	1	2	1.00	نفوسيم
-Miamin	ميامين	ميامين	auto	media	1	1	1.00	وميامين
 Mica	ميخا	ميخا	auto	media	3	5	0.80	متنيا
 Micha	ميخا	ميخا	auto	media	2	3	1.00	متنيا
 Michah	ميخا	ميخا	auto	media	1	3	1.00	يشيا
 Michaiah	ميخا	ميخا	auto	media	1	2	1.00	عسايا
 Michmas	مخماس	مخماس	auto	media	1	2	1.00	مئة
 Michmethath	المكمتة	المكمتة	auto	media	3	2	1.00	تآنة
-Migdal-el	ومجدل	ومجدل	auto	media	3	1	1.00	مجدل
-Migron	مجرون	مجرون	auto	media	3	2	0.50	مغرون
-Migron	مغرون	مغرون	auto	media	1	1	1.00	مقيما
+Migdal-el	مجدل إيل	مجدل إيل	auto	media	3	1	1.00	ومجدل
+Migdal-gad	مجدل جاد	مجدل جاد	auto	media	3	1	1.00	حداشة مجدل جاد
+Migron	بمجرون	بمجرون	auto	media	1	1	1.00	عياث
+Migron	مغرون	مغرون	auto	media	3	2	0.50	بمجرون
 Mikneiah	مقنيا	مقنيا	auto	media	2	2	1.00	ومقنيا
 Milalai	جللاي	جللاي	auto	media	2	1	1.00	مللاي
-Milcom	ملكوم	ملكوم	auto	media	1	3	1.00	ولملكوم
+Milcom	لملكوم	لملكوم	auto	media	1	3	0.67	ملكوم
 Miletus	ميليتس	ميليتس	auto	media	3	3	1.00	خيوس
 Millo	جعله	جعله	auto	media	3	7	0.14	عمل
 Minni	ومني	ومني	auto	media	3	1	1.00	مني
@@ -1705,7 +1752,7 @@ Mispar	مسفار	مسفار	auto	media	1	2	0.50	مسفارث
 Mithkah	مثقة	مثقة	auto	media	3	2	1.00	تارح
 Mitylene	ميتيليني	ميتيليني	auto	media	3	1	1.00	وأتينا
 Moab	موآب	موآب	auto	media	6	186	0.80	معابر
-Moadiah	معديا	معديا	auto	media	1	3	0.33	موعديا
+Moadiah	معديا	معديا	auto	media	1	3	0.33	ومعديا
 Molech	مولك	مولك	auto	media	2	15	0.53	لمولك
 Moriah	المريا	المريا	auto	media	2	1	1.00	محرقة
 Moseroth	مسيروت	مسيروت	auto	media	3	3	0.67	ارتحلوا
@@ -1717,16 +1764,16 @@ Naarah	نعرات	نعرات	auto	media	2	1	1.00	ونعرات
 Naggai	نجاي	نجاي	auto	media	1	1	1.00	ناحوم
 Nahalal	نحلال	نحلال	auto	media	2	3	0.33	نهلال
 Nahalol	نحلال	نحلال	auto	media	1	3	0.33	نهلال
-Nahalol	نهلول	نهلول	auto	media	1	1	1.00	انوا
+Nahalol	نهلول	نهلول	auto	media	1	1	1.00	الجزية
 Nahum	ناحوم	ناحوم	auto	media	3	2	1.00	نينوى
 Naphath	المرتفعات	المرتفعات	auto	media	2	1	1.00	الثلاث
 Naphtuhim	نفتوحيم	نفتوحيم	auto	media	2	2	1.00	ونفتوحيم
-Nathan-melech	نثنملك	نثنملك	auto	media	2	1	1.00	أعطاها
+Nathan-melech	نثنملك	نثنملك	auto	media	2	1	1.00	أعطاها ملوك
 Naum	ناحوم	ناحوم	auto	media	1	1	1.00	عاموص
 Nazareth	ناصرة	ناصرة	auto	media	2	32	0.12	الناصري
 Neah	نيعة	نيعة	auto	media	3	3	0.33	هناك
 Neapolis	نيابوليس	نيابوليس	auto	media	3	1	1.00	توجهنا
-Nebu-sar-sekim	سرسخيم	سرسخيم	auto	media	1	1	1.00	وسرسخيم
+Nebu-sar-sekim	نبو سرسخيم	نبو سرسخيم	auto	media	1	1	1.00	سرسخيم
 Nebuchadnezzar	نبوخذنصر	نبوخذنصر	auto	media	2	88	0.36	نبوخذناصر
 Nebushasban	نبوشزبان	نبوشزبان	auto	media	1	1	1.00	ونبوشزبان
 Nebushazban	نبوشزبان	نبوشزبان	auto	media	1	1	1.00	ونبوشزبان
@@ -1743,13 +1790,13 @@ Nethaneel	نثنائيل	نثنائيل	auto	media	1	5	1.00	ثوران
 Nethanel	نثنائيل	نثنائيل	auto	media	1	5	1.00	ثوران
 Netophah	نطوفة	نطوفة	auto	media	3	12	0.17	ونطوفة
 Neziah	نصيح	نصيح	auto	media	2	2	1.00	حطيفا
-Nibhaz	نبحز	نبحز	auto	media	1	1	1.00	نيهم
+Nibhaz	نبحز	نبحز	auto	media	1	1	1.00	بنيهم
 Nibshan	النبشان	النبشان	auto	media	3	1	1.00	والنبشان
 Nicolas	نيقولاوس	نيقولاوس	auto	media	1	1	1.00	ونيقولاوس
 Nicolaus	نيقولاوس	نيقولاوس	auto	media	1	1	1.00	ونيقولاوس
 Nicopolis	نيكوبوليس	نيكوبوليس	auto	media	3	1	1.00	تيخيكس
 Nile	النيل	النيل	auto	media	1	30	0.17	كالنيل
-Nile	نيل	نيل	auto	media	2	48	0.04	كنيل
+Nile	كنيل	كنيل	auto	media	2	48	0.04	النيل
 Nimrod	نمرود	نمرود	auto	media	4	4	1.00	كنمرود
 Nineveh	نينوى	نينوى	auto	media	3	30	0.63	ونينوى
 Nisroch	نسروخ	نسروخ	auto	media	1	2	1.00	شرآصر
@@ -1760,7 +1807,6 @@ Noah	نوعة	نوعة	auto	media	2	4	1.00	ونوعة
 Nod	نود	نود	auto	media	3	1	1.00	دن
 Nohah	مناحة	مناحة	auto	media	1	1	1.00	آحود
 Nohah	نوحة	نوحة	auto	media	1	2	0.50	ونوحة
-North	نت	نت	auto	media	1	10	0.10	وبنت
 Obal	عوبال	عوبال	auto	media	1	2	0.50	وعوبال
 Obil	أوبيل	أوبيل	auto	media	2	1	1.00	الجمال
 Ohad	أوهد	أوهد	auto	media	2	2	1.00	وأوهد
@@ -1769,33 +1815,33 @@ Onam	أونام	أونام	auto	media	4	4	1.00	وأونام
 Onesimus	أنسيمس	أنسيمس	auto	media	2	4	0.50	سيعرفانكم
 Onesiphorus	أنيسيفورس	أنيسيفورس	auto	media	2	2	1.00	أراحني
 Ophni	العفني	العفني	auto	media	3	1	1.00	والعفني
-Ozni	أزني	أزني	auto	media	1	2	0.50	شوني
+Ozni	شوني	شوني	auto	media	1	2	0.50	لأزني
 Paarai	حصراي	حصراي	auto	media	2	1	1.00	فعراي
 Paddan	فدان	فدان	auto	media	2	16	0.69	دان
-Paddan-aram	أرام	أرام	auto	media	2	11	0.91	فدان
-Padon	ادون	ادون	auto	media	2	2	1.00	فادون
-Palti	فلطي	فلطي	auto	media	3	3	0.67	طي
-Paltiel	فلطيئيل	فلطيئيل	auto	media	2	1	1.00	طيئيل
-Paphos	افوس	افوس	auto	media	3	2	1.00	بافوس
+Padon	فادون	فادون	auto	media	2	2	1.00	سيعها
+Pai	فاعي	فاعي	auto	media	1	1	1.00	ماء
+Palti	فلطي	فلطي	auto	media	3	3	0.67	بنيامين
+Paltiel	فلطيئيل	فلطيئيل	auto	media	2	1	1.00	الرئيس
+Paphos	بافوس	بافوس	auto	media	3	2	1.00	باريشوع
 Parah	الفارة	الفارة	auto	media	3	1	1.00	والفارة
 Parbar	أربعة	أربعة	auto	media	2	1	1.00	الغرب
 Parmashta	فرمشتا	فرمشتا	auto	media	2	1	1.00	وفرمشتا
-Parmenas	رميناس	رميناس	auto	media	2	1	1.00	وبرميناس
+Parmenas	برميناس	برميناس	auto	media	2	1	1.00	وبرميناس
+Parnach	فرناخ	فرناخ	auto	media	2	1	1.00	الرئيس
 Parshandatha	فرشنداثا	فرشنداثا	auto	media	2	1	1.00	وفرشنداثا
-Parthians	رتيون	رتيون	auto	media	1	1	1.00	فرتيون
-Pas-dammim	دميم	دميم	auto	media	1	1	1.00	أمام
-Pasach	اسك	اسك	auto	media	2	1	1.00	فاسك
+Parvaim	فروايم	فروايم	auto	media	3	1	1.00	بحجارة
+Pas-dammim	فس دميم	فس دميم	auto	media	1	1	1.00	فس دميم قد
+Pasach	فاسك	فاسك	auto	media	2	1	1.00	عشوة
+Patara	باترا	باترا	auto	media	3	1	1.00	التالي
 Pathrusim	فتروسيم	فتروسيم	auto	media	2	2	1.00	وفتروسيم
-Patmos	طمس	طمس	auto	media	3	1	1.00	بطمس
-Patrobas	تروباس	تروباس	auto	media	2	1	1.00	بتروباس
-Pedaiah	وفدايا	وفدايا	auto	media	2	1	1.00	فدايا
+Patmos	بطمس	بطمس	auto	media	3	1	1.00	المسيح
+Patrobas	بتروباس	بتروباس	auto	media	2	1	1.00	هرماس
+Pedaiah	فداية	فداية	auto	media	2	1	1.00	زبيدة
 Pelaiah	فلايا	فلايا	auto	media	4	3	1.00	دلايا
-Pelaliah	ليا	ليا	auto	media	2	1	1.00	فلليا
-Peniel	نوئيل	نوئيل	auto	media	1	6	0.83	نيئيل
-Peniel	نيئيل	نيئيل	auto	media	1	1	1.00	فنيئيل
-Pergamum	رغامس	رغامس	auto	media	3	2	1.00	برغامس
-Persia	رشنا	رشنا	auto	media	3	33	0.03	ارس
-Peruda	ريدا	ريدا	auto	media	1	2	0.50	رودا
+Peniel	فنيئيل	فنيئيل	auto	media	1	1	1.00	ونجيت
+Perida	فريدا	فريدا	auto	media	1	2	0.50	رودا
+Persis	برسيس	برسيس	auto	media	2	1	1.00	تريفوسا
+Peruda	رودا	رودا	auto	media	1	2	0.50	فرودا
 Peullethai	فعلتاي	فعلتاي	auto	media	1	1	1.00	وفعلتاي
 Peulthai	فعلتاي	فعلتاي	auto	media	1	1	1.00	وفعلتاي
 Pharaoh	فأخرجنا	فأخرجنا	auto	media	1	111	0.01	واطرحها
@@ -1806,43 +1852,40 @@ Pharaoh	فاران	فاران	auto	media	2	12	0.08	فأصعدها
 Pharaoh	فاشترى	فاشترى	auto	media	1	138	0.01	فأخرجنا
 Pharaoh	فرأت	فرأت	auto	media	2	11	0.09	جواريها
 Pharisee	فريسي	فريسي	auto	media	1	95	0.05	فريسيا
-Pharosh	فرعوش	فرعوش	auto	media	1	1	1.00	رعوش
+Pharosh	فرعوش	فرعوش	auto	media	1	1	1.00	انتسب
 Pharpar	فرفر	فرفر	auto	media	3	1	1.00	فأطهر
-Phaseah	فاسيح	فاسيح	auto	media	1	2	1.00	اسيح
-Phenicia	فينيقية	فينيقية	auto	media	1	3	1.00	ينيقية
-Philemon	فليمون	فليمون	auto	media	2	2	0.50	يمون
+Phaseah	فاسيح	فاسيح	auto	media	1	2	1.00	عزا
+Phenicia	فينيقية	فينيقية	auto	media	1	3	1.00	وأنطاكية
+Philemon	فليمون	فليمون	auto	media	2	2	0.50	معنا
 Philetus	فيليتس	فيليتس	auto	media	2	1	1.00	وفيليتس
-Philippi	فيلبي	فيلبي	auto	media	3	8	0.62	يلبي
-Philistia	فلسطين	فلسطين	auto	media	3	251	0.04	سطين
-Philistine	فلشتيم	فلشتيم	auto	media	1	2	1.00	شتيم
-Philologus	فيلولوغس	فيلولوغس	auto	media	2	1	1.00	يلولوغس
-Phlegon	فليغون	فليغون	auto	media	2	1	1.00	يغون
-Phoenicia	فينيقية	فينيقية	auto	media	2	4	1.00	ينيقية
+Philippi	فيلبي	فيلبي	auto	media	3	8	0.62	في
+Philistia	فلسطين	فلسطين	auto	media	3	251	0.04	الفلسطينيين
+Philistine	فلشتيم	فلشتيم	auto	media	1	2	1.00	الذين
+Philologus	فيلولوغس	فيلولوغس	auto	media	2	1	1.00	جوليا
+Phlegon	فليغون	فليغون	auto	media	2	1	1.00	الذين
+Phoenicia	فينيقية	فينيقية	auto	media	2	4	1.00	وأنطاكية
 Phurah	فورة	فورة	auto	media	1	2	1.00	وفورة
 Phut	فوط	فوط	auto	media	1	3	1.00	وفوط
 Phygellus	فيجلس	فيجلس	auto	media	1	1	1.00	يجلس
 Phygelus	فيجلس	فيجلس	auto	media	1	1	1.00	يجلس
 Pi-beseth	فيبستة	فيبستة	auto	media	3	1	1.00	وفيبستة
-Pi-hahiroth	الحيروث	الحيروث	auto	media	3	4	1.00	ارتحلوا
+Pi-hahiroth	الحيروث	الحيروث	auto	media	3	4	1.00	فم الحيروث
 Pildash	فلداش	فلداش	auto	media	2	1	1.00	وفلداش
-Piltai	فلطاي	فلطاي	auto	media	2	1	1.00	طاي
-Pinon	ينون	ينون	auto	media	2	2	1.00	فينون
+Piltai	فلطاي	فلطاي	auto	media	2	1	1.00	لمنيامين
+Pinon	فينون	فينون	auto	media	2	2	1.00	إيلة
 Piram	فرآم	فرآم	auto	media	2	1	1.00	وفرآم
-Pishon	يشون	يشون	auto	media	2	1	1.00	فيشون
-Pison	يشون	يشون	auto	media	1	1	1.00	فيشون
-Pithom	يثوم	يثوم	auto	media	3	1	1.00	فيثوم
-Pithon	يثون	يثون	auto	media	2	2	1.00	فيثون
+Pishon	فيشون	فيشون	auto	media	2	1	1.00	حيث
+Pison	فيشون	فيشون	auto	media	1	1	1.00	حيث
+Pithom	فيثوم	فيثوم	auto	media	3	1	1.00	يذلوهم
+Pithon	فيثون	فيثون	auto	media	2	2	1.00	تحريع
 Plain	ثلاثين	ثلاثين	auto	media	1	2	0.50	والدائرة
-Pontus	نتس	نتس	auto	media	3	3	0.67	بنتس
+Pontus	بنتس	بنتس	auto	media	3	3	0.67	وبنتس
 Poratha	فوراثا	فوراثا	auto	media	2	1	1.00	أريداثا
-Potiphar	فوطيفار	فوطيفار	auto	media	2	2	1.00	وطيفار
-Ptolemais	تولمايس	تولمايس	auto	media	2	1	1.00	بتولمايس
-Publius	وبليوس	وبليوس	auto	media	2	2	1.00	بوبليوس
-Purim	وريم	وريم	auto	media	1	7	0.14	فوريم
-Putiel	وطيئيل	وطيئيل	auto	media	2	1	1.00	فوطيئيل
-Quartus	وكوارتس	وكوارتس	auto	media	2	1	1.00	وارتس
+Potiphar	فوطيفار	فوطيفار	auto	media	2	2	1.00	لفوطيفار
+Ptolemais	بتولمايس	بتولمايس	auto	media	2	1	1.00	فسلمنا
+Purim	فوريم	فوريم	auto	media	1	7	0.14	الفوريم
 Raamses	ورعمسيس	ورعمسيس	auto	media	2	1	1.00	رعمسيس
-Rab-saris	شراصر	شراصر	auto	media	2	2	1.00	سرسخيم
+Rab-saris	شراصر رئيس	شراصر رئيس	auto	media	2	2	1.00	نرجل شراصر رئيس
 Rabbah	الربة	الربة	auto	media	1	1	1.00	والربة
 Rachab	راحاب	راحاب	auto	media	1	1	1.00	راعوث
 Raham	يرقعام	يرقعام	auto	media	2	1	1.00	راقم
@@ -1850,14 +1893,17 @@ Rakem	راقم	راقم	auto	media	2	1	1.00	وراقم
 Rakkath	أكلوا	أكلوا	auto	media	1	2	0.50	رقة
 Ramah	الرامي	الرامي	auto	media	1	1	1.00	ما
 Ramah	رامة	رامة	auto	media	1	1	1.00	الضياع
-Ramathaim-zophim	رامتايم	رامتايم	auto	media	2	1	1.00	أفرايمي
+Ramath-lehi	رمت لحي	رمت لحي	auto	media	3	1	1.00	رمى اللحي
+Ramath-mizpeh	رامة المصفاة	رامة المصفاة	auto	media	2	1	1.00	محنايم إلى تخم
 Raphu	رافو	رافو	auto	media	2	1	1.00	فلطي
 Reaia	رآيا	رآيا	auto	media	1	1	1.00	وابنه
 Recah	ريكة	ريكة	auto	media	3	1	1.00	رافا
 Rechah	ريكة	ريكة	auto	media	1	1	1.00	رافا
+Regem-melech	رجم ملك	رجم ملك	auto	media	2	1	1.00	رجم ملك رجالهم
+Rehoboth-Ir	رحوبوت عير	رحوبوت عير	auto	media	1	1	1.00	رحوبوت عير كالح
 Rephael	رفائيل	رفائيل	auto	media	2	1	1.00	ورفائيل
 Rephah	رفح	رفح	auto	media	2	1	1.00	رشف
-Rephaim	الرفائيين	الرفائيين	auto	media	1	1	1.00	ورة
+Rephaim	الرفائيين	الرفائيين	auto	media	1	1	1.00	أرجوب
 Rephaim	رفائيين	رفائيين	auto	media	1	9	0.22	الرفائيين
 Resen	رسن	رسن	auto	media	3	1	1.00	ورسن
 Resheph	رشف	رشف	auto	media	2	1	1.00	ورشف
@@ -1866,9 +1912,10 @@ Rezeph	رصف	رصف	auto	media	3	2	1.00	ورصف
 Rezon	رزون	رزون	auto	media	2	1	1.00	عزر
 Rhesa	ريسا	ريسا	auto	media	2	1	1.00	شألتيئيل
 Rhoda	رودا	رودا	auto	media	2	1	1.00	جارية
-Rhodes	رودس	رودس	auto	media	3	1	1.00	وس
+Rhodes	رودس	رودس	auto	media	3	1	1.00	كوس
 Rizpah	رصفة	رصفة	auto	media	2	4	1.00	سرية
-Rogelim	روجليم	روجليم	auto	media	3	2	1.00	رزلاي
+Rogelim	روجليم	روجليم	auto	media	3	2	1.00	برزلاي
+Romamti-ezer	روممتي عزر	روممتي عزر	auto	media	2	2	0.50	لروممتي عزر
 Rosh	روش	روش	auto	media	1	2	0.50	وروش
 Rufus	روفس	روفس	auto	media	4	2	1.00	وروفس
 Rumah	رومة	رومة	auto	media	2	1	1.00	عشرة
@@ -1885,7 +1932,8 @@ Samaria	سامريا	سامريا	auto	media	1	124	0.02	سامرية
 Samaria	سامرية	سامرية	auto	media	2	115	0.01	السامرية
 Samgar	سمجر	سمجر	auto	media	1	1	1.00	وسمجر
 Samothrace	ساموثراكي	ساموثراكي	auto	media	3	1	1.00	ترواس
-Satan	الشيطان	الشيطان	auto	media	2	100	0.38	لشيطان
+Satan	الشيطان	الشيطان	auto	media	2	100	0.38	للشيطان
+Sceva	لسكاوا	لسكاوا	auto	media	2	1	1.00	علوا
 Scythians	سكيثي	سكيثي	auto	media	1	1	1.00	ختان
 Seba	سبا	سبا	auto	media	4	4	0.75	شبا
 Secundus	سكوندس	سكوندس	auto	media	2	1	1.00	وسكوندس
@@ -1896,7 +1944,7 @@ Semein	شمعي	شمعي	auto	media	1	1	1.00	متاثيا
 Senaah	سناءة	سناءة	auto	media	2	5	0.40	هسناءة
 Seneh	سنه	سنه	auto	media	3	1	1.00	سن
 Senuah	هسنوآة	هسنوآة	auto	media	1	1	1.00	ثانيا
-Seorim	سعوريم	سعوريم	auto	media	2	1	1.00	لسعوريم
+Seorim	لسعوريم	لسعوريم	auto	media	2	1	1.00	لحاريم
 Sepharad	صفارد	صفارد	auto	media	3	4	0.25	صرفة
 Sered	سارد	سارد	auto	media	2	2	1.00	لسارد
 Seth	شيث	شيث	auto	media	2	10	0.40	شيت
@@ -1916,7 +1964,7 @@ Sharuhen	شاروحين	شاروحين	auto	media	3	3	0.33	وشاروحين
 Shashak	شاشق	شاشق	auto	media	2	2	1.00	وشاشق
 Shaul	شأول	شأول	auto	media	4	8	0.62	شاول
 Shaul	وشاول	وشاول	auto	media	2	2	0.50	شاول
-Shaveh-kiriathaim	قريتايم	قريتايم	auto	media	2	1	1.00	قرنايم
+Shaveh-kiriathaim	شوى قريتايم	شوى قريتايم	auto	media	2	1	1.00	عشتاروث قرنايم
 Shavsha	شوشا	شوشا	auto	media	1	4	0.25	وشوشا
 Sheba	سبا	سبا	auto	media	4	25	0.48	شبا
 Sheba	سبعة	سبعة	auto	media	2	1	1.00	شبع
@@ -1942,8 +1990,9 @@ Sheshach	شيشك	شيشك	auto	media	1	2	1.00	دهشا
 Shethar-bozenai	شتربوزناي	شتربوزناي	auto	media	1	4	1.00	وشتربوزناي
 Shibboleth	سبولت	سبولت	auto	media	1	1	1.00	شبولت
 Shihor	شيحور	شيحور	auto	media	3	3	0.67	الشيحور
+Shihor-libnath	شيحور لبنة	شيحور لبنة	auto	media	3	1	1.00	كرمل غربا
 Shikkeron	شكرون	شكرون	auto	media	3	1	1.00	يبنئيل
-Shillem	شليم	شليم	auto	media	2	3	0.67	يحصيئيل
+Shillem	شليم	شليم	auto	media	2	3	0.33	يحصيئيل
 Shiloah	شيلوه	شيلوه	auto	media	2	1	1.00	برصين
 Shiloh	شيلون	شيلون	auto	media	1	1	1.00	يزول
 Shiloh	شيلوه	شيلوه	auto	media	3	38	0.74	شيلو
@@ -1953,6 +2002,7 @@ Shimeah	شماة	شماة	auto	media	2	2	0.50	أورشليم
 Shimeah	شمعى	شمعى	auto	media	1	7	0.57	شمعا
 Shimeath	شمعة	شمعة	auto	media	2	2	1.00	شمريت
 Shimhi	شمعي	شمعي	auto	media	1	1	1.00	شمرة
+Shimron-meron	شمرون مرأون	شمرون مرأون	auto	media	2	1	1.00	شمرون مرأون احد
 Shion	شيئون	شيئون	auto	media	3	1	1.00	وشيئون
 Shoa	شهراء	شهراء	auto	media	3	1	1.00	وشهراء
 Shobach	شوبك	شوبك	auto	media	2	4	1.00	سبعة
@@ -1967,11 +2017,12 @@ Shual	شوعال	شوعال	auto	media	4	3	0.67	الفرقة
 Shubael	شوبائيل	شوبائيل	auto	media	2	5	0.40	شبوئيل
 Shuhah	شوحة	شوحة	auto	media	1	1	1.00	أخو
 Shunem	شونم	شونم	auto	media	3	9	0.33	وشونم
-Shuni	شوني	شوني	auto	media	2	2	1.00	لشوني
-Shupham	شفوفام	شفوفام	auto	media	1	3	0.33	حوفام
-Shuppim	شفيم	شفيم	auto	media	4	3	1.00	وشفيم
+Shuni	شوني	شوني	auto	media	2	2	0.50	لشوني
+Shupham	لشفوفام	لشفوفام	auto	media	1	3	0.33	لحوفام
+Shuppim	شفيم	شفيم	auto	media	2	2	1.00	وشفيم
+Shuppim	لشفيم	لشفيم	auto	media	2	1	1.00	محرس
 Sidon	صيدون	صيدون	auto	media	6	49	0.45	صيداء
-Siloam	سلوام	سلوام	auto	media	2	5	0.80	صيرا
+Siloam	سلوام	سلوام	auto	media	2	5	0.80	بصيرا
 Simeon	سمعان	سمعان	auto	media	2	2	1.00	وقيام
 Simon	سمعان	سمعان	auto	media	7	19	1.00	يحمله
 Simon	وسمعان	وسمعان	auto	media	3	6	0.83	سمعان
@@ -1983,11 +2034,11 @@ Sisamai	سسماي	سسماي	auto	media	1	1	1.00	وسسماي
 Sodi	سودي	سودي	auto	media	2	1	1.00	جديئيل
 Sophereth	سوفرث	سوفرث	auto	media	2	2	0.50	هسوفرث
 Sosthenes	سوستانيس	سوستانيس	auto	media	2	2	1.00	وسوستانيس
-Spain	سأمضي	سأمضي	auto	media	3	2	0.50	اسبانيا
+Succoth-benoth	سكوث بنوث	سكوث بنوث	auto	media	1	1	1.00	سكوث بنوث أهل
 Sukkiim	سكيين	سكيين	auto	media	1	1	1.00	وسكيين
 Suph	سوف	سوف	auto	media	3	1	1.00	توفل
 Suphah	سوفة	سوفة	auto	media	3	1	1.00	اهب
-Sur	سور	سور	auto	media	3	1	1.00	لصد
+Sur	سور	سور	auto	media	3	1	1.00	للصد
 Susanna	سوسنة	سوسنة	auto	media	2	1	1.00	وسوسنة
 Susi	سوسي	سوسي	auto	media	2	1	1.00	جدي
 Syene	سينيم	سينيم	auto	media	3	3	0.33	أسوان
@@ -1996,13 +2047,13 @@ Syracuse	سراكوسا	سراكوسا	auto	media	3	1	1.00	فنزلنا
 Syria	سورية	سورية	auto	media	3	116	0.08	صغيرين
 Syria	صغيرا	صغيرا	auto	media	1	89	0.02	عزريا
 Syrtis	السيرتس	السيرتس	auto	media	3	1	1.00	حازمين
-Taanath-shiloh	تآنة	تآنة	auto	media	3	1	1.00	شيلوه
 Tabbaoth	طباعوت	طباعوت	auto	media	2	2	1.00	صيحا
 Tabbath	طباة	طباة	auto	media	3	1	1.00	شطة
 Tabeal	طبئيل	طبئيل	auto	media	2	1	1.00	نستفتحها
 Tabeel	طبئيل	طبئيل	auto	media	2	1	1.00	وطبئيل
 Taberah	تبعيرة	تبعيرة	auto	media	3	2	1.00	هتأوة
 Tahrea	تاريع	تاريع	auto	media	1	2	0.50	وتاريع
+Tahtim-hodshi	تحتيم إلى حدشي	تحتيم إلى حدشي	auto	media	1	1	1.00	أرض تحتيم
 Tamar	وتدمر	وتدمر	auto	media	2	1	1.00	تدمر
 Tammuz	تموز	تموز	auto	media	1	1	1.00	الشمال
 Tanhumeth	تنحومث	تنحومث	auto	media	2	2	1.00	النطوفاتي
@@ -2010,12 +2061,11 @@ Tarea	تاريع	تاريع	auto	media	1	2	0.50	وتاريع
 Tarsus	طرسوس	طرسوس	auto	media	3	5	0.60	طرسوسي
 Tartak	ترتاق	ترتاق	auto	media	1	1	1.00	وترتاق
 Tattenai	تتناي	تتناي	auto	media	1	4	1.00	شتربوزناي
-Tebeth	طيبيت	طيبيت	auto	media	1	1	1.00	يت
-Tehaphnehes	تحفنحيس	تحفنحيس	auto	media	1	1	1.00	تغشاها
+Tebeth	طيبيت	طيبيت	auto	media	1	1	1.00	بيت
+Tehaphnehes	تحفنحيس	تحفنحيس	auto	media	1	1	1.00	فتغشاها
 Tehinnah	تحنة	تحنة	auto	media	2	1	1.00	وتحنة
-Tel-abib	أبيب	أبيب	auto	media	3	1	1.00	تل
-Tel-harsha	حرشا	حرشا	auto	media	3	2	1.00	وتل
-Telah	تلح	تلح	auto	media	2	1	1.00	وتلح
+Tel-melah	تل ملح	تل ملح	auto	media	3	2	1.00	تل ملح تل
+Telah	تلح	تلح	auto	media	2	1	1.00	تاحن
 Telem	طالم	طالم	auto	media	5	3	0.67	وطالم
 Tema	تيماء	تيماء	auto	media	5	5	0.80	وتيماء
 Teresh	ترش	ترش	auto	media	2	2	1.00	وترش
@@ -2029,13 +2079,16 @@ Thummim	التميم	التميم	auto	media	1	5	0.80	والتميم
 Tiberias	طبرية	طبرية	auto	media	2	1	1.00	جاءت
 Tiberius	طيباريوس	طيباريوس	auto	media	2	12	0.08	إيطورية
 Tibhath	باطح	باطح	auto	media	1	2	0.50	طبحة
-Tibhath	طبحة	طبحة	auto	media	2	1	1.00	ثيرا
+Tibhath	طبحة	طبحة	auto	media	2	1	1.00	كثيرا
 Tibni	تبني	تبني	auto	media	2	2	1.00	جينة
 Tikvah	تقوة	تقوة	auto	media	4	3	0.67	توقهة
-Timaeus	تيماوس	تيماوس	auto	media	2	1	1.00	ارتيماوس
+Tilgath-pilneser	تلغث فلناسر	تلغث فلناسر	auto	media	1	6	0.33	تلغث فلناسر ملك
+Timaeus	تيماوس	تيماوس	auto	media	2	1	1.00	بارتيماوس
+Timnath-heres	تمنة حارس	تمنة حارس	auto	media	3	3	0.33	تمنة سارح
+Timnath-serah	تمنة سارح	تمنة سارح	auto	media	1	2	1.00	تمنة سارح التي
 Tiphsah	تفسح	تفسح	auto	media	3	1	1.00	متسلطا
 Tiphsah	تفصح	تفصح	auto	media	3	1	1.00	يفتحوا
-Tirhakah	ترهاقة	ترهاقة	auto	media	2	2	1.00	يحاربك
+Tirhakah	ترهاقة	ترهاقة	auto	media	2	2	1.00	ليحاربك
 Tob	طوب	طوب	auto	media	3	4	1.00	صوبا
 Tobadonijah	وأدونيا	وأدونيا	auto	media	2	1	1.00	أدونيا
 Tobijah	طوبيا	طوبيا	auto	media	4	3	1.00	وطوبيا
@@ -2045,22 +2098,24 @@ Toi	توعي	توعي	auto	media	2	4	0.50	توعو
 Tola	تولاع	تولاع	auto	media	2	4	1.00	لتولاع
 Tophel	توفل	توفل	auto	media	3	1	1.00	وتوفل
 Topheth	تفتة	تفتة	auto	media	2	17	0.06	توفة
+Tubal-cain	توبال قايين	توبال قايين	auto	media	2	1	1.00	أخت توبال قايين
 Tyre	تاجرة	تاجرة	auto	media	3	64	0.02	تجارها
 Ucal	أكال	أكال	auto	media	2	1	1.00	وأكال
-Ulai	أولاي	أولاي	auto	media	3	2	1.00	ولاية
+Ulai	أولاي	أولاي	auto	media	3	2	1.00	لاية
 Ulam	أولام	أولام	auto	media	4	4	1.00	راقم
 Ulla	علا	علا	auto	media	1	2	0.50	آرح
 Unni	وعني	وعني	auto	media	4	3	1.00	عني
-Uphaz	أوفاز	أوفاز	auto	media	3	2	1.00	ابس
+Uphaz	أوفاز	أوفاز	auto	media	3	2	1.00	لابس
 Urbanus	أوربانوس	أوربانوس	auto	media	1	1	1.00	إستاخيس
 Uriel	أوريئيل	أوريئيل	auto	media	6	5	0.80	وأوريئيل
-Urijah	أوريا	أوريا	auto	media	4	12	1.00	رخيا
-Urim	لأوريم	لأوريم	auto	media	1	8	0.25	للأوريم
-Uthai	عوتاي	عوتاي	auto	media	2	1	1.00	غواي
-Uthai	عوثاي	عوثاي	auto	media	2	1	1.00	نباني
-Uzai	أوزاي	أوزاي	auto	media	2	1	1.00	دايا
+Urijah	أوريا	أوريا	auto	media	4	12	1.00	برخيا
+Urim	للأوريم	للأوريم	auto	media	1	8	0.25	الأوريم
+Uthai	عوتاي	عوتاي	auto	media	2	1	1.00	بغواي
+Uthai	عوثاي	عوثاي	auto	media	2	1	1.00	بنباني
+Uzai	أوزاي	أوزاي	auto	media	2	1	1.00	الزاوية
 Uzal	أوزال	أوزال	auto	media	2	2	1.00	وأوزال
 Uzza	عزة	عزة	auto	media	1	1	1.00	وعزة
+Uzzen-sheerah	أزين شيرة	أزين شيرة	auto	media	3	1	1.00	العليا أزين شيرة
 Uzzia	عزيا	عزيا	auto	media	2	1	1.00	شاماع
 Uzziel	عزيئيل	عزيئيل	auto	media	12	19	0.84	وعزيئيل
 Vedan	ودان	ودان	auto	media	1	1	1.00	دان
@@ -2076,7 +2131,7 @@ Zalmonah	صلمونة	صلمونة	auto	media	3	2	1.00	ارتحلوا
 Zaphon	صافون	صافون	auto	media	3	4	0.25	وصافون
 Zarephath	صرفة	صرفة	auto	media	3	4	1.00	صفارد
 Zeboim	صبوعيم	صبوعيم	auto	media	3	1	1.00	وصبوعيم
-Zebudah	زبيدة	زبيدة	auto	media	1	1	1.00	داية
+Zebudah	زبيدة	زبيدة	auto	media	1	1	1.00	فداية
 Zecher	زاكر	زاكر	auto	media	1	2	0.50	وزاكر
 Zeeb	زبح	زبح	auto	media	2	3	0.33	ذئب
 Zelzah	صلصح	صلصح	auto	media	3	1	1.00	تصادف
@@ -2097,12 +2152,13 @@ Zior	صيعور	صيعور	auto	media	3	1	1.00	وصيعور
 Ziphion	صفيون	صفيون	auto	media	1	2	0.50	لصفون
 Ziphron	زفرون	زفرون	auto	media	3	1	1.00	حصر
 Zobah	صوبة	صوبة	auto	media	3	16	0.69	صوبا
+Zobah-Hamath	صوبة في حماة	صوبة في حماة	auto	media	1	1	1.00	صوبة
 Zobebah	هصوبيبة	هصوبيبة	auto	media	2	1	1.00	وهصوبيبة
 Zophar	صوفر	صوفر	auto	media	2	4	1.00	وصوفر
 Zorobabel	زربابل	زربابل	auto	media	1	1	1.00	شألتيئيل
 Zuar	يساكر	يساكر	auto	media	2	5	0.80	صوغر
 Zuph	صوف	صوف	auto	media	5	4	0.75	شاول
-Zur	صور	صور	auto	media	6	5	1.00	زبي
+Zur	صور	صور	auto	media	6	5	1.00	كزبي
 Zuriel	صوريئيل	صوريئيل	auto	media	2	1	1.00	أبيحايل
 Aaron	هارون	هارون	auto	alta	2	333	1.00	وهارون
 Abagtha	أبغثا	أبغثا	auto	alta	2	1	1.00	وأبغثا
@@ -2112,6 +2168,9 @@ Abdiel	عبدئيل	عبدئيل	auto	alta	2	1	1.00	آبائهم
 Abdon	عبدون	عبدون	auto	alta	9	8	0.88	وعبدون
 Abel	هابيل	هابيل	auto	alta	2	9	1.00	الله
 Abel-beth-maacah	آبل	آبل بيت معكة	revisado	alta	3	6	1.00	وآبل
+Abel-beth-maacah	آبل بيت معكة	آبل بيت معكة	auto	alta	3	6	0.67	آبل بيت
+Abel-mizraim	آبل مصرايم	آبل مصرايم	auto	alta	2	1	1.00	اسمه آبل مصرايم
+Abel-shittim	آبل شطيم	آبل شطيم	auto	alta	2	1	1.00	شطيم
 Abi	أبية	أبية	auto	alta	1	2	0.50	أبي
 Abiah	أبياه	أبياه	auto	alta	2	1	1.00	أبا
 Abiathar	أبياثار	أبياثار	auto	alta	2	29	0.97	وأبياثار
@@ -2166,14 +2225,13 @@ Adithaim	عديتايم	عديتايم	auto	alta	3	1	1.00	وعديتايم
 Adlai	عدلاي	عدلاي	auto	alta	2	1	1.00	السائم
 Admah	أدمة	أدمة	auto	alta	3	5	1.00	وأدمة
 Admatha	أدماثا	أدماثا	revisado	alta	2	1	1.00	وأدماثا
-Adna	عدنا	عدنا	auto	alta	4	2	1.00	نايا
+Adna	عدنا	عدنا	auto	alta	4	2	1.00	بنايا
 Adnah	عدناح	عدناح	auto	alta	2	1	1.00	انطلق
 Adnah	عدنة	عدنة	auto	alta	2	1	1.00	آبائهم
 Adonijah	أدونيا	أدونيا	auto	alta	6	26	1.00	وأدونيا
 Adoraim	أدورايم	أدورايم	auto	alta	3	1	1.00	وأدورايم
 Adrammelech	أدرملك	أدرملك	auto	alta	4	3	1.00	لأدرملك
 Adria	أدريا	أدريا	auto	alta	1	1	1.00	النوتية
-Adriel	عدرئيل	عدرئيل	auto	alta	2	2	0.50	عدريئيل
 Adullam	عدلام	عدلام	revisado	alta	3	11	0.73	وعدلام
 Adummim	أدميم	أدميم	auto	alta	3	2	1.00	ادي
 Agabus	أغابوس	أغابوس	auto	alta	2	2	1.00	اسمه
@@ -2202,7 +2260,7 @@ Ahisamach	أخيساماك	أخيساماك	auto	alta	2	3	1.00	أهوليآب
 Ahishahar	أخيشاحر	أخيشاحر	auto	alta	2	1	1.00	وأخيشاحر
 Ahishar	أخيشار	أخيشار	auto	alta	2	1	1.00	وأخيشار
 Ahithophel	أخيتوفل	أخيتوفل	auto	alta	2	17	1.00	لأخيتوفل
-Ahitub	أخيطوب	أخيطوب	auto	alta	6	13	1.00	رأيت
+Ahitub	أخيطوب	أخيطوب	auto	alta	6	13	1.00	وأخيطوب
 Ahlab	أحلب	أحلب	auto	alta	3	2	0.50	وأحلب
 Ahlai	أحلاي	أحلاي	auto	alta	4	2	1.00	أفايم
 Aholiab	أهوليآب	أهوليآب	auto	alta	1	5	1.00	وأهوليآب
@@ -2215,8 +2273,10 @@ Ai	عاي	عاي	auto	alta	7	37	0.84	وعاي
 Aiath	عياث	عياث	auto	alta	2	1	1.00	أمتعته
 Aija	عيا	عيا	auto	alta	2	1	1.00	وعيا
 Aijalon	أيلون	أيلون	auto	alta	4	10	1.00	وأيلون
+Akkub	عقوب	عقوب	auto	alta	2	5	1.00	أخيمان
 Alameth	علامث	علامث	revisado	alta	1	1	1.00	وعلامث
 Almodad	ألموداد	ألموداد	auto	alta	2	2	1.00	شالف
+Almon-diblathaim	علمون دبلاتايم	علمون دبلاتايم	auto	alta	2	2	1.00	دبلاتايم
 Alvah	علوة	علوة	auto	alta	2	2	1.00	أمراء
 Alvan	علوان	علوان	auto	alta	2	2	0.50	عليان
 Amad	عمعاد	عمعاد	auto	alta	3	1	1.00	وعمعاد
@@ -2224,7 +2284,7 @@ Amal	عامال	عامال	auto	alta	2	1	1.00	وعامال
 Amariah	أمريا	أمريا	auto	alta	18	14	1.00	وأمريا
 Amasa	عماسا	عماسا	auto	alta	4	12	1.00	لعماسا
 Amasai	عماساي	عماساي	auto	alta	8	5	1.00	ألقانة
-Amasiah	عمسيا	عمسيا	auto	alta	2	1	1.00	أس
+Amasiah	عمسيا	عمسيا	auto	alta	2	1	1.00	زكري
 Amaziah	أمصيا	أمصيا	auto	alta	8	39	1.00	وأمصيا
 Ami	آمي	آمي	auto	alta	1	2	0.50	آمون
 Amittai	أمتاي	أمتاي	auto	alta	2	2	1.00	جت
@@ -2232,7 +2292,7 @@ Ammiel	عميئيل	عميئيل	auto	alta	6	5	1.00	جملي
 Ammihud	عميهود	عميهود	auto	alta	10	10	1.00	وعميهود
 Amminadab	عميناداب	عميناداب	auto	alta	4	13	1.00	وعميناداب
 Ammishaddai	عميشداي	عميشداي	auto	alta	2	5	1.00	أخيعزر
-Ammizabad	عميزاباد	عميزاباد	auto	alta	2	1	1.00	نايا
+Ammizabad	عميزاباد	عميزاباد	auto	alta	2	1	1.00	جبار
 Amnon	أمنون	أمنون	auto	alta	4	22	1.00	بأمنون
 Amon	آمون	آمون	auto	alta	5	19	0.89	أمون
 Amos	عاموس	عاموس	auto	alta	2	7	1.00	لعاموس
@@ -2240,7 +2300,7 @@ Amoz	آموص	آموص	auto	alta	2	13	1.00	المسح
 Amplias	أمبلياس	أمبلياس	auto	alta	1	1	1.00	الرب
 Amram	عمرام	عمرام	auto	alta	4	14	0.86	لعمرام
 Amraphel	أمرافل	أمرافل	auto	alta	2	2	1.00	وأمرافل
-Amzi	أمصي	أمصي	auto	alta	4	2	1.00	اني
+Amzi	أمصي	أمصي	auto	alta	4	2	1.00	شامر
 Anab	عناب	عناب	auto	alta	3	2	1.00	وعناب
 Anah	عنى	عنى	auto	alta	4	10	1.00	وعنى
 Anaharath	أناحرة	أناحرة	auto	alta	3	1	1.00	وأناحرة
@@ -2250,7 +2310,7 @@ Anan	عانان	عانان	auto	alta	2	1	1.00	وعانان
 Anani	عناني	عناني	auto	alta	2	1	1.00	وعناني
 Ananias	حنانيا	حنانيا	auto	alta	6	10	1.00	يا
 Andrew	أندراوس	أندراوس	auto	alta	2	12	1.00	وأندراوس
-Aner	عانر	عانر	auto	alta	2	2	1.00	ان
+Aner	عانر	عانر	auto	alta	2	2	1.00	كان
 Aniam	أنيعام	أنيعام	auto	alta	2	1	1.00	وأنيعام
 Anim	عانيم	عانيم	auto	alta	3	1	1.00	وعانيم
 Antipas	أنتيباس	أنتيباس	auto	alta	2	1	1.00	إيماني
@@ -2265,10 +2325,11 @@ Arab	أراب	أراب	auto	alta	3	1	1.00	أشعان
 Arabah	العربة	العربة	auto	alta	4	27	0.67	والعربة
 Arad	عراد	عراد	auto	alta	6	5	1.00	أرض
 Arah	آرح	آرح	auto	alta	6	4	1.00	علا
+Aram-maacah	أرام معكة	أرام معكة	auto	alta	2	1	1.00	أرام النهرين
 Aran	أران	أران	auto	alta	2	2	1.00	وأران
 Ararat	أراراط	أراراط	auto	alta	3	4	1.00	شرآصر
 Ardon	أردون	أردون	auto	alta	2	1	1.00	وأردون
-Areli	أرئيلي	أرئيلي	auto	alta	2	2	1.00	لأرئيلي
+Areli	أرئيلي	أرئيلي	auto	alta	2	2	0.50	لأرئيلي
 Argob	أرجوب	أرجوب	auto	alta	5	5	1.00	يائير
 Aridai	أريداي	أريداي	auto	alta	2	1	1.00	وأريداي
 Aridatha	أريداثا	أريداثا	auto	alta	2	1	1.00	وأريداثا
@@ -2294,7 +2355,7 @@ Asaiah	عسايا	عسايا	auto	alta	9	8	1.00	وعسايا
 Asaph	آساف	آساف	auto	alta	8	40	0.70	المسجل
 Asenath	أسنات	أسنات	auto	alta	2	3	1.00	صفنات
 Ashan	عاشان	عاشان	auto	alta	3	4	1.00	وعاشان
-Ashbel	أشبيل	أشبيل	auto	alta	2	3	1.00	وأشبيل
+Ashbel	أشبيل	أشبيل	auto	alta	2	3	0.67	وأشبيل
 Ashdod	أشدود	أشدود	auto	alta	3	21	0.76	لأشدود
 Asher	أشير	أشير	auto	alta	2	46	0.93	وأشير
 Ashima	أشيما	أشيما	auto	alta	1	1	1.00	حماة
@@ -2306,136 +2367,167 @@ Asia	أسيا	أسيا	auto	alta	3	22	0.91	وأسيا
 Asnah	أسنة	أسنة	auto	alta	2	1	1.00	نو
 Aspatha	أسفاثا	أسفاثا	auto	alta	2	1	1.00	وأسفاثا
 Asriel	أسريئيل	أسريئيل	auto	alta	2	2	1.00	لأسريئيل
-Asshurim	أشوريم	أشوريم	auto	alta	2	1	1.00	أميم
+Asshurim	أشوريم	أشوريم	auto	alta	2	1	1.00	لأميم
 Assyria	أشور	أشور	auto	alta	3	150	0.89	حاصرها
 Asyncritus	أسينكريتس	أسينكريتس	auto	alta	2	1	1.00	هرماس
 Atad	أطاد	أطاد	auto	alta	3	2	1.00	أتوا
 Atarah	عطارة	عطارة	auto	alta	2	1	1.00	أخرى
+Ataroth-addar	عطاروت أدار	عطاروت أدار	auto	alta	3	2	0.50	شرقا عطاروت أدار
 Athach	عتاك	عتاك	auto	alta	3	1	1.00	عاشان
 Athaiah	عثايا	عثايا	auto	alta	2	1	1.00	شفطيا
 Athaliah	عثليا	عثليا	auto	alta	6	17	1.00	وعثليا
 Atharim	أتاريم	أتاريم	auto	alta	3	1	1.00	طريق
 Athlai	عثلاي	عثلاي	auto	alta	2	1	1.00	وعثلاي
 Attai	عتاي	عتاي	auto	alta	6	4	1.00	وعتاي
-Attalia	أتالية	أتالية	auto	alta	3	2	0.50	رجة
+Attalia	أتالية	أتالية	auto	alta	3	2	0.50	بالكلمة
 Avith	عويت	عويت	auto	alta	3	2	1.00	مات
 Avvim	العويم	عويم	revisado	alta	3	1	1.00	والعويم
 Azal	آصل	آصل	auto	alta	3	1	1.00	يصل
 Azaliah	أصليا	أصليا	auto	alta	2	2	1.00	شافان
-Azaniah	أزنيا	أزنيا	auto	alta	2	1	1.00	نوي
+Azaniah	أزنيا	أزنيا	auto	alta	2	1	1.00	بنوي
 Azariah	عزريا	عزريا	revisado	alta	38	47	0.66	وعزريا
 Azaz	عزاز	عزاز	auto	alta	2	1	1.00	شامع
 Aziza	وعزيزا	وعزيزا	auto	alta	2	1	1.00	عزيزا
 Azmaveth	عزموت	عزموت	auto	alta	10	9	1.00	وعزموت
+Aznoth-tabor	أزنوت تابور	أزنوت تابور	auto	alta	3	1	1.00	أزنوت تابور خرج
 Azriel	عزريئيل	عزريئيل	auto	alta	2	1	1.00	وعزريئيل
 Azrikam	عزريقام	عزريقام	auto	alta	8	6	1.00	وعزريقام
 Azzan	عزان	عزان	auto	alta	2	1	1.00	يساكر
-Baalah	بعلة	بعلة	auto	alta	2	3	1.00	بالاسم
-Baalis	بعليس	بعليس	auto	alta	2	1	1.00	عليس
+Baal-berith	بعل بريث	بعل بريث	auto	alta	1	3	0.67	بريث
+Baal-hanan	بعل حانان	بعل حانان	auto	alta	2	5	1.00	السهل بعل حانان
+Baal-shalishah	بعل شليشة	بعل شليشة	auto	alta	3	1	1.00	بعل شليشة أحضر
+Baal-tamar	بعل تامار	بعل تامار	auto	alta	3	1	1.00	بعل تامار ثار
+Baalah	بعلة	بعلة	auto	alta	5	4	1.00	وبعلة
+Baalis	بعليس	بعليس	auto	alta	2	1	1.00	يصدقهم
 Baana	بعنا	بعنا	auto	alta	5	3	1.00	عنا
-Baanah	بعنة	بعنة	auto	alta	4	4	0.75	عنة
-Baaseiah	بعسيا	بعسيا	auto	alta	2	1	1.00	عسيا
+Baanah	بعنة	بعنة	auto	alta	8	9	1.00	وبعنة
+Baara	بعرا	بعرا	auto	alta	2	1	1.00	وبعرا
+Baaseiah	بعسيا	بعسيا	auto	alta	2	1	1.00	ملكيا
 Baasha	بعشا	بعشا	revisado	alta	2	26	0.92	عشا
-Balaam	بلعام	بلعام	auto	alta	2	59	0.97	لعام
+Balaam	بلعام	بلعام	auto	alta	2	59	1.00	بالاق
 Baladan	بلادان	بلادان	revisado	alta	2	2	1.00	لادان
-Balah	وبالة	وبالة	auto	alta	3	1	1.00	الة
-Balak	بالاق	بالاق	auto	alta	2	41	0.98	الاق
-Bamoth	باموت	باموت	auto	alta	3	2	1.00	اموت
-Bani	باني	باني	auto	alta	10	8	0.75	اني
-Bani	نباني	نباني	auto	alta	2	1	1.00	بنباني
-Bani	وباني	وباني	auto	alta	9	9	0.78	اني
-Barabbas	باراباس	باراباس	auto	alta	2	10	1.00	اراباس
-Barak	باراق	باراق	auto	alta	2	14	0.79	اراق
-Bariah	وباريح	وباريح	auto	alta	2	1	1.00	اريح
-Barnabas	برنابا	برنابا	auto	alta	2	29	0.66	رنابا
-Bartimaeus	بارتيماوس	بارتيماوس	auto	alta	2	1	1.00	ارتيماوس
-Baruch	باروخ	باروخ	auto	alta	6	23	0.96	اروخ
-Barzillai	برزلاي	برزلاي	auto	alta	6	10	0.90	رزلاي
-Basemath	باسمة	باسمة	auto	alta	1	1	1.00	اسمة
-Bashan	باشان	باشان	auto	alta	3	54	0.91	اشان
-Basmath	باسمة	باسمة	auto	alta	1	1	1.00	اسمة
-Bavai	بواي	بواي	auto	alta	1	1	1.00	واي
-Bavvai	بواي	بواي	auto	alta	1	1	1.00	واي
-Bebai	باباي	باباي	auto	alta	4	4	1.00	اباي
-Bedad	بداد	بداد	auto	alta	2	2	0.50	داد
-Bedan	بدان	بدان	auto	alta	2	1	1.00	دان
-Bedan	وبدان	وبدان	auto	alta	1	1	1.00	دان
-Bela	بالع	بالع	auto	alta	5	13	1.00	قبلما
-Belshazzar	بيلشاصر	بيلشاصر	auto	alta	2	8	1.00	يلشاصر
-Ben-hadad	بنهدد	بنهدد	auto	alta	6	25	0.92	نهدد
-Ben-hail	بنحائل	بنحائل	auto	alta	1	1	1.00	نحائل
-Benaiah	بنايا	بنايا	auto	alta	8	7	0.86	نايا
-Benaiah	وبنايا	وبنايا	auto	alta	14	11	1.00	نايا
-Benhail	بنحائل	بنحائل	auto	alta	1	1	1.00	نحائل
+Balah	بالة	بالة	auto	alta	3	1	1.00	وبالة
+Balak	بالاق	بالاق	auto	alta	2	41	1.00	بلعام
+Bamoth	باموت	باموت	auto	alta	3	2	1.00	التي
+Bani	باني	باني	auto	alta	20	17	0.76	وباني
+Bani	بنباني	بنباني	auto	alta	2	1	1.00	بني
+Barabbas	باراباس	باراباس	auto	alta	2	10	1.00	فبيلاطس
+Barak	باراق	باراق	auto	alta	2	14	0.93	بباراق
+Bariah	باريح	باريح	auto	alta	2	1	1.00	وباريح
+Barnabas	برنابا	برنابا	auto	alta	2	29	0.97	وبرنابا
+Bartimaeus	بارتيماوس	بارتيماوس	auto	alta	2	1	1.00	تيماوس
+Baruch	باروخ	باروخ	auto	alta	8	24	1.00	زباي
+Barzillai	برزلاي	برزلاي	auto	alta	6	10	1.00	لبرزلاي
+Basemath	باسمة	باسمة	auto	alta	1	1	1.00	امرأة
+Bashan	باشان	باشان	auto	alta	3	54	0.98	وباشان
+Basmath	باسمة	باسمة	auto	alta	1	1	1.00	امرأة
+Bath-rabbim	بث ربيم	بث ربيم	auto	alta	3	1	1.00	باب بث ربيم
+Bavai	بواي	بواي	auto	alta	1	1	1.00	حيناداد
+Bavvai	بواي	بواي	auto	alta	1	1	1.00	حيناداد
+Bealiah	بعليا	بعليا	auto	alta	2	1	1.00	وبعليا
+Bebai	باباي	باباي	auto	alta	4	4	1.00	زباي
+Bebai	بيباي	بيباي	auto	alta	2	1	1.00	وبيباي
+Bedad	بداد	بداد	auto	alta	2	2	0.50	هداد
+Bedan	بدان	بدان	auto	alta	3	2	1.00	دان
+Beeshterah	بعشترة	بعشترة	auto	alta	2	1	1.00	وبعشترة
+Bela	بالع	بالع	auto	alta	7	14	1.00	قبلما
+Belshazzar	بيلشاصر	بيلشاصر	auto	alta	2	8	1.00	لبيلشاصر
+Ben-abinadab	ابن أبيناداب	ابن أبيناداب	auto	alta	1	1	1.00	أبيناداب في كل
+Ben-ammi	بن عمي	بن عمي	auto	alta	2	2	0.50	بن عمي هو
+Ben-hadad	بنهدد	بنهدد	auto	alta	6	25	0.96	بنهدد قال هكذا
+Ben-hail	بنحائل	بنحائل	auto	alta	1	1	1.00	بنحائل عوبديا
+Ben-hanan	بن حانان	بن حانان	auto	alta	2	1	1.00	رنة بن حانان
+Benaiah	بنايا	بنايا	auto	alta	22	18	1.00	وبنايا
+Benaiah	بناياهو	بناياهو	auto	alta	2	23	0.74	وبناياهو
+Benhail	بنحائل	بنحائل	auto	alta	1	1	1.00	نثنئيل
 Benjamin	بنيامين	بنيامين	revisado	alta	4	171	0.78	نيامين
-Beor	بعور	بعور	auto	alta	4	11	0.91	عور
+Beor	بعور	بعور	auto	alta	4	11	0.91	بالع
+Beracah	براخة	براخة	auto	alta	1	1	1.00	وبراخة
 Beracah	وبراخة	براخة	revisado	alta	1	1	1.00	راخة
-Berachah	وبراخة	وبراخة	auto	alta	1	1	1.00	راخة
-Beraiah	وبرايا	وبرايا	auto	alta	2	1	1.00	رايا
-Berechiah	برخيا	برخيا	auto	alta	6	8	0.88	رخيا
-Beriah	بريعة	بريعة	auto	alta	6	8	0.75	ريعة
-Beriah	وبريعة	وبريعة	auto	alta	2	2	1.00	ريعة
-Besai	بيساي	بيساي	auto	alta	2	2	1.00	يساي
-Beth-aven	آون	آون	auto	alta	4	7	1.00	بالقرن
+Berachah	براخة	براخة	auto	alta	1	1	1.00	وبراخة
+Beraiah	برايا	برايا	auto	alta	2	1	1.00	وبرايا
+Berechiah	برخيا	برخيا	auto	alta	12	11	1.00	وبرخيا
+Beriah	بريعة	بريعة	auto	alta	8	10	1.00	وبريعة
+Besai	بيساي	بيساي	auto	alta	2	2	1.00	عزا
+Beth-aven	بيت آون	بيت آون	auto	alta	4	7	1.00	آون
+Beth-barah	بيت بارة	بيت بارة	auto	alta	3	2	0.50	بارة
+Beth-car	بيت كار	بيت كار	auto	alta	3	1	1.00	تحت بيت كار
+Beth-diblathaim	بيت دبلتايم	بيت دبلتايم	auto	alta	2	1	1.00	دبلتايم
+Beth-haram	بيت هارام	بيت هارام	auto	alta	3	2	0.50	هارام
+Beth-haran	بيت هاران	بيت هاران	auto	alta	1	1	1.00	بيت هاران مدنا
+Beth-horon	بيت حورون	بيت حورون	auto	alta	4	12	1.00	عقبة بيت حورون
 Beth-horon	حورون	بيت حورون	revisado	alta	4	12	1.00	بيت
-Beth-shan	شان	شان	auto	alta	2	8	1.00	شارع
-Beth-shean	شان	شان	auto	alta	2	8	1.00	تعنك
+Beth-nimrah	بيت نمرة	بيت نمرة	auto	alta	3	3	0.67	نمرة
+Beth-rapha	بيت رافا	بيت رافا	auto	alta	2	1	1.00	لد بيت رافا
+Beth-shan	بيت شان	بيت شان	auto	alta	2	8	1.00	سور بيت شان
+Beth-shean	بيت شان	بيت شان	auto	alta	2	8	1.00	بيت شان قراها
 Bethany	عنيا	عنيا	auto	alta	3	12	0.92	بستة
 Bethsaida	صيدا	صيدا	auto	alta	4	7	1.00	صيداء
-Bezai	بيصاي	بيصاي	auto	alta	2	2	1.00	يصاي
+Bezai	بيصاي	بيصاي	auto	alta	4	3	1.00	أربعة
 Bezaleel	بصلئيل	بصلئيل	revisado	alta	1	8	0.88	صلئيل
-Bezalel	بصلئيل	بصلئيل	auto	alta	1	8	0.88	صلئيل
-Bichri	بكري	بكري	auto	alta	2	9	0.89	كري
-Bigtha	أبغثا	أبغثا	auto	alta	2	1	1.00	وبغثا
+Bezalel	بصلئيل	بصلئيل	auto	alta	2	9	1.00	وبصلئيل
+Bichri	بكري	بكري	auto	alta	2	9	0.89	خرج
+Bigtha	بغثا	بغثا	auto	alta	2	1	1.00	أبغثا
 Bigthan	بغثان	بغثان	auto	alta	1	2	0.50	بغثانا
 Bigthana	بغثانا	بغثانا	auto	alta	1	2	0.50	بغثان
-Bigvai	بغواي	بغواي	auto	alta	4	5	1.00	غواي
-Bigvai	وبغواي	وبغواي	auto	alta	2	1	1.00	غواي
-Bilhah	بلهة	بلهة	auto	alta	5	11	1.00	لهة
-Bilhan	بلهان	بلهان	auto	alta	4	3	1.00	لهان
-Bilshan	بلشان	بلشان	auto	alta	2	2	1.00	لشان
-Bimhal	وبمهال	وبمهال	auto	alta	2	1	1.00	مهال
-Birsha	وبرشاع	وبرشاع	auto	alta	2	1	1.00	رشاع
-Birzavith	برزاوث	برزاوث	auto	alta	1	1	1.00	رزاوث
-Bishlam	بشلام	بشلام	auto	alta	2	1	1.00	شلام
-Bithiah	بثية	بثية	auto	alta	2	1	1.00	ثية
-Bithynia	وبيثينية	وبيثينية	auto	alta	3	2	0.50	بثينية
-Biztha	وبزثا	وبزثا	auto	alta	2	1	1.00	زثا
-Blastus	بلاستس	بلاستس	auto	alta	2	1	1.00	لاستس
-Boaz	بوعز	بوعز	auto	alta	3	24	0.96	بأس
-Bochim	بوكيم	بوكيم	auto	alta	2	2	1.00	وكيم
+Bigvai	بغواي	بغواي	auto	alta	6	6	1.00	جاءوا
+Bildad	بلدد	بلدد	auto	alta	2	5	1.00	وبلدد
+Bilhah	بلهة	بلهة	auto	alta	5	11	1.00	تولاد
+Bilhan	بلهان	بلهان	auto	alta	4	3	1.00	ويعقان
+Bilshan	بلشان	بلشان	auto	alta	2	2	1.00	بعنة
+Bimhal	بمهال	بمهال	auto	alta	2	1	1.00	وبمهال
+Birsha	برشاع	برشاع	auto	alta	2	1	1.00	وبرشاع
+Birzavith	برزاوث	برزاوث	auto	alta	1	1	1.00	بريعة
+Bishlam	بشلام	بشلام	auto	alta	2	1	1.00	طبئيل
+Bithiah	بثية	بثية	auto	alta	2	1	1.00	يقوثيئيل
+Bithynia	بيثينية	بيثينية	auto	alta	3	2	0.50	وبيثينية
+Biziothiah	بزيوتية	بزيوتية	auto	alta	3	1	1.00	وبزيوتية
+Biztha	بزثا	بزثا	auto	alta	2	1	1.00	وبزثا
+Blastus	بلاستس	بلاستس	auto	alta	2	1	1.00	استعطفوا
+Boaz	بوعز	بوعز	auto	alta	3	24	1.00	بأس
+Bochim	بوكيم	بوكيم	auto	alta	2	2	1.00	بكم
 Bozrah	بصرة	بصرة	auto	alta	5	9	0.89	صرة
-Cabul	كابول	كابول	auto	alta	6	2	1.00	ابول
+Cabul	كابول	كابول	auto	alta	6	2	1.00	العامق
 Caiaphas	قيافا	قيافا	auto	alta	2	9	1.00	وقيافا
 Cain	قايين	قايين	auto	alta	2	16	1.00	لقايين
 Cainan	قينان	قينان	auto	alta	3	8	1.00	أرفكشاد
-Caleb	كالب	كالب	auto	alta	4	39	0.85	الب
-Canaan	كنعان	كنعان	auto	alta	5	171	0.51	نعان
-Carchemish	كركميش	كركميش	auto	alta	4	3	1.00	ركميش
-Carmi	وكرمي	وكرمي	auto	alta	2	4	0.75	رمي
-Carshena	كرشنا	كرشنا	auto	alta	2	1	1.00	رشنا
-Casiphia	كسفيا	كسفيا	auto	alta	3	1	1.00	سفيا
+Calah	كالح	كالح	auto	alta	3	2	1.00	وكالح
+Caleb	كالب	كالب	auto	alta	4	39	0.92	لكالب
+Canaan	كنعان	كنعان	auto	alta	5	171	0.54	وكنعان
+Caphthorim	كفتوريم	كفتوريم	auto	alta	1	2	1.00	وكفتوريم
+Caphtorim	كفتوريم	كفتوريم	auto	alta	1	3	0.67	وكفتوريم
+Carcas	كركس	كركس	auto	alta	1	1	1.00	وكركس
+Carchemish	كركميش	كركميش	auto	alta	4	3	1.00	خرج
+Carkas	كركس	كركس	auto	alta	1	1	1.00	وكركس
+Carmi	كرمي	كرمي	auto	alta	4	7	1.00	وكرمي
+Carshena	كرشنا	كرشنا	auto	alta	2	1	1.00	مرسنا
+Casiphia	كسفيا	كسفيا	auto	alta	3	1	1.00	المسمى
 Chebar	خابور	خابور	auto	alta	3	8	1.00	كالمنظر
-Chelal	وكلال	وكلال	auto	alta	2	1	1.00	لال
+Chedorlaomer	كدرلعومر	كدرلعومر	auto	alta	2	5	1.00	لكدرلعومر
+Chelal	كلال	كلال	auto	alta	2	1	1.00	وكلال
 Chemosh	كموش	كموش	auto	alta	2	8	1.00	لكموش
-Chenani	وكناني	وكناني	auto	alta	2	1	1.00	ناني
-Chephirah	كفيرة	كفيرة	auto	alta	3	4	0.50	فيرة
-Cheran	وكران	وكران	auto	alta	2	2	1.00	ران
-Cherith	كريث	كريث	auto	alta	3	2	1.00	ريث
+Chenaanah	كنعنة	كنعنة	auto	alta	4	5	1.00	يفنوا
+Chenani	كناني	كناني	auto	alta	2	1	1.00	وكناني
+Chephirah	كفيرة	كفيرة	auto	alta	3	4	0.50	الكفيرة
+Cheran	كران	كران	auto	alta	2	2	1.00	وكران
+Cherith	كريث	كريث	auto	alta	3	2	1.00	اختبئ
 Chesil	وكسيل	كسيل	revisado	alta	3	1	1.00	سيل
-Chezib	كزيب	كزيب	auto	alta	2	1	1.00	زيب
-Chileab	كيلآب	كيلآب	auto	alta	1	2	0.50	يلآب
+Chezib	كزيب	كزيب	auto	alta	2	1	1.00	شيلة
+Chileab	كيلآب	كيلآب	auto	alta	1	2	0.50	الكرملية
+Chilmad	كلمد	كلمد	auto	alta	3	1	1.00	وكلمد
 Chimham	كمهام	كمهام	revisado	alta	2	4	1.00	مهام
 Chislev	كسلو	كسلو	auto	alta	1	2	1.00	سلو
-Chitlish	وكتليش	وكتليش	auto	alta	3	1	1.00	تليش
+Chitlish	كتليش	كتليش	auto	alta	3	1	1.00	وكتليش
 Chronicles	أخبار	أخبار	auto	alta	1	38	1.00	إسرائيل
-Cilicia	يليكية	يليكية	auto	alta	3	8	0.88	كيليكية
-Claudia	وكلافدية	وكلافدية	auto	alta	2	1	1.00	لافدية
-Cnidus	كنيدس	كنيدس	auto	alta	3	1	1.00	نيدس
-Cornelius	كرنيليوس	كرنيليوس	auto	alta	2	10	1.00	رنيليوس
-Cozbi	كزبي	كزبي	auto	alta	2	2	1.00	زبي
-Cushan	كوشان	كوشان	auto	alta	3	1	1.00	وشان
-Cushi	كوشي	كوشي	auto	alta	5	7	1.00	وشي
+Chushan-rishathaim	كوشان رشعتايم	كوشان رشعتايم	auto	alta	1	2	1.00	كوشان رشعتايم ملك
+Cilicia	كيليكية	كيليكية	auto	alta	3	8	0.88	وكيليكية
+Claudia	كلافدية	كلافدية	auto	alta	2	1	1.00	وكلافدية
+Cnidus	كنيدس	كنيدس	auto	alta	3	1	1.00	تمكنا
+Cornelius	كرنيليوس	كرنيليوس	auto	alta	2	10	1.00	عسكريا
+Cozbi	كزبي	كزبي	auto	alta	2	2	1.00	سبب
+Cushan	كوشان	كوشان	auto	alta	3	1	1.00	خيام
+Cushan-rishathaim	كوشان رشعتايم	كوشان رشعتايم	auto	alta	1	2	1.00	كوشان رشعتايم ملك
+Cushi	كوشي	كوشي	auto	alta	5	7	1.00	شلميا
 Cyrus	كورش	كورش	auto	alta	2	19	1.00	لكورش
 Dagon	داجون	داجون	auto	alta	2	7	1.00	بداجون
 Dalmanutha	دلمانوثة	دلمانوثة	auto	alta	2	1	1.00	السفينة
@@ -2469,6 +2561,7 @@ Dishon	ديشون	ديشون	revisado	alta	4	6	0.83	ديشان
 Dodanim	دودانيم	دودانيم	auto	alta	2	2	1.00	ودودانيم
 Dothan	دوثان	دوثان	auto	alta	3	2	1.00	أين
 Ebed	عابد	عابد	auto	alta	4	6	1.00	ضدك
+Ebed-melech	عبد ملك	عبد ملك	auto	alta	2	6	1.00	سمع عبد ملك
 Ebiasaph	أبيأساف	أبيأساف	auto	alta	2	5	0.60	وأبيأساف
 Eden	عدن	عدن	auto	alta	7	17	1.00	كعدن
 Edrei	إذرعي	إذرعي	auto	alta	4	8	1.00	وإذرعي
@@ -2490,7 +2583,7 @@ Eliakim	ألياقيم	ألياقيم	auto	alta	8	12	1.00	يواخ
 Eliam	أليعام	أليعام	auto	alta	4	3	0.67	وسليمان
 Eliasaph	ألياساف	ألياساف	auto	alta	4	6	1.00	لجاد
 Eliashib	ألياشيب	ألياشيب	auto	alta	18	15	1.00	وألياشيب
-Eliathah	إيليآثة	إيليآثة	auto	alta	2	2	1.00	لإيليآثة
+Eliathah	إيليآثة	إيليآثة	auto	alta	2	2	0.50	لإيليآثة
 Elidad	أليداد	أليداد	revisado	alta	2	1	1.00	نيامين
 Eliel	إيليئيل	إيليئيل	auto	alta	14	8	1.00	وإيليئيل
 Eliezer	أليعزر	أليعزر	auto	alta	18	12	0.92	وأليعزر
@@ -2524,7 +2617,7 @@ Ephah	عيفة	عيفة	auto	alta	9	5	1.00	وعيفة
 Ephlal	أفلال	أفلال	auto	alta	2	1	1.00	وأفلال
 Ephraim	أفرايم	أفرايم	auto	alta	7	167	0.97	إفرايم
 Ephratah	أفراتة	أفراتة	auto	alta	1	4	0.75	أفرات
-Ephrathah	أفراتة	أفراتة	auto	alta	3	8	0.62	نتا
+Ephrathah	أفراتة	أفراتة	auto	alta	3	8	0.62	كراحيل
 Ephron	عفرون	عفرون	auto	alta	4	11	1.00	لعفرون
 Eshban	أشبان	أشبان	auto	alta	2	2	1.00	وأشبان
 Eshtaol	أشتأول	أشتأول	auto	alta	3	8	0.88	وأشتأول
@@ -2534,12 +2627,13 @@ Ethnan	أثنان	أثنان	auto	alta	2	1	1.00	وأثنان
 Ezbai	أزباي	أزباي	auto	alta	2	1	1.00	نعراي
 Ezer	إيصر	إيصر	auto	alta	2	5	1.00	وإيصر
 Ezion-geber	عصيون	عصيون جابر	revisado	alta	3	7	1.00	جابر
+Ezion-geber	عصيون جابر	عصيون جابر	auto	alta	3	7	1.00	عصيون
 Ezra	عزرا	عزرا	auto	alta	4	25	1.00	لعزرا
 Ezra	عزرة	عزرة	auto	alta	1	1	1.00	وشماي
 Ezrah	عزرة	عزرة	auto	alta	1	1	1.00	وشماي
 Ezri	عزري	عزري	auto	alta	2	1	1.00	لشغل
-Felix	فيلكس	فيلكس	auto	alta	2	8	1.00	يلكس
-Festus	فستوس	فستوس	auto	alta	1	13	1.00	ستوس
+Felix	فيلكس	فيلكس	auto	alta	2	8	1.00	العزيز
+Festus	فستوس	فستوس	auto	alta	1	13	1.00	لفستوس
 Gad	جاد	جاد	auto	alta	4	69	0.99	جادا
 Gaius	غايس	غايس	auto	alta	4	3	1.00	وغايس
 Gaius	غايوس	غايوس	auto	alta	4	2	1.00	المشهد
@@ -2556,9 +2650,9 @@ Gershom	جرشوم	جرشوم	auto	alta	5	7	1.00	غريبة
 Gezer	جازر	جازر	auto	alta	3	16	0.88	وجازر
 Gibbethon	جبثون	جبثون	auto	alta	3	5	1.00	وجبثون
 Gibeah	جبعة	جبعة	auto	alta	8	50	0.92	وجبعة
-Giddalti	جدلتي	جدلتي	auto	alta	2	2	1.00	لجدلتي
+Giddalti	جدلتي	جدلتي	auto	alta	2	2	0.50	لجدلتي
 Gideoni	جدعوني	جدعوني	revisado	alta	2	5	1.00	أبيدن
-Gihon	جيحون	جيحون	auto	alta	5	7	0.86	رحين
+Gihon	جيحون	جيحون	auto	alta	5	7	0.86	فرحين
 Gilead	جلعاد	جلعاد	auto	alta	10	100	0.91	وجلعاد
 Gilgal	الجلجال	الجلجال	auto	alta	8	42	0.90	والجلجال
 Gittaim	جتايم	جتايم	auto	alta	3	2	1.00	وجتايم
@@ -2574,7 +2668,7 @@ Habazziniah	حبصينيا	حبصينيا	auto	alta	1	1	1.00	يازنيا
 Hacaliah	حكليا	حكليا	auto	alta	1	2	1.00	نحميا
 Hachaliah	حكليا	حكليا	auto	alta	1	2	1.00	نحميا
 Hachilah	حخيلة	حخيلة	auto	alta	3	3	1.00	إلى
-Hadad	هداد	هداد	auto	alta	2	4	0.50	داد
+Hadad	هداد	هداد	auto	alta	2	4	0.50	بداد
 Hadadezer	عزر	عزر	auto	alta	1	18	1.00	هدر
 Hadar	حدار	حدار	auto	alta	1	2	0.50	وحدار
 Hadashah	حداشة	حداشة	auto	alta	3	1	1.00	وحداشة
@@ -2591,8 +2685,7 @@ Hammedatha	همداثا	همداثا	auto	alta	2	5	1.00	هامان
 Hamor	حمور	حمور	auto	alta	2	13	1.00	لحمور
 Hanan	حانان	حانان	auto	alta	18	12	0.92	وحانان
 Hanani	حناني	حناني	auto	alta	10	11	1.00	الرائي
-Hananiah	حننيا	حننيا	auto	alta	28	23	1.00	أرنان
-Hannah	حنة	حنة	auto	alta	2	11	1.00	ننة
+Hannah	حنة	حنة	auto	alta	2	11	1.00	أنها
 Hanoch	حنوك	حنوك	auto	alta	3	6	1.00	الحنوكيين
 Hanun	حانون	حانون	auto	alta	6	10	1.00	لحانون
 Hapharaim	حفارايم	حفارايم	auto	alta	2	1	1.00	وحفارايم
@@ -2624,20 +2717,21 @@ Hattil	حطيل	حطيل	auto	alta	2	2	1.00	آمي
 Hattush	حطوش	حطوش	auto	alta	8	5	1.00	وشافاط
 Havilah	الحويلة	حويلة	revisado	alta	3	1	1.00	الواحد
 Havilah	حويلة	حويلة	auto	alta	8	6	1.00	وحويلة
-Havvoth-jair	يائير	يائير	auto	alta	3	6	1.00	حووث
+Havvoth-jair	حووث يائير	حووث يائير	auto	alta	3	6	1.00	دعاهن حووث يائير
 Hazael	حزائيل	حزائيل	auto	alta	2	21	1.00	واسأل
 Hazaiah	حزايا	حزايا	revisado	alta	2	1	1.00	عدايا
+Hazar-addar	حصر أدار	حصر أدار	auto	alta	3	1	1.00	حصر أدار يعبر
 Hazor	حاصور	حاصور	auto	alta	15	18	0.94	وحاصور
 Hebron	حبرون	حبرون	auto	alta	7	77	0.86	بحبرون
 Helah	حلاة	حلاة	auto	alta	2	2	1.00	لأشحور
 Helbah	حلبة	حلبة	auto	alta	3	1	1.00	وحلبة
-Heldai	حلداي	حلداي	auto	alta	1	2	0.50	وليدعيا
+Heldai	حلداي	حلداي	auto	alta	1	2	0.50	ليدعيا
 Helon	حيلون	حيلون	auto	alta	2	5	1.00	زبولون
 Heman	هيمان	هيمان	auto	alta	6	15	0.93	وهيمان
 Hemdan	حمدان	حمدان	auto	alta	2	2	0.50	حمران
 Henadad	حيناداد	حيناداد	auto	alta	6	4	1.00	للمناظرة
 Hepher	حافر	حافر	auto	alta	9	9	1.00	تفوح
-Hephzi-bah	حفصيبة	حفصيبة	auto	alta	1	2	1.00	بعولة
+Hephzi-bah	حفصيبة	حفصيبة	auto	alta	1	2	1.00	أمه حفصيبة
 Hephzibah	حفصيبة	حفصيبة	auto	alta	1	1	1.00	خمسا
 Hermas	هرماس	هرماس	auto	alta	2	1	1.00	هرميس
 Herod	هيرودس	هيرودس	auto	alta	4	41	1.00	ظهر
@@ -2655,7 +2749,7 @@ Hodijah	هوديا	هوديا	auto	alta	3	5	1.00	وهوديا
 Hophni	حفني	حفني	auto	alta	2	5	1.00	فينحاس
 Horeb	حوريب	حوريب	auto	alta	1	16	1.00	شرب
 Hormah	حرمة	حرمة	revisado	alta	2	9	1.00	وحرمة
-Hosanna	أوصنا	أوصنا	auto	alta	1	5	1.00	انوا
+Hosanna	أوصنا	أوصنا	auto	alta	1	5	1.00	كانوا
 Hoshama	هوشاماع	هوشاماع	auto	alta	2	1	1.00	وهوشاماع
 Humtah	حمطة	حمطة	auto	alta	3	1	1.00	وحمطة
 Hur	حور	حور	auto	alta	8	16	1.00	وحور
@@ -2675,8 +2769,8 @@ Igal	يجآل	يجآل	auto	alta	5	3	1.00	ويجآل
 Igdaliah	يجدليا	يجدليا	auto	alta	2	1	1.00	الباب
 Iim	عييم	عييم	auto	alta	3	1	1.00	وعييم
 Ilai	عيلاي	عيلاي	auto	alta	1	2	0.50	الأخوخي
-Imla	يملة	يملة	auto	alta	1	4	1.00	ميخا
-Imlah	يملة	يملة	auto	alta	1	4	1.00	ميخا
+Imla	يملة	يملة	auto	alta	1	4	1.00	يقل
+Imlah	يملة	يملة	auto	alta	1	4	1.00	يقل
 Immer	إمير	إمير	revisado	alta	9	10	0.90	وإمير
 Imna	يمناع	يمناع	revisado	alta	2	1	1.00	ويمناع
 Imnah	يمنة	يمنة	auto	alta	4	4	1.00	إعطاء
@@ -2685,6 +2779,7 @@ Imri	إمري	إمري	auto	alta	4	2	1.00	عمري
 Iphdeiah	يفديا	يفديا	revisado	alta	1	1	1.00	ويفديا
 Iphedeiah	يفديا	يفديا	revisado	alta	1	1	1.00	ويفديا
 Iphtah	ويفتاح	ويفتاح	auto	alta	3	1	1.00	يفتاح
+Ir-shemesh	عير شمس	عير شمس	auto	alta	2	1	1.00	أشتأول عير شمس
 Ira	عيرا	عيرا	auto	alta	6	6	1.00	وعيرا
 Irad	عيراد	عيراد	auto	alta	2	1	1.00	وعيراد
 Iram	عيرام	عيرام	auto	alta	2	2	1.00	أمير
@@ -2693,9 +2788,10 @@ Irijah	يرئيا	يرئيا	auto	alta	2	2	1.00	إرميا
 Isaac	إسحاق	إسحاق	revisado	alta	2	123	1.00	أجسك
 Isaiah	إشعياء	إشعياء	auto	alta	2	54	0.74	إشعيا
 Iscah	يسكة	يسكة	auto	alta	2	1	1.00	ملكة
-Ish-bosheth	إيشبوشث	إيشبوشث	auto	alta	2	13	0.85	وإيشبوشث
+Ish-bosheth	إيشبوشث	إيشبوشث	auto	alta	2	13	0.85	إيشبوشث بن
 Ishbah	يشبح	يشبح	auto	alta	2	1	1.00	ويشبح
 Ishbak	يشباق	يشباق	revisado	alta	2	2	1.00	ويشباق
+Ishbi-benob	يشبي بنوب	يشبي بنوب	auto	alta	2	1	1.00	يشبي بنوب الذي
 Ishi	يشعي	يشعي	auto	alta	8	4	1.00	شيشان
 Ishma	يشما	يشما	auto	alta	2	1	1.00	ويشما
 Ishmael	إسماعيل	إسماعيل	auto	alta	10	52	0.83	وإسماعيل
@@ -2719,11 +2815,12 @@ Ithran	يثران	يثران	auto	alta	3	4	0.75	ويثران
 Ithream	يثرعام	يثرعام	auto	alta	2	2	1.00	أبيطال
 Ittai	إتاي	إتاي	auto	alta	4	8	1.00	لإتاي
 Ivvah	عوا	عوا	auto	alta	3	5	0.80	وعوا
+Iye-abarim	عيي عباريم	عيي عباريم	auto	alta	3	3	0.67	عباريم
 Iyim	عييم	عييم	auto	alta	2	1	1.00	ثم
 Izhar	يصهار	يصهار	auto	alta	2	14	0.64	ويصهار
 Izliah	يزلياه	يزلياه	auto	alta	1	1	1.00	ويزلياه
 Izrahiah	يزرحيا	يزرحيا	auto	alta	2	1	1.00	يشيا
-Izri	يصري	يصري	auto	alta	1	2	0.50	ليصري
+Izri	ليصري	ليصري	auto	alta	1	2	0.50	صري
 Izziah	يزيا	يزيا	auto	alta	1	1	1.00	ويزيا
 Jaala	يعلا	يعلا	auto	alta	1	2	0.50	يعلة
 Jaalah	يعلا	يعلا	auto	alta	1	2	0.50	يعلة
@@ -2735,14 +2832,14 @@ Jaazaniah	يازنيا	يازنيا	auto	alta	6	3	1.00	حبصينيا
 Jaaziah	يعزيا	يعزيا	auto	alta	2	2	1.00	ليعزيا
 Jabal	يابال	يابال	auto	alta	2	1	1.00	أبا
 Jabesh	يابيش	يابيش	revisado	alta	4	21	1.00	جادي
-Jabesh-gilead	يابيش	يابيش	auto	alta	2	20	0.90	جلعاد
+Jabesh-gilead	يابيش جلعاد	يابيش جلعاد	auto	alta	2	20	0.60	يابيش جلعاد هم
 Jabin	يابين	يابين	auto	alta	4	7	1.00	يوباب
 Jacan	يعكان	يعكان	auto	alta	1	1	1.00	ويعكان
 Jachan	يعكان	يعكان	auto	alta	1	1	1.00	ويعكان
 Jachin	ياكين	ياكين	revisado	alta	7	9	0.89	يامين
 Jada	ياداع	ياداع	auto	alta	2	2	1.00	وياداع
 Jadon	يادون	يادون	auto	alta	2	1	1.00	ويادون
-Jael	ياعيل	ياعيل	auto	alta	2	6	1.00	اللحاف
+Jael	ياعيل	ياعيل	auto	alta	2	6	1.00	طالبه
 Jahath	يحث	يحث	auto	alta	8	5	1.00	ويحث
 Jahaz	ياهص	ياهص	auto	alta	3	9	0.56	يهصة
 Jahaziah	يحزيا	يحزيا	auto	alta	1	1	1.00	ويحزيا
@@ -2756,12 +2853,12 @@ Jahzah	يهصة	يهصة	auto	alta	1	2	1.00	ويهصة
 Jahzeel	ياحصئيل	ياحصئيل	auto	alta	2	3	0.67	لياحصئيل
 Jair	يائير	يائير	auto	alta	8	9	0.89	الجلعادي
 Jairus	يايرس	يايرس	auto	alta	2	2	1.00	جاء
-Jakim	ياقيم	ياقيم	auto	alta	4	2	1.00	وياقيم
+Jakim	ياقيم	ياقيم	auto	alta	2	1	1.00	وياقيم
 Jalam	يعلام	يعلام	auto	alta	1	4	1.00	ويعلام
 Jalon	يالون	يالون	auto	alta	2	1	1.00	ويالون
 James	ويوحنا	ويوحنا	auto	alta	2	19	0.95	جالس
 Jamin	ويمين	ويمين	auto	alta	2	1	1.00	يمين
-Jamin	يامين	يامين	auto	alta	4	5	1.00	ويامين
+Jamin	يامين	يامين	auto	alta	4	5	0.80	ويامين
 Janai	يعناي	يعناي	auto	alta	1	1	1.00	ويعناي
 Japheth	يافث	يافث	auto	alta	2	11	1.00	ويافث
 Japhia	يافيع	يافيع	auto	alta	7	5	1.00	ويافيع
@@ -2831,7 +2928,7 @@ Johanan	يوحانان	يوحانان	auto	alta	15	25	0.92	ويوحانان
 John	يوحنا	يوحنا	auto	alta	4	125	1.00	ويوحنا
 John	يونا	يونا	auto	alta	1	5	1.00	يعلن
 Joiada	يوياداع	يوياداع	auto	alta	3	5	1.00	ويوياداع
-Joiarib	يوياريب	يوياريب	auto	alta	6	6	0.83	ويهوياريب
+Joiarib	يوياريب	يوياريب	auto	alta	6	6	0.83	يهوياريب
 Joktan	يقطان	يقطان	auto	alta	2	6	1.00	ويقطان
 Jonadab	يوناداب	يوناداب	auto	alta	4	16	0.69	يهوناداب
 Jonah	يونان	يونان	auto	alta	2	24	1.00	نينوى
@@ -2840,7 +2937,7 @@ Joppa	يافا	يافا	auto	alta	3	14	1.00	ومياه
 Jorai	يوراي	يوراي	auto	alta	2	1	1.00	ويوراي
 Joram	يهورام	يهورام	auto	alta	2	19	0.79	يورام
 Jorim	يوريم	يوريم	revisado	alta	2	1	1.00	يوسي
-Joseph	يوسف	يوسف	auto	alta	20	229	1.00	ليوسف
+Joseph	يوسف	يوسف	auto	alta	20	229	0.99	ليوسف
 Joses	يوسي	يوسي	auto	alta	3	5	1.00	ويوسي
 Joshaphat	يوشافاط	يوشافاط	auto	alta	3	2	1.00	حانان
 Joshua	يشوع	يشوع	auto	alta	4	191	0.99	تجسسا
@@ -2854,45 +2951,47 @@ Jubal	يوبال	يوبال	auto	alta	2	1	1.00	بالعود
 Judith	يهوديت	يهوديت	auto	alta	1	1	1.00	بيري
 Julia	جوليا	جوليا	auto	alta	2	1	1.00	وجوليا
 Justus	يسطس	يسطس	auto	alta	1	1	1.00	ويسوع
-Kadesh	قادش	قادش	auto	alta	2	26	1.00	ارد
-Kadesh-barnea	قادش	قادش	auto	alta	2	24	1.00	برنيع
+Kadesh	قادش	قادش	auto	alta	2	26	1.00	مخاصمة
 Kadmiel	قدميئيل	قدميئيل	auto	alta	2	8	1.00	وقدميئيل
 Kareah	قاريح	قاريح	auto	alta	2	14	1.00	يوحانان
 Kedar	قيدار	قيدار	auto	alta	4	11	1.00	وقيدار
 Keilah	قعيلة	قعيلة	auto	alta	3	16	1.00	وقعيلة
-Kenan	قينان	قينان	auto	alta	1	7	1.00	كانت
-Kibroth-hattaavah	هتأوة	هتأوة	auto	alta	3	5	1.00	قبروت
-Kir	قير	قير	auto	alta	5	11	0.91	كبني
+Kenan	قينان	قينان	auto	alta	1	7	1.00	فكانت
+Kibroth-hattaavah	قبروت هتأوة	قبروت هتأوة	auto	alta	3	5	1.00	هتأوة
+Kiriath-arba	قرية أربع	قرية أربع	auto	alta	1	7	1.00	قرية أربع التي
 Kish	قيس	قيس	auto	alta	8	18	1.00	وقيس
 Kishon	قيشون	قيشون	auto	alta	3	5	1.00	جيش
-Laadan	ولعدان	ولعدان	auto	alta	1	1	1.00	عدان
-Laban	لابان	لابان	auto	alta	2	46	1.00	ابان
-Laban	ولابان	ولابان	auto	alta	3	1	1.00	ابان
-Lachish	لخيش	لخيش	auto	alta	3	22	0.77	لاخيش
+Kittim	كتيم	كتيم	auto	alta	4	4	1.00	وكتيم
+Laadah	لعدة	لعدة	auto	alta	2	1	1.00	ولعدة
+Laadan	لعدان	لعدان	auto	alta	2	10	0.50	ولعدان
+Laban	لابان	لابان	auto	alta	5	47	1.00	ولابان
+Lachish	لخيش	لخيش	auto	alta	3	22	0.91	لاخيش
 Ladan	ولعدان	ولعدان	revisado	alta	1	1	1.00	عدان
-Lahad	ولاهد	ولاهد	auto	alta	2	1	1.00	اهد
-Lahmam	ولحمام	ولحمام	auto	alta	3	1	1.00	حمام
-Laish	لايش	لايش	auto	alta	3	6	1.00	ايش
-Laishah	ليشة	ليشة	auto	alta	3	1	1.00	يشة
-Lasha	لاشع	لاشع	auto	alta	3	2	0.50	اشع
-Lazarus	لعازر	لعازر	auto	alta	4	15	0.87	عازر
-Leah	ليئة	ليئة	auto	alta	2	32	0.91	لليئة
-Lebanah	لبانة	لبانة	auto	alta	2	2	1.00	بانة
+Lahad	لاهد	لاهد	auto	alta	2	1	1.00	ولاهد
+Lahmam	لحمام	لحمام	auto	alta	3	1	1.00	ولحمام
+Laish	لايش	لايش	auto	alta	3	6	1.00	جليم
+Laishah	ليشة	ليشة	auto	alta	3	1	1.00	اصهلي
+Lasha	لاشع	لاشع	auto	alta	3	2	0.50	غزة
+Lazarus	لعازر	لعازر	auto	alta	4	15	1.00	عازر
+Leah	ليئة	ليئة	auto	alta	2	32	1.00	لليئة
+Lebanah	لبانة	لبانة	auto	alta	2	2	1.00	حجابة
 Lebanon	لبنان	لبنان	revisado	alta	4	62	0.89	بنان
-Lehabim	ولهابيم	ولهابيم	auto	alta	2	2	1.00	هابيم
-Leviathan	لوياثان	لوياثان	auto	alta	1	5	0.80	وياثان
-Libnah	لبنة	لبنة	auto	alta	6	18	0.83	بنة
-Linus	ولينس	ولينس	auto	alta	2	1	1.00	ينس
-Lotan	لوطان	لوطان	auto	alta	2	5	1.00	وطان
-Ludim	لوديم	لوديم	auto	alta	2	2	1.00	وديم
-Luz	لوز	لوز	auto	alta	5	7	1.00	وز
-Lycaonia	ليكأونية	ليكأونية	auto	alta	3	2	1.00	يكأونية
+Lebo-hamath	مدخل حماة	مدخل حماة	auto	alta	2	12	0.92	بن أمتاي
+Lehabim	لهابيم	لهابيم	auto	alta	2	2	1.00	ولهابيم
+Leviathan	لوياثان	لوياثان	auto	alta	1	5	0.80	المتحوية
+Libnah	لبنة	لبنة	auto	alta	6	18	0.94	بلبنة
+Linus	لينس	لينس	auto	alta	2	1	1.00	ولينس
+Lotan	لوطان	لوطان	auto	alta	2	5	1.00	تمناع
+Ludim	لوديم	لوديم	auto	alta	2	2	1.00	لهابيم
+Luz	لوز	لوز	auto	alta	5	7	1.00	اسمها
+Lycaonia	ليكأونية	ليكأونية	auto	alta	3	2	1.00	مدينتي
 Lycia	ليكية	ليكية	revisado	alta	3	1	1.00	يكية
-Lydda	لدة	لدة	auto	alta	1	3	1.00	دة
-Lydia	ليدية	ليدية	auto	alta	2	4	0.50	يدية
+Lydda	لدة	لدة	auto	alta	1	3	1.00	يجتاز
+Lydia	ليدية	ليدية	auto	alta	2	4	0.50	بياعة
+Lysanias	ليسانيوس	ليسانيوس	auto	alta	2	1	1.00	وليسانيوس
 Lysanias	وليسانيوس	ليسانيوس	revisado	alta	2	1	1.00	يسانيوس
-Lysias	ليسياس	ليسياس	auto	alta	1	3	1.00	يسياس
-Lystra	لسترة	لسترة	auto	alta	3	6	0.67	سترة
+Lysias	ليسياس	ليسياس	auto	alta	1	3	1.00	العزيز
+Lystra	لسترة	لسترة	auto	alta	3	6	1.00	سترة
 Maacah	معكة	معكة	auto	alta	12	30	0.70	ومعكة
 Maachah	معكة	معكة	auto	alta	8	18	0.89	ومعكة
 Maadai	معداي	معداي	auto	alta	2	1	1.00	أوئيل
@@ -2925,15 +3024,15 @@ Mahath	محث	محث	auto	alta	5	4	0.75	زمة
 Mahli	محلي	محلي	auto	alta	4	13	0.85	مراري
 Mahseiah	محسيا	محسيا	auto	alta	1	2	1.00	الشراء
 Makkedah	مقيدة	مقيدة	auto	alta	3	8	1.00	ومقيدة
-Malachi	ملاخي	ملاخي	auto	alta	2	1	1.00	لمة
+Malachi	ملاخي	ملاخي	auto	alta	2	1	1.00	كلمة
 Malcam	ملكام	ملكام	auto	alta	1	1	1.00	وملكام
 Malcham	ملكام	ملكام	auto	alta	1	2	0.50	وملكام
 Malchi-shua	ملكيشوع	ملكيشوع	auto	alta	2	5	1.00	وملكيشوع
 Malchiah	ملكيا	ملكيا	auto	alta	8	9	1.00	وملكيا
-Malchiel	ملكيئيل	ملكيئيل	auto	alta	2	3	1.00	وملكيئيل
+Malchiel	ملكيئيل	ملكيئيل	auto	alta	2	3	0.67	وملكيئيل
 Malchijah	ملكيا	ملكيا	auto	alta	18	12	1.00	وملكيا
 Malchiram	ملكيرام	ملكيرام	auto	alta	2	1	1.00	وملكيرام
-Malchus	ملخس	ملخس	auto	alta	2	1	1.00	استله
+Malchus	ملخس	ملخس	auto	alta	2	1	1.00	فاستله
 Malluch	ملوخ	ملوخ	auto	alta	10	7	0.86	وملوخ
 Malta	مليطة	مالطة	revisado	alta	2	1	1.00	الجزيرة
 Mamre	ممرا	ممرا	auto	alta	5	10	1.00	مغارة
@@ -2952,7 +3051,7 @@ Massah	مسة	مسة	revisado	alta	3	5	1.00	ومسة
 Matred	مطرد	مطرد	auto	alta	2	2	1.00	مات
 Matri	مطري	مطري	auto	alta	2	1	1.00	عشائره
 Mattan	متان	متان	auto	alta	4	3	1.00	تماثيله
-Mattanah	متانة	متانة	auto	alta	3	2	1.00	اموت
+Mattanah	متانة	متانة	auto	alta	3	2	1.00	من
 Mattaniah	متنيا	متنيا	auto	alta	20	15	1.00	ومتنيا
 Mattatha	متاثا	متاثا	auto	alta	2	1	1.00	مليا
 Mattathah	متاثا	متاثا	revisado	alta	1	1	1.00	ومتاثا
@@ -2979,11 +3078,14 @@ Merari	مراري	مراري	auto	alta	2	38	1.00	ومراري
 Merathaim	مراثايم	مراثايم	auto	alta	2	1	1.00	راءهم
 Meremoth	مريموث	مريموث	auto	alta	4	7	0.86	ومريموث
 Meribah	مريبة	مريبة	revisado	alta	6	12	0.83	ومريبة
+Meribah-kadesh	مريبة قادش	مريبة قادش	auto	alta	1	3	0.67	مياه مريبة قادش
+Merodach-baladan	مرودخ بلادان	مرودخ بلادان	auto	alta	2	2	0.50	مرودخ بلادان بن
 Meshech	ماشك	ماشك	auto	alta	5	9	0.89	وماشك
 Meshelemiah	مشلميا	مشلميا	auto	alta	2	5	0.80	لمشلميا
 Meshullam	مشلام	مشلام	auto	alta	40	24	0.96	ومشلام
 Messiah	مسيا	مسيا	auto	alta	1	2	1.00	المسيح
 Methuselah	متوشالح	متوشالح	auto	alta	2	7	1.00	وتسعا
+Miamin	ميامين	ميامين	auto	alta	1	1	1.00	وميامين
 Mibhar	مبحار	مبحار	auto	alta	2	1	1.00	هجري
 Mibsam	مبسام	مبسام	auto	alta	4	3	1.00	ومبسام
 Mibzar	مبصار	مبصار	auto	alta	2	2	1.00	أمير
@@ -2998,10 +3100,11 @@ Michri	مكري	مكري	auto	alta	2	1	1.00	يبنيا
 Middin	مدين	مدين	revisado	alta	3	1	1.00	ومدين
 Midian	مديان	مديان	revisado	alta	5	63	0.59	بمديان
 Migdol	مجدل	مجدل	revisado	alta	5	6	1.00	إلى
+Mijamin	لميامين	لميامين	auto	alta	2	1	1.00	لملكيا
 Mijamin	ميامين	ميامين	revisado	alta	4	5	0.80	لميامين
 Milcah	ملكة	ملكة	auto	alta	4	10	1.00	يسكة
 Miniamin	منيامين	منيامين	auto	alta	4	2	1.00	ومنيامين
-Miniamin	ميامين	ميامين	auto	alta	1	3	0.67	وميامين
+Miniamin	ميامين	ميامين	auto	alta	1	3	0.67	لمنيامين
 Minnith	منيت	منيت	auto	alta	3	2	1.00	مجيئك
 Mirma	مرمة	مرمة	auto	alta	1	1	1.00	ومرمة
 Mirmah	مرمة	مرمة	auto	alta	1	1	1.00	ومرمة
@@ -3009,7 +3112,8 @@ Mishal	مشآل	مشآل	auto	alta	3	3	1.00	ومشآل
 Misham	مشعام	مشعام	auto	alta	2	1	1.00	ومشعام
 Mishma	مشماع	مشماع	auto	alta	4	4	1.00	ومشماع
 Mishmannah	مشمنة	مشمنة	auto	alta	2	1	1.00	ومشمنة
-Mithredath	مثرداث	مثرداث	auto	alta	4	2	1.00	وعدها
+Misrephoth-maim	مسرفوت مايم	مسرفوت مايم	auto	alta	3	2	1.00	مسرفوت مايم جميع
+Mithredath	مثرداث	مثرداث	auto	alta	4	2	1.00	عدها
 Mizraim	مصرايم	مصرايم	auto	alta	1	4	1.00	ومصرايم
 Mizzah	مزة	مزة	auto	alta	2	3	1.00	ومزة
 Mnason	مناسون	مناسون	auto	alta	2	1	1.00	معنا
@@ -3018,8 +3122,8 @@ Molid	موليد	موليد	auto	alta	2	1	1.00	وموليد
 Mordecai	مردخاي	مردخاي	auto	alta	4	52	1.00	رعلايا
 Moses	موسى	موسى	auto	alta	2	785	0.99	مسحها
 Moza	موصا	موصا	auto	alta	4	5	1.00	وموصا
-Myra	ميرا	ميرا	auto	alta	3	1	1.00	مفيلية
-Mysia	ميسيا	ميسيا	auto	alta	3	2	1.00	ثينية
+Myra	ميرا	ميرا	auto	alta	3	1	1.00	بمفيلية
+Mysia	ميسيا	ميسيا	auto	alta	3	2	1.00	بثينية
 Naam	ناعم	ناعم	revisado	alta	2	1	1.00	وناعم
 Naaman	نعمان	نعمان	auto	alta	7	16	0.94	ونعمان
 Naarah	نعرة	نعرة	auto	alta	2	2	1.00	ونعرة
@@ -3053,7 +3157,7 @@ Nebajoth	نبايوت	نبايوت	auto	alta	1	5	1.00	نسائه
 Neballat	نبلاط	نبلاط	auto	alta	3	1	1.00	ونبلاط
 Nebat	نباط	نباط	revisado	alta	2	25	0.96	ناباط
 Nebo	نبو	نبو	auto	alta	9	11	1.00	زبينا
-Nebuzar-adan	نبوزرادان	نبوزرادان	auto	alta	1	15	1.00	نبوشزبان
+Nebuzar-adan	نبوزرادان	نبوزرادان	auto	alta	1	15	1.00	نبوزرادان رئيس
 Nebuzaradan	نبوزرادان	نبوزرادان	revisado	alta	1	15	1.00	نبوشزبان
 Nedabiah	ندبيا	ندبيا	auto	alta	2	1	1.00	وندبيا
 Nehemiah	نحميا	نحميا	auto	alta	6	8	1.00	رعميا
@@ -3074,7 +3178,6 @@ Nodab	نوداب	نوداب	auto	alta	1	1	1.00	ونوداب
 Nun	نون	نون	auto	alta	2	30	1.00	ونون
 Nympha	نمفاس	نمفاس	auto	alta	1	1	1.00	الكنيسة
 Obadiah	عوبديا	عوبديا	auto	alta	24	20	0.95	وعوبديا
-Obed-edom	عوبيد	عوبيد	auto	alta	1	16	0.94	أدوم
 Ochran	عكرن	عكرن	auto	alta	1	5	1.00	خراف
 Ocran	عكرن	عكرن	auto	alta	1	5	1.00	خراف
 Oholiab	أهوليآب	أهوليآب	auto	alta	1	5	1.00	وأهوليآب
@@ -3088,41 +3191,42 @@ Ophrah	عفرة	عفرة	auto	alta	8	10	0.90	وعفرة
 Ornan	أرنان	أرنان	auto	alta	2	17	0.59	لأرنان
 Othni	عثني	عثني	auto	alta	2	1	1.00	رفائيل
 Othniel	عثنيئيل	عثنيئيل	auto	alta	2	6	0.83	عثنئيل
-Pagiel	جعيئيل	جعيئيل	auto	alta	2	5	1.00	فجعيئيل
-Pai	اعي	اعي	auto	alta	1	1	1.00	فاعي
+Paddan-aram	فدان أرام	فدان أرام	auto	alta	2	11	0.91	فدان أرام ليجيء
+Pagiel	فجعيئيل	فجعيئيل	auto	alta	2	5	1.00	أشير
+Pahath-moab	فحث موآب	فحث موآب	auto	alta	6	6	1.00	ألفان ثمان
 Palal	فالال	فالال	auto	alta	2	1	1.00	وفالال
-Pamphylia	مفيلية	مفيلية	auto	alta	3	5	1.00	بمفيلية
-Paran	اران	اران	auto	alta	3	8	1.00	فاران
-Parnach	رناخ	رناخ	auto	alta	2	1	1.00	فرناخ
-Parosh	رعوش	رعوش	auto	alta	7	6	1.00	فرعوش
+Pamphylia	بمفيلية	بمفيلية	auto	alta	3	5	1.00	وبمفيلية
+Paran	فاران	فاران	auto	alta	3	8	1.00	ولابان
+Parosh	فرعوش	فرعوش	auto	alta	7	6	1.00	ألعازار
 Parvaim	روايم	فروايم	revisado	alta	3	1	1.00	فروايم
-Pashhur	شحور	شحور	auto	alta	4	11	0.91	فشحور
-Pashur	شحور	شحور	auto	alta	4	11	0.91	فشحور
-Patara	اترا	اترا	auto	alta	3	1	1.00	باترا
-Pathros	تروس	تروس	auto	alta	3	5	1.00	فتروس
-Pedahzur	دهصور	دهصور	auto	alta	2	5	1.00	فدهصور
-Pedaiah	دايا	دايا	auto	alta	10	6	0.83	فدايا
+Pashhur	فشحور	فشحور	auto	alta	5	12	0.92	وفشحور
+Pashur	فشحور	فشحور	auto	alta	5	12	0.92	وفشحور
+Pathros	فتروس	فتروس	auto	alta	3	5	1.00	أرض
+Pedahzur	فدهصور	فدهصور	auto	alta	2	5	1.00	هذا
 Pedaiah	داية	فداية	revisado	alta	2	1	1.00	فداية
-Pelatiah	فلطيا	فلطيا	auto	alta	8	5	1.00	طيا
+Pedaiah	فدايا	فدايا	auto	alta	12	7	1.00	وفدايا
+Pelatiah	فلطيا	فلطيا	auto	alta	8	5	1.00	رفايا
 Peleg	الج	فالج	revisado	alta	2	8	1.00	فالج
+Peleg	فالج	فالج	auto	alta	2	8	1.00	لد
+Penuel	فنوئيل	فنوئيل	auto	alta	6	8	0.88	وفنوئيل
 Peor	غور	غور	auto	alta	3	8	1.00	نتطهر
 Perez	ارص	فارص	revisado	alta	1	15	0.93	فارص
-Perida	ريدا	ريدا	auto	alta	1	2	0.50	فريدا
-Persis	رسيس	رسيس	auto	alta	2	1	1.00	برسيس
+Perez	فارص	فارص	auto	alta	1	15	1.00	وفارص
+Peter	بطرس	بطرس	auto	alta	1	179	0.87	تسهر
 Phaltiel	فلطيئيل	فلطيئيل	auto	alta	1	2	0.50	فلطي
-Pharaoh-nechoh	نخو	نخو	auto	alta	1	7	1.00	فرعون
 Pharez	فارص	فارص	revisado	alta	1	15	1.00	ارص
 Phichol	فيكول	فيكول	auto	alta	1	3	1.00	وفيكول
 Phicol	فيكول	فيكول	auto	alta	1	3	1.00	وفيكول
-Philadelphia	فيلادلفيا	فيلادلفيا	auto	alta	3	2	1.00	يلادلفيا
+Philadelphia	فيلادلفيا	فيلادلفيا	auto	alta	3	2	1.00	لاودكية
 Philip	فيلبس	فيلبس	auto	alta	6	35	1.00	يلبس
-Phinehas	فينحاس	فينحاس	auto	alta	6	24	1.00	ينحاس
+Phinehas	فينحاس	فينحاس	auto	alta	6	24	1.00	وفينحاس
 Phrygia	فريجية	فريجية	auto	alta	3	4	0.75	وفريجية
-Pilate	يلاطس	يلاطس	auto	alta	1	53	0.98	بيلاطس
+Pilate	بيلاطس	بيلاطس	auto	alta	1	53	1.00	فبيلاطس
 Pisgah	الفسجة	الفسجة	auto	alta	3	8	1.00	صحراء
-Pisidia	يسيدية	يسيدية	auto	alta	3	2	1.00	بيسيدية
-Priscilla	ريسكلا	ريسكلا	auto	alta	2	6	0.83	بريسكلا
-Quirinius	كيرينيوس	كيرينيوس	auto	alta	1	1	1.00	يرينيوس
+Pisidia	بيسيدية	بيسيدية	auto	alta	3	2	1.00	اجتازا
+Priscilla	بريسكلا	بريسكلا	auto	alta	2	6	0.83	وبريسكلا
+Quartus	كوارتس	كوارتس	auto	alta	2	1	1.00	وكوارتس
+Quirinius	كيرينيوس	كيرينيوس	auto	alta	1	1	1.00	جرى
 Raamah	رعمة	رعمة	auto	alta	5	3	0.67	ورعمة
 Rab-saris	ربساريس	ربساريس	auto	alta	1	1	1.00	وربساريس
 Rabbah	ربة	ربة	auto	alta	2	18	0.72	الربة
@@ -3137,11 +3241,12 @@ Rahab	رهب	رهب	auto	alta	2	5	1.00	ذراع
 Ram	رام	رام	revisado	alta	6	9	0.67	ورام
 Ramah	الرامة	الرامة	auto	alta	14	36	0.92	والرامة
 Ramah	ورامة	ورامة	auto	alta	1	1	1.00	رامة
+Ramathaim-zophim	رامتايم صوفيم	رامتايم صوفيم	auto	alta	2	1	1.00	رامتايم
 Rameses	رعمسيس	رعمسيس	auto	alta	3	5	1.00	ماش
-Ramiah	رميا	رميا	auto	alta	2	1	1.00	نايا
+Ramiah	رميا	رميا	auto	alta	2	1	1.00	ميامين
 Ramoth	راموت	راموت	auto	alta	7	37	0.73	وراموت
 Ramoth	راموث	راموث	auto	alta	1	1	1.00	وراموث
-Ramoth-gilead	راموت	راموت	auto	alta	2	20	1.00	جلعاد
+Ramoth-gilead	راموت جلعاد	راموت جلعاد	auto	alta	2	20	1.00	راموت جلعاد له
 Rapha	رافا	رافا	auto	alta	2	9	0.89	ورافا
 Raphah	رافة	رافة	auto	alta	1	2	0.50	ورافة
 Reaiah	رآيا	رآيا	auto	alta	4	5	0.80	رصين
@@ -3192,12 +3297,11 @@ Saph	ساف	ساف	auto	alta	1	2	0.50	سفاي
 Sapphira	سفيرة	سفيرة	auto	alta	2	1	1.00	حنانيا
 Sarah	سارة	سارة	auto	alta	2	48	0.75	ساراي
 Saraph	ساراف	ساراف	auto	alta	2	1	1.00	وساراف
-Sardis	ساردس	ساردس	auto	alta	2	3	1.00	سيمشون
+Sardis	ساردس	ساردس	auto	alta	2	3	1.00	فسيمشون
 Sarid	ساريد	ساريد	auto	alta	3	2	1.00	عشائرهم
 Saron	شارون	شارون	auto	alta	1	6	0.83	سارون
 Sarsechim	سرسخيم	سرسخيم	auto	alta	1	1	1.00	وسرسخيم
 Saul	شاول	شاول	auto	alta	2	327	0.98	سأهلك
-Sceva	سكاوا	سكاوا	auto	alta	2	1	1.00	لسكاوا
 Sebam	شبام	شبام	auto	alta	2	1	1.00	وشبام
 Secacah	سكاكة	سكاكة	auto	alta	3	1	1.00	وسكاكة
 Seir	سعير	سعير	auto	alta	4	27	0.89	إيصر
@@ -3240,9 +3344,10 @@ Sharon	شارون	شارون	auto	alta	5	7	0.86	مسارح
 Shashai	شاشاي	شاشاي	auto	alta	2	1	1.00	وشاشاي
 Sheal	شآل	شآل	auto	alta	2	1	1.00	وشآل
 Shealtiel	شألتيئيل	شألتيئيل	auto	alta	3	12	0.58	شألتئيل
+Shear-jashub	شآر ياشوب	شآر ياشوب	auto	alta	2	1	1.00	أنت شآر ياشوب
 Sheariah	شعريا	شعريا	auto	alta	2	2	1.00	وشعريا
 Sheba	شبا	شبا	auto	alta	5	6	1.00	وشبا
-Sheba	شبع	شبع	auto	alta	3	9	1.00	تبعا
+Sheba	شبع	شبع	auto	alta	3	9	1.00	فتبعا
 Shebaniah	شبنيا	شبنيا	auto	alta	8	8	0.88	وشبنيا
 Shebarim	شباريم	شباريم	auto	alta	3	1	1.00	صار
 Shebat	شباط	شباط	auto	alta	1	1	1.00	برخيا
@@ -3315,8 +3420,8 @@ Sirah	السيرة	سيرة	revisado	alta	3	1	1.00	ئر
 Sisera	سيسرا	سيسرا	revisado	alta	4	19	1.00	بسيسرا
 Sismai	سسماي	سسماي	revisado	alta	1	1	1.00	وسسماي
 Sithri	ستري	ستري	auto	alta	1	1	1.00	وستري
-Sitnah	سطنة	سطنة	auto	alta	3	1	1.00	ئرا
-Sivan	سيوان	سيوان	auto	alta	1	1	1.00	سانهم
+Sitnah	سطنة	سطنة	auto	alta	3	1	1.00	بئرا
+Sivan	سيوان	سيوان	auto	alta	1	1	1.00	بلسانه
 Smyrna	سميرنا	سميرنا	auto	alta	3	2	1.00	ميتا
 Sodom	سدوم	سدوم	auto	alta	3	50	0.96	كسدوم
 Solomon	سليمان	سليمان	auto	alta	2	275	0.99	لسليمان
@@ -3328,12 +3433,14 @@ Succoth	سكوت	سكوت	auto	alta	6	16	1.00	وسكوت
 Susa	شوشن	شوشن	auto	alta	3	20	0.90	شوشان
 Sychar	سوخار	سوخار	auto	alta	3	1	1.00	الضيعة
 Taanach	تعنك	تعنك	auto	alta	3	8	0.88	وتعنك
+Taanath-shiloh	تآنة شيلوه	تآنة شيلوه	auto	alta	3	1	1.00	تآنة شيلوه عبرها
 Tabitha	طابيثا	طابيثا	auto	alta	1	3	0.67	ترجمته
 Tabor	تابور	تابور	revisado	alta	6	7	1.00	لوطة
 Tabrimmon	طبريمون	طبريمون	auto	alta	1	1	1.00	وأرسلهم
 Tabrimon	طبريمون	طبريمون	auto	alta	1	1	1.00	وأرسلهم
 Tadmor	تدمر	تدمر	revisado	alta	3	2	1.00	المخازن
-Tahan	تاحن	تاحن	auto	alta	4	2	1.00	لتاحن
+Tahan	تاحن	تاحن	auto	alta	2	1	1.00	وتاحن
+Tahan	لتاحن	لتاحن	auto	alta	2	1	1.00	التاحنيين
 Tahash	تاحش	تاحش	auto	alta	1	1	1.00	وتاحش
 Tahath	تاحت	تاحت	auto	alta	3	2	1.00	تارح
 Tahpanhes	تحفنحيس	تحفنحيس	auto	alta	3	7	0.86	وتحفنيس
@@ -3347,6 +3454,8 @@ Tarshish	ترشيش	ترشيش	auto	alta	9	25	0.92	وترشيش
 Tartan	ترتان	ترتان	auto	alta	2	2	1.00	فحارب
 Tatnai	تتناي	تتناي	auto	alta	1	4	1.00	شتربوزناي
 Tebaliah	طبليا	طبليا	auto	alta	2	1	1.00	وطبليا
+Tel-abib	تل أبيب	تل أبيب	auto	alta	3	1	1.00	أبيب
+Tel-harsha	تل حرشا	تل حرشا	auto	alta	3	2	1.00	ملح تل حرشا
 Telaim	طلايم	طلايم	auto	alta	2	1	1.00	راجل
 Telassar	تلاسار	تلاسار	auto	alta	3	2	0.50	تلسار
 Teman	تيمان	تيمان	auto	alta	6	19	0.53	التيمن
@@ -3372,7 +3481,7 @@ Titus	تيطس	تيطس	auto	alta	2	15	0.80	وتيطس
 Tobiah	طوبيا	طوبيا	auto	alta	4	14	1.00	دلايا
 Tolad	تولاد	تولاد	auto	alta	2	1	1.00	وتولاد
 Topheth	توفة	توفة	auto	alta	1	8	1.00	مرتفعات
-Trachonitis	تراخونيتس	تراخونيتس	auto	alta	3	1	1.00	يسانيوس
+Trachonitis	تراخونيتس	تراخونيتس	auto	alta	3	1	1.00	ليسانيوس
 Troas	ترواس	ترواس	auto	alta	3	6	1.00	انتظرونا
 Trophimus	تروفيمس	تروفيمس	auto	alta	2	3	1.00	وتروفيمس
 Tryphaena	تريفينا	تريفينا	auto	alta	1	1	1.00	تريفوسا
@@ -3386,7 +3495,7 @@ Ur	أور	أور	auto	alta	4	5	1.00	ساكار
 Uri	أوري	أوري	auto	alta	6	7	1.00	وأوري
 Uriah	أوريا	أوريا	auto	alta	6	34	1.00	لأوريا
 Uz	عوص	عوص	auto	alta	7	7	1.00	غزة
-Uzza	عزا	عزا	auto	alta	8	5	1.00	ستان
+Uzza	عزا	عزا	auto	alta	8	5	1.00	بستان
 Uzzah	عزة	عزة	revisado	alta	3	9	0.56	عزا
 Uzzi	عزي	عزي	auto	alta	14	11	1.00	وعزي
 Uzziah	عزيا	عزيا	auto	alta	9	38	0.74	وعزيا
@@ -3439,7 +3548,7 @@ Zerubbabel	زربابل	زربابل	auto	alta	3	28	0.86	وزربابل
 Zeruiah	صروية	صروية	auto	alta	2	25	1.00	مسجلا
 Zetham	زيثام	زيثام	auto	alta	2	2	1.00	ثم
 Zethan	زيتان	زيتان	auto	alta	2	1	1.00	وزيتان
-Zethar	زيثار	زيثار	auto	alta	2	1	1.00	زثا
+Zethar	زيثار	زيثار	auto	alta	2	1	1.00	وزيثار
 Zia	زيع	زيع	auto	alta	2	1	1.00	وزيع
 Ziba	صيبا	صيبا	auto	alta	2	13	1.00	لصيبا
 Zibeon	صبعون	صبعون	auto	alta	3	7	1.00	بنت
@@ -3450,7 +3559,7 @@ Ziha	صيحا	صيحا	auto	alta	4	3	1.00	حسوفا
 Ziklag	صقلغ	صقلغ	auto	alta	3	13	0.92	وصقلغ
 Zillah	صلة	صلة	auto	alta	2	3	1.00	وصلة
 Zillethai	صلتاي	صلتاي	auto	alta	2	2	1.00	وصلتاي
-Zilpah	زلفة	زلفة	auto	alta	2	7	1.00	يئة
+Zilpah	زلفة	زلفة	auto	alta	2	7	1.00	ليئة
 Zilthai	صلتاي	صلتاي	auto	alta	2	2	1.00	وصلتاي
 Zimmah	زمة	زمة	auto	alta	4	3	1.00	وزمة
 Zimran	زمران	زمران	auto	alta	2	2	1.00	مدان
@@ -3462,7 +3571,7 @@ Ziphah	زيفة	زيفة	auto	alta	2	1	1.00	وزيفة
 Zippor	صفور	صفور	auto	alta	2	7	1.00	خير
 Zithri	ستري	ستري	auto	alta	1	1	1.00	وستري
 Ziv	زيو	زيو	auto	alta	1	2	1.00	شهر
-Ziz	صيص	صيص	auto	alta	3	1	1.00	تجدوهم
+Ziz	صيص	صيص	auto	alta	3	1	1.00	يروئيل
 Ziza	زيزا	زيزا	auto	alta	4	2	1.00	وزيزا
 Zizah	زيزة	زيزة	auto	alta	2	2	0.50	وزيزة
 Zoan	صوعن	صوعن	auto	alta	3	7	1.00	حانيس
