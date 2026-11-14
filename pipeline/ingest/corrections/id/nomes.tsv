@@ -45,6 +45,8 @@ Beth-baal-meon	Meon	Bet-Baal-Meon	revisado	baixa	1	1	1.00	Bamot
 Beth-eked	Tangkap	Bet-Eked	revisado	baixa	3	2	0.50	Tidak
 Beth-merhak	Mereka	Bet-Merhak	revisado	baixa	1	1	1.00	Daud
 Bithron	Yordan	Bitron	revisado	baixa	1	1	1.00	Abner
+Booths Festival	pesta Booths	Hari Raya Pondok Daun	revisado	baixa	1	1	0.00	
+Brook Kidron	sungai Kidron	Sungai Kidron	revisado	baixa	1	1	0.00	
 Bul	November	Bul	revisado	baixa	1	1	1.00	Salomo
 Cabul	Itulah	Kabul	revisado	baixa	3	1	1.00	Saudaraku
 Candace	Yerusalem	Kandake	revisado	baixa	1	1	1.00	Di
@@ -55,24 +57,31 @@ Cherethites	Kreta	Kreti	revisado	baixa	1	1	1.00	Terakhir
 Chinnereth	Yesimot	Kinerot	revisado	baixa	1	10	0.10	Tiberias
 Chinnereth	Yordan	Kinerot	revisado	baixa	1	1	1.00	Galilea
 Chronicles	Kisah	Tawarikh	revisado	baixa	1	35	0.83	Ahasweros
+City of Salt	kota Salt	Kota Garam	revisado	baixa	2	1	0.00	
+City of the Lord	kota Lord	Kota TUHAN	revisado	baixa	1	2	0.00	
 Colossae	Allah	Kolose	revisado	baixa	1	2	0.50	Salam
 Corban	Taurat	Korban	revisado	baixa	1	2	0.50	Menurut
 Cushi	Kamulah	Kusi	revisado	baixa	1	5	0.20	Kamu
 Decapolis	Sepuluh	Dekapolis	revisado	baixa	3	3	1.00	Yudea
+Dedication Festival	pesta Dedication	Pesta Pentahbisan	revisado	baixa	1	1	0.00	
 Destiny	Dewi	Meni	revisado	baixa	1	1	1.00	Takdir
 Destruction	Matahari	Kota Kehancuran	revisado	baixa	1	1	1.00	Heliopolis
 Dibon	Sungai-sungai	Dibon	revisado	baixa	1	1	1.00	Darah
 Dimnah	Nea	Dimna	revisado	baixa	1	2	0.50	Rimon
+Dragon Spring	mata air Dragon	Sumur Naga	revisado	baixa	3	1	0.00	
 Dumah	TUHAN	Duma	revisado	baixa	3	1	1.00	Dalam
 East	Etan	Timur	revisado	baixa	1	14	0.07	Heman
 East	Zebah	Timur	revisado	baixa	2	4	0.25	Unta-unta
 Ecbatana	Ahmeta	Ekbatana	revisado	baixa	3	1	1.00	Keputusan
+Egypt Sea	laut Mesir	laut Mesir	sem	baixa	1	1	0.00	
+Egyptian Sea	laut Egyptian	laut Egyptian	sem	baixa	1	1	0.00	
 Elon	Yehuda	Elon	revisado	baixa	2	2	0.50	Pasukan
 En-hakkore	Berseru	En-Hakore	revisado	baixa	3	1	1.00	Air
 Ephron	Neftah	Efron	revisado	baixa	2	1	1.00	Yearim
 Ethanim	Hari	Etanim	revisado	baixa	1	1	1.00	Raya
 Eve	Eden	Hawa	revisado	baixa	2	4	0.25	Hawa
 Ezel	Sesudah	Ezel	revisado	baixa	1	2	0.50	Kemudian
+Ezel Stone	batu Ezel	Batu Ezel	revisado	baixa	1	1	0.00	
 Eznites	Basebet	Ezni	revisado	baixa	1	1	1.00	Takmoni
 Field	Yerusalem	Ladang Penatu	revisado	baixa	1	3	0.67	Segelintir
 Forest	Gedung	Hutan	revisado	baixa	1	1	1.00	TUHAN
@@ -109,6 +118,7 @@ Hivites	Yebus	Hewi	revisado	baixa	1	23	0.65	Hewi
 Hor-haggidgad	Gudgod	Hor-Hagidgad	revisado	baixa	2	3	0.33	Mosera
 Horeb	Rehuel	Horeb	revisado	baixa	1	14	0.07	Moab
 Horonites	Horon	Horon	revisado	baixa	1	3	0.67	Rupanya
+House of the Forest	rumah Hutan	Gedung Hutan Libanon	revisado	baixa	1	4	0.00	
 Hurai	Hidai	Hurai	revisado	baixa	1	1	1.00	Piraton
 Hushathites	Husa	Husati	revisado	baixa	1	2	1.00	Abiezer
 Ilai	Maharai	Ilai	revisado	baixa	1	1	1.00	Ahohi
@@ -142,7 +152,9 @@ Kue	Kuda-kuda	Kue	revisado	baixa	3	1	1.00	Kilikia
 LORD	Eloi	TUHAN	revisado	baixa	1	281	0.00	Roh-roh
 Laadan	Libni	Libni	revisado	baixa	1	2	1.00	Nama
 Lahmi	Yair	Lahmi	revisado	baixa	1	1	1.00	Kali
+Lebanon Mount	gunung Libanon	Gunung Libanon	revisado	baixa	1	1	0.00	
 Legion	Batalion	Legiun	revisado	baixa	1	2	1.00	Jawabnya
+Lower Pool	kolam Lower	Kolam Bawah	revisado	baixa	1	1	0.00	
 Lucifer	Fajar	Lusifer	revisado	baixa	2	1	1.00	Putra
 Maareh-geba	Tamar	Maare-Geba	revisado	baixa	3	1	1.00	Baal
 Mahalab	Akzib	Mahalab	revisado	baixa	2	1	1.00	Rama
@@ -156,6 +168,12 @@ Meshech	Aku	Mesekh	revisado	baixa	1	1	1.00	Tarsis
 Metheg-ammah	Beberapa	Metegh-Amma	revisado	baixa	2	1	1.00	Gat
 Milcom	Molok	Milkom	revisado	baixa	1	3	1.00	Salomo
 Mizraim	Mesir	Mizraim	revisado	baixa	1	2	1.00	Dia
+Moriah Mount	gunung Moria	Gunung Moria	revisado	baixa	1	1	0.00	
+Mount Baal-hermon	gunung Baal-hermon	Gunung Baal-Hermon	revisado	baixa	1	1	0.00	
+Mount Baalhermon	gunung Baalhermon	Gunung Baal-Hermon	revisado	baixa	1	1	0.00	
+Mount Lebanon	gunung Libanon	Gunung Libanon	revisado	baixa	2	1	0.00	
+Mount Shapher	gunung Shapher	Gunung Syefer	revisado	baixa	1	2	0.00	
+Mount Shepher	gunung Shepher	Gunung Syefer	revisado	baixa	1	2	0.00	
 Naaman	Yimna	Naaman	revisado	baixa	2	1	1.00	Marga-marga
 Nahath	Elkana	Nahat	revisado	baixa	1	1	1.00	Tohu
 Naphath	Taanak	Nafat	revisado	baixa	2	1	1.00	Isakar
@@ -163,6 +181,7 @@ Naphoth-dor	Dor	Nafot-Dor	revisado	baixa	1	1	1.00	Yordan
 Nazirites	Akhirnya	Nazir	revisado	baixa	1	13	0.08	Bagian-bagian
 Nero	Akhir	Nero	revisado	baixa	1	2	0.50	Dan
 Nohah	Karena	Nohah	revisado	baixa	1	1	1.00	Benyamin
+Old Pool	kolam Old	Kolam Lama	revisado	baixa	1	1	0.00	
 Olivet	Zaitun	Bukit Zaitun	revisado	baixa	1	3	1.00	Bukit
 Omega	Pergamus	Omega	revisado	baixa	1	4	0.25	Smirna
 On	Asnat	On	revisado	baixa	2	5	0.40	Paneah
@@ -177,6 +196,7 @@ Pillars	Balai	Tiang	revisado	baixa	1	1	1.00	Panjangnya
 Place	Golgota	Golgota	revisado	baixa	1	2	1.00	Lalu
 Place	Ke	Golgota	revisado	baixa	1	1	1.00	Golgota
 Plain	Bangsa	Dataran Moab	revisado	baixa	1	2	0.50	Yordan
+Plain of Jordan	dataran Yordan	Lembah Yordan	revisado	baixa	1	2	0.00	
 Pool	Kolam	Kolam Raja	revisado	baixa	2	2	1.00	Selanjutnya
 Puah	Yehuda	Pua	revisado	baixa	2	2	0.50	Hamul
 Pul	Tubal	Pul	revisado	baixa	1	1	1.00	Lud
@@ -195,6 +215,9 @@ River	Raja	Seberang Sungai	revisado	baixa	1	9	0.11	Amori
 Rock	Yokdeam	Yokdeam	sem	baixa	1	4	0.25	Maon
 Rocks	Saul	Batu-batu Kambing Liar	revisado	baixa	1	1	1.00	Maka
 Salome	Hal	Salome	revisado	baixa	1	1	1.00	Herodes
+Sea of Chinnereth	laut Kinerot	Danau Kinerot	revisado	baixa	1	2	0.00	
+Sea of Egypt	laut Mesir	laut Mesir	sem	baixa	1	1	0.00	
+Sea of Tiberias	laut Tiberias	Danau Tiberias	revisado	baixa	1	2	0.00	
 Sered	Yehuda	Sered	revisado	baixa	2	2	0.50	Pasukan
 Shage	Sarar	Sage	revisado	baixa	1	1	1.00	Syama
 Shallum	Mesulam	Salum	revisado	baixa	2	2	0.50	Ahitub
@@ -205,6 +228,7 @@ Shebat	Februari	Sebat	revisado	baixa	1	1	1.00	Darius
 Shemaiah	Samua	Semaya	revisado	baixa	2	1	1.00	Matanya
 Shephelah	Gedera	Sefela	revisado	baixa	2	10	0.10	Azeka
 Shephelah	Semasa	Sefela	revisado	baixa	1	1	1.00	Israel
+Shepher Mount	gunung Shepher	Gunung Syefer	revisado	baixa	1	2	0.00	
 Shiloh	Dialah	Syilo	revisado	baixa	1	1	1.00	Tongkat
 Shiloni	Syela	Silo	revisado	baixa	1	1	1.00	Yoyarib
 Shilonites	Kolhoze	Silo	revisado	baixa	1	1	1.00	Syela
@@ -216,16 +240,22 @@ Skull	Yesus	Tengkorak	revisado	baixa	1	1	1.00	Sesudah
 South	Selatan	Selatan	revisado	baixa	2	3	0.33	Salomo
 South	Semesta	Negeb	revisado	baixa	1	1	1.00	Aku
 Straight	Carilah	Jalan Lurus	revisado	baixa	1	1	1.00	Kata
+Straight Gate	pintu gerbang Jalan Lurus	Jalan Lurus	revisado	baixa	1	1	0.00	
 Tabbur-erez	Besar	Tabur-Erets	revisado	baixa	1	1	1.00	Peramal
 Tartan	Sargon	Tartan	revisado	baixa	2	2	0.50	Akan
 Throne	Ruang	Takhta	revisado	baixa	1	1	1.00	Bangunan
 Tola	Onan	Tola	revisado	baixa	2	2	0.50	Syela
+Tribe of Judah	suku Judah	Suku Yehuda	revisado	baixa	1	1	0.00	
 Ucal	Tuhan	Ukhal	revisado	baixa	2	1	1.00	Agur
 Unnamed#1	Imam	Imam	sem	baixa	1	1	1.00	Salomo
 Unnamed#2	Imam	Imam	sem	baixa	1	1	1.00	Salomo
 Unnamed#3	Imam	Imam	sem	baixa	1	1	1.00	Salomo
 Unnamed#4	Imam	Imam	sem	baixa	1	1	1.00	Salomo
+Upper Pool	kolam Upper	Kolam Atas	revisado	baixa	1	3	0.00	
+Waters of Merom	air Merom	Air Merom	revisado	baixa	1	2	0.00	
 Weeks	Pentakosta	Pentakosta	revisado	baixa	1	7	0.43	Efesus
+Wilderness of Maon	padang gurun Maon	Padang Gurun Maon	revisado	baixa	1	2	0.00	
+Wilderness of Ziph	padang gurun Zif	Padang Gurun Zif	revisado	baixa	1	3	0.00	
 Willows	Harabim	Harabim	sem	baixa	1	1	1.00	Moab
 Zaphon	Aku	Zafon	revisado	baixa	1	1	1.00	Dahulu
 Zealot	Kariot	Zelot	revisado	baixa	1	2	0.50	Simon
@@ -244,6 +274,7 @@ Abel-meholah	Mehola	Abel-Mehola	revisado	media	3	3	0.67	Abel
 Abel-shittim	Sitim	Abel-Sitim	revisado	media	2	1	1.00	Abel
 Abiah	Abia	Abia	revisado	media	1	1	1.00	Anaknya
 Abidan	Abidan	Abidan	revisado	media	2	5	0.40	Gideoni
+Achor Valley	Lembah Musibah	Lembah Akhor	revisado	media	1	4	1.00	
 Adam	Adam	Adam	revisado	media	5	25	0.48	Sartan
 Adami-nekeb	Adami	Adami-Nekeb	revisado	media	3	1	1.00	Nekeb
 Addar	Adar	Addar	revisado	media	3	1	1.00	Karka
@@ -297,6 +328,7 @@ Babylon	Babel	Babel	revisado	media	5	87	0.80	Baladan
 Bajith	Rakyat	Bait	revisado	media	1	1	1.00	Medeba
 Bamoth-baal	Bamot	Bamot-Baal	revisado	media	3	3	0.33	Baal
 Bath-shua	Syua	Bat-Syua	revisado	media	1	1	1.00	Lalu
+Beautiful Gate	Gerbang Indah	Gerbang Indah	revisado	media	3	2	0.50	
 Bedan	Kemudian	Bedan	revisado	media	1	1	1.00	Barak
 Beer	Beer	Beer	revisado	media	2	1	1.00	Abimelek
 Beer-elim	Elim	Beer-Elim	revisado	media	3	1	1.00	Eglaim
@@ -339,13 +371,19 @@ Bezalel	Bezalel	Bezaleel	revisado	media	1	6	1.00	Israel
 Bichri	Bikri	Bikri	revisado	media	2	9	0.33	Abisai
 Bilgah	Bilga	Bilga	revisado	media	2	3	0.33	Bilgai
 Bor-ashan	Asan	Borasan	revisado	media	3	1	1.00	Bor
+Broad Wall	Tembok Lebar	Tembok Lebar	revisado	media	3	2	1.00	
+Brook of Egypt	sungai Mesir	Sungai Mesir	revisado	media	3	8	0.25	sungai Efrat
+Brook of the Willows	sungai Harabim	Sungai Harabim	sem	media	2	1	1.00	
 Cainan	Kenan	Kenan	revisado	media	1	6	0.83	Mahalalel
 Chilion	Kiliyon	Kilion	revisado	media	2	3	0.33	Kilyon
 Chinnereth	Kineret	Kinerot	revisado	media	2	4	0.25	Edrei
 Chinneroth	Kinerot	Kinerot	revisado	media	2	3	0.33	Iyon
 Chisloth-tabor	Kislot	Kislot-Tabor	revisado	media	2	1	1.00	Tabor
 Chushan-rishathaim	Risyataim	Kusan-Risyataim	revisado	media	1	2	1.00	Kusan
+City of Destruction	Kota Matahari	Kota Kehancuran	revisado	media	1	1	1.00	
+City of Palms	kota Pohon	Kota Pohon Korma	revisado	media	2	3	0.67	kota Yeriko
 Claudius	Klaudius	Klaudius	revisado	media	2	11	0.18	Kudus
+Corner Gate	Gerbang Sudut	Gerbang Penjuru	revisado	media	3	2	1.00	Gerbang Efraim
 Cush	Kudus	Kus	revisado	media	2	9	0.11	Aku
 Cush	Kus	Kus	revisado	media	4	22	0.18	Kedua
 Cushan-rishathaim	Risyataim	Kusan-Risyataim	revisado	media	1	2	1.00	Kusan
@@ -354,6 +392,7 @@ Dan	Dan	Dan	revisado	media	5	58	0.78	Yaan
 Deuel	Rehuel	Reguel	revisado	media	1	5	0.40	Eliasaf
 Diana	Dia	Artemis	revisado	media	1	5	0.20	Yang
 Dishan	Disyan	Disan	revisado	media	2	3	0.33	Aran
+Dung Gate	Gerbang Pembuangan	Gerbang Sampah	revisado	media	3	4	1.00	Gerbang Lembah
 Ebal	Ebal	Ebal	revisado	media	2	1	1.00	Syobal
 Ebal	Obal	Obal	revisado	media	1	1	1.00	Seba
 Ebenezer	Eben	Eben-Haezer	revisado	media	4	3	1.00	Haezer
@@ -384,6 +423,12 @@ Euodias	Eyodia	Euodia	revisado	media	1	1	1.00	Kepada
 Euphrates	Efrat	Efrat	revisado	media	3	43	0.81	Kekuasaan
 Evil-merodach	Merodak	Ewil-Merodakh	revisado	media	2	1	1.00	Ewil
 Ezion-geber	Ezion	Ezion-Geber	revisado	media	3	5	0.60	Geber
+Fish Gate	Gerbang Ikan	Gerbang Ikan	revisado	media	3	2	1.00	Gerbang Efraim
+Fountain Gate	Gerbang Air	Gerbang Air Mancur	revisado	media	2	3	1.00	
+Gate of Yeshanah	Gerbang Lama	Gerbang Yesana	revisado	media	1	2	1.00	Gerbang Ikan
+Gate of the Fountain	Gerbang Air	Gerbang Air Mancur	revisado	media	1	3	1.00	
+Gate of the Guard	Gerbang Ikan	Gerbang Penjaga	revisado	media	1	1	1.00	Gerbang Lama
+Gate of the Valley	Gerbang Lembah	Gerbang Lembah	revisado	media	1	2	1.00	Gerbang Pembuangan
 Gath-hepher	Hefer	Gat-Hefer	revisado	media	3	2	1.00	Gat
 Gath-rimmon	Rimon	Gat-Rimon	revisado	media	3	2	0.50	Gat
 Gibeath-elohim	Gibea	Gibeat-Elohim	revisado	media	3	1	1.00	Filistin
@@ -391,11 +436,16 @@ Gideoni	Gideoni	Gideoni	revisado	media	2	5	0.40	Abidan
 Giloh	Gilo	Gilo	revisado	media	2	3	0.33	Elifelet
 God	Nod	Nod	revisado	media	1	5488	0.00	Gad
 Goliath	Goliat	Goliat	revisado	media	2	5	1.00	Gat
+Great Sea	Laut Tengah	Laut Besar	revisado	media	3	25	0.76	Laut Mati
+Guard Gate	Gerbang Ikan	Gerbang Penjaga	revisado	media	1	1	1.00	Gerbang Lama
 Hadad	Hadad	Hadad	revisado	media	3	6	1.00	Daud
 Hadad-rimmon	Rimon	Hadad-Rimon	revisado	media	3	1	1.00	Hadad
 Hadar	Hadad	Hadad	revisado	media	1	1	1.00	Tema
 Hadrach	Aram	Hadrakh	revisado	media	3	1	1.00	Damsyik
 Hahiroth	Hahirot	Hahirot	revisado	media	1	1	1.00	Mara
+Hall of Judgment	Ruang Pengadilan	Balai Pengadilan	revisado	media	2	1	1.00	
+Hall of Pillars	Balai Bertiang	Balai Tiang	revisado	media	2	1	1.00	
+Hall of the Throne	Ruang Pengadilan	Balai Pengadilan	revisado	media	2	1	1.00	
 Hammath	Hamat	Hamat	revisado	media	3	3	0.33	Anat
 Hanoch	Henok	Henokh	revisado	media	1	1	1.00	Anak
 Hanoch	Henokh	Henokh	revisado	media	2	3	0.33	Henok
@@ -418,6 +468,7 @@ Hizkijah	Hiskia	Hizkia	revisado	media	1	1	1.00	Azur
 Hodaviah	Hodawya	Hodawya	revisado	media	1	3	0.33	Hodewa
 Hodevah	Hodewa	Hodewa	revisado	media	1	3	0.33	Hodawya
 Homam	Hemam	Homam	revisado	media	1	1	1.00	Lotan
+Horse Gate	Gerbang Kuda	Gerbang Kuda	revisado	media	3	1	1.00	
 Hosea	Hosea	Hosea	revisado	media	2	1	1.00	Kepada
 Hushim	Husim	Husim	revisado	media	2	3	0.33	Syilem
 Ir-moab	Moab	Ar-Moab	revisado	media	1	1	1.00	Arnon
@@ -439,6 +490,7 @@ Jehozabad	Yozabad	Yozabad	revisado	media	2	1	1.00	Yozakar
 Jeiel	Yehiel	Yeiel	revisado	media	1	1	1.00	Elifelet
 Jemuel	Yemuel	Yemuel	revisado	media	2	3	0.33	Nemuel
 Jephunneh	Yefune	Yefune	revisado	media	2	13	0.46	Siftan
+Jericho Valley	lembah Yordan	Lembah Yordan	revisado	media	1	1	1.00	
 Jesaiah	Yesaya	Yesaya	revisado	media	1	1	1.00	Pedaya
 Jeshaiah	Yesaya	Yesaya	revisado	media	5	3	1.00	Atalya
 Jeshimon	Yesimon	Yesimon	revisado	media	3	6	0.33	Maon
@@ -451,6 +503,7 @@ Jokneam	Yokneam	Yokneam	revisado	media	3	4	0.25	Yoknam
 Jonah	Yopa	Yunus	revisado	media	2	24	0.04	Yunus
 Jonas	Yunus	Yohanes	revisado	media	1	4	0.75	Simon
 Joppa	Yopa	Yope	revisado	media	3	13	0.23	Yope
+Jordan Valley	lembah Yordan	Lembah Yordan	revisado	media	1	8	0.38	
 Josedech	Yozadak	Yosadak	revisado	media	1	5	0.80	Sealtiel
 Joseph	Yosek	Yusuf	revisado	media	2	16	0.06	Yusuf
 Jotbathah	Yotbata	Yotbata	revisado	media	3	3	0.33	Mosera
@@ -464,6 +517,7 @@ Kabzeel	Kabsel	Kabzeel	revisado	media	3	3	0.33	Kabzeel
 Kedesh-naphtali	Naftali	Kedes-Naftali	revisado	media	2	1	1.00	Kedes
 Kenath	Kenat	Kenat	revisado	media	3	3	0.33	Nobah
 Kibroth-hattaavah	Kibrot	Kibrot-Hataawa	revisado	media	3	5	0.60	Hatawa
+King's Valley	Lembah Raja	Lembah Raja	revisado	media	2	2	1.00	Lembah Syawe
 Kiriath-arba	Kiryat	Kiryat-Arba	revisado	media	1	7	0.71	Arba
 Kiriath-arim	Kiryat	Kiryat-Yearim	revisado	media	1	1	1.00	Yearim
 Kiriath-baal	Kiryat	Kiryat-Baal	revisado	media	1	2	1.00	Raba
@@ -504,11 +558,16 @@ Michmas	Mikmas	Mikmas	revisado	media	1	2	1.00
 Millo	Megido	Millo	revisado	media	3	5	0.20	Salomo
 Mizpeh	Mispa	Mizpe	revisado	media	2	1	1.00	Moab
 Moseroth	Mosera	Mosera	revisado	media	1	3	0.33	Eleazar
+Mount Horeb	gunung Sinai	Gunung Horeb	revisado	media	2	15	0.87	
+Mount Seir	gunung Seir	Gunung Seir	revisado	media	4	24	0.08	gunung Sinai
+Mount of Olives	Bukit Zaitun	Bukit Zaitun	revisado	media	3	18	0.78	Bukit Kekafiran
+Muster Gate	Gerbang Pemeriksaan	Gerbang Pemeriksaan	revisado	media	2	1	1.00	
 Nahalal	Nahalal	Nahalal	revisado	media	2	3	0.33	Yidala
 Nahalol	Nahalol	Nahalol	revisado	media	2	3	0.33	Kanaan
 Naphoth-dor	Nafat	Nafot-Dor	revisado	media	1	4	0.25	Dor
 Nathan-melech	Melek	Netan-Melekh	revisado	media	2	1	1.00	Natan
 Neah	Nea	Nea	revisado	media	3	3	0.33	Et
+Nebo Mount	gunung Nebo	Gunung Nebo	revisado	media	1	5	0.40	
 Negeb	Negeb	Negeb	revisado	media	3	32	0.44	Bersyeba
 Nicolaitans	Nikolaus	Nikolaitan	revisado	media	1	2	1.00	Ajaran
 Noah	Nah	Nuh	revisado	media	2	44	0.02	Nuh
@@ -517,6 +576,8 @@ Obed-edom	Obed	Obed-Edom	revisado	media	1	3	1.00	Edom
 Oboth	Obot	Obot	revisado	media	3	4	0.25	Moab
 Ochran	Okran	Okhran	revisado	media	1	5	0.40	Pagiel
 Ocran	Okran	Okhran	revisado	media	1	5	0.40	Pagiel
+Old Gate	Gerbang Lama	Gerbang Lama	revisado	media	1	1	1.00	
+Olives Mount	Bukit Zaitun	Bukit Zaitun	revisado	media	1	14	1.00	
 On	On	On	revisado	media	2	3	0.33	Korah
 Ophir	Opir	Ofir	revisado	media	2	1	1.00	Yobab
 Osnappar	Asnaper	Osnapar	revisado	media	1	1	1.00	Samaria
@@ -540,25 +601,35 @@ Pochereth-hazzebaim	Pokeret	Pokhereth-Hazebaim	revisado	media	1	2	1.00	Hazebaim
 Poti-pherah	Potifera	Potifera	revisado	media	1	3	0.33	Paneah
 Potiphar	Potifar	Potifar	revisado	media	2	2	1.00	Sementara
 Potiphera	Potifera	Potifera	revisado	media	1	3	0.33	Paneah
+Preparation Festival	perayaan Paskah	Hari Persiapan	revisado	media	1	6	0.33	
+Prison Gate	Gerbang Ikan	Gerbang Penjara	revisado	media	1	1	1.00	Gerbang Efraim
 Pyrrhus	Gayus	Pirus	revisado	media	1	1	1.00	Aristarkus
 Raamah	Rama	Raama	revisado	media	2	1	1.00	Sabta
 Raamses	Rameses	Raamses	revisado	media	2	1	1.00	Mesir
 Ram	Ram	Ram	revisado	media	2	4	0.25	Hesron
 Ramah	Yoram	Rama	revisado	media	2	1	1.00	Raja
 Ramath-mizpeh	Ramat	Ramat-Mizpe	revisado	media	2	1	1.00	Mispa
+Red Sea	Laut Merah	Laut Teberau	revisado	media	5	22	0.91	Laut Tengah
 Regem-melech	Regem	Regem-Melekh	revisado	media	2	1	1.00	Melek
 Rehoboam	Rehabeam	Rehabeam	revisado	media	2	18	0.72	Yerobeam
 Remaliah	Remalya	Remalya	revisado	media	2	12	0.25	Remalia
 Reuel	Rehuel	Rehuel	revisado	media	2	4	1.00	Yeus
 Rhoda	Rode	Rode	revisado	media	2	1	1.00	Petrus
+Rock of Escape	Batu Keluputan	Batu Perpisahan	revisado	media	2	1	1.00	
 Rome	Roma	Roma	revisado	media	3	34	0.56	Romawi
 Salah	Selah	Selah	revisado	media	1	6	0.83	Arpaksad
 Salim	Salem	Salim	revisado	media	3	1	1.00	Ainon
 Salmon	Salmon	Salmon	revisado	media	2	5	0.20	Nahason
+Salt Valley	Lembah Asin	Lembah Garam	revisado	media	1	2	1.00	
 Salu	Salu	Salu	revisado	media	2	1	1.00	Israel
 Satan	Satanas	Setan	revisado	media	2	87	0.34	Saling
 Scythians	Kita	Skit	revisado	media	1	1	1.00	Yang
+Sea of Chinneroth	Laut Mati	Danau Kinerot	revisado	media	1	1	1.00	
+Sea of Galilee	Laut Mati	Danau Galilea	revisado	media	2	10	0.10	
+Sea of the Philistines	Laut Tengah	Laut Filistin	revisado	media	1	1	1.00	Laut Merah
+Sea of the Plain	Laut Mati	Laut Asin	revisado	media	1	2	1.00	Laut Asin
 Seba	Seba	Seba	revisado	media	4	2	1.00	Syeba
+Seir Mount	gunung Seir	Gunung Seir	revisado	media	2	4	0.25	gunung Sinai
 Senaah	Sena	Senaah	revisado	media	2	4	0.25	Senaa
 Sennacherib	Sanherib	Sanherib	revisado	media	2	9	0.89	Dengar
 Sepharad	Sardis	Sardis	revisado	media	1	3	1.00	Suara
@@ -569,6 +640,7 @@ Shammah	Sama	Sama	revisado	media	2	1	1.00	Harod
 Sharezer	Ezer	Sarezer	revisado	media	1	1	1.00	Sar
 Shaul	Saul	Saul	revisado	media	2	3	0.33	Zohar
 Shedeur	Syedeur	Sedeur	revisado	media	2	5	0.40	Elizur
+Sheep Gate	Gerbang Domba	Gerbang Domba	revisado	media	3	4	1.00	gerbang Yerusalem
 Shelah	Siloam	Silwah	revisado	media	1	6	0.67	Siloah
 Shelumiel	Selumiel	Selumiel	revisado	media	2	5	0.40	Zurisyadai
 Sherezer	Ezer	Sarezer	revisado	media	1	1	1.00	Regem
@@ -583,6 +655,7 @@ Shimron-meron	Meron	Simron-Meron	revisado	media	2	1	1.00	Simron
 Shinar	Sinear	Sinear	revisado	media	3	7	0.14	Sinab
 Shittim	Sitim	Sitim	revisado	media	1	4	0.25	Yesimot
 Shuthelah	Bela	Sutelah	revisado	media	2	1	1.00	Keturunan
+Sinai Wilderness	padang gurun Sinai	Padang Gurun Sinai	revisado	media	1	13	0.08	
 Sippai	Sibekai	Sipai	revisado	media	1	1	1.00	Saf
 Spain	Spanyol	Spanyol	revisado	media	3	2	1.00	Jadi
 Stephanas	Stefanus	Stefanas	revisado	media	2	4	0.75	Fortunatus
@@ -611,25 +684,35 @@ Tobijah	Tobia	Tobia	revisado	media	2	2	1.00	Yosia
 Toi	Tou	Toi	revisado	media	2	2	0.50	Itu
 Tola	Tola	Tola	revisado	media	2	1	1.00	Tempat
 Topheth	Tofet	Tofet	revisado	media	3	5	0.20	Tempat
+Tower of the Hundred	Menara Hananel	Menara Mea	revisado	media	2	2	1.00	Menara Mea
+Tower of the Ovens	Menara Perapian	Menara Perapian	revisado	media	2	2	1.00	
 Tubal-cain	Tubal	Tubal-Kain	revisado	media	2	1	1.00	Kain
 Urbane	Urbanus	Urbanus	revisado	media	1	1	1.00	Stakis
-Urijah	Uria	Uria	auto	media	3	9	1.00	Berekia
-Zabad	Yozabad	Yozabad	auto	media	1	1	1.00	Yozakar
-Zaccur	Zabud	Zabud	auto	media	1	1	1.00	Utai
-Zachariah	Zakaria	Zakaria	auto	media	1	3	1.00	Samaria
-Zacharias	Zakaria	Zakaria	auto	media	2	11	0.82	Istrinya
-Zatthu	Zatu	Zatu	auto	media	1	1	1.00	Pahat
-Zeboim	Zeboim	Zeboim	auto	media	3	1	1.00	Nebalat
-Zephath	Zefat	Zefat	auto	media	3	8	0.12	Simeon
-Zephon	Sifion	Sifion	auto	media	1	1	1.00	Esbon
-Zerahiah	Seraya	Seraya	auto	media	2	2	0.50	Merayot
-Zereth-shahar	Zeret	Zeret	auto	media	3	1	1.00	Hasahar
-Zeruiah	Zeruya	Zeruya	auto	media	2	18	0.44	Sepertiga
-Zidkijah	Zedekia	Zedekia	auto	media	1	1	1.00	Hakalya
-Zidon	Sidon	Sidon	auto	media	1	1	1.00	Anak
-Zion	Sion	Sion	auto	media	2	58	0.43	Sionlah
-Zuar	Zuar	Zuar	auto	media	2	5	0.40	Isakar
-Zurishaddai	Zurisyadai	Zurisyadai	auto	media	2	5	0.40	Selumiel
+Urijah	Uria	Uria	revisado	media	3	9	1.00	Berekia
+Valley Gate	Gerbang Lembah	Gerbang Lembah	revisado	media	2	3	1.00	Gerbang Pembuangan
+Valley of Achor	Lembah Musibah	Lembah Akhor	revisado	media	2	4	1.00	
+Valley of Jericho	lembah Yordan	Lembah Yordan	revisado	media	2	1	1.00	
+Valley of Salt	Lembah Asin	Lembah Garam	revisado	media	2	2	1.00	
+Valley of Shaveh	Lembah Raja	Lembah Syawe	revisado	media	3	2	1.00	Lembah Syawe
+Way of Holiness	Jalan Suci	Jalan Kudus	revisado	media	3	1	1.00	
+Wilderness of Sinai	padang gurun Sinai	Padang Gurun Sinai	revisado	media	1	13	0.08	
+Yeshanah Gate	Gerbang Lama	Gerbang Yesana	revisado	media	1	2	1.00	Gerbang Ikan
+Zabad	Yozabad	Zabad	revisado	media	1	1	1.00	Yozakar
+Zaccur	Zabud	Zakur	revisado	media	1	1	1.00	Utai
+Zachariah	Zakaria	Zakharia	revisado	media	1	3	1.00	Samaria
+Zacharias	Zakaria	Zakharia	revisado	media	2	11	0.82	Istrinya
+Zatthu	Zatu	Zatu	revisado	media	1	1	1.00	Pahat
+Zeboim	Zeboim	Zeboim	revisado	media	3	1	1.00	Nebalat
+Zephath	Zefat	Zefat	revisado	media	3	8	0.12	Simeon
+Zephon	Sifion	Sefon	revisado	media	1	1	1.00	Esbon
+Zerahiah	Seraya	Zerahia	revisado	media	2	2	0.50	Merayot
+Zereth-shahar	Zeret	Zeret-Sahar	revisado	media	3	1	1.00	Hasahar
+Zeruiah	Zeruya	Zeruya	revisado	media	2	18	0.44	Sepertiga
+Zidkijah	Zedekia	Zedekia	revisado	media	1	1	1.00	Hakalya
+Zidon	Sidon	Sidon	revisado	media	1	1	1.00	Anak
+Zion	Sion	Sion	revisado	media	2	58	0.43	Sionlah
+Zuar	Zuar	Zuar	revisado	media	2	5	0.40	Isakar
+Zurishaddai	Zurisyadai	Zurisadai	revisado	media	2	5	0.40	Selumiel
 Abagtha	Abagta	Abagta	auto	alta	2	1	1.00	Bigta
 Abana	Abana	Abana	auto	alta	3	1	1.00	Naaman
 Abarim	Abarim	Abarim	auto	alta	2	4	0.50	Naiklah
@@ -687,6 +770,7 @@ Adoram	Adoram	Adoram	auto	alta	1	4	0.50	Salomo
 Adrammelech	Adramelek	Adramelek	auto	alta	4	3	1.00	Anamelek
 Adramyttium	Adramitium	Adramitium	auto	alta	3	1	1.00	Aristarkus
 Adria	Adria	Adria	auto	alta	1	1	1.00	Sampai
+Adriatic Sea	Laut Adria	Laut Adria	auto	alta	2	1	1.00	
 Adriel	Adriel	Adriel	auto	alta	2	2	1.00	Armoni
 Adullam	Adulam	Adulam	auto	alta	3	8	0.88	Pada
 Adummim	Adumim	Adumim	auto	alta	3	2	1.00	Batu
@@ -777,6 +861,7 @@ Aphiah	Afiah	Afiah	auto	alta	2	1	1.00	Abiel
 Apollonia	Apolonia	Apolonia	auto	alta	3	1	1.00	Amfipolis
 Apollos	Apolos	Apolos	auto	alta	2	10	1.00	Paulus
 Apollyon	Apolion	Apolion	revisado	alta	1	1	1.00	Abadon
+Appii Forum	Pasar Apius	Pasar Apius	auto	alta	1	1	1.00	
 Aquila	Akwila	Akwila	auto	alta	2	6	0.83	Priskila
 Ar	Ar	Ar	auto	alta	3	7	1.00	Hari
 Arabia	Arab	Arab	auto	alta	4	10	0.70	Saya
@@ -862,6 +947,7 @@ Baal	Baal	Baal	auto	alta	2	45	0.98	Etbaal
 Baal-perazim	Perasim	Perasim	auto	alta	3	1	1.00	Baal
 Baal-shalishah	Salisa	Salisa	auto	alta	3	1	1.00	Elisa
 Baalah	Baala	Baala	auto	alta	2	2	1.00	Kesalon
+Baalah Mount	gunung Baala	Gunung Baala	auto	alta	1	1	1.00	
 Baalath	Baalat	Baalat	auto	alta	6	2	1.00	Elteke
 Baana	Bana	Bana	auto	alta	2	1	1.00	Lama
 Baanah	Baana	Baana	auto	alta	4	3	1.00	Bilsan
@@ -902,6 +988,7 @@ Ben-hadad	Hadad	Hadad	auto	alta	6	21	1.00	Ben
 Benaiah	Benaya	Benaya	auto	alta	10	22	0.91	Natan
 Beninu	Beninu	Beninu	revisado	alta	2	1	1.00	Bani
 Benjamin	Benyamin	Benyamin	auto	alta	6	124	0.84	Ananya
+Benjamin Gate	Gerbang Benyamin	Gerbang Benyamin	auto	alta	3	1	1.00	Gerbang Sudut
 Beon	Beon	Beon	auto	alta	2	1	1.00	Dibon
 Beor	Beor	Beor	auto	alta	2	8	1.00	Petor
 Berea	Berea	Berea	auto	alta	3	6	1.00	Firman
@@ -950,6 +1037,7 @@ Bohan	Bohan	Bohan	auto	alta	2	2	1.00	Batu
 Bozez	Bozes	Bozes	auto	alta	3	1	1.00	Seneh
 Bozkath	Boskat	Boskat	auto	alta	3	2	0.50	Yosia
 Bozrah	Bosra	Bosra	auto	alta	3	3	0.67	Seluruh
+Brook Eshcol	lembah Eskol	Lembah Eskol	auto	alta	1	4	0.50	Lembah Tandan
 Bunni	Buni	Buni	auto	alta	6	3	1.00	Bani
 Buz	Bus	Bus	auto	alta	2	1	1.00	Us
 Cabul	Kabul	Kabul	auto	alta	3	1	1.00	Zebulon
@@ -972,6 +1060,7 @@ Carcas	Karkas	Karkas	auto	alta	1	1	1.00	Harbona
 Carchemish	Karkemis	Karkemis	auto	alta	3	1	1.00	Kalno
 Carkas	Karkas	Karkas	auto	alta	1	1	1.00	Harbona
 Carmel	Karmel	Karmel	auto	alta	3	16	0.81	Alamelek
+Carmel Mount	gunung Karmel	Gunung Karmel	auto	alta	1	5	1.00	
 Carmi	Karmi	Karmi	auto	alta	4	5	0.60	Anak-anak
 Carpus	Karpus	Karpus	auto	alta	1	1	1.00	Troas
 Casiphia	Kasifya	Kasifya	auto	alta	3	1	1.00	Saya
@@ -998,6 +1087,7 @@ Chloe	Kloe	Kloe	auto	alta	2	1	1.00	Saudara-saudari
 Chorazin	Korazin	Korazin	auto	alta	3	2	1.00	Sidon
 Chuza	Kuza	Kuza	revisado	alta	2	1	1.00	Susana
 Cilicia	Kilikia	Kilikia	auto	alta	3	8	1.00	Likia
+City of David	Kota Daud	Kota Daud	auto	alta	1	26	0.92	kota Gat
 Clauda	Klauda	Klauda	auto	alta	1	1	1.00	Ketika
 Claudia	Klaudia	Klaudia	auto	alta	2	1	1.00	Usahakanlah
 Clement	Klemens	Klemens	auto	alta	2	1	1.00	Kehidupan
@@ -1055,6 +1145,8 @@ Dorcas	Dorkas	Dorkas	auto	alta	1	3	0.67	Aram
 Dothan	Dotan	Dotan	auto	alta	3	2	1.00	Sesudah
 Drusilla	Drusila	Drusila	auto	alta	2	1	1.00	Istrinya
 Dumah	Duma	Duma	auto	alta	5	2	1.00	Humta
+East Gate	Gerbang Timur	Gerbang Timur	auto	alta	4	1	1.00	
+Ebal Mount	gunung Ebal	Gunung Ebal	auto	alta	1	6	0.67	gunung Gerizim
 Ebed	Ebed	Ebed	auto	alta	4	6	0.50	Zebul
 Eber	Eber	Eber	auto	alta	2	9	0.78	Heber
 Ebiasaph	Abiasaf	Abiasaf	auto	alta	2	1	1.00	Asir
@@ -1069,6 +1161,7 @@ Egypt	Mesir	Mesir	auto	alta	4	511	0.91	Begitu
 Ehud	Ehud	Ehud	auto	alta	2	7	1.00	Sesudah
 Ekron	Ekron	Ekron	auto	alta	3	17	1.00	Sikron
 Elah	Ela	Ela	auto	alta	4	8	0.75	Baesa
+Elah Valley	lembah Elah	Lembah Elah	auto	alta	1	3	1.00	
 Elam	Elam	Elam	auto	alta	11	17	0.94	Elasar
 Elasah	Elasa	Elasa	auto	alta	2	1	1.00	Maaseya
 Elath	Elat	Elat	auto	alta	3	4	1.00	Laut
@@ -1125,9 +1218,11 @@ Ephah	Efa	Efa	auto	alta	5	2	1.00	Syeba
 Epher	Efer	Efer	auto	alta	2	1	1.00	Efa
 Ephesus	Efesus	Efesus	auto	alta	3	24	0.75	Yesus
 Ephraim	Efraim	Efraim	auto	alta	7	90	0.72	Yudea
+Ephraim Gate	Gerbang Efraim	Gerbang Efraim	auto	alta	3	3	1.00	Pintu Gerbang Efraim
 Ephrath	Efrata	Efrata	auto	alta	2	3	1.00	Rahel
 Ephrathah	Efrata	Efrata	auto	alta	3	3	0.67	Kiranya
 Ephron	Efron	Efron	auto	alta	2	10	1.00	Hebron
+Ephron Mount	gunung Efron	Gunung Efron	auto	alta	1	2	0.50	
 Er	Er	Er	auto	alta	2	5	0.60	Eri
 Erastus	Erastus	Erastus	auto	alta	2	3	1.00	Kwartus
 Erech	Erek	Erek	auto	alta	3	2	0.50	Sinear
@@ -1139,6 +1234,7 @@ Esek	Esek	Esek	auto	alta	3	1	1.00	Mereka
 Eshan	Esan	Esan	auto	alta	3	1	1.00	Afeka
 Eshban	Esban	Esban	auto	alta	2	1	1.00	Hemdan
 Eshcol	Eskol	Eskol	auto	alta	2	2	1.00	Aner
+Eshcol Valley	lembah Eskol	Lembah Eskol	auto	alta	1	4	0.50	Lembah Tandan
 Eshtaol	Estaol	Estaol	auto	alta	3	7	1.00	Zora
 Esther	Ester	Ester	auto	alta	2	46	0.93	Ahasweros
 Etam	Etam	Etam	auto	alta	3	2	1.00	Yehuda
@@ -1156,7 +1252,9 @@ Ezer	Ezer	Ezer	auto	alta	6	5	0.60	Zaawan
 Ezra	Ezra	Ezra	auto	alta	4	25	0.60	Efrat
 Felix	Feliks	Feliks	auto	alta	2	8	0.75	Lisias
 Festus	Festus	Festus	auto	alta	1	13	1.00	Feliks
+Forest Ephraim	hutan Efraim	Hutan Efraim	auto	alta	1	1	1.00	
 Fortunatus	Fortunatus	Fortunatus	auto	alta	2	2	0.50	Akaikus
+Forum of Appius	Pasar Apius	Pasar Apius	auto	alta	2	1	1.00	
 Gaal	Gaal	Gaal	auto	alta	2	9	1.00	Peramal
 Gaash	Gaas	Gaas	auto	alta	3	3	1.00	Hidai
 Gabbai	Gabai	Gabai	auto	alta	2	1	1.00	Silai
@@ -1176,6 +1274,9 @@ Gallio	Galio	Galio	auto	alta	2	3	1.00	Yahudi
 Gamaliel	Gamaliel	Gamaliel	auto	alta	4	7	0.71	Amisydai
 Gareb	Gareb	Gareb	auto	alta	2	1	1.00	Ira
 Gatam	Gatam	Gatam	revisado	alta	2	2	0.50	Omar
+Gate Miphkad	Gerbang Pemeriksaan	Gerbang Pemeriksaan	auto	alta	1	1	1.00	
+Gate of Benjamin	Gerbang Benyamin	Gerbang Benyamin	auto	alta	1	1	1.00	Gerbang Sudut
+Gate of Ephraim	Gerbang Efraim	Gerbang Efraim	auto	alta	2	3	1.00	Pintu Gerbang Efraim
 Gath	Gat	Gat	auto	alta	4	32	0.78	Goliat
 Gaza	Gaza	Gaza	auto	alta	3	16	1.00	Lasa
 Gazzam	Gazam	Gazam	auto	alta	2	2	1.00	Paseah
@@ -1191,6 +1292,7 @@ Gennesaret	Genesaret	Genesaret	auto	alta	3	3	0.67	Galilea
 Genubath	Genubat	Genubat	revisado	alta	2	1	1.00	Ratu
 Gera	Gera	Gera	auto	alta	4	6	0.50	Selama
 Gerar	Gerar	Gerar	auto	alta	3	8	1.00	Gomora
+Gerizim Mount	gunung Gerizim	Gunung Gerizim	auto	alta	1	4	1.00	gunung Ebal
 Gershom	Gersom	Gersom	auto	alta	5	4	0.75	Mereka
 Gershon	Gerson	Gerson	auto	alta	2	21	0.57	Hebron
 Geshem	Gesyem	Gesyem	auto	alta	2	4	1.00	Yerusalem
@@ -1209,6 +1311,7 @@ Gidom	Gidom	Gidom	auto	alta	3	1	1.00	Rimon
 Gihon	Gihon	Gihon	auto	alta	5	5	1.00	Naikkanlah
 Gilalai	Gilalai	Gilalai	auto	alta	2	1	1.00	Milalai
 Gilboa	Gilboa	Gilboa	auto	alta	2	3	1.00	Syan
+Gilboa Mount	gunung Gilboa	Gunung Gilboa	auto	alta	1	4	0.75	gunung Gilead
 Gilead	Gilead	Gilead	auto	alta	7	73	0.82	Gad
 Gilgal	Gilgal	Gilgal	auto	alta	8	36	0.86	Lalu
 Gilo	Gilo	Gilo	auto	alta	1	1	1.00	Elifelet
@@ -1251,6 +1354,7 @@ Hakkephirim	Kefirim	Kefirim	auto	alta	2	1	1.00	Gesyem
 Hakkoz	Hakos	Hakos	revisado	alta	2	4	1.00	Barzilai
 Hakupha	Hakufa	Hakufa	revisado	alta	2	2	1.00	Bakbuk
 Halah	Hala	Hala	auto	alta	3	2	1.00	Raja
+Halak Mount	gunung Halak	Gunung Halak	auto	alta	1	2	1.00	gunung Hermon
 Halhul	Halhul	Halhul	auto	alta	3	1	1.00	Anot
 Hali	Hali	Hali	revisado	alta	3	1	1.00	Helkat
 Hallohesh	Halohes	Halohes	auto	alta	2	2	1.00	Sobek
@@ -1307,6 +1411,7 @@ Hazo	Hazo	Hazo	auto	alta	2	1	1.00	Pildas
 Hazor	Hazor	Hazor	auto	alta	6	13	0.77	Madon
 Heber	Heber	Heber	auto	alta	2	4	0.75	Kedes
 Hebron	Hebron	Hebron	auto	alta	5	56	0.73	Debir
+Hebron Valley	Lembah Hebron	Lembah Hebron	auto	alta	1	1	1.00	
 Hegai	Hegai	Hegai	auto	alta	2	3	1.00	Abihail
 Helam	Helam	Helam	auto	alta	3	2	0.50	Sewaktu
 Helbah	Helba	Helba	auto	alta	3	1	1.00	Ahlab
@@ -1330,6 +1435,7 @@ Hermas	Hermas	Hermas	auto	alta	2	1	1.00	Hermes
 Hermes	Hermes	Hermes	auto	alta	3	2	1.00	Hermas
 Hermogenes	Hermogenes	Hermogenes	auto	alta	2	1	1.00	Figelus
 Hermon	Hermon	Hermon	auto	alta	1	3	1.00	Siryon
+Hermon Mount	gunung Hermon	Gunung Hermon	auto	alta	1	11	0.73	gunung Halak
 Herod	Herodes	Herodes	auto	alta	4	41	0.95	Roma
 Herodias	Herodiana	Herodiana	auto	alta	2	6	1.00	Herodes
 Herodion	Herodion	Herodion	auto	alta	2	1	1.00	Narkisus
@@ -1353,6 +1459,7 @@ Hodijah	Hodia	Hodia	auto	alta	3	5	1.00	Ya
 Hoglah	Hogla	Hogla	auto	alta	2	4	0.75	Noa
 Hoham	Hoham	Hoham	auto	alta	2	1	1.00	Piram
 Hophni	Hofni	Hofni	revisado	alta	2	5	1.00	Panglima
+Hor Mount	gunung Hor	Gunung Hor	auto	alta	2	12	0.83	
 Horam	Horam	Horam	auto	alta	2	1	1.00	Yosua
 Horesh	Koresa	Koresa	auto	alta	3	4	0.75	Yesimon
 Hori	Hori	Hori	auto	alta	2	8	0.75	Lotan
@@ -1387,6 +1494,7 @@ Imlah	Yimla	Yimla	auto	alta	1	2	1.00	Mikaya
 Immer	Imer	Imer	auto	alta	9	7	0.86	Ime
 Imri	Imri	Imri	auto	alta	2	1	1.00	Yeriko
 India	India	India	auto	alta	3	2	1.00	Inilah
+Iphtahel Valley	lembah Yiftah	Lembah Yiftah	auto	alta	1	2	1.00	
 Ira	Ira	Ira	auto	alta	6	3	1.00	Yair
 Irad	Irad	Irad	auto	alta	2	1	1.00	Mehuyael
 Isaac	Isak	Isak	auto	alta	2	114	0.90	Isaklah
@@ -1495,6 +1603,7 @@ Jezebel	Isebel	Isebel	auto	alta	2	20	0.95	Yisreel
 Jeziah	Yezia	Yezia	auto	alta	1	1	1.00	Benaya
 Jezrahiah	Yizraya	Yizraya	auto	alta	2	1	1.00	Semaya
 Jezreel	Yisreel	Yisreel	auto	alta	8	36	0.64	Isebel
+Jezreel Valley	lembah Yisreel	Lembah Yisreel	auto	alta	1	2	1.00	
 Jidlaph	Yidlaf	Yidlaf	auto	alta	2	1	1.00	Pildas
 Joab	Yoab	Yoab	auto	alta	6	101	0.92	Gia
 Joah	Yoah	Yoah	auto	alta	2	6	1.00	Elyakim
@@ -1587,6 +1696,7 @@ Lazarus	Lazarus	Lazarus	auto	alta	4	15	0.93	Badannya
 Leah	Lea	Lea	auto	alta	2	32	0.88	Bolehkah
 Lebanah	Lebana	Lebana	auto	alta	2	2	1.00	Hagaba
 Lebanon	Libanon	Libanon	auto	alta	4	30	1.00	Saron
+Lebanon Valley	Lembah Libanon	Lembah Libanon	auto	alta	1	2	1.00	
 Lebonah	Lebona	Lebona	auto	alta	3	1	1.00	Silo
 Lehabim	Lehab	Lehab	auto	alta	2	1	1.00	Anam
 Lehi	Lehi	Lehi	auto	alta	3	4	1.00	Age
@@ -1740,9 +1850,11 @@ Misrephoth-maim	Misrefot	Misrefot	auto	alta	3	2	1.00	Maim
 Mithredath	Mitredat	Mitredat	auto	alta	4	2	1.00	Yehuda
 Mitylene	Mitilene	Mitilene	auto	alta	3	1	1.00	Jadi
 Mizpah	Mispa	Mispa	auto	alta	8	45	0.51	Yaazanya
+Mizpeh Valley	lembah Mispa	Lembah Mispa	auto	alta	1	2	0.50	
 Mizzah	Miza	Miza	auto	alta	2	2	1.00	Serah
 Mnason	Manason	Manason	auto	alta	2	1	1.00	Siprus
 Moab	Moab	Moab	auto	alta	6	121	0.87	Ahab
+Moab Plains	dataran Moab	Dataran Moab	auto	alta	1	12	0.83	
 Moadiah	Moaja	Moaja	auto	alta	1	3	0.67	Maazya
 Moladah	Molada	Molada	auto	alta	3	3	0.67	Eltolad
 Molech	Molok	Molok	auto	alta	2	11	0.91	Tofet
@@ -1751,6 +1863,26 @@ Moreh	More	More	revisado	alta	6	3	1.00	Mereka
 Moriah	Moria	Moria	auto	alta	2	1	1.00	Isak
 Moserah	Mosera	Mosera	auto	alta	2	1	1.00	Israel
 Moses	Musa	Musa	auto	alta	2	751	0.90	Hosea
+Mount Baalah	gunung Baala	Gunung Baala	auto	alta	2	1	1.00	
+Mount Carmel	gunung Karmel	Gunung Karmel	auto	alta	2	11	0.73	gunung Libanon
+Mount Ebal	gunung Ebal	Gunung Ebal	auto	alta	2	5	0.80	gunung Gerizim
+Mount Ephron	gunung Efron	Gunung Efron	auto	alta	2	1	1.00	
+Mount Gerizim	gunung Gerizim	Gunung Gerizim	auto	alta	2	5	0.80	gunung Ebal
+Mount Gilboa	gunung Gilboa	Gunung Gilboa	auto	alta	2	6	0.67	
+Mount Gilead	gunung Gilead	Gunung Gilead	auto	alta	2	1	1.00	
+Mount Halak	gunung Halak	Gunung Halak	auto	alta	2	2	1.00	gunung Hermon
+Mount Heres	gunung Heres	Gunung Heres	auto	alta	2	1	1.00	
+Mount Hermon	gunung Hermon	Gunung Hermon	auto	alta	2	9	0.89	gunung Siryon
+Mount Hor	gunung Hor	Gunung Hor	auto	alta	4	12	0.83	
+Mount Jearim	gunung Yearim	Gunung Yearim	auto	alta	2	1	1.00	gunung Seir
+Mount Nebo	gunung Nebo	Gunung Nebo	auto	alta	2	2	1.00	
+Mount Paran	gunung Paran	Gunung Paran	auto	alta	2	1	1.00	gunung Sinai
+Mount Perazim	gunung Perasim	Gunung Perasim	auto	alta	2	1	1.00	
+Mount Sinai	gunung Sinai	Gunung Sinai	auto	alta	2	28	0.82	gunung Paran
+Mount Sion	gunung Siryon	Gunung Siryon	auto	alta	1	1	1.00	gunung Hermon
+Mount Tabor	gunung Tabor	Gunung Tabor	auto	alta	2	6	0.50	
+Mount Zalmon	gunung Zalmon	Gunung Zalmon	auto	alta	2	1	1.00	
+Mount Zion	Bukit Sion	Bukit Sion	auto	alta	2	11	0.73	
 Mushi	Musi	Musi	auto	alta	2	4	0.50	Mahli
 Myra	Mira	Mira	auto	alta	3	1	1.00	Likia
 Mysia	Misia	Misia	auto	alta	3	2	1.00	Bitinia
@@ -1863,6 +1995,7 @@ Palti	Paltiel	Paltiel	auto	alta	1	2	1.00	Galim
 Pamphylia	Pamfilia	Pamfilia	auto	alta	3	5	1.00	Frigia
 Paphos	Pafos	Pafos	auto	alta	3	2	1.00	Paulus
 Paran	Paran	Paran	auto	alta	3	8	0.75	Harun
+Paran Mount	gunung Paran	Gunung Paran	auto	alta	1	1	1.00	gunung Sinai
 Parmenas	Parmenas	Parmenas	auto	alta	2	1	1.00	Prokorus
 Parosh	Paros	Paros	auto	alta	6	5	1.00	Dari
 Parshandatha	Pasandata	Pasandata	auto	alta	2	1	1.00	Aridata
@@ -1890,6 +2023,7 @@ Peniel	Peniel	Peniel	auto	alta	2	6	0.83	Allah
 Peninnah	Penina	Penina	auto	alta	2	2	1.00	Elkana
 Penuel	Peniel	Peniel	auto	alta	2	6	0.83	Penuel
 Peor	Peor	Peor	auto	alta	3	7	0.86	Mereka
+Perazim Mount	gunung Perasim	Gunung Perasim	auto	alta	1	1	1.00	
 Perga	Perga	Perga	auto	alta	3	3	1.00	Pafos
 Pergamum	Pergamus	Pergamus	auto	alta	3	2	1.00	Smirna
 Perida	Perida	Perida	auto	alta	1	2	0.50	Peruda
@@ -1977,6 +2111,7 @@ Rei	Rei	Rei	auto	alta	2	1	1.00	Simei
 Rekem	Rekem	Rekem	auto	alta	2	2	1.00	Reba
 Rephaiah	Refaya	Refaya	auto	alta	2	1	1.00	Bagian
 Rephaim	Refaim	Refaim	auto	alta	2	9	0.89	Negeri
+Rephaim Valley	lembah Refaim	Lembah Refaim	auto	alta	1	6	1.00	lembah Hinom
 Rephan	Remfan	Remfan	revisado	alta	1	1	1.00	Oleh
 Rephidim	Rafidim	Rafidim	auto	alta	3	5	0.80	Ritma
 Resen	Resen	Resen	auto	alta	3	1	1.00	Niniwe
@@ -1992,6 +2127,7 @@ Ribai	Ribai	Ribai	auto	alta	2	1	1.00	Itai
 Riblah	Ribla	Ribla	auto	alta	6	5	0.80	Raja
 Rimmon	Rimon	Rimon	auto	alta	9	12	0.58	Gidom
 Riphath	Rifat	Rifat	auto	alta	2	1	1.00	Togarma
+River of Arnon	sungai Arnon	Sungai Arnon	auto	alta	1	11	0.55	sungai Yordan
 Rizpah	Rizpa	Rizpa	auto	alta	2	4	1.00	Aya
 Rogelim	Rogelim	Rogelim	auto	alta	3	2	1.00	Barzilai
 Rufus	Rufus	Rufus	auto	alta	4	2	1.00	Yesus
@@ -2009,6 +2145,7 @@ Sallai	Silai	Silai	auto	alta	2	1	1.00	Gabai
 Sallu	Salu	Salu	auto	alta	4	3	0.67	Maaseya
 Salmone	Salmone	Salmone	auto	alta	3	1	1.00	Dengan
 Salome	Salome	Salome	auto	alta	2	3	0.67	Yoses
+Salt Sea	Laut Mati	Laut Mati	auto	alta	3	13	1.00	Laut Asin
 Samaria	Samaria	Samaria	revisado	alta	4	98	0.93	Zakaria
 Samos	Samos	Samos	revisado	alta	3	1	1.00	Kios
 Samothrace	Samotrake	Samotrake	auto	alta	3	1	1.00	Troas
@@ -2037,6 +2174,7 @@ Senuah	Hasenua	Hasenua	auto	alta	1	1	1.00	Yehuda
 Sephar	Sefar	Sefar	auto	alta	3	1	1.00	Mesa
 Sepharvaim	Sefarwaim	Sefarwaim	auto	alta	3	6	1.00	Awa
 Seraiah	Seraya	Seraya	auto	alta	7	11	0.91	Zefanya
+Serpent's Stone	Batu Zohelet	Batu Zohelet	auto	alta	2	1	1.00	
 Serug	Serug	Serug	auto	alta	2	5	0.80	Rehu
 Seth	Set	Set	auto	alta	2	9	0.78	Sesudah
 Shaalabbin	Saalabin	Saalabin	auto	alta	1	1	1.00	Ayalon
@@ -2118,6 +2256,7 @@ Siaha	Sia	Sia	auto	alta	1	2	0.50	Siaha
 Sibbecai	Sibekai	Sibekai	auto	alta	1	2	0.50	Husa
 Sibbechai	Sibekai	Sibekai	auto	alta	1	2	0.50	Husa
 Sibmah	Sibma	Sibma	auto	alta	3	5	0.80	Hasahar
+Siddim Valley	Lembah Sidim	Lembah Sidim	auto	alta	1	3	1.00	
 Sidon	Sidon	Sidon	auto	alta	6	39	0.95	Korazin
 Sihon	Sihon	Sihon	auto	alta	2	31	0.94	Hesbon
 Silas	Silas	Silas	auto	alta	2	17	0.88	Yudas
@@ -2141,6 +2280,7 @@ Sodom	Sodom	Sodom	auto	alta	3	37	0.86	Sidim
 Solomon	Salomo	Salomo	auto	alta	2	167	0.90	Rezon
 Sopater	Sopater	Sopater	auto	alta	2	2	0.50	Sosipater
 Sophereth	Soferet	Soferet	auto	alta	2	2	1.00	Sotai
+Sorek Valley	Lembah Sorek	Lembah Sorek	auto	alta	1	1	1.00	
 Sosthenes	Sostenes	Sostenes	auto	alta	2	2	1.00	Penguasa
 Sotai	Sotai	Sotai	auto	alta	2	2	1.00	Soferet
 Stachys	Stakis	Stakis	auto	alta	2	1	1.00	Kristus
@@ -2161,6 +2301,7 @@ Tabeal	Tabeel	Tabeel	auto	alta	2	1	1.00	Yehuda
 Tabeel	Tabeel	Tabeel	auto	alta	2	1	1.00	Mitredat
 Taberah	Tabera	Tabera	auto	alta	3	2	1.00	Hatawa
 Tabitha	Tabita	Tabita	auto	alta	1	3	0.67	Setibanya
+Tabor Mount	gunung Tabor	Gunung Tabor	auto	alta	1	5	0.60	
 Tabrimmon	Tabrimon	Tabrimon	auto	alta	1	1	1.00	Hezion
 Tabrimon	Tabrimon	Tabrimon	auto	alta	1	1	1.00	Hezion
 Tahash	Tahas	Tahas	auto	alta	1	1	1.00	Tebah
@@ -2218,6 +2359,9 @@ Togarmah	Togarma	Togarma	auto	alta	2	1	1.00	Gomer
 Tohu	Tohu	Tohu	auto	alta	1	1	1.00	Zuf
 Tophel	Tofel	Tofel	auto	alta	3	1	1.00	Suf
 Tower	Menara	Menara	auto	alta	3	5	1.00	Gerbang
+Tower of Eder	menara Eder	Menara Eder	auto	alta	1	1	1.00	
+Tower of Hananel	Menara Hananel	Menara Hananel	auto	alta	2	3	1.00	Menara Mea
+Tower of Shechem	Menara Sikem	Menara Sikem	auto	alta	1	3	1.00	
 Trachonitis	Trakonitis	Trakonitis	auto	alta	3	1	1.00	Pontius
 Troas	Troas	Troas	revisado	alta	3	6	1.00	Samotrake
 Trogyllium	Trogilium	Trogilium	auto	alta	3	1	1.00	Miletus
@@ -2245,8 +2389,30 @@ Uzzah	Uza	Uza	auto	alta	2	4	1.00	Saat
 Uzzi	Uzi	Uzi	auto	alta	6	3	1.00	Hasabya
 Uzziah	Uzia	Uzia	auto	alta	4	19	0.84	Saya
 Uzziel	Uziel	Uziel	auto	alta	4	7	0.86	Misael
+Vale of Hebron	Lembah Hebron	Lembah Hebron	auto	alta	1	1	1.00	
+Vale of Siddim	Lembah Sidim	Lembah Sidim	auto	alta	1	3	1.00	
+Valley of Aijalon	lembah Ayalon	Lembah Ayalon	auto	alta	2	1	1.00	
+Valley of Elah	lembah Elah	Lembah Elah	auto	alta	2	3	1.00	
+Valley of Eshcol	lembah Eskol	Lembah Eskol	auto	alta	1	4	0.50	Lembah Tandan
+Valley of Gerar	lembah Gerar	Lembah Gerar	auto	alta	2	2	0.50	
+Valley of Gibeon	lembah Gibeon	Lembah Gibeon	auto	alta	2	1	1.00	
+Valley of Hebron	Lembah Hebron	Lembah Hebron	auto	alta	1	1	1.00	
+Valley of Hinnom	lembah Hinom	Lembah Hinom	auto	alta	2	4	0.75	lembah Refaim
+Valley of Iphtahel	lembah Yiftah	Lembah Yiftah	auto	alta	1	2	1.00	
+Valley of Jezreel	lembah Yisreel	Lembah Yisreel	auto	alta	2	3	1.00	
+Valley of Jiphthahel	lembah Yiftah	Lembah Yiftah	auto	alta	1	2	1.00	
+Valley of Lebanon	Lembah Libanon	Lembah Libanon	auto	alta	2	2	1.00	
+Valley of Mizpeh	lembah Mispa	Lembah Mispa	auto	alta	2	1	1.00	
+Valley of Rephaim	lembah Refaim	Lembah Refaim	auto	alta	2	6	1.00	lembah Hinom
+Valley of Siddim	Lembah Sidim	Lembah Sidim	auto	alta	1	3	1.00	
+Valley of Sorek	Lembah Sorek	Lembah Sorek	auto	alta	2	1	1.00	
+Valley of Zeboim	lembah Zeboim	Lembah Zeboim	auto	alta	2	1	1.00	
+Valley of Zered	lembah Zered	Lembah Zered	auto	alta	2	1	1.00	
+Valley of the Arnon	Lembah Arnon	Lembah Arnon	auto	alta	1	11	0.73	lembah Yabok
 Vashti	Wasti	Wasti	auto	alta	2	10	1.00	Ratu
 Waheb	Waheb	Waheb	auto	alta	3	1	1.00	Kitab
+Water Gate	Gerbang Air	Gerbang Air	auto	alta	3	5	0.80	Pintu Gerbang Air
+Waters of Jericho	air Yeriko	Air Yeriko	auto	alta	1	1	1.00	
 Zaanannim	Zaananim	Zaananim	auto	alta	3	2	1.00	Adami
 Zaavan	Zaawan	Zaawan	auto	alta	1	1	1.00	Akan
 Zabad	Zabad	Zabad	auto	alta	6	3	1.00	Aziza
@@ -2275,6 +2441,7 @@ Zebedee	Zebedeus	Zebedeus	auto	alta	2	11	0.73	Setelah
 Zebidah	Zebida	Zebida	revisado	alta	1	1	1.00	Pedaya
 Zebina	Zebina	Zebina	auto	alta	2	1	1.00	Zabad
 Zeboiim	Zeboim	Zeboim	auto	alta	3	4	0.50	Sidim
+Zeboim Valley	lembah Zeboim	Lembah Zeboim	auto	alta	1	1	1.00	
 Zebudah	Zebida	Zebida	revisado	alta	1	1	1.00	Pedaya
 Zebul	Zebul	Zebul	auto	alta	2	5	1.00	Yerubaal
 Zebulun	Zebulon	Zebulon	auto	alta	2	35	0.74	Sepuluh
