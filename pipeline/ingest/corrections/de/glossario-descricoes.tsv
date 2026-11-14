@@ -1,0 +1,148 @@
+# Glossário das descrições em alemão (TIPNR, pipeline/sensus/descricoes_pt.py). Colunas:
+#   secao      cargo | tempo | tribo | lugar | relacao | nome
+#   ingles     termo como aparece na descrição da fonte (exato, com maiúsculas)
+#   portugues  tradução usada na frase (aqui: alemão)
+#   nota       observação para o revisor (opcional)
+#   genero     m, f ou n: gênero do substantivo (vazio se não se aplica)
+secao	ingles	portugues	nota	genero
+cargo	man	Mann		m
+cargo	woman	Frau		f
+cargo	location	Ort		m
+cargo	high priest	Hohepriester		m
+cargo	HIgh Priest	Hohepriester		m
+cargo	priest	Priester		m
+cargo	warrior	Krieger		m
+cargo	warriors	Krieger		m
+cargo	musician	Musiker		m
+cargo	prophet	Prophet		m
+cargo	prophetess	Prophetin		f
+cargo	king	König		m
+cargo	King	König		m
+cargo	queen	Königin		f
+cargo	group	Gruppe		f
+cargo	male deity	männliche Gottheit		f
+cargo	female deity	weibliche Gottheit		f
+cargo	deity	Gottheit		f
+cargo	people	Volk		n
+cargo	woman or town	Frau oder Stadt		f
+cargo	man or town	Mann oder Stadt		m
+cargo	town	Stadt		f
+cargo	city	Stadt		f
+cargo	emperor	Kaiser		m
+cargo	prince	Fürst		m
+cargo	apostle	Apostel		m
+cargo	angel	Engel		m
+cargo	concubine	Nebenfrau		f
+cargo	chief	Anführer		m
+cargo	steward	Verwalter		m
+cargo	servant	Diener		m
+cargo	ruler	Herrscher		m
+cargo	musical piece	Musikstück		n
+cargo	musical term	musikalischer Begriff		m
+cargo	judge	Richter		m
+cargo	Judge	Richter		m
+cargo	gigantic man	Riese		m
+cargo	Pharaoh	Pharao		m
+cargo	festival	Fest		n
+cargo	governor	Statthalter		m
+cargo	Governor	Statthalter		m
+cargo	man who founded the tribe	Stammesgründer		m
+tempo	at the time of the Patriarchs	aus der Zeit der Patriarchen		
+tempo	at the time of Egypt and Wilderness	aus der Zeit Ägyptens und der Wüste		
+tempo	at the time of Egypt and Wilderness and Conquest	aus der Zeit Ägyptens, der Wüste und der Landnahme		
+tempo	at the time of Exile and Return	aus der Zeit des Exils und der Rückkehr		
+tempo	at the time of Divided Monarchy	aus der Zeit des geteilten Königreichs		
+tempo	at the time of United Monarchy	aus der Zeit des vereinten Königreichs		
+tempo	at the time of United Monarchyand Divided Monarchy	aus der Zeit des vereinten und des geteilten Königreichs		
+tempo	at the time of the New Testament	aus der Zeit des Neuen Testaments		
+tempo	at the time of New Testament	aus der Zeit des Neuen Testaments		
+tempo	at the time of the Exodus	aus der Zeit des Exodus		
+tempo	before Israel's Monarchy	vor dem Königtum Israels		
+tempo	at the time before the Flood	aus der Zeit vor der Sintflut		
+tempo	before the Flood	vor der Sintflut		
+tempo	at the time of Judges	aus der Zeit der Richter		
+tribo	Levi	Levi		
+tribo	Judah	Juda		
+tribo	Asher	Asser		
+tribo	Benjamin	Benjamin		
+tribo	Ephraim	Ephraim		
+tribo	Manasseh	Manasse		
+tribo	Simeon	Simeon		
+tribo	Issachar	Isaschar		
+tribo	Zebulun	Sebulon		
+tribo	Naphtali	Naphthali		
+tribo	Reuben	Ruben		
+tribo	Gad	Gad		
+tribo	Dan	Dan		
+lugar	in Asia	in Asien		
+lugar	of Egypt	aus Ägypten		
+lugar	of the Kingdom of Israel	aus dem Königreich Israel		
+lugar	of Northern Israel	aus dem Nordreich Israel		
+lugar	in the Old Testament	im Alten Testament		
+lugar	of the Cushites	von den Kuschitern		
+lugar	of the Arabs	von den Arabern		
+lugar	of the Edomites	von den Edomitern		
+lugar	of the Midianites	von den Midianitern		
+lugar	of the Syrians	von den Syrern		
+lugar	of the Gomerians	von den Gomeritern		
+lugar	of the Ammonites	von den Ammonitern		
+lugar	of the Greeks	von den Griechen		
+lugar	of the Ishmaelites	von den Ismaelitern		
+lugar	of the Moabites	von den Moabitern		
+lugar	of the Egyptians	von den Ägyptern		
+lugar	of the Philistines	von den Philistern		
+lugar	of the Hittites	von den Hethitern		
+lugar	of the Canaanites	von den Kanaanitern		
+lugar	of the Amalekites	von den Amalekitern		
+lugar	of the Jebusites	von den Jebusitern		
+lugar	of the Assyrians	von den Assyrern		
+lugar	of the Babylonians	von den Babyloniern		
+lugar	of the Chaldeans	von den Chaldäern		
+lugar	of the Persians	von den Persern		
+lugar	of the Hebrews	von den Hebräern		
+lugar	of the Israelites	von den Israeliten		
+relacao	son of	Sohn von		
+relacao	daughter of	Tochter von		
+relacao	brother of	Bruder von		
+relacao	sister of	Schwester von		
+relacao	half-brother of	Halbbruder von		
+relacao	half-sister of	Halbschwester von		
+relacao	wife of	Ehefrau von		
+relacao	husband of	Ehemann von		
+relacao	mother of	Mutter von		
+relacao	father of	Vater von		
+relacao	founder of	Gründer von		
+relacao	concubine of	Nebenfrau von		
+relacao	descendant of	Nachkomme von		
+relacao	ancestor of	Vorfahre von		
+relacao	father or founder of	Vater oder Gründer von		
+relacao	unnamed father of	ungenannter Vater von		
+relacao	only referred to as father of	nur als Vater von		
+relacao	unnamed daughter of	ungenannte Tochter von		
+relacao	only referred to as a wife of	nur als Ehefrau von		
+relacao	only referred to as daughter of	nur als Tochter von		
+relacao	only referred to as husband of	nur als Ehemann von		
+relacao	unnamed wife of	ungenannte Ehefrau von		
+relacao	unnamed husband of	ungenannter Ehemann von		
+relacao	progenitors of	Stammväter von		
+relacao	only referred to as son of	nur als Sohn von		
+relacao	unnamed son of	ungenannter Sohn von		
+relacao	father in law of	Schwiegervater von		
+relacao	servant of	Diener von		
+relacao	founded nation of	Gründer des Volkes von		
+relacao	father and re-founder of	Vater und Neugründer von		
+relacao	possibly brother of	vielleicht Bruder von		
+relacao	uncle of	Onkel von		
+relacao	progenitor of	Stammvater von		
+relacao	founders of	Gründer von		
+relacao	adoptive mother of	Adoptivmutter von		
+relacao	unnamed older daughter of	ungenannte ältere Tochter von		
+relacao	unnamed younger daughter of	ungenannte jüngere Tochter von		
+relacao	only referred to as sister of	nur als Schwester von		
+relacao	unnamed sister of	ungenannte Schwester von		
+relacao	unnamed mother of	ungenannte Mutter von		
+relacao	presumed mother of	vermutliche Mutter von		
+relacao	unnamed mother-in-law of	ungenannte Schwiegermutter von		
+nome	Pharaoh	Pharao		
+nome	Asia	Asien		
+nome	Christ	Christus		

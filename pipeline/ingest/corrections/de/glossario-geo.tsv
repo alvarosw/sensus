@@ -1,0 +1,54 @@
+# Glossário geo em alemão (openbible-geo por regra). Colunas: secao (tipo | geometria | voto | fonte), ingles, alemão,
+# nota, genero. Termo que falta faz a descrição geo cair na tradução automática.
+secao	ingles	portugues	nota	genero
+tipo	settlement	Siedlung		
+tipo	region	Region		
+tipo	mountain	Berg		
+tipo	wadi	Wadi		
+tipo	river	Fluss		
+tipo	spring	Quelle		
+tipo	hill	Hügel		
+tipo	island	Insel		
+tipo	valley	Tal		
+tipo	body of water	Gewässer		
+tipo	well	Brunnen		
+tipo	probability center radial	Wahrscheinlichkeitszentrum (radial)		
+tipo	road	Straße		
+tipo	mountain range	Gebirgszug		
+tipo	structure	Bauwerk		
+tipo	mouth of river	Flussmündung		
+tipo	pool	Teich		
+tipo	cliff	Felswand		
+tipo	cave	Höhle		
+tipo	field	Feld		
+tipo	mountain pass	Gebirgspass		
+tipo	mountain ridge	Bergkamm		
+tipo	wall	Mauer		
+tipo	forest	Wald		
+tipo	harbor	Hafen		
+tipo	garden	Garten		
+tipo	promontory	Vorgebirge		
+geometria	point	Punkt		
+geometria	polygon	Polygon		
+geometria	path	Pfad		
+voto	confidence_possible	Konfidenz möglich		
+voto	confidence_likely	Konfidenz wahrscheinlich		
+voto	confidence_yes	Konfidenz ja		
+voto	confidence_mostlikely	Konfidenz sehr wahrscheinlich		
+voto	confidence_unlikely	Konfidenz unwahrscheinlich		
+voto	confidence_no	Konfidenz nein		
+voto	confidence_map	Konfidenz Karte		
+voto	authority_usually	Autorität meist		
+voto	authority_scholar	Autorität Gelehrte		
+voto	authority_traditional	Autorität Tradition		
+voto	authority_parallel	Autorität Parallele		
+voto	authority_preserved	Autorität erhalten		
+voto	authority_variant	Autorität Variante		
+voto	authority_old	Autorität alt		
+voto	identified_been	identifiziert: gewesen		
+voto	identified_is	identifiziert: ist		
+voto	identified_adjective	identifiziert: Adjektiv		
+voto	uncertain	unsicher		
+voto	unknown	unbekannt		
+fonte	modern	modern		
+fonte	ancient	antik		
