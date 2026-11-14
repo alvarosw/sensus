@@ -1,0 +1,1189 @@
+# Notas da revisão de nomes por agentes de IA (uma linha por nome_en + candidato, ou nome_en + tipo).
+# Conferidas no texto da Bíblia da língua e na tradução inglesa. Só registro: o ingestor não lê este arquivo.
+nome_en	candidato	nome_de	origem	nota
+Peninnah	Peninna	Peninna	revisado	rev. IA: conferido em 1Sam.1.2; Lutero 1912: Peninna
+Eldad	Eldad	Eldad	revisado	rev. IA: conferido em Num.11.26; Lutero 1912: Eldad
+Pagiel	Pagiel	Pagiel	revisado	rev. IA: conferido em Num.1.13; Lutero 1912: Pagiel
+Mesha	Mesa	Mesa	revisado	rev. IA: conferido em Gen.10.30; Lutero 1912: Mesa
+Zuph	Zuph	Zuph	revisado	rev. IA: conferido em 1Sam.1.1; Lutero 1912: Zuph
+Amos	Amos	Amos	revisado	rev. IA: conferido em Amos.1.1; Lutero 1912: Amos
+Sabtah	Sabtha	Sabtha	revisado	rev. IA: conferido em Gen.10.7; Lutero 1912: Sabtha
+Middin	Middin	Middin	revisado	rev. IA: conferido em Josh.15.61; Lutero 1912: Middin
+David	David	David	revisado	rev. IA: conferido em Ruth.4.17; Lutero 1912: David
+Hirah	Hira	Hira	revisado	rev. IA: conferido em Gen.38.1; Lutero 1912: Hira
+Peresh	Peres	Peres	revisado	rev. IA: conferido em 1Chr.7.16; Lutero 1912: Peres
+Talmai	Thalmai	Thalmai	revisado	rev. IA: conferido em Num.13.22; Lutero 1912: Thalmai
+Nod	Nod	Nod	revisado	rev. IA: conferido em Gen.4.16; Lutero 1912: Nod
+Lachish	Lachis	Lachis	revisado	rev. IA: conferido em Josh.10.5; Lutero 1912: Lachis
+Anan	Anan	Anan	revisado	rev. IA: conferido em Neh.10.26; Lutero 1912: Anan
+Abidan	Abidan	Abidan	revisado	rev. IA: conferido em Num.1.11; Lutero 1912: Abidan
+Elisheba	Eliseba	Eliseba	revisado	rev. IA: conferido em Exod.6.23; Lutero 1912: Eliseba
+Delilah	Delila	Delila	revisado	rev. IA: conferido em Judg.16.4; Lutero 1912: Delila
+Bethlehem	Bethlehem	Bethlehem	revisado	rev. IA: conferido em Gen.35.19; Lutero 1912: Bethlehem
+Armageddon	Harmagedon	Harmagedon	revisado	rev. IA: conferido em Rev.16.16; Lutero 1912: Harmagedon
+Shemer	Semer	Semer	revisado	rev. IA: conferido em 1Kgs.16.24; Lutero 1912: Semer
+Aholibamah	Oholibama	Oholibama	revisado	rev. IA: conferido em Gen.36.2; Lutero 1912: Oholibama
+Bera	Bera	Bera	revisado	rev. IA: conferido em Gen.14.2; Lutero 1912: Bera
+Jannai	Jannas	Janna	revisado	rev. IA: conferido em Luke.3.24; Lutero 1912: Janna; candidato no genitivo (Sohn Jannas)
+Beth-togarmah	Thogarma	Thogarma	revisado	rev. IA: conferido em Ezek.27.14; Lutero 1912: Thogarma
+Nain	Nain	Nain	revisado	rev. IA: conferido em Luke.7.11; Lutero 1912: Nain
+Salmone	Salmone	Salmone	revisado	rev. IA: conferido em Acts.27.7; Lutero 1912: Salmone
+Gog	Gog	Gog	revisado	rev. IA: conferido em 1Chr.5.4; Lutero 1912: Gog
+Goah	Goath	Goath	revisado	rev. IA: conferido em Jer.31.39; Lutero 1912: Goath
+Zebina	Sebina	Sebina	revisado	rev. IA: conferido em Ezra.10.43; Lutero 1912: Sebina
+Magog	Magog	Magog	revisado	rev. IA: conferido em Gen.10.2; Lutero 1912: Magog
+Hushai	Husai	Husai	revisado	rev. IA: conferido em 2Sam.15.32; Lutero 1912: Husai
+Shemariah	Semarja	Semarja	revisado	rev. IA: conferido em 1Chr.12.5; Lutero 1912: Semarja
+Parah	Happara	Happara	revisado	rev. IA: conferido em Josh.18.23; Lutero 1912: Happara
+Jaakobah	Jaekoba	Jaekoba	revisado	rev. IA: conferido em 1Chr.4.36; Lutero 1912: Jaekoba
+Ahira	Ahira	Ahira	revisado	rev. IA: conferido em Num.1.15; Lutero 1912: Ahira
+Zaham	Saham	Saham	revisado	rev. IA: conferido em 2Chr.11.19; Lutero 1912: Saham
+Quirinius	Cyrenius	Cyrenius	revisado	rev. IA: conferido em Luke.2.2; Lutero 1912: Cyrenius
+Jair	Jair	Jair	revisado	rev. IA: conferido em Num.32.41; Lutero 1912: Jair
+Shaalabbin	Saalabbin	Saalabbin	revisado	rev. IA: conferido em Josh.19.42; Lutero 1912: Saalabbin
+Azmon	Azmon	Azmon	revisado	rev. IA: conferido em Num.34.4; Lutero 1912: Azmon
+Abishur	Abisur	Abisur	revisado	rev. IA: conferido em 1Chr.2.28; Lutero 1912: Abisur
+Shelomith	Salomith	Salomith	revisado	rev. IA: conferido em 1Chr.23.9; Lutero 1912: Salomith
+Ai	Ai	Ai	revisado	rev. IA: conferido em Gen.12.8; Lutero 1912: Ai
+Zalaph	Zalaphs	Zalaph	revisado	rev. IA: conferido em Neh.3.30; Lutero 1912: Zalaph; candidato no genitivo
+Ahimoth	Ahimoth	Ahimoth	revisado	rev. IA: conferido em 1Chr.6.25; Lutero 1912: Ahimoth
+Shaalim	Saalim	Saalim	revisado	rev. IA: conferido em 1Sam.9.4; Lutero 1912: Saalim
+Tilgath-pilneser	Thilgath-Pilneser	Thilgath-Pilneser	revisado	rev. IA: conferido em 1Chr.5.6; Lutero 1912: Thilgath-Pilneser
+Tob	Tob	Tob	revisado	rev. IA: conferido em Judg.11.3; Lutero 1912: Tob
+Ashpenaz	Aspenas	Aspenas	revisado	rev. IA: conferido em Dan.1.3; Lutero 1912: Aspenas
+Shaphan	Saphan	Saphan	revisado	rev. IA: conferido em 2Kgs.22.3; Lutero 1912: Saphan
+Cleophas	Kleophas	Kleophas	revisado	rev. IA: conferido em Luke.24.18; Lutero 1912: Kleophas
+Gihon	Gihon	Gihon	revisado	rev. IA: conferido em Gen.2.13; Lutero 1912: Gihon
+Eleasah	Eleasa	Eleasa	revisado	rev. IA: conferido em 1Chr.2.39; Lutero 1912: Eleasa
+Jarib	Jarib	Jarib	revisado	rev. IA: conferido em Ezra.8.16; Lutero 1912: Jarib
+Ananias	Ananias	Ananias	revisado	rev. IA: conferido em Acts.5.1; Lutero 1912: Ananias
+Zeror	Zerors	Zeror	revisado	rev. IA: conferido em 1Sam.9.1; Lutero 1912: Zeror; candidato no genitivo
+Jahzeiah	Jahseja	Jahseja	revisado	rev. IA: conferido em Ezra.10.15; Lutero 1912: Jahseja
+Anath	Anaths	Anath	revisado	rev. IA: conferido em Judg.3.31; Lutero 1912: Anath; candidato no genitivo
+Kelaiah	Kelaja	Kelaja	revisado	rev. IA: conferido em Ezra.10.23; Lutero 1912: Kelaja
+Jehallelel	Jehallel-Els	Jehallel-El	revisado	rev. IA: conferido em 1Chr.4.16; Lutero 1912: Jehallel-El; candidato no genitivo
+Cushi	Chusi	Chusi	revisado	rev. IA: conferido em 2Sam.18.21; Lutero 1912: Chusi
+Ephlal	Ephlal	Ephlal	revisado	rev. IA: conferido em 1Chr.2.37; Lutero 1912: Ephlal
+Joshbekashah	Josbekasa	Josbekasa	revisado	rev. IA: conferido em 1Chr.25.4; Lutero 1912: Josbekasa
+Jakim	Jakim	Jakim	revisado	rev. IA: conferido em 1Chr.8.19; Lutero 1912: Jakim
+Rechah	Recha	Recha	revisado	rev. IA: conferido em 1Chr.4.12; Lutero 1912: Recha
+Ashnah	Asna	Asna	revisado	rev. IA: conferido em Josh.15.33; Lutero 1912: Asna
+Mithredath	Mithredath	Mithredath	revisado	rev. IA: conferido em Ezra.1.8; Lutero 1912: Mithredath
+Bildad	Bildad	Bildad	revisado	rev. IA: conferido em Job.2.11; Lutero 1912: Bildad
+Sisera	Sisera	Sisera	revisado	rev. IA: conferido em Judg.4.2; Lutero 1912: Sisera
+Zurishaddai	Zuri-Saddais	Zuri-Saddai	revisado	rev. IA: conferido em Num.1.6; Lutero 1912: Zuri-Saddai; candidato no genitivo
+Haggedolim	Gedolims	Gedolim	revisado	rev. IA: conferido em Neh.11.14; Lutero 1912: Gedolim; candidato no genitivo
+Tebeth	Tebeth	Tebeth	revisado	rev. IA: conferido em Esth.2.16; Lutero 1912: Tebeth
+Hezion	Hesjons	Hesjon	revisado	rev. IA: conferido em 1Kgs.15.18; Lutero 1912: Hesjon; candidato no genitivo
+Hodijah	Hodia	Hodia	revisado	rev. IA: conferido em Neh.8.7; Lutero 1912: Hodia
+Enos	Enos	Enos	revisado	rev. IA: conferido em Gen.4.26; Lutero 1912: Enos
+Heresh	Heres	Heres	revisado	rev. IA: conferido em 1Chr.9.15; Lutero 1912: Heres
+Sodi	Sodis	Sodi	revisado	rev. IA: conferido em Num.13.10; Lutero 1912: Sodi; candidato no genitivo
+Azgad	Asgad	Asgad	revisado	rev. IA: conferido em Ezra.2.12; Lutero 1912: Asgad
+Baal-hanan	Baal-Hanan	Baal-Hanan	revisado	rev. IA: conferido em Gen.36.38; Lutero 1912: Baal-Hanan
+Hor-haggidgad	Horgidgad	Horgidgad	revisado	rev. IA: conferido em Num.33.32; Lutero 1912: Horgidgad
+Elmadam	Elmadams	Elmadam	revisado	rev. IA: conferido em Luke.3.28; Lutero 1912: Elmadam; candidato no genitivo
+Jarha	Jarha	Jarha	revisado	rev. IA: conferido em 1Chr.2.34; Lutero 1912: Jarha
+Ammah	Amma	Amma	revisado	rev. IA: conferido em 2Sam.2.24; Lutero 1912: Amma
+Hosah	Hosa	Hosa	revisado	rev. IA: conferido em Josh.19.29; Lutero 1912: Hosa
+Medad	Medad	Medad	revisado	rev. IA: conferido em Num.11.26; Lutero 1912: Medad
+En-rimmon	En-Rimmon	En-Rimmon	revisado	rev. IA: conferido em Neh.11.29; Lutero 1912: En-Rimmon
+Sallu	Sallu	Sallu	revisado	rev. IA: conferido em 1Chr.9.7; Lutero 1912: Sallu
+Tappuah	Thappuah	Thappuah	revisado	rev. IA: conferido em Josh.12.17; Lutero 1912: Thappuah
+Gaddiel	Gaddiel	Gaddiel	revisado	rev. IA: conferido em Num.13.10; Lutero 1912: Gaddiel
+Zeboiim	Zeboim	Zeboim	revisado	rev. IA: conferido em Gen.10.19; Lutero 1912: Zeboim
+Moriah	Morija	Morija	revisado	rev. IA: conferido em Gen.22.2; Lutero 1912: Morija
+Potiphar	Potiphar	Potiphar	revisado	rev. IA: conferido em Gen.37.36; Lutero 1912: Potiphar
+Meshezabeel	Mesesabeel	Mesesabeel	revisado	rev. IA: conferido em Neh.3.4; Lutero 1912: Mesesabeel
+Mijamin	Mijamin	Mijamin	revisado	rev. IA: conferido em 1Chr.24.9; Lutero 1912: Mijamin
+Heleph	Heleph	Heleph	revisado	rev. IA: conferido em Josh.19.33; Lutero 1912: Heleph
+Bernice	Bernice	Bernice	revisado	rev. IA: conferido em Acts.25.13; Lutero 1912: Bernice
+Caleb	Kaleb	Kaleb	revisado	rev. IA: conferido em Num.13.6; Lutero 1912: Kaleb
+Malchi-shua	Malchisua	Malchisua	revisado	rev. IA: conferido em 1Sam.14.49; Lutero 1912: Malchisua
+Amphipolis	Amphipolis	Amphipolis	revisado	rev. IA: conferido em Acts.17.1; Lutero 1912: Amphipolis
+Aharhel	Aharhels	Aharhel	revisado	rev. IA: conferido em 1Chr.4.8; Lutero 1912: Aharhel; candidato no genitivo
+Melchi	Melchis	Melchi	revisado	rev. IA: conferido em Luke.3.24; Lutero 1912: Melchi; candidato no genitivo
+Arza	Arzas	Arza	revisado	rev. IA: conferido em 1Kgs.16.9; Lutero 1912: Arza; candidato no genitivo
+Naham	Nahams	Naham	revisado	rev. IA: conferido em 1Chr.4.19; Lutero 1912: Naham; candidato no genitivo
+Jonam	Jonams	Jonam	revisado	rev. IA: conferido em Luke.3.30; Lutero 1912: Jonam; candidato no genitivo
+Hadlai	Hadlais	Hadlai	revisado	rev. IA: conferido em 2Chr.28.12; Lutero 1912: Hadlai; candidato no genitivo
+Pildash	Phildas	Phildas	revisado	rev. IA: conferido em Gen.22.22; Lutero 1912: Phildas
+Jabesh	Jabes	Jabes	revisado	rev. IA: conferido em Judg.21.8; Lutero 1912: Jabes
+Shuah	Suhas	Suha	revisado	rev. IA: conferido em 1Chr.4.11; Lutero 1912: Suha; candidato no genitivo
+Machbenah	Machbenas	Machbena	revisado	rev. IA: conferido em 1Chr.2.49; Lutero 1912: Machbena; candidato no genitivo
+Nahash	Nahas	Nahas	revisado	rev. IA: conferido em 1Sam.11.1; Lutero 1912: Nahas
+Mahol	Mahols	Mahol	revisado	rev. IA: conferido em 1Kgs.4.31; Lutero 1912: Mahol; candidato no genitivo
+Carchemish	Karchemis	Karchemis	revisado	rev. IA: conferido em 2Chr.35.20; Lutero 1912: Karchemis
+Shelesh	Seles	Seles	revisado	rev. IA: conferido em 1Chr.7.35; Lutero 1912: Seles
+Parnach	Parnachs	Parnach	revisado	rev. IA: conferido em Num.34.25; Lutero 1912: Parnach; candidato no genitivo
+Magbish	Magbis	Magbis	revisado	rev. IA: conferido em Ezra.2.30; Lutero 1912: Magbis
+Harumaph	Harumaphs	Harumaph	revisado	rev. IA: conferido em Neh.3.10; Lutero 1912: Harumaph; candidato no genitivo
+Tahash	Thahas	Thahas	revisado	rev. IA: conferido em Gen.22.24; Lutero 1912: Thahas
+Bedad	Bedads	Bedad	revisado	rev. IA: conferido em Gen.36.35; Lutero 1912: Bedad; candidato no genitivo
+En-shemesh	En-Semes	En-Semes	revisado	rev. IA: conferido em Josh.15.7; Lutero 1912: En-Semes
+Timothy	Timotheus	Timotheus	revisado	rev. IA: conferido em Acts.16.1; Lutero 1912: Timotheus
+Hacaliah	Hachaljas	Hachalja	revisado	rev. IA: conferido em Neh.1.1; Lutero 1912: Hachalja; candidato no genitivo
+Ahisamach	Ahisamachs	Ahisamach	revisado	rev. IA: conferido em Exod.31.6; Lutero 1912: Ahisamach; candidato no genitivo
+Diblaim	Diblaims	Diblaim	revisado	rev. IA: conferido em Hos.1.3; Lutero 1912: Diblaim; candidato no genitivo
+Allon	Allons	Allon	revisado	rev. IA: conferido em 1Chr.4.37; Lutero 1912: Allon; candidato no genitivo
+Mark	Markus	Markus	revisado	rev. IA: conferido em Acts.12.12; Lutero 1912: Markus
+Lahmam	Lahmas	Lahmas	revisado	rev. IA: conferido em Josh.15.40; Lutero 1912: Lahmas
+Chislon	Chislons	Chislon	revisado	rev. IA: conferido em Num.34.21; Lutero 1912: Chislon; candidato no genitivo
+Ir	Irs	Ir	revisado	rev. IA: conferido em 1Chr.7.12; Lutero 1912: Ir; candidato no genitivo
+Zebedee	Zebedäus	Zebedäus	revisado	rev. IA: conferido em Matt.4.21; Lutero 1912: Zebedäus
+Menna	Menams	Menam	revisado	rev. IA: conferido em Luke.3.31; Lutero 1912: Menam; candidato no genitivo
+Ginath	Ginaths	Ginath	revisado	rev. IA: conferido em 1Kgs.16.21; Lutero 1912: Ginath; candidato no genitivo
+Jahdo	Jahdos	Jahdo	revisado	rev. IA: conferido em 1Chr.5.14; Lutero 1912: Jahdo; candidato no genitivo
+Jakeh	Jakes	Jake	revisado	rev. IA: conferido em Prov.30.1; Lutero 1912: Jake; candidato no genitivo
+Josibiah	Josibjas	Josibja	revisado	rev. IA: conferido em 1Chr.4.35; Lutero 1912: Josibja; candidato no genitivo
+Baladan	Baladans	Baladan	revisado	rev. IA: conferido em 2Kgs.20.12; Lutero 1912: Baladan; candidato no genitivo
+Neriah	Nerias	Neria	revisado	rev. IA: conferido em Jer.32.12; Lutero 1912: Neria; candidato no genitivo
+Hachmoni	Hachmonis	Hachmoni	revisado	rev. IA: conferido em 1Chr.27.32; Lutero 1912: Hachmoni; candidato no genitivo
+Jorkeam	Jorkeams	Jorkeam	revisado	rev. IA: conferido em 1Chr.2.44; Lutero 1912: Jorkeam; candidato no genitivo
+Jeshishai	Jesisais	Jesisai	revisado	rev. IA: conferido em 1Chr.5.14; Lutero 1912: Jesisai; candidato no genitivo
+Pergamum	Pergamus	Pergamus	revisado	rev. IA: conferido em Rev.1.11; Lutero 1912: Pergamus
+Enosh	Enos	Enos	revisado	rev. IA: conferido em Gen.4.26; Lutero 1912: Enos
+Hakkatan	Hakkatans	Hakkatan	revisado	rev. IA: conferido em Ezra.8.12; Lutero 1912: Hakkatan; candidato no genitivo
+Paul	Paulus	Paulus	revisado	rev. IA: conferido em Acts.13.7; Lutero 1912: Paulus
+Jehaleleel	Jehallel-Els	Jehallel-El	revisado	rev. IA: conferido em 1Chr.4.16; Lutero 1912: Jehallel-El; candidato no genitivo
+Sharar	Sarars	Sarar	revisado	rev. IA: conferido em 2Sam.23.33; Lutero 1912: Sarar; candidato no genitivo
+Raphu	Raphus	Raphu	revisado	rev. IA: conferido em Num.13.9; Lutero 1912: Raphu; candidato no genitivo
+Josiphiah	Josiphjas	Josiphja	revisado	rev. IA: conferido em Ezra.8.10; Lutero 1912: Josiphja; candidato no genitivo
+Lappidoth	Lapidoths	Lapidoth	revisado	rev. IA: conferido em Judg.4.4; Lutero 1912: Lapidoth; candidato no genitivo
+Hasenuah	Hasnuas	Hasnua	revisado	rev. IA: conferido em 1Chr.9.7; Lutero 1912: Hasnua; candidato no genitivo
+Ikkesh	Ikkes	Ikkes	revisado	rev. IA: conferido em 2Sam.23.26; Lutero 1912: Ikkes
+Laish	Lais	Lais	revisado	rev. IA: conferido em Judg.18.7; Lutero 1912: Lais
+Idbash	Jidbas	Jidbas	revisado	rev. IA: conferido em 1Chr.4.3; Lutero 1912: Jidbas
+Buzi	Busis	Busi	revisado	rev. IA: conferido em Ezek.1.3; Lutero 1912: Busi; candidato no genitivo
+Nacon	Nachons	Nachon	revisado	rev. IA: conferido em 2Sam.6.6; Lutero 1912: Nachon; candidato no genitivo
+Amminadib	Ammi-Nadibs	Ammi-Nadib	revisado	rev. IA: conferido em Song.6.12; Lutero 1912: Ammi-Nadib; candidato no genitivo
+Haggeri	Hagris	Hagri	revisado	rev. IA: conferido em 1Chr.11.38; Lutero 1912: Hagri; candidato no genitivo
+Ir-shemesh	Ir-Semes	Ir-Semes	revisado	rev. IA: conferido em Josh.19.41; Lutero 1912: Ir-Semes
+Kolaiah	Kolajas	Kolaja	revisado	rev. IA: conferido em Neh.11.7; Lutero 1912: Kolaja; candidato no genitivo
+Clement	Klemens	Klemens	revisado	rev. IA: conferido em Phil.4.3; Lutero 1912: Klemens
+Matri	Matris	Matri	revisado	rev. IA: conferido em 1Sam.10.21; Lutero 1912: Matri; candidato no genitivo
+Jehalelel	Jehallel-Els	Jehallel-El	revisado	rev. IA: conferido em 2Chr.29.12; Lutero 1912: Jehallel-El; candidato no genitivo
+Hattush	Hattus	Hattus	revisado	rev. IA: conferido em 1Chr.3.22; Lutero 1912: Hattus
+Chemosh	Kamos	Kamos	revisado	rev. IA: conferido em Num.21.29; Lutero 1912: Kamos
+Azaniah	Asanjas	Asanja	revisado	rev. IA: conferido em Neh.10.9; Lutero 1912: Asanja; candidato no genitivo
+Huri	Huris	Huri	revisado	rev. IA: conferido em 1Chr.5.14; Lutero 1912: Huri; candidato no genitivo
+Naggai	Nangais	Nangai	revisado	rev. IA: conferido em Luke.3.25; Lutero 1912: Nangai; candidato no genitivo
+Maath	Maaths	Maath	revisado	rev. IA: conferido em Luke.3.26; Lutero 1912: Maath; candidato no genitivo
+Chitlish	Kithlis	Kithlis	revisado	rev. IA: conferido em Josh.15.40; Lutero 1912: Kithlis
+Imla	Jemlas	Jemla	revisado	rev. IA: conferido em 1Kgs.22.8; Lutero 1912: Jemla; candidato no genitivo
+Janna	Jannas	Janna	revisado	rev. IA: conferido em Luke.3.24; Lutero 1912: Janna; candidato no genitivo
+Jaroah	Jaroahs	Jaroah	revisado	rev. IA: conferido em 1Chr.5.14; Lutero 1912: Jaroah; candidato no genitivo
+Elmodam	Elmadams	Elmadam	revisado	rev. IA: conferido em Luke.3.28; Lutero 1912: Elmadam; candidato no genitivo
+Cosam	Kosams	Kosam	revisado	rev. IA: conferido em Luke.3.28; Lutero 1912: Kosam; candidato no genitivo
+Parosh	Pareos	Pareos	revisado	rev. IA: conferido em Ezra.8.3; Lutero 1912: Pareos
+Joed	Joeds	Joed	revisado	rev. IA: conferido em Neh.11.7; Lutero 1912: Joed; candidato no genitivo
+Hasrah	Hasras	Hasra	revisado	rev. IA: conferido em 2Chr.34.22; Lutero 1912: Hasra; candidato no genitivo
+Messiah	Messias	Messias	revisado	rev. IA: conferido em John.1.41; Lutero 1912: Messias
+Aphiah	Aphiahs	Aphiah	revisado	rev. IA: conferido em 1Sam.9.1; Lutero 1912: Aphiah; candidato no genitivo
+Josech	Josechs	Josech	revisado	rev. IA: conferido em Luke.3.26; Lutero 1912: Josech; candidato no genitivo
+Pelaliah	Pelaljas	Pelalja	revisado	rev. IA: conferido em Neh.11.12; Lutero 1912: Pelalja; candidato no genitivo
+Cush	Chus	Chus	revisado	rev. IA: conferido em Gen.10.6; Lutero 1912: Chus
+Putiel	Putiels	Putiel	revisado	rev. IA: conferido em Exod.6.25; Lutero 1912: Putiel; candidato no genitivo
+Shomer	Somers	Somer	revisado	rev. IA: conferido em 2Kgs.12.21; Lutero 1912: Somer; candidato no genitivo
+Harum	Harums	Harum	revisado	rev. IA: conferido em 1Chr.4.8; Lutero 1912: Harum; candidato no genitivo
+Syracuse	Syrakus	Syrakus	revisado	rev. IA: conferido em Acts.28.12; Lutero 1912: Syrakus
+Chelub	Chelubs	Chelub	revisado	rev. IA: conferido em 1Chr.27.26; Lutero 1912: Chelub; candidato no genitivo
+Naphish	Naphis	Naphis	revisado	rev. IA: conferido em Gen.25.15; Lutero 1912: Naphis
+Birzaith	Birsawiths	Birsawith	revisado	rev. IA: conferido em 1Chr.7.31; Lutero 1912: Birsawith; candidato no genitivo
+Jeush	Jeus	Jeus	revisado	rev. IA: conferido em 1Chr.1.35; Lutero 1912: Jeus
+Pethuel	Pethuels	Pethuel	revisado	rev. IA: conferido em Joel.1.1; Lutero 1912: Pethuel; candidato no genitivo
+Meshillemoth	Mesillemoths	Mesillemoth	revisado	rev. IA: conferido em 2Chr.28.12; Lutero 1912: Mesillemoth; candidato no genitivo
+Habazziniah	Habazinjas	Habazinja	revisado	rev. IA: conferido em Jer.35.3; Lutero 1912: Habazinja; candidato no genitivo
+Kareah	Kareahs	Kareah	revisado	rev. IA: conferido em 2Kgs.25.23; Lutero 1912: Kareah; candidato no genitivo
+Becorath	Bechoraths	Bechorath	revisado	rev. IA: conferido em 1Sam.9.1; Lutero 1912: Bechorath; candidato no genitivo
+Matthat	Matthats	Matthat	revisado	rev. IA: conferido em Luke.3.24; Lutero 1912: Matthat; candidato no genitivo
+Amzi	Amzis	Amzi	revisado	rev. IA: conferido em 1Chr.6.46; Lutero 1912: Amzi; candidato no genitivo
+Joash	Joas	Joas	revisado	rev. IA: conferido em Judg.6.11; Lutero 1912: Joas
+Jaare-oregim	Jaere-Orgims	Jaere-Orgim	revisado	rev. IA: conferido em 2Sam.21.19; Lutero 1912: Jaere-Orgim; candidato no genitivo
+Abinoam	Abinoams	Abinoam	revisado	rev. IA: conferido em Judg.4.6; Lutero 1912: Abinoam; candidato no genitivo
+Baaseiah	Baesejas	Baeseja	revisado	rev. IA: conferido em 1Chr.6.40; Lutero 1912: Baeseja; candidato no genitivo
+Shimeath	Simeaths	Simeath	revisado	rev. IA: conferido em 2Kgs.12.21; Lutero 1912: Simeath; candidato no genitivo
+Stephen	Stephanus	Stephanus	revisado	rev. IA: conferido em Acts.6.5; Lutero 1912: Stephanus
+Michmash	Michmas	Michmas	revisado	rev. IA: conferido em 1Sam.13.2; Lutero 1912: Michmas
+Maroth	Maroths	Maroth	revisado	rev. IA: conferido em Mic.1.12; Lutero 1912: Maroth; candidato no genitivo
+Nisroch	Nisrochs	Nisroch	revisado	rev. IA: conferido em 2Kgs.19.37; Lutero 1912: Nisroch; candidato no genitivo
+Shimrith	Simriths	Simrith	revisado	rev. IA: conferido em 2Chr.24.26; Lutero 1912: Simrith; candidato no genitivo
+Zeresh	Seres	Seres	revisado	rev. IA: conferido em Esth.5.10; Lutero 1912: Seres
+Shedeur	Sedeurs	Sedeur	revisado	rev. IA: conferido em Num.1.5; Lutero 1912: Sedeur; candidato no genitivo
+Oded	Odeds	Oded	revisado	rev. IA: conferido em 2Chr.15.1; Lutero 1912: Oded; candidato no genitivo
+Deker	Dekers	Deker	revisado	rev. IA: conferido em 1Kgs.4.9; Lutero 1912: Deker; candidato no genitivo
+Igdaliah	Jigdaljas	Jigdalja	revisado	rev. IA: conferido em Jer.35.4; Lutero 1912: Jigdalja; candidato no genitivo
+Alush	Alus	Alus	revisado	rev. IA: conferido em Num.33.13; Lutero 1912: Alus
+Besodeiah	Besodjas	Besodja	revisado	rev. IA: conferido em Neh.3.6; Lutero 1912: Besodja; candidato no genitivo
+Habaziniah	Habazinjas	Habazinja	revisado	rev. IA: conferido em Jer.35.3; Lutero 1912: Habazinja; candidato no genitivo
+Tyre	Tyrus	Tyrus	revisado	rev. IA: conferido em Josh.19.29; Lutero 1912: Tyrus
+Addi	Addis	Addi	revisado	rev. IA: conferido em Luke.3.28; Lutero 1912: Addi; candidato no genitivo
+Imlah	Jemlas	Jemla	revisado	rev. IA: conferido em 1Kgs.22.8; Lutero 1912: Jemla; candidato no genitivo
+Matred	Matreds	Matred	revisado	rev. IA: conferido em Gen.36.39; Lutero 1912: Matred; candidato no genitivo
+Ithiel	Ithiels	Ithiel	revisado	rev. IA: conferido em Neh.11.7; Lutero 1912: Ithiel; candidato no genitivo
+Joshibiah	Josibjas	Josibja	revisado	rev. IA: conferido em 1Chr.4.35; Lutero 1912: Josibja; candidato no genitivo
+Adiel	Abdiels	Abdiel	revisado	rev. IA: conferido em 1Chr.9.12; Lutero 1912: Abdiel; candidato no genitivo; Lutero usa Abdiel em 1Chr 9,12 e 27,25
+Lecah	Lechas	Lecha	revisado	rev. IA: conferido em 1Chr.4.21; Lutero 1912: Lecha; candidato no genitivo
+Kadesh	Kades	Kades	revisado	rev. IA: conferido em Gen.14.7; Lutero 1912: Kades
+Mattatha	Mattathans	Mattathan	revisado	rev. IA: conferido em Luke.3.31; Lutero 1912: Mattathan; candidato no genitivo
+Lapidoth	Lapidoths	Lapidoth	revisado	rev. IA: conferido em Judg.4.4; Lutero 1912: Lapidoth; candidato no genitivo
+Zuar	Zuars	Zuar	revisado	rev. IA: conferido em Num.1.8; Lutero 1912: Zuar; candidato no genitivo
+Phanuel	Phanuels	Phanuel	revisado	rev. IA: conferido em Luke.2.36; Lutero 1912: Phanuel; candidato no genitivo
+Bichri	Bichris	Bichri	revisado	rev. IA: conferido em 2Sam.20.1; Lutero 1912: Bichri; candidato no genitivo
+Beor	Beors	Beor	revisado	rev. IA: conferido em Gen.36.32; Lutero 1912: Beor; candidato no genitivo
+Kedesh	Kedes	Kedes	revisado	rev. IA: conferido em Josh.12.22; Lutero 1912: Kedes
+Azzan	Assans	Assan	revisado	rev. IA: conferido em Num.34.26; Lutero 1912: Assan; candidato no genitivo
+Hammedatha	Hammedathas	Hammedatha	revisado	rev. IA: conferido em Esth.3.1; Lutero 1912: Hammedatha; candidato no genitivo
+Jahzerah	Jahseras	Jahsera	revisado	rev. IA: conferido em 1Chr.9.12; Lutero 1912: Jahsera; candidato no genitivo
+Hachaliah	Hachaljas	Hachalja	revisado	rev. IA: conferido em Neh.1.1; Lutero 1912: Hachalja; candidato no genitivo
+Ephai	Ephais	Ephai	revisado	rev. IA: conferido em Jer.40.8; Lutero 1912: Ephai; candidato no genitivo
+Jabesh-gilead	Jabes	Jabes in Gilead	revisado	rev. IA: conferido em Judg.21.8; Lutero 1912: Jabes in Gilead; forma de Lutero (Jabes in Gilead)
+Nahum	Nahums	Nahum	revisado	rev. IA: conferido em Nah.1.1; Lutero 1912: Nahum; candidato no genitivo
+Elkosh	Elkos	Elkos	revisado	rev. IA: conferido em Nah.1.1; Lutero 1912: Elkos
+Bath-rabbim	Bathrabbims	Bathrabbim	revisado	rev. IA: conferido em Song.7.4; Lutero 1912: Bathrabbim; candidato no genitivo
+Andrew	Andreas	Andreas	revisado	rev. IA: conferido em Matt.4.18; Lutero 1912: Andreas
+Uzai	Usais	Usai	revisado	rev. IA: conferido em Neh.3.25; Lutero 1912: Usai; candidato no genitivo
+Hazaiah	Hasajas	Hasaja	revisado	rev. IA: conferido em Neh.11.5; Lutero 1912: Hasaja; candidato no genitivo
+John	Johannes	Johannes	revisado	rev. IA: conferido em Matt.3.1; Lutero 1912: Johannes
+Remaliah	Remaljas	Remalja	revisado	rev. IA: conferido em 2Kgs.15.25; Lutero 1912: Remalja; candidato no genitivo
+Elnaam	Elnaams	Elnaam	revisado	rev. IA: conferido em 1Chr.11.46; Lutero 1912: Elnaam; candidato no genitivo
+Nympha	Nymphas	Nymphas	revisado	rev. IA: conferido em Col.4.15; Lutero 1912: Nymphas
+Shelomi	Selomis	Selomi	revisado	rev. IA: conferido em Num.34.27; Lutero 1912: Selomi; candidato no genitivo
+Ammishaddai	Ammi-Saddais	Ammi-Saddai	revisado	rev. IA: conferido em Num.1.12; Lutero 1912: Ammi-Saddai; candidato no genitivo
+Jerubbesheth	Jerubbeseths	Jerubbeseth	revisado	rev. IA: conferido em 2Sam.11.21; Lutero 1912: Jerubbeseth; candidato no genitivo
+Esli	Eslis	Esli	revisado	rev. IA: conferido em Luke.3.25; Lutero 1912: Esli; candidato no genitivo
+Nimshi	Nimsis	Nimsi	revisado	rev. IA: conferido em 1Kgs.19.16; Lutero 1912: Nimsi; candidato no genitivo
+Aher	Ahers	Aher	revisado	rev. IA: conferido em 1Chr.7.12; Lutero 1912: Aher; candidato no genitivo
+Mash	Mas	Mas	revisado	rev. IA: conferido em Gen.10.23; Lutero 1912: Mas
+Pilate	Pilatus	Pilatus	revisado	rev. IA: conferido em Matt.27.2; Lutero 1912: Pilatus
+Ulla	Ullas	Ulla	revisado	rev. IA: conferido em 1Chr.7.39; Lutero 1912: Ulla; candidato no genitivo
+Helon	Helons	Helon	revisado	rev. IA: conferido em Num.1.9; Lutero 1912: Helon; candidato no genitivo
+Jeberechiah	Jeberechjas	Jeberechja	revisado	rev. IA: conferido em Isa.8.2; Lutero 1912: Jeberechja; candidato no genitivo
+Hodesh	Hodes	Hodes	revisado	rev. IA: conferido em 1Chr.8.9; Lutero 1912: Hodes
+Salu	Salus	Salu	revisado	rev. IA: conferido em Num.25.14; Lutero 1912: Salu; candidato no genitivo
+Azbuk	Asbuks	Asbuk	revisado	rev. IA: conferido em Neh.3.16; Lutero 1912: Asbuk; candidato no genitivo
+Rhesa	Resas	Resa	revisado	rev. IA: conferido em Luke.3.27; Lutero 1912: Resa; candidato no genitivo
+Magpiash	Magpias	Magpias	revisado	rev. IA: conferido em Neh.10.20; Lutero 1912: Magpias
+Zechariah	Zacharias	Zacharias	revisado	rev. IA: conferido em Matt.23.35; Lutero 1912: Zacharias
+Ethbaal	Ethbaals	Ethbaal	revisado	rev. IA: conferido em 1Kgs.16.31; Lutero 1912: Ethbaal; candidato no genitivo
+Ribai	Ribais	Ribai	revisado	rev. IA: conferido em 2Sam.23.29; Lutero 1912: Ribai; candidato no genitivo
+Jahdai	Jahdais	Jahdai	revisado	rev. IA: conferido em 1Chr.2.47; Lutero 1912: Jahdai; candidato no genitivo
+Herod	Herodes	Herodes	revisado	rev. IA: conferido em Matt.2.1; Lutero 1912: Herodes
+Hillel	Hillels	Hillel	revisado	rev. IA: conferido em Judg.12.13; Lutero 1912: Hillel; candidato no genitivo
+Paruah	Paruahs	Paruah	revisado	rev. IA: conferido em 1Kgs.4.17; Lutero 1912: Paruah; candidato no genitivo
+Agur	Agurs	Agur	revisado	rev. IA: conferido em Prov.30.1; Lutero 1912: Agur; candidato no genitivo
+Maoch	Maochs	Maoch	revisado	rev. IA: conferido em 1Sam.27.2; Lutero 1912: Maoch; candidato no genitivo
+Dodavahu	Dodavas	Dodava	revisado	rev. IA: conferido em 2Chr.20.37; Lutero 1912: Dodava; candidato no genitivo
+Tabrimon	Tabrimmons	Tabrimmon	revisado	rev. IA: conferido em 1Kgs.15.18; Lutero 1912: Tabrimmon; candidato no genitivo
+Azaliah	Azaljas	Azalja	revisado	rev. IA: conferido em 2Kgs.22.3; Lutero 1912: Azalja; candidato no genitivo
+Teresh	Theres	Theres	revisado	rev. IA: conferido em Esth.2.21; Lutero 1912: Theres
+Beeri	Beeris	Beeri	revisado	rev. IA: conferido em Gen.26.34; Lutero 1912: Beeri; candidato no genitivo
+Adlai	Adlais	Adlai	revisado	rev. IA: conferido em 1Chr.27.29; Lutero 1912: Adlai; candidato no genitivo
+Chloe	Chloes	Chloe	revisado	rev. IA: conferido em 1Cor.1.11; Lutero 1912: Chloe; candidato no genitivo
+Zaanan	Zaenans	Zaenan	revisado	rev. IA: conferido em Mic.1.11; Lutero 1912: Zaenan; candidato no genitivo
+Nebat	Nebats	Nebat	revisado	rev. IA: conferido em 1Kgs.11.26; Lutero 1912: Nebat; candidato no genitivo
+Gemalli	Gemallis	Gemalli	revisado	rev. IA: conferido em Num.13.12; Lutero 1912: Gemalli; candidato no genitivo
+Zippor	Zippors	Zippor	revisado	rev. IA: conferido em Num.22.2; Lutero 1912: Zippor; candidato no genitivo
+Nathan-melech	Nethan-Melechs	Nethan-Melech	revisado	rev. IA: conferido em 2Kgs.23.11; Lutero 1912: Nethan-Melech; candidato no genitivo
+Beth-shemesh	Beth-Semes	Beth-Semes	revisado	rev. IA: conferido em Josh.15.10; Lutero 1912: Beth-Semes
+Hesed	Heseds	Hesed	revisado	rev. IA: conferido em 1Kgs.4.10; Lutero 1912: Hesed; candidato no genitivo
+Chuza	Chusas	Chusa	revisado	rev. IA: conferido em Luke.8.3; Lutero 1912: Chusa; candidato no genitivo
+Junia	Junias	Junias	revisado	rev. IA: conferido em Rom.16.7; Lutero 1912: Junias
+Dodo	Dodos	Dodo	revisado	rev. IA: conferido em Judg.10.1; Lutero 1912: Dodo; candidato no genitivo
+Potiphera	Potipheras	Potiphera	revisado	rev. IA: conferido em Gen.41.45; Lutero 1912: Potiphera; candidato no genitivo
+Peter	Petrus	Petrus	revisado	rev. IA: conferido em Matt.4.18; Lutero 1912: Petrus
+Tabrimmon	Tabrimmons	Tabrimmon	revisado	rev. IA: conferido em 1Kgs.15.18; Lutero 1912: Tabrimmon; candidato no genitivo
+Shiphtan	Siphtans	Siphtan	revisado	rev. IA: conferido em Num.34.24; Lutero 1912: Siphtan; candidato no genitivo
+Arnan	Arnans	Arnan	revisado	rev. IA: conferido em 1Chr.3.21; Lutero 1912: Arnan; candidato no genitivo
+Bechorath	Bechoraths	Bechorath	revisado	rev. IA: conferido em 1Sam.9.1; Lutero 1912: Bechorath; candidato no genitivo
+Dibri	Dibris	Dibri	revisado	rev. IA: conferido em Lev.24.11; Lutero 1912: Dibri; candidato no genitivo
+Hodiah	Hodijas	Hodija	revisado	rev. IA: conferido em 1Chr.4.19; Lutero 1912: Hodija; candidato no genitivo
+Imri	Imris	Imri	revisado	rev. IA: conferido em 1Chr.9.4; Lutero 1912: Imri; candidato no genitivo
+Philip	Philippus	Philippus	revisado	rev. IA: conferido em Matt.10.3; Lutero 1912: Philippus
+Rosh	Ros	Ros	revisado	rev. IA: conferido em Gen.46.21; Lutero 1912: Ros
+Shuhah	Suhas	Suha	revisado	rev. IA: conferido em 1Chr.4.11; Lutero 1912: Suha; candidato no genitivo
+Naum	Nahums	Nahum	revisado	rev. IA: conferido em Luke.3.25; Lutero 1912: Nahum; candidato no genitivo
+Shilhi	Silhis	Silhi	revisado	rev. IA: conferido em 1Kgs.22.42; Lutero 1912: Silhi; candidato no genitivo
+Jogli	Joglis	Jogli	revisado	rev. IA: conferido em Num.34.22; Lutero 1912: Jogli; candidato no genitivo
+Shiphi	Sipheis	Siphei	revisado	rev. IA: conferido em 1Chr.4.37; Lutero 1912: Siphei; candidato no genitivo
+Agee	Ages	Age	revisado	rev. IA: conferido em 2Sam.23.11; Lutero 1912: Age; candidato no genitivo
+Thahash	Thahas	Thahas	revisado	rev. IA: conferido em Gen.22.24; Lutero 1912: Thahas
+Tikvah	Tikwas	Tikwa	revisado	rev. IA: conferido em Ezra.10.15; Lutero 1912: Tikwa; candidato no genitivo
+Ocran	Ochrans	Ochran	revisado	rev. IA: conferido em Num.1.13; Lutero 1912: Ochran; candidato no genitivo
+Barachel	Baracheels	Baracheel	revisado	rev. IA: conferido em Job.32.2; Lutero 1912: Baracheel; candidato no genitivo
+Abdiel	Abdiels	Abdiel	revisado	rev. IA: conferido em 1Chr.5.15; Lutero 1912: Abdiel; candidato no genitivo
+Gaash	Gaas	Gaas	revisado	rev. IA: conferido em Josh.24.30; Lutero 1912: Gaas
+Tanhumeth	Thanhumeths	Thanhumeth	revisado	rev. IA: conferido em 2Kgs.25.23; Lutero 1912: Thanhumeth; candidato no genitivo
+Gadi	Gadis	Gadi	revisado	rev. IA: conferido em 2Kgs.15.14; Lutero 1912: Gadi; candidato no genitivo
+Hallohesh	Halohes	Halohes	revisado	rev. IA: conferido em Neh.3.12; Lutero 1912: Halohes
+Ahilud	Ahiluds	Ahilud	revisado	rev. IA: conferido em 2Sam.8.16; Lutero 1912: Ahilud; candidato no genitivo
+Susi	Susis	Susi	revisado	rev. IA: conferido em Num.13.11; Lutero 1912: Susi; candidato no genitivo
+Beth-ezel	Beth-Haezels	Beth-Haezel	revisado	rev. IA: conferido em Mic.1.11; Lutero 1912: Beth-Haezel; candidato no genitivo
+Poti-pherah	Potipheras	Potiphera	revisado	rev. IA: conferido em Gen.41.45; Lutero 1912: Potiphera; candidato no genitivo
+Birzavith	Birsawiths	Birsawith	revisado	rev. IA: conferido em 1Chr.7.31; Lutero 1912: Birsawith; candidato no genitivo
+Beth-gader	Bethgaders	Bethgader	revisado	rev. IA: conferido em 1Chr.2.51; Lutero 1912: Bethgader; candidato no genitivo
+Meshillemith	Mesillemiths	Mesillemith	revisado	rev. IA: conferido em 1Chr.9.12; Lutero 1912: Mesillemith; candidato no genitivo
+Tikvah	Thikwas	Thikwa	revisado	rev. IA: conferido em 2Kgs.22.14; Lutero 1912: Thikwa; candidato no genitivo
+Achish	Achis	Achis	revisado	rev. IA: conferido em 1Sam.21.10; Lutero 1912: Achis
+Harhaiah	Harhajas	Harhaja	revisado	rev. IA: conferido em Neh.3.8; Lutero 1912: Harhaja; candidato no genitivo
+Col-hozeh	Chol-Hoses	Chol-Hose	revisado	rev. IA: conferido em Neh.3.15; Lutero 1912: Chol-Hose; candidato no genitivo
+Michri	Michris	Michri	revisado	rev. IA: conferido em 1Chr.9.8; Lutero 1912: Michri; candidato no genitivo
+Ahasbai	Ahasbais	Ahasbai	revisado	rev. IA: conferido em 2Sam.23.34; Lutero 1912: Ahasbai; candidato no genitivo
+Kish	Kis	Kis	revisado	rev. IA: conferido em 1Sam.9.1; Lutero 1912: Kis
+Melea	Meleas	Melea	revisado	rev. IA: conferido em Luke.3.31; Lutero 1912: Melea; candidato no genitivo
+Sceva	Skevas	Skevas	revisado	rev. IA: conferido em Acts.19.14; Lutero 1912: Skevas
+Lael	Laels	Lael	revisado	rev. IA: conferido em Num.3.24; Lutero 1912: Lael; candidato no genitivo
+Amittai	Amitthais	Amitthai	revisado	rev. IA: conferido em 2Kgs.14.25; Lutero 1912: Amitthai; candidato no genitivo
+Dodavah	Dodavas	Dodava	revisado	rev. IA: conferido em 2Chr.20.37; Lutero 1912: Dodava; candidato no genitivo
+Pedahzur	Pedazurs	Pedazur	revisado	rev. IA: conferido em Num.1.10; Lutero 1912: Pedazur; candidato no genitivo
+Ephod	Ephods	Ephod	revisado	rev. IA: conferido em Num.34.23; Lutero 1912: Ephod; candidato no genitivo
+Bohan	Bohans	Bohan	revisado	rev. IA: conferido em Josh.15.6; Lutero 1912: Bohan; candidato no genitivo
+Halohesh	Halohes	Halohes	revisado	rev. IA: conferido em Neh.3.12; Lutero 1912: Halohes
+Neri	Neris	Neri	revisado	rev. IA: conferido em Luke.3.27; Lutero 1912: Neri; candidato no genitivo
+Ochran	Ochrans	Ochran	revisado	rev. IA: conferido em Num.1.13; Lutero 1912: Ochran; candidato no genitivo
+Machi	Machis	Machi	revisado	rev. IA: conferido em Num.13.15; Lutero 1912: Machi; candidato no genitivo
+Mezahab	Mesahabs	Mesahab	revisado	rev. IA: conferido em Gen.36.39; Lutero 1912: Mesahab; candidato no genitivo
+Abel	Zahl	Abel	revisado	rev. IA: conferido em 1Sam.6.18; Lutero 1912: Abel; Lutero traduz (großer Stein); forma alemã igual
+Abel-keramim	Aroer	Abel-Keramim	revisado	rev. IA: conferido em Judg.11.33; Lutero 1912: Abel-Keramim; Lutero traduz (Plan der Weinberge)
+Abel-mizraim	Daher	Abel-Mizraim	revisado	rev. IA: conferido em Gen.50.11; Lutero 1912: Abel-Mizraim; Lutero traduz (Der Ägypter Klage)
+Adino	Rittern	Adino	revisado	rev. IA: conferido em 2Sam.23.8; Lutero 1912: Adino; Lutero omite; forma alemã
+Adramyttium	Aristarchus	Adramyttium	revisado	rev. IA: conferido em Acts.27.2; Lutero 1912: Adramyttium; Lutero: adramyttisches Schiff
+Al-taschith	Schatten		sem	rev. IA: conferido em Ps.57.1; sem forma própria segura em Lutero 1912; título de salmo traduzido por Lutero (daß er nicht umkäme)
+Alamoth	Semiramoth	Alamoth	revisado	rev. IA: conferido em 1Chr.15.20; Lutero 1912: Alamoth; termo musical; forma alemã
+Allon	Jabneel	Allon	revisado	rev. IA: conferido em Josh.19.33; Lutero 1912: Allon; Lutero traduz (Eichen)
+Allon-bacuth	Klageeiche	Klageeiche	revisado	rev. IA: conferido em Gen.35.8; Lutero 1912: Klageeiche
+Amaw	Bileam	Amaw	revisado	rev. IA: conferido em Num.22.5; Lutero 1912: Amaw; Lutero traduz (Lande der Kinder seines Volks)
+Amorite	Amoriter	Amoriter	revisado	rev. IA: conferido em Gen.10.16; Lutero 1912: Amoriter
+Amorites	Amoriter	Amoriter	revisado	rev. IA: conferido em Gen.10.16; Lutero 1912: Amoriter
+Apharasthchite	Apharsach	Apharsach	revisado	rev. IA: conferido em Ezra.5.6; Lutero 1912: Apharsach
+Arabah	Abhängen	Araba	revisado	rev. IA: conferido em Josh.12.3; Lutero 1912: Araba; Lutero traduz (Gefilde); forma alemã
+Arabah	Arbathiter	Araba	revisado	rev. IA: conferido em 2Sam.23.31; Lutero 1912: Araba; Lutero traduz (Gefilde); forma alemã
+Arabah	Bach	Araba	revisado	rev. IA: conferido em Josh.12.1; Lutero 1912: Araba; Lutero traduz (Gefilde); forma alemã
+Aram	Jair	Aram	revisado	rev. IA: conferido em 1Chr.2.23; Lutero 1912: Aram; Lutero: Syrer
+Aram	Kemuel	Aram	revisado	rev. IA: conferido em Gen.22.21; Lutero 1912: Aram; Lutero: Syrer
+Aram-naharaim	Syrern	Mesopotamien	revisado	rev. IA: conferido em Ps.60.1; Lutero 1912: Mesopotamien; Lutero: Mesopotamien (Gen 24,10)
+Aramitess	Asriel	Syrerin	revisado	rev. IA: conferido em 1Chr.7.14; Lutero 1912: Syrerin; Lutero: syrisches Kebsweib
+Archites	Arachiter	Arachiter	revisado	rev. IA: conferido em Josh.16.2; Lutero 1912: Arachiter
+Areopagus	Damaris	Areopag	revisado	rev. IA: conferido em Acts.17.34; Lutero 1912: Areopag; Lutero traduz (Gerichtsplatz)
+Areopagus	Paulus	Areopag	revisado	rev. IA: conferido em Acts.17.22; Lutero 1912: Areopag; Lutero traduz (Gerichtsplatz)
+Ariel	Is-Hails	Ariel	revisado	rev. IA: conferido em 2Sam.23.20; Lutero 1912: Ariel
+Arkite	Arkiter	Arkiter	revisado	rev. IA: conferido em Gen.10.17; Lutero 1912: Arkiter
+Arkites	Arkiter	Arkiter	revisado	rev. IA: conferido em Gen.10.17; Lutero 1912: Arkiter
+Artemis	Demetrius	Diana	revisado	rev. IA: conferido em Acts.19.24; Lutero 1912: Diana; Lutero: Diana
+Arvadite	Arvaditer	Arvaditer	revisado	rev. IA: conferido em Gen.10.18; Lutero 1912: Arvaditer
+Arvadites	Arvaditer	Arvaditer	revisado	rev. IA: conferido em Gen.10.18; Lutero 1912: Arvaditer
+Asen	Hariph		sem	rev. IA: conferido em Neh.7.24; sem forma própria segura em Lutero 1912; nome sem correspondência em Lutero nem na KJV
+Atharim	Arad	Atharim	revisado	rev. IA: conferido em Num.21.1; Lutero 1912: Atharim; Lutero traduz (Weg der Kundschafter)
+Atroth-beth-joab	Atharoth	Atharoth-Beth-Joab	revisado	rev. IA: conferido em 1Chr.2.54; Lutero 1912: Atharoth-Beth-Joab; Lutero: Atharoth des Hauses Joabs
+Azotus	Asdod	Asdod	revisado	rev. IA: conferido em Acts.8.40; Lutero 1912: Asdod
+Babylonia	Babel	Babel	revisado	rev. IA: conferido em Ezra.1.11; Lutero 1912: Babel
+Bamah	Was	Bama	revisado	rev. IA: conferido em Ezek.20.29; Lutero 1912: Bama; Lutero traduz (Höhe)
+Beer-lahai-roi	Lebendigen	Beer-Lahai-Roi	revisado	rev. IA: conferido em Gen.16.14; Lutero 1912: Beer-Lahai-Roi; Lutero traduz (Brunnen des Lebendigen, der mich ansieht)
+Ben-hur	Hur	Ben-Hur	revisado	rev. IA: conferido em 1Kgs.4.8; Lutero 1912: Ben-Hur; Lutero: der Sohn Hurs
+Beno	Ibri	Beno	revisado	rev. IA: conferido em 1Chr.24.27; Lutero 1912: Beno; Lutero omite; forma alemã
+Beth-Ashtoreth	Astharoth	Haus der Astharoth	revisado	rev. IA: conferido em 1Sam.31.10; Lutero 1912: Haus der Astharoth; Lutero: Haus der Astharoth
+Beth-eden	Zepter	Beth-Eden	revisado	rev. IA: conferido em Amos.1.5; Lutero 1912: Beth-Eden; Lutero traduz (Lusthaus)
+Beth-eked	Unterwegs	Hirtenhaus	revisado	rev. IA: conferido em 2Kgs.10.12; Lutero 1912: Hirtenhaus
+Beth-haggan	Jibleam	Beth-Haggan	revisado	rev. IA: conferido em 2Kgs.9.27; Lutero 1912: Beth-Haggan; Lutero traduz (Haus des Gartens)
+Beth-merhak	Hause	Beth-Merhak	revisado	rev. IA: conferido em 2Sam.15.17; Lutero 1912: Beth-Merhak; Lutero traduz (am äußersten Hause)
+Bethany	Bethabara	Bethabara	revisado	rev. IA: conferido em John.1.28; Lutero 1912: Bethabara
+Bether	Scheidebergen	Bether	revisado	rev. IA: conferido em Song.2.17; Lutero 1912: Bether; Lutero traduz (Scheideberge)
+Bithiah	Jekuthiel	Bithja	revisado	rev. IA: conferido em 1Chr.4.18; Lutero 1912: Bithja; Lutero: Bithjas (genitivo)
+Buzites	Bus	Busiter	revisado	rev. IA: conferido em Job.32.2; Lutero 1912: Busiter; Lutero: von Bus
+Cherethites	Krether	Krether	revisado	rev. IA: conferido em 1Sam.30.14; Lutero 1912: Krether
+Cush	Wasser	Mohrenland	revisado	rev. IA: conferido em Gen.2.13; Lutero 1912: Mohrenland
+Cushan	Hütten	Kuschan	revisado	rev. IA: conferido em Hab.3.7; Lutero 1912: Kuschan; Lutero: der Mohren Hütten
+Cyprus	Zypern	Zypern	revisado	rev. IA: conferido em Acts.4.36; Lutero 1912: Zypern
+Decapolis	Galiläische	Dekapolis	revisado	rev. IA: conferido em Mark.7.31; Lutero 1912: Dekapolis; Lutero traduz (zehn Städte)
+Dehavites	Deha	Deha	revisado	rev. IA: conferido em Ezra.4.9; Lutero 1912: Deha
+Destiny	Meni	Meni	revisado	rev. IA: conferido em Isa.65.11; Lutero 1912: Meni
+Destruction	Eine	Ir-Heres	revisado	rev. IA: conferido em Isa.19.18; Lutero 1912: Ir-Heres
+Dinaites	Dina	Dina	revisado	rev. IA: conferido em Ezra.4.9; Lutero 1912: Dina
+Dorcas	Röcke	Tabea	revisado	rev. IA: conferido em Acts.9.39; Lutero 1912: Tabea
+East	Sebah	Morgenland	revisado	rev. IA: conferido em Judg.8.10; Lutero 1912: Morgenland; Lutero: Kinder des Morgens / Morgenland
+Ecbatana	Ahmetha	Ahmetha	revisado	rev. IA: conferido em Ezra.6.2; Lutero 1912: Ahmetha
+Eglath-shelishiyah	Eglath	Eglath-Selisija	revisado	rev. IA: conferido em Isa.15.5; Lutero 1912: Eglath-Selisija; Lutero: das dritte Eglath
+Egypt	Put	Ägypten	revisado	rev. IA: conferido em Gen.10.6; Lutero 1912: Ägypten
+En-hakkore	Anrufers	En-Hakkore	revisado	rev. IA: conferido em Judg.15.19; Lutero 1912: En-Hakkore; Lutero: des Anrufers Brunnen
+Ephron	Nephthoa	Ephron	revisado	rev. IA: conferido em Josh.18.15; Lutero 1912: Ephron; Lutero: Gebirge Ephron (Jos 15,9)
+Eznites	Vornehmster	Ezniter	revisado	rev. IA: conferido em 2Sam.23.8; Lutero 1912: Ezniter; Lutero omite
+Field	Teiche	Acker des Walkmüllers	revisado	rev. IA: conferido em 2Kgs.18.17; Lutero 1912: Acker des Walkmüllers
+Forest	Rüstungen	Haus des Waldes	revisado	rev. IA: conferido em Isa.22.8; Lutero 1912: Haus des Waldes
+Fortune	HERRN	Gad	revisado	rev. IA: conferido em Isa.65.11; Lutero 1912: Gad; Lutero: dem Gad einen Tisch
+Freedmen	Kyrener	Libertiner	revisado	rev. IA: conferido em Acts.6.9; Lutero 1912: Libertiner
+Gadara	Totengräbern	Gadara	revisado	rev. IA: conferido em Matt.8.28; Lutero 1912: Gadara; Lutero: Gergesener
+Galilee	Gilgal	Galiläa	revisado	rev. IA: conferido em Josh.12.23; Lutero 1912: Galiläa
+Garmite	Garmiter	Garmiter	revisado	rev. IA: conferido em 1Chr.4.19; Lutero 1912: Garmiter
+Garmites	Garmiter	Garmiter	revisado	rev. IA: conferido em 1Chr.4.19; Lutero 1912: Garmiter
+Gath	Gahtiters	Gath	revisado	rev. IA: conferido em 1Chr.13.13; Lutero 1912: Gath
+Ge-harashim	Seraja	Tal der Zimmerleute	revisado	rev. IA: conferido em 1Chr.4.14; Lutero 1912: Tal der Zimmerleute
+Gederah	Geschäft	Gedera	revisado	rev. IA: conferido em 1Chr.4.23; Lutero 1912: Gedera; Lutero traduz (Pflanzungen)
+Gerasa	Gadarener	Gerasa	revisado	rev. IA: conferido em Mark.5.1; Lutero 1912: Gerasa; Lutero: Gadarener / Gergesener
+Gerasa	Gergesener	Gerasa	revisado	rev. IA: conferido em Matt.8.28; Lutero 1912: Gerasa; Lutero: Gadarener / Gergesener
+Gibeath-elohim	Hügel	Hügel Gottes	revisado	rev. IA: conferido em 1Sam.10.5; Lutero 1912: Hügel Gottes
+Gilo	Gileoniters	Gilo	revisado	rev. IA: conferido em 2Sam.23.34; Lutero 1912: Gilo
+Gimzo	Socho	Gimso	revisado	rev. IA: conferido em 2Chr.28.18; Lutero 1912: Gimso
+Girgashites	Girgasiter	Girgasiter	revisado	rev. IA: conferido em Gen.10.16; Lutero 1912: Girgasiter
+Girgasite	Girgasiter	Girgasiter	revisado	rev. IA: conferido em Gen.10.16; Lutero 1912: Girgasiter
+Girzites	Girsiter	Girsiter	revisado	rev. IA: conferido em 1Sam.27.8; Lutero 1912: Girsiter
+Gizonites	Gisoniters	Gisoniter	revisado	rev. IA: conferido em 1Chr.11.34; Lutero 1912: Gisoniter
+Goiim	Gilgal	Gojim	revisado	rev. IA: conferido em Josh.12.23; Lutero 1912: Gojim; Lutero traduz (Heiden)
+Goiim	Kedor-Laomor	Gojim	revisado	rev. IA: conferido em Gen.14.1; Lutero 1912: Gojim; Lutero traduz (Heiden)
+Gulloth-mayim	Mittagsland	Gulloth-Majim	revisado	rev. IA: conferido em Josh.15.19; Lutero 1912: Gulloth-Majim; Lutero traduz (Wasserquellen)
+Hachmonites	Hachmonis	Hachmoniter	revisado	rev. IA: conferido em 2Sam.23.8; Lutero 1912: Hachmoniter
+Hakkephirim	Fläche	Kephirim	revisado	rev. IA: conferido em Neh.6.2; Lutero 1912: Kephirim; Lutero traduz (Dörfer)
+Hamathite	Hamathiter	Hamathiter	revisado	rev. IA: conferido em Gen.10.18; Lutero 1912: Hamathiter
+Hamathites	Hamathiter	Hamathiter	revisado	rev. IA: conferido em Gen.10.18; Lutero 1912: Hamathiter
+Hammelech	Abdeel	Hammelech	revisado	rev. IA: conferido em Jer.36.26; Lutero 1912: Hammelech; Lutero traduz (Königssohn)
+Hararites	Harariter	Harariter	revisado	rev. IA: conferido em 2Sam.23.11; Lutero 1912: Harariter
+Haruphites	Harophiter	Harophiter	revisado	rev. IA: conferido em 1Chr.12.5; Lutero 1912: Harophiter
+Hazerim	Avviter	Hazerim	revisado	rev. IA: conferido em Deut.2.23; Lutero 1912: Hazerim; Lutero traduz (Dörfer)
+Helech	Heer	Helech	revisado	rev. IA: conferido em Ezek.27.11; Lutero 1912: Helech; Lutero traduz (Heer)
+Heliopolis	Götzentempel	Beth-Semes	revisado	rev. IA: conferido em Jer.43.13; Lutero 1912: Beth-Semes; Lutero: Beth-Semes in Ägyptenland
+Heliopolis	Potipheras	On	revisado	rev. IA: conferido em Gen.41.45; Lutero 1912: On; Lutero: Priester zu On
+Heres	Streit	Heres	revisado	rev. IA: conferido em Judg.8.13; Lutero 1912: Heres
+Hermes	Merkurius	Merkurius	revisado	rev. IA: conferido em Acts.14.12; Lutero 1912: Merkurius
+Higgaion	Hände	Zwischenspiel	revisado	rev. IA: conferido em Ps.9.16; Lutero 1912: Zwischenspiel; Lutero: Zwischenspiel
+Highway	Weingärten	Landstraße	revisado	rev. IA: conferido em Num.21.22; Lutero 1912: Landstraße; Lutero: Landstraße
+Hivite	Heviter	Heviter	revisado	rev. IA: conferido em Gen.10.17; Lutero 1912: Heviter
+Hivites	Heviter	Heviter	revisado	rev. IA: conferido em Gen.10.17; Lutero 1912: Heviter
+Horesh	Ort	Hores	revisado	rev. IA: conferido em 1Sam.23.19; Lutero 1912: Hores; Lutero traduz (Heide)
+Horonaim	Absalom	Horonaim	revisado	rev. IA: conferido em 2Sam.13.34; Lutero 1912: Horonaim
+Horonites	Horoniter	Horoniter	revisado	rev. IA: conferido em Neh.2.10; Lutero 1912: Horoniter
+Hushathites	Husathiter	Husathiter	revisado	rev. IA: conferido em 2Sam.21.18; Lutero 1912: Husathiter
+Ir-moab	Moabiter	Ir-Moab	revisado	rev. IA: conferido em Num.22.36; Lutero 1912: Ir-Moab; Lutero: Stadt der Moabiter
+Ishbi-benob	Jesbi	Jesbi zu Nob	revisado	rev. IA: conferido em 2Sam.21.16; Lutero 1912: Jesbi zu Nob
+Ithiel	Jakes	Ithiel	revisado	rev. IA: conferido em Prov.30.1; Lutero 1912: Ithiel
+Ithrites	Jethriter	Jethriter	revisado	rev. IA: conferido em 2Sam.23.38; Lutero 1912: Jethriter
+Jaar	Siehe	Jaar	revisado	rev. IA: conferido em Ps.132.6; Lutero 1912: Jaar; Lutero traduz (Feld des Waldes)
+James	Jakobus	Jakobus	revisado	rev. IA: conferido em Matt.4.21; Lutero 1912: Jakobus
+James	Salome	Jakobus	revisado	rev. IA: conferido em Mark.15.40; Lutero 1912: Jakobus
+Janen	Nahaliel		sem	rev. IA: conferido em Num.21.19; sem forma própria segura em Lutero 1912; nome sem correspondência em Lutero nem na KJV
+Jashar	Ist	Jasar	revisado	rev. IA: conferido em Josh.10.13; Lutero 1912: Jasar; Lutero traduz (Buch des Frommen / der Redlichen)
+Jasher	Kinder	Jasar	revisado	rev. IA: conferido em 2Sam.1.18; Lutero 1912: Jasar; Lutero traduz (Buch des Frommen / der Redlichen)
+Jebusite	Jebusiter	Jebusiter	revisado	rev. IA: conferido em Gen.10.16; Lutero 1912: Jebusiter
+Jebusites	Jebusiter	Jebusiter	revisado	rev. IA: conferido em Gen.10.16; Lutero 1912: Jebusiter
+Jehudijah	Jekuthiel	Jehudija	revisado	rev. IA: conferido em 1Chr.4.18; Lutero 1912: Jehudija; Lutero: jüdisches Weib
+Jemnath	Ekron		sem	rev. IA: conferido em Josh.15.46; sem forma própria segura em Lutero 1912; nome sem correspondência em Lutero nem na KJV
+Jeshimon	Maon	Jesimon	revisado	rev. IA: conferido em 1Sam.23.24; Lutero 1912: Jesimon
+Jonath-elem-rechokim	Philister		sem	rev. IA: conferido em Ps.56.1; sem forma própria segura em Lutero 1912; título de salmo traduzido por Lutero
+Joshua	Jorems	Josua	revisado	rev. IA: conferido em Luke.3.29; Lutero 1912: Josua; Lutero: Sohn des Jesus (Lc 3,29)
+Judaism	Judentum	Judentum	revisado	rev. IA: conferido em Gal.1.13; Lutero 1912: Judentum
+Judea	Jünger	Judäa	revisado	rev. IA: conferido em Mark.3.7; Lutero 1912: Judäa
+Judgment	Boden	Gerichtshalle	revisado	rev. IA: conferido em 1Kgs.7.7; Lutero 1912: Gerichtshalle; Lutero: Halle zum Richtstuhl
+Kadesh	Hodsi	Kades	revisado	rev. IA: conferido em 2Sam.24.6; Lutero 1912: Kades
+Kadmonites	Kadmoniter	Kadmoniter	revisado	rev. IA: conferido em Gen.15.19; Lutero 1912: Kadmoniter
+Karnaim	Hörnern	Karnaim	revisado	rev. IA: conferido em Amos.6.13; Lutero 1912: Karnaim; Lutero traduz (Hörner)
+Kenites	Keniter	Keniter	revisado	rev. IA: conferido em Gen.15.19; Lutero 1912: Keniter
+Kenizzites	Kenisiter	Kenisiter	revisado	rev. IA: conferido em Gen.15.19; Lutero 1912: Kenisiter
+Kibroth-hattaavah	Hazeroth	Lustgräber	revisado	rev. IA: conferido em Num.11.35; Lutero 1912: Lustgräber
+Kiriath-huzoth	Gassenstadt	Gassenstadt	revisado	rev. IA: conferido em Num.22.39; Lutero 1912: Gassenstadt
+Koa	Chaldäer	Koa	revisado	rev. IA: conferido em Ezek.23.23; Lutero 1912: Koa
+Kue	Kaufleute	Kue	revisado	rev. IA: conferido em 1Kgs.10.28; Lutero 1912: Kue
+Leb-kamai	Einwohner	Leb-Kamai	revisado	rev. IA: conferido em Jer.51.1; Lutero 1912: Leb-Kamai
+Lucifer	Wie	Luzifer	revisado	rev. IA: conferido em Isa.14.12; Lutero 1912: Luzifer; Lutero: Morgenstern
+Lycia	Lyzien	Lyzien	revisado	rev. IA: conferido em Acts.27.5; Lutero 1912: Lyzien
+Machpelah	Mamre	Machpela	revisado	rev. IA: conferido em Gen.23.17; Lutero 1912: Machpela; Lutero: zwiefache Höhle
+Mahalab	Achsib	Mahaleb	revisado	rev. IA: conferido em Josh.19.29; Lutero 1912: Mahaleb
+Mahalath	Heman	Mahalath	revisado	rev. IA: conferido em Ps.88.1; Lutero 1912: Mahalath
+Mahavites	Maheviter	Maheviter	revisado	rev. IA: conferido em 1Chr.11.46; Lutero 1912: Maheviter
+Maher-shalal-hash-baz	Raubebald	Raubebald-Eilebeute	revisado	rev. IA: conferido em Isa.8.1; Lutero 1912: Raubebald-Eilebeute
+Malta	Melite	Melite	revisado	rev. IA: conferido em Acts.28.1; Lutero 1912: Melite
+Maskil	Saitenspiel	Unterweisung	revisado	rev. IA: conferido em Ps.54.1; Lutero 1912: Unterweisung; Lutero: Unterweisung
+Matthew	Matthäus	Matthäus	revisado	rev. IA: conferido em Matt.9.9; Lutero 1912: Matthäus
+Mazzaroth	Kannst	Mazzaroth	revisado	rev. IA: conferido em Job.38.32; Lutero 1912: Mazzaroth; Lutero traduz
+Mecherathites	Macherathiter	Macherathiter	revisado	rev. IA: conferido em 1Chr.11.36; Lutero 1912: Macherathiter
+Meholathites	Meholathiter	Meholathiter	revisado	rev. IA: conferido em 1Sam.18.19; Lutero 1912: Meholathiter
+Melzar	Misael	Melzar	revisado	rev. IA: conferido em Dan.1.11; Lutero 1912: Melzar; Lutero traduz (Aufseher)
+Memphis	Moph	Moph	revisado	rev. IA: conferido em Hos.9.6; Lutero 1912: Moph
+Menuhoth	Manahthiter	Manahthiter	revisado	rev. IA: conferido em 1Chr.2.52; Lutero 1912: Manahthiter
+Merathaim	Heimsuchung	Merathaim	revisado	rev. IA: conferido em Jer.50.21; Lutero 1912: Merathaim; Lutero traduz
+Meronothites	Meronothiter	Meronothiter	revisado	rev. IA: conferido em 1Chr.27.30; Lutero 1912: Meronothiter
+Metheg-ammah	Philister	Metheg-Amma	revisado	rev. IA: conferido em 2Sam.8.1; Lutero 1912: Metheg-Amma; Lutero traduz
+Meunites	Meuniter	Meuniter	revisado	rev. IA: conferido em 1Chr.4.41; Lutero 1912: Meuniter
+Mezobaites	Mezobaja	Mezobaja	revisado	rev. IA: conferido em 1Chr.11.47; Lutero 1912: Mezobaja
+Migron	Granatbaum	Migron	revisado	rev. IA: conferido em 1Sam.14.2; Lutero 1912: Migron
+Miktam	Mesopotamien	Gülden Kleinod	revisado	rev. IA: conferido em Ps.60.1; Lutero 1912: Gülden Kleinod; Lutero: ein gülden Kleinod
+Mishraites	Misraiter	Misraiter	revisado	rev. IA: conferido em 1Chr.2.53; Lutero 1912: Misraiter
+Misrephoth-maim	Mizpa	Misrephoth-Majim	revisado	rev. IA: conferido em Josh.11.8; Lutero 1912: Misrephoth-Majim
+Mithnites	Mithniter	Mithniter	revisado	rev. IA: conferido em 1Chr.11.43; Lutero 1912: Mithniter
+Mizpah	Jegar-Sahadutha	Mizpa	revisado	rev. IA: conferido em Gen.31.47; Lutero 1912: Mizpa; Lutero: Mizpa (Gn 31,49)
+Mortar	Krämervolk	Maktes	revisado	rev. IA: conferido em Zeph.1.11; Lutero 1912: Maktes; Lutero traduz (Mühle)
+Muth-labben	Jugend		sem	rev. IA: conferido em Ps.9.1; sem forma própria segura em Lutero 1912; título de salmo traduzido por Lutero (von der schönen Jugend)
+Naamathites	Naema	Naemathiter	revisado	rev. IA: conferido em Job.2.11; Lutero 1912: Naemathiter; Lutero: Zophar von Naema
+Nagge	Nangais	Nangai	revisado	rev. IA: conferido em Luke.3.25; Lutero 1912: Nangai
+Naphath	Nepheths	Napheth	revisado	rev. IA: conferido em Josh.17.11; Lutero 1912: Napheth
+Nazirites	Schermesser	Nasiräer	revisado	rev. IA: conferido em Num.6.5; Lutero 1912: Nasiräer; Lutero traduz (Gottgeweihter)
+Negeb	Abhängen	Mittagsland	revisado	rev. IA: conferido em Josh.10.40; Lutero 1912: Mittagsland; Lutero: gegen Mittag / Mittagsland
+Nehelamites	Nehalam	Nehelamiter	revisado	rev. IA: conferido em Jer.29.24; Lutero 1912: Nehelamiter; Lutero: von Nehalam
+Nephilim	Welt	Riesen	revisado	rev. IA: conferido em Gen.6.4; Lutero 1912: Riesen; Lutero: Tyrannen / Riesen
+Netaim	Zäunen	Netaim	revisado	rev. IA: conferido em 1Chr.4.23; Lutero 1912: Netaim; Lutero traduz (Pflanzungen)
+Nohah	Manahath	Noha	revisado	rev. IA: conferido em 1Chr.8.6; Lutero 1912: Noha
+Nohah	Menuha	Menuha	revisado	rev. IA: conferido em Judg.20.43; Lutero 1912: Menuha
+North	Götter	Mitternacht	revisado	rev. IA: conferido em Dan.11.8; Lutero 1912: Mitternacht; Lutero: König gegen Mitternacht
+Olivet	Ölberg	Ölberg	revisado	rev. IA: conferido em Luke.19.29; Lutero 1912: Ölberg
+Omega	Pergamus	Omega	revisado	rev. IA: conferido em Rev.1.11; Lutero 1912: Omega; Lutero: das A und das O
+Pacatiana	Amen		sem	rev. IA: conferido em 1Tim.6.21; sem forma própria segura em Lutero 1912; subscrição tardia, não está no texto de Lutero
+Paddan	Kanaan	Mesopotamien	revisado	rev. IA: conferido em Gen.28.6; Lutero 1912: Mesopotamien
+Paddan-aram	Dina	Mesopotamien	revisado	rev. IA: conferido em Gen.46.15; Lutero 1912: Mesopotamien
+Parthians	Parther	Parther	revisado	rev. IA: conferido em Acts.2.9; Lutero 1912: Parther
+Pavement	Hochpflaster	Hochpflaster	revisado	rev. IA: conferido em John.19.13; Lutero 1912: Hochpflaster
+Pekod	Edle	Pekod	revisado	rev. IA: conferido em Ezek.23.23; Lutero 1912: Pekod
+Pelethites	Plether	Plether	revisado	rev. IA: conferido em 2Sam.8.18; Lutero 1912: Plether
+Pelonites	Peloniter	Peloniter	revisado	rev. IA: conferido em 1Chr.11.27; Lutero 1912: Peloniter
+Pelusium	Sin	Sin	revisado	rev. IA: conferido em Ezek.30.15; Lutero 1912: Sin
+Perizzites	Pheresiter	Pheresiter	revisado	rev. IA: conferido em Gen.13.7; Lutero 1912: Pheresiter
+Pharaoh	Sanoah	Pharao	revisado	rev. IA: conferido em 1Chr.4.18; Lutero 1912: Pharao
+Phenice	Phönix	Phönix	revisado	rev. IA: conferido em Acts.27.12; Lutero 1912: Phönix
+Phenicia	Phönizien	Phönizien	revisado	rev. IA: conferido em Acts.11.19; Lutero 1912: Phönizien
+Phoenicia	Phönizien	Phönizien	revisado	rev. IA: conferido em Acts.11.19; Lutero 1912: Phönizien
+Pi-beseth	Bubastus	Bubastus	revisado	rev. IA: conferido em Ezek.30.17; Lutero 1912: Bubastus
+Pillars	Halle	Säulenhalle	revisado	rev. IA: conferido em 1Kgs.7.6; Lutero 1912: Säulenhalle; Lutero: Halle von Säulen
+Place	Schädelstätte	Schädelstätte	revisado	rev. IA: conferido em Matt.27.33; Lutero 1912: Schädelstätte
+Plain	Klagen	Gefilde der Moabiter	revisado	rev. IA: conferido em Deut.34.8; Lutero 1912: Gefilde der Moabiter
+Pool	Chol-Hoses	Teich Siloah	revisado	rev. IA: conferido em Neh.3.15; Lutero 1912: Teich Siloah
+Pool	König	Teich des Königs	revisado	rev. IA: conferido em Neh.2.14; Lutero 1912: Teich des Königs; Lutero: des Königs Teich
+Puah	Phuva	Phuva	revisado	rev. IA: conferido em Gen.46.13; Lutero 1912: Phuva
+Puthites	Puthiter	Puthiter	revisado	rev. IA: conferido em 1Chr.2.53; Lutero 1912: Puthiter
+Rab-mag	Nebusasban	Rab-Mag	revisado	rev. IA: conferido em Jer.39.13; Lutero 1912: Rab-Mag
+Rab-saris	Assyrien	Erzkämmerer	revisado	rev. IA: conferido em 2Kgs.18.17; Lutero 1912: Erzkämmerer; Lutero: Erzkämmerer / oberster Kämmerer
+Rab-saris	Nergal-Sarezer	Erzkämmerer	revisado	rev. IA: conferido em Jer.39.3; Lutero 1912: Erzkämmerer; Lutero: Erzkämmerer / oberster Kämmerer
+Rabsaris	Assyrien	Erzkämmerer	revisado	rev. IA: conferido em 2Kgs.18.17; Lutero 1912: Erzkämmerer; Lutero: Erzkämmerer / oberster Kämmerer
+Rabshakeh	Erzschenke	Erzschenke	revisado	rev. IA: conferido em 2Kgs.18.17; Lutero 1912: Erzschenke
+Ramah	Baalath-Beer-Ramath	Rama	revisado	rev. IA: conferido em Josh.19.8; Lutero 1912: Rama
+Ramah	Baum	Rama	revisado	rev. IA: conferido em 1Sam.22.6; Lutero 1912: Rama
+Ramathites	Ramathiter	Ramathiter	revisado	rev. IA: conferido em 1Chr.27.27; Lutero 1912: Ramathiter
+Rephaim	Stamm	Rephaim	revisado	rev. IA: conferido em Deut.3.13; Lutero 1912: Rephaim
+Rhodes	Ebenholz	Rhodus	revisado	rev. IA: conferido em Ezek.27.15; Lutero 1912: Rhodus; Lutero: Rhodus (At 21,1)
+River	Kinder	Strom	revisado	rev. IA: conferido em Num.22.5; Lutero 1912: Strom; Lutero: der Strom (Eufrates)
+River	Rehoboth	Strom	revisado	rev. IA: conferido em Gen.36.37; Lutero 1912: Strom; Lutero: der Strom (Eufrates)
+Rock	Maon		sem	rev. IA: conferido em Josh.15.55; sem forma própria segura em Lutero 1912; sem nome próprio no versículo
+Rocks	Gemsen	Gemsenfelsen	revisado	rev. IA: conferido em 1Sam.24.2; Lutero 1912: Gemsenfelsen
+Sahar	Ware		sem	rev. IA: conferido em Ezek.27.18; sem forma própria segura em Lutero 1912; Lutero traduz (weiße Wolle)
+Salome	Jahrestag	Salome	revisado	rev. IA: conferido em Matt.14.6; Lutero 1912: Salome
+Sela	Fels	Sela	revisado	rev. IA: conferido em Judg.1.36; Lutero 1912: Sela
+Shamed	Miseam	Semer	revisado	rev. IA: conferido em 1Chr.8.12; Lutero 1912: Semer
+Shaveh	Susiter	Save	revisado	rev. IA: conferido em Gen.14.5; Lutero 1912: Save
+Sheminith	Mikneja		sem	rev. IA: conferido em 1Chr.15.21; sem forma própria segura em Lutero 1912; termo musical traduzido por Lutero (acht Saiten)
+Shephelah	Gefilden	Sephela	revisado	rev. IA: conferido em Josh.12.8; Lutero 1912: Sephela; Lutero traduz (Gründe)
+Shephelah	Zedernholz	Sephela	revisado	rev. IA: conferido em 1Kgs.10.27; Lutero 1912: Sephela; Lutero traduz (Gründe)
+Shiggaion	Benjaminiten		sem	rev. IA: conferido em Ps.7.1; sem forma própria segura em Lutero 1912; título de salmo traduzido por Lutero
+Shigionoth	Unschuldigen		sem	rev. IA: conferido em Hab.3.1; sem forma própria segura em Lutero 1912; título de salmo traduzido por Lutero
+Shiloh	Held	Silo	revisado	rev. IA: conferido em Gen.49.10; Lutero 1912: Silo; Lutero: der Held
+Shiloni	Selaniter	Selaniter	revisado	rev. IA: conferido em Neh.11.5; Lutero 1912: Selaniter
+Shilonites	Selaniter	Selaniter	revisado	rev. IA: conferido em Neh.11.5; Lutero 1912: Selaniter
+Shimeathite	Simeathiter	Simeathiter	revisado	rev. IA: conferido em 1Chr.2.55; Lutero 1912: Simeathiter
+Shiphmites	Sephamiter	Sephamiter	revisado	rev. IA: conferido em 1Chr.27.27; Lutero 1912: Sephamiter
+Shoa	Mannschaft	Soa	revisado	rev. IA: conferido em Ezek.23.23; Lutero 1912: Soa
+Shuhites	Suah	Suhiter	revisado	rev. IA: conferido em Job.2.11; Lutero 1912: Suhiter; Lutero: Bildad von Suah
+Shulammites	Sulamith	Sulamith	revisado	rev. IA: conferido em Song.6.13; Lutero 1912: Sulamith
+Shumathites	Sumathiter	Sumathiter	revisado	rev. IA: conferido em 1Chr.2.53; Lutero 1912: Sumathiter
+Shunammites	Sunamitin	Sunamitin	revisado	rev. IA: conferido em 2Kgs.4.12; Lutero 1912: Sunamitin
+Sinite	Siniter	Siniter	revisado	rev. IA: conferido em Gen.10.17; Lutero 1912: Siniter
+Sinites	Siniter	Siniter	revisado	rev. IA: conferido em Gen.10.17; Lutero 1912: Siniter
+Skull	Schädelstätte	Schädelstätte	revisado	rev. IA: conferido em Luke.23.33; Lutero 1912: Schädelstätte
+South	Ist	Mittag	revisado	rev. IA: conferido em Zech.7.7; Lutero 1912: Mittag; Lutero: Königin von Mittag / gegen Mittag
+South	Salomons	Mittag	revisado	rev. IA: conferido em Matt.12.42; Lutero 1912: Mittag; Lutero: Königin von Mittag / gegen Mittag
+South	Stamm	Mittag	revisado	rev. IA: conferido em Dan.11.7; Lutero 1912: Mittag; Lutero: Königin von Mittag / gegen Mittag
+Straight	Stehe	Die gerade Gasse	revisado	rev. IA: conferido em Acts.9.11; Lutero 1912: Die gerade Gasse
+Sucathite	Suchathiter	Suchathiter	revisado	rev. IA: conferido em 1Chr.2.55; Lutero 1912: Suchathiter
+Suph	Schilfmeer	Schilfmeer	revisado	rev. IA: conferido em Deut.1.1; Lutero 1912: Schilfmeer
+Tabbur-erez	Zaubereiche	Tabbur-Erez	revisado	rev. IA: conferido em Judg.9.37; Lutero 1912: Tabbur-Erez; Lutero traduz (Mitte des Landes)
+Tarpelite	Tarpal	Tarpal	revisado	rev. IA: conferido em Ezra.4.9; Lutero 1912: Tarpal
+Tarshish	Meerschiffe	Tharsis	revisado	rev. IA: conferido em 1Kgs.10.22; Lutero 1912: Tharsis
+Thebes	Edlen	No	revisado	rev. IA: conferido em Nah.3.10; Lutero 1912: No
+Thebes	Pathros	No	revisado	rev. IA: conferido em Ezek.30.14; Lutero 1912: No
+There	Hier	Hier ist der HERR	revisado	rev. IA: conferido em Ezek.48.35; Lutero 1912: Hier ist der HERR
+Throne	Boden	Thronhalle	revisado	rev. IA: conferido em 1Kgs.7.7; Lutero 1912: Thronhalle; Lutero: Halle zum Richtstuhl
+Thummim	Amtschild	Thummim	revisado	rev. IA: conferido em Exod.28.30; Lutero 1912: Thummim; Lutero: Licht und Recht
+Tigris	Assyrien	Hiddekel	revisado	rev. IA: conferido em Gen.2.14; Lutero 1912: Hiddekel
+Tirathite	Thireathiter	Thireathiter	revisado	rev. IA: conferido em 1Chr.2.55; Lutero 1912: Thireathiter
+Tizites	Thiziter	Thiziter	revisado	rev. IA: conferido em 1Chr.11.45; Lutero 1912: Thiziter
+Tower	Dankchor	Ofenturm	revisado	rev. IA: conferido em Neh.12.38; Lutero 1912: Ofenturm
+Tower	Schaftor	Turm	revisado	rev. IA: conferido em Neh.3.1; Lutero 1912: Turm
+Ucal	Agurs	Uchal	revisado	rev. IA: conferido em Prov.30.1; Lutero 1912: Uchal; Lutero traduz
+Unnamed#1	Eliud		sem	rev. IA: conferido em Matt.1.15; sem forma própria segura em Lutero 1912; entidade sem nome
+Unnamed#1	Salomo		sem	rev. IA: conferido em 1Kgs.2.27; sem forma própria segura em Lutero 1912; entidade sem nome
+Unnamed#2	Eliud		sem	rev. IA: conferido em Matt.1.15; sem forma própria segura em Lutero 1912; entidade sem nome
+Unnamed#2	Salomo		sem	rev. IA: conferido em 1Kgs.2.27; sem forma própria segura em Lutero 1912; entidade sem nome
+Unnamed#3	Eliud		sem	rev. IA: conferido em Matt.1.15; sem forma própria segura em Lutero 1912; entidade sem nome
+Unnamed#3	Salomo		sem	rev. IA: conferido em 1Kgs.2.27; sem forma própria segura em Lutero 1912; entidade sem nome
+Unnamed#4	Eliud		sem	rev. IA: conferido em Matt.1.15; sem forma própria segura em Lutero 1912; entidade sem nome
+Unnamed#4	Salomo		sem	rev. IA: conferido em 1Kgs.2.27; sem forma própria segura em Lutero 1912; entidade sem nome
+Unnamed#5	Eliud		sem	rev. IA: conferido em Matt.1.15; sem forma própria segura em Lutero 1912; entidade sem nome
+Unnamed#6	Eliud		sem	rev. IA: conferido em Matt.1.15; sem forma própria segura em Lutero 1912; entidade sem nome
+Unnamed#7	Eliud		sem	rev. IA: conferido em Matt.1.15; sem forma própria segura em Lutero 1912; entidade sem nome
+Unnamed#8	Eliud		sem	rev. IA: conferido em Matt.1.15; sem forma própria segura em Lutero 1912; entidade sem nome
+Unnamed#9	Eliud		sem	rev. IA: conferido em Matt.1.15; sem forma própria segura em Lutero 1912; entidade sem nome
+Urim	Träume	Urim	revisado	rev. IA: conferido em 1Sam.28.6; Lutero 1912: Urim; Lutero: Licht
+Weeks	Wochen	Fest der Wochen	revisado	rev. IA: conferido em Exod.34.22; Lutero 1912: Fest der Wochen
+Willows	Weidenbach	Weidenbach	revisado	rev. IA: conferido em Isa.15.7; Lutero 1912: Weidenbach
+Zalmon	Allmächtige	Zalmon	revisado	rev. IA: conferido em Ps.68.14; Lutero 1912: Zalmon
+Zealot	Ischariot	Zelotes	revisado	rev. IA: conferido em Matt.10.4; Lutero 1912: Zelotes; Lutero: Simon, genannt Zelotes (Lc 6,15)
+Zemarite	Zemariter	Zemariter	revisado	rev. IA: conferido em Gen.10.18; Lutero 1912: Zemariter
+Zemarites	Zemariter	Zemariter	revisado	rev. IA: conferido em Gen.10.18; Lutero 1912: Zemariter
+Zeus	Merkurius	Jupiter	revisado	rev. IA: conferido em Acts.14.12; Lutero 1912: Jupiter; Lutero: Jupiter
+Zophim	Höhe	Zophim	revisado	rev. IA: conferido em Num.23.14; Lutero 1912: Zophim
+Zorathites	Zorathiter	Zorathiter	revisado	rev. IA: conferido em 1Chr.2.53; Lutero 1912: Zorathiter
+Abaddon	Abaddon	Abaddon	revisado	rev. IA: conferido em Rev.9.11; Lutero 1912: Abaddon
+Abiah	Abia	Abia	revisado	rev. IA: conferido em 1Sam.8.2; Lutero 1912: Abia
+Abiel	Abiel	Abiel	revisado	rev. IA: conferido em 1Sam.9.1; Lutero 1912: Abiel
+Achsa	Achsa	Achsa	revisado	rev. IA: conferido em 1Chr.2.49; Lutero 1912: Achsa
+Adamah	Adama	Adama	revisado	rev. IA: conferido em Josh.19.36; Lutero 1912: Adama
+Addan	Addon	Addon	revisado	rev. IA: conferido em Ezra.2.59; Lutero 1912: Addon
+Addar	Adar	Adar	revisado	rev. IA: conferido em Josh.15.3; Lutero 1912: Adar
+Adoniram	Adoniram	Adoniram	revisado	rev. IA: conferido em 1Kgs.4.6; Lutero 1912: Adoniram
+Adoram	Adoram	Adoram	revisado	rev. IA: conferido em 2Sam.20.24; Lutero 1912: Adoram
+Adria	Adria-Meer	Adria	revisado	rev. IA: conferido em Acts.27.27; Lutero 1912: Adria
+Agag	Agag	Agag	revisado	rev. IA: conferido em Num.24.7; Lutero 1912: Agag
+Ahiah	Ahia	Ahia	revisado	rev. IA: conferido em 1Chr.8.7; Lutero 1912: Ahia
+Ahiram	Ahiram	Ahiram	revisado	rev. IA: conferido em Num.26.38; Lutero 1912: Ahiram
+Ahoah	Ahoah	Ahoah	revisado	rev. IA: conferido em 1Chr.8.4; Lutero 1912: Ahoah
+Aija	Aja	Aja	revisado	rev. IA: conferido em Neh.11.31; Lutero 1912: Aja
+Ajah	Aja	Aja	revisado	rev. IA: conferido em Gen.36.24; Lutero 1912: Aja
+Akeldama	Hakeldama	Hakeldama	revisado	rev. IA: conferido em Acts.1.19; Lutero 1912: Hakeldama
+Alameth	Alemeth	Alemeth	revisado	rev. IA: conferido em 1Chr.7.8; Lutero 1912: Alemeth
+Alpha	Anfang	Alpha	revisado	rev. IA: conferido em Rev.1.8; Lutero 1912: Alpha; Lutero: das A und das O
+Amalek	Amalek	Amalek	revisado	rev. IA: conferido em Gen.14.7; Lutero 1912: Amalek
+Anak	Enak	Enak	revisado	rev. IA: conferido em Num.13.22; Lutero 1912: Enak
+Anamim	Anamiter	Anamiter	revisado	rev. IA: conferido em Gen.10.13; Lutero 1912: Anamiter
+Anna	Hanna	Hanna	revisado	rev. IA: conferido em Luke.2.36; Lutero 1912: Hanna
+Annas	Hanna	Hannas	revisado	rev. IA: conferido em Luke.3.2; Lutero 1912: Hannas; Lutero: Hannas (Lc 3,2)
+Aphses	Hapizzez	Hapizzez	revisado	rev. IA: conferido em 1Chr.24.15; Lutero 1912: Hapizzez
+Arabia	Arabien	Arabien	revisado	rev. IA: conferido em 1Kgs.10.15; Lutero 1912: Arabien
+Aram	Hadrach	Aram	revisado	rev. IA: conferido em Zech.9.1; Lutero 1912: Aram
+Aram-maacah	Maacha	Maacha	revisado	rev. IA: conferido em 1Chr.19.6; Lutero 1912: Maacha
+Aram-zobah	Zoba	Zoba	revisado	rev. IA: conferido em Ps.60.1; Lutero 1912: Zoba
+Aroer	Aroeriters	Aroer	revisado	rev. IA: conferido em 1Chr.11.44; Lutero 1912: Aroer
+Arumah	Aruma	Aruma	revisado	rev. IA: conferido em Judg.9.41; Lutero 1912: Aruma
+Asareel	Asareel	Asareel	revisado	rev. IA: conferido em 1Chr.4.16; Lutero 1912: Asareel
+Asarel	Asareel	Asareel	revisado	rev. IA: conferido em 1Chr.4.16; Lutero 1912: Asareel
+Asherah	Aschera	Aschera	revisado	rev. IA: conferido em Judg.6.25; Lutero 1912: Aschera
+Ashriel	Asriel	Asriel	revisado	rev. IA: conferido em 1Chr.7.14; Lutero 1912: Asriel
+Asshur	Assur	Assur	revisado	rev. IA: conferido em Gen.10.11; Lutero 1912: Assur
+Asshurim	Assuriter	Assuriter	revisado	rev. IA: conferido em Gen.25.3; Lutero 1912: Assuriter
+Assyria	Assyrien	Assyrien	revisado	rev. IA: conferido em Gen.2.14; Lutero 1912: Assyrien
+Attalia	Attalien	Attalien	revisado	rev. IA: conferido em Acts.14.25; Lutero 1912: Attalien
+Augustus	Augustus	Augustus	revisado	rev. IA: conferido em Luke.2.1; Lutero 1912: Augustus
+Avvim	Avviter	Avviter	revisado	rev. IA: conferido em Deut.2.23; Lutero 1912: Avviter
+Azal	Azel	Azel	revisado	rev. IA: conferido em Zech.14.5; Lutero 1912: Azel
+Azarael	Asareel	Asareel	revisado	rev. IA: conferido em Neh.12.36; Lutero 1912: Asareel
+Azariahu	Asarja	Asarja	revisado	rev. IA: conferido em 2Chr.21.2; Lutero 1912: Asarja
+Azaz	Asa	Asas	revisado	rev. IA: conferido em 1Chr.5.8; Lutero 1912: Asas; Lutero: der Sohn des Asas
+Azur	Assur	Assur	revisado	rev. IA: conferido em Jer.28.1; Lutero 1912: Assur
+Azzur	Assur	Assur	revisado	rev. IA: conferido em Neh.10.17; Lutero 1912: Assur
+Baalath-beer	Baalath-Beer-Ramath	Baalath-Beer	revisado	rev. IA: conferido em Josh.19.8; Lutero 1912: Baalath-Beer
+Baale-judah	Juda	Baal in Juda	revisado	rev. IA: conferido em 2Sam.6.2; Lutero 1912: Baal in Juda; Lutero: gen Baal in Juda
+Babel	Babel	Babel	revisado	rev. IA: conferido em Gen.10.10; Lutero 1912: Babel
+Babylon	Babel	Babel	revisado	rev. IA: conferido em Gen.10.10; Lutero 1912: Babel
+Babylon	Babylon	Babylon	revisado	rev. IA: conferido em Acts.7.43; Lutero 1912: Babylon
+Baharum	Baherumiter	Bahurim	revisado	rev. IA: conferido em 1Chr.11.33; Lutero 1912: Bahurim; Lutero: Baherumiter
+Bamoth-baal	Bamoth-Baal	Bamoth-Baal	revisado	rev. IA: conferido em Josh.13.17; Lutero 1912: Bamoth-Baal
+Bartholomew	Bartholomäus	Bartholomäus	revisado	rev. IA: conferido em Matt.10.3; Lutero 1912: Bartholomäus
+Basemath	Basmath	Basmath	revisado	rev. IA: conferido em 1Kgs.4.15; Lutero 1912: Basmath
+Basmath	Basmath	Basmath	revisado	rev. IA: conferido em 1Kgs.4.15; Lutero 1912: Basmath
+Bath-shua	Sua	Sua	revisado	rev. IA: conferido em Gen.38.2; Lutero 1912: Sua
+Bear	Bären	Bär	revisado	rev. IA: conferido em Job.38.32; Lutero 1912: Bär; Lutero: den Bären am Himmel
+Becher	Becher	Becher	revisado	rev. IA: conferido em Gen.46.21; Lutero 1912: Becher
+Beer	HERR	Beer	revisado	rev. IA: conferido em Num.21.16; Lutero 1912: Beer; Lutero traduz (zum Brunnen)
+Beer-elim	Elim	Beer-Elim	revisado	rev. IA: conferido em Isa.15.8; Lutero 1912: Beer-Elim; Lutero: Born Elim
+Beeroth	Beeroth	Beeroth	revisado	rev. IA: conferido em Josh.9.17; Lutero 1912: Beeroth
+Ben	Benaja	Ben	revisado	rev. IA: conferido em 1Chr.15.18; Lutero 1912: Ben; Lutero junta: Ben-Jaesiel
+Ben-Geber	Geber	Ben-Geber	revisado	rev. IA: conferido em 1Kgs.4.13; Lutero 1912: Ben-Geber; Lutero: der Sohn Gebers
+Ben-abinadab	Abinadab	Ben-Abinadab	revisado	rev. IA: conferido em 1Kgs.4.11; Lutero 1912: Ben-Abinadab; Lutero: der Sohn Abinadabs
+Ben-ammi	Ammi	Ben-Ammi	revisado	rev. IA: conferido em Gen.19.38; Lutero 1912: Ben-Ammi; Lutero: das Kind Ammi
+Ben-deker	Dekers	Ben-Deker	revisado	rev. IA: conferido em 1Kgs.4.9; Lutero 1912: Ben-Deker; Lutero: der Sohn Dekers
+Ben-hesed	Heseds	Ben-Hesed	revisado	rev. IA: conferido em 1Kgs.4.10; Lutero 1912: Ben-Hesed; Lutero: der Sohn Heseds
+Berothah	Berotha	Berotha	revisado	rev. IA: conferido em 2Sam.8.8; Lutero 1912: Berotha
+Beten	Beten	Beten	revisado	rev. IA: conferido em Josh.19.25; Lutero 1912: Beten
+Beth-arbel	Arbeels	Beth-Arbeel	revisado	rev. IA: conferido em Hos.10.14; Lutero 1912: Beth-Arbeel; Lutero: das Haus Arbeels
+Beth-ashbea	Asbeas	Beth-Asbea	revisado	rev. IA: conferido em 1Chr.4.21; Lutero 1912: Beth-Asbea; Lutero: des Hauses Asbeas
+Beth-azmaveth	Beth-Asmaveth	Beth-Asmaveth	revisado	rev. IA: conferido em Neh.7.28; Lutero 1912: Beth-Asmaveth
+Beth-millo	Millo	Beth-Millo	revisado	rev. IA: conferido em Judg.9.6; Lutero 1912: Beth-Millo; Lutero: das Haus Millo
+Beth-rehob	Beth-Rehob	Beth-Rehob	revisado	rev. IA: conferido em Judg.18.28; Lutero 1912: Beth-Rehob
+Bethel	Bethul	Bethul	revisado	rev. IA: conferido em Josh.19.4; Lutero 1912: Bethul
+Bileam	Bileam	Bileam	revisado	rev. IA: conferido em 1Chr.6.70; Lutero 1912: Bileam
+Cainan	Kenan	Kenan	revisado	rev. IA: conferido em Gen.5.9; Lutero 1912: Kenan
+Calneh	Chalne	Chalne	revisado	rev. IA: conferido em Gen.10.10; Lutero 1912: Chalne
+Canaan	Kanaan	Kanaan	revisado	rev. IA: conferido em Gen.9.18; Lutero 1912: Kanaan
+Caphthorim	Kaphthoriter	Kaphthoriter	revisado	rev. IA: conferido em Gen.10.14; Lutero 1912: Kaphthoriter
+Caphtor	Kaphthor	Kaphthor	revisado	rev. IA: conferido em Gen.10.14; Lutero 1912: Kaphthor
+Caphtorim	Kaphthoriter	Kaphthoriter	revisado	rev. IA: conferido em Gen.10.14; Lutero 1912: Kaphthoriter
+Cappadocia	Kappadozien	Kappadozien	revisado	rev. IA: conferido em Acts.2.9; Lutero 1912: Kappadozien
+Casluhim	Kasluhiter	Kasluhiter	revisado	rev. IA: conferido em Gen.10.14; Lutero 1912: Kasluhiter
+Chaldea	Chaldäer	Chaldäa	revisado	rev. IA: conferido em 2Kgs.25.4; Lutero 1912: Chaldäa
+Cherub	Cherub	Cherub	revisado	rev. IA: conferido em Ezra.2.59; Lutero 1912: Cherub
+Chesulloth	Chesulloth	Chesulloth	revisado	rev. IA: conferido em Josh.19.18; Lutero 1912: Chesulloth
+Chinnereth	Kinnereth	Kinnereth	revisado	rev. IA: conferido em Deut.3.17; Lutero 1912: Kinnereth
+Claudius	Klaudius	Klaudius	revisado	rev. IA: conferido em Acts.11.28; Lutero 1912: Klaudius
+Cononiah	Chananja	Chananja	revisado	rev. IA: conferido em 2Chr.31.12; Lutero 1912: Chananja
+Corinth	Korinth	Korinth	revisado	rev. IA: conferido em Acts.18.1; Lutero 1912: Korinth
+Cush	Chub	Mohrenland	revisado	rev. IA: conferido em Ezek.30.5; Lutero 1912: Mohrenland
+Cush	Chusi	Chusi	revisado	rev. IA: conferido em 2Sam.18.21; Lutero 1912: Chusi
+Dalaiah	Delaja	Delaja	revisado	rev. IA: conferido em 1Chr.3.24; Lutero 1912: Delaja
+Debir	Hebron	Debir	revisado	rev. IA: conferido em Josh.10.3; Lutero 1912: Debir
+Dekar	Dekers	Deker	revisado	rev. IA: conferido em 1Kgs.4.9; Lutero 1912: Deker; candidato no genitivo
+Deuel	Deguels	Deguel	revisado	rev. IA: conferido em Num.1.14; Lutero 1912: Deguel; candidato no genitivo
+Diblathaim	Almon-Diblathaim	Diblathaim	revisado	rev. IA: conferido em Num.33.46; Lutero 1912: Diblathaim
+Dimnah	Dimna	Dimna	revisado	rev. IA: conferido em Josh.21.35; Lutero 1912: Dimna
+Dodanim	Dodaniter	Dodaniter	revisado	rev. IA: conferido em Gen.10.4; Lutero 1912: Dodaniter
+East	Euphrat	Morgenland	revisado	rev. IA: conferido em Rev.16.12; Lutero 1912: Morgenland; Lutero: Könige vom Aufgang der Sonne
+Eder	Ader	Ader	revisado	rev. IA: conferido em 1Chr.8.15; Lutero 1912: Ader
+Egypt	Ägypten	Ägypten	revisado	rev. IA: conferido em Gen.12.10; Lutero 1912: Ägypten
+Ela	Ela	Ela	revisado	rev. IA: conferido em 1Kgs.4.18; Lutero 1912: Ela
+Eliadah	Eljada	Eljada	revisado	rev. IA: conferido em 1Kgs.11.23; Lutero 1912: Eljada
+Eliah	Elia	Elia	revisado	rev. IA: conferido em 1Chr.8.27; Lutero 1912: Elia
+Eliehoenai	Eljoenai	Eljoenai	revisado	rev. IA: conferido em 1Chr.26.3; Lutero 1912: Eljoenai
+Elienai	Eljoenai	Eljoenai	revisado	rev. IA: conferido em 1Chr.8.20; Lutero 1912: Eljoenai
+Elihoenai	Eljoenai	Eljoenai	revisado	rev. IA: conferido em Ezra.8.4; Lutero 1912: Eljoenai
+Elishah	Elisa	Elisa	revisado	rev. IA: conferido em Gen.10.4; Lutero 1912: Elisa
+Elonbeth-hanan	Beth-Hanan	Elon-Beth-Hanan	revisado	rev. IA: conferido em 1Kgs.4.9; Lutero 1912: Elon-Beth-Hanan; Lutero: Elon und Beth-Hanan
+Emim	Emiter	Emiter	revisado	rev. IA: conferido em Gen.14.5; Lutero 1912: Emiter
+Emmaus	Emmaus	Emmaus	revisado	rev. IA: conferido em Luke.24.13; Lutero 1912: Emmaus
+Ephah	Epha	Epha	revisado	rev. IA: conferido em Gen.25.4; Lutero 1912: Epha
+Ephes-dammim	Ephes-Dammim	Ephes-Dammim	revisado	rev. IA: conferido em 1Sam.17.1; Lutero 1912: Ephes-Dammim
+Ephraim	Ephrem	Ephrem	revisado	rev. IA: conferido em John.11.54; Lutero 1912: Ephrem
+Ethiopia	Topaz	Mohrenland	revisado	rev. IA: conferido em Job.28.19; Lutero 1912: Mohrenland
+Euodias	Evodia	Evodia	revisado	rev. IA: conferido em Phil.4.2; Lutero 1912: Evodia
+Euphrates	Euphrat	Euphrat	revisado	rev. IA: conferido em Gen.2.14; Lutero 1912: Euphrat
+Eve	Eva	Eva	revisado	rev. IA: conferido em Gen.3.20; Lutero 1912: Eva
+Ezbai	Asbais	Asbai	revisado	rev. IA: conferido em 1Chr.11.37; Lutero 1912: Asbai; candidato no genitivo
+Ezel	Asel	Asel	revisado	rev. IA: conferido em 1Sam.20.19; Lutero 1912: Asel
+Ezrah	Esra	Esra	revisado	rev. IA: conferido em 1Chr.4.17; Lutero 1912: Esra
+Galeed	Gilead	Gilead	revisado	rev. IA: conferido em Gen.31.47; Lutero 1912: Gilead
+Gamad	Arvad	Gamad	revisado	rev. IA: conferido em Ezek.27.11; Lutero 1912: Gamad; Lutero traduz (Wächter)
+Gebal	Gebal	Gebal	revisado	rev. IA: conferido em Josh.13.5; Lutero 1912: Gebal
+Gebal	Gebaliter	Gebal	revisado	rev. IA: conferido em Josh.13.5; Lutero 1912: Gebal
+Gederah	Gedera	Gedera	revisado	rev. IA: conferido em Josh.15.36; Lutero 1912: Gedera
+Gederah	Gederathither	Gedera	revisado	rev. IA: conferido em 1Chr.12.4; Lutero 1912: Gedera
+Geliloth	Geliloth	Geliloth	revisado	rev. IA: conferido em Josh.18.17; Lutero 1912: Geliloth
+Gershom	Gerson	Gerson	revisado	rev. IA: conferido em Exod.18.3; Lutero 1912: Gerson
+Geuel	Guel	Guel	revisado	rev. IA: conferido em Num.13.15; Lutero 1912: Guel
+Gibea	Gibea	Gibea	revisado	rev. IA: conferido em 1Chr.2.49; Lutero 1912: Gibea
+Gibeath-haaraloth	Araloth	Hügel Araloth	revisado	rev. IA: conferido em Josh.5.3; Lutero 1912: Hügel Araloth
+God	Gott	Gott	revisado	rev. IA: conferido em Gen.1.1; Lutero 1912: Gott
+Greece	Griechen	Griechenland	revisado	rev. IA: conferido em Dan.8.21; Lutero 1912: Griechenland
+Greece	Griechenland	Griechenland	revisado	rev. IA: conferido em Dan.8.21; Lutero 1912: Griechenland
+Hagri	Hagris	Hagri	revisado	rev. IA: conferido em 1Chr.11.38; Lutero 1912: Hagri; candidato no genitivo
+Hammath	Hammath	Hammath	revisado	rev. IA: conferido em Josh.19.35; Lutero 1912: Hammath
+Hanoch	Henoch	Henoch	revisado	rev. IA: conferido em Gen.25.4; Lutero 1912: Henoch
+Harod	Harod	Harod	revisado	rev. IA: conferido em Judg.7.1; Lutero 1912: Harod
+Harod	Haroditer	Harod	revisado	rev. IA: conferido em 2Sam.23.25; Lutero 1912: Harod
+Harosheth-hagoyim	Haroseth	Haroseth der Heiden	revisado	rev. IA: conferido em Judg.4.2; Lutero 1912: Haroseth der Heiden
+Hazar-addar	Adar	Hazar-Addar	revisado	rev. IA: conferido em Num.34.4; Lutero 1912: Hazar-Addar; Lutero: Dorf Adar
+Heber	Eber	Eber	revisado	rev. IA: conferido em 1Chr.5.13; Lutero 1912: Eber
+Hebrews	Hebräer	Hebräer	revisado	rev. IA: conferido em Gen.40.15; Lutero 1912: Hebräer
+Heleb	Heleb	Heleb	revisado	rev. IA: conferido em 2Sam.23.29; Lutero 1912: Heleb
+Heli	Eli	Eli	revisado	rev. IA: conferido em Luke.3.23; Lutero 1912: Eli
+Hemam	Homam	Homam	revisado	rev. IA: conferido em 1Chr.1.39; Lutero 1912: Homam
+Hemath	Hammath	Hammath	revisado	rev. IA: conferido em 1Chr.2.55; Lutero 1912: Hammath
+Henoch	Henoch	Henoch	revisado	rev. IA: conferido em Gen.25.4; Lutero 1912: Henoch
+Herodian	Herodes	Herodianer	revisado	rev. IA: conferido em Matt.22.16; Lutero 1912: Herodianer; Lutero: des Herodes Diener
+Heth	Heth	Heth	revisado	rev. IA: conferido em Gen.10.15; Lutero 1912: Heth
+Hezeki	Hiski	Hiski	revisado	rev. IA: conferido em 1Chr.8.17; Lutero 1912: Hiski
+Hezir	Hefir	Hefir	revisado	rev. IA: conferido em 1Chr.24.15; Lutero 1912: Hefir
+Hizkiah	Hiskia	Hiskia	revisado	rev. IA: conferido em 1Chr.3.23; Lutero 1912: Hiskia
+Hizkijah	Hiskia	Hiskia	revisado	rev. IA: conferido em Neh.10.17; Lutero 1912: Hiskia
+Hodaiah	Hodavja	Hodavja	revisado	rev. IA: conferido em 1Chr.3.24; Lutero 1912: Hodavja
+Hodevah	Hodavja	Hodavja	revisado	rev. IA: conferido em Ezra.2.40; Lutero 1912: Hodavja
+Hophra	Hophra	Hophra	revisado	rev. IA: conferido em Jer.44.30; Lutero 1912: Hophra
+Hori	Hori	Hori	revisado	rev. IA: conferido em Gen.14.6; Lutero 1912: Hori
+Hosea	Hosea	Hosea	revisado	rev. IA: conferido em Hos.1.1; Lutero 1912: Hosea
+Hothan	Hotham	Hotham	revisado	rev. IA: conferido em 1Chr.11.44; Lutero 1912: Hotham
+Huram	Huram	Huram	revisado	rev. IA: conferido em 1Chr.8.5; Lutero 1912: Huram
+Hushah	Husas	Husa	revisado	rev. IA: conferido em 1Chr.4.4; Lutero 1912: Husa; candidato no genitivo
+Huz	Uz	Uz	revisado	rev. IA: conferido em Gen.22.21; Lutero 1912: Uz
+Iconium	Ikonion	Ikonion	revisado	rev. IA: conferido em Acts.13.51; Lutero 1912: Ikonion
+Illyricum	Illyrien	Illyrien	revisado	rev. IA: conferido em Rom.15.19; Lutero 1912: Illyrien
+Imna	Jimna	Jimna	revisado	rev. IA: conferido em 1Chr.7.35; Lutero 1912: Jimna
+India	Indien	Indien	revisado	rev. IA: conferido em Esth.1.1; Lutero 1912: Indien
+Iphtah	Jephthah	Jephthah	revisado	rev. IA: conferido em Josh.15.43; Lutero 1912: Jephthah
+Ir-nahash	Nahas	Ir-Nahas	revisado	rev. IA: conferido em 1Chr.4.12; Lutero 1912: Ir-Nahas; Lutero: Stadt Nahas
+Ishi	Jesai	Jesai	revisado	rev. IA: conferido em 1Chr.2.31; Lutero 1912: Jesai
+Ishi	Jesei	Jesei	revisado	rev. IA: conferido em 1Chr.4.20; Lutero 1912: Jesei
+Ishiah	Jissia	Jissia	revisado	rev. IA: conferido em 1Chr.7.3; Lutero 1912: Jissia
+Ishijah	Jissia	Jissia	revisado	rev. IA: conferido em Ezra.10.31; Lutero 1912: Jissia
+Isshijah	Jissia	Jissia	revisado	rev. IA: conferido em Ezra.10.31; Lutero 1912: Jissia
+Isuah	Jiswa	Jiswa	revisado	rev. IA: conferido em Gen.46.17; Lutero 1912: Jiswa
+Isui	Jiswi	Jiswi	revisado	rev. IA: conferido em Gen.46.17; Lutero 1912: Jiswi
+Ivvah	Iwwa	Iwwa	revisado	rev. IA: conferido em 2Kgs.18.34; Lutero 1912: Iwwa
+Jaasau	Jaesai	Jaesai	revisado	rev. IA: conferido em Ezra.10.37; Lutero 1912: Jaesai
+Jaasu	Jaesai	Jaesai	revisado	rev. IA: conferido em Ezra.10.37; Lutero 1912: Jaesai
+Jaaziel	Asiel	Asiel	revisado	rev. IA: conferido em 1Chr.15.20; Lutero 1912: Asiel
+Jacob	Jakob	Jakob	revisado	rev. IA: conferido em Gen.25.26; Lutero 1912: Jakob
+Jahzah	Jahza	Jahza	revisado	rev. IA: conferido em 1Chr.6.78; Lutero 1912: Jahza
+James	Johannes	Jakobus	revisado	rev. IA: conferido em Matt.4.21; Lutero 1912: Jakobus
+James	Joses	Jakobus	revisado	rev. IA: conferido em Matt.13.55; Lutero 1912: Jakobus
+Javan	Javan	Javan	revisado	rev. IA: conferido em Gen.10.2; Lutero 1912: Javan
+Jeduthun	Jeduthun	Jeduthun	revisado	rev. IA: conferido em 1Chr.9.16; Lutero 1912: Jeduthun
+Jehohanan	Johanan	Johanan	revisado	rev. IA: conferido em 1Chr.26.3; Lutero 1912: Johanan
+Jehoiachin	Jojachin	Jojachin	revisado	rev. IA: conferido em 2Kgs.24.6; Lutero 1912: Jojachin
+Jehoiarib	Jojarib	Jojarib	revisado	rev. IA: conferido em 1Chr.24.7; Lutero 1912: Jojarib
+Jehonathan	Jonathan	Jonathan	revisado	rev. IA: conferido em 1Chr.27.25; Lutero 1912: Jonathan
+Jehuel	Jehiel	Jehiel	revisado	rev. IA: conferido em 2Chr.29.14; Lutero 1912: Jehiel
+Jehush	Jeus	Jeus	revisado	rev. IA: conferido em 1Chr.8.39; Lutero 1912: Jeus
+Jeiel	Jehiel	Jehiel	revisado	rev. IA: conferido em 1Chr.15.18; Lutero 1912: Jehiel
+Jekabzeel	Kabzeel	Kabzeel	revisado	rev. IA: conferido em Neh.11.25; Lutero 1912: Kabzeel
+Jerah	Jarah	Jarah	revisado	rev. IA: conferido em Gen.10.26; Lutero 1912: Jarah
+Jeremoth	Jerimoth	Jerimoth	revisado	rev. IA: conferido em 1Chr.7.8; Lutero 1912: Jerimoth
+Jerijah	Jeria	Jeria	revisado	rev. IA: conferido em 1Chr.26.31; Lutero 1912: Jeria
+Jesaiah	Jesaja	Jesaja	revisado	rev. IA: conferido em 1Chr.3.21; Lutero 1912: Jesaja
+Jeshaiah	Jesaja	Jesaja	revisado	rev. IA: conferido em 1Chr.3.21; Lutero 1912: Jesaja
+Jesiah	Jissia	Jissia	revisado	rev. IA: conferido em 1Chr.12.6; Lutero 1912: Jissia
+Jesimiel	Ismeel	Ismeel	revisado	rev. IA: conferido em 1Chr.4.36; Lutero 1912: Ismeel
+Jesse	Jesse	Jesse	revisado	rev. IA: conferido em Matt.1.5; Lutero 1912: Jesse
+Jethro	Jethro	Jethro	revisado	rev. IA: conferido em Exod.3.1; Lutero 1912: Jethro
+Jeuel	Jeiel	Jeiel	revisado	rev. IA: conferido em 2Chr.29.13; Lutero 1912: Jeiel
+Jezoar	Jizhar	Jizhar	revisado	rev. IA: conferido em 1Chr.4.7; Lutero 1912: Jizhar
+Jezreel	Jesreelitin	Jesreelitin	revisado	rev. IA: conferido em 1Sam.27.3; Lutero 1912: Jesreelitin
+Joahaz	Joahas	Joahas	revisado	rev. IA: conferido em 2Chr.34.8; Lutero 1912: Joahas
+Joanan	Johanan	Johanan	revisado	rev. IA: conferido em Luke.3.27; Lutero 1912: Johanan
+Joanna	Johanan	Johanna	revisado	rev. IA: conferido em Luke.3.27; Lutero 1912: Johanna
+Joda	Juda	Juda	revisado	rev. IA: conferido em Luke.3.26; Lutero 1912: Juda
+John	Jona	Jona	revisado	rev. IA: conferido em Matt.16.17; Lutero 1912: Jona
+Joiada	Jojada	Jojada	revisado	rev. IA: conferido em Neh.3.6; Lutero 1912: Jojada
+Joiakim	Jojakim	Jojakim	revisado	rev. IA: conferido em Neh.12.10; Lutero 1912: Jojakim
+Jonan	Jonams	Jonam	revisado	rev. IA: conferido em Luke.3.30; Lutero 1912: Jonam; candidato no genitivo
+Jonas	Jona	Jona	revisado	rev. IA: conferido em John.1.42; Lutero 1912: Jona
+Joppa	Joppe	Joppe	revisado	rev. IA: conferido em Acts.9.36; Lutero 1912: Joppe
+Jorim	Jorems	Jorem	revisado	rev. IA: conferido em Luke.3.29; Lutero 1912: Jorem; candidato no genitivo
+Josabad	Josabad	Josabad	revisado	rev. IA: conferido em 1Chr.12.4; Lutero 1912: Josabad
+Jose	Jorems	Josua	revisado	rev. IA: conferido em Luke.3.29; Lutero 1912: Josua; Lutero: Sohn des Jesus (Lc 3,29)
+Joseph	Josechs	Josech	revisado	rev. IA: conferido em Luke.3.26; Lutero 1912: Josech; candidato no genitivo
+Joshaphat	Josaphat	Josaphat	revisado	rev. IA: conferido em 1Chr.11.43; Lutero 1912: Josaphat
+Jozadak	Jozadak	Jozadak	revisado	rev. IA: conferido em Ezra.10.18; Lutero 1912: Jozadak
+Juda	Juda	Juda	revisado	rev. IA: conferido em Luke.3.26; Lutero 1912: Juda
+Judas	Juda	Judas	revisado	rev. IA: conferido em Matt.10.4; Lutero 1912: Judas
+Jude	Juda	Judas	revisado	rev. IA: conferido em Matt.13.55; Lutero 1912: Judas
+Judea	Juda	Juda	revisado	rev. IA: conferido em Ezra.5.1; Lutero 1912: Juda
+Judea	Judäa	Judäa	revisado	rev. IA: conferido em Mark.3.7; Lutero 1912: Judäa
+Kadesh-barnea	Kades-Barnea	Kades-Barnea	revisado	rev. IA: conferido em Num.32.8; Lutero 1912: Kades-Barnea
+Karnaim	Astharoth-Karnaim	Karnaim	revisado	rev. IA: conferido em Gen.14.5; Lutero 1912: Karnaim
+Kenath	Kenath	Kenath	revisado	rev. IA: conferido em 1Chr.2.23; Lutero 1912: Kenath
+Kir	Kir	Kir	revisado	rev. IA: conferido em 2Kgs.3.25; Lutero 1912: Kir
+Kir-hareseth	Kir-Hareseth	Kir-Hareseth	revisado	rev. IA: conferido em 2Kgs.3.25; Lutero 1912: Kir-Hareseth
+Kishi	Kusis	Kusi	revisado	rev. IA: conferido em 1Chr.6.44; Lutero 1912: Kusi; candidato no genitivo
+Kitron	Kitron	Kitron	revisado	rev. IA: conferido em Judg.1.30; Lutero 1912: Kitron
+Kittim	Chittiter	Chittiter	revisado	rev. IA: conferido em Gen.10.4; Lutero 1912: Chittiter
+Kore	Kore	Kore	revisado	rev. IA: conferido em 1Chr.9.19; Lutero 1912: Kore
+LORD	Ohr	HERR	revisado	rev. IA: conferido em 2Sam.7.22; Lutero 1912: HERR
+Ladan	Laedan	Laedan	revisado	rev. IA: conferido em 1Chr.7.26; Lutero 1912: Laedan
+Lebo-hamath	Hamath	Lebo-Hamath	revisado	rev. IA: conferido em Num.13.21; Lutero 1912: Lebo-Hamath; Lutero: da man gen Hamath geht
+Lehabim	Lehabiter	Lehabiter	revisado	rev. IA: conferido em Gen.10.13; Lutero 1912: Lehabiter
+Letushim	Letusiter	Letusiter	revisado	rev. IA: conferido em Gen.25.3; Lutero 1912: Letusiter
+Leummim	Leumiter	Leumiter	revisado	rev. IA: conferido em Gen.25.3; Lutero 1912: Leumiter
+Levi	Levi	Levi	revisado	rev. IA: conferido em Gen.29.34; Lutero 1912: Levi
+Libya	Libyen	Libyen	revisado	rev. IA: conferido em Ezek.30.5; Lutero 1912: Libyen
+Libya	Libyer	Libyen	revisado	rev. IA: conferido em 2Chr.12.3; Lutero 1912: Libyen
+Ludim	Luditer	Luditer	revisado	rev. IA: conferido em Gen.10.13; Lutero 1912: Luditer
+Luke	Lukas	Lukas	revisado	rev. IA: conferido em Col.4.14; Lutero 1912: Lukas
+Maacath	Maacha	Maacha	revisado	rev. IA: conferido em Josh.13.13; Lutero 1912: Maacha
+Maareh-geba	Geba	Maareh-Geba	revisado	rev. IA: conferido em Judg.20.33; Lutero 1912: Maareh-Geba
+Magadan	Magdalas	Magdala	revisado	rev. IA: conferido em Matt.15.39; Lutero 1912: Magdala; candidato no genitivo
+Mahalah	Mahela	Mahela	revisado	rev. IA: conferido em 1Chr.7.18; Lutero 1912: Mahela
+Mahalath	Mahalath	Mahalath	revisado	rev. IA: conferido em Gen.28.9; Lutero 1912: Mahalath
+Mahaneh-dan	Dan	Lager Dan	revisado	rev. IA: conferido em Judg.13.25; Lutero 1912: Lager Dan
+Mahseiah	Maaseja	Maaseja	revisado	rev. IA: conferido em Jer.32.12; Lutero 1912: Maaseja
+Maranatha	Maran	Maran atha	revisado	rev. IA: conferido em 1Cor.16.22; Lutero 1912: Maran atha
+Massa	Massa	Massa	revisado	rev. IA: conferido em Gen.25.14; Lutero 1912: Massa
+Matthan	Matthan	Matthan	revisado	rev. IA: conferido em Matt.1.15; Lutero 1912: Matthan
+Media	Medien	Medien	revisado	rev. IA: conferido em Ezra.6.2; Lutero 1912: Medien
+Mehunim	Meuniter	Meuniter	revisado	rev. IA: conferido em Ezra.2.50; Lutero 1912: Meuniter
+Melchiah	Malchia	Malchia	revisado	rev. IA: conferido em Jer.21.1; Lutero 1912: Malchia
+Menan	Menams	Menam	revisado	rev. IA: conferido em Luke.3.31; Lutero 1912: Menam; candidato no genitivo
+Meribah-kadesh	Kades	Haderwasser zu Kades	revisado	rev. IA: conferido em Deut.32.51; Lutero 1912: Haderwasser zu Kades
+Meshech-Tubal	Thubal	Mesech-Thubal	revisado	rev. IA: conferido em Ezek.32.26; Lutero 1912: Mesech-Thubal; Lutero: Mesech und Thubal
+Meunim	Meuniter	Meuniter	revisado	rev. IA: conferido em Ezra.2.50; Lutero 1912: Meuniter
+Miamin	Mijamin	Mijamin	revisado	rev. IA: conferido em Ezra.10.25; Lutero 1912: Mijamin
+Mica	Micha	Micha	revisado	rev. IA: conferido em 1Chr.9.15; Lutero 1912: Micha
+Micha	Micha	Micha	revisado	rev. IA: conferido em 1Chr.9.15; Lutero 1912: Micha
+Michah	Micha	Micha	revisado	rev. IA: conferido em 1Chr.23.20; Lutero 1912: Micha
+Michmas	Michmas	Michmas	revisado	rev. IA: conferido em Ezra.2.27; Lutero 1912: Michmas
+Midian	Midian	Midian	revisado	rev. IA: conferido em Gen.25.2; Lutero 1912: Midian
+Misgab	Moab	Misgab	revisado	rev. IA: conferido em Jer.48.1; Lutero 1912: Misgab; Lutero traduz (hohe Feste)
+Mishael	Misael	Misael	revisado	rev. IA: conferido em Exod.6.22; Lutero 1912: Misael
+Moab	Moab	Moab	revisado	rev. IA: conferido em Gen.19.37; Lutero 1912: Moab
+Moadiah	Maadja	Maadja	revisado	rev. IA: conferido em Neh.12.5; Lutero 1912: Maadja
+Moresheth-gath	Moreseth-Gath	Moreseth-Gath	revisado	rev. IA: conferido em Mic.1.14; Lutero 1912: Moreseth-Gath
+Mozah	Moza	Moza	revisado	rev. IA: conferido em Josh.18.26; Lutero 1912: Moza
+Muppim	Muppim	Muppim	revisado	rev. IA: conferido em Gen.46.21; Lutero 1912: Muppim
+Mysia	Mysien	Mysien	revisado	rev. IA: conferido em Acts.16.7; Lutero 1912: Mysien
+Nahalol	Nahalol	Nahalol	revisado	rev. IA: conferido em Judg.1.30; Lutero 1912: Nahalol
+Naphath-dor	Taphath	Naphoth-Dor	revisado	rev. IA: conferido em 1Kgs.4.11; Lutero 1912: Naphoth-Dor; Lutero: Naphoth-Dor (Js 12,23)
+Naphtuhim	Naphthuhiter	Naphthuhiter	revisado	rev. IA: conferido em Gen.10.13; Lutero 1912: Naphthuhiter
+Neah	Nea	Nea	revisado	rev. IA: conferido em Josh.19.13; Lutero 1912: Nea
+Nephushesim	Nephusiter	Nephusiter	revisado	rev. IA: conferido em Ezra.2.50; Lutero 1912: Nephusiter
+Nephusim	Nephusiter	Nephusiter	revisado	rev. IA: conferido em Ezra.2.50; Lutero 1912: Nephusiter
+Nero	HERR		sem	rev. IA: conferido em 2Tim.4.22; sem forma própria segura em Lutero 1912; subscrição tardia, não está no texto de Lutero
+Netophah	Netopha	Netopha	revisado	rev. IA: conferido em 2Sam.23.28; Lutero 1912: Netopha
+Nile	Nil	Nil	revisado	rev. IA: conferido em Gen.41.1; Lutero 1912: Nil
+Nob	Nob	Nob	revisado	rev. IA: conferido em 1Sam.21.1; Lutero 1912: Nob
+Nun	Nun	Nun	revisado	rev. IA: conferido em Exod.33.11; Lutero 1912: Nun
+Oded	Obed	Obed	revisado	rev. IA: conferido em 2Chr.28.9; Lutero 1912: Obed
+Osnappar	Asnaphar	Asnaphar	revisado	rev. IA: conferido em Ezra.4.10; Lutero 1912: Asnaphar
+Paddan	Laban	Mesopotamien	revisado	rev. IA: conferido em Gen.25.20; Lutero 1912: Mesopotamien
+Parvaim	Parwaim-Gold	Parwaim	revisado	rev. IA: conferido em 2Chr.3.6; Lutero 1912: Parwaim
+Passover	Passahopfer	Passah	revisado	rev. IA: conferido em Exod.12.27; Lutero 1912: Passah
+Pathrusim	Pathrusiter	Pathrusiter	revisado	rev. IA: conferido em Gen.10.14; Lutero 1912: Pathrusiter
+Pau	Pagu	Pagu	revisado	rev. IA: conferido em Gen.36.39; Lutero 1912: Pagu
+Peniel	Pniel	Pniel	revisado	rev. IA: conferido em Gen.32.30; Lutero 1912: Pniel
+Persia	Persien	Persien	revisado	rev. IA: conferido em 2Chr.36.22; Lutero 1912: Persien
+Pharosh	Pareos	Pareos	revisado	rev. IA: conferido em Ezra.8.3; Lutero 1912: Pareos
+Phebe	Phöbe	Phöbe	revisado	rev. IA: conferido em Rom.16.1; Lutero 1912: Phöbe
+Philistine	Philister	Philister	revisado	rev. IA: conferido em Gen.10.14; Lutero 1912: Philister
+Phrygia	Phrygien	Phrygien	revisado	rev. IA: conferido em Acts.2.10; Lutero 1912: Phrygien
+Phurah	Pura	Pura	revisado	rev. IA: conferido em Judg.7.10; Lutero 1912: Pura
+Phut	Put	Put	revisado	rev. IA: conferido em Gen.10.6; Lutero 1912: Put
+Pirathon	Pirathon	Pirathon	revisado	rev. IA: conferido em Judg.12.13; Lutero 1912: Pirathon
+Pochereth-hazzebaim	Pochereth	Pochereth von Zebaim	revisado	rev. IA: conferido em Ezra.2.57; Lutero 1912: Pochereth von Zebaim
+Puah	Phua	Phua	revisado	rev. IA: conferido em Judg.10.1; Lutero 1912: Phua
+Pul	Phul	Phul	revisado	rev. IA: conferido em Isa.66.19; Lutero 1912: Phul
+Put	Put	Put	revisado	rev. IA: conferido em Gen.10.6; Lutero 1912: Put
+Pyrrhus	Gajus	Pyrrhus	revisado	rev. IA: conferido em Acts.20.4; Lutero 1912: Pyrrhus; Lutero omite
+Raamses	Raemses	Raemses	revisado	rev. IA: conferido em Exod.1.11; Lutero 1912: Raemses
+Rachab	Rahab	Rahab	revisado	rev. IA: conferido em Matt.1.5; Lutero 1912: Rahab
+Rakem	Rekem	Rekem	revisado	rev. IA: conferido em 1Chr.7.16; Lutero 1912: Rekem
+Ramah	Ramathiter	Rama	revisado	rev. IA: conferido em 1Chr.27.27; Lutero 1912: Rama
+Ramoth	Jeremoth	Jeremoth	revisado	rev. IA: conferido em Ezra.10.29; Lutero 1912: Jeremoth
+Raphah	Rapha	Rapha	revisado	rev. IA: conferido em 1Chr.8.37; Lutero 1912: Rapha
+Reaia	Reaja	Reaja	revisado	rev. IA: conferido em 1Chr.5.5; Lutero 1912: Reaja
+Rei	Rei	Rei	revisado	rev. IA: conferido em 1Kgs.1.8; Lutero 1912: Rei
+Rephaim	Ephraim	Rephaim	revisado	rev. IA: conferido em Josh.17.15; Lutero 1912: Rephaim
+Reu	Regu	Regu	revisado	rev. IA: conferido em Gen.11.18; Lutero 1912: Regu
+Rhegium	Rhegion	Rhegion	revisado	rev. IA: conferido em Acts.28.13; Lutero 1912: Rhegion
+Rhoda	Rhode	Rhode	revisado	rev. IA: conferido em Acts.12.13; Lutero 1912: Rhode
+Rimmon	Dimna	Rimmon	revisado	rev. IA: conferido em Josh.21.35; Lutero 1912: Rimmon
+River	Amoriter	Strom	revisado	rev. IA: conferido em Josh.24.15; Lutero 1912: Strom; Lutero: jenseit des Stroms
+River	Wasser	Strom	revisado	rev. IA: conferido em Deut.11.24; Lutero 1912: Strom; Lutero: jenseit des Stroms
+Rome	Römer	Rom	revisado	rev. IA: conferido em John.11.48; Lutero 1912: Rom
+Sadoc	Zadok	Zadok	revisado	rev. IA: conferido em Matt.1.14; Lutero 1912: Zadok
+Salathiel	Sealthiel	Sealthiel	revisado	rev. IA: conferido em Luke.3.27; Lutero 1912: Sealthiel
+Salma	Salma	Salma	revisado	rev. IA: conferido em 1Chr.2.51; Lutero 1912: Salma
+Salt	Salzstadt	Salzstadt	revisado	rev. IA: conferido em Josh.15.62; Lutero 1912: Salzstadt
+Samgar	Samgar-Nebo	Samgar-Nebo	revisado	rev. IA: conferido em Jer.39.3; Lutero 1912: Samgar-Nebo
+Satan	Satan	Satan	revisado	rev. IA: conferido em 1Chr.21.1; Lutero 1912: Satan
+Scythians	Scythe	Scythen	revisado	rev. IA: conferido em Col.3.11; Lutero 1912: Scythen; Lutero: Scythe
+Seba	Seba	Seba	revisado	rev. IA: conferido em Gen.10.7; Lutero 1912: Seba
+Sela	Sela	Sela	revisado	rev. IA: conferido em 2Kgs.14.7; Lutero 1912: Sela
+Semei	Simei	Simei	revisado	rev. IA: conferido em Luke.3.26; Lutero 1912: Simei
+Semein	Simei	Simei	revisado	rev. IA: conferido em Luke.3.26; Lutero 1912: Simei
+Senaah	Senaa	Senaa	revisado	rev. IA: conferido em Ezra.2.35; Lutero 1912: Senaa
+Senuah	Hasnuas	Hasnua	revisado	rev. IA: conferido em Neh.11.9; Lutero 1912: Hasnua; candidato no genitivo
+Sepharad	Sepharad	Sepharad	revisado	rev. IA: conferido em Obad.1.20; Lutero 1912: Sepharad
+Serah	Serah	Serah	revisado	rev. IA: conferido em Gen.46.17; Lutero 1912: Serah
+Seraiah	Seja	Seja	revisado	rev. IA: conferido em 2Sam.20.25; Lutero 1912: Seja
+Shaalbim	Saalbim	Saalbim	revisado	rev. IA: conferido em Judg.1.35; Lutero 1912: Saalbim
+Shaalbon	Saalboniter	Saalbon	revisado	rev. IA: conferido em 2Sam.23.32; Lutero 1912: Saalbon; Lutero: der Saalboniter
+Shage	Sage	Sage	revisado	rev. IA: conferido em 1Chr.11.34; Lutero 1912: Sage
+Shamariah	Semarja	Semarja	revisado	rev. IA: conferido em 2Chr.11.19; Lutero 1912: Semarja
+Shamma	Samma	Samma	revisado	rev. IA: conferido em 1Chr.7.37; Lutero 1912: Samma
+Shaphir	Saphir	Saphir	revisado	rev. IA: conferido em Mic.1.11; Lutero 1912: Saphir
+Sharuhen	Saruhen	Saruhen	revisado	rev. IA: conferido em Josh.19.6; Lutero 1912: Saruhen
+Shaul	Saul	Saul	revisado	rev. IA: conferido em Gen.36.37; Lutero 1912: Saul
+Shaveh-kiriathaim	Kirjathaim	Save-Kirjathaim	revisado	rev. IA: conferido em Gen.14.5; Lutero 1912: Save-Kirjathaim; Lutero: Feld Kirjathaim
+Shavsha	Sawsa	Sawsa	revisado	rev. IA: conferido em 1Chr.18.16; Lutero 1912: Sawsa
+Sheba	Saba	Saba	revisado	rev. IA: conferido em Gen.10.7; Lutero 1912: Saba
+Sheba	Seba	Seba	revisado	rev. IA: conferido em Gen.10.7; Lutero 1912: Seba
+Shelah	Salah	Salah	revisado	rev. IA: conferido em Gen.10.24; Lutero 1912: Salah
+Shelah	Sela	Sela	revisado	rev. IA: conferido em Gen.38.5; Lutero 1912: Sela
+Shelah	Siloah	Siloah	revisado	rev. IA: conferido em Neh.3.15; Lutero 1912: Siloah
+Shelomoth	Salomith	Salomith	revisado	rev. IA: conferido em 1Chr.23.9; Lutero 1912: Salomith
+Shema	Sama	Sama	revisado	rev. IA: conferido em 1Chr.2.43; Lutero 1912: Sama
+Shemaah	Saamas	Saama	revisado	rev. IA: conferido em 1Chr.12.3; Lutero 1912: Saama; candidato no genitivo
+Shemed	Semer	Semer	revisado	rev. IA: conferido em 1Chr.8.12; Lutero 1912: Semer
+Shemuel	Samuel	Samuel	revisado	rev. IA: conferido em Num.34.20; Lutero 1912: Samuel
+Shephathiah	Sephatja	Sephatja	revisado	rev. IA: conferido em 1Chr.9.8; Lutero 1912: Sephatja
+Sheresh	Seres	Seres	revisado	rev. IA: conferido em 1Chr.7.16; Lutero 1912: Seres
+Shibah	Seba	Seba	revisado	rev. IA: conferido em Gen.26.33; Lutero 1912: Seba
+Shiloah	Siloah	Siloah	revisado	rev. IA: conferido em Isa.8.6; Lutero 1912: Siloah
+Shimea	Simea	Simea	revisado	rev. IA: conferido em 1Chr.6.30; Lutero 1912: Simea
+Shimeon	Simeon	Simeon	revisado	rev. IA: conferido em Ezra.10.31; Lutero 1912: Simeon
+Shimhi	Simei	Simei	revisado	rev. IA: conferido em 1Chr.8.21; Lutero 1912: Simei
+Shimon	Simon	Simon	revisado	rev. IA: conferido em 1Chr.4.20; Lutero 1912: Simon
+Shimri	Simri	Simri	revisado	rev. IA: conferido em 1Chr.4.37; Lutero 1912: Simri
+Shiza	Sisa	Sisa	revisado	rev. IA: conferido em 1Chr.11.42; Lutero 1912: Sisa
+Shuah	Suah	Suah	revisado	rev. IA: conferido em Gen.25.2; Lutero 1912: Suah
+Shubael	Subael	Subael	revisado	rev. IA: conferido em 1Chr.24.20; Lutero 1912: Subael
+Shupham	Supham	Supham	revisado	rev. IA: conferido em Num.26.39; Lutero 1912: Supham
+Sidon	Groß-Sidon	Sidon	revisado	rev. IA: conferido em Josh.11.8; Lutero 1912: Sidon
+Simeon	Simon	Simon	revisado	rev. IA: conferido em Acts.13.1; Lutero 1912: Simon
+Simri	Simri	Simri	revisado	rev. IA: conferido em 1Chr.26.10; Lutero 1912: Simri
+Sirah	Bor-Hassira	Bor-Hassira	revisado	rev. IA: conferido em 2Sam.3.26; Lutero 1912: Bor-Hassira
+So	So	So	revisado	rev. IA: conferido em 2Kgs.17.4; Lutero 1912: So
+Soco	Socho	Socho	revisado	rev. IA: conferido em 1Chr.4.18; Lutero 1912: Socho
+Suah	Suah	Suah	revisado	rev. IA: conferido em 1Chr.7.36; Lutero 1912: Suah
+Sukkiim	Suchiter	Suchiter	revisado	rev. IA: conferido em 2Chr.12.3; Lutero 1912: Suchiter
+Sur	Sur	Sur	revisado	rev. IA: conferido em 2Kgs.11.6; Lutero 1912: Sur
+Syria	Syrien	Syrien	revisado	rev. IA: conferido em Judg.10.6; Lutero 1912: Syrien
+Syrtis	Syrte	Syrte	revisado	rev. IA: conferido em Acts.27.17; Lutero 1912: Syrte
+Tabitha	Tabea	Tabea	revisado	rev. IA: conferido em Acts.9.36; Lutero 1912: Tabea
+Tahtim-hodshi	Hodsi	Niederland Hodsi	revisado	rev. IA: conferido em 2Sam.24.6; Lutero 1912: Niederland Hodsi
+Tahtimhodshi	Hodsi	Niederland Hodsi	revisado	rev. IA: conferido em 2Sam.24.6; Lutero 1912: Niederland Hodsi
+Tamah	Themah	Themah	revisado	rev. IA: conferido em Ezra.2.53; Lutero 1912: Themah
+Tarshish	Tharsis	Tharsis	revisado	rev. IA: conferido em Gen.10.4; Lutero 1912: Tharsis
+Tharshish	Tharsis	Tharsis	revisado	rev. IA: conferido em 1Chr.7.10; Lutero 1912: Tharsis
+Tiberius	Tiberius	Tiberius	revisado	rev. IA: conferido em Luke.3.1; Lutero 1912: Tiberius
+Tiglath-pileser	Thiglath-Pileser	Thiglath-Pileser	revisado	rev. IA: conferido em 2Kgs.15.29; Lutero 1912: Thiglath-Pileser
+Timnath-heres	Thimnath-Heres	Thimnath-Heres	revisado	rev. IA: conferido em Judg.2.9; Lutero 1912: Thimnath-Heres
+Tobijah	Tobia	Tobia	revisado	rev. IA: conferido em 2Chr.17.8; Lutero 1912: Tobia
+Tohu	Thohus	Thohu	revisado	rev. IA: conferido em 1Sam.1.1; Lutero 1912: Thohu; candidato no genitivo
+Topheth	Thopheth	Thopheth	revisado	rev. IA: conferido em Jer.7.31; Lutero 1912: Thopheth
+Tower	Ecktor	Turm Hananeel	revisado	rev. IA: conferido em Jer.31.38; Lutero 1912: Turm Hananeel
+Trogyllium	Trogyllion	Trogyllion	revisado	rev. IA: conferido em Acts.20.15; Lutero 1912: Trogyllion
+Tyre	Tyrer	Tyrus	revisado	rev. IA: conferido em 2Chr.2.14; Lutero 1912: Tyrus
+Uzzia	Usia	Usia	revisado	rev. IA: conferido em 1Chr.11.44; Lutero 1912: Usia
+Vedan	Dan	Vedan	revisado	rev. IA: conferido em Ezek.27.19; Lutero 1912: Vedan; Lutero: Dan
+Vophsi	Vaphsis	Vaphsi	revisado	rev. IA: conferido em Num.13.14; Lutero 1912: Vaphsi; candidato no genitivo
+Zacchur	Sakkur	Sakkur	revisado	rev. IA: conferido em 1Chr.4.26; Lutero 1912: Sakkur
+Zaccur	Sabbud	Sabbud	revisado	rev. IA: conferido em Ezra.8.14; Lutero 1912: Sabbud
+Zachariah	Sacharja	Sacharja	revisado	rev. IA: conferido em 2Kgs.14.29; Lutero 1912: Sacharja
+Zaphon	Schön	Zaphon	revisado	rev. IA: conferido em Ps.48.2; Lutero 1912: Zaphon; Lutero traduz (gegen Mitternacht)
+Zaphon	Zaphon	Zaphon	revisado	rev. IA: conferido em Josh.13.27; Lutero 1912: Zaphon
+Zarephath	Zarpath	Zarpath	revisado	rev. IA: conferido em 1Kgs.17.9; Lutero 1912: Zarpath
+Zatthu	Satthu	Satthu	revisado	rev. IA: conferido em Neh.10.14; Lutero 1912: Satthu
+Zeboim	Zeboim	Zeboim	revisado	rev. IA: conferido em Neh.11.34; Lutero 1912: Zeboim
+Zephath	Zephath	Zephath	revisado	rev. IA: conferido em Judg.1.17; Lutero 1912: Zephath
+Zeredah	Zaredatha	Zareda	revisado	rev. IA: conferido em 2Chr.4.17; Lutero 1912: Zareda; Lutero: Zareda (1Rs 11,26)
+Zeri	Jizri	Jizri	revisado	rev. IA: conferido em 1Chr.25.11; Lutero 1912: Jizri
+Zidkijah	Zedekia	Zedekia	revisado	rev. IA: conferido em Neh.10.1; Lutero 1912: Zedekia
+Zidon	Sidon	Sidon	revisado	rev. IA: conferido em Gen.10.15; Lutero 1912: Sidon
+Zizah	Sina	Sina	revisado	rev. IA: conferido em 1Chr.23.10; Lutero 1912: Sina
+Zobah-Hamath	Zoba	Zoba-Hamath	revisado	rev. IA: conferido em 1Chr.18.3; Lutero 1912: Zoba-Hamath; Lutero: Zoba und Hamath
+Zorobabel	Serubabel	Serubabel	revisado	rev. IA: conferido em Luke.3.27; Lutero 1912: Serubabel
+Zur	Zur	Zur	revisado	rev. IA: conferido em Num.25.15; Lutero 1912: Zur
+Zuzim	Susiter	Susiter	revisado	rev. IA: conferido em Gen.14.5; Lutero 1912: Susiter
+Adriatic Sea	Meer Adriatic	Adria-Meer	revisado	rev. IA: conferido em Acts.27.27; Lutero 1912: Adria-Meer
+Aven Valley	Tal Aven	Feld Aven	revisado	rev. IA: conferido em texto; Lutero 1912: Feld Aven
+Beautiful Gate	Tor Beautiful	Schöne Tür	revisado	rev. IA: conferido em Acts.3.2; Lutero 1912: Schöne Tür; Lutero: des Tempels Tür, die da heißt die schöne
+Beracah Valley	Tal Baracha	Lobetal	revisado	rev. IA: conferido em texto; Lutero 1912: Lobetal
+Broad Wall	Mauer Broad	Breite Mauer	revisado	rev. IA: conferido em Neh.3.8; Lutero 1912: Breite Mauer
+Brook of the Arabah	Bach Araba	Bach in der Wüste	revisado	rev. IA: conferido em Amos.6.14; Lutero 1912: Bach in der Wüste
+Brook of the Willows	Bach Weidenbach	Weidenbach	revisado	rev. IA: conferido em Isa.15.7; Lutero 1912: Weidenbach
+City of Destruction	Stadt Ir-Heres	Ir-Heres	revisado	rev. IA: conferido em Isa.19.18; Lutero 1912: Ir-Heres
+City of Salt	Stadt Salzstadt	Salzstadt	revisado	rev. IA: conferido em Josh.15.62; Lutero 1912: Salzstadt
+City of the Lord	Stadt Lord	Stadt des HERRN	revisado	rev. IA: conferido em Isa.60.14; Lutero 1912: Stadt des HERRN
+Dragon Spring	Brunnen Dragon	Drachenbrunnen	revisado	rev. IA: conferido em Neh.2.13; Lutero 1912: Drachenbrunnen
+Dung Gate	Tor Dung	Misttor	revisado	rev. IA: conferido em Neh.2.13; Lutero 1912: Misttor
+East Gate	Tor Morgenland	Tor gegen Morgen	revisado	rev. IA: conferido em 1Chr.26.14; Lutero 1912: Tor gegen Morgen
+Egypt Sea	Meer Ägypten	Zunge des Meeres in Ägypten	revisado	rev. IA: conferido em texto; Lutero 1912: Zunge des Meeres in Ägypten
+Egyptian Sea	Meer Egyptian	Zunge des Meeres in Ägypten	revisado	rev. IA: conferido em Isa.11.15; Lutero 1912: Zunge des Meeres in Ägypten
+Elah Valley	Tal Ela	Eichgrund	revisado	rev. IA: conferido em texto; Lutero 1912: Eichgrund
+Eshcol Valley	Tal Eskol	Bach Eskol	revisado	rev. IA: conferido em texto; Lutero 1912: Bach Eskol
+Foundation Gate	Tor Foundation	Grundtor	revisado	rev. IA: conferido em texto; Lutero 1912: Grundtor
+Fountain Gate	Tor Fountain	Brunnentor	revisado	rev. IA: conferido em Neh.2.14; Lutero 1912: Brunnentor
+Gate Miphkad	Tor Miphkad	Ratstor	revisado	rev. IA: conferido em Neh.3.31; Lutero 1912: Ratstor
+Gate of the Foundation	Tor Foundation	Grundtor	revisado	rev. IA: conferido em 2Chr.23.5; Lutero 1912: Grundtor
+Gate of the Fountain	Tor Fountain	Brunnentor	revisado	rev. IA: conferido em Neh.2.14; Lutero 1912: Brunnentor
+Gate of the Valley	Tor Valley	Taltor	revisado	rev. IA: conferido em Neh.2.13; Lutero 1912: Taltor
+Great Sea	Meer Great	Großes Meer	revisado	rev. IA: conferido em Exod.23.31; Lutero 1912: Großes Meer; Lutero: das große Meer
+Hall of Judgment	Halle Gerichtshalle	Halle zum Richtstuhl	revisado	rev. IA: conferido em 1Kgs.7.7; Lutero 1912: Halle zum Richtstuhl
+Hall of Pillars	Halle Säulenhalle	Halle von Säulen	revisado	rev. IA: conferido em 1Kgs.7.6; Lutero 1912: Halle von Säulen
+Hall of the Throne	Halle Thronhalle	Halle zum Richtstuhl	revisado	rev. IA: conferido em 1Kgs.7.7; Lutero 1912: Halle zum Richtstuhl
+Hamon-gog Valley	Tal Hamon-gog	Gogs Haufental	revisado	rev. IA: conferido em texto; Lutero 1912: Gogs Haufental
+Hill Mizar	Hügel Mizar	Berg Mizar	revisado	rev. IA: conferido em Ps.42.6; Lutero 1912: Berg Mizar; Lutero: am kleinen Berg
+Horse Gate	Tor Horse	Roßtor	revisado	rev. IA: conferido em 2Chr.23.15; Lutero 1912: Roßtor
+House of the Forest	Haus Haus des Waldes	Haus vom Walde Libanon	revisado	rev. IA: conferido em texto; Lutero 1912: Haus vom Walde Libanon
+Jericho Valley	Tal Jericho	Ebene Jericho	revisado	rev. IA: conferido em texto; Lutero 1912: Ebene Jericho; Lutero: Ebene Jerichos
+Jordan Valley	Tal Jordan	Gegend am Jordan	revisado	rev. IA: conferido em Gen.13.10; Lutero 1912: Gegend am Jordan
+King's Valley	Tal King	Königsgrund	revisado	rev. IA: conferido em texto; Lutero 1912: Königsgrund
+Lebanon Valley	Tal Libanon	Ebene beim Berge Libanon	revisado	rev. IA: conferido em texto; Lutero 1912: Ebene beim Berge Libanon
+Lower Pool	Teich Lower	Unterer Teich	revisado	rev. IA: conferido em Isa.22.9; Lutero 1912: Unterer Teich
+Middle Gate	Tor Middle	Mitteltor	revisado	rev. IA: conferido em Jer.39.3; Lutero 1912: Mitteltor
+Mizar Mount	Berg Mizar	Berg Mizar	revisado	rev. IA: conferido em texto; Lutero 1912: Berg Mizar; Lutero: am kleinen Berg
+Mizpeh Valley	Tal Mizpe	Ebene Mizpa	revisado	rev. IA: conferido em texto; Lutero 1912: Ebene Mizpa
+Mount Mizar	Berg Mizar	Berg Mizar	revisado	rev. IA: conferido em Ps.42.6; Lutero 1912: Berg Mizar; Lutero: am kleinen Berg
+Mount of Olives	Berg Olives	Ölberg	revisado	rev. IA: conferido em 2Sam.15.30; Lutero 1912: Ölberg
+Muster Gate	Tor Muster	Ratstor	revisado	rev. IA: conferido em Neh.3.31; Lutero 1912: Ratstor
+New Gate	Tor New	Neues Tor	revisado	rev. IA: conferido em Jer.26.10; Lutero 1912: Neues Tor
+North Gate	Tor Mitternacht	Tor gegen Mitternacht	revisado	rev. IA: conferido em 1Chr.26.14; Lutero 1912: Tor gegen Mitternacht
+Old Gate	Tor Old	Altes Tor	revisado	rev. IA: conferido em Neh.3.6; Lutero 1912: Altes Tor
+Old Pool	Teich Old	Alter Teich	revisado	rev. IA: conferido em Isa.22.11; Lutero 1912: Alter Teich
+Olives Mount	Berg Olives	Ölberg	revisado	rev. IA: conferido em texto; Lutero 1912: Ölberg
+People's Gate	Tor People	Tor des Volks	revisado	rev. IA: conferido em texto; Lutero 1912: Tor des Volks
+Plain of Aven	Gefilde Aven	Feld Aven	revisado	rev. IA: conferido em Amos.1.5; Lutero 1912: Feld Aven
+Plain of Jordan	Gefilde Jordan	Gegend am Jordan	revisado	rev. IA: conferido em Gen.13.10; Lutero 1912: Gegend am Jordan
+Potsherd Gate	Tor Potsherd	Ziegeltor	revisado	rev. IA: conferido em Jer.19.2; Lutero 1912: Ziegeltor
+Red Sea	Meer Red	Schilfmeer	revisado	rev. IA: conferido em Exod.10.19; Lutero 1912: Schilfmeer
+Rock of Escape	Fels Escape	Scheidefels	revisado	rev. IA: conferido em 1Sam.23.28; Lutero 1912: Scheidefels
+Salt Valley	Tal Salzstadt	Salztal	revisado	rev. IA: conferido em texto; Lutero 1912: Salztal
+Sea of Egypt	Meer Ägypten	Zunge des Meeres in Ägypten	revisado	rev. IA: conferido em Isa.11.15; Lutero 1912: Zunge des Meeres in Ägypten
+Sea of Tiberias	Meer Tiberias	Meer bei Tiberias	revisado	rev. IA: conferido em John.6.1; Lutero 1912: Meer bei Tiberias; Lutero: das Meer an der Stadt Tiberias
+Sea of the Philistines	Meer Philistines	Philistermeer	revisado	rev. IA: conferido em Exod.23.31; Lutero 1912: Philistermeer
+Sea of the Plain	Meer Gefilde der Moabiter	Meer im Gefilde	revisado	rev. IA: conferido em Josh.3.16; Lutero 1912: Meer im Gefilde
+Sorek Valley	Tal Sorek	Bach Sorek	revisado	rev. IA: conferido em texto; Lutero 1912: Bach Sorek
+South Gate	Tor Mittag	Tor gegen Mittag	revisado	rev. IA: conferido em 1Chr.26.15; Lutero 1912: Tor gegen Mittag
+Straight Gate	Tor Die gerade Gasse	Die gerade Gasse	revisado	rev. IA: conferido em Acts.9.11; Lutero 1912: Die gerade Gasse
+Tower of Shechem	Turm Sichem	Turm zu Sichem	revisado	rev. IA: conferido em Judg.9.46; Lutero 1912: Turm zu Sichem
+Tower of the Ovens	Turm Ovens	Ofenturm	revisado	rev. IA: conferido em Neh.3.11; Lutero 1912: Ofenturm
+Travelers Valley	Tal Travelers	Tal der Wanderer	revisado	rev. IA: conferido em texto; Lutero 1912: Tal der Wanderer; Lutero: das Tal, da man geht am Meer
+Tribe of Judah	Stamm Juda	Stamm Juda	revisado	rev. IA: conferido em Prov.25.1; Lutero 1912: Stamm Juda
+Upper Pool	Teich Upper	Oberer Teich	revisado	rev. IA: conferido em 2Kgs.18.17; Lutero 1912: Oberer Teich
+Valley Gate	Tor Valley	Taltor	revisado	rev. IA: conferido em 2Chr.26.9; Lutero 1912: Taltor
+Valley of Aven	Tal Aven	Feld Aven	revisado	rev. IA: conferido em Amos.1.5; Lutero 1912: Feld Aven
+Valley of Baca	Tal Baca	Jammertal	revisado	rev. IA: conferido em Ps.84.6; Lutero 1912: Jammertal
+Valley of Beracah	Tal Baracha	Lobetal	revisado	rev. IA: conferido em 2Chr.20.26; Lutero 1912: Lobetal
+Valley of Decision	Tal Decision	Tal des Urteils	revisado	rev. IA: conferido em Joel.3.14; Lutero 1912: Tal des Urteils
+Valley of Elah	Tal Ela	Eichgrund	revisado	rev. IA: conferido em 1Sam.17.2; Lutero 1912: Eichgrund
+Valley of Eshcol	Tal Eskol	Bach Eskol	revisado	rev. IA: conferido em Num.13.23; Lutero 1912: Bach Eskol
+Valley of Hamon-gog	Tal Hamon-gog	Gogs Haufental	revisado	rev. IA: conferido em Ezek.39.11; Lutero 1912: Gogs Haufental
+Valley of Hamongog	Tal Hamongog	Gogs Haufental	revisado	rev. IA: conferido em Ezek.39.11; Lutero 1912: Gogs Haufental
+Valley of Jericho	Tal Jericho	Ebene Jericho	revisado	rev. IA: conferido em Deut.34.3; Lutero 1912: Ebene Jericho; Lutero: Ebene Jerichos
+Valley of Lebanon	Tal Libanon	Ebene beim Berge Libanon	revisado	rev. IA: conferido em Josh.11.17; Lutero 1912: Ebene beim Berge Libanon
+Valley of Mizpeh	Tal Mizpe	Ebene Mizpa	revisado	rev. IA: conferido em Josh.11.8; Lutero 1912: Ebene Mizpa
+Valley of Salt	Tal Salzstadt	Salztal	revisado	rev. IA: conferido em 2Sam.8.13; Lutero 1912: Salztal
+Valley of Shaveh	Tal Save	Königstal	revisado	rev. IA: conferido em Gen.14.17; Lutero 1912: Königstal
+Valley of Sorek	Tal Sorek	Bach Sorek	revisado	rev. IA: conferido em Judg.16.4; Lutero 1912: Bach Sorek
+Valley of Zered	Tal Sered	Bach Sered	revisado	rev. IA: conferido em Num.21.12; Lutero 1912: Bach Sered
+Valley of the Arnon	Tal Arnon	Bach Arnon	revisado	rev. IA: conferido em Deut.2.24; Lutero 1912: Bach Arnon
+Valley of the Passengers	Tal Passengers	Tal der Wanderer	revisado	rev. IA: conferido em Ezek.39.11; Lutero 1912: Tal der Wanderer; Lutero: das Tal, da man geht am Meer
+Waters of Jericho	Wasser Jericho	Wasser bei Jericho	revisado	rev. IA: conferido em Josh.16.1; Lutero 1912: Wasser bei Jericho
+Way of Holiness	Weg Holiness	Heiliger Weg	revisado	rev. IA: conferido em Isa.35.8; Lutero 1912: Heiliger Weg
+City of Palms	Stadt Arad	Palmenstadt	revisado	rev. IA: conferido em texto; Lutero 1912: Palmenstadt
+Corner Gate	Tor Ephraim	Ecktor	revisado	rev. IA: conferido em 2Kgs.14.13; Lutero 1912: Ecktor
+Fish Gate	Tor Ephraim	Fischtor	revisado	rev. IA: conferido em Neh.12.39; Lutero 1912: Fischtor
+Gate of Yeshanah	Tor Ephraim	Altes Tor	revisado	rev. IA: conferido em Neh.12.39; Lutero 1912: Altes Tor
+Gate of the Guard	Tor Ephraim	Kerkertor	revisado	rev. IA: conferido em Neh.12.39; Lutero 1912: Kerkertor
+Guard Gate	Tor Ephraim	Kerkertor	revisado	rev. IA: conferido em texto; Lutero 1912: Kerkertor
+Halak Mount	Berge Libanon	Kahles Gebirge	revisado	rev. IA: conferido em texto; Lutero 1912: Kahles Gebirge
+Hermon Mount	Berg Hermon	Berg Hermon	revisado	rev. IA: conferido em texto; Lutero 1912: Berg Hermon; nominativo
+Moab Plains	Gefilde Moab	Gefilde der Moabiter	revisado	rev. IA: conferido em texto; Lutero 1912: Gefilde der Moabiter
+Mount Carmel	Berg Karmel	Berg Karmel	revisado	rev. IA: conferido em 1Kgs.18.19; Lutero 1912: Berg Karmel; nominativo
+Mount Halak	Berge Libanon	Kahles Gebirge	revisado	rev. IA: conferido em Josh.11.17; Lutero 1912: Kahles Gebirge
+Mount Hermon	Berg Hermon	Berg Hermon	revisado	rev. IA: conferido em Deut.3.8; Lutero 1912: Berg Hermon; nominativo
+Mount Horeb	Berge Horeb	Berg Horeb	revisado	rev. IA: conferido em Exod.33.6; Lutero 1912: Berg Horeb; nominativo
+Mount Seir	Gebirge Seir	Gebirge Seir	revisado	rev. IA: conferido em Deut.2.1; Lutero 1912: Gebirge Seir
+Mount Sinai	Berge Sinai	Berg Sinai	revisado	rev. IA: conferido em Exod.24.16; Lutero 1912: Berg Sinai; nominativo
+Mount Tabor	Berg Thabor	Berg Thabor	revisado	rev. IA: conferido em Judg.4.6; Lutero 1912: Berg Thabor; nominativo
+Mount Zion	Berge Zion	Berg Zion	revisado	rev. IA: conferido em 2Kgs.19.31; Lutero 1912: Berg Zion; nominativo
+Nebo Mount	Gebirge Abarim	Berg Nebo	revisado	rev. IA: conferido em texto; Lutero 1912: Berg Nebo
+Prison Gate	Tor Ephraim	Kerkertor	revisado	rev. IA: conferido em Neh.12.39; Lutero 1912: Kerkertor
+Salt Sea	Meer Jaser	Salzmeer	revisado	rev. IA: conferido em Jer.48.32; Lutero 1912: Salzmeer
+Sea of Galilee	Meer Kinneroth	Galiläisches Meer	revisado	rev. IA: conferido em Josh.12.3; Lutero 1912: Galiläisches Meer
+Sheep Gate	Tor Ephraim	Schaftor	revisado	rev. IA: conferido em Neh.12.39; Lutero 1912: Schaftor
+Tabor Mount	Berg Thabor	Berg Thabor	revisado	rev. IA: conferido em texto; Lutero 1912: Berg Thabor; nominativo
+Tower of the Hundred	Turm Hananeel	Turm Mea	revisado	rev. IA: conferido em Neh.3.1; Lutero 1912: Turm Mea
+Valley of Hinnom	Tal Ben-Hinnom	Tal Hinnom	revisado	rev. IA: conferido em Jer.7.31; Lutero 1912: Tal Hinnom
+Valley of Jezreel	Tal Jesreel	Tal Jesreel	revisado	rev. IA: conferido em Josh.17.16; Lutero 1912: Tal Jesreel
+Valley of Slaughter	Tal Ben-Hinnom	Würgetal	revisado	rev. IA: conferido em Jer.7.32; Lutero 1912: Würgetal
+Water Gate	Tor Ephraim	Wassertor	revisado	rev. IA: conferido em Neh.8.16; Lutero 1912: Wassertor
+West Gate	Tor Salecheth	Tor gegen Abend	revisado	rev. IA: conferido em 1Chr.26.16; Lutero 1912: Tor gegen Abend
+Yeshanah Gate	Tor Ephraim	Altes Tor	revisado	rev. IA: conferido em texto; Lutero 1912: Altes Tor
+Ebal Mount	Berge Ebal	Berg Ebal	revisado	rev. IA: composto no nominativo (texto: Berge Ebal); Lutero 1912: Berg Ebal
+Ephron Mount	Gebirges Ephron	Gebirge Ephron	revisado	rev. IA: composto no nominativo (texto: Gebirges Ephron); Lutero 1912: Gebirge Ephron
+Forest Ephraim	Walde Ephraim	Wald Ephraim	revisado	rev. IA: composto no nominativo (texto: Walde Ephraim); Lutero 1912: Wald Ephraim
+Gerizim Mount	Berge Garizim	Berg Garizim	revisado	rev. IA: composto no nominativo (texto: Berge Garizim); Lutero 1912: Berg Garizim
+Moriah Mount	Berge Morija	Berg Morija	revisado	rev. IA: composto no nominativo (texto: Berge Morija); Lutero 1912: Berg Morija
+Mount Bashan	Gebirge Basans	Gebirge Basan	revisado	rev. IA: composto no nominativo (texto: Gebirge Basans); Lutero 1912: Gebirge Basan
+Mount Ebal	Berge Ebal	Berg Ebal	revisado	rev. IA: composto no nominativo (texto: Berge Ebal); Lutero 1912: Berg Ebal
+Mount Ephron	Gebirges Ephron	Gebirge Ephron	revisado	rev. IA: composto no nominativo (texto: Gebirges Ephron); Lutero 1912: Gebirge Ephron
+Mount Gerizim	Berge Garizim	Berg Garizim	revisado	rev. IA: composto no nominativo (texto: Berge Garizim); Lutero 1912: Berg Garizim
+Mount Jearim	Gebirges Jearim	Gebirge Jearim	revisado	rev. IA: composto no nominativo (texto: Gebirges Jearim); Lutero 1912: Gebirge Jearim
+Mount Moriah	Berge Morija	Berg Morija	revisado	rev. IA: composto no nominativo (texto: Berge Morija); Lutero 1912: Berg Morija
+Mount Paran	Berge Pharan	Berg Pharan	revisado	rev. IA: composto no nominativo (texto: Berge Pharan); Lutero 1912: Berg Pharan
+Mount Perazim	Berge Perazim	Berg Perazim	revisado	rev. IA: composto no nominativo (texto: Berge Perazim); Lutero 1912: Berg Perazim
+Paran Mount	Berge Pharan	Berg Pharan	revisado	rev. IA: composto no nominativo (texto: Berge Pharan); Lutero 1912: Berg Pharan
+Perazim Mount	Berge Perazim	Berg Perazim	revisado	rev. IA: composto no nominativo (texto: Berge Perazim); Lutero 1912: Berg Perazim
+Rephaim Valley	Grunde Rephaim	Grund Rephaim	revisado	rev. IA: composto no nominativo (texto: Grunde Rephaim); Lutero 1912: Grund Rephaim
+Sea of Chinnereth	Meeres Kinnereth	Meer Kinnereth	revisado	rev. IA: composto no nominativo (texto: Meeres Kinnereth); Lutero 1912: Meer Kinnereth
+Valley of Gerar	Grunde Gerar	Grund Gerar	revisado	rev. IA: composto no nominativo (texto: Grunde Gerar); Lutero 1912: Grund Gerar
+Valley of Rephaim	Grunde Rephaim	Grund Rephaim	revisado	rev. IA: composto no nominativo (texto: Grunde Rephaim); Lutero 1912: Grund Rephaim
