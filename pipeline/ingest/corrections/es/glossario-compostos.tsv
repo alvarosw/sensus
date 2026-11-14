@@ -1,0 +1,54 @@
+# Glossário de cabeças de nomes compostos em inglês -> formas em espanhol (Bíblia spablm, tradição Reina-Valera).
+# Usado por pipeline/ingest/nomes.py --lang es (ver pipeline/sensus/names_pt.py, decompoe e escolhe_frase). Colunas:
+#   cabeca   palavra ou expressão inglesa que encabeça o nome ('Mount', 'Gate of'), como no glossário pt
+#   formas   formas em espanhol antes do núcleo, separadas por '|', com conector e artigo ('monte de los' + 'Olivos')
+# Formas conferidas no texto da spablm (monte, valle de, puerta de la, tribu de, mar, desierto de, llanuras de...).
+# Uma forma que não aparece no texto só gera frases não achadas (confiança baixa, não usadas).
+# Revisado com auxílio de IA (T1-es).
+cabeca	formas
+Mount	monte|monte de|monte del|monte de la|monte de los|monte de las
+Mount of	monte de|monte del|monte de la|monte de los|monte de las
+Valley	valle|valle de|valle del|valle de la|valle de los|valle de las
+Valley of	valle de|valle del|valle de la|valle de los|valle de las
+Vale	valle|valle de|valle del|valle de la|valle de los|valle de las
+Vale of	valle de|valle del|valle de la|valle de los|valle de las
+Tribe of	tribu de|tribu del|tribu de la|tribu de los|tribu de las
+Gate	puerta|puerta de|puerta del|puerta de la|puerta de los|puerta de las
+Gate of	puerta de|puerta del|puerta de la|puerta de los|puerta de las
+Sea	mar|mar de|mar del|mar de la|mar de los|mar de las
+Sea of	mar de|mar del|mar de la|mar de los|mar de las
+Tower	torre|torre de|torre del|torre de la|torre de los|torre de las
+Tower of	torre de|torre del|torre de la|torre de los|torre de las
+City	ciudad|ciudad de|ciudad del|ciudad de la|ciudad de los|ciudad de las
+City of	ciudad de|ciudad del|ciudad de la|ciudad de los|ciudad de las
+Brook	arroyo|torrente|arroyo de|arroyo del|arroyo de la|arroyo de los|arroyo de las|torrente de|torrente del|torrente de la|torrente de los|torrente de las
+Brook of	arroyo de|arroyo del|arroyo de la|arroyo de los|arroyo de las|torrente de|torrente del|torrente de la|torrente de los|torrente de las
+Wilderness	desierto|desierto de|desierto del|desierto de la|desierto de los|desierto de las
+Wilderness of	desierto de|desierto del|desierto de la|desierto de los|desierto de las
+Plain	llanura|campos|llanura de|llanura del|llanura de la|llanura de los|llanura de las|campos de|campos del|campos de la|campos de los|campos de las
+Plain of	llanura de|llanura del|llanura de la|llanura de los|llanura de las|llanuras de|llanuras del|llanuras de la|llanuras de los|llanuras de las|campos de|campos del|campos de la|campos de los|campos de las
+Plains	llanuras|campos|llanura|llanuras de|llanuras del|llanuras de la|llanuras de los|llanuras de las|campos de|campos del|campos de la|campos de los|campos de las|llanura de|llanura del|llanura de la|llanura de los|llanura de las
+Pool	estanque|estanque de|estanque del|estanque de la|estanque de los|estanque de las
+Pool of	estanque de|estanque del|estanque de la|estanque de los|estanque de las
+Hall	sala|pórtico|sala de|sala del|sala de la|sala de los|sala de las|pórtico de|pórtico del|pórtico de la|pórtico de los|pórtico de las
+Hall of	sala de|sala del|sala de la|sala de los|sala de las|pórtico de|pórtico del|pórtico de la|pórtico de los|pórtico de las
+Spring	fuente|manantial|fuente de|fuente del|fuente de la|fuente de los|fuente de las|manantial de|manantial del|manantial de la|manantial de los|manantial de las
+Rock	roca|peña|roca de|roca del|roca de la|roca de los|roca de las|peña de|peña del|peña de la|peña de los|peña de las
+Rock of	roca de|roca del|roca de la|roca de los|roca de las|peña de|peña del|peña de la|peña de los|peña de las
+Stone	piedra|peña|piedra de|piedra del|piedra de la|piedra de los|piedra de las|peña de|peña del|peña de la|peña de los|peña de las
+Way of	camino de|camino del|camino de la|camino de los|camino de las
+Waters	aguas|aguas de|aguas del|aguas de la|aguas de los|aguas de las
+Waters of	aguas de|aguas del|aguas de la|aguas de los|aguas de las
+Forest	bosque|bosque de|bosque del|bosque de la|bosque de los|bosque de las
+Forest of	bosque de|bosque del|bosque de la|bosque de los|bosque de las
+Festival	fiesta|fiesta de|fiesta del|fiesta de la|fiesta de los|fiesta de las
+Square	plaza|plaza de|plaza del|plaza de la|plaza de los|plaza de las
+Wall	muro|muro de|muro del|muro de la|muro de los|muro de las
+Forum	foro|plaza|foro de|foro del|foro de la|foro de los|foro de las|plaza de|plaza del|plaza de la|plaza de los|plaza de las
+Forum of	foro de|foro del|foro de la|foro de los|foro de las|plaza de|plaza del|plaza de la|plaza de los|plaza de las
+Hill	collado|colina|collado de|collado del|collado de la|collado de los|collado de las|colina de|colina del|colina de la|colina de los|colina de las
+Hill of	collado de|collado del|collado de la|collado de los|collado de las|colina de|colina del|colina de la|colina de los|colina de las
+River	río|río de|río del|río de la|río de los|río de las
+River of	río de|río del|río de la|río de los|río de las
+House	casa|casa de|casa del|casa de la|casa de los|casa de las
+House of	casa de|casa del|casa de la|casa de los|casa de las
