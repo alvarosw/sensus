@@ -1,0 +1,54 @@
+# Glossário de cabeças de nomes compostos em inglês -> formas russas (Синодальный перевод, russyn). Usado por
+# pipeline/ingest/nomes.py --lang ru (names_pt.decompoe e escolhe_frase). Mesmo formato do glossário pt:
+#   cabeca   cabeça inglesa ('Mount', 'Valley of', 'Gate')
+#   formas   formas russas que vêm antes do núcleo, separadas por '|'. A frase candidata é forma + ' ' + núcleo.
+# Só o nominativo da cabeça (гора, долина, ворота): a frase achada vira o nome, e uma forma flexionada (горе, долине)
+# daria o nome no caso errado. Formas conferidas no texto da Sinodal. Adjetivos pospostos da Sinodal (море
+# Галилейское, гора Масличная) não cabem neste padrão e ficam para os nomes manuais.
+cabeca	formas
+Mount	гора
+Mount of	гора
+Valley	долина
+Valley of	долина
+Vale	долина
+Vale of	долина
+Tribe of	колено
+Gate	ворота
+Gate of	ворота
+Sea	море
+Sea of	море
+Tower	башня
+Tower of	башня
+City	город
+City of	город
+Brook	поток
+Brook of	поток
+Wilderness	пустыня
+Wilderness of	пустыня
+Plain	равнина
+Plain of	равнина
+Plains	равнины
+Pool	пруд|купальня
+Pool of	пруд|купальня
+Hall	притвор
+Hall of	притвор
+Spring	источник
+Rock	скала
+Rock of	скала
+Stone	камень
+Way of	путь|дорога
+Waters	воды
+Waters of	воды
+Forest	лес
+Forest of	лес
+Festival	праздник
+Square	площадь
+Wall	стена
+Forum	торжище
+Forum of	торжище
+Hill	холм
+Hill of	холм
+River	река
+River of	река
+House	дом
+House of	дом
