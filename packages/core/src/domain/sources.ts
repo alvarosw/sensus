@@ -116,6 +116,8 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'smith-looking': { short: 'Olhando para Jesus', commentator: 'Uriah Smith · Olhando para Jesus', role: 'commentary', lang: 'en' },
   // Perguntas e respostas (pipeline/ingest/bible_readings.py): uma unidade por pergunta; obra coletiva, sem autor único.
   'bible-readings': { short: 'Leituras Bíblicas', commentator: 'Review and Herald · Leituras Bíblicas', role: 'commentary', lang: 'en' },
+  // Sermões por texto (pipeline/ingest/sermoes_gutenberg.py): um comentário por sermão, no intervalo da passagem.
+  'maclaren-expositions': { short: 'Maclaren', commentator: 'Alexander Maclaren', role: 'commentary', lang: 'en' },
 };
 
 /** Ordem de preferência das fontes de lugares (menor = melhor) para escolher a identificação moderna. */
