@@ -361,7 +361,8 @@ function MiniSource({ citeId, onOpen }: { citeId: string; onOpen: (id: string) =
   const sb = tok?.strong_base ?? null;
   const lexicon = useAsync(() => (sb ? loadLexicon(repo, sb) : Promise.resolve([])), [repo, sb]);
   const lex = tok && sb ? wordView(tok, sb, lexicon.data ?? []).lex.primary : null;
-  const glossItem = tok ? glossShortText({ lexicon: lex, tokenGloss: tok.gloss_en, contextFor: appLang }) : null;
+  // Sem glosa enquanto o léxico carrega: senão a contextual troca pela do léxico quando ele chega.
+  const glossItem = tok && !lexicon.loading ? glossShortText({ lexicon: lex, tokenGloss: tok.gloss_en, contextFor: appLang }) : null;
   const st = useShortTexts([glossItem]);
   const g = st.view(glossItem);
   const gloss = g ? `“${g.text}”${g.mark ? ` (${g.mark})` : ''}` : '';

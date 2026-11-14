@@ -60,9 +60,11 @@ describe('shortTextMark', () => {
 
 describe('títulos de tópico e de verbete', () => {
   it('inverte o tópico com palavra final pequena', () => {
-    expect(topicHeadwordForTranslation('AFFLICTED, DUTY TOWARD THE')).toBe('Duty toward the afflicted');
-    expect(topicHeadwordForTranslation('HUMILITY, EXAMPLES OF')).toBe('Examples of humility');
-    expect(topicHeadwordForTranslation('IDOLATRY, WARNINGS AGAINST')).toBe('Warnings against idolatry');
+    expect(topicHeadwordForTranslation('AFFLICTED, DUTY TOWARD THE')).toBe('Duty toward the Afflicted');
+    expect(topicHeadwordForTranslation('HUMILITY, EXAMPLES OF')).toBe('Examples of Humility');
+    expect(topicHeadwordForTranslation('IDOLATRY, WARNINGS AGAINST')).toBe('Warnings against Idolatry');
+    expect(topicHeadwordForTranslation('GOD, LOVE OF')).toBe('Love of God');
+    expect(topicHeadwordForTranslation('CHRIST, OFFICES OF')).toBe('Offices of Christ');
   });
 
   it('sem inversão, só a caixa de título', () => {
@@ -89,7 +91,7 @@ describe('títulos de tópico e de verbete', () => {
     expect(r).toEqual({
       original: 'Afflicted, Duty Toward the',
       lang: 'en',
-      forMachine: 'Duty toward the afflicted',
+      forMachine: 'Duty toward the Afflicted',
       packValue: null,
     });
   });
@@ -156,7 +158,7 @@ describe('machineBatch', () => {
       { original: 'amor', lang: 'es', forMachine: 'amor', packValue: null },
       glossShortText({ lexicon: { gloss: 'love', source_id: 'stepbible-tbesg' }, tokenGloss: 'love' }),
     ];
-    expect(machineBatch(items)).toEqual({ lang: 'en', texts: ['love', 'Duty toward the afflicted'] });
+    expect(machineBatch(items)).toEqual({ lang: 'en', texts: ['love', 'Duty toward the Afflicted'] });
   });
 
   it('sem nada traduzível', () => {

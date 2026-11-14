@@ -94,6 +94,7 @@ export function LiterarioLens({ onLayout }: LensProps) {
                         key={e.cite_id}
                         entry={e}
                         sourceShort={shortOf(p, e.source_id)}
+                        translateTitle={false}
                         tokenByKey={tokenByKey}
                         onOpen={() => useStudy.getState().pushPanel({ kind: 'source', citeId: e.cite_id })}
                         onAsk={() => attachCard(e.cite_id, `${shortOf(p, e.source_id)}: ${titleCaseHeadword(e.headword)}`)}

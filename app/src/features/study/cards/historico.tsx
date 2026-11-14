@@ -37,6 +37,7 @@ export function DictionaryCard({
   onAsk,
   lines = 4,
   names = [],
+  translateTitle = true,
 }: {
   entry: DictionaryEntry;
   sourceShort: string;
@@ -47,16 +48,19 @@ export function DictionaryCard({
   lines?: number;
   /** Entidades do trecho: o título que é nome de entidade usa o nome em português quando existe. */
   names?: readonly NameFields[];
+  /** false: o título não vai ao modelo (introdução de livro: "JOB, BOOK OF" viraria "Livro de trabalho"). */
+  translateTitle?: boolean;
 }) {
   const appLang = useLang();
   const srcLang = useSourceLang(entry.source_id);
   // Título e corpo no mesmo lote (uma nota): o card tem prosa, então a oferta da primeira vez fica aqui.
   const title = headwordShortText(entry.headword, entry.source_id, names, appLang);
-  const tr = useTranslatable([title.forMachine, entry.text], { lang: srcLang, policy: 'item' });
+  const titleForMachine = translateTitle ? title.forMachine : null;
+  const tr = useTranslatable([titleForMachine, entry.text], { lang: srcLang, policy: 'item' });
   const shownTitle = shownShortText({
     packValue: title.packValue,
     original: title.original,
-    machine: title.forMachine ? tr.machine(title.forMachine) : null,
+    machine: titleForMachine ? tr.machine(titleForMachine) : null,
     appLang,
     originalLang: title.lang,
   });

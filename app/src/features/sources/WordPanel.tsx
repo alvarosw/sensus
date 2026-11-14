@@ -121,8 +121,9 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
   const lsj = view.lex.secondary;
   const lemma = token?.lemma ?? lex?.lemma ?? strongBase ?? '';
   // Glosa contextual (token, em inglês) ou a do léxico, conforme o app; e a glosa do léxico, sempre (linha do léxico).
-  const glossItem = glossShortText({ lexicon: lex, tokenGloss: token?.gloss_en, contextFor: appLang });
-  const lexGlossItem = glossShortText({ lexicon: lex, tokenGloss: null });
+  // Enquanto o léxico carrega, não há glosa: senão a contextual troca pela do léxico quando ele chega.
+  const glossItem = lexicon.loading ? null : glossShortText({ lexicon: lex, tokenGloss: token?.gloss_en, contextFor: appLang });
+  const lexGlossItem = lexicon.loading ? null : glossShortText({ lexicon: lex, tokenGloss: null });
   const editions = token ? token.editions.split(',').map((e) => e.trim()).filter(Boolean) : [];
   // Edições do AT (L, Q, K…) vêm com legenda curta; no NT as siglas (TR, BYZ, NA) já se explicam.
   const legend = editionLegend(editions);

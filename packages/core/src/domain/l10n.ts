@@ -95,7 +95,7 @@ export function titleCaseHeadword(headword: string): string {
 }
 
 /**
- * Título de tópico para o modelo: "AFFLICTED, DUTY TOWARD THE" -> "Duty toward the afflicted". Sem inversão, só a
+ * Título de tópico para o modelo: "AFFLICTED, DUTY TOWARD THE" -> "Duty toward the Afflicted". Sem inversão, só a
  * caixa de título sai (o modelo costuma corrigir a caixa).
  */
 export function topicHeadwordForTranslation(headword: string): string {
@@ -106,7 +106,8 @@ export function topicHeadwordForTranslation(headword: string): string {
     const words = rest.split(/\s+/);
     const last = words[words.length - 1]?.toLowerCase() ?? '';
     if (head && TOPIC_TAIL_WORDS.has(last)) {
-      const phrase = `${rest} ${head}`.toLowerCase();
+      // O núcleo mantém caixa de título: nome próprio ("God", "Christ") não vira minúsculo.
+      const phrase = `${rest.toLowerCase()} ${titleCaseHeadword(head)}`;
       return phrase.replace(/^\p{L}/u, (c) => c.toUpperCase());
     }
   }

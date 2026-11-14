@@ -5,6 +5,8 @@ import { buildThread, threadTitle, type ThreadAi } from './thread';
 import { normalizeForm } from './keyword';
 
 const RANGE = { start: 50002005, end: 50002008 };
+/** Trecho do AT (1Rs 15:1-2): o painel de histórico AT não mistura com o NT. */
+const RANGE_AT = { start: 11015001, end: 11015002 };
 /** Sem IA configurada. */
 const NO_AI: ThreadAi = { status: 'noprovider', summary: null };
 /** IA terminada e sem resumo (só os fallbacks). */
@@ -208,8 +210,8 @@ describe('buildThread', () => {
   });
 
   it('Histórico AT: verbete sem entidade vai ao modelo como título em inglês', () => {
-    const panel = panelOf({ dictionary: [{ headword: 'ASA' }] });
-    const hist = buildThread({ panel, range: RANGE, books: [], ai: DONE }).find((s) => s.lens === 'historico')!;
+    const panel = { ...panelOf({ dictionary: [{ headword: 'ASA' }] }), range: RANGE_AT, reference: '1 Reis 15:1-2' };
+    const hist = buildThread({ panel, range: RANGE_AT, books: [], ai: DONE }).find((s) => s.lens === 'historico')!;
     expect(hist.evidence).toEqual({ kind: 'names', names: [{ original: 'Asa', lang: 'en', forMachine: 'Asa', packValue: null }] });
   });
 
