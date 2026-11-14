@@ -12,7 +12,7 @@ Ama	place		sem	rev. IA: sem forma tradicional segura em ur
 Amate	place		sem	rev. IA: sem forma tradicional segura em ur
 Amaw	place		sem	rev. IA: sem forma tradicional segura em ur
 Amminadib	person	عمیناداب	revisado	rev. IA: Song.6.12 عمیناداب
-Angle	place		sem	rev. IA: sem forma tradicional segura em ur
+Angle	place	کونا	revisado	rev. IA: 2Chr.26.9 کونا
 Apostles	group	رسول	revisado	rev. IA: sem ref رسول
 Apostles (Post-Ascension)	group	رسول	revisado	rev. IA: sem ref رسول
 Apostles (The Eleven)	group	گیارہ رسول	revisado	rev. IA: sem ref گیارہ رسول
@@ -72,7 +72,7 @@ Disciples of John	group	یوحنا کے شاگرد	revisado	rev. IA: sem ref ی�
 Diviners' Oak	place		sem	rev. IA: sem forma tradicional segura em ur
 Diviners'_Oak	place		sem	rev. IA: sem forma tradicional segura em ur
 Diviners’ Oak	place		sem	rev. IA: sem forma tradicional segura em ur
-East	place		sem	rev. IA: sem forma tradicional segura em ur
+East	place	مشرق	revisado	rev. IA: Gen.25.6 مشرق
 Egypt's	place	مصر	revisado	rev. IA: sem ref مصر
 Elkosh	place	القوش	revisado	rev. IA: Nah.1.1 القوش
 Enaim	place	عینیم	revisado	rev. IA: Gen.38.14 عینیم
@@ -191,7 +191,7 @@ Nation of Israel	group	بنی اسرائیل	revisado	rev. IA: Ps.14.7 بنی ا
 Nehelam	place	نحلام	revisado	rev. IA: Jer.29.24 نحلام
 Nephilim	group	نفیلیم	revisado	rev. IA: Gen.6.4 نفیلیم
 New_Moon	other	نیا چاند	revisado	rev. IA: Col.2.16 نیا چاند
-North	place		sem	rev. IA: sem forma tradicional segura em ur
+North	place	شمال	revisado	rev. IA: Dan.11.6 شمال
 North Gate	place	شمالی دروازہ	revisado	rev. IA: 1Chr.26.14 شمالی دروازہ
 Nuhashe	place		sem	rev. IA: sem forma tradicional segura em ur
 Parbar	place	فربار	revisado	rev. IA: 1Chr.26.18 فربار
@@ -362,3 +362,217 @@ son_of_Joiada	person	یہویداع کا بیٹا	revisado	rev. IA: Neh.13.28 ی
 sons of Jashen	person	یاشن کے بیٹے	revisado	rev. IA: 2Sam.23.32 یاشن کے بیٹے
 the giant in Gath	person		sem	rev. IA: sem forma tradicional segura em ur
 wife_of_Heli	person	عیلی کی بیوی	revisado	rev. IA: Luke.1.5 عیلی کی بیوی
+Valley of Shittim	place	شطیم کی وادی	revisado	rev. IA: Joel.3.18 شطیم کی وادی
+Water Gate	place	پانی کا دروازہ	revisado	rev. IA: Neh.3.26 پانی کا دروازہ
+Valley of Aven	place	آون کی وادی	revisado	rev. IA: Amos.1.5 آون کی وادی
+Brook of the Willows	place	بید کے درختوں کا نالہ	revisado	rev. IA: Isa.15.7 بید کے درختوں کا نالہ
+Armageddon	place	حرمجدون	revisado	rev. IA: Rev.16.16 حرمجدون
+Mount Halak	place	حلق کا پہاڑ	revisado	rev. IA: Josh.11.17 حلق کا پہاڑ
+Forum of Appius	place	اپیوس کا بازار	revisado	rev. IA: Acts.28.15 اپیوس کا بازار
+Dung Gate	place	گوبر کا دروازہ	revisado	rev. IA: Neh.2.13 گوبر کا دروازہ
+Lower Pool	place	زیریں تالاب	revisado	rev. IA: Isa.22.9 زیریں تالاب
+Valley of Baca	place	بکا کی وادی	revisado	rev. IA: Ps.84.6 بکا کی وادی
+Way of Holiness	place	پاکیزگی کا راستہ	revisado	rev. IA: Isa.35.8 پاکیزگی کا راستہ
+Valley of Hamon-gog	place	وادی حمون جوج	revisado	rev. IA: Ezek.39.11 وادی حمون جوج
+Eth-kazin	place		sem	rev. IA: sem forma tradicional segura em ur
+Valley of Aijalon	place	ایالون کی وادی	revisado	rev. IA: Josh.10.12 ایالون کی وادی
+Gate of Yeshanah	place	یشانہ کا دروازہ	revisado	rev. IA: Neh.3.6 یشانہ کا دروازہ
+Fountain Gate	place	چشمے کا دروازہ	revisado	rev. IA: Neh.2.14 چشمے کا دروازہ
+El-bethel	place	ایل بیت ایل	revisado	rev. IA: Gen.35.7 ایل بیت ایل
+Mount Gerizim	place	جرزیم کا پہاڑ	revisado	rev. IA: Deut.11.29 جرزیم کا پہاڑ
+Valley of Achor	place	عکور کی وادی	revisado	rev. IA: Josh.7.24 عکور کی وادی
+Valley of Jehoshaphat	place	یہوسفط کی وادی	revisado	rev. IA: Joel.3.2 یہوسفط کی وادی
+Valley of Sorek	place	سورق کی وادی	revisado	rev. IA: Judg.16.4 سورق کی وادی
+Mount Hermon	place	کوہ حرمون	revisado	rev. IA: Deut.3.8 کوہ حرمون
+Mount Jearim	place	یعریم کا پہاڑ	revisado	rev. IA: Josh.15.10 یعریم کا پہاڑ
+Mount Seir 2	place	کوہ سعیر	revisado	rev. IA: Josh.15.10 کوہ سعیر
+Valley of Hebron	place	حبرون کی وادی	revisado	rev. IA: Gen.37.14 حبرون کی وادی
+Valley of Hinnom	place	وادی ہنوم	revisado	rev. IA: Josh.15.8 وادی ہنوم
+Valley of Eshcol	place	اسکول کی وادی	revisado	rev. IA: Num.13.23 اسکول کی وادی
+Mount Shepher	place	شیفر کا پہاڑ	revisado	rev. IA: Num.33.23 شیفر کا پہاڑ
+Red Sea 3	place	بحیرہ قلزم	revisado	rev. IA: Exod.10.19 بحیرہ قلزم
+Red Sea 1	place	بحیرہ قلزم	revisado	rev. IA: Exod.13.18 بحیرہ قلزم
+Valley of Iphtahel	place	یفتاح ایل کی وادی	revisado	rev. IA: Josh.19.14 یفتاح ایل کی وادی
+Mount Carmel	place	کوہ کرمل	revisado	rev. IA: Josh.12.22 کوہ کرمل
+Babylon 3	place	بابل	revisado	rev. IA: sem ref بابل
+Valley of Shaveh	place	وادی شوہ	revisado	rev. IA: Gen.14.17 وادی شوہ
+Valley of Decision	place		sem	rev. IA: sem forma tradicional segura em ur
+Hall of Pillars	place	ستونوں کا ایوان	revisado	rev. IA: 1Kgs.7.6 ستونوں کا ایوان
+Valley of Siddim	place	سدیم کی وادی	revisado	rev. IA: Gen.14.3 سدیم کی وادی
+Colossae	place	کلسی	revisado	rev. IA: Col.1.2 کلسی
+East Gate	place	مشرقی دروازہ	revisado	rev. IA: 1Chr.26.14 مشرقی دروازہ
+Gate of the Guard	place	پہرے داروں کا دروازہ	revisado	rev. IA: Neh.12.39 پہرے داروں کا دروازہ
+Wilderness of Ziph	place	زیف کا بیابان	revisado	rev. IA: 1Sam.23.14 زیف کا بیابان
+Tower of the Hundred	place	سو کا برج	revisado	rev. IA: Neh.3.1 سو کا برج
+Old Pool	place	پرانا تالاب	revisado	rev. IA: Isa.22.11 پرانا تالاب
+City of Palms 1	place	کھجوروں کا شہر	revisado	rev. IA: Deut.34.3 کھجوروں کا شہر
+Upper Pool	place	بالائی تالاب	revisado	rev. IA: 2Kgs.18.17 بالائی تالاب
+Sea of Galilee	place	گلیل کی جھیل	revisado	rev. IA: Num.34.11 گلیل کی جھیل
+Cushan	place	کوشن	revisado	rev. IA: Hab.3.7 کوشن
+Mount Mizar	place	میزار کا پہاڑ	revisado	rev. IA: Ps.42.6 میزار کا پہاڑ
+Brook of the Arabah	place	عربہ کا نالہ	revisado	rev. IA: Amos.6.14 عربہ کا نالہ
+Mount Zemaraim	place	صمریم کا پہاڑ	revisado	rev. IA: 2Chr.13.4 صمریم کا پہاڑ
+Beautiful Gate	place	خوبصورت دروازہ	revisado	rev. IA: Acts.3.2 خوبصورت دروازہ
+Hall of the Throne	place	تخت کا ایوان	revisado	rev. IA: 1Kgs.7.7 تخت کا ایوان
+Fish Gate	place	مچھلی کا دروازہ	revisado	rev. IA: 2Chr.33.14 مچھلی کا دروازہ
+West Gate	place	مغربی دروازہ	revisado	rev. IA: 1Chr.26.16 مغربی دروازہ
+Mount Hor 2	place	ہور کا پہاڑ	revisado	rev. IA: Num.34.7 ہور کا پہاڑ
+Corner Gate	place	کونے کا دروازہ	revisado	rev. IA: 2Kgs.14.13 کونے کا دروازہ
+East Square	place	مشرقی چوک	revisado	rev. IA: 2Chr.29.4 مشرقی چوک
+Valley of Zephathah	place	صفتہ کی وادی	revisado	rev. IA: 2Chr.14.10 صفتہ کی وادی
+Waters of Merom	place	میرون کا پانی	revisado	rev. IA: Josh.11.5 میرون کا پانی
+Sea of Egypt	place	مصر کا سمندر	revisado	rev. IA: Isa.11.15 مصر کا سمندر
+Waters of Jericho	place	یریحو کا پانی	revisado	rev. IA: Josh.16.1 یریحو کا پانی
+Tower of the Ovens	place	تنوروں کا برج	revisado	rev. IA: Neh.3.11 تنوروں کا برج
+Gate of the Foundation	place	بنیاد کا دروازہ	revisado	rev. IA: 2Chr.23.5 بنیاد کا دروازہ
+Valley of Rephaim	place	رفائیم کی وادی	revisado	rev. IA: Josh.15.8 رفائیم کی وادی
+Mount Ephron	place	عفرون کا پہاڑ	revisado	rev. IA: Josh.15.9 عفرون کا پہاڑ
+Brook of Egypt	place	مصر کا نالہ	revisado	rev. IA: Num.34.5 مصر کا نالہ
+Ephraim Gate	place	افرائیم کا دروازہ	revisado	rev. IA: 2Kgs.14.13 افرائیم کا دروازہ
+Valley of Zeboim	place	صبوئیم کی وادی	revisado	rev. IA: 1Sam.13.18 صبوئیم کی وادی
+Valley of Gerar	place	جرار کی وادی	revisado	rev. IA: Gen.26.17 جرار کی وادی
+Valley Gate	place	وادی کا دروازہ	revisado	rev. IA: 2Chr.26.9 وادی کا دروازہ
+City of David	place	داؤد کا شہر	revisado	rev. IA: 2Sam.5.7 داؤد کا شہر
+Mount Zalmon	place	صلمون کا پہاڑ	revisado	rev. IA: Judg.9.48 صلمون کا پہاڑ
+Rock of Escape	place		sem	rev. IA: sem forma tradicional segura em ur
+Serpent’s Stone	place	سانپ کا پتھر	revisado	rev. IA: 1Kgs.1.9 سانپ کا پتھر
+Hall of Judgment	place	عدالت کا ایوان	revisado	rev. IA: 1Kgs.7.7 عدالت کا ایوان
+Valley of Gibeon	place	جبعون کی وادی	revisado	rev. IA: Isa.28.21 جبعون کی وادی
+Mount Esau	place	عیسو کا پہاڑ	revisado	rev. IA: Obad.1.8 عیسو کا پہاڑ
+Tower of Shechem	place	شکیم کا برج	revisado	rev. IA: Judg.9.46 شکیم کا برج
+Mount Gilead	place	جلعاد کا پہاڑ	revisado	rev. IA: Judg.7.3 جلعاد کا پہاڑ
+Mount Perazim	place	فراصیم کا پہاڑ	revisado	rev. IA: Isa.28.21 فراصیم کا پہاڑ
+Mount Horeb	place	حوریب کا پہاڑ	revisado	rev. IA: Exod.3.1 حوریب کا پہاڑ
+Valley of Succoth	place	سکوت کی وادی	revisado	rev. IA: Ps.60.6 سکوت کی وادی
+Sheep Gate	place	بھیڑوں کا دروازہ	revisado	rev. IA: Neh.3.1 بھیڑوں کا دروازہ
+Valley of Jezreel	place	یزرعیل کی وادی	revisado	rev. IA: Josh.17.16 یزرعیل کی وادی
+Jordan Valley	place	وادی اردن	revisado	rev. IA: Gen.13.10 وادی اردن
+Mount Ebal	place	عیبال کا پہاڑ	revisado	rev. IA: Deut.11.29 عیبال کا پہاڑ
+Great Sea	place	بڑا سمندر	revisado	rev. IA: Exod.23.31 بڑا سمندر
+New Gate	place	نیا دروازہ	revisado	rev. IA: Jer.26.10 نیا دروازہ
+Muster Gate	place	مردم شماری کا دروازہ	revisado	rev. IA: Neh.3.31 مردم شماری کا دروازہ
+Valley of Zered	place	زارد کی وادی	revisado	rev. IA: Num.21.12 زارد کی وادی
+Mount Moriah	place	موریاہ کا پہاڑ	revisado	rev. IA: 2Chr.3.1 موریاہ کا پہاڑ
+Mount Bashan	place	باشان کا پہاڑ	revisado	rev. IA: Ps.68.15 باشان کا پہاڑ
+Broad Wall	place	چوڑی فصیل	revisado	rev. IA: Neh.3.8 چوڑی فصیل
+Valley of Elah	place	ایلہ کی وادی	revisado	rev. IA: 1Sam.17.2 ایلہ کی وادی
+Kir-hareseth	place		sem	rev. IA: sem forma tradicional segura em ur
+Dragon Spring	place	اژدہا کا چشمہ	revisado	rev. IA: Neh.2.13 اژدہا کا چشمہ
+Mount Zion	place	کوہ صیون	revisado	rev. IA: 2Kgs.19.31 کوہ صیون
+Salt Sea	place	نمکین سمندر	revisado	rev. IA: Gen.14.3 نمکین سمندر
+Middle Gate	place	درمیانی دروازہ	revisado	rev. IA: Jer.39.3 درمیانی دروازہ
+Mount Sinai	place	کوہ سینا	revisado	rev. IA: Exod.16.1 کوہ سینا
+Mount Ephraim	place	افرائیم کا پہاڑ	revisado	rev. IA: Jer.4.15 افرائیم کا پہاڑ
+Valley of Lebanon	place	لبنان کی وادی	revisado	rev. IA: Josh.11.17 لبنان کی وادی
+Mount Baalah	place	بعلہ کا پہاڑ	revisado	rev. IA: Josh.15.11 بعلہ کا پہاڑ
+Mount of Olives	place	زیتون کا پہاڑ	revisado	rev. IA: 2Sam.15.30 زیتون کا پہاڑ
+City of Palms 2	place	کھجوروں کا شہر	revisado	rev. IA: Judg.1.16 کھجوروں کا شہر
+Mount Lebanon	place	کوہ لبنان	revisado	rev. IA: Judg.3.3 کوہ لبنان
+Senaah	place	سناہ	revisado	rev. IA: 1Chr.9.7 سناہ
+Mount Baal-hermon	place	بعل حرمون کا پہاڑ	revisado	rev. IA: Judg.3.3 بعل حرمون کا پہاڑ
+Valley of Jericho	place	یریحو کی وادی	revisado	rev. IA: Deut.34.3 یریحو کی وادی
+King’s Valley	place	بادشاہ کی وادی	revisado	rev. IA: Gen.14.17 بادشاہ کی وادی
+Mount Tabor	place	تابور کا پہاڑ	revisado	rev. IA: Josh.19.22 تابور کا پہاڑ
+Mount Gilboa	place	جلبوعہ کا پہاڑ	revisado	rev. IA: 1Sam.28.4 جلبوعہ کا پہاڑ
+Sea of Jazer	place	یعزیر کا سمندر	revisado	rev. IA: Jer.48.32 یعزیر کا سمندر
+Red Sea 2	place	بحیرہ قلزم	revisado	rev. IA: Exod.23.31 بحیرہ قلزم
+Mount Hor 1	place	ہور کا پہاڑ	revisado	rev. IA: Num.20.22 ہور کا پہاڑ
+Adriatic Sea	place		sem	rev. IA: sem forma tradicional segura em ur
+City of Destruction	place	ہلاکت کا شہر	revisado	rev. IA: Isa.19.18 ہلاکت کا شہر
+Benjamin Gate	place	بنیامین کا دروازہ	revisado	rev. IA: Jer.20.2 بنیامین کا دروازہ
+Wilderness of Maon	place	معون کا بیابان	revisado	rev. IA: 1Sam.23.24 معون کا بیابان
+Wilderness of Sinai	place	سینا کا بیابان	revisado	rev. IA: Exod.19.1 سینا کا بیابان
+Mount Seir 1	place	کوہ سعیر	revisado	rev. IA: Gen.14.6 کوہ سعیر
+Mount Heres	place	حارس کا پہاڑ	revisado	rev. IA: Judg.1.35 حارس کا پہاڑ
+Mount Nebo	place	کوہ نبو	revisado	rev. IA: Deut.32.49 کوہ نبو
+Aven	place	آون	revisado	rev. IA: Hos.10.8 آون
+Valley of the Arnon	place	ارنون کی وادی	revisado	rev. IA: Deut.2.24 ارنون کی وادی
+Tower of Hananel	place	حننیئیل کا برج	revisado	rev. IA: Neh.3.1 حننیئیل کا برج
+Mount Paran	place	کوہ فاران	revisado	rev. IA: Deut.33.2 کوہ فاران
+Horse Gate	place	گھوڑوں کا دروازہ	revisado	rev. IA: 2Chr.23.15 گھوڑوں کا دروازہ
+Abdiel	person	عبدیئیل	revisado	rev. IA: 1Chr.5.15 عبدیئیل
+Achor_Valley	place	عکور کی وادی	revisado	rev. IA: Josh.7.24 عکور کی وادی
+Adriatic_Sea	place		sem	rev. IA: sem forma tradicional segura em ur
+Ahi	person	احی	revisado	rev. IA: 1Chr.5.15 احی
+Alexander	person	سکندر	revisado	rev. IA: Mark.15.21 سکندر
+Apharasthchite	other		sem	rev. IA: sem forma tradicional segura em ur
+Aven_Valley	place	آون کی وادی	revisado	rev. IA: Amos.1.5 آون کی وادی
+Baalah_Mount	place	بعلہ کا پہاڑ	revisado	rev. IA: Josh.15.11 بعلہ کا پہاڑ
+Bear	other		sem	rev. IA: sem forma tradicional segura em ur
+Beautiful_Gate	place	خوبصورت دروازہ	revisado	rev. IA: Acts.3.2 خوبصورت دروازہ
+Behemoth	other	بہیمؤت	revisado	rev. IA: Job.40.15 بہیمؤت
+Ben	person		sem	rev. IA: sem forma tradicional segura em ur
+Ben-ammi	person	بن عمی	revisado	rev. IA: Gen.19.38 بن عمی
+Benjamin_Gate	place	بنیامین کا دروازہ	revisado	rev. IA: Jer.20.2 بنیامین کا دروازہ
+Broad_Wall	place	چوڑی فصیل	revisado	rev. IA: Neh.3.8 چوڑی فصیل
+Brook_of_Egypt	place	مصر کا نالہ	revisado	rev. IA: Num.34.5 مصر کا نالہ
+Brook_of_the_Arabah	place	عربہ کا نالہ	revisado	rev. IA: Amos.6.14 عربہ کا نالہ
+Brook_of_the_Willows	place	بید کے درختوں کا نالہ	revisado	rev. IA: Isa.15.7 بید کے درختوں کا نالہ
+Carmel_Mount	place	کوہ کرمل	revisado	rev. IA: 1Kgs.18.19 کوہ کرمل
+Casluhim	group	کسلوحیم	revisado	rev. IA: Gen.10.14 کسلوحیم
+Clement	person	کلیمنٹ	revisado	rev. IA: Phil.4.3 کلیمنٹ
+Corban	place		sem	rev. IA: sem forma tradicional segura em ur
+Corner_Gate	place	کونے کا دروازہ	revisado	rev. IA: 2Kgs.14.13 کونے کا دروازہ
+Cush	person	کوش	revisado	rev. IA: Gen.2.13 کوش
+Dinaites	person		sem	rev. IA: sem forma tradicional segura em ur
+Dragon_Spring	place	اژدہا کا چشمہ	revisado	rev. IA: Neh.2.13 اژدہا کا چشمہ
+Dung_Gate	place	گوبر کا دروازہ	revisado	rev. IA: Neh.2.13 گوبر کا دروازہ
+East_Gate	place	مشرقی دروازہ	revisado	rev. IA: Neh.3.29 مشرقی دروازہ
+Ebal_Mount	place	عیبال کا پہاڑ	revisado	rev. IA: Deut.11.29 عیبال کا پہاڑ
+Egypt_Sea	place	مصر کا سمندر	revisado	rev. IA: Isa.11.15 مصر کا سمندر
+Elah_Valley	place	ایلہ کی وادی	revisado	rev. IA: 1Sam.17.2 ایلہ کی وادی
+Elika	person		sem	rev. IA: sem forma tradicional segura em ur
+Elon	person	ایلون	revisado	rev. IA: Gen.26.34 ایلون
+Ephod	person		sem	rev. IA: sem forma tradicional segura em ur
+Ephraim_Gate	place	افرائیم کا دروازہ	revisado	rev. IA: 2Kgs.14.13 افرائیم کا دروازہ
+Ephron_Mount	place	عفرون کا پہاڑ	revisado	rev. IA: Josh.15.9 عفرون کا پہاڑ
+Esau_Mount	place	عیسو کا پہاڑ	revisado	rev. IA: Obad.1.8 عیسو کا پہاڑ
+Eshcol_Valley	place	اسکول کی وادی	revisado	rev. IA: Num.13.23 اسکول کی وادی
+Ezel_Stone	place	ازل کا پتھر	revisado	rev. IA: 1Sam.20.19 ازل کا پتھر
+Fish_Gate	place	مچھلی کا دروازہ	revisado	rev. IA: 2Chr.33.14 مچھلی کا دروازہ
+Forest_Ephraim	place	افرائیم کا جنگل	revisado	rev. IA: 2Sam.18.6 افرائیم کا جنگل
+Forum_of_Appius	place	اپیوس کا بازار	revisado	rev. IA: Acts.28.15 اپیوس کا بازار
+Fountain_Gate	place	چشمے کا دروازہ	revisado	rev. IA: Neh.2.14 چشمے کا دروازہ
+Freedmen	group		sem	rev. IA: sem forma tradicional segura em ur
+Gerizim_Mount	place	جرزیم کا پہاڑ	revisado	rev. IA: Deut.11.29 جرزیم کا پہاڑ
+Gilboa_Mount	place	جلبوعہ کا پہاڑ	revisado	rev. IA: Judg.7.3 جلبوعہ کا پہاڑ
+Great_Sea	place	بڑا سمندر	revisado	rev. IA: Exod.23.31 بڑا سمندر
+Guard_Gate	place	پہرے داروں کا دروازہ	revisado	rev. IA: Neh.12.39 پہرے داروں کا دروازہ
+Guni	person	جونی	revisado	rev. IA: Gen.46.24 جونی
+Halak_Mount	place	حلق کا پہاڑ	revisado	rev. IA: Josh.11.17 حلق کا پہاڑ
+Hall_of_Judgment	place	عدالت کا ایوان	revisado	rev. IA: 1Kgs.7.7 عدالت کا ایوان
+Hall_of_Pillars	place	ستونوں کا ایوان	revisado	rev. IA: 1Kgs.7.6 ستونوں کا ایوان
+Hall_of_the_Throne	place	تخت کا ایوان	revisado	rev. IA: 1Kgs.7.7 تخت کا ایوان
+Hebron_Valley	place	حبرون کی وادی	revisado	rev. IA: Gen.37.14 حبرون کی وادی
+Hermon_Mount	place	کوہ حرمون	revisado	rev. IA: Deut.3.8 کوہ حرمون
+Higgaion	other		sem	rev. IA: sem forma tradicional segura em ur
+Hor_Mount	place	ہور کا پہاڑ	revisado	rev. IA: Num.20.22 ہور کا پہاڑ
+Horse_Gate	place	گھوڑوں کا دروازہ	revisado	rev. IA: Neh.3.28 گھوڑوں کا دروازہ
+Hosanna	other		sem	rev. IA: sem forma tradicional segura em ur
+House_of_the_Forest	place	جنگل کا گھر	revisado	rev. IA: 1Kgs.7.2 جنگل کا گھر
+Hushathites	group		sem	rev. IA: sem forma tradicional segura em ur
+Iphtahel_Valley	place	یفتاح ایل کی وادی	revisado	rev. IA: Josh.19.14 یفتاح ایل کی وادی
+Jahleel	person	یحلیئیل	revisado	rev. IA: Gen.46.14 یحلیئیل
+Jazer_Sea	place	یعزیر کا سمندر	revisado	rev. IA: Jer.48.32 یعزیر کا سمندر
+Jericho_Valley	place	یریحو کی وادی	revisado	rev. IA: Deut.34.3 یریحو کی وادی
+Jezreel_Valley	place	یزرعیل کی وادی	revisado	rev. IA: Josh.17.16 یزرعیل کی وادی
+Judaism	other		sem	rev. IA: sem forma tradicional segura em ur
+Kadmonites	group		sem	rev. IA: sem forma tradicional segura em ur
+Kenizzites	group		sem	rev. IA: sem forma tradicional segura em ur
+King's_Valley	place	بادشاہ کی وادی	revisado	rev. IA: Gen.14.17 بادشاہ کی وادی
+Kiyyun	other		sem	rev. IA: sem forma tradicional segura em ur
+Lebanon_Mount	place	کوہ لبنان	revisado	rev. IA: Judg.3.3 کوہ لبنان
+Legion	other		sem	rev. IA: sem forma tradicional segura em ur
+Leviathan	other	لویاتان	revisado	rev. IA: Job.3.8 لویاتان
+Lo-ammi	person		sem	rev. IA: sem forma tradicional segura em ur
+Mahalath	other	محلت	revisado	rev. IA: Gen.28.9 محلت
+Mizar_Mount	place	میزار کا پہاڑ	revisado	rev. IA: Ps.42.6 میزار کا پہاڑ
+Moab	person	موآب	revisado	rev. IA: Gen.19.37 موآب
+Moriah_Mount	place	موریاہ کا پہاڑ	revisado	rev. IA: Gen.22.2 موریاہ کا پہاڑ
+Muster_Gate	place	مردم شماری کا دروازہ	revisado	rev. IA: Neh.3.31 مردم شماری کا دروازہ
+Nebo_Mount	place	کوہ نبو	revisado	rev. IA: Num.27.12 کوہ نبو
+Nethanel	person	نتنی ایل	revisado	rev. IA: Num.1.8 نتنی ایل
+New_Gate	place	نیا دروازہ	revisado	rev. IA: Jer.26.10 نیا دروازہ
+Nicolaitans	group		sem	rev. IA: sem forma tradicional segura em ur
+Olives_Mount	place	زیتون کا پہاڑ	revisado	rev. IA: 2Sam.15.30 زیتون کا پہاڑ
+Omega	other		sem	rev. IA: sem forma tradicional segura em ur
