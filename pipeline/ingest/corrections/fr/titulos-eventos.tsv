@@ -22,8 +22,8 @@ event_id	cite_id	titulo_en	titulo_fr	origem	nota
 8	ent:theographic:rec96xYWb8KLaUZpF	Lifetime of Seth	Vie de Seth	revisado	rev. IA
 9	ent:theographic:rec0irQ4RDrOjQKWD	Birth of Enos	Naissance d'Énosch	revisado	rev. IA
 10	ent:theographic:recAeYv2iAFNW3dOZ	Lifetime of Enos	Vie d'Énosch	revisado	rev. IA
-11	ent:theographic:recM0WSoo4n0iYARu	Birth of Cainan	Naissance de Kaïnan	revisado	rev. IA
-12	ent:theographic:recJEeDtyPx5U35PG	Lifetime of Cainan	Vie de Kaïnan	revisado	rev. IA
+11	ent:theographic:recM0WSoo4n0iYARu	Birth of Cainan	Naissance de Kénan	revisado	rev. IA; rev. amostragem (forma do Gênesis)
+12	ent:theographic:recJEeDtyPx5U35PG	Lifetime of Cainan	Vie de Kénan	revisado	rev. IA; rev. amostragem (forma do Gênesis)
 13	ent:theographic:recbhJTgfqzA2wi9g	Birth of Mahlaleel	Naissance de Mahalaleel	revisado	rev. IA
 14	ent:theographic:recP4eETeAB1w2UDk	Lifetime of Mahlaleel	Vie de Mahalaleel	revisado	rev. IA
 15	ent:theographic:rec1gA68LB2NDsnCR	Birth of Jared	Naissance de Jéred	revisado	rev. IA
@@ -40,7 +40,7 @@ event_id	cite_id	titulo_en	titulo_fr	origem	nota
 26	ent:theographic:recLhxi3tDTOD3wzR	Birth of Noah	Naissance de Noé	revisado	rev. IA
 27	ent:theographic:recTdAS4YoPxLBszy	Lifetime of Noah	Vie de Noé	revisado	rev. IA
 28	ent:theographic:reciFgNLimxSBMqKH	Death of Enos	Mort d'Énosch	revisado	rev. IA
-29	ent:theographic:recC3DfLQVkOYAv8e	Death of Cainan	Mort de Kaïnan	revisado	rev. IA
+29	ent:theographic:recC3DfLQVkOYAv8e	Death of Cainan	Mort de Kénan	revisado	rev. IA; rev. amostragem (forma do Gênesis)
 30	ent:theographic:recicDx68rL317hoE	Death of Mahlaleel	Mort de Mahalaleel	revisado	rev. IA
 31	ent:theographic:recQUPYt83xclFDlk	Death of Jared	Mort de Jéred	revisado	rev. IA
 32	ent:theographic:rec1n3lFKpydGhoQL	God decides to destroy every living thing	Dieu décide de détruire tout être vivant	revisado	rev. IA
@@ -56,10 +56,10 @@ event_id	cite_id	titulo_en	titulo_fr	origem	nota
 42	ent:theographic:recnAzV0utz4k20eC	Leaving the Ark	Sortie de l'arche	revisado	rev. IA
 43	ent:theographic:recUsWq7FcQB7vaMa	God makes a covenant with Noah	Dieu fait alliance avec Noé	revisado	rev. IA
 44	ent:theographic:recgz06wNQlsq6kOc	Noah gets drunk and Canaan is cursed	Noé s'enivre et Canaan est maudit	revisado	rev. IA
-45	ent:theographic:rec7uQ8Nhf6h5zdfj	Birth of Arphaxad	Naissance d'Arphaxad	revisado	rev. IA
-46	ent:theographic:recQDMfXnyQKhXj01	Lifetime of Arphaxad	Vie d'Arphaxad	revisado	rev. IA
-47	ent:theographic:recN97j5QCkdCwVOC	Birth of Salah	Naissance de Sala	revisado	rev. IA
-48	ent:theographic:rectmsC3P5l7oRNpD	Lifetime of Salah	Vie de Sala	revisado	rev. IA
+45	ent:theographic:rec7uQ8Nhf6h5zdfj	Birth of Arphaxad	Naissance d'Arpacschad	revisado	rev. IA; rev. amostragem (forma do Gênesis)
+46	ent:theographic:recQDMfXnyQKhXj01	Lifetime of Arphaxad	Vie d'Arpacschad	revisado	rev. IA; rev. amostragem (forma do Gênesis)
+47	ent:theographic:recN97j5QCkdCwVOC	Birth of Salah	Naissance de Schélach	revisado	rev. IA; rev. amostragem (forma do Gênesis)
+48	ent:theographic:rectmsC3P5l7oRNpD	Lifetime of Salah	Vie de Schélach	revisado	rev. IA; rev. amostragem (forma do Gênesis)
 49	ent:theographic:rec1JFgGFGfK07blt	Birth of Eber	Naissance d'Héber	revisado	rev. IA
 50	ent:theographic:rec3cw1D7e1QItoGc	Lifetime of Eber	Vie d'Héber	revisado	rev. IA
 51	ent:theographic:recsQpAQgJcwaSk9l	Birth of Peleg	Naissance de Péleg	revisado	rev. IA
@@ -89,11 +89,11 @@ event_id	cite_id	titulo_en	titulo_fr	origem	nota
 75	ent:theographic:recG5DZ6bn0BDuYH9	Abraham and Lot Separate	Abraham et Lot se séparent	revisado	rev. IA
 76	ent:theographic:rechXJhZerr2X4BnE	Birth of Ishmael	Naissance d'Ismaël	revisado	rev. IA
 77	ent:theographic:rec1CnwQbgxnwGiRS	Lifetime of Ishmael	Vie d'Ismaël	revisado	rev. IA
-78	ent:theographic:reciSatPkxfnd664i	Death of Arphaxad	Mort d'Arphaxad	revisado	rev. IA
+78	ent:theographic:reciSatPkxfnd664i	Death of Arphaxad	Mort d'Arpacschad	revisado	rev. IA; rev. amostragem (forma do Gênesis)
 79	ent:theographic:recITDSS0o4dApwQg	Sodom Destroyed	Sodome est détruite	revisado	rev. IA
 80	ent:theographic:recsPU7EMhmA9z27x	Birth of Isaac	Naissance d'Isaac	revisado	rev. IA
 81	ent:theographic:recMAoYK2dHmjhRh9	Lifetime of Isaac	Vie d'Isaac	revisado	rev. IA
-82	ent:theographic:recefHHfdDlITHHsH	Death of Salah	Mort de Sala	revisado	rev. IA
+82	ent:theographic:recefHHfdDlITHHsH	Death of Salah	Mort de Schélach	revisado	rev. IA; rev. amostragem (forma do Gênesis)
 83	ent:theographic:recSDGDMwUBAMUgur	Isaac Marries Rebekah	Isaac épouse Rebecca	revisado	rev. IA
 84	ent:theographic:recTZ4anILXT9AMbx	Death of Shem	Mort de Sem	revisado	rev. IA
 85	ent:theographic:recd4mOzI2nL66vR5	Birth of Jacob and Esau	Naissance de Jacob et d'Ésaü	revisado	rev. IA
