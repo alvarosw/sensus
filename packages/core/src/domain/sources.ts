@@ -111,6 +111,8 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'smith-us-prophecy': { short: 'Estados Unidos na Profecia', commentator: 'Uriah Smith · Estados Unidos na Profecia', role: 'commentary', lang: 'en' },
   'smith-sanctuary': { short: 'O Santuário e os 2.300 Dias', commentator: 'Uriah Smith · O Santuário e os 2.300 Dias', role: 'commentary', lang: 'en' },
   'smith-looking': { short: 'Olhando para Jesus', commentator: 'Uriah Smith · Olhando para Jesus', role: 'commentary', lang: 'en' },
+  // Perguntas e respostas (pipeline/ingest/bible_readings.py): uma unidade por pergunta; obra coletiva, sem autor único.
+  'bible-readings': { short: 'Leituras Bíblicas', commentator: 'Review and Herald · Leituras Bíblicas', role: 'commentary', lang: 'en' },
 };
 
 /** Ordem de preferência das fontes de lugares (menor = melhor) para escolher a identificação moderna. */
