@@ -2,7 +2,7 @@
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Animated, { interpolate, useAnimatedStyle } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { dirOf, formatShortRef, scriptOf, traditionLabel } from '@sensus/core';
+import { contextGloss, dirOf, formatShortRef, scriptOf, shortTextMark, TOKEN_GLOSS_LANG, traditionLabel } from '@sensus/core';
 import {
   fontFamilies,
   IconButton,
@@ -18,6 +18,7 @@ import {
 } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useAsync } from '@/data/use-async';
+import { useLang } from '@/i18n';
 import { useStudy } from '@/state/study';
 import { askAbout, panelFor, showInText } from '../common/actions';
 import { BACK_PRIORITY, useBackLayer } from '../common/back';
@@ -209,6 +210,7 @@ function Body({ detail, repo }: { detail: CiteDetail; repo: ReturnType<typeof us
   const books = useBooks();
   const { record } = detail;
   const textSource = useStudy((s) => s.textSource);
+  const appLang = useLang();
 
   const extra = useAsync<{ view: WordView | null; xr: string | null }>(async () => {
     if (record.table === 'token' && record.record.strong_base) {
@@ -249,13 +251,17 @@ function Body({ detail, repo }: { detail: CiteDetail; repo: ReturnType<typeof us
     const t = record.record;
     const pills = morphPills(t.morph_desc);
     const view = extra.data?.view;
+    // Glosa contextual do token (inglês): só com o app em inglês ou sem glosa do léxico; em outra língua leva "(en)".
+    const ctx = extra.loading ? null : contextGloss({ tokenGloss: t.gloss_en, lexiconGloss: lex?.gloss, appLang });
+    const ctxMark = ctx ? shortTextMark({ via: 'original', lang: TOKEN_GLOSS_LANG }, appLang) : null;
+    const ctxText = ctx ? `“${ctx.original}”${ctxMark ? ` (${ctxMark})` : ''}` : null;
     return (
       <>
         <Text style={{ fontFamily: fontFamilies.greek, fontSize: 28, lineHeight: 34, color: st.tok, writingDirection: dirOf(scriptOf(detail.label)) }} selectable>
           {detail.label}
         </Text>
         <Txt v="bodySm" color="muted" style={{ fontSize: 13 }}>
-          {[t.lemma, t.translit, t.strong, t.gloss_en ? `“${t.gloss_en}”` : null].filter(Boolean).join(' · ')}
+          {[t.lemma, t.translit, t.strong, ctxText].filter(Boolean).join(' · ')}
         </Txt>
         {pills.length > 0 ? (
           <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 4 }}>
