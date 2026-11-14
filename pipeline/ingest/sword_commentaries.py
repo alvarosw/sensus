@@ -40,6 +40,8 @@ MODULES = [
     ("PNT", "PNT.zip", "restoration", "B. W. Johnson (séc. XIX)"),
     ("TFG", "TFG.zip", "restoration", "J. W. McGarvey (1829-1915) e Philip Y. Pendleton"),
     ("Abbott", "Abbott.zip", "congregational", "John S. C. Abbott (1805-1877) e Jacob Abbott (1803-1879)"),
+    # Lote 2: Salmos (domínio público pelo .conf; Spurgeon, 1834-1892, publicado em 1882 e 1882-1884).
+    ("TDavid", "TDavid.zip", "reformed-baptist", "Charles Haddon Spurgeon (1834-1892)"),
 ]
 
 # Módulos com licença diferente de 'Public Domain', aprovados pelo responsável do projeto

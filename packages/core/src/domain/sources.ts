@@ -89,6 +89,7 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'sword-luther': { short: 'Lutero', commentator: 'Lutero', role: 'commentary', lang: 'en' },
   'sword-pnt': { short: 'B. W. Johnson', commentator: 'B. W. Johnson', role: 'commentary', lang: 'en' },
   'sword-tfg': { short: 'McGarvey', commentator: 'McGarvey e Pendleton', role: 'commentary', lang: 'en' },
+  'sword-tdavid': { short: 'Spurgeon', commentator: 'Spurgeon', role: 'commentary', lang: 'en' },
   // Adventistas (Ellen G. White, domínio público; só parágrafos com referência explícita). O comentarista leva a
   // obra: duas obras dela no mesmo versículo precisam de rótulos distintos.
   'egw-great-controversy': { short: 'Grande Conflito', commentator: 'Ellen G. White · Grande Conflito', role: 'commentary', lang: 'en' },
