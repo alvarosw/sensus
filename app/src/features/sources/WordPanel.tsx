@@ -16,7 +16,22 @@ import {
 } from '@/design';
 import { useRepo } from '@/data/db-context';
 import { useAsync } from '@/data/use-async';
-import { CORPUS, dirOf, editionLegend, scriptOf, sourceShort, type Testament, type Token, type Vid } from '@sensus/core';
+import {
+  CORPUS,
+  dirOf,
+  editionLegend,
+  glossShortText,
+  scriptOf,
+  shortTextMark,
+  shownShortText,
+  sourceShort,
+  TOKEN_GLOSS_LANG,
+  type ShortText,
+  type Testament,
+  type Token,
+  type Vid,
+} from '@sensus/core';
+import { useLang } from '@/i18n';
 import { useStudy } from '@/state/study';
 import { showInText } from '../common/actions';
 import { loadConcordance, loadLexicon, loadSources } from '../common/cites';
@@ -89,6 +104,7 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
   const repo = useRepo();
   const books = useBooks();
   const [showLsj, setShowLsj] = useState(false);
+  const appLang = useLang();
 
   const lexicon = useAsync(() => (strongBase ? loadLexicon(repo, strongBase) : Promise.resolve([])), [repo, strongBase]);
   const textSource = useStudy((s) => s.textSource);
@@ -104,7 +120,9 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
   const lex = view.lex.primary;
   const lsj = view.lex.secondary;
   const lemma = token?.lemma ?? lex?.lemma ?? strongBase ?? '';
-  const gloss = token?.gloss_en ?? lex?.gloss ?? null;
+  // Glosa contextual (token, em inglês) ou a do léxico, conforme o app; e a glosa do léxico, sempre (linha do léxico).
+  const glossItem = glossShortText({ lexicon: lex, tokenGloss: token?.gloss_en, contextFor: appLang });
+  const lexGlossItem = glossShortText({ lexicon: lex, tokenGloss: null });
   const editions = token ? token.editions.split(',').map((e) => e.trim()).filter(Boolean) : [];
   // Edições do AT (L, Q, K…) vêm com legenda curta; no NT as siglas (TR, BYZ, NA) já se explicam.
   const legend = editionLegend(editions);
@@ -132,9 +150,29 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
   const lsjText = lsj ? (lsj.definition.length > LSJ_MAX ? `${lsj.definition.slice(0, LSJ_MAX)}…` : lsj.definition) : null;
   const lsjTr = useAutoTranslate(showLsj ? lsjText : null, lsjLang);
   // Cabeçalho (glosa e classe em inglês) traduzido em um lote só, com uma nota. Glosa e classe são colunas em
-  // inglês do banco, por isso o idioma é 'en' (a fonte do token tem o idioma da língua original).
-  const headerEn = [gloss, ...parts.filter((r) => r.english).map((r) => r.value)].filter((t): t is string => !!t);
-  const header = useTranslatable(headerEn, { lang: 'en', policy: 'item' });
+  // inglês do banco, por isso o idioma é TOKEN_GLOSS_LANG ('en'); a glosa do léxico também é inglesa.
+  const headerEn = [
+    ...new Set(
+      [glossItem?.forMachine, lexGlossItem?.forMachine, ...parts.filter((r) => r.english).map((r) => r.value)].filter(
+        (t): t is string => !!t,
+      ),
+    ),
+  ];
+  const header = useTranslatable(headerEn, { lang: TOKEN_GLOSS_LANG, policy: 'item' });
+  const showGloss = (item: ShortText | null) => {
+    if (!item) return null;
+    const shown = shownShortText({
+      packValue: null,
+      original: item.original,
+      machine: item.forMachine ? header.machine(item.forMachine) : null,
+      appLang,
+      originalLang: item.lang,
+    });
+    const mark = shortTextMark(shown, appLang);
+    return { text: shown.text, mark };
+  };
+  const gloss = showGloss(glossItem);
+  const lexGloss = showGloss(lexGlossItem);
   const licenseSummary = [
     token ? sourceShort(CORPUS[token.corpus].tokensSource) : null,
     lex ? sourceShort(lex.source_id, sources.data?.get(lex.source_id)?.title) : null,
@@ -165,7 +203,7 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
         {token ? <Text style={{ fontFamily: fontFamilies.greek, fontSize: 14.5 }}>{lemma}</Text> : null}
         {token ? ' · ' : ''}
         {token?.strong ?? strongBase ?? ''}
-        {gloss ? ` · “${header.show(gloss)}”` : ''}
+        {gloss ? ` · “${gloss.text}”${gloss.mark ? ` (${gloss.mark})` : ''}` : ''}
       </Txt>
 
       {parts.length > 0 ? <KeyValues rows={parts.map((p) => ({ key: p.key, value: p.english ? header.show(p.value) : p.value }))} /> : null}
@@ -190,7 +228,7 @@ function WordBody({ token, strongBase, fallbackId }: { token: Token | null; stro
         <Card testID="word-lexicon">
           <Text style={{ fontFamily: fontFamilies.greek, fontSize: 20, lineHeight: 26, color: c.text, writingDirection: dirOf(scriptOf(lex.lemma ?? lemma)) }}>
             {lex.lemma ?? lemma}
-            {lex.gloss ? <Text style={{ fontFamily: fontFamilies.ui, fontSize: 13, color: c.muted }}>{`  ${lex.gloss}`}</Text> : null}
+            {lexGloss ? <Text style={{ fontFamily: fontFamilies.ui, fontSize: 13, color: c.muted }}>{`  ${lexGloss.text}${lexGloss.mark ? ` (${lexGloss.mark})` : ''}`}</Text> : null}
           </Text>
           <Txt v="excerpt" style={{ fontSize: 13.5 }} selectable testID="word-lexicon-text">{lexTr.display}</Txt>
           <AutoTranslateNote tr={lexTr} testID="word-lexicon-tr" />

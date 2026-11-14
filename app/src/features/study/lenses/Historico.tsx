@@ -100,6 +100,7 @@ export function HistoricoLens({ onLayout }: LensProps) {
                         entry={e}
                         sourceShort={shortOf(p, e.source_id)}
                         tokenByKey={tokenByKey}
+                        names={p.layers.historical.entities}
                         onOpen={() => useStudy.getState().pushPanel({ kind: 'source', citeId: e.cite_id })}
                         onAsk={() => attachCard(e.cite_id, `${shortOf(p, e.source_id)}: ${titleCaseHeadword(e.headword)}`)}
                       />

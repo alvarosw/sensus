@@ -4,13 +4,17 @@
 // Língua espera a escolha da IA (esqueleto) e, sem ela, usa os fallbacks de keyword.ts.
 import {
   commentatorOf,
+  DEFAULT_APP_LANG,
+  glossShortText,
+  headwordShortText,
   isIntroCommentary,
   testamentOfCorpus,
-  titleCaseHeadword,
   variantSites,
+  type AppLang,
   type Book,
   type PanelData,
   type SectionKey,
+  type ShortText,
   type StructuredSummary,
   type Vid,
   shownEntityName,
@@ -46,7 +50,7 @@ export type ThreadEvidence =
   /** Versículo vizinho anterior (Literário). */
   | { kind: 'verse'; ref: string; text: string }
   /** Palavra que move o trecho (Língua). `note` = "hápax" ou a contagem no testamento; `by` diz de onde veio a escolha. */
-  | { kind: 'word'; tokenCiteId: string; lemma: string; gloss: string | null; note: string | null; by: WordBy; mentions?: number }
+  | { kind: 'word'; tokenCiteId: string; lemma: string; gloss: ShortText | null; note: string | null; by: WordBy; mentions?: number }
   /** Língua aguardando a escolha da IA: o passo mostra um esqueleto no lugar da evidência. */
   | { kind: 'pending' }
   /** Primeiro sítio de variação entre TR, BYZ e NA (Texto). */
@@ -54,7 +58,7 @@ export type ThreadEvidence =
   /** Referência cruzada de maior peso (Intertexto). */
   | { kind: 'xref'; ref: string; text: string; citeId: string }
   /** Entidades e verbetes (Histórico). */
-  | { kind: 'names'; names: string[] }
+  | { kind: 'names'; names: ShortText[] }
   /** Comentaristas (Interpretação); `more` = quantos ficaram de fora. */
   | { kind: 'commentators'; names: string[]; more: number };
 
@@ -79,6 +83,8 @@ export interface ThreadInput {
   range: { start: Vid; end: Vid };
   books: readonly Book[];
   ai: ThreadAi;
+  /** Língua de namePt (Repo.nameLang segue o app); padrão: português. */
+  appLang?: AppLang;
 }
 
 /** Seções que vêm depois de @lingua no resumo (ordem de SUMMARY_FORMAT, não a de exibição). */
@@ -88,7 +94,7 @@ const AFTER_LINGUA: readonly SectionKey[] = ['texto', 'intertexto', 'historico',
  * Passos do fio, na ordem narrativa. Sem painel, nenhum passo (a folha ainda carrega). Um passo sem
  * evidência no banco é omitido; Aplicação entra só com IA.
  */
-export function buildThread({ panel, range, books, ai }: ThreadInput): ThreadStep[] {
+export function buildThread({ panel, range, books, ai, appLang = DEFAULT_APP_LANG }: ThreadInput): ThreadStep[] {
   if (!panel) return [];
   const hasAi = ai.status !== 'noprovider';
   const evidence: Record<ThreadLensKey, ThreadEvidence | null> = {
@@ -96,7 +102,7 @@ export function buildThread({ panel, range, books, ai }: ThreadInput): ThreadSte
     lingua: languageEvidence(panel, range, wordAiOf(ai)),
     texto: textEvidence(panel),
     intertexto: intertextEvidence(panel, books),
-    historico: historicalEvidence(panel),
+    historico: historicalEvidence(panel, appLang),
     interpretacao: interpretationEvidence(panel),
     aplicacao: null,
   };
@@ -144,7 +150,7 @@ function languageEvidence(panel: PanelData, range: { start: Vid; end: Vid }, ai:
     kind: 'word',
     tokenCiteId: t.cite_id,
     lemma: lexicon?.lemma ?? t.lemma ?? bareWord(t.surface),
-    gloss: lexicon?.gloss ?? t.gloss_en,
+    gloss: glossShortText({ lexicon, tokenGloss: t.gloss_en }),
     note,
     by,
     ...(mentions !== undefined ? { mentions } : {}),
@@ -178,13 +184,24 @@ function intertextEvidence(panel: PanelData, books: readonly Book[]): ThreadEvid
   };
 }
 
-/** Entidades primeiro, depois verbetes; sem repetir nome. */
-function historicalEvidence(panel: PanelData): ThreadEvidence | null {
-  const all = [
-    ...panel.layers.historical.entities.map((e) => shownEntityName(e, true).text),
-    ...panel.layers.historical.dictionary.map((d) => titleCaseHeadword(d.headword)),
+/**
+ * Entidades primeiro, depois verbetes; sem repetir nome. Um verbete com o mesmo nome de uma entidade do trecho usa o
+ * nome em pt dela (a chave de repetição é o nome mostrado, então "Philippi" e "Filipos" contam como um só).
+ */
+function historicalEvidence(panel: PanelData, appLang: AppLang): ThreadEvidence | null {
+  const entities = panel.layers.historical.entities;
+  const all: ShortText[] = [
+    ...entities.map((e) => ({ original: shownEntityName(e, true).text, lang: null, forMachine: null, packValue: null })),
+    ...panel.layers.historical.dictionary.map((d) => headwordShortText(d.headword, d.source_id, entities, appLang)),
   ];
-  const names = [...new Set(all.map((n) => n.trim()).filter(Boolean))];
+  const seen = new Set<string>();
+  const names: ShortText[] = [];
+  for (const n of all) {
+    const key = (n.packValue?.value ?? n.original).trim();
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    names.push(n);
+  }
   if (names.length === 0) return null;
   return { kind: 'names', names: names.slice(0, MAX_NAMES) };
 }

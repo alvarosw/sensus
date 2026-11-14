@@ -13,11 +13,14 @@ import type { KeyWord } from '../format';
 export const WordCard = memo(function WordCard({
   word,
   books,
+  gloss,
   onOpen,
   onAsk,
 }: {
   word: KeyWord;
   books: readonly Book[];
+  /** Glosa já escolhida pelo texto curto (pacote, tradução ou original) e a marca da língua, se houver. */
+  gloss: { text: string; mark: string | null } | null;
   onOpen: () => void;
   onAsk: () => void;
 }) {
@@ -25,7 +28,6 @@ export const WordCard = memo(function WordCard({
   const t = word.token;
   const lemma = word.lexicon?.lemma ?? t.lemma ?? bareWord(t.surface);
   const translit = word.lexicon?.translit ?? t.translit;
-  const gloss = word.lexicon?.gloss ?? t.gloss_en;
   const n = word.count;
   const value = Math.min(1, Math.max(0.06, Math.log(n + 1) / Math.log(120)));
   const morph = morphChipsOf(t.morph_desc, word.testament);
@@ -39,7 +41,7 @@ export const WordCard = memo(function WordCard({
         <View style={{ flex: 1, gap: 2 }}>
           <Txt v="lemma">{lemma}</Txt>
           <Txt v="meta" color="muted" style={{ fontFamily: fontFamilies.ui, fontSize: 12, lineHeight: 17 }}>
-            {[translit, gloss ? `“${gloss}” (en)` : null].filter(Boolean).join(' · ')}
+            {[translit, gloss ? `“${gloss.text}”${gloss.mark ? ` (${gloss.mark})` : ''}` : null].filter(Boolean).join(' · ')}
             {` · ${STUDY.inText}: `}
             <Txt v="greek" color="muted" style={{ fontSize: 14 }}>{bareWord(t.surface)}</Txt>
           </Txt>

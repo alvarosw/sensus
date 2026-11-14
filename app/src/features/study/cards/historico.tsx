@@ -4,18 +4,21 @@ import { useState } from 'react';
 import { Pressable, View } from 'react-native';
 import {
   formatEventDate,
+  headwordShortText,
   shownEntityName,
-  titleCaseHeadword,
+  shownShortText,
   type Book,
   type DictionaryEntry,
   type Entity,
+  type NameFields,
   type TimelineEvent,
 } from '@sensus/core';
+import { useLang } from '@/i18n';
 import { Card, CardTop, LinkButton, radius, size, space, Txt, TypeMark, useTheme } from '@/design';
 import { ScriptText } from '@/features/rich';
 import { refShort } from '@/features/common/format';
 import { EventPreview } from '@/features/timeline';
-import { useAutoTranslate } from '@/translate/useAutoTranslate';
+import { useTranslatable } from '@/translate/useTranslatable';
 import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
 import { EntityDescription } from '@/translate/EntityDescription';
 import { TimelineTranslationNote } from '@/translate/TimelineTranslationNote';
@@ -33,6 +36,7 @@ export function DictionaryCard({
   onOpen,
   onAsk,
   lines = 4,
+  names = [],
 }: {
   entry: DictionaryEntry;
   sourceShort: string;
@@ -41,17 +45,32 @@ export function DictionaryCard({
   onOpen: () => void;
   onAsk: () => void;
   lines?: number;
+  /** Entidades do trecho: o título que é nome de entidade usa o nome em português quando existe. */
+  names?: readonly NameFields[];
 }) {
-  const tr = useAutoTranslate(entry.text, useSourceLang(entry.source_id));
+  const appLang = useLang();
+  const srcLang = useSourceLang(entry.source_id);
+  // Título e corpo no mesmo lote (uma nota): o card tem prosa, então a oferta da primeira vez fica aqui.
+  const title = headwordShortText(entry.headword, entry.source_id, names, appLang);
+  const tr = useTranslatable([title.forMachine, entry.text], { lang: srcLang, policy: 'item' });
+  const shownTitle = shownShortText({
+    packValue: title.packValue,
+    original: title.original,
+    machine: title.forMachine ? tr.machine(title.forMachine) : null,
+    appLang,
+    originalLang: title.lang,
+  });
+  const titleText = shownTitle.via === 'original' ? shownTitle.text.split(',')[0]! : shownTitle.text;
+  const body = tr.machine(entry.text);
   return (
     <Card testID={`dic-${entry.cite_id}`}>
       <CardTop>
         <TypeMark kind="dic" label={topical ? STUDY.topicIndex : STUDY.entry} />
-        <Txt v="bodySm" bold>{titleCaseHeadword(entry.headword).split(',')[0]!}</Txt>
+        <Txt v="bodySm" bold>{titleText}</Txt>
         <Txt v="meta" color="muted">{sourceShort}</Txt>
       </CardTop>
-      {tr.translated ? (
-        <Txt v="excerpt" numberOfLines={lines}>{tr.display}</Txt>
+      {body ? (
+        <Txt v="excerpt" numberOfLines={lines}>{body}</Txt>
       ) : (
         <ScriptText text={entry.text} numberOfLines={lines} tokenByKey={tokenByKey} />
       )}

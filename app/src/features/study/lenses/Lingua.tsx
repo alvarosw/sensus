@@ -1,14 +1,18 @@
 // Lente Língua: palavras-chave do trecho (grego no NT, hebraico no AT), com léxico e concordância no painel da palavra.
 import { useMemo } from 'react';
+import { View } from 'react-native';
+import { glossShortText } from '@sensus/core';
 import { bareWord } from '@/features/common/format';
 import { useStudy } from '@/state/study';
+import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
+import { useShortTexts } from '@/translate/useShortTexts';
 import { WordCard } from '../cards';
 import { keyWordsOf } from '../format';
 import { LensShell } from '../LensShell';
 import { STUDY } from '../strings';
 import { useStudyData } from '../useStudyData';
 import { Body, Cards, SECTION_LABEL, SHOWN, useExpanded, type LensProps } from './shared';
-import { Empty } from '@/design';
+import { Empty, space } from '@/design';
 
 export function LinguaLens({ onLayout }: LensProps) {
   const data = useStudyData();
@@ -16,6 +20,9 @@ export function LinguaLens({ onLayout }: LensProps) {
   const { panel, books } = data;
   const words = useMemo(() => (panel ? keyWordsOf(panel) : []), [panel]);
   const shown = expanded ? words : words.slice(0, SHOWN);
+  // Glosas dos cards mostrados: um lote de tradução e uma nota acima dos cards.
+  const glosses = shown.map((w) => glossShortText({ lexicon: w.lexicon, tokenGloss: w.token.gloss_en }));
+  const st = useShortTexts(glosses);
   return (
     <LensShell
       lens="lingua"
@@ -29,21 +36,25 @@ export function LinguaLens({ onLayout }: LensProps) {
           words.length === 0 ? (
             <Empty text={STUDY.languageEmpty} />
           ) : (
-            <Cards>
-              {shown.map((w) => (
-                <WordCard
-                  key={w.strongBase}
-                  word={w}
-                  books={books}
-                  onOpen={() => useStudy.getState().pushPanel({ kind: 'word', tokenCiteId: w.token.cite_id })}
-                  onAsk={() => {
-                    const st = useStudy.getState();
-                    st.attach({ id: w.token.cite_id, kind: 'token', label: bareWord(w.token.surface), citeIds: [w.token.cite_id, ...(w.lexicon ? [w.lexicon.cite_id] : [])] });
-                    st.openChat();
-                  }}
-                />
-              ))}
-            </Cards>
+            <View style={{ gap: space[3] }}>
+              <AutoTranslateNote tr={st.note} testID="lingua-tr" />
+              <Cards>
+                {shown.map((w, i) => (
+                  <WordCard
+                    key={w.strongBase}
+                    word={w}
+                    books={books}
+                    gloss={st.view(glosses[i])}
+                    onOpen={() => useStudy.getState().pushPanel({ kind: 'word', tokenCiteId: w.token.cite_id })}
+                    onAsk={() => {
+                      const ask = useStudy.getState();
+                      ask.attach({ id: w.token.cite_id, kind: 'token', label: bareWord(w.token.surface), citeIds: [w.token.cite_id, ...(w.lexicon ? [w.lexicon.cite_id] : [])] });
+                      ask.openChat();
+                    }}
+                  />
+                ))}
+              </Cards>
+            </View>
           )
         }
       </Body>

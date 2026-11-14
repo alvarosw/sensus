@@ -4,7 +4,7 @@
 // (Detalhar este ponto / De onde vem isso? / Perguntar sobre isto).
 import { memo, useMemo, useState, type ReactNode } from 'react';
 import { Pressable, Text, View, type TextStyle } from 'react-native';
-import { dirOf, scriptOf, type Block, type CiteRef, type ClaimInfo, type Inline } from '@sensus/core';
+import { dirOf, glossShortText, scriptOf, type Block, type CiteRef, type ClaimInfo, type Inline } from '@sensus/core';
 import {
   Caret,
   CitePill,
@@ -25,8 +25,14 @@ import {
 import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { useCite } from '../common/hooks';
 import { useStudy } from '@/state/study';
-import { t } from '@/i18n';
+import { t, useLang } from '@/i18n';
+import { useRepo } from '@/data/db-context';
+import { useAsync } from '@/data/use-async';
+import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
+import { useShortTexts } from '@/translate/useShortTexts';
+import { loadLexicon } from '../common/cites';
 import { morphLabelsPt } from '../common/morph';
+import { wordView } from '../common/word-view';
 
 /** Dados de uma afirmação, entregues às ações do menu ⋯. */
 export interface ClaimMenuInfo {
@@ -347,11 +353,19 @@ function stripSourcePrefix(label: string): string {
 function MiniSource({ citeId, onOpen }: { citeId: string; onOpen: (id: string) => void }) {
   const kind = sourceTypeOf(citeId);
   const { loading, detail } = useCite(citeId);
+  const repo = useRepo();
+  const appLang = useLang();
   const title = detail ? (detail.kind === 'tok' || detail.kind === 'lex' ? stripSourcePrefix(detail.label) : detail.label) : citeId.split(':').slice(1).join(' · ');
-  const excerpt =
-    detail?.record.table === 'token'
-      ? [detail.record.record.lemma, morphLabelsPt(detail.record.record.morph_desc, true).join(', '), detail.record.record.gloss_en ? `“${detail.record.record.gloss_en}”` : ''].filter(Boolean).join(' · ')
-      : detail?.text ?? '';
+  // Token: a glosa segue a mesma regra do painel da palavra (léxico traduzível ou glosa contextual em inglês).
+  const tok = detail?.record.table === 'token' ? detail.record.record : null;
+  const sb = tok?.strong_base ?? null;
+  const lexicon = useAsync(() => (sb ? loadLexicon(repo, sb) : Promise.resolve([])), [repo, sb]);
+  const lex = tok && sb ? wordView(tok, sb, lexicon.data ?? []).lex.primary : null;
+  const glossItem = tok ? glossShortText({ lexicon: lex, tokenGloss: tok.gloss_en, contextFor: appLang }) : null;
+  const st = useShortTexts([glossItem]);
+  const g = st.view(glossItem);
+  const gloss = g ? `“${g.text}”${g.mark ? ` (${g.mark})` : ''}` : '';
+  const excerpt = tok ? [tok.lemma, morphLabelsPt(tok.morph_desc, true).join(', '), gloss].filter(Boolean).join(' · ') : detail?.text ?? '';
   return (
     <Card style={{ paddingVertical: 9, paddingHorizontal: 10, gap: space[2] }}>
       <CardTop>
@@ -363,7 +377,10 @@ function MiniSource({ citeId, onOpen }: { citeId: string; onOpen: (id: string) =
         )}
       </CardTop>
       {detail ? (
-        <Txt v="excerpt" numberOfLines={3} style={{ fontSize: 13 }}>{excerpt}</Txt>
+        <>
+          <Txt v="excerpt" numberOfLines={3} style={{ fontSize: 13 }}>{excerpt}</Txt>
+          {tok ? <AutoTranslateNote tr={st.note} testID={`mini-src-tr-${citeId}`} /> : null}
+        </>
       ) : loading ? (
         <Txt v="bodySm" color="muted">…</Txt>
       ) : (
