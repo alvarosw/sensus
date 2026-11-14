@@ -20,7 +20,7 @@ App de estudo bíblico (Expo/React Native, pt-BR) com núcleo TypeScript (`packa
 - Regra nova = função pura com teste, com caso de NT grego **e** AT hebraico.
 - Uma feature usa outra só pelo `index.ts` dela; camadas de baixo nunca importam `features/`.
 - Textos de UI e documentação em pt-BR; comentários de código em português, no estilo do arquivo vizinho.
-- Nada gerado por IA é gravado no aparelho.
+- Nada gerado por IA em tempo de uso é gravado no aparelho; conteúdo preparado com IA no pipeline entra só revisado, versionado em TSV e declarado na fonte.
 - Commits em português, **sem** linha `Co-Authored-By` e sem qualquer crédito a IA.
 
 ## Verificação

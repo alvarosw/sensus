@@ -96,6 +96,7 @@ Contratos em [design/idiomas-biblias-fontes.md](design/idiomas-biblias-fontes.md
 - **P2 — Nomes `namePt`/`descriptionPt`/`ptNames`** guardam o idioma do app: renomear.
 - **P2 — Referências montadas no núcleo** (`panel.reference`, `variants.ref`) ainda em pt quando aparecem na tela.
 - **P2 — Haskell** (Daniel, o Profeta; O Vidente de Patmos): fora do banco até limpar as citações de margem do scan.
+- **P2 — Bíblia zh (`cmncbs`) com espaços espúrios** ("岳父 米甸祭司 叶特罗"): `ebible.clean` troca `\pn` por espaço. Corrigir muda todos os pacotes de Bíblia; sai em release `bibles-*` própria.
 - **P2 — Indonésio sem Bíblia** (nenhuma completa e livre encontrada); **vietnamita 1925** entra em 2030 (regra BR).
 - **P3 — Reina-Valera 1909 completa** (o módulo SWORD tem licença contraditória; o eBible tem 18 versículos vazios).
 - **P3 — Títulos pt das obras adventistas novas** são tradução nossa (só *O Desejado de Todas as Nações* é título de
