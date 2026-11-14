@@ -1,0 +1,60 @@
+# Glossário geo em vietnamita (openbible-geo, pipeline/sensus/geo_descricao.py, por regra). Colunas:
+#   secao      tipo | geometria | voto | fonte
+#   ingles     termo como aparece na descrição da fonte (exato)
+#   vietnamita tradução usada na frase
+#   nota       observação para o revisor (opcional)
+# tipo: tipo de lugar (Best modern identification: NOME (TIPO, GEOMETRIA geometry)).
+# geometria: point, polygon, path.  voto: rótulos de Votes (nomes de confiança e de autoridade da fonte).
+# fonte: modern (identificação moderna) ou ancient (identificação antiga, do texto da fonte).
+secao	ingles	vietnamita	nota
+tipo	settlement	địa điểm dân cư
+tipo	region	vùng
+tipo	mountain	núi
+tipo	wadi	suối khô
+tipo	river	sông
+tipo	spring	suối
+tipo	hill	đồi
+tipo	island	hải đảo
+tipo	valley	thung lũng
+tipo	body of water	vùng nước
+tipo	well	giếng
+tipo	probability center radial	tâm xác suất hướng tâm	termo técnico da fonte; confirmar
+tipo	road	đường
+tipo	mountain range	dãy núi
+tipo	structure	công trình
+tipo	mouth of river	cửa sông
+tipo	pool	hồ nước
+tipo	cliff	vách đá
+tipo	cave	hang
+tipo	field	cánh đồng
+tipo	mountain pass	đèo
+tipo	mountain ridge	sườn núi
+tipo	wall	tường thành
+tipo	forest	rừng
+tipo	harbor	bến cảng
+tipo	garden	vườn
+tipo	promontory	mũi đất
+geometria	point	điểm
+geometria	polygon	đa giác
+geometria	path	tuyến
+voto	confidence_yes	độ tin cậy cao
+voto	confidence_likely	độ tin cậy khá
+voto	confidence_mostlikely	độ tin cậy rất cao
+voto	confidence_possible	khả năng
+voto	confidence_unlikely	ít khả năng
+voto	confidence_no	không tin cậy
+voto	confidence_map	tin cậy theo bản đồ
+voto	authority_usually	thẩm quyền thường dùng
+voto	authority_scholar	thẩm quyền học giả
+voto	authority_traditional	thẩm quyền truyền thống
+voto	authority_parallel	thẩm quyền song song
+voto	authority_preserved	thẩm quyền được bảo tồn
+voto	authority_variant	thẩm quyền biến thể
+voto	authority_old	thẩm quyền cổ
+voto	identified_been	được nhận diện là đã từng
+voto	identified_is	được nhận diện là
+voto	identified_adjective	được nhận diện
+voto	uncertain	không chắc chắn
+voto	unknown	không rõ
+fonte	modern	hiện đại
+fonte	ancient	cổ đại
