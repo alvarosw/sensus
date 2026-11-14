@@ -178,7 +178,7 @@ event_id	cite_id	titulo_en	titulo_de	origem	nota
 164	ent:theographic:rec3u4dUBOoBi5pUx	Death of Solomon	Tod von Salomo	revisado	rev. IA
 165	ent:theographic:recX0KzMJywvbeM6D	Reign of Rehoboam	Herrschaft von Rehabeam	revisado	rev. IA
 166	ent:theographic:rec3R4qyFlVjCRORt	Northern Kingdom (Israel)	Das Nordreich (Israel)	revisado	rev. IA
-167	ent:theographic:rec824qPcsyF7GtTh	Reign of Jeroboam I	Herrschaft von Jerobeam I	revisado	rev. IA
+167	ent:theographic:rec824qPcsyF7GtTh	Reign of Jeroboam I	Herrschaft von Jerobeam I.	revisado	rev. IA; rev. amostragem
 168	ent:theographic:recDK5FF0d1qrz8sn	Reign of Abijam	Herrschaft von Abia	revisado	rev. IA
 169	ent:theographic:recfIqDLtdCqz7N3V	Death of Abijam	Tod von Abia	revisado	rev. IA
 170	ent:theographic:recmEKC9vgAJDYa2z	Reign of Asa	Herrschaft von Asa	revisado	rev. IA
@@ -210,7 +210,7 @@ event_id	cite_id	titulo_en	titulo_de	origem	nota
 196	ent:theographic:recz99BZY6sWTR2SI	Death of Jehoahaz	Tod von Joahas	revisado	rev. IA
 197	ent:theographic:rec70XpPIr8MiLTVb	Reign of Jehoash	Herrschaft von Joas in Israel	revisado	rev. IA
 198	ent:theographic:rec75MawjODD5ju3b	Reign of Amaziah	Herrschaft von Amazja	revisado	rev. IA
-199	ent:theographic:recGe7VTJOGbn63NQ	Reign of Jeroboam II	Herrschaft von Jerobeam II	revisado	rev. IA
+199	ent:theographic:recGe7VTJOGbn63NQ	Reign of Jeroboam II	Herrschaft von Jerobeam II.	revisado	rev. IA; rev. amostragem
 200	ent:theographic:recKICyY8GrWaYCq3	Prophecies of Jonah	Prophezeiungen des Jona	revisado	rev. IA
 201	ent:theographic:recsgU87rUrPKR9uA	Death of Jehoahash	Tod von Joas in Israel	revisado	rev. IA
 202	ent:theographic:rec6VtctTK9zZ5UxZ	Prophecies of Joel	Prophezeiungen des Joel	revisado	rev. IA
@@ -218,7 +218,7 @@ event_id	cite_id	titulo_en	titulo_de	origem	nota
 204	ent:theographic:recOJfWD0IUcT4yJD	Reign of Uzziah	Herrschaft von Usia	revisado	rev. IA
 205	ent:theographic:rec0MJooZFfHsxW1N	Prophecies of Amos	Prophezeiungen des Amos	revisado	rev. IA
 206	ent:theographic:recekTocE5mIkvDEk	Prophecies of Hosea	Prophezeiungen des Hosea	revisado	rev. IA
-207	ent:theographic:recFQnWRST9SS0RRp	Death of Jeroboam II	Tod von Jerobeam II	revisado	rev. IA
+207	ent:theographic:recFQnWRST9SS0RRp	Death of Jeroboam II	Tod von Jerobeam II.	revisado	rev. IA; rev. amostragem
 208	ent:theographic:recUQaOuprbt82K3O	Reign of Zachariah	Herrschaft von Sacharja	revisado	rev. IA
 209	ent:theographic:recmYpqEy1fUpISEt	Reign of Shallum	Herrschaft von Sallum	revisado	rev. IA
 210	ent:theographic:recWsgJ5fuSjjOZsT	Death of Zachariah	Tod von Sacharja	revisado	rev. IA
@@ -271,129 +271,129 @@ event_id	cite_id	titulo_en	titulo_de	origem	nota
 258	ent:theographic:rec78vW2GDruKkctf	Herod slays male children	Herodes lässt die Knaben töten	revisado	rev. IA
 260	ent:theographic:recQdRNODeVwWG5Qx	Joseph and Mary return from Egypt	Joseph und Maria kehren aus Ägypten zurück	revisado	rev. IA
 262	ent:theographic:rec40p7ak4u60WdPB	Joseph and Mary return to Nazareth	Joseph und Maria kehren nach Nazareth zurück	revisado	rev. IA
-254	ent:theographic:recg5KKSE8un6XLe6	Birth of Jesus	Geburt von Jesus Christus	revisado	rev. IA
-259	ent:theographic:recVUI3XqN3CdNF1k	Jesus Circumsized	Beschneidung von Jesus Christus	revisado	rev. IA
-261	ent:theographic:recISCjAW413V6T1j	Temple Presentation of Jesus	Darstellung von Jesus Christus im Tempel	revisado	rev. IA
-263	ent:theographic:recHiT0IbNNmDry0s	Childhood of Jesus	Kindheit von Jesus Christus	revisado	rev. IA
-264	ent:theographic:rec8FDMhG6menTpse	Jesus as a child in the Temple	Jesus Christus als Kind im Tempel	revisado	rev. IA
-265	ent:theographic:rec8aq3QrGCer9RqY	Jesus Growing Up	Jesus Christus wächst heran	revisado	rev. IA
+254	ent:theographic:recg5KKSE8un6XLe6	Birth of Jesus	Geburt Jesu	revisado	rev. IA; rev. amostragem
+259	ent:theographic:recVUI3XqN3CdNF1k	Jesus Circumsized	Beschneidung Jesu	revisado	rev. IA; rev. amostragem
+261	ent:theographic:recISCjAW413V6T1j	Temple Presentation of Jesus	Darstellung Jesu im Tempel	revisado	rev. IA; rev. amostragem
+263	ent:theographic:recHiT0IbNNmDry0s	Childhood of Jesus	Kindheit Jesu	revisado	rev. IA; rev. amostragem
+264	ent:theographic:rec8FDMhG6menTpse	Jesus as a child in the Temple	Jesus als Kind im Tempel	revisado	rev. IA; rev. amostragem
+265	ent:theographic:rec8aq3QrGCer9RqY	Jesus Growing Up	Jesus wächst heran	revisado	rev. IA; rev. amostragem
 266	ent:theographic:recW9F8RuUqf5HZkd	John the Baptist Begins Ministry	Johannes der Täufer beginnt sein Wirken	revisado	rev. IA
-267	ent:theographic:rec8LSQHQdcYfC9La	John Baptizes Jesus	Johannes der Täufer tauft Jesus Christus	revisado	rev. IA
+267	ent:theographic:rec8LSQHQdcYfC9La	John Baptizes Jesus	Johannes der Täufer tauft Jesus	revisado	rev. IA; rev. amostragem
 268	ent:theographic:rec7GKv3V8PLB1Wk1	Temptations of Jesus	Die Versuchung Jesu Christi durch Satan	revisado	rev. IA
-277	ent:theographic:recThval8jPdpjMQd	Jesus Leaves Judea toward Galilee	Jesus Christus verlässt Judäa und zieht nach Galiläa	revisado	rev. IA
-279	ent:theographic:recokV9koCd9sHkZo	Jesus visits Galilee	Jesus Christus besucht Galiläa	revisado	rev. IA
-281	ent:theographic:recfKYBkGyK1iVyQ7	Jesus in Capernaum	Jesus Christus in Kapernaum	revisado	rev. IA
+277	ent:theographic:recThval8jPdpjMQd	Jesus Leaves Judea toward Galilee	Jesus verlässt Judäa und zieht nach Galiläa	revisado	rev. IA; rev. amostragem
+279	ent:theographic:recokV9koCd9sHkZo	Jesus visits Galilee	Jesus besucht Galiläa	revisado	rev. IA; rev. amostragem
+281	ent:theographic:recfKYBkGyK1iVyQ7	Jesus in Capernaum	Jesus in Kapernaum	revisado	rev. IA; rev. amostragem
 282	ent:theographic:recYIGeTJrnJFAHyB	Fishers of Men	Die Menschenfischer	revisado	rev. IA
 284	ent:theographic:reczf8H4EoM3gfimU	Peter's Mother-in-law and Others Healed	Die Schwiegermutter Simons wird geheilt	revisado	rev. IA
 276	ent:theographic:recbsEPvWlO2Ajcfo	John the Baptist Imprisoned	Johannes der Täufer wird von Herodes Antipas gefangen gesetzt	revisado	rev. IA
-283	ent:theographic:recVzgELtu6c6u0JJ	The Demoniac	Jesus Christus heilt einen Besessenen	revisado	rev. IA
-280	ent:theographic:recDZ5yPUfsW2mQCB	Jesus Rejected at Nazareth	Jesus Christus wird in Nazareth abgewiesen	revisado	rev. IA
+283	ent:theographic:recVzgELtu6c6u0JJ	The Demoniac	Jesus heilt einen Besessenen	revisado	rev. IA; rev. amostragem
+280	ent:theographic:recDZ5yPUfsW2mQCB	Jesus Rejected at Nazareth	Jesus wird in Nazareth abgewiesen	revisado	rev. IA; rev. amostragem
 269	ent:theographic:rec51NMfUoy8EBm5D	John's Witness	Das Zeugnis des Johannes	revisado	rev. IA
 270	ent:theographic:rec2rWYKV739WLO4b	First Disciples Gathered	Die ersten Jünger werden gesammelt	revisado	rev. IA
-271	ent:theographic:recamPG0iyTXyCMRx	Water to Wine	Jesus Christus verwandelt Wasser in Wein	revisado	rev. IA
-272	ent:theographic:recBwb7o0eXRqj1Oa	Visiting Capernaum	Jesus Christus besucht Kapernaum	revisado	rev. IA
-273	ent:theographic:recajWYSuk71jMpgi	First Passover and Temple Cleansing	Erstes Passah und Tempelreinigung durch Jesus Christus	revisado	rev. IA
-274	ent:theographic:recqe4jV2tmZC9XuG	Jesus and Nicodemus	Jesus Christus und Nikodemus	revisado	rev. IA
+271	ent:theographic:recamPG0iyTXyCMRx	Water to Wine	Jesus verwandelt Wasser in Wein	revisado	rev. IA; rev. amostragem
+272	ent:theographic:recBwb7o0eXRqj1Oa	Visiting Capernaum	Jesus besucht Kapernaum	revisado	rev. IA; rev. amostragem
+273	ent:theographic:recajWYSuk71jMpgi	First Passover and Temple Cleansing	Erstes Passah und Tempelreinigung durch Jesus	revisado	rev. IA; rev. amostragem
+274	ent:theographic:recqe4jV2tmZC9XuG	Jesus and Nicodemus	Jesus und Nikodemus	revisado	rev. IA; rev. amostragem
 275	ent:theographic:recj0lpW2pEiRfASU	John the Baptist Witnesses	Johannes der Täufer legt Zeugnis ab	revisado	rev. IA
-278	ent:theographic:recZVzEsSsBBuv6XX	The Samaritan Woman	Jesus Christus und die samaritische Frau	revisado	rev. IA
-296	ent:theographic:rec5EydSXHdbLbzk1	Sermon on the Mount	Die Bergpredigt von Jesus Christus	revisado	rev. IA
-286	ent:theographic:recrx5gqQTez5Oz5h	Healing the Leper	Jesus Christus heilt einen Aussätzigen	revisado	rev. IA
-297	ent:theographic:rec6mNLyG5AVN4X1b	Healing Centurion's Servant	Jesus Christus heilt den Diener des Hauptmanns	revisado	rev. IA
-387	ent:theographic:recY3vd5gVnwqoRV1	Gadarene Demoniacs	Jesus Christus und die Besessenen von Gadara	revisado	rev. IA
-287	ent:theographic:rec9Ni8NXcob4ou2m	Healing the Man with Palsy	Jesus Christus heilt einen Gelähmten	revisado	rev. IA
-288	ent:theographic:recbiDrbxO70fDsta	Jesus Calls Matthew	Jesus Christus ruft Matthäus	revisado	rev. IA
-289	ent:theographic:recbt0ME8XMDoNbVc	Fasting Question	Jesus Christus und die Frage nach dem Fasten	revisado	rev. IA
-290	ent:theographic:rec4P9y8WdotpjMm9	Parable of the Winseskins	Jesus Christus und das Gleichnis von den Schläuchen	revisado	rev. IA
-388	ent:theographic:recMTSIklCghjlACt	Capernaum Miracles	Jesus Christus wirkt Wunder in Kapernaum	revisado	rev. IA
-295	ent:theographic:recSpTfIckUAeEOLd	Apostles Chosen	Jesus Christus erwählt die zwölf Apostel	revisado	rev. IA
-299	ent:theographic:recdgE4vWpwc2fVpK	Jesus' Message on John the Baptist	Johannes der Täufer schickt Boten zu Jesus Christus	revisado	rev. IA
-300	ent:theographic:recYaZ1gwefzzNB1V	Woe to Chorazin and Bethsaida	Jesus Christus spricht Wehe über Chorazin und Bethsaida	revisado	rev. IA
-292	ent:theographic:recDFt0ANS33dAxri	Corn on the Sabbath	Jesus Christus und die Ähren am Sabbat	revisado	rev. IA
-293	ent:theographic:reciGxBNHjPZwHKvO	Healing a Withered Hand	Jesus Christus heilt eine verdorrte Hand	revisado	rev. IA
-294	ent:theographic:recpYSwD914PD9tHU	Healing Multitudes	Jesus Christus heilt viele Menschen	revisado	rev. IA
-303	ent:theographic:recqkOAX88FDIN0ee	Blind and Dumb Demoniac and Following Discourse	Jesus Christus heilt einen blinden und stummen Besessenen	revisado	rev. IA
-386	ent:theographic:rec7WzLFXKdweuzOD	Seaside Parables and Miracle	Jesus Christus lehrt in Gleichnissen am See	revisado	rev. IA
-285	ent:theographic:rechbRJbRUie1YGOk	Jesus' 1st Tour of Galilee	Jesus Christus auf der ersten Reise durch Galiläa	revisado	rev. IA
-298	ent:theographic:recsTeovHSah64TzF	Widow's Son Resurrected	Jesus Christus erweckt den Sohn der Witwe	revisado	rev. IA
-301	ent:theographic:recXZv0xfad7smkqB	Anointed by a Sinner Woman	Eine Sünderin salbt Jesus Christus	revisado	rev. IA
-302	ent:theographic:recgL37NW080FcKh8	Jesus' 2nd Tour of Galilee	Jesus Christus auf der zweiten Reise durch Galiläa	revisado	rev. IA
-291	ent:theographic:recGpBzggp7LyILNR	Bethesda pool healing	Jesus Christus heilt am Teich Bethesda	revisado	rev. IA
-390	ent:theographic:rec6tRRdOlOUY9UNN	3rd Tour of Galilee	Jesus Christus auf der dritten Reise durch Galiläa	revisado	rev. IA
-389	ent:theographic:recnCLTHvWRdrFwVY	2nd Rejection at Nazareth	Jesus Christus wird zum zweiten Mal in Nazareth abgewiesen	revisado	rev. IA
+278	ent:theographic:recZVzEsSsBBuv6XX	The Samaritan Woman	Jesus und die samaritische Frau	revisado	rev. IA; rev. amostragem
+296	ent:theographic:rec5EydSXHdbLbzk1	Sermon on the Mount	Die Bergpredigt	revisado	rev. IA; rev. amostragem
+286	ent:theographic:recrx5gqQTez5Oz5h	Healing the Leper	Jesus heilt einen Aussätzigen	revisado	rev. IA; rev. amostragem
+297	ent:theographic:rec6mNLyG5AVN4X1b	Healing Centurion's Servant	Jesus heilt den Diener des Hauptmanns	revisado	rev. IA; rev. amostragem
+387	ent:theographic:recY3vd5gVnwqoRV1	Gadarene Demoniacs	Jesus und die Besessenen von Gadara	revisado	rev. IA; rev. amostragem
+287	ent:theographic:rec9Ni8NXcob4ou2m	Healing the Man with Palsy	Jesus heilt einen Gelähmten	revisado	rev. IA; rev. amostragem
+288	ent:theographic:recbiDrbxO70fDsta	Jesus Calls Matthew	Jesus ruft Matthäus	revisado	rev. IA; rev. amostragem
+289	ent:theographic:recbt0ME8XMDoNbVc	Fasting Question	Jesus und die Frage nach dem Fasten	revisado	rev. IA; rev. amostragem
+290	ent:theographic:rec4P9y8WdotpjMm9	Parable of the Winseskins	Jesus und das Gleichnis von den Schläuchen	revisado	rev. IA; rev. amostragem
+388	ent:theographic:recMTSIklCghjlACt	Capernaum Miracles	Jesus wirkt Wunder in Kapernaum	revisado	rev. IA; rev. amostragem
+295	ent:theographic:recSpTfIckUAeEOLd	Apostles Chosen	Jesus erwählt die zwölf Apostel	revisado	rev. IA; rev. amostragem
+299	ent:theographic:recdgE4vWpwc2fVpK	Jesus' Message on John the Baptist	Johannes der Täufer schickt Boten zu Jesus	revisado	rev. IA; rev. amostragem
+300	ent:theographic:recYaZ1gwefzzNB1V	Woe to Chorazin and Bethsaida	Jesus spricht Wehe über Chorazin und Bethsaida	revisado	rev. IA; rev. amostragem
+292	ent:theographic:recDFt0ANS33dAxri	Corn on the Sabbath	Jesus und die Ähren am Sabbat	revisado	rev. IA; rev. amostragem
+293	ent:theographic:reciGxBNHjPZwHKvO	Healing a Withered Hand	Jesus heilt eine verdorrte Hand	revisado	rev. IA; rev. amostragem
+294	ent:theographic:recpYSwD914PD9tHU	Healing Multitudes	Jesus heilt viele Menschen	revisado	rev. IA; rev. amostragem
+303	ent:theographic:recqkOAX88FDIN0ee	Blind and Dumb Demoniac and Following Discourse	Jesus heilt einen blinden und stummen Besessenen	revisado	rev. IA; rev. amostragem
+386	ent:theographic:rec7WzLFXKdweuzOD	Seaside Parables and Miracle	Jesus lehrt in Gleichnissen am See	revisado	rev. IA; rev. amostragem
+285	ent:theographic:rechbRJbRUie1YGOk	Jesus' 1st Tour of Galilee	Jesus auf der ersten Reise durch Galiläa	revisado	rev. IA; rev. amostragem
+298	ent:theographic:recsTeovHSah64TzF	Widow's Son Resurrected	Jesus erweckt den Sohn der Witwe	revisado	rev. IA; rev. amostragem
+301	ent:theographic:recXZv0xfad7smkqB	Anointed by a Sinner Woman	Eine Sünderin salbt Jesus	revisado	rev. IA; rev. amostragem
+302	ent:theographic:recgL37NW080FcKh8	Jesus' 2nd Tour of Galilee	Jesus auf der zweiten Reise durch Galiläa	revisado	rev. IA; rev. amostragem
+291	ent:theographic:recGpBzggp7LyILNR	Bethesda pool healing	Jesus heilt am Teich Bethesda	revisado	rev. IA; rev. amostragem
+390	ent:theographic:rec6tRRdOlOUY9UNN	3rd Tour of Galilee	Jesus auf der dritten Reise durch Galiläa	revisado	rev. IA; rev. amostragem
+389	ent:theographic:recnCLTHvWRdrFwVY	2nd Rejection at Nazareth	Jesus wird zum zweiten Mal in Nazareth abgewiesen	revisado	rev. IA; rev. amostragem
 391	ent:theographic:rec5E1T7Mq1psBubn	John Beheaded	Johannes der Täufer wird von Herodes Antipas enthauptet	revisado	rev. IA
-393	ent:theographic:rec8AUk5qsGus2shA	Feeding of Five Thousand	Jesus Christus speist die Fünftausend	revisado	rev. IA
-394	ent:theographic:recQ8WbFKwtwzK9Xm	Jesus Walks on Water	Jesus Christus geht auf dem Wasser, Simon Petrus folgt ihm	revisado	rev. IA
-396	ent:theographic:recXbkZXIXcuKVF6d	Healing in Gennesaret	Jesus Christus heilt in Genezareth	revisado	rev. IA
-398	ent:theographic:recah9fwlW8Xyk4gn	Commandments and Tradition Discourse	Jesus Christus und Simon Petrus über Gebote und Überlieferung	revisado	rev. IA
-399	ent:theographic:rec7Xd0T6QiyeeChg	Healing Canaanite Daughter	Jesus Christus heilt die Tochter einer Frau aus Kanaan	revisado	rev. IA
-401	ent:theographic:reccrRGqDRLWjCHog	Feeding of Four Thousand	Jesus Christus speist die Viertausend	revisado	rev. IA
-404	ent:theographic:recBuPmgXN9v9X6WI	Peter's Confession "Upon this Rock"	Jesus Christus und das Bekenntnis von Simon Petrus	revisado	rev. IA
-405	ent:theographic:rec4eZvHbmI1QToIw	Foretelling the Death and Resurrection	Jesus Christus und Simon Petrus: Ankündigung von Tod und Auferstehung	revisado	rev. IA
-406	ent:theographic:recbbehq3RkfnSmCE	The Transfiguation	Die Verklärung von Jesus Christus	revisado	rev. IA
-407	ent:theographic:recXhKGCw4B1CjXQB	Healing a Boy with a Demon	Jesus Christus heilt einen besessenen Jungen	revisado	rev. IA
-408	ent:theographic:recyFfX2l12rwEkqk	Second Foretelling of Death and Resurrection	Jesus Christus kündigt zum zweiten Mal Tod und Auferstehung an	revisado	rev. IA
-409	ent:theographic:recvkY2icLy3QDClR	Tax Coin in a Fish's Mouth	Jesus Christus und Simon Petrus: die Münze im Maul des Fisches	revisado	rev. IA
-410	ent:theographic:recIZ6XquF0X7jaNE	Teachings on Humility/Temptation/Reconciliation	Jesus Christus lehrt über Demut, Versuchung und Versöhnung	revisado	rev. IA
-400	ent:theographic:rechQpDJIE2FCEYTU	Healing a Crowd near Sea of Galilee	Jesus Christus heilt eine Menschenmenge am See Genezareth	revisado	rev. IA
-402	ent:theographic:recqtoV4JQiYCmkZN	Discourse with Pharisees and Saducees	Jesus Christus im Streitgespräch mit Pharisäern und Sadduzäern	revisado	rev. IA
-403	ent:theographic:rec1QOmEc6elW8boO	Healing a Blind Man at Bethsaida	Jesus Christus heilt einen Blinden in Bethsaida	revisado	rev. IA
-421	ent:theographic:recO855E9csJLnyFO	Samaritans Reject Jesus	Die Samariter weisen Jesus Christus ab	revisado	rev. IA
-422	ent:theographic:rec5EAcIz2rHZRN8q	70 Sent Out	Jesus Christus sendet die Siebzig aus	revisado	rev. IA
-423	ent:theographic:recm9poq0bKg2RuU5	Good Samaritan Parable Taught	Jesus Christus lehrt das Gleichnis vom barmherzigen Samariter	revisado	rev. IA
-424	ent:theographic:recycS0pNycJe2Xet	Jesus meets Martha and Mary	Jesus Christus besucht Martha und Maria	revisado	rev. IA
-425	ent:theographic:reco0PVfMeFcQrURu	Lord's Prayer Taught	Jesus Christus lehrt das Vaterunser	revisado	rev. IA
-428	ent:theographic:recrSSo7ihKbdos1g	Woes and Parables with Pharisees	Jesus Christus und Simon Petrus: Wehe und Gleichnisse	revisado	rev. IA
-429	ent:theographic:receThtYDpzQmFpc1	Healing Woman With 18-year Infirmity	Jesus Christus heilt eine Frau mit achtzehnjährigem Leiden	revisado	rev. IA
-430	ent:theographic:recoUkvcVV6nR1G2D	Mustard Seed and Leaven Teaching	Jesus Christus lehrt vom Senfkorn und vom Sauerteig	revisado	rev. IA
-397	ent:theographic:recMCgwIq1sw9Q779	Bread of Life Sermon	Jesus Christus und Simon Petrus: die Rede vom Brot des Lebens	revisado	rev. IA
-412	ent:theographic:recZcjp3TlQQqapTX	Feast of Tabernacles	Jesus Christus und Nikodemus auf dem Laubhüttenfest	revisado	rev. IA
-419	ent:theographic:recWT2eiDCOXEAbGB	Woman Caught in Adultery	Jesus Christus und die Ehebrecherin	revisado	rev. IA
-420	ent:theographic:recD6VSiTfaITZLz4	Light of the World/I am discourse	Jesus Christus: Ich bin das Licht der Welt	revisado	rev. IA
-426	ent:theographic:recxURN2uAbTe7CGr	Blind Man Healed	Jesus Christus heilt einen Blindgeborenen	revisado	rev. IA
-427	ent:theographic:recs2ESnv8JHoLJNs	The Good Shepherd Teaching	Jesus Christus lehrt vom guten Hirten	revisado	rev. IA
-431	ent:theographic:recs1VxMp6PJ11GLW	Feast of Dedication	Jesus Christus auf dem Tempelweihfest	revisado	rev. IA
-438	ent:theographic:recR3zid90odgmB6g	Jesus Teaches in Perea	Jesus Christus lehrt jenseits des Jordans	revisado	rev. IA
-439	ent:theographic:recN2veKNMtB7HzFi	Healing Blind Bartimaeus	Jesus Christus heilt den blinden Bartimäus	revisado	rev. IA
+393	ent:theographic:rec8AUk5qsGus2shA	Feeding of Five Thousand	Jesus speist die Fünftausend	revisado	rev. IA; rev. amostragem
+394	ent:theographic:recQ8WbFKwtwzK9Xm	Jesus Walks on Water	Jesus geht auf dem Wasser, Petrus folgt ihm	revisado	rev. IA; rev. amostragem
+396	ent:theographic:recXbkZXIXcuKVF6d	Healing in Gennesaret	Jesus heilt in Genezareth	revisado	rev. IA; rev. amostragem
+398	ent:theographic:recah9fwlW8Xyk4gn	Commandments and Tradition Discourse	Jesus über Gebote und Überlieferung	revisado	rev. IA; rev. amostragem
+399	ent:theographic:rec7Xd0T6QiyeeChg	Healing Canaanite Daughter	Jesus heilt die Tochter einer Frau aus Kanaan	revisado	rev. IA; rev. amostragem
+401	ent:theographic:reccrRGqDRLWjCHog	Feeding of Four Thousand	Jesus speist die Viertausend	revisado	rev. IA; rev. amostragem
+404	ent:theographic:recBuPmgXN9v9X6WI	Peter's Confession "Upon this Rock"	Das Bekenntnis des Petrus	revisado	rev. IA; rev. amostragem
+405	ent:theographic:rec4eZvHbmI1QToIw	Foretelling the Death and Resurrection	Jesus kündigt Tod und Auferstehung an	revisado	rev. IA; rev. amostragem
+406	ent:theographic:recbbehq3RkfnSmCE	The Transfiguation	Die Verklärung Jesu	revisado	rev. IA; rev. amostragem
+407	ent:theographic:recXhKGCw4B1CjXQB	Healing a Boy with a Demon	Jesus heilt einen besessenen Jungen	revisado	rev. IA; rev. amostragem
+408	ent:theographic:recyFfX2l12rwEkqk	Second Foretelling of Death and Resurrection	Jesus kündigt zum zweiten Mal Tod und Auferstehung an	revisado	rev. IA; rev. amostragem
+409	ent:theographic:recvkY2icLy3QDClR	Tax Coin in a Fish's Mouth	Die Münze im Maul des Fisches	revisado	rev. IA; rev. amostragem
+410	ent:theographic:recIZ6XquF0X7jaNE	Teachings on Humility/Temptation/Reconciliation	Jesus lehrt über Demut, Versuchung und Versöhnung	revisado	rev. IA; rev. amostragem
+400	ent:theographic:rechQpDJIE2FCEYTU	Healing a Crowd near Sea of Galilee	Jesus heilt eine Menschenmenge am See Genezareth	revisado	rev. IA; rev. amostragem
+402	ent:theographic:recqtoV4JQiYCmkZN	Discourse with Pharisees and Saducees	Jesus im Streitgespräch mit Pharisäern und Sadduzäern	revisado	rev. IA; rev. amostragem
+403	ent:theographic:rec1QOmEc6elW8boO	Healing a Blind Man at Bethsaida	Jesus heilt einen Blinden in Bethsaida	revisado	rev. IA; rev. amostragem
+421	ent:theographic:recO855E9csJLnyFO	Samaritans Reject Jesus	Die Samariter weisen Jesus ab	revisado	rev. IA; rev. amostragem
+422	ent:theographic:rec5EAcIz2rHZRN8q	70 Sent Out	Jesus sendet die Siebzig aus	revisado	rev. IA; rev. amostragem
+423	ent:theographic:recm9poq0bKg2RuU5	Good Samaritan Parable Taught	Jesus lehrt das Gleichnis vom barmherzigen Samariter	revisado	rev. IA; rev. amostragem
+424	ent:theographic:recycS0pNycJe2Xet	Jesus meets Martha and Mary	Jesus besucht Martha und Maria	revisado	rev. IA; rev. amostragem
+425	ent:theographic:reco0PVfMeFcQrURu	Lord's Prayer Taught	Jesus lehrt das Vaterunser	revisado	rev. IA; rev. amostragem
+428	ent:theographic:recrSSo7ihKbdos1g	Woes and Parables with Pharisees	Weherufe und Gleichnisse gegen die Pharisäer	revisado	rev. IA; rev. amostragem
+429	ent:theographic:receThtYDpzQmFpc1	Healing Woman With 18-year Infirmity	Jesus heilt eine Frau mit achtzehnjährigem Leiden	revisado	rev. IA; rev. amostragem
+430	ent:theographic:recoUkvcVV6nR1G2D	Mustard Seed and Leaven Teaching	Jesus lehrt vom Senfkorn und vom Sauerteig	revisado	rev. IA; rev. amostragem
+397	ent:theographic:recMCgwIq1sw9Q779	Bread of Life Sermon	Die Rede vom Brot des Lebens	revisado	rev. IA; rev. amostragem
+412	ent:theographic:recZcjp3TlQQqapTX	Feast of Tabernacles	Jesus auf dem Laubhüttenfest	revisado	rev. IA; rev. amostragem
+419	ent:theographic:recWT2eiDCOXEAbGB	Woman Caught in Adultery	Jesus und die Ehebrecherin	revisado	rev. IA; rev. amostragem
+420	ent:theographic:recD6VSiTfaITZLz4	Light of the World/I am discourse	Jesus: Ich bin das Licht der Welt	revisado	rev. IA; rev. amostragem
+426	ent:theographic:recxURN2uAbTe7CGr	Blind Man Healed	Jesus heilt einen Blindgeborenen	revisado	rev. IA; rev. amostragem
+427	ent:theographic:recs2ESnv8JHoLJNs	The Good Shepherd Teaching	Jesus lehrt vom guten Hirten	revisado	rev. IA; rev. amostragem
+431	ent:theographic:recs1VxMp6PJ11GLW	Feast of Dedication	Jesus auf dem Tempelweihfest	revisado	rev. IA; rev. amostragem
+438	ent:theographic:recR3zid90odgmB6g	Jesus Teaches in Perea	Jesus lehrt jenseits des Jordans	revisado	rev. IA; rev. amostragem
+439	ent:theographic:recN2veKNMtB7HzFi	Healing Blind Bartimaeus	Jesus heilt den blinden Bartimäus	revisado	rev. IA; rev. amostragem
 443	ent:theographic:recmXmhZt51doQu7o	Holy Week	Die Karwoche	revisado	rev. IA
-444	ent:theographic:recBsshyiGaHc6bgC	Triumphal Entry	Jesus Christus zieht triumphal in Jerusalem ein	revisado	rev. IA
-445	ent:theographic:rece7YQZcZkN73mF8	Temple Cleansed	Jesus Christus reinigt den Tempel	revisado	rev. IA
-448	ent:theographic:recOZxrWd00qyF4Ej	Debates in the Temple	Jesus Christus streitet im Tempel	revisado	rev. IA
-449	ent:theographic:recN1gyMPKbPPQIMa	Olivet Discourse	Jesus Christus spricht auf dem Ölberg	revisado	rev. IA
+444	ent:theographic:recBsshyiGaHc6bgC	Triumphal Entry	Der Einzug in Jerusalem	revisado	rev. IA; rev. amostragem
+445	ent:theographic:rece7YQZcZkN73mF8	Temple Cleansed	Jesus reinigt den Tempel	revisado	rev. IA; rev. amostragem
+448	ent:theographic:recOZxrWd00qyF4Ej	Debates in the Temple	Jesus streitet im Tempel	revisado	rev. IA; rev. amostragem
+449	ent:theographic:recN1gyMPKbPPQIMa	Olivet Discourse	Jesus spricht auf dem Ölberg	revisado	rev. IA; rev. amostragem
 450	ent:theographic:recym9Dfibw7KdshX	Sanhedrin Conspiracy	Kaiphas und der Hohe Rat planen den Tod Jesu	revisado	rev. IA
 451	ent:theographic:rec3IGuoFfX4wwc0u	Judas Plans Betrayal	Judas Ischariot plant den Verrat	revisado	rev. IA
-452	ent:theographic:recehyRQPiIuEscz4	The Last Supper	Jesus Christus beim letzten Abendmahl	revisado	rev. IA
-454	ent:theographic:recNQ0XuoN4rfJR3o	Prayer and Betrayal in Gethsemane	Jesus Christus betet in Gethsemane, Judas Ischariot verrät ihn	revisado	rev. IA
-455	ent:theographic:recP6WhPl8eV4tavO	Jewish Trials	Jesus Christus vor Kaiphas	revisado	rev. IA
+452	ent:theographic:recehyRQPiIuEscz4	The Last Supper	Jesus beim letzten Abendmahl	revisado	rev. IA; rev. amostragem
+454	ent:theographic:recNQ0XuoN4rfJR3o	Prayer and Betrayal in Gethsemane	Jesus betet in Gethsemane, Judas Ischariot verrät ihn	revisado	rev. IA; rev. amostragem
+455	ent:theographic:recP6WhPl8eV4tavO	Jewish Trials	Jesus vor Kaiphas	revisado	rev. IA; rev. amostragem
 457	ent:theographic:recvsq3X87BSBcInj	Judas' Suicide	Judas Ischariot erhängt sich	revisado	rev. IA
-456	ent:theographic:recUlD55WynUKdHAo	Roman Trials	Jesus Christus vor Pontius Pilatus	revisado	rev. IA
-458	ent:theographic:rec7pLeyxV0yEdrcl	Bearing Cross to Golgotha	Simon trägt das Kreuz für Jesus Christus nach Golgatha	revisado	rev. IA
-460	ent:theographic:recwQXXtK8ZbnYuIJ	Resurrection and Ascension	Die Auferstehung und Himmelfahrt von Jesus Christus	revisado	rev. IA
-446	ent:theographic:recotN6XCwPBF0OzT	Fig Tree Cursed	Jesus Christus verflucht den Feigenbaum	revisado	rev. IA
-447	ent:theographic:recYOqX5Qe2a0FHvw	Teaching by the Fig Tree	Jesus Christus und Simon Petrus am Feigenbaum	revisado	rev. IA
-436	ent:theographic:recTplXPehmPfFUiG	Lepers Healed	Jesus Christus heilt Aussätzige	revisado	rev. IA
-437	ent:theographic:recrwlbTDWOETPpei	Discourse on the Kingdom and Other Parables	Jesus Christus lehrt vom Reich Gottes und in Gleichnissen	revisado	rev. IA
-440	ent:theographic:reccSs8loWRLm8LAb	Zaccheus Converted and Parable of the Pounds	Zachäus bekehrt sich, Jesus Christus erzählt das Gleichnis von den Pfunden	revisado	rev. IA
-432	ent:theographic:rec70ZLu9pdrEWXR9	Teaching and Healing in Perea to Jerusalem	Jesus Christus lehrt und heilt auf dem Weg von jenseits des Jordans nach Jerusalem	revisado	rev. IA
-433	ent:theographic:reclZp6jMKWzYmop9	Lazarus Raised form the Dead	Jesus Christus erweckt Lazarus von den Toten	revisado	rev. IA
+456	ent:theographic:recUlD55WynUKdHAo	Roman Trials	Jesus vor Pontius Pilatus	revisado	rev. IA; rev. amostragem
+458	ent:theographic:rec7pLeyxV0yEdrcl	Bearing Cross to Golgotha	Simon trägt das Kreuz für Jesus nach Golgatha	revisado	rev. IA; rev. amostragem
+460	ent:theographic:recwQXXtK8ZbnYuIJ	Resurrection and Ascension	Auferstehung und Himmelfahrt Jesu	revisado	rev. IA; rev. amostragem
+446	ent:theographic:recotN6XCwPBF0OzT	Fig Tree Cursed	Jesus verflucht den Feigenbaum	revisado	rev. IA; rev. amostragem
+447	ent:theographic:recYOqX5Qe2a0FHvw	Teaching by the Fig Tree	Jesus lehrt am verdorrten Feigenbaum	revisado	rev. IA; rev. amostragem
+436	ent:theographic:recTplXPehmPfFUiG	Lepers Healed	Jesus heilt Aussätzige	revisado	rev. IA; rev. amostragem
+437	ent:theographic:recrwlbTDWOETPpei	Discourse on the Kingdom and Other Parables	Jesus lehrt vom Reich Gottes und in Gleichnissen	revisado	rev. IA; rev. amostragem
+440	ent:theographic:reccSs8loWRLm8LAb	Zaccheus Converted and Parable of the Pounds	Zachäus bekehrt sich, Jesus erzählt das Gleichnis von den Pfunden	revisado	rev. IA; rev. amostragem
+432	ent:theographic:rec70ZLu9pdrEWXR9	Teaching and Healing in Perea to Jerusalem	Jesus lehrt und heilt auf dem Weg von jenseits des Jordans nach Jerusalem	revisado	rev. IA; rev. amostragem
+433	ent:theographic:reclZp6jMKWzYmop9	Lazarus Raised form the Dead	Jesus erweckt Lazarus von den Toten	revisado	rev. IA; rev. amostragem
 434	ent:theographic:recZhxqZJmXuGMdvd	Chief Priests Conspire Against Jesus	Kaiphas und die Hohenpriester beschließen, Jesus zu töten	revisado	rev. IA
-435	ent:theographic:recMIEeRCAf7IGRwc	Jesus Withdraws to Ephraim	Jesus Christus zieht sich nach Ephraim zurück	revisado	rev. IA
-441	ent:theographic:recrB2eWea9OCFtOz	Mary Anoints Jesus	Maria salbt Jesus Christus	revisado	rev. IA
-453	ent:theographic:recu6M6co9Iaw0Ow5	Upper Room Discourse	Jesus Christus spricht im Abendmahlssaal	revisado	rev. IA
-459	ent:theographic:rechX4p94qqiHLqLx	Crucifixion and Burial	Kreuzigung und Grablegung von Jesus Christus	revisado	rev. IA
+435	ent:theographic:recMIEeRCAf7IGRwc	Jesus Withdraws to Ephraim	Jesus zieht sich nach Ephraim zurück	revisado	rev. IA; rev. amostragem
+441	ent:theographic:recrB2eWea9OCFtOz	Mary Anoints Jesus	Maria salbt Jesus	revisado	rev. IA; rev. amostragem
+453	ent:theographic:recu6M6co9Iaw0Ow5	Upper Room Discourse	Jesus spricht im Abendmahlssaal	revisado	rev. IA; rev. amostragem
+459	ent:theographic:rechX4p94qqiHLqLx	Crucifixion and Burial	Kreuzigung und Grablegung Jesu	revisado	rev. IA; rev. amostragem
 304	ent:theographic:recvfB75N6vrQwhWW	The Holy Spirit is promised	Die Verheißung des Heiligen Geistes	revisado	rev. IA
-305	ent:theographic:rec06pcAZBChUBKxF	Jesus ascends to Heaven	Jesus Christus fährt in den Himmel auf	revisado	rev. IA
+305	ent:theographic:rec06pcAZBChUBKxF	Jesus ascends to Heaven	Jesus fährt in den Himmel auf	revisado	rev. IA; rev. amostragem
 306	ent:theographic:reczDqE366xgbgv2C	Matthias replaces Judas	Matthias wird anstelle von Judas gewählt	revisado	rev. IA
 307	ent:theographic:recIu7xhASS4Ufyfd	The Holy Spirit comes	Die Verheißung des Heiligen Geistes erfüllt sich an Pfingsten	revisado	rev. IA
-308	ent:theographic:recQoK9KFveLh556S	Peter preaches at Pentecost	Simon Petrus predigt an Pfingsten	revisado	rev. IA
+308	ent:theographic:recQoK9KFveLh556S	Peter preaches at Pentecost	Petrus predigt an Pfingsten	revisado	rev. IA; rev. amostragem
 309	ent:theographic:recVrh6Nbm3PruADf	The church grows	Die Gemeinde wächst	revisado	rev. IA
-310	ent:theographic:recLnDbrahKzEue0K	Lame man healed	Johannes der Apostel und Simon Petrus heilen einen Lahmen	revisado	rev. IA
-311	ent:theographic:reciu7dT92C4dTrfl	Peter preaches in Solomon's Portico	Simon Petrus predigt in der Halle Salomos	revisado	rev. IA
-312	ent:theographic:rech8qvzNnkDTqCi3	Peter and John's Trial	Simon Petrus und Johannes der Apostel vor Gericht	revisado	rev. IA
+310	ent:theographic:recLnDbrahKzEue0K	Lame man healed	Petrus und Johannes heilen einen Lahmen	revisado	rev. IA; rev. amostragem
+311	ent:theographic:reciu7dT92C4dTrfl	Peter preaches in Solomon's Portico	Petrus predigt in der Halle Salomos	revisado	rev. IA; rev. amostragem
+312	ent:theographic:rech8qvzNnkDTqCi3	Peter and John's Trial	Petrus und Johannes vor dem Hohen Rat	revisado	rev. IA; rev. amostragem
 313	ent:theographic:recNQxwdQFjZidQTP	Believers pray for boldness	Die Gläubigen beten um Freimut	revisado	rev. IA
-314	ent:theographic:rec5Y0EXegwQ5m9mX	Believers share all things	Barnabas und die Gläubigen teilen alles	revisado	rev. IA
+314	ent:theographic:rec5Y0EXegwQ5m9mX	Believers share all things	Die Gläubigen haben alles gemeinsam	revisado	rev. IA; rev. amostragem
 315	ent:theographic:recnjhZVhcbtc7WL0	Ananias and Sapphira lie to God	Ananias und Saphira belügen Gott	revisado	rev. IA
-316	ent:theographic:rectkWZqlKG1cfOQT	Apostles work signs and wonders in Solomon's Portico	Simon Petrus wirkt Zeichen und Wunder in der Halle Salomos	revisado	rev. IA
-317	ent:theographic:recCcRDJtUxaIqXnD	Apostles arrested, put on trial	Simon Petrus und die Apostel werden verhaftet	revisado	rev. IA
+316	ent:theographic:rectkWZqlKG1cfOQT	Apostles work signs and wonders in Solomon's Portico	Die Apostel tun Zeichen und Wunder in der Halle Salomos	revisado	rev. IA; rev. amostragem
+317	ent:theographic:recCcRDJtUxaIqXnD	Apostles arrested, put on trial	Die Apostel werden verhaftet und verhört	revisado	rev. IA; rev. amostragem
 318	ent:theographic:rec1qE6wAe0XINRoV	Gamaliel advises the counsel and Apostles freed	Gamaliel rät dem Hohen Rat, Apostel werden freigelassen	revisado	rev. IA
 319	ent:theographic:recXUpfeHouc4qLEl	Seven chosen to serve	Sieben werden gewählt, darunter Stephanus und Philippus der Evangelist	revisado	rev. IA
 320	ent:theographic:reclAFi4IpJvlWCDp	Stephen is seized	Stephanus wird ergriffen	revisado	rev. IA
@@ -402,17 +402,17 @@ event_id	cite_id	titulo_en	titulo_de	origem	nota
 323	ent:theographic:recVjdJplfI1wSxYk	Saul persecutes the church	Saulus verfolgt die Gemeinde	revisado	rev. IA
 324	ent:theographic:recP6mZs3oSlZdrT0	Philip preaches in Samaria	Philippus der Evangelist predigt in Samarien	revisado	rev. IA
 325	ent:theographic:recvI0SgATGCasGsV	Conversion of Ethiopian Eunuch	Philippus der Evangelist und der Kämmerer der Kandaze	revisado	rev. IA
-326	ent:theographic:recCz7opcoITkiZiq	Saul is converted	Paulus wird bekehrt, Ananias ist dabei	revisado	rev. IA
-327	ent:theographic:reczeOH6wbjkZHP1w	Saul proclaims Jesus	Paulus und Barnabas verkünden Jesus Christus	revisado	rev. IA
-328	ent:theographic:recxH9n2Xk1PM6DvB	Peter heals Aeneas and Dorcas	Simon Petrus heilt Äneas und Tabea	revisado	rev. IA
-329	ent:theographic:rec4fFrtrUuDVkTNK	Peter meets Cornelius	Simon Petrus trifft Kornelius	revisado	rev. IA
-330	ent:theographic:recCef9mlyuV3XWd3	Peter preaches to gentiles in Caesarea	Simon Petrus predigt den Heiden in Cäsarea	revisado	rev. IA
-331	ent:theographic:recNnOBWct1TV6CUZ	Peter defends Gentile salvation	Simon Petrus verteidigt die Rettung der Heiden	revisado	rev. IA
-332	ent:theographic:recn2U67FPmywxqcb	Disciples first called Christians	Barnabas und Paulus in Antiochien: Die Jünger heißen erstmals Christen	revisado	rev. IA
-333	ent:theographic:recCCk6aW2ZbOCRTd	Herod kills James	Herodes Agrippa I lässt Jakobus hinrichten	revisado	rev. IA
-334	ent:theographic:recDiHn0k1yUMCdjc	Herod imprisons Peter	Herodes Agrippa I lässt Simon Petrus gefangen nehmen	revisado	rev. IA
-335	ent:theographic:recMhkv38hrlSmT3K	An angel rescues Peter from prison	Ein Engel befreit Simon Petrus aus dem Gefängnis	revisado	rev. IA
-336	ent:theographic:recTAdkQX4sglPtLl	Herod dies	Tod von Herodes Agrippa I	revisado	rev. IA
+326	ent:theographic:recCz7opcoITkiZiq	Saul is converted	Die Bekehrung des Paulus	revisado	rev. IA; rev. amostragem
+327	ent:theographic:reczeOH6wbjkZHP1w	Saul proclaims Jesus	Saulus verkündigt Jesus	revisado	rev. IA; rev. amostragem
+328	ent:theographic:recxH9n2Xk1PM6DvB	Peter heals Aeneas and Dorcas	Petrus heilt Äneas und Tabea	revisado	rev. IA; rev. amostragem
+329	ent:theographic:rec4fFrtrUuDVkTNK	Peter meets Cornelius	Petrus trifft Kornelius	revisado	rev. IA; rev. amostragem
+330	ent:theographic:recCef9mlyuV3XWd3	Peter preaches to gentiles in Caesarea	Petrus predigt den Heiden in Cäsarea	revisado	rev. IA; rev. amostragem
+331	ent:theographic:recNnOBWct1TV6CUZ	Peter defends Gentile salvation	Petrus verteidigt die Rettung der Heiden	revisado	rev. IA; rev. amostragem
+332	ent:theographic:recn2U67FPmywxqcb	Disciples first called Christians	In Antiochien heißen die Jünger erstmals Christen	revisado	rev. IA; rev. amostragem
+333	ent:theographic:recCCk6aW2ZbOCRTd	Herod kills James	Herodes Agrippa I. lässt Jakobus hinrichten	revisado	rev. IA; rev. amostragem
+334	ent:theographic:recDiHn0k1yUMCdjc	Herod imprisons Peter	Herodes Agrippa I. lässt Petrus gefangen nehmen	revisado	rev. IA; rev. amostragem
+335	ent:theographic:recMhkv38hrlSmT3K	An angel rescues Peter from prison	Ein Engel befreit Petrus aus dem Gefängnis	revisado	rev. IA; rev. amostragem
+336	ent:theographic:recTAdkQX4sglPtLl	Herod dies	Tod von Herodes Agrippa I.	revisado	rev. IA; rev. amostragem
 337	ent:theographic:recJl6YAS1kSQ6t8W	First missionary journey begins	Paulus und Barnabas beginnen die erste Missionsreise	revisado	rev. IA
 338	ent:theographic:recUWXmZlrKxIx99u	First Missionary Journey	Die erste Missionsreise mit Paulus, Barnabas und Johannes Markus	revisado	rev. IA
 339	ent:theographic:recJeAtSLg0KP2loe	Barnabas and Saul go to Cyprus	Barnabas und Paulus reisen nach Zypern	revisado	rev. IA
@@ -420,7 +420,7 @@ event_id	cite_id	titulo_en	titulo_de	origem	nota
 341	ent:theographic:receeGDZ90DJxYxnX	Mission to Iconium	Paulus und Barnabas in Ikonion	revisado	rev. IA
 342	ent:theographic:recrre0r2IHdN3Y7Z	Mission to Lystra and Derbe	Paulus und Barnabas in Lystra und Derbe	revisado	rev. IA
 343	ent:theographic:reckt5soySSqCZnoa	Return to Antioch in Syria	Paulus und Barnabas kehren nach Antiochien in Syrien zurück	revisado	rev. IA
-344	ent:theographic:recwmsQ1HEDGztu9O	Jerusalem Council	Das Konzil in Jerusalem mit Paulus und Barnabas	revisado	rev. IA
+344	ent:theographic:recwmsQ1HEDGztu9O	Jerusalem Council	Das Apostelkonzil in Jerusalem	revisado	rev. IA; rev. amostragem
 345	ent:theographic:reciR4wcxOAcLxak0	Second Missionary Journey	Die zweite Missionsreise mit Paulus, Silas und Timotheus	revisado	rev. IA
 346	ent:theographic:recW2x0namY3sL2iX	Paul and Barnabas part ways	Paulus und Barnabas trennen sich	revisado	rev. IA
 348	ent:theographic:recsnRcoxqD4pQGHp	Second Missionary Journey begins	Paulus und Silas beginnen die zweite Missionsreise	revisado	rev. IA
@@ -430,7 +430,7 @@ event_id	cite_id	titulo_en	titulo_de	origem	nota
 352	ent:theographic:reczE4p2AzSrs4ppP	Lydia's Conversion	Paulus und die Bekehrung der Lydia	revisado	rev. IA
 353	ent:theographic:rec1Olk9cxeWoT5Jl	Paul casts demon out of soothsayer	Paulus treibt einer Wahrsagerin einen Geist aus	revisado	rev. IA
 354	ent:theographic:recVY5whVRxmh37rH	Paul and Silas imprisoned	Paulus und Silas werden ins Gefängnis geworfen	revisado	rev. IA
-355	ent:theographic:recX4DzqXgIe0R2T4	Philippian jailer converted	Paulus und Silas: der Kerkermeister von Philippi bekehrt sich	revisado	rev. IA
+355	ent:theographic:recX4DzqXgIe0R2T4	Philippian jailer converted	Der Kerkermeister von Philippi bekehrt sich	revisado	rev. IA; rev. amostragem
 356	ent:theographic:rec611BDzVM1WOUa5	Paul and Silas released	Paulus und Silas werden freigelassen	revisado	rev. IA
 357	ent:theographic:recrnXnFkh9CGTgkn	Uproar in Thessalonica	Unruhen in Thessalonich mit Jason, Silas und Paulus	revisado	rev. IA
 358	ent:theographic:recF289Cj0XMYVOmr	Mission to Berea	Timotheus, Silas und Paulus in Beröa	revisado	rev. IA

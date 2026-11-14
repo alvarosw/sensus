@@ -30,24 +30,24 @@ tipo	garden	Garten
 tipo	promontory	Vorgebirge		
 geometria	point	Punkt		
 geometria	polygon	Polygon		
-geometria	path	Pfad		
+geometria	path	Linie		
 voto	confidence_possible	Konfidenz möglich		
 voto	confidence_likely	Konfidenz wahrscheinlich		
 voto	confidence_yes	Konfidenz ja		
 voto	confidence_mostlikely	Konfidenz sehr wahrscheinlich		
 voto	confidence_unlikely	Konfidenz unwahrscheinlich		
 voto	confidence_no	Konfidenz nein		
-voto	confidence_map	Konfidenz Karte		
-voto	authority_usually	Autorität meist		
+voto	confidence_map	Konfidenz laut Karte		
+voto	authority_usually	Autorität üblich		
 voto	authority_scholar	Autorität Gelehrte		
 voto	authority_traditional	Autorität Tradition		
 voto	authority_parallel	Autorität Parallele		
 voto	authority_preserved	Autorität erhalten		
 voto	authority_variant	Autorität Variante		
 voto	authority_old	Autorität alt		
-voto	identified_been	identifiziert: gewesen		
-voto	identified_is	identifiziert: ist		
-voto	identified_adjective	identifiziert: Adjektiv		
+voto	identified_been	identifiziert (war)		
+voto	identified_is	identifiziert (ist)		
+voto	identified_adjective	identifiziert (Adjektiv)		
 voto	uncertain	unsicher		
 voto	unknown	unbekannt		
 fonte	modern	modern		
