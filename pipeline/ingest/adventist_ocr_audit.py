@@ -39,6 +39,7 @@ ALT = {
     ],
     # Sem outra digitalização de domínio público (a de 1990, Review and Herald, é reimpressão posterior): sem regra a.
     "haskell-cross": [],
+    "smith-looking": [],
     "egw-thoughts": [
         ("thoughtsfrommoun0000egwh", "https://archive.org/download/thoughtsfrommoun0000egwh/thoughtsfrommoun0000egwh_djvu.txt",
          "thoughtsfrommoun0000egwh_djvu.txt"),

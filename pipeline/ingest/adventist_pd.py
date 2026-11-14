@@ -44,6 +44,7 @@ Segunda leva (autores falecidos entre 1872 e 1922; publicações de 1873 a 1905)
   sanctuarytwentyt0000smit; 1877).
 - haskell-cross: Stephen N. Haskell, The Cross and Its Shadow (archive.org StephenN.HaskellTheCrossAndItsShadow1914;
   Bible Training School, 1914). Publicado em 1914, fora da faixa de datas desta leva (ver DATA_LICENSES.md).
+- smith-looking: Uriah Smith, Looking unto Jesus (archive.org looking-unto-jesus_202511; Review and Herald, 1897).
 Nos scans com notas de rodapé de referência (`page_notes`), a nota vai para o parágrafo da página e a
 continuação da página volta ao parágrafo de prosa, sem colar na nota.
 
@@ -320,12 +321,26 @@ WORKS = [
          furniture=r"\d*\s*THE SANCTUARY\.?\s*\d*", ocr_junk=r"©", page_notes=True,
          # Índice remissivo e catálogo do editor (com anúncios) ficam no fim, depois de "INDEX. 349": saem.
          skip=(r"^\s*INDEX[.,]?\s*\d+\s*$", r"\Z")),
+    # Uriah Smith (1832-1903): Looking unto Jesus, Christ in Type and Antitype (Review and Herald; copyright 1897, prefácio
+    # de julho de 1898). Única digitalização encontrada no archive.org.
+    Work("smith-looking", "Looking unto Jesus: Christ in Type and Antitype", "Looking unto Jesus",
+         "Review and Herald, 1897 (copyright 1897; prefácio de julho de 1898)",
+         "https://archive.org/details/looking-unto-jesus_202511",
+         "https://archive.org/download/looking-unto-jesus_202511/Looking%20unto%20Jesus_djvu.txt",
+         "Looking unto Jesus_djvu.txt", "archive", r"(?!)", CHAPTER_HEAD,
+         "Internet Archive looking-unto-jesus_202511 (Review and Herald, 1897/1898)",
+         author="Uriah Smith (1832-1903)",
+         pd=("Domínio público: autor falecido em 1903 e obra publicada em 1897 (domínio público nos EUA); "
+             "no Brasil, autor falecido há mais de 70 anos."),
+         furniture=(r"(?i).{0,10}LOOKING UNTO[\s\-.]*JESUS.{0,6}|\d{0,3}\s*PREFACE\.?\s*\d{0,3}|"
+                    r"\d{0,3}\s*TABLE OF CONTENTS\.?\s*\d{0,3}"),
+         chapter_seq=True, ocr_junk=r"©|\|", page_notes=True),
 ]
 
 
 # Obras da segunda leva: citação de margem e de nota sai do comentário (campo `citacoes`).
 SEGUNDA_LEVA = ("egw-desire-of-ages", "haskell-daniel", "haskell-seer", "haskell-cross", "waggoner-galatians",
-                "waggoner-christ", "andrews-sabbath", "smith-us-prophecy", "smith-sanctuary")
+                "waggoner-christ", "andrews-sabbath", "smith-us-prophecy", "smith-sanctuary", "smith-looking")
 WORKS = [replace(w, citacoes=w.source_id in SEGUNDA_LEVA) for w in WORKS]
 
 # Fora da execução padrão e do banco: nas obras de Haskell, citações bíblicas de margem curtas, perguntas de estudo e
