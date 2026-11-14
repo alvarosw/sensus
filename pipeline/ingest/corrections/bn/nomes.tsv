@@ -233,7 +233,7 @@ Booths Festival			auto	baixa	1	1	0.00
 Broad Wall			auto	baixa	3	2	0.00	
 Brook Eshcol			auto	baixa	1	4	0.00	
 Brook Kidron	কিদ্রোণ নদী	কিদ্রোণ নদী	auto	baixa	1	2	0.00	
-Brook of Egypt			auto	baixa	3	11	0.00	
+Brook of Egypt	মিসর নদী	মিসর নদী	auto	baixa	3	11	0.00	
 Brook of the Arabah	অরাবা নদী	অরাবা নদী	auto	baixa	2	1	0.00	
 Brook of the Willows			auto	baixa	2	1	0.00	
 Buzites	বূষীয়	বূষীয়	sem	baixa	1	2	1.00	উঠে
@@ -285,7 +285,7 @@ Ecbatana	গুটানো	গুটানো	sem	baixa	3	1	1.00	লেখা
 Eglath-shelishiyah	শলিশীয়া	শলিশীয়া	sem	baixa	3	2	1.00	ইগ্লৎ
 Egypt	টিপত	মিসর	revisado	baixa	3	715	0.00	এগিয়ে
 Egypt	পুট	পুট	sem	baixa	1	4	0.25	পূট
-Egypt Sea			auto	baixa	1	1	0.00	
+Egypt Sea	মিসর সাগর	মিসর সাগর	auto	baixa	1	1	0.00	
 Egyptian Sea			auto	baixa	1	1	0.00	
 El-bethel	থেল	থেল	sem	baixa	2	1	1.00	বৈথেল
 Eladah	ইলিয়াদা	ইলিয়াদা	sem	baixa	1	1	1.00	ইলিয়াদার
@@ -560,7 +560,7 @@ Jeuel	যুয়েল	যুয়েল	sem	baixa	2	1	1.00	ছেলে
 Jeuz	যিয়ূশ	যিয়ূশ	sem	baixa	2	1	1.00	নিজের
 Jezaniah	যাসনিয়	যাসনিয়	sem	baixa	2	4	0.75	যোহানন
 Jezreel	যিষ্রিয়েলীয়া	যিষ্রীয়েল	revisado	baixa	3	9	0.56	যিষ্রীয়েল
-Jezreel Valley			auto	baixa	1	3	0.00	
+Jezreel Valley	যিষ্রীয়েল উপত্যকা	যিষ্রীয়েল উপত্যকা	auto	baixa	1	3	0.00	
 Jibsam	যিব্	যিব্	sem	baixa	1	1	1.00	হিসাবে
 Jidlaph	যিদ্	যিদ্	sem	baixa	2	1	1.00	পিল্
 Joda	নগির	নগির	sem	baixa	1	1	1.00	যোষেখ
@@ -671,7 +671,6 @@ Mount Ephron			auto	baixa	2	1	0.00
 Mount Esau			auto	baixa	1	4	0.00	
 Mount Gerizim			auto	baixa	2	5	0.00	
 Mount Gilboa			auto	baixa	2	8	0.00	
-Mount Gilead			auto	baixa	2	1	0.00	
 Mount Halak			auto	baixa	2	2	0.00	
 Mount Heres			auto	baixa	2	1	0.00	
 Mount Hermon			auto	baixa	2	16	0.00	
@@ -833,7 +832,7 @@ Saph	সফ	সফ	auto	baixa	1	2	0.50	হূশাতীয়
 Scythians	স্কুথীয়	স্কুথীয়	auto	baixa	1	1	1.00	এখানে
 Sea of Chinnereth			auto	baixa	1	2	0.00	
 Sea of Chinneroth			auto	baixa	1	1	0.00	
-Sea of Egypt			auto	baixa	1	1	0.00	
+Sea of Egypt	মিসর সাগর	মিসর সাগর	auto	baixa	1	1	0.00	
 Sea of Galilee			auto	baixa	2	10	0.00	
 Sea of Jazer	যাসের সাগর	যাসের সাগর	auto	baixa	2	1	0.00	
 Sea of Tiberias			auto	baixa	1	2	0.00	
@@ -991,7 +990,7 @@ Valley of Hinnom			auto	baixa	2	12	0.00
 Valley of Iphtahel			auto	baixa	1	2	0.00	
 Valley of Jehoshaphat	যিহোশাফট উপত্যকা	যিহোশাফট উপত্যকা	auto	baixa	2	2	0.00	
 Valley of Jericho	যিরীহো উপত্যকা	যিরীহো উপত্যকা	auto	baixa	2	1	0.00	
-Valley of Jezreel			auto	baixa	2	5	0.00	
+Valley of Jezreel	যিষ্রীয়েল উপত্যকা	যিষ্রীয়েল উপত্যকা	auto	baixa	2	5	0.00	
 Valley of Jiphthahel			auto	baixa	1	2	0.00	
 Valley of Lebanon			auto	baixa	2	2	0.00	
 Valley of Mizpeh			auto	baixa	2	1	0.00	
@@ -3337,6 +3336,7 @@ Moriah	মোরিয়া	মোরিয়া	auto	alta	2	1	1.00	হোম
 Moriah Mount	মোরিয়া পর্বত	মোরিয়া পর্বত	auto	alta	1	2	0.50	
 Moseroth	মোষেরোতে	মোষেরোতে	auto	alta	3	3	0.67	মোষেরোৎ
 Moses	মোশি	মোশি	auto	alta	2	785	0.99	মোশিকে
+Mount Gilead	গিলিয়দ পর্বত	গিলিয়দ পর্বত	auto	alta	2	1	1.00	
 Mount Moriah	মোরিয়া পর্বত	মোরিয়া পর্বত	auto	alta	2	1	1.00	
 Mount Nebo	নবো পর্বত	নবো পর্বত	auto	alta	2	2	0.50	
 Mount Zion	সিয়োন পর্বত	সিয়োন পর্বত	auto	alta	2	25	0.52	
