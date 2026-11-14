@@ -13,1036 +13,1181 @@
 # Bíblia da língua. Não achada: candidato = forma do glossário + núcleo, confianca baixa.
 # Revisão: comece pelas linhas de confianca baixa e media. Linhas revisado e sem não são recalculadas.
 nome_en	candidato	nome_hi	origem	confianca	entidades	versos	cobertura	alternativa
-Abel	वाले	वाले	auto	baixa	1	1	1.00	गए
-Ahasuerus	तेरेश	तेरेश	auto	baixa	2	30	0.07	और
-Ahaz	आहाज	आहाज	auto	baixa	2	4	1.00	तह्रे
-Ahaz	नक्शा	नक्शा	auto	baixa	2	37	0.03	आहाज
-Ain	भागों	भागों	auto	baixa	1	1	1.00	युत्ता
-Al-taschith	वंशियों	वंशियों	auto	baixa	1	4	0.25	बात
-Allon	यब्नेल	यब्नेल	auto	baixa	2	1	1.00	बांज
-Amaw	ढक	ढक	auto	baixa	3	1	1.00	बिलाम
-Amminadib	सहेलियाँ	सहेलियाँ	auto	baixa	1	1	1.00	कल्पना
-Amorite	एमोरी	एमोरी	auto	baixa	1	4	0.50	एमोरियों
-Amorites	एमोरी	एमोरी	auto	baixa	1	86	0.29	एमोरियों
-Angle	ने	ने	auto	baixa	2	1	1.00	कोने
-Apharasthchite	अफ़ारसी	अफ़ारसी	auto	baixa	1	3	0.33	अपर्सतकी
-Archites	एरेकी	एरेकी	auto	baixa	1	6	0.83	अहीतोपेल
-Arkite	अर्की	अर्की	auto	baixa	1	2	1.00	सीनी
-Arkites	अर्की	अर्की	auto	baixa	1	2	1.00	सीनी
-Arvadite	अर्वदी	अर्वदी	auto	baixa	1	2	1.00	हमाती
-Arvadites	अर्वदी	अर्वदी	auto	baixa	1	2	1.00	हमाती
-Asen	सन्तान	सन्तान	auto	baixa	1	1	1.00	हारीफ
-Atroth-shophan	अत्रौत	अत्रौत	auto	baixa	3	1	1.00	शोपान
-Azaz	अजाज	अजाज	auto	baixa	2	1	1.00	रहता
-Azaziah	अजज्याह	अजज्याह	auto	baixa	6	3	1.00	खर्ज
-Azotus	अश्दोद	अश्दोद	auto	baixa	1	1	1.00	सुसमाचार
-Baal-zebub	जबूब	जबूब	auto	baixa	2	4	1.00	बाल
-Baal-zephon	सपोन	सपोन	auto	baixa	3	3	1.00	डालें
-Bar-jesus	पाफुस	पाफुस	auto	baixa	1	2	0.50	यीशु
-Bear	सप्तर्षि	सप्तर्षि	auto	baixa	1	2	1.00	बनानेवाला
-Beer	बैर	बैर	auto	baixa	3	1	1.00	वे
-Behemoth	को	को	auto	baixa	1	1	1.00	के
-Bene-jaakan	याकानियों	याकानियों	auto	baixa	3	3	1.00	बीच
-Beth-eked	पकड़ो	पकड़ो	auto	baixa	3	2	0.50	के
-Bethlehem	बैतलहम	बैतलहम	auto	baixa	7	58	0.78	समेत
-Birzaith	बिर्जोत	बिर्जोत	auto	baixa	1	1	1.00	बरीआ
-Birzavith	बिर्जोत	बिर्जोत	auto	baixa	1	1	1.00	बरीआ
-Buz	बूज	बूज	auto	baixa	4	2	1.00	ऊस
-Buz	बूजियों	बूजियों	auto	baixa	3	1	1.00	भी
-Buzites	बूजी	बूजी	auto	baixa	1	2	1.00	बूढ़े
-Canneh	न्	न्	auto	baixa	2	1	1.00	ने
-Chaldea	फैलाओ	फैलाओ	auto	baixa	1	9	0.11	देन
-Cherethites	करेतियों	करेतियों	auto	baixa	1	9	0.56	करेती
-Cherethites	करेती	करेती	auto	baixa	1	3	0.33	करेतियों
-Chronicles	लिखे	लिखे	auto	baixa	1	38	0.47	किए
-Cush	छुटकारा	छुटकारा	auto	baixa	1	1	1.00	हूँ
-Cyprus	साइप्रस	साइप्रस	auto	baixa	3	15	0.53	किसी
-Dehavites	देहवी	देहवी	auto	baixa	1	1	1.00	एलामी
-Dekar	बेन्देकेर	बेन्देकेर	auto	baixa	1	1	1.00	माकस
-Destiny	देवी	देवी	auto	baixa	1	1	1.00	देते
-Destruction	देश	देश	auto	baixa	1	1	1.00	नाशनगर
-Dinaites	दीनी	दीनी	auto	baixa	1	1	1.00	शिमशै
-East	जेबह	जेबह	auto	baixa	3	18	0.06	तट
-Egypt	पूत	पूत	auto	baixa	1	4	0.50	नप्तूही
-Ephron	नेप्तोह	नेप्तोह	auto	baixa	2	1	1.00	फिर
-Ethiopia	खोजा	खोजा	auto	baixa	1	7	0.14	सत्ताईस
-Ethiopia	सत्ताईस	सत्ताईस	auto	baixa	1	4	0.50	गीहोन
-Euphrates	फरात	फरात	auto	baixa	3	61	0.59	मूरतें
-Eve	हव्वा	हव्वा	auto	baixa	2	4	1.00	ने
-Ezekiel	यहेजकेल	यहेजकेल	auto	baixa	2	2	1.00	शक्ति
-Eznites	एस्	एस्	auto	baixa	1	1	1.00	नी
-Field	जलकुण्ड	जलकुण्ड	auto	baixa	1	3	1.00	सिरे
-Forest	अस्त्र	अस्त्र	auto	baixa	1	1	1.00	शस्त्र
-Fortune	वस्तुएँ	वस्तुएँ	auto	baixa	1	1	1.00	सजाते
-Freedmen	कुरेनी	कुरेनी	auto	baixa	1	1	1.00	में
-Galeed	गिलियाद	गिलियाद	auto	baixa	1	2	1.00	सहादुथा
-Galilee	गोयीम	गोयीम	auto	baixa	1	1	1.00	गिलगाल
-Garmite	गेरेमी	गेरेमी	auto	baixa	1	1	1.00	नहम
-Garmites	गेरेमी	गेरेमी	auto	baixa	1	1	1.00	नहम
-Gazez	गाजेज	गाजेज	auto	baixa	4	1	1.00	उससे
-Gedor	गदोरवासी	गदोरवासी	auto	baixa	1	1	1.00	योएला
-Gerasa	गिरासेनियों	गिरासेनियों	auto	baixa	2	4	0.75	आस
-Gibeah	गिबत्पीनहास	गिबत्पीनहास	auto	baixa	1	1	1.00	गया
-Gibeath-elohim	जब	जब	auto	baixa	3	1	1.00	नबूवत
-Gibeath-haaraloth	बनवाकर	बनवाकर	auto	baixa	2	1	1.00	खतना
-Girgashites	गिर्गाशी	गिर्गाशी	auto	baixa	1	16	0.25	गिर्गाशियों
-Girgasite	गिर्गाशी	गिर्गाशी	auto	baixa	1	2	1.00	यबूसी
-Girzites	गिर्जियों	गिर्जियों	auto	baixa	1	1	1.00	ये
-Gizonites	गीजोई	गीजोई	auto	baixa	1	1	1.00	योनातान
-Greece	के	के	auto	baixa	3	13	0.69	उभारेगा
-Gulloth-mayim	बोली	बोली	auto	baixa	1	2	1.00	सोते
-Hachmonites	हक्मोनी	हक्मोनी	auto	baixa	1	2	0.50	तहकमोनी
-Hakkephirim	किसी	किसी	auto	baixa	2	1	1.00	मेरी
-Hamathite	हमाती	हमाती	auto	baixa	1	2	1.00	समारी
-Hamathites	हमाती	हमाती	auto	baixa	1	2	1.00	समारी
-Hammelech	अब्देल	अब्देल	auto	baixa	2	2	0.50	यरहमेल
-Hararites	हरारी	हरारी	auto	baixa	1	4	1.00	शारार
-Haruphites	हारूपी	हारूपी	auto	baixa	1	1	1.00	यरीमोत
-Hebrews	इब्री	इब्री	auto	baixa	1	37	0.59	मेरे
-Hegai	हेगे	हेगे	auto	baixa	2	3	1.00	गई
-Helech	ढालें	ढालें	auto	baixa	3	1	1.00	तेरे
-Heliopolis	देवालयों	देवालयों	auto	baixa	1	1	1.00	देश
-Heliopolis	पोतीपेरा	पोतीपेरा	auto	baixa	1	5	0.60	देवालयों
-Heth	ज्येष्ठ	ज्येष्ठ	auto	baixa	2	58	0.02	जेठा
-Hezeki	हिजकी	हिजकी	auto	baixa	1	1	1.00	हेबेर
-Hierapolis	हियरापुलिसवालों	हियरापुलिसवालों	auto	baixa	3	1	1.00	लिये
-Highway	या	या	auto	baixa	1	2	1.00	पीएँगे
-Hivite	हिब्बी	हिब्बी	auto	baixa	1	9	0.89	हित्ती
-Hivites	हिब्बी	हिब्बी	auto	baixa	1	25	0.64	हित्ती
-Horonites	होरोनी	होरोनी	auto	baixa	1	3	1.00	अम्मोनी
-Hur	बेन्हूर	बेन्हूर	auto	baixa	2	1	1.00	अर्थात्
-Hushathites	हूशाई	हूशाई	auto	baixa	1	5	1.00	सिब्बकै
-Hymenaeus	हुमिनयुस	हुमिनयुस	auto	baixa	2	2	1.00	फिलेतुस
-India	सीवान	सीवान	auto	baixa	3	2	0.50	आज्ञा
-Iphedeiah	यिपदयाह	यिपदयाह	auto	baixa	1	1	1.00	पनूएल
-Ithmah	महवीमी	महवीमी	auto	baixa	2	1	1.00	एलनाम
-Ithrites	येतेरी	येतेरी	auto	baixa	1	3	1.00	मिश्राई
-Iyim	डीहों	डीहों	auto	baixa	2	1	1.00	किया
-Jaar	पाया	पाया	auto	baixa	1	1	1.00	इसकी
-James	जेलोतेस	जेलोतेस	auto	baixa	2	5	0.40	अन्द्रियास
-James	योसेस	योसेस	auto	baixa	3	19	0.16	मरियम
-James	रिसियाने	रिसियाने	auto	baixa	2	19	0.05	यूहन्ना
-Janen	मत्ताना	मत्ताना	auto	baixa	1	1	1.00	नहलीएल
-Jebusite	यबूस	यबूस	auto	baixa	1	1	1.00	सिरे
-Jebusite	यबूसी	यबूसी	auto	baixa	1	2	1.00	गिर्गाशी
-Jebusites	यबूसी	यबूसी	auto	baixa	1	37	0.62	यबूसियों
-Jehiel	यहूएल	यहूएल	auto	baixa	1	1	1.00	उज्जीएल
-Jemnath	एक्रोन	एक्रोन	auto	baixa	1	1	1.00	हैं
-Jeziah	यिज्जियाह	यिज्जियाह	auto	baixa	1	1	1.00	रम्याह
-Jonath-elem-rechokim	क्योंकि	क्योंकि	auto	baixa	1	1	1.00	निगलना
-Jose	येशू	येशू	auto	baixa	1	1	1.00	योरीम
-Jozacar	यहोजाबाद	यहोजाबाद	auto	baixa	1	2	1.00	शिमात
-Judgment	उसमें	उसमें	auto	baixa	1	1	1.00	लिये
-Kadmonites	कदमोनियों	कदमोनियों	auto	baixa	1	1	1.00	कनिज्जियों
-Karnaim	अश्तारोत्कनम	अश्तारोत्कनम	auto	baixa	1	1	1.00	किर्यातैम
-Kenites	केनी	केनी	auto	baixa	1	10	0.60	केनियों
-Kenizzites	केनियों	केनियों	auto	baixa	1	1	1.00	कनिज्जियों
-LORD	इलोई	इलोई	auto	baixa	1	843	0.00	एलोहे
-Legion	क्योंकि	क्योंकि	auto	baixa	1	2	1.00	सेना
-Lucifer	लूका	लूका	auto	baixa	2	1	1.00	कैसे
-Mahalab	अकजीब	अकजीब	auto	baixa	2	1	1.00	नामक
-Mahalath	चिल्लाता	चिल्लाता	auto	baixa	1	2	0.50	मन
-Mahavites	महवीमी	महवीमी	auto	baixa	1	1	1.00	योशव्याह
-Maranatha	शापित	शापित	auto	baixa	1	1	1.00	हमारे
-Mazzaroth	राशियों	राशियों	auto	baixa	1	1	1.00	सप्तर्षि
-Mecherathites	मकेराई	मकेराई	auto	baixa	1	1	1.00	हेपेर
-Meholathites	महोलाई	महोलाई	auto	baixa	1	2	0.50	महोलवासी
-Memphis	मिस्र	मिस्र	auto	baixa	3	8	0.75	मिस्री
-Menuhoth	मनुहोतवासी	मनुहोतवासी	auto	baixa	1	1	1.00	में
-Meribah-kadesh	मरीबा	मरीबा	auto	baixa	1	3	1.00	कादेश
-Meronothites	मेरोनोती	मेरोनोती	auto	baixa	1	2	0.50	मेरोनोतवासी
-Metheg-ammah	जीतकर	जीतकर	auto	baixa	2	1	1.00	हाथ
-Meunites	मूनी	मूनी	auto	baixa	1	3	0.33	मूनियों
-Mezobaites	मसोबाई	मसोबाई	auto	baixa	1	1	1.00	मोआबी
-Misgab	निराश	निराश	auto	baixa	2	1	1.00	मोआब
-Mishraites	मिश्राई	मिश्राई	auto	baixa	1	1	1.00	सोराई
-Mithnites	मेतेनी	मेतेनी	auto	baixa	1	1	1.00	योशापात
-Mortar	मक्तेश	मक्तेश	auto	baixa	3	1	1.00	मिट
-Muth-labben	मन	मन	auto	baixa	1	1	1.00	मैं
-Naamathites	नामाती	नामाती	auto	baixa	1	4	1.00	तेमानी
-Naphath	तानाक	तानाक	auto	baixa	2	1	1.00	एनदोर
-Naphath-dor	तापत	तापत	auto	baixa	1	1	1.00	दोर
-Naphoth-dor	दोर	दोर	auto	baixa	2	4	1.00	उनको
-Nazirites	नाज़ीर	नाज़ीर	auto	baixa	1	15	0.67	नाज़ीरों
-Nehelamites	नेहेलामी	नेहेलामी	auto	baixa	1	3	1.00	शमायाह
-Nephushesim	नपीसीम	नपीसीम	auto	baixa	1	2	0.50	नपूशस
-Nephusim	नपीसीम	नपीसीम	auto	baixa	1	2	0.50	मूनीम
-Nero	तेरी	तेरी	auto	baixa	1	2	0.50	अनुग्रह
-Nohah	मनुहा	मनुहा	auto	baixa	1	1	1.00	ओर
-Nohah	मानहत	मानहत	auto	baixa	1	1	1.00	घरानों
-North	रथ	रथ	auto	baixa	1	10	0.10	अन्त
-Olivet	वे	वे	auto	baixa	1	3	0.33	जैतून
-Orion	नक्षत्रों	नक्षत्रों	auto	baixa	1	3	0.33	जो
-Pacatiana	ज्ञान	ज्ञान	auto	baixa	1	1	1.00	कितने
-Pavement	में	में	auto	baixa	1	1	1.00	बातें
-Pelethites	पलेतियों	पलेतियों	auto	baixa	1	7	0.71	पलेती
-Pelonites	पलोनी	पलोनी	auto	baixa	1	4	0.75	हेलेस
-Pelusium	सीन	सीन	auto	baixa	3	2	1.00	उस
-Perizzites	परिज्जी	परिज्जी	auto	baixa	1	23	0.48	परिज्जियों
-Peter	पतरस	पतरस	auto	baixa	1	179	0.84	तापते
-Phoenicia	फीनीके	फीनीके	auto	baixa	2	4	0.75	अन्ताकिया
-Phut	पूत	पूत	auto	baixa	1	3	0.67	पूती
-Pillars	पचास	पचास	auto	baixa	1	1	1.00	ओसारा
-Place	ले	ले	auto	baixa	1	1	1.00	गुलगुता
-Plain	दक्षिण	दक्षिण	auto	baixa	1	2	0.50	लिये
-Pleiades	कचपचिया	कचपचिया	auto	baixa	1	3	1.00	मृगशिरा
-Pool	को	को	auto	baixa	1	1	1.00	सोते
-Pool	पल्ले	पल्ले	auto	baixa	1	1	1.00	कोल्होजे
-Puthites	पूती	पूती	auto	baixa	1	1	1.00	शूमाती
-Rab-mag	मगों	मगों	auto	baixa	2	2	1.00	सर्सकीम
-Rab-saris	नेर्गलसरेसेर	नेर्गलसरेसेर	auto	baixa	2	2	1.00	नबूसजबान
-Ramah	आस	आस	auto	baixa	1	1	1.00	भाला
-Ramathites	रामाई	रामाई	auto	baixa	1	1	1.00	शापामी
-Rephaim	रपाइयों	रपाइयों	auto	baixa	1	1	1.00	राज्य
-Rephaim	रपाई	रपाई	auto	baixa	1	9	0.33	रपाइयों
-Rezon	रजोन	रजोन	auto	baixa	2	1	1.00	सोबा
-Rhoda	रूदे	रूदे	auto	baixa	2	1	1.00	दासी
-Rhodes	तेरे	तेरे	auto	baixa	1	1	1.00	लाते
-Rhodes	रुदुस	रुदुस	auto	baixa	3	1	1.00	कोस
-River	पारवाले	पारवाले	auto	baixa	1	10	0.10	रूपी
-River	राजा	राजा	auto	baixa	2	18	0.72	जाए
-River	वे	वे	auto	baixa	1	1	1.00	भेजे
-Rock	माओन	माओन	auto	baixa	1	4	1.00	का
-Rocks	बकरों	बकरों	auto	baixa	1	1	1.00	की
-Sahar	पास	पास	auto	baixa	3	1	1.00	सब
-Salome	खुश	खुश	auto	baixa	1	1	1.00	उत्सव
-Salt	निबशान	निबशान	auto	baixa	1	1	1.00	छः
-Sansannah	सनसन्ना	सनसन्ना	auto	baixa	3	1	1.00	मदमन्ना
-Saph	हूशाई	हूशाई	auto	baixa	1	2	1.00	सिप्पै
-Sephar	सपारा	सपारा	auto	baixa	3	1	1.00	मेशा
-Shaaph	शाप	शाप	auto	baixa	4	2	1.00	गेशान
-Sheminith	मिकनेयाह	मिकनेयाह	auto	baixa	1	3	0.33	मत्तित्याह
-Shepham	शपाम	शपाम	auto	baixa	3	3	0.67	से
-Shephelah	क्षेत्र	क्षेत्र	auto	baixa	2	19	0.16	तेल
-Shepho	शपो	शपो	auto	baixa	2	2	0.50	शोबाल
-Shiggaion	शरण	शरण	auto	baixa	1	1	1.00	मैं
-Shilonites	शीलोई	शीलोई	auto	baixa	1	1	1.00	कोल्होजे
-Shimeathite	शिमाती	शिमाती	auto	baixa	1	1	1.00	तिराती
-Shiphmites	शिमी	शिमी	auto	baixa	1	1	1.00	शापामी
-Shuhites	शूही	शूही	auto	baixa	1	5	1.00	तेमानी
-Shulammites	शूलेम्मिन	शूलेम्मिन	auto	baixa	1	1	1.00	लौट
-Shumathites	शूमाती	शूमाती	auto	baixa	1	1	1.00	पूती
-Shunammites	शूनेमिन	शूनेमिन	auto	baixa	1	8	1.00	ढूँढ़ते
-Sikkuth	चरणपीठ	चरणपीठ	auto	baixa	1	1	1.00	फिरते
-Simeon	योनान	योनान	auto	baixa	2	1	1.00	शमौन
-Simon	शमौन	शमौन	auto	baixa	11	29	0.97	जो
-Sinite	सीनी	सीनी	auto	baixa	1	2	1.00	हिब्बी
-Sinites	सीनी	सीनी	auto	baixa	1	2	1.00	हिब्बी
-Skull	कुकर्मियों	कुकर्मियों	auto	baixa	1	1	1.00	को
-South	उठ	उठ	auto	baixa	1	12	0.08	उत्तर
-South	समेत	समेत	auto	baixa	1	1	1.00	हुआ
-South	साथ	साथ	auto	baixa	2	3	0.67	सुनने
-Straight	तरसुस	तरसुस	auto	baixa	1	1	1.00	गली
-Sucathite	सूकाती	सूकाती	auto	baixa	1	1	1.00	शिमाती
-Tabbur-erez	उतरे	उतरे	auto	baixa	1	1	1.00	और
-Tarpelite	तर्पली	तर्पली	auto	baixa	1	1	1.00	बाबेली
-Thebes	उठेंगे	उठेंगे	auto	baixa	3	6	0.17	बसी
-There	घेरा	घेरा	auto	baixa	1	1	1.00	अठारह
-Throne	उसने	उसने	auto	baixa	1	1	1.00	दूसरे
-Tirathite	तिराती	तिराती	auto	baixa	1	1	1.00	शिमाती
-Tizites	तीसी	तीसी	auto	baixa	1	1	1.00	यदीएल
-Tower	कोनेवाले	कोनेवाले	auto	baixa	1	4	0.25	कोने
-Tower	भट्ठों	भट्ठों	auto	baixa	1	2	0.50	पहत्मोआब
-Tower	हम्मेआ	हम्मेआ	auto	baixa	1	2	1.00	वरन्
-Trogyllium	मीलेतुस	मीलेतुस	auto	baixa	3	1	1.00	खियुस
-Unnamed#1	उत्पन्न	उत्पन्न	auto	baixa	1	1	1.00	एलीहूद
-Unnamed#1	ने	ने	auto	baixa	1	1	1.00	पद
-Unnamed#2	उत्पन्न	उत्पन्न	auto	baixa	1	1	1.00	एलीहूद
-Unnamed#2	ने	ने	auto	baixa	1	1	1.00	पद
-Unnamed#3	उत्पन्न	उत्पन्न	auto	baixa	1	1	1.00	एलीहूद
-Unnamed#3	ने	ने	auto	baixa	1	1	1.00	पद
-Unnamed#4	उत्पन्न	उत्पन्न	auto	baixa	1	1	1.00	एलीहूद
-Unnamed#4	ने	ने	auto	baixa	1	1	1.00	पद
-Unnamed#5	उत्पन्न	उत्पन्न	auto	baixa	1	1	1.00	एलीहूद
-Unnamed#6	उत्पन्न	उत्पन्न	auto	baixa	1	1	1.00	एलीहूद
-Unnamed#7	उत्पन्न	उत्पन्न	auto	baixa	1	1	1.00	एलीहूद
-Unnamed#8	उत्पन्न	उत्पन्न	auto	baixa	1	1	1.00	एलीहूद
-Unnamed#9	उत्पन्न	उत्पन्न	auto	baixa	1	1	1.00	एलीहूद
-Vedan	यावान	यावान	auto	baixa	1	1	1.00	दान
-Weeks	लवे	लवे	auto	baixa	1	8	0.12	पिन्तेकुस्त
-Willows	जो	जो	auto	baixa	1	1	1.00	वृक्ष
-Zabbud	जक्कूर	जक्कूर	auto	baixa	1	1	1.00	वंश
-Zacchaeus	जक्कई	जक्कई	auto	baixa	2	3	1.00	चौगुना
-Zacher	जेकेर	जेकेर	auto	baixa	1	2	0.50	गदोर
-Zaham	जाहम	जाहम	auto	baixa	2	1	1.00	यूश
-Zaza	जाजा	जाजा	auto	baixa	2	1	1.00	और
-Zealot	इस्करियोती	इस्करियोती	auto	baixa	1	2	0.50	उसे
-Zebudah	जबीदा	जबीदा	auto	baixa	1	1	1.00	पदायाह
-Zeeb	जेब	जेब	auto	baixa	2	3	1.00	ओरेब
-Zemarite	समारी	समारी	auto	baixa	1	2	1.00	हमाती
-Zemarites	समारी	समारी	auto	baixa	1	2	1.00	हमाती
-Zephath	सपत	सपत	auto	baixa	3	9	0.11	उस
-Zepho	सपो	सपो	auto	baixa	2	3	0.67	से
-Zephon	सपोन	सपोन	auto	baixa	1	2	1.00	शूनियों
-Zeredah	सारतान	सारतान	auto	baixa	2	1	1.00	यरदन
-Zethar	जेतेर	जेतेर	auto	baixa	2	1	1.00	सेवा
-Zeus	ज्यूस	ज्यूस	auto	baixa	1	2	1.00	उस
-Ziph	जीप	जीप	auto	baixa	8	12	0.75	तेलेम
-Ziphah	जीपा	जीपा	auto	baixa	2	1	1.00	जीप
-Zorathites	सोराई	सोराई	auto	baixa	1	3	0.67	सोरी
-Zuzim	जूजियों	जूजियों	auto	baixa	1	1	1.00	संगी
-Abaddon	अबद्दोन	अबद्दोन	auto	media	1	7	0.14	अपुल्लयोन
-Abel-meholah	आबेल	आबेल	auto	media	3	3	1.00	महोला
-Abiah	अबिय्याह	अबिय्याह	auto	media	4	4	1.00	गया
-Abiel	अबीएल	अबीएल	auto	media	3	7	0.43	हूरै
-Abiezer	अबीएजेरी	अबीएजेरी	auto	media	1	7	0.29	अबीएजेर
-Achsa	अकसा	अकसा	auto	media	1	1	1.00	मकबेना
-Achshaph	अक्षाप	अक्षाप	auto	media	3	3	1.00	हासोर
-Achzib	अकजीब	अकजीब	auto	media	6	6	0.67	अक्को
-Adbeel	अदबएल	अदबएल	auto	media	2	2	1.00	इश्माएल
-Ader	एदेर	एदेर	auto	media	1	1	1.00	अराद
-Adoniram	अदोनीराम	अदोनीराम	auto	media	1	5	0.40	अदोराम
-Adoram	अदोराम	अदोराम	auto	media	1	5	0.40	अदोनीराम
-Aeneas	ऐनियास	ऐनियास	auto	media	2	2	1.00	बिछौना
-Aenon	ऐनोन	ऐनोन	auto	media	3	1	1.00	सालेम
-Agag	अगागी	अगागी	auto	media	1	12	0.42	अगाग
-Agee	भागे	भागे	auto	media	2	1	1.00	आगै
-Aher	अहेर	अहेर	auto	media	2	1	1.00	ईर
-Ahiah	अहिय्याह	अहिय्याह	auto	media	3	3	1.00	राजसी
-Ahiram	अहीराम	अहीराम	auto	media	2	3	0.33	अहीरामियों
-Ahoah	अहोह	अहोह	auto	media	2	6	0.17	नामान
-Ahuzam	अहुज्जाम	अहुज्जाम	auto	media	1	1	1.00	हाहशतारी
-Ahuzzam	अहुज्जाम	अहुज्जाम	auto	media	1	1	1.00	हाहशतारी
-Ahuzzath	अहुज्जत	अहुज्जत	auto	media	2	1	1.00	पास
-Ai	आई	आई	auto	media	7	37	0.84	है
-Aija	अय्या	अय्या	auto	media	2	1	1.00	और
-Ajah	अय्या	अय्या	auto	media	1	2	1.00	अल्यान
-Akeldama	हकलदमा	हकलदमा	auto	media	3	4	0.25	खेत
-Alameth	आलेमेत	आलेमेत	auto	media	1	1	1.00	अनातोत
-Alamoth	अलामोत	अलामोत	auto	media	1	3	0.33	शमीरामोत
-Alexandria	सिकन्दरिया	सिकन्दरिया	auto	media	3	4	1.00	इतालिया
-Alphaeus	हलफईस	हलफईस	auto	media	3	7	0.71	बरतुल्मै
-Amalek	अमालेक	अमालेक	auto	media	4	31	0.32	अमालेकियों
-Amalek	अमालेकी	अमालेकी	auto	media	1	46	0.33	अमालेक
-Amasiah	अमस्याह	अमस्याह	auto	media	2	1	1.00	अर्पण
-Ammon	अम्मोन	अम्मोन	auto	media	1	12	0.08	अम्मोनी
-Ammon	अम्मोनी	अम्मोनी	auto	media	2	125	0.26	अम्मोनियों
-Amplias	अम्पलियातुस	अम्पलियातुस	auto	media	1	1	1.00	प्रिय
-Anak	अनाक	अनाक	auto	media	2	16	0.25	अहीमन
-Ananias	हनन्याह	हनन्याह	auto	media	6	10	1.00	आया
-Angle	आगे	आगे	auto	media	1	5	0.20	ने
-Annas	हन्ना	हन्ना	auto	media	2	4	1.00	यूहन्ना
-Antioch	अन्ताकिया	अन्ताकिया	auto	media	6	22	0.82	तीमोन
-Apelles	अपिल्लेस	अपिल्लेस	auto	media	2	1	1.00	अरिस्तुबुलुस
-Aphek	अपेक	अपेक	auto	media	10	11	0.73	गए
-Aphiah	अपीह	अपीह	auto	media	2	1	1.00	अबीएल
-Aphik	अपीक	अपीक	auto	media	2	1	1.00	अक्को
-Aphses	हप्पित्सेस	हप्पित्सेस	auto	media	1	1	1.00	हेजीर
-Apollyon	अपुल्लयोन	अपुल्लयोन	auto	media	1	1	1.00	अबद्दोन
-Apphia	अफफिया	अफफिया	auto	media	2	1	1.00	फिलेमोन
-Arabia	अरब	अरब	auto	media	4	19	0.42	बितानी
-Aram	अराम	अराम	auto	media	8	16	0.62	और
-Aram-naharaim	परमेश्वर	परमेश्वर	auto	media	2	1	1.00	हमको
-Aram-zobah	परमेश्वर	परमेश्वर	auto	media	1	1	1.00	हमको
-Aramitess	अरामी	अरामी	auto	media	1	1	1.00	अस्रीएल
-Archelaus	अरखिलाउस	अरखिलाउस	auto	media	2	1	1.00	डरा
-Areopagus	अरियुपगुस	अरियुपगुस	auto	media	3	4	0.75	दमरिस
-Aretas	अरितास	अरितास	auto	media	2	1	1.00	पहरा
-Ariel	सरीखे	सरीखे	auto	media	1	2	0.50	कबसेल
-Armageddon	मगिदोन	मगिदोन	auto	media	2	1	1.00	राजाओं
-Artemas	अरतिमास	अरतिमास	auto	media	2	1	1.00	काटने
-Arumah	अरूमा	अरूमा	auto	media	3	3	0.33	जबूल
-Asaph	आसाप	आसाप	auto	media	8	40	0.70	अशरेला
-Asenath	आसनत	आसनत	auto	media	2	3	1.00	सापनत
-Ashkenaz	अश्कनज	अश्कनज	auto	media	5	3	1.00	झण्डा
-Ashpenaz	अश्पनज	अश्पनज	auto	media	2	1	1.00	ऐसे
-Ashvath	वात	वात	auto	media	2	1	1.00	अश्
-Asnappar	नप्पर	नप्पर	auto	media	1	1	1.00	बसाया
-Asshur	अश्शूर	अश्शूर	auto	media	4	7	0.86	और
-Asshurim	अश्शूरी	अश्शूरी	auto	media	2	1	1.00	लतूशी
-Assos	अस्सुस	अस्सुस	auto	media	3	2	1.00	पौलुस
-Assyria	अश्शूर	अश्शूर	auto	media	3	150	0.83	सीहोर
-Atharim	रहता	रहता	auto	media	3	1	1.00	कनानी
-Athens	एथेंस	एथेंस	auto	media	3	8	0.75	बातें
-Augustus	औगुस्तुस	औगुस्तुस	auto	media	2	5	0.40	पौलुस
-Avith	अबीत	अबीत	auto	media	3	2	1.00	है
-Avvim	अब्बीम	अब्बीम	auto	media	3	1	1.00	पारा
-Ayyah	अय्या	अय्या	auto	media	2	1	1.00	बस्तियाँ
-Azal	आसेल	आसेल	auto	media	3	1	1.00	खड्ड
-Azarael	अजरेल	अजरेल	auto	media	1	1	1.00	नतनेल
-Azareel	अजरेल	अजरेल	auto	media	4	5	0.80	मासै
-Azarel	अजरेल	अजरेल	auto	media	4	4	1.00	याशोबाम
-Azariah	शद्रक	शद्रक	auto	media	1	18	0.78	अजर्याह
-Azariahu	अजर्याह	अजर्याह	auto	media	1	1	1.00	जकर्याह
-Azazel	अजाजेल	अजाजेल	auto	media	3	3	1.00	उससे
-Azbuk	अजबूक	अजबूक	auto	media	2	1	1.00	बेतसूर
-Azgad	अजगाद	अजगाद	auto	media	4	4	1.00	बाईस
-Aziza	अज़ीज़ा	अज़ीज़ा	auto	media	2	1	1.00	एल्याशीब
-Aznoth-tabor	अजनोत्ताबोर	अजनोत्ताबोर	auto	media	3	1	1.00	दक्षिण
-Azor	अजोर	अजोर	auto	media	2	2	1.00	और
-Azriel	अज्रीएल	अज्रीएल	auto	media	6	3	1.00	यहदीएल
-Azur	अज्जूर	अज्जूर	auto	media	2	2	1.00	और
-Azzan	अज्जान	अज्जान	auto	media	2	1	1.00	इस्साकारियों
-Azzur	अज्जूर	अज्जूर	auto	media	4	3	1.00	आतेर
-Baal-berith	बरीत	बरीत	auto	media	1	3	0.67	एलबरीत
-Baalath-beer	बालत्बेर	बालत्बेर	auto	media	3	5	0.20	कहलाता
-Baale-judah	बाले	बाले	auto	media	2	1	1.00	यहूदा
-Babel	बाबेल	बाबेल	auto	media	2	2	1.00	कलने
-Babylon	बाबेल	बाबेल	auto	media	5	316	0.82	हत्याओं
-Babylonia	बाबेल	बाबेल	auto	media	2	15	0.53	पुस्तकालय
-Baharum	बहूरीमी	बहूरीमी	auto	media	1	1	1.00	एल्यहबा
-Bahurim	बहूरीम	बहूरीम	auto	media	3	7	0.43	बहूरीमी
-Balah	बाला	बाला	auto	media	3	1	1.00	हसर्शूआल
-Bamoth-baal	बामोतबाल	बामोतबाल	auto	media	3	3	0.33	बेतबाल्मोन
-Bartholomew	बरतुल्मै	बरतुल्मै	auto	media	2	4	1.00	थोमा
-Bartimaeus	बरतिमाई	बरतिमाई	auto	media	2	1	1.00	तिमाई
-Basemath	बासमत	बासमत	auto	media	1	1	1.00	बेटी
-Basmath	बासमत	बासमत	auto	media	1	1	1.00	अहीमास
-Bath-shua	शूआ	शूआ	auto	media	1	2	1.00	यहूदा
-Bealoth	आलोत	आलोत	auto	media	2	1	1.00	बाना
-Bedad	बदद	बदद	auto	media	2	2	1.00	हदद
-Bedan	बदान	बदान	auto	media	3	2	1.00	गिलाद
-Beeroth	बेरोत	बेरोत	auto	media	3	11	0.45	बेरोती
-Ben-zoheth	बेनजोहेत	बेनजोहेत	auto	media	2	1	1.00	जोहेत
-Bene-berak	बनेबराक	बनेबराक	auto	media	3	1	1.00	गत्रिम्मोन
-Beno	बिनो	बिनो	auto	media	2	2	1.00	के
-Beon	बोन	बोन	auto	media	2	1	1.00	दीबोन
-Berea	बिरीया	बिरीया	auto	media	3	6	0.50	भेज
-Berothah	बेरोता	बेरोता	auto	media	3	3	0.33	सिब्रैम
-Besodeiah	बसोदयाह	बसोदयाह	auto	media	2	1	1.00	बेंड़े
-Besor	बसोर	बसोर	auto	media	3	3	1.00	पुरुषों
-Beth-Ashtoreth	अश्तोरेत	अश्तोरेत	auto	media	1	1	1.00	बेतशान
-Beth-ashbea	बेत	बेत	auto	media	3	1	1.00	लादा
-Beth-azmaveth	बेतजमावत	बेतजमावत	auto	media	2	3	0.33	बयालीस
-Beth-haggan	भाग	भाग	auto	media	3	1	1.00	भवन
-Beth-haran	बेतनिम्रा	बेतनिम्रा	auto	media	1	1	1.00	बेत
-Beth-le-aphrah	बेतआप्रा	बेतआप्रा	auto	media	2	1	1.00	लोटपोट
-Bethesda	बैतहसदा	बैतहसदा	auto	media	3	1	1.00	भेड़
-Bethphage	बैतफगे	बैतफगे	auto	media	3	3	1.00	भेजा
-Bethul	बतूल	बतूल	auto	media	2	1	1.00	एलतोलद
-Bezek	बेजेक	बेजेक	auto	media	6	3	1.00	अदोनीबेजेक
-Bileam	बिलाम	बिलाम	auto	media	2	1	1.00	मिले
-Binea	बिना	बिना	auto	media	2	2	1.00	आसेल
-Caesarea	कैसरिया	कैसरिया	auto	media	3	19	0.79	आसन
-Caphtor	कप्तोर	कप्तोर	auto	media	3	13	0.23	कप्तोरियों
-Cenchreae	किंख्रिया	किंख्रिया	auto	media	3	3	0.67	होकर
-Chaldea	चढ़े	चढ़े	auto	media	2	91	0.01	छिदे
-Chelal	कलाल	कलाल	auto	media	2	1	1.00	बसलेल
-Chelluh	कलूही	कलूही	auto	media	1	1	1.00	बेदयाह
-Chelub	कलूब	कलूब	auto	media	4	2	1.00	के
-Chenani	कनानी	कनानी	auto	media	2	1	1.00	बानी
-Chephirah	कपीरा	कपीरा	auto	media	3	4	1.00	बेरोत
-Cheran	करान	करान	auto	media	2	2	1.00	यित्रान
-Cherith	करीत	करीत	auto	media	3	2	1.00	के
-Cherub	करूब	करूब	auto	media	3	3	1.00	इम्मेर
-Chesil	कसील	कसील	auto	media	3	1	1.00	एलतोलद
-Chesulloth	कसुल्लोत	कसुल्लोत	auto	media	3	3	0.33	शूनेम
-Chezib	कजीब	कजीब	auto	media	2	1	1.00	उसके
-Chilmad	कलमद	कलमद	auto	media	3	1	1.00	व्यापारी
-Chios	खियुस	खियुस	auto	media	3	1	1.00	मीलेतुस
-Chorazin	खुराजीन	खुराजीन	auto	media	3	2	1.00	सोर
-Chushan-rishathaim	रिश्आतइम	रिश्आतइम	auto	media	1	2	1.00	कूशन
-Chuza	खुज़ा	खुज़ा	auto	media	2	1	1.00	सूसन्नाह
-Claudius	क्लौदियुस	क्लौदियुस	auto	media	2	11	0.18	यहूदी
-Cleophas	क्लोपास	क्लोपास	auto	media	1	2	0.50	क्लियुपास
-Colossae	कुलुस्से	कुलुस्से	auto	media	3	2	0.50	से
-Coos	कोस	कोस	auto	media	1	1	1.00	तो
-Corban	कुरबान	कुरबान	auto	media	1	2	0.50	सिक्कों
-Corinth	कुरिन्थुस	कुरिन्थुस	auto	media	3	15	0.40	को
-Cos	कोस	कोस	auto	media	2	1	1.00	तो
-Coz	कोस	कोस	auto	media	1	1	1.00	से
-Cozbi	कोजबी	कोजबी	auto	media	2	2	1.00	की
-Crete	क्रेते	क्रेते	auto	media	2	9	0.44	काटें
-Cush	कूशी	कूशी	auto	media	1	44	0.41	कूश
-Cushan-rishathaim	रिश्आतइम	रिश्आतइम	auto	media	1	2	1.00	कूशन
-Cyrenius	क्विरिनियुस	क्विरिनियुस	auto	media	1	1	1.00	सीरिया
-Dalaiah	दलायाह	दलायाह	auto	media	1	1	1.00	पलायाह
-Dalphon	दल्पोन	दल्पोन	auto	media	2	1	1.00	पर्शन्दाता
-Dara	दारा	दारा	auto	media	2	1	1.00	और
-Decapolis	दिकापुलिस	दिकापुलिस	auto	media	3	3	1.00	कैसे
-Dedan	ददान	ददान	auto	media	7	11	0.73	ददानी
-Deker	बेन्देकेर	बेन्देकेर	auto	media	1	1	1.00	बेतशेमेश
-Derbe	दिरबे	दिरबे	auto	media	3	5	0.80	चेले
-Diana	महान	महान	auto	media	1	5	0.80	धन्धे
-Diblathaim	अल्मोनदिबलातैम	अल्मोनदिबलातैम	auto	media	1	3	0.67	बेतदिबलातैम
-Dibon	दीमोन	दीमोन	auto	media	1	1	1.00	मोआबियों
-Dibon-gad	दीबोन	दीबोन	auto	media	1	2	1.00	डीहों
-Dimnah	दिम्ना	दिम्ना	auto	media	3	3	0.33	नहलाल
-Dionysius	दियुनुसियुस	दियुनुसियुस	auto	media	2	1	1.00	दमरिस
-Diotrephes	दियुत्रिफेस	दियुत्रिफेस	auto	media	2	1	1.00	जो
-Dophkah	दोपका	दोपका	auto	media	3	2	1.00	डेरा
-Ecbatana	वृत्तान्त	वृत्तान्त	auto	media	3	1	1.00	अहमता
-Eden	एदेनी	एदेनी	auto	media	3	15	0.13	एदेन
-Eglath-shelishiyah	एग्लत	एग्लत	auto	media	3	2	1.00	शलीशिया
-Egypt	लेगी	लेगी	auto	media	3	715	0.00	गाएँगी
-Ela	एला	एला	auto	media	1	1	1.00	था
-Eliadah	एल्यादा	एल्यादा	auto	media	1	1	1.00	हदादेजेर
-Eliah	एलिय्याह	एलिय्याह	auto	media	2	2	1.00	योरेश्याह
-Elihoreph	एलीहोरोप	एलीहोरोप	auto	media	2	1	1.00	आधिकारिक
-Eliphal	एलीपाल	एलीपाल	auto	media	2	1	1.00	अहीआम
-Eliphalet	एलीपेलेत	एलीपेलेत	auto	media	1	3	1.00	एल्यादा
-Elipheleh	एलीपलेह	एलीपलेह	auto	media	1	2	1.00	यीएल
-Eliphelehu	एलीपलेह	एलीपलेह	auto	media	1	2	1.00	यीएल
-Elishah	एलीशा	एलीशा	auto	media	4	3	1.00	तर्शीश
-Elizaphan	एलसाफान	एलसाफान	auto	media	2	5	0.40	एलीसापान
-Elkosh	एल्कोशवासी	एल्कोशवासी	auto	media	3	1	1.00	की
-Elmadam	मदाम	मदाम	auto	media	1	1	1.00	एल्
-Elmodam	मदाम	मदाम	auto	media	1	1	1.00	कोसाम
-Elonbeth-hanan	बेतानान	बेतानान	auto	media	3	1	1.00	एलोन
-Elpalet	एलपेलेत	एलपेलेत	auto	media	1	2	0.50	एलीपेलेत
-Elteke	एलतके	एलतके	auto	media	1	1	1.00	के
-Eltekeh	एलतके	एलतके	auto	media	3	2	1.00	बालात
-Eltekon	एलतकोन	एलतकोन	auto	media	3	1	1.00	बेतनोत
-Elzabad	एलजाबाद	एलजाबाद	auto	media	4	2	1.00	आठवाँ
-Emek-keziz	एमेक्कसीस	एमेक्कसीस	auto	media	3	1	1.00	के
-Emmaus	इम्माऊस	इम्माऊस	auto	media	3	3	0.33	मील
-Epaenetus	इपैनितुस	इपैनितुस	auto	media	2	1	1.00	आसिया
-Epaphroditus	इपफ्रुदीतुस	इपफ्रुदीतुस	auto	media	2	3	0.67	पास
-Ephah	एपा	एपा	auto	media	9	5	1.00	शेबा
-Ephai	एपै	एपै	auto	media	2	1	1.00	कारेह
-Epher	एपेर	एपेर	auto	media	6	4	1.00	एल्दा
-Ephes-dammim	एपेसदम्मीम	एपेसदम्मीम	auto	media	3	3	0.33	पसदम्मीम
-Ephesus	इफिसुस	इफिसुस	auto	media	3	24	0.71	मीलेतुस
-Ephlal	एपलाल	एपलाल	auto	media	2	1	1.00	ओबेद
-Ephod	एपोद	एपोद	auto	media	2	1	1.00	यूसुफियों
-Ephraim	एप्रैम	एप्रैम	auto	media	7	167	0.81	फिरा
-Ephrath	एप्राता	एप्राता	auto	media	2	3	1.00	अर्थात्
-Epicurean	इपिकूरी	इपिकूरी	auto	media	1	1	1.00	पुनरुत्थान
-Esau	एसाव	एसाव	auto	media	3	151	0.50	देश
-Eshtemoh	एश्तमो	एश्तमो	auto	media	1	1	1.00	आनीम
-Esli	असल्याह	असल्याह	auto	media	2	1	1.00	गई
-Euodias	यूओदिया	यूओदिया	auto	media	1	1	1.00	निवेदन
-Eutychus	यूतुखुस	यूतुखुस	auto	media	2	1	1.00	उठाया
-Ezel	एजेल	एजेल	auto	media	1	2	0.50	से
-Ezrah	एपेर	एपेर	auto	media	1	1	1.00	मेरेद
-Ezri	एज्री	एज्री	auto	media	2	1	1.00	खेती
-Gadara	गदरेनियों	गदरेनियों	auto	media	1	1	1.00	पार
-Gaddi	गद्दी	गद्दी	auto	media	2	1	1.00	वंशियों
-Gadi	गादी	गादी	auto	media	2	2	1.00	राजा
-Gamad	गम्	गम्	auto	media	3	1	1.00	मद
-Gath	गती	गती	auto	media	1	2	0.50	गतवासी
-Gazzam	गज्जाम	गज्जाम	auto	media	2	2	1.00	पासेह
-Gebal	गबल	गबल	auto	media	3	4	0.25	गबाली
-Gebal	गबाली	गबाली	auto	media	1	1	1.00	अमालेकी
-Geber	बेनगेबेर	बेनगेबेर	auto	media	1	1	1.00	अर्गोब
-Gederah	गदेरावासी	गदेरावासी	auto	media	1	1	1.00	वीर
-Gedor	गदोर	गदोर	auto	media	9	8	0.75	गए
-Geliloth	गलीलोत	गलीलोत	auto	media	2	3	0.33	जो
-Gennesaret	गन्नेसरत	गन्नेसरत	auto	media	3	3	1.00	घाट
-Gershon	गेर्शोन	गेर्शोन	auto	media	2	34	0.24	गेर्शोनियों
-Gesham	गेशान	गेशान	auto	media	1	1	1.00	रेगेम
-Geshur	गशूर	गशूर	auto	media	3	14	0.57	गशूरी
-Gethsemane	गतसमनी	गतसमनी	auto	media	3	2	1.00	उसने
-Geuel	गूएल	गूएल	auto	media	2	1	1.00	से
-Gibea	गिबा	गिबा	auto	media	2	1	1.00	मकबेना
-Gilo	गीलोवासी	गीलोवासी	auto	media	1	1	1.00	अहीतोपेल
-Gimzo	गिमजो	गिमजो	auto	media	3	1	1.00	सोको
-Ginnethon	गिन्	गिन्	auto	media	2	3	1.00	नतोन
-Gittith	गीत	गीत	auto	media	1	3	0.33	दिखाया
-God	गोद	गोद	auto	media	1	8587	0.00	घोड़ा
-Golgotha	गुलगुता	गुलगुता	auto	media	3	4	0.75	कहलाता
-Gurbaal	गूर्बालवासी	गूर्बालवासी	auto	media	3	1	1.00	अरबियों
-Hadar	हदद	हदद	auto	media	1	2	1.00	मस्सा
-Haeleph	एलेप	एलेप	auto	media	3	1	1.00	सेला
-Haggeri	हग्री	हग्री	auto	media	1	1	1.00	मिभार
-Hahiroth	पीहहीरोत	पीहहीरोत	auto	media	1	1	1.00	मारा
-Hamath-zobah	हमात	हमात	auto	media	2	2	1.00	सोबा
-Hammath	हम्मत	हम्मत	auto	media	5	5	0.40	रक्कत
-Hareph	हारेप	हारेप	auto	media	2	1	1.00	और
-Harmon	हेर्मोन	हेर्मोन	auto	media	3	1	1.00	नाकों
-Harod	हरोद	हरोद	auto	media	3	3	0.33	हेरोदी
-Harod	हरोरी	हरोरी	auto	media	1	2	0.50	हेरोदी
-Harosheth-hagoyim	हरोशेत	हरोशेत	auto	media	3	3	1.00	सीसरा
-Harumaph	हरुमप	हरुमप	auto	media	2	1	1.00	हत्तूश
-Havvoth-jair	हव्वोत्याईर	हव्वोत्याईर	auto	media	3	6	0.17	हब्बोत्याईर
-Hazaiah	अदायाह	अदायाह	auto	media	2	1	1.00	हजायाह
-Hazerim	बसे	बसे	auto	media	1	1	1.00	कप्तोरियों
-Hazo	हज़ो	हज़ो	auto	media	2	1	1.00	पिल्दाश
-Heber	एबेर	एबेर	auto	media	2	2	1.00	शेबा
-Heleb	हेलेब	हेलेब	auto	media	2	3	0.33	हेलेद
-Heleph	हेलेप	हेलेप	auto	media	3	2	0.50	यब्नेल
-Heli	एली	एली	auto	media	2	1	1.00	की
-Hemath	हम्मत	हम्मत	auto	media	1	1	1.00	शिमाती
-Henoch	हनोक	हनोक	auto	media	1	2	1.00	एल्दा
-Hermas	हर्मास	हर्मास	auto	media	2	1	1.00	हिर्मेस
-Hermes	हिर्मेस	हिर्मेस	auto	media	3	2	1.00	हर्मास
-Hermogenes	हिरमुगिनेस	हिरमुगिनेस	auto	media	2	1	1.00	जिनमें
-Hesed	बेन्हेसेद	बेन्हेसेद	auto	media	2	1	1.00	हेपेर
-Hezir	हेजीर	हेजीर	auto	media	4	2	1.00	हप्पित्सेस
-Hezrai	हेस्रो	हेस्रो	auto	media	1	2	1.00	अराबी
-Hizki	हिजकी	हिजकी	auto	media	1	1	1.00	जबद्याह
-Hizkiah	हिजकिय्याह	हिजकिय्याह	auto	media	2	2	1.00	योशिय्याह
-Hizkijah	हिजकिय्याह	हिजकिय्याह	auto	media	1	1	1.00	अज्जूर
-Hodaiah	होदव्याह	होदव्याह	auto	media	1	1	1.00	दलायाह
-Hodaviah	होदवा	होदवा	auto	media	1	3	0.33	होदव्याह
-Hodevah	होदवा	होदवा	auto	media	1	3	0.33	होदव्याह
-Hophra	होप्रा	होप्रा	auto	media	1	18	0.06	फ़िरौन
-Horonaim	ओर	ओर	auto	media	1	1	1.00	पहरा
-Hosea	होशे	होशे	auto	media	2	3	1.00	योआश
-Hoshea	होशे	होशे	auto	media	6	10	1.00	एला
-Hothan	होताम	होताम	auto	media	1	1	1.00	अश्तारोती
-Huppim	मुप्पीम	मुप्पीम	auto	media	1	3	0.33	हुप्पीम
-Huram	हूराम	हूराम	auto	media	2	4	0.50	हूपाम
-Huz	ऊस	ऊस	auto	media	1	1	1.00	उसका
-Ibleam	यिबलाम	यिबलाम	auto	media	3	6	0.50	याबेश
-Ibri	इब्री	इब्री	auto	media	2	1	1.00	याजिय्याह
-Idbash	यिद्वाश	यिद्वाश	auto	media	2	1	1.00	यिश्मा
-Imna	यिम्ना	यिम्ना	auto	media	2	1	1.00	आमाल
-Iphdeiah	यिपदयाह	यिपदयाह	auto	media	1	1	1.00	पनूएल
-Iphtah	इप्ताह	इप्ताह	auto	media	3	1	1.00	नसीब
-Ir-moab	मोआब	मोआब	auto	media	1	1	1.00	सीमा
-Ishbi-benob	यिशबोबनोब	यिशबोबनोब	auto	media	2	1	1.00	भाले
-Ishiah	यिश्शिय्याह	यिश्शिय्याह	auto	media	1	1	1.00	यिज्रह्याह
-Isuah	यिश्वा	यिश्वा	auto	media	1	2	1.00	सेरह
-Isui	यिश्वी	यिश्वी	auto	media	1	3	1.00	यिश्वीयों
-Iye-abarim	अबारीम	अबारीम	auto	media	3	3	0.67	मोआब
-Izziah	यिज्जियाह	यिज्जियाह	auto	media	1	1	1.00	रम्याह
-Jaare-oregim	यारयोरगीम	यारयोरगीम	auto	media	1	2	0.50	जुलाहे
-Jaaziel	यहीएल	यहीएल	auto	media	2	3	1.00	याजीएल
-Jacob	याकूब	याकूब	auto	media	3	1011	0.34	एलीहूद
-Jahaziah	यहजयाह	यहजयाह	auto	media	1	1	1.00	तिकवा
-Jahzah	यहस	यहस	auto	media	1	2	1.00	पास
-Jahzeiah	यहजयाह	यहजयाह	auto	media	1	1	1.00	असाहेल
-Jairus	याईर	याईर	auto	media	2	2	1.00	आया
-Japhlet	यपलेत	यपलेत	auto	media	2	3	0.67	बिम्हाल
-Jaroah	यहदो	यहदो	auto	media	2	1	1.00	यशीशै
-Jasher	याशार	याशार	auto	media	1	2	1.00	सिखाने
-Jathniel	यदीएल	यदीएल	auto	media	2	1	1.00	जबद्याह
-Javan	यावान	यावान	auto	media	4	34	0.18	द्वीपवासियों
-Jaziz	याजीज	याजीज	auto	media	2	1	1.00	अधिकारी
-Jegar-sahadutha	सहादुथा	सहादुथा	auto	media	1	1	1.00	जैगर
-Jehaleleel	यहलेल	यहलेल	auto	media	1	1	1.00	असरेल
-Jehallelel	यहलेल	यहलेल	auto	media	1	1	1.00	असरेल
-Jehdeiah	येहदयाह	येहदयाह	auto	media	4	2	1.00	शूबाएल
-Jehezekel	यहेजकेल	यहेजकेल	auto	media	1	1	1.00	नीसवीं
-Jehezkel	यहेजकेल	यहेजकेल	auto	media	1	1	1.00	के
-Jehiel	यहीएल	यहीएल	auto	media	20	17	0.76	एलिय्याह
-Jehiel	यीएल	यीएल	auto	media	1	1	1.00	उज्जियाह
-Jehizkiah	यहिजकिय्याह	यहिजकिय्याह	auto	media	2	1	1.00	बेरेक्याह
-Jehoiachin	यहोयाकीन	यहोयाकीन	auto	media	2	22	0.41	यहोयाकीम
-Jehoiada	योयादा	योयादा	auto	media	1	1	1.00	बसोदयाह
-Jehoram	यहोराम	यहोराम	auto	media	4	22	0.73	योराम
-Jehoshabeath	यहोशावत	यहोशावत	auto	media	1	2	0.50	यहोशेबा
-Jehoshaphat	योशापात	योशापात	auto	media	1	1	1.00	यहिय्याह
-Jehozabad	यहोजाबाद	यहोजाबाद	auto	media	6	4	1.00	योजाबाद
-Jehud	यहूद	यहूद	auto	media	3	1	1.00	बनेबराक
-Jehudi	यहूदी	यहूदी	auto	media	2	3	1.00	लिए
-Jehudijah	यहूदिन	यहूदिन	auto	media	2	1	1.00	येरेद
-Jehuel	यहूएल	यहूएल	auto	media	1	1	1.00	उज्जीएल
-Jehush	यूश	यूश	auto	media	1	1	1.00	एशेक
-Jeiel	यूएल	यूएल	auto	media	2	2	1.00	शिम्री
-Jekameam	यकमाम	यकमाम	auto	media	2	2	1.00	यरिय्याह
-Jemuel	यमूएल	यमूएल	auto	media	2	4	0.50	नमूएल
-Jered	येरेद	येरेद	auto	media	2	1	1.00	मेरेद
-Jeremoth	यरामोत	यरामोत	auto	media	1	1	1.00	बानी
-Jeriel	यरीएल	यरीएल	auto	media	2	1	1.00	यहमै
-Jerimoth	यरेमोत	यरेमोत	auto	media	1	1	1.00	आलेमेत
-Jerioth	यरीओत	यरीओत	auto	media	2	1	1.00	येशेर
-Jeruel	यरूएल	यरूएल	auto	media	3	1	1.00	मिलेंगे
-Jesaiah	यशायाह	यशायाह	auto	media	2	2	1.00	शकन्याह
-Jeshaiah	यशायाह	यशायाह	auto	media	9	8	0.88	सरी
-Jesiah	यिश्शिय्याह	यिश्शिय्याह	auto	media	1	1	1.00	योएजेर
-Jesus	यीशु	यीशु	auto	media	2	1161	0.75	यूस्तुस
-Jether	यतेरे	यतेरे	auto	media	2	1	1.00	जेठे
-Jetheth	यतेत	यतेत	auto	media	2	2	1.00	ये
-Jethro	यित्रो	यित्रो	auto	media	2	19	0.42	यात्रा
-Jetur	यतूर	यतूर	auto	media	4	4	0.75	ये
-Jeuz	ये	ये	auto	media	2	1	1.00	उसके
-Jezaniah	याजन्याह	याजन्याह	auto	media	2	4	0.75	होशायाह
-Jeziel	यजीएल	यजीएल	auto	media	2	1	1.00	अहीएजेर
-Jezliah	यिजलीआ	यिजलीआ	auto	media	1	1	1.00	एल्पाल
-Jezoar	यिसहर	यिसहर	auto	media	1	1	1.00	हेला
-Jezreel	यिज्रेल	यिज्रेल	auto	media	12	43	0.72	यिज्रेली
-Jezreel	यिज्रेली	यिज्रेली	auto	media	1	6	0.83	यिज्रेल
-Jidlaph	यिद्लाप	यिद्लाप	auto	media	2	1	1.00	पिल्दाश
-Joahaz	योआह	योआह	auto	media	2	1	1.00	योआहाज
-Joanan	यूहन्ना	यूहन्ना	auto	media	1	1	1.00	नहे
-Joanna	यूहन्ना	यूहन्ना	auto	media	1	1	1.00	नहे
-Joezer	योएजेर	योएजेर	auto	media	2	1	1.00	यिश्शिय्याह
-Johanan	यहोहानान	यहोहानान	auto	media	2	2	1.00	एल्याशीब
-Jokmeam	योकमाम	योकमाम	auto	media	4	2	1.00	यिज्रेल
-Jonam	योनान	योनान	auto	media	1	1	1.00	एलयाकीम
-Jonas	इनसे	इनसे	auto	media	1	4	0.25	यूहन्ना
-Josabad	योजाबाद	योजाबाद	auto	media	1	1	1.00	यिशमायाह
-Josedech	यहोसादाक	यहोसादाक	auto	media	1	12	0.67	योसादाक
-Joseph	योसेख	योसेख	auto	media	1	1	1.00	योदाह
-Joshua	येशू	येशू	auto	media	1	1	1.00	योरीम
-Josiah	योशियाह	योशियाह	auto	media	2	4	0.25	तोबियाह
-Jotbah	योत्बावासी	योत्बावासी	auto	media	3	1	1.00	जब
-Jozadak	योसादाक	योसादाक	auto	media	2	1	1.00	यारीब
-Juda	यहूदा	यहूदा	auto	media	1	1	1.00	योनान
-Juda	योदाह	योदाह	auto	media	1	1	1.00	योसेख
-Judaism	यहूदी	यहूदी	auto	media	1	2	1.00	यहूदियों
-Judas	यहूदा	यहूदा	auto	media	7	31	0.94	लिखाई
-Jude	यहूदा	यहूदा	auto	media	2	3	1.00	यीशु
-Judea	यहूदिया	यहूदिया	auto	media	4	59	0.73	यहूदा
-Jushab-hesed	यूशब	यूशब	auto	media	2	1	1.00	हेसेद
-Kadesh	देश	देश	auto	media	1	1	1.00	तहतीम्होदशी
-Kadesh-barnea	कादेशबर्ने	कादेशबर्ने	auto	media	2	24	0.42	अद्दार
-Kain	कैन	कैन	auto	media	3	2	0.50	हैं
-Karnaim	कारण	कारण	auto	media	1	1	1.00	करते
-Kartah	कर्ता	कर्ता	auto	media	2	2	0.50	अर्थात्
-Kedesh-naphtali	केदेश	केदेश	auto	media	2	1	1.00	नप्तालियों
-Kemuel	कमूएल	कमूएल	auto	media	6	3	1.00	हुए
-Kenath	कनात	कनात	auto	media	3	4	0.50	नोबह
-Kerioth	करिय्योत	करिय्योत	auto	media	2	3	1.00	के
-Kir	कीर	कीर	auto	media	5	11	0.45	की
-Kir-hareseth	कीरहरासत	कीरहरासत	auto	media	1	2	1.00	निराश
-Kir-hareseth	कीरहेरेस	कीरहेरेस	auto	media	1	5	0.60	कीरहरासत
-Kiriath-arim	किर्यत्यारीम	किर्यत्यारीम	auto	media	1	1	1.00	कपीरा
-Kitron	कित्रोन	कित्रोन	auto	media	3	3	0.33	को
-Kittim	कित्तियों	कित्तियों	auto	media	2	2	1.00	जहाज
-Kiyyun	की	की	auto	media	1	1	1.00	जिन्हें
-Kohath	कहात	कहात	auto	media	2	42	0.43	कहाती
-Koz	कोस	कोस	auto	media	1	1	1.00	से
-Koz	हक्कोस	हक्कोस	auto	media	2	4	1.00	को
-Kue	हुए	हुए	auto	media	3	2	1.00	के
-Ladan	लादान	लादान	auto	media	1	1	1.00	अम्मीहूद
-Lahmam	लहमास	लहमास	auto	media	3	1	1.00	कब्बोन
-Lasea	लसया	लसया	auto	media	3	1	1.00	से
-Lebaoth	लबाओत	लबाओत	auto	media	3	1	1.00	शिल्हीम
-Lebo-hamath	हमात	हमात	auto	media	2	12	0.92	लेकर
-Lehi	लही	लही	auto	media	3	4	0.75	जले
-Lemuel	लमूएल	लमूएल	auto	media	2	2	1.00	दाखमधु
-Letushim	लतूशी	लतूशी	auto	media	2	1	1.00	लुम्मी
-Levi	लेवी	लेवी	auto	media	6	331	0.15	लेवीय
-Libya	लीबिया	लीबिया	auto	media	3	10	0.10	लूबी
-Likhi	लिखी	लिखी	auto	media	2	1	1.00	अहिअन
-Lo-debar	लोदबार	लोदबार	auto	media	3	5	0.40	लोदबरवासी
-Luke	लूका	लूका	auto	media	2	4	0.75	के
-Lycaonia	लुकाउनिया	लुकाउनिया	auto	media	3	2	1.00	प्रदेशों
-Lycia	किलिकिया	किलिकिया	auto	media	3	1	1.00	लूसिया
-Lydda	लुद्दा	लुद्दा	auto	media	1	3	1.00	यह
-Lysias	लूसियास	लूसियास	auto	media	1	3	1.00	फेलिक्स
-Maacath	माकी	माकी	auto	media	1	1	1.00	माकियों
-Maadai	मादै	मादै	auto	media	2	1	1.00	बानी
-Macedonia	मकिदुनिया	मकिदुनिया	auto	media	3	27	0.74	मकिदुनी
-Madai	मादै	मादै	auto	media	2	2	1.00	मागोग
-Mahalah	महला	महला	auto	media	1	1	1.00	ईशहोद
-Mahalath	महलत	महलत	auto	media	3	7	0.29	माता
-Manaen	मनाहेम	मनाहेम	auto	media	2	1	1.00	शमौन
-Manasseh	दान	दान	auto	media	1	1	1.00	बने
-Marah	मारा	मारा	auto	media	3	5	0.60	खारा
-Mark	मरकुस	मरकुस	auto	media	1	10	0.80	तुम्हारे
-Maskil	रची	रची	auto	media	1	14	0.07	चिल्लाता
-Massa	मस्सा	मस्सा	auto	media	2	2	1.00	दूमा
-Mattathias	मत्तित्याह	मत्तित्याह	auto	media	4	2	1.00	असल्याह
-Matthan	मत्तान	मत्तान	auto	media	2	1	1.00	उत्पन्न
-Matthew	मत्ती	मत्ती	auto	media	2	8	0.62	बैठे
-Mearah	मारा	मारा	auto	media	3	1	1.00	सारा
-Medan	मदना	मदना	auto	media	2	2	0.50	मदान
-Media	मादी	मादी	auto	media	1	11	0.27	मादै
-Media	मादै	मादै	auto	media	1	8	0.62	मेढ़ा
-Media	मेदी	मेदी	auto	media	1	22	0.05	मादी
-Mehir	महीर	महीर	auto	media	2	1	1.00	फिर
-Mehuman	महूमान	महूमान	auto	media	2	1	1.00	में
-Melchi	मलकी	मलकी	auto	media	4	2	1.00	लेवी
-Melchiah	मल्किय्याह	मल्किय्याह	auto	media	1	2	1.00	मासेयाह
-Melita	माल्टा	माल्टा	auto	media	1	1	1.00	कहलाता
-Melzar	मीशाएल	मीशाएल	auto	media	2	2	0.50	भाल
-Menan	मिन्नाह	मिन्नाह	auto	media	1	1	1.00	मलेआह
-Menna	मिन्नाह	मिन्नाह	auto	media	1	1	1.00	मलेआह
-Mephaath	मेपात	मेपात	auto	media	3	4	1.00	कदेमोत
-Merodach-baladan	बलदान	बलदान	auto	media	2	2	1.00	मरोदक
-Meroz	मेरोज	मेरोज	auto	media	3	1	1.00	शूरवीरों
-Meshech-Tubal	मेशेक	मेशेक	auto	media	2	1	1.00	तूबल
-Meshezabeel	मशेजबेल	मशेजबेल	auto	media	3	3	1.00	मरेमोत
-Meshezabel	मशेजबेल	मशेजबेल	auto	media	3	3	1.00	सादोक
-Meshillemith	मशिल्लीत	मशिल्लीत	auto	media	2	2	0.50	मशिल्लेमोत
-Mesopotamia	मेसोपोटामिया	मेसोपोटामिया	auto	media	3	7	0.29	रिश्आतइम
-Messiah	मसीह	मसीह	auto	media	1	2	1.00	मिल
-Mezahab	मेज़ाहाब	मेज़ाहाब	auto	media	3	2	1.00	महेतबेल
-Miamin	मिय्यामीन	मिय्यामीन	auto	media	1	1	1.00	रम्याह
-Mica	मीका	मीका	auto	media	2	3	1.00	मुखिया
-Mica	मीकायाह	मीकायाह	auto	media	1	2	0.50	मुखिया
-Micha	मीका	मीका	auto	media	2	3	1.00	मुखिया
-Michah	मीका	मीका	auto	media	1	3	1.00	शामीर
-Michaiah	मीकायाह	मीकायाह	auto	media	5	8	0.75	जकर्याह
-Michmas	मिकमाश	मिकमाश	auto	media	1	2	1.00	मनुष्य
-Michmethath	मिकमतात	मिकमतात	auto	media	3	2	1.00	एनतप्पूह
-Midian	मिद्यान	मिद्यान	auto	media	5	63	0.38	मिद्यानी
-Miktam	मुझ	मुझ	auto	media	1	6	0.50	धार्मिकता
-Mishael	मीशाएल	मीशाएल	auto	media	5	21	0.38	उज्जीएल
-Misrephoth-maim	मिस्रपोतमैम	मिस्रपोतमैम	auto	media	3	2	1.00	मिस्पे
-Mizraim	मिस्र	मिस्र	auto	media	1	4	1.00	अनामी
-Moadiah	मोअद्याह	मोअद्याह	auto	media	1	3	0.33	माद्याह
-Moresheth	मोरेशेत	मोरेशेत	auto	media	1	3	0.33	मोरेशेतवासी
-Moresheth	मोरेशेतवासी	मोरेशेतवासी	auto	media	1	2	1.00	में
-Moresheth-gath	मोरेशेत	मोरेशेत	auto	media	2	3	0.33	गत
-Mozah	मोसा	मोसा	auto	media	3	1	1.00	मिस्पे
-Muppim	मुप्पीम	मुप्पीम	auto	media	1	3	0.33	हुप्पीम
-Myra	मूरा	मूरा	auto	media	3	1	1.00	लूसिया
-Naam	नाम	नाम	auto	media	2	1	1.00	कनज
-Naggai	नग्	नग्	auto	media	1	1	1.00	नहूम
-Nahalol	नहलोल	नहलोल	auto	media	2	3	0.33	निकाला
-Naioth	नबायोत	नबायोत	auto	media	3	6	0.83	है
-Naphish	नापीश	नापीश	auto	media	3	3	1.00	नोदाब
-Naphtuhim	नप्तूही	नप्तूही	auto	media	2	2	1.00	अनामी
-Nazareth	नासरी	नासरी	auto	media	3	33	0.61	नासरत
-Neah	नेआ	नेआ	auto	media	3	3	0.33	इत्कासीन
-Neapolis	नियापुलिस	नियापुलिस	auto	media	3	1	1.00	इसलिए
-Nebu-sar-sekim	सर्सकीम	सर्सकीम	auto	media	1	1	1.00	नेर्गलसरेसेर
-Nebushasban	नबूसजबान	नबूसजबान	auto	media	1	1	1.00	नेर्गलसरेसेर
-Nebushazban	नबूसजबान	नबूसजबान	auto	media	1	1	1.00	नेर्गलसरेसेर
-Neco	नको	नको	auto	media	1	10	0.80	नो
-Negeb	होंगे	होंगे	auto	media	3	44	0.02	लेंगे
-Nehushtan	नहुशतान	नहुशतान	auto	media	1	1	1.00	स्थान
-Nemuel	नमूएल	नमूएल	auto	media	2	1	1.00	ने
-Nepheg	नेपेग	नेपेग	auto	media	4	4	1.00	थे
-Nephilim	नपीली	नपीली	auto	media	1	2	0.50	नपीलों
-Nereus	नेर्युस	नेर्युस	auto	media	2	1	1.00	उलुम्पास
-Netaim	नताईम	नताईम	auto	media	3	1	1.00	गदेरा
-Netophah	नतोपा	नतोपा	auto	media	3	12	0.17	नतोपाही
-Nezib	नसीब	नसीब	auto	media	3	1	1.00	इप्ताह
-Nibhaz	निभज	निभज	auto	media	1	1	1.00	किया
-Nicolaitans	नीकुलइयों	नीकुलइयों	auto	media	1	2	1.00	करता
-Nicolas	नीकुलाउस	नीकुलाउस	auto	media	1	1	1.00	नीकानोर
-Nicopolis	निकुपुलिस	निकुपुलिस	auto	media	3	1	1.00	निश्चय
-Nile	नील	नील	auto	media	3	48	0.50	नदी
-Nophah	नोपह	नोपह	auto	media	2	1	1.00	दीबोन
-Nympha	नुमफास	नुमफास	auto	media	1	1	1.00	नमस्कार
-Olympas	उलुम्पास	उलुम्पास	auto	media	2	1	1.00	यूलिया
-Onesiphorus	उनेसिफुरूस	उनेसिफुरूस	auto	media	2	2	1.00	क्योंकि
-Ophrah	ओप्रा	ओप्रा	auto	media	8	10	0.80	ओर
-Osnappar	नप्पर	नप्पर	auto	media	1	1	1.00	ओस्
-Ozni	शूनी	शूनी	auto	media	1	2	0.50	अरोदी
-Paddan	पद्दान	पद्दान	auto	media	2	16	0.06	पहुँचने
-Pai	पाऊ	पाऊ	auto	media	1	1	1.00	पत्नी
-Paphos	पाफुस	पाफुस	auto	media	3	2	1.00	पंफूलिया
-Parmenas	परमिनास	परमिनास	auto	media	2	1	1.00	परिपूर्ण
-Parthians	पारथी	पारथी	auto	media	1	1	1.00	कप्पदूकिया
-Parvaim	पर्वेम	पर्वेम	auto	media	3	1	1.00	जड़वाए
-Patmos	पतमुस	पतमुस	auto	media	3	1	1.00	परमेश्वर
-Pedahel	पदहेल	पदहेल	auto	media	2	1	1.00	नप्तालियों
-Pekod	पकोद	पकोद	auto	media	2	2	1.00	कोआ
-Peniel	पनीएल	पनीएल	auto	media	2	6	0.33	देखने
-Penuel	पनूएल	पनूएल	auto	media	6	8	0.75	एजेर
-Peor	पोर	पोर	auto	media	3	8	0.50	देखो
-Perga	पिरगा	पिरगा	auto	media	3	3	1.00	पाफुस
-Pergamum	पिरगमुन	पिरगमुन	auto	media	3	2	1.00	स्वर्गदूत
-Persia	परेस	परेस	auto	media	1	33	0.03	मेरेस
-Persia	मेरेस	मेरेस	auto	media	1	27	0.04	फारस
-Persis	पिरसिस	पिरसिस	auto	media	2	1	1.00	प्रिय
-Pethor	पतोर	पतोर	auto	media	3	2	1.00	बोर
-Pethuel	पतूएल	पतूएल	auto	media	2	1	1.00	योएल
-Phaltiel	पलतीएल	पलतीएल	auto	media	1	2	0.50	पलती
-Pharisee	फरीसी	फरीसी	auto	media	1	95	0.36	फरीसियों
-Pharosh	परोश	परोश	auto	media	1	1	1.00	वंश
-Pharpar	पर्पर	पर्पर	auto	media	3	1	1.00	भरा
-Phebe	फीबे	फीबे	auto	media	1	1	1.00	सेविका
-Phenice	फीनिक्स	फीनिक्स	auto	media	1	1	1.00	काटें
-Phenicia	फीनीके	फीनीके	auto	media	1	3	1.00	अन्ताकिया
-Phichol	पीकोल	पीकोल	auto	media	1	3	1.00	को
-Phicol	पीकोल	पीकोल	auto	media	1	3	1.00	को
-Philistia	पलिश्ती	पलिश्ती	auto	media	1	250	0.34	पलिश्तियों
-Philistia	पलिश्तीन	पलिश्तीन	auto	media	2	22	0.18	पलिश्त
-Philistine	पलिश्ती	पलिश्ती	auto	media	1	2	1.00	जिनसे
-Philologus	फिलुलुगुस	फिलुलुगुस	auto	media	2	1	1.00	यूलिया
-Phlegon	फिलगोन	फिलगोन	auto	media	2	1	1.00	भाइयों
-Phoebe	फीबे	फीबे	auto	media	1	2	0.50	के
-Phoenix	फीनिक्स	फीनिक्स	auto	media	2	1	1.00	काटें
-Phygellus	फूगिलुस	फूगिलुस	auto	media	1	1	1.00	हिरमुगिनेस
-Phygelus	फूगिलुस	फूगिलुस	auto	media	1	1	1.00	हिरमुगिनेस
-Place	लाए	लाए	auto	media	1	2	0.50	गुलगुता
-Pochereth-hazzebaim	पोकरेत	पोकरेत	auto	media	1	2	1.00	सबायीम
-Pontus	पुन्तुस	पुन्तुस	auto	media	3	3	1.00	पारथी
-Prochorus	प्रुखुरुस	प्रुखुरुस	auto	media	2	1	1.00	नीकानोर
-Ptolemais	पतुलिमयिस	पतुलिमयिस	auto	media	2	1	1.00	जलयात्रा
-Pul	पूलियों	पूलियों	auto	media	1	1	1.00	तुबलियों
-Purah	फूरा	फूरा	auto	media	1	2	1.00	उतर
-Put	पूती	पूती	auto	media	1	3	0.33	पूत
-Puteoli	पुतियुली	पुतियुली	auto	media	3	1	1.00	चली
-Pyrrhus	पुरूर्स	पुरूर्स	auto	media	1	1	1.00	सोपत्रुस
-Raamah	रामाह	रामाह	auto	media	5	3	1.00	उत्तम
-Raamses	रामसेस	रामसेस	auto	media	2	1	1.00	भण्डारवाले
-Raca	नरक	नरक	auto	media	1	1	1.00	कचहरी
-Rachab	राहाब	राहाब	auto	media	1	1	1.00	रूत
-Ramah	यहोराम	यहोराम	auto	media	2	2	1.00	योराम
-Ramath-lehi	रामत	रामत	auto	media	3	1	1.00	जबड़े
-Ramath-mizpeh	रामत	रामत	auto	media	2	1	1.00	मिस्पे
-Ramathaim-zophim	रामातैम	रामातैम	auto	media	2	1	1.00	एप्रैमी
-Ramoth	यरामोत	यरामोत	auto	media	1	1	1.00	और
-Rapha	रापा	रापा	auto	media	2	9	0.67	अर्द
-Raphah	रापा	रापा	auto	media	1	2	0.50	रपायाह
-Raphu	रापू	रापू	auto	media	2	1	1.00	गोत्र
-Reaia	रायाह	रायाह	auto	media	1	1	1.00	बाल
-Rehoboth	रहोबोत	रहोबोत	auto	media	6	3	1.00	हमारे
-Rehoboth	रहोबोतीर	रहोबोतीर	auto	media	1	1	1.00	को
-Rehum	रहूम	रहूम	auto	media	8	11	0.73	मरेमोत
-Rephael	रपाएल	रपाएल	auto	media	2	1	1.00	एलीहू
-Rephah	रेपा	रेपा	auto	media	2	1	1.00	रेशेप
-Rephaiah	रपायाह	रपायाह	auto	media	9	6	0.83	अर्नान
-Rephan	रिफान	रिफान	auto	media	1	1	1.00	परे
-Resheph	रेशेप	रेशेप	auto	media	2	1	1.00	रेपा
-Reuben	रूबेन	रूबेन	auto	media	2	86	0.49	रूबेनी
-Rezeph	रेसेप	रेसेप	auto	media	3	2	1.00	एदेनी
-Rimmon	दिम्ना	दिम्ना	auto	media	1	1	1.00	ये
-Rimmono	रिम्मोन	रिम्मोन	auto	media	2	1	1.00	चराइयों
-Riphath	रीपत	रीपत	auto	media	2	2	0.50	दीपत
-Rome	रोम	रोम	auto	media	2	15	0.53	रोमी
-Rome	रोमी	रोमी	auto	media	1	28	0.32	रोम
-Rosh	रोश	रोश	auto	media	1	2	0.50	नोहा
-Rumah	रूमावासी	रूमावासी	auto	media	2	1	1.00	रहा
-Sabbath	सब्त	सब्त	auto	media	1	151	0.36	सब
-Sachia	मुख्य	मुख्य	auto	media	1	1	1.00	उसके
-Sadducee	सदूकी	सदूकी	auto	media	1	14	0.29	सदूकियों
-Sadoc	सादोक	सादोक	auto	media	1	1	1.00	अखीम
-Salathiel	शालतीएल	शालतीएल	auto	media	1	1	1.00	रेसा
-Salim	सालेम	सालेम	auto	media	3	1	1.00	ऐनोन
-Samgar	समगर्नबो	समगर्नबो	auto	media	1	1	1.00	सर्सकीम
-Samos	सामुस	सामुस	auto	media	3	1	1.00	खियुस
-Samothrace	सुमात्राके	सुमात्राके	auto	media	3	1	1.00	दूसरे
-Sarah	सारा	सारा	auto	media	2	48	0.75	सारै
-Saraph	साराप	साराप	auto	media	2	1	1.00	और
-Scythians	स्कूती	स्कूती	auto	media	1	1	1.00	खतना
-Seba	सबा	सबा	auto	media	4	4	1.00	शेबा
-Sebam	सबाम	सबाम	auto	media	2	1	1.00	बोन
-Segub	सगूब	सगूब	auto	media	4	3	1.00	उसने
-Sela	से	से	auto	media	1	2	1.00	सीमा
-Sela	सेला	सेला	auto	media	4	5	0.60	से
-Semei	शिमी	शिमी	auto	media	1	1	1.00	योसेख
-Semein	शिमी	शिमी	auto	media	1	1	1.00	योसेख
-Senaah	सना	सना	auto	media	2	5	0.40	हस्सना
-Senir	सनीर	सनीर	auto	media	2	4	1.00	सिर्योन
-Senuah	हस्सनूआ	हस्सनूआ	auto	media	1	1	1.00	नायब
-Sepharad	सपाराद	सपाराद	auto	media	2	1	1.00	सारफत
-Sepharad	सरदीस	सरदीस	auto	media	1	4	0.75	सपाराद
-Seraiah	राजसी	राजसी	auto	media	1	4	0.25	सरायाह
-Sethur	सतूर	सतूर	auto	media	2	1	1.00	आशेर
-Shaalbim	शाल्बीम	शाल्बीम	auto	media	3	5	0.40	इसलिए
-Shaashgaz	शाशगज	शाशगज	auto	media	2	1	1.00	साँझ
-Shachia	मुख्य	मुख्य	auto	media	1	1	1.00	उसके
-Shallun	शल्लूम	शल्लूम	auto	media	1	1	1.00	ताले
-Shamariah	शेमर्याह	शेमर्याह	auto	media	1	1	1.00	जाहम
-Shamer	शेमेर	शेमेर	auto	media	2	3	0.67	अमसी
-Shamma	शम्मा	शम्मा	auto	media	2	1	1.00	शिलसा
-Shapham	शापाम	शापाम	auto	media	2	1	1.00	शापात
-Shaphir	शापीर	शापीर	auto	media	3	1	1.00	सकती
-Sharuhen	शारूहेन	शारूहेन	auto	media	3	3	0.33	उन्हें
-Shaul	शाऊल	शाऊल	auto	media	6	10	0.90	सम्ला
-Shaveh-kiriathaim	किर्यातैम	किर्यातैम	auto	media	2	1	1.00	शावे
-Shavsha	शवा	शवा	auto	media	1	4	0.25	शबशा
-Sheal	शाल	शाल	auto	media	2	1	1.00	से
-Shebat	शबात	शबात	auto	media	1	1	1.00	इस
-Shebuel	शबूएल	शबूएल	auto	media	2	5	0.60	शूबाएल
-Sheleph	शेलेप	शेलेप	auto	media	2	2	1.00	से
-Shelomith	शलोमोत	शलोमोत	auto	media	1	3	1.00	एलीएजेर
-Shelomoth	शलोमीत	शलोमीत	auto	media	1	1	1.00	हजीएल
-Shemaah	शमाआ	शमाआ	auto	media	2	1	1.00	यजीएल
-Shemed	शामेद	शामेद	auto	media	1	1	1.00	मिशाम
-Shemuel	शमूएल	शमूएल	auto	media	4	2	1.00	अम्मीहूद
-Shephathiah	शपत्याह	शपत्याह	auto	media	1	1	1.00	यिबनायाह
-Shephelah	तेल	तेल	auto	media	1	6	0.17	बेतशेमेश
-Shethar-bozenai	शतर्बोजनै	शतर्बोजनै	auto	media	1	4	1.00	तत्तनै
-Shethar-boznai	शतर्बोजनै	शतर्बोजनै	auto	media	1	4	1.00	तत्तनै
-Sheva	शवा	शवा	auto	media	2	1	1.00	शाप
-Shiloah	शीलोह	शीलोह	auto	media	2	1	1.00	रसीन
-Shimeah	शिमआह	शिमआह	auto	media	3	9	0.44	ये
-Shimeon	शिमोन	शिमोन	auto	media	2	1	1.00	यिश्शियाह
-Shimhi	शिमी	शिमी	auto	media	1	1	1.00	शिम्रात
-Shimon	शिमोन	शिमोन	auto	media	2	1	1.00	रिन्ना
-Shiphi	शिपी	शिपी	auto	media	2	1	1.00	शिम्री
-Shiphtan	शिप्तान	शिप्तान	auto	media	2	1	1.00	गोत्र
-Shubael	शूबाएल	शूबाएल	auto	media	2	5	0.40	शबूएल
-Shunem	शूनेम	शूनेम	auto	media	3	9	0.33	उन्होंने
-Shupham	शपूपाम	शपूपाम	auto	media	1	3	0.33	हूपाम
-Silla	सिल्ला	सिल्ला	auto	media	3	1	1.00	मिल्लो
-Simeon	में	में	auto	media	4	3	1.00	शमौन
-Simri	शिम्री	शिम्री	auto	media	1	1	1.00	मरारी
-Sin	सीन	सीन	auto	media	3	4	1.00	सीनै
-Siphmoth	सिपमोत	सिपमोत	auto	media	3	1	1.00	एश्तमो
-Smyrna	स्मुरना	स्मुरना	auto	media	3	2	1.00	पिरगमुन
-So	सो	सो	auto	media	2	1	1.00	उसको
-Soco	सोको	सोको	auto	media	2	2	1.00	बेतसूर
-Sopater	सोपत्रुस	सोपत्रुस	auto	media	2	2	0.50	सोसिपत्रुस
-Spain	इसपानिया	इसपानिया	auto	media	3	2	1.00	मैं
-Stachys	इस्तखुस	इस्तखुस	auto	media	2	1	1.00	सहकर्मी
-Suph	सूफ	सूफ	auto	media	3	1	1.00	से
-Suphah	सूपा	सूपा	auto	media	3	1	1.00	इस
-Sur	सूर	सूर	auto	media	3	1	1.00	और
-Sychar	सूखार	सूखार	auto	media	3	1	1.00	याकूब
-Syene	सवेने	सवेने	auto	media	3	3	0.67	सीनियों
-Syntyche	सुन्तुखे	सुन्तुखे	auto	media	2	1	1.00	यूओदिया
-Syracuse	सुरकूसा	सुरकूसा	auto	media	3	1	1.00	टिके
-Syria	सरीखा	सरीखा	auto	media	1	89	0.01	राजा
-Syria	सीरिया	सीरिया	auto	media	3	116	0.08	सरीखा
-Syrtis	सुरतिस	सुरतिस	auto	media	3	1	1.00	टिक
-Tamah	तेमह	तेमह	auto	media	1	2	1.00	बर्कोस
-Tammuz	तम्मूज	तम्मूज	auto	media	1	1	1.00	था
-Taphath	तापत	तापत	auto	media	2	1	1.00	अबीनादब
-Tehaphnehes	तहपन्हेस	तहपन्हेस	auto	media	1	1	1.00	बेटियाँ
-Telaim	तलाईम	तलाईम	auto	media	2	1	1.00	थे
-Teman	तेमानी	तेमानी	auto	media	1	13	0.46	तेमान
-Tertius	तिरतियुस	तिरतियुस	auto	media	2	1	1.00	पत्री
-Tertullus	तिरतुल्लुस	तिरतुल्लुस	auto	media	2	2	1.00	पौलुस
-Tharshish	तर्शीश	तर्शीश	auto	media	1	1	1.00	अहीशहर
-Theophilus	थियुफिलुस	थियुफिलुस	auto	media	2	2	1.00	लिखूँ
-Thessalonica	थिस्सलुनीके	थिस्सलुनीके	auto	media	3	11	0.55	थिस्सलुनीकियों
-Theudas	थियूदास	थियूदास	auto	media	2	1	1.00	हुआ
-Tiberius	तिबिरियुस	तिबिरियुस	auto	media	2	12	0.08	पुन्तियुस
-Tigris	तीसरी	तीसरी	auto	media	2	2	0.50	चौथी
-Tilon	तोलोन	तोलोन	auto	media	2	1	1.00	रिन्ना
-Timaeus	तिमाई	तिमाई	auto	media	2	1	1.00	बरतिमाई
-Timnath-heres	तिम्नथेरेस	तिम्नथेरेस	auto	media	3	3	0.33	तिम्नत्सेरह
-Tobijah	तोबियाह	तोबियाह	auto	media	4	3	1.00	तोबदोनिय्याह
-Tohu	तोहू	तोहू	auto	media	1	3	0.33	तोह
-Tophel	तोपेल	तोपेल	auto	media	3	1	1.00	बातें
-Topheth	तोपेत	तोपेत	auto	media	3	17	0.53	आते
-Tryphaena	त्रूफैना	त्रूफैना	auto	media	1	1	1.00	त्रूफोसा
-Tryphena	त्रूफैना	त्रूफैना	auto	media	1	1	1.00	त्रूफोसा
-Tubal-cain	तूबल	तूबल	auto	media	2	1	1.00	कैन
-Tyre	फिराते	फिराते	auto	media	3	64	0.02	उतरे
-Unni	उन्नो	उन्नो	auto	media	2	1	1.00	उनके
-Uphaz	ऊफाज	ऊफाज	auto	media	3	2	1.00	और
-Urbane	उरबानुस	उरबानुस	auto	media	1	1	1.00	और
-Uzai	ऊजै	ऊजै	auto	media	2	1	1.00	उसी
-Uzal	ऊजाल	ऊजाल	auto	media	2	2	1.00	दिक्ला
-Uzal	हुआ	हुआ	auto	media	3	1	1.00	सूत
-Uzza	उज्जा	उज्जा	auto	media	9	6	1.00	उसका
-Uzzia	उज्जियाह	उज्जियाह	auto	media	2	1	1.00	शामा
-Vaniah	वन्	वन्	auto	media	2	1	1.00	याह
-Zaavan	जावान	जावान	auto	media	1	2	1.00	अकान
-Zabdi	जब्दी	जब्दी	auto	media	6	6	0.83	समीप
-Zabud	जाबूद	जाबूद	auto	media	2	1	1.00	और
-Zacchur	जक्कूर	जक्कूर	auto	media	1	1	1.00	और
-Zachariah	जकर्याह	जकर्याह	auto	media	1	3	1.00	सामरिया
-Zacharias	जकर्याह	जकर्याह	auto	media	2	12	1.00	घबराया
-Zalaph	सालाप	सालाप	auto	media	2	1	1.00	मशुल्लाम
-Zaphon	सापोन	सापोन	auto	media	3	4	0.50	हेशबोन
-Zaphon	सिय्योन	सिय्योन	auto	media	1	3	0.33	दिशा
-Zatthu	जत्तू	जत्तू	auto	media	1	1	1.00	परोश
-Zattu	जत्तू	जत्तू	auto	media	3	5	0.80	सौ
-Zavan	जावान	जावान	auto	media	1	2	1.00	अकान
-Zebidah	जबीदा	जबीदा	auto	media	1	1	1.00	रूमावासी
-Zebina	जबीना	जबीना	auto	media	2	1	1.00	यद्दई
-Zeboim	सबोईम	सबोईम	auto	media	3	1	1.00	हादीद
-Zebulun	जबूलून	जबूलून	auto	media	2	48	0.83	जबूलूनी
-Zecher	जेकेर	जेकेर	auto	media	1	2	0.50	जकर्याह
-Zedad	सदाद	सदाद	auto	media	3	2	1.00	से
-Zela	जेला	जेला	auto	media	3	2	0.50	सेला
-Zemira	जमीरा	जमीरा	auto	media	1	1	1.00	एलीएजेर
-Zemirah	जमीरा	जमीरा	auto	media	1	1	1.00	एलीएजेर
-Zenan	सनान	सनान	auto	media	3	1	1.00	हदाशा
-Zenas	जेनास	जेनास	auto	media	2	1	1.00	देख
-Zer	सेर	सेर	auto	media	3	1	1.00	किन्नेरेत
-Zerah	जेरह	जेरह	auto	media	12	31	0.65	एर
-Zerahiah	जरहयाह	जरहयाह	auto	media	4	6	0.67	मरायोत
-Zered	जेरेद	जेरेद	auto	media	3	3	1.00	से
-Zeredah	सरेदावासी	सरेदावासी	auto	media	3	1	1.00	सरूआह
-Zeresh	जेरेश	जेरेश	auto	media	2	3	1.00	सवेरे
-Zeri	यिस्री	यिस्री	auto	media	1	2	0.50	सरी
-Zeror	सरोर	सरोर	auto	media	2	1	1.00	सूरमा
-Zetham	जेताम	जेताम	auto	media	2	2	1.00	योएल
-Zethan	जेतान	जेतान	auto	media	2	1	1.00	अहीशहर
-Ziddim	सिद्दीम	सिद्दीम	auto	media	3	1	1.00	सेर
-Zidkijah	सिदकिय्याह	सिदकिय्याह	auto	media	1	1	1.00	हकल्याह
-Zidon	सीदोन	सीदोन	auto	media	1	2	1.00	हित्त
-Ziphion	शूनियों	शूनियों	auto	media	1	2	0.50	ओजनियों
-Ziphron	जिप्रोन	जिप्रोन	auto	media	3	1	1.00	हसरेनान
-Ziv	अस्सीवें	अस्सीवें	auto	media	1	2	0.50	जीव
-Ziza	जीजा	जीजा	auto	media	4	2	1.00	शिपी
-Zizah	यूश	यूश	auto	media	2	2	1.00	जीजा
-Zobah-Hamath	सोबा	सोबा	auto	media	1	1	1.00	हमात
-Zoheth	जोहेत	जोहेत	auto	media	2	1	1.00	बेनजोहेत
-Zophah	सोपह	सोपह	auto	media	2	2	1.00	सूह
-Zophar	सोपर	सोपर	auto	media	2	4	1.00	अनुसार
-Zophim	सोपीम	सोपीम	auto	media	3	1	1.00	सिरे
-Zorobabel	जरुब्बाबेल	जरुब्बाबेल	auto	media	1	1	1.00	शालतीएल
+Abel	वाले	आबेल	revisado	baixa	1	1	1.00	गए
+Achor Valley	{n} की तराई Achor	आकोर की तराई	revisado	baixa	1	5	0.00	
+Adriatic Sea	{n} समुद्र Adriatic	अद्रिया समुद्र	revisado	baixa	2	1	0.00	
+Ahasuerus	तेरेश	क्षयर्ष	revisado	baixa	2	30	0.07	और
+Ahaz	आहाज	आहाज	revisado	baixa	2	4	1.00	तह्रे
+Ahaz	नक्शा	आहाज	revisado	baixa	2	37	0.03	आहाज
+Ain	भागों	ऐन	revisado	baixa	1	1	1.00	युत्ता
+Al-taschith	वंशियों	अलतशहेत	revisado	baixa	1	4	0.25	बात
+Allon	यब्नेल	यब्नेल	sem	baixa	2	1	1.00	बांज
+Amaw	ढक	ढक	sem	baixa	3	1	1.00	बिलाम
+Amminadib	सहेलियाँ	सहेलियाँ	sem	baixa	1	1	1.00	कल्पना
+Amorite	एमोरी	एमोरी	revisado	baixa	1	4	0.50	एमोरियों
+Amorites	एमोरी	एमोरी	revisado	baixa	1	86	0.29	एमोरियों
+Angle	ने	ने	sem	baixa	2	1	1.00	कोने
+Apharasthchite	अफ़ारसी	अपर्सतकी	revisado	baixa	1	3	0.33	अपर्सतकी
+Appii Forum	{n} का चौक Appii	अप्पियुस का चौक	revisado	baixa	1	1	0.00	
+Archites	एरेकी	एरेकी	revisado	baixa	1	6	0.83	अहीतोपेल
+Arkite	अर्की	अर्की	revisado	baixa	1	2	1.00	सीनी
+Arkites	अर्की	अर्की	revisado	baixa	1	2	1.00	सीनी
+Arvadite	अर्वदी	अर्वदी	revisado	baixa	1	2	1.00	हमाती
+Arvadites	अर्वदी	अर्वदी	revisado	baixa	1	2	1.00	हमाती
+Asen	सन्तान	सन्तान	sem	baixa	1	1	1.00	हारीफ
+Atroth-shophan	अत्रौत	अत्रौत-शोपान	revisado	baixa	3	1	1.00	शोपान
+Azaz	अजाज	अजाज	revisado	baixa	2	1	1.00	रहता
+Azaziah	अजज्याह	अजज्याह	revisado	baixa	6	3	1.00	खर्ज
+Azotus	अश्दोद	अश्दोद	revisado	baixa	1	1	1.00	सुसमाचार
+Baal-zebub	जबूब	बाल-जबूब	revisado	baixa	2	4	1.00	बाल
+Baal-zephon	सपोन	बाल-सपोन	revisado	baixa	3	3	1.00	डालें
+Bar-jesus	पाफुस	बार-यीशु	revisado	baixa	1	2	0.50	यीशु
+Bear	सप्तर्षि	सप्तर्षि	revisado	baixa	1	2	1.00	बनानेवाला
+Beautiful Gate	{n} फाटक Beautiful	सुन्दर फाटक	revisado	baixa	3	2	0.00	
+Beer	बैर	बैर	revisado	baixa	3	1	1.00	वे
+Behemoth	को	जलगज	revisado	baixa	1	1	1.00	के
+Bene-jaakan	याकानियों	याकानियों के कुएँ	revisado	baixa	3	3	1.00	बीच
+Beth-eked	पकड़ो	पकड़ो	sem	baixa	3	2	0.50	के
+Bethlehem	बैतलहम	बैतलहम	revisado	baixa	7	58	0.78	समेत
+Birzaith	बिर्जोत	बिर्जोत	revisado	baixa	1	1	1.00	बरीआ
+Birzavith	बिर्जोत	बिर्जोत	revisado	baixa	1	1	1.00	बरीआ
+Booths Festival	{n} का पर्व Booths	झोपड़ियों का पर्व	revisado	baixa	1	1	0.00	
+Broad Wall	{n} शहरपनाह Broad	चौड़ी शहरपनाह	revisado	baixa	3	2	0.00	
+Brook of the Arabah	अराबा का नाला	अराबा का नाला	revisado	baixa	2	1	0.00	
+Brook of the Willows	मजनूवृक्षों का नाला का नाला	मजनूवृक्षों का नाला	revisado	baixa	2	1	0.00	
+Buz	बूज	बूज	revisado	baixa	4	2	1.00	ऊस
+Buz	बूजियों	बूज	revisado	baixa	3	1	1.00	भी
+Buzites	बूजी	बूजी	revisado	baixa	1	2	1.00	बूढ़े
+Canneh	न्	कन्ने	revisado	baixa	2	1	1.00	ने
+Carmel Mount	{n} पर्वत Carmel	कर्मेल पर्वत	revisado	baixa	1	5	0.00	
+Chaldea	फैलाओ	कसदियों का देश	revisado	baixa	1	9	0.11	देन
+Cherethites	करेतियों	करेती	revisado	baixa	1	9	0.56	करेती
+Cherethites	करेती	करेती	revisado	baixa	1	3	0.33	करेतियों
+Chronicles	लिखे	इतिहास	revisado	baixa	1	38	0.47	किए
+City of Destruction	नाशनगरपुर	नाशनगर	revisado	baixa	1	1	0.00	
+City of Palms	{n}पुर Palms	खजूरवाला नगर	revisado	baixa	2	4	0.00	
+City of Salt	नमक का नगरपुर	नमक का नगर	revisado	baixa	2	1	0.00	
+City of the Lord	{n}पुर Lord	यहोवा का नगर	revisado	baixa	1	2	0.00	
+Corner Gate	{n} फाटक Corner	कोनेवाला फाटक	revisado	baixa	3	5	0.00	
+Cush	छुटकारा	कूश	revisado	baixa	1	1	1.00	हूँ
+Cyprus	साइप्रस	साइप्रस	revisado	baixa	3	15	0.53	किसी
+Dedication Festival	{n} का पर्व Dedication	स्थापन पर्व	revisado	baixa	1	1	0.00	
+Dehavites	देहवी	देहवी	revisado	baixa	1	1	1.00	एलामी
+Dekar	बेन्देकेर	देकेर	revisado	baixa	1	1	1.00	माकस
+Destiny	देवी	भावी देवी	revisado	baixa	1	1	1.00	देते
+Destruction	देश	नाशनगर	revisado	baixa	1	1	1.00	नाशनगर
+Dinaites	दीनी	दीनी	revisado	baixa	1	1	1.00	शिमशै
+Dragon Spring	{n} का सोता Dragon	अजगर का सोता	revisado	baixa	3	1	0.00	
+Dung Gate	{n} फाटक Dung	कूड़ाफाटक	revisado	baixa	3	4	0.00	
+East	जेबह	पूर्वी	revisado	baixa	3	18	0.06	तट
+East Square	पूर्वी का चौक	पूर्वी चौक	revisado	baixa	1	1	0.00	
+Egypt	पूत	मिस्र	revisado	baixa	1	4	0.50	नप्तूही
+Egyptian Sea	{n} समुद्र Egyptian	मिस्र का समुद्र	revisado	baixa	1	1	0.00	
+Ephron	नेप्तोह	एप्रोन	revisado	baixa	2	1	1.00	फिर
+Ethiopia	खोजा	कूश	revisado	baixa	1	7	0.14	सत्ताईस
+Ethiopia	सत्ताईस	कूश	revisado	baixa	1	4	0.50	गीहोन
+Euphrates	फरात	फरात	revisado	baixa	3	61	0.59	मूरतें
+Eve	हव्वा	हव्वा	revisado	baixa	2	4	1.00	ने
+Ezekiel	यहेजकेल	यहेजकेल	revisado	baixa	2	2	1.00	शक्ति
+Eznites	एस्	एस्नी	revisado	baixa	1	1	1.00	नी
+Field	जलकुण्ड	धोबियों का खेत	revisado	baixa	1	3	1.00	सिरे
+Fish Gate	{n} फाटक Fish	मछली फाटक	revisado	baixa	3	4	0.00	
+Forest	अस्त्र	अस्त्र	sem	baixa	1	1	1.00	शस्त्र
+Forest Ephraim	एप्रैम का वन	एप्रैम का वन	revisado	baixa	1	1	0.00	
+Fortune	वस्तुएँ	भाग्य देवता	revisado	baixa	1	1	1.00	सजाते
+Forum of Appius	{n} का चौक Appius	अप्पियुस का चौक	revisado	baixa	2	1	0.00	
+Foundation Gate	{n} फाटक Foundation	नींव का फाटक	revisado	baixa	1	1	0.00	
+Fountain Gate	{n} फाटक Fountain	सोता फाटक	revisado	baixa	2	3	0.00	
+Freedmen	कुरेनी	दासत्व-मुक्त	revisado	baixa	1	1	1.00	में
+Galeed	गिलियाद	गिलियाद	revisado	baixa	1	2	1.00	सहादुथा
+Galilee	गोयीम	गलील	revisado	baixa	1	1	1.00	गिलगाल
+Garmite	गेरेमी	गेरेमी	revisado	baixa	1	1	1.00	नहम
+Garmites	गेरेमी	गेरेमी	revisado	baixa	1	1	1.00	नहम
+Gate Miphkad	{n} फाटक Miphkad	मिपकाद फाटक	revisado	baixa	1	1	0.00	
+Gate of Yeshanah	{n} फाटक Yeshanah	पुराना फाटक	revisado	baixa	1	2	0.00	
+Gate of the Foundation	{n} फाटक Foundation	नींव का फाटक	revisado	baixa	2	1	0.00	
+Gate of the Fountain	{n} फाटक Fountain	सोता फाटक	revisado	baixa	1	3	0.00	
+Gate of the Guard	{n} फाटक Guard	पहरुओं का फाटक	revisado	baixa	1	1	0.00	
+Gate of the Valley	{n} फाटक Valley	तराई का फाटक	revisado	baixa	1	2	0.00	
+Gazez	गाजेज	गाजेज	revisado	baixa	4	1	1.00	उससे
+Gedor	गदोरवासी	गदोर	revisado	baixa	1	1	1.00	योएला
+Gerasa	गिरासेनियों	गिरासेनियों का देश	revisado	baixa	2	4	0.75	आस
+Gerizim Mount	{n} पर्वत Gerizim	गिरिज्जीम पर्वत	revisado	baixa	1	4	0.00	
+Gibeah	गिबत्पीनहास	गिबा	revisado	baixa	1	1	1.00	गया
+Gibeath-elohim	जब	परमेश्वर का पहाड़	revisado	baixa	3	1	1.00	नबूवत
+Gibeath-haaraloth	बनवाकर	खलड़ियाँ टीला	revisado	baixa	2	1	1.00	खतना
+Girgashites	गिर्गाशी	गिर्गाशी	revisado	baixa	1	16	0.25	गिर्गाशियों
+Girgasite	गिर्गाशी	गिर्गाशी	revisado	baixa	1	2	1.00	यबूसी
+Girzites	गिर्जियों	गिर्जी	revisado	baixa	1	1	1.00	ये
+Gizonites	गीजोई	गीजोई	revisado	baixa	1	1	1.00	योनातान
+Great Sea	{n} समुद्र Great	महासमुद्र	revisado	baixa	3	36	0.00	
+Greece	के	यूनान	revisado	baixa	3	13	0.69	उभारेगा
+Guard Gate	{n} फाटक Guard	पहरुओं का फाटक	revisado	baixa	1	1	0.00	
+Gulloth-mayim	बोली	जल के सोते	revisado	baixa	1	2	1.00	सोते
+Hachmonites	हक्मोनी	हक्मोनी	revisado	baixa	1	2	0.50	तहकमोनी
+Hakkephirim	किसी	किसी	sem	baixa	2	1	1.00	मेरी
+Halak Mount	{n} पर्वत Halak	हालाक पहाड़	revisado	baixa	1	2	0.00	
+Hall of Judgment	{n} का ओसारा Judgment	न्याय का ओसारा	revisado	baixa	2	1	0.00	
+Hall of Pillars	खम्भों का ओसारा का ओसारा	खम्भों का ओसारा	revisado	baixa	2	1	0.00	
+Hall of the Throne	सिंहासन का ओसारा	सिंहासन का ओसारा	revisado	baixa	2	1	0.00	
+Hamathite	हमाती	हमाती	revisado	baixa	1	2	1.00	समारी
+Hamathites	हमाती	हमाती	revisado	baixa	1	2	1.00	समारी
+Hammelech	अब्देल	अब्देल	sem	baixa	2	2	0.50	यरहमेल
+Hamon-gog Valley	{n} की तराई Hamon-gog	हमोन-गोग की तराई	revisado	baixa	1	2	0.00	
+Hararites	हरारी	हरारी	revisado	baixa	1	4	1.00	शारार
+Haruphites	हारूपी	हारूपी	revisado	baixa	1	1	1.00	यरीमोत
+Hebrews	इब्री	इब्री	revisado	baixa	1	37	0.59	मेरे
+Hegai	हेगे	हेगे	revisado	baixa	2	3	1.00	गई
+Helech	ढालें	ढालें	sem	baixa	3	1	1.00	तेरे
+Heliopolis	देवालयों	ओन	revisado	baixa	1	1	1.00	देश
+Heliopolis	पोतीपेरा	ओन	revisado	baixa	1	5	0.60	देवालयों
+Heth	ज्येष्ठ	हित्त	revisado	baixa	2	58	0.02	जेठा
+Hezeki	हिजकी	हिजकी	revisado	baixa	1	1	1.00	हेबेर
+Hierapolis	हियरापुलिसवालों	हियरापुलिस	revisado	baixa	3	1	1.00	लिये
+Highway	या	राजमार्ग	revisado	baixa	1	2	1.00	पीएँगे
+Hill Mizar	{n} पहाड़ी Mizar	मिसार पहाड़ी	revisado	baixa	1	1	0.00	
+Hivite	हिब्बी	हिब्बी	revisado	baixa	1	9	0.89	हित्ती
+Hivites	हिब्बी	हिब्बी	revisado	baixa	1	25	0.64	हित्ती
+Hor Mount	{n} पर्वत Hor	होर पर्वत	revisado	baixa	2	12	0.00	
+Horonites	होरोनी	होरोनी	revisado	baixa	1	3	1.00	अम्मोनी
+Horse Gate	{n} फाटक Horse	घोड़ाफाटक	revisado	baixa	3	3	0.00	
+House of the Forest	{n} का भवन Forest	लबानोनी वन नामक भवन	revisado	baixa	1	6	0.00	
+Hur	बेन्हूर	हूर	revisado	baixa	2	1	1.00	अर्थात्
+Hushathites	हूशाई	हूशाई	revisado	baixa	1	5	1.00	सिब्बकै
+Hymenaeus	हुमिनयुस	हुमिनयुस	revisado	baixa	2	2	1.00	फिलेतुस
+India	सीवान	हिन्दुस्तान	revisado	baixa	3	2	0.50	आज्ञा
+Iphedeiah	यिपदयाह	यिपदयाह	revisado	baixa	1	1	1.00	पनूएल
+Iphtahel Valley	{n} की तराई Iphtahel	यिप्तहेल की तराई	revisado	baixa	1	2	0.00	
+Ithmah	महवीमी	यित्मा	revisado	baixa	2	1	1.00	एलनाम
+Ithrites	येतेरी	येतेरी	revisado	baixa	1	3	1.00	मिश्राई
+Iyim	डीहों	डीहों	sem	baixa	2	1	1.00	किया
+Jaar	पाया	पाया	sem	baixa	1	1	1.00	इसकी
+James	जेलोतेस	याकूब	revisado	baixa	2	5	0.40	अन्द्रियास
+James	योसेस	याकूब	revisado	baixa	3	19	0.16	मरियम
+James	रिसियाने	याकूब	revisado	baixa	2	19	0.05	यूहन्ना
+Janen	मत्ताना	मत्ताना	sem	baixa	1	1	1.00	नहलीएल
+Jebusite	यबूस	यबूसी	revisado	baixa	1	1	1.00	सिरे
+Jebusite	यबूसी	यबूसी	revisado	baixa	1	2	1.00	गिर्गाशी
+Jebusites	यबूसी	यबूसी	revisado	baixa	1	37	0.62	यबूसियों
+Jehiel	यहूएल	यहूएल	revisado	baixa	1	1	1.00	उज्जीएल
+Jemnath	एक्रोन	एक्रोन	sem	baixa	1	1	1.00	हैं
+Jericho Valley	यरीहो की तराई	यरीहो की तराई	revisado	baixa	1	1	0.00	
+Jeziah	यिज्जियाह	यिज्जियाह	revisado	baixa	1	1	1.00	रम्याह
+Jezreel Valley	{n} की तराई Jezreel	यिज्रेल की तराई	revisado	baixa	1	3	0.00	
+Jonath-elem-rechokim	क्योंकि	योनतेलेम्रहोकीम	revisado	baixa	1	1	1.00	निगलना
+Jordan Valley	यरदन की तराई	यरदन की तराई	revisado	baixa	1	8	0.00	
+Jose	येशू	येशू	revisado	baixa	1	1	1.00	योरीम
+Jozacar	यहोजाबाद	योजाबाद	revisado	baixa	1	2	1.00	शिमात
+Judgment	उसमें	उसमें	sem	baixa	1	1	1.00	लिये
+Kadmonites	कदमोनियों	कदमोनी	revisado	baixa	1	1	1.00	कनिज्जियों
+Karnaim	अश्तारोत्कनम	अश्तारोत्कनम	sem	baixa	1	1	1.00	किर्यातैम
+Kenites	केनी	केनी	revisado	baixa	1	10	0.60	केनियों
+Kenizzites	केनियों	कनिज्जी	revisado	baixa	1	1	1.00	कनिज्जियों
+King's Valley	{n} की तराई King	राजा की तराई	revisado	baixa	2	2	0.00	
+LORD	इलोई	यहोवा	revisado	baixa	1	843	0.00	एलोहे
+Lebanon Valley	लबानोन की तराई	लबानोन की तराई	revisado	baixa	1	2	0.00	
+Legion	क्योंकि	सेना	revisado	baixa	1	2	1.00	सेना
+Lower Pool	{n} जलकुण्ड Lower	निचला जलकुण्ड	revisado	baixa	1	1	0.00	
+Lucifer	लूका	भोर का तारा	revisado	baixa	2	1	1.00	कैसे
+Mahalab	अकजीब	अकजीब	sem	baixa	2	1	1.00	नामक
+Mahalath	चिल्लाता	महलत	revisado	baixa	1	2	0.50	मन
+Mahavites	महवीमी	महवीमी	revisado	baixa	1	1	1.00	योशव्याह
+Maranatha	शापित	शापित	sem	baixa	1	1	1.00	हमारे
+Mazzaroth	राशियों	राशियाँ	revisado	baixa	1	1	1.00	सप्तर्षि
+Mecherathites	मकेराई	मकेराई	revisado	baixa	1	1	1.00	हेपेर
+Meholathites	महोलाई	महोलाई	revisado	baixa	1	2	0.50	महोलवासी
+Memphis	मिस्र	नोप	revisado	baixa	3	8	0.75	मिस्री
+Menuhoth	मनुहोतवासी	मनुहोत	revisado	baixa	1	1	1.00	में
+Meribah-kadesh	मरीबा	कादेश का मरीबा	revisado	baixa	1	3	1.00	कादेश
+Meronothites	मेरोनोती	मेरोनोती	revisado	baixa	1	2	0.50	मेरोनोतवासी
+Metheg-ammah	जीतकर	जीतकर	sem	baixa	2	1	1.00	हाथ
+Meunites	मूनी	मूनी	revisado	baixa	1	3	0.33	मूनियों
+Mezobaites	मसोबाई	मसोबाई	revisado	baixa	1	1	1.00	मोआबी
+Middle Gate	{n} फाटक Middle	बीचवाला फाटक	revisado	baixa	1	1	0.00	
+Misgab	निराश	निराश	sem	baixa	2	1	1.00	मोआब
+Mishraites	मिश्राई	मिश्राई	revisado	baixa	1	1	1.00	सोराई
+Mithnites	मेतेनी	मेतेनी	revisado	baixa	1	1	1.00	योशापात
+Mizar Mount	{n} पर्वत Mizar	मिसार पहाड़ी	revisado	baixa	1	1	0.00	
+Mizpeh Valley	मिस्पे की तराई	मिस्पे की तराई	revisado	baixa	1	2	0.00	
+Moriah Mount	मोरिय्याह पर्वत	मोरिय्याह पर्वत	revisado	baixa	1	2	0.00	
+Mortar	मक्तेश	मक्तेश	revisado	baixa	3	1	1.00	मिट
+Mount Baal-hermon	बालहेर्मोन पर्वत	बालहेर्मोन पर्वत	revisado	baixa	1	1	0.00	
+Mount Baalhermon	{n} पर्वत Baalhermon	बालहेर्मोन पर्वत	revisado	baixa	1	1	0.00	
+Mount Carmel	{n} पर्वत Carmel	कर्मेल पर्वत	revisado	baixa	2	18	0.00	
+Mount Gerizim	{n} पर्वत Gerizim	गिरिज्जीम पर्वत	revisado	baixa	2	5	0.00	
+Mount Halak	{n} पर्वत Halak	हालाक पहाड़	revisado	baixa	2	2	0.00	
+Mount Heres	हेरेस पर्वत	हेरेस पर्वत	revisado	baixa	2	1	0.00	
+Mount Hor	{n} पर्वत Hor	होर पर्वत	revisado	baixa	4	12	0.00	
+Mount Jearim	{n} पर्वत Jearim	यारीम पहाड़	revisado	baixa	2	1	0.00	
+Mount Mizar	{n} पर्वत Mizar	मिसार पहाड़ी	revisado	baixa	1	1	0.00	
+Mount Moriah	मोरिय्याह पर्वत	मोरिय्याह पर्वत	revisado	baixa	2	1	0.00	
+Mount Perazim	{n} पर्वत Perazim	परासीम पहाड़	revisado	baixa	2	1	0.00	
+Mount Shapher	{n} पर्वत Shapher	शेपेर पर्वत	revisado	baixa	1	2	0.00	
+Mount Shepher	{n} पर्वत Shepher	शेपेर पर्वत	revisado	baixa	1	2	0.00	
+Mount Sion	{n} पर्वत Sion	सिय्योन पर्वत	revisado	baixa	1	1	0.00	
+Mount Zalmon	सल्मोन पर्वत	सल्मोन पर्वत	revisado	baixa	2	1	0.00	
+Mount Zemaraim	समारैम पर्वत	समारैम पर्वत	revisado	baixa	2	1	0.00	
+Mount of Olives	{n} का पहाड़ Olives	जैतून का पहाड़	revisado	baixa	3	18	0.00	
+Muster Gate	{n} फाटक Muster	मिपकाद फाटक	revisado	baixa	2	1	0.00	
+Muth-labben	मन	मूतलब्बेन	revisado	baixa	1	1	1.00	मैं
+Naamathites	नामाती	नामाती	revisado	baixa	1	4	1.00	तेमानी
+Naphath	तानाक	तानाक	sem	baixa	2	1	1.00	एनदोर
+Naphath-dor	तापत	दोर का ऊँचा देश	revisado	baixa	1	1	1.00	दोर
+Naphoth-dor	दोर	दोर का ऊँचा देश	revisado	baixa	2	4	1.00	उनको
+Nazirites	नाज़ीर	नाज़ीर	revisado	baixa	1	15	0.67	नाज़ीरों
+Nehelamites	नेहेलामी	नेहेलामी	revisado	baixa	1	3	1.00	शमायाह
+Nephushesim	नपीसीम	नपूशस	revisado	baixa	1	2	0.50	नपूशस
+Nephusim	नपीसीम	नपीसीम	revisado	baixa	1	2	0.50	मूनीम
+Nero	तेरी	नीरो	revisado	baixa	1	2	0.50	अनुग्रह
+New Gate	{n} फाटक New	नया फाटक	revisado	baixa	3	2	0.00	
+Nohah	मनुहा	मनुहा	revisado	baixa	1	1	1.00	ओर
+Nohah	मानहत	नोहा	revisado	baixa	1	1	1.00	घरानों
+North	रथ	उत्तर	revisado	baixa	1	10	0.10	अन्त
+North Gate	उत्तर फाटक	उत्तरी फाटक	revisado	baixa	1	1	0.00	
+Old Gate	{n} फाटक Old	पुराना फाटक	revisado	baixa	1	1	0.00	
+Old Pool	{n} जलकुण्ड Old	पुराना जलकुण्ड	revisado	baixa	1	1	0.00	
+Olives Mount	{n} पर्वत Olives	जैतून का पहाड़	revisado	baixa	1	14	0.00	
+Olivet	वे	जैतून पहाड़	revisado	baixa	1	3	0.33	जैतून
+Orion	नक्षत्रों	मृगशिरा	revisado	baixa	1	3	0.33	जो
+Pacatiana	ज्ञान	ज्ञान	sem	baixa	1	1	1.00	कितने
+Pavement	में	चबूतरा	revisado	baixa	1	1	1.00	बातें
+Pelethites	पलेतियों	पलेती	revisado	baixa	1	7	0.71	पलेती
+Pelonites	पलोनी	पलोनी	revisado	baixa	1	4	0.75	हेलेस
+Pelusium	सीन	सीन	revisado	baixa	3	2	1.00	उस
+People's Gate	{n} फाटक People	सदर फाटक	revisado	baixa	2	1	0.00	
+Perazim Mount	{n} पर्वत Perazim	परासीम पहाड़	revisado	baixa	1	1	0.00	
+Perizzites	परिज्जी	परिज्जी	revisado	baixa	1	23	0.48	परिज्जियों
+Peter	पतरस	पतरस	revisado	baixa	1	179	0.84	तापते
+Phoenicia	फीनीके	फीनीके	revisado	baixa	2	4	0.75	अन्ताकिया
+Phut	पूत	पूत	revisado	baixa	1	3	0.67	पूती
+Pillars	पचास	खम्भों का ओसारा	revisado	baixa	1	1	1.00	ओसारा
+Place	ले	खोपड़ी का स्थान	revisado	baixa	1	1	1.00	गुलगुता
+Plain	दक्षिण	तराई	revisado	baixa	1	2	0.50	लिये
+Plain of Aven	आवेन का मैदान	आवेन की तराई	revisado	baixa	1	1	0.00	
+Plain of Jordan	यरदन का मैदान	यरदन की तराई	revisado	baixa	1	2	0.00	
+Pleiades	कचपचिया	कचपचिया	revisado	baixa	1	3	1.00	मृगशिरा
+Pool	को	राजा का कुण्ड	revisado	baixa	1	1	1.00	सोते
+Pool	पल्ले	शेलह का कुण्ड	revisado	baixa	1	1	1.00	कोल्होजे
+Potsherd Gate	{n} फाटक Potsherd	ठीकरों का फाटक	revisado	baixa	2	1	0.00	
+Preparation Festival	{n} का पर्व Preparation	तैयारी का दिन	revisado	baixa	1	6	0.00	
+Prison Gate	{n} फाटक Prison	पहरुओं का फाटक	revisado	baixa	1	1	0.00	
+Puthites	पूती	पूती	revisado	baixa	1	1	1.00	शूमाती
+Rab-mag	मगों	मगों का प्रधान	revisado	baixa	2	2	1.00	सर्सकीम
+Rab-saris	नेर्गलसरेसेर	खोजों का प्रधान	revisado	baixa	2	2	1.00	नबूसजबान
+Ramah	आस	रामा	revisado	baixa	1	1	1.00	भाला
+Ramathites	रामाई	रामाई	revisado	baixa	1	1	1.00	शापामी
+Red Sea	{n} समुद्र Red	लाल समुद्र	revisado	baixa	5	33	0.00	
+Rephaim	रपाइयों	रपाई	revisado	baixa	1	1	1.00	राज्य
+Rephaim	रपाई	रपाई	revisado	baixa	1	9	0.33	रपाइयों
+Rephaim Valley	रपाई की तराई	रपाईम की तराई	revisado	baixa	1	8	0.00	
+Rezon	रजोन	रजोन	revisado	baixa	2	1	1.00	सोबा
+Rhoda	रूदे	रूदे	revisado	baixa	2	1	1.00	दासी
+Rhodes	तेरे	रुदुस	revisado	baixa	1	1	1.00	लाते
+Rhodes	रुदुस	रुदुस	revisado	baixa	3	1	1.00	कोस
+River	पारवाले	महानद	revisado	baixa	1	10	0.10	रूपी
+River	राजा	महानद	revisado	baixa	2	18	0.72	जाए
+River	वे	महानद	revisado	baixa	1	1	1.00	भेजे
+Rock	माओन	चट्टान	revisado	baixa	1	4	1.00	का
+Rock of Escape	{n} की चट्टान Escape	सेलाहम्म-हलकोत	revisado	baixa	2	1	0.00	
+Rocks	बकरों	जंगली बकरों की चट्टानें	revisado	baixa	1	1	1.00	की
+Sahar	पास	पास	sem	baixa	3	1	1.00	सब
+Salome	खुश	सलोमी	revisado	baixa	1	1	1.00	उत्सव
+Salt	निबशान	नमक का नगर	revisado	baixa	1	1	1.00	छः
+Salt Sea	नमक का नगर समुद्र	खारा ताल	revisado	baixa	3	21	0.00	
+Salt Valley	नमक का नगर की तराई	नमक की तराई	revisado	baixa	1	5	0.00	
+Sansannah	सनसन्ना	सनसन्ना	revisado	baixa	3	1	1.00	मदमन्ना
+Saph	हूशाई	सप	revisado	baixa	1	2	1.00	सिप्पै
+Sea of Chinnereth	किन्नेरेत समुद्र	किन्नेरेत ताल	revisado	baixa	1	2	0.00	
+Sea of Chinneroth	किन्नेरेत समुद्र	किन्नेरेत ताल	revisado	baixa	1	1	0.00	
+Sea of the Philistines	{n} समुद्र Philistines	पलिश्तियों का समुद्र	revisado	baixa	1	1	0.00	
+Sea of the Plain	तराई समुद्र	अराबा का ताल	revisado	baixa	1	2	0.00	
+Sephar	सपारा	सपारा	revisado	baixa	3	1	1.00	मेशा
+Serpent's Stone	{n} नामक पत्थर Serpent	जोहेलेत पत्थर	revisado	baixa	2	1	0.00	
+Shaaph	शाप	शाप	revisado	baixa	4	2	1.00	गेशान
+Sheep Gate	{n} फाटक Sheep	भेड़फाटक	revisado	baixa	3	4	0.00	
+Sheminith	मिकनेयाह	शमीनीत	revisado	baixa	1	3	0.33	मत्तित्याह
+Shepham	शपाम	शपाम	revisado	baixa	3	3	0.67	से
+Shephelah	क्षेत्र	नीचे का देश	revisado	baixa	2	19	0.16	तेल
+Shepher Mount	{n} पर्वत Shepher	शेपेर पर्वत	revisado	baixa	1	2	0.00	
+Shepho	शपो	शपो	revisado	baixa	2	2	0.50	शोबाल
+Shiggaion	शरण	शिग्गायोन	revisado	baixa	1	1	1.00	मैं
+Shilonites	शीलोई	शीलोई	revisado	baixa	1	1	1.00	कोल्होजे
+Shimeathite	शिमाती	शिमाती	revisado	baixa	1	1	1.00	तिराती
+Shiphmites	शिमी	शापामी	revisado	baixa	1	1	1.00	शापामी
+Shuhites	शूही	शूही	revisado	baixa	1	5	1.00	तेमानी
+Shulammites	शूलेम्मिन	शूलेम्मिन	revisado	baixa	1	1	1.00	लौट
+Shumathites	शूमाती	शूमाती	revisado	baixa	1	1	1.00	पूती
+Shunammites	शूनेमिन	शूनेमिन	revisado	baixa	1	8	1.00	ढूँढ़ते
+Siddim Valley	{n} की तराई Siddim	सिद्दीम की तराई	revisado	baixa	1	3	0.00	
+Sikkuth	चरणपीठ	चरणपीठ	sem	baixa	1	1	1.00	फिरते
+Simeon	योनान	शिमोन	revisado	baixa	2	1	1.00	शमौन
+Simon	शमौन	शमौन	revisado	baixa	11	29	0.97	जो
+Sinite	सीनी	सीनी	revisado	baixa	1	2	1.00	हिब्बी
+Sinites	सीनी	सीनी	revisado	baixa	1	2	1.00	हिब्बी
+Skull	कुकर्मियों	खोपड़ी	revisado	baixa	1	1	1.00	को
+Sorek Valley	{n} की तराई Sorek	सोरेक घाटी	revisado	baixa	1	1	0.00	
+South	उठ	दक्षिण	revisado	baixa	1	12	0.08	उत्तर
+South	समेत	दक्षिण	revisado	baixa	1	1	1.00	हुआ
+South	साथ	दक्षिण	revisado	baixa	2	3	0.67	सुनने
+South Gate	दक्षिण फाटक	दक्षिणी फाटक	revisado	baixa	1	1	0.00	
+Straight	तरसुस	सीधी गली	revisado	baixa	1	1	1.00	गली
+Straight Gate	सीधी गली फाटक	सीधी गली	revisado	baixa	1	1	0.00	
+Sucathite	सूकाती	सूकाती	revisado	baixa	1	1	1.00	शिमाती
+Tabbur-erez	उतरे	उतरे	sem	baixa	1	1	1.00	और
+Tarpelite	तर्पली	तर्पली	revisado	baixa	1	1	1.00	बाबेली
+Thebes	उठेंगे	नो	revisado	baixa	3	6	0.17	बसी
+There	घेरा	यहोवा शाम्मा	revisado	baixa	1	1	1.00	अठारह
+Throne	उसने	सिंहासन	revisado	baixa	1	1	1.00	दूसरे
+Tirathite	तिराती	तिराती	revisado	baixa	1	1	1.00	शिमाती
+Tizites	तीसी	तीसी	revisado	baixa	1	1	1.00	यदीएल
+Tower	कोनेवाले	हननेल का गुम्मट	revisado	baixa	1	4	0.25	कोने
+Tower	भट्ठों	भट्ठों का गुम्मट	revisado	baixa	1	2	0.50	पहत्मोआब
+Tower	हम्मेआ	हम्मेआ का गुम्मट	revisado	baixa	1	2	1.00	वरन्
+Tower of Hananel	{n} का गुम्मट Hananel	हननेल का गुम्मट	revisado	baixa	2	4	0.00	
+Tower of the Hundred	{n} का गुम्मट Hundred	हम्मेआ का गुम्मट	revisado	baixa	2	2	0.00	
+Tower of the Ovens	{n} का गुम्मट Ovens	भट्ठों का गुम्मट	revisado	baixa	2	2	0.00	
+Travelers Valley	{n} की तराई Travelers	यात्रियों की तराई	revisado	baixa	1	1	0.00	
+Tribe of Judah	यहूदा का गोत्र	यहूदा का गोत्र	revisado	baixa	1	1	0.00	
+Trogyllium	मीलेतुस	त्रोगुल्लियुम	revisado	baixa	3	1	1.00	खियुस
+Unnamed#1	उत्पन्न	उत्पन्न	sem	baixa	1	1	1.00	एलीहूद
+Unnamed#1	ने	ने	sem	baixa	1	1	1.00	पद
+Unnamed#2	उत्पन्न	उत्पन्न	sem	baixa	1	1	1.00	एलीहूद
+Unnamed#2	ने	ने	sem	baixa	1	1	1.00	पद
+Unnamed#3	उत्पन्न	उत्पन्न	sem	baixa	1	1	1.00	एलीहूद
+Unnamed#3	ने	ने	sem	baixa	1	1	1.00	पद
+Unnamed#4	उत्पन्न	उत्पन्न	sem	baixa	1	1	1.00	एलीहूद
+Unnamed#4	ने	ने	sem	baixa	1	1	1.00	पद
+Unnamed#5	उत्पन्न	उत्पन्न	sem	baixa	1	1	1.00	एलीहूद
+Unnamed#6	उत्पन्न	उत्पन्न	sem	baixa	1	1	1.00	एलीहूद
+Unnamed#7	उत्पन्न	उत्पन्न	sem	baixa	1	1	1.00	एलीहूद
+Unnamed#8	उत्पन्न	उत्पन्न	sem	baixa	1	1	1.00	एलीहूद
+Unnamed#9	उत्पन्न	उत्पन्न	sem	baixa	1	1	1.00	एलीहूद
+Upper Pool	{n} जलकुण्ड Upper	ऊपर का जलकुण्ड	revisado	baixa	1	3	0.00	
+Vale of Siddim	{n} की तराई Siddim	सिद्दीम की तराई	revisado	baixa	1	3	0.00	
+Valley Gate	{n} फाटक Valley	तराई का फाटक	revisado	baixa	2	4	0.00	
+Valley of Achor	{n} की तराई Achor	आकोर की तराई	revisado	baixa	2	5	0.00	
+Valley of Baca	{n} की तराई Baca	बाका की तराई	revisado	baixa	2	1	0.00	
+Valley of Decision	{n} की तराई Decision	निर्णय की तराई	revisado	baixa	1	1	0.00	
+Valley of Hamon-gog	{n} की तराई Hamon-gog	हमोन-गोग की तराई	revisado	baixa	1	2	0.00	
+Valley of Hamongog	{n} की तराई Hamongog	हमोन-गोग की तराई	revisado	baixa	1	2	0.00	
+Valley of Hinnom	{n} की तराई Hinnom	हिन्नोम की तराई	revisado	baixa	2	12	0.00	
+Valley of Iphtahel	{n} की तराई Iphtahel	यिप्तहेल की तराई	revisado	baixa	1	2	0.00	
+Valley of Jehoshaphat	{n} की तराई Jehoshaphat	यहोशापात की तराई	revisado	baixa	2	2	0.00	
+Valley of Jericho	यरीहो की तराई	यरीहो की तराई	revisado	baixa	2	1	0.00	
+Valley of Jezreel	{n} की तराई Jezreel	यिज्रेल की तराई	revisado	baixa	2	5	0.00	
+Valley of Jiphthahel	{n} की तराई Jiphthahel	यिप्तहेल की तराई	revisado	baixa	1	2	0.00	
+Valley of Lebanon	लबानोन की तराई	लबानोन की तराई	revisado	baixa	2	2	0.00	
+Valley of Mizpeh	मिस्पे की तराई	मिस्पे की तराई	revisado	baixa	2	1	0.00	
+Valley of Rephaim	रपाई की तराई	रपाईम की तराई	revisado	baixa	2	8	0.00	
+Valley of Salt	नमक का नगर की तराई	नमक की तराई	revisado	baixa	2	5	0.00	
+Valley of Siddim	{n} की तराई Siddim	सिद्दीम की तराई	revisado	baixa	1	3	0.00	
+Valley of Slaughter	{n} की तराई Slaughter	घात की तराई	revisado	baixa	1	2	0.00	
+Valley of Sorek	{n} की तराई Sorek	सोरेक घाटी	revisado	baixa	2	1	0.00	
+Valley of Zephathah	{n} की तराई Zephathah	सापता की तराई	revisado	baixa	2	1	0.00	
+Valley of Zered	जेरेद की तराई	जेरेद की तराई	revisado	baixa	2	1	0.00	
+Valley of the Passengers	{n} की तराई Passengers	यात्रियों की तराई	revisado	baixa	1	1	0.00	
+Vedan	यावान	दान	revisado	baixa	1	1	1.00	दान
+Water Gate	{n} फाटक Water	जलफाटक	revisado	baixa	3	5	0.00	
+Way of Holiness	{n} का मार्ग Holiness	पवित्र मार्ग	revisado	baixa	3	1	0.00	
+Weeks	लवे	सप्ताहों का पर्व	revisado	baixa	1	8	0.12	पिन्तेकुस्त
+West Gate	{n} फाटक West	शल्लेकेत फाटक	revisado	baixa	1	1	0.00	
+Willows	जो	मजनूवृक्षों का नाला	revisado	baixa	1	1	1.00	वृक्ष
+Yeshanah Gate	{n} फाटक Yeshanah	पुराना फाटक	revisado	baixa	1	2	0.00	
+Zabbud	जक्कूर	जक्कूर	revisado	baixa	1	1	1.00	वंश
+Zacchaeus	जक्कई	जक्कई	revisado	baixa	2	3	1.00	चौगुना
+Zacher	जेकेर	जेकेर	revisado	baixa	1	2	0.50	गदोर
+Zaham	जाहम	जाहम	revisado	baixa	2	1	1.00	यूश
+Zaza	जाजा	जाजा	revisado	baixa	2	1	1.00	और
+Zealot	इस्करियोती	जेलोतेस	revisado	baixa	1	2	0.50	उसे
+Zebudah	जबीदा	जबीदा	revisado	baixa	1	1	1.00	पदायाह
+Zeeb	जेब	जेब	revisado	baixa	2	3	1.00	ओरेब
+Zemarite	समारी	समारी	revisado	baixa	1	2	1.00	हमाती
+Zemarites	समारी	समारी	revisado	baixa	1	2	1.00	हमाती
+Zephath	सपत	सपत	revisado	baixa	3	9	0.11	उस
+Zephathah Valley	{n} की तराई Zephathah	सापता की तराई	revisado	baixa	1	1	0.00	
+Zepho	सपो	सपो	revisado	baixa	2	3	0.67	से
+Zephon	सपोन	सपोन	revisado	baixa	1	2	1.00	शूनियों
+Zeredah	सारतान	सारतान	revisado	baixa	2	1	1.00	यरदन
+Zethar	जेतेर	जेतेर	revisado	baixa	2	1	1.00	सेवा
+Zeus	ज्यूस	ज्यूस	revisado	baixa	1	2	1.00	उस
+Ziph	जीप	जीप	revisado	baixa	8	12	0.75	तेलेम
+Ziphah	जीपा	जीपा	revisado	baixa	2	1	1.00	जीप
+Zorathites	सोराई	सोराई	revisado	baixa	1	3	0.67	सोरी
+Zuzim	जूजियों	जूजी	revisado	baixa	1	1	1.00	संगी
+Abaddon	अबद्दोन	अबद्दोन	revisado	media	1	7	0.14	अपुल्लयोन
+Abel-meholah	आबेल	आबेल-महोला	revisado	media	3	3	1.00	महोला
+Abiah	अबिय्याह	अबिय्याह	revisado	media	4	4	1.00	गया
+Abiel	अबीएल	अबीएल	revisado	media	3	7	0.43	हूरै
+Abiezer	अबीएजेरी	अबीएजेर	revisado	media	1	7	0.29	अबीएजेर
+Achsa	अकसा	अकसा	revisado	media	1	1	1.00	मकबेना
+Achshaph	अक्षाप	अक्षाप	revisado	media	3	3	1.00	हासोर
+Achzib	अकजीब	अकजीब	revisado	media	6	6	0.67	अक्को
+Adbeel	अदबएल	अदबएल	revisado	media	2	2	1.00	इश्माएल
+Ader	एदेर	एदेर	revisado	media	1	1	1.00	अराद
+Adoniram	अदोनीराम	अदोनीराम	revisado	media	1	5	0.40	अदोराम
+Adoram	अदोराम	अदोराम	revisado	media	1	5	0.40	अदोनीराम
+Aeneas	ऐनियास	ऐनियास	revisado	media	2	2	1.00	बिछौना
+Aenon	ऐनोन	ऐनोन	revisado	media	3	1	1.00	सालेम
+Agag	अगागी	अगाग	revisado	media	1	12	0.42	अगाग
+Agee	भागे	आगै	revisado	media	2	1	1.00	आगै
+Aher	अहेर	अहेर	revisado	media	2	1	1.00	ईर
+Ahiah	अहिय्याह	अहिय्याह	revisado	media	3	3	1.00	राजसी
+Ahiram	अहीराम	अहीराम	revisado	media	2	3	0.33	अहीरामियों
+Ahoah	अहोह	अहोह	revisado	media	2	6	0.17	नामान
+Ahuzam	अहुज्जाम	अहुज्जाम	revisado	media	1	1	1.00	हाहशतारी
+Ahuzzam	अहुज्जाम	अहुज्जाम	revisado	media	1	1	1.00	हाहशतारी
+Ahuzzath	अहुज्जत	अहुज्जत	revisado	media	2	1	1.00	पास
+Ai	आई	आई	revisado	media	7	37	0.84	है
+Aija	अय्या	अय्या	revisado	media	2	1	1.00	और
+Ajah	अय्या	अय्या	revisado	media	1	2	1.00	अल्यान
+Akeldama	हकलदमा	हकलदमा	revisado	media	3	4	0.25	खेत
+Alameth	आलेमेत	आलेमेत	revisado	media	1	1	1.00	अनातोत
+Alamoth	अलामोत	अलामोत	revisado	media	1	3	0.33	शमीरामोत
+Alexandria	सिकन्दरिया	सिकन्दरिया	revisado	media	3	4	1.00	इतालिया
+Alphaeus	हलफईस	हलफईस	revisado	media	3	7	0.71	बरतुल्मै
+Amalek	अमालेक	अमालेक	revisado	media	4	31	0.32	अमालेकियों
+Amalek	अमालेकी	अमालेक	revisado	media	1	46	0.33	अमालेक
+Amasiah	अमस्याह	अमस्याह	revisado	media	2	1	1.00	अर्पण
+Ammon	अम्मोन	अम्मोन	revisado	media	1	12	0.08	अम्मोनी
+Ammon	अम्मोनी	अम्मोन	revisado	media	2	125	0.26	अम्मोनियों
+Amplias	अम्पलियातुस	अम्पलियातुस	revisado	media	1	1	1.00	प्रिय
+Anak	अनाक	अनाक	revisado	media	2	16	0.25	अहीमन
+Ananias	हनन्याह	हनन्याह	revisado	media	6	10	1.00	आया
+Angle	आगे	आगे	sem	media	1	5	0.20	ने
+Annas	हन्ना	हन्ना	revisado	media	2	4	1.00	यूहन्ना
+Antioch	अन्ताकिया	अन्ताकिया	revisado	media	6	22	0.82	तीमोन
+Apelles	अपिल्लेस	अपिल्लेस	revisado	media	2	1	1.00	अरिस्तुबुलुस
+Aphek	अपेक	अपेक	revisado	media	10	11	0.73	गए
+Aphiah	अपीह	अपीह	revisado	media	2	1	1.00	अबीएल
+Aphik	अपीक	अपीक	revisado	media	2	1	1.00	अक्को
+Aphses	हप्पित्सेस	हप्पित्सेस	revisado	media	1	1	1.00	हेजीर
+Apollyon	अपुल्लयोन	अपुल्लयोन	revisado	media	1	1	1.00	अबद्दोन
+Apphia	अफफिया	अफफिया	revisado	media	2	1	1.00	फिलेमोन
+Arabia	अरब	अरब	revisado	media	4	19	0.42	बितानी
+Aram	अराम	अराम	revisado	media	8	16	0.62	और
+Aram-naharaim	परमेश्वर	परमेश्वर	sem	media	2	1	1.00	हमको
+Aram-zobah	परमेश्वर	परमेश्वर	sem	media	1	1	1.00	हमको
+Aramitess	अरामी	अरामी	revisado	media	1	1	1.00	अस्रीएल
+Archelaus	अरखिलाउस	अरखिलाउस	revisado	media	2	1	1.00	डरा
+Areopagus	अरियुपगुस	अरियुपगुस	revisado	media	3	4	0.75	दमरिस
+Aretas	अरितास	अरितास	revisado	media	2	1	1.00	पहरा
+Ariel	सरीखे	अरीएल	revisado	media	1	2	0.50	कबसेल
+Armageddon	मगिदोन	हर-मगिदोन	revisado	media	2	1	1.00	राजाओं
+Artemas	अरतिमास	अरतिमास	revisado	media	2	1	1.00	काटने
+Arumah	अरूमा	अरूमा	revisado	media	3	3	0.33	जबूल
+Asaph	आसाप	आसाप	revisado	media	8	40	0.70	अशरेला
+Asenath	आसनत	आसनत	revisado	media	2	3	1.00	सापनत
+Ashkenaz	अश्कनज	अश्कनज	revisado	media	5	3	1.00	झण्डा
+Ashpenaz	अश्पनज	अश्पनज	revisado	media	2	1	1.00	ऐसे
+Ashvath	वात	अश्वात	revisado	media	2	1	1.00	अश्
+Asnappar	नप्पर	ओस्नप्पर	revisado	media	1	1	1.00	बसाया
+Asshur	अश्शूर	अश्शूर	revisado	media	4	7	0.86	और
+Asshurim	अश्शूरी	अश्शूरी	revisado	media	2	1	1.00	लतूशी
+Assos	अस्सुस	अस्सुस	revisado	media	3	2	1.00	पौलुस
+Assyria	अश्शूर	अश्शूर	revisado	media	3	150	0.83	सीहोर
+Atharim	रहता	अतारीम	revisado	media	3	1	1.00	कनानी
+Athens	एथेंस	एथेंस	revisado	media	3	8	0.75	बातें
+Augustus	औगुस्तुस	औगुस्तुस	revisado	media	2	5	0.40	पौलुस
+Avith	अबीत	अबीत	revisado	media	3	2	1.00	है
+Avvim	अब्बीम	अब्बीम	revisado	media	3	1	1.00	पारा
+Ayyah	अय्या	अय्या	revisado	media	2	1	1.00	बस्तियाँ
+Azal	आसेल	आसेल	revisado	media	3	1	1.00	खड्ड
+Azarael	अजरेल	अजरेल	revisado	media	1	1	1.00	नतनेल
+Azareel	अजरेल	अजरेल	revisado	media	4	5	0.80	मासै
+Azarel	अजरेल	अजरेल	revisado	media	4	4	1.00	याशोबाम
+Azariah	शद्रक	अजर्याह	revisado	media	1	18	0.78	अजर्याह
+Azariahu	अजर्याह	अजर्याह	revisado	media	1	1	1.00	जकर्याह
+Azazel	अजाजेल	अजाजेल	revisado	media	3	3	1.00	उससे
+Azbuk	अजबूक	अजबूक	revisado	media	2	1	1.00	बेतसूर
+Azgad	अजगाद	अजगाद	revisado	media	4	4	1.00	बाईस
+Aziza	अज़ीज़ा	अज़ीज़ा	revisado	media	2	1	1.00	एल्याशीब
+Aznoth-tabor	अजनोत्ताबोर	अजनोत्ताबोर	revisado	media	3	1	1.00	दक्षिण
+Azor	अजोर	अजोर	revisado	media	2	2	1.00	और
+Azriel	अज्रीएल	अज्रीएल	revisado	media	6	3	1.00	यहदीएल
+Azur	अज्जूर	अज्जूर	revisado	media	2	2	1.00	और
+Azzan	अज्जान	अज्जान	revisado	media	2	1	1.00	इस्साकारियों
+Azzur	अज्जूर	अज्जूर	revisado	media	4	3	1.00	आतेर
+Baal-berith	बरीत	बाल-बरीत	revisado	media	1	3	0.67	एलबरीत
+Baalath-beer	बालत्बेर	बालत्बेर	revisado	media	3	5	0.20	कहलाता
+Baale-judah	बाले	यहूदा का बाले	revisado	media	2	1	1.00	यहूदा
+Babel	बाबेल	बाबेल	revisado	media	2	2	1.00	कलने
+Babylon	बाबेल	बाबेल	revisado	media	5	316	0.82	हत्याओं
+Babylonia	बाबेल	बाबेल	revisado	media	2	15	0.53	पुस्तकालय
+Baharum	बहूरीमी	बहूरीमी	revisado	media	1	1	1.00	एल्यहबा
+Bahurim	बहूरीम	बहूरीम	revisado	media	3	7	0.43	बहूरीमी
+Balah	बाला	बाला	revisado	media	3	1	1.00	हसर्शूआल
+Bamoth-baal	बामोतबाल	बामोतबाल	revisado	media	3	3	0.33	बेतबाल्मोन
+Bartholomew	बरतुल्मै	बरतुल्मै	revisado	media	2	4	1.00	थोमा
+Bartimaeus	बरतिमाई	बरतिमाई	revisado	media	2	1	1.00	तिमाई
+Basemath	बासमत	बासमत	revisado	media	1	1	1.00	बेटी
+Basmath	बासमत	बासमत	revisado	media	1	1	1.00	अहीमास
+Bath-shua	शूआ	बतशूआ	revisado	media	1	2	1.00	यहूदा
+Bealoth	आलोत	आलोत	revisado	media	2	1	1.00	बाना
+Bedad	बदद	बदद	revisado	media	2	2	1.00	हदद
+Bedan	बदान	बदान	revisado	media	3	2	1.00	गिलाद
+Beeroth	बेरोत	बेरोत	revisado	media	3	11	0.45	बेरोती
+Ben-zoheth	बेनजोहेत	बेनजोहेत	revisado	media	2	1	1.00	जोहेत
+Bene-berak	बनेबराक	बनेबराक	revisado	media	3	1	1.00	गत्रिम्मोन
+Beno	बिनो	बिनो	revisado	media	2	2	1.00	के
+Beon	बोन	बोन	revisado	media	2	1	1.00	दीबोन
+Berea	बिरीया	बिरीया	revisado	media	3	6	0.50	भेज
+Berothah	बेरोता	बेरोता	revisado	media	3	3	0.33	सिब्रैम
+Besodeiah	बसोदयाह	बसोदयाह	revisado	media	2	1	1.00	बेंड़े
+Besor	बसोर	बसोर	revisado	media	3	3	1.00	पुरुषों
+Beth-Ashtoreth	अश्तोरेत	अश्तोरेत	sem	media	1	1	1.00	बेतशान
+Beth-ashbea	बेत	बेत-अशबे	revisado	media	3	1	1.00	लादा
+Beth-azmaveth	बेतजमावत	बेतजमावत	revisado	media	2	3	0.33	बयालीस
+Beth-haggan	भाग	भाग	sem	media	3	1	1.00	भवन
+Beth-haran	बेतनिम्रा	बेत-हारन	revisado	media	1	1	1.00	बेत
+Beth-le-aphrah	बेतआप्रा	बेतआप्रा	revisado	media	2	1	1.00	लोटपोट
+Bethesda	बैतहसदा	बैतहसदा	revisado	media	3	1	1.00	भेड़
+Bethphage	बैतफगे	बैतफगे	revisado	media	3	3	1.00	भेजा
+Bethul	बतूल	बतूल	revisado	media	2	1	1.00	एलतोलद
+Bezek	बेजेक	बेजेक	revisado	media	6	3	1.00	अदोनीबेजेक
+Bileam	बिलाम	बिलाम	revisado	media	2	1	1.00	मिले
+Binea	बिना	बिना	revisado	media	2	2	1.00	आसेल
+Caesarea	कैसरिया	कैसरिया	revisado	media	3	19	0.79	आसन
+Caphtor	कप्तोर	कप्तोर	revisado	media	3	13	0.23	कप्तोरियों
+Cenchreae	किंख्रिया	किंख्रिया	revisado	media	3	3	0.67	होकर
+Chaldea	चढ़े	कसदियों का देश	revisado	media	2	91	0.01	छिदे
+Chelal	कलाल	कलाल	revisado	media	2	1	1.00	बसलेल
+Chelluh	कलूही	कलूही	revisado	media	1	1	1.00	बेदयाह
+Chelub	कलूब	कलूब	revisado	media	4	2	1.00	के
+Chenani	कनानी	कनानी	revisado	media	2	1	1.00	बानी
+Chephirah	कपीरा	कपीरा	revisado	media	3	4	1.00	बेरोत
+Cheran	करान	करान	revisado	media	2	2	1.00	यित्रान
+Cherith	करीत	करीत	revisado	media	3	2	1.00	के
+Cherub	करूब	करूब	revisado	media	3	3	1.00	इम्मेर
+Chesil	कसील	कसील	revisado	media	3	1	1.00	एलतोलद
+Chesulloth	कसुल्लोत	कसुल्लोत	revisado	media	3	3	0.33	शूनेम
+Chezib	कजीब	कजीब	revisado	media	2	1	1.00	उसके
+Chilmad	कलमद	कलमद	revisado	media	3	1	1.00	व्यापारी
+Chios	खियुस	खियुस	revisado	media	3	1	1.00	मीलेतुस
+Chorazin	खुराजीन	खुराजीन	revisado	media	3	2	1.00	सोर
+Chushan-rishathaim	रिश्आतइम	कूशन-रिश्आतइम	revisado	media	1	2	1.00	कूशन
+Chuza	खुज़ा	खुज़ा	revisado	media	2	1	1.00	सूसन्नाह
+Claudius	क्लौदियुस	क्लौदियुस	revisado	media	2	11	0.18	यहूदी
+Cleophas	क्लोपास	क्लोपास	revisado	media	1	2	0.50	क्लियुपास
+Colossae	कुलुस्से	कुलुस्से	revisado	media	3	2	0.50	से
+Coos	कोस	कोस	revisado	media	1	1	1.00	तो
+Corban	कुरबान	कुरबान	revisado	media	1	2	0.50	सिक्कों
+Corinth	कुरिन्थुस	कुरिन्थुस	revisado	media	3	15	0.40	को
+Cos	कोस	कोस	revisado	media	2	1	1.00	तो
+Coz	कोस	कोस	revisado	media	1	1	1.00	से
+Cozbi	कोजबी	कोजबी	revisado	media	2	2	1.00	की
+Crete	क्रेते	क्रेते	revisado	media	2	9	0.44	काटें
+Cush	कूशी	कूश	revisado	media	1	44	0.41	कूश
+Cushan-rishathaim	रिश्आतइम	कूशन-रिश्आतइम	revisado	media	1	2	1.00	कूशन
+Cyrenius	क्विरिनियुस	क्विरिनियुस	revisado	media	1	1	1.00	सीरिया
+Dalaiah	दलायाह	दलायाह	revisado	media	1	1	1.00	पलायाह
+Dalphon	दल्पोन	दल्पोन	revisado	media	2	1	1.00	पर्शन्दाता
+Dara	दारा	दारा	revisado	media	2	1	1.00	और
+Decapolis	दिकापुलिस	दिकापुलिस	revisado	media	3	3	1.00	कैसे
+Dedan	ददान	ददान	revisado	media	7	11	0.73	ददानी
+Deker	बेन्देकेर	देकेर	revisado	media	1	1	1.00	बेतशेमेश
+Derbe	दिरबे	दिरबे	revisado	media	3	5	0.80	चेले
+Diana	महान	अरतिमिस	revisado	media	1	5	0.80	धन्धे
+Diblathaim	अल्मोनदिबलातैम	दिबलातैम	revisado	media	1	3	0.67	बेतदिबलातैम
+Dibon	दीमोन	दीमोन	revisado	media	1	1	1.00	मोआबियों
+Dibon-gad	दीबोन	दीबोन-गाद	revisado	media	1	2	1.00	डीहों
+Dimnah	दिम्ना	दिम्ना	revisado	media	3	3	0.33	नहलाल
+Dionysius	दियुनुसियुस	दियुनुसियुस	revisado	media	2	1	1.00	दमरिस
+Diotrephes	दियुत्रिफेस	दियुत्रिफेस	revisado	media	2	1	1.00	जो
+Dophkah	दोपका	दोपका	revisado	media	3	2	1.00	डेरा
+East Gate	पूर्वी फाटक	पूर्वी फाटक	revisado	media	4	5	0.40	
+Ebal Mount	एबाल पर्वत	एबाल पर्वत	revisado	media	1	8	0.38	एबाल पहाड़
+Ecbatana	वृत्तान्त	अहमता	revisado	media	3	1	1.00	अहमता
+Eden	एदेनी	एदेन	revisado	media	3	15	0.13	एदेन
+Eglath-shelishiyah	एग्लत	एग्लत-शलीशिया	revisado	media	3	2	1.00	शलीशिया
+Egypt	लेगी	मिस्र	revisado	media	3	715	0.00	गाएँगी
+Ela	एला	एला	revisado	media	1	1	1.00	था
+Eliadah	एल्यादा	एल्यादा	revisado	media	1	1	1.00	हदादेजेर
+Eliah	एलिय्याह	एलिय्याह	revisado	media	2	2	1.00	योरेश्याह
+Elihoreph	एलीहोरोप	एलीहोरोप	revisado	media	2	1	1.00	आधिकारिक
+Eliphal	एलीपाल	एलीपाल	revisado	media	2	1	1.00	अहीआम
+Eliphalet	एलीपेलेत	एलीपेलेत	revisado	media	1	3	1.00	एल्यादा
+Elipheleh	एलीपलेह	एलीपलेह	revisado	media	1	2	1.00	यीएल
+Eliphelehu	एलीपलेह	एलीपलेह	revisado	media	1	2	1.00	यीएल
+Elishah	एलीशा	एलीशा	revisado	media	4	3	1.00	तर्शीश
+Elizaphan	एलसाफान	एलसाफान	revisado	media	2	5	0.40	एलीसापान
+Elkosh	एल्कोशवासी	एल्कोश	revisado	media	3	1	1.00	की
+Elmadam	मदाम	एल्मदाम	revisado	media	1	1	1.00	एल्
+Elmodam	मदाम	एल्मदाम	revisado	media	1	1	1.00	कोसाम
+Elonbeth-hanan	बेतानान	एलोन-बेतानान	revisado	media	3	1	1.00	एलोन
+Elpalet	एलपेलेत	एलपेलेत	revisado	media	1	2	0.50	एलीपेलेत
+Elteke	एलतके	एलतके	revisado	media	1	1	1.00	के
+Eltekeh	एलतके	एलतके	revisado	media	3	2	1.00	बालात
+Eltekon	एलतकोन	एलतकोन	revisado	media	3	1	1.00	बेतनोत
+Elzabad	एलजाबाद	एलजाबाद	revisado	media	4	2	1.00	आठवाँ
+Emek-keziz	एमेक्कसीस	एमेक्कसीस	revisado	media	3	1	1.00	के
+Emmaus	इम्माऊस	इम्माऊस	revisado	media	3	3	0.33	मील
+Epaenetus	इपैनितुस	इपैनितुस	revisado	media	2	1	1.00	आसिया
+Epaphroditus	इपफ्रुदीतुस	इपफ्रुदीतुस	revisado	media	2	3	0.67	पास
+Ephah	एपा	एपा	revisado	media	9	5	1.00	शेबा
+Ephai	एपै	एपै	revisado	media	2	1	1.00	कारेह
+Epher	एपेर	एपेर	revisado	media	6	4	1.00	एल्दा
+Ephes-dammim	एपेसदम्मीम	एपेसदम्मीम	revisado	media	3	3	0.33	पसदम्मीम
+Ephesus	इफिसुस	इफिसुस	revisado	media	3	24	0.71	मीलेतुस
+Ephlal	एपलाल	एपलाल	revisado	media	2	1	1.00	ओबेद
+Ephod	एपोद	एपोद	revisado	media	2	1	1.00	यूसुफियों
+Ephraim	एप्रैम	एप्रैम	revisado	media	7	167	0.81	फिरा
+Ephrath	एप्राता	एप्राता	revisado	media	2	3	1.00	अर्थात्
+Epicurean	इपिकूरी	इपिकूरी	revisado	media	1	1	1.00	पुनरुत्थान
+Esau	एसाव	एसाव	revisado	media	3	151	0.50	देश
+Eshcol Valley	एशकोल नामक घाटी	एशकोल घाटी	revisado	media	1	4	0.25	
+Eshtemoh	एश्तमो	एश्तमो	revisado	media	1	1	1.00	आनीम
+Esli	असल्याह	असल्याह	revisado	media	2	1	1.00	गई
+Euodias	यूओदिया	यूओदिया	revisado	media	1	1	1.00	निवेदन
+Eutychus	यूतुखुस	यूतुखुस	revisado	media	2	1	1.00	उठाया
+Ezel	एजेल	एजेल	revisado	media	1	2	0.50	से
+Ezrah	एपेर	एज्रा	revisado	media	1	1	1.00	मेरेद
+Ezri	एज्री	एज्री	revisado	media	2	1	1.00	खेती
+Gadara	गदरेनियों	गदरेनियों	sem	media	1	1	1.00	पार
+Gaddi	गद्दी	गद्दी	revisado	media	2	1	1.00	वंशियों
+Gadi	गादी	गादी	revisado	media	2	2	1.00	राजा
+Gamad	गम्	गम्मद	revisado	media	3	1	1.00	मद
+Gath	गती	गत	revisado	media	1	2	0.50	गतवासी
+Gazzam	गज्जाम	गज्जाम	revisado	media	2	2	1.00	पासेह
+Gebal	गबल	गबल	revisado	media	3	4	0.25	गबाली
+Gebal	गबाली	गबल	revisado	media	1	1	1.00	अमालेकी
+Geber	बेनगेबेर	गेबेर	revisado	media	1	1	1.00	अर्गोब
+Gederah	गदेरावासी	गदेरा	revisado	media	1	1	1.00	वीर
+Gedor	गदोर	गदोर	revisado	media	9	8	0.75	गए
+Geliloth	गलीलोत	गलीलोत	revisado	media	2	3	0.33	जो
+Gennesaret	गन्नेसरत	गन्नेसरत	revisado	media	3	3	1.00	घाट
+Gershon	गेर्शोन	गेर्शोन	revisado	media	2	34	0.24	गेर्शोनियों
+Gesham	गेशान	गेशान	revisado	media	1	1	1.00	रेगेम
+Geshur	गशूर	गशूर	revisado	media	3	14	0.57	गशूरी
+Gethsemane	गतसमनी	गतसमनी	revisado	media	3	2	1.00	उसने
+Geuel	गूएल	गूएल	revisado	media	2	1	1.00	से
+Gibea	गिबा	गिबा	revisado	media	2	1	1.00	मकबेना
+Gilo	गीलोवासी	गीलो	revisado	media	1	1	1.00	अहीतोपेल
+Gimzo	गिमजो	गिमजो	revisado	media	3	1	1.00	सोको
+Ginnethon	गिन्	गिन्नतोन	revisado	media	2	3	1.00	नतोन
+Gittith	गीत	गित्तीत	revisado	media	1	3	0.33	दिखाया
+God	गोद	गोद	sem	media	1	8587	0.00	घोड़ा
+Golgotha	गुलगुता	गुलगुता	revisado	media	3	4	0.75	कहलाता
+Gurbaal	गूर्बालवासी	गूर्बाल	revisado	media	3	1	1.00	अरबियों
+Hadar	हदद	हदद	revisado	media	1	2	1.00	मस्सा
+Haeleph	एलेप	एलेप	revisado	media	3	1	1.00	सेला
+Haggeri	हग्री	हग्री	revisado	media	1	1	1.00	मिभार
+Hahiroth	पीहहीरोत	पीहहीरोत	revisado	media	1	1	1.00	मारा
+Hamath-zobah	हमात	हमात-सोबा	revisado	media	2	2	1.00	सोबा
+Hammath	हम्मत	हम्मत	revisado	media	5	5	0.40	रक्कत
+Hareph	हारेप	हारेप	revisado	media	2	1	1.00	और
+Harmon	हेर्मोन	हेर्मोन	revisado	media	3	1	1.00	नाकों
+Harod	हरोद	हरोद	revisado	media	3	3	0.33	हेरोदी
+Harod	हरोरी	हरोद	revisado	media	1	2	0.50	हेरोदी
+Harosheth-hagoyim	हरोशेत	अन्यजातियों का हरोशेत	revisado	media	3	3	1.00	सीसरा
+Harumaph	हरुमप	हरुमप	revisado	media	2	1	1.00	हत्तूश
+Havvoth-jair	हव्वोत्याईर	हव्वोत्याईर	revisado	media	3	6	0.17	हब्बोत्याईर
+Hazaiah	अदायाह	हजायाह	revisado	media	2	1	1.00	हजायाह
+Hazerim	बसे	बसे	sem	media	1	1	1.00	कप्तोरियों
+Hazo	हज़ो	हज़ो	revisado	media	2	1	1.00	पिल्दाश
+Heber	एबेर	एबेर	revisado	media	2	2	1.00	शेबा
+Heleb	हेलेब	हेलेब	revisado	media	2	3	0.33	हेलेद
+Heleph	हेलेप	हेलेप	revisado	media	3	2	0.50	यब्नेल
+Heli	एली	एली	revisado	media	2	1	1.00	की
+Hemath	हम्मत	हम्मत	revisado	media	1	1	1.00	शिमाती
+Henoch	हनोक	हनोक	revisado	media	1	2	1.00	एल्दा
+Hermas	हर्मास	हर्मास	revisado	media	2	1	1.00	हिर्मेस
+Hermes	हिर्मेस	हिर्मेस	revisado	media	3	2	1.00	हर्मास
+Hermogenes	हिरमुगिनेस	हिरमुगिनेस	revisado	media	2	1	1.00	जिनमें
+Hermon Mount	हेर्मोन पर्वत	हेर्मोन पर्वत	revisado	media	1	20	0.35	हेर्मोन के पहाड़
+Hesed	बेन्हेसेद	बेन्हेसेद	revisado	media	2	1	1.00	हेपेर
+Hezir	हेजीर	हेजीर	revisado	media	4	2	1.00	हप्पित्सेस
+Hezrai	हेस्रो	हेस्रो	revisado	media	1	2	1.00	अराबी
+Hizki	हिजकी	हिजकी	revisado	media	1	1	1.00	जबद्याह
+Hizkiah	हिजकिय्याह	हिजकिय्याह	revisado	media	2	2	1.00	योशिय्याह
+Hizkijah	हिजकिय्याह	हिजकिय्याह	revisado	media	1	1	1.00	अज्जूर
+Hodaiah	होदव्याह	होदव्याह	revisado	media	1	1	1.00	दलायाह
+Hodaviah	होदवा	होदवा	revisado	media	1	3	0.33	होदव्याह
+Hodevah	होदवा	होदवा	revisado	media	1	3	0.33	होदव्याह
+Hophra	होप्रा	होप्रा	revisado	media	1	18	0.06	फ़िरौन
+Horonaim	ओर	होरोनैम	revisado	media	1	1	1.00	पहरा
+Hosea	होशे	होशे	revisado	media	2	3	1.00	योआश
+Hoshea	होशे	होशे	revisado	media	6	10	1.00	एला
+Hothan	होताम	होताम	revisado	media	1	1	1.00	अश्तारोती
+Huppim	मुप्पीम	हुप्पीम	revisado	media	1	3	0.33	हुप्पीम
+Huram	हूराम	हूराम	revisado	media	2	4	0.50	हूपाम
+Huz	ऊस	ऊस	revisado	media	1	1	1.00	उसका
+Ibleam	यिबलाम	यिबलाम	revisado	media	3	6	0.50	याबेश
+Ibri	इब्री	इब्री	revisado	media	2	1	1.00	याजिय्याह
+Idbash	यिद्वाश	यिद्वाश	revisado	media	2	1	1.00	यिश्मा
+Imna	यिम्ना	यिम्ना	revisado	media	2	1	1.00	आमाल
+Iphdeiah	यिपदयाह	यिपदयाह	revisado	media	1	1	1.00	पनूएल
+Iphtah	इप्ताह	इप्ताह	revisado	media	3	1	1.00	नसीब
+Ir-moab	मोआब	मोआब का नगर	revisado	media	1	1	1.00	सीमा
+Ishbi-benob	यिशबोबनोब	यिशबोबनोब	revisado	media	2	1	1.00	भाले
+Ishiah	यिश्शिय्याह	यिश्शिय्याह	revisado	media	1	1	1.00	यिज्रह्याह
+Isuah	यिश्वा	यिश्वा	revisado	media	1	2	1.00	सेरह
+Isui	यिश्वी	यिश्वी	revisado	media	1	3	1.00	यिश्वीयों
+Iye-abarim	अबारीम	अबारीम	revisado	media	3	3	0.67	मोआब
+Izziah	यिज्जियाह	यिज्जियाह	revisado	media	1	1	1.00	रम्याह
+Jaare-oregim	यारयोरगीम	यारयोरगीम	revisado	media	1	2	0.50	जुलाहे
+Jaaziel	यहीएल	याजीएल	revisado	media	2	3	1.00	याजीएल
+Jacob	याकूब	याकूब	revisado	media	3	1011	0.34	एलीहूद
+Jahaziah	यहजयाह	यहजयाह	revisado	media	1	1	1.00	तिकवा
+Jahzah	यहस	यहस	revisado	media	1	2	1.00	पास
+Jahzeiah	यहजयाह	यहजयाह	revisado	media	1	1	1.00	असाहेल
+Jairus	याईर	याईर	revisado	media	2	2	1.00	आया
+Japhlet	यपलेत	यपलेत	revisado	media	2	3	0.67	बिम्हाल
+Jaroah	यहदो	योराह	revisado	media	2	1	1.00	यशीशै
+Jasher	याशार	याशार	revisado	media	1	2	1.00	सिखाने
+Jathniel	यदीएल	यातनीएल	revisado	media	2	1	1.00	जबद्याह
+Javan	यावान	यावान	revisado	media	4	34	0.18	द्वीपवासियों
+Jaziz	याजीज	याजीज	revisado	media	2	1	1.00	अधिकारी
+Jegar-sahadutha	सहादुथा	जैगर-सहादुथा	revisado	media	1	1	1.00	जैगर
+Jehaleleel	यहलेल	यहलेल	revisado	media	1	1	1.00	असरेल
+Jehallelel	यहलेल	यहलेल	revisado	media	1	1	1.00	असरेल
+Jehdeiah	येहदयाह	येहदयाह	revisado	media	4	2	1.00	शूबाएल
+Jehezekel	यहेजकेल	यहेजकेल	revisado	media	1	1	1.00	नीसवीं
+Jehezkel	यहेजकेल	यहेजकेल	revisado	media	1	1	1.00	के
+Jehiel	यहीएल	यहीएल	revisado	media	20	17	0.76	एलिय्याह
+Jehiel	यीएल	यीएल	revisado	media	1	1	1.00	उज्जियाह
+Jehizkiah	यहिजकिय्याह	यहिजकिय्याह	revisado	media	2	1	1.00	बेरेक्याह
+Jehoiachin	यहोयाकीन	यहोयाकीन	revisado	media	2	22	0.41	यहोयाकीम
+Jehoiada	योयादा	योयादा	revisado	media	1	1	1.00	बसोदयाह
+Jehoram	यहोराम	यहोराम	revisado	media	4	22	0.73	योराम
+Jehoshabeath	यहोशावत	यहोशावत	revisado	media	1	2	0.50	यहोशेबा
+Jehoshaphat	योशापात	योशापात	revisado	media	1	1	1.00	यहिय्याह
+Jehozabad	यहोजाबाद	यहोजाबाद	revisado	media	6	4	1.00	योजाबाद
+Jehud	यहूद	यहूद	revisado	media	3	1	1.00	बनेबराक
+Jehudi	यहूदी	यहूदी	revisado	media	2	3	1.00	लिए
+Jehudijah	यहूदिन	यहूदिन	revisado	media	2	1	1.00	येरेद
+Jehuel	यहूएल	यहूएल	revisado	media	1	1	1.00	उज्जीएल
+Jehush	यूश	यूश	revisado	media	1	1	1.00	एशेक
+Jeiel	यूएल	यूएल	revisado	media	2	2	1.00	शिम्री
+Jekameam	यकमाम	यकमाम	revisado	media	2	2	1.00	यरिय्याह
+Jemuel	यमूएल	यमूएल	revisado	media	2	4	0.50	नमूएल
+Jered	येरेद	येरेद	revisado	media	2	1	1.00	मेरेद
+Jeremoth	यरामोत	यरामोत	revisado	media	1	1	1.00	बानी
+Jeriel	यरीएल	यरीएल	revisado	media	2	1	1.00	यहमै
+Jerimoth	यरेमोत	यरेमोत	revisado	media	1	1	1.00	आलेमेत
+Jerioth	यरीओत	यरीओत	revisado	media	2	1	1.00	येशेर
+Jeruel	यरूएल	यरूएल	revisado	media	3	1	1.00	मिलेंगे
+Jesaiah	यशायाह	यशायाह	revisado	media	2	2	1.00	शकन्याह
+Jeshaiah	यशायाह	यशायाह	revisado	media	9	8	0.88	सरी
+Jesiah	यिश्शिय्याह	यिश्शिय्याह	revisado	media	1	1	1.00	योएजेर
+Jesus	यीशु	यीशु	revisado	media	2	1161	0.75	यूस्तुस
+Jether	यतेरे	यतेरे	revisado	media	2	1	1.00	जेठे
+Jetheth	यतेत	यतेत	revisado	media	2	2	1.00	ये
+Jethro	यित्रो	यित्रो	revisado	media	2	19	0.42	यात्रा
+Jetur	यतूर	यतूर	revisado	media	4	4	0.75	ये
+Jeuz	ये	यूस	revisado	media	2	1	1.00	उसके
+Jezaniah	याजन्याह	याजन्याह	revisado	media	2	4	0.75	होशायाह
+Jeziel	यजीएल	यजीएल	revisado	media	2	1	1.00	अहीएजेर
+Jezliah	यिजलीआ	यिजलीआ	revisado	media	1	1	1.00	एल्पाल
+Jezoar	यिसहर	यिसहर	revisado	media	1	1	1.00	हेला
+Jezreel	यिज्रेल	यिज्रेल	revisado	media	12	43	0.72	यिज्रेली
+Jezreel	यिज्रेली	यिज्रेली	revisado	media	1	6	0.83	यिज्रेल
+Jidlaph	यिद्लाप	यिद्लाप	revisado	media	2	1	1.00	पिल्दाश
+Joahaz	योआह	योआहाज	revisado	media	2	1	1.00	योआहाज
+Joanan	यूहन्ना	यूहन्ना	revisado	media	1	1	1.00	नहे
+Joanna	यूहन्ना	यूहन्ना	revisado	media	1	1	1.00	नहे
+Joezer	योएजेर	योएजेर	revisado	media	2	1	1.00	यिश्शिय्याह
+Johanan	यहोहानान	यहोहानान	revisado	media	2	2	1.00	एल्याशीब
+Jokmeam	योकमाम	योकमाम	revisado	media	4	2	1.00	यिज्रेल
+Jonam	योनान	योनान	revisado	media	1	1	1.00	एलयाकीम
+Jonas	इनसे	योना	revisado	media	1	4	0.25	यूहन्ना
+Josabad	योजाबाद	योजाबाद	revisado	media	1	1	1.00	यिशमायाह
+Josedech	यहोसादाक	यहोसादाक	revisado	media	1	12	0.67	योसादाक
+Joseph	योसेख	योसेख	revisado	media	1	1	1.00	योदाह
+Joshua	येशू	येशू	revisado	media	1	1	1.00	योरीम
+Josiah	योशियाह	योशियाह	revisado	media	2	4	0.25	तोबियाह
+Jotbah	योत्बावासी	योत्बा	revisado	media	3	1	1.00	जब
+Jozadak	योसादाक	योसादाक	revisado	media	2	1	1.00	यारीब
+Juda	यहूदा	यहूदा	revisado	media	1	1	1.00	योनान
+Juda	योदाह	योदाह	revisado	media	1	1	1.00	योसेख
+Judaism	यहूदी	यहूदी मत	revisado	media	1	2	1.00	यहूदियों
+Judas	यहूदा	यहूदा	revisado	media	7	31	0.94	लिखाई
+Jude	यहूदा	यहूदा	revisado	media	2	3	1.00	यीशु
+Judea	यहूदिया	यहूदिया	revisado	media	4	59	0.73	यहूदा
+Jushab-hesed	यूशब	यूशब-हेसेद	revisado	media	2	1	1.00	हेसेद
+Kadesh	देश	कादेश	revisado	media	1	1	1.00	तहतीम्होदशी
+Kadesh-barnea	कादेशबर्ने	कादेशबर्ने	revisado	media	2	24	0.42	अद्दार
+Kain	कैन	कैन	revisado	media	3	2	0.50	हैं
+Karnaim	कारण	कर्नैम	revisado	media	1	1	1.00	करते
+Kartah	कर्ता	कर्ता	revisado	media	2	2	0.50	अर्थात्
+Kedesh-naphtali	केदेश	केदेश नप्ताली	revisado	media	2	1	1.00	नप्तालियों
+Kemuel	कमूएल	कमूएल	revisado	media	6	3	1.00	हुए
+Kenath	कनात	कनात	revisado	media	3	4	0.50	नोबह
+Kerioth	करिय्योत	करिय्योत	revisado	media	2	3	1.00	के
+Kir	कीर	कीर	revisado	media	5	11	0.45	की
+Kir-hareseth	कीरहरासत	कीरहरासत	revisado	media	1	2	1.00	निराश
+Kir-hareseth	कीरहेरेस	कीरहरासत	revisado	media	1	5	0.60	कीरहरासत
+Kiriath-arim	किर्यत्यारीम	किर्यत्यारीम	revisado	media	1	1	1.00	कपीरा
+Kitron	कित्रोन	कित्रोन	revisado	media	3	3	0.33	को
+Kittim	कित्तियों	कित्ती	revisado	media	2	2	1.00	जहाज
+Kiyyun	की	कीयून	revisado	media	1	1	1.00	जिन्हें
+Kohath	कहात	कहात	revisado	media	2	42	0.43	कहाती
+Koz	कोस	कोस	revisado	media	1	1	1.00	से
+Koz	हक्कोस	हक्कोस	revisado	media	2	4	1.00	को
+Kue	हुए	कोए	revisado	media	3	2	1.00	के
+Ladan	लादान	लादान	revisado	media	1	1	1.00	अम्मीहूद
+Lahmam	लहमास	लहमास	revisado	media	3	1	1.00	कब्बोन
+Lasea	लसया	लसया	revisado	media	3	1	1.00	से
+Lebaoth	लबाओत	लबाओत	revisado	media	3	1	1.00	शिल्हीम
+Lebo-hamath	हमात	हमात का मार्ग	revisado	media	2	12	0.92	लेकर
+Lehi	लही	लही	revisado	media	3	4	0.75	जले
+Lemuel	लमूएल	लमूएल	revisado	media	2	2	1.00	दाखमधु
+Letushim	लतूशी	लतूशी	revisado	media	2	1	1.00	लुम्मी
+Levi	लेवी	लेवी	revisado	media	6	331	0.15	लेवीय
+Libya	लीबिया	लीबिया	revisado	media	3	10	0.10	लूबी
+Likhi	लिखी	लिखी	revisado	media	2	1	1.00	अहिअन
+Lo-debar	लोदबार	लोदबार	revisado	media	3	5	0.40	लोदबरवासी
+Luke	लूका	लूका	revisado	media	2	4	0.75	के
+Lycaonia	लुकाउनिया	लुकाउनिया	revisado	media	3	2	1.00	प्रदेशों
+Lycia	किलिकिया	लूसिया	revisado	media	3	1	1.00	लूसिया
+Lydda	लुद्दा	लुद्दा	revisado	media	1	3	1.00	यह
+Lysias	लूसियास	लूसियास	revisado	media	1	3	1.00	फेलिक्स
+Maacath	माकी	माकी	revisado	media	1	1	1.00	माकियों
+Maadai	मादै	मादै	revisado	media	2	1	1.00	बानी
+Macedonia	मकिदुनिया	मकिदुनिया	revisado	media	3	27	0.74	मकिदुनी
+Madai	मादै	मादै	revisado	media	2	2	1.00	मागोग
+Mahalah	महला	महला	revisado	media	1	1	1.00	ईशहोद
+Mahalath	महलत	महलत	revisado	media	3	7	0.29	माता
+Manaen	मनाहेम	मनाहेम	revisado	media	2	1	1.00	शमौन
+Manasseh	दान	मनश्शे	revisado	media	1	1	1.00	बने
+Marah	मारा	मारा	revisado	media	3	5	0.60	खारा
+Mark	मरकुस	मरकुस	revisado	media	1	10	0.80	तुम्हारे
+Maskil	रची	रची	sem	media	1	14	0.07	चिल्लाता
+Massa	मस्सा	मस्सा	revisado	media	2	2	1.00	दूमा
+Mattathias	मत्तित्याह	मत्तित्याह	revisado	media	4	2	1.00	असल्याह
+Matthan	मत्तान	मत्तान	revisado	media	2	1	1.00	उत्पन्न
+Matthew	मत्ती	मत्ती	revisado	media	2	8	0.62	बैठे
+Mearah	मारा	मारा	revisado	media	3	1	1.00	सारा
+Medan	मदना	मदना	revisado	media	2	2	0.50	मदान
+Media	मादी	मादै	revisado	media	1	11	0.27	मादै
+Media	मादै	मादै	revisado	media	1	8	0.62	मेढ़ा
+Media	मेदी	मादै	revisado	media	1	22	0.05	मादी
+Mehir	महीर	महीर	revisado	media	2	1	1.00	फिर
+Mehuman	महूमान	महूमान	revisado	media	2	1	1.00	में
+Melchi	मलकी	मलकी	revisado	media	4	2	1.00	लेवी
+Melchiah	मल्किय्याह	मल्किय्याह	revisado	media	1	2	1.00	मासेयाह
+Melita	माल्टा	माल्टा	revisado	media	1	1	1.00	कहलाता
+Melzar	मीशाएल	मेलसर	revisado	media	2	2	0.50	भाल
+Menan	मिन्नाह	मिन्नाह	revisado	media	1	1	1.00	मलेआह
+Menna	मिन्नाह	मिन्नाह	revisado	media	1	1	1.00	मलेआह
+Mephaath	मेपात	मेपात	revisado	media	3	4	1.00	कदेमोत
+Merodach-baladan	बलदान	मरोदक-बलदान	revisado	media	2	2	1.00	मरोदक
+Meroz	मेरोज	मेरोज	revisado	media	3	1	1.00	शूरवीरों
+Meshech-Tubal	मेशेक	मेशेक और तूबल	revisado	media	2	1	1.00	तूबल
+Meshezabeel	मशेजबेल	मशेजबेल	revisado	media	3	3	1.00	मरेमोत
+Meshezabel	मशेजबेल	मशेजबेल	revisado	media	3	3	1.00	सादोक
+Meshillemith	मशिल्लीत	मशिल्लीत	revisado	media	2	2	0.50	मशिल्लेमोत
+Mesopotamia	मेसोपोटामिया	मेसोपोटामिया	revisado	media	3	7	0.29	रिश्आतइम
+Messiah	मसीह	मसीह	revisado	media	1	2	1.00	मिल
+Mezahab	मेज़ाहाब	मेज़ाहाब	revisado	media	3	2	1.00	महेतबेल
+Miamin	मिय्यामीन	मिय्यामीन	revisado	media	1	1	1.00	रम्याह
+Mica	मीका	मीका	revisado	media	2	3	1.00	मुखिया
+Mica	मीकायाह	मीका	revisado	media	1	2	0.50	मुखिया
+Micha	मीका	मीका	revisado	media	2	3	1.00	मुखिया
+Michah	मीका	मीका	revisado	media	1	3	1.00	शामीर
+Michaiah	मीकायाह	मीकायाह	revisado	media	5	8	0.75	जकर्याह
+Michmas	मिकमाश	मिकमाश	revisado	media	1	2	1.00	मनुष्य
+Michmethath	मिकमतात	मिकमतात	revisado	media	3	2	1.00	एनतप्पूह
+Midian	मिद्यान	मिद्यान	revisado	media	5	63	0.38	मिद्यानी
+Miktam	मुझ	मुझ	sem	media	1	6	0.50	धार्मिकता
+Mishael	मीशाएल	मीशाएल	revisado	media	5	21	0.38	उज्जीएल
+Misrephoth-maim	मिस्रपोतमैम	मिस्रपोतमैम	revisado	media	3	2	1.00	मिस्पे
+Mizraim	मिस्र	मिस्र	revisado	media	1	4	1.00	अनामी
+Moadiah	मोअद्याह	मोअद्याह	revisado	media	1	3	0.33	माद्याह
+Moresheth	मोरेशेत	मोरेशेत	revisado	media	1	3	0.33	मोरेशेतवासी
+Moresheth	मोरेशेतवासी	मोरेशेत	revisado	media	1	2	1.00	में
+Moresheth-gath	मोरेशेत	मोरेशेत-गत	revisado	media	2	3	0.33	गत
+Mount Hermon	हेर्मोन पर्वत	हेर्मोन पर्वत	revisado	media	2	16	0.44	हेर्मोन के पहाड़
+Mount Horeb	होरेब पहाड़	होरेब पर्वत	revisado	media	2	17	0.18	होरेब पर्वत
+Mount Seir	सेईर पहाड़	सेईर पहाड़	revisado	media	4	35	0.20	सेईर के पहाड़
+Mount Tabor	ताबोर पहाड़	ताबोर पहाड़	revisado	media	2	9	0.33	
+Mozah	मोसा	मोसा	revisado	media	3	1	1.00	मिस्पे
+Muppim	मुप्पीम	मुप्पीम	revisado	media	1	3	0.33	हुप्पीम
+Myra	मूरा	मूरा	revisado	media	3	1	1.00	लूसिया
+Naam	नाम	नाम	revisado	media	2	1	1.00	कनज
+Naggai	नग्	नग्गई	revisado	media	1	1	1.00	नहूम
+Nahalol	नहलोल	नहलोल	revisado	media	2	3	0.33	निकाला
+Naioth	नबायोत	नबायोत	revisado	media	3	6	0.83	है
+Naphish	नापीश	नापीश	revisado	media	3	3	1.00	नोदाब
+Naphtuhim	नप्तूही	नप्तूही	revisado	media	2	2	1.00	अनामी
+Nazareth	नासरी	नासरत	revisado	media	3	33	0.61	नासरत
+Neah	नेआ	नेआ	revisado	media	3	3	0.33	इत्कासीन
+Neapolis	नियापुलिस	नियापुलिस	revisado	media	3	1	1.00	इसलिए
+Nebo Mount	नबो पहाड़	नबो पहाड़	revisado	media	1	6	0.17	
+Nebu-sar-sekim	सर्सकीम	सर्सकीम	revisado	media	1	1	1.00	नेर्गलसरेसेर
+Nebushasban	नबूसजबान	नबूसजबान	revisado	media	1	1	1.00	नेर्गलसरेसेर
+Nebushazban	नबूसजबान	नबूसजबान	revisado	media	1	1	1.00	नेर्गलसरेसेर
+Neco	नको	नको	revisado	media	1	10	0.80	नो
+Negeb	होंगे	दक्षिण देश	revisado	media	3	44	0.02	लेंगे
+Nehushtan	नहुशतान	नहुशतान	revisado	media	1	1	1.00	स्थान
+Nemuel	नमूएल	नमूएल	revisado	media	2	1	1.00	ने
+Nepheg	नेपेग	नेपेग	revisado	media	4	4	1.00	थे
+Nephilim	नपीली	नपीली	revisado	media	1	2	0.50	नपीलों
+Nereus	नेर्युस	नेर्युस	revisado	media	2	1	1.00	उलुम्पास
+Netaim	नताईम	नताईम	revisado	media	3	1	1.00	गदेरा
+Netophah	नतोपा	नतोपा	revisado	media	3	12	0.17	नतोपाही
+Nezib	नसीब	नसीब	revisado	media	3	1	1.00	इप्ताह
+Nibhaz	निभज	निभज	revisado	media	1	1	1.00	किया
+Nicolaitans	नीकुलइयों	नीकुलइयों	revisado	media	1	2	1.00	करता
+Nicolas	नीकुलाउस	नीकुलाउस	revisado	media	1	1	1.00	नीकानोर
+Nicopolis	निकुपुलिस	निकुपुलिस	revisado	media	3	1	1.00	निश्चय
+Nile	नील	नील	revisado	media	3	48	0.50	नदी
+Nophah	नोपह	नोपह	revisado	media	2	1	1.00	दीबोन
+Nympha	नुमफास	नुमफास	revisado	media	1	1	1.00	नमस्कार
+Olympas	उलुम्पास	उलुम्पास	revisado	media	2	1	1.00	यूलिया
+Onesiphorus	उनेसिफुरूस	उनेसिफुरूस	revisado	media	2	2	1.00	क्योंकि
+Ophrah	ओप्रा	ओप्रा	revisado	media	8	10	0.80	ओर
+Osnappar	नप्पर	ओस्नप्पर	revisado	media	1	1	1.00	ओस्
+Ozni	शूनी	ओजनी	revisado	media	1	2	0.50	अरोदी
+Paddan	पद्दान	पद्दान	revisado	media	2	16	0.06	पहुँचने
+Pai	पाऊ	पाऊ	revisado	media	1	1	1.00	पत्नी
+Paphos	पाफुस	पाफुस	revisado	media	3	2	1.00	पंफूलिया
+Parmenas	परमिनास	परमिनास	revisado	media	2	1	1.00	परिपूर्ण
+Parthians	पारथी	पारथी	revisado	media	1	1	1.00	कप्पदूकिया
+Parvaim	पर्वेम	पर्वेम	revisado	media	3	1	1.00	जड़वाए
+Patmos	पतमुस	पतमुस	revisado	media	3	1	1.00	परमेश्वर
+Pedahel	पदहेल	पदहेल	revisado	media	2	1	1.00	नप्तालियों
+Pekod	पकोद	पकोद	revisado	media	2	2	1.00	कोआ
+Peniel	पनीएल	पनीएल	revisado	media	2	6	0.33	देखने
+Penuel	पनूएल	पनूएल	revisado	media	6	8	0.75	एजेर
+Peor	पोर	पोर	revisado	media	3	8	0.50	देखो
+Perga	पिरगा	पिरगा	revisado	media	3	3	1.00	पाफुस
+Pergamum	पिरगमुन	पिरगमुन	revisado	media	3	2	1.00	स्वर्गदूत
+Persia	परेस	फारस	revisado	media	1	33	0.03	मेरेस
+Persia	मेरेस	फारस	revisado	media	1	27	0.04	फारस
+Persis	पिरसिस	पिरसिस	revisado	media	2	1	1.00	प्रिय
+Pethor	पतोर	पतोर	revisado	media	3	2	1.00	बोर
+Pethuel	पतूएल	पतूएल	revisado	media	2	1	1.00	योएल
+Phaltiel	पलतीएल	पलतीएल	revisado	media	1	2	0.50	पलती
+Pharisee	फरीसी	फरीसी	revisado	media	1	95	0.36	फरीसियों
+Pharosh	परोश	परोश	revisado	media	1	1	1.00	वंश
+Pharpar	पर्पर	पर्पर	revisado	media	3	1	1.00	भरा
+Phebe	फीबे	फीबे	revisado	media	1	1	1.00	सेविका
+Phenice	फीनिक्स	फीनिक्स	revisado	media	1	1	1.00	काटें
+Phenicia	फीनीके	फीनीके	revisado	media	1	3	1.00	अन्ताकिया
+Phichol	पीकोल	पीकोल	revisado	media	1	3	1.00	को
+Phicol	पीकोल	पीकोल	revisado	media	1	3	1.00	को
+Philistia	पलिश्ती	पलिश्तीन	revisado	media	1	250	0.34	पलिश्तियों
+Philistia	पलिश्तीन	पलिश्तीन	revisado	media	2	22	0.18	पलिश्त
+Philistine	पलिश्ती	पलिश्ती	revisado	media	1	2	1.00	जिनसे
+Philologus	फिलुलुगुस	फिलुलुगुस	revisado	media	2	1	1.00	यूलिया
+Phlegon	फिलगोन	फिलगोन	revisado	media	2	1	1.00	भाइयों
+Phoebe	फीबे	फीबे	revisado	media	1	2	0.50	के
+Phoenix	फीनिक्स	फीनिक्स	revisado	media	2	1	1.00	काटें
+Phygellus	फूगिलुस	फूगिलुस	revisado	media	1	1	1.00	हिरमुगिनेस
+Phygelus	फूगिलुस	फूगिलुस	revisado	media	1	1	1.00	हिरमुगिनेस
+Place	लाए	गुलगुता	revisado	media	1	2	0.50	गुलगुता
+Pochereth-hazzebaim	पोकरेत	पोकरेत-सबायीम	revisado	media	1	2	1.00	सबायीम
+Pontus	पुन्तुस	पुन्तुस	revisado	media	3	3	1.00	पारथी
+Prochorus	प्रुखुरुस	प्रुखुरुस	revisado	media	2	1	1.00	नीकानोर
+Ptolemais	पतुलिमयिस	पतुलिमयिस	revisado	media	2	1	1.00	जलयात्रा
+Pul	पूलियों	पूल	revisado	media	1	1	1.00	तुबलियों
+Purah	फूरा	फूरा	revisado	media	1	2	1.00	उतर
+Put	पूती	पूत	revisado	media	1	3	0.33	पूत
+Puteoli	पुतियुली	पुतियुली	revisado	media	3	1	1.00	चली
+Pyrrhus	पुरूर्स	पुरूर्स	revisado	media	1	1	1.00	सोपत्रुस
+Raamah	रामाह	रामाह	revisado	media	5	3	1.00	उत्तम
+Raamses	रामसेस	रामसेस	revisado	media	2	1	1.00	भण्डारवाले
+Raca	नरक	नरक	sem	media	1	1	1.00	कचहरी
+Rachab	राहाब	राहाब	revisado	media	1	1	1.00	रूत
+Ramah	यहोराम	रामा	revisado	media	2	2	1.00	योराम
+Ramath-lehi	रामत	रामत-लही	revisado	media	3	1	1.00	जबड़े
+Ramath-mizpeh	रामत	रामत-मिस्पे	revisado	media	2	1	1.00	मिस्पे
+Ramathaim-zophim	रामातैम	रामातैम-सोपीम	revisado	media	2	1	1.00	एप्रैमी
+Ramoth	यरामोत	यरामोत	revisado	media	1	1	1.00	और
+Rapha	रापा	रापा	revisado	media	2	9	0.67	अर्द
+Raphah	रापा	रापा	revisado	media	1	2	0.50	रपायाह
+Raphu	रापू	रापू	revisado	media	2	1	1.00	गोत्र
+Reaia	रायाह	रायाह	revisado	media	1	1	1.00	बाल
+Rehoboth	रहोबोत	रहोबोत	revisado	media	6	3	1.00	हमारे
+Rehoboth	रहोबोतीर	रहोबोतीर	revisado	media	1	1	1.00	को
+Rehum	रहूम	रहूम	revisado	media	8	11	0.73	मरेमोत
+Rephael	रपाएल	रपाएल	revisado	media	2	1	1.00	एलीहू
+Rephah	रेपा	रेपा	revisado	media	2	1	1.00	रेशेप
+Rephaiah	रपायाह	रपायाह	revisado	media	9	6	0.83	अर्नान
+Rephan	रिफान	रिफान	revisado	media	1	1	1.00	परे
+Resheph	रेशेप	रेशेप	revisado	media	2	1	1.00	रेपा
+Reuben	रूबेन	रूबेन	revisado	media	2	86	0.49	रूबेनी
+Rezeph	रेसेप	रेसेप	revisado	media	3	2	1.00	एदेनी
+Rimmon	दिम्ना	रिम्मोन	revisado	media	1	1	1.00	ये
+Rimmono	रिम्मोन	रिम्मोन	revisado	media	2	1	1.00	चराइयों
+Riphath	रीपत	रीपत	revisado	media	2	2	0.50	दीपत
+Rome	रोम	रोम	revisado	media	2	15	0.53	रोमी
+Rome	रोमी	रोम	revisado	media	1	28	0.32	रोम
+Rosh	रोश	रोश	revisado	media	1	2	0.50	नोहा
+Rumah	रूमावासी	रूमा	revisado	media	2	1	1.00	रहा
+Sabbath	सब्त	सब्त	revisado	media	1	151	0.36	सब
+Sachia	मुख्य	सोक्या	revisado	media	1	1	1.00	उसके
+Sadducee	सदूकी	सदूकी	revisado	media	1	14	0.29	सदूकियों
+Sadoc	सादोक	सादोक	revisado	media	1	1	1.00	अखीम
+Salathiel	शालतीएल	शालतीएल	revisado	media	1	1	1.00	रेसा
+Salim	सालेम	सालेम	revisado	media	3	1	1.00	ऐनोन
+Samgar	समगर्नबो	समगर्नबो	revisado	media	1	1	1.00	सर्सकीम
+Samos	सामुस	सामुस	revisado	media	3	1	1.00	खियुस
+Samothrace	सुमात्राके	सुमात्राके	revisado	media	3	1	1.00	दूसरे
+Sarah	सारा	सारा	revisado	media	2	48	0.75	सारै
+Saraph	साराप	साराप	revisado	media	2	1	1.00	और
+Scythians	स्कूती	स्कूती	revisado	media	1	1	1.00	खतना
+Seba	सबा	सबा	revisado	media	4	4	1.00	शेबा
+Sebam	सबाम	सबाम	revisado	media	2	1	1.00	बोन
+Segub	सगूब	सगूब	revisado	media	4	3	1.00	उसने
+Sela	से	सेला	revisado	media	1	2	1.00	सीमा
+Sela	सेला	सेला	revisado	media	4	5	0.60	से
+Semei	शिमी	शिमी	revisado	media	1	1	1.00	योसेख
+Semein	शिमी	शिमी	revisado	media	1	1	1.00	योसेख
+Senaah	सना	सना	revisado	media	2	5	0.40	हस्सना
+Senir	सनीर	सनीर	revisado	media	2	4	1.00	सिर्योन
+Senuah	हस्सनूआ	हस्सनूआ	revisado	media	1	1	1.00	नायब
+Sepharad	सपाराद	सपाराद	revisado	media	2	1	1.00	सारफत
+Sepharad	सरदीस	सपाराद	revisado	media	1	4	0.75	सपाराद
+Seraiah	राजसी	सरायाह	revisado	media	1	4	0.25	सरायाह
+Sethur	सतूर	सतूर	revisado	media	2	1	1.00	आशेर
+Shaalbim	शाल्बीम	शाल्बीम	revisado	media	3	5	0.40	इसलिए
+Shaashgaz	शाशगज	शाशगज	revisado	media	2	1	1.00	साँझ
+Shachia	मुख्य	सोक्या	revisado	media	1	1	1.00	उसके
+Shallun	शल्लूम	शल्लूम	revisado	media	1	1	1.00	ताले
+Shamariah	शेमर्याह	शेमर्याह	revisado	media	1	1	1.00	जाहम
+Shamer	शेमेर	शेमेर	revisado	media	2	3	0.67	अमसी
+Shamma	शम्मा	शम्मा	revisado	media	2	1	1.00	शिलसा
+Shapham	शापाम	शापाम	revisado	media	2	1	1.00	शापात
+Shaphir	शापीर	शापीर	revisado	media	3	1	1.00	सकती
+Sharuhen	शारूहेन	शारूहेन	revisado	media	3	3	0.33	उन्हें
+Shaul	शाऊल	शाऊल	revisado	media	6	10	0.90	सम्ला
+Shaveh-kiriathaim	किर्यातैम	शावे-किर्यातैम	revisado	media	2	1	1.00	शावे
+Shavsha	शवा	शवा	revisado	media	1	4	0.25	शबशा
+Sheal	शाल	शाल	revisado	media	2	1	1.00	से
+Shebat	शबात	शबात	revisado	media	1	1	1.00	इस
+Shebuel	शबूएल	शबूएल	revisado	media	2	5	0.60	शूबाएल
+Sheleph	शेलेप	शेलेप	revisado	media	2	2	1.00	से
+Shelomith	शलोमोत	शलोमोत	revisado	media	1	3	1.00	एलीएजेर
+Shelomoth	शलोमीत	शलोमीत	revisado	media	1	1	1.00	हजीएल
+Shemaah	शमाआ	शमाआ	revisado	media	2	1	1.00	यजीएल
+Shemed	शामेद	शामेद	revisado	media	1	1	1.00	मिशाम
+Shemuel	शमूएल	शमूएल	revisado	media	4	2	1.00	अम्मीहूद
+Shephathiah	शपत्याह	शपत्याह	revisado	media	1	1	1.00	यिबनायाह
+Shephelah	तेल	तेल	sem	media	1	6	0.17	बेतशेमेश
+Shethar-bozenai	शतर्बोजनै	शतर्बोजनै	revisado	media	1	4	1.00	तत्तनै
+Shethar-boznai	शतर्बोजनै	शतर्बोजनै	revisado	media	1	4	1.00	तत्तनै
+Sheva	शवा	शवा	revisado	media	2	1	1.00	शाप
+Shiloah	शीलोह	शीलोह	revisado	media	2	1	1.00	रसीन
+Shimeah	शिमआह	शिमआह	revisado	media	3	9	0.44	ये
+Shimeon	शिमोन	शिमोन	revisado	media	2	1	1.00	यिश्शियाह
+Shimhi	शिमी	शिमी	revisado	media	1	1	1.00	शिम्रात
+Shimon	शिमोन	शिमोन	revisado	media	2	1	1.00	रिन्ना
+Shiphi	शिपी	शिपी	revisado	media	2	1	1.00	शिम्री
+Shiphtan	शिप्तान	शिप्तान	revisado	media	2	1	1.00	गोत्र
+Shubael	शूबाएल	शूबाएल	revisado	media	2	5	0.40	शबूएल
+Shunem	शूनेम	शूनेम	revisado	media	3	9	0.33	उन्होंने
+Shupham	शपूपाम	शपूपाम	revisado	media	1	3	0.33	हूपाम
+Silla	सिल्ला	सिल्ला	revisado	media	3	1	1.00	मिल्लो
+Simeon	में	शिमोन	revisado	media	4	3	1.00	शमौन
+Simri	शिम्री	शिम्री	revisado	media	1	1	1.00	मरारी
+Sin	सीन	सीन	revisado	media	3	4	1.00	सीनै
+Siphmoth	सिपमोत	सिपमोत	revisado	media	3	1	1.00	एश्तमो
+Smyrna	स्मुरना	स्मुरना	revisado	media	3	2	1.00	पिरगमुन
+So	सो	सो	revisado	media	2	1	1.00	उसको
+Soco	सोको	सोको	revisado	media	2	2	1.00	बेतसूर
+Sopater	सोपत्रुस	सोपत्रुस	revisado	media	2	2	0.50	सोसिपत्रुस
+Spain	इसपानिया	इसपानिया	revisado	media	3	2	1.00	मैं
+Stachys	इस्तखुस	इस्तखुस	revisado	media	2	1	1.00	सहकर्मी
+Suph	सूफ	सूफ	revisado	media	3	1	1.00	से
+Suphah	सूपा	सूपा	revisado	media	3	1	1.00	इस
+Sur	सूर	सूर फाटक	revisado	media	3	1	1.00	और
+Sychar	सूखार	सूखार	revisado	media	3	1	1.00	याकूब
+Syene	सवेने	सवेने	revisado	media	3	3	0.67	सीनियों
+Syntyche	सुन्तुखे	सुन्तुखे	revisado	media	2	1	1.00	यूओदिया
+Syracuse	सुरकूसा	सुरकूसा	revisado	media	3	1	1.00	टिके
+Syria	सरीखा	अराम	revisado	media	1	89	0.01	राजा
+Syria	सीरिया	सीरिया	revisado	media	3	116	0.08	सरीखा
+Syrtis	सुरतिस	सुरतिस	revisado	media	3	1	1.00	टिक
+Tabor Mount	ताबोर पहाड़	ताबोर पहाड़	revisado	media	1	8	0.38	
+Tamah	तेमह	तेमह	revisado	media	1	2	1.00	बर्कोस
+Tammuz	तम्मूज	तम्मूज	revisado	media	1	1	1.00	था
+Taphath	तापत	तापत	revisado	media	2	1	1.00	अबीनादब
+Tehaphnehes	तहपन्हेस	तहपन्हेस	revisado	media	1	1	1.00	बेटियाँ
+Telaim	तलाईम	तलाईम	revisado	media	2	1	1.00	थे
+Teman	तेमानी	तेमान	revisado	media	1	13	0.46	तेमान
+Tertius	तिरतियुस	तिरतियुस	revisado	media	2	1	1.00	पत्री
+Tertullus	तिरतुल्लुस	तिरतुल्लुस	revisado	media	2	2	1.00	पौलुस
+Tharshish	तर्शीश	तर्शीश	revisado	media	1	1	1.00	अहीशहर
+Theophilus	थियुफिलुस	थियुफिलुस	revisado	media	2	2	1.00	लिखूँ
+Thessalonica	थिस्सलुनीके	थिस्सलुनीके	revisado	media	3	11	0.55	थिस्सलुनीकियों
+Theudas	थियूदास	थियूदास	revisado	media	2	1	1.00	हुआ
+Tiberius	तिबिरियुस	तिबिरियुस	revisado	media	2	12	0.08	पुन्तियुस
+Tigris	तीसरी	हिद्देकेल	revisado	media	2	2	0.50	चौथी
+Tilon	तोलोन	तोलोन	revisado	media	2	1	1.00	रिन्ना
+Timaeus	तिमाई	तिमाई	revisado	media	2	1	1.00	बरतिमाई
+Timnath-heres	तिम्नथेरेस	तिम्नथेरेस	revisado	media	3	3	0.33	तिम्नत्सेरह
+Tobijah	तोबियाह	तोबियाह	revisado	media	4	3	1.00	तोबदोनिय्याह
+Tohu	तोहू	तोहू	revisado	media	1	3	0.33	तोह
+Tophel	तोपेल	तोपेल	revisado	media	3	1	1.00	बातें
+Topheth	तोपेत	तोपेत	revisado	media	3	17	0.53	आते
+Tryphaena	त्रूफैना	त्रूफैना	revisado	media	1	1	1.00	त्रूफोसा
+Tryphena	त्रूफैना	त्रूफैना	revisado	media	1	1	1.00	त्रूफोसा
+Tubal-cain	तूबल	तूबल-कैन	revisado	media	2	1	1.00	कैन
+Tyre	फिराते	सोर	revisado	media	3	64	0.02	उतरे
+Unni	उन्नो	उन्नो	revisado	media	2	1	1.00	उनके
+Uphaz	ऊफाज	ऊफाज	revisado	media	3	2	1.00	और
+Urbane	उरबानुस	उरबानुस	revisado	media	1	1	1.00	और
+Uzai	ऊजै	ऊजै	revisado	media	2	1	1.00	उसी
+Uzal	ऊजाल	ऊजाल	revisado	media	2	2	1.00	दिक्ला
+Uzal	हुआ	ऊजाल	revisado	media	3	1	1.00	सूत
+Uzza	उज्जा	उज्जा	revisado	media	9	6	1.00	उसका
+Uzzia	उज्जियाह	उज्जियाह	revisado	media	2	1	1.00	शामा
+Valley of Eshcol	एशकोल नामक घाटी	एशकोल घाटी	revisado	media	1	4	0.25	
+Valley of the Arnon	अर्नोन नामक घाटी	अर्नोन घाटी	revisado	media	1	11	0.18	अर्नोन घाटी
+Vaniah	वन्	वन्याह	revisado	media	2	1	1.00	याह
+Zaavan	जावान	जावान	revisado	media	1	2	1.00	अकान
+Zabdi	जब्दी	जब्दी	revisado	media	6	6	0.83	समीप
+Zabud	जाबूद	जाबूद	revisado	media	2	1	1.00	और
+Zacchur	जक्कूर	जक्कूर	revisado	media	1	1	1.00	और
+Zachariah	जकर्याह	जकर्याह	revisado	media	1	3	1.00	सामरिया
+Zacharias	जकर्याह	जकर्याह	revisado	media	2	12	1.00	घबराया
+Zalaph	सालाप	सालाप	revisado	media	2	1	1.00	मशुल्लाम
+Zaphon	सापोन	सापोन	revisado	media	3	4	0.50	हेशबोन
+Zaphon	सिय्योन	सापोन	revisado	media	1	3	0.33	दिशा
+Zatthu	जत्तू	जत्तू	revisado	media	1	1	1.00	परोश
+Zattu	जत्तू	जत्तू	revisado	media	3	5	0.80	सौ
+Zavan	जावान	जावान	revisado	media	1	2	1.00	अकान
+Zebidah	जबीदा	जबीदा	revisado	media	1	1	1.00	रूमावासी
+Zebina	जबीना	जबीना	revisado	media	2	1	1.00	यद्दई
+Zeboim	सबोईम	सबोईम	revisado	media	3	1	1.00	हादीद
+Zebulun	जबूलून	जबूलून	revisado	media	2	48	0.83	जबूलूनी
+Zecher	जेकेर	जेकेर	revisado	media	1	2	0.50	जकर्याह
+Zedad	सदाद	सदाद	revisado	media	3	2	1.00	से
+Zela	जेला	जेला	revisado	media	3	2	0.50	सेला
+Zemira	जमीरा	जमीरा	revisado	media	1	1	1.00	एलीएजेर
+Zemirah	जमीरा	जमीरा	revisado	media	1	1	1.00	एलीएजेर
+Zenan	सनान	सनान	revisado	media	3	1	1.00	हदाशा
+Zenas	जेनास	जेनास	revisado	media	2	1	1.00	देख
+Zer	सेर	सेर	revisado	media	3	1	1.00	किन्नेरेत
+Zerah	जेरह	जेरह	revisado	media	12	31	0.65	एर
+Zerahiah	जरहयाह	जरहयाह	revisado	media	4	6	0.67	मरायोत
+Zered	जेरेद	जेरेद	revisado	media	3	3	1.00	से
+Zeredah	सरेदावासी	सरेदावासी	revisado	media	3	1	1.00	सरूआह
+Zeresh	जेरेश	जेरेश	revisado	media	2	3	1.00	सवेरे
+Zeri	यिस्री	यिस्री	revisado	media	1	2	0.50	सरी
+Zeror	सरोर	सरोर	revisado	media	2	1	1.00	सूरमा
+Zetham	जेताम	जेताम	revisado	media	2	2	1.00	योएल
+Zethan	जेतान	जेतान	revisado	media	2	1	1.00	अहीशहर
+Ziddim	सिद्दीम	सिद्दीम	revisado	media	3	1	1.00	सेर
+Zidkijah	सिदकिय्याह	सिदकिय्याह	revisado	media	1	1	1.00	हकल्याह
+Zidon	सीदोन	सीदोन	revisado	media	1	2	1.00	हित्त
+Ziphion	शूनियों	सपोन	revisado	media	1	2	0.50	ओजनियों
+Ziphron	जिप्रोन	जिप्रोन	revisado	media	3	1	1.00	हसरेनान
+Ziv	अस्सीवें	जीव	revisado	media	1	2	0.50	जीव
+Ziza	जीजा	जीजा	revisado	media	4	2	1.00	शिपी
+Zizah	यूश	जीजा	revisado	media	2	2	1.00	जीजा
+Zobah-Hamath	सोबा	हमात-सोबा	revisado	media	1	1	1.00	हमात
+Zoheth	जोहेत	जोहेत	revisado	media	2	1	1.00	बेनजोहेत
+Zophah	सोपह	सोपह	revisado	media	2	2	1.00	सूह
+Zophar	सोपर	सोपर	revisado	media	2	4	1.00	अनुसार
+Zophim	सोपीम	सोपीम	revisado	media	3	1	1.00	सिरे
+Zorobabel	जरुब्बाबेल	जरुब्बाबेल	revisado	media	1	1	1.00	शालतीएल
 Aaron	हारून	हारून	auto	alta	2	333	0.99	नहरों
 Abagtha	अबगता	अबगता	auto	alta	2	1	1.00	बिजता
 Abana	अबाना	अबाना	auto	alta	3	1	1.00	पर्पर
 Abarim	अबारीम	अबारीम	auto	alta	2	5	1.00	यरीहो
-Abda	अब्दा	अब्दा	auto	alta	2	1	1.00	अदोनीराम
+Abda	अब्दा	अब्दा	revisado	alta	2	1	1.00	अदोनीराम
 Abdeel	अब्देल	अब्देल	auto	alta	2	1	1.00	अज्रीएल
 Abdi	अब्दी	अब्दी	auto	alta	6	3	1.00	बाईं
 Abdiel	अब्दीएल	अब्दीएल	auto	alta	2	1	1.00	अही
@@ -1078,7 +1223,7 @@ Abishai	अबीशै	अबीशै	auto	alta	2	24	1.00	इत्तै
 Abishua	अबीशू	अबीशू	auto	alta	4	5	1.00	पीनहास
 Abishur	अबीशूर	अबीशूर	auto	alta	2	2	1.00	और
 Abital	अबीतल	अबीतल	auto	alta	2	2	1.00	हग्गीत
-Abitub	अबीतूब	अबीतूब	auto	alta	2	1	1.00	और
+Abitub	अबीतूब	अबीतूब	revisado	alta	2	1	1.00	और
 Abiud	अबीहूद	अबीहूद	auto	alta	2	1	1.00	अजोर
 Abner	अब्नेर	अब्नेर	auto	alta	2	53	1.00	नेर
 Abraham	अब्राहम	अब्राहम	auto	alta	2	277	0.81	अब्राम
@@ -1098,7 +1243,7 @@ Adah	आदा	आदा	auto	alta	4	9	0.89	याबाल
 Adaiah	अदायाह	अदायाह	auto	alta	15	10	0.90	यदीदा
 Adalia	अदल्या	अदल्या	auto	alta	2	1	1.00	अरीदाता
 Adam	आदम	आदम	auto	alta	2	27	0.96	आदमियों
-Adam	आदाम	आदाम	auto	alta	3	1	1.00	खारा
+Adam	आदाम	आदाम	revisado	alta	3	1	1.00	खारा
 Adamah	अदामा	अदामा	auto	alta	3	1	1.00	रामाह
 Adami-nekeb	अदामीनेकेब	अदामीनेकेब	auto	alta	3	1	1.00	यब्नेल
 Adar	अदार	अदार	auto	alta	1	9	1.00	दारा
@@ -1111,12 +1256,12 @@ Adin	आदीन	आदीन	auto	alta	4	4	1.00	चौवन
 Adina	अदीना	अदीना	auto	alta	2	1	1.00	शीजा
 Adino	अदीनो	अदीनो	auto	alta	2	1	1.00	हैं
 Adithaim	अदीतैम	अदीतैम	auto	alta	3	1	1.00	गदेरोतैम
-Adlai	अदलै	अदलै	auto	alta	2	1	1.00	अधिकारी
-Admah	अदमा	अदमा	auto	alta	3	5	1.00	सदोम
+Adlai	अदलै	अदलै	revisado	alta	2	1	1.00	अधिकारी
+Admah	अदमा	अदमा	revisado	alta	3	5	1.00	सदोम
 Admatha	अदमाता	अदमाता	auto	alta	2	1	1.00	कर्शना
 Adna	अदना	अदना	auto	alta	4	2	1.00	बनायाह
 Adnah	अदनह	अदनह	auto	alta	4	2	1.00	यदीएल
-Adoni-bezek	अदोनीबेजेक	अदोनीबेजेक	auto	alta	2	3	1.00	बेजेक
+Adoni-bezek	अदोनीबेजेक	अदोनीबेजेक	revisado	alta	2	3	1.00	बेजेक
 Adoni-zedek	अदोनीसेदेक	अदोनीसेदेक	auto	alta	2	2	1.00	लाकीश
 Adonijah	अदोनिय्याह	अदोनिय्याह	auto	alta	6	26	0.96	हग्गीत
 Adonikam	अदोनीकाम	अदोनीकाम	auto	alta	2	3	1.00	सड़सठ
@@ -1137,7 +1282,7 @@ Ahasbai	अहसबै	अहसबै	auto	alta	2	1	1.00	गीलोवास
 Ahava	अहवा	अहवा	auto	alta	3	3	1.00	हम
 Ahaziah	अहज्याह	अहज्याह	auto	alta	4	33	0.91	तर्शीश
 Ahban	अहबान	अहबान	auto	alta	2	1	1.00	अबीशूर
-Ahi	अही	अही	auto	alta	4	2	1.00	अब्दीएल
+Ahi	अही	अही	revisado	alta	4	2	1.00	अब्दीएल
 Ahiam	अहीआम	अहीआम	auto	alta	2	2	1.00	हरारी
 Ahian	अहिअन	अहिअन	auto	alta	2	1	1.00	अनीआम
 Ahiezer	अहीएजेर	अहीएजेर	auto	alta	4	6	1.00	अम्मीशद्दै
@@ -1163,7 +1308,7 @@ Ahlai	अहलै	अहलै	auto	alta	4	2	1.00	शेशान
 Aholah	ओहोला	ओहोला	auto	alta	1	4	1.00	ओहोलीबा
 Aholiab	ओहोलीआब	ओहोलीआब	auto	alta	1	5	1.00	अहीसामाक
 Aholibah	ओहोलीबा	ओहोलीबा	auto	alta	1	5	1.00	ओहोला
-Aholibamah	ओहोलीबामा	ओहोलीबामा	auto	alta	3	8	0.88	अना
+Aholibamah	ओहोलीबामा	ओहोलीबामा	revisado	alta	3	8	0.88	अना
 Ahumai	अहूमै	अहूमै	auto	alta	2	1	1.00	लहद
 Aiah	अय्या	अय्या	auto	alta	3	6	1.00	अद्रीएल
 Aiath	अय्यात	अय्यात	auto	alta	2	1	1.00	आया
@@ -1180,11 +1325,11 @@ Allon-bacuth	अल्लोनबक्कूत	अल्लोनबक्क
 Almodad	अल्मोदाद	अल्मोदाद	auto	alta	2	2	1.00	हसर्मावेत
 Almon	अल्मोन	अल्मोन	auto	alta	2	1	1.00	अनातोत
 Almon-diblathaim	अल्मोनदिबलातैम	अल्मोनदिबलातैम	auto	alta	2	2	1.00	अबारीम
-Alpha	अल्फा	अल्फा	auto	alta	1	4	0.75	पहला
+Alpha	अल्फा	अल्फा	revisado	alta	1	4	0.75	पहला
 Alush	आलूश	आलूश	auto	alta	3	2	1.00	और
 Alvah	अल्वा	अल्वा	auto	alta	2	2	1.00	यतेत
 Alvan	आल्वान	आल्वान	auto	alta	2	2	0.50	अल्यान
-Amad	अमाद	अमाद	auto	alta	3	1	1.00	अलाम्मेल्लेक
+Amad	अमाद	अमाद	revisado	alta	3	1	1.00	अलाम्मेल्लेक
 Amal	आमाल	आमाल	auto	alta	2	1	1.00	हेलेम
 Amam	अमाम	अमाम	auto	alta	3	1	1.00	शेमा
 Amana	अमाना	अमाना	auto	alta	3	1	1.00	सनीर
@@ -1214,7 +1359,7 @@ Anab	अनाब	अनाब	auto	alta	3	2	1.00	आनीम
 Anah	अना	अना	auto	alta	4	10	1.00	लोतान
 Anaharath	अनाहरत	अनाहरत	auto	alta	3	1	1.00	हपारैम
 Anaiah	अनायाह	अनायाह	auto	alta	4	2	1.00	पदायाह
-Anamim	अनामी	अनामी	auto	alta	2	2	1.00	नप्तूही
+Anamim	अनामी	अनामी	revisado	alta	2	2	1.00	नप्तूही
 Anammelech	अनम्मेलेक	अनम्मेलेक	auto	alta	2	1	1.00	अद्रम्मेलेक
 Anan	आनान	आनान	auto	alta	2	1	1.00	हानान
 Anani	अनानी	अनानी	auto	alta	2	1	1.00	योहानान
@@ -1233,7 +1378,7 @@ Antipas	अन्तिपास	अन्तिपास	auto	alta	2	1	1.00	ह
 Antipatris	अन्तिपत्रिस	अन्तिपत्रिस	auto	alta	2	1	1.00	सिपाहियों
 Antothijah	अन्तोतिय्याह	अन्तोतिय्याह	auto	alta	1	1	1.00	हनन्याह
 Anub	आनूब	आनूब	auto	alta	2	1	1.00	हारूम
-Aphekah	अपेका	अपेका	auto	alta	2	1	1.00	यानीम
+Aphekah	अपेका	अपेका	revisado	alta	2	1	1.00	यानीम
 Apollonia	अपुल्लोनिया	अपुल्लोनिया	auto	alta	3	1	1.00	अम्फिपुलिस
 Apollos	अपुल्लोस	अपुल्लोस	auto	alta	2	10	1.00	पौलुस
 Appaim	अप्पैम	अप्पैम	auto	alta	2	2	0.50	अहलै
@@ -1263,7 +1408,7 @@ Arisai	अरीसै	अरीसै	auto	alta	2	1	1.00	अरीदै
 Aristarchus	अरिस्तर्खुस	अरिस्तर्खुस	auto	alta	2	5	1.00	मरकुस
 Aristobulus	अरिस्तुबुलुस	अरिस्तुबुलुस	auto	alta	2	1	1.00	अपिल्लेस
 Armoni	अर्मोनी	अर्मोनी	auto	alta	2	1	1.00	अद्रीएल
-Arnan	अर्नान	अर्नान	auto	alta	2	1	1.00	हनन्याह
+Arnan	अर्नान	अर्नान	revisado	alta	2	1	1.00	हनन्याह
 Arnon	अर्नोन	अर्नोन	auto	alta	3	23	0.96	अर्नोनवाले
 Arod	अरोदी	अरोदी	auto	alta	2	2	0.50	अरेलियों
 Aroer	अरोएर	अरोएर	auto	alta	9	17	0.94	अर्नोन
@@ -1318,6 +1463,7 @@ Atroth-beth-joab	अत्रोतबेत्योआब	अत्रोत�
 Attai	अत्तै	अत्तै	auto	alta	6	4	1.00	नातान
 Attalia	अत्तलिया	अत्तलिया	auto	alta	3	2	0.50	सुनाकर
 Aven	आवेन	आवेन	auto	alta	2	1	1.00	वेदियों
+Aven Valley	आवेन नामक तराई	आवेन की तराई	revisado	alta	1	1	1.00	
 Avva	अव्वा	अव्वा	auto	alta	2	1	1.00	सपर्वैम
 Avvim	अव्वी	अव्वी	auto	alta	1	2	0.50	अव्वियों
 Azaliah	असल्याह	असल्याह	auto	alta	2	2	1.00	योआहाज
@@ -1329,7 +1475,7 @@ Azmaveth	अज्मावेत	अज्मावेत	auto	alta	10	9	0.89	�
 Azmon	अस्मोन	अस्मोन	auto	alta	3	3	1.00	दक्षिणी
 Azrikam	अज्रीकाम	अज्रीकाम	auto	alta	8	6	1.00	नार्याह
 Azubah	अजूबा	अजूबा	auto	alta	4	4	1.00	पच्चीस
-Baal	बाल	बाल	auto	alta	7	75	0.93	भली
+Baal	बाल	बाल	revisado	alta	7	75	0.93	भली
 Baal-gad	बालगाद	बालगाद	auto	alta	2	3	1.00	हालाक
 Baal-hamon	बाल्हामोन	बाल्हामोन	auto	alta	2	1	1.00	फलों
 Baal-hanan	बाल्हानान	बाल्हानान	auto	alta	2	5	1.00	गूलर
@@ -1341,6 +1487,7 @@ Baal-perazim	बालपरासीम	बालपरासीम	auto	alta	3
 Baal-shalishah	बालशालीशा	बालशालीशा	auto	alta	3	1	1.00	बीस
 Baal-tamar	बालतामार	बालतामार	auto	alta	3	1	1.00	मारेगेवा
 Baalah	बाला	बाला	auto	alta	5	4	1.00	इय्यीम
+Baalah Mount	बाला पहाड़	बाला पहाड़	revisado	alta	1	1	1.00	
 Baalath	बालात	बालात	auto	alta	6	3	1.00	एलतके
 Baalhanan	बाल्हानान	बाल्हानान	auto	alta	2	5	1.00	हदर
 Baalis	बालीस	बालीस	auto	alta	2	1	1.00	गदल्याह
@@ -1378,17 +1525,17 @@ Bazluth	बसलूत	बसलूत	auto	alta	2	2	0.50	बसलीत
 Bealiah	बाल्याह	बाल्याह	auto	alta	2	1	1.00	एलूजै
 Bealoth	बालोत	बालोत	auto	alta	2	1	1.00	तेलेम
 Bebai	बेबै	बेबै	auto	alta	6	5	1.00	जब्बै
-Becher	बेकेर	बेकेर	auto	alta	4	4	1.00	के
+Becher	बेकेर	बेकेर	revisado	alta	4	4	1.00	के
 Bechorath	बकोरत	बकोरत	auto	alta	1	1	1.00	सरोर
 Becorath	बकोरत	बकोरत	auto	alta	1	1	1.00	सरोर
 Bedeiah	बेदयाह	बेदयाह	auto	alta	2	1	1.00	बनायाह
-Beer	बेर	बेर	auto	alta	2	1	1.00	अबीमेलेक
+Beer	बेर	बेर	revisado	alta	2	1	1.00	अबीमेलेक
 Beer-elim	बेरेलीम	बेरेलीम	auto	alta	3	1	1.00	एगलैम
 Beer-lahai-roi	लहैरोई	लहैरोई	auto	alta	3	3	0.67	बएर
 Beera	बेरा	बेरा	auto	alta	2	1	1.00	बेसेर
 Beerah	बएराह	बएराह	auto	alta	2	1	1.00	बनाकर
 Beeri	बेरी	बेरी	auto	alta	4	2	1.00	बेटी
-Beersheba	बेर्शेबा	बेर्शेबा	auto	alta	4	33	1.00	शिबा
+Beersheba	बेर्शेबा	बेर्शेबा	revisado	alta	4	33	1.00	शिबा
 Beeshterah	बेशतरा	बेशतरा	auto	alta	2	1	1.00	गोत्र
 Bel	बेल	बेल	auto	alta	1	3	1.00	बेडौल
 Bela	बेला	बेला	auto	alta	7	14	1.00	बोर
@@ -1407,9 +1554,11 @@ Benaiah	बनायाह	बनायाह	auto	alta	24	41	1.00	भेज
 Benhail	बेन्हैल	बेन्हैल	auto	alta	1	1	1.00	भेज
 Beninu	बनीनू	बनीनू	auto	alta	2	1	1.00	बानी
 Benjamin	बिन्यामीन	बिन्यामीन	auto	alta	10	174	0.62	जेतान
+Benjamin Gate	बिन्यामीन के फाटक	बिन्यामीन का फाटक	revisado	alta	3	4	0.75	
 Beor	बोर	बोर	auto	alta	4	11	0.91	बेला
 Bera	बेरा	बेरा	auto	alta	2	1	1.00	बिर्शा
 Beracah	बराका	बराका	auto	alta	1	1	1.00	शमाआ
+Beracah Valley	बराका की तराई	बराका की तराई	revisado	alta	1	1	1.00	बराका नामक तराई
 Berachah	बराका	बराका	auto	alta	1	1	1.00	शमाआ
 Beraiah	बरायाह	बरायाह	auto	alta	2	1	1.00	शिम्रात
 Berechiah	बेरेक्याह	बेरेक्याह	auto	alta	12	11	1.00	कूशायाह
@@ -1439,7 +1588,7 @@ Beth-gader	बेतगादेर	बेतगादेर	auto	alta	2	1	1.00	
 Beth-gamul	बेतगामूल	बेतगामूल	auto	alta	3	1	1.00	बेतमोन
 Beth-gilgal	बेतगिलगाल	बेतगिलगाल	auto	alta	2	1	1.00	अज्मावेत
 Beth-haccherem	बेथक्केरेम	बेथक्केरेम	auto	alta	3	2	1.00	ताले
-Beth-haram	बेतहारम	बेतहारम	auto	alta	3	2	0.50	बेतनिम्रा
+Beth-haram	बेतहारम	बेतहारम	revisado	alta	3	2	0.50	बेतनिम्रा
 Beth-hoglah	बेथोग्ला	बेथोग्ला	auto	alta	3	3	1.00	बेतराबा
 Beth-horon	बेथोरोन	बेथोरोन	auto	alta	4	12	1.00	ओलों
 Beth-jeshimoth	बेत्यशीमोत	बेत्यशीमोत	auto	alta	3	4	1.00	आबेलशित्तीम
@@ -1475,9 +1624,9 @@ Bezer	बेसेर	बेसेर	auto	alta	5	6	0.83	बेरा
 Bichri	बिक्री	बिक्री	auto	alta	2	9	0.89	अबीशै
 Bidkar	बिदकर	बिदकर	auto	alta	1	1	1.00	भारी
 Bigtha	बिगता	बिगता	auto	alta	2	1	1.00	बिजता
-Bigthan	बिगताना	बिगताना	auto	alta	1	2	1.00	बैठा
+Bigthan	बिगताना	बिगताना	revisado	alta	1	2	1.00	बैठा
 Bigthana	बिगताना	बिगताना	auto	alta	1	2	1.00	बैठा
-Bigvai	बिगवै	बिगवै	auto	alta	6	6	1.00	बिलशान
+Bigvai	बिगवै	बिगवै	revisado	alta	6	6	1.00	बिलशान
 Bildad	बिल्दद	बिल्दद	auto	alta	2	5	1.00	विलाप
 Bilgah	बिल्गा	बिल्गा	auto	alta	4	4	0.75	इम्मेर
 Bilhah	बिल्हा	बिल्हा	auto	alta	5	11	1.00	तोलाद
@@ -1501,6 +1650,9 @@ Bor-ashan	कोराशान	कोराशान	auto	alta	3	1	1.00	हो�
 Bozez	बोसेस	बोसेस	auto	alta	3	1	1.00	सेने
 Bozkath	बोस्कत	बोस्कत	auto	alta	3	2	0.50	बोस्कतवासी
 Bozrah	बोस्रा	बोस्रा	auto	alta	5	9	0.78	बोस्राई
+Brook Eshcol	एशकोल नामक नाले	एशकोल नाला	revisado	alta	1	4	0.50	एशकोल नाला
+Brook Kidron	किद्रोन के नाले	किद्रोन का नाला	revisado	alta	1	2	0.50	किद्रोन नाले
+Brook of Egypt	मिस्र के नाले	मिस्र का नाला	revisado	alta	3	11	0.82	
 Bukki	बुक्की	बुक्की	auto	alta	4	4	1.00	योग्ली
 Bukkiah	बुक्किय्याह	बुक्किय्याह	auto	alta	2	2	1.00	उज्जीएल
 Bul	बूल	बूल	auto	alta	1	1	1.00	सुलैमान
@@ -1515,7 +1667,7 @@ Cain	कैन	कैन	auto	alta	2	16	1.00	कहाँ
 Cainan	केनान	केनान	auto	alta	3	8	1.00	अरफक्षद
 Calah	कालह	कालह	auto	alta	3	2	1.00	निकलकर
 Calcol	कलकोल	कलकोल	auto	alta	3	2	1.00	पाँच
-Caleb	कालेब	कालेब	auto	alta	4	39	0.92	कालेबवंशी
+Caleb	कालेब	कालेब	revisado	alta	4	39	0.92	कालेबवंशी
 Calneh	कलने	कलने	auto	alta	4	4	0.50	अक्कद
 Calno	कलनो	कलनो	auto	alta	1	1	1.00	क्या
 Cana	काना	काना	auto	alta	2	4	1.00	चिन्ह
@@ -1558,6 +1710,7 @@ Chisloth-tabor	किसलोत्ताबोर	किसलोत्ता�
 Chitlish	कितलीश	कितलीश	auto	alta	3	1	1.00	लहमास
 Chloe	खलोए	खलोए	auto	alta	2	1	1.00	के
 Cilicia	किलिकिया	किलिकिया	auto	alta	3	8	1.00	लिख
+City of David	दाऊदपुर	दाऊदपुर	revisado	alta	1	46	0.83	दाऊद के नगर
 Clauda	कौदा	कौदा	auto	alta	1	1	1.00	आड़
 Claudia	क्लौदिया	क्लौदिया	auto	alta	2	1	1.00	पूदेंस
 Clement	क्लेमेंस	क्लेमेंस	auto	alta	2	1	1.00	सहकर्मियों
@@ -1597,17 +1750,17 @@ David	दाऊद	दाऊद	auto	alta	2	968	0.89	दही
 Debir	दबीर	दबीर	auto	alta	10	14	0.86	गेदेर
 Deborah	दबोरा	दबोरा	auto	alta	4	10	1.00	दाई
 Delaiah	दलायाह	दलायाह	auto	alta	9	7	1.00	माज्याह
-Delilah	दलीला	दलीला	auto	alta	2	6	1.00	दिया
+Delilah	दलीला	दलीला	revisado	alta	2	6	1.00	दिया
 Demas	देमास	देमास	auto	alta	2	3	1.00	दलमतिया
 Demetrius	दिमेत्रियुस	दिमेत्रियुस	auto	alta	2	3	1.00	देते
 Deuel	दूएल	दूएल	auto	alta	1	5	0.80	रूएल
 Diblaim	दिबलैम	दिबलैम	auto	alta	2	1	1.00	लिया
 Dibon	दीबोन	दीबोन	auto	alta	6	12	0.92	यकब्सेल
 Dibri	दिब्री	दिब्री	auto	alta	2	1	1.00	इस्राएली
-Diklah	दिक्ला	दिक्ला	auto	alta	2	2	1.00	ऊजाल
+Diklah	दिक्ला	दिक्ला	revisado	alta	2	2	1.00	ऊजाल
 Dilean	दिलान	दिलान	auto	alta	3	1	1.00	योक्तेल
 Dimonah	दीमोना	दीमोना	auto	alta	3	1	1.00	कीना
-Dinah	दीना	दीना	auto	alta	2	8	1.00	दिन
+Dinah	दीना	दीना	revisado	alta	2	8	1.00	दिन
 Dinhabah	दिन्हाबा	दिन्हाबा	auto	alta	3	2	1.00	जब
 Dishan	दीशान	दीशान	auto	alta	2	5	1.00	दीशोन
 Dishon	दीशोन	दीशोन	auto	alta	4	6	1.00	दीशान
@@ -1639,6 +1792,7 @@ Edrei	एद्रेई	एद्रेई	auto	alta	4	8	1.00	केदेश
 Eglah	एग्ला	एग्ला	auto	alta	2	2	1.00	अबीतल
 Eglaim	एगलैम	एगलैम	auto	alta	3	1	1.00	बेरेलीम
 Eglon	एग्लोन	एग्लोन	auto	alta	5	12	1.00	हेब्रोन
+Egypt Sea	मिस्र के समुद्र	मिस्र का समुद्र	revisado	alta	1	1	1.00	
 Ehi	एही	एही	auto	alta	1	2	0.50	बेला
 Ehud	एहूद	एहूद	auto	alta	4	9	1.00	घुसेड़
 Eker	एकेर	एकेर	auto	alta	2	1	1.00	के
@@ -1647,6 +1801,7 @@ El-bethel	एलबेतेल	एलबेतेल	auto	alta	2	1	1.00	भा�
 El-paran	एल्पारान	एल्पारान	auto	alta	3	1	1.00	सेईर
 Eladah	एलादा	एलादा	auto	alta	1	1	1.00	बेरेद
 Elah	एला	एला	auto	alta	11	13	1.00	ओहोलीबामा
+Elah Valley	एला नामक तराई	एला की तराई	revisado	alta	1	3	0.67	एला तराई
 Elam	एलाम	एलाम	auto	alta	15	30	0.93	लूद
 Elasah	एलासा	एलासा	auto	alta	4	2	1.00	मासेयाह
 Elath	एलत	एलत	auto	alta	3	6	0.50	एलोत
@@ -1669,7 +1824,7 @@ Eliashib	एल्याशीब	एल्याशीब	auto	alta	18	15	1.00	
 Eliathah	एलियातह	एलियातह	auto	alta	2	2	0.50	एलीआता
 Elidad	एलीदाद	एलीदाद	auto	alta	2	1	1.00	किसलोन
 Eliehoenai	एल्यहोएनै	एल्यहोएनै	auto	alta	2	2	1.00	यहोहानान
-Eliel	एलीएल	एलीएल	auto	alta	16	9	1.00	यहदीएल
+Eliel	एलीएल	एलीएल	revisado	alta	16	9	1.00	यहदीएल
 Elienai	एलीएनै	एलीएनै	auto	alta	2	1	1.00	एलीएल
 Eliezer	एलीएजेर	एलीएजेर	auto	alta	22	14	1.00	जिक्री
 Elihoenai	एल्यहोएनै	एल्यहोएनै	auto	alta	1	1	1.00	जरहयाह
@@ -1679,11 +1834,11 @@ Elika	एलीका	एलीका	auto	alta	2	1	1.00	हेरोदी
 Elim	एलीम	एलीम	auto	alta	3	4	1.00	इस्राएलियों
 Elimelech	एलीमेलेक	एलीमेलेक	auto	alta	2	6	1.00	किल्योन
 Elioenai	एल्यहोएनै	एल्यहोएनै	auto	alta	1	1	1.00	यहोहानान
-Elioenai	एल्योएनै	एल्योएनै	auto	alta	12	7	1.00	एल्याशीब
+Elioenai	एल्योएनै	एल्योएनै	revisado	alta	12	7	1.00	एल्याशीब
 Eliphaz	एलीपज	एलीपज	auto	alta	4	14	1.00	रूएल
 Eliphelet	एलीपेलेत	एलीपेलेत	auto	alta	9	7	1.00	एलीआम
 Elisabeth	एलीशिबा	एलीशिबा	auto	alta	1	8	1.00	भयभीत
-Elisha	एलीशा	एलीशा	auto	alta	2	53	0.98	एलिय्याह
+Elisha	एलीशा	एलीशा	revisado	alta	2	53	0.98	एलिय्याह
 Elishama	एलीशामा	एलीशामा	auto	alta	12	16	0.94	शमायाह
 Elishaphat	एलीशापात	एलीशापात	auto	alta	2	1	1.00	हियाव
 Elisheba	एलीशेबा	एलीशेबा	auto	alta	2	1	1.00	लिया
@@ -1715,7 +1870,7 @@ En-rimmon	एन्निम्मोन	एन्निम्मोन	auto	alt
 En-rogel	एनरोगेल	एनरोगेल	auto	alta	3	6	0.67	जोहेलेत
 En-shemesh	एनशेमेश	एनशेमेश	auto	alta	3	2	1.00	एनरोगेल
 En-tappuah	एनतप्पूह	एनतप्पूह	auto	alta	2	2	0.50	तक
-Enaim	एनैम	एनैम	auto	alta	3	2	1.00	देवदासी
+Enaim	एनैम	एनैम	revisado	alta	3	2	1.00	देवदासी
 Enam	एनाम	एनाम	auto	alta	3	1	1.00	एनगन्नीम
 Enan	एनान	एनान	auto	alta	2	5	1.00	भेंट
 Eneglaim	एनएगलैम	एनएगलैम	auto	alta	3	1	1.00	एनगदी
@@ -1724,9 +1879,11 @@ Enoch	हनोक	हनोक	auto	alta	4	12	1.00	एक
 Enos	एनोश	एनोश	auto	alta	1	8	1.00	केनान
 Enosh	एनोश	एनोश	auto	alta	1	8	1.00	केनान
 Epaphras	इपफ्रास	इपफ्रास	auto	alta	2	3	1.00	पर
+Ephraim Gate	एप्रैम के फाटक	एप्रैम का फाटक	revisado	alta	3	4	0.50	
 Ephratah	एप्राता	एप्राता	auto	alta	1	4	1.00	एजेर
 Ephrathah	एप्राता	एप्राता	auto	alta	3	8	0.75	वीरता
 Ephron	एप्रोन	एप्रोन	auto	alta	4	11	1.00	चारों
+Ephron Mount	एप्रोन पहाड़	एप्रोन पहाड़	revisado	alta	1	2	0.50	
 Er	एर	एर	auto	alta	6	8	1.00	जेरह
 Eran	एरान	एरान	auto	alta	2	2	0.50	एरानियों
 Erastus	इरास्तुस	इरास्तुस	auto	alta	2	3	1.00	क्वारतुस
@@ -1734,9 +1891,10 @@ Erech	एरेख	एरेख	auto	alta	3	2	0.50	एरेकी
 Eri	एरी	एरी	auto	alta	2	2	1.00	एरियों
 Esar-haddon	एसर्हद्दोन	एसर्हद्दोन	auto	alta	1	3	1.00	शरेसेर
 Esarhaddon	एसर्हद्दोन	एसर्हद्दोन	auto	alta	1	3	1.00	शरेसेर
+Esau Mount	एसाव के पहाड़	एसाव का पहाड़	revisado	alta	1	4	1.00	
 Esek	एसेक	एसेक	auto	alta	3	1	1.00	से
 Eshan	एशान	एशान	auto	alta	3	1	1.00	अराब
-Eshban	एशबान	एशबान	auto	alta	2	2	1.00	हेमदान
+Eshban	एशबान	एशबान	revisado	alta	2	2	1.00	हेमदान
 Eshcol	एशकोल	एशकोल	auto	alta	2	2	1.00	को
 Eshtaol	एश्ताओल	एश्ताओल	auto	alta	3	8	0.88	एश्ताओली
 Eshtemoa	एश्तमो	एश्तमो	auto	alta	4	6	1.00	सिपमोत
@@ -1745,7 +1903,7 @@ Esther	एस्तेर	एस्तेर	auto	alta	2	46	0.98	हेगे
 Etam	एताम	एताम	auto	alta	9	5	1.00	था
 Eth-kazin	इत्कासीन	इत्कासीन	auto	alta	3	1	1.00	नेआ
 Etham	एताम	एताम	auto	alta	3	4	1.00	डेरा
-Ethan	एतान	एतान	auto	alta	5	6	0.67	हेमान
+Ethan	एतान	एतान	revisado	alta	5	6	0.67	हेमान
 Ethanim	एतानीम	एतानीम	auto	alta	1	1	1.00	सातवें
 Ethbaal	एतबाल	एतबाल	auto	alta	2	1	1.00	बाल
 Ether	एतेर	एतेर	auto	alta	4	2	1.00	समेत
@@ -1757,8 +1915,9 @@ Evi	एवी	एवी	auto	alta	2	2	1.00	रेबा
 Evil-merodach	एवील्मरोदक	एवील्मरोदक	auto	alta	2	2	1.00	यहोयाकीन
 Ezbai	एज्बै	एज्बै	auto	alta	2	1	1.00	हेस्रो
 Ezbon	एसबोन	एसबोन	auto	alta	3	3	0.67	घरानों
+Ezel Stone	एजेल नामक पत्थर	एजेल पत्थर	revisado	alta	1	1	1.00	
 Ezem	एसेम	एसेम	auto	alta	3	3	1.00	इय्यीम
-Ezer	एजेर	एजेर	auto	alta	10	5	1.00	जेठे
+Ezer	एजेर	एजेर	revisado	alta	10	5	1.00	जेठे
 Ezer	एसेर	एसेर	auto	alta	2	5	1.00	सेईर
 Ezion-geber	एस्योनगेबेर	एस्योनगेबेर	auto	alta	3	7	1.00	एसावियों
 Ezra	एज्रा	एज्रा	auto	alta	5	26	1.00	येशुअ
@@ -1785,6 +1944,8 @@ Gamaliel	गम्लीएल	गम्लीएल	auto	alta	2	5	1.00	अम�
 Gamul	गामूल	गामूल	auto	alta	2	1	1.00	याकीन
 Gareb	गारेब	गारेब	auto	alta	5	3	1.00	गोआ
 Gatam	गाताम	गाताम	auto	alta	2	3	1.00	ओमार
+Gate of Benjamin	बिन्यामीन के फाटक	बिन्यामीन का फाटक	revisado	alta	1	4	0.75	
+Gate of Ephraim	एप्रैम के फाटक	एप्रैम का फाटक	revisado	alta	2	4	0.50	
 Gath	गत	गत	auto	alta	4	44	0.68	गती
 Gath-hepher	गथेपेर	गथेपेर	auto	alta	3	2	0.50	गथेपेरवासी
 Gath-rimmon	गत्रिम्मोन	गत्रिम्मोन	auto	alta	5	4	1.00	अय्यालोन
@@ -1793,7 +1954,7 @@ Ge-harashim	गेहराशीम	गेहराशीम	auto	alta	2	2	0.50
 Geba	गेबा	गेबा	auto	alta	7	18	0.94	गिबा
 Geber	गेबेर	गेबेर	auto	alta	2	1	1.00	एमोरियों
 Gebim	गेबीम	गेबीम	auto	alta	3	1	1.00	भागने
-Gedaliah	गदल्याह	गदल्याह	auto	alta	10	31	1.00	बालीस
+Gedaliah	गदल्याह	गदल्याह	revisado	alta	10	31	1.00	बालीस
 Geder	गेदेर	गेदेर	auto	alta	2	2	0.50	दबीर
 Gederah	गदेरा	गदेरा	auto	alta	4	4	0.50	गदेरावासी
 Gederoth	गदेरोत	गदेरोत	auto	alta	3	2	1.00	गिमजो
@@ -1805,7 +1966,7 @@ Genubath	गनूबत	गनूबत	auto	alta	2	1	1.00	हुआ
 Gera	गेरा	गेरा	auto	alta	8	9	1.00	बेकेर
 Gerar	गरार	गरार	auto	alta	3	10	1.00	गमोरा
 Gershom	गेर्शोम	गेर्शोम	auto	alta	5	7	1.00	देश
-Geshan	गेशान	गेशान	auto	alta	1	1	1.00	रेगेम
+Geshan	गेशान	गेशान	revisado	alta	1	1	1.00	रेगेम
 Geshem	गेशेम	गेशेम	auto	alta	2	4	1.00	से
 Gether	गेतेर	गेतेर	auto	alta	2	2	1.00	थे
 Gezer	गेजेर	गेजेर	auto	alta	3	16	0.88	से
@@ -1817,11 +1978,12 @@ Gibeon	गिबोन	गिबोन	auto	alta	4	47	0.77	गिबोनी
 Giddalti	गिद्दलती	गिद्दलती	auto	alta	2	2	1.00	मल्लोती
 Giddel	गिद्देल	गिद्देल	auto	alta	4	4	1.00	गहर
 Gideon	गिदोन	गिदोन	auto	alta	2	50	0.78	घड़ों
-Gideoni	गिदोनी	गिदोनी	auto	alta	2	5	1.00	अबीदान
+Gideoni	गिदोनी	गिदोनी	revisado	alta	2	5	1.00	अबीदान
 Gidom	गिदोम	गिदोम	auto	alta	3	1	1.00	दो
 Gihon	गीहोन	गीहोन	auto	alta	5	7	0.86	जो
 Gilalai	गिललै	गिललै	auto	alta	2	1	1.00	मिललै
 Gilboa	गिलबो	गिलबो	auto	alta	2	3	1.00	गिलादी
+Gilboa Mount	गिलबो पहाड़	गिलबो पहाड़	revisado	alta	1	6	0.50	
 Gilead	गिलाद	गिलाद	auto	alta	10	100	0.92	गिलादी
 Gilgal	गिलगाल	गिलगाल	auto	alta	8	42	0.88	एलीशा
 Giloh	गीलो	गीलो	auto	alta	3	3	0.67	गीलोवासी
@@ -1854,7 +2016,7 @@ Hachilah	हकीला	हकीला	auto	alta	3	3	1.00	छिपा
 Hachmoni	हक्मोनी	हक्मोनी	auto	alta	2	1	1.00	मंत्री
 Hadad	हदद	हदद	auto	alta	7	14	0.93	बदद
 Hadad-rimmon	हदद्रिम्मोन	हदद्रिम्मोन	auto	alta	3	1	1.00	मगिद्दोन
-Hadadezer	हदादेजेर	हदादेजेर	auto	alta	1	18	1.00	बधाई
+Hadadezer	हदादेजेर	हदादेजेर	revisado	alta	1	18	1.00	बधाई
 Hadarezer	हदादेजेर	हदादेजेर	auto	alta	1	18	1.00	बधाई
 Hadashah	हदाशा	हदाशा	auto	alta	3	1	1.00	मिगदलगाद
 Hadid	हादीद	हादीद	auto	alta	3	3	1.00	सबोईम
@@ -1870,7 +2032,7 @@ Haggi	हाग्गी	हाग्गी	auto	alta	2	2	1.00	हाग्ग�
 Haggiah	हग्गिय्याह	हग्गिय्याह	auto	alta	2	1	1.00	असायाह
 Haggith	हग्गीत	हग्गीत	auto	alta	2	5	1.00	अबीतल
 Hagri	हग्री	हग्री	auto	alta	1	6	0.83	हग्रियों
-Hakkatan	हक्कातान	हक्कातान	auto	alta	2	1	1.00	अजगाद
+Hakkatan	हक्कातान	हक्कातान	revisado	alta	2	1	1.00	अजगाद
 Hakkoz	हक्कोस	हक्कोस	auto	alta	4	5	1.00	के
 Hakupha	हकूपा	हकूपा	auto	alta	2	2	1.00	बकबूक
 Halah	हलह	हलह	auto	alta	3	4	0.75	हारा
@@ -1964,9 +2126,10 @@ Hazor-hadattah	हासोर्हदत्ता	हासोर्हदत�
 Hazzelelponi	हस्सलेलपोनी	हस्सलेलपोनी	auto	alta	1	1	1.00	यिद्वाश
 Heber	हेबेर	हेबेर	auto	alta	8	12	0.83	हेबेरियों
 Hebron	हेब्रोन	हेब्रोन	auto	alta	7	77	0.86	एग्लोन
+Hebron Valley	हेब्रोन की तराई	हेब्रोन की तराई	revisado	alta	1	1	1.00	
 Helah	हेला	हेला	auto	alta	2	2	1.00	एत्ना
 Helam	हेलाम	हेलाम	auto	alta	3	2	1.00	लड़ा
-Helbah	हेलबा	हेलबा	auto	alta	3	1	1.00	अहलाब
+Helbah	हेलबा	हेलबा	revisado	alta	3	1	1.00	अहलाब
 Helbon	हेलबोन	हेलबोन	auto	alta	3	1	1.00	में
 Heldai	हेल्दै	हेल्दै	auto	alta	1	2	0.50	हेलेम
 Helek	हेलेक	हेलेक	auto	alta	2	2	0.50	ईएजेर
@@ -1985,7 +2148,7 @@ Hepher	हेपेर	हेपेर	auto	alta	9	9	1.00	बेन्हेस�
 Hephzi-bah	हेप्सीबा	हेप्सीबा	auto	alta	1	2	1.00	सुहागिन
 Hephzibah	हेप्सीबा	हेप्सीबा	auto	alta	1	1	1.00	जब
 Heres	हेरेस	हेरेस	auto	alta	3	1	1.00	से
-Heresh	हेरेश	हेरेश	auto	alta	2	1	1.00	जिक्री
+Heresh	हेरेश	हेरेश	revisado	alta	2	1	1.00	जिक्री
 Hereth	हेरेत	हेरेत	auto	alta	3	1	1.00	रह
 Hermon	हेर्मोन	हेर्मोन	auto	alta	1	7	1.00	एमोरियों
 Herod	हेरोदेस	हेरोदेस	auto	alta	4	41	1.00	क्रोध
@@ -2013,7 +2176,7 @@ Hobab	होबाब	होबाब	auto	alta	2	2	1.00	हेबेर
 Hobah	होबा	होबा	auto	alta	3	1	1.00	ओर
 Hod	होद	होद	auto	alta	2	1	1.00	और
 Hodaviah	होदव्याह	होदव्याह	auto	alta	5	3	1.00	वीर
-Hodesh	होदेश	होदेश	auto	alta	2	1	1.00	मेशा
+Hodesh	होदेश	होदेश	revisado	alta	2	1	1.00	मेशा
 Hodiah	होदिय्याह	होदिय्याह	auto	alta	5	8	0.75	कीला
 Hodijah	होदिय्याह	होदिय्याह	auto	alta	3	5	1.00	धन्य
 Hoglah	होग्ला	होग्ला	auto	alta	2	4	1.00	नोवा
@@ -2028,8 +2191,8 @@ Horem	होरेम	होरेम	auto	alta	3	1	1.00	यिरोन
 Horesh	होरेश	होरेश	auto	alta	3	4	1.00	ओर
 Hori	होरी	होरी	auto	alta	4	10	0.70	गोत्र
 Hormah	होर्मा	होर्मा	auto	alta	2	9	1.00	कोराशान
-Horonaim	होरोनैम	होरोनैम	auto	alta	3	5	0.80	सोअर
-Hosah	होसा	होसा	auto	alta	5	5	1.00	सोर
+Horonaim	होरोनैम	होरोनैम	revisado	alta	3	5	0.80	सोअर
+Hosah	होसा	होसा	revisado	alta	5	5	1.00	सोर
 Hosanna	होशाना	होशाना	auto	alta	1	5	1.00	धन्य
 Hoshaiah	होशायाह	होशायाह	auto	alta	4	3	1.00	हाकिम
 Hoshama	होशामा	होशामा	auto	alta	2	1	1.00	यकम्याह
@@ -2061,7 +2224,7 @@ Idalah	यिदला	यिदला	auto	alta	3	1	1.00	नहलाल
 Iddo	इद्दो	इद्दो	auto	alta	13	14	0.93	जो
 Idumea	इदूमिया	इदूमिया	auto	alta	3	1	1.00	भीड़
 Igal	यिगाल	यिगाल	auto	alta	5	3	1.00	गोत्र
-Igdaliah	यिग्दल्याह	यिग्दल्याह	auto	alta	2	1	1.00	आया
+Igdaliah	यिग्दल्याह	यिग्दल्याह	revisado	alta	2	1	1.00	आया
 Igeal	यिगाल	यिगाल	auto	alta	1	1	1.00	बारीह
 Iim	इय्यीम	इय्यीम	auto	alta	3	1	1.00	एसेम
 Ijon	इय्योन	इय्योन	auto	alta	3	4	0.75	दिनों
@@ -2094,7 +2257,7 @@ Ishhod	ईशहोद	ईशहोद	auto	alta	1	1	1.00	को
 Ishi	यिशी	यिशी	auto	alta	8	4	1.00	अहलै
 Ishijah	यिश्शियाह	यिश्शियाह	auto	alta	1	1	1.00	शिमोन
 Ishma	यिश्मा	यिश्मा	auto	alta	2	1	1.00	यिद्वाश
-Ishmael	इश्माएल	इश्माएल	auto	alta	12	53	0.83	मिस्पा
+Ishmael	इश्माएल	इश्माएल	revisado	alta	12	53	0.83	मिस्पा
 Ishmaiah	यिशमायाह	यिशमायाह	auto	alta	3	2	1.00	अज्रीएल
 Ishmerai	यिशमरै	यिशमरै	auto	alta	2	1	1.00	यिजलीआ
 Ishod	ईशहोद	ईशहोद	auto	alta	1	1	1.00	को
@@ -2144,8 +2307,8 @@ Jabez	याबेस	याबेस	auto	alta	5	3	1.00	तिराती
 Jabin	याबीन	याबीन	auto	alta	4	7	1.00	योबाब
 Jabneel	यब्नेल	यब्नेल	auto	alta	6	3	0.67	हेलेप
 Jabneh	यब्ने	यब्ने	auto	alta	1	1	1.00	शहरपनाहें
-Jacan	याकान	याकान	auto	alta	1	1	1.00	जीअ
-Jachan	याकान	याकान	auto	alta	1	1	1.00	जीअ
+Jacan	याकान	याकान	revisado	alta	1	1	1.00	जीअ
+Jachan	याकान	याकान	revisado	alta	1	1	1.00	जीअ
 Jachin	याकीन	याकीन	auto	alta	7	9	0.89	यामीन
 Jada	यादा	यादा	auto	alta	2	2	1.00	नादाब
 Jadau	यद्दई	यद्दई	auto	alta	1	1	1.00	जाबाद
@@ -2163,7 +2326,7 @@ Jahdo	यहदो	यहदो	auto	alta	2	1	1.00	योराह
 Jahleel	यहलेल	यहलेल	auto	alta	2	2	1.00	यहलेलियों
 Jahmai	यहमै	यहमै	auto	alta	2	1	1.00	यिबसाम
 Jahzeel	यहसेल	यहसेल	auto	alta	2	3	1.00	यहसेलियों
-Jahzerah	यहजेरा	यहजेरा	auto	alta	2	1	1.00	इम्मेर
+Jahzerah	यहजेरा	यहजेरा	revisado	alta	2	1	1.00	इम्मेर
 Jair	याईर	याईर	auto	alta	9	11	0.82	गिलादी
 Jakeh	याके	याके	auto	alta	2	1	1.00	ईतीएल
 Jakim	याकीम	याकीम	auto	alta	4	2	1.00	जिक्री
@@ -2173,7 +2336,7 @@ Jambres	यम्ब्रेस	यम्ब्रेस	auto	alta	2	1	1.00	य
 Jamin	यामीन	यामीन	auto	alta	6	6	1.00	याकीन
 Jamlech	यम्लेक	यम्लेक	auto	alta	2	1	1.00	योशा
 Janai	यानै	यानै	auto	alta	1	1	1.00	बाशान
-Janim	यानीम	यानीम	auto	alta	3	1	1.00	अपेका
+Janim	यानीम	यानीम	revisado	alta	3	1	1.00	अपेका
 Janna	यन्ना	यन्ना	auto	alta	1	1	1.00	मत्तात
 Jannai	यन्ना	यन्ना	auto	alta	1	1	1.00	मत्तात
 Jannes	यन्नेस	यन्नेस	auto	alta	2	1	1.00	यम्ब्रेस
@@ -2194,6 +2357,7 @@ Jasiel	यासीएल	यासीएल	auto	alta	1	1	1.00	मसोबा�
 Jason	यासोन	यासोन	auto	alta	2	5	1.00	यहाँ
 Jattir	यत्तीर	यत्तीर	auto	alta	3	6	0.67	शामीर
 Jazer	याजेर	याजेर	auto	alta	3	13	0.92	यरिय्याह
+Jazer Sea	याजेर के ताल	याजेर का ताल	revisado	alta	1	1	1.00	
 Jeaterai	यातरै	यातरै	auto	alta	1	2	0.50	जेरह
 Jeatherai	यातरै	यातरै	auto	alta	1	2	0.50	जेरह
 Jeberechiah	जेबेरेक्याह	जेबेरेक्याह	auto	alta	2	1	1.00	ऊरिय्याह
@@ -2212,7 +2376,7 @@ Jehoahaz	यहोआहाज	यहोआहाज	auto	alta	4	22	0.91	यो�
 Jehohanan	यहोहानान	यहोहानान	auto	alta	14	8	1.00	एल्यहोएनै
 Jehoiada	यहोयादा	यहोयादा	auto	alta	8	49	0.98	योआब
 Jehoiakim	यहोयाकीम	यहोयाकीम	auto	alta	2	37	0.97	योशिय्याह
-Jehoiarib	यहोयारीब	यहोयारीब	auto	alta	2	1	1.00	यदायाह
+Jehoiarib	यहोयारीब	यहोयारीब	revisado	alta	2	1	1.00	यदायाह
 Jehonathan	यहोनातान	यहोनातान	auto	alta	5	3	1.00	नतन्याह
 Jehoshaphat	यहोशापात	यहोशापात	auto	alta	8	76	0.97	योआब
 Jehosheba	यहोशेबा	यहोशेबा	auto	alta	1	2	0.50	योआश
@@ -2233,12 +2397,12 @@ Jerahmeel	यरहमेल	यरहमेल	auto	alta	6	10	0.80	कीश
 Jeremai	यरेमै	यरेमै	auto	alta	2	1	1.00	एलीपेलेत
 Jeremiah	यिर्मयाह	यिर्मयाह	auto	alta	16	136	0.98	इक्कीस
 Jeremoth	यरेमोत	यरेमोत	auto	alta	8	6	0.83	अह्यो
-Jeriah	यरिय्याह	यरिय्याह	auto	alta	2	2	1.00	यहजीएल
+Jeriah	यरिय्याह	यरिय्याह	revisado	alta	2	2	1.00	यहजीएल
 Jeribai	यरीबै	यरीबै	auto	alta	2	1	1.00	योशव्याह
 Jericho	यरीहो	यरीहो	auto	alta	4	68	0.85	इम्री
 Jerijah	यरिय्याह	यरिय्याह	auto	alta	2	1	1.00	याजेर
 Jerimoth	यरीमोत	यरीमोत	auto	alta	13	9	0.78	यरेमोत
-Jeroboam	यारोबाम	यारोबाम	auto	alta	4	95	1.00	रहबाम
+Jeroboam	यारोबाम	यारोबाम	revisado	alta	4	95	1.00	रहबाम
 Jeroham	यरोहाम	यरोहाम	auto	alta	14	10	1.00	तोह
 Jerubbesheth	यरूब्बेशेत	यरूब्बेशेत	auto	alta	1	1	1.00	तेबेस
 Jerusalem	यरूशलेम	यरूशलेम	auto	alta	3	1074	0.70	यरूशलेमी
@@ -2271,11 +2435,11 @@ Jochebed	योकेबेद	योकेबेद	auto	alta	2	2	1.00	जो
 Joda	योदाह	योदाह	auto	alta	1	1	1.00	योसेख
 Joed	योएद	योएद	auto	alta	2	1	1.00	इतीएह
 Joel	योएल	योएल	auto	alta	28	20	1.00	ये
-Joelah	योएला	योएला	auto	alta	2	1	1.00	यरोहाम
+Joelah	योएला	योएला	revisado	alta	2	1	1.00	यरोहाम
 Jogbehah	योगबहा	योगबहा	auto	alta	3	2	1.00	नोबह
 Jogli	योग्ली	योग्ली	auto	alta	2	1	1.00	बुक्की
 Joha	योहा	योहा	auto	alta	4	2	1.00	यिस्पा
-Johanan	योहानान	योहानान	auto	alta	17	26	0.96	याजन्याह
+Johanan	योहानान	योहानान	revisado	alta	17	26	0.96	याजन्याह
 John	यूहन्ना	यूहन्ना	auto	alta	5	130	0.97	जितने
 Joiada	योयादा	योयादा	auto	alta	3	5	1.00	योयाकीम
 Joiakim	योयाकीम	योयाकीम	auto	alta	2	3	1.00	योयादा
@@ -2319,7 +2483,7 @@ Jucal	यूकल	यूकल	auto	alta	1	2	0.50	यहूकल
 Judah	यहूदा	यहूदा	auto	alta	11	1029	0.62	योजाबाद
 Judea	जुड़	जुड़	auto	alta	1	2	0.50	यहूदा
 Judith	यहूदीत	यहूदीत	auto	alta	1	1	1.00	हित्ती
-Julia	यूलिया	यूलिया	auto	alta	2	1	1.00	फिलुलुगुस
+Julia	यूलिया	यूलिया	revisado	alta	2	1	1.00	फिलुलुगुस
 Julius	यूलियुस	यूलियुस	auto	alta	2	2	1.00	पौलुस
 Junia	यूनियास	यूनियास	auto	alta	2	1	1.00	अन्द्रुनीकुस
 Justus	यूस्तुस	यूस्तुस	auto	alta	3	2	1.00	तीतुस
@@ -2329,14 +2493,14 @@ Kadesh	कादेश	कादेश	auto	alta	2	26	0.58	सन्देशा
 Kadmiel	कदमीएल	कदमीएल	auto	alta	2	8	1.00	खड़े
 Kallai	कल्लै	कल्लै	auto	alta	2	1	1.00	सल्लै
 Kamon	कामोन	कामोन	auto	alta	3	1	1.00	में
-Kanah	काना	काना	auto	alta	6	7	1.00	जाकर
+Kanah	काना	काना	revisado	alta	6	7	1.00	जाकर
 Kareah	कारेह	कारेह	auto	alta	2	14	1.00	कर
 Karka	कर्काआ	कर्काआ	auto	alta	3	1	1.00	अद्दार
 Karkor	कर्कोर	कर्कोर	auto	alta	3	1	1.00	लाख
 Kartan	कर्तान	कर्तान	auto	alta	3	1	1.00	चराइयों
 Kattath	कत्तात	कत्तात	auto	alta	2	1	1.00	यिदला
 Kedar	केदार	केदार	auto	alta	4	11	1.00	के
-Kedemah	केदमा	केदमा	auto	alta	2	3	0.67	तेमा
+Kedemah	केदमा	केदमा	revisado	alta	2	3	0.67	तेमा
 Kedemoth	कदेमोत	कदेमोत	auto	alta	3	4	1.00	मेपात
 Kedesh	केदेश	केदेश	auto	alta	9	12	1.00	एद्रेई
 Kehelathah	कहेलाता	कहेलाता	auto	alta	3	2	1.00	डेरा
@@ -2351,14 +2515,14 @@ Kerioth-hezron	करिय्योथेस्रोन	करिय्यो�
 Keros	केरोस	केरोस	auto	alta	2	2	1.00	सीअहा
 Keturah	कतूरा	कतूरा	auto	alta	2	4	1.00	एपेर
 Kezia	कसीआ	कसीआ	auto	alta	1	1	1.00	जेठी
-Keziah	कसीआ	कसीआ	auto	alta	1	1	1.00	जेठी
+Keziah	कसीआ	कसीआ	revisado	alta	1	1	1.00	जेठी
 Kibroth-hattaavah	किब्रोतहत्तावा	किब्रोतहत्तावा	auto	alta	3	5	1.00	हसेरोत
 Kibzaim	किबसैम	किबसैम	auto	alta	3	2	0.50	चार
 Kidron	किद्रोन	किद्रोन	auto	alta	3	16	0.69	कब्रों
 Kinah	कीना	कीना	auto	alta	3	1	1.00	दीमोना
-Kiriath-arba	किर्यतअर्बा	किर्यतअर्बा	auto	alta	1	7	1.00	यकब्सेल
+Kiriath-arba	किर्यतअर्बा	किर्यतअर्बा	revisado	alta	1	7	1.00	यकब्सेल
 Kiriath-baal	किर्यतबाल	किर्यतबाल	auto	alta	1	2	1.00	किर्यत्यारीम
-Kiriath-huzoth	किर्यथूसोत	किर्यथूसोत	auto	alta	3	1	1.00	चला
+Kiriath-huzoth	किर्यथूसोत	किर्यथूसोत	revisado	alta	3	1	1.00	चला
 Kiriath-jearim	किर्यत्यारीम	किर्यत्यारीम	auto	alta	3	22	0.82	किर्य्यत्यारीम
 Kiriath-sannah	किर्यत्सन्ना	किर्यत्सन्ना	auto	alta	1	1	1.00	दन्ना
 Kiriath-sepher	किर्यत्सेपेर	किर्यत्सेपेर	auto	alta	1	4	1.00	अकसा
@@ -2366,14 +2530,14 @@ Kiriathaim	किर्यातैम	किर्यातैम	auto	alta	6	1
 Kish	कीश	कीश	auto	alta	8	18	1.00	किसी
 Kishi	कीशी	कीशी	auto	alta	2	2	0.50	कूशायाह
 Kishion	किश्योन	किश्योन	auto	alta	3	3	0.67	चराइयों
-Kishon	कीशोन	कीशोन	auto	alta	3	5	1.00	खींच
+Kishon	कीशोन	कीशोन	revisado	alta	3	5	1.00	खींच
 Kittim	कित्ती	कित्ती	auto	alta	2	2	1.00	के
 Koa	कोआ	कोआ	auto	alta	3	1	1.00	पकोद
 Kolaiah	कोलायाह	कोलायाह	auto	alta	4	2	1.00	पदायाह
 Korah	कोरह	कोरह	auto	alta	8	44	0.64	को
 Kore	कोरे	कोरे	auto	alta	4	4	0.75	करे
 Laadah	लादा	लादा	auto	alta	2	1	1.00	लेका
-Laadan	लादान	लादान	auto	alta	2	10	0.50	अम्मीहूद
+Laadan	लादान	लादान	revisado	alta	2	10	0.50	अम्मीहूद
 Laban	लाबान	लाबान	auto	alta	5	47	1.00	दीजाहाब
 Lachish	लाकीश	लाकीश	auto	alta	3	22	1.00	हिजकिय्याह
 Lael	लाएल	लाएल	auto	alta	2	1	1.00	एल्यासाप
@@ -2391,8 +2555,9 @@ Lasharon	लश्शारोन	लश्शारोन	auto	alta	3	1	1.00	�
 Lazarus	लाज़र	लाज़र	auto	alta	4	15	1.00	तड़प
 Leah	लिआ	लिआ	auto	alta	2	32	1.00	जिल्पा
 Leb-kamai	लेबकामै	लेबकामै	auto	alta	2	1	1.00	एक
-Lebanah	लबाना	लबाना	auto	alta	2	2	1.00	हगाबा
+Lebanah	लबाना	लबाना	revisado	alta	2	2	1.00	हगाबा
 Lebanon	लबानोन	लबानोन	auto	alta	4	62	0.98	बेगारियों
+Lebanon Mount	लबानोन पर्वत	लबानोन पर्वत	revisado	alta	1	1	1.00	
 Lebonah	लबोना	लबोना	auto	alta	3	1	1.00	शीलो
 Lecah	लेका	लेका	auto	alta	1	1	1.00	लादा
 Lehabim	लहाबी	लहाबी	auto	alta	2	2	1.00	लूदी
@@ -2402,11 +2567,11 @@ Leummim	लुम्मी	लुम्मी	auto	alta	2	1	1.00	लतूशी
 Leviathan	लिव्यातान	लिव्यातान	auto	alta	1	5	1.00	जन्तुओं
 Libnah	लिब्ना	लिब्ना	auto	alta	6	18	0.78	लिब्नावासी
 Libni	लिब्नी	लिब्नी	auto	alta	3	10	0.50	महली
-Linus	लीनुस	लीनुस	auto	alta	2	1	1.00	यूबूलुस
+Linus	लीनुस	लीनुस	revisado	alta	2	1	1.00	यूबूलुस
 Lo-ammi	लोअम्मी	लोअम्मी	auto	alta	2	1	1.00	लोग
 Lo-ruhamah	लोरुहामा	लोरुहामा	auto	alta	2	2	1.00	रख
 Lod	लोद	लोद	auto	alta	3	7	0.57	लुद्दा
-Lois	लोइस	लोइस	auto	alta	2	1	1.00	नानी
+Lois	लोइस	लोइस	revisado	alta	2	1	1.00	नानी
 Lot	लूत	लूत	auto	alta	2	34	0.97	पोते
 Lotan	लोतान	लोतान	auto	alta	2	5	1.00	अना
 Lucius	लूकियुस	लूकियुस	auto	alta	2	2	1.00	तीमुथियुस
@@ -2420,7 +2585,7 @@ Lysanias	लिसानियास	लिसानियास	auto	alta	2	1	1
 Lystra	लुस्त्रा	लुस्त्रा	auto	alta	3	6	1.00	दिरबे
 Maacah	माका	माका	auto	alta	12	30	0.70	का
 Maachah	माका	माका	auto	alta	8	18	0.89	का
-Maai	माऐ	माऐ	auto	alta	2	1	1.00	मिललै
+Maai	माऐ	माऐ	revisado	alta	2	1	1.00	मिललै
 Maarath	मरात	मरात	auto	alta	3	1	1.00	और
 Maareh-geba	मारेगेवा	मारेगेवा	auto	alta	3	1	1.00	बालतामार
 Maasai	मासै	मासै	auto	alta	1	2	0.50	अमशै
@@ -2468,7 +2633,7 @@ Malcam	मल्काम	मल्काम	auto	alta	1	1	1.00	मेशा
 Malcham	मल्काम	मल्काम	auto	alta	1	2	0.50	आकाश
 Malchi-shua	मल्कीशूअ	मल्कीशूअ	auto	alta	2	5	1.00	कीश
 Malchiah	मल्किय्याह	मल्किय्याह	auto	alta	8	9	1.00	यिर्मयाह
-Malchiel	मल्कीएल	मल्कीएल	auto	alta	2	3	1.00	मल्कीएलियों
+Malchiel	मल्कीएल	मल्कीएल	revisado	alta	2	3	1.00	मल्कीएलियों
 Malchijah	मल्किय्याह	मल्किय्याह	auto	alta	18	12	1.00	रम्याह
 Malchiram	मल्कीराम	मल्कीराम	auto	alta	2	1	1.00	यकम्याह
 Malchus	मलखुस	मलखुस	auto	alta	2	1	1.00	चलाकर
@@ -2483,14 +2648,14 @@ Maoch	माओक	माओक	auto	alta	1	2	0.50	माका
 Maon	माओन	माओन	auto	alta	5	6	0.83	शम्मै
 Mareal	मरला	मरला	auto	alta	3	1	1.00	दब्बेशेत
 Mareshah	मारेशा	मारेशा	auto	alta	5	8	0.88	मारेशावासी
-Maroth	मारोत	मारोत	auto	alta	3	1	1.00	बाट
+Maroth	मारोत	मारोत	revisado	alta	3	1	1.00	बाट
 Marsena	मर्सना	मर्सना	auto	alta	2	1	1.00	कर्शना
 Martha	मार्था	मार्था	auto	alta	2	12	1.00	मरता
 Mary	मरियम	मरियम	auto	alta	10	41	0.98	मंगनी
 Mash	मश	मश	auto	alta	2	2	0.50	शेम
 Mashal	माशाल	माशाल	auto	alta	1	1	1.00	आशेर
 Masrekah	मस्रेकाई	मस्रेकाई	auto	alta	3	2	0.50	मस्रेकावासी
-Massah	मस्सा	मस्सा	auto	alta	3	5	1.00	मरीबा
+Massah	मस्सा	मस्सा	revisado	alta	3	5	1.00	मरीबा
 Matred	मत्रेद	मत्रेद	auto	alta	2	2	1.00	महेतबेल
 Matri	मत्री	मत्री	auto	alta	2	1	1.00	चिट्ठी
 Mattan	मत्तान	मत्तान	auto	alta	4	3	1.00	घात
@@ -2500,7 +2665,7 @@ Mattatha	मत्तता	मत्तता	auto	alta	2	1	1.00	मलेआ�
 Mattathah	मत्तत्ता	मत्तत्ता	auto	alta	1	1	1.00	मत्तनै
 Mattattah	मत्तत्ता	मत्तत्ता	auto	alta	1	1	1.00	मत्तनै
 Mattenai	मत्तनै	मत्तनै	auto	alta	6	3	1.00	मत्तत्ता
-Matthat	मत्तात	मत्तात	auto	alta	4	2	1.00	मलकी
+Matthat	मत्तात	मत्तात	revisado	alta	4	2	1.00	मलकी
 Matthias	मत्तियाह	मत्तियाह	auto	alta	2	2	1.00	अतः
 Mattithiah	मत्तित्याह	मत्तित्याह	auto	alta	8	8	1.00	कोरही
 Me-jarkon	मेयर्कोन	मेयर्कोन	auto	alta	3	1	1.00	रक्कोन
@@ -2517,10 +2682,10 @@ Melatiah	मलत्याह	मलत्याह	auto	alta	2	1	1.00	मे�
 Melchisedec	मलिकिसिदक	मलिकिसिदक	auto	alta	1	11	0.91	मिली
 Melchizedek	मलिकिसिदक	मलिकिसिदक	auto	alta	1	11	0.91	मिली
 Melea	मलेआह	मलेआह	auto	alta	2	1	1.00	मिन्नाह
-Melech	मेलेक	मेलेक	auto	alta	2	2	1.00	मीका
+Melech	मेलेक	मेलेक	revisado	alta	2	2	1.00	मीका
 Memucan	ममूकान	ममूकान	auto	alta	2	3	1.00	मेरेस
 Menahem	मनहेम	मनहेम	auto	alta	2	8	1.00	में
-Meonothai	मोनोतै	मोनोतै	auto	alta	2	1	1.00	ओप्रा
+Meonothai	मोनोतै	मोनोतै	revisado	alta	2	1	1.00	ओप्रा
 Mephibosheth	मपीबोशेत	मपीबोशेत	auto	alta	4	15	0.87	मेज
 Merab	मेरब	मेरब	auto	alta	2	4	0.75	मेरा
 Meraiah	मरायाह	मरायाह	auto	alta	2	1	1.00	सरायाह
@@ -2569,7 +2734,7 @@ Milcom	मिल्कोम	मिल्कोम	auto	alta	1	3	1.00	अम्�
 Miletus	मीलेतुस	मीलेतुस	auto	alta	3	3	1.00	खियुस
 Millo	मिल्लो	मिल्लो	auto	alta	3	7	0.86	मगिद्दो
 Miniamin	मिन्यामीन	मिन्यामीन	auto	alta	5	5	0.60	याजकों
-Minni	मिन्नी	मिन्नी	auto	alta	3	1	1.00	झण्डा
+Minni	मिन्नी	मिन्नी	revisado	alta	3	1	1.00	झण्डा
 Minnith	मिन्नीत	मिन्नीत	auto	alta	3	2	1.00	अम्मोनी
 Miriam	मिर्याम	मिर्याम	auto	alta	4	13	1.00	मिस्र
 Mirma	मिर्मा	मिर्मा	auto	alta	1	1	1.00	मुख्य
@@ -2578,7 +2743,7 @@ Mishal	मिशाल	मिशाल	auto	alta	3	3	0.67	माशाल
 Misham	मिशाम	मिशाम	auto	alta	2	1	1.00	शामेद
 Mishma	मिश्मा	मिश्मा	auto	alta	4	4	1.00	दूमा
 Mishmannah	मिश्मन्ना	मिश्मन्ना	auto	alta	2	1	1.00	यिर्मयाह
-Mispar	मिस्पार	मिस्पार	auto	alta	1	2	0.50	मिस्पेरेत
+Mispar	मिस्पार	मिस्पार	revisado	alta	1	2	0.50	मिस्पेरेत
 Mispereth	मिस्पेरेत	मिस्पेरेत	auto	alta	1	2	0.50	मिस्पार
 Mithkah	मित्का	मित्का	auto	alta	3	2	1.00	कूच
 Mithredath	मिथ्रदात	मिथ्रदात	auto	alta	4	2	1.00	गिनकर
@@ -2588,15 +2753,30 @@ Mizpeh	मिस्पे	मिस्पे	auto	alta	7	3	1.00	योक्त�
 Mizzah	मिज्जा	मिज्जा	auto	alta	2	3	1.00	शम्मा
 Mnason	मनासोन	मनासोन	auto	alta	2	1	1.00	हम
 Moab	मोआब	मोआब	auto	alta	6	186	0.66	मोआबी
+Moab Plains	मोआब के अराबा	मोआब का अराबा	revisado	alta	1	12	1.00	
 Moladah	मोलादा	मोलादा	auto	alta	3	4	1.00	अमाम
 Molech	मोलेक	मोलेक	auto	alta	2	15	0.60	में
 Molid	मोलीद	मोलीद	auto	alta	2	1	1.00	की
 Mordecai	मोर्दकै	मोर्दकै	auto	alta	4	52	1.00	रेलायाह
-Moreh	मोरे	मोरे	auto	alta	6	3	1.00	में
+Moreh	मोरे	मोरे	revisado	alta	6	3	1.00	में
 Moriah	मोरिय्याह	मोरिय्याह	auto	alta	2	1	1.00	जा
 Moserah	मोसेरा	मोसेरा	auto	alta	2	1	1.00	मर
 Moseroth	मोसेरोत	मोसेरोत	auto	alta	3	3	0.67	से
 Moses	मूसा	मूसा	auto	alta	2	785	0.98	होशे
+Mount Baalah	बाला पहाड़	बाला पहाड़	revisado	alta	2	1	1.00	
+Mount Bashan	बाशान का पहाड़	बाशान का पहाड़	revisado	alta	1	1	1.00	
+Mount Ebal	एबाल पर्वत	एबाल पर्वत	revisado	alta	2	5	0.60	एबाल पहाड़
+Mount Ephraim	एप्रैम के पहाड़	एप्रैम का पहाड़	revisado	alta	2	3	1.00	
+Mount Ephron	एप्रोन पहाड़	एप्रोन पहाड़	revisado	alta	2	1	1.00	
+Mount Esau	एसाव के पहाड़	एसाव का पहाड़	revisado	alta	1	4	1.00	
+Mount Gilboa	गिलबो पहाड़	गिलबो पहाड़	revisado	alta	2	8	0.62	
+Mount Gilead	गिलाद पहाड़	गिलाद पहाड़	revisado	alta	2	1	1.00	
+Mount Lebanon	लबानोन पर्वत	लबानोन पर्वत	revisado	alta	2	1	1.00	
+Mount Nebo	नबो पहाड़	नबो पहाड़	revisado	alta	2	2	0.50	
+Mount Paran	पारान पर्वत	पारान पर्वत	revisado	alta	2	2	1.00	
+Mount Sinai	सीनै पर्वत	सीनै पर्वत	revisado	alta	2	30	0.60	सीनै पहाड़
+Mount Zion	सिय्योन पर्वत	सिय्योन पर्वत	revisado	alta	2	25	0.76	सिय्योन के पहाड़
+Mount of Esau	एसाव के पहाड़	एसाव का पहाड़	revisado	alta	1	4	1.00	
 Moza	मोसा	मोसा	auto	alta	4	5	0.80	उससे
 Mushi	मूशी	मूशी	auto	alta	2	10	0.80	महली
 Mysia	मूसिया	मूसिया	auto	alta	3	2	1.00	बितूनिया
@@ -2664,7 +2844,7 @@ Nicolaus	नीकुलाउस	नीकुलाउस	auto	alta	1	1	1.00	�
 Nimrah	निम्रा	निम्रा	auto	alta	2	1	1.00	बोन
 Nimrim	निम्रीम	निम्रीम	auto	alta	3	2	1.00	मुर्झा
 Nimrod	निम्रोद	निम्रोद	auto	alta	4	4	1.00	वीर
-Nimshi	निमशी	निमशी	auto	alta	2	5	1.00	इसलिए
+Nimshi	निमशी	निमशी	revisado	alta	2	5	1.00	इसलिए
 Nineveh	नीनवे	नीनवे	auto	alta	3	30	0.63	जाने
 Nisroch	निस्रोक	निस्रोक	auto	alta	1	2	1.00	मन्दिर
 Noadiah	नोअद्याह	नोअद्याह	auto	alta	4	2	1.00	योजाबाद
@@ -2718,16 +2898,17 @@ Pagiel	पगीएल	पगीएल	auto	alta	2	5	1.00	बैल
 Pahath-moab	पहत्मोआब	पहत्मोआब	auto	alta	6	6	1.00	आठ
 Palal	पालाल	पालाल	auto	alta	2	1	1.00	परोश
 Pallu	पल्लू	पल्लू	auto	alta	2	5	1.00	पल्लूइयों
-Palti	पलती	पलती	auto	alta	3	3	0.67	पुत्र
+Palti	पलती	पलती	revisado	alta	3	3	0.67	पुत्र
 Paltiel	पलतीएल	पलतीएल	auto	alta	2	1	1.00	अज्जान
 Pamphylia	पंफूलिया	पंफूलिया	auto	alta	3	5	1.00	पाफुस
 Parah	पारा	पारा	auto	alta	3	1	1.00	ओप्रा
 Paran	पारान	पारान	auto	alta	3	8	1.00	पार
+Paran Mount	पारान पर्वत	पारान पर्वत	revisado	alta	1	2	1.00	
 Parbar	पर्बार	पर्बार	auto	alta	2	1	1.00	पर
 Parmashta	पर्मशता	पर्मशता	auto	alta	2	1	1.00	वैजाता
 Parnach	पर्नाक	पर्नाक	auto	alta	2	1	1.00	एलीसापान
 Parosh	परोश	परोश	auto	alta	7	6	1.00	बहत्तर
-Parshandatha	पर्शन्दाता	पर्शन्दाता	auto	alta	2	1	1.00	अस्पाता
+Parshandatha	पर्शन्दाता	पर्शन्दाता	revisado	alta	2	1	1.00	अस्पाता
 Paruah	पारुह	पारुह	auto	alta	2	1	1.00	इस्साकार
 Pas-dammim	पसदम्मीम	पसदम्मीम	auto	alta	1	1	1.00	पलिश्ती
 Pasach	पासक	पासक	auto	alta	2	1	1.00	अश्
@@ -2764,14 +2945,14 @@ Peullethai	पुल्लतै	पुल्लतै	auto	alta	1	1	1.00	अम
 Peulthai	पुल्लतै	पुल्लतै	auto	alta	1	1	1.00	अम्मीएल
 Phanuel	फनूएल	फनूएल	auto	alta	2	1	1.00	हन्नाह
 Pharaoh	फ़िरौन	फ़िरौन	auto	alta	17	232	1.00	और
-Pharaoh-nechoh	नको	नको	auto	alta	1	7	1.00	करने
+Pharaoh-nechoh	नको	फ़िरौन-नको	revisado	alta	1	7	1.00	करने
 Pharez	पेरेस	पेरेस	auto	alta	1	15	0.93	येरेस
 Phaseah	पासेह	पासेह	auto	alta	1	2	1.00	गज्जाम
 Philadelphia	फिलदिलफिया	फिलदिलफिया	auto	alta	3	2	1.00	लौदीकिया
 Philemon	फिलेमोन	फिलेमोन	auto	alta	2	2	0.50	जो
 Philetus	फिलेतुस	फिलेतुस	auto	alta	2	1	1.00	फैलता
 Philip	फिलिप्पुस	फिलिप्पुस	auto	alta	6	35	1.00	जेलखाने
-Philippi	फिलिप्पी	फिलिप्पी	auto	alta	3	8	0.50	जहाज
+Philippi	फिलिप्पी	फिलिप्पी	revisado	alta	3	8	0.50	जहाज
 Phinehas	पीनहास	पीनहास	auto	alta	6	24	1.00	जिनसे
 Phrygia	फ्रूगिया	फ्रूगिया	auto	alta	3	4	0.75	लीबिया
 Phurah	फूरा	फूरा	auto	alta	1	2	1.00	उतर
@@ -2783,7 +2964,7 @@ Pileha	पिल्हा	पिल्हा	auto	alta	1	1	1.00	हल्लो�
 Pilha	पिल्हा	पिल्हा	auto	alta	1	1	1.00	हल्लोहेश
 Piltai	पिलतै	पिलतै	auto	alta	2	1	1.00	मिन्यामीन
 Pinon	पीनोन	पीनोन	auto	alta	2	2	1.00	अधिपति
-Piram	पिराम	पिराम	auto	alta	2	1	1.00	होहाम
+Piram	पिराम	पिराम	revisado	alta	2	1	1.00	होहाम
 Pirathon	पिरातोनी	पिरातोनी	auto	alta	3	5	0.80	पिरातोन
 Pisgah	पिसगा	पिसगा	auto	alta	3	8	1.00	सोपीम
 Pishon	पीशोन	पीशोन	auto	alta	2	1	1.00	सोना
@@ -2804,7 +2985,7 @@ Publius	पुबलियुस	पुबलियुस	auto	alta	2	2	1.00	प
 Pudens	पूदेंस	पूदेंस	auto	alta	2	1	1.00	लीनुस
 Punon	पूनोन	पूनोन	auto	alta	3	2	1.00	सलमोना
 Purim	पूरीम	पूरीम	auto	alta	1	7	0.71	पूर
-Put	पूत	पूत	auto	alta	2	8	0.62	पुत्र
+Put	पूत	पूत	revisado	alta	2	8	0.62	पुत्र
 Putiel	पूतीएल	पूतीएल	auto	alta	2	1	1.00	पुत्र
 Quartus	क्वारतुस	क्वारतुस	auto	alta	2	1	1.00	इरास्तुस
 Quirinius	क्विरिनियुस	क्विरिनियुस	auto	alta	1	1	1.00	सीरिया
@@ -2828,7 +3009,7 @@ Ramah	रामाह	रामाह	auto	alta	13	33	1.00	हम
 Rameses	रामसेस	रामसेस	auto	alta	3	5	1.00	प्रदेश
 Ramiah	रम्याह	रम्याह	auto	alta	2	1	1.00	मिय्यामीन
 Ramoth	रामोत	रामोत	auto	alta	7	37	0.70	अर्थात्
-Ramoth-gilead	रामोत	रामोत	auto	alta	2	20	1.00	गिलाद
+Ramoth-gilead	रामोत	गिलाद का रामोत	revisado	alta	2	20	1.00	गिलाद
 Reaiah	रायाह	रायाह	auto	alta	4	5	0.80	रसीन
 Reba	रेबा	रेबा	auto	alta	2	2	1.00	रेकेम
 Rebekah	रिबका	रिबका	auto	alta	2	30	0.97	एक
@@ -2862,6 +3043,7 @@ Rimmon-perez	रिम्मोनपेरेस	रिम्मोनपेर
 Rinnah	रिन्ना	रिन्ना	auto	alta	2	1	1.00	जोहेत
 Rissah	रिस्सा	रिस्सा	auto	alta	3	2	1.00	डेरा
 Rithmah	रित्मा	रित्मा	auto	alta	3	2	1.00	रिम्मोनपेरेस
+River of Arnon	अर्नोन के नाले	अर्नोन का नाला	revisado	alta	1	11	0.55	
 Rizia	रिस्या	रिस्या	auto	alta	1	1	1.00	आरह
 Rizpah	रिस्पा	रिस्पा	auto	alta	2	4	1.00	अय्या
 Rogelim	रोगलीम	रोगलीम	auto	alta	3	2	0.50	रोगलीमवासी
@@ -2887,8 +3069,8 @@ Salome	सलोमी	सलोमी	auto	alta	2	3	0.67	मलें
 Salu	सालू	सालू	auto	alta	2	1	1.00	इस्राएली
 Samaria	सामरिया	सामरिया	auto	alta	4	133	0.83	सामरी
 Samgar-nebo	समगर्नबो	समगर्नबो	auto	alta	1	1	1.00	सर्सकीम
-Samlah	सम्ला	सम्ला	auto	alta	2	4	1.00	शाऊल
-Samson	शिमशोन	शिमशोन	auto	alta	2	38	1.00	सातों
+Samlah	सम्ला	सम्ला	revisado	alta	2	4	1.00	शाऊल
+Samson	शिमशोन	शिमशोन	revisado	alta	2	38	1.00	सातों
 Samuel	शमूएल	शमूएल	auto	alta	2	122	0.98	शाऊल
 Sanballat	सम्बल्लत	सम्बल्लत	auto	alta	2	10	1.00	बनवा
 Sapphira	सफीरा	सफीरा	auto	alta	2	1	1.00	हनन्याह
@@ -2899,10 +3081,15 @@ Sarsechim	सर्सकीम	सर्सकीम	auto	alta	1	1	1.00	हा�
 Satan	शैतान	शैतान	auto	alta	2	100	0.82	साथ
 Saul	शाऊल	शाऊल	auto	alta	2	327	0.98	शमूएल
 Sceva	स्क्किवा	स्क्किवा	auto	alta	2	1	1.00	के
+Sea of Egypt	मिस्र के समुद्र	मिस्र का समुद्र	revisado	alta	1	1	1.00	
+Sea of Galilee	गलील की झील	गलील की झील	revisado	alta	2	10	0.50	
+Sea of Jazer	याजेर के ताल	याजेर का ताल	revisado	alta	2	1	1.00	
+Sea of Tiberias	तिबिरियास की झील	तिबिरियास की झील	revisado	alta	1	2	0.50	तिबिरियास झील
 Secacah	सकाका	सकाका	auto	alta	3	1	1.00	बेतराबा
 Secu	सेकू	सेकू	auto	alta	3	1	1.00	शमूएल
 Secundus	सिकुन्दुस	सिकुन्दुस	auto	alta	2	1	1.00	अरिस्तर्खुस
 Seir	सेईर	सेईर	auto	alta	4	27	0.93	एसेर
+Seir Mount	सेईर पहाड़	सेईर पहाड़	revisado	alta	2	12	0.58	सेईर के पहाड़
 Seirah	सेइरे	सेइरे	auto	alta	3	2	0.50	शरण
 Selah	सेला	सेला	auto	alta	1	74	0.95	सेना
 Seled	सेलेद	सेलेद	auto	alta	2	1	1.00	यिशी
@@ -2914,7 +3101,7 @@ Seorim	सोरीम	सोरीम	auto	alta	2	1	1.00	हारीम
 Sepharvaim	सपर्वैम	सपर्वैम	auto	alta	3	6	1.00	सपर्वैमी
 Serah	सेरह	सेरह	auto	alta	2	3	1.00	आशेर
 Seraiah	सरायाह	सरायाह	auto	alta	14	17	1.00	सपन्याह
-Sered	सेरेद	सेरेद	auto	alta	2	2	1.00	सेरेदियों
+Sered	सेरेद	सेरेद	revisado	alta	2	2	1.00	सेरेदियों
 Serug	सरूग	सरूग	auto	alta	2	6	1.00	रू
 Seth	शेत	शेत	auto	alta	2	10	1.00	से
 Shaalabbin	शालब्बीन	शालब्बीन	auto	alta	1	1	1.00	यितला
@@ -2937,17 +3124,17 @@ Shamed	शामेद	शामेद	auto	alta	1	1	1.00	मिशाम
 Shamgar	शमगर	शमगर	auto	alta	2	2	1.00	शमू
 Shamhuth	शम्हूत	शम्हूत	auto	alta	2	1	1.00	सेनापति
 Shamir	शामीर	शामीर	auto	alta	8	4	1.00	यत्तीर
-Shammah	शम्मा	शम्मा	auto	alta	8	13	0.62	बासमत
+Shammah	शम्मा	शम्मा	revisado	alta	8	13	0.62	बासमत
 Shammai	शम्मै	शम्मै	auto	alta	6	5	1.00	ओनाम
 Shammua	शम्मू	शम्मू	auto	alta	6	5	0.80	जक्कूर
 Shamsherai	शमशरै	शमशरै	auto	alta	2	1	1.00	शहर्याह
 Shaphan	शापान	शापान	auto	alta	4	24	1.00	असायाह
-Shaphat	शापात	शापात	auto	alta	10	8	1.00	शिमोन
+Shaphat	शापात	शापात	revisado	alta	10	8	1.00	शिमोन
 Sharai	शारै	शारै	auto	alta	2	1	1.00	शाशै
 Sharar	शारार	शारार	auto	alta	2	2	0.50	हरारी
 Sharezer	शरेसेर	शरेसेर	auto	alta	3	3	1.00	अद्रम्मेलेक
 Sharon	शारोन	शारोन	auto	alta	5	7	1.00	चराइयों
-Shashai	शाशै	शाशै	auto	alta	2	1	1.00	शारै
+Shashai	शाशै	शाशै	revisado	alta	2	1	1.00	शारै
 Shashak	शाशक	शाशक	auto	alta	2	2	1.00	यिपदयाह
 Shaveh	शावे	शावे	auto	alta	1	2	1.00	उसके
 Shealtiel	शालतीएल	शालतीएल	auto	alta	3	12	1.00	जरुब्बाबेल
@@ -3018,8 +3205,9 @@ Shinar	शिनार	शिनार	auto	alta	3	8	0.88	ईंट
 Shion	शीओन	शीओन	auto	alta	3	1	1.00	अनाहरत
 Shiphrah	शिप्रा	शिप्रा	auto	alta	2	1	1.00	मिस्र
 Shishak	शीशक	शीशक	auto	alta	2	6	1.00	मिस्र
-Shitrai	शित्रै	शित्रै	auto	alta	2	1	1.00	तराइयों
+Shitrai	शित्रै	शित्रै	revisado	alta	2	1	1.00	तराइयों
 Shittim	शित्तीम	शित्तीम	auto	alta	3	6	0.67	युक्ति
+Shittim Valley	शित्तीम की घाटी	शित्तीम की घाटी	revisado	alta	1	1	1.00	
 Shiza	शीजा	शीजा	auto	alta	2	1	1.00	तीस
 Shoa	शोया	शोया	auto	alta	3	1	1.00	कोआ
 Shobab	शोबाब	शोबाब	auto	alta	4	4	1.00	शम्मू
@@ -3031,7 +3219,7 @@ Shobi	शोबी	शोबी	auto	alta	2	1	1.00	बर्जिल्लै
 Shoham	शोहम	शोहम	auto	alta	2	1	1.00	बिनो
 Shomer	शोमेर	शोमेर	auto	alta	2	4	0.50	शेमेर
 Shua	शूआ	शूआ	auto	alta	3	4	1.00	शोमेर
-Shuah	शूआ	शूआ	auto	alta	1	3	1.00	ऊन
+Shuah	शूआ	शूआ	revisado	alta	1	3	1.00	ऊन
 Shuah	शूह	शूह	auto	alta	2	2	1.00	यिशबाक
 Shuah	शूहा	शूहा	auto	alta	1	1	1.00	हुआ
 Shual	शूआल	शूआल	auto	alta	4	3	0.67	दल
@@ -3048,10 +3236,11 @@ Sibmah	सिबमा	सिबमा	auto	alta	3	6	0.83	सींचूँग�
 Sibraim	सिब्रैम	सिब्रैम	auto	alta	3	1	1.00	बेरोता
 Sidon	सीदोन	सीदोन	auto	alta	6	49	0.69	सीदोनी
 Sihon	सीहोन	सीहोन	auto	alta	2	34	1.00	हेशबोन
-Silas	सीलास	सीलास	auto	alta	2	17	0.76	सिलवानुस
+Silas	सीलास	सीलास	revisado	alta	2	17	0.76	सिलवानुस
 Siloam	शीलोह	शीलोह	auto	alta	2	5	0.60	सानी
 Simeon	शिमोन	शिमोन	auto	alta	2	43	0.70	शिमोनी
 Sinai	सीनै	सीनै	auto	alta	2	55	0.67	सीन
+Sinai Wilderness	सीनै के जंगल	सीनै का जंगल	revisado	alta	1	13	0.92	
 Sippai	सिप्पै	सिप्पै	auto	alta	1	2	0.50	सिब्बकै
 Sirah	सीरा	सीरा	auto	alta	3	1	1.00	इस
 Sirion	सिर्योन	सिर्योन	auto	alta	1	3	0.67	सीदोनी
@@ -3083,7 +3272,7 @@ Taanath-shiloh	तानतशीलो	तानतशीलो	auto	alta	3	1	1
 Tabbaoth	तब्बाओत	तब्बाओत	auto	alta	2	2	1.00	हसूपा
 Tabbath	तब्बात	तब्बात	auto	alta	3	1	1.00	आबेल
 Tabeal	ताबेल	ताबेल	auto	alta	2	1	1.00	घबरा
-Tabeel	ताबेल	ताबेल	auto	alta	2	1	1.00	बिशलाम
+Tabeel	ताबेल	ताबेल	revisado	alta	2	1	1.00	बिशलाम
 Taberah	तबेरा	तबेरा	auto	alta	3	2	1.00	और
 Tabitha	तबीता	तबीता	auto	alta	1	3	0.67	तब
 Tabor	ताबोर	ताबोर	auto	alta	6	7	1.00	तीसरा
@@ -3094,7 +3283,7 @@ Tahan	तहन	तहन	auto	alta	4	2	1.00	तहनियों
 Tahash	तहश	तहश	auto	alta	1	1	1.00	तेबह
 Tahath	तहत	तहत	auto	alta	9	5	1.00	शूतेलह
 Tahpanhes	तहपन्हेस	तहपन्हेस	auto	alta	3	7	1.00	अपने
-Tahpenes	तहपनेस	तहपनेस	auto	alta	2	2	1.00	अपनी
+Tahpenes	तहपनेस	तहपनेस	revisado	alta	2	2	1.00	अपनी
 Tahrea	तह्रे	तह्रे	auto	alta	1	2	0.50	तारे
 Tahtim-hodshi	तहतीम्होदशी	तहतीम्होदशी	auto	alta	1	1	1.00	दान्यान
 Tahtimhodshi	तहतीम्होदशी	तहतीम्होदशी	auto	alta	1	1	1.00	दान्यान
@@ -3113,7 +3302,7 @@ Tatnai	तत्तनै	तत्तनै	auto	alta	1	4	1.00	शतर्ब�
 Tattenai	तत्तनै	तत्तनै	auto	alta	1	4	1.00	शतर्बोजनै
 Tebah	तेबह	तेबह	auto	alta	2	1	1.00	तहश
 Tebaliah	तबल्याह	तबल्याह	auto	alta	2	1	1.00	तेरह
-Tebeth	तेबेत	तेबेत	auto	alta	1	1	1.00	एस्तेर
+Tebeth	तेबेत	तेबेत	revisado	alta	1	1	1.00	एस्तेर
 Tehinnah	तहिन्ना	तहिन्ना	auto	alta	2	1	1.00	ईर्नाहाश
 Tekoa	तकोआ	तकोआ	auto	alta	3	14	0.57	तकोई
 Tel-abib	तेलाबीब	तेलाबीब	auto	alta	3	1	1.00	थे
@@ -3129,7 +3318,7 @@ Temeni	तेमनी	तेमनी	auto	alta	2	1	1.00	हाहशतार�
 Terah	तेरह	तेरह	auto	alta	5	12	0.92	तहत
 Teresh	तेरेश	तेरेश	auto	alta	2	2	1.00	थे
 Thahash	तहश	तहश	auto	alta	1	1	1.00	तेबह
-Thebez	तेबेस	तेबेस	auto	alta	3	2	1.00	यरूब्बेशेत
+Thebez	तेबेस	तेबेस	revisado	alta	3	2	1.00	यरूब्बेशेत
 Thomas	थोमा	थोमा	auto	alta	2	12	0.92	बरतुल्मै
 Thummim	तुम्मीम	तुम्मीम	auto	alta	1	5	1.00	ऊरीम
 Thyatira	थुआतीरा	थुआतीरा	auto	alta	3	4	1.00	और
@@ -3137,9 +3326,9 @@ Tiberias	तिबिरियास	तिबिरियास	auto	alta	2	1	1
 Tibhath	तिभत	तिभत	auto	alta	3	2	0.50	बहुत
 Tibni	तिब्नी	तिब्नी	auto	alta	2	2	1.00	भागों
 Tidal	तिदाल	तिदाल	auto	alta	2	2	1.00	गोयीम
-Tiglath-pileser	तिग्लत्पिलेसेर	तिग्लत्पिलेसेर	auto	alta	1	9	0.67	लजाएगा
+Tiglath-pileser	तिग्लत्पिलेसेर	तिग्लत्पिलेसेर	revisado	alta	1	9	0.67	लजाएगा
 Tikvah	तिकवा	तिकवा	auto	alta	4	3	0.67	तोखत
-Tilgath-pilneser	तिग्लत्पिलेसेर	तिग्लत्पिलेसेर	auto	alta	1	6	0.50	यारेब
+Tilgath-pilneser	तिग्लत्पिलेसेर	तिग्लत्पिलेसेर	revisado	alta	1	6	0.50	यारेब
 Timna	तिम्ना	तिम्ना	auto	alta	2	6	1.00	तेमान
 Timnah	तिम्ना	तिम्ना	auto	alta	1	2	1.00	यतेत
 Timnah	तिम्नाह	तिम्नाह	auto	alta	7	13	0.85	कैन
@@ -3148,7 +3337,7 @@ Timon	तीमोन	तीमोन	auto	alta	2	1	1.00	स्तिफनु�
 Timotheus	तीमुथियुस	तीमुथियुस	auto	alta	1	24	1.00	त्रुफिमुस
 Timothy	तीमुथियुस	तीमुथियुस	auto	alta	1	28	0.86	फिलेमोन
 Tiphsah	तिप्सह	तिप्सह	auto	alta	6	2	1.00	इस
-Tiras	तीरास	तीरास	auto	alta	2	2	1.00	पुत्र
+Tiras	तीरास	तीरास	revisado	alta	2	2	1.00	पुत्र
 Tirhakah	तिर्हाका	तिर्हाका	auto	alta	2	2	1.00	हिजकिय्याह
 Tirhanah	तिर्हाना	तिर्हाना	auto	alta	2	1	1.00	उत्पन्न
 Tiria	तीरया	तीरया	auto	alta	2	1	1.00	जीपा
@@ -3163,6 +3352,8 @@ Togarmah	तोगर्मा	तोगर्मा	auto	alta	2	4	1.00	घर�
 Toi	तोई	तोई	auto	alta	2	4	0.50	तोऊ
 Tola	तोला	तोला	auto	alta	4	5	1.00	तोलियों
 Tolad	तोलाद	तोलाद	auto	alta	2	1	1.00	बिल्हा
+Tower of Eder	एदेर के गुम्मट	एदेर का गुम्मट	revisado	alta	1	2	0.50	एदेर नामक गुम्मट
+Tower of Shechem	शेकेम के गुम्मट	शेकेम का गुम्मट	revisado	alta	1	3	1.00	
 Trachonitis	त्रखोनीतिस	त्रखोनीतिस	auto	alta	3	1	1.00	इतूरैया
 Troas	त्रोआस	त्रोआस	auto	alta	3	6	1.00	करपुस
 Trophimus	त्रुफिमुस	त्रुफिमुस	auto	alta	2	3	1.00	सोपत्रुस
@@ -3193,9 +3384,26 @@ Uzziah	उज्जियाह	उज्जियाह	auto	alta	9	38	0.74	घ
 Uzziel	उज्जीएल	उज्जीएल	auto	alta	12	19	0.79	उज्जीएलियों
 Vaizatha	वैजाता	वैजाता	auto	alta	1	1	1.00	पर्मशता
 Vajezatha	वैजाता	वैजाता	auto	alta	1	1	1.00	पर्मशता
+Vale of Hebron	हेब्रोन की तराई	हेब्रोन की तराई	revisado	alta	1	1	1.00	
+Valley of Aijalon	अय्यालोन की तराई	अय्यालोन की तराई	revisado	alta	2	1	1.00	
+Valley of Aven	आवेन नामक तराई	आवेन की तराई	revisado	alta	1	1	1.00	
+Valley of Beracah	बराका की तराई	बराका की तराई	revisado	alta	2	1	1.00	बराका नामक तराई
+Valley of Elah	एला नामक तराई	एला की तराई	revisado	alta	2	3	0.67	एला तराई
+Valley of Gerar	गरार की घाटी	गरार की घाटी	revisado	alta	2	2	0.50	
+Valley of Gibeon	गिबोन की तराई	गिबोन की तराई	revisado	alta	2	1	1.00	
+Valley of Hebron	हेब्रोन की तराई	हेब्रोन की तराई	revisado	alta	1	1	1.00	
+Valley of Shaveh	शावे नामक तराई	शावे की तराई	revisado	alta	3	2	0.50	
+Valley of Shittim	शित्तीम की घाटी	शित्तीम की घाटी	revisado	alta	2	1	1.00	
+Valley of Succoth	सुक्कोत की तराई	सुक्कोत की तराई	revisado	alta	2	2	1.00	
+Valley of Zeboim	सबोईम नामक तराई	सबोईम की तराई	revisado	alta	2	1	1.00	
 Vashti	वशती	वशती	auto	alta	2	10	1.00	दृष्टि
 Vophsi	वोप्सी	वोप्सी	auto	alta	2	1	1.00	नहूबी
 Waheb	वाहेब	वाहेब	auto	alta	3	1	1.00	यहोवा
+Waters of Jericho	यरीहो के जल	यरीहो का जल	revisado	alta	1	1	1.00	
+Waters of Merom	मेरोम नामक ताल	मेरोम ताल	revisado	alta	1	2	1.00	
+Wilderness of Maon	माओन नामक जंगल	माओन का जंगल	revisado	alta	1	2	0.50	माओन जंगल
+Wilderness of Sinai	सीनै के जंगल	सीनै का जंगल	revisado	alta	1	13	0.92	
+Wilderness of Ziph	जीप नामक जंगल	जीप का जंगल	revisado	alta	1	3	0.67	जीप के जंगल
 Yiron	यिरोन	यिरोन	auto	alta	3	1	1.00	गाँवों
 Zaanan	सानान	सानान	auto	alta	3	1	1.00	शापीर
 Zaanannim	सानन्नीम	सानन्नीम	auto	alta	3	2	1.00	बांज
@@ -3216,6 +3424,7 @@ Zebadiah	जबद्याह	जबद्याह	auto	alta	18	9	1.00	अर�
 Zebah	जेबह	जेबह	auto	alta	2	9	1.00	जेब
 Zebedee	जब्दी	जब्दी	auto	alta	2	11	1.00	से
 Zeboiim	सबोयीम	सबोयीम	auto	alta	3	5	1.00	सदोम
+Zeboim Valley	सबोईम नामक तराई	सबोईम की तराई	revisado	alta	1	1	1.00	
 Zebul	जबूल	जबूल	auto	alta	2	5	1.00	एबेद
 Zechariah	जकर्याह	जकर्याह	auto	alta	55	53	1.00	मासेयाह
 Zedekiah	सिदकिय्याह	सिदकिय्याह	auto	alta	11	63	0.97	शेलेम्याह
@@ -3235,7 +3444,7 @@ Ziba	सीबा	सीबा	auto	alta	2	13	1.00	जीन
 Zibeon	सिबोन	सिबोन	auto	alta	3	7	1.00	एलोन
 Zibia	सिब्या	सिब्या	auto	alta	2	1	1.00	सोक्या
 Zibiah	सिब्या	सिब्या	auto	alta	2	2	1.00	बेर्शेबा
-Zichri	जिक्री	जिक्री	auto	alta	24	13	0.92	कोरह
+Zichri	जिक्री	जिक्री	revisado	alta	24	13	0.92	कोरह
 Ziha	सीहा	सीहा	auto	alta	4	3	1.00	हसूपा
 Ziklag	सिकलग	सिकलग	auto	alta	3	13	0.92	सिल्लतै
 Zillah	सिल्ला	सिल्ला	auto	alta	2	3	1.00	घायल
@@ -3244,9 +3453,9 @@ Zilpah	जिल्पा	जिल्पा	auto	alta	2	7	1.00	लिआ
 Zilthai	सिल्लतै	सिल्लतै	auto	alta	2	2	1.00	एलीएनै
 Zimmah	जिम्मा	जिम्मा	auto	alta	4	3	1.00	शिमी
 Zimran	जिम्रान	जिम्रान	auto	alta	2	2	1.00	शूह
-Zimri	जिम्री	जिम्री	auto	alta	9	12	0.92	मादै
+Zimri	जिम्री	जिम्री	revisado	alta	9	12	0.92	मादै
 Zin	सीन	सीन	auto	alta	5	10	0.90	दक्षिणी
-Zion	सिय्योन	सिय्योन	auto	alta	2	148	0.95	सिसकियों
+Zion	सिय्योन	सिय्योन	revisado	alta	2	148	0.95	सिसकियों
 Zior	सीओर	सीओर	auto	alta	3	1	1.00	जो
 Zippor	सिप्पोर	सिप्पोर	auto	alta	2	7	1.00	बोर
 Zipporah	सिप्पोरा	सिप्पोरा	auto	alta	2	3	1.00	ससुर
