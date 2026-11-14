@@ -58,8 +58,8 @@ event_id	cite_id	titulo_en	titulo_vi	origem	nota
 44	ent:theographic:recgz06wNQlsq6kOc	Noah gets drunk and Canaan is cursed	Nô-ê say rượu và Ca-na-an bị rủa sả	revisado	rev. IA
 45	ent:theographic:rec7uQ8Nhf6h5zdfj	Birth of Arphaxad	Sự sinh của A-bác-sát	revisado	rev. IA
 46	ent:theographic:recQDMfXnyQKhXj01	Lifetime of Arphaxad	Cuộc đời của A-bác-sát	revisado	rev. IA
-47	ent:theographic:recN97j5QCkdCwVOC	Birth of Salah	Sự sinh của Sa-la	revisado	rev. IA
-48	ent:theographic:rectmsC3P5l7oRNpD	Lifetime of Salah	Cuộc đời của Sa-la	revisado	rev. IA
+47	ent:theographic:recN97j5QCkdCwVOC	Birth of Salah	Sự sinh của Sê-lách	revisado	rev. IA; rev. amostragem
+48	ent:theographic:rectmsC3P5l7oRNpD	Lifetime of Salah	Cuộc đời của Sê-lách	revisado	rev. IA; rev. amostragem
 49	ent:theographic:rec1JFgGFGfK07blt	Birth of Eber	Sự sinh của Hê-be	revisado	rev. IA
 50	ent:theographic:rec3cw1D7e1QItoGc	Lifetime of Eber	Cuộc đời của Hê-be	revisado	rev. IA
 51	ent:theographic:recsQpAQgJcwaSk9l	Birth of Peleg	Sự sinh của Bê-léc	revisado	rev. IA
@@ -93,7 +93,7 @@ event_id	cite_id	titulo_en	titulo_vi	origem	nota
 79	ent:theographic:recITDSS0o4dApwQg	Sodom Destroyed	Sô-đôm bị hủy diệt	revisado	rev. IA
 80	ent:theographic:recsPU7EMhmA9z27x	Birth of Isaac	Sự sinh của Y-sác	revisado	rev. IA
 81	ent:theographic:recMAoYK2dHmjhRh9	Lifetime of Isaac	Cuộc đời của Y-sác	revisado	rev. IA
-82	ent:theographic:recefHHfdDlITHHsH	Death of Salah	Sự qua đời của Sa-la	revisado	rev. IA
+82	ent:theographic:recefHHfdDlITHHsH	Death of Salah	Sự qua đời của Sê-lách	revisado	rev. IA; rev. amostragem
 83	ent:theographic:recSDGDMwUBAMUgur	Isaac Marries Rebekah	Y-sác cưới Rê-be-ca	revisado	rev. IA
 84	ent:theographic:recTZ4anILXT9AMbx	Death of Shem	Sự qua đời của Sem	revisado	rev. IA
 85	ent:theographic:recd4mOzI2nL66vR5	Birth of Jacob and Esau	Sự sinh của Gia-cốp và Ê-sau	revisado	rev. IA
@@ -399,11 +399,11 @@ event_id	cite_id	titulo_en	titulo_vi	origem	nota
 320	ent:theographic:reclAFi4IpJvlWCDp	Stephen is seized	Ê-tiên bị bắt	revisado	rev. IA
 321	ent:theographic:recNZVX1qwBc7F9AU	Stephen addresses the council	Ê-tiên phát biểu trước công nghị	revisado	rev. IA
 322	ent:theographic:recgcZKRVZDvMUMOa	Stephen is stoned	Ê-tiên bị ném đá	revisado	rev. IA
-323	ent:theographic:recVjdJplfI1wSxYk	Saul persecutes the church	Phao-lô bắt bớ Hội thánh	revisado	rev. IA
+323	ent:theographic:recVjdJplfI1wSxYk	Saul persecutes the church	Sau-lơ bắt bớ Hội thánh	revisado	rev. IA; rev. amostragem
 324	ent:theographic:recP6mZs3oSlZdrT0	Philip preaches in Samaria	Phi-líp giảng ở Sa-ma-ri	revisado	rev. IA
 325	ent:theographic:recvI0SgATGCasGsV	Conversion of Ethiopian Eunuch	Sự cải đạo của hoạn quan người Ê-thi-ô-bi	revisado	rev. IA
-326	ent:theographic:recCz7opcoITkiZiq	Saul is converted	Phao-lô được cải đạo	revisado	rev. IA
-327	ent:theographic:reczeOH6wbjkZHP1w	Saul proclaims Jesus	Phao-lô rao giảng Đức Chúa Jêsus	revisado	rev. IA
+326	ent:theographic:recCz7opcoITkiZiq	Saul is converted	Sau-lơ được cải đạo	revisado	rev. IA; rev. amostragem
+327	ent:theographic:reczeOH6wbjkZHP1w	Saul proclaims Jesus	Sau-lơ rao giảng Đức Chúa Jêsus	revisado	rev. IA; rev. amostragem
 328	ent:theographic:recxH9n2Xk1PM6DvB	Peter heals Aeneas and Dorcas	Phi-e-rơ chữa Ê-nê và Đô-ca	revisado	rev. IA
 329	ent:theographic:rec4fFrtrUuDVkTNK	Peter meets Cornelius	Phi-e-rơ gặp Cọt-nây	revisado	rev. IA
 330	ent:theographic:recCef9mlyuV3XWd3	Peter preaches to gentiles in Caesarea	Phi-e-rơ giảng cho dân ngoại ở Sê-sa-rê	revisado	rev. IA
@@ -415,7 +415,7 @@ event_id	cite_id	titulo_en	titulo_vi	origem	nota
 336	ent:theographic:recTAdkQX4sglPtLl	Herod dies	Hê-rốt qua đời	revisado	rev. IA
 337	ent:theographic:recJl6YAS1kSQ6t8W	First missionary journey begins	Chuyến truyền giáo thứ nhất bắt đầu	revisado	rev. IA
 338	ent:theographic:recUWXmZlrKxIx99u	First Missionary Journey	Chuyến truyền giáo thứ nhất	revisado	rev. IA
-339	ent:theographic:recJeAtSLg0KP2loe	Barnabas and Saul go to Cyprus	Ba-na-ba và Phao-lô đi Chíp-rơ	revisado	rev. IA
+339	ent:theographic:recJeAtSLg0KP2loe	Barnabas and Saul go to Cyprus	Ba-na-ba và Sau-lơ đi Chíp-rơ	revisado	rev. IA; rev. amostragem
 340	ent:theographic:recGlchVqaW39mkY0	Mission to Antioch in Pisidia	Chuyến truyền giáo đến An-ti-ốt ở Bi-si-đi	revisado	rev. IA
 341	ent:theographic:receeGDZ90DJxYxnX	Mission to Iconium	Chuyến truyền giáo đến Y-cô-ni	revisado	rev. IA
 342	ent:theographic:recrre0r2IHdN3Y7Z	Mission to Lystra and Derbe	Chuyến truyền giáo đến Lít-trơ và Đẹt-bơ	revisado	rev. IA

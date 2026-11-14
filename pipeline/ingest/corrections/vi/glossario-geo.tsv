@@ -37,20 +37,20 @@ tipo	promontory	mũi đất
 geometria	point	điểm
 geometria	polygon	đa giác
 geometria	path	tuyến
-voto	confidence_yes	độ tin cậy cao
-voto	confidence_likely	độ tin cậy khá
-voto	confidence_mostlikely	độ tin cậy rất cao
-voto	confidence_possible	khả năng
-voto	confidence_unlikely	ít khả năng
-voto	confidence_no	không tin cậy
-voto	confidence_map	tin cậy theo bản đồ
-voto	authority_usually	thẩm quyền thường dùng
-voto	authority_scholar	thẩm quyền học giả
-voto	authority_traditional	thẩm quyền truyền thống
-voto	authority_parallel	thẩm quyền song song
-voto	authority_preserved	thẩm quyền được bảo tồn
-voto	authority_variant	thẩm quyền biến thể
-voto	authority_old	thẩm quyền cổ
+voto	confidence_yes	tin cậy: có	rev. amostragem
+voto	confidence_likely	tin cậy: nhiều khả năng	rev. amostragem
+voto	confidence_mostlikely	tin cậy: rất nhiều khả năng	rev. amostragem
+voto	confidence_possible	tin cậy: có thể	rev. amostragem
+voto	confidence_unlikely	tin cậy: ít khả năng	rev. amostragem
+voto	confidence_no	tin cậy: không	rev. amostragem
+voto	confidence_map	tin cậy: theo bản đồ	rev. amostragem
+voto	authority_usually	căn cứ: thường dùng	rev. amostragem
+voto	authority_scholar	căn cứ: học giả	rev. amostragem
+voto	authority_traditional	căn cứ: truyền thống	rev. amostragem
+voto	authority_parallel	căn cứ: đoạn song song	rev. amostragem
+voto	authority_preserved	căn cứ: tên được giữ lại	rev. amostragem
+voto	authority_variant	căn cứ: dị bản	rev. amostragem
+voto	authority_old	căn cứ: tên cổ	rev. amostragem
 voto	identified_been	được nhận diện là đã từng
 voto	identified_is	được nhận diện là
 voto	identified_adjective	được nhận diện
