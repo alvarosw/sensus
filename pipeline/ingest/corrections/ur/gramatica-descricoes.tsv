@@ -1,0 +1,46 @@
+# Gramática das descrições em urdu (TIPNR e openbible-geo por regra; pipeline/sensus/descricoes_pt.py).
+# Colunas: chave, modelo. {campo} é trocado pelo valor; {pont.;}, {pont..}, {pont.,} são os sinais da língua.
+# Ordem: o complemento vem ANTES do cargo (frase_cargo_comp = "{comp} {cargo}"). O کا/کی (genitivo) concorda com o
+# cargo, que é o núcleo: por isso as chaves comp_* têm variante .f (cargo feminino, coluna genero do glossário).
+# Relações com {x} são o modelo completo (a relação sai depois do nome: "{x} کا بیٹا"). Lugares ("of ...") e tempos
+# são invariáveis ("سے منسوب", "میں مقیم", "کے زمانے میں"), por isso não concordam com o cargo.
+# Pontuação: "؛" (ponto e vírgula), "۔" (fim de parágrafo), "،" (vírgula).
+chave	modelo
+mencao_primeira	پہلا ذکر {ref} میں
+mencao_unica	صرف {ref} میں آتا ہے
+frase_cargo_comp	{comp} {cargo}
+frase_tempo_com_comp	{frase}{pont.,} {tempo}
+frase_tempo_sem_comp	{frase} {tempo}
+cabecalho	{frase}{pont.;} {mencao}{pont..}
+comp_territorio_tribo	{perto}{tribo} قبیلے کے علاقے کا
+comp_territorio_tribo.f	{perto}{tribo} قبیلے کے علاقے کی
+comp_perto_sufixo	{nome} کے قریب واقع 
+comp_tribo	{tribo} قبیلے کا
+comp_tribo.f	{tribo} قبیلے کی
+comp_cidade	{nome} شہر کا
+comp_cidade.f	{nome} شہر کی
+comp_perto	{nome} کے قریب رہنے والا
+comp_perto.f	{nome} کے قریب رہنے والی
+comp_de	{nome} کا
+comp_de.f	{nome} کی
+comp_em	{nome} میں رہنے والا
+comp_em.f	{nome} میں رہنے والی
+citacao	جسے {lista} کہا جاتا ہے
+citacao_apenas	صرف {lista} کہا جاتا ہے
+original	 ({original})
+conector_e	 اور 
+conector_ou	 یا 
+lista_sep	، 
+pont.;	؛
+pont..	۔
+pont.,	،
+maiuscula_inicial	não
+nome_ingles_permitido	não
+flexao_relacao	nenhuma
+pos	nenhum
+geo_melhor	سب سے بہتر جدید شناخت: {nome} ({tipo}، ہندسہ: {geometria})؛ تعلق کا اسکور {score}/1000۔
+geo_identificacao	شناخت: "{texto}" ({fonte})۔
+geo_votos	ووٹ: {votos}۔
+geo_voto	{voto} {n}
+geo_tempo	وقت کے ساتھ وزنی اسکور {tempo}/1000۔
+geo_outros	ڈیٹاسیٹ میں {n} دیگر ممکنہ جدید مقامات۔
