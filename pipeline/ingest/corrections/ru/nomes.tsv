@@ -79,7 +79,7 @@ Basmath	Васемафа	Васемафа	revisado	baixa	1	1	1.00	Неффали
 Bathsheba	Ависага	Вирсавия	revisado	baixa	2	12	0.08	Царя
 Bealoth	Валоф	Валоф	revisado	baixa	2	1	1.00	Тела
 Bear	Ас	Ас	revisado	baixa	1	2	1.00	Хима
-Beautiful Gate	ворота Beautiful	Красные ворота	revisado	baixa	3	2	0.00	
+Beautiful Gate	ворота Beautiful	Красные двери	revisado	baixa	3	2	0.00	
 Bedan	Иеффай	Бедан	revisado	baixa	1	1	1.00	Иероваал
 Behemoth	Вот	Бегемот	revisado	baixa	1	1	1.00	Я
 Bel	Вил	Вил	revisado	baixa	1	3	1.00	Пал
@@ -231,7 +231,7 @@ Hamath-zobah	Емаф-Сува	Емаф-Сува	revisado	baixa	2	2	0.50	Сол�
 Hamathite	Хамафея	Хамафей	revisado	baixa	1	2	0.50	Арвадей
 Hamathites	Хамафея	Хамафеи	revisado	baixa	1	2	0.50	Арвадей
 Hammelech	Иерамеилу	Иерамеилу	sem	baixa	2	2	0.50	Селемии
-Hamon-gog Valley	долина Hamon-gog	Долина Гамон-Гог	revisado	baixa	1	2	0.00	
+Hamon-gog Valley	долина Hamon-gog	Долина полчища Гогова	revisado	baixa	1	2	0.00	
 Hararites	Гараритянин	Гараритяне	revisado	baixa	1	4	1.00	Араритянин
 Harmon	Господа	Господа	sem	baixa	3	1	1.00	И
 Harod	Гародитянин	Харод	revisado	baixa	1	2	0.50	Хародитянин
@@ -603,7 +603,7 @@ Tower of Hananel	башня Hananel	Башня Ананеила	revisado	baixa	2
 Tower of Shechem	башня Shechem	Башня Сихемская	revisado	baixa	1	3	0.00	
 Tower of the Hundred	башня Hundred	Башня Меа	revisado	baixa	2	2	0.00	
 Tower of the Ovens	башня Ovens	Башня печей	revisado	baixa	2	2	0.00	
-Travelers Valley	долина Travelers	Долина путешественников	revisado	baixa	1	1	0.00	
+Travelers Valley	долина Travelers	Долина прохожих	revisado	baixa	1	1	0.00	
 Tribe of Judah	колено Иуда	Колено Иудино	revisado	baixa	1	1	0.00	
 Unnamed#1	Господня	Господня	sem	baixa	1	1	1.00	Он
 Unnamed#1	Елиуд	Елиуд	sem	baixa	1	1	1.00	Матфан
@@ -631,8 +631,8 @@ Valley of Elah	долина Elah	Долина дуба	revisado	baixa	2	3	0.00
 Valley of Eshcol	долина Эшкол	Долина Есхол	revisado	baixa	1	4	0.00	
 Valley of Gerar	долина Герар	Долина Герарская	revisado	baixa	2	2	0.00	
 Valley of Gibeon	долина Гаваон	Долина Гаваонская	revisado	baixa	2	1	0.00	
-Valley of Hamon-gog	долина Hamon-gog	Долина Гамон-Гог	revisado	baixa	1	2	0.00	
-Valley of Hamongog	долина Hamongog	Долина Гамон-Гог	revisado	baixa	1	2	0.00	
+Valley of Hamon-gog	долина Hamon-gog	Долина полчища Гогова	revisado	baixa	1	2	0.00	
+Valley of Hamongog	долина Hamongog	Долина полчища Гогова	revisado	baixa	1	2	0.00	
 Valley of Hebron	долина Хеврон	Долина Хеврон	revisado	baixa	1	1	0.00	
 Valley of Hinnom	долина Hinnom	Долина сыновей Енномовых	revisado	baixa	2	12	0.00	
 Valley of Iphtahel	долина Iphtahel	Долина Иффаил	revisado	baixa	1	2	0.00	
@@ -654,7 +654,7 @@ Valley of Zeboim	долина Цевоим	Долина Цевоим	revisado	ba
 Valley of Zephathah	долина Zephathah	Долина Цефафа	revisado	baixa	2	1	0.00	
 Valley of Zered	долина Заред	Долина Заред	revisado	baixa	2	1	0.00	
 Valley of the Arnon	долина Арнон	Долина Арнона	revisado	baixa	1	11	0.00	
-Valley of the Passengers	долина Passengers	Долина путешественников	revisado	baixa	1	1	0.00	
+Valley of the Passengers	долина Passengers	Долина прохожих	revisado	baixa	1	1	0.00	
 Waheb	Господних	Вагеб	revisado	baixa	3	1	1.00	Потом
 Water Gate	ворота Water	Водяные ворота	revisado	baixa	3	5	0.00	
 Waters of Jericho	воды Иерихон	Воды Иерихона	revisado	baixa	1	1	0.00	
@@ -1005,7 +1005,7 @@ Emim	Эмимы	Эмимы	revisado	media	1	3	0.33	Эмимов
 Emmaus	Эммаус	Эммаус	revisado	media	3	3	0.33	Иерусалим
 En-dor	Ен-Дора	Ен-Дор	revisado	media	3	3	0.33	Аендоре
 En-rogel	Ен-Рогела	Ен-Рогел	revisado	media	3	6	0.33	Рогель
-Engedi	Ен-Геди	Ен-Геди	revisado	media	3	7	0.14	Енгедди
+Engedi	Ен-Геди	Ен-Гадди	revisado	media	3	7	0.14	Енгедди
 Epaenetus	Епенета	Епенет	revisado	media	2	1	1.00	Приветствуйте
 Ephes-dammim	Ефес-Даммиме	Ефес-Даммим	revisado	media	3	3	0.33	Фасдамиме
 Ephraim	Ефраим	Ефраим	revisado	media	4	160	0.01	Ефрем
