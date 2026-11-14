@@ -1,0 +1,417 @@
+# Notas da revisão de nomes por agentes de IA (uma linha por nome_en + candidato, ou nome_en + tipo).
+# Conferidas no texto da Bíblia da língua e na tradução inglesa. Só registro: o ingestor não lê este arquivo.
+nome_en	tipo	nome_vi	origem	nota
+Abila	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Abila Lysaniou	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Adasa	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Adramyttium	place	A-tra-mít	revisado	rev. IA: Acts.27.2; forma da tradição 1925 (vie1934); pt: Adramítio
+Adulis	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Al-taschith	other		sem	rev. IA: Ps.57.1; sem forma tradicional segura em vi (1925)
+Alamoth	other	A-la-mốt	revisado	rev. IA: 1Chr.15.20; forma da tradição 1925 (vie1934); pt: Alamote
+Ama	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Amate	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Amaw	place		sem	rev. IA: Num.22.5; sem forma tradicional segura em vi (1925)
+Amminadib	person		sem	rev. IA: Song.6.12; sem forma tradicional segura em vi (1925)
+Angle	place	Cửa Góc	revisado	rev. IA: 2Chr.26.9; forma da tradição 1925 (vie1934); pt: Porta do Ângulo
+Apostles	group	Các sứ đồ	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Apóstolos
+Apostles (Post-Ascension)	group	Các sứ đồ sau khi Chúa thăng thiên	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Apóstolos (depois da ascensão)
+Apostles (The Eleven)	group	Mười một sứ đồ	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Apóstolos (os onze)
+Arabah	place	A-ra-ba	revisado	rev. IA: Deut.1.1; forma da tradição 1925 (vie1934); pt: Arabá
+Aram-naharaim	place	A-ram-Na-ha-ra-im	revisado	rev. IA: Ps.60.1; forma da tradição 1925 (vie1934); pt: Arã-Naraim
+Aram-zobah	place	A-ram-Xô-ba	revisado	rev. IA: Ps.60.1; forma da tradição 1925 (vie1934); pt: Arã-Zobá
+Aramitess	person	Người A-ram	revisado	rev. IA: 1Chr.7.14; forma da tradição 1925 (vie1934); pt: Aramita
+Arbela	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Arsinoe	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Asen	person		sem	rev. IA: Neh.7.24; sem forma tradicional segura em vi (1925)
+Ashdod's	place	Ách-đốt	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: 
+Atroth-beth-joab	place	Ạt-rốt-Bết-Giô-áp	revisado	rev. IA: 1Chr.2.54; forma da tradição 1925 (vie1934); pt: Atarote-Bete-Joabe
+Bajith	place		sem	rev. IA: Isa.15.2; sem forma tradicional segura em vi (1925)
+Barsabas Justus	person	Giô-sép gọi là Ba-sa-ba, cũng gọi là Giút-tu	revisado	rev. IA: Acts.1.23; forma da tradição 1925 (vie1934); pt: José Barsabás, chamado Justo
+Batanea	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Beeroth Bene-jaakan	place	Bê-ê-rốt Bê-ne-Gia-can	revisado	rev. IA: Deut.10.6; forma da tradição 1925 (vie1934); pt: Beerote-Bene-Jaacã
+Belamon	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Benjamin's Gate	place	Cửa Bên-gia-min	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Porta de Benjamim
+Beth-Ashtoreth	place	Miếu Át-tạt-tê	revisado	rev. IA: 1Sam.31.10; forma da tradição 1925 (vie1934); pt: Bete-Astarote
+Beth-eked	place		sem	rev. IA: 2Kgs.10.12; sem forma tradicional segura em vi (1925)
+Beth-haggan	place	Bết-Ha-gan	revisado	rev. IA: 2Kgs.9.27; forma da tradição 1925 (vie1934); pt: Bete-Hagã
+Beth-horon_Lower	place	Bết-Hô-rôn dưới	revisado	rev. IA: Josh.10.10; forma da tradição 1925 (vie1934); pt: Bete-Horom de Baixo
+Beth-horon_Upper	place	Bết-Hô-rôn trên	revisado	rev. IA: Josh.16.5; forma da tradição 1925 (vie1934); pt: Bete-Horom de Cima
+Beth-merhak	place		sem	rev. IA: 2Sam.15.17; sem forma tradicional segura em vi (1925)
+Bether 2	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Bether_Mountain	place	Núi Bê-thẹt	revisado	rev. IA: Song.2.17; forma da tradição 1925 (vie1934); pt: Monte Beter
+Bethlehem Ephrathah	place	Bết-lê-hem Ép-ra-ta	revisado	rev. IA: Mic.5.2; forma da tradição 1925 (vie1934); pt: Belém Efrata
+Beyond the River	place	Bên kia sông	revisado	rev. IA: Ezra.4.10; forma da tradição 1925 (vie1934); pt: Além do Rio
+Booths_Festival	other	Lễ Lều tạm	revisado	rev. IA: John.7.2; forma da tradição 1925 (vie1934); pt: Festa dos Tabernáculos
+Caesarea Philippi	place	Sê-sa-rê Phi-líp	revisado	rev. IA: Matt.16.13; forma da tradição 1925 (vie1934); pt: Cesareia de Filipe
+Caesarea_Philippi	place	Sê-sa-rê Phi-líp	revisado	rev. IA: Matt.16.13; forma da tradição 1925 (vie1934); pt: Cesareia de Filipe
+Caleb Ephrathah	place	Ca-lép-Ép-ra-ta	revisado	rev. IA: 1Chr.2.24; forma da tradição 1925 (vie1934); pt: Calebe de Efrata
+Caleb_Ephrathah	place	Ca-lép-Ép-ra-ta	revisado	rev. IA: 1Chr.2.24; forma da tradição 1925 (vie1934); pt: Calebe de Efrata
+Canaanite_woman	person	Người đàn bà Ca-na-an	revisado	rev. IA: Gen.46.10; forma da tradição 1925 (vie1934); pt: Mulher cananeia
+Canaanitish woman	person	Người đàn bà Ca-na-an	revisado	rev. IA: Gen.46.10; forma da tradição 1925 (vie1934); pt: Mulher cananeia
+Carthage	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Chalcis	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Charmande	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Chief Priests	group	Các thầy tế lễ cả	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Principais sacerdotes
+Chronicles	other	Sử ký	revisado	rev. IA: 1Kgs.14.19; forma da tradição 1925 (vie1934); pt: Crônicas
+City of Salt	place	Thành Muối	revisado	rev. IA: Josh.15.62; forma da tradição 1925 (vie1934); pt: Cidade do Sal
+City_of_Salt	place	Thành Muối	revisado	rev. IA: Josh.15.62; forma da tradição 1925 (vie1934); pt: Cidade do Sal
+Claudius Lysias	person	Cơ-lốt Ly-sia	revisado	rev. IA: Acts.23.26; forma da tradição 1925 (vie1934); pt: Cláudio Lísias
+Concubine the Aramitess	person	Người hầu A-ram	revisado	rev. IA: 1Chr.7.14; forma da tradição 1925 (vie1934); pt: Concubina aramita
+Daughter of Herodias	person	Con gái của Hê-rô-đia	revisado	rev. IA: Matt.14.6; forma da tradição 1925 (vie1934); pt: Filha de Herodias
+Daughter of Lot - Older	person	Con gái lớn của Lót	revisado	rev. IA: Gen.19.31; forma da tradição 1925 (vie1934); pt: Filha mais velha de Ló
+Daughter of Lot - Younger	person	Con gái nhỏ của Lót	revisado	rev. IA: Gen.19.8; forma da tradição 1925 (vie1934); pt: Filha mais nova de Ló
+Daughter of Machir	person	Con gái của Ma-ki	revisado	rev. IA: 1Chr.2.21; forma da tradição 1925 (vie1934); pt: Filha de Maquir
+Daughter of Meshullam	person	Con gái của Mê-su-lam	revisado	rev. IA: Neh.6.18; forma da tradição 1925 (vie1934); pt: Filha de Mesulão
+Daughter of Pharaoh	person	Con gái của Pha-ra-ôn	revisado	rev. IA: Exod.2.5; forma da tradição 1925 (vie1934); pt: Filha de Faraó
+Daughter of Putiel	person	Con gái của Phu-ti-ên	revisado	rev. IA: Exod.6.25; forma da tradição 1925 (vie1934); pt: Filha de Putiel
+Daughter of Shuah	person	Con gái của Su-a	revisado	rev. IA: Gen.38.2; forma da tradição 1925 (vie1934); pt: Filha de Suá
+Dedication_Festival	other	Lễ Khánh thành	revisado	rev. IA: John.10.22; forma da tradição 1925 (vie1934); pt: Festa da Dedicação
+Dehavites	group	Đê-ha-vít	revisado	rev. IA: Ezra.4.9; forma da tradição 1925 (vie1934); pt: Dinaítas
+Destiny	other	Mê-ni	revisado	rev. IA: Isa.65.11; forma da tradição 1925 (vie1934); pt: Destino
+Disciples of John	group	Môn đồ của Giăng	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Discípulos de João
+Diviners' Oak	place	Cây dẻ bộp của thầy bói	revisado	rev. IA: Judg.9.37; forma da tradição 1925 (vie1934); pt: Carvalho dos Adivinhos
+Diviners'_Oak	place	Cây dẻ bộp của thầy bói	revisado	rev. IA: Judg.9.37; forma da tradição 1925 (vie1934); pt: Carvalho dos Adivinhos
+Diviners’ Oak	place	Cây dẻ bộp của thầy bói	revisado	rev. IA: Judg.9.37; forma da tradição 1925 (vie1934); pt: Carvalho dos Adivinhos
+East	place	Đông phương	revisado	rev. IA: Gen.25.6; forma da tradição 1925 (vie1934); pt: Terra do Oriente
+Egypt's	place	Ê-díp-tô	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: 
+Elkosh	place	Ên-cốt	revisado	rev. IA: Nah.1.1; forma da tradição 1925 (vie1934); pt: 
+Enaim	place	Ê-na-im	revisado	rev. IA: Gen.38.14; forma da tradição 1925 (vie1934); pt: Enaim
+Eridu	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Etruria	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Eznites	group		sem	rev. IA: 2Sam.23.8; sem forma tradicional segura em vi (1925)
+Fair Havens	place	Mỹ-Cảng	revisado	rev. IA: Acts.27.8; forma da tradição 1925 (vie1934); pt: Bons Portos
+Fair_Havens	place	Mỹ-Cảng	revisado	rev. IA: Acts.27.8; forma da tradição 1925 (vie1934); pt: Bons Portos
+Forest	place	Rừng	revisado	rev. IA: Isa.22.8; forma da tradição 1925 (vie1934); pt: Bosque
+Fortune	other	Gát	revisado	rev. IA: Isa.65.11; forma da tradição 1925 (vie1934); pt: Sorte
+Foundation_Gate	place	Cửa Giê-sốt	revisado	rev. IA: 2Chr.23.5; forma da tradição 1925 (vie1934); pt: Porta do Fundamento
+Gadara	place	Ga-đa-ra	revisado	rev. IA: Matt.8.28; forma da tradição 1925 (vie1934); pt: Gadara
+Gate of the Children of the People	place	Cửa của con cái dân sự	revisado	rev. IA: Jer.17.19; forma da tradição 1925 (vie1934); pt: Porta dos Filhos do Povo
+Gath-padalla	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Genealogy of Jesus	group	Gia phổ của Đức Chúa Jêsus	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Genealogia de Jesus
+Gerasa	place	Giê-ra-sê	revisado	rev. IA: Matt.8.28; forma da tradição 1925 (vie1934); pt: Gerasa
+Gergesa	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Geruth Chimham	place	Trạm Kim-ham	revisado	rev. IA: Jer.41.17; forma da tradição 1925 (vie1934); pt: Gerute-Quimã
+Geruth_Chimham	place	Trạm Kim-ham	revisado	rev. IA: Jer.41.17; forma da tradição 1925 (vie1934); pt: Gerute-Quimã
+Gittith	other		sem	rev. IA: Ps.8.1; sem forma tradicional segura em vi (1925)
+God	person	Đức Chúa Trời	revisado	rev. IA: Gen.1.1; forma da tradição 1925 (vie1934); pt: Deus
+Goiim	group	Gô-im	revisado	rev. IA: Gen.14.1; forma da tradição 1925 (vie1934); pt: Goim
+Goiim	place	Gô-im	revisado	rev. IA: Gen.14.1; forma da tradição 1925 (vie1934); pt: Goim
+Goiim 1	place	Gô-im 1	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Goim 1
+Goiim 2	place	Gô-im 2	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Goim 2
+Gulloth-mayim	place		sem	rev. IA: Josh.15.19; sem forma tradicional segura em vi (1925)
+Gutium	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Hakkephirim	place		sem	rev. IA: Neh.6.2; sem forma tradicional segura em vi (1925)
+Halahha	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Ham	place	Ham	revisado	rev. IA: Gen.5.32; forma da tradição 1925 (vie1934); pt: Hã
+Ham 1	place	Ham 1	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Hã 1
+Hammelech	person	Ham-mê-léc	revisado	rev. IA: Jer.36.26; forma da tradição 1925 (vie1934); pt: 
+Hamon-gog_Valley	place		sem	rev. IA: Ezek.39.11; sem forma tradicional segura em vi (1925)
+Harhar	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Hatti	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Hazerim	place		sem	rev. IA: Deut.2.23; sem forma tradicional segura em vi (1925)
+Helech	place	Hê-léc	revisado	rev. IA: Ezek.27.11; forma da tradição 1925 (vie1934); pt: 
+Heracleopolis Magna	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Heracleopolis Parva	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Heres	place	Hê-re	revisado	rev. IA: Judg.8.13; forma da tradição 1925 (vie1934); pt: Heres
+Herod Agrippa I	person	Hê-rốt Ạc-ríp-ba I	revisado	rev. IA: Acts.12.1; forma da tradição 1925 (vie1934); pt: Herodes Agripa I
+Herod Antipas	person	Hê-rốt An-ti-ba	revisado	rev. IA: Matt.14.1; forma da tradição 1925 (vie1934); pt: Herodes Antipas
+Herodian	group	Đảng Hê-rốt	revisado	rev. IA: Matt.22.16; forma da tradição 1925 (vie1934); pt: Herodianos
+Herod’s palace	place	Dinh Hê-rốt	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Palácio de Herodes
+Highway	place	Đường cái	revisado	rev. IA: Num.20.17; forma da tradição 1925 (vie1934); pt: Caminho Real
+Hilakku	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Holy Place	place	Nơi thánh	revisado	rev. IA: Exod.26.33; forma da tradição 1925 (vie1934); pt: Lugar Santo
+Holy Place 1	place	Nơi thánh 1	revisado	rev. IA: Exod.26.33; forma da tradição 1925 (vie1934); pt: Lugar Santo 1
+Holy Place 2	place	Nơi thánh 2	revisado	rev. IA: 1Kgs.6.5; forma da tradição 1925 (vie1934); pt: Lugar Santo 2
+Holy Spirit	person	Đức Thánh Linh	revisado	rev. IA: Gen.1.2; forma da tradição 1925 (vie1934); pt: Espírito Santo
+Holy_Place	place	Nơi thánh	revisado	rev. IA: Exod.26.33; forma da tradição 1925 (vie1934); pt: Lugar Santo
+Hophra	person	Hốp-ra	revisado	rev. IA: Jer.37.5; forma da tradição 1925 (vie1934); pt: Hofra
+Horesh	place	Hô-rết	revisado	rev. IA: 1Sam.23.15; forma da tradição 1925 (vie1934); pt: Horesa
+House of the Forest of Lebanon	place	Cung rừng Li-ban	revisado	rev. IA: 1Kgs.7.2; forma da tradição 1925 (vie1934); pt: Casa do Bosque do Líbano
+Jaar	place	Gia-a	revisado	rev. IA: Ps.132.6; forma da tradição 1925 (vie1934); pt: Jaar
+Janen	place		sem	rev. IA: Num.21.19; sem forma tradicional segura em vi (1925)
+Janua	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Jemnath	place		sem	rev. IA: Josh.15.46; sem forma tradicional segura em vi (1925)
+Jerusalem's	place	Giê-ru-sa-lem	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: 
+Jerusalem_wives	person	Các con gái Giê-ru-sa-lem	revisado	rev. IA: 2Sam.5.13; forma da tradição 1925 (vie1934); pt: Mulheres de Jerusalém
+Jesus Christ	person	Đức Chúa Jêsus Christ	revisado	rev. IA: Gen.49.10; forma da tradição 1925 (vie1934); pt: Jesus Cristo
+John Mark	person	Giăng gọi là Mác	revisado	rev. IA: Acts.12.12; forma da tradição 1925 (vie1934); pt: João Marcos
+John the Apostle	person	Sứ đồ Giăng	revisado	rev. IA: Matt.4.21; forma da tradição 1925 (vie1934); pt: João, o apóstolo
+John the Baptist	person	Giăng Báp-tít	revisado	rev. IA: Matt.3.1; forma da tradição 1925 (vie1934); pt: João Batista
+Jonath-elem-rechokim	other		sem	rev. IA: Ps.56.1; sem forma tradicional segura em vi (1925)
+Judas Barsabas	person	Giu-đe gọi là Ba-sa-ba	revisado	rev. IA: Acts.15.22; forma da tradição 1925 (vie1934); pt: Judas Barsabás
+Judas Iscariot	person	Giu-đa Ích-ca-ri-ốt	revisado	rev. IA: Matt.10.4; forma da tradição 1925 (vie1934); pt: Judas Iscariotes
+Judgment	place	Hiên xét đoán	revisado	rev. IA: 1Kgs.7.7; forma da tradição 1925 (vie1934); pt: Pórtico do Juízo
+King's_Highway	place	Đường cái của vua	revisado	rev. IA: Num.20.17; forma da tradição 1925 (vie1934); pt: Caminho Real
+King’s Highway	place	Đường cái của vua	revisado	rev. IA: Num.20.17; forma da tradição 1925 (vie1934); pt: Caminho Real
+Kumidi	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+LORD	other	Đức Giê-hô-va	revisado	rev. IA: Gen.1.1; forma da tradição 1925 (vie1934); pt: SENHOR
+Laash	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Lebanon_Valley	place	Trũng Li-ban	revisado	rev. IA: Josh.11.17; forma da tradição 1925 (vie1934); pt: Planície do Líbano
+Lebbaeus Thaddaeus	person	Tha-đê	revisado	rev. IA: Matt.10.3; forma da tradição 1925 (vie1934); pt: Lebeu, chamado Tadeu
+Line of Cain	group	Dòng dõi Ca-in	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Linhagem de Caim
+Lower Beth-horon	place	Bết-Hô-rôn dưới	revisado	rev. IA: Josh.16.3; forma da tradição 1925 (vie1934); pt: Bete-Horom de Baixo
+Lower Gulloth	place	Suối dưới	revisado	rev. IA: Josh.15.19; forma da tradição 1925 (vie1934); pt: Fontes de Baixo
+Lucifer	other	Sao mai	revisado	rev. IA: Isa.14.12; forma da tradição 1925 (vie1934); pt: Lúcifer
+Lucifer	person	Sao mai	revisado	rev. IA: Isa.14.12; forma da tradição 1925 (vie1934); pt: Lúcifer
+Lydia	place	Ly-đi	revisado	rev. IA: Gen.36.22; forma da tradição 1925 (vie1934); pt: Lídia
+Maareh-geba	place		sem	rev. IA: Judg.20.33; sem forma tradicional segura em vi (1925)
+Madiama	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Magdala	place	Ma-ga-đan	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Magdala
+Magdalsenna	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Magdolum	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Mahalab	place	Ma-ha-láp	revisado	rev. IA: Josh.19.29; forma da tradição 1925 (vie1934); pt: 
+Maranatha	other	Ma-ra-na-tha	revisado	rev. IA: 1Cor.16.22; forma da tradição 1925 (vie1934); pt: Maranata
+Mary Magdalene	person	Ma-ri Ma-đơ-len	revisado	rev. IA: Matt.27.56; forma da tradição 1925 (vie1934); pt: Maria Madalena
+Mary_Magdalene	person	Ma-ri Ma-đơ-len	revisado	rev. IA: Matt.27.56; forma da tradição 1925 (vie1934); pt: Maria Madalena
+Maskil	other		sem	rev. IA: Ps.32.1; sem forma tradicional segura em vi (1925)
+Mazzaroth	other		sem	rev. IA: Job.38.32; sem forma tradicional segura em vi (1925)
+Merom	place	Mê-rôm	revisado	rev. IA: Josh.11.5; forma da tradição 1925 (vie1934); pt: Merom
+Meronoth	place		sem	rev. IA: 1Chr.27.30; sem forma tradicional segura em vi (1925)
+Meunites	group	Ma-ô-nít	revisado	rev. IA: 1Chr.4.41; forma da tradição 1925 (vie1934); pt: Meunins
+Micah	person	Mi-chê	revisado	rev. IA: Judg.17.1; forma da tradição 1925 (vie1934); pt: 
+Miktam	other		sem	rev. IA: Ps.16.1; sem forma tradicional segura em vi (1925)
+Misrephoth-maim	place	Mít-rê-phốt-Ma-im	revisado	rev. IA: Josh.11.8; forma da tradição 1925 (vie1934); pt: Misrefote-Maim
+Mizpeh_Valley	place	Trũng Mích-va	revisado	rev. IA: Josh.11.3; forma da tradição 1925 (vie1934); pt: Planície de Mispá
+Moab_Plains	place	Đồng bằng Mô-áp	revisado	rev. IA: Num.22.1; forma da tradição 1925 (vie1934); pt: Campos de Moabe
+Mortar	place		sem	rev. IA: Zeph.1.11; sem forma tradicional segura em vi (1925)
+Most Holy	place	Nơi chí thánh	revisado	rev. IA: Exod.26.33; forma da tradição 1925 (vie1934); pt: Lugar Santíssimo
+Most Holy Place	place	Nơi chí thánh	revisado	rev. IA: Exod.26.34; forma da tradição 1925 (vie1934); pt: Lugar Santíssimo
+Most Holy Place 1	place	Nơi chí thánh 1	revisado	rev. IA: Exod.26.33; forma da tradição 1925 (vie1934); pt: Lugar Santíssimo 1
+Most Holy Place 2	place	Nơi chí thánh 2	revisado	rev. IA: 1Kgs.6.16; forma da tradição 1925 (vie1934); pt: Lugar Santíssimo 2
+Most_Holy_Place	place	Nơi chí thánh	revisado	rev. IA: 1Kgs.6.16; forma da tradição 1925 (vie1934); pt: Lugar Santíssimo
+Mother of Aholah and Aholibah	person	Mẹ của Ô-hô-la và Ô-hô-li-ba	revisado	rev. IA: Ezek.23.2; forma da tradição 1925 (vie1934); pt: 
+Mother of Lemuel	person	Mẹ của Lê-mu-ên	revisado	rev. IA: Prov.31.1; forma da tradição 1925 (vie1934); pt: Mãe de Lemuel
+Mother of Zebedees children	person	Mẹ các con trai Xê-bê-đê	revisado	rev. IA: Matt.20.20; forma da tradição 1925 (vie1934); pt: Mãe dos filhos de Zebedeu
+Mother of the Wife of Simon	person	Bà gia của Si-môn	revisado	rev. IA: Matt.8.14; forma da tradição 1925 (vie1934); pt: Sogra de Simão
+Muth-labben	other		sem	rev. IA: Ps.9.1; sem forma tradicional segura em vi (1925)
+Nahuru	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Naphath	place	Na-phát	revisado	rev. IA: Josh.17.11; forma da tradição 1925 (vie1934); pt: 
+Naphath-dor	place	Na-phát-Đô-rơ	revisado	rev. IA: 1Kgs.4.11; forma da tradição 1925 (vie1934); pt: Nafote-Dor
+Nation of Israel	group	Dân Y-sơ-ra-ên	revisado	rev. IA: Ps.14.7; forma da tradição 1925 (vie1934); pt: Nação de Israel
+Nehelam	place	Nê-hê-lam	revisado	rev. IA: Jer.29.24; forma da tradição 1925 (vie1934); pt: Neelamita
+Nephilim	group		sem	rev. IA: Gen.6.4; sem forma tradicional segura em vi (1925)
+New_Moon	other	Ngày mồng một	revisado	rev. IA: Col.2.16; forma da tradição 1925 (vie1934); pt: Lua nova
+North	place	Phương bắc	revisado	rev. IA: Dan.11.6; forma da tradição 1925 (vie1934); pt: Norte
+North Gate	place	Cửa Bắc	revisado	rev. IA: 1Chr.26.14; forma da tradição 1925 (vie1934); pt: Porta do Norte
+Nuhashe	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Parbar	place	Bạt-ba	revisado	rev. IA: 1Chr.26.18; forma da tradição 1925 (vie1934); pt: Parbar
+People's_Gate	place	Cửa của con cái dân sự	revisado	rev. IA: Jer.17.19; forma da tradição 1925 (vie1934); pt: Porta dos Filhos do Povo
+People’s Gate	place	Cửa của con cái dân sự	revisado	rev. IA: Jer.17.19; forma da tradição 1925 (vie1934); pt: Porta dos Filhos do Povo
+Pharisees	group	Người Pha-ri-si	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Fariseus
+Phillip the Apostle	person	Sứ đồ Phi-líp	revisado	rev. IA: Matt.10.3; forma da tradição 1925 (vie1934); pt: Filipe, o apóstolo
+Phillip the Evangelist	person	Phi-líp, người giảng Tin Lành	revisado	rev. IA: Acts.6.5; forma da tradição 1925 (vie1934); pt: Filipe, o evangelista
+Pillars	place	Hiên cột	revisado	rev. IA: 1Kgs.7.6; forma da tradição 1925 (vie1934); pt: Colunas
+Pitru	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Plain	place	Đồng bằng	revisado	rev. IA: Deut.34.3; forma da tradição 1925 (vie1934); pt: Planície
+Pontius Pilate	person	Bôn-xơ Phi-lát	revisado	rev. IA: Matt.27.2; forma da tradição 1925 (vie1934); pt: Pôncio Pilatos
+Pool	place		sem	rev. IA: Neh.2.14; sem forma tradicional segura em vi (1925)
+Portius Festus	person	Bốt-tiu Phê-tu	revisado	rev. IA: Acts.24.27; forma da tradição 1925 (vie1934); pt: Pórcio Festo
+Potsherd Gate	place	Cửa Gốm	revisado	rev. IA: Jer.19.2; forma da tradição 1925 (vie1934); pt: 
+Potsherd_Gate	place	Cửa Gốm	revisado	rev. IA: Jer.19.2; forma da tradição 1925 (vie1934); pt: 
+Preparation_Festival	other	Ngày sắm sửa	revisado	rev. IA: Matt.27.62; forma da tradição 1925 (vie1934); pt: Dia da Preparação
+Punt	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Pyrrhus	person	Bi-ru	revisado	rev. IA: Acts.20.4; forma da tradição 1925 (vie1934); pt: Pirro
+Queen of Sheba	person	Nữ vương Sê-ba	revisado	rev. IA: 1Kgs.10.1; forma da tradição 1925 (vie1934); pt: Rainha de Sabá
+Queen_of_Sheba	person	Nữ vương Sê-ba	revisado	rev. IA: 1Kgs.10.1; forma da tradição 1925 (vie1934); pt: Rainha de Sabá
+Raca	other	Ra-ca	revisado	rev. IA: Matt.5.22; forma da tradição 1925 (vie1934); pt: Raca
+Ragmat	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+River	place		sem	rev. IA: Gen.36.37; sem forma tradicional segura em vi (1925)
+River 2	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+River 3	place	Rê-hô-bốt trên sông	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Reobote do Rio
+Rock	place		sem	rev. IA: Josh.15.55; sem forma tradicional segura em vi (1925)
+Rocks	place	Hòn đá dê rừng	revisado	rev. IA: 1Sam.24.2; forma da tradição 1925 (vie1934); pt: Rochedos
+Sadducees	group	Người Sa-đu-sê	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Saduceus
+Sahar	place		sem	rev. IA: Ezek.27.18; sem forma tradicional segura em vi (1925)
+Salome	person	Sa-lô-mê	revisado	rev. IA: Matt.14.6; forma da tradição 1925 (vie1934); pt: Salomé
+Salona	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Salt_Valley	place	Trũng Muối	revisado	rev. IA: 2Sam.8.13; forma da tradição 1925 (vie1934); pt: Vale do Sal
+Samaria's	place	Sa-ma-ri	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: 
+Saparda	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Saparre	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Scribes	group	Các thầy thông giáo	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Escribas
+Scythia	place	Sy-the	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Cítia
+Second Quarter	place	Quận thứ nhì	revisado	rev. IA: 2Kgs.22.14; forma da tradição 1925 (vie1934); pt: Segundo Bairro
+Second_Quarter	place	Quận thứ nhì	revisado	rev. IA: 2Kgs.22.14; forma da tradição 1925 (vie1934); pt: Segundo Bairro
+Sergius Paulus	person	Sê-giúp Phau-lút	revisado	rev. IA: Acts.13.7; forma da tradição 1925 (vie1934); pt: Sérgio Paulo
+Sergius_Paulus	person	Sê-giúp Phau-lút	revisado	rev. IA: Acts.13.7; forma da tradição 1925 (vie1934); pt: Sérgio Paulo
+Shephelah	place	Đồng bằng	revisado	rev. IA: Deut.1.7; forma da tradição 1925 (vie1934); pt: Sefelá
+Shiggaion	other		sem	rev. IA: Ps.7.1; sem forma tradicional segura em vi (1925)
+Shushan_Eduth	other		sem	rev. IA: Ps.60.1; sem forma tradicional segura em vi (1925)
+Simon Peter	person	Si-môn Phi-e-rơ	revisado	rev. IA: Matt.4.18; forma da tradição 1925 (vie1934); pt: Simão Pedro
+Simon Zelotes	person	Si-môn gọi là Xê-lốt	revisado	rev. IA: Matt.10.4; forma da tradição 1925 (vie1934); pt: Simão, o zelote
+Simon the Sorcerer	person	Si-môn thuật sĩ	revisado	rev. IA: Acts.8.9; forma da tradição 1925 (vie1934); pt: Simão, o mágico
+Simon the Tanner	person	Si-môn thợ thuộc da	revisado	rev. IA: Acts.9.43; forma da tradição 1925 (vie1934); pt: Simão, o curtidor
+Sister of Tahpenes	person	Em gái của Tác-bê-ne	revisado	rev. IA: 1Kgs.11.19; forma da tradição 1925 (vie1934); pt: Irmã de Tafnes
+Solomon's Portico	place	Hiên cửa Sa-lô-môn	revisado	rev. IA: Acts.3.11; forma da tradição 1925 (vie1934); pt: Pórtico de Salomão
+Solomon's_Portico	place	Hiên cửa Sa-lô-môn	revisado	rev. IA: Acts.3.11; forma da tradição 1925 (vie1934); pt: Pórtico de Salomão
+Solomon’s Portico	place	Hiên cửa Sa-lô-môn	revisado	rev. IA: John.10.23; forma da tradição 1925 (vie1934); pt: Pórtico de Salomão
+South	place	Phương nam	revisado	rev. IA: Dan.11.5; forma da tradição 1925 (vie1934); pt: Sul
+South 1	place	Phương nam 1	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Sul 1
+South 2	place	Phương nam 2	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Sul 2
+South 3	place	Phương nam 3	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Sul 3
+South Gate	place	Cửa Nam	revisado	rev. IA: 1Chr.26.15; forma da tradição 1925 (vie1934); pt: Porta do Sul
+Sparta	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Straight Gate	place	Đường Ngay thẳng	revisado	rev. IA: Acts.9.11; forma da tradição 1925 (vie1934); pt: 
+Straight Street	place	Đường Ngay thẳng	revisado	rev. IA: Acts.9.11; forma da tradição 1925 (vie1934); pt: Rua Direita
+Suph	place	Su-phơ	revisado	rev. IA: Deut.1.1; forma da tradição 1925 (vie1934); pt: Sufe
+Sutu	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Syrtis	place	Si-rơ-tơ	revisado	rev. IA: Acts.27.17; forma da tradição 1925 (vie1934); pt: Sirte
+Tabbur-erez	place		sem	rev. IA: Judg.9.37; sem forma tradicional segura em vi (1925)
+Tartessos	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Tegarama	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Thapsacus	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+The Lord Is There	place	Đức Giê-hô-va ở đó	revisado	rev. IA: Ezek.48.35; forma da tradição 1925 (vie1934); pt: O SENHOR Está Ali
+The Lord Will Provide	place	Giê-hô-va Di-rê	revisado	rev. IA: Gen.22.14; forma da tradição 1925 (vie1934); pt: O SENHOR Proverá
+Thelme	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Thisbe	place	Thi-sê-be	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Tisbe
+Three Taverns	place	Ba Quán	revisado	rev. IA: Acts.28.15; forma da tradição 1925 (vie1934); pt: Três Vendas
+Three_Taverns	place	Ba Quán	revisado	rev. IA: Acts.28.15; forma da tradição 1925 (vie1934); pt: Três Vendas
+Throne	place	Hiên ngai	revisado	rev. IA: 1Kgs.7.7; forma da tradição 1925 (vie1934); pt: Pórtico do Trono
+Tjaru	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Tower	place		sem	rev. IA: Neh.3.1; sem forma tradicional segura em vi (1925)
+Tower_of_Eder	place	Tháp Ê-đe	revisado	rev. IA: Gen.35.21; forma da tradição 1925 (vie1934); pt: Torre do Rebanho
+Travelers_Valley	place		sem	rev. IA: Ezek.39.11; sem forma tradicional segura em vi (1925)
+Tribe of Asher	group	Chi phái A-se	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Tribo de Aser
+Tribe of Benjamin	group	Chi phái Bên-gia-min	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Tribo de Benjamim
+Tribe of Dan	group	Chi phái Đan	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Tribo de Dã
+Tribe of Gad	group	Chi phái Gát	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Tribo de Gade
+Tribe of Issachar	group	Chi phái Y-sa-ca	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Tribo de Issacar
+Tribe of Joseph	group	Chi phái Giô-sép	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Tribo de José
+Tribe of Judah	group	Chi phái Giu-đa	revisado	rev. IA: Prov.25.1; forma da tradição 1925 (vie1934); pt: Tribo de Judá
+Tribe of Levi	group	Chi phái Lê-vi	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Tribo de Levi
+Tribe of Naphtali	group	Chi phái Nép-ta-li	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Tribo de Naftali
+Tribe of Reuben	group	Chi phái Ru-bên	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Tribo de Rúben
+Tribe of Simeon	group	Chi phái Si-mê-ôn	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Tribo de Simeão
+Tribe of Zebulun	group	Chi phái Sa-bu-lôn	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Tribo de Zebulom
+Umman Manda	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Unnamed#1	person		sem	rev. IA: 1Kgs.2.27; sem forma tradicional segura em vi (1925)
+Unnamed#2	person		sem	rev. IA: 1Kgs.2.27; sem forma tradicional segura em vi (1925)
+Unnamed#3	person		sem	rev. IA: 1Kgs.2.27; sem forma tradicional segura em vi (1925)
+Unnamed#4	person		sem	rev. IA: 1Kgs.2.27; sem forma tradicional segura em vi (1925)
+Unnamed#5	person		sem	rev. IA: Matt.1.15; sem forma tradicional segura em vi (1925)
+Unnamed#6	person		sem	rev. IA: Matt.1.15; sem forma tradicional segura em vi (1925)
+Unnamed#7	person		sem	rev. IA: Matt.1.15; sem forma tradicional segura em vi (1925)
+Unnamed#8	person		sem	rev. IA: Matt.1.15; sem forma tradicional segura em vi (1925)
+Unnamed#9	person		sem	rev. IA: Matt.1.15; sem forma tradicional segura em vi (1925)
+Upper Beth-horon	place	Bết-Hô-rôn trên	revisado	rev. IA: Josh.16.5; forma da tradição 1925 (vie1934); pt: Bete-Horom de Cima
+Upper Gulloth	place	Suối trên	revisado	rev. IA: Josh.15.19; forma da tradição 1925 (vie1934); pt: Fontes de Cima
+Upu	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Uqnu	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Ur 2	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Ur of the Chaldees	place	U-rơ của dân Canh-đê	revisado	rev. IA: Gen.11.28; forma da tradição 1925 (vie1934); pt: Ur dos Caldeus
+Ura	place		sem	rev. IA: sem ref; sem forma tradicional segura em vi (1925)
+Valley of Mizpeh	place	Trũng Mích-va	revisado	rev. IA: Josh.11.8; forma da tradição 1925 (vie1934); pt: Vale de Mispá
+Valley of Salt	place	Trũng Muối	revisado	rev. IA: 2Sam.8.13; forma da tradição 1925 (vie1934); pt: Vale do Sal
+Valley of the Son of Hinnom	place	Trũng con trai Hi-nôm	revisado	rev. IA: 2Kgs.23.10; forma da tradição 1925 (vie1934); pt: Vale do filho de Hinom
+Washer's_Field	place	Ruộng thợ nện	revisado	rev. IA: 2Kgs.18.17; forma da tradição 1925 (vie1934); pt: Campo do Lavandeiro
+Washer’s Field	place	Ruộng thợ nện	revisado	rev. IA: 2Kgs.18.17; forma da tradição 1925 (vie1934); pt: Campo do Lavandeiro
+Way of the Red Sea	place	Đường Biển Đỏ	revisado	rev. IA: Num.14.25; forma da tradição 1925 (vie1934); pt: Caminho do Mar Vermelho
+Wife of Ezekiel	person	Vợ của Ê-xê-chi-ên	revisado	rev. IA: Ezek.24.18; forma da tradição 1925 (vie1934); pt: Esposa de Ezequiel
+Wife of Simon	person		sem	rev. IA: Matt.8.14; sem forma tradicional segura em vi (1925)
+Wildgoats_Rocks	place	Hòn đá dê rừng	revisado	rev. IA: 1Sam.24.2; forma da tradição 1925 (vie1934); pt: Rochedos das Cabras Monteses
+Wildgoats’ Rocks	place	Hòn đá dê rừng	revisado	rev. IA: 1Sam.24.2; forma da tradição 1925 (vie1934); pt: Rochedos das Cabras Monteses
+Willows	place	Khe Liễu	revisado	rev. IA: Isa.15.7; forma da tradição 1925 (vie1934); pt: Ribeiro dos Salgueiros
+Zion's	place	Si-ôn	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: 
+a_wife_of_Eliphaz	person	Vợ của Ê-li-pha	revisado	rev. IA: Gen.36.11; forma da tradição 1925 (vie1934); pt: Esposa de Elifaz
+a_wife_of_Ezekiel	person	Vợ của Ê-xê-chi-ên	revisado	rev. IA: Ezek.24.18; forma da tradição 1925 (vie1934); pt: Esposa de Ezequiel
+a_wife_of_Hezron	person	Vợ của Hết-rôn	revisado	rev. IA: 1Chr.2.9; forma da tradição 1925 (vie1934); pt: Esposa de Hezrom
+a_wife_of_Jerahmeel	person	Vợ của Giê-rác-mê-ên	revisado	rev. IA: 1Chr.2.26; forma da tradição 1925 (vie1934); pt: Esposa de Jerameel
+a_wife_of_Josiah	person	Vợ của Giô-si-a	revisado	rev. IA: 1Chr.3.15; forma da tradição 1925 (vie1934); pt: Esposa de Josias
+a_wife_of_Lot	person	Vợ của Lót	revisado	rev. IA: Gen.19.15; forma da tradição 1925 (vie1934); pt: Esposa de Ló
+a_wife_of_Peter	person	Vợ của Phi-e-rơ	revisado	rev. IA: Matt.8.14; forma da tradição 1925 (vie1934); pt: Esposa de Pedro
+a_wife_of_Simeon	person	Vợ của Si-mê-ôn	revisado	rev. IA: Gen.46.10; forma da tradição 1925 (vie1934); pt: Esposa de Simeão
+a_wife_of_Solomon	person		sem	rev. IA: 1Kgs.4.11; sem forma tradicional segura em vi (1925)
+daughter1_of_Lot	person	Con gái lớn của Lót	revisado	rev. IA: Gen.19.37; forma da tradição 1925 (vie1934); pt: Filha mais velha de Ló
+daughter2_of_Lot	person	Con gái nhỏ của Lót	revisado	rev. IA: Gen.19.38; forma da tradição 1925 (vie1934); pt: Filha mais nova de Ló
+daughter_of_Annas	person	Con gái của An-ne	revisado	rev. IA: John.18.13; forma da tradição 1925 (vie1934); pt: Filha de Anás
+daughter_of_Machir	person	Con gái của Ma-ki	revisado	rev. IA: 1Chr.2.21; forma da tradição 1925 (vie1934); pt: Filha de Maquir
+daughter_of_Meshullam	person	Con gái của Mê-su-lam	revisado	rev. IA: Neh.6.18; forma da tradição 1925 (vie1934); pt: Filha de Mesulão
+daughter_of_Pharaoh	person	Con gái của Pha-ra-ôn	revisado	rev. IA: Exod.2.5; forma da tradição 1925 (vie1934); pt: Filha de Faraó
+daughter_of_Putiel	person	Con gái của Phu-ti-ên	revisado	rev. IA: Exod.6.25; forma da tradição 1925 (vie1934); pt: Filha de Putiel
+daughter_of_Sanballat	person	Con gái của San-ba-lát	revisado	rev. IA: Neh.13.28; forma da tradição 1925 (vie1934); pt: Filha de Sambalate
+daughter_of_Shecaniah	person	Con gái của Sê-ca-nia	revisado	rev. IA: Neh.6.18; forma da tradição 1925 (vie1934); pt: Filha de Secanias
+father_of_Barnabas	person	Cha của Ba-na-ba	revisado	rev. IA: Col.4.10; forma da tradição 1925 (vie1934); pt: Pai de Barnabé
+father_of_Conaniah	person	Cha của Kê-na-nia	revisado	rev. IA: 2Chr.31.12; forma da tradição 1925 (vie1934); pt: Pai de Conanias
+father_of_Elizabeth	person	Cha của Ê-li-sa-bét	revisado	rev. IA: Luke.1.5; forma da tradição 1925 (vie1934); pt: Pai de Isabel
+father_of_Eunice	person	Cha của Ơ-nít	revisado	rev. IA: 2Tim.1.5; forma da tradição 1925 (vie1934); pt: Pai de Eunice
+father_of_Hilkiah	person	Cha của Hinh-kia	revisado	rev. IA: Jer.32.7; forma da tradição 1925 (vie1934); pt: Pai de Hilquias
+father_of_Hodiah	person	Cha của Hô-đia	revisado	rev. IA: 1Chr.4.19; forma da tradição 1925 (vie1934); pt: Pai de Hodias
+father_of_Lazarus	person	Cha của La-xa-rơ	revisado	rev. IA: Luke.10.39; forma da tradição 1925 (vie1934); pt: Pai de Lázaro
+father_of_Mamre	person	Cha của Mam-rê	revisado	rev. IA: Gen.14.13; forma da tradição 1925 (vie1934); pt: Pai de Manre
+father_of_Nathan	person	Cha của Na-than	revisado	rev. IA: 1Chr.11.38; forma da tradição 1925 (vie1934); pt: Pai de Natã
+father_of_Tahpenes	person	Cha của Tác-bê-ne	revisado	rev. IA: 1Kgs.11.19; forma da tradição 1925 (vie1934); pt: Pai de Tafnes
+father_of_Timothy	person	Cha của Ti-mô-thê	revisado	rev. IA: Acts.16.1; forma da tradição 1925 (vie1934); pt: Pai de Timóteo
+huge_man	person	Người cao lớn	revisado	rev. IA: 2Sam.21.20; forma da tradição 1925 (vie1934); pt: Homem enorme
+husband_of_Hammolecheth	person	Chồng của Ha-mô-lê-kết	revisado	rev. IA: 1Chr.7.18; forma da tradição 1925 (vie1934); pt: Marido de Hamolequete
+husband_of_Mary	person	Chồng của Ma-ri	revisado	rev. IA: Acts.12.12; forma da tradição 1925 (vie1934); pt: Marido de Maria
+husband_of_Matred	person	Chồng của Mát-rết	revisado	rev. IA: Gen.36.39; forma da tradição 1925 (vie1934); pt: Marido de Matrede
+husband_of_Shimeath	person	Chồng của Si-mê-át	revisado	rev. IA: 2Kgs.12.21; forma da tradição 1925 (vie1934); pt: Marido de Simeate
+husband_of_Zeruiah	person	Chồng của Xê-ru-gia	revisado	rev. IA: 1Sam.26.6; forma da tradição 1925 (vie1934); pt: Marido de Zeruia
+man of great stature	person	Người cao lớn	revisado	rev. IA: 2Sam.21.20; forma da tradição 1925 (vie1934); pt: Homem de grande estatura
+man of understanding	person	Người thông sáng	revisado	rev. IA: Ezra.8.18; forma da tradição 1925 (vie1934); pt: Homem entendido
+motherInLaw_of_Peter	person	Bà gia của Phi-e-rơ	revisado	rev. IA: Matt.8.14; forma da tradição 1925 (vie1934); pt: Sogra de Pedro
+sister_of_Tahpenes	person	Em gái của Tác-bê-ne	revisado	rev. IA: 1Kgs.11.19; forma da tradição 1925 (vie1934); pt: Irmã de Tafnes
+son of Abinadab	person	Bên-A-bi-na-đáp	revisado	rev. IA: 1Kgs.4.11; forma da tradição 1925 (vie1934); pt: Ben-Abinadabe
+son of Dekar	person	Bên-Đê-kem	revisado	rev. IA: 1Kgs.4.9; forma da tradição 1925 (vie1934); pt: Ben-Dequer
+son of Geber	person	Bên-Ghê-be	revisado	rev. IA: 1Kgs.4.13; forma da tradição 1925 (vie1934); pt: Ben-Geber
+son of Hesed	person	Bên-Hê-sết	revisado	rev. IA: 1Kgs.4.10; forma da tradição 1925 (vie1934); pt: Ben-Hesede
+son of Hur	person	Bên-Hu-rơ	revisado	rev. IA: 1Kgs.4.8; forma da tradição 1925 (vie1934); pt: Ben-Hur
+son of Joiada	person	Con trai của Giô-gia-đa	revisado	rev. IA: Neh.13.28; forma da tradição 1925 (vie1934); pt: Filho de Joiada
+son_of_Jashen	person	Con trai của Gia-sen	revisado	rev. IA: 2Sam.23.32; forma da tradição 1925 (vie1934); pt: Filho de Jásen
+son_of_Joiada	person	Con trai của Giô-gia-đa	revisado	rev. IA: Neh.13.28; forma da tradição 1925 (vie1934); pt: Filho de Joiada
+sons of Jashen	person	Các con trai của Gia-sen	revisado	rev. IA: 2Sam.23.32; forma da tradição 1925 (vie1934); pt: Filhos de Jásen
+the giant in Gath	person	Người khổng lồ ở Gát	revisado	rev. IA: 2Sam.21.16; forma da tradição 1925 (vie1934); pt: O gigante de Gate
+wife_of_Heli	person		sem	rev. IA: Luke.1.5; sem forma tradicional segura em vi (1925)
+Allon	place	A-lôn	revisado	rev. IA: Josh.19.33; forma da tradição 1925 (vie1934); pt: Alom-Zaanim
+Metheg-ammah	place		sem	rev. IA: 2Sam.8.1; sem forma tradicional segura em vi (1925)
+Forum of Appius	place	Phô-rum Áp-bi-u	revisado	rev. IA: Acts.28.15; forma da tradição 1925 (vie1934); pt: Praça de Ápio
+Valley of Hamon-gog	place		sem	rev. IA: Ezek.39.11; sem forma tradicional segura em vi (1925)
+Hall of Pillars	place	Hiên cột	revisado	rev. IA: 1Kgs.7.6; forma da tradição 1925 (vie1934); pt: Pórtico de colunas
+Hall of the Throne	place	Hiên ngai	revisado	rev. IA: 1Kgs.7.7; forma da tradição 1925 (vie1934); pt: Pórtico do trono
+Mahaneh-dan 2	place	Trại quân Đan 2	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Campo de Dã 2
+East Square	place	Phố phía đông	revisado	rev. IA: 2Chr.29.4; forma da tradição 1925 (vie1934); pt: Praça oriental
+Ir-moab	place	Thành Mô-áp	revisado	rev. IA: Num.22.36; forma da tradição 1925 (vie1934); pt: Cidade de Moabe
+Trogyllium	place		sem	rev. IA: Acts.20.15; sem forma tradicional segura em vi (1925)
+Misgab	place		sem	rev. IA: Jer.48.1; sem forma tradicional segura em vi (1925)
+Hall of Judgment	place	Hiên xét đoán	revisado	rev. IA: 1Kgs.7.7; forma da tradição 1925 (vie1934); pt: Pórtico do juízo
+Broad Wall	place	Vách rộng	revisado	rev. IA: Neh.3.8; forma da tradição 1925 (vie1934); pt: Muralha larga
+Mahaneh-dan 1	place	Trại quân Đan 1	revisado	rev. IA: sem ref; forma da tradição 1925 (vie1934); pt: Campo de Dã 1
+Ayyah	place		sem	rev. IA: 1Chr.7.28; sem forma tradicional segura em vi (1925)
+Ge-harashim	place	Trũng thợ mộc	revisado	rev. IA: 1Chr.4.14; forma da tradição 1925 (vie1934); pt: Vale dos Artesãos
+Helkath-hazzurim	place	Đồng Gươm	revisado	rev. IA: 2Sam.2.16; forma da tradição 1925 (vie1934); pt: Helcate-Hazurim
+Kue	place		sem	rev. IA: 1Kgs.10.28; sem forma tradicional segura em vi (1925)
+Bear	other	Sao bắc đẩu	revisado	rev. IA: Job.9.9; forma da tradição 1925 (vie1934); pt: Ursa
+Behemoth	other		sem	rev. IA: Job.40.15; sem forma tradicional segura em vi (1925)
+Broad_Wall	place	Vách rộng	revisado	rev. IA: Neh.3.8; forma da tradição 1925 (vie1934); pt: Muralha larga
+Forum_of_Appius	place	Phô-rum Áp-bi-u	revisado	rev. IA: Acts.28.15; forma da tradição 1925 (vie1934); pt: Praça de Ápio
+Freedmen	group		sem	rev. IA: Acts.6.9; sem forma tradicional segura em vi (1925)
+Hall_of_Judgment	place	Hiên xét đoán	revisado	rev. IA: 1Kgs.7.7; forma da tradição 1925 (vie1934); pt: Pórtico do juízo
+Hall_of_Pillars	place	Hiên cột	revisado	rev. IA: 1Kgs.7.6; forma da tradição 1925 (vie1934); pt: Pórtico de colunas
+Hall_of_the_Throne	place	Hiên ngai	revisado	rev. IA: 1Kgs.7.7; forma da tradição 1925 (vie1934); pt: Pórtico do trono
+Higgaion	other		sem	rev. IA: Ps.9.16; sem forma tradicional segura em vi (1925)
+Jehudijah	person		sem	rev. IA: 1Chr.4.18; sem forma tradicional segura em vi (1925)
+Judaism	other	Đạo Giu-đa	revisado	rev. IA: Gal.1.13; forma da tradição 1925 (vie1934); pt: Judaísmo
+Legion	other		sem	rev. IA: Mark.5.9; sem forma tradicional segura em vi (1925)
+Mahalath	other	Ma-ha-lát	revisado	rev. IA: Gen.28.9; forma da tradição 1925 (vie1934); pt: Maalate
+Mahaneh-dan	place	Trại quân Đan	revisado	rev. IA: Judg.13.25; forma da tradição 1925 (vie1934); pt: Campo de Dã
+Nero	person		sem	rev. IA: Phil.4.22; sem forma tradicional segura em vi (1925)
+Orion	other	Sao cày	revisado	rev. IA: Job.9.9; forma da tradição 1925 (vie1934); pt: Órion
+Pacatiana	place		sem	rev. IA: 1Tim.6.21; sem forma tradicional segura em vi (1925)
+Passover	other	Lễ Vượt qua	revisado	rev. IA: Exod.12.11; forma da tradição 1925 (vie1934); pt: Páscoa
+Pleiades	other	Sao rua	revisado	rev. IA: Job.9.9; forma da tradição 1925 (vie1934); pt: Plêiades
+Rab-mag	person		sem	rev. IA: Jer.39.3; sem forma tradicional segura em vi (1925)
+Selah	other		sem	rev. IA: Ps.3.2; sem forma tradicional segura em vi (1925)
+Shigionoth	other		sem	rev. IA: Hab.3.1; sem forma tradicional segura em vi (1925)
+Straight	place	Đường Ngay thẳng	revisado	rev. IA: Acts.9.11; forma da tradição 1925 (vie1934); pt: Direita
+Tahtim-hodshi	place		sem	rev. IA: 2Sam.24.6; sem forma tradicional segura em vi (1925)
+Weeks	other	Lễ các tuần	revisado	rev. IA: Exod.34.22; forma da tradição 1925 (vie1934); pt: Festa das semanas
+Tahtimhodshi	place		sem	rev. IA: 2Sam.24.6; sem forma tradicional segura em vi (1925)
+Place	place	Gô-gô-tha	revisado	rev. IA: Matt.27.33; forma da tradição 1925 (vie1934); pt: Gólgota
+Valley of the Passengers	place		sem	rev. IA: Ezek.39.11; sem forma tradicional segura em vi (1925)
+Salt	place	Thành Muối	revisado	rev. IA: Josh.15.62; forma da tradição 1925 (vie1934); pt: Mar salgado
+Appii Forum	place	Phô-rum Áp-bi-u	revisado	rev. IA: Acts.28.15; forma da tradição 1925 (vie1934); pt: Praça de Ápio
+There	place	Đức Giê-hô-va ở đó	revisado	rev. IA: Ezek.48.35; forma da tradição 1925 (vie1934); pt: O SENHOR Está Ali
+Field	place	Ruộng thợ nện	revisado	rev. IA: 2Kgs.18.17; forma da tradição 1925 (vie1934); pt: Campo do lavandeiro
+Destruction	place	Thành Hủy diệt	revisado	rev. IA: Isa.19.18; forma da tradição 1925 (vie1934); pt: Cidade da Destruição
+Valley of Hamongog	place		sem	rev. IA: Ezek.39.11; sem forma tradicional segura em vi (1925)
+Skull	place	Chỗ Sọ	revisado	rev. IA: Luke.23.33; forma da tradição 1925 (vie1934); pt: Caveira
