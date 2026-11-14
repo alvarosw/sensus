@@ -232,6 +232,7 @@ Bezai	হোদিয়	হোদিয়	sem	baixa	2	1	1.00	হশুম
 Booths Festival			sem	baixa	1	1	0.00	
 Broad Wall		চওড়া দেওয়াল	revisado	baixa	3	2	0.00	
 Brook Eshcol			sem	baixa	1	4	0.00	
+Brook Eshcol	ইষ্কোল নদী	ইষ্কোল নদী	auto	baixa	1	4	0.00	
 Brook Kidron	কিদ্রোণ নদী	কিদ্রোণ নদী	revisado	baixa	1	2	0.00	
 Brook of Egypt	মিসর নদী	মিসর নদী	revisado	baixa	3	11	0.00	
 Brook of the Arabah	অরাবা নদী	অরাবা নদী	revisado	baixa	2	1	0.00	
@@ -331,9 +332,11 @@ Ephraim Gate	ইফ্রয়িম দ্বার	ইফ্রয়িম �
 Ephron	নিপ্তোহের	নিপ্তোহের	sem	baixa	2	1	1.00	যিরারীমের
 Ephron Mount			sem	baixa	1	2	0.00	
 Esau Mount			sem	baixa	1	4	0.00	
+Esau Mount	এষৌ পর্বত	এষৌ পর্বত	auto	baixa	1	4	0.00	
 Eshan	ইশিয়ন	ইশিয়ন	sem	baixa	3	1	1.00	অরাব
 Eshban	ইশবন	ইশবন	sem	baixa	2	2	1.00	দিশোন
 Eshcol Valley		ইষ্কোল উপত্যকা	revisado	baixa	1	4	0.00	
+Eshcol Valley	ইষ্কোল উপত্যকা	ইষ্কোল উপত্যকা	auto	baixa	1	4	0.00	
 Eshtemoh	ইষ্টিমোয়	ইষ্টিমোয়	sem	baixa	1	1	1.00	আনীম
 Ethiopia	ওপিয়া	কূশ	revisado	baixa	1	4	0.25	এটা
 Ethnan	ইৎনন	ইৎনন	sem	baixa	2	1	1.00	ছেলেরা
@@ -345,6 +348,7 @@ Eve	পেরেছি	হবা	revisado	baixa	2	4	0.25	ফেলেছে
 Evil-merodach	মরোদক	মরোদক	sem	baixa	2	2	1.00	বন্দীত্বের
 Ezbai	বয়	বয়	sem	baixa	2	1	1.00	নারয়
 Ezel Stone			sem	baixa	1	1	0.00	
+Ezel Stone	এষল পাথর	এষল পাথর	auto	baixa	1	1	0.00	
 Eznites	ইসনীয়	ইসনীয়	revisado	baixa	1	1	1.00	মোনীয়
 Field	শাকিকে	শাকিকে	sem	baixa	1	3	0.33	সারীসকে
 Fish Gate			sem	baixa	3	4	0.00	
@@ -455,6 +459,7 @@ Haziel	হসীয়েল	হসীয়েল	sem	baixa	2	1	1.00	শলো�
 Hazor-hadattah	হদত্তা	হদত্তা	sem	baixa	3	1	1.00	হাৎসোর
 Hazzelelponi	পোনী	পোনী	sem	baixa	1	1	1.00	হৎসলিল
 Hebron Valley		হিব্রোণ উপত্যকা	revisado	baixa	1	1	0.00	
+Hebron Valley	হিব্রোণ উপত্যকা	হিব্রোণ উপত্যকা	auto	baixa	1	1	0.00	
 Helbon	বনিক	বনিক	sem	baixa	3	1	1.00	শুভ্র
 Heliopolis	সূর্যপুরী	সূর্যপুরী	sem	baixa	2	5	0.20	সূর্যপুরীর
 Helkai	হিল্কয়	হিল্কয়	sem	baixa	2	1	1.00	হারীম
@@ -661,6 +666,7 @@ Mizpeh Valley			sem	baixa	1	2	0.00
 Moab Plains		মোয়াবের সমভূমি	revisado	baixa	1	12	0.00	
 Mortar	মক্তেশ	মক্তেশ	sem	baixa	3	1	1.00	তোমরা
 Mount Baal-hermon			sem	baixa	1	1	0.00	
+Mount Baal-hermon	বাল-হর্মোণ পর্বত	বাল-হর্মোণ পর্বত	auto	baixa	1	1	0.00	
 Mount Baalah			sem	baixa	2	1	0.00	
 Mount Baalhermon			sem	baixa	1	1	0.00	
 Mount Bashan		বাশন পর্বত	revisado	baixa	1	1	0.00	
@@ -669,6 +675,7 @@ Mount Ebal		ঈবল পর্বত	revisado	baixa	2	5	0.00
 Mount Ephraim	ইফ্রয়িম পর্বত	ইফ্রয়িম পর্বত	revisado	baixa	2	3	0.00	
 Mount Ephron			sem	baixa	2	1	0.00	
 Mount Esau			sem	baixa	1	4	0.00	
+Mount Esau	এষৌ পর্বত	এষৌ পর্বত	auto	baixa	1	4	0.00	
 Mount Gerizim		গরিষীম পর্বত	revisado	baixa	2	5	0.00	
 Mount Gilboa		গিলবোয় পর্বত	revisado	baixa	2	8	0.00	
 Mount Halak		হালক পর্বত	revisado	baixa	2	2	0.00	
@@ -688,6 +695,7 @@ Mount Sion		সিয়োন পর্বত	revisado	baixa	1	1	0.00
 Mount Zalmon			sem	baixa	2	1	0.00	
 Mount Zemaraim			sem	baixa	2	1	0.00	
 Mount of Esau			sem	baixa	1	4	0.00	
+Mount of Esau	এষৌ পর্বত	এষৌ পর্বত	auto	baixa	1	4	0.00	
 Mount of Olives		জৈতুন পর্বত	revisado	baixa	3	18	0.00	
 Muster Gate			sem	baixa	2	1	0.00	
 Muth-labben	আমা	আমা	sem	baixa	1	1	1.00	কথা
@@ -832,7 +840,9 @@ Sansannah	সন্না	সন্না	revisado	baixa	3	1	1.00	মন্ন�
 Saph	সফ	সফ	revisado	baixa	1	2	0.50	হূশাতীয়
 Scythians	স্কুথীয়	স্কুথীয়	revisado	baixa	1	1	1.00	এখানে
 Sea of Chinnereth		কিন্নেরৎ সাগর	revisado	baixa	1	2	0.00	
+Sea of Chinnereth	কিন্নেরৎ সাগর	কিন্নেরৎ সাগর	auto	baixa	1	2	0.00	
 Sea of Chinneroth		কিন্নেরৎ সাগর	revisado	baixa	1	1	0.00	
+Sea of Chinneroth	কিন্নেরত সাগর	কিন্নেরত সাগর	auto	baixa	1	1	0.00	
 Sea of Egypt	মিসর সাগর	মিসর সাগর	revisado	baixa	1	1	0.00	
 Sea of Galilee		গালীল সাগর	revisado	baixa	2	10	0.00	
 Sea of Jazer	যাসের সাগর	যাসের সাগর	revisado	baixa	2	1	0.00	
@@ -973,6 +983,7 @@ Upper Pool			sem	baixa	1	3	0.00
 Vaizatha	বয়িষাথঃ	বয়িষাথ	revisado	baixa	1	1	1.00	অরীষয়
 Vajezatha	বয়িষাথঃ	বয়িষাথঃ	sem	baixa	1	1	1.00	অরীষয়
 Vale of Hebron		হিব্রোণ উপত্যকা	revisado	baixa	1	1	0.00	
+Vale of Hebron	হিব্রোণ উপত্যকা	হিব্রোণ উপত্যকা	auto	baixa	1	1	0.00	
 Vale of Siddim		সিদ্দীম উপত্যকা	revisado	baixa	1	3	0.00	
 Valley Gate			sem	baixa	2	4	0.00	
 Valley of Achor		আখোর উপত্যকা	revisado	baixa	2	5	0.00	
@@ -983,11 +994,15 @@ Valley of Baca			sem	baixa	2	1	0.00
 Valley of Decision			sem	baixa	1	1	0.00	
 Valley of Elah	এলা উপত্যকা	এলা উপত্যকা	revisado	baixa	2	3	0.00	
 Valley of Eshcol		ইষ্কোল উপত্যকা	revisado	baixa	1	4	0.00	
+Valley of Eshcol	ইষ্কোল উপত্যকা	ইষ্কোল উপত্যকা	auto	baixa	1	4	0.00	
 Valley of Gerar			sem	baixa	2	2	0.00	
+Valley of Gerar	গরার উপত্যকা	গরার উপত্যকা	auto	baixa	2	2	0.00	
 Valley of Gibeon			sem	baixa	2	1	0.00	
+Valley of Gibeon	গিবিয়োন উপত্যকা	গিবিয়োন উপত্যকা	auto	baixa	2	1	0.00	
 Valley of Hamon-gog			sem	baixa	1	2	0.00	
 Valley of Hamongog			sem	baixa	1	2	0.00	
 Valley of Hebron		হিব্রোণ উপত্যকা	revisado	baixa	1	1	0.00	
+Valley of Hebron	হিব্রোণ উপত্যকা	হিব্রোণ উপত্যকা	auto	baixa	1	1	0.00	
 Valley of Hinnom		হিন্নোম উপত্যকা	revisado	baixa	2	12	0.00	
 Valley of Iphtahel		যিপ্তহেল উপত্যকা	revisado	baixa	1	2	0.00	
 Valley of Jehoshaphat	যিহোশাফট উপত্যকা	যিহোশাফট উপত্যকা	revisado	baixa	2	2	0.00	
@@ -1374,6 +1389,7 @@ Chinneroth	কিন্নেরত	কিন্নেরত	revisado	media	2	3	
 Chislev	কিষলেব	কিষলেব	revisado	media	1	2	0.50	কিশ্
 Chloe	ক্লোয়ী	ক্লোয়ী	revisado	media	2	1	1.00	ক্লোয়ীর
 Chuza	কুষ	কুষ	revisado	media	2	1	1.00	কুষের
+City of David	দায়ূদ নগর	দায়ূদ নগর	auto	media	1	46	0.20	
 Clauda	কৌদা	কৌদা	revisado	media	1	1	1.00	নৌকাটি
 Claudia	ক্লৌদিয়া	ক্লৌদিয়া	revisado	media	2	1	1.00	লীন
 Claudius	ক্লৌদিয়	ক্লৌদিয়	revisado	media	2	11	0.18	ক্লৌদিয়ের
@@ -1677,6 +1693,7 @@ Hereth	হেরত	হেরত	revisado	media	3	1	1.00	দেশে
 Hermas	হর্ম্মা	হর্ম্মা	revisado	media	2	1	1.00	হর্ম্মিপাত্রোবা
 Hermes	হারমেশ	হারমেশ	revisado	media	1	1	1.00	জিউস
 Hermon	হর্মোণ	হর্মোণ	revisado	media	1	7	0.57	হর্মোন
+Hermon Mount	হর্মোণ পর্বত	হর্মোণ পর্বত	auto	media	1	20	0.30	
 Herodian	হেরোদীয়	হেরোদীয়	revisado	media	1	3	0.67	হেরোদীয়কে
 Hesed	হেষদ	হেষদ	revisado	media	2	1	1.00	হেফরের
 Heshbon	হিষ্বোন	হিষ্বোন	revisado	media	3	37	0.03	হিশবোন
@@ -2111,6 +2128,7 @@ Moresheth	মোরেষ্টিয়	মোরেষ্টিয়	auto	med
 Moresheth-gath	মোরেষ্টিয়	মোরেষ্টিয়	auto	media	1	3	0.33	মোরেষ্টীয়
 Moresheth-gath	মোরেষৎ	মোরেষৎ	auto	media	1	1	1.00	গাৎকে
 Moserah	মোষেরোতে	মোষেরোতে	auto	media	2	1	1.00	লোকেরা
+Mount Hermon	হর্মোণ পর্বত	হর্মোণ পর্বত	auto	media	2	16	0.38	
 Mount Seir	সেয়ীর পর্বত	সেয়ীর পর্বত	auto	media	4	35	0.37	
 Mount Tabor	তাবোর পর্বত	তাবোর পর্বত	auto	media	2	9	0.33	
 Mozah	মোৎসা	মোৎসা	auto	media	3	1	1.00	মিস্
@@ -2320,6 +2338,7 @@ Sardis	সার্দ্দি	সার্দ্দি	auto	media	2	3	0.33	স
 Sarsechim	শর্সখীম	শর্সখীম	auto	media	1	1	1.00	শরেৎস
 Satan	শয়তান	শয়তান	auto	media	2	100	0.62	শয়তানও
 Sceva	স্কিবা	স্কিবা	auto	media	2	1	1.00	ছেলে
+Sea of Galilee	গালীল সাগর	গালীল সাগর	auto	media	2	10	0.20	
 Seba	শিবা	শিবা	auto	media	4	4	0.75	সবা
 Secundus	সিকুন্দ	সিকুন্দ	auto	media	2	1	1.00	থিষোলনীয়
 Segub	সগূব	সগূব	auto	media	4	3	1.00	সগূবকে
@@ -2736,6 +2755,7 @@ Azrikam	অস্রীকাম	অস্রীকাম	auto	alta	8	6	1.00	ন
 Azubah	অসূবা	অসূবা	auto	alta	4	4	0.75	অসুরা
 Baal	বাল	বাল	auto	alta	6	74	0.72	বাল্
 Baal-shalishah	শালিশা	শালিশা	auto	alta	3	1	1.00	বাল্
+Baalah Mount	বালা পর্বত	বালা পর্বত	auto	alta	1	1	1.00	
 Baalis	বালীস	বালীস	auto	alta	2	1	1.00	বিশ্বাস
 Baanah	বানা	বানা	auto	alta	9	10	1.00	বানাকে
 Baara	বারা	বারা	auto	alta	2	1	1.00	আর
@@ -2876,6 +2896,7 @@ Dorcas	দর্কা	দর্কা	auto	alta	1	3	0.67	আঙরাখা
 Drusilla	দ্রুষিল্লা	দ্রুষিল্লা	auto	alta	2	1	1.00	যিহুদী
 Dumah	দূমা	দূমা	auto	alta	8	4	1.00	অরাব
 Dura	দূরা	দূরা	auto	alta	3	1	1.00	মূর্ত্তি
+Ebal Mount	এবল পর্বত	এবল পর্বত	auto	alta	1	8	0.62	
 Ebed	এবদের	এবদের	auto	alta	2	5	1.00	এব
 Ebed-melech	মেলক	মেলক	sem	alta	2	6	1.00	এবদ
 Ebron	এব্রোণে	এব্রোণে	auto	alta	2	1	1.00	এবং
@@ -2921,6 +2942,7 @@ Enosh	ইনোশ	ইনোশ	auto	alta	1	8	1.00	ইনোশের
 Ephraim	ইফ্রয়িম	ইফ্রয়িম	auto	alta	7	167	0.95	ইফ্রয়িমের
 Ephratah	ইফ্রাথা	ইফ্রাথা	auto	alta	1	4	1.00	ইফ্রাথার
 Ephrathah	ইফ্রাথা	ইফ্রাথা	auto	alta	1	6	0.50	ইফ্রাথার
+Ephron Mount	ইফ্রোণ পর্বত	ইফ্রোণ পর্বত	auto	alta	1	2	0.50	
 Eri	এরি	এরি	auto	alta	2	2	0.50	অরেলী
 Eshtemoa	ইষ্টিমোয়	ইষ্টিমোয়	auto	alta	4	6	1.00	শিফমোৎ
 Esther	ইষ্টের	ইষ্টের	auto	alta	2	46	0.96	ইষ্টেরকে
@@ -2955,6 +2977,7 @@ Giddel	গিদ্দেল	গিদ্দেল	auto	alta	4	4	1.00	গিদ�
 Gideoni	গিদিয়োনি	গিদিয়োনি	auto	alta	2	5	1.00	গিদিয়োনির
 Gidom	গিদোম	গিদোম	sem	alta	3	1	1.00	গিয়ে
 Gihon	গীহোন	গীহোন	auto	alta	5	7	0.57	গীহোনে
+Gilboa Mount	গিলবোয় পর্বত	গিলবোয় পর্বত	auto	alta	1	6	0.67	
 Giloh	গীলো	গীলো	auto	alta	3	3	0.67	গীলোনীয়
 Ginnethon	গিন্নথোন	গিন্নথোন	auto	alta	2	3	0.67	গিন্নথোনের
 Gishpa	গীষ্প	গীষ্প	auto	alta	1	1	1.00	গীষ্পের
@@ -3338,7 +3361,13 @@ Moriah	মোরিয়া	মোরিয়া	auto	alta	2	1	1.00	হোম
 Moriah Mount	মোরিয়া পর্বত	মোরিয়া পর্বত	auto	alta	1	2	0.50	
 Moseroth	মোষেরোতে	মোষেরোতে	auto	alta	3	3	0.67	মোষেরোৎ
 Moses	মোশি	মোশি	auto	alta	2	785	0.99	মোশিকে
+Mount Baalah	বালা পর্বত	বালা পর্বত	auto	alta	2	1	1.00	
+Mount Bashan	বাশন পর্বত	বাশন পর্বত	auto	alta	1	1	1.00	
+Mount Ebal	এবল পর্বত	এবল পর্বত	auto	alta	2	5	1.00	
+Mount Ephron	ইফ্রোণ পর্বত	ইফ্রোণ পর্বত	auto	alta	2	1	1.00	
+Mount Gilboa	গিলবোয় পর্বত	গিলবোয় পর্বত	auto	alta	2	8	0.50	
 Mount Gilead	গিলিয়দ পর্বত	গিলিয়দ পর্বত	auto	alta	2	1	1.00	
+Mount Heres	হেরস পর্বত	হেরস পর্বত	auto	alta	2	1	1.00	
 Mount Moriah	মোরিয়া পর্বত	মোরিয়া পর্বত	auto	alta	2	1	1.00	
 Mount Nebo	নবো পর্বত	নবো পর্বত	auto	alta	2	2	0.50	
 Mount Zion	সিয়োন পর্বত	সিয়োন পর্বত	auto	alta	2	25	0.52	
