@@ -154,6 +154,15 @@ para o alinhamento de OCR. O motivo é o layout: as caixas de texto (TYPE/ANTITY
 se misturam com o parágrafo, e o resultado traz fragmentos de citação no comentário (ex.: Ap 20:15). Código, correções
 (`corrections/haskell-cross.tsv`) e scan ficam; a fonte entra quando essa limpeza passar na amostragem.
 
+**Doutrina (domínio público; teologia sistemática, por referência explícita).** Mesma regra de parágrafo com referência
+(`pipeline/ingest/doutrina_pd.py`): cada parágrafo do corpo com referência bíblica gera uma linha por referência. Prefácio,
+sumário e índices (a partir de "Index Of") ficam fora. O cabeçalho do verbete traz autor, obra, parte e capítulo.
+
+| Fonte (id) | Autor | Título e edição | Origem do texto | Condições |
+|---|---|---|---|---|
+| `strong-systematic` | Augustus Hopkins Strong (1836-1921), batista | Systematic Theology (The Judson Press, 1907; revisada e ampliada; três volumes) | Project Gutenberg #44035 (vol. 1, *The Doctrine of God*), #44555 (vol. 2, *The Doctrine of Man*) e #45283 (vol. 3, *The Doctrine of Salvation*) | Domínio público: autor falecido em 1921 e obra publicada em 1907 (domínio público nos EUA); no Brasil, autor falecido há mais de 70 anos. Cabeçalho e rodapé do Gutenberg removidos. Notas em bloco recuado entram como parágrafos. Texto em inglês. |
+| `calvin-institutes` | João Calvino (1509-1564) | Institutes of the Christian Religion, tradução de John Allen (sexta edição americana revisada e corrigida, Presbyterian Board of Publication, Filadélfia; 1813 no volume 1) | Project Gutenberg #45001 (livros I a III) e #64392 (livros IV e V) | Domínio público: autor falecido em 1564; tradução publicada em 1813 (domínio público nos EUA); no Brasil, autor falecido há mais de 70 anos. Cabeçalho e rodapé do Gutenberg removidos. Notas de rodapé com referência (`(n)` no volume 1, `[n]` no volume 2) valem para o parágrafo que tem a marca; notas só com texto (latim, nomes de autores) não geram linha. Referências em capítulo romano minúsculo (`Prov. xxix. 18`, `Rom. viii. 30`; `refparse.find_refs(romano=True)`). Prefácio do tradutor e dedicatória antes do Livro I ficam fora (contagem). Texto em inglês. |
+
 **Examinadas e não incluídas (adventistas e outras):** *Ministry of Healing* (1905/1909): o scan de 1909 não tem
 referência explícita em parágrafo, e o de 1905 traz aviso de 1942 (edição revisada); não está no Gutenberg. *Education*
 (1903): no Gutenberg (#62102), as referências são linhas curtas de lista (cerca de 35), sem comentário; no archive.org,

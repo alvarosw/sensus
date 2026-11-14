@@ -122,6 +122,10 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   // Nicoll, 1887-1905), 48 volumes do Gutenberg. Os autores variam por volume (a maioria é presbiteriana escocesa;
   // Maclaren é batista; Farrar, Moule e Plummer são anglicanos); a tradição do registro é a presbiteriana.
   'expositors-bible': { short: "Expositor's Bible", commentator: 'The Expositor\'s Bible', role: 'commentary', lang: 'en' },
+  // Doutrina (pipeline/ingest/doutrina_pd.py): teologia sistemática em domínio público, por referência explícita.
+  'strong-systematic': { short: 'Strong', commentator: 'A. H. Strong', role: 'commentary', lang: 'en' },
+  // Institutas (pipeline/ingest/doutrina_pd.py), tradução de John Allen; o comentarista leva a obra, como as EGW.
+  'calvin-institutes': { short: 'Institutas', commentator: 'João Calvino · Institutas', role: 'commentary', lang: 'en' },
 };
 
 /** Ordem de preferência das fontes de lugares (menor = melhor) para escolher a identificação moderna. */
