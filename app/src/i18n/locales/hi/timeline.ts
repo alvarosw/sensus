@@ -35,7 +35,7 @@ export const hiTl = {
   noEvents: 'इस खोज और फ़िल्टर से कोई घटना मेल नहीं खाती।',
   noLines: 'इन फ़िल्टरों से कोई कालरेखा नहीं मिली।',
   footer:
-    'स्रोत: Theographic (CC BY-SA 4.0)। तिथियाँ स्रोत के कालक्रम के अनुसार हैं।',
+    'स्रोत: Theographic (CC BY-SA 4.0)। तिथियाँ स्रोत के कालक्रम के अनुसार हैं; शीर्षक, नाम और विवरण हिन्दी में Sensus परियोजना का अनुकूलन हैं, AI की सहायता से।',
 
   lineTitleOf: (count: number) => `${count} ${count === 1 ? 'घटना' : 'घटनाएँ'}`,
   inSource: (name: string) => `स्रोत में: ${name}`,
