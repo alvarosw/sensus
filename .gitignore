@@ -27,3 +27,6 @@ dist/
 .claude/settings.local.json
 pipeline/bibles/out/
 data/staging-pendente/
+
+# pasta de dados (na main) ou link para ela (nos worktrees)
+/data
