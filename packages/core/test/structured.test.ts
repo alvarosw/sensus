@@ -321,6 +321,14 @@ describe('prompt: citação logo após cada frase e rótulo de inferência exato
     expect(user).toContain('Frases de inferência começam com "(Inferência)"');
   });
 
+  it('manda usar o nome entre colchetes (língua do app) de pessoa ou lugar na resposta, AT e NT', () => {
+    const sys = buildSystemPrompt({ language: 'es' });
+    expect(sys).toContain('Pessoa ou lugar com nome entre colchetes (ex.: "Aaron [Arão]")');
+    expect(sys).toContain('use o nome entre colchetes na resposta');
+    // A regra vale para toda língua de resposta: o prompt é o mesmo, só muda o idioma final.
+    expect(sys).toContain('Responda em espanhol.');
+  });
+
   it('a versão do resumo mudou com o prompt (invalida o cache de resumos antigos)', () => {
     expect(SUMMARY_PROMPT_VERSION).toBe('resumo-v6');
   });

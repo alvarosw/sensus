@@ -1,5 +1,5 @@
 // Serialização do painel em texto de contexto para o LLM, com orçamento por camada.
-import type { Commentary, LexiconEntry, PanelData, Token } from '../types';
+import type { Commentary, Entity, LexiconEntry, PanelData, Token } from '../types';
 import { formatReference } from '../refs';
 import { missingBaseEditions } from '../panel';
 import { variantSites } from '../variants';
@@ -108,6 +108,15 @@ const TYPE_LABEL: Record<string, string> = {
   group: 'grupo',
   other: 'outro',
 };
+
+/**
+ * Nome na língua do app, entre colchetes, quando ele existe e é diferente do nome da fonte (ex.: "Aaron [Arão]").
+ * A IA usa esse nome na resposta (regra no prompt); sem ele, a linha fica como antes.
+ */
+function localName(e: Entity): string {
+  const local = e.namePt?.trim();
+  return local && local !== e.name ? ` [${local}]` : '';
+}
 
 function buildItems(panel: PanelData): Item[] {
   const items: Item[] = [];
@@ -235,7 +244,7 @@ function buildItems(panel: PanelData): Item[] {
       section: 'Pessoas, lugares e grupos',
       sectionOrder: 2,
       priority: 2,
-      line: `[${e.cite_id}] ${titleOf(e.source_id)}: ${e.name} (${TYPE_LABEL[e.type] ?? e.type})${desc}`,
+      line: `[${e.cite_id}] ${titleOf(e.source_id)}: ${e.name}${localName(e)} (${TYPE_LABEL[e.type] ?? e.type})${desc}`,
     });
   }
 
