@@ -232,7 +232,7 @@ Bezai	হোদিয়	হোদিয়	sem	baixa	2	1	1.00	হশুম
 Booths Festival			sem	baixa	1	1	0.00	
 Broad Wall		চওড়া দেওয়াল	revisado	baixa	3	2	0.00	
 Brook Eshcol			sem	baixa	1	4	0.00	
-Brook Eshcol	ইষ্কোল নদী	ইষ্কোল নদী	auto	baixa	1	4	0.00	
+Brook Eshcol	ইষ্কোল নদী	ইষ্কোল উপত্যকা	revisado	baixa	1	4	0.00	
 Brook Kidron	কিদ্রোণ নদী	কিদ্রোণ নদী	revisado	baixa	1	2	0.00	
 Brook of Egypt	মিসর নদী	মিসর নদী	revisado	baixa	3	11	0.00	
 Brook of the Arabah	অরাবা নদী	অরাবা নদী	revisado	baixa	2	1	0.00	
@@ -332,11 +332,11 @@ Ephraim Gate	ইফ্রয়িম দ্বার	ইফ্রয়িম �
 Ephron	নিপ্তোহের	নিপ্তোহের	sem	baixa	2	1	1.00	যিরারীমের
 Ephron Mount			sem	baixa	1	2	0.00	
 Esau Mount			sem	baixa	1	4	0.00	
-Esau Mount	এষৌ পর্বত	এষৌ পর্বত	auto	baixa	1	4	0.00	
+Esau Mount	এষৌ পর্বত	এষৌ পর্বত	revisado	baixa	1	4	0.00	
 Eshan	ইশিয়ন	ইশিয়ন	sem	baixa	3	1	1.00	অরাব
 Eshban	ইশবন	ইশবন	sem	baixa	2	2	1.00	দিশোন
 Eshcol Valley		ইষ্কোল উপত্যকা	revisado	baixa	1	4	0.00	
-Eshcol Valley	ইষ্কোল উপত্যকা	ইষ্কোল উপত্যকা	auto	baixa	1	4	0.00	
+Eshcol Valley	ইষ্কোল উপত্যকা	ইষ্কোল উপত্যকা	revisado	baixa	1	4	0.00	
 Eshtemoh	ইষ্টিমোয়	ইষ্টিমোয়	sem	baixa	1	1	1.00	আনীম
 Ethiopia	ওপিয়া	কূশ	revisado	baixa	1	4	0.25	এটা
 Ethnan	ইৎনন	ইৎনন	sem	baixa	2	1	1.00	ছেলেরা
@@ -348,7 +348,7 @@ Eve	পেরেছি	হবা	revisado	baixa	2	4	0.25	ফেলেছে
 Evil-merodach	মরোদক	মরোদক	sem	baixa	2	2	1.00	বন্দীত্বের
 Ezbai	বয়	বয়	sem	baixa	2	1	1.00	নারয়
 Ezel Stone			sem	baixa	1	1	0.00	
-Ezel Stone	এষল পাথর	এষল পাথর	auto	baixa	1	1	0.00	
+Ezel Stone	এষল পাথর	এষল পাথর	revisado	baixa	1	1	0.00	
 Eznites	ইসনীয়	ইসনীয়	revisado	baixa	1	1	1.00	মোনীয়
 Field	শাকিকে	শাকিকে	sem	baixa	1	3	0.33	সারীসকে
 Fish Gate			sem	baixa	3	4	0.00	
@@ -459,7 +459,7 @@ Haziel	হসীয়েল	হসীয়েল	sem	baixa	2	1	1.00	শলো�
 Hazor-hadattah	হদত্তা	হদত্তা	sem	baixa	3	1	1.00	হাৎসোর
 Hazzelelponi	পোনী	পোনী	sem	baixa	1	1	1.00	হৎসলিল
 Hebron Valley		হিব্রোণ উপত্যকা	revisado	baixa	1	1	0.00	
-Hebron Valley	হিব্রোণ উপত্যকা	হিব্রোণ উপত্যকা	auto	baixa	1	1	0.00	
+Hebron Valley	হিব্রোণ উপত্যকা	হিব্রোণ উপত্যকা	revisado	baixa	1	1	0.00	
 Helbon	বনিক	বনিক	sem	baixa	3	1	1.00	শুভ্র
 Heliopolis	সূর্যপুরী	সূর্যপুরী	sem	baixa	2	5	0.20	সূর্যপুরীর
 Helkai	হিল্কয়	হিল্কয়	sem	baixa	2	1	1.00	হারীম
@@ -666,7 +666,7 @@ Mizpeh Valley			sem	baixa	1	2	0.00
 Moab Plains		মোয়াবের সমভূমি	revisado	baixa	1	12	0.00	
 Mortar	মক্তেশ	মক্তেশ	sem	baixa	3	1	1.00	তোমরা
 Mount Baal-hermon			sem	baixa	1	1	0.00	
-Mount Baal-hermon	বাল-হর্মোণ পর্বত	বাল-হর্মোণ পর্বত	auto	baixa	1	1	0.00	
+Mount Baal-hermon	বাল-হর্মোণ পর্বত	বাল-হর্মোণ পর্বত	revisado	baixa	1	1	0.00	
 Mount Baalah			sem	baixa	2	1	0.00	
 Mount Baalhermon			sem	baixa	1	1	0.00	
 Mount Bashan		বাশন পর্বত	revisado	baixa	1	1	0.00	
@@ -675,7 +675,7 @@ Mount Ebal		ঈবল পর্বত	revisado	baixa	2	5	0.00
 Mount Ephraim	ইফ্রয়িম পর্বত	ইফ্রয়িম পর্বত	revisado	baixa	2	3	0.00	
 Mount Ephron			sem	baixa	2	1	0.00	
 Mount Esau			sem	baixa	1	4	0.00	
-Mount Esau	এষৌ পর্বত	এষৌ পর্বত	auto	baixa	1	4	0.00	
+Mount Esau	এষৌ পর্বত	এষৌ পর্বত	revisado	baixa	1	4	0.00	
 Mount Gerizim		গরিষীম পর্বত	revisado	baixa	2	5	0.00	
 Mount Gilboa		গিলবোয় পর্বত	revisado	baixa	2	8	0.00	
 Mount Halak		হালক পর্বত	revisado	baixa	2	2	0.00	
@@ -695,7 +695,7 @@ Mount Sion		সিয়োন পর্বত	revisado	baixa	1	1	0.00
 Mount Zalmon			sem	baixa	2	1	0.00	
 Mount Zemaraim			sem	baixa	2	1	0.00	
 Mount of Esau			sem	baixa	1	4	0.00	
-Mount of Esau	এষৌ পর্বত	এষৌ পর্বত	auto	baixa	1	4	0.00	
+Mount of Esau	এষৌ পর্বত	এষৌ পর্বত	revisado	baixa	1	4	0.00	
 Mount of Olives		জৈতুন পর্বত	revisado	baixa	3	18	0.00	
 Muster Gate			sem	baixa	2	1	0.00	
 Muth-labben	আমা	আমা	sem	baixa	1	1	1.00	কথা
@@ -840,9 +840,9 @@ Sansannah	সন্না	সন্না	revisado	baixa	3	1	1.00	মন্ন�
 Saph	সফ	সফ	revisado	baixa	1	2	0.50	হূশাতীয়
 Scythians	স্কুথীয়	স্কুথীয়	revisado	baixa	1	1	1.00	এখানে
 Sea of Chinnereth		কিন্নেরৎ সাগর	revisado	baixa	1	2	0.00	
-Sea of Chinnereth	কিন্নেরৎ সাগর	কিন্নেরৎ সাগর	auto	baixa	1	2	0.00	
+Sea of Chinnereth	কিন্নেরৎ সাগর	কিন্নেরৎ সাগর	revisado	baixa	1	2	0.00	
 Sea of Chinneroth		কিন্নেরৎ সাগর	revisado	baixa	1	1	0.00	
-Sea of Chinneroth	কিন্নেরত সাগর	কিন্নেরত সাগর	auto	baixa	1	1	0.00	
+Sea of Chinneroth	কিন্নেরত সাগর	কিন্নেরৎ সাগর	revisado	baixa	1	1	0.00	
 Sea of Egypt	মিসর সাগর	মিসর সাগর	revisado	baixa	1	1	0.00	
 Sea of Galilee		গালীল সাগর	revisado	baixa	2	10	0.00	
 Sea of Jazer	যাসের সাগর	যাসের সাগর	revisado	baixa	2	1	0.00	
@@ -983,7 +983,7 @@ Upper Pool			sem	baixa	1	3	0.00
 Vaizatha	বয়িষাথঃ	বয়িষাথ	revisado	baixa	1	1	1.00	অরীষয়
 Vajezatha	বয়িষাথঃ	বয়িষাথঃ	sem	baixa	1	1	1.00	অরীষয়
 Vale of Hebron		হিব্রোণ উপত্যকা	revisado	baixa	1	1	0.00	
-Vale of Hebron	হিব্রোণ উপত্যকা	হিব্রোণ উপত্যকা	auto	baixa	1	1	0.00	
+Vale of Hebron	হিব্রোণ উপত্যকা	হিব্রোণ উপত্যকা	revisado	baixa	1	1	0.00	
 Vale of Siddim		সিদ্দীম উপত্যকা	revisado	baixa	1	3	0.00	
 Valley Gate			sem	baixa	2	4	0.00	
 Valley of Achor		আখোর উপত্যকা	revisado	baixa	2	5	0.00	
@@ -994,15 +994,15 @@ Valley of Baca			sem	baixa	2	1	0.00
 Valley of Decision			sem	baixa	1	1	0.00	
 Valley of Elah	এলা উপত্যকা	এলা উপত্যকা	revisado	baixa	2	3	0.00	
 Valley of Eshcol		ইষ্কোল উপত্যকা	revisado	baixa	1	4	0.00	
-Valley of Eshcol	ইষ্কোল উপত্যকা	ইষ্কোল উপত্যকা	auto	baixa	1	4	0.00	
+Valley of Eshcol	ইষ্কোল উপত্যকা	ইষ্কোল উপত্যকা	revisado	baixa	1	4	0.00	
 Valley of Gerar			sem	baixa	2	2	0.00	
-Valley of Gerar	গরার উপত্যকা	গরার উপত্যকা	auto	baixa	2	2	0.00	
+Valley of Gerar	গরার উপত্যকা	গরার উপত্যকা	revisado	baixa	2	2	0.00	
 Valley of Gibeon			sem	baixa	2	1	0.00	
-Valley of Gibeon	গিবিয়োন উপত্যকা	গিবিয়োন উপত্যকা	auto	baixa	2	1	0.00	
+Valley of Gibeon	গিবিয়োন উপত্যকা	গিবিয়োন উপত্যকা	revisado	baixa	2	1	0.00	
 Valley of Hamon-gog			sem	baixa	1	2	0.00	
 Valley of Hamongog			sem	baixa	1	2	0.00	
 Valley of Hebron		হিব্রোণ উপত্যকা	revisado	baixa	1	1	0.00	
-Valley of Hebron	হিব্রোণ উপত্যকা	হিব্রোণ উপত্যকা	auto	baixa	1	1	0.00	
+Valley of Hebron	হিব্রোণ উপত্যকা	হিব্রোণ উপত্যকা	revisado	baixa	1	1	0.00	
 Valley of Hinnom		হিন্নোম উপত্যকা	revisado	baixa	2	12	0.00	
 Valley of Iphtahel		যিপ্তহেল উপত্যকা	revisado	baixa	1	2	0.00	
 Valley of Jehoshaphat	যিহোশাফট উপত্যকা	যিহোশাফট উপত্যকা	revisado	baixa	2	2	0.00	
@@ -1389,7 +1389,7 @@ Chinneroth	কিন্নেরত	কিন্নেরত	revisado	media	2	3	
 Chislev	কিষলেব	কিষলেব	revisado	media	1	2	0.50	কিশ্
 Chloe	ক্লোয়ী	ক্লোয়ী	revisado	media	2	1	1.00	ক্লোয়ীর
 Chuza	কুষ	কুষ	revisado	media	2	1	1.00	কুষের
-City of David	দায়ূদ নগর	দায়ূদ নগর	auto	media	1	46	0.20	
+City of David	দায়ূদ নগর	দায়ূদ নগর	revisado	media	1	46	0.20	
 Clauda	কৌদা	কৌদা	revisado	media	1	1	1.00	নৌকাটি
 Claudia	ক্লৌদিয়া	ক্লৌদিয়া	revisado	media	2	1	1.00	লীন
 Claudius	ক্লৌদিয়	ক্লৌদিয়	revisado	media	2	11	0.18	ক্লৌদিয়ের
@@ -1693,7 +1693,7 @@ Hereth	হেরত	হেরত	revisado	media	3	1	1.00	দেশে
 Hermas	হর্ম্মা	হর্ম্মা	revisado	media	2	1	1.00	হর্ম্মিপাত্রোবা
 Hermes	হারমেশ	হারমেশ	revisado	media	1	1	1.00	জিউস
 Hermon	হর্মোণ	হর্মোণ	revisado	media	1	7	0.57	হর্মোন
-Hermon Mount	হর্মোণ পর্বত	হর্মোণ পর্বত	auto	media	1	20	0.30	
+Hermon Mount	হর্মোণ পর্বত	হর্মোণ পর্বত	revisado	media	1	20	0.30	
 Herodian	হেরোদীয়	হেরোদীয়	revisado	media	1	3	0.67	হেরোদীয়কে
 Hesed	হেষদ	হেষদ	revisado	media	2	1	1.00	হেফরের
 Heshbon	হিষ্বোন	হিষ্বোন	revisado	media	3	37	0.03	হিশবোন
@@ -1830,139 +1830,139 @@ Jasiel	যাসীয়েল	যাসীয়েল	revisado	media	1	1	1.00
 Jattir	যত্তীর	যত্তীর	revisado	media	3	6	0.50	যত্তী
 Javan	যান	যান	sem	media	1	31	0.03	যারা
 Javan	যারা	যবন	revisado	media	2	2	0.50	যবন
-Jeberechiah	যিবেরিখিয়	যিবেরিখিয়	auto	media	2	1	1.00	যিবেরিখিয়ের
-Jecamiah	যিকমিয়	যিকমিয়	auto	media	1	1	1.00	হোশামা
-Jecoliah	যিখলিয়া	যিখলিয়া	auto	media	2	2	0.50	যিথলিয়া
-Jedaiah	যিদায়	যিদায়	auto	media	4	3	1.00	সারাই
-Jediael	যিদিয়েল	যিদিয়েল	auto	media	2	1	1.00	যোহা
-Jehdeiah	যেহদিয়	যেহদিয়	auto	media	4	2	1.00	এই
-Jehezekel	যিহিষ্কেল	যিহিষ্কেল	auto	media	1	1	1.00	যিহিষ্কেলের
-Jehizkiah	যিহিষ্কিয়	যিহিষ্কিয়	auto	media	2	1	1.00	বেরিখিয়
-Jehoiachin	যিহোয়াখীন	যিহোয়াখীন	auto	media	2	22	0.50	যিহোয়াখীনকে
-Jehoiada	যিহোয়াদায়	যিহোয়াদায়	auto	media	2	1	1.00	যদি
-Jehoiarib	যিহোয়ারীব	যিহোয়ারীব	auto	media	2	1	1.00	যিহোয়ারীবের
-Jehonathan	যিহোনাথন	যিহোনাথন	auto	media	4	2	1.00	পাঠালেন
-Jehonathan	যোনাথন	যোনাথন	auto	media	1	1	1.00	যোনাথনের
-Jehoshabeath	যিহোশাবৎ	যিহোশাবৎ	auto	media	1	2	0.50	যিহোশেবা
-Jehozabad	যিহোষাবদ	যিহোষাবদ	auto	media	6	4	1.00	যোষাখ
-Jehozadak	যিহোষাদক	যিহোষাদক	auto	media	1	12	0.58	যোষাদক
-Jehubbah	যিহুব্ব	যিহুব্ব	auto	media	2	1	1.00	অহি
-Jehucal	যিহূখল	যিহূখল	auto	media	1	2	1.00	যে
-Jehud	যিহূদ	যিহূদ	auto	media	3	1	1.00	বনে
-Jehudi	যিহূদী	যিহূদী	auto	media	2	3	1.00	যিহূদীকে
-Jehudijah	যিহূদীয়া	যিহূদীয়া	auto	media	2	1	1.00	যেরদ
-Jekamiah	যিকমিয়	যিকমিয়	auto	media	3	2	1.00	যিকমিয়ের
-Jekuthiel	যিকুথীয়েল	যিকুথীয়েল	auto	media	2	1	1.00	যিকুথীয়েলকে
-Jemuel	যিমূয়েল	যিমূয়েল	auto	media	2	4	0.50	নমূয়েল
-Jephunneh	যিফুন্নি	যিফুন্নি	auto	media	4	16	0.62	যিফূন্নি
-Jerah	যেরহ	যেরহ	auto	media	2	2	0.50	যক্তনের
-Jerahmeel	যিরহমেল	যিরহমেল	auto	media	6	10	0.80	যিরহমেলের
-Jered	যেরদ	যেরদ	auto	media	2	1	1.00	যেরদকে
-Jeremai	যিরেময়	যিরেময়	auto	media	2	1	1.00	শিমিয়ি৷
-Jeremoth	যিরমোৎ৷	যিরমোৎ৷	auto	media	1	1	1.00	বানির
-Jeriah	যিরিয়	যিরিয়	auto	media	2	2	1.00	হিব্রোণের
-Jeribai	যিরীবয়	যিরীবয়	auto	media	2	1	1.00	যিৎমা
-Jeriel	যিরীয়েল	যিরীয়েল	auto	media	2	1	1.00	এঁরা
-Jerijah	যিরিয়	যিরিয়	auto	media	2	1	1.00	যাসেরে
-Jerimoth	ঈরী	ঈরী	auto	media	2	1	1.00	যিরেমোৎ
-Jerimoth	যিরেমোৎ	যিরেমোৎ	auto	media	4	4	1.00	অস্রীয়েলের
-Jeroham	যিহোরাম	যিহোরাম	auto	media	2	1	1.00	যিহোহাননের
-Jerubbesheth	যিরূব্বেশত	যিরূব্বেশত	auto	media	1	1	1.00	যিরূব্বেশতের
-Jeruel	যিরূয়েল	যিরূয়েল	auto	media	3	1	1.00	বিরুদ্ধে
-Jerusalem	যিরূশালেম	যিরূশালেম	auto	media	3	1074	0.33	যিরূশালেমে
-Jesaiah	যিশায়াহ	যিশায়াহ	auto	media	2	2	1.00	রফায়
-Jeshaiah	যিশায়াহ	যিশায়াহ	auto	media	9	8	0.75	যিশায়াহের
-Jeshebeab	যেশবাব	যেশবাব	auto	media	2	1	1.00	যেশবাবের
-Jesher	যেশর	যেশর	auto	media	2	1	1.00	যেশ
-Jeshishai	যিশীশয়	যিশীশয়	auto	media	2	1	1.00	যিশীশয়ের
-Jeshohaiah	যিশোহায়	যিশোহায়	auto	media	2	1	1.00	অসায়
-Jeshua	যেশূয়তে	যেশূয়তে	auto	media	3	1	1.00	পেলটে
-Jesiah	যিশিয়	যিশিয়	auto	media	1	1	1.00	যোয়েষ
-Jesimiel	যিশীমীয়েল	যিশীমীয়েল	auto	media	2	1	1.00	যিশোহায়
-Jesus	যীশু	যীশু	auto	media	2	1161	0.71	যুষ্ঠ
-Jether	যেথর	যেথর	auto	media	9	9	0.78	যেথ
-Jetheth	যিথেৎ	যিথেৎ	auto	media	2	2	0.50	ভেদে
-Jethro	যিথ্রো	যিথ্রো	auto	media	2	19	0.47	যিথ্রোর
-Jezer	যেৎসর	যেৎসর	auto	media	2	3	1.00	যেৎস
-Jeziah	যিষিয়	যিষিয়	auto	media	1	1	1.00	পরিয়োশ
-Jeziel	যিষীয়েল	যিষীয়েল	auto	media	2	1	1.00	যেহূ
-Jezliah	হিষ্কি	হিষ্কি	auto	media	1	1	1.00	লিয়
-Jezoar	যিৎসোহর	যিৎসোহর	auto	media	1	1	1.00	যিৎসোহ
-Jezrahiah	যিষ্রহিয়	যিষ্রহিয়	auto	media	2	1	1.00	গায়কেরা
-Jezreel	যিষ্রিয়েল	যিষ্রিয়েল	auto	media	9	39	0.44	ঐটমের
-Jezreel	যিষ্রিয়েলে	যিষ্রিয়েলে	auto	media	1	29	0.41	যিষ্রিয়েল
-Joahaz	যোয়াহস	যোয়াহস	auto	media	2	1	1.00	যোয়াহসের
-Joash	যোয়াশ	যোয়াশ	auto	media	16	56	0.77	যোয়াশের
-Joed	যোয়েদ	যোয়েদ	auto	media	2	1	1.00	যোয়ে
-Joelah	যোয়েলা	যোয়েলা	auto	media	2	1	1.00	যিরোহমের
-Jogbehah	যগ্	যগ্	auto	media	3	2	0.50	যগবিহ
-Johanan	যিহোহানন	যিহোহানন	auto	media	4	3	1.00	যিহোহাননের
-Joiada	যিহোয়াদা	যিহোয়াদা	auto	media	1	1	1.00	বসালো
-Jokdeam	যক্	যক্	auto	media	3	1	1.00	দিয়াম
-Jokmeam	যক্	যক্	auto	media	4	2	1.00	মিয়াম
-Jokneam	যক্নিয়াম	যক্নিয়াম	auto	media	3	5	0.20	যক্নিয়ামের
-Jokshan	যক্	যক্	auto	media	2	3	1.00	মদান
-Jonam	যোনম	যোনম	auto	media	1	1	1.00	যোনমের
-Jonas	যোহন	যোহন	auto	media	1	4	1.00	যোহনের
-Joppa	যোফা	যোফা	auto	media	3	14	0.07	যোনা
-Jordan	যর্দ্দন	যর্দ্দন	auto	media	3	204	0.82	যর্দ্দনের
-Jorkeam	যর্কিয়ম	যর্কিয়ম	auto	media	2	1	1.00	রহম
-Josabad	যোষাবদ	যোষাবদ	auto	media	1	1	1.00	যহসীয়েল
-Josedech	যিহোষাদক	যিহোষাদক	auto	media	1	12	0.58	যোষাদক
-Joseph	যোষেখ	যোষেখ	auto	media	1	1	1.00	যোষেখের
-Joses	যোশি	যোশি	auto	media	1	3	0.33	যোষি
-Joses	যোষি	যোষি	auto	media	2	5	0.40	যোশি
-Joshah	যোশঃ	যোশঃ	auto	media	2	1	1.00	যম্লেক
-Joshaphat	যিহোশাফট	যিহোশাফট	auto	media	1	1	1.00	যিহিয়
-Joshbekashah	বকাশা	বকাশা	auto	media	2	2	1.00	বকাশার
-Josiah	যোশিয়া	যোশিয়া	auto	media	1	4	0.25	যোশিয়
-Jotbah	যট্	যট্	auto	media	3	1	1.00	রাজত্ব
-Jotbathah	বাথা	বাথা	auto	media	3	3	0.33	যট্
-Jozadak	যিহোষাদক	যিহোষাদক	auto	media	2	1	1.00	যিহোষাদকের
-Jucal	যিহূখল	যিহূখল	auto	media	1	2	1.00	ছেলে
-Juda	যিহূদা	যিহূদা	auto	media	1	1	1.00	যিহূদার
-Judaism	যিহুদী	যিহুদী	auto	media	1	2	1.00	যাচ্ছিলাম
-Judas	যিহূদা	যিহূদা	auto	media	7	31	0.94	উদয়
-Jude	যিহূদা	যিহূদা	auto	media	2	3	1.00	যীশুকে
-Judea	যিহূদায়	যিহূদায়	auto	media	1	2	0.50	যিহূদা
-Judea	যিহূদিয়া	যিহূদিয়া	auto	media	2	44	0.36	যিহূদিয়াতে
-Judea	যিহূদিয়াতে	যিহূদিয়াতে	auto	media	2	59	0.12	যিহূদিয়া
-Julius	যুলিয়	যুলিয়	auto	media	2	2	1.00	ইতালিয়াতে
-Jushab-hesed	যুশবহেষদ	যুশবহেষদ	auto	media	2	1	1.00	হশুবা
-Justus	যুষ্ঠ	যুষ্ঠ	auto	media	3	2	1.00	তিতিয়
-Kabzeel	কবসেলীয়	কবসেলীয়	auto	media	3	4	0.25	সেল
-Kadmiel	কদমীয়েল	কদমীয়েল	auto	media	2	8	0.25	মীয়েল
-Kain	কয়িন	কয়িন	auto	media	3	2	0.50	ক্ষয়
-Kanah	কান্না	কান্না	auto	media	3	2	1.00	সীমানা
-Kanah	কান্নাতে	কান্নাতে	auto	media	3	5	0.40	মহাসীদোন
-Karkor	কর্কোরে	কর্কোরে	auto	media	3	1	1.00	মাত্র
-Karnaim	কর্ণয়িমে	কর্ণয়িমে	auto	media	1	1	1.00	কদরলায়ম
-Karnaim	কারনাইন	কারনাইন	auto	media	1	1	1.00	করি
-Kartan	কর্ত্তন	কর্ত্তন	auto	media	3	1	1.00	নরহন্তা
-Kedar	কেদর	কেদর	auto	media	4	11	0.73	কেদরে
-Kedemoth	কদেমোৎ	কদেমোৎ	auto	media	3	4	1.00	চারিটী
-Kedesh	কেদশ	কেদশ	auto	media	8	12	0.83	কেদশে
-Kedesh	কেদশে	কেদশে	auto	media	1	3	0.67	কেদশ
-Kelaiah	কলায়	কলায়	auto	media	2	1	1.00	কলীট
-Kelita	কলীট	কলীট	auto	media	2	2	1.00	পলায়
-Kenath	কনাৎ	কনাৎ	auto	media	3	4	0.50	ষাটটা
-Keren-happuch	কেরনহপ্পূক	কেরনহপ্পূক	auto	media	2	1	1.00	নাম
-Kerioth	করিয়োত	করিয়োত	auto	media	2	3	0.67	করিয়োৎ
-Kezia	কৎসীয়া	কৎসীয়া	auto	media	1	1	1.00	যিমীমা
-Keziah	কৎসীয়া	কৎসীয়া	auto	media	1	1	1.00	যিমীমা
-Kibroth-hattaavah	কিব্রোৎহত্তাবাতে	কিব্রোৎহত্তাবাতে	auto	media	3	5	0.20	কিব্রোৎ
-Kibzaim	কিব্	কিব্	auto	media	3	2	0.50	সয়িম
-Kir	কীর	কীর	auto	media	1	1	1.00	কী
-Kir	কীরে	কীরে	auto	media	3	5	0.40	কীর
-Kir	কীর্	কীর্	auto	media	1	7	0.29	কীর
-Kiriath-arba	কিরিয়থর্ব্ব	কিরিয়থর্ব্ব	auto	media	1	7	0.14	কিরিয়থর্ব্বে
-Kiriath-jearim	যিরারীম	যিরারীম	auto	media	3	22	0.05	কিরিয়ৎ
-Kiriathaim	কিরিয়াথয়িম	কিরিয়াথয়িম	auto	media	6	10	0.50	কিরিয়াথয়িমে
-Kitron	কিটরোণ	কিটরোণ	auto	media	3	3	0.33	কনানীয়
-Kiyyun	কীয়ুন	কীয়ুন	auto	media	1	1	1.00	সিক্কূৎ
-Kohath	কহাত	কহাত	auto	media	2	42	0.43	কহাৎ
-Korah	কোরহ	কোরহ	auto	media	8	44	0.66	অনা
-Kore	কোরহ	কোরহ	auto	media	1	3	0.67	কোরি
+Jeberechiah	যিবেরিখিয়	যিবেরিখিয়	revisado	media	2	1	1.00	যিবেরিখিয়ের
+Jecamiah	যিকমিয়	যিকমিয়	revisado	media	1	1	1.00	হোশামা
+Jecoliah	যিখলিয়া	যিখলিয়া	revisado	media	2	2	0.50	যিথলিয়া
+Jedaiah	যিদায়	যিদায়	revisado	media	4	3	1.00	সারাই
+Jediael	যিদিয়েল	যিদিয়েল	revisado	media	2	1	1.00	যোহা
+Jehdeiah	যেহদিয়	যেহদিয়	revisado	media	4	2	1.00	এই
+Jehezekel	যিহিষ্কেল	যিহিষ্কেল	revisado	media	1	1	1.00	যিহিষ্কেলের
+Jehizkiah	যিহিষ্কিয়	যিহিষ্কিয়	revisado	media	2	1	1.00	বেরিখিয়
+Jehoiachin	যিহোয়াখীন	যিহোয়াখীন	revisado	media	2	22	0.50	যিহোয়াখীনকে
+Jehoiada	যিহোয়াদায়	যিহোয়াদা	revisado	media	2	1	1.00	যদি
+Jehoiarib	যিহোয়ারীব	যিহোয়ারীব	revisado	media	2	1	1.00	যিহোয়ারীবের
+Jehonathan	যিহোনাথন	যিহোনাথন	revisado	media	4	2	1.00	পাঠালেন
+Jehonathan	যোনাথন	যোনাথন	revisado	media	1	1	1.00	যোনাথনের
+Jehoshabeath	যিহোশাবৎ	যিহোশাবৎ	revisado	media	1	2	0.50	যিহোশেবা
+Jehozabad	যিহোষাবদ	যিহোষাবদ	revisado	media	6	4	1.00	যোষাখ
+Jehozadak	যিহোষাদক	যিহোষাদক	revisado	media	1	12	0.58	যোষাদক
+Jehubbah	যিহুব্ব	যিহুব্ব	revisado	media	2	1	1.00	অহি
+Jehucal	যিহূখল	যিহূখল	revisado	media	1	2	1.00	যে
+Jehud	যিহূদ	যিহূদ	revisado	media	3	1	1.00	বনে
+Jehudi	যিহূদী	যিহূদী	revisado	media	2	3	1.00	যিহূদীকে
+Jehudijah	যিহূদীয়া	যিহূদীয়া	revisado	media	2	1	1.00	যেরদ
+Jekamiah	যিকমিয়	যিকমিয়	revisado	media	3	2	1.00	যিকমিয়ের
+Jekuthiel	যিকুথীয়েল	যিকুথীয়েল	revisado	media	2	1	1.00	যিকুথীয়েলকে
+Jemuel	যিমূয়েল	যিমূয়েল	revisado	media	2	4	0.50	নমূয়েল
+Jephunneh	যিফুন্নি	যিফুন্নি	revisado	media	4	16	0.62	যিফূন্নি
+Jerah	যেরহ	যেরহ	revisado	media	2	2	0.50	যক্তনের
+Jerahmeel	যিরহমেল	যিরহমেল	revisado	media	6	10	0.80	যিরহমেলের
+Jered	যেরদ	যেরদ	revisado	media	2	1	1.00	যেরদকে
+Jeremai	যিরেময়	যিরেময়	revisado	media	2	1	1.00	শিমিয়ি৷
+Jeremoth	যিরমোৎ৷	যিরমোৎ	revisado	media	1	1	1.00	বানির
+Jeriah	যিরিয়	যিরিয়	revisado	media	2	2	1.00	হিব্রোণের
+Jeribai	যিরীবয়	যিরীবয়	revisado	media	2	1	1.00	যিৎমা
+Jeriel	যিরীয়েল	যিরীয়েল	revisado	media	2	1	1.00	এঁরা
+Jerijah	যিরিয়	যিরিয়	revisado	media	2	1	1.00	যাসেরে
+Jerimoth	ঈরী	ঈরী	sem	media	2	1	1.00	যিরেমোৎ
+Jerimoth	যিরেমোৎ	যিরেমোৎ	revisado	media	4	4	1.00	অস্রীয়েলের
+Jeroham	যিহোরাম	যিহোরাম	revisado	media	2	1	1.00	যিহোহাননের
+Jerubbesheth	যিরূব্বেশত	যিরূব্বেশত	revisado	media	1	1	1.00	যিরূব্বেশতের
+Jeruel	যিরূয়েল	যিরূয়েল	revisado	media	3	1	1.00	বিরুদ্ধে
+Jerusalem	যিরূশালেম	যিরূশালেম	revisado	media	3	1074	0.33	যিরূশালেমে
+Jesaiah	যিশায়াহ	যিশায়াহ	revisado	media	2	2	1.00	রফায়
+Jeshaiah	যিশায়াহ	যিশায়াহ	revisado	media	9	8	0.75	যিশায়াহের
+Jeshebeab	যেশবাব	যেশবাব	revisado	media	2	1	1.00	যেশবাবের
+Jesher	যেশর	যেশর	revisado	media	2	1	1.00	যেশ
+Jeshishai	যিশীশয়	যিশীশয়	revisado	media	2	1	1.00	যিশীশয়ের
+Jeshohaiah	যিশোহায়	যিশোহায়	revisado	media	2	1	1.00	অসায়
+Jeshua	যেশূয়তে	যেশূয়তে	sem	media	3	1	1.00	পেলটে
+Jesiah	যিশিয়	যিশিয়	revisado	media	1	1	1.00	যোয়েষ
+Jesimiel	যিশীমীয়েল	যিশীমীয়েল	revisado	media	2	1	1.00	যিশোহায়
+Jesus	যীশু	যীশু	revisado	media	2	1161	0.71	যুষ্ঠ
+Jether	যেথর	যেথর	revisado	media	9	9	0.78	যেথ
+Jetheth	যিথেৎ	যিথেৎ	revisado	media	2	2	0.50	ভেদে
+Jethro	যিথ্রো	যিথ্রো	revisado	media	2	19	0.47	যিথ্রোর
+Jezer	যেৎসর	যেৎসর	revisado	media	2	3	1.00	যেৎস
+Jeziah	যিষিয়	যিষিয়	revisado	media	1	1	1.00	পরিয়োশ
+Jeziel	যিষীয়েল	যিষীয়েল	revisado	media	2	1	1.00	যেহূ
+Jezliah	হিষ্কি	যিষ্‌লিয়	revisado	media	1	1	1.00	লিয়
+Jezoar	যিৎসোহর	যিৎসোহর	revisado	media	1	1	1.00	যিৎসোহ
+Jezrahiah	যিষ্রহিয়	যিষ্রহিয়	revisado	media	2	1	1.00	গায়কেরা
+Jezreel	যিষ্রিয়েল	যিষ্রিয়েল	revisado	media	9	39	0.44	ঐটমের
+Jezreel	যিষ্রিয়েলে	যিষ্রিয়েল	revisado	media	1	29	0.41	যিষ্রিয়েল
+Joahaz	যোয়াহস	যোয়াহস	revisado	media	2	1	1.00	যোয়াহসের
+Joash	যোয়াশ	যোয়াশ	revisado	media	16	56	0.77	যোয়াশের
+Joed	যোয়েদ	যোয়েদ	revisado	media	2	1	1.00	যোয়ে
+Joelah	যোয়েলা	যোয়েলা	revisado	media	2	1	1.00	যিরোহমের
+Jogbehah	যগ্	যগবিহ	revisado	media	3	2	0.50	যগবিহ
+Johanan	যিহোহানন	যিহোহানন	revisado	media	4	3	1.00	যিহোহাননের
+Joiada	যিহোয়াদা	যিহোয়াদা	revisado	media	1	1	1.00	বসালো
+Jokdeam	যক্	যক্‌দিয়াম	revisado	media	3	1	1.00	দিয়াম
+Jokmeam	যক্	যক্মিয়াম	revisado	media	4	2	1.00	মিয়াম
+Jokneam	যক্নিয়াম	যক্নিয়াম	revisado	media	3	5	0.20	যক্নিয়ামের
+Jokshan	যক্	যক্‌শন	revisado	media	2	3	1.00	মদান
+Jonam	যোনম	যোনম	revisado	media	1	1	1.00	যোনমের
+Jonas	যোহন	যোহন	revisado	media	1	4	1.00	যোহনের
+Joppa	যোফা	যোফা	revisado	media	3	14	0.07	যোনা
+Jordan	যর্দ্দন	যর্দ্দন	revisado	media	3	204	0.82	যর্দ্দনের
+Jorkeam	যর্কিয়ম	যর্কিয়ম	revisado	media	2	1	1.00	রহম
+Josabad	যোষাবদ	যোষাবদ	revisado	media	1	1	1.00	যহসীয়েল
+Josedech	যিহোষাদক	যিহোষাদক	revisado	media	1	12	0.58	যোষাদক
+Joseph	যোষেখ	যোষেফ	revisado	media	1	1	1.00	যোষেখের
+Joses	যোশি	যোশি	revisado	media	1	3	0.33	যোষি
+Joses	যোষি	যোষি	revisado	media	2	5	0.40	যোশি
+Joshah	যোশঃ	যোশহ	revisado	media	2	1	1.00	যম্লেক
+Joshaphat	যিহোশাফট	যিহোশাফট	revisado	media	1	1	1.00	যিহিয়
+Joshbekashah	বকাশা	যোশবকাশা	revisado	media	2	2	1.00	বকাশার
+Josiah	যোশিয়া	যোশিয়া	revisado	media	1	4	0.25	যোশিয়
+Jotbah	যট্	যট্বা	revisado	media	3	1	1.00	রাজত্ব
+Jotbathah	বাথা	যট্বাথা	revisado	media	3	3	0.33	যট্
+Jozadak	যিহোষাদক	যিহোষাদক	revisado	media	2	1	1.00	যিহোষাদকের
+Jucal	যিহূখল	যিহূখল	revisado	media	1	2	1.00	ছেলে
+Juda	যিহূদা	যিহূদা	revisado	media	1	1	1.00	যিহূদার
+Judaism	যিহুদী	যিহূদী ধর্ম	revisado	media	1	2	1.00	যাচ্ছিলাম
+Judas	যিহূদা	যিহূদা	revisado	media	7	31	0.94	উদয়
+Jude	যিহূদা	যিহূদা	revisado	media	2	3	1.00	যীশুকে
+Judea	যিহূদায়	যিহূদা	revisado	media	1	2	0.50	যিহূদা
+Judea	যিহূদিয়া	যিহূদিয়া	revisado	media	2	44	0.36	যিহূদিয়াতে
+Judea	যিহূদিয়াতে	যিহূদিয়া	revisado	media	2	59	0.12	যিহূদিয়া
+Julius	যুলিয়	যুলিয়	revisado	media	2	2	1.00	ইতালিয়াতে
+Jushab-hesed	যুশবহেষদ	যুশবহেষদ	revisado	media	2	1	1.00	হশুবা
+Justus	যুষ্ঠ	যুষ্ঠ	revisado	media	3	2	1.00	তিতিয়
+Kabzeel	কবসেলীয়	কবসেল	revisado	media	3	4	0.25	সেল
+Kadmiel	কদমীয়েল	কদমীয়েল	revisado	media	2	8	0.25	মীয়েল
+Kain	কয়িন	কয়িন	revisado	media	3	2	0.50	ক্ষয়
+Kanah	কান্না	কান্না	revisado	media	3	2	1.00	সীমানা
+Kanah	কান্নাতে	কান্না	revisado	media	3	5	0.40	মহাসীদোন
+Karkor	কর্কোরে	কর্কোর	revisado	media	3	1	1.00	মাত্র
+Karnaim	কর্ণয়িমে	কর্ণয়িম	revisado	media	1	1	1.00	কদরলায়ম
+Karnaim	কারনাইন	কর্ণয়িম	revisado	media	1	1	1.00	করি
+Kartan	কর্ত্তন	কর্ত্তন	revisado	media	3	1	1.00	নরহন্তা
+Kedar	কেদর	কেদর	revisado	media	4	11	0.73	কেদরে
+Kedemoth	কদেমোৎ	কদেমোৎ	revisado	media	3	4	1.00	চারিটী
+Kedesh	কেদশ	কেদশ	revisado	media	8	12	0.83	কেদশে
+Kedesh	কেদশে	কেদশ	revisado	media	1	3	0.67	কেদশ
+Kelaiah	কলায়	কলায়	revisado	media	2	1	1.00	কলীট
+Kelita	কলীট	কলীট	revisado	media	2	2	1.00	পলায়
+Kenath	কনাৎ	কনাৎ	revisado	media	3	4	0.50	ষাটটা
+Keren-happuch	কেরনহপ্পূক	কেরনহপ্পূক	revisado	media	2	1	1.00	নাম
+Kerioth	করিয়োত	করিয়োত	revisado	media	2	3	0.67	করিয়োৎ
+Kezia	কৎসীয়া	কৎসীয়া	revisado	media	1	1	1.00	যিমীমা
+Keziah	কৎসীয়া	কৎসীয়া	revisado	media	1	1	1.00	যিমীমা
+Kibroth-hattaavah	কিব্রোৎহত্তাবাতে	কিব্রোৎহত্তাবা	revisado	media	3	5	0.20	কিব্রোৎ
+Kibzaim	কিব্	কিব্সয়িম	revisado	media	3	2	0.50	সয়িম
+Kir	কীর	কীর	revisado	media	1	1	1.00	কী
+Kir	কীরে	কীর	revisado	media	3	5	0.40	কীর
+Kir	কীর্	কীর	revisado	media	1	7	0.29	কীর
+Kiriath-arba	কিরিয়থর্ব্ব	কিরিয়ৎ-অর্ব্ব	revisado	media	1	7	0.14	কিরিয়থর্ব্বে
+Kiriath-jearim	যিরারীম	কিরিয়ৎ-যিয়ারীম	revisado	media	3	22	0.05	কিরিয়ৎ
+Kiriathaim	কিরিয়াথয়িম	কিরিয়াথয়িম	revisado	media	6	10	0.50	কিরিয়াথয়িমে
+Kitron	কিটরোণ	কিটরোণ	revisado	media	3	3	0.33	কনানীয়
+Kiyyun	কীয়ুন	কীয়ুন	revisado	media	1	1	1.00	সিক্কূৎ
+Kohath	কহাত	কহাত	revisado	media	2	42	0.43	কহাৎ
+Korah	কোরহ	কোরহ	revisado	media	8	44	0.66	অনা
+Kore	কোরহ	কোরহ	revisado	media	1	3	0.67	কোরি
 Kore	কোরি	কোরি	auto	media	3	3	0.67	করে
 Koz	কোষ	কোষ	auto	media	1	1	1.00	হক্কোষ
 Koz	হক্কোস	হক্কোস	auto	media	2	4	1.00	হক্কোসের
