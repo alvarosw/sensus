@@ -24,7 +24,7 @@ Abiezer	অবীয়েষরের	অবীয়েষ্রীয়	revi
 Abijah	অবী	অবিয়	revisado	baixa	1	2	0.50	অবিয়া
 Abilene	অবিলীনি	অবিলীনি	sem	baixa	3	1	1.00	অবিলীনির
 Accad	অক্কদ	আক্কদ	revisado	baixa	3	1	1.00	জায়গা
-Achor Valley			auto	baixa	1	5	0.00	
+Achor Valley			sem	baixa	1	5	0.00	
 Achshaph	ষফ	ষফ	sem	baixa	3	3	1.00	ষফের
 Adalia	অদলিয়ঃ	অদলিয়ঃ	sem	baixa	2	1	1.00	অরীদাথঃ
 Adami-nekeb	অদামী	অদামী	sem	baixa	3	1	1.00	নেকব
@@ -37,7 +37,7 @@ Adna	অদন	অদনা	revisado	baixa	4	2	1.00	বনায়
 Adnah	অদন	অদ্না	revisado	baixa	4	2	1.00	হাজা
 Adoni-bezek	অদোনী	অদোনী	sem	baixa	2	3	1.00	বেষক
 Adoni-zedek	ষেদক	ষেদক	sem	baixa	2	2	1.00	অদোনী
-Adriatic Sea			auto	baixa	2	1	0.00	
+Adriatic Sea		আদ্রিয়া সমুদ্র	revisado	baixa	2	1	0.00	
 Aeneas	অবসাঙ্গতা	অবসাঙ্গতা	sem	baixa	2	2	0.50	বিছানা
 Aenon	ঐনোন	ঐনোন	sem	baixa	3	1	1.00	যোহনও
 Aharhel	হারুমের	হারুমের	sem	baixa	2	1	1.00	অহর্হল
@@ -96,7 +96,7 @@ Apharasthchite	অফর্সত্খীয়	অফর্সত্খীয�
 Aphiah	অফীহ	অফীহ	sem	baixa	2	1	1.00	অফীহের
 Aphses	হপ্পিসেস	হপ্পিসেস	sem	baixa	1	1	1.00	হপ্পিসেসের
 Appaim	অপ্পয়িম	অপ্পয়িম	sem	baixa	2	2	1.00	অপ্পয়িমের
-Appii Forum			auto	baixa	1	1	0.00	
+Appii Forum		অপ্পিয়ের হাট	revisado	baixa	1	1	0.00	
 Arabia	আরব	আরব	revisado	baixa	3	8	0.75	আরবের
 Arad	অরা	অরাদ	revisado	baixa	5	5	0.80	অরাদের
 Aram-naharaim	আমাদের	আমাদের	sem	baixa	2	1	1.00	আমা
@@ -138,7 +138,7 @@ Atroth-shophan	অটরোত	অটরোত	sem	baixa	3	1	1.00	শোফন
 Attai	অত্তয়	অত্তয়	revisado	baixa	6	4	1.00	যার্হা
 Attalia	অত্তালিয়াতে	আত্তালিয়া	revisado	baixa	3	2	0.50	তাঁরা
 Aven	পাহাড়কে	পাহাড়কে	sem	baixa	2	1	1.00	পাবে
-Aven Valley			auto	baixa	1	1	0.00	
+Aven Valley			sem	baixa	1	1	0.00	
 Avith	হারিয়ে	হারিয়ে	sem	baixa	3	2	0.50	রাজত্ব
 Avva	রাজা	রাজা	sem	baixa	2	1	1.00	তারা
 Avvim	অব্বীম	অব্বীয়	revisado	baixa	3	1	1.00	অফ্রা
@@ -165,7 +165,7 @@ Baal-hanan	হানন	হানন	sem	baixa	1	1	1.00	বাল
 Baal-tamar	তামরে	তামরে	sem	baixa	3	1	1.00	বাল্
 Baal-zebub	সবূব	সবূব	sem	baixa	2	4	1.00	সবূবের
 Baal-zephon	সফোন	সফোন	sem	baixa	3	3	1.00	সফোনের
-Baalah Mount			auto	baixa	1	1	0.00	
+Baalah Mount			sem	baixa	1	1	0.00	
 Baalath-beer	বালৎ	বালৎ	sem	baixa	2	2	0.50	বের
 Baalhanan	হানন	হানন	sem	baixa	1	1	1.00	বাল
 Bajith	কাঁদবা	কাঁদবা	sem	baixa	1	1	1.00	কাটা
@@ -176,7 +176,7 @@ Bartimaeus	বরতীময়	বর্তিময়	revisado	baixa	2	1	1.0
 Bath-rabbim	রব্বীম	রব্বীম	sem	baixa	3	1	1.00	রব্বীমের
 Bath-shua	শূয়া	শূয়া	sem	baixa	1	2	0.50	শূয়
 Bear	বাচ্চাদের	বাচ্চাদের	sem	baixa	1	2	0.50	বাচ্চা
-Beautiful Gate			auto	baixa	3	2	0.00	
+Beautiful Gate		সুন্দর দরজা	revisado	baixa	3	2	0.00	
 Bedad	বদ	বদ	sem	baixa	2	2	1.00	হদদ্
 Beer-lahai-roi	রয়ী	রয়ী	sem	baixa	3	3	1.00	লহয়
 Ben-Geber	গেবর	গেবর	sem	baixa	1	1	1.00	গেব
@@ -190,7 +190,7 @@ Ben-hur	বিন্	বিন্	sem	baixa	1	1	1.00	হূর
 Bene-berak	বরক	বরক	sem	baixa	3	1	1.00	বনে
 Bene-jaakan	বনে	বনে	sem	baixa	2	2	1.00	যাত্রা
 Benhail	হয়িল	হয়িল	sem	baixa	1	1	1.00	বিন্
-Benjamin Gate	বিন্যামীন দ্বার	বিন্যামীন দ্বার	auto	baixa	3	4	0.00	
+Benjamin Gate	বিন্যামীন দ্বার	বিন্যামীন দ্বার	revisado	baixa	3	4	0.00	
 Berea	ভাইয়েরা	বিরয়া	revisado	baixa	1	2	0.50	বিরয়া
 Beth-Ashtoreth	অষ্টারোৎ	অষ্টারোৎ	sem	baixa	1	1	1.00	টাঙ্গিয়ে
 Beth-anath	অনাত	অনাত	sem	baixa	3	2	0.50	অনাৎ
@@ -229,20 +229,20 @@ Bethphage	বৈৎফগী	বৈৎফগী	revisado	baixa	3	3	1.00	এল�
 Bethuel	বথূয়েল	বথূয়েল	revisado	baixa	2	9	0.67	বথুয়েল
 Bethuel	বথূয়েলে	বথূয়েল	revisado	baixa	2	1	1.00	হর্মাতে
 Bezai	হোদিয়	হোদিয়	sem	baixa	2	1	1.00	হশুম
-Booths Festival			auto	baixa	1	1	0.00	
-Broad Wall			auto	baixa	3	2	0.00	
-Brook Eshcol			auto	baixa	1	4	0.00	
-Brook Kidron	কিদ্রোণ নদী	কিদ্রোণ নদী	auto	baixa	1	2	0.00	
-Brook of Egypt	মিসর নদী	মিসর নদী	auto	baixa	3	11	0.00	
-Brook of the Arabah	অরাবা নদী	অরাবা নদী	auto	baixa	2	1	0.00	
-Brook of the Willows			auto	baixa	2	1	0.00	
+Booths Festival			sem	baixa	1	1	0.00	
+Broad Wall		চওড়া দেওয়াল	revisado	baixa	3	2	0.00	
+Brook Eshcol			sem	baixa	1	4	0.00	
+Brook Kidron	কিদ্রোণ নদী	কিদ্রোণ নদী	revisado	baixa	1	2	0.00	
+Brook of Egypt	মিসর নদী	মিসর নদী	revisado	baixa	3	11	0.00	
+Brook of the Arabah	অরাবা নদী	অরাবা নদী	revisado	baixa	2	1	0.00	
+Brook of the Willows			sem	baixa	2	1	0.00	
 Buzites	বূষীয়	বূষীয়	sem	baixa	1	2	1.00	উঠে
 Caesarea	কৈসরিয়া	কৈসরিয়া	revisado	baixa	2	16	0.44	আসার
 Calah	কেলহ	কলহ	revisado	baixa	3	2	0.50	কেলহের
 Calneh	কলনী	কলনী	sem	baixa	1	1	1.00	ছিল
 Calno	দামেস্ক	দামেস্ক	sem	baixa	1	1	1.00	আর
 Canneh	কন্নী	কন্নী	sem	baixa	2	1	1.00	হারন
-Carmel Mount			auto	baixa	1	5	0.00	
+Carmel Mount		কর্মিল পর্বত	revisado	baixa	1	5	0.00	
 Cenchreae	কংক্রিয়া	কংক্রিয়া	revisado	baixa	3	3	0.33	কিংক্রিয়াস্থ
 Chaldea	কলদীয়	কলদীয়	revisado	baixa	1	9	0.78	পালাও
 Chenaniah	কননিয়	কনানিয়	revisado	baixa	3	3	1.00	কননিয়ের
@@ -252,13 +252,13 @@ Cherethites	করেথীয়	করেথীয়	revisado	baixa	2	12	0.75
 Chisloth-tabor	তাবোরের	তাবোরের	sem	baixa	2	1	1.00	তাবোর
 Chronicles	বইটিতে	বংশাবলি	revisado	baixa	1	38	0.84	করেছিলেন
 Chushan-rishathaim	রিশিয়াথয়িম	রিশিয়াথয়িম	sem	baixa	1	2	1.00	কূশন
-City of David			auto	baixa	1	46	0.00	
-City of Destruction			auto	baixa	1	1	0.00	
-City of Palms			auto	baixa	2	4	0.00	
-City of Salt			auto	baixa	2	1	0.00	
-City of the Lord			auto	baixa	1	2	0.00	
+City of David		দায়ূদের নগর	revisado	baixa	1	46	0.00	
+City of Destruction			sem	baixa	1	1	0.00	
+City of Palms			sem	baixa	2	4	0.00	
+City of Salt			sem	baixa	2	1	0.00	
+City of the Lord			sem	baixa	1	2	0.00	
 Cnidus	ক্লীদ	ক্লীদ	sem	baixa	3	1	1.00	ক্রীতী
-Corner Gate			auto	baixa	3	5	0.00	
+Corner Gate			sem	baixa	3	5	0.00	
 Cush	দেশ	কূশ	revisado	baixa	1	1	1.00	বেষ্টন
 Cush	পিছু	কূশ	revisado	baixa	1	1	1.00	রক্ষা
 Cushan-rishathaim	রিশিয়াথয়িম	রিশিয়াথয়িম	sem	baixa	1	2	1.00	কূশন
@@ -266,30 +266,30 @@ Cyprus	কুপ্র	কুপ্র	revisado	baixa	3	15	0.27	সাইপ্�
 Cyrene	কুরীনীয়	কুরীনী	revisado	baixa	3	7	0.57	কুরিনীয়
 Cyrenius	কুরীনিয়	কুরীনিয়	revisado	baixa	1	1	1.00	কুরীনিয়ের
 Debir	বটোনীম	দবীর	revisado	baixa	2	1	1.00	পী
-Dedication Festival			auto	baixa	1	1	0.00	
+Dedication Festival			sem	baixa	1	1	0.00	
 Dehavites	দেহ্বীয়	দেহ্বীয়	sem	baixa	1	1	1.00	দীনীয়
 Demetrius	দীমীত্রিয়	দীমীত্রিয়	revisado	baixa	2	3	0.67	দীমীত্রিয়ের
 Destruction	আনুগত্য	আনুগত্য	sem	baixa	1	1	1.00	আনুগত্যের
 Deuel	দ্যূয়েল	দূয়েল	revisado	baixa	1	5	0.80	দ্যুয়েল
 Dinaites	দীনীয়	দীনীয়	sem	baixa	1	1	1.00	দেহ্বীয়
-Dragon Spring			auto	baixa	3	1	0.00	
-Dung Gate			auto	baixa	3	4	0.00	
+Dragon Spring			sem	baixa	3	1	0.00	
+Dung Gate			sem	baixa	3	4	0.00	
 East	মাত্	মাত্	sem	baixa	2	6	0.17	এরাই
 East	হাৎসো	হাৎসো	sem	baixa	1	18	0.06	রাস্তা
-East Gate			auto	baixa	4	5	0.00	
-East Square			auto	baixa	1	1	0.00	
-Ebal Mount			auto	baixa	1	8	0.00	
+East Gate		পূর্ব দ্বার	revisado	baixa	4	5	0.00	
+East Square			sem	baixa	1	1	0.00	
+Ebal Mount		ঈবল পর্বত	revisado	baixa	1	8	0.00	
 Ebenezer	এবন্	এবন্	sem	baixa	4	3	1.00	এষর
 Ebiasaph	ইবীয়াসফ	ইবীয়াসফ	sem	baixa	2	5	0.60	অবীয়াসফ
 Ecbatana	গুটানো	গুটানো	sem	baixa	3	1	1.00	লেখা
 Eglath-shelishiyah	শলিশীয়া	শলিশীয়া	sem	baixa	3	2	1.00	ইগ্লৎ
 Egypt	টিপত	মিসর	revisado	baixa	3	715	0.00	এগিয়ে
 Egypt	পুট	পুট	sem	baixa	1	4	0.25	পূট
-Egypt Sea	মিসর সাগর	মিসর সাগর	auto	baixa	1	1	0.00	
-Egyptian Sea			auto	baixa	1	1	0.00	
+Egypt Sea	মিসর সাগর	মিসর সাগর	sem	baixa	1	1	0.00	
+Egyptian Sea			sem	baixa	1	1	0.00	
 El-bethel	থেল	থেল	sem	baixa	2	1	1.00	বৈথেল
 Eladah	ইলিয়াদা	ইলিয়াদা	sem	baixa	1	1	1.00	ইলিয়াদার
-Elah Valley	এলা উপত্যকা	এলা উপত্যকা	auto	baixa	1	3	0.00	
+Elah Valley	এলা উপত্যকা	এলা উপত্যকা	revisado	baixa	1	3	0.00	
 Elam	হানন	এলম	revisado	baixa	2	1	1.00	হনানিয়
 Elasah	ইলীয়াসা	ইলীয়াসা	sem	baixa	2	1	1.00	ছেলে
 Elasah	ইলীয়াসা৷	ইলীয়াসা৷	sem	baixa	2	1	1.00	মাসেয়
@@ -327,13 +327,13 @@ Ephesus	ইফিষ	ইফিষ	revisado	baixa	1	17	0.24	ইফিষীয়
 Ephesus	একসুরে	একসুরে	sem	baixa	1	22	0.05	এফিমকে
 Ephesus	এফিমকে	ইফিষ	revisado	baixa	1	20	0.05	ইফিষ
 Ephlal	লল	লল	sem	baixa	2	1	1.00	ইফ্
-Ephraim Gate	ইফ্রয়িম দ্বার	ইফ্রয়িম দ্বার	auto	baixa	3	4	0.00	
+Ephraim Gate	ইফ্রয়িম দ্বার	ইফ্রয়িম দ্বার	revisado	baixa	3	4	0.00	
 Ephron	নিপ্তোহের	নিপ্তোহের	sem	baixa	2	1	1.00	যিরারীমের
-Ephron Mount			auto	baixa	1	2	0.00	
-Esau Mount			auto	baixa	1	4	0.00	
+Ephron Mount			sem	baixa	1	2	0.00	
+Esau Mount			sem	baixa	1	4	0.00	
 Eshan	ইশিয়ন	ইশিয়ন	sem	baixa	3	1	1.00	অরাব
 Eshban	ইশবন	ইশবন	sem	baixa	2	2	1.00	দিশোন
-Eshcol Valley			auto	baixa	1	4	0.00	
+Eshcol Valley		ইষ্কোল উপত্যকা	revisado	baixa	1	4	0.00	
 Eshtemoh	ইষ্টিমোয়	ইষ্টিমোয়	sem	baixa	1	1	1.00	আনীম
 Ethiopia	ওপিয়া	কূশ	revisado	baixa	1	4	0.25	এটা
 Ethnan	ইৎনন	ইৎনন	sem	baixa	2	1	1.00	ছেলেরা
@@ -344,15 +344,15 @@ Eutychus	উতুখ	উতুখ	sem	baixa	2	1	1.00	অনেকক্ষণ
 Eve	পেরেছি	হবা	revisado	baixa	2	4	0.25	ফেলেছে
 Evil-merodach	মরোদক	মরোদক	sem	baixa	2	2	1.00	বন্দীত্বের
 Ezbai	বয়	বয়	sem	baixa	2	1	1.00	নারয়
-Ezel Stone			auto	baixa	1	1	0.00	
+Ezel Stone			sem	baixa	1	1	0.00	
 Eznites	ইসনীয়	ইসনীয়	revisado	baixa	1	1	1.00	মোনীয়
 Field	শাকিকে	শাকিকে	sem	baixa	1	3	0.33	সারীসকে
-Fish Gate			auto	baixa	3	4	0.00	
+Fish Gate			sem	baixa	3	4	0.00	
 Forest	করেছিলে	করেছিলে	sem	baixa	1	1	1.00	প্রাসা
 Fortune	ভরেছ	ভরেছ	sem	baixa	1	1	1.00	মদে
-Forum of Appius			auto	baixa	2	1	0.00	
-Foundation Gate			auto	baixa	1	1	0.00	
-Fountain Gate			auto	baixa	2	3	0.00	
+Forum of Appius		অপ্পিয়ের হাট	revisado	baixa	2	1	0.00	
+Foundation Gate			sem	baixa	1	1	0.00	
+Fountain Gate			sem	baixa	2	3	0.00	
 Freedmen	কুরিনীয়	কুরিনীয়	sem	baixa	1	1	1.00	স্তিফান
 Gabbai	গব্বয়	গব্বয়	sem	baixa	2	1	1.00	আটাশ
 Gaham	গহম	গহম	sem	baixa	2	1	1.00	নামে
@@ -362,26 +362,26 @@ Gamad	তারাই	তারাই	sem	baixa	3	1	1.00	তারা
 Garmite	গর্মীয়	গর্মীয়	sem	baixa	1	1	1.00	কিয়ীলার
 Garmites	গর্মীয়	গর্মীয়	sem	baixa	1	1	1.00	কিয়ীলার
 Gatam	গয়িতম	গয়িতম	revisado	baixa	2	3	1.00	আদা
-Gate Miphkad			auto	baixa	1	1	0.00	
-Gate of Benjamin	বিন্যামীন দ্বার	বিন্যামীন দ্বার	auto	baixa	1	4	0.00	
-Gate of Ephraim	ইফ্রয়িম দ্বার	ইফ্রয়িম দ্বার	auto	baixa	2	4	0.00	
-Gate of Yeshanah			auto	baixa	1	2	0.00	
-Gate of the Foundation			auto	baixa	2	1	0.00	
-Gate of the Fountain			auto	baixa	1	3	0.00	
-Gate of the Guard			auto	baixa	1	1	0.00	
-Gate of the Valley			auto	baixa	1	2	0.00	
+Gate Miphkad			sem	baixa	1	1	0.00	
+Gate of Benjamin	বিন্যামীন দ্বার	বিন্যামীন দ্বার	revisado	baixa	1	4	0.00	
+Gate of Ephraim	ইফ্রয়িম দ্বার	ইফ্রয়িম দ্বার	revisado	baixa	2	4	0.00	
+Gate of Yeshanah			sem	baixa	1	2	0.00	
+Gate of the Foundation			sem	baixa	2	1	0.00	
+Gate of the Fountain			sem	baixa	1	3	0.00	
+Gate of the Guard			sem	baixa	1	1	0.00	
+Gate of the Valley			sem	baixa	1	2	0.00	
 Gath-hepher	হেফর	হেফর	sem	baixa	3	2	1.00	হেফরের
 Gazzam	গসম	গসম	revisado	baixa	2	2	1.00	গসমের
 Ge-harashim	সরায়	সরায়	sem	baixa	2	2	0.50	সরায়ের
 Gedaliah	গদলিয়৷	গদলিয়	revisado	baixa	2	1	1.00	যারিব
 Gennesaret	গিনেষরৎ	গিনেষরৎ	revisado	baixa	3	3	1.00	এসে
-Gerizim Mount			auto	baixa	1	4	0.00	
+Gerizim Mount		গরিষীম পর্বত	revisado	baixa	1	4	0.00	
 Gesham	গেসন	গেসন	sem	baixa	1	1	1.00	শাফ
 Geuel	গ্যূয়েল	গ্যূয়েল	sem	baixa	2	1	1.00	ছেলে
 Gibeah	যা	গিবিয়া	revisado	baixa	1	1	1.00	পীনহসের
 Gibeath-elohim	যেখানে	যেখানে	sem	baixa	3	1	1.00	খঞ্জনি
 Gibeath-haaraloth	র্বত	র্বত	sem	baixa	2	1	1.00	র্বতের
-Gilboa Mount			auto	baixa	1	6	0.00	
+Gilboa Mount		গিলবোয় পর্বত	revisado	baixa	1	6	0.00	
 Gilead	গিলিয়	গিলিয়দ	revisado	baixa	2	11	0.82	গিলিয়দের
 Girgashites	গির্গাশীয়	গির্গাশীয়	revisado	baixa	1	16	0.44	গির্গাশীয়দের
 Girgasite	গির্গাশীয়	গির্গাশীয়	revisado	baixa	1	2	1.00	যিবূষীয়
@@ -389,9 +389,9 @@ Girzites	গির্ষীয়	গির্ষীয়	sem	baixa	1	1	1.00	�
 Gittith	বাহিনী	বাহিনী	sem	baixa	1	3	0.33	শক্তি
 Gizonites	গিষোণীয়	গিষোণীয়	sem	baixa	1	1	1.00	শাগির
 Goah	গোয়াতে	গোয়াতে	sem	baixa	3	1	1.00	সোজা
-Great Sea			auto	baixa	3	36	0.00	
+Great Sea		মহাসমুদ্র	revisado	baixa	3	36	0.00	
 Greece	গ্রীসের	গ্রীস	revisado	baixa	3	13	0.23	গ্রীস
-Guard Gate			auto	baixa	1	1	0.00	
+Guard Gate			sem	baixa	1	1	0.00	
 Gulloth-mayim	উনুইগুলি	উনুইগুলি	sem	baixa	1	2	1.00	উনুইগুলিও
 Hacaliah	হখলিয়	হখলিয়	revisado	baixa	1	2	1.00	হখলিয়ের
 Hachaliah	হখলিয়	হখলিয়	revisado	baixa	1	2	1.00	হখলিয়ের
@@ -403,11 +403,11 @@ Hadlai	লয়	লয়	sem	baixa	2	1	1.00	লয়ের
 Hadrach	হদ্রক	হদ্রক	sem	baixa	3	1	1.00	তার
 Haggiah	হগিয়	হগিয়	sem	baixa	2	1	1.00	অসায়
 Hakkephirim	আমাকে	আমাকে	sem	baixa	2	1	1.00	লোকের
-Halak Mount			auto	baixa	1	2	0.00	
+Halak Mount		হালক পর্বত	revisado	baixa	1	2	0.00	
 Halhul	হূল	হূল	sem	baixa	3	1	1.00	হল্
-Hall of Judgment			auto	baixa	2	1	0.00	
-Hall of Pillars			auto	baixa	2	1	0.00	
-Hall of the Throne			auto	baixa	2	1	0.00	
+Hall of Judgment			sem	baixa	2	1	0.00	
+Hall of Pillars			sem	baixa	2	1	0.00	
+Hall of the Throne			sem	baixa	2	1	0.00	
 Ham	হমে	হাম	revisado	baixa	3	1	1.00	শাবি
 Hamath	হমাৎ	হমাৎ	revisado	baixa	1	21	0.62	হমাত
 Hamath-zobah	সোবাতে	সোবাতে	sem	baixa	2	2	0.50	হমাৎ
@@ -417,7 +417,7 @@ Hammath	হম্মত	হম্মত	sem	baixa	3	2	0.50	সূখাথীয
 Hammath	হম্মৎ	হম্মৎ	sem	baixa	1	1	1.00	ঘেরা
 Hammoth-dor	গালীলস্থ	গালীলস্থ	sem	baixa	2	1	1.00	দোর
 Hammuel	হম্মুয়েল	হম্মুয়েল	sem	baixa	1	1	1.00	মে
-Hamon-gog Valley			auto	baixa	1	2	0.00	
+Hamon-gog Valley			sem	baixa	1	2	0.00	
 Hamuel	হম্মুয়েল	হম্মুয়েল	sem	baixa	1	1	1.00	মে
 Hanan	অব্দোন	হানন	revisado	baixa	2	1	1.00	ইলীয়েল
 Hanan	হাননকে	হানন	revisado	baixa	2	1	1.00	হানন
@@ -454,7 +454,7 @@ Hazerim	তাদের	তাদের	sem	baixa	1	1	1.00	আসা
 Haziel	হসীয়েল	হসীয়েল	sem	baixa	2	1	1.00	শলোমৎ
 Hazor-hadattah	হদত্তা	হদত্তা	sem	baixa	3	1	1.00	হাৎসোর
 Hazzelelponi	পোনী	পোনী	sem	baixa	1	1	1.00	হৎসলিল
-Hebron Valley			auto	baixa	1	1	0.00	
+Hebron Valley		হিব্রোণ উপত্যকা	revisado	baixa	1	1	0.00	
 Helbon	বনিক	বনিক	sem	baixa	3	1	1.00	শুভ্র
 Heliopolis	সূর্যপুরী	সূর্যপুরী	sem	baixa	2	5	0.20	সূর্যপুরীর
 Helkai	হিল্কয়	হিল্কয়	sem	baixa	2	1	1.00	হারীম
@@ -463,7 +463,7 @@ Hemath	হম্মত	হম্মত	sem	baixa	1	1	1.00	এরা
 Hemdan	হিমদন	হিমদন	sem	baixa	2	2	0.50	দিশোন
 Hermes	হর্ম্মা	হর্ম্মা	sem	baixa	2	1	1.00	ভাইদেরকে
 Hermogenes	হর্ম্মগিনিও	হর্ম্মগিনিও	sem	baixa	2	1	1.00	প্রদেশে
-Hermon Mount			auto	baixa	1	20	0.00	
+Hermon Mount		হর্মোণ পর্বত	revisado	baixa	1	20	0.00	
 Hezeki	সবদিয়	সবদিয়	sem	baixa	1	1	1.00	ছেলেরা
 Hezekiah	যিহিষ্কিয়	হিষ্কিয়	revisado	baixa	2	2	1.00	যিহিষ্কিয়ের
 Hezir	পীয়শ	পীয়শ	sem	baixa	2	1	1.00	মশুল্লম
@@ -472,20 +472,20 @@ Hiel	হীয়েল	হীয়েল	sem	baixa	2	1	1.00	বৈথেলী
 Higgaion	নিষ্পন্ন	নিষ্পন্ন	sem	baixa	1	1	1.00	কাজ
 Highway	যাব	রাজপথ	revisado	baixa	1	2	1.00	কিংবা
 Hilkiah	শিম্রি	হিল্কিয়	revisado	baixa	2	1	1.00	লোকেরা
-Hill Mizar			auto	baixa	1	1	0.00	
+Hill Mizar			sem	baixa	1	1	0.00	
 Hivite	হিত্তীয়কে	হিব্বীয়	revisado	baixa	1	9	0.11	হিব্বীয়
 Hivites	যিরীহোতে	হিব্বীয়	revisado	baixa	1	25	0.04	হিব্বীয়
 Hizki	ইল্পাল	ইল্পাল	sem	baixa	1	1	1.00	ছেল
 Hodaviah	হোদবিয়	হোদবিয়	sem	baixa	6	6	0.83	হোদবিয়ের
 Hodevah	দা	দা	sem	baixa	1	3	0.33	কদ্
-Hor Mount			auto	baixa	2	12	0.00	
+Hor Mount		হোর পর্বত	revisado	baixa	2	12	0.00	
 Horesh	বনে	বনে	sem	baixa	3	4	1.00	পরে
 Horonaim	অবশালোম	অবশালোম	sem	baixa	1	1	1.00	পাহাড়ের
 Horonites	হোরোণীয়	হোরোণীয়	sem	baixa	1	3	1.00	শহরবাসী
-Horse Gate			auto	baixa	3	3	0.00	
+Horse Gate		ঘোড়া দরজা	revisado	baixa	3	3	0.00	
 Hoshaiah	হোশয়িয়	হোশয়িয়	sem	baixa	4	3	1.00	তা
 Hothan	হোথম	হোথম	sem	baixa	1	1	1.00	হোথমের
-House of the Forest			auto	baixa	1	6	0.00	
+House of the Forest			sem	baixa	1	6	0.00	
 Hushathites	হূশাতীয়	হূশাতীয়	sem	baixa	1	5	0.80	হুশাতীয়
 Hymenaeus	হুমিনায়	হুমিনায়	sem	baixa	2	2	1.00	নিন্দা
 Ibneiah	যিব্	যিব্	sem	baixa	2	1	1.00	মিখ্রি
@@ -495,7 +495,7 @@ Ibzan	ইব্	ইব্	sem	baixa	2	2	1.00	সন
 Idbash	যিদ্	যিদ্	sem	baixa	2	1	1.00	যিশ্মা
 Idumea	ইদোম	ইদোম	revisado	baixa	3	1	1.00	যে
 Iphtah	যিপ্তহ	যিপ্তহ	sem	baixa	3	1	1.00	নৎসীব
-Iphtahel Valley			auto	baixa	1	2	0.00	
+Iphtahel Valley		যিপ্তহেল উপত্যকা	revisado	baixa	1	2	0.00	
 Ir-moab	সীমানা	সীমানা	sem	baixa	1	1	1.00	মোয়াব
 Ishbak	যিশ্	যিশ্	sem	baixa	2	2	1.00	যক্
 Ishbi-benob	যিশবী	যিশবী	sem	baixa	2	1	1.00	বনোব
@@ -525,7 +525,7 @@ Janen	বামোতে	বামোতে	sem	baixa	1	1	1.00	মত্তা�
 Japheth	যেফত	যেফৎ	revisado	baixa	2	11	0.45	যেফৎকে
 Jared	যেরদ	যেরদ	revisado	baixa	2	7	0.43	যেরদের
 Jathniel	যৎনীয়েল	যৎনীয়েল	sem	baixa	2	1	1.00	যিদীয়েল
-Jazer Sea	যাসের সাগর	যাসের সাগর	auto	baixa	1	1	0.00	
+Jazer Sea	যাসের সাগর	যাসের সাগর	sem	baixa	1	1	0.00	
 Jeaterai	যিয়ত্রয়	যিয়ত্রয়	sem	baixa	1	2	0.50	সিম্মের
 Jeatherai	যিয়ত্রয়	যিয়ত্রয়	sem	baixa	1	2	0.50	সিম্মের
 Jebusite	যিবূষীয়	যিবূষীয়	revisado	baixa	1	2	1.00	গির্গাশীয়
@@ -551,7 +551,7 @@ Jeiel	যীয়ীয়েল	যীয়ীয়েল	sem	baixa	2	1	1.00
 Jekabzeel	যিকব্	যিকব্	sem	baixa	2	1	1.00	সেল
 Jekameam	যিকমিয়াম	যিকমিয়াম	sem	baixa	2	2	1.00	হিব্রোণের
 Jemnath	পর্যন্ত	পর্যন্ত	sem	baixa	1	1	1.00	ইক্রোণ
-Jericho Valley	যিরীহো উপত্যকা	যিরীহো উপত্যকা	auto	baixa	1	1	0.00	
+Jericho Valley	যিরীহো উপত্যকা	যিরীহো উপত্যকা	revisado	baixa	1	1	0.00	
 Jeroham	যারিশিয়	যারিশিয়	sem	baixa	2	1	1.00	সিখ্রি
 Jeshimon	সীফীয়	সীফীয়	sem	baixa	3	6	0.33	সামন
 Jeuel	যিয়ুয়েল	যিয়ুয়েল	sem	baixa	1	1	1.00	ইলীফেলট
@@ -560,7 +560,7 @@ Jeuel	যুয়েল	যুয়েল	sem	baixa	2	1	1.00	ছেলে
 Jeuz	যিয়ূশ	যিয়ূশ	sem	baixa	2	1	1.00	নিজের
 Jezaniah	যাসনিয়	যাসনিয়	sem	baixa	2	4	0.75	যোহানন
 Jezreel	যিষ্রিয়েলীয়া	যিষ্রীয়েল	revisado	baixa	3	9	0.56	যিষ্রীয়েল
-Jezreel Valley	যিষ্রীয়েল উপত্যকা	যিষ্রীয়েল উপত্যকা	auto	baixa	1	3	0.00	
+Jezreel Valley	যিষ্রীয়েল উপত্যকা	যিষ্রীয়েল উপত্যকা	revisado	baixa	1	3	0.00	
 Jibsam	যিব্	যিব্	sem	baixa	1	1	1.00	হিসাবে
 Jidlaph	যিদ্	যিদ্	sem	baixa	2	1	1.00	পিল্
 Joda	নগির	নগির	sem	baixa	1	1	1.00	যোষেখ
@@ -568,7 +568,7 @@ Joel	অসায়েল	যোয়েল	revisado	baixa	2	1	1.00	অসা�
 Joezer	যোয়েষর	যোয়েষর	revisado	baixa	2	1	1.00	যোয়েষ
 Jonan	যোনম	যোনম	sem	baixa	1	1	1.00	যোনমের
 Jonath-elem-rechokim	ঈশ্বর	ঈশ্বর	sem	baixa	1	1	1.00	মারধর
-Jordan Valley			auto	baixa	1	8	0.00	
+Jordan Valley		যর্দন উপত্যকা	revisado	baixa	1	8	0.00	
 Jose	যোরীমের	যোরীমের	sem	baixa	1	1	1.00	ইলীয়েষরের
 Joshaviah	যোশবিয়	যোশবিয়	sem	baixa	2	1	1.00	যিৎমা
 Jubal	বীণা	যুবল	revisado	baixa	2	1	1.00	বংশীধারী
@@ -585,7 +585,7 @@ Kenaz	কনস	কনস	revisado	baixa	7	14	0.57	কনস্
 Kenites	কেনীয়	কেনীয়	revisado	baixa	1	10	0.80	কেনীয়দের
 Kenizzites	কনিষীয়	কনিষীয়	revisado	baixa	1	1	1.00	কেনিয়
 Kerioth-hezron	করিয়োৎ	করিয়োৎ	sem	baixa	3	1	1.00	হিষ্রোণ
-King's Valley			auto	baixa	2	2	0.00	
+King's Valley		রাজার উপত্যকা	revisado	baixa	2	2	0.00	
 Kir-hareseth	কীর্	কীর্	sem	baixa	2	5	0.40	হরাসত
 Kiriath-arim	আরীম	আরীম	sem	baixa	1	1	1.00	কফীরা
 Kiriath-baal	কিরিয়ৎ	কিরিয়ৎ	sem	baixa	1	2	1.00	বাল
@@ -596,15 +596,15 @@ Koa	কোয়া	কোয়া	sem	baixa	3	1	1.00	পকোদ
 Kue	কিনে	কিনে	sem	baixa	3	2	0.50	থেকে
 Lahad	লহদ	লহদ	sem	baixa	2	1	1.00	রায়া
 Lahmam	লহমম	লহমম	sem	baixa	3	1	1.00	কিৎলীশ
-Lebanon Mount			auto	baixa	1	1	0.00	
-Lebanon Valley			auto	baixa	1	2	0.00	
+Lebanon Mount		লেবানন পর্বত	revisado	baixa	1	1	0.00	
+Lebanon Valley			sem	baixa	1	2	0.00	
 Legion	অনে	অনে	sem	baixa	1	2	0.50	করলেন
 Lehem	যাশূবিলেহম	যাশূবিলেহম	sem	baixa	2	1	1.00	কোষেবা
 Lehi	লিহীতে	লিহীতে	sem	baixa	3	4	0.75	পলেষ্টীয়
 Lemuel	লমূয়েল	লমূয়েল	revisado	baixa	2	2	1.00	হে
 Leummim	লিয়ূম্মীয়	লিয়ূম্মীয়	sem	baixa	2	1	1.00	লটুশীয়
 Levi	ইলীয়েষর	লেবি	revisado	baixa	2	1	1.00	ইলীয়েষরের
-Lower Pool			auto	baixa	1	1	0.00	
+Lower Pool			sem	baixa	1	1	0.00	
 Lucifer	শুকতারা	শুকতারা	sem	baixa	2	1	1.00	উচ্ছিন্ন
 Machbanai	বন্নয়	বন্নয়	sem	baixa	1	1	1.00	যিরমিয়
 Machbannai	বন্নয়	বন্নয়	sem	baixa	1	1	1.00	যিরমিয়
@@ -653,43 +653,43 @@ Metheg-ammah	থে	থে	sem	baixa	2	1	1.00	পলেষ্টীয়দে�
 Meunites	মিয়ূনীয়দের	মিয়ূনীয়দের	sem	baixa	1	3	0.33	মিয়ূনীয়দেরও
 Mezobaites	মসোবায়ীয়	মসোবায়ীয়	sem	baixa	1	1	1.00	ওবেদ
 Michmethath	মিক্	মিক্	sem	baixa	3	2	1.00	মথত
-Middle Gate			auto	baixa	1	1	0.00	
+Middle Gate			sem	baixa	1	1	0.00	
 Mishraites	মিশ্রায়ীয়	মিশ্রায়ীয়	sem	baixa	1	1	1.00	মিশ্রায়ীয়েরা
 Mithnites	মিত্নীয়	মিত্নীয়	sem	baixa	1	1	1.00	যোশাফট
-Mizar Mount			auto	baixa	1	1	0.00	
-Mizpeh Valley			auto	baixa	1	2	0.00	
-Moab Plains			auto	baixa	1	12	0.00	
+Mizar Mount			sem	baixa	1	1	0.00	
+Mizpeh Valley			sem	baixa	1	2	0.00	
+Moab Plains		মোয়াবের সমভূমি	revisado	baixa	1	12	0.00	
 Mortar	মক্তেশ	মক্তেশ	sem	baixa	3	1	1.00	তোমরা
-Mount Baal-hermon			auto	baixa	1	1	0.00	
-Mount Baalah			auto	baixa	2	1	0.00	
-Mount Baalhermon			auto	baixa	1	1	0.00	
-Mount Bashan			auto	baixa	1	1	0.00	
-Mount Carmel			auto	baixa	2	18	0.00	
-Mount Ebal			auto	baixa	2	5	0.00	
-Mount Ephraim	ইফ্রয়িম পর্বত	ইফ্রয়িম পর্বত	auto	baixa	2	3	0.00	
-Mount Ephron			auto	baixa	2	1	0.00	
-Mount Esau			auto	baixa	1	4	0.00	
-Mount Gerizim			auto	baixa	2	5	0.00	
-Mount Gilboa			auto	baixa	2	8	0.00	
-Mount Halak			auto	baixa	2	2	0.00	
-Mount Heres			auto	baixa	2	1	0.00	
-Mount Hermon			auto	baixa	2	16	0.00	
-Mount Hor			auto	baixa	4	12	0.00	
-Mount Horeb	হোরেবে পর্বত	হোরেবে পর্বত	auto	baixa	2	17	0.00	
-Mount Jearim			auto	baixa	2	1	0.00	
-Mount Lebanon			auto	baixa	2	1	0.00	
-Mount Mizar			auto	baixa	1	1	0.00	
-Mount Paran			auto	baixa	2	2	0.00	
-Mount Perazim			auto	baixa	2	1	0.00	
-Mount Shapher			auto	baixa	1	2	0.00	
-Mount Shepher			auto	baixa	1	2	0.00	
-Mount Sinai			auto	baixa	2	30	0.00	
-Mount Sion			auto	baixa	1	1	0.00	
-Mount Zalmon			auto	baixa	2	1	0.00	
-Mount Zemaraim			auto	baixa	2	1	0.00	
-Mount of Esau			auto	baixa	1	4	0.00	
-Mount of Olives			auto	baixa	3	18	0.00	
-Muster Gate			auto	baixa	2	1	0.00	
+Mount Baal-hermon			sem	baixa	1	1	0.00	
+Mount Baalah			sem	baixa	2	1	0.00	
+Mount Baalhermon			sem	baixa	1	1	0.00	
+Mount Bashan		বাশন পর্বত	revisado	baixa	1	1	0.00	
+Mount Carmel		কর্মিল পর্বত	revisado	baixa	2	18	0.00	
+Mount Ebal		ঈবল পর্বত	revisado	baixa	2	5	0.00	
+Mount Ephraim	ইফ্রয়িম পর্বত	ইফ্রয়িম পর্বত	revisado	baixa	2	3	0.00	
+Mount Ephron			sem	baixa	2	1	0.00	
+Mount Esau			sem	baixa	1	4	0.00	
+Mount Gerizim		গরিষীম পর্বত	revisado	baixa	2	5	0.00	
+Mount Gilboa		গিলবোয় পর্বত	revisado	baixa	2	8	0.00	
+Mount Halak		হালক পর্বত	revisado	baixa	2	2	0.00	
+Mount Heres			sem	baixa	2	1	0.00	
+Mount Hermon		হর্মোণ পর্বত	revisado	baixa	2	16	0.00	
+Mount Hor		হোর পর্বত	revisado	baixa	4	12	0.00	
+Mount Horeb	হোরেবে পর্বত	হোরেব পর্বত	revisado	baixa	2	17	0.00	
+Mount Jearim			sem	baixa	2	1	0.00	
+Mount Lebanon		লেবানন পর্বত	revisado	baixa	2	1	0.00	
+Mount Mizar			sem	baixa	1	1	0.00	
+Mount Paran		পারণ পর্বত	revisado	baixa	2	2	0.00	
+Mount Perazim			sem	baixa	2	1	0.00	
+Mount Shapher			sem	baixa	1	2	0.00	
+Mount Shepher			sem	baixa	1	2	0.00	
+Mount Sinai		সীনয় পর্বত	revisado	baixa	2	30	0.00	
+Mount Sion		সিয়োন পর্বত	revisado	baixa	1	1	0.00	
+Mount Zalmon			sem	baixa	2	1	0.00	
+Mount Zemaraim			sem	baixa	2	1	0.00	
+Mount of Esau			sem	baixa	1	4	0.00	
+Mount of Olives		জৈতুন পর্বত	revisado	baixa	3	18	0.00	
+Muster Gate			sem	baixa	2	1	0.00	
 Muth-labben	আমা	আমা	sem	baixa	1	1	1.00	কথা
 Naamathites	নামাথীয়	নামাথীয়	sem	baixa	1	4	1.00	নিজে
 Naggai	ইনি	ইনি	sem	baixa	1	1	1.00	ইষলি
@@ -717,52 +717,52 @@ Nergal-sar-ezer	নের্গল	নের্গল	sem	baixa	2	2	1.00	শর�
 Nergal-sharezer	নের্গল	নের্গল	sem	baixa	1	2	1.00	শরেৎসর
 Neri	রীষা	রীষা	sem	baixa	2	1	1.00	ইনি
 Nero	হোন	হোন	sem	baixa	1	2	0.50	জানাচ্ছেন
-New Gate			auto	baixa	3	2	0.00	
+New Gate			sem	baixa	3	2	0.00	
 Nicolaus	নীকান	নীকলায়	revisado	baixa	1	1	1.00	আন্তিয়খিয়াস্থ
-Nineveh	নীনবীতে	নীনবীতে	auto	baixa	3	30	0.17	নীনবী
-Noah	নোয়া	নোয়া	auto	baixa	2	4	1.00	মহলা
-Nohah	মানহতে	মানহতে	auto	baixa	1	1	1.00	নেতা
-Nohah	সামন	সামন	auto	baixa	1	1	1.00	সামনের
-North	বাসনপত্	বাসনপত্	auto	baixa	1	10	0.10	উত্তরের
-North Gate			auto	baixa	1	1	0.00	
-Obadiah	হারীম	হারীম	auto	baixa	2	1	1.00	মল্লূক
-Old Gate			auto	baixa	1	1	0.00	
-Old Pool			auto	baixa	1	1	0.00	
-Olives Mount			auto	baixa	1	14	0.00	
-Olivet	জৈতুন	জৈতুন	auto	baixa	1	3	1.00	প্রতিরাতে
-Orion	সপ্তর্ষিমণ্ডল	সপ্তর্ষিমণ্ডল	auto	baixa	1	3	0.67	কালপুরুষ
-Pacatiana	বিদ্যা	বিদ্যা	auto	baixa	1	1	1.00	থাকুক
-Paddan	পদ্দন	পদ্দন	auto	baixa	2	16	0.62	পৌঁছাবা
-Paran Mount			auto	baixa	1	2	0.00	
-Parbar	পশ্চিমের	পশ্চিমের	auto	baixa	2	1	1.00	রাস্তা
-Parvaim	পর্বয়িম	পর্বয়িম	auto	baixa	3	1	1.00	পাথর
-Pas-dammim	দম্মীমে	দম্মীমে	auto	baixa	1	1	1.00	পস্
-Pau	পায়ু	পায়ু	auto	baixa	3	2	0.50	পুত্
-Pavement	পাথ	পাথ	auto	baixa	1	1	1.00	পীলাত
-Pekahiah	পকহিয়	পকহিয়	auto	baixa	2	3	1.00	রাজা
-Pelaliah	পললিয়	পললিয়	auto	baixa	2	1	1.00	পললিয়ের
-Pelatiah	পলটিয়	পলটিয়	auto	baixa	6	3	1.00	ছেলেরা
-Pelethites	পলেথীয়	পলেথীয়	auto	baixa	1	7	0.71	পলেথীয়দের
-Pelonites	পলোনীয়	পলোনীয়	auto	baixa	1	4	0.75	হেলস
-Pelusium	সীন	সীন	auto	baixa	3	2	1.00	ক্লেশে
-Peniel	পনূ	পনূ	auto	baixa	1	1	1.00	য়েল
-Peniel	পনূয়েল	পনূয়েল	auto	baixa	1	6	0.67	পনূয়েলও
-Penuel	পনূয়েল	পনূয়েল	auto	baixa	6	8	0.75	ছেলে
-People's Gate			auto	baixa	2	1	0.00	
-Perazim Mount			auto	baixa	1	1	0.00	
-Perez-uzza	পেরষ	পেরষ	auto	baixa	2	1	1.00	উষঃ
-Perez-uzzah	পেরষ	পেরষ	auto	baixa	1	2	0.50	পেরস
-Perez-uzzah	পেরস	পেরস	auto	baixa	1	1	1.00	উষকে
-Perizzites	পরিষীয়	পরিষীয়	auto	baixa	1	23	0.87	পরিষীয়দের
-Peter	পিতর	পিতর	auto	baixa	1	179	0.83	প্রেরিতের
-Pethuel	পথূয়েল	পথূয়েল	auto	baixa	2	1	1.00	পথূয়েলের
-Peullethai	পিয়ূল্লতয়	পিয়ূল্লতয়	auto	baixa	1	1	1.00	কেননা
-Peulthai	পিয়ূল্লতয়	পিয়ূল্লতয়	auto	baixa	1	1	1.00	কেননা
-Phaltiel	পলটিকে	পলটিকে	auto	baixa	1	2	0.50	লয়িশের
-Phanuel	পনুয়েল	পনুয়েল	auto	baixa	2	1	1.00	পনুয়েলের
-Pharosh	পরোশ	পরোশ	auto	baixa	1	1	1.00	পরোশের
-Pharpar	পর্পর	পর্পর	auto	baixa	3	1	1.00	পারি
-Phebe	ফৈবী	ফৈবী	auto	baixa	1	1	1.00	ফৈবীর
+Nineveh	নীনবীতে	নীনবী	revisado	baixa	3	30	0.17	নীনবী
+Noah	নোয়া	নোয়া	revisado	baixa	2	4	1.00	মহলা
+Nohah	মানহতে	মানহতে	sem	baixa	1	1	1.00	নেতা
+Nohah	সামন	সামন	sem	baixa	1	1	1.00	সামনের
+North	বাসনপত্	বাসনপত্	sem	baixa	1	10	0.10	উত্তরের
+North Gate			sem	baixa	1	1	0.00	
+Obadiah	হারীম	হারীম	sem	baixa	2	1	1.00	মল্লূক
+Old Gate			sem	baixa	1	1	0.00	
+Old Pool			sem	baixa	1	1	0.00	
+Olives Mount		জৈতুন পর্বত	revisado	baixa	1	14	0.00	
+Olivet	জৈতুন	জৈতুন	revisado	baixa	1	3	1.00	প্রতিরাতে
+Orion	সপ্তর্ষিমণ্ডল	কালপুরুষ	revisado	baixa	1	3	0.67	কালপুরুষ
+Pacatiana	বিদ্যা	বিদ্যা	sem	baixa	1	1	1.00	থাকুক
+Paddan	পদ্দন	পদ্দন	revisado	baixa	2	16	0.62	পৌঁছাবা
+Paran Mount			sem	baixa	1	2	0.00	
+Parbar	পশ্চিমের	পশ্চিমের	sem	baixa	2	1	1.00	রাস্তা
+Parvaim	পর্বয়িম	পর্বয়িম	revisado	baixa	3	1	1.00	পাথর
+Pas-dammim	দম্মীমে	দম্মীমে	sem	baixa	1	1	1.00	পস্
+Pau	পায়ু	পায়ু	sem	baixa	3	2	0.50	পুত্
+Pavement	পাথ	পাথ	sem	baixa	1	1	1.00	পীলাত
+Pekahiah	পকহিয়	পকহিয়	revisado	baixa	2	3	1.00	রাজা
+Pelaliah	পললিয়	পললিয়	revisado	baixa	2	1	1.00	পললিয়ের
+Pelatiah	পলটিয়	পলটিয়	revisado	baixa	6	3	1.00	ছেলেরা
+Pelethites	পলেথীয়	পলেথীয়	revisado	baixa	1	7	0.71	পলেথীয়দের
+Pelonites	পলোনীয়	পলোনীয়	revisado	baixa	1	4	0.75	হেলস
+Pelusium	সীন	সীন	sem	baixa	3	2	1.00	ক্লেশে
+Peniel	পনূ	পনূ	sem	baixa	1	1	1.00	য়েল
+Peniel	পনূয়েল	পনূয়েল	revisado	baixa	1	6	0.67	পনূয়েলও
+Penuel	পনূয়েল	পনূয়েল	revisado	baixa	6	8	0.75	ছেলে
+People's Gate			sem	baixa	2	1	0.00	
+Perazim Mount			sem	baixa	1	1	0.00	
+Perez-uzza	পেরষ	পেরষ	sem	baixa	2	1	1.00	উষঃ
+Perez-uzzah	পেরষ	পেরষ	sem	baixa	1	2	0.50	পেরস
+Perez-uzzah	পেরস	পেরস	sem	baixa	1	1	1.00	উষকে
+Perizzites	পরিষীয়	পরিষীয়	revisado	baixa	1	23	0.87	পরিষীয়দের
+Peter	পিতর	পিতর	revisado	baixa	1	179	0.83	প্রেরিতের
+Pethuel	পথূয়েল	পথূয়েল	revisado	baixa	2	1	1.00	পথূয়েলের
+Peullethai	পিয়ূল্লতয়	পিয়ূল্লতয়	sem	baixa	1	1	1.00	কেননা
+Peulthai	পিয়ূল্লতয়	পিয়ূল্লতয়	sem	baixa	1	1	1.00	কেননা
+Phaltiel	পলটিকে	পলটিকে	sem	baixa	1	2	0.50	লয়িশের
+Phanuel	পনুয়েল	পনূয়েল	revisado	baixa	2	1	1.00	পনুয়েলের
+Pharosh	পরোশ	পরোশ	revisado	baixa	1	1	1.00	পরোশের
+Pharpar	পর্পর	পর্পর	revisado	baixa	3	1	1.00	পারি
+Phebe	ফৈবী	ফৈবী	revisado	baixa	1	1	1.00	ফৈবীর
 Philistia	পলেষ্টিয়া	পলেষ্টিয়া	auto	baixa	1	6	0.50	পলেষ্টিয়
 Philistine	পলেষ্টীয়দের	পলেষ্টীয়দের	auto	baixa	1	2	1.00	পলেষ্টীয়
 Phut	পুট	পুট	auto	baixa	1	3	0.33	পূট
