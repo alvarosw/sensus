@@ -242,6 +242,33 @@ class FraseTest(unittest.TestCase):
         f = escolhe_frase(GLOSSARIO["Mount"], "Foo", None, [1, 2], textos)
         self.assertEqual((f.candidato, f.achados, f.confianca), ("monte Foo", 0, "baixa"))
 
+    def test_composto_sem_nucleo_pt_nao_gera_marcador_cru(self):
+        # AT (hebraico): 'monte {n}' sem núcleo pt e sem 'Sinai' nos versículos. Antes saía 'monte {n} Sinai'.
+        textos = {1: "E ele falou ao povo.", 2: "E ele voltou para a tenda."}
+        f = escolhe_frase(("monte {n}",), "Sinai", None, [1, 2], textos)
+        self.assertNotIn("{n}", f.candidato)
+        self.assertEqual((f.candidato, f.achados, f.confianca), ("", 0, "baixa"))
+
+    def test_nt_porta_com_marcador_sem_nucleo_pt_nao_gera_marcador_cru(self):
+        # NT (grego): 'porta de {n}' para 'Beautiful Gate' sem núcleo pt e sem a frase no texto.
+        textos = {1: "E subiram ao templo à hora da oração.", 2: "E um coxo estava sentado junto à porta."}
+        f = escolhe_frase(("porta de {n}",), "Beautiful", None, [1, 2], textos)
+        self.assertNotIn("{n}", f.candidato)
+        self.assertEqual((f.candidato, f.achados, f.confianca), ("", 0, "baixa"))
+
+    def test_candidato_nunca_contem_marcador(self):
+        # Qualquer combinação de forma com {n}, núcleo com ou sem nome pt, achada ou não achada.
+        casos = [
+            (("monte {n}",), "Sinai", None, {1: "E ele falou.", 2: "E ele voltou."}),
+            (("monte {n}",), "Sinai", "Sinai", {1: "E subiu ao monte Sinai.", 2: "E ele falou."}),
+            (("porta de {n}",), "Beautiful", None, {1: "E estava junto à porta de Formosa.", 2: "E ele falou."}),
+            (("porta de {n}",), "Beautiful", "Formosa", {1: "E ele falou.", 2: "E ele voltou."}),
+        ]
+        for formas, en, pt, textos in casos:
+            with self.subTest(formas=formas, nucleo=en, pt=pt):
+                f = escolhe_frase(formas, en, pt, list(textos), textos)
+                self.assertNotIn("{n}", f.candidato)
+
     def test_achada_em_menos_da_metade_fica_media(self):
         textos = {1: "E subiu ao monte Sinai.", 2: "E ele falou.", 3: "E ele voltou."}
         f = escolhe_frase(GLOSSARIO["Mount"], "Sinai", "Sinai", [1, 2, 3], textos)

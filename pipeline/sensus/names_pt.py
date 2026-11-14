@@ -304,7 +304,7 @@ def ocorrencias(texto: str, formas: tuple[str, ...], nucleo_pt: str | None,
 @dataclass(frozen=True)
 class Frase:
     """Resultado de escolhe_frase: a frase achada (como está no texto) e a confiança pela cobertura."""
-    candidato: str            # frase do texto (a mais comum); se não achada, forma do glossário + núcleo
+    candidato: str            # frase do texto (a mais comum); se não achada, forma + núcleo pt ('' se {n} e sem núcleo)
     alternativa: str | None   # segunda frase achada, para revisão humana
     achados: int              # versículos do nome em que a frase aparece
     versos: int               # versículos do nome que existem na Bíblia Livre
@@ -345,7 +345,14 @@ def escolhe_frase(formas: tuple[str, ...], nucleo_en: str, nucleo_pt: str | None
 
     ranking = sorted(por_frase, key=lambda c: (-len(por_frase[c]), -peso(c), ordem.get(c, len(ordem)), c))
     if not ranking:
-        nao_achada = frases(formas, nucleo_pt)[0] if nucleo_pt else f"{formas[0]} {nucleo_en}"
+        # Sem frase no texto: com núcleo pt, a forma do glossário + núcleo pt. Sem núcleo pt, forma com {n} não
+        # gera candidato (o marcador sairia cru); forma sem {n} mantém o núcleo inglês, como sempre.
+        if nucleo_pt:
+            nao_achada = frases(formas, nucleo_pt)[0]
+        elif "{n}" in formas[0]:
+            nao_achada = ""
+        else:
+            nao_achada = f"{formas[0]} {nucleo_en}"
         return Frase(nao_achada, None, 0, n, "baixa")
     melhor = ranking[0]
     k = len(por_frase[melhor])
