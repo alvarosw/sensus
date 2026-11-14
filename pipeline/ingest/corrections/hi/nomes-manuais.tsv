@@ -1,0 +1,371 @@
+# Notas da revisão de nomes por agentes de IA (uma linha por nome_en + candidato, ou nome_en + tipo).
+# Conferidas no texto da Bíblia da língua e na tradução inglesa. Só registro: o ingestor não lê este arquivo.
+nome_en	tipo	nome_hi	origem	nota
+Abila	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Abila Lysaniou	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Adasa	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Adramyttium	place	अद्रमुत्तियुम	revisado	rev. IA: Acts.27.2: forma अद्रमुत्तियुम
+Adulis	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Al-taschith	other	अलतशहेत	revisado	rev. IA: Ps.57.1: forma अलतशहेत
+Alamoth	other	अलामोत	revisado	rev. IA: 1Chr.15.20: forma अलामोत
+Ama	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Amate	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Amaw	place		sem	rev. IA: Num.22.5: sem forma tradicional segura no hin2017
+Amminadib	person	अम्मीनादीब	revisado	rev. IA: Song.6.12: forma अम्मीनादीब
+Angle	place	कोने का फाटक	revisado	rev. IA: 2Chr.26.9: forma कोने का फाटक
+Apostles	group	प्रेरित	revisado	rev. IA: sem ref: forma प्रेरित
+Apostles (Post-Ascension)	group	स्वर्गारोहण के बाद के प्रेरित	revisado	rev. IA: sem ref: forma स्वर्गारोहण के बाद के प्रेरित
+Apostles (The Eleven)	group	ग्यारह प्रेरित	revisado	rev. IA: sem ref: forma ग्यारह प्रेरित
+Arabah	place	अराबा	revisado	rev. IA: Deut.1.1: forma अराबा
+Aram-naharaim	place	अरम्नहरैम	revisado	rev. IA: Ps.60.1: forma अरम्नहरैम
+Aram-zobah	place	अराम-सोबा	revisado	rev. IA: Ps.60.1: forma अराम-सोबा
+Aramitess	person	अरामी स्त्री	revisado	rev. IA: 1Chr.7.14: forma अरामी स्त्री
+Arbela	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Arsinoe	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Asen	person		sem	rev. IA: Neh.7.24: sem forma tradicional segura no hin2017
+Ashdod's	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Atroth-beth-joab	place	अत्रोतबेत्योआब	revisado	rev. IA: 1Chr.2.54: forma अत्रोतबेत्योआब
+Bajith	place		sem	rev. IA: Isa.15.2: sem forma tradicional segura no hin2017
+Barsabas Justus	person	यूसुफ बरसब्बा यूस्तुस	revisado	rev. IA: Acts.1.23: forma यूसुफ बरसब्बा यूस्तुस
+Batanea	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Beeroth Bene-jaakan	place	याकानियों के कुएँ	revisado	rev. IA: Deut.10.6: forma याकानियों के कुएँ
+Belamon	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Benjamin's Gate	place	बिन्यामीन का फाटक	revisado	rev. IA: sem ref: forma बिन्यामीन का फाटक
+Beth-Ashtoreth	place	अश्तोरेत का मन्दिर	revisado	rev. IA: 1Sam.31.10: forma अश्तोरेत का मन्दिर
+Beth-eked	place	ऊन कतरने का स्थान	revisado	rev. IA: 2Kgs.10.12: forma ऊन कतरने का स्थान
+Beth-haggan	place	बारी का भवन	revisado	rev. IA: 2Kgs.9.27: forma बारी का भवन
+Beth-horon_Lower	place	निचला बेथोरोन	revisado	rev. IA: Josh.10.10: forma निचला बेथोरोन
+Beth-horon_Upper	place	ऊपरी बेथोरोन	revisado	rev. IA: Josh.16.5: forma ऊपरी बेथोरोन
+Beth-merhak	place		sem	rev. IA: 2Sam.15.17: sem forma tradicional segura no hin2017
+Bether 2	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Bether_Mountain	place	बेतेर पहाड़	revisado	rev. IA: Song.2.17: forma बेतेर पहाड़
+Bethlehem Ephrathah	place	बैतलहम एप्राता	revisado	rev. IA: Mic.5.2: forma बैतलहम एप्राता
+Beyond the River	place	महानद के पार	revisado	rev. IA: Ezra.4.10: forma महानद के पार
+Booths_Festival	other	झोपड़ियों का पर्व	revisado	rev. IA: John.7.2: forma झोपड़ियों का पर्व
+Caesarea Philippi	place	कैसरिया फिलिप्पी	revisado	rev. IA: Matt.16.13: forma कैसरिया फिलिप्पी
+Caesarea_Philippi	place	कैसरिया फिलिप्पी	revisado	rev. IA: Matt.16.13: forma कैसरिया फिलिप्पी
+Caleb Ephrathah	place	कालेब एप्राता	revisado	rev. IA: 1Chr.2.24: forma कालेब एप्राता
+Caleb_Ephrathah	place	कालेब एप्राता	revisado	rev. IA: 1Chr.2.24: forma कालेब एप्राता
+Canaanite_woman	person	कनानी स्त्री	revisado	rev. IA: Gen.46.10: forma कनानी स्त्री
+Canaanitish woman	person	कनानी स्त्री	revisado	rev. IA: Gen.46.10: forma कनानी स्त्री
+Carthage	place	कार्थेज	revisado	rev. IA: sem ref: forma कार्थेज
+Chalcis	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Charmande	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Chief Priests	group	प्रधान याजक	revisado	rev. IA: sem ref: forma प्रधान याजक
+Chronicles	other	इतिहास	revisado	rev. IA: 1Kgs.14.19: forma इतिहास
+City of Salt	place	नमक का नगर	revisado	rev. IA: Josh.15.62: forma नमक का नगर
+City_of_Salt	place	नमक का नगर	revisado	rev. IA: Josh.15.62: forma नमक का नगर
+Claudius Lysias	person	क्लौदियुस लूसियास	revisado	rev. IA: Acts.23.26: forma क्लौदियुस लूसियास
+Concubine the Aramitess	person	अरामी रखैल	revisado	rev. IA: 1Chr.7.14: forma अरामी रखैल
+Daughter of Herodias	person	हेरोदियास की बेटी	revisado	rev. IA: Matt.14.6: forma हेरोदियास की बेटी
+Daughter of Lot - Older	person	लूत की बड़ी बेटी	revisado	rev. IA: Gen.19.31: forma लूत की बड़ी बेटी
+Daughter of Lot - Younger	person	लूत की छोटी बेटी	revisado	rev. IA: Gen.19.8: forma लूत की छोटी बेटी
+Daughter of Machir	person	माकीर की बेटी	revisado	rev. IA: 1Chr.2.21: forma माकीर की बेटी
+Daughter of Meshullam	person	मशुल्लाम की बेटी	revisado	rev. IA: Neh.6.18: forma मशुल्लाम की बेटी
+Daughter of Pharaoh	person	फ़िरौन की बेटी	revisado	rev. IA: Exod.2.5: forma फ़िरौन की बेटी
+Daughter of Putiel	person	पूतीएल की बेटी	revisado	rev. IA: Exod.6.25: forma पूतीएल की बेटी
+Daughter of Shuah	person	शूआ की बेटी	revisado	rev. IA: Gen.38.2: forma शूआ की बेटी
+Dedication_Festival	other	स्थापन पर्व	revisado	rev. IA: John.10.22: forma स्थापन पर्व
+Dehavites	group	देहवी	revisado	rev. IA: Ezra.4.9: forma देहवी
+Destiny	other	भावी देवी	revisado	rev. IA: Isa.65.11: forma भावी देवी
+Disciples of John	group	यूहन्ना के चेले	revisado	rev. IA: sem ref: forma यूहन्ना के चेले
+Diviners' Oak	place	मोननीम बांज वृक्ष	revisado	rev. IA: Judg.9.37: forma मोननीम बांज वृक्ष
+Diviners'_Oak	place	मोननीम बांज वृक्ष	revisado	rev. IA: Judg.9.37: forma मोननीम बांज वृक्ष
+Diviners’ Oak	place	मोननीम बांज वृक्ष	revisado	rev. IA: Judg.9.37: forma मोननीम बांज वृक्ष
+East	place	पूर्व देश	revisado	rev. IA: Gen.25.6: forma पूर्व देश
+Egypt's	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Elkosh	place		sem	rev. IA: Nah.1.1: sem forma tradicional segura no hin2017
+Enaim	place	एनैम	revisado	rev. IA: Gen.38.14: forma एनैम
+Eridu	place	एरिदु	revisado	rev. IA: sem ref: forma एरिदु
+Etruria	place	एत्रुरिया	revisado	rev. IA: sem ref: forma एत्रुरिया
+Eznites	group	एस्नी	revisado	rev. IA: 2Sam.23.8: forma एस्नी
+Fair Havens	place	शुभलंगरबारी	revisado	rev. IA: Acts.27.8: forma शुभलंगरबारी
+Fair_Havens	place	शुभलंगरबारी	revisado	rev. IA: Acts.27.8: forma शुभलंगरबारी
+Forest	place	वन	revisado	rev. IA: Isa.22.8: forma वन
+Fortune	other	भाग्य देवता	revisado	rev. IA: Isa.65.11: forma भाग्य देवता
+Foundation_Gate	place	नींव का फाटक	revisado	rev. IA: 2Chr.23.5: forma नींव का फाटक
+Gadara	place	गदरा	revisado	rev. IA: Matt.8.28: forma गदरा
+Gate of the Children of the People	place	सदर फाटक	revisado	rev. IA: Jer.17.19: forma सदर फाटक
+Gath-padalla	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Genealogy of Jesus	group	यीशु की वंशावली	revisado	rev. IA: sem ref: forma यीशु की वंशावली
+Gerasa	place	गिरासा	revisado	rev. IA: Matt.8.28: forma गिरासा
+Gergesa	place	गिरगिसा	revisado	rev. IA: sem ref: forma गिरगिसा
+Geruth Chimham	place	किम्हाम की सराय	revisado	rev. IA: Jer.41.17: forma किम्हाम की सराय
+Geruth_Chimham	place	किम्हाम की सराय	revisado	rev. IA: Jer.41.17: forma किम्हाम की सराय
+Gittith	other	गित्तीत	revisado	rev. IA: Ps.8.1: forma गित्तीत
+God	person	परमेश्वर	revisado	rev. IA: Gen.1.1: forma परमेश्वर
+Goiim	group	गोयीम	revisado	rev. IA: Gen.14.1: forma गोयीम
+Goiim	place	गोयीम	revisado	rev. IA: Gen.14.1: forma गोयीम
+Goiim 1	place	गोयीम 1	revisado	rev. IA: sem ref: forma गोयीम 1
+Goiim 2	place	गोयीम 2	revisado	rev. IA: sem ref: forma गोयीम 2
+Gulloth-mayim	place		sem	rev. IA: Josh.15.19: sem forma tradicional segura no hin2017
+Gutium	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Hakkephirim	place		sem	rev. IA: Neh.6.2: sem forma tradicional segura no hin2017
+Halahha	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Ham	place	हाम	revisado	rev. IA: Gen.5.32: forma हाम
+Ham 1	place	हाम 1	revisado	rev. IA: sem ref: forma हाम 1
+Hammelech	person		sem	rev. IA: Jer.36.26: sem forma tradicional segura no hin2017
+Hamon-gog_Valley	place	हमोन-गोग की तराई	revisado	rev. IA: Ezek.39.11: forma हमोन-गोग की तराई
+Harhar	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Hatti	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Hazerim	place	हसेरीम	revisado	rev. IA: Deut.2.23: forma हसेरीम
+Helech	place		sem	rev. IA: Ezek.27.11: sem forma tradicional segura no hin2017
+Heracleopolis Magna	place	हेराक्लियोपोलिस मैग्ना	revisado	rev. IA: sem ref: forma हेराक्लियोपोलिस मैग्ना
+Heracleopolis Parva	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Heres	place	हेरेस	revisado	rev. IA: Judg.8.13: forma हेरेस
+Herod Agrippa I	person	हेरोदेस अग्रिप्पा प्रथम	revisado	rev. IA: Acts.12.1: forma हेरोदेस अग्रिप्पा प्रथम
+Herod Antipas	person	हेरोदेस अन्तिपास	revisado	rev. IA: Matt.14.1: forma हेरोदेस अन्तिपास
+Herodian	group	हेरोदी	revisado	rev. IA: Matt.22.16: forma हेरोदी
+Herod’s palace	place	हेरोदेस का महल	revisado	rev. IA: sem ref: forma हेरोदेस का महल
+Highway	place	राजमार्ग	revisado	rev. IA: Num.20.17: forma राजमार्ग
+Hilakku	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Holy Place	place	पवित्रस्थान	revisado	rev. IA: Exod.26.33: forma पवित्रस्थान
+Holy Place 1	place	पवित्रस्थान 1	revisado	rev. IA: Exod.26.33: forma पवित्रस्थान 1
+Holy Place 2	place	पवित्रस्थान 2	revisado	rev. IA: 1Kgs.6.5: forma पवित्रस्थान 2
+Holy Spirit	person	पवित्र आत्मा	revisado	rev. IA: Gen.1.2: forma पवित्र आत्मा
+Holy_Place	place	पवित्रस्थान	revisado	rev. IA: Exod.26.33: forma पवित्रस्थान
+Hophra	person	होप्रा	revisado	rev. IA: Jer.37.5: forma होप्रा
+Horesh	place	होरेश	revisado	rev. IA: 1Sam.23.15: forma होरेश
+House of the Forest of Lebanon	place	लबानोनी वन नामक भवन	revisado	rev. IA: 1Kgs.7.2: forma लबानोनी वन नामक भवन
+Jaar	place	याअर	revisado	rev. IA: Ps.132.6: forma याअर
+Janen	place		sem	rev. IA: Num.21.19: sem forma tradicional segura no hin2017
+Janua	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Jemnath	place		sem	rev. IA: Josh.15.46: sem forma tradicional segura no hin2017
+Jerusalem's	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Jerusalem_wives	person	यरूशलेम की स्त्रियाँ	revisado	rev. IA: 2Sam.5.13: forma यरूशलेम की स्त्रियाँ
+Jesus Christ	person	यीशु मसीह	revisado	rev. IA: Gen.49.10: forma यीशु मसीह
+John Mark	person	यूहन्ना मरकुस	revisado	rev. IA: Acts.12.12: forma यूहन्ना मरकुस
+John the Apostle	person	प्रेरित यूहन्ना	revisado	rev. IA: Matt.4.21: forma प्रेरित यूहन्ना
+John the Baptist	person	यूहन्ना बपतिस्मा देनेवाला	revisado	rev. IA: Matt.3.1: forma यूहन्ना बपतिस्मा देनेवाला
+Jonath-elem-rechokim	other		sem	rev. IA: Ps.56.1: sem forma tradicional segura no hin2017
+Judas Barsabas	person	यहूदा बरसब्बा	revisado	rev. IA: Acts.15.22: forma यहूदा बरसब्बा
+Judas Iscariot	person	यहूदा इस्करियोती	revisado	rev. IA: Matt.10.4: forma यहूदा इस्करियोती
+Judgment	place	न्याय का ओसारा	revisado	rev. IA: 1Kgs.7.7: forma न्याय का ओसारा
+King's_Highway	place	राजमार्ग	revisado	rev. IA: Num.20.17: forma राजमार्ग
+King’s Highway	place	राजमार्ग	revisado	rev. IA: Num.20.17: forma राजमार्ग
+Kumidi	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+LORD	other	यहोवा	revisado	rev. IA: Gen.1.1: forma यहोवा
+Laash	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Lebanon_Valley	place	लबानोन की तराई	revisado	rev. IA: Josh.11.17: forma लबानोन की तराई
+Lebbaeus Thaddaeus	person	तद्दै	revisado	rev. IA: Matt.10.3: forma तद्दै
+Line of Cain	group	कैन का वंश	revisado	rev. IA: sem ref: forma कैन का वंश
+Lower Beth-horon	place	निचला बेथोरोन	revisado	rev. IA: Josh.16.3: forma निचला बेथोरोन
+Lower Gulloth	place	निचले सोते	revisado	rev. IA: Josh.15.19: forma निचले सोते
+Lucifer	other	भोर का तारा	revisado	rev. IA: Isa.14.12: forma भोर का तारा
+Lucifer	person	भोर का तारा	revisado	rev. IA: Isa.14.12: forma भोर का तारा
+Lydia	place	लुदिया	revisado	rev. IA: Gen.36.22: forma लुदिया
+Maareh-geba	place		sem	rev. IA: Judg.20.33: sem forma tradicional segura no hin2017
+Madiama	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Magdala	place	मगदला	revisado	rev. IA: sem ref: forma मगदला
+Magdalsenna	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Magdolum	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Mahalab	place		sem	rev. IA: Josh.19.29: sem forma tradicional segura no hin2017
+Maranatha	other	मारानाथा	revisado	rev. IA: 1Cor.16.22: forma मारानाथा
+Mary Magdalene	person	मरियम मगदलीनी	revisado	rev. IA: Matt.27.56: forma मरियम मगदलीनी
+Mary_Magdalene	person	मरियम मगदलीनी	revisado	rev. IA: Matt.27.56: forma मरियम मगदलीनी
+Maskil	other	मश्कील	revisado	rev. IA: Ps.32.1: forma मश्कील
+Mazzaroth	other	राशियाँ	revisado	rev. IA: Job.38.32: forma राशियाँ
+Merom	place	मेरोम	revisado	rev. IA: Josh.11.5: forma मेरोम
+Meronoth	place		sem	rev. IA: 1Chr.27.30: sem forma tradicional segura no hin2017
+Meunites	group	मूनी	revisado	rev. IA: 1Chr.4.41: forma मूनी
+Micah	person		sem	rev. IA: Judg.17.1: sem forma tradicional segura no hin2017
+Miktam	other	मिक्ताम	revisado	rev. IA: Ps.16.1: forma मिक्ताम
+Misrephoth-maim	place	मिस्रपोतमैम	revisado	rev. IA: Josh.11.8: forma मिस्रपोतमैम
+Mizpeh_Valley	place	मिस्पे की तराई	revisado	rev. IA: Josh.11.3: forma मिस्पे की तराई
+Moab_Plains	place	मोआब का अराबा	revisado	rev. IA: Num.22.1: forma मोआब का अराबा
+Mortar	place		sem	rev. IA: Zeph.1.11: sem forma tradicional segura no hin2017
+Most Holy	place	परमपवित्रस्थान	revisado	rev. IA: Exod.26.33: forma परमपवित्रस्थान
+Most Holy Place	place	परमपवित्रस्थान	revisado	rev. IA: Exod.26.34: forma परमपवित्रस्थान
+Most Holy Place 1	place	परमपवित्रस्थान 1	revisado	rev. IA: Exod.26.33: forma परमपवित्रस्थान 1
+Most Holy Place 2	place	परमपवित्रस्थान 2	revisado	rev. IA: 1Kgs.6.16: forma परमपवित्रस्थान 2
+Most_Holy_Place	place	परमपवित्रस्थान	revisado	rev. IA: 1Kgs.6.16: forma परमपवित्रस्थान
+Mother of Aholah and Aholibah	person		sem	rev. IA: Ezek.23.2: sem forma tradicional segura no hin2017
+Mother of Lemuel	person	लमूएल की माता	revisado	rev. IA: Prov.31.1: forma लमूएल की माता
+Mother of Zebedees children	person	जब्दी के पुत्रों की माता	revisado	rev. IA: Matt.20.20: forma जब्दी के पुत्रों की माता
+Mother of the Wife of Simon	person	शमौन की सास	revisado	rev. IA: Matt.8.14: forma शमौन की सास
+Muth-labben	other		sem	rev. IA: Ps.9.1: sem forma tradicional segura no hin2017
+Nahuru	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Naphath	place		sem	rev. IA: Josh.17.11: sem forma tradicional segura no hin2017
+Naphath-dor	place	दोर का ऊँचा देश	revisado	rev. IA: 1Kgs.4.11: forma दोर का ऊँचा देश
+Nation of Israel	group	इस्राएल जाति	revisado	rev. IA: Ps.14.7: forma इस्राएल जाति
+Nehelam	place	नेहेलाम	revisado	rev. IA: Jer.29.24: forma नेहेलाम
+Nephilim	group	नपीली	revisado	rev. IA: Gen.6.4: forma नपीली
+New_Moon	other	नया चाँद	revisado	rev. IA: Col.2.16: forma नया चाँद
+North	place	उत्तर	revisado	rev. IA: Dan.11.6: forma उत्तर
+North Gate	place	उत्तरी फाटक	revisado	rev. IA: 1Chr.26.14: forma उत्तरी फाटक
+Nuhashe	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Parbar	place	पर्बार	revisado	rev. IA: 1Chr.26.18: forma पर्बार
+People's_Gate	place	सदर फाटक	revisado	rev. IA: Jer.17.19: forma सदर फाटक
+People’s Gate	place	सदर फाटक	revisado	rev. IA: Jer.17.19: forma सदर फाटक
+Pharisees	group	फरीसी	revisado	rev. IA: sem ref: forma फरीसी
+Phillip the Apostle	person	प्रेरित फिलिप्पुस	revisado	rev. IA: Matt.10.3: forma प्रेरित फिलिप्पुस
+Phillip the Evangelist	person	सुसमाचार प्रचारक फिलिप्पुस	revisado	rev. IA: Acts.6.5: forma सुसमाचार प्रचारक फिलिप्पुस
+Pillars	place	खम्भों का ओसारा	revisado	rev. IA: 1Kgs.7.6: forma खम्भों का ओसारा
+Pitru	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Plain	place	तराई	revisado	rev. IA: Deut.34.3: forma तराई
+Pontius Pilate	person	पुन्तियुस पिलातुस	revisado	rev. IA: Matt.27.2: forma पुन्तियुस पिलातुस
+Pool	place		sem	rev. IA: Neh.2.14: sem forma tradicional segura no hin2017
+Portius Festus	person	पुरकियुस फेस्तुस	revisado	rev. IA: Acts.24.27: forma पुरकियुस फेस्तुस
+Potsherd Gate	place		sem	rev. IA: Jer.19.2: sem forma tradicional segura no hin2017
+Potsherd_Gate	place		sem	rev. IA: Jer.19.2: sem forma tradicional segura no hin2017
+Preparation_Festival	other	तैयारी का दिन	revisado	rev. IA: Matt.27.62: forma तैयारी का दिन
+Punt	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Pyrrhus	person	पुरूर्स	revisado	rev. IA: Acts.20.4: forma पुरूर्स
+Queen of Sheba	person	शेबा की रानी	revisado	rev. IA: 1Kgs.10.1: forma शेबा की रानी
+Queen_of_Sheba	person	शेबा की रानी	revisado	rev. IA: 1Kgs.10.1: forma शेबा की रानी
+Raca	other	राका	revisado	rev. IA: Matt.5.22: forma राका
+Ragmat	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+River	place		sem	rev. IA: Gen.36.37: sem forma tradicional segura no hin2017
+River 2	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+River 3	place	महानद के तट का रहोबोत	revisado	rev. IA: sem ref: forma महानद के तट का रहोबोत
+Rock	place		sem	rev. IA: Josh.15.55: sem forma tradicional segura no hin2017
+Rocks	place	चट्टानें	revisado	rev. IA: 1Sam.24.2: forma चट्टानें
+Sadducees	group	सदूकी	revisado	rev. IA: sem ref: forma सदूकी
+Sahar	place		sem	rev. IA: Ezek.27.18: sem forma tradicional segura no hin2017
+Salome	person	सलोमी	revisado	rev. IA: Matt.14.6: forma सलोमी
+Salona	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Salt_Valley	place	नमक की तराई	revisado	rev. IA: 2Sam.8.13: forma नमक की तराई
+Samaria's	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Saparda	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Saparre	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Scribes	group	शास्त्री	revisado	rev. IA: sem ref: forma शास्त्री
+Scythia	place	स्कूतिया	revisado	rev. IA: sem ref: forma स्कूतिया
+Second Quarter	place	नया टोला	revisado	rev. IA: 2Kgs.22.14: forma नया टोला
+Second_Quarter	place	नया टोला	revisado	rev. IA: 2Kgs.22.14: forma नया टोला
+Sergius Paulus	person	सिरगियुस पौलुस	revisado	rev. IA: Acts.13.7: forma सिरगियुस पौलुस
+Sergius_Paulus	person	सिरगियुस पौलुस	revisado	rev. IA: Acts.13.7: forma सिरगियुस पौलुस
+Shephelah	place	नीचे का देश	revisado	rev. IA: Deut.1.7: forma नीचे का देश
+Shiggaion	other		sem	rev. IA: Ps.7.1: sem forma tradicional segura no hin2017
+Shushan_Eduth	other		sem	rev. IA: Ps.60.1: sem forma tradicional segura no hin2017
+Simon Peter	person	शमौन पतरस	revisado	rev. IA: Matt.4.18: forma शमौन पतरस
+Simon Zelotes	person	शमौन जेलोतेस	revisado	rev. IA: Matt.10.4: forma शमौन जेलोतेस
+Simon the Sorcerer	person	जादूगर शमौन	revisado	rev. IA: Acts.8.9: forma जादूगर शमौन
+Simon the Tanner	person	शमौन चर्मकार	revisado	rev. IA: Acts.9.43: forma शमौन चर्मकार
+Sister of Tahpenes	person	तहपनेस की बहन	revisado	rev. IA: 1Kgs.11.19: forma तहपनेस की बहन
+Solomon's Portico	place	सुलैमान का ओसारा	revisado	rev. IA: Acts.3.11: forma सुलैमान का ओसारा
+Solomon's_Portico	place	सुलैमान का ओसारा	revisado	rev. IA: Acts.3.11: forma सुलैमान का ओसारा
+Solomon’s Portico	place	सुलैमान का ओसारा	revisado	rev. IA: John.10.23: forma सुलैमान का ओसारा
+South	place	दक्षिण	revisado	rev. IA: Dan.11.5: forma दक्षिण
+South 1	place	दक्षिण 1	revisado	rev. IA: sem ref: forma दक्षिण 1
+South 2	place	दक्षिण 2	revisado	rev. IA: sem ref: forma दक्षिण 2
+South 3	place	दक्षिण 3	revisado	rev. IA: sem ref: forma दक्षिण 3
+South Gate	place	दक्षिणी फाटक	revisado	rev. IA: 1Chr.26.15: forma दक्षिणी फाटक
+Sparta	place	स्पार्टा	revisado	rev. IA: sem ref: forma स्पार्टा
+Straight Gate	place		sem	rev. IA: Acts.9.11: sem forma tradicional segura no hin2017
+Straight Street	place	सीधी गली	revisado	rev. IA: Acts.9.11: forma सीधी गली
+Suph	place	सूफ	revisado	rev. IA: Deut.1.1: forma सूफ
+Sutu	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Syrtis	place	सुरतिस	revisado	rev. IA: Acts.27.17: forma सुरतिस
+Tabbur-erez	place		sem	rev. IA: Judg.9.37: sem forma tradicional segura no hin2017
+Tartessos	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Tegarama	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Thapsacus	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+The Lord Is There	place	यहोवा शाम्मा	revisado	rev. IA: Ezek.48.35: forma यहोवा शाम्मा
+The Lord Will Provide	place	यहोवा यिरे	revisado	rev. IA: Gen.22.14: forma यहोवा यिरे
+Thelme	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Thisbe	place	तिशबे	revisado	rev. IA: sem ref: forma तिशबे
+Three Taverns	place	तीन-सराय	revisado	rev. IA: Acts.28.15: forma तीन-सराय
+Three_Taverns	place	तीन-सराय	revisado	rev. IA: Acts.28.15: forma तीन-सराय
+Throne	place	सिंहासन का ओसारा	revisado	rev. IA: 1Kgs.7.7: forma सिंहासन का ओसारा
+Tjaru	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Tower	place		sem	rev. IA: Neh.3.1: sem forma tradicional segura no hin2017
+Tower_of_Eder	place	एदेर का गुम्मट	revisado	rev. IA: Gen.35.21: forma एदेर का गुम्मट
+Travelers_Valley	place	यात्रियों की तराई	revisado	rev. IA: Ezek.39.11: forma यात्रियों की तराई
+Tribe of Asher	group	आशेर का गोत्र	revisado	rev. IA: sem ref: forma आशेर का गोत्र
+Tribe of Benjamin	group	बिन्यामीन का गोत्र	revisado	rev. IA: sem ref: forma बिन्यामीन का गोत्र
+Tribe of Dan	group	दान का गोत्र	revisado	rev. IA: sem ref: forma दान का गोत्र
+Tribe of Gad	group	गाद का गोत्र	revisado	rev. IA: sem ref: forma गाद का गोत्र
+Tribe of Issachar	group	इस्साकार का गोत्र	revisado	rev. IA: sem ref: forma इस्साकार का गोत्र
+Tribe of Joseph	group	यूसुफ का गोत्र	revisado	rev. IA: sem ref: forma यूसुफ का गोत्र
+Tribe of Judah	group	यहूदा का गोत्र	revisado	rev. IA: Prov.25.1: forma यहूदा का गोत्र
+Tribe of Levi	group	लेवी का गोत्र	revisado	rev. IA: sem ref: forma लेवी का गोत्र
+Tribe of Naphtali	group	नप्ताली का गोत्र	revisado	rev. IA: sem ref: forma नप्ताली का गोत्र
+Tribe of Reuben	group	रूबेन का गोत्र	revisado	rev. IA: sem ref: forma रूबेन का गोत्र
+Tribe of Simeon	group	शिमोन का गोत्र	revisado	rev. IA: sem ref: forma शिमोन का गोत्र
+Tribe of Zebulun	group	जबूलून का गोत्र	revisado	rev. IA: sem ref: forma जबूलून का गोत्र
+Umman Manda	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Unnamed#1	person		sem	rev. IA: 1Kgs.2.27: sem forma tradicional segura no hin2017
+Unnamed#2	person		sem	rev. IA: 1Kgs.2.27: sem forma tradicional segura no hin2017
+Unnamed#3	person		sem	rev. IA: 1Kgs.2.27: sem forma tradicional segura no hin2017
+Unnamed#4	person		sem	rev. IA: 1Kgs.2.27: sem forma tradicional segura no hin2017
+Unnamed#5	person		sem	rev. IA: Matt.1.15: sem forma tradicional segura no hin2017
+Unnamed#6	person		sem	rev. IA: Matt.1.15: sem forma tradicional segura no hin2017
+Unnamed#7	person		sem	rev. IA: Matt.1.15: sem forma tradicional segura no hin2017
+Unnamed#8	person		sem	rev. IA: Matt.1.15: sem forma tradicional segura no hin2017
+Unnamed#9	person		sem	rev. IA: Matt.1.15: sem forma tradicional segura no hin2017
+Upper Beth-horon	place	ऊपरी बेथोरोन	revisado	rev. IA: Josh.16.5: forma ऊपरी बेथोरोन
+Upper Gulloth	place	ऊपर के सोते	revisado	rev. IA: Josh.15.19: forma ऊपर के सोते
+Upu	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Uqnu	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Ur 2	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Ur of the Chaldees	place	कसदियों का ऊर	revisado	rev. IA: Gen.11.28: forma कसदियों का ऊर
+Ura	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+Valley of Mizpeh	place	मिस्पे की तराई	revisado	rev. IA: Josh.11.8: forma मिस्पे की तराई
+Valley of Salt	place	नमक की तराई	revisado	rev. IA: 2Sam.8.13: forma नमक की तराई
+Valley of the Son of Hinnom	place	हिन्नोमवंशियों की तराई	revisado	rev. IA: 2Kgs.23.10: forma हिन्नोमवंशियों की तराई
+Washer's_Field	place	धोबियों का खेत	revisado	rev. IA: 2Kgs.18.17: forma धोबियों का खेत
+Washer’s Field	place	धोबियों का खेत	revisado	rev. IA: 2Kgs.18.17: forma धोबियों का खेत
+Way of the Red Sea	place	लाल समुद्र का मार्ग	revisado	rev. IA: Num.14.25: forma लाल समुद्र का मार्ग
+Wife of Ezekiel	person	यहेजकेल की पत्नी	revisado	rev. IA: Ezek.24.18: forma यहेजकेल की पत्नी
+Wife of Simon	person		sem	rev. IA: Matt.8.14: sem forma tradicional segura no hin2017
+Wildgoats_Rocks	place	जंगली बकरों की चट्टानें	revisado	rev. IA: 1Sam.24.2: forma जंगली बकरों की चट्टानें
+Wildgoats’ Rocks	place	जंगली बकरों की चट्टानें	revisado	rev. IA: 1Sam.24.2: forma जंगली बकरों की चट्टानें
+Willows	place	मजनूवृक्षों का नाला	revisado	rev. IA: Isa.15.7: forma मजनूवृक्षों का नाला
+Zion's	place		sem	rev. IA: sem ref: sem forma tradicional segura no hin2017
+a_wife_of_Eliphaz	person	एलीपज की पत्नी	revisado	rev. IA: Gen.36.11: forma एलीपज की पत्नी
+a_wife_of_Ezekiel	person	यहेजकेल की पत्नी	revisado	rev. IA: Ezek.24.18: forma यहेजकेल की पत्नी
+a_wife_of_Hezron	person	हेस्रोन की पत्नी	revisado	rev. IA: 1Chr.2.9: forma हेस्रोन की पत्नी
+a_wife_of_Jerahmeel	person	यरहमेल की पत्नी	revisado	rev. IA: 1Chr.2.26: forma यरहमेल की पत्नी
+a_wife_of_Josiah	person	योशिय्याह की पत्नी	revisado	rev. IA: 1Chr.3.15: forma योशिय्याह की पत्नी
+a_wife_of_Lot	person	लूत की पत्नी	revisado	rev. IA: Gen.19.15: forma लूत की पत्नी
+a_wife_of_Peter	person	पतरस की पत्नी	revisado	rev. IA: Matt.8.14: forma पतरस की पत्नी
+a_wife_of_Simeon	person	शिमोन की पत्नी	revisado	rev. IA: Gen.46.10: forma शिमोन की पत्नी
+a_wife_of_Solomon	person		sem	rev. IA: 1Kgs.4.11: sem forma tradicional segura no hin2017
+daughter1_of_Lot	person	लूत की बड़ी बेटी	revisado	rev. IA: Gen.19.37: forma लूत की बड़ी बेटी
+daughter2_of_Lot	person	लूत की छोटी बेटी	revisado	rev. IA: Gen.19.38: forma लूत की छोटी बेटी
+daughter_of_Annas	person	हन्ना की बेटी	revisado	rev. IA: John.18.13: forma हन्ना की बेटी
+daughter_of_Machir	person	माकीर की बेटी	revisado	rev. IA: 1Chr.2.21: forma माकीर की बेटी
+daughter_of_Meshullam	person	मशुल्लाम की बेटी	revisado	rev. IA: Neh.6.18: forma मशुल्लाम की बेटी
+daughter_of_Pharaoh	person	फ़िरौन की बेटी	revisado	rev. IA: Exod.2.5: forma फ़िरौन की बेटी
+daughter_of_Putiel	person	पूतीएल की बेटी	revisado	rev. IA: Exod.6.25: forma पूतीएल की बेटी
+daughter_of_Sanballat	person	सम्बल्लत की बेटी	revisado	rev. IA: Neh.13.28: forma सम्बल्लत की बेटी
+daughter_of_Shecaniah	person	शकन्याह की बेटी	revisado	rev. IA: Neh.6.18: forma शकन्याह की बेटी
+father_of_Barnabas	person	बरनबास का पिता	revisado	rev. IA: Col.4.10: forma बरनबास का पिता
+father_of_Conaniah	person	कोनन्याह का पिता	revisado	rev. IA: 2Chr.31.12: forma कोनन्याह का पिता
+father_of_Elizabeth	person	एलीशिबा का पिता	revisado	rev. IA: Luke.1.5: forma एलीशिबा का पिता
+father_of_Eunice	person	यूनीके का पिता	revisado	rev. IA: 2Tim.1.5: forma यूनीके का पिता
+father_of_Hilkiah	person	हिल्किय्याह का पिता	revisado	rev. IA: Jer.32.7: forma हिल्किय्याह का पिता
+father_of_Hodiah	person	होदिय्याह का पिता	revisado	rev. IA: 1Chr.4.19: forma होदिय्याह का पिता
+father_of_Lazarus	person	लाज़र का पिता	revisado	rev. IA: Luke.10.39: forma लाज़र का पिता
+father_of_Mamre	person	मम्रे का पिता	revisado	rev. IA: Gen.14.13: forma मम्रे का पिता
+father_of_Nathan	person	नातान का पिता	revisado	rev. IA: 1Chr.11.38: forma नातान का पिता
+father_of_Tahpenes	person	तहपनेस का पिता	revisado	rev. IA: 1Kgs.11.19: forma तहपनेस का पिता
+father_of_Timothy	person	तीमुथियुस का पिता	revisado	rev. IA: Acts.16.1: forma तीमुथियुस का पिता
+huge_man	person	बड़े डील-डौल का पुरुष	revisado	rev. IA: 2Sam.21.20: forma बड़े डील-डौल का पुरुष
+husband_of_Hammolecheth	person	हम्मोलेकेत का पति	revisado	rev. IA: 1Chr.7.18: forma हम्मोलेकेत का पति
+husband_of_Mary	person	मरियम का पति	revisado	rev. IA: Acts.12.12: forma मरियम का पति
+husband_of_Matred	person	मत्रेद का पति	revisado	rev. IA: Gen.36.39: forma मत्रेद का पति
+husband_of_Shimeath	person	शिमात का पति	revisado	rev. IA: 2Kgs.12.21: forma शिमात का पति
+husband_of_Zeruiah	person	सरूयाह का पति	revisado	rev. IA: 1Sam.26.6: forma सरूयाह का पति
+man of great stature	person	बड़े डील-डौल का पुरुष	revisado	rev. IA: 2Sam.21.20: forma बड़े डील-डौल का पुरुष
+man of understanding	person	बुद्धिमान पुरुष	revisado	rev. IA: Ezra.8.18: forma बुद्धिमान पुरुष
+motherInLaw_of_Peter	person	पतरस की सास	revisado	rev. IA: Matt.8.14: forma पतरस की सास
+sister_of_Tahpenes	person	तहपनेस की बहन	revisado	rev. IA: 1Kgs.11.19: forma तहपनेस की बहन
+son of Abinadab	person	बेन-अबीनादब	revisado	rev. IA: 1Kgs.4.11: forma बेन-अबीनादब
+son of Dekar	person	बेन्देकेर	revisado	rev. IA: 1Kgs.4.9: forma बेन्देकेर
+son of Geber	person	बेनगेबेर	revisado	rev. IA: 1Kgs.4.13: forma बेनगेबेर
+son of Hesed	person	बेन्हेसेद	revisado	rev. IA: 1Kgs.4.10: forma बेन्हेसेद
+son of Hur	person	बेन्हूर	revisado	rev. IA: 1Kgs.4.8: forma बेन्हूर
+son of Joiada	person	योयादा का पुत्र	revisado	rev. IA: Neh.13.28: forma योयादा का पुत्र
+son_of_Jashen	person	याशेन का पुत्र	revisado	rev. IA: 2Sam.23.32: forma याशेन का पुत्र
+son_of_Joiada	person	योयादा का पुत्र	revisado	rev. IA: Neh.13.28: forma योयादा का पुत्र
+sons of Jashen	person	याशेन के पुत्र	revisado	rev. IA: 2Sam.23.32: forma याशेन के पुत्र
+the giant in Gath	person	गत का दानव	revisado	rev. IA: 2Sam.21.16: forma गत का दानव
+wife_of_Heli	person		sem	rev. IA: Luke.1.5: sem forma tradicional segura no hin2017
+Allon	place	सानन्नीम का बांज वृक्ष	revisado	rev. IA: Josh.19.33: forma सानन्नीम का बांज वृक्ष
+Metheg-ammah	place	मेतेग-अम्मा	revisado	rev. IA: 2Sam.8.1: forma मेतेग-अम्मा
+Misgab	place	मिसगाब	revisado	rev. IA: Jer.48.1: forma मिसगाब
+Iyim	place	अबारीम	revisado	rev. IA: Num.33.45: forma अबारीम
+Pacatiana	place	पकातियाना	revisado	rev. IA: 1Tim.6.21: forma पकातियाना
+Sikkuth	other	सक्कूत	revisado	rev. IA: Amos.5.26: forma सक्कूत
+Karnaim	place	कर्नैम	revisado	rev. IA: Gen.14.5: forma कर्नैम
