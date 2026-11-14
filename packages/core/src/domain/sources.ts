@@ -118,6 +118,8 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'bible-readings': { short: 'Leituras Bíblicas', commentator: 'Review and Herald · Leituras Bíblicas', role: 'commentary', lang: 'en' },
   // Sermões por texto (pipeline/ingest/sermoes_gutenberg.py): um comentário por sermão, no intervalo da passagem.
   'maclaren-expositions': { short: 'Maclaren', commentator: 'Alexander Maclaren', role: 'commentary', lang: 'en' },
+  // Doutrina (pipeline/ingest/doutrina_pd.py): teologia sistemática em domínio público, por referência explícita.
+  'strong-systematic': { short: 'Strong', commentator: 'A. H. Strong', role: 'commentary', lang: 'en' },
 };
 
 /** Ordem de preferência das fontes de lugares (menor = melhor) para escolher a identificação moderna. */
