@@ -1,14 +1,36 @@
 // Lente Intertexto: referências cruzadas do trecho (com peso relativo) e tópicos que o citam.
 import { View } from 'react-native';
-import { titleCaseHeadword } from '@sensus/core';
+import { headwordShortText, type DictionaryEntry, type NameFields } from '@sensus/core';
+import { useLang } from '@/i18n';
 import { Empty, SubHeader, space } from '@/design';
 import { useStudy } from '@/state/study';
 import { chv, refShort } from '@/features/common/format';
+import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
+import { useShortTexts } from '@/translate/useShortTexts';
 import { TopicTag, XrefCard } from '../cards';
 import { LensShell } from '../LensShell';
 import { STUDY } from '../strings';
 import { useStudyData } from '../useStudyData';
 import { Body, Cards, SECTION_LABEL, SHOWN, attachCard, useExpanded, type LensProps } from './shared';
+
+/** Tópicos que citam o trecho: rótulos em um lote de tradução e uma nota abaixo dos chips. */
+function TopicList({ topics, names }: { topics: readonly DictionaryEntry[]; names: readonly NameFields[] }) {
+  const appLang = useLang();
+  const items = topics.map((tp) => headwordShortText(tp.headword, tp.source_id, names, appLang));
+  const st = useShortTexts(items);
+  if (topics.length === 0) return null;
+  return (
+    <>
+      <SubHeader label={STUDY.topics} />
+      <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space[3] }}>
+        {topics.map((tp, i) => (
+          <TopicTag key={tp.cite_id} label={st.view(items[i])!.text} onPress={() => useStudy.getState().openPopover(tp.cite_id)} />
+        ))}
+      </View>
+      <AutoTranslateNote tr={st.note} testID="topics-tr" />
+    </>
+  );
+}
 
 export function IntertextoLens({ onLayout }: LensProps) {
   const data = useStudyData();
@@ -62,16 +84,7 @@ export function IntertextoLens({ onLayout }: LensProps) {
                   })}
                 </Cards>
               )}
-              {topics.length > 0 && (
-                <>
-                  <SubHeader label={STUDY.topics} />
-                  <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: space[3] }}>
-                    {topics.map((tp) => (
-                      <TopicTag key={tp.cite_id} label={titleCaseHeadword(tp.headword)} onPress={() => useStudy.getState().openPopover(tp.cite_id)} />
-                    ))}
-                  </View>
-                </>
-              )}
+              <TopicList topics={topics} names={p.layers.historical.entities} />
             </View>
           );
         }}
