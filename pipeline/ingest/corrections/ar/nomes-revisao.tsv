@@ -1,0 +1,108 @@
+# Notas da revisão de nomes por agentes de IA (uma linha por nome_en + candidato, ou nome_en + tipo).
+# Conferidas no texto da Bíblia da língua e na tradução inglesa. Só registro: o ingestor não lê este arquivo.
+nome_en	candidato	nome_ar	origem	nota
+Sherebiah	شربيا	شربيا	revisado	rev. IA: Ezra.8.18 conferido na VD
+Ladan	ولعدان	ولعدان	revisado	rev. IA: 1Chr.7.26 conferido na VD
+Maaseiah	معسيا	معسيا	revisado	rev. IA: 1Chr.15.18 conferido na VD
+Sismai	سسماي	سسماي	revisado	rev. IA: 1Chr.2.40 conferido na VD
+Ishbak	يشباق	يشباق	revisado	rev. IA: Gen.25.2 conferido na VD
+Shamir	شامور	شامير	revisado	rev. IA: Josh.15.48 conferido na VD; candidato شامور; forma da VD
+Manasseh	منسى	منسى	revisado	rev. IA: Gen.41.51 conferido na VD
+Shimei	شمعي	شمعي	revisado	rev. IA: Exod.6.17 conferido na VD
+Baasha	بعشا	بعشا	revisado	rev. IA: 1Kgs.15.16 conferido na VD
+Elizur	أليصور	أليصور	revisado	rev. IA: Num.1.5 conferido na VD
+Immer	إمير	إمير	revisado	rev. IA: 1Chr.9.12 conferido na VD
+Uzzah	عزة	عزة	revisado	rev. IA: 2Sam.6.3 conferido na VD
+Maai	ماعاي	ماعاي	revisado	rev. IA: Neh.12.36 conferido na VD
+Dinhabah	دنهابة	دنهابة	revisado	rev. IA: Gen.36.32 conferido na VD
+Dan	دان	دان	revisado	rev. IA: Gen.14.14 conferido na VD
+Iphedeiah	يفديا	يفديا	revisado	rev. IA: 1Chr.8.25 conferido na VD
+Tychicus	تيخيكس	تيخيكس	revisado	rev. IA: Acts.20.4 conferido na VD
+Shama	شاماع	شاما	revisado	rev. IA: 1Chr.11.44 conferido na VD; candidato شاماع trazia letra do versículo
+Ahimaaz	أخيمعص	أخيمعص	revisado	rev. IA: 1Sam.14.50 conferido na VD
+Jehozabad	يهوزاباد	يهوزاباد	revisado	rev. IA: 2Kgs.12.21 conferido na VD
+Azariah	عزريا	عزريا	revisado	rev. IA: 1Kgs.4.2 conferido na VD
+Middin	مدين	مدين	revisado	rev. IA: Josh.15.61 conferido na VD
+Sisera	سيسرا	سيسرا	revisado	rev. IA: Judg.4.2 conferido na VD
+Tabor	تابور	تابور	revisado	rev. IA: Josh.19.22 conferido na VD
+Jobab	يوباب	يوباب	revisado	rev. IA: Gen.10.29 conferido na VD
+Parvaim	روايم	فروايم	revisado	rev. IA: 2Chr.3.6 conferido na VD; candidato روايم perdia a فـ de من فروايم
+Jorim	يوريم	يوريم	revisado	rev. IA: Luke.3.29 conferido na VD
+Aholibamah	أهوليبامة	أهوليبامة	revisado	rev. IA: Gen.26.34 conferido na VD
+Timon	تيمون	تيمون	revisado	rev. IA: Acts.6.5 conferido na VD
+Dishon	ديشون	ديشون	revisado	rev. IA: Gen.36.21 conferido na VD
+Ram	رام	رام	revisado	rev. IA: Ruth.4.19 conferido na VD
+Sepharvaim	سفروايم	سفروايم	revisado	rev. IA: 2Kgs.17.24 conferido na VD
+Enan	عينن	عينان	revisado	rev. IA: Num.1.15 conferido na VD; candidato عينن; forma da VD
+Iphdeiah	يفديا	يفديا	revisado	rev. IA: 1Chr.8.25 conferido na VD
+Abel-beth-maacah	آبل	آبل بيت معكة	revisado	rev. IA: 2Sam.20.14 conferido na VD; nome composto completo; candidato era só آبل
+Chimham	كمهام	كمهام	revisado	rev. IA: 2Sam.19.37 conferido na VD
+Eliab	أليآب	أليآب	revisado	rev. IA: Num.1.9 conferido na VD
+Ezion-geber	عصيون	عصيون جابر	revisado	rev. IA: Num.33.35 conferido na VD; candidato era só عصيون (nome composto)
+Ishmerai	يشمراي	يشمراي	revisado	rev. IA: 1Chr.8.18 conferido na VD
+Sin	سين	سين	revisado	rev. IA: Exod.16.1 conferido na VD
+Ham	حام	حام	revisado	rev. IA: Gen.5.32 conferido na VD
+Jahdiel	يحديئيل	يحديئيل	revisado	rev. IA: 1Chr.5.24 conferido na VD
+Hormah	حرمة	حرمة	revisado	rev. IA: Num.14.45 conferido na VD
+Timnah	تمناع	تمناع	revisado	rev. IA: Gen.36.40 conferido na VD
+Shenazzar	شنأصر	شنأصر	revisado	rev. IA: 1Chr.3.18 conferido na VD
+Migdol	مجدل	مجدل	revisado	rev. IA: Exod.14.2 conferido na VD
+Gideoni	جدعوني	جدعوني	revisado	rev. IA: Num.1.11 conferido na VD
+Jachin	ياكين	ياكين	revisado	rev. IA: Gen.46.10 conferido na VD
+Sansannah	سنسنة	سنسنة	revisado	rev. IA: Josh.15.31 conferido na VD
+Alameth	علامث	علامث	revisado	rev. IA: 1Chr.7.8 conferido na VD
+Imna	يمناع	يمناع	revisado	rev. IA: 1Chr.7.35 conferido na VD
+Elidad	أليداد	أليداد	revisado	rev. IA: Num.34.21 conferido na VD
+Herodias	هيروديا	هيروديا	revisado	rev. IA: Matt.14.3 conferido na VD
+Rebekah	رفقة	رفقة	revisado	rev. IA: Gen.22.23 conferido na VD
+Massah	مسة	مسة	revisado	rev. IA: Exod.17.7 conferido na VD
+Beracah	وبراخة	براخة	revisado	rev. IA: 1Chr.12.3 conferido na VD; candidato trazia و do texto
+Jahleel	ياحلئيل	ياحلئيل	revisado	rev. IA: Gen.46.14 conferido na VD
+Shalmai	سلماي	سلماي	revisado	rev. IA: Ezra.2.46 conferido na VD
+Isaac	إسحاق	إسحاق	revisado	rev. IA: Gen.17.19 conferido na VD
+Lycia	ليكية	ليكية	revisado	rev. IA: Acts.27.5 conferido na VD
+Zin	صين	صين	revisado	rev. IA: Num.13.21 conferido na VD
+Dibon	ديبون	ديبون	revisado	rev. IA: Num.21.30 conferido na VD
+Nebuzaradan	نبوزرادان	نبوزرادان	revisado	rev. IA: 2Kgs.25.8 conferido na VD
+Jecoliah	يكليا	يكليا	revisado	rev. IA: 2Kgs.15.2 conferido na VD
+Admatha	أدماثا	أدماثا	revisado	rev. IA: Esth.1.14 conferido na VD
+Midian	مديان	مديان	revisado	rev. IA: Gen.25.2 conferido na VD
+Meribah	مريبة	مريبة	revisado	rev. IA: Exod.17.7 conferido na VD
+Rephidim	رفيديم	رفيديم	revisado	rev. IA: Exod.17.1 conferido na VD
+Jephthah	يفتاح	يفتاح	revisado	rev. IA: Judg.11.1 conferido na VD
+Mahalaleel	مهللئيل	مهللئيل	revisado	rev. IA: Gen.5.12 conferido na VD
+Pedaiah	داية	فداية	revisado	rev. IA: 2Kgs.23.36 conferido na VD; candidato داية perdia الفاء
+Abidan	أبيدن	أبيدن	revisado	rev. IA: Num.1.11 conferido na VD
+Michaiah	ميخايا	ميخايا	revisado	rev. IA: 2Kgs.22.12 conferido na VD
+Zalmunna	صلمناع	صلمناع	revisado	rev. IA: Judg.8.5 conferido na VD
+Benjamin	بنيامين	بنيامين	revisado	rev. IA: Gen.35.18 conferido na VD
+Mary	مريم	مريم	revisado	rev. IA: Matt.1.16 conferido na VD
+Peleg	الج	فالج	revisado	rev. IA: Gen.10.25 conferido na VD; candidato الج: artigo indevido e letra perdida
+Baladan	بلادان	بلادان	revisado	rev. IA: 2Kgs.20.12 conferido na VD
+Shaharaim	شحرايم	شحرايم	revisado	rev. IA: 1Chr.8.8 conferido na VD
+Jeremiah	يرميا	إرميا	revisado	rev. IA: 2Kgs.23.31 conferido na VD; forma da VD do profeta; candidato يرميا é do versículo de 2Rs 23:31
+Beth-horon	حورون	بيت حورون	revisado	rev. IA: Josh.10.10 conferido na VD; nome composto completo; candidato era só حورون
+Shebna	شبنة	شبنة	revisado	rev. IA: 2Kgs.18.18 conferido na VD
+Matthan	ومتان	متان	revisado	rev. IA: Matt.1.15 conferido na VD; candidato trazia و do texto
+Bezaleel	بصلئيل	بصلئيل	revisado	rev. IA: Exod.31.2 conferido na VD
+Lebanon	لبنان	لبنان	revisado	rev. IA: Deut.1.7 conferido na VD
+Mijamin	ميامين	ميامين	revisado	rev. IA: 1Chr.24.9 conferido na VD
+Mattathah	متاثا	متاثا	revisado	rev. IA: Ezra.10.33 conferido na VD
+Perez	ارص	فارص	revisado	rev. IA: Gen.38.29 conferido na VD; candidato ارص perdia a فا
+Adullam	عدلام	عدلام	revisado	rev. IA: Gen.38.1 conferido na VD
+Chesil	وكسيل	كسيل	revisado	rev. IA: Josh.15.30 conferido na VD; candidato trazia و do texto
+Lysanias	وليسانيوس	ليسانيوس	revisado	rev. IA: Luke.3.1 conferido na VD; candidato trazia و do texto
+Tadmor	تدمر	تدمر	revisado	rev. IA: 1Kgs.9.18 conferido na VD
+Melatiah	ملطيا	ملطيا	revisado	rev. IA: Neh.3.7 conferido na VD
+Naam	ناعم	ناعم	revisado	rev. IA: 1Chr.4.15 conferido na VD
+Pharez	فارص	فارص	revisado	rev. IA: Gen.38.29 conferido na VD
+Agrippa	أغريباس	أغريباس	revisado	rev. IA: Acts.25.13 conferido na VD
+Jabesh	يابيش	يابيش	revisado	rev. IA: Judg.21.8 conferido na VD
+Hazaiah	حزايا	حزايا	revisado	rev. IA: Neh.11.5 conferido na VD
+Malta	مليطة	مالطة	revisado	rev. IA: Acts.28.1 conferido na VD; candidato مليطة; forma da VD
+Nebat	نباط	نباط	revisado	rev. IA: 1Kgs.11.26 conferido na VD
+Ashtaroth	العشتاروث	عشتاروث	revisado	rev. IA: alta fora da amostra; artigo indevido no candidato
+Avvim	العويم	عويم	revisado	rev. IA: alta fora da amostra; artigo indevido no candidato
+Haahashtari	الأخشتاري	أخشتاري	revisado	rev. IA: alta fora da amostra; artigo ha- do hebraico lido como ال
+Havilah	الحويلة	حويلة	revisado	rev. IA: alta fora da amostra; artigo indevido; o nome hebraico não tem artigo
+Sirah	السيرة	سيرة	revisado	rev. IA: alta fora da amostra; artigo indevido; em بئر سيرة
