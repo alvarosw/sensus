@@ -1,0 +1,703 @@
+# Notas da revisão de nomes por agentes de IA (uma linha por nome_en + candidato, ou nome_en + tipo).
+# Conferidas no texto da Bíblia da língua e na tradução inglesa. Só registro: o ingestor não lê este arquivo.
+nome_en	candidato	nome_id	origem	nota
+Jotbah	Yotba	Yotba	revisado	rev. IA: 2Kgs.21.19; forma conferida na LAI TB
+Nun	Nun	Nun	revisado	rev. IA: Exod.33.11; forma conferida na LAI TB
+Eliadah	Eliada	Eliada	revisado	rev. IA: 1Kgs.11.23; forma conferida na LAI TB
+Peruda	Peruda	Peruda	revisado	rev. IA: Ezra.2.55; forma conferida na LAI TB
+Nimrim	Nimrim	Nimrim	revisado	rev. IA: Isa.15.6; forma conferida na LAI TB
+Haggai	Hagai	Hagai	revisado	rev. IA: Ezra.5.1; forma conferida na LAI TB
+Azzur	Azur	Azur	revisado	rev. IA: Neh.10.17; forma conferida na LAI TB
+Saron	Saron	Saron	revisado	rev. IA: Isa.33.9; forma conferida na LAI TB
+Tob	Tob	Tob	revisado	rev. IA: Judg.11.3; forma conferida na LAI TB
+Hakkoz	Hakos	Hakos	revisado	rev. IA: Ezra.2.61; forma conferida na LAI TB
+Mahlah	Mahla	Mahla	revisado	rev. IA: Num.27.1; forma conferida na LAI TB
+Jared	Yared	Yared	revisado	rev. IA: Gen.5.15; forma conferida na LAI TB
+Ammon	Amon	Amon	revisado	rev. IA: Gen.19.38; forma conferida na LAI TB
+Hali	Hali	Hali	revisado	rev. IA: Josh.19.25; forma conferida na LAI TB
+Jasher	Yasar	Yasyar	revisado	rev. IA: Josh.10.13; LAI TB 'Kitab Yasyar' (candidato Yasar)
+Etham	Etam	Etam	revisado	rev. IA: Exod.13.20; forma conferida na LAI TB
+Hophni	Hofni	Hofni	revisado	rev. IA: 1Sam.1.3; forma conferida na LAI TB
+Quirinius	Kirenius	Kirenius	revisado	rev. IA: Luke.2.2; forma conferida na LAI TB
+Sheba	Syeba	Syeba	revisado	rev. IA: Gen.10.7; forma conferida na LAI TB
+Hakupha	Hakufa	Hakufa	revisado	rev. IA: Ezra.2.51; forma conferida na LAI TB
+Nympha	Nimfa	Nimfas	revisado	rev. IA: Col.4.15; candidato Nimfa errado, LAI TB 'Nimfas'
+Beninu	Beninu	Beninu	revisado	rev. IA: Neh.10.13; forma conferida na LAI TB
+Eliab	Eliab	Eliab	revisado	rev. IA: Num.2.7; forma conferida na LAI TB
+Ituraea	Iturea	Iturea	revisado	rev. IA: Luke.3.1; forma conferida na LAI TB
+Zithri	Sitri	Sitri	revisado	rev. IA: Exod.6.22; forma conferida na LAI TB
+Samaria	Samaria	Samaria	revisado	rev. IA: 1Kgs.13.32; forma conferida na LAI TB
+Epaphras	Epafras	Epafras	revisado	rev. IA: Col.1.7; forma conferida na LAI TB
+Antipas	Antipas	Antipas	revisado	rev. IA: Rev.2.13; forma conferida na LAI TB
+Nob	Nob	Nob	revisado	rev. IA: 1Sam.21.1; forma conferida na LAI TB
+Gebim	Gebim	Gebim	revisado	rev. IA: Isa.10.31; forma conferida na LAI TB
+Zuph	Zuf	Zuf	revisado	rev. IA: 1Sam.1.1; forma conferida na LAI TB
+Tabbaoth	Tabaot	Tabaot	revisado	rev. IA: Ezra.2.43; forma conferida na LAI TB
+Kenan	Kenan	Kenan	revisado	rev. IA: Gen.5.9; forma conferida na LAI TB
+Arah	Ara	Ara	revisado	rev. IA: Ezra.2.5; forma conferida na LAI TB
+Dalphon	Dalfon	Dalfon	revisado	rev. IA: Esth.9.7; forma conferida na LAI TB
+Jedaiah	Yedaya	Yedaya	revisado	rev. IA: Ezra.2.36; forma conferida na LAI TB
+Hezir	Hezir	Hezir	revisado	rev. IA: Neh.10.20; forma conferida na LAI TB
+Zebudah	Zebida	Zebida	revisado	rev. IA: 2Kgs.23.36; forma conferida na LAI TB
+Timothy	Timotius	Timotius	revisado	rev. IA: Acts.16.1; forma conferida na LAI TB
+Laodicea	Laodikia	Laodikia	revisado	rev. IA: Col.2.1; forma conferida na LAI TB
+Sithri	Sitri	Sitri	revisado	rev. IA: Exod.6.22; forma conferida na LAI TB
+Kamon	Kamon	Kamon	revisado	rev. IA: Judg.10.5; forma conferida na LAI TB
+Ammah	Ama	Amah	revisado	rev. IA: 2Sam.2.24; candidato Ama errado, LAI TB 'bukit Amah'
+Eleazar	Eleazar	Eleazar	revisado	rev. IA: Exod.28.1; forma conferida na LAI TB
+Chimham	Kimham	Kimham	revisado	rev. IA: 2Sam.19.37; forma conferida na LAI TB
+Zedekiah	Zedekia	Zedekia	revisado	rev. IA: 1Kgs.22.11; forma conferida na LAI TB
+Maon	Maon	Maon	revisado	rev. IA: Josh.15.55; forma conferida na LAI TB
+Thummim	Tumim	Tumim	revisado	rev. IA: Exod.28.30; forma conferida na LAI TB
+Genubath	Genubat	Genubat	revisado	rev. IA: 1Kgs.11.20; forma conferida na LAI TB
+Puah	Pua	Pua	revisado	rev. IA: Exod.1.15; forma conferida na LAI TB
+Troas	Troas	Troas	revisado	rev. IA: Acts.16.8; forma conferida na LAI TB
+Ahaziah	Ahazia	Ahazia	revisado	rev. IA: 1Kgs.22.40; forma conferida na LAI TB
+Onam	Onam	Onam	revisado	rev. IA: Gen.36.23; forma conferida na LAI TB
+Hur	Hur	Hur	revisado	rev. IA: Exod.17.10; forma conferida na LAI TB
+Gad	Gad	Gad	revisado	rev. IA: Gen.30.11; forma conferida na LAI TB
+Zippor	Zipor	Zipor	revisado	rev. IA: Num.22.2; forma conferida na LAI TB
+Nimrah	Nimrah	Nimra	revisado	rev. IA: Num.32.3; candidato Nimrah errado, LAI TB 'Nimra'
+Chuza	Kuza	Kuza	revisado	rev. IA: Luke.8.3; forma conferida na LAI TB
+Japhia	Yafia	Yafia	revisado	rev. IA: Josh.10.3; forma conferida na LAI TB
+Pison	Pison	Pison	revisado	rev. IA: Gen.2.11; forma conferida na LAI TB
+Rameses	Rameses	Rameses	revisado	rev. IA: Gen.47.11; forma conferida na LAI TB
+Ziklag	Ziklag	Ziklag	revisado	rev. IA: 1Sam.27.6; forma conferida na LAI TB
+Nicolaus	Nikolaus	Nikolaus	revisado	rev. IA: Acts.6.5; forma conferida na LAI TB
+Apollyon	Apolion	Apolion	revisado	rev. IA: Rev.9.11; forma conferida na LAI TB
+Lysanias	Lisanias	Lisanias	revisado	rev. IA: Luke.3.1; forma conferida na LAI TB
+Kattath	Katat	Katat	revisado	rev. IA: Josh.19.15; forma conferida na LAI TB
+Ittai	Itai	Itai	revisado	rev. IA: 2Sam.15.19; forma conferida na LAI TB
+Jerusalem	Yerusalem	Yerusalem	revisado	rev. IA: Josh.10.1; forma conferida na LAI TB
+Jahzeel	Yahzeel	Yahzeel	revisado	rev. IA: Num.26.48; forma conferida na LAI TB
+Delaiah	Delaya	Delaya	revisado	rev. IA: Neh.6.10; forma conferida na LAI TB
+Accad	Akad	Akad	revisado	rev. IA: Gen.10.10; forma conferida na LAI TB
+Samos	Samos	Samos	revisado	rev. IA: Acts.20.15; forma conferida na LAI TB
+Rephan	Remfan	Remfan	revisado	rev. IA: Acts.7.43; forma conferida na LAI TB
+Piram	Piram	Piram	revisado	rev. IA: Josh.10.3; forma conferida na LAI TB
+Tappuah	Tapuah	Tapuah	revisado	rev. IA: Josh.12.17; forma conferida na LAI TB
+Sheba	Seba	Seba	revisado	rev. IA: Gen.10.7; forma conferida na LAI TB
+Zebidah	Zebida	Zebida	revisado	rev. IA: 2Kgs.23.36; forma conferida na LAI TB
+Ararat	Ararat	Ararat	revisado	rev. IA: Gen.8.4; forma conferida na LAI TB
+Merom	Merom	Merom	revisado	rev. IA: Josh.11.5; forma conferida na LAI TB
+Gatam	Gatam	Gatam	revisado	rev. IA: Gen.36.11; forma conferida na LAI TB
+Moreh	More	More	revisado	rev. IA: Gen.12.6; forma conferida na LAI TB
+Sheleph	Selef	Selef	revisado	rev. IA: Gen.10.26; forma conferida na LAI TB
+Tabbath	Tabat	Tabat	revisado	rev. IA: Judg.7.22; forma conferida na LAI TB
+Chephirah	Kefira	Kefira	revisado	rev. IA: Josh.9.17; forma conferida na LAI TB
+Gomer	Gomer	Gomer	revisado	rev. IA: Gen.10.2; forma conferida na LAI TB
+Arpachshad	Arpaksad	Arpaksad	revisado	rev. IA: Gen.10.22; forma conferida na LAI TB
+Putiel	Putiel	Putiel	revisado	rev. IA: Exod.6.25; forma conferida na LAI TB
+Tikvah	Tikwa	Tikwa	revisado	rev. IA: 2Kgs.22.14; forma conferida na LAI TB
+Eunice	Eunike	Eunike	revisado	rev. IA: 2Tim.1.5; forma conferida na LAI TB
+Onesiphorus	Onesiforus	Onesiforus	revisado	rev. IA: 2Tim.1.16; forma conferida na LAI TB
+Hosanna	Hosana	Hosana	revisado	rev. IA: Matt.21.9; forma conferida na LAI TB
+Atad	Atad	Atad	revisado	rev. IA: Gen.50.10; forma conferida na LAI TB
+Asaph	Asaf	Asaf	revisado	rev. IA: 2Kgs.18.18; forma conferida na LAI TB
+Abraham	Abraham	Abraham	revisado	rev. IA: Gen.17.5; forma conferida na LAI TB
+Asher	Asyer	Asyer	revisado	rev. IA: Gen.30.13; forma conferida na LAI TB
+Uz	Us	Us	revisado	rev. IA: Gen.10.23; forma conferida na LAI TB
+Mishal	Misal	Misal	revisado	rev. IA: Josh.19.26; forma conferida na LAI TB
+Miriam	Miryam	Miryam	revisado	rev. IA: Exod.15.20; forma conferida na LAI TB
+Josiah	Yosia	Yosia	revisado	rev. IA: 1Kgs.13.2; forma conferida na LAI TB
+Shalishah	Salisa	Salisa	revisado	rev. IA: 1Sam.9.4; forma conferida na LAI TB
+Abel	Bet	Abel	revisado	rev. IA: 1Sam.6.18; batu Abel na LAI TB (candidato Bet errado)
+Abel-beth-maacah	Abel	Abel-Bet-Maakha	revisado	rev. IA: 2Sam.20.14; LAI TB Abel-Bet-Maakha
+Abel-mizraim	Betapa	Abel-Mizraim	revisado	rev. IA: Gen.50.11; LAI TB Abel-Mizraim
+Adiel	Azarel	Adiel	revisado	rev. IA: Neh.11.13; LAI TB Adiel
+Adino	Yoseb	Adino	revisado	rev. IA: 2Sam.23.8; LAI TB Adino (candidato Yoseb errado)
+Ain	Rimon	En-Rimon	revisado	rev. IA: Neh.11.29; LAI TB En-Rimon (candidato Rimon incompleto)
+Akrabbim	Karka	Akrabim	revisado	rev. IA: Josh.15.3; LAI TB Akrabim (candidato Karka errado)
+Allon	Yabneel	Alon	revisado	rev. IA: Josh.19.33; LAI TB Alon (candidato Yabneel errado)
+Amorite	Amori	Amori	revisado	rev. IA: Gen.10.16; LAI TB orang Amori
+Amorites	Amori	Amori	revisado	rev. IA: Gen.10.16; LAI TB orang Amori
+Angle	Palal	Sudut	revisado	rev. IA: Neh.3.25; LAI TB sudut (candidato Palal errado)
+Apharasthchite	Barat	Afarsakhi	revisado	rev. IA: Ezr.6.6; forma LAI TB Afarsakhi (candidato Barat errado)
+Archites	Arki	Arki	revisado	rev. IA: Josh.16.2; LAI TB orang Arki
+Ard	Asyer	Ard	revisado	rev. IA: Num.26.40; LAI TB Ard
+Ariel	Kabsel	Kabzeel	revisado	rev. IA: 2Sam.23.20; LAI TB Kabzeel (cidade de origem; candidato Kabsel grafia errada)
+Ariel	Yerusalem	Ariel	revisado	rev. IA: Isa.29.2; LAI TB Ariel (nome da cidade)
+Arkite	Arki	Arki	revisado	rev. IA: Gen.10.17; LAI TB orang Arki
+Arkites	Arki	Arki	revisado	rev. IA: Gen.10.17; LAI TB orang Arki
+Arvadite	Arwadi	Arwadi	revisado	rev. IA: Gen.10.18; LAI TB orang Arwadi
+Arvadites	Arwadi	Arwadi	revisado	rev. IA: Gen.10.18; LAI TB orang Arwadi
+Asen	Harif	Asan	revisado	rev. IA: Josh.15.42; LAI TB Asan (candidato Harif errado)
+Ashbel	Pasukan	Asbel	revisado	rev. IA: Num.26.38; LAI TB Asbel (candidato Pasukan errado)
+Azazel	Israel	Azazel	revisado	rev. IA: Lev.16.8; LAI TB Azazel (candidato Israel errado)
+Azotus	Asdod	Azotus	revisado	rev. IA: Acts.8.40; LAI TB Azotus
+Babylonia	Babel	Babel	revisado	rev. IA: Ezr.1.11; LAI TB Babel
+Bar-jesus	Bar	Bar-Yesus	revisado	rev. IA: Acts.13.6; LAI TB Bar-Yesus (candidato Bar incompleto)
+Beer	Sumur	Beer	revisado	rev. IA: Num.21.16; LAI TB Beer
+Beer-lahai-roi	Lahai	Beer-Lahai-Roi	revisado	rev. IA: Gen.16.14; LAI TB Beer-Lahai-Roi
+Beth-baal-meon	Meon	Bet-Baal-Meon	revisado	rev. IA: Josh.13.17; LAI TB Bet-Baal-Meon
+Beth-eked	Tangkap	Bet-Eked	revisado	rev. IA: 2Kgs.10.14; LAI TB Bet-Eked
+Beth-merhak	Mereka	Bet-Merhak	revisado	rev. IA: 2Sam.15.17; LAI TB Bet-Merhak
+Bithron	Yordan	Bitron	revisado	rev. IA: 2Sam.2.29; LAI TB Bitron
+Bul	November	Bul	revisado	rev. IA: 1Kgs.6.38; LAI TB Bul (mes)
+Cabul	Itulah	Kabul	revisado	rev. IA: 1Kgs.9.13; LAI TB Kabul
+Candace	Yerusalem	Kandake	revisado	rev. IA: Acts.8.27; LAI TB Kandake
+Caphtor	Kreta	Kaftor	revisado	rev. IA: Deut.2.23; LAI TB Kaftor
+Chaldea	Kasdim	Kasdim	revisado	rev. IA: Ezr.5.12; LAI TB Kasdim
+Cherethites	Ketika	Kreti	revisado	rev. IA: 2Kgs.11.4; LAI TB orang Kreti (candidato Ketika errado)
+Cherethites	Kreta	Kreti	revisado	rev. IA: 1Sam.30.14; LAI TB orang Kreti
+Chinnereth	Yesimot	Kinerot	revisado	rev. IA: Josh.12.3; LAI TB Kinerot (candidato Yesimot errado)
+Chinnereth	Yordan	Kinerot	revisado	rev. IA: Deut.3.17; LAI TB Kinerot (candidato Yordan errado)
+Chronicles	Kisah	Tawarikh	revisado	rev. IA: 1Kgs.15.7; LAI TB kitab Tawarikh (candidato Kisah errado)
+Colossae	Allah	Kolose	revisado	rev. IA: Col.4.18; LAI TB Kolose (candidato Allah errado)
+Corban	Taurat	Korban	revisado	rev. IA: Matt.27.6; LAI TB korban (candidato Taurat errado)
+Cushi	Kamulah	Kusi	revisado	rev. IA: 2Sam.18.21; LAI TB Kusi (candidato Kamulah errado)
+Decapolis	Sepuluh	Dekapolis	revisado	rev. IA: Matt.4.25; LAI TB Dekapolis
+Destiny	Dewi	Meni	revisado	rev. IA: Isa.65.11; LAI TB Meni (candidato Dewi errado)
+Destruction	Matahari	Kota Kehancuran	revisado	rev. IA: Isa.19.18; LAI TB Kota Kehancuran (candidato Matahari errado)
+Dibon	Sungai-sungai	Dibon	revisado	rev. IA: Isa.15.9; LAI TB Dibon (candidato Sungai-sungai errado)
+Dimnah	Nea	Dimna	revisado	rev. IA: Josh.19.13; LAI TB Dimna (candidato Nea errado)
+Dumah	TUHAN	Duma	revisado	rev. IA: Isa.21.11; LAI TB Duma (candidato TUHAN errado)
+East	Etan	Timur	revisado	rev. IA: 1Kgs.4.30; LAI TB orang Timur (candidato Etan errado)
+East	Zebah	Timur	revisado	rev. IA: Judg.8.10; LAI TB orang Timur (candidato Zebah errado)
+Ecbatana	Ahmeta	Ekbatana	revisado	rev. IA: Ezr.6.2; LAI TB Ekbatana
+Elon	Yehuda	Elon	revisado	rev. IA: Num.26.26; LAI TB Elon (candidato Yehuda errado)
+En-hakkore	Berseru	En-Hakore	revisado	rev. IA: Judg.15.19; LAI TB En-Hakore (candidato Berseru errado)
+Ephron	Neftah	Efron	revisado	rev. IA: Josh.18.15; LAI TB Efron (candidato Neftah errado)
+Ethanim	Hari	Etanim	revisado	rev. IA: 1Kgs.8.2; LAI TB bulan Etanim (candidato Hari errado)
+Eve	Eden	Hawa	revisado	rev. IA: 2Cor.11.3; LAI TB Hawa
+Ezel	Sesudah	Ezel	revisado	rev. IA: 1Sam.20.41; LAI TB batu Ezel (candidato Sesudah errado)
+Eznites	Basebet	Ezni	revisado	rev. IA: 2Sam.23.8; LAI TB orang Ezni (candidato Basebet errado)
+Field	Yerusalem	Ladang Penatu	revisado	rev. IA: 2Kgs.18.17; LAI TB ladang tukang penatu (candidato Yerusalem errado)
+Forest	Gedung	Hutan	revisado	rev. IA: Isa.22.8; LAI TB hutan (candidato Gedung errado)
+Fortune	Keberuntungan	Untung	revisado	rev. IA: Isa.65.11; LAI TB Untung (candidato Keberuntungan errado)
+Freedmen	Pertemuan	Libertini	revisado	rev. IA: Acts.6.9; LAI TB Libertini (candidato Pertemuan errado)
+Gadara	Girgasi	Gadara	revisado	rev. IA: Matt.8.28; LAI TB Gadara (candidato Girgasi errado)
+Galilee	Goyim	Goyim	revisado	rev. IA: Josh.12.23; LAI TB Goyim
+Ge-harashim	Lod	Ge-Harasim	revisado	rev. IA: Neh.11.35; LAI TB Ge-Harasim (candidato Lod errado)
+Geba	Gezer	Geba	revisado	rev. IA: 2Sam.5.25; LAI TB Geba (candidato Gezer errado)
+Gerasa	Gadara	Gerasa	revisado	rev. IA: Mark.5.1; LAI TB Gerasa (candidato Gadara errado)
+Gibeath-haaraloth	Khatan	Gibeat-Haaraloth	revisado	rev. IA: Josh.5.3; LAI TB Gibeat-Haaraloth (candidato Khatan errado)
+Girgashites	Girgasi	Girgasi	revisado	rev. IA: Gen.10.16; LAI TB orang Girgasi (candidato Girgasi, nome_pt confirmado)
+Girgasite	Girgasi	Girgasi	revisado	rev. IA: Gen.10.16; LAI TB orang Girgasi
+Girzites	Girzi	Girzi	revisado	rev. IA: 1Sam.27.8; LAI TB orang Girzi
+Greece	Israel	Yunani	revisado	rev. IA: Zech.9.13; LAI TB Yunani (candidato Israel errado)
+Greece	Kirene	Yunani	revisado	rev. IA: Acts.11.20; LAI TB Yunani (candidato Kirene errado)
+Greece	Makedonia	Makedonia	revisado	rev. IA: Acts.16.9; LAI TB Makedonia (candidato Makedonia confere ao verso)
+Gulloth-mayim	Ayah	Gulot-Mayim	revisado	rev. IA: Josh.15.19; LAI TB Gulot-Mayim (candidato Ayah errado)
+Hachmonites	Takmoni	Hakmoni	revisado	rev. IA: 2Sam.23.8; LAI TB Hakmoni (candidato Takmoni errado)
+Hamathite	Hamat	Hamati	revisado	rev. IA: Gen.10.18; LAI TB orang Hamati
+Hamathites	Hamat	Hamati	revisado	rev. IA: Gen.10.18; LAI TB orang Hamati
+Hararites	Harari	Harari	revisado	rev. IA: 2Sam.23.11; LAI TB orang Harari
+Hasrah	Harhas	Harhas	revisado	rev. IA: 2Kgs.22.14; LAI TB Harhas (candidato Harhas, grafia LAI)
+Hazerim	Awi	Hazerim	revisado	rev. IA: Deut.2.23; LAI TB Hazerim (candidato Awi errado)
+Heber	Herodes	Heber	revisado	rev. IA: Num.26.45; LAI TB Heber (candidato Herodes errado, ref Luk.8.3 nao confere)
+Heber	Makir	Heber	revisado	rev. IA: Num.26.45; LAI TB Heber (candidato Makir errado)
+Hebrews	Aner	Ibrani	revisado	rev. IA: Gen.14.13; LAI TB orang Ibrani (candidato Aner errado)
+Helem	Heldai	Helem	revisado	rev. IA: Zech.6.10; LAI TB Helem (candidato Heldai errado)
+Helkath-hazzurim	Ladang	Helkat-Hazurim	revisado	rev. IA: 2Sam.2.16; LAI TB Helkat-Hazurim (candidato Ladang errado)
+Hiddekel	Tigris	Hidekel	revisado	rev. IA: Gen.2.14; LAI TB Hidekel (candidato Tigris errado)
+Highway	Izinkanlah	Jalan Raja	revisado	rev. IA: Num.20.17; LAI TB jalan raja (candidato Izinkanlah errado)
+Hivite	Hewi	Hewi	revisado	rev. IA: Gen.10.17; LAI TB orang Hewi
+Hivites	Yebus	Hewi	revisado	rev. IA: Exod.3.8; LAI TB orang Hewi (candidato Yebus errado)
+Hor-haggidgad	Gudgod	Hor-Hagidgad	revisado	rev. IA: Deut.10.7; LAI TB Hor-Hagidgad (candidato Gudgod errado)
+Horeb	Rehuel	Horeb	revisado	rev. IA: Exod.3.1; LAI TB Horeb (candidato Rehuel errado)
+Horonites	Horon	Horon	revisado	rev. IA: Neh.2.10; LAI TB orang Horon
+Hurai	Hidai	Hurai	revisado	rev. IA: 2Sam.23.30; LAI TB Hurai (candidato Hidai, forma 1Taw 11:32)
+Hushathites	Husa	Husati	revisado	rev. IA: 2Sam.21.18; LAI TB orang Husati
+Ilai	Maharai	Ilai	revisado	rev. IA: 2Sam.23.28; LAI TB Ilai (candidato Maharai errado)
+Imnah	Manasye	Imna	revisado	rev. IA: Num.26.44; LAI TB Imna (candidato Manasye errado)
+Ishvi	Yusuf	Isywi	revisado	rev. IA: Num.26.44; LAI TB Isywi (candidato Yusuf errado)
+Ithiel	Yake	Itiel	revisado	rev. IA: Prov.30.1; LAI TB Itiel (candidato Yake errado)
+Ithrites	Yetri	Yitri	revisado	rev. IA: 2Sam.23.38; LAI TB orang Yitri (candidato Yetri ok)
+Jaare-oregim	Yair	Yaare-Oregim	revisado	rev. IA: 2Sam.21.19; LAI TB Yaare-Oregim (candidato Yair errado)
+Jahleel	Yehuda	Yahleel	revisado	rev. IA: Num.26.26; LAI TB Yahleel (candidato Yehuda errado)
+James	Alfeus	Yakobus	revisado	rev. IA: Matt.10.3; LAI TB Yakobus anak Alfeus (candidato Alfeus errado)
+James	Yakobus	Yakobus	revisado	rev. IA: Matt.4.21; LAI TB Yakobus anak Zebedeus
+Janen	Nahaliel		sem	rev. IA: Num.21.19; nome LAI TB nao identificado com seguranca
+Jashobeam	Basebet	Yasobeam	revisado	rev. IA: 1Chr.11.11; LAI TB Yasobeam (candidato Basebet errado)
+Javan	Yunani	Yawan	revisado	rev. IA: Isa.66.19; LAI TB Yawan (candidato Yunani errado)
+Jebusite	Yebus	Yebus	revisado	rev. IA: Gen.10.16; LAI TB orang Yebus
+Jebusites	Yebus	Yebus	revisado	rev. IA: Gen.10.16; LAI TB orang Yebus
+Jehoshabeath	Yoseba	Yehosyeba	revisado	rev. IA: 2Kgs.11.2; LAI TB Yehosyeba (candidato Yoseba errado)
+Jemnath	Tengah	Yemna	revisado	rev. IA: Josh.15.46; LAI TB Yemna (candidato Tengah errado)
+Jerubbesheth	Tebes	Yerub-Bosyet	revisado	rev. IA: 2Sam.11.21; LAI TB Yerub-Bosyet (candidato Tebes errado)
+Jesse	Isai	Isai	revisado	rev. IA: Ruth.4.17; LAI TB Isai (candidato Yesaya errado)
+Job	Ayub	Ayub	revisado	rev. IA: Jas.5.11; LAI TB Ayub (candidato Ingatlah errado)
+Judgment	Ruang	Balai Pengadilan	revisado	rev. IA: 1Kgs.7.7; LAI TB balai pengadilan (candidato Ruang errado)
+Kadesh	Hodsi	Kadesh	revisado	rev. IA: 2Sam.24.6; LAI TB Kadesh (candidato Hodsi errado)
+Kadmonites	Kadmon	Kadmoni	revisado	rev. IA: Gen.15.19; LAI TB orang Kadmoni
+Kain	Asyur	Kain	revisado	rev. IA: Num.24.22; LAI TB Kain (candidato Asyur errado)
+Kenites	Keni	Keni	revisado	rev. IA: Gen.15.19; LAI TB orang Keni
+Kenizzites	Keni	Kenas	revisado	rev. IA: Gen.15.19; LAI TB orang Kenas
+Kiriath-huzoth	Huzot	Kiryat-Huzot	revisado	rev. IA: Num.22.39; LAI TB Kiryat-Huzot (candidato Huzot incompleto)
+Kittim	Siprus	Kitim	revisado	rev. IA: Num.24.24; LAI TB Kitim (candidato Siprus errado)
+Kue	Kuda-kuda	Kue	revisado	rev. IA: 1Kgs.10.28; LAI TB Kue (candidato Kuda-kuda errado)
+LORD	Eloi	TUHAN	revisado	rev. IA: Mark.15.34; LAI TB TUHAN (nome divino; candidato Eloi errado)
+Laadan	Libni	Libni	revisado	rev. IA: Exod.6.17; LAI TB Libni (candidato confere ao verso)
+Lahmi	Yair	Lahmi	revisado	rev. IA: 2Sam.21.19; LAI TB Lahmi (candidato Yair errado)
+Legion	Batalion	Legiun	revisado	rev. IA: Mark.5.9; LAI TB Legiun (candidato Batalion errado)
+Lucifer	Fajar	Lusifer	revisado	rev. IA: Isa.14.12; LAI TB Lusifer (candidato Fajar errado)
+Maareh-geba	Tamar	Maare-Geba	revisado	rev. IA: Judg.20.33; LAI TB Maare-Geba (candidato Tamar errado)
+Mahalab	Akzib	Mahalab	revisado	rev. IA: Josh.19.29; LAI TB Mahalab (candidato Akzib errado)
+Maher-shalal-hash-baz	Merampas	Maher-Syalal-Hasy-Bas	revisado	rev. IA: Isa.8.3; LAI TB Maher-Syalal-Hasy-Bas (candidato Merampas errado)
+Manahath	Karena	Manahat	revisado	rev. IA: Judg.20.43; LAI TB Manahat (candidato Karena errado)
+Maranatha	Biarlah	Maranata	revisado	rev. IA: 1Cor.16.22; LAI TB Maranata (candidato Biarlah errado)
+Meholathites	Mehola	Mehola	revisado	rev. IA: 1Sam.18.19; LAI TB Mehola (candidato Mehola confere)
+Meronothites	Meronot	Meronot	revisado	rev. IA: Neh.3.7; LAI TB Meronot (candidato Meronot confere)
+Meroz	Terkutuklah	Meroz	revisado	rev. IA: Judg.5.23; LAI TB Meroz (candidato Terkutuklah errado)
+Meshech	Aku	Mesekh	revisado	rev. IA: Isa.66.19; LAI TB Mesekh (candidato Aku errado)
+Metheg-ammah	Beberapa	Metegh-Amma	revisado	rev. IA: 2Sam.8.1; LAI TB Metegh-Amma (candidato Beberapa errado)
+Milcom	Molok	Milkom	revisado	rev. IA: 1Kgs.11.5; LAI TB Milkom (candidato Molok errado)
+Mizraim	Mesir	Mizraim	revisado	rev. IA: Gen.10.6; LAI TB Mizraim, filho de Ham (candidato Mesir errado)
+Naaman	Yimna	Naaman	revisado	rev. IA: Num.26.40; LAI TB Naaman (candidato Yimna errado)
+Nahath	Elkana	Nahat	revisado	rev. IA: 1Sam.1.1; LAI TB Nahat (candidato Elkana errado)
+Naphath	Taanak	Nafat	revisado	rev. IA: Josh.17.11; LAI TB Nafat (candidato Taanak errado)
+Naphoth-dor	Dor	Nafot-Dor	revisado	rev. IA: Josh.11.2; LAI TB Nafot-Dor (candidato Dor incompleto)
+Nazirites	Akhirnya	Nazir	revisado	rev. IA: Judg.16.17; LAI TB nazir (candidato Akhirnya errado)
+Nero	Akhir	Nero	revisado	rev. IA: 2Tim.4.22; LAI TB Nero (candidato Akhir errado)
+Nohah	Karena	Nohah	revisado	rev. IA: Judg.20.43; LAI TB Nohah (candidato Karena errado)
+Olivet	Zaitun	Bukit Zaitun	revisado	rev. IA: Luk.19.29; LAI TB Bukit Zaitun (candidato Zaitun incompleto)
+Omega	Pergamus	Omega	revisado	rev. IA: Rev.1.11; LAI TB Omega
+On	Asnat	On	revisado	rev. IA: Gen.41.45; LAI TB On (candidato Asnat errado)
+Ornan	Arauna	Arauna	revisado	rev. IA: 2Sam.24.18; LAI TB Arauna (candidato Arauna confere)
+Pacatiana	Akibat		sem	rev. IA: 1Tim.6.21; sem forma tradicional segura na LAI TB
+Pavement	Lantai	Litostrotos	revisado	rev. IA: John.19.13; LAI TB Litostrotos (candidato Lantai errado)
+Pelethites	Benaya	Peleti	revisado	rev. IA: 2Sam.8.18; LAI TB orang Peleti (candidato Benaya errado)
+Pelonites	Helez	Pelon	revisado	rev. IA: 2Sam.23.26; LAI TB orang Pelon (candidato Helez errado)
+Perizzites	Feris	Feris	revisado	rev. IA: Gen.34.30; LAI TB orang Feris (candidato Feris confere)
+Pharaoh	Rameses	Firaun	revisado	rev. IA: Gen.47.11; LAI TB Firaun (candidato Rameses errado)
+Pillars	Balai	Tiang	revisado	rev. IA: 1Kgs.7.6; LAI TB balai tiang (candidato Balai errado)
+Place	Golgota	Golgota	revisado	rev. IA: Matt.27.33; LAI TB Golgota (candidato Golgota confere)
+Place	Ke	Golgota	revisado	rev. IA: John.19.17; LAI TB tempat Golgota (candidato Ke errado)
+Plain	Bangsa	Dataran Moab	revisado	rev. IA: Deut.34.8; LAI TB dataran Moab (candidato Bangsa errado)
+Pool	Kolam	Kolam Raja	revisado	rev. IA: Neh.2.14; LAI TB kolam Raja (candidato Kolam incompleto)
+Puah	Yehuda	Pua	revisado	rev. IA: Num.26.23; LAI TB Pua (candidato Yehuda errado)
+Pul	Tubal	Pul	revisado	rev. IA: Isa.66.19; LAI TB Pul (candidato Tubal errado)
+Put	Lud	Put	revisado	rev. IA: Isa.66.19; LAI TB Put (candidato Lud errado)
+Rab-saris	Lakis	Rabsaris	revisado	rev. IA: 2Kgs.18.17; LAI TB Rabsaris (candidato Lakis errado)
+Rabsaris	Lakis	Rabsaris	revisado	rev. IA: 2Kgs.18.17; LAI TB Rabsaris (candidato Lakis errado)
+Rabshakeh	Raja	Rabsyake	revisado	rev. IA: 2Kgs.18.19; LAI TB Rabsyake (candidato Raja errado)
+Raca	Aku	Raka	revisado	rev. IA: Matt.5.22; LAI TB Raka (candidato Aku errado)
+Ramah	Berita	Rama	revisado	rev. IA: 1Sam.22.6; LAI TB Rama (candidato Berita errado)
+Ramath-lehi	Lehi	Ramat-Lehi	revisado	rev. IA: Judg.15.17; LAI TB Ramat-Lehi (candidato Lehi incompleto)
+Ramathaim-zophim	Rama	Ramataim-Zofim	revisado	rev. IA: 1Sam.1.1; LAI TB Ramataim-Zofim (candidato Rama incompleto)
+Rapha	Saf	Saf	revisado	rev. IA: 2Sam.21.18; LAI TB Saf, conforme o verso (candidato Saf confere)
+River	Bileam	Sungai	revisado	rev. IA: Num.22.5; LAI TB sungai (candidato Bileam errado)
+River	Provinsi	Seberang Sungai	revisado	rev. IA: Ezr.4.11; LAI TB Seberang Sungai (candidato Provinsi errado)
+River	Raja	Seberang Sungai	revisado	rev. IA: Ezr.4.11; LAI TB Seberang Sungai (candidato Raja errado)
+Rock	Yokdeam		sem	rev. IA: Josh.15.55; "Rock" sem nome proprio na LAI TB
+Rocks	Saul	Batu-batu Kambing Liar	revisado	rev. IA: 1Sam.24.2; LAI TB batu-batu kambing liar (candidato Saul errado)
+Salome	Hal	Salome	revisado	rev. IA: Matt.14.6; LAI TB Salome (candidato Hal errado)
+Sered	Yehuda	Sered	revisado	rev. IA: Num.26.26; LAI TB Sered (candidato Yehuda errado)
+Shage	Sarar	Sage	revisado	rev. IA: 2Sam.23.33; LAI TB Sage (candidato Sarar errado)
+Shallum	Mesulam	Salum	revisado	rev. IA: Neh.11.11; LAI TB Salum (candidato Mesulam errado)
+Shavsha	Seraya	Savsa	revisado	rev. IA: 2Sam.8.17; LAI TB Savsa (candidato Seraya errado)
+Shear-jashub	Segelintir	Sear-Yasub	revisado	rev. IA: Isa.7.3; LAI TB Sear-Yasub (candidato Segelintir errado)
+Shebarim	Ai	Syebarim	revisado	rev. IA: Josh.7.5; LAI TB Syebarim (candidato Ai errado)
+Shebat	Februari	Sebat	revisado	rev. IA: Zech.1.7; LAI TB bulan Sebat (candidato Februari errado)
+Shemaiah	Samua	Semaya	revisado	rev. IA: Neh.11.17; LAI TB Semaya (candidato Samua errado)
+Shephelah	Gedera	Sefela	revisado	rev. IA: Josh.15.33; LAI TB Sefela (candidato Gedera errado)
+Shephelah	Semasa	Sefela	revisado	rev. IA: 1Kgs.10.27; LAI TB Sefela (candidato Semasa errado)
+Shiloh	Dialah	Syilo	revisado	rev. IA: Gen.49.10; LAI TB Syilo (candidato Dialah errado)
+Shiloni	Syela	Silo	revisado	rev. IA: Neh.11.5; LAI TB orang Silo (candidato Syela errado)
+Shilonites	Kolhoze	Silo	revisado	rev. IA: Neh.11.5; LAI TB orang Silo (candidato Kolhoze errado)
+Shittim	Akasia	Sitim	revisado	rev. IA: Num.25.1; LAI TB Sitim (candidato Akasia errado)
+Shunammites	Sunem	Sunem	revisado	rev. IA: 1Kgs.1.3; LAI TB Sunem (candidato Sunem confere)
+Sinite	Sini	Sini	revisado	rev. IA: Gen.10.17; LAI TB orang Sini (candidato Sini confere)
+Sinites	Sini	Sini	revisado	rev. IA: Gen.10.17; LAI TB orang Sini
+Skull	Yesus	Tengkorak	revisado	rev. IA: Luke.23.33; LAI TB Tengkorak (candidato Yesus errado)
+South	Selatan	Selatan	revisado	rev. IA: Matt.12.42; LAI TB ratu dari Selatan (candidato Selatan confere)
+South	Semesta	Negeb	revisado	rev. IA: Zech.7.7; LAI TB Negeb (candidato Semesta errado)
+Straight	Carilah	Jalan Lurus	revisado	rev. IA: Acts.9.11; LAI TB Jalan Lurus (candidato Carilah errado)
+Tabbur-erez	Besar	Tabur-Erets	revisado	rev. IA: Judg.9.37; LAI TB Tabur-Erets (candidato Besar errado)
+Tartan	Sargon	Tartan	revisado	rev. IA: Isa.20.1; LAI TB Tartan (candidato Sargon errado)
+Throne	Ruang	Takhta	revisado	rev. IA: 1Kgs.7.7; LAI TB takhta (candidato Ruang errado)
+Tola	Onan	Tola	revisado	rev. IA: Num.26.23; LAI TB Tola (candidato Onan errado)
+Ucal	Tuhan	Ukhal	revisado	rev. IA: Prov.30.1; LAI TB Ukhal (candidato Tuhan errado)
+Unnamed#1	Imam		sem	rev. IA: 1Kgs.2.27; sacerdote sem nome na Bíblia
+Unnamed#2	Imam		sem	rev. IA: 1Kgs.2.27; sacerdote sem nome na Bíblia
+Unnamed#3	Imam		sem	rev. IA: 1Kgs.2.27; sacerdote sem nome na Bíblia
+Unnamed#4	Imam		sem	rev. IA: 1Kgs.2.27; sacerdote sem nome na Bíblia
+Weeks	Pentakosta	Pentakosta	revisado	rev. IA: Acts.2.1; LAI TB Pentakosta (candidato Pentakosta confere)
+Willows	Harabim		sem	rev. IA: Isa.15.7; sem forma tradicional segura na LAI TB
+Zaphon	Aku	Zafon	revisado	rev. IA: Isa.14.13; LAI TB Zafon (candidato Aku errado)
+Zealot	Kariot	Zelot	revisado	rev. IA: Matt.10.4; LAI TB Zelot (candidato Kariot errado)
+Zemarite	Semari	Zemari	revisado	rev. IA: Gen.10.18; LAI TB orang Zemari (candidato Semari errado)
+Zemarites	Semari	Zemari	revisado	rev. IA: Gen.10.18; LAI TB orang Zemari
+Zerah	Zohar	Zerah	revisado	rev. IA: Exod.6.15; LAI TB Zerah (candidato Zohar errado)
+Zichri	Zabdi	Zikri	revisado	rev. IA: Neh.11.17; LAI TB Zikri (candidato Zabdi errado)
+Ziv	Mei	Ziv	revisado	rev. IA: 1Kgs.6.1; LAI TB bulan Ziv (candidato Mei errado)
+Zophim	Bileam	Zofim	revisado	rev. IA: Num.23.14; LAI TB padang Zofim (candidato Bileam errado)
+Aaron	Harun	Harun	revisado	rev. IA: Exod.4.14; LAI TB Harun (candidato Harun confere)
+Abaddon	Abadon	Abadon	revisado	rev. IA: Rev.9.11; LAI TB Abadon (candidato Abadon confere)
+Abdon	Hamon	Abdon	revisado	rev. IA: Josh.19.28; LAI TB Abdon (candidato Hamon errado)
+Abel	Abel	Abel	revisado	rev. IA: 2Sam.20.14; LAI TB Abel (candidato Abel confere)
+Abel-keramim	Keramim	Abel-Keramim	revisado	rev. IA: Judg.11.33; LAI TB Abel-Keramim (candidato Keramim incompleto)
+Abel-meholah	Mehola	Abel-Mehola	revisado	rev. IA: Judg.7.22; LAI TB Abel-Mehola (candidato Mehola incompleto)
+Abel-shittim	Sitim	Abel-Sitim	revisado	rev. IA: Num.33.49; LAI TB Abel-Sitim (candidato Sitim incompleto)
+Abiah	Abia	Abia	revisado	rev. IA: 1Sam.8.2; LAI TB Abia (candidato Abia confere)
+Abidan	Abidan	Abidan	revisado	rev. IA: Num.2.22; LAI TB Abidan (candidato Abidan confere)
+Adam	Adam	Adam	revisado	rev. IA: Gen.3.20; LAI TB Adam (candidato Adam confere)
+Adami-nekeb	Adami	Adami-Nekeb	revisado	rev. IA: Josh.19.33; LAI TB Adami-Nekeb (candidato Adami incompleto)
+Addar	Adar	Addar	revisado	rev. IA: Josh.15.3; LAI TB Addar (candidato Adar, forma LAI Addar)
+Adoni-bezek	Bezek	Adoni-Bezek	revisado	rev. IA: Judg.1.7; LAI TB Adoni-Bezek (candidato Bezek incompleto)
+Adoni-zedek	Adoni	Adoni-Zedek	revisado	rev. IA: Josh.10.1; LAI TB Adoni-Zedek (candidato Adoni incompleto)
+Ahasuerus	Ahasweros	Ahasweros	revisado	rev. IA: Ezr.4.6; LAI TB Ahasweros (candidato confere)
+Ahiah	Ahia	Ahia	revisado	rev. IA: Neh.10.26; LAI TB Ahia (candidato confere)
+Ahiezer	Ahiezer	Ahiezer	revisado	rev. IA: Num.2.25; LAI TB Ahiezer (candidato confere)
+Ahira	Ahira	Ahira	revisado	rev. IA: Num.2.29; LAI TB Ahira (candidato confere)
+Ahiram	Marga	Ahiram	revisado	rev. IA: Num.26.38; LAI TB Ahiram (candidato Marga errado)
+Ahoah	Ahohi	Ahoah	revisado	rev. IA: 2Sam.23.9; LAI TB Ahoah (candidato Ahohi errado)
+Aija	Aya	Aija	revisado	rev. IA: Neh.11.31; LAI TB Aija (candidato Aya errado)
+Ain	Ain	Ain	revisado	rev. IA: Num.34.11; LAI TB Ain (candidato confere)
+Ajah	Aya	Aja	revisado	rev. IA: Gen.36.24; LAI TB Aja (candidato Aya errado)
+Akan	Akan	Akan	revisado	rev. IA: Gen.36.27; LAI TB Akan (candidato confere)
+Akeldama	Hakeldama	Hakeldama	revisado	rev. IA: Acts.1.19; LAI TB Hakeldama (candidato confere)
+Allon-bacuth	Bakut	Alon-Bakhut	revisado	rev. IA: Gen.35.8; LAI TB Alon-Bakhut (candidato Bakut incompleto)
+Alpha	Akulah	Alfa	revisado	rev. IA: Rev.1.8; LAI TB Alfa (candidato Akulah errado)
+Alvah	Alfa	Alwa	revisado	rev. IA: Gen.36.40; LAI TB Alwa (candidato Alfa errado)
+Amaw	Amau	Amau	revisado	rev. IA: Num.22.5; LAI TB Amau (candidato Amau confere)
+Ammishaddai	Amisyadai	Amisyadai	revisado	rev. IA: Num.2.25; LAI TB Amisyadai (candidato confere)
+Amon	Amon	Amon	revisado	rev. IA: 1Kgs.22.26; LAI TB Amon, rei (candidato confere)
+Anna	Hana	Hana	revisado	rev. IA: Luke.2.36; LAI TB Hana (candidato Hana confere)
+Aphik	Afek	Afek	revisado	rev. IA: Judg.1.31; LAI TB Afek (candidato confere)
+Arab	Arab	Arab	revisado	rev. IA: Josh.15.52; LAI TB Arab (candidato confere)
+Arabah	Araba	Araba	revisado	rev. IA: 1Sam.23.24; LAI TB Araba (candidato confere)
+Aram	Aram	Aram	revisado	rev. IA: Gen.10.22; LAI TB Aram (candidato confere)
+Arba	Arba	Arba	revisado	rev. IA: Josh.14.15; LAI TB Arba (candidato confere)
+Aroer	Arur	Aroer	revisado	rev. IA: 1Sam.30.28; LAI TB Aroer (candidato Arur errado)
+Artaxerxes	Artasasta	Artahsasta	revisado	rev. IA: Ezr.4.7; LAI TB Artahsasta (candidato Artasasta errado)
+Arumah	Aruma	Aruma	revisado	rev. IA: Judg.9.41; LAI TB Aruma (candidato confere)
+Ashtaroth	Asytoret	Asytoret	revisado	rev. IA: 1Sam.7.3; LAI TB Asytoret (candidato confere)
+Ashteroth-karnaim	Asterot	Asterot-Karnaim	revisado	rev. IA: Gen.14.5; LAI TB Asterot-Karnaim (candidato Asterot incompleto)
+Asshur	Asyur	Asyur	revisado	rev. IA: Gen.10.11; LAI TB Asyur (candidato confere)
+Asshurim	Asyur	Asyurim	revisado	rev. IA: Gen.25.3; LAI TB Asyurim (candidato Asyur incompleto)
+Ataroth-addar	Atarot	Atarot-Adar	revisado	rev. IA: Josh.16.5; LAI TB Atarot-Adar (candidato Atarot incompleto)
+Atroth-shophan	Sofan	Atrot-Syofan	revisado	rev. IA: Num.32.35; LAI TB Atrot-Syofan (candidato Sofan incompleto)
+Augustus	Agustus	Agustus	revisado	rev. IA: Luke.2.1; LAI TB Agustus (candidato confere)
+Aznoth-tabor	Aznot	Aznot-Tabor	revisado	rev. IA: Josh.19.34; LAI TB Aznot-Tabor (candidato Aznot incompleto)
+Baal-berith	Berit	Baal-Berit	revisado	rev. IA: Judg.8.33; LAI TB Baal-Berit (candidato Berit incompleto)
+Baal-gad	Halak	Baal-Gad	revisado	rev. IA: Josh.11.17; LAI TB Baal-Gad (candidato Halak errado)
+Baal-hazor	Hazor	Baal-Hazor	revisado	rev. IA: 2Sam.13.23; LAI TB Baal-Hazor (candidato Hazor incompleto)
+Baal-meon	Meon	Baal-Meon	revisado	rev. IA: Num.32.38; LAI TB Baal-Meon (candidato Meon incompleto)
+Baal-peor	Peor	Baal-Peor	revisado	rev. IA: Deut.4.3; LAI TB Baal-Peor (candidato Peor incompleto)
+Baal-tamar	Tamar	Baal-Tamar	revisado	rev. IA: Judg.20.33; LAI TB Baal-Tamar (candidato Tamar incompleto)
+Baal-zebub	Zebub	Baal-Zebub	revisado	rev. IA: 2Kgs.1.2; LAI TB Baal-Zebub (candidato Zebub incompleto)
+Baal-zephon	Zefon	Baal-Zefon	revisado	rev. IA: Exod.14.2; LAI TB Baal-Zefon (candidato Zefon incompleto)
+Baalath-beer	Baalat	Baalat-Beer	revisado	rev. IA: Josh.19.8; LAI TB Baalat-Beer (candidato Baalat incompleto)
+Babel	Babel	Babel	revisado	rev. IA: Gen.10.10; LAI TB Babel (candidato confere)
+Babylon	Babel	Babel	revisado	rev. IA: Gen.10.10; LAI TB Babel (candidato Babel confere)
+Bajith	Rakyat	Bait	revisado	rev. IA: Isa.15.2; LAI TB Bait (candidato Rakyat errado)
+Bamoth-baal	Bamot	Bamot-Baal	revisado	rev. IA: Josh.13.17; LAI TB Bamot-Baal (candidato Bamot incompleto)
+Bath-shua	Syua	Bat-Syua	revisado	rev. IA: Gen.38.2; LAI TB Bat-Syua (candidato Syua incompleto)
+Bedan	Kemudian	Bedan	revisado	rev. IA: 1Sam.12.11; LAI TB Bedan (candidato Kemudian errado)
+Beer	Beer	Beer	revisado	rev. IA: Judg.9.21; LAI TB Beer (candidato confere)
+Beer-elim	Elim	Beer-Elim	revisado	rev. IA: Isa.15.8; LAI TB Beer-Elim (candidato Elim incompleto)
+Bela	Bela	Bela	revisado	rev. IA: Gen.14.2; LAI TB Bela (candidato confere)
+Bela	Beria	Bela	revisado	rev. IA: Num.26.40; LAI TB Bela (candidato Beria errado)
+Ben-ammi	Ami	Ben-Ami	revisado	rev. IA: Gen.19.38; LAI TB Ben-Ami (candidato Ami incompleto)
+Ben-hur	Ben	Ben-Hur	revisado	rev. IA: 1Kgs.4.8; LAI TB Ben-Hur (candidato Ben incompleto)
+Bene-berak	Berak	Bene-Berak	revisado	rev. IA: Josh.19.45; LAI TB Bene-Berak (candidato Berak incompleto)
+Bene-jaakan	Yaakan	Bene-Yaakan	revisado	rev. IA: Deut.10.6; LAI TB Bene-Yaakan (candidato Yaakan incompleto)
+Beriah	Berikut	Beria	revisado	rev. IA: Num.26.44; LAI TB Beria (candidato Berikut errado)
+Betah	Berotai	Betah	revisado	rev. IA: 2Sam.8.8; LAI TB Betah (candidato Berotai errado)
+Beth-Ashtoreth	Asytoret	Bet-Asytoret	revisado	rev. IA: 1Sam.31.10; LAI TB Bet-Asytoret (candidato Asytoret incompleto)
+Beth-anath	Anat	Bet-Anat	revisado	rev. IA: Judg.1.33; LAI TB Bet-Anat (candidato Anat incompleto)
+Beth-arabah	Araba	Bet-Araba	revisado	rev. IA: Josh.15.6; LAI TB Bet-Araba (candidato Araba incompleto)
+Beth-aven	Awen	Bet-Awen	revisado	rev. IA: Josh.7.2; LAI TB Bet-Awen (candidato Awen incompleto)
+Beth-barah	Bara	Bet-Bara	revisado	rev. IA: Judg.7.24; LAI TB Bet-Bara (candidato Bara incompleto)
+Beth-car	Kar	Bet-Kar	revisado	rev. IA: 1Sam.7.11; LAI TB Bet-Kar (candidato Kar incompleto)
+Beth-dagon	Dagon	Bet-Dagon	revisado	rev. IA: Josh.19.27; LAI TB Bet-Dagon (candidato Dagon incompleto)
+Beth-emek	Emek	Bet-Emek	revisado	rev. IA: Josh.19.27; LAI TB Bet-Emek (candidato Emek incompleto)
+Beth-gilgal	Gilgal	Bet-Gilgal	revisado	rev. IA: Neh.12.29; LAI TB Bet-Gilgal (candidato Gilgal incompleto)
+Beth-haccherem	Kerem	Bet-Hakerem	revisado	rev. IA: Neh.3.14; LAI TB Bet-Hakerem (candidato Kerem incompleto)
+Beth-haggan	Hagan	Bet-Hagan	revisado	rev. IA: 2Kgs.9.27; LAI TB Bet-Hagan (candidato Hagan confere a forma com prefixo)
+Beth-haram	Haram	Bet-Haram	revisado	rev. IA: Josh.13.27; LAI TB Bet-Haram (candidato Haram incompleto)
+Beth-haran	Haran	Bet-Haran	revisado	rev. IA: Num.32.36; LAI TB Bet-Haran (candidato Haran incompleto)
+Beth-hoglah	Hogla	Bet-Hoglah	revisado	rev. IA: Josh.15.6; LAI TB Bet-Hoglah (candidato Hogla errado)
+Beth-horon	Horon	Bet-Horon	revisado	rev. IA: Josh.10.10; LAI TB Bet-Horon (candidato Horon incompleto)
+Beth-maacah	Maaka	Bet-Maakha	revisado	rev. IA: 2Sam.20.14; LAI TB Bet-Maakha (candidato Maaka incompleto)
+Beth-millo	Milo	Bet-Milo	revisado	rev. IA: Judg.9.6; LAI TB Bet-Milo (candidato Milo incompleto)
+Beth-nimrah	Nimra	Bet-Nimra	revisado	rev. IA: Num.32.3; LAI TB Bet-Nimra (candidato Nimra incompleto)
+Beth-pelet	Pelet	Bet-Pelet	revisado	rev. IA: Neh.11.26; LAI TB Bet-Pelet (candidato Pelet incompleto)
+Beth-peor	Peor	Bet-Peor	revisado	rev. IA: Deut.3.29; LAI TB Bet-Peor (candidato Peor incompleto)
+Beth-rehob	Rehob	Bet-Rehob	revisado	rev. IA: Num.13.21; LAI TB Bet-Rehob (candidato Rehob incompleto)
+Beth-shan	Bet	Bet-Sean	revisado	rev. IA: Josh.17.11; LAI TB Bet-Sean (candidato Bet errado)
+Beth-shean	Sean	Bet-Sean	revisado	rev. IA: Josh.17.11; LAI TB Bet-Sean (candidato Sean incompleto)
+Beth-shemesh	Semes	Bet-Semes	revisado	rev. IA: Josh.15.10; LAI TB Bet-Semes (candidato Semes incompleto)
+Beth-shittah	Sita	Bet-Sita	revisado	rev. IA: Judg.7.22; LAI TB Bet-Sita (candidato Sita incompleto)
+Beth-zur	Zur	Bet-Zur	revisado	rev. IA: Josh.15.58; LAI TB Bet-Zur (candidato Zur incompleto)
+Bezaleel	Bezalel	Bezaleel	revisado	rev. IA: Exod.31.2; LAI TB Bezaleel (candidato Bezalel grafia LAI)
+Bezalel	Bezalel	Bezaleel	revisado	rev. IA: Exod.31.2; LAI TB Bezaleel
+Bichri	Bikri	Bikri	revisado	rev. IA: 2Sam.20.1; LAI TB Bikri (candidato Bikri confere)
+Bilgah	Bilga	Bilga	revisado	rev. IA: Neh.10.8; LAI TB Bilga (candidato confere)
+Bor-ashan	Asan	Borasan	revisado	rev. IA: 1Sam.30.30; LAI TB Borasan (candidato Asan incompleto)
+Cainan	Kenan	Kenan	revisado	rev. IA: Luke.3.37; LAI TB Kenan (candidato confere)
+Chilion	Kiliyon	Kilion	revisado	rev. IA: Ruth.4.9; LAI TB Kilion (candidato Kiliyon errado)
+Chinnereth	Kineret	Kinerot	revisado	rev. IA: Josh.19.35; LAI TB Kinerot (candidato Kineret errado)
+Chinneroth	Kinerot	Kinerot	revisado	rev. IA: 1Kgs.15.20; LAI TB Kinerot (candidato confere)
+Chisloth-tabor	Kislot	Kislot-Tabor	revisado	rev. IA: Josh.19.12; LAI TB Kislot-Tabor (candidato Kislot incompleto)
+Chushan-rishathaim	Risyataim	Kusan-Risyataim	revisado	rev. IA: Judg.3.8; LAI TB Kusan-Risyataim (candidato Risyataim incompleto)
+Claudius	Klaudius	Klaudius	revisado	rev. IA: Acts.11.28; LAI TB Klaudius
+Cush	Kudus	Kus	revisado	rev. IA: Isa.43.3; LAI TB Kus, Etiopia (candidato Kudus errado)
+Cush	Kus	Kus	revisado	rev. IA: Gen.2.13; LAI TB Kus (candidato confere)
+Cushan-rishathaim	Risyataim	Kusan-Risyataim	revisado	rev. IA: Judg.3.8; LAI TB Kusan-Risyataim (candidato Risyataim incompleto)
+Damascus	Damsik	Damsyik	revisado	rev. IA: Gen.14.15; LAI TB Damsyik (candidato Damsik errado)
+Dan	Dan	Dan	revisado	rev. IA: Gen.14.14; LAI TB Dan (candidato confere)
+Deuel	Rehuel	Reguel	revisado	rev. IA: Num.2.14; LAI TB Reguel (candidato Rehuel errado)
+Diana	Dia	Artemis	revisado	rev. IA: Acts.19.24; LAI TB Artemis (candidato Dia errado)
+Dishan	Disyan	Disan	revisado	rev. IA: Gen.36.28; LAI TB Disan (candidato Disyan errado)
+Ebal	Ebal	Ebal	revisado	rev. IA: Gen.36.23; LAI TB Ebal (candidato confere)
+Ebal	Obal	Obal	revisado	rev. IA: Gen.10.28; LAI TB Obal (candidato Obal confere)
+Ebenezer	Eben	Eben-Haezer	revisado	rev. IA: 1Sam.4.1; LAI TB Eben-Haezer (candidato Eben incompleto)
+Eber	Heber	Heber	revisado	rev. IA: Num.24.24; LAI TB Heber (candidato Heber confere)
+Eglath-shelishiyah	Selisia	Eglat-Selisia	revisado	rev. IA: Isa.15.5; LAI TB Eglat-Selisia (candidato Selisia incompleto)
+El-bethel	Betel	El-Betel	revisado	rev. IA: Gen.35.7; LAI TB El-Betel (candidato Betel incompleto)
+El-paran	Paran	El-Paran	revisado	rev. IA: Gen.14.6; LAI TB El-Paran (candidato Paran incompleto)
+Eleazar	Eleasar	Eleazar	revisado	rev. IA: Exod.6.23; LAI TB Eleazar (candidato Eleasar errado)
+Eliah	Elia	Eliya	revisado	rev. IA: Ezr.10.26; LAI TB Eliya (candidato Elia errado)
+Eliehoenai	Elyoenai	Elyoenai	revisado	rev. IA: Ezr.8.4; LAI TB Elyoenai (candidato confere)
+Elihoenai	Elyoenai	Elyoenai	revisado	rev. IA: Ezr.8.4; LAI TB Elyoenai (candidato confere)
+Eliphalet	Elifelet	Elifelet	revisado	rev. IA: 2Sam.5.16; LAI TB Elifelet (candidato confere)
+Elishah	Elisa	Elisa	revisado	rev. IA: Gen.10.4; LAI TB Elisa, filho de Yawan (candidato Elisa confere)
+Elizur	Elizur	Elisur	revisado	rev. IA: Num.2.10; LAI TB Elisur (candidato Elizur errado)
+Eloth	Elat	Elot	revisado	rev. IA: 1Kgs.9.26; LAI TB Elot (candidato Elat errado)
+Emek-keziz	Kezis	Emek-Keziz	revisado	rev. IA: Josh.18.21; LAI TB Emek-Keziz (candidato Kezis incompleto)
+En-dor	Dor	En-Dor	revisado	rev. IA: Josh.17.11; LAI TB En-Dor (candidato Dor incompleto)
+En-rimmon	Rimon	En-Rimon	revisado	rev. IA: Neh.11.29; LAI TB En-Rimon (candidato Rimon incompleto)
+En-shemesh	Semes	En-Semes	revisado	rev. IA: Josh.15.7; LAI TB En-Semes (candidato Semes incompleto)
+En-tappuah	Tapuah	En-Tapuah	revisado	rev. IA: Josh.17.7; LAI TB En-Tapuah (candidato Tapuah incompleto)
+Enan	Enan	Enan	revisado	rev. IA: Num.2.29; LAI TB Enan (candidato confere)
+Ephes-dammim	Damim	Efes-Dammim	revisado	rev. IA: 1Sam.17.1; LAI TB Efes-Dammim (candidato Damim incompleto)
+Epicurean	Epikuros	Epikuros	revisado	rev. IA: Acts.17.18; LAI TB Epikuros (candidato confere)
+Eran	Keturunan	Eran	revisado	rev. IA: Num.26.36; LAI TB Eran (candidato Keturunan errado)
+Eshtemoa	Estemoa	Estemoa	revisado	rev. IA: 1Sam.30.28; LAI TB Estemoa (candidato confere)
+Ethiopia	Etiopia	Etiopia	revisado	rev. IA: 2Sam.18.21; LAI TB Etiopia (candidato Etiopia confere)
+Euodias	Eyodia	Euodia	revisado	rev. IA: Phil.4.2; LAI TB Euodia (candidato Eyodia errado)
+Euphrates	Efrat	Efrat	revisado	rev. IA: Gen.2.14; LAI TB Efrat (candidato Efrat confere)
+Evil-merodach	Merodak	Ewil-Merodakh	revisado	rev. IA: 2Kgs.25.27; LAI TB Ewil-Merodakh (candidato Merodak incompleto)
+Ezion-geber	Ezion	Ezion-Geber	revisado	rev. IA: Deut.2.8; LAI TB Ezion-Geber (candidato Ezion incompleto)
+Gath-hepher	Hefer	Gat-Hefer	revisado	rev. IA: Josh.19.13; LAI TB Gat-Hefer (candidato Hefer incompleto)
+Gath-rimmon	Rimon	Gat-Rimon	revisado	rev. IA: Josh.19.45; LAI TB Gat-Rimon (candidato Rimon incompleto)
+Gibeath-elohim	Gibea	Gibeat-Elohim	revisado	rev. IA: 1Sam.10.5; LAI TB Gibeat-Elohim (candidato Gibea incompleto)
+Gideoni	Gideoni	Gideoni	revisado	rev. IA: Num.2.22; LAI TB Gideoni (candidato confere)
+Giloh	Gilo	Gilo	revisado	rev. IA: 2Sam.23.34; LAI TB Gilo (candidato confere)
+God	Nod	Nod	revisado	rev. IA: Gen.4.16; LAI TB tanah Nod (candidato Nod confere)
+Goliath	Goliat	Goliat	revisado	rev. IA: 1Sam.17.4; LAI TB Goliat (candidato Goliat confere)
+Hadad	Hadad	Hadad	revisado	rev. IA: Gen.25.15; LAI TB Hadad (candidato Hadad confere)
+Hadad-rimmon	Rimon	Hadad-Rimon	revisado	rev. IA: Zech.12.11; LAI TB Hadad-Rimon (candidato Rimon incompleto)
+Hadar	Hadad	Hadad	revisado	rev. IA: Gen.25.15; LAI TB Hadad, conforme o verso (candidato Hadad confere)
+Hadrach	Aram	Hadrakh	revisado	rev. IA: Zech.9.1; LAI TB Hadrakh (candidato Aram errado)
+Hahiroth	Hahirot	Hahirot	revisado	rev. IA: Num.33.8; LAI TB Hahirot (candidato confere)
+Hammath	Hamat	Hamat	revisado	rev. IA: Josh.19.35; LAI TB Hamat (candidato confere)
+Hanoch	Henok	Henokh	revisado	rev. IA: Gen.25.4; LAI TB Henokh (candidato Henok grafia)
+Hanoch	Henokh	Henokh	revisado	rev. IA: Num.26.5; LAI TB Henokh (candidato confere)
+Harosheth-hagoyim	Haroset	Harosyet-Hagoyim	revisado	rev. IA: Judg.4.2; LAI TB Harosyet-Hagoyim (candidato Haroset incompleto)
+Havvoth-jair	Yair	Hawot-Yair	revisado	rev. IA: Num.32.41; LAI TB Hawot-Yair (candidato Yair incompleto)
+Hazar-addar	Hazar	Hazar-Adar	revisado	rev. IA: Num.34.4; LAI TB Hazar-Adar (candidato Hazar incompleto)
+Hazar-enan	Enan	Hazar-Enan	revisado	rev. IA: Num.34.9; LAI TB Hazar-Enan (candidato Enan incompleto)
+Hazar-shual	Sual	Hazar-Sual	revisado	rev. IA: Neh.11.27; LAI TB Hazar-Sual (candidato Sual incompleto)
+Hazazon-tamar	Hasason	Hazazon-Tamar	revisado	rev. IA: Gen.14.7; LAI TB Hazazon-Tamar (candidato Hasason errado)
+Heleb	Heled	Heled	revisado	rev. IA: 2Sam.23.29; LAI TB Heled (candidato Heleb errado)
+Heliopolis	Heliopolis	On	revisado	rev. IA: Gen.41.45; LAI TB On, Heliopolis (candidato Heliopolis, forma LAI On)
+Helon	Helon	Helon	revisado	rev. IA: Num.2.7; LAI TB Helon (candidato confere)
+Henoch	Henok	Henokh	revisado	rev. IA: Gen.25.4; LAI TB Henokh (candidato Henok grafia)
+Herodian	Herodes	Herodes	revisado	rev. IA: Matt.22.16; LAI TB Herodes (candidato confere)
+Hezro	Hezrai	Hezrai	revisado	rev. IA: 2Sam.23.35; LAI TB Hezrai (candidato Hezrai confere)
+Hezron	Hesron	Hezron	revisado	rev. IA: Exod.6.14; LAI TB Hezron (candidato Hesron errado)
+Hezron	Hezron	Hezron	revisado	rev. IA: Josh.15.3; LAI TB Hezron (candidato confere)
+Hiram	Huram	Hiram	revisado	rev. IA: 1Kgs.7.13; LAI TB Hiram (candidato Huram errado)
+Hizkijah	Hiskia	Hizkia	revisado	rev. IA: Neh.10.17; LAI TB Hizkia (candidato Hiskia grafia)
+Hodaviah	Hodawya	Hodawya	revisado	rev. IA: Ezr.2.40; LAI TB Hodawya (candidato confere)
+Hodevah	Hodewa	Hodewa	revisado	rev. IA: Neh.7.43; LAI TB Hodewa (candidato confere)
+Homam	Hemam	Homam	revisado	rev. IA: Gen.36.22; LAI TB Homam (candidato Hemam errado)
+Hosea	Hosea	Hosea	revisado	rev. IA: Rom.9.25; LAI TB Hosea (candidato confere)
+Hushim	Husim	Husim	revisado	rev. IA: Gen.46.23; LAI TB Husim (candidato confere)
+Ir-moab	Moab	Ar-Moab	revisado	rev. IA: Num.22.36; LAI TB Ar-Moab (candidato Moab incompleto)
+Ir-shemesh	Semes	Ir-Semes	revisado	rev. IA: Josh.19.41; LAI TB Ir-Semes (candidato Semes incompleto)
+Ishbi-benob	Benob	Yisbi-Benob	revisado	rev. IA: 2Sam.21.16; LAI TB Yisbi-Benob (candidato Benob incompleto)
+Isui	Yusuf	Isywi	revisado	rev. IA: Num.26.44; LAI TB Isywi (candidato Yusuf errado)
+Iye-abarim	Abarim	Iye-Abarim	revisado	rev. IA: Num.21.11; LAI TB Iye-Abarim (candidato Abarim incompleto)
+Jabesh-gilead	Yabes	Yabesh-Gilead	revisado	rev. IA: Judg.21.8; LAI TB Yabesh-Gilead (candidato Yabes incompleto)
+Jacob	Yakub	Yakub	revisado	rev. IA: Gen.25.26; LAI TB Yakub (candidato confere)
+Jairus	Yairus	Yairus	revisado	rev. IA: Mark.5.22; LAI TB Yairus (candidato Yairus confere)
+James	Yohanes	Yakobus	revisado	rev. IA: Matt.4.21; LAI TB Yakobus anak Zebedeus (candidato Yohanes errado)
+James	Yoses	Yakobus	revisado	rev. IA: Matt.13.55; LAI TB Yakobus (candidato Yoses errado)
+Javan	Yawan	Yawan	revisado	rev. IA: Gen.10.2; LAI TB Yawan (candidato Yawan confere)
+Jebus	Yebus	Yebus	revisado	rev. IA: Josh.15.8; LAI TB Yebus (candidato Yebus confere)
+Jegar-sahadutha	Sahaduta	Yegar-Sahaduta	revisado	rev. IA: Gen.31.47; LAI TB Yegar-Sahaduta (candidato Sahaduta incompleto)
+Jehonathan	Yonatan	Yehonatan	revisado	rev. IA: Neh.12.18; LAI TB Yehonatan (candidato Yonatan incompleto)
+Jehoram	Yoram	Yehoram	revisado	rev. IA: 1Kgs.22.50; LAI TB Yehoram (candidato Yoram incompleto)
+Jehozabad	Yozabad	Yozabad	revisado	rev. IA: 2Kgs.12.21; LAI TB Yozabad (candidato Yozabad confere)
+Jeiel	Yehiel	Yeiel	revisado	rev. IA: Ezr.8.13; LAI TB Yeiel (candidato Yehiel errado)
+Jemuel	Yemuel	Yemuel	revisado	rev. IA: Exod.6.15; LAI TB Yemuel (candidato confere)
+Jephunneh	Yefune	Yefune	revisado	rev. IA: Num.14.6; LAI TB Yefune (candidato confere)
+Jesaiah	Yesaya	Yesaya	revisado	rev. IA: Neh.11.7; LAI TB Yesaya (candidato confere)
+Jeshaiah	Yesaya	Yesaya	revisado	rev. IA: Ezr.8.7; LAI TB Yesaya (candidato confere)
+Jeshimon	Yesimon	Yesimon	revisado	rev. IA: 1Sam.23.19; LAI TB Yesimon (candidato confere)
+Jethro	Yitro	Yitro	revisado	rev. IA: Exod.3.1; LAI TB Yitro (candidato confere)
+Jetur	Iturea	Yetur	revisado	rev. IA: Luke.3.1; LAI TB Yetur, Gen 25:15 (candidato Iturea errado)
+Jeuel	Yehiel	Yeuel	revisado	rev. IA: Ezr.8.13; LAI TB Yeuel (candidato Yehiel errado)
+John	Simon	Yohanes	revisado	rev. IA: Matt.10.2; LAI TB Yohanes (candidato Simon errado)
+Joiada	Yoyada	Yoyada	revisado	rev. IA: Neh.3.6; LAI TB Yoyada (candidato confere)
+Jokneam	Yokneam	Yokneam	revisado	rev. IA: Josh.19.11; LAI TB Yokneam (candidato confere)
+Jonah	Yopa	Yunus	revisado	rev. IA: Jonah.1.3; LAI TB Yunus (candidato Yopa errado)
+Jonas	Yunus	Yohanes	revisado	rev. IA: John.21.15; LAI TB Simon anak Yohanes (candidato Yunus errado)
+Joppa	Yopa	Yope	revisado	rev. IA: Josh.19.46; LAI TB Yope (candidato Yopa grafia)
+Josedech	Yozadak	Yosadak	revisado	rev. IA: Ezr.3.2; LAI TB Yosadak (candidato Yozadak grafia)
+Joseph	Yosek	Yusuf	revisado	rev. IA: Luke.3.23; LAI TB Yusuf (candidato Yosek errado)
+Jotbathah	Yotbata	Yotbata	revisado	rev. IA: Deut.10.7; LAI TB Yotbata (candidato confere)
+Jozadak	Yozadak	Yosadak	revisado	rev. IA: Ezr.10.18; LAI TB Yosadak (candidato Yozadak grafia)
+Judah	Yehuda	Yehuda	revisado	rev. IA: Gen.29.35; LAI TB Yehuda (candidato confere)
+Judaism	Yahudi	Yahudi	revisado	rev. IA: Gal.1.13; LAI TB Yahudi (candidato confere)
+Jude	Yudas	Yudas	revisado	rev. IA: Matt.13.55; LAI TB Yudas (candidato confere)
+Judea	Yehuda	Yudea	revisado	rev. IA: Ezr.5.1; LAI TB Yudea (candidato Yehuda errado para a provincia)
+Julius	Yulius	Yulius	revisado	rev. IA: Acts.27.1; LAI TB Yulius (candidato confere)
+Kabzeel	Kabsel	Kabzeel	revisado	rev. IA: 2Sam.23.20; LAI TB Kabzeel (candidato Kabsel grafia)
+Kedesh-naphtali	Naftali	Kedes-Naftali	revisado	rev. IA: Judg.4.6; LAI TB Kedes-Naftali (candidato Naftali incompleto)
+Kenath	Kenat	Kenat	revisado	rev. IA: Num.32.42; LAI TB Kenat (candidato Kenat confere)
+Kibroth-hattaavah	Kibrot	Kibrot-Hataawa	revisado	rev. IA: Num.11.34; LAI TB Kibrot-Hataawa (candidato Kibrot incompleto)
+Kiriath-arba	Kiryat	Kiryat-Arba	revisado	rev. IA: Gen.35.27; LAI TB Kiryat-Arba (candidato Kiryat incompleto)
+Kiriath-arim	Kiryat	Kiryat-Yearim	revisado	rev. IA: Ezr.2.25; LAI TB Kiryat-Yearim (candidato Kiryat incompleto)
+Kiriath-baal	Kiryat	Kiryat-Baal	revisado	rev. IA: Josh.15.60; LAI TB Kiryat-Baal (candidato Kiryat incompleto)
+Kiriath-sepher	Sefer	Kiryat-Sefer	revisado	rev. IA: Josh.15.15; LAI TB Kiryat-Sefer (candidato Sefer incompleto)
+Kitron	Kitron	Kitron	revisado	rev. IA: Judg.1.30; LAI TB Kitron
+Kittim	Kit	Kitim	revisado	rev. IA: Gen.10.4; LAI TB Kitim (candidato Kit incompleto)
+Kohath	Kehat	Kehat	revisado	rev. IA: Exod.6.16; LAI TB Kehat (candidato Kehat confere)
+Laishah	Lais	Laisa	revisado	rev. IA: Isa.10.30; LAI TB Laisa (candidato Lais incompleto)
+Lebo-hamath	Hamat	Lebo-Hamat	revisado	rev. IA: Num.13.21; LAI TB Lebo-Hamat (candidato Hamat incompleto)
+Lo-debar	Lodebar	Lodebar	revisado	rev. IA: 2Sam.17.27; LAI TB Lodebar (candidato confere)
+Ludim	Lud	Ludim	revisado	rev. IA: Gen.10.13; LAI TB Ludim (candidato Lud errado)
+Luke	Lukas	Lukas	revisado	rev. IA: Col.4.14; LAI TB Lukas (candidato Lukas confere)
+Maacath	Maaka	Maakhat	revisado	rev. IA: Josh.13.13; LAI TB Maakhat (candidato Maaka incompleto)
+Maaziah	Maazya	Maazya	revisado	rev. IA: Neh.10.8; LAI TB Maazya (candidato confere)
+Magadan	Magdala	Magdala	revisado	rev. IA: Matt.15.39; LAI TB Magdala (candidato confere)
+Mahalath	Mahalat	Mahalat	revisado	rev. IA: Gen.28.9; LAI TB Mahalat (candidato confere)
+Mahaneh-dan	Mahane	Mahane-Dan	revisado	rev. IA: Judg.13.25; LAI TB Mahane-Dan (candidato Mahane incompleto)
+Malchiel	Makir	Malkiel	revisado	rev. IA: Num.26.45; LAI TB Malkiel (candidato Makir errado)
+Malchijah	Malik	Malkia	revisado	rev. IA: Neh.11.12; LAI TB Malkia (candidato Malik grafia)
+Malta	Malta	Malta	revisado	rev. IA: Acts.28.1; LAI TB Malta (candidato confere)
+Manasseh	Namanya	Manasye	revisado	rev. IA: Judg.18.30; LAI TB Manasye (candidato Namanya errado)
+Marah	Mara	Mara	revisado	rev. IA: Exod.15.23; LAI TB Mara (candidato confere)
+Massa	Masa	Masa	revisado	rev. IA: Gen.25.14; LAI TB Masa (candidato confere)
+Mattithiah	Matica	Matitya	revisado	rev. IA: Ezr.10.43; LAI TB Matitya (candidato Matica grafia)
+Melatiah	Melaca	Melatya	revisado	rev. IA: Neh.3.7; LAI TB Melatya (candidato Melaca grafia)
+Melita	Malta	Malta	revisado	rev. IA: Acts.28.1; LAI TB Malta (candidato confere)
+Merodach-baladan	Baladan	Merodakh-Baladan	revisado	rev. IA: 2Kgs.20.12; LAI TB Merodakh-Baladan (candidato Baladan incompleto)
+Meshullam	Mesilemot	Mesulam	revisado	rev. IA: Neh.11.13; LAI TB Mesulam (candidato Mesilemot errado)
+Mesopotamia	Mesopotamia	Mesopotamia	revisado	rev. IA: Acts.2.9; LAI TB Mesopotamia (candidato confere)
+Messiah	Mesias	Mesias	revisado	rev. IA: John.4.25; LAI TB Mesias (candidato confere)
+Miamin	Miyamin	Miyamin	revisado	rev. IA: Ezr.10.25; LAI TB Miyamin (candidato confere)
+Mica	Mika	Mikha	revisado	rev. IA: Neh.10.11; LAI TB Mikha (candidato Mika grafia)
+Micaiah	Mika	Mikha	revisado	rev. IA: 1Kgs.22.8; LAI TB Mikha, profeta (candidato Mika grafia)
+Micha	Mika	Mikha	revisado	rev. IA: Neh.10.11; LAI TB Mikha (candidato Mika grafia)
+Michaiah	Mika	Mikaya	revisado	rev. IA: 2Kgs.22.12; LAI TB Mikaya (candidato Mika incompleto)
+Michaiah	Mikaya	Mikaya	revisado	rev. IA: 2Kgs.22.12; LAI TB Mikaya (candidato confere)
+Michmas	Mikmas	Mikmas	revisado	rev. IA: Ezr.2.27; LAI TB Mikmas (candidato Mikmas confere)
+Millo	Megido	Millo	revisado	rev. IA: 1Kgs.9.15; LAI TB Millo (candidato Megido errado)
+Mizpeh	Mispa	Mizpe	revisado	rev. IA: 1Sam.22.3; LAI TB Mizpe (candidato Mispa grafia)
+Moseroth	Mosera	Mosera	revisado	rev. IA: Deut.10.6; LAI TB Mosera (candidato confere)
+Nahalal	Nahalal	Nahalal	revisado	rev. IA: Josh.19.15; LAI TB Nahalal (candidato confere)
+Nahalol	Nahalol	Nahalol	revisado	rev. IA: Judg.1.30; LAI TB Nahalol (candidato confere)
+Naphoth-dor	Nafat	Nafot-Dor	revisado	rev. IA: Josh.12.23; LAI TB Nafot-Dor (candidato Nafat incompleto)
+Nathan-melech	Melek	Netan-Melekh	revisado	rev. IA: 2Kgs.23.11; LAI TB Netan-Melekh (candidato Melek incompleto)
+Neah	Nea	Nea	revisado	rev. IA: Josh.19.13; LAI TB Nea (candidato confere)
+Negeb	Negeb	Negeb	revisado	rev. IA: Num.13.17; LAI TB Negeb (candidato confere)
+Nicolaitans	Nikolaus	Nikolaitan	revisado	rev. IA: Rev.2.6; LAI TB Nikolaitan (candidato Nikolaus errado)
+Noah	Nah	Nuh	revisado	rev. IA: Matt.24.38; LAI TB Nuh (candidato Nah grafia)
+Obed	Obed	Obed	revisado	rev. IA: Ruth.4.17; LAI TB Obed (candidato confere)
+Obed-edom	Obed	Obed-Edom	revisado	rev. IA: 2Sam.6.10; LAI TB Obed-Edom (candidato Obed incompleto)
+Oboth	Obot	Obot	revisado	rev. IA: Num.21.10; LAI TB Obot (candidato Obot confere)
+Ochran	Okran	Okhran	revisado	rev. IA: Num.2.27; LAI TB Okhran (candidato Okran grafia)
+Ocran	Okran	Okhran	revisado	rev. IA: Num.2.27; LAI TB Okhran (candidato Okran grafia)
+On	On	On	revisado	rev. IA: Num.16.1; LAI TB On (candidato confere)
+Ophir	Opir	Ofir	revisado	rev. IA: Gen.10.29; LAI TB Ofir (candidato Opir grafia)
+Osnappar	Asnaper	Osnapar	revisado	rev. IA: Ezr.4.10; LAI TB Osnapar (candidato Asnaper errado)
+Ozni	Suni	Ozni	revisado	rev. IA: Gen.46.16; LAI TB Ozni (candidato Suni errado)
+Paddan-aram	Padan	Paddan-Aram	revisado	rev. IA: Gen.25.20; LAI TB Paddan-Aram (candidato Padan incompleto)
+Pagiel	Pagiel	Pagiel	revisado	rev. IA: Num.2.27; LAI TB Pagiel (candidato confere)
+Pahath-moab	Pahat	Pahat-Moab	revisado	rev. IA: Ezr.2.6; LAI TB Pahat-Moab (candidato Pahat incompleto)
+Pahath-moab	Pahatmoab	Pahat-Moab	revisado	rev. IA: Ezr.8.4; LAI TB Pahat-Moab (candidato Pahatmoab sem hifen)
+Perez	Peres	Peres	revisado	rev. IA: Gen.38.29; LAI TB Peres (candidato Peres confere)
+Perez-uzzah	Perez	Peres-Uza	revisado	rev. IA: 2Sam.6.8; LAI TB Peres-Uza (candidato Perez grafia)
+Pharaoh	Hahirot	Firaun	revisado	rev. IA: Exod.14.9; LAI TB Firaun (candidato Hahirot errado)
+Pharaoh	Para	Firaun	revisado	rev. IA: Gen.47.20; LAI TB Firaun (candidato Para errado)
+Pharaoh	Paran	Firaun	revisado	rev. IA: 1Kgs.11.18; LAI TB Firaun (candidato Paran errado)
+Pharaoh	Sarai	Firaun	revisado	rev. IA: Gen.12.15; LAI TB Firaun (candidato Sarai errado)
+Pharaoh-nechoh	Neko	Firaun Nekho	revisado	rev. IA: 2Kgs.23.29; LAI TB Firaun Nekho (candidato Neko grafia)
+Pharez	Peres	Peres	revisado	rev. IA: Gen.38.29; LAI TB Peres (candidato Peres confere)
+Philistine	Filistin	Filistin	revisado	rev. IA: Gen.10.14; LAI TB orang Filistin (candidato confere)
+Phurah	Pura	Pura	revisado	rev. IA: Judg.7.10; LAI TB Pura (candidato confere)
+Phut	Put	Put	revisado	rev. IA: Gen.10.6; LAI TB Put (candidato confere)
+Pochereth-hazzebaim	Pokeret	Pokhereth-Hazebaim	revisado	rev. IA: Ezr.2.57; LAI TB Pokhereth-Hazebaim (candidato Pokeret grafia)
+Poti-pherah	Potifera	Potifera	revisado	rev. IA: Gen.41.45; LAI TB Potifera (candidato Potifera confere)
+Potiphar	Potifar	Potifar	revisado	rev. IA: Gen.37.36; LAI TB Potifar (candidato confere)
+Potiphera	Potifera	Potifera	revisado	rev. IA: Gen.41.45; LAI TB Potifera (candidato confere)
+Pyrrhus	Gayus	Pirus	revisado	rev. IA: Acts.20.4; LAI TB Pirus (candidato Gayus errado)
+Raamah	Rama	Raama	revisado	rev. IA: Gen.10.7; LAI TB Raama (candidato Rama grafia)
+Raamses	Rameses	Raamses	revisado	rev. IA: Exod.1.11; LAI TB Raamses (candidato Rameses grafia)
+Ram	Ram	Ram	revisado	rev. IA: Ruth.4.19; LAI TB Ram (candidato confere)
+Ramah	Yoram	Rama	revisado	rev. IA: 2Kgs.8.29; LAI TB Rama (candidato Yoram errado)
+Ramath-mizpeh	Ramat	Ramat-Mizpe	revisado	rev. IA: Josh.13.26; LAI TB Ramat-Mizpe (candidato Ramat incompleto)
+Regem-melech	Regem	Regem-Melekh	revisado	rev. IA: Zech.7.2; LAI TB Regem-Melekh (candidato Regem incompleto)
+Rehoboam	Rehabeam	Rehabeam	revisado	rev. IA: 1Kgs.11.43; LAI TB Rehabeam (candidato confere)
+Remaliah	Remalya	Remalya	revisado	rev. IA: 2Kgs.15.25; LAI TB Remalya (candidato confere)
+Reuel	Rehuel	Rehuel	revisado	rev. IA: Gen.36.4; LAI TB Rehuel (candidato Rehuel confere)
+Rhoda	Rode	Rode	revisado	rev. IA: Acts.12.13; LAI TB Rode (candidato confere)
+Rome	Roma	Roma	revisado	rev. IA: John.11.48; LAI TB Roma (candidato confere)
+Salah	Selah	Selah	revisado	rev. IA: Gen.10.24; LAI TB Selah (candidato Selah confere)
+Salim	Salem	Salim	revisado	rev. IA: John.3.23; LAI TB Salim (candidato Salem grafia)
+Salmon	Salmon	Salmon	revisado	rev. IA: Ruth.4.21; LAI TB Salmon (candidato confere)
+Salu	Salu	Salu	revisado	rev. IA: Num.25.14; LAI TB Salu (candidato confere)
+Satan	Satanas	Setan	revisado	rev. IA: Matt.4.10; LAI TB Setan (candidato Satanas errado)
+Scythians	Kita	Skit	revisado	rev. IA: Col.3.11; LAI TB Skit (candidato Kita errado)
+Seba	Seba	Seba	revisado	rev. IA: Gen.10.7; LAI TB Seba (candidato confere)
+Senaah	Sena	Senaah	revisado	rev. IA: Ezr.2.35; LAI TB Senaah (candidato Sena incompleto)
+Sennacherib	Sanherib	Sanherib	revisado	rev. IA: 2Kgs.18.13; LAI TB Sanherib (candidato confere)
+Sepharad	Sardis	Sardis	revisado	rev. IA: Rev.1.11; LAI TB Sardis (candidato Sardis confere)
+Serah	Iezer	Serah	revisado	rev. IA: Num.26.46; LAI TB Serah (candidato Iezer errado)
+Shaalbim	Saalbim	Saalbim	revisado	rev. IA: Judg.1.35; LAI TB Saalbim (candidato confere)
+Shallun	Salum	Salum	revisado	rev. IA: Neh.3.15; LAI TB Salum (candidato confere)
+Shammah	Sama	Sama	revisado	rev. IA: 2Sam.23.25; LAI TB Sama (candidato confere)
+Sharezer	Ezer	Sarezer	revisado	rev. IA: Zech.7.2; LAI TB Sarezer (candidato Ezer incompleto)
+Shaul	Saul	Saul	revisado	rev. IA: Exod.6.15; LAI TB Saul (candidato confere)
+Shedeur	Syedeur	Sedeur	revisado	rev. IA: Num.2.10; LAI TB Sedeur (candidato Syedeur grafia)
+Shelah	Siloam	Silwah	revisado	rev. IA: Neh.3.15; LAI TB Silwah (candidato Siloam incompleto)
+Shelumiel	Selumiel	Selumiel	revisado	rev. IA: Num.2.12; LAI TB Selumiel (candidato confere)
+Sherezer	Ezer	Sarezer	revisado	rev. IA: Zech.7.2; LAI TB Sarezer (candidato Ezer incompleto)
+Shethar-bozenai	Boznai	Setar-Bozenai	revisado	rev. IA: Ezr.5.3; LAI TB Setar-Bozenai (candidato Boznai incompleto)
+Shethar-boznai	Boznai	Setar-Bozenai	revisado	rev. IA: Ezr.5.3; LAI TB Setar-Bozenai (candidato Boznai incompleto)
+Shibah	Syeba	Syiba	revisado	rev. IA: Gen.26.33; LAI TB Syiba (candidato Syeba grafia)
+Shihor-libnath	Libnat	Sihor-Libnat	revisado	rev. IA: Josh.19.26; LAI TB Sihor-Libnat (candidato Libnat incompleto)
+Shimeah	Simea	Simea	revisado	rev. IA: 2Sam.13.3; LAI TB Simea (candidato confere)
+Shimeon	Simeon	Simei	revisado	rev. IA: Ezr.10.31; LAI TB Simei (candidato Simeon errado)
+Shimrith	Simeat	Simeat	revisado	rev. IA: 2Kgs.12.21; LAI TB Simeat (candidato Simeat confere)
+Shimron-meron	Meron	Simron-Meron	revisado	rev. IA: Josh.12.20; LAI TB Simron-Meron (candidato Meron incompleto)
+Shinar	Sinear	Sinear	revisado	rev. IA: Gen.10.10; LAI TB Sinear (candidato confere)
+Shittim	Sitim	Sitim	revisado	rev. IA: Num.33.49; LAI TB Sitim (candidato confere)
+Shuthelah	Bela	Sutelah	revisado	rev. IA: Num.26.36; LAI TB Sutelah (candidato Bela errado)
+Sippai	Sibekai	Sipai	revisado	rev. IA: 1Chr.20.4; LAI TB Sipai (candidato Sibekai errado)
+Spain	Spanyol	Spanyol	revisado	rev. IA: Rom.15.24; LAI TB Spanyol (candidato confere)
+Stephanas	Stefanus	Stefanas	revisado	rev. IA: 1Cor.1.16; LAI TB Stefanas (candidato Stefanus errado)
+Stephen	Stefanus	Stefanus	revisado	rev. IA: Acts.6.5; LAI TB Stefanus (candidato confere)
+Stoic	Stoa	Stoa	revisado	rev. IA: Acts.17.18; LAI TB Stoa (candidato confere)
+Succoth-benoth	Benot	Sukot-Benot	revisado	rev. IA: 2Kgs.17.30; LAI TB Sukot-Benot (candidato Benot incompleto)
+Syene	Sinim	Sinim	revisado	rev. IA: Isa.49.12; LAI TB Sinim (candidato Sinim, nome do verso Isa 49:12)
+Syria	Siria	Siria	revisado	rev. IA: 2Sam.8.5; LAI TB Siria (candidato Siria confere)
+Taanath-shiloh	Taanat	Taanat-Silo	revisado	rev. IA: Josh.16.6; LAI TB Taanat-Silo (candidato Taanat incompleto)
+Tabor	Tabor	Tabor	revisado	rev. IA: Judg.8.18; LAI TB Tabor (candidato confere)
+Tadmor	Tamar	Tadmor	revisado	rev. IA: 1Kgs.9.18; LAI TB Tadmor (candidato Tamar errado)
+Tahtim-hodshi	Tahtim	Tahtim-Hodsi	revisado	rev. IA: 2Sam.24.6; LAI TB Tahtim-Hodsi (candidato Tahtim incompleto)
+Tahtimhodshi	Tahtim	Tahtim-Hodsi	revisado	rev. IA: 2Sam.24.6; LAI TB Tahtim-Hodsi (candidato Tahtim incompleto)
+Tamah	Temah	Tamah	revisado	rev. IA: Ezr.2.53; LAI TB Tamah (candidato Temah grafia)
+Tel-harsha	Tel	Tel-Harsa	revisado	rev. IA: Ezr.2.59; LAI TB Tel-Harsa (candidato Tel incompleto)
+Tel-melah	Mela	Tel-Melah	revisado	rev. IA: Ezr.2.59; LAI TB Tel-Melah (candidato Mela incompleto)
+Telem	Telaim	Telaim	revisado	rev. IA: 1Sam.15.4; LAI TB Telaim (candidato confere)
+Tiberius	Tiberius	Tiberius	revisado	rev. IA: Luke.3.1; LAI TB Tiberius (candidato confere)
+Tibhath	Tebah	Tibhat	revisado	rev. IA: 2Sam.8.8; LAI TB Tibhat (candidato Tebah grafia)
+Tiglath-pileser	Pileser	Tiglat-Pileser	revisado	rev. IA: 2Kgs.15.19; LAI TB Tiglat-Pileser (candidato Pileser incompleto)
+Tilgath-pilneser	Pileser	Tiglat-Pileser	revisado	rev. IA: 2Kgs.15.19; LAI TB Tiglat-Pileser (candidato Pileser incompleto)
+Timna	Timna	Timna	revisado	rev. IA: Gen.36.12; LAI TB Timna (candidato confere)
+Timnath-heres	Timnat	Timnat-Heres	revisado	rev. IA: Josh.19.50; LAI TB Timnat-Heres (candidato Timnat incompleto)
+Timnath-serah	Timnat	Timnat-Serah	revisado	rev. IA: Josh.19.50; LAI TB Timnat-Serah (candidato Timnat incompleto)
+Tobijah	Tobia	Tobia	revisado	rev. IA: Zech.6.10; LAI TB Tobia (candidato Tobia confere)
+Toi	Tou	Toi	revisado	rev. IA: 2Sam.8.9; LAI TB Toi (candidato Tou grafia)
+Tola	Tola	Tola	revisado	rev. IA: Judg.10.1; LAI TB Tola (candidato confere)
+Topheth	Tofet	Tofet	revisado	rev. IA: 2Kgs.23.10; LAI TB Tofet (candidato Tofet confere)
+Tubal-cain	Tubal	Tubal-Kain	revisado	rev. IA: Gen.4.22; LAI TB Tubal-Kain (candidato Tubal incompleto)
+Urbane	Urbanus	Urbanus	revisado	rev. IA: Rom.16.9; LAI TB Urbanus (candidato confere)
