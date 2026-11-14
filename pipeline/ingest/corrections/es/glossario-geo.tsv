@@ -1,0 +1,59 @@
+# Glossário geo em espanhol (openbible-geo, por regra; pipeline/sensus/geo_descricao.py). Colunas:
+#   secao      tipo | geometria | voto | fonte
+#   ingles     termo como aparece na descrição da fonte (exato)
+#   portugues  tradução usada na frase (aqui: espanhol)
+#   nota       observação para o revisor (opcional)
+#   genero     vazio (ver gramatica-descricoes)
+# geometria: o modelo geo_melhor já diz 'geometría {geometria}', por isso os valores começam com 'de'.
+secao	ingles	portugues	nota	genero
+tipo	settlement	asentamiento
+tipo	region	región
+tipo	mountain	montaña
+tipo	wadi	wadi
+tipo	river	río
+tipo	spring	manantial
+tipo	hill	colina
+tipo	island	isla
+tipo	valley	valle
+tipo	body of water	masa de agua
+tipo	well	pozo
+tipo	probability center radial	centro de probabilidad radial
+tipo	road	camino
+tipo	mountain range	cordillera
+tipo	structure	estructura
+tipo	mouth of river	desembocadura de río
+tipo	pool	estanque
+tipo	cliff	acantilado
+tipo	cave	cueva
+tipo	field	campo
+tipo	mountain pass	paso de montaña
+tipo	mountain ridge	cresta de montaña
+tipo	wall	muro
+tipo	forest	bosque
+tipo	harbor	puerto
+tipo	garden	jardín
+tipo	promontory	promontorio
+geometria	point	de punto
+geometria	polygon	de polígono
+geometria	path	de trayecto
+fonte	modern	moderna
+fonte	ancient	antigua
+voto	confidence_possible	confianza: posible
+voto	confidence_likely	confianza: probable
+voto	confidence_yes	confianza: sí
+voto	confidence_mostlikely	confianza: muy probable
+voto	confidence_unlikely	confianza: improbable
+voto	confidence_no	confianza: no
+voto	confidence_map	confianza: mapa
+voto	authority_usually	autoridad: por lo general
+voto	authority_scholar	autoridad: especialistas
+voto	authority_traditional	autoridad: tradicional
+voto	authority_parallel	autoridad: paralelo
+voto	authority_preserved	autoridad: nombre conservado
+voto	authority_variant	autoridad: variante
+voto	authority_old	autoridad: antiguo
+voto	unknown	desconocido
+voto	uncertain	incierto
+voto	identified_been	identificado: ha sido
+voto	identified_is	identificado: es
+voto	identified_adjective	identificado: adjetivo
