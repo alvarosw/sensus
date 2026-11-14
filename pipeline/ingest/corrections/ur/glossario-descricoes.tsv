@@ -1,0 +1,166 @@
+# Glossário das descrições em urdu (TIPNR, pipeline/sensus/descricoes_pt.py). Colunas:
+#   secao      cargo | tempo | tribo | lugar | relacao | nome
+#   ingles     termo como aparece na descrição da fonte (exato, com maiúsculas)
+#   portugues  tradução usada na frase (aqui: urdu; o nome da coluna é o do código)
+#   nota       observação para o revisor (opcional)
+#   genero     m | f | vazio: gênero do termo (cargo). O genitivo کا/کی concorda com ele: f usa a forma '.f' da gramática.
+#              Termos sem gênero fixo (ex.: 'woman or town') ficam vazios e concordam como masculino.
+#              Tempos, relações e lugares têm modelo fixo, por isso não usam gênero.
+#              Lugares ('of ...', 'in ...') são invariáveis: "سے منسوب" e "میں مقیم" não mudam com o cargo.
+#              Nomes de tribo e de pessoas seguem a forma de nomes.tsv (urdu).
+secao	ingles	portugues	nota	genero
+cargo	man	مرد		m
+cargo	woman	عورت		f
+cargo	location	مقام		m
+cargo	high priest	سردار کاہن		m
+cargo	priest	کاہن		m
+cargo	warrior	جنگجو		m
+cargo	warriors	جنگجو گروہ	coletivo no singular	m
+cargo	musician	موسیقار		m
+cargo	prophet	نبی		m
+cargo	prophetess	نبیہ		f
+cargo	king	بادشاہ		m
+cargo	queen	ملکہ		f
+cargo	group	گروہ		m
+cargo	male deity	مرد دیوتا		m
+cargo	female deity	عورت دیوی		f
+cargo	deity	دیوتا		m
+cargo	people	قوم	nação (singular)	f
+cargo	woman or town	عورت یا شہر	mistura dois gêneros; sem forma .f	
+cargo	town	شہر		m
+cargo	emperor	شہنشاہ		m
+cargo	prince	شہزادہ		m
+cargo	apostle	رسول		m
+cargo	angel	فرشتہ		m
+cargo	concubine	داشتہ		f
+cargo	chief	سردار		m
+cargo	steward	منتظم		m
+cargo	servant	خادم		m
+cargo	ruler	حاکم		m
+cargo	musical piece	موسیقی کی تصنیف	cargo com genitivo interno; concorda como feminino (تصنیف)	f
+cargo	judge	قاضی		m
+cargo	city	شہر		m
+cargo	gigantic man	دیوہیکل آدمی		m
+cargo	Pharaoh	فرعون	cargo (título); o nome próprio está na seção nome	m
+cargo	festival	عید		f
+cargo	governor	والی		m
+cargo	Judge	قاضی		m
+tempo	at the time of the Patriarchs	پدرسرداروں کے زمانے میں		
+tempo	at the time of Egypt and Wilderness	مصر اور بیابان کے زمانے میں		
+tempo	at the time of Exile and Return	جلاوطنی اور واپسی کے زمانے میں		
+tempo	at the time of Divided Monarchy	تقسیم شدہ بادشاہت کے زمانے میں		
+tempo	at the time of United Monarchy	متحدہ بادشاہت کے زمانے میں		
+tempo	at the time of the New Testament	نئے عہد نامے کے زمانے میں		
+tempo	at the time of the Exodus	خروج کے زمانے میں		
+tempo	before Israel's Monarchy	اسرائیل کی بادشاہت سے پہلے		
+tempo	at the time before the Flood	طوفانِ نوح سے پہلے کے زمانے میں		
+tempo	before the Flood	طوفانِ نوح سے پہلے		
+tempo	at the time of Judges	قاضیوں کے زمانے میں		
+tribo	Levi	لاوی		
+tribo	Judah	یہوداہ		
+tribo	Asher	آشر		
+tribo	Benjamin	بنیامین		
+tribo	Ephraim	افرائیم		
+tribo	Manasseh	منسی		
+tribo	Simeon	شمعون		
+tribo	Issachar	یسکار		
+tribo	Zebulun	زبولون		
+tribo	Naphtali	نفتالی		
+tribo	Reuben	روبن		
+tribo	Gad	گاد		
+tribo	Dan	دان		
+relacao	son of	{x} کا بیٹا		
+relacao	daughter of	{x} کی بیٹی		
+relacao	brother of	{x} کا بھائی		
+relacao	sister of	{x} کی بہن		
+relacao	half-brother of	{x} کا سوتیلا بھائی		
+relacao	half-sister of	{x} کی سوتیلی بہن		
+relacao	wife of	{x} کی بیوی		
+relacao	husband of	{x} کا شوہر		
+relacao	mother of	{x} کی ماں		
+relacao	father of	{x} کا باپ		
+relacao	founder of	{x} کا بانی		
+relacao	concubine of	{x} کی داشتہ		
+relacao	descendant of	{x} کی نسل سے		
+nome	Pharaoh	فرعوہ		
+nome	Asia	آسیہ		
+nome	Christ	مسیح		
+lugar	in Asia	آسیہ میں مقیم		
+lugar	of Egypt	مصر سے منسوب		
+lugar	of the Cushites	کوشیوں سے منسوب		
+lugar	of the Arabs	عربوں سے منسوب		
+lugar	of the Edomites	ادومیوں سے منسوب		
+lugar	of the Midianites	مدیانیوں سے منسوب		
+lugar	of the Syrians	ارامیوں سے منسوب		
+lugar	of the Gomerians	جومریوں سے منسوب		
+lugar	of the Ammonites	عمونیوں سے منسوب		
+lugar	of the Greeks	یونانیوں سے منسوب		
+lugar	of the Ishmaelites	اسماعیلیوں سے منسوب		
+lugar	of the Moabites	موآبیوں سے منسوب		
+lugar	of the Egyptians	مصریوں سے منسوب		
+lugar	of the Philistines	فلستیوں سے منسوب		
+lugar	of the Hittites	حتیوں سے منسوب		
+lugar	of the Canaanites	کنعانیوں سے منسوب		
+lugar	of the Amalekites	عمالیقیوں سے منسوب		
+lugar	of the Jebusites	یبوسیوں سے منسوب		
+lugar	of the Assyrians	اسوریوں سے منسوب		
+lugar	of the Babylonians	بابلیوں سے منسوب		
+lugar	of the Chaldeans	کلدانیوں سے منسوب		
+lugar	of the Persians	فارسیوں سے منسوب		
+lugar	of the Hebrews	عبرانیوں سے منسوب		
+lugar	of the Israelites	اسرائیلیوں سے منسوب		
+cargo	huge man	دیوہیکل آدمی		m
+nome	Northern Israel	شمالی اسرائیل		
+nome	Hor Mount	ہور پہاڑ		
+nome	Tabor Mount	تبور پہاڑ		
+nome	Hermon Mount	حرمون پہاڑ		
+nome	Olives Mount	زیتون کا پہاڑ		
+nome	Ebal Mount	عیبال پہاڑ		
+nome	Seir Mount	سعیر پہاڑ		
+nome	Red Sea	بحیرۂ قلزم		
+nome	Edom Bozrah	ادوم کا بصرہ		
+nome	Beth-horon Upper	اوپری بیت حورون		
+nome	Rephaim Valley	رفائیم کی وادی		
+nome	Benjamin Gate	بنیامین کا دروازہ		
+nome	Ephraim Gate	افرائیم کا دروازہ		
+nome	Syria	سیریا		
+nome	Gederah	جدرہ		
+nome	Machir	مکیر		
+nome	Caesar	قیصر		
+nome	Joseph	یوسف		
+nome	Nohah	نوحہ		
+nome	Shelomith	شلوموتھ		
+nome	Tahpenes	تحفنیس		
+nome	Putiel	فوتیئیل		
+nome	Joiada	یویدع		
+nome	Jonathan	یوناتان		
+nome	Abiel	ابیایل		
+nome	Salome	سلومی		
+nome	Barsabbas	برسابا		
+nome	Amalakites	عمالیقی		
+nome	Philistine	فلستی		
+nome	Abijam	ابیاہ		
+nome	Cleopas	کلوپاس		
+nome	Hanochite	حنوکی	gentílico: base do nome + ی (nomes.tsv)	
+nome	Agagite	اجاجی	gentílico: base + ی	
+nome	Ahiramite	اخیرامی	gentílico: base + ی	
+nome	Amramite	عمرامی	gentílico: base + ی	
+nome	Ardite	اردی	gentílico: base + ی	
+nome	Arelite	عرلی	gentílico: base + ی	
+nome	Arodi	ارودی	gentílico: base + ی	
+nome	Ashbelite	اشبیلی	gentílico: base + ی	
+nome	Asrielite	عسریئیلی	gentílico: base + ی	
+nome	Becherite	بکری	gentílico: base + ی	
+nome	Belaite	بیلعی	gentílico: base + ی	
+nome	Beriite	بریعی	gentílico: base + ی	
+nome	Bichrite	بکری	gentílico: base + ی	
+nome	Abiezrite	ابیعزری	gentílico: base + ی	
+nome	Eranite	عیرانی	gentílico: base + ی	
+nome	Shemidaite	شمیدعی	gentílico: base + ی	
+nome	Ammonite	عمونی	gentílico: base + ی	
+nome	Clopas	کلوپاس		
+nome	Abram	ابرام		
+nome	Jehoash	یہوآش		
+nome	Christian	مسیحی		
+nome	Guard Gate	پہرے کا دروازہ		
+nome	Achor Valley	عکور کی وادی		
