@@ -214,10 +214,22 @@ def main(lang: str) -> dict:
     if perfil.usa_marcados:
         brutos = {v: {perfil.saida(n) for n in marcados.get(v, [])} for v in verses}
     else:
-        brutos = {v: {perfil.saida(c) for c in perfil.candidatos(t)} for v, t in verses.items()}
+        # ar: uma forma sem proclítico só entra se aparece sozinha no corpus (atestadas).
+        atestadas = frozenset(p for t in verses.values() for p in perfil.palavras(t)) if perfil.palavras else None
+        brutos = {v: {perfil.saida(c) for c in (perfil.candidatos(t, atestadas) if atestadas is not None
+                                                else perfil.candidatos(t))} for v, t in verses.items()}
     vocabulario = frozenset(c for s in brutos.values() for c in s)
     vc = {v: {perfil.chave(c, vocabulario) for c in s} for v, s in brutos.items()}
     df = Counter(c for s in vc.values() for c in s)
+    # Nomes com hífen em inglês também aceitam sequências de palavras (ar: بيت حورون para Beth-horon). Mapa à parte:
+    # os demais nomes continuam com as palavras sozinhas, sem mudança.
+    vc_h, df_h = vc, df
+    if perfil.sequencias:
+        vc_h = {v: vc[v] | perfil.sequencias(t) for v, t in verses.items()}
+        df_h = Counter(c for s in vc_h.values() for c in s)
+
+    def mapas(base: str) -> tuple[dict, Counter]:
+        return (vc_h, df_h) if "-" in base else (vc, df)
 
     entidades: dict[str, dict] = {}
     refs: dict[str, set[int]] = defaultdict(set)
@@ -237,7 +249,7 @@ def main(lang: str) -> dict:
     for cid, partes in partes_de.items():
         if partes is not None:
             versos_base[partes[0]] |= refs[cid]
-    preferido = {b: choose(b, V, vc, df, perfil).nome for b, V in versos_base.items()}
+    preferido = {b: choose(b, V, *mapas(b), perfil).nome for b, V in versos_base.items()}
 
     grupos: dict[tuple[str, str], dict] = {}
     chave_entidade: dict[str, tuple[str, str]] = {}
@@ -258,14 +270,15 @@ def main(lang: str) -> dict:
                     fora_comp += 1
             continue
         base = partes[0]
-        esc = choose(base, refs[cid], vc, df, perfil)
+        mv, md = mapas(base)
+        esc = choose(base, refs[cid], mv, md, perfil)
         if esc.nome is None:
             sem_versos += 1
             continue
         pref = preferido.get(base)
-        V = [v for v in refs[cid] if v in vc]
-        if pref and pref != esc.nome and V and sum(1 for v in V if pref in vc[v]) * 2 >= len(V):
-            esc = avalia(base, pref, refs[cid], vc, df, esc.nome, perfil)
+        V = [v for v in refs[cid] if v in mv]
+        if pref and pref != esc.nome and V and sum(1 for v in V if pref in mv[v]) * 2 >= len(V):
+            esc = avalia(base, pref, refs[cid], mv, md, esc.nome, perfil)
         chave = (base, esc.nome)
         chave_entidade[cid] = chave
         g = grupos.setdefault(chave, {"cids": [], "versos": set(), "alts": Counter()})
@@ -283,7 +296,8 @@ def main(lang: str) -> dict:
         if (base, c) in chaves_preservadas:
             continue
         alt = next((a for a, _ in g["alts"].most_common() if a != c), None)
-        e = avalia(base, c, g["versos"], vc, df, alt, perfil)
+        mv, md = mapas(base)
+        e = avalia(base, c, g["versos"], mv, md, alt, perfil)
         linhas.append({
             "nome_en": base,
             "candidato": c,

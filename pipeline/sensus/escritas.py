@@ -54,6 +54,9 @@ class Perfil:
     usa_marcados: bool = False               # candidatos vêm dos nomes marcados na Bíblia (\pn, ؔ)
     limiares: Limiares = LIMIARES_PT
     maiuscula: str = "[^\\W\\d_]"            # primeira letra de uma palavra capitalizada (regex)
+    # ar: palavras do corpus (para validar formas sem proclítico) e sequências de 2-3 palavras (nomes com hífen).
+    palavras: Callable[[str], set[str]] | None = None
+    sequencias: Callable[[str], set[str]] | None = None
 
 
 # ---- candidatos ---------------------------------------------------------------------------------------------------
@@ -80,18 +83,43 @@ def _cand_ru(texto: str) -> set[str]:
     return set(_PALAVRA_RU.findall(texto))
 
 
-def _cand_ar(texto: str) -> set[str]:
-    # Árabe não tem maiúscula. A palavra inteira vale, e também a forma sem proclítico (و ف ب ل ك e as duplas).
+def _palavras_ar(texto: str) -> set[str]:
+    # Palavras do texto (saida), para o corpus: dizem se uma forma sem proclítico aparece sozinha.
+    return {t for t in (_saida_ar(x) for x in _TOKEN_AR.findall(texto)) if len(t) >= 2}
+
+
+def _cand_ar(texto: str, atestadas: frozenset[str] = frozenset()) -> set[str]:
+    # Árabe não tem maiúscula. Sempre: a palavra inteira e a forma sem o و de conjunção (وبراخة -> براخة, Matthan
+    # ومتان -> متان). Sem as outras letras (ف ب ل ك e as duplas وب وك ول وف) a forma só entra se ela própria
+    # aparece sem proclítico no corpus (atestadas): فروايم (Parvaim) e فارص (Perez) ficam com a letra.
     out: set[str] = set()
-    for t in _TOKEN_AR.findall(texto):
-        t = _saida_ar(t)
-        if len(t) < 2:
-            continue
+    for t in _palavras_ar(texto):
         out.add(t)
-        if len(t) >= 4 and t[:2] in ("وب", "ول", "فب", "فل", "وك") and len(t) - 2 >= 2:
-            out.add(t[2:])
-        elif len(t) >= 3 and t[0] in "وفبلك":
+        if len(t) >= 3 and t[0] == "و":
             out.add(t[1:])
+        candidatas = []
+        if len(t) >= 3 and t[0] in "فبلك":
+            candidatas.append(t[1:])
+        if len(t) >= 4 and t[0] == "و" and t[1] in "فبلك":
+            candidatas.append(t[2:])
+        out.update(c for c in candidatas if len(c) >= 2 and c in atestadas)
+    return out
+
+
+# Preposições e partículas: não começam nem terminam um nome composto ('em Ezion-geber' não é 'Ezion-geber').
+_PARTICULAS_AR = frozenset({"في", "من", "على", "الى", "إلى", "عن", "مع", "عند", "ان", "أن", "ما", "لا"})
+
+
+def _sequencias_ar(texto: str) -> set[str]:
+    # Nomes com hífen em inglês são duas ou mais palavras em árabe (Beth-horon -> بيت حورون). Pares e trios de
+    # palavras seguidas do texto, sem o و de conjunção em cada palavra. Só é usado para nomes com hífen (ingest/nomes.py).
+    palavras = [p[1:] if len(p) >= 3 and p[0] == "و" else p for p in (_saida_ar(t) for t in _TOKEN_AR.findall(texto))]
+    out: set[str] = set()
+    for n in (2, 3):
+        for i in range(len(palavras) - n + 1):
+            trecho = palavras[i:i + n]
+            if all(len(p) >= 2 for p in trecho) and trecho[0] not in _PARTICULAS_AR and trecho[-1] not in _PARTICULAS_AR:
+                out.add(" ".join(trecho))
     return out
 
 
@@ -354,7 +382,7 @@ PERFIS: dict[str, Perfil] = {
     "ur": Perfil("ur", _cand_ur, _rom_ar, _saida_ur, _chave_identidade, _pontuacao_padrao, NAO_NUCLEO["ur"],
                  captura=False),
     "ar": Perfil("ar", _cand_ar, _rom_ar, _saida_ar, _chave_identidade, _pontuacao_padrao, NAO_NUCLEO["ar"],
-                 captura=False),
+                 captura=False, palavras=_palavras_ar, sequencias=_sequencias_ar),
     "id": _perfil_latino("id", maiuscula="[A-ZÀ-Ý]"),
     "vi": _perfil_latino("vi", rom=_rom_vi, maiuscula="[^\\W\\d_]"),
 }

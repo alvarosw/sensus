@@ -179,5 +179,51 @@ class PontuaTest(unittest.TestCase):
         self.assertAlmostEqual(s, similarity("Moses", "moisey"))
 
 
+class ArabeTest(unittest.TestCase):
+    """Árabe (arbvd): proclíticos, nomes compostos com hífen e escolha. Textos curtos de tradução própria."""
+
+    AR = PERFIS["ar"]
+
+    def _vc(self, textos):
+        atest = frozenset(p for t in textos.values() for p in self.AR.palavras(t))
+        vc = {v: self.AR.candidatos(t, atest) for v, t in textos.items()}
+        return vc, Counter(c for s in vc.values() for c in s)
+
+    def test_proclitico_e_retirado_sem_perder_letra_do_nome(self):
+        # NT: Mateus 1:15 (Matã, precedido de و de conjunção): 'ومتان' também dá 'متان'.
+        self.assertIn("متان", self.AR.candidatos("ومتان ولد يعقوب"))
+        # AT: Gênesis 38:29 (Perez = فارص): o ف faz parte do nome. 'ارص' só entra se aparece sozinho no corpus.
+        self.assertNotIn("ارص", self.AR.candidatos("فدعى اسمه فارص"))
+        self.assertIn("ارص", self.AR.candidatos("فدعى اسمه فارص", frozenset({"ارص"})))
+
+    def test_escolha_perez_mantem_o_pe(self):
+        # AT: Gênesis 38:29 (Perez). 'فارص' aparece em dois versículos; a forma sem o ف não aparece no corpus.
+        textos = {1: "فدعى اسمه فارص", 2: "ثم خرج أخوه وفارص يتبعه"}
+        vc, df = self._vc(textos)
+        esc = choose("Perez", [1, 2], vc, df, self.AR)
+        self.assertEqual(esc.nome, "فارص")
+
+    def test_escolha_lisanias_sem_conjuncao(self):
+        # NT: Lucas 3:1 (Lisânias, tetrarca da Abilene): 'وليسانيوس' perde o و, o nome é 'ليسانيوس'.
+        textos = {1: "وليسانيوس رئيس للأبلية", 2: "ليسانيوس الرئيس"}
+        vc, df = self._vc(textos)
+        self.assertEqual(choose("Lysanias", [1, 2], vc, df, self.AR).nome, "ليسانيوس")
+
+    def test_sequencia_de_palavras_para_nome_com_hifen(self):
+        # AT: Josué 10:10 (Bete-Horom = بيت حورون, duas palavras; و de conjunção em 'وبيت').
+        self.assertIn("بيت حورون", self.AR.sequencias("وطردهم الرب في بيت حورون"))
+        # preposição não entra no começo ou no fim do nome: 'في عصيون جابر' não é o nome
+        seq = self.AR.sequencias("وسكن في عصيون جابر")
+        self.assertIn("عصيون جابر", seq)
+        self.assertNotIn("في عصيون جابر", seq)
+
+    def test_escolha_composto_com_hifen_usa_sequencia(self):
+        # AT: Josué 10:10 (Beth-horon). Só o nome com hífen recebe sequências (mapa à parte, como em nomes.py).
+        textos = {1: "وطردهم الرب في بيت حورون", 2: "وبيت حورون ضربهم", 3: "وعقبة بيت حورون"}
+        vc = {v: self.AR.candidatos(t) | self.AR.sequencias(t) for v, t in textos.items()}
+        df = Counter(c for s in vc.values() for c in s)
+        self.assertEqual(choose("Beth-horon", [1, 2, 3], vc, df, self.AR).nome, "بيت حورون")
+
+
 if __name__ == "__main__":
     unittest.main()
