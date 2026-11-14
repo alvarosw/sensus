@@ -565,6 +565,7 @@ Jeuel	যুয়েল	যুয়েল	sem	baixa	2	1	1.00	ছেলে
 Jeuz	যিয়ূশ	যিয়ূশ	sem	baixa	2	1	1.00	নিজের
 Jezaniah	যাসনিয়	যাসনিয়	sem	baixa	2	4	0.75	যোহানন
 Jezreel	যিষ্রিয়েলীয়া	যিষ্রীয়েল	revisado	baixa	3	9	0.56	যিষ্রীয়েল
+Jezreel Valley			auto	baixa	1	3	0.00	
 Jezreel Valley	যিষ্রীয়েল উপত্যকা	যিষ্রীয়েল উপত্যকা	revisado	baixa	1	3	0.00	
 Jibsam	যিব্	যিব্	sem	baixa	1	1	1.00	হিসাবে
 Jidlaph	যিদ্	যিদ্	sem	baixa	2	1	1.00	পিল্
@@ -574,6 +575,7 @@ Joezer	যোয়েষর	যোয়েষর	revisado	baixa	2	1	1.00	য�
 Jonan	যোনম	যোনম	sem	baixa	1	1	1.00	যোনমের
 Jonath-elem-rechokim	ঈশ্বর	ঈশ্বর	sem	baixa	1	1	1.00	মারধর
 Jordan Valley		যর্দন উপত্যকা	revisado	baixa	1	8	0.00	
+Jordan Valley	যর্দ্দন উপত্যকা	যর্দ্দন উপত্যকা	auto	baixa	1	8	0.00	
 Jose	যোরীমের	যোরীমের	sem	baixa	1	1	1.00	ইলীয়েষরের
 Joshaviah	যোশবিয়	যোশবিয়	sem	baixa	2	1	1.00	যিৎমা
 Jubal	বীণা	যুবল	revisado	baixa	2	1	1.00	বংশীধারী
@@ -663,7 +665,9 @@ Mishraites	মিশ্রায়ীয়	মিশ্রায়ীয়	s
 Mithnites	মিত্নীয়	মিত্নীয়	sem	baixa	1	1	1.00	যোশাফট
 Mizar Mount			sem	baixa	1	1	0.00	
 Mizpeh Valley			sem	baixa	1	2	0.00	
+Mizpeh Valley	মিস্পা উপত্যকা	মিস্পা উপত্যকা	auto	baixa	1	2	0.00	
 Moab Plains		মোয়াবের সমভূমি	revisado	baixa	1	12	0.00	
+Moab Plains	মোয়াব সমভূমি	মোয়াব সমভূমি	auto	baixa	1	12	0.00	
 Mortar	মক্তেশ	মক্তেশ	sem	baixa	3	1	1.00	তোমরা
 Mount Baal-hermon			sem	baixa	1	1	0.00	
 Mount Baal-hermon	বাল-হর্মোণ পর্বত	বাল-হর্মোণ পর্বত	revisado	baixa	1	1	0.00	
@@ -781,6 +785,7 @@ Place	জায়গাটাকে	জায়গাটাকে	sem	baixa	1	
 Plain	পর্যন্ত	পর্যন্ত	sem	baixa	1	2	0.50	দিন
 Plain of Aven			sem	baixa	1	1	0.00	
 Plain of Jordan		যর্দনের সমভূমি	revisado	baixa	1	2	0.00	
+Plain of Jordan	যর্দ্দন সমভূমি	যর্দ্দন সমভূমি	auto	baixa	1	2	0.00	
 Pleiades	কৃত্তিকা	কৃত্তিকা	revisado	baixa	1	3	0.67	বিশেষ
 Pochereth-hazzebaim	হৎসবায়ীম	হৎসবায়ীম	revisado	baixa	1	2	1.00	পোখেরৎ
 Pool	পশু	পশু	sem	baixa	1	1	1.00	পুকুর
@@ -957,6 +962,7 @@ Tower	হননেলের	হননেলের	sem	baixa	1	4	0.75	হম্�
 Tower	হম্মেয়ার	হম্মেয়ার	sem	baixa	1	2	0.50	হননেলের
 Tower of Eder	এদর দুর্গ	এদর দুর্গ	revisado	baixa	1	2	0.00	
 Tower of Hananel		হননেল দুর্গ	revisado	baixa	2	4	0.00	
+Tower of Shechem			auto	baixa	1	3	0.00	
 Tower of Shechem	শিখিম দুর্গ	শিখিম দুর্গ	revisado	baixa	1	3	0.00	
 Tower of the Hundred			sem	baixa	2	2	0.00	
 Tower of the Ovens			sem	baixa	2	2	0.00	
@@ -1007,10 +1013,12 @@ Valley of Hinnom		হিন্নোম উপত্যকা	revisado	baixa	2	1
 Valley of Iphtahel		যিপ্তহেল উপত্যকা	revisado	baixa	1	2	0.00	
 Valley of Jehoshaphat	যিহোশাফট উপত্যকা	যিহোশাফট উপত্যকা	revisado	baixa	2	2	0.00	
 Valley of Jericho	যিরীহো উপত্যকা	যিরীহো উপত্যকা	revisado	baixa	2	1	0.00	
+Valley of Jezreel			auto	baixa	2	5	0.00	
 Valley of Jezreel	যিষ্রীয়েল উপত্যকা	যিষ্রীয়েল উপত্যকা	revisado	baixa	2	5	0.00	
 Valley of Jiphthahel		যিপ্তহেল উপত্যকা	revisado	baixa	1	2	0.00	
 Valley of Lebanon		লেবানন উপত্যকা	revisado	baixa	2	2	0.00	
 Valley of Mizpeh			sem	baixa	2	1	0.00	
+Valley of Mizpeh	মিস্পা উপত্যকা	মিস্পা উপত্যকা	auto	baixa	2	1	0.00	
 Valley of Rephaim	রফায়ীয় উপত্যকা	রফায়ীম উপত্যকা	revisado	baixa	2	8	0.00	
 Valley of Salt		লবণ উপত্যকা	revisado	baixa	2	5	0.00	
 Valley of Shaveh	শাবি উপত্যকা	শাবি উপত্যকা	revisado	baixa	3	2	0.00	
@@ -3370,6 +3378,7 @@ Mount Gilead	গিলিয়দ পর্বত	গিলিয়দ পর�
 Mount Heres	হেরস পর্বত	হেরস পর্বত	auto	alta	2	1	1.00	
 Mount Moriah	মোরিয়া পর্বত	মোরিয়া পর্বত	auto	alta	2	1	1.00	
 Mount Nebo	নবো পর্বত	নবো পর্বত	auto	alta	2	2	0.50	
+Mount Paran	পারণ পর্বত	পারণ পর্বত	auto	alta	2	2	1.00	
 Mount Zion	সিয়োন পর্বত	সিয়োন পর্বত	auto	alta	2	25	0.52	
 Moza	মোৎসা	মোৎসা	auto	alta	4	5	1.00	ঐফা
 Mushi	মূশি	মূশি	auto	alta	2	10	0.70	মুশি
@@ -3448,6 +3457,7 @@ Pagiel	পগীয়েল	পগীয়েল	auto	alta	2	5	1.00	পগী�
 Pahath-moab	পহৎ	পহৎ	auto	alta	6	6	1.00	আটশো
 Palti	পল্টি	পল্টি	auto	alta	2	1	1.00	রাফূ
 Paphos	পাফঃ	পাফঃ	auto	alta	3	2	1.00	পাম্ফুলিয়া
+Paran Mount	পারণ পর্বত	পারণ পর্বত	auto	alta	1	2	1.00	
 Parmenas	পার্মিনা	পার্মিনা	auto	alta	2	1	1.00	আন্তিয়খিয়াস্থ
 Paruah	পারূহ	পারূহ	revisado	alta	2	1	1.00	পারূহের
 Paseah	পাসেহ	পাসেহ	auto	alta	5	4	1.00	পাসেহের
