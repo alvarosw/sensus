@@ -2,6 +2,8 @@
 # Colunas: chave, modelo. Campos {nome} são trocados pelo valor; {pont.;}, {pont..}, {pont.,} são os sinais da língua.
 # Sem variante .f: no espanhol nenhum modelo concorda com o gênero do cargo (o cargo é um substantivo, e as
 # preposições e artigos fixos já vêm no modelo). Conectores e 'original' têm espaço nas pontas, de propósito.
+# A citação é impessoal ('Se le llama'), porque 'Llamado' não concordava com mulheres (Abigail). pos eufonia_es:
+# 'y' vira 'e' antes de i/hi (Eleazar e Itamar) e 'o' vira 'u' antes de o/ho (Ozni u Oznite).
 chave	modelo
 mencao_primeira	primera mención en {ref}
 mencao_unica	aparece solo en {ref}
@@ -16,8 +18,8 @@ comp_cidade	de la ciudad de {nome}
 comp_perto	cerca de {nome}
 comp_de	de {nome}
 comp_em	en {nome}
-citacao	Llamado {lista}
-citacao_apenas	Solo llamado {lista}
+citacao	Se le llama {lista}
+citacao_apenas	Solo se le llama {lista}
 original	 ({original})
 conector_e	 y 
 conector_ou	 o 
@@ -28,7 +30,7 @@ pont.,	,
 maiuscula_inicial	sim
 nome_ingles_permitido	sim
 flexao_relacao	nenhuma
-pos	nenhum
+pos	eufonia_es
 geo_melhor	Mejor identificación moderna: {nome} ({tipo}, geometría {geometria}); puntuación de asociación {score}/1000.
 geo_identificacao	Identificación: "{texto}" ({fonte}).
 geo_votos	Votos: {votos}.

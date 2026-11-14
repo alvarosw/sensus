@@ -24,7 +24,7 @@ from collections.abc import Mapping
 
 from sensus import refs
 from sensus.book_abbr import abreviaturas
-from sensus.flexao import elisao_fr, genitivo_bn, genitivo_ru
+from sensus.flexao import elisao_fr, eufonia_es, genitivo_bn, genitivo_ru
 
 # Seções do glossário (corrections/glossario-descricoes.tsv). Cada uma é um mapa inglês -> tradução.
 SECOES = ("cargo", "tempo", "tribo", "lugar", "relacao", "nome")
@@ -64,7 +64,7 @@ GRAMATICA_PT: Gramatica = {
 
 _PONT = (";", ".", ",")
 _FLEXOES = ("nenhuma", "genitivo_ru", "genitivo_bn")
-_POS = ("nenhum", "elisao_fr")
+_POS = ("nenhum", "elisao_fr", "eufonia_es")
 _GENEROS = ("", "m", "f", "n")
 
 _REF = re.compile(r"(?P<livro>(?:LXX\.)?[1-3]?[A-Za-z]+)\.(?P<cap>\d+)\.(?P<ver>\d+)(?P<suf>[a-z]?)")
@@ -177,6 +177,8 @@ def _pos(texto: str, gram: Mapping[str, str]) -> str:
     modo = gram.get("pos", "nenhum")
     if modo == "elisao_fr":
         return elisao_fr(texto)
+    if modo == "eufonia_es":
+        return eufonia_es(texto)
     if modo not in _POS:
         raise ValueError(f"gramática: pos desconhecido {modo!r} (use {', '.join(_POS)})")
     return texto
