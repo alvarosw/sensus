@@ -1,0 +1,58 @@
+# Glossário geo em hindi (openbible-geo, por regra; pipeline/sensus/geo_descricao.py). Colunas:
+#   secao      tipo | geometria | voto | fonte
+#   ingles     termo como aparece na descrição da fonte (exato)
+#   portugues  tradução usada na frase (aqui: hindi)
+#   nota       observação para o revisor (opcional)
+#   genero     não usado (os termos geo não concordam em gênero)
+secao	ingles	portugues	nota	genero
+tipo	settlement	बस्ती
+tipo	region	क्षेत्र
+tipo	mountain	पहाड़
+tipo	wadi	वादी
+tipo	river	नदी
+tipo	spring	झरना
+tipo	hill	टीला
+tipo	island	द्वीप
+tipo	valley	घाटी
+tipo	body of water	जलराशि
+tipo	well	कुआँ
+tipo	probability center radial	संभाव्यता केंद्र त्रिज्या
+tipo	road	मार्ग
+tipo	mountain range	पर्वत श्रृंखला
+tipo	structure	संरचना
+tipo	mouth of river	नदी का मुहाना
+tipo	pool	तालाब
+tipo	cliff	चट्टान
+tipo	cave	गुफा
+tipo	field	खेत
+tipo	mountain pass	पर्वतीय दर्रा
+tipo	mountain ridge	पर्वत कटक
+tipo	wall	दीवार
+tipo	forest	वन
+tipo	harbor	बंदरगाह
+tipo	garden	बाग
+tipo	promontory	भूशिर
+geometria	point	बिंदु
+geometria	polygon	बहुभुज
+geometria	path	पथ
+fonte	modern	आधुनिक
+fonte	ancient	प्राचीन
+voto	confidence_possible	भरोसा: संभव
+voto	confidence_likely	भरोसा: संभावित
+voto	confidence_yes	भरोसा: हाँ
+voto	confidence_mostlikely	भरोसा: बहुत संभव
+voto	confidence_unlikely	भरोसा: असंभव
+voto	confidence_no	भरोसा: नहीं
+voto	confidence_map	भरोसा: मानचित्र
+voto	authority_usually	अधिकार: आम तौर पर
+voto	authority_scholar	अधिकार: विद्वान
+voto	authority_traditional	अधिकार: परंपरागत
+voto	authority_parallel	अधिकार: समानांतर
+voto	authority_preserved	अधिकार: नाम सुरक्षित
+voto	authority_variant	अधिकार: रूप-भेद
+voto	authority_old	अधिकार: प्राचीन
+voto	unknown	अज्ञात
+voto	uncertain	अनिश्चित
+voto	identified_been	पहचान: हुई है
+voto	identified_is	पहचान: है
+voto	identified_adjective	पहचान: विशेषण
