@@ -58,6 +58,7 @@ const NOVAS: Array<{ id: string; kind: string; tradition: string }> = [
   { id: 'sword-tfg', kind: 'commentary', tradition: 'restoration' },
   { id: 'sword-tdavid', kind: 'commentary', tradition: 'reformed-baptist' },
   { id: 'sword-westminster', kind: 'commentary', tradition: 'presbyterian' },
+  { id: 'sword-lbcf1689', kind: 'commentary', tradition: 'reformed-baptist' },
   { id: 'smith-looking', kind: 'commentary', tradition: 'adventist' },
   { id: 'egw-great-controversy', kind: 'commentary', tradition: 'adventist' },
   { id: 'egw-patriarchs', kind: 'commentary', tradition: 'adventist' },

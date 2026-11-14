@@ -164,6 +164,13 @@ def artigos(osis: str, modo: str, capitulo: int | None = None) -> list[Artigo]:
 
 # ---- módulos -------------------------------------------------------------------
 
+def _lbcf(nos: list[GenBookNode]):
+    """Confissão Batista de 1689: capítulos 'Chapter N' (o prefácio, o fim e o índice não entram)."""
+    for n in nos:
+        if n.text and n.name.startswith("Chapter "):
+            yield "Baptist Confession of Faith of 1689", "cap", numero_capitulo(n.name), n.text
+
+
 def _westminster(nos: list[GenBookNode]):
     """Confissão (capítulos sob 'WCF'), Breve (nó 'WSC') e Maior (nós 'Q…' sob 'WLC') catecismos."""
     for n in nos:
@@ -192,6 +199,9 @@ MODULOS = [
     Modulo("Westminster", "Westminster.zip", "sword-westminster", "presbyterian",
            "Assembleia de Westminster (1643-1649)",
            "The Westminster Confession of Faith, with the Shorter and Larger Catechisms", _westminster),
+    Modulo("BaptistConfession1689", "BaptistConfession1689.zip", "sword-lbcf1689", "reformed-baptist",
+           "Igrejas batistas da Inglaterra e do País de Gales (1689)",
+           "Baptist Confession of Faith of 1689", _lbcf),
 ]
 
 

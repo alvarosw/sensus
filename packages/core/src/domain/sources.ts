@@ -92,6 +92,7 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'sword-tdavid': { short: 'Spurgeon', commentator: 'Spurgeon', role: 'commentary', lang: 'en' },
   // Confissões de fé (pipeline/ingest/sword_confissoes.py; domínio público, por referência das provas).
   'sword-westminster': { short: 'Westminster', commentator: 'Confissão de Westminster', role: 'commentary', lang: 'en' },
+  'sword-lbcf1689': { short: 'Confissão de 1689', commentator: 'Confissão Batista de 1689', role: 'commentary', lang: 'en' },
   // Adventistas (Ellen G. White, domínio público; só parágrafos com referência explícita). O comentarista leva a
   // obra: duas obras dela no mesmo versículo precisam de rótulos distintos.
   'egw-great-controversy': { short: 'Grande Conflito', commentator: 'Ellen G. White · Grande Conflito', role: 'commentary', lang: 'en' },
