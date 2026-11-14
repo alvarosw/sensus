@@ -111,6 +111,8 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'smith-us-prophecy': { short: 'Estados Unidos na Profecia', commentator: 'Uriah Smith · Estados Unidos na Profecia', role: 'commentary', lang: 'en' },
   'smith-sanctuary': { short: 'O Santuário e os 2.300 Dias', commentator: 'Uriah Smith · O Santuário e os 2.300 Dias', role: 'commentary', lang: 'en' },
   'smith-looking': { short: 'Olhando para Jesus', commentator: 'Uriah Smith · Olhando para Jesus', role: 'commentary', lang: 'en' },
+  // Sermões por texto (pipeline/ingest/sermoes_gutenberg.py): um comentário por sermão, no intervalo da passagem.
+  'maclaren-expositions': { short: 'Maclaren', commentator: 'Alexander Maclaren', role: 'commentary', lang: 'en' },
 };
 
 /** Ordem de preferência das fontes de lugares (menor = melhor) para escolher a identificação moderna. */
