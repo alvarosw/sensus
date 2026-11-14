@@ -53,6 +53,7 @@ Toda decisão abaixo tem **um** dono. Feature nenhuma reimplementa:
 | Quais idiomas o app tem? Qual o BCP-47, o endônimo, a direção, o código do motor de tradução? | `APP_LANGS`, `appLangInfo`, `fallbackChain` (`locale`) |
 | Nome e abreviação de um livro neste idioma? | `bookNameOf`, `bookAbbrOf`, `BOOK_NAMES` |
 | Este texto precisa de tradução automática para o idioma do app? | `needsTranslation`, `isTranslatableSource` |
+| Que texto curto mostrar (pacote, tradução automática ou original)? Como reescrever um título para o modelo? | `shownShortText`, `glossShortText`, `headwordShortText`, `topicHeadwordForTranslation`, `TOKEN_GLOSS_LANG` (`l10n`) |
 | Que Bíblias recomendar neste idioma? | `parseBibleCatalog`, `recommendBibles`, `bibleAbbr` (`bibles`) |
 | O leitor aceita este comentário (tradição e fonte)? | `isCommentaryAllowed` (`source-prefs`); quem aplica é o Repo |
 
@@ -100,13 +101,13 @@ strings.ts          textos: o objeto pt (fonte do tipo) + `localized({ pt, ...xT
 
 | Onde | O que mora ali |
 |---|---|
-| `packages/core/src/domain/` | `language` (Lang, Corpus, Testament, `CORPUS`, original por testamento, legenda das edições), `strong`, `lexicon` (`LEXICONS`, `pickLexicon`), `morph` (conteúdo, verbo, nome próprio por língua), `vid` (aritmética de vid), `script` (escrita e direção), `word` (`wordFacts`), `sources` (registro de fontes e tradições, idioma traduzível), `locale` (14 idiomas), `book-names` (livros por idioma), `bibles` (catálogo de Bíblias baixáveis), `source-prefs` (preferência de comentários) |
+| `packages/core/src/domain/` | `language` (Lang, Corpus, Testament, `CORPUS`, original por testamento, legenda das edições), `strong`, `lexicon` (`LEXICONS`, `pickLexicon`), `morph` (conteúdo, verbo, nome próprio por língua), `vid` (aritmética de vid), `script` (escrita e direção), `word` (`wordFacts`), `sources` (registro de fontes e tradições, idioma traduzível), `locale` (14 idiomas), `l10n` (textos curtos: glosas, títulos de verbete e tópico, nomes do pacote), `book-names` (livros por idioma), `bibles` (catálogo de Bíblias baixáveis), `source-prefs` (preferência de comentários) |
 | `packages/core/src/repo/` | consultas ao banco por área (`text`, `language`, `commentary`, `dictionary`, `entities`, `timeline*`, `cite`); `Repo` é a fachada |
 | `packages/core/src/` | painel (`panel.ts`), IA (`ai/`), linha do tempo e combinações (`timeline*.ts`), tradução (segmentos e lotes) |
 | `app/src/ui/` | componentes sem domínio (inclui `Buttons`) |
 | `app/src/data/` | banco, download, fila serial de consultas, fontes carregadas |
 | `app/src/state/study/` | store compartilhado em slices (`reader`, `selection`, `sheet`, `lenses`, `generations`, `panels`, `chat`, `toast`); `state/reader-nav.ts` |
-| `app/src/translate/` | `useTranslatable` (política `item` ou `global`), motor e cache em memória |
+| `app/src/translate/` | `useTranslatable` (política `item` ou `global`), `useShortTexts` (textos curtos: um lote e uma nota por bloco, sem oferta), `DownloadTranslation` (botão Baixar tradução), motor e cache em memória |
 | `app/src/features/<f>/index.ts` | API pública de `reader` (inclui a navegação), `study`, `timeline`, `maps`, `rich` |
 | `app/src/features/study/` | folha (`StudySheet`, `PeekContent` + `peek-model`, `Rail`), lentes (`lenses/` + `lens-model`), cards (`cards/`), fio (`thread`, `keyword`), dados e IA (`useStudyData`, `useStudyAi`) |
 

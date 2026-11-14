@@ -30,7 +30,7 @@ Pendências registradas durante o desenvolvimento. Prioridade: **P1** (próximo)
 - **P2 — Gill** vem do módulo SWORD do SermonIndex (declarado domínio público na .conf, não verificado
   de forma independente).
 - **P3 — Descrições em inglês** (entidades, dicionários, léxico): tradução automática no aparelho (ML Kit, opcional,
-  só Android) com o link do Google Tradutor como alternativa. Falta iOS e a qualidade da tradução por fragmentos.
+  só Android) com o botão Baixar tradução no painel de fonte. Falta iOS e a qualidade da tradução por fragmentos.
 - **P3 — Macula Greek/Hebrew** (árvores sintáticas, CC BY 4.0) para diagramação do argumento.
 
 ## IA
