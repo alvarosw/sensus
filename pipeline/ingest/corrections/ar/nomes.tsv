@@ -13,156 +13,156 @@
 # Bíblia da língua. Não achada: candidato = forma do glossário + núcleo, confianca baixa.
 # Revisão: comece pelas linhas de confianca baixa e media. Linhas revisado e sem não são recalculadas.
 nome_en	candidato	nome_ar	origem	confianca	entidades	versos	cobertura	alternativa
-Abel	الحجر	الحجر	auto	baixa	1	1	1.00	الصحراء
-Abel-keramim	الكروم	الكروم	auto	baixa	3	1	1.00	آبل
-Abel-maim	وآبل	وآبل	auto	baixa	1	1	1.00	آبل
-Abel-meholah	محولة	محولة	auto	baixa	3	3	1.00	آبل
-Abilene	الأبلية	الأبلية	auto	baixa	3	1	1.00	البنطي
-Acco	أكزيب	أكزيب	auto	baixa	2	1	1.00	وأكزيب
-Acco	أكملنا	أكملنا	auto	baixa	1	2	0.50	أكزيب
-Adadah	عدعدة	عدعدة	auto	baixa	3	1	1.00	وعدعدة
-Adoni-bezek	أدوني	أدوني	auto	baixa	2	3	1.00	جازاني
-Adoni-zedek	أدوني	أدوني	auto	baixa	2	2	1.00	بعاي
-Aeneas	إينياس	إينياس	auto	baixa	2	2	1.00	افرش
-Aenon	نون	نون	auto	baixa	3	1	1.00	أنه
-Agag	أجاج	أجاج	auto	baixa	4	13	0.46	يتسامى
-Agee	أجي	أجي	auto	baixa	2	1	1.00	عدسا
-Agur	أجور	أجور	auto	baixa	2	1	1.00	الرجل
-Ahoah	أخوخ	أخوخ	auto	baixa	1	1	1.00	وأخوخ
-Ahoah	الأخوخي	الأخوخي	auto	baixa	1	6	0.67	أربعة
-Akkub	أماكنهم	أماكنهم	auto	baixa	2	1	1.00	والشعب
-Akkub	حجابة	حجابة	auto	baixa	2	1	1.00	عقوب
-Akkub	وألياشيب	وألياشيب	auto	baixa	2	1	1.00	ألياشيب
-Akkub	وابين	وابين	auto	baixa	2	5	0.20	عقوب
-Al-taschith	احتمت	احتمت	auto	baixa	1	4	0.25	المصائب
-Alamoth	ألياب	ألياب	auto	baixa	1	3	0.33	الضيقات
-Alexander	فأشار	فأشار	auto	baixa	2	1	1.00	إسكندر
-Allon-bacuth	باكوت	باكوت	auto	baixa	3	1	1.00	اكوت
-Amalek	عماليق	عماليق	auto	baixa	4	31	0.81	أراحك
-Amaw	لعام	لعام	auto	baixa	3	1	1.00	بلعام
-Amminadib	جعلتني	جعلتني	auto	baixa	1	1	1.00	ين
-Ammon	عمون	عمون	auto	baixa	3	125	0.78	أكمنة
-Amok	عاموق	عاموق	auto	baixa	2	2	1.00	وعاموق
-Amorite	الأموري	الأموري	auto	baixa	1	4	1.00	والأموري
-Amorites	الأموريين	الأموريين	auto	baixa	1	86	0.79	أموري
-Anak	عناق	عناق	auto	baixa	2	16	0.56	هناك
-Angle	الوادي	الوادي	auto	baixa	2	1	1.00	الزاوية
-Angle	فالال	فالال	auto	baixa	1	5	0.20	ثانيا
-Annas	حنان	حنان	auto	baixa	2	4	1.00	الكهنة
-Apharasthchite	الأفرسكيين	الأفرسكيين	auto	baixa	1	3	0.67	الأفرستكيين
-Aphek	أفيق	أفيق	auto	baixa	10	11	0.82	وأفيق
-Apollyon	أبوليون	أبوليون	auto	baixa	1	1	1.00	باليونانية
-Aram-naharaim	اقتحمتنا	اقتحمتنا	auto	baixa	2	1	1.00	أرجعنا
-Aram-zobah	أرجعنا	أرجعنا	auto	baixa	1	1	1.00	اقتحمتنا
-Archites	الأركي	الأركي	auto	baixa	1	6	0.83	الأركيين
-Areopagus	اغوس	اغوس	auto	baixa	3	4	0.50	أريوس
-Aretas	الحارث	الحارث	auto	baixa	2	1	1.00	يحرس
-Ariel	أسدي	أسدي	auto	baixa	1	2	1.00	الأفعال
-Arimathea	الرامة	الرامة	auto	baixa	2	4	1.00	يلاطس
-Arkite	العرقي	العرقي	auto	baixa	1	2	1.00	والعرقي
-Arkites	العرقي	العرقي	auto	baixa	1	2	1.00	والعرقي
-Armageddon	هرمجدون	هرمجدون	auto	baixa	2	1	1.00	بالعبرانية
-Aroer	العروعيري	العروعيري	auto	baixa	1	1	1.00	العشتروتي
-Artaxerxes	أرتحششتا	أرتحششتا	auto	baixa	3	14	0.79	أرتحشستا
-Arvadite	الأروادي	الأروادي	auto	baixa	1	2	1.00	والأروادي
-Arvadites	الأروادي	الأروادي	auto	baixa	1	2	1.00	والأروادي
-Asen	اثنا	اثنا	auto	baixa	1	1	1.00	واثنا
-Ashteroth-karnaim	قرنايم	قرنايم	auto	baixa	3	2	0.50	عشتاروث
-Ataroth-addar	عطاروت	عطاروت	auto	baixa	3	2	1.00	أدار
-Atroth-beth-joab	عطروت	عطروت	auto	baixa	2	1	1.00	الصرعي
-Atroth-shophan	شوفان	شوفان	auto	baixa	3	1	1.00	عطروت
-Ayyah	جازر	جازر	auto	baixa	2	1	1.00	أملاكهم
-Azarael	وعزرا	وعزرا	auto	baixa	1	1	1.00	وعزرئيل
-Azbuk	عزبوق	عزبوق	auto	baixa	2	1	1.00	البركة
-Azekah	أفس	أفس	auto	baixa	3	7	0.14	سوكوه
-Azgad	عزجد	عزجد	auto	baixa	4	4	0.75	هقاطان
-Aznoth-tabor	أزنوت	أزنوت	auto	baixa	3	1	1.00	تابور
-Azotus	مجتاز	مجتاز	auto	baixa	1	1	1.00	أشدود
-Azur	عزور	عزور	auto	baixa	2	2	1.00	الشهر
-Azzur	عزور	عزور	auto	baixa	4	3	1.00	وعزور
-Baal-hamon	هامون	هامون	auto	baixa	2	1	1.00	الكرم
-Baal-hazor	حاصور	حاصور	auto	baixa	3	1	1.00	الزمان
-Baal-hermon	حرمون	حرمون	auto	baixa	2	1	1.00	باشان
-Baal-meon	شبام	شبام	auto	baixa	1	6	0.17	وبالع
-Baal-meon	وبالع	وبالع	auto	baixa	2	4	0.25	المدن
-Baal-peor	ببعل	ببعل	auto	baixa	2	3	0.67	بعل
-Baal-zebub	التشبي	التشبي	auto	baixa	2	4	0.25	أليس
-Baal-zephon	صفون	صفون	auto	baixa	3	3	1.00	بعل
-Baalath-beer	بعلة	بعلة	auto	baixa	2	2	0.50	الضياع
-Baalath-beer	وبعلوت	وبعلوت	auto	baixa	1	5	0.40	بعلة
-Baale-judah	بالاسم	بالاسم	auto	baixa	2	1	1.00	الجالس
-Baharum	البحرومي	البحرومي	auto	baixa	1	1	1.00	إليحبا
-Bajith	لبكاء	لبكاء	auto	baixa	1	1	1.00	للبكاء
-Bakbakkar	وبقبقر	وبقبقر	auto	baixa	2	1	1.00	قبقر
-Bakbuk	بقبوق	بقبوق	auto	baixa	2	2	1.00	حقوفا
-Bakbukiah	وبقبقيا	وبقبقيا	auto	baixa	2	3	1.00	قبقيا
-Bamoth-baal	وباموت	وباموت	auto	baixa	3	3	0.33	اموت
-Barkos	برقوس	برقوس	auto	baixa	2	2	1.00	رقوس
-Bath-shua	أماته	أماته	auto	baixa	1	2	0.50	الثلاثة
-Bealoth	وبعلوت	وبعلوت	auto	baixa	4	2	1.00	علوت
-Bear	والجبار	والجبار	auto	baixa	1	2	0.50	الجبار
-Beer-elim	إيليم	إيليم	auto	baixa	3	1	1.00	أجلايم
-Beer-lahai-roi	بئر	بئر	auto	baixa	3	3	1.00	رئي
-Beeroth	وبئيروت	وبئيروت	auto	baixa	3	11	0.36	بئيروت
-Beersheba	تسبى	تسبى	auto	baixa	1	23	0.04	بئر
-Bela	وبالع	وبالع	auto	baixa	2	1	1.00	وبعل
-Ben	وبين	وبين	auto	baixa	2	1	1.00	وبنايا
-Ben-Geber	جابر	جابر	auto	baixa	1	1	1.00	بأسوار
-Ben-deker	دقر	دقر	auto	baixa	1	1	1.00	ابن
-Ben-hesed	حسد	حسد	auto	baixa	1	1	1.00	ابن
-Ben-hur	ابن	ابن	auto	baixa	1	1	1.00	حور
-Ben-zoheth	وبنزوحيت	وبنزوحيت	auto	baixa	2	1	1.00	نزوحيت
-Bene-berak	برق	برق	auto	baixa	3	1	1.00	وبني
-Bene-jaakan	يعقان	يعقان	auto	baixa	3	3	1.00	بني
-Beno	بنو	بنو	auto	baixa	2	2	1.00	ابن
-Beon	وبعون	وبعون	auto	baixa	2	1	1.00	وحشبون
-Besor	البسور	البسور	auto	baixa	3	3	1.00	يعبروا
-Betah	باطح	باطح	auto	baixa	2	1	1.00	بيروثاي
-Beth-Ashtoreth	عشتاروث	عشتاروث	auto	baixa	1	1	1.00	سور
-Beth-anath	عناة	عناة	auto	baixa	3	2	1.00	يرأون
-Beth-anoth	ألتقون	ألتقون	auto	baixa	3	1	1.00	وألتقون
-Beth-ashbea	أشبيع	أشبيع	auto	baixa	3	1	1.00	البز
-Beth-azmaveth	عزموت	عزموت	auto	baixa	2	3	1.00	أربعون
-Beth-baal-meon	وباموت	وباموت	auto	baixa	1	1	1.00	معون
-Beth-dagon	داجون	داجون	auto	baixa	6	2	1.00	ومقيدة
-Beth-eden	عدن	عدن	auto	baixa	3	1	1.00	بيت
-Beth-eked	بيت	بيت	auto	baixa	3	2	1.00	عقد
-Beth-emek	بيت	بيت	auto	baixa	3	1	1.00	ابول
-Beth-ezel	هأيصل	هأيصل	auto	baixa	3	1	1.00	بيت
-Beth-gader	جادير	جادير	auto	baixa	2	1	1.00	حاريف
-Beth-gamul	جامول	جامول	auto	baixa	3	1	1.00	قريتايم
-Beth-gilgal	الجلجال	الجلجال	auto	baixa	2	1	1.00	ضياعا
-Beth-haccherem	هكاريم	هكاريم	auto	baixa	3	2	1.00	رممه
-Beth-haggan	البستان	البستان	auto	baixa	3	1	1.00	طارده
-Beth-hoglah	حجلة	حجلة	auto	baixa	3	3	1.00	بيت
-Beth-le-aphrah	عفرة	عفرة	auto	baixa	2	1	1.00	التراب
-Beth-lebaoth	لباوت	لباوت	auto	baixa	3	1	1.00	باوت
-Beth-marcaboth	مركبوت	مركبوت	auto	baixa	2	2	0.50	المركبوت
-Beth-meon	معون	معون	auto	baixa	2	1	1.00	بيت
-Beth-merhak	أثره	أثره	auto	baixa	1	1	1.00	البيت
-Beth-millo	إلأ	إلأ	auto	baixa	3	3	0.33	أبيمالك
-Beth-pazzez	صيص	صيص	auto	baixa	3	1	1.00	فصيص
-Beth-pelet	وبيت	وبيت	auto	baixa	3	2	1.00	الط
-Beth-peor	قبره	قبره	auto	baixa	3	4	0.25	بيت
-Beth-rehob	بيت	بيت	auto	baixa	3	4	0.50	لبيت
-Beth-shemesh	شمس	شمس	auto	baixa	6	3	1.00	شحصيمة
-Beth-tappuah	أفيقة	أفيقة	auto	baixa	3	1	1.00	وأفيقة
-Beth-togarmah	توجرمة	توجرمة	auto	baixa	3	2	1.00	البغال
-Beth-zur	صور	صور	auto	baixa	3	4	1.00	وبيت
-Bethany	عبرة	عبرة	auto	baixa	2	1	1.00	ان
-Bethel	بيت	بيت	auto	baixa	5	76	0.82	إيل
-Bethel	متكلهم	متكلهم	auto	baixa	1	2	0.50	بيت
-Bether	وأشبه	وأشبه	auto	baixa	1	1	1.00	غفر
-Bethlehem	لحم	لحم	auto	baixa	7	58	0.83	وبيت
-Bethphage	فاجي	فاجي	auto	baixa	3	3	1.00	قربوا
-Bethuel	بتوئيل	بتوئيل	auto	baixa	4	10	0.80	وبتوئيل
-Bezek	بازق	بازق	auto	baixa	6	3	1.00	ازق
-Binnui	بنوي	بنوي	auto	baixa	4	2	1.00	بن
-Binnui	وبنوي	وبنوي	auto	baixa	5	4	1.00	وبصلئيل
-Bithron	أبنير	أبنير	auto	baixa	1	1	1.00	عبروا
-Bocheru	وبكرو	وبكرو	auto	baixa	2	2	1.00	كرو
-Bohan	بوهن	بوهن	auto	baixa	2	2	1.00	بن
-Bukki	بقي	بقي	auto	baixa	4	4	0.75	بني
+Abel	الحجر	هابيل	revisado	baixa	1	1	1.00	الصحراء
+Abel-keramim	الكروم	آبل الكرامين	revisado	baixa	3	1	1.00	آبل
+Abel-maim	وآبل	آبل مايم	revisado	baixa	1	1	1.00	آبل
+Abel-meholah	محولة	آبل محولة	revisado	baixa	3	3	1.00	آبل
+Abilene	الأبلية	أبيلية	revisado	baixa	3	1	1.00	البنطي
+Acco	أكزيب	عكو	revisado	baixa	2	1	1.00	وأكزيب
+Acco	أكملنا	أكملنا	sem	baixa	1	2	0.50	أكزيب
+Adadah	عدعدة	عدعدة	revisado	baixa	3	1	1.00	وعدعدة
+Adoni-bezek	أدوني	أدوني بازق	revisado	baixa	2	3	1.00	جازاني
+Adoni-zedek	أدوني	أدوني صادق	revisado	baixa	2	2	1.00	بعاي
+Aeneas	إينياس	إينياس	revisado	baixa	2	2	1.00	افرش
+Aenon	نون	عينون	revisado	baixa	3	1	1.00	أنه
+Agag	أجاج	أجاج	revisado	baixa	4	13	0.46	يتسامى
+Agee	أجي	أجي	revisado	baixa	2	1	1.00	عدسا
+Agur	أجور	أجور	revisado	baixa	2	1	1.00	الرجل
+Ahoah	أخوخ	أخوخي	revisado	baixa	1	1	1.00	وأخوخ
+Ahoah	الأخوخي	الأخوخي	sem	baixa	1	6	0.67	أربعة
+Akkub	أماكنهم	أماكنهم	sem	baixa	2	1	1.00	والشعب
+Akkub	حجابة	عقوب	revisado	baixa	2	1	1.00	عقوب
+Akkub	وألياشيب	وألياشيب	sem	baixa	2	1	1.00	ألياشيب
+Akkub	وابين	وابين	sem	baixa	2	5	0.20	عقوب
+Al-taschith	احتمت	احتمت	sem	baixa	1	4	0.25	المصائب
+Alamoth	ألياب	ألياب	sem	baixa	1	3	0.33	الضيقات
+Alexander	فأشار	إسكندر	revisado	baixa	2	1	1.00	إسكندر
+Allon-bacuth	باكوت	ألون باكوت	revisado	baixa	3	1	1.00	اكوت
+Amalek	عماليق	عماليق	revisado	baixa	4	31	0.81	أراحك
+Amaw	لعام	لعام	sem	baixa	3	1	1.00	بلعام
+Amminadib	جعلتني	عميناداب	revisado	baixa	1	1	1.00	ين
+Ammon	عمون	عمون	revisado	baixa	3	125	0.78	أكمنة
+Amok	عاموق	عاموق	revisado	baixa	2	2	1.00	وعاموق
+Amorite	الأموري	الأموري	revisado	baixa	1	4	1.00	والأموري
+Amorites	الأموريين	الأموريين	revisado	baixa	1	86	0.79	أموري
+Anak	عناق	عناق	revisado	baixa	2	16	0.56	هناك
+Angle	الوادي	الوادي	sem	baixa	2	1	1.00	الزاوية
+Angle	فالال	فالال	sem	baixa	1	5	0.20	ثانيا
+Annas	حنان	حنان	revisado	baixa	2	4	1.00	الكهنة
+Apharasthchite	الأفرسكيين	الأفرستكيين	revisado	baixa	1	3	0.67	الأفرستكيين
+Aphek	أفيق	أفيق	revisado	baixa	10	11	0.82	وأفيق
+Apollyon	أبوليون	أبوليون	revisado	baixa	1	1	1.00	باليونانية
+Aram-naharaim	اقتحمتنا	أرام النهرين	revisado	baixa	2	1	1.00	أرجعنا
+Aram-zobah	أرجعنا	أرام صوبة	revisado	baixa	1	1	1.00	اقتحمتنا
+Archites	الأركي	الأركيين	revisado	baixa	1	6	0.83	الأركيين
+Areopagus	اغوس	أريوس باغوس	revisado	baixa	3	4	0.50	أريوس
+Aretas	الحارث	الحارث	revisado	baixa	2	1	1.00	يحرس
+Ariel	أسدي	أرئيل	revisado	baixa	1	2	1.00	الأفعال
+Arimathea	الرامة	الرامة	revisado	baixa	2	4	1.00	يلاطس
+Arkite	العرقي	العرقي	revisado	baixa	1	2	1.00	والعرقي
+Arkites	العرقي	العرقيين	revisado	baixa	1	2	1.00	والعرقي
+Armageddon	هرمجدون	هرمجدون	revisado	baixa	2	1	1.00	بالعبرانية
+Aroer	العروعيري	عروعير	revisado	baixa	1	1	1.00	العشتروتي
+Artaxerxes	أرتحششتا	أرتحشستا	revisado	baixa	3	14	0.79	أرتحشستا
+Arvadite	الأروادي	الأروادي	revisado	baixa	1	2	1.00	والأروادي
+Arvadites	الأروادي	الأرواديين	revisado	baixa	1	2	1.00	والأروادي
+Asen	اثنا	اثنا	sem	baixa	1	1	1.00	واثنا
+Ashteroth-karnaim	قرنايم	عشتاروث قرنايم	revisado	baixa	3	2	0.50	عشتاروث
+Ataroth-addar	عطاروت	عطاروت أدار	revisado	baixa	3	2	1.00	أدار
+Atroth-beth-joab	عطروت	عطروت بيت يوآب	revisado	baixa	2	1	1.00	الصرعي
+Atroth-shophan	شوفان	عطروت شوفان	revisado	baixa	3	1	1.00	عطروت
+Ayyah	جازر	جازر	sem	baixa	2	1	1.00	أملاكهم
+Azarael	وعزرا	عزرئيل	revisado	baixa	1	1	1.00	وعزرئيل
+Azbuk	عزبوق	عزبوق	revisado	baixa	2	1	1.00	البركة
+Azekah	أفس	عزيقة	revisado	baixa	3	7	0.14	سوكوه
+Azgad	عزجد	عزجد	revisado	baixa	4	4	0.75	هقاطان
+Aznoth-tabor	أزنوت	أزنوت تابور	revisado	baixa	3	1	1.00	تابور
+Azotus	مجتاز	أشدود	revisado	baixa	1	1	1.00	أشدود
+Azur	عزور	عزور	revisado	baixa	2	2	1.00	الشهر
+Azzur	عزور	عزور	revisado	baixa	4	3	1.00	وعزور
+Baal-hamon	هامون	بعل هامون	revisado	baixa	2	1	1.00	الكرم
+Baal-hazor	حاصور	بعل حاصور	revisado	baixa	3	1	1.00	الزمان
+Baal-hermon	حرمون	بعل حرمون	revisado	baixa	2	1	1.00	باشان
+Baal-meon	شبام	بعل معون	revisado	baixa	1	6	0.17	وبالع
+Baal-meon	وبالع	وبالع	sem	baixa	2	4	0.25	المدن
+Baal-peor	ببعل	بعل فغور	revisado	baixa	2	3	0.67	بعل
+Baal-zebub	التشبي	بعل زبوب	revisado	baixa	2	4	0.25	أليس
+Baal-zephon	صفون	بعل صفون	revisado	baixa	3	3	1.00	بعل
+Baalath-beer	بعلة	بعلة	revisado	baixa	2	2	0.50	الضياع
+Baalath-beer	وبعلوت	وبعلوت	sem	baixa	1	5	0.40	بعلة
+Baale-judah	بالاسم	بعلة يهوذا	revisado	baixa	2	1	1.00	الجالس
+Baharum	البحرومي	البحرومي	sem	baixa	1	1	1.00	إليحبا
+Bajith	لبكاء	لبكاء	sem	baixa	1	1	1.00	للبكاء
+Bakbakkar	وبقبقر	بقبقر	revisado	baixa	2	1	1.00	قبقر
+Bakbuk	بقبوق	بقبوق	revisado	baixa	2	2	1.00	حقوفا
+Bakbukiah	وبقبقيا	بقبقيا	revisado	baixa	2	3	1.00	قبقيا
+Bamoth-baal	وباموت	باموت بعل	revisado	baixa	3	3	0.33	اموت
+Barkos	برقوس	برقوس	revisado	baixa	2	2	1.00	رقوس
+Bath-shua	أماته	بنت شوع	revisado	baixa	1	2	0.50	الثلاثة
+Bealoth	وبعلوت	بعلوت	revisado	baixa	4	2	1.00	علوت
+Bear	والجبار	الدب	revisado	baixa	1	2	0.50	الجبار
+Beer-elim	إيليم	بئر إيليم	revisado	baixa	3	1	1.00	أجلايم
+Beer-lahai-roi	بئر	بئر لحي رئي	revisado	baixa	3	3	1.00	رئي
+Beeroth	وبئيروت	بئيروت	revisado	baixa	3	11	0.36	بئيروت
+Beersheba	تسبى	بئر سبع	revisado	baixa	1	23	0.04	بئر
+Bela	وبالع	بالع	revisado	baixa	2	1	1.00	وبعل
+Ben	وبين	وبين	sem	baixa	2	1	1.00	وبنايا
+Ben-Geber	جابر	بن جابر	revisado	baixa	1	1	1.00	بأسوار
+Ben-deker	دقر	بن دقر	revisado	baixa	1	1	1.00	ابن
+Ben-hesed	حسد	بن حسد	revisado	baixa	1	1	1.00	ابن
+Ben-hur	ابن	بن حور	revisado	baixa	1	1	1.00	حور
+Ben-zoheth	وبنزوحيت	بنزوحيت	revisado	baixa	2	1	1.00	نزوحيت
+Bene-berak	برق	بني براق	revisado	baixa	3	1	1.00	وبني
+Bene-jaakan	يعقان	بني يعقان	revisado	baixa	3	3	1.00	بني
+Beno	بنو	بنو	sem	baixa	2	2	1.00	ابن
+Beon	وبعون	بعون	revisado	baixa	2	1	1.00	وحشبون
+Besor	البسور	بسور	revisado	baixa	3	3	1.00	يعبروا
+Betah	باطح	باطح	sem	baixa	2	1	1.00	بيروثاي
+Beth-Ashtoreth	عشتاروث	بيت عشتاروث	revisado	baixa	1	1	1.00	سور
+Beth-anath	عناة	بيت عنة	revisado	baixa	3	2	1.00	يرأون
+Beth-anoth	ألتقون	بيت عنوت	revisado	baixa	3	1	1.00	وألتقون
+Beth-ashbea	أشبيع	أشبيع	sem	baixa	3	1	1.00	البز
+Beth-azmaveth	عزموت	بيت عزموت	revisado	baixa	2	3	1.00	أربعون
+Beth-baal-meon	وباموت	بيت بعل معون	revisado	baixa	1	1	1.00	معون
+Beth-dagon	داجون	بيت داجون	revisado	baixa	6	2	1.00	ومقيدة
+Beth-eden	عدن	بيت عدن	revisado	baixa	3	1	1.00	بيت
+Beth-eked	بيت	بيت عقد	revisado	baixa	3	2	1.00	عقد
+Beth-emek	بيت	بيت عمق	revisado	baixa	3	1	1.00	ابول
+Beth-ezel	هأيصل	هأيصل	sem	baixa	3	1	1.00	بيت
+Beth-gader	جادير	بيت جادر	revisado	baixa	2	1	1.00	حاريف
+Beth-gamul	جامول	بيت جامول	revisado	baixa	3	1	1.00	قريتايم
+Beth-gilgal	الجلجال	بيت جلجال	revisado	baixa	2	1	1.00	ضياعا
+Beth-haccherem	هكاريم	بيت هكاريم	revisado	baixa	3	2	1.00	رممه
+Beth-haggan	البستان	بيت هجان	revisado	baixa	3	1	1.00	طارده
+Beth-hoglah	حجلة	بيت حجلة	revisado	baixa	3	3	1.00	بيت
+Beth-le-aphrah	عفرة	بيت لعفرة	revisado	baixa	2	1	1.00	التراب
+Beth-lebaoth	لباوت	بيت لباوت	revisado	baixa	3	1	1.00	باوت
+Beth-marcaboth	مركبوت	بيت مركبوت	revisado	baixa	2	2	0.50	المركبوت
+Beth-meon	معون	بيت معون	revisado	baixa	2	1	1.00	بيت
+Beth-merhak	أثره	أثره	sem	baixa	1	1	1.00	البيت
+Beth-millo	إلأ	إلأ	sem	baixa	3	3	0.33	أبيمالك
+Beth-pazzez	صيص	بيت فصيص	revisado	baixa	3	1	1.00	فصيص
+Beth-pelet	وبيت	بيت فالط	revisado	baixa	3	2	1.00	الط
+Beth-peor	قبره	بيت فغور	revisado	baixa	3	4	0.25	بيت
+Beth-rehob	بيت	بيت رحوب	revisado	baixa	3	4	0.50	لبيت
+Beth-shemesh	شمس	بيت شمس	revisado	baixa	6	3	1.00	شحصيمة
+Beth-tappuah	أفيقة	بيت تفوح	revisado	baixa	3	1	1.00	وأفيقة
+Beth-togarmah	توجرمة	بيت توجرمة	revisado	baixa	3	2	1.00	البغال
+Beth-zur	صور	بيت صور	revisado	baixa	3	4	1.00	وبيت
+Bethany	عبرة	بيت عنيا	revisado	baixa	2	1	1.00	ان
+Bethel	بيت	بيت إيل	revisado	baixa	5	76	0.82	إيل
+Bethel	متكلهم	بيت إيل	revisado	baixa	1	2	0.50	بيت
+Bether	وأشبه	وأشبه	sem	baixa	1	1	1.00	غفر
+Bethlehem	لحم	بيت لحم	revisado	baixa	7	58	0.83	وبيت
+Bethphage	فاجي	بيت فاجي	revisado	baixa	3	3	1.00	قربوا
+Bethuel	بتوئيل	بتوئيل	revisado	baixa	4	10	0.80	وبتوئيل
+Bezek	بازق	بازق	revisado	baixa	6	3	1.00	ازق
+Binnui	بنوي	بنوي	revisado	baixa	4	2	1.00	بن
+Binnui	وبنوي	بنوي	revisado	baixa	5	4	1.00	وبصلئيل
+Bithron	أبنير	أبنير	sem	baixa	1	1	1.00	عبروا
+Bocheru	وبكرو	بكرو	revisado	baixa	2	2	1.00	كرو
+Bohan	بوهن	بوهن	revisado	baixa	2	2	1.00	بن
+Bukki	بقي	بقي	revisado	baixa	4	4	0.75	بني
 Buz	وبوز	وبوز	auto	baixa	3	1	1.00	وز
 Buz	وبوزا	وبوزا	auto	baixa	2	1	1.00	عوصا
 Buzites	البوزي	البوزي	auto	baixa	1	2	1.00	وخشيت
