@@ -1,0 +1,372 @@
+# Notas da revisão de nomes por agentes de IA (uma linha por nome_en + candidato, ou nome_en + tipo).
+# Conferidas no texto da Bíblia da língua e na tradução inglesa. Só registro: o ingestor não lê este arquivo.
+nome_en	tipo	nome_de	origem	nota
+Abila	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt; fora do texto de Lutero
+Abila Lysaniou	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt; fora do texto de Lutero
+Adasa	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt; fora do texto de Lutero
+Adramyttium	place	Adramyttium	revisado	rev. IA: conferido em Acts.27.2; Lutero 1912: Adramyttium
+Adulis	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Al-taschith	other	Al-Taschith	revisado	rev. IA: conferido em Ps.57.1; Lutero 1912: Al-Taschith; título de salmo; Lutero traduz
+Alamoth	other	Alamoth	revisado	rev. IA: conferido em 1Chr.15.20; Lutero 1912: Alamoth
+Ama	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Amate	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Amaw	place		sem	rev. IA: conferido em Num.22.5; sem forma própria segura em Lutero 1912; sem nome pt
+Amminadib	person	Ammi-Nadib	revisado	rev. IA: conferido em Song.6.12; Lutero 1912: Ammi-Nadib
+Angle	place	Winkel	revisado	rev. IA: conferido em 2Chr.26.9; Lutero 1912: Winkel; Lutero: Winkel (Ne 3,19)
+Apostles	group	Apostel	revisado	rev. IA: conferido em texto; Lutero 1912: Apostel
+Apostles (Post-Ascension)	group	Apostel nach der Himmelfahrt	revisado	rev. IA: conferido em texto; Lutero 1912: Apostel nach der Himmelfahrt
+Apostles (The Eleven)	group	Die Elf	revisado	rev. IA: conferido em texto; Lutero 1912: Die Elf
+Arabah	place	Araba	revisado	rev. IA: conferido em Deut.1.1; Lutero 1912: Araba
+Aram-naharaim	place	Mesopotamien	revisado	rev. IA: conferido em Ps.60.1; Lutero 1912: Mesopotamien
+Aram-zobah	place	Aram-Zoba	revisado	rev. IA: conferido em Ps.60.1; Lutero 1912: Aram-Zoba
+Aramitess	person	Syrerin	revisado	rev. IA: conferido em 1Chr.7.14; Lutero 1912: Syrerin
+Arbela	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Arsinoe	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Asen	person		sem	rev. IA: conferido em Neh.7.24; sem forma própria segura em Lutero 1912; sem nome pt
+Ashdod's	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Atroth-beth-joab	place	Atharoth-Beth-Joab	revisado	rev. IA: conferido em 1Chr.2.54; Lutero 1912: Atharoth-Beth-Joab
+Bajith	place		sem	rev. IA: conferido em Isa.15.2; sem forma própria segura em Lutero 1912; sem nome pt
+Barsabas Justus	person	Joseph Barsabas, genannt Just	revisado	rev. IA: conferido em Acts.1.23; Lutero 1912: Joseph Barsabas, genannt Just; Lutero: Joseph, genannt Barsabas, mit dem Zunamen Just
+Batanea	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Beeroth Bene-jaakan	place	Beeroth der Kinder Jakan	revisado	rev. IA: conferido em Deut.10.6; Lutero 1912: Beeroth der Kinder Jakan
+Belamon	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Benjamin's Gate	place	Tor Benjamin	revisado	rev. IA: conferido em texto; Lutero 1912: Tor Benjamin
+Beth-Ashtoreth	place	Haus der Astharoth	revisado	rev. IA: conferido em 1Sam.31.10; Lutero 1912: Haus der Astharoth
+Beth-eked	place	Hirtenhaus	revisado	rev. IA: conferido em 2Kgs.10.12; Lutero 1912: Hirtenhaus
+Beth-haggan	place	Beth-Haggan	revisado	rev. IA: conferido em 2Kgs.9.27; Lutero 1912: Beth-Haggan
+Beth-horon_Lower	place	Nieder-Beth-Horon	revisado	rev. IA: conferido em Josh.10.10; Lutero 1912: Nieder-Beth-Horon
+Beth-horon_Upper	place	Ober-Beth-Horon	revisado	rev. IA: conferido em Josh.16.5; Lutero 1912: Ober-Beth-Horon
+Beth-merhak	place		sem	rev. IA: conferido em 2Sam.15.17; sem forma própria segura em Lutero 1912; sem nome pt
+Bether 2	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Bether_Mountain	place	Scheideberge	revisado	rev. IA: conferido em Song.2.17; Lutero 1912: Scheideberge; Lutero: Scheideberge (Ct 2,17)
+Bethlehem Ephrathah	place	Bethlehem Ephratha	revisado	rev. IA: conferido em Mic.5.2; Lutero 1912: Bethlehem Ephratha
+Beyond the River	place	Diesseit des Wassers	revisado	rev. IA: conferido em Ezra.4.10; Lutero 1912: Diesseit des Wassers; Lutero: diesseit des Wassers (Esd 4)
+Booths_Festival	other	Laubhüttenfest	revisado	rev. IA: conferido em John.7.2; Lutero 1912: Laubhüttenfest; Lutero: Fest der Laubhütten
+Caesarea Philippi	place	Cäsarea Philippi	revisado	rev. IA: conferido em Matt.16.13; Lutero 1912: Cäsarea Philippi
+Caesarea_Philippi	place	Cäsarea Philippi	revisado	rev. IA: conferido em Matt.16.13; Lutero 1912: Cäsarea Philippi
+Caleb Ephrathah	place	Kaleb-Ephratha	revisado	rev. IA: conferido em 1Chr.2.24; Lutero 1912: Kaleb-Ephratha
+Caleb_Ephrathah	place	Kaleb-Ephratha	revisado	rev. IA: conferido em 1Chr.2.24; Lutero 1912: Kaleb-Ephratha
+Canaanite_woman	person	Kananäisches Weib	revisado	rev. IA: conferido em Gen.46.10; Lutero 1912: Kananäisches Weib
+Canaanitish woman	person	Kananäisches Weib	revisado	rev. IA: conferido em Gen.46.10; Lutero 1912: Kananäisches Weib
+Carthage	place	Karthago	revisado	rev. IA: conferido em texto; Lutero 1912: Karthago
+Chalcis	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Charmande	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Chief Priests	group	Hohepriester	revisado	rev. IA: conferido em texto; Lutero 1912: Hohepriester
+Chronicles	other	Chronik	revisado	rev. IA: conferido em 1Kgs.14.19; Lutero 1912: Chronik
+City of Salt	place	Salzstadt	revisado	rev. IA: conferido em Josh.15.62; Lutero 1912: Salzstadt
+City_of_Salt	place	Salzstadt	revisado	rev. IA: conferido em Josh.15.62; Lutero 1912: Salzstadt
+Claudius Lysias	person	Klaudius Lysias	revisado	rev. IA: conferido em Acts.23.26; Lutero 1912: Klaudius Lysias
+Concubine the Aramitess	person	Syrisches Kebsweib	revisado	rev. IA: conferido em 1Chr.7.14; Lutero 1912: Syrisches Kebsweib
+Daughter of Herodias	person	Tochter der Herodias	revisado	rev. IA: conferido em Matt.14.6; Lutero 1912: Tochter der Herodias
+Daughter of Lot - Older	person	Ältere Tochter Lots	revisado	rev. IA: conferido em Gen.19.31; Lutero 1912: Ältere Tochter Lots
+Daughter of Lot - Younger	person	Jüngere Tochter Lots	revisado	rev. IA: conferido em Gen.19.8; Lutero 1912: Jüngere Tochter Lots
+Daughter of Machir	person	Tochter Machirs	revisado	rev. IA: conferido em 1Chr.2.21; Lutero 1912: Tochter Machirs
+Daughter of Meshullam	person	Tochter Mesullams	revisado	rev. IA: conferido em Neh.6.18; Lutero 1912: Tochter Mesullams
+Daughter of Pharaoh	person	Tochter Pharaos	revisado	rev. IA: conferido em Exod.2.5; Lutero 1912: Tochter Pharaos
+Daughter of Putiel	person	Tochter Putiels	revisado	rev. IA: conferido em Exod.6.25; Lutero 1912: Tochter Putiels
+Daughter of Shuah	person	Tochter Suas	revisado	rev. IA: conferido em Gen.38.2; Lutero 1912: Tochter Suas
+Dedication_Festival	other	Kirchweihe	revisado	rev. IA: conferido em John.10.22; Lutero 1912: Kirchweihe; Lutero: Kirchweihe (Jo 10,22)
+Dehavites	group	Deha	revisado	rev. IA: conferido em Ezra.4.9; Lutero 1912: Deha
+Destiny	other	Meni	revisado	rev. IA: conferido em Isa.65.11; Lutero 1912: Meni
+Disciples of John	group	Jünger des Johannes	revisado	rev. IA: conferido em texto; Lutero 1912: Jünger des Johannes
+Diviners' Oak	place	Zaubereiche	revisado	rev. IA: conferido em Judg.9.37; Lutero 1912: Zaubereiche
+Diviners'_Oak	place	Zaubereiche	revisado	rev. IA: conferido em Judg.9.37; Lutero 1912: Zaubereiche
+Diviners’ Oak	place	Zaubereiche	revisado	rev. IA: conferido em Judg.9.37; Lutero 1912: Zaubereiche
+East	place	Morgenland	revisado	rev. IA: conferido em Gen.25.6; Lutero 1912: Morgenland
+Egypt's	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Elkosh	place		sem	rev. IA: conferido em Nah.1.1; sem forma própria segura em Lutero 1912; sem nome pt
+Enaim	place	Enaim	revisado	rev. IA: conferido em Gen.38.14; Lutero 1912: Enaim
+Eridu	place	Eridu	revisado	rev. IA: conferido em texto; Lutero 1912: Eridu
+Etruria	place	Etrurien	revisado	rev. IA: conferido em texto; Lutero 1912: Etrurien
+Eznites	group	Ezniter	revisado	rev. IA: conferido em 2Sam.23.8; Lutero 1912: Ezniter
+Fair Havens	place	Gutfurt	revisado	rev. IA: conferido em Acts.27.8; Lutero 1912: Gutfurt
+Fair_Havens	place	Gutfurt	revisado	rev. IA: conferido em Acts.27.8; Lutero 1912: Gutfurt
+Forest	place	Haus des Waldes	revisado	rev. IA: conferido em Isa.22.8; Lutero 1912: Haus des Waldes
+Fortune	other	Gad	revisado	rev. IA: conferido em Isa.65.11; Lutero 1912: Gad
+Foundation_Gate	place	Grundtor	revisado	rev. IA: conferido em 2Chr.23.5; Lutero 1912: Grundtor
+Gadara	place	Gadara	revisado	rev. IA: conferido em Matt.8.28; Lutero 1912: Gadara
+Gate of the Children of the People	place	Tor des Volks	revisado	rev. IA: conferido em Jer.17.19; Lutero 1912: Tor des Volks
+Gath-padalla	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Genealogy of Jesus	group	Stammbaum Jesu	revisado	rev. IA: conferido em texto; Lutero 1912: Stammbaum Jesu
+Gerasa	place	Gerasa	revisado	rev. IA: conferido em Matt.8.28; Lutero 1912: Gerasa
+Gergesa	place	Gergesa	revisado	rev. IA: conferido em texto; Lutero 1912: Gergesa
+Geruth Chimham	place	Herberge Chimhams	revisado	rev. IA: conferido em Jer.41.17; Lutero 1912: Herberge Chimhams
+Geruth_Chimham	place	Herberge Chimhams	revisado	rev. IA: conferido em Jer.41.17; Lutero 1912: Herberge Chimhams
+Gittith	other	Gittith	revisado	rev. IA: conferido em Ps.8.1; Lutero 1912: Gittith
+God	person	Gott	revisado	rev. IA: conferido em Gen.1.1; Lutero 1912: Gott
+Goiim	group	Gojim	revisado	rev. IA: conferido em Gen.14.1; Lutero 1912: Gojim
+Goiim	place	Gojim	revisado	rev. IA: conferido em Gen.14.1; Lutero 1912: Gojim
+Goiim 1	place	Gojim 1	revisado	rev. IA: conferido em texto; Lutero 1912: Gojim 1
+Goiim 2	place	Gojim 2	revisado	rev. IA: conferido em texto; Lutero 1912: Gojim 2
+Gulloth-mayim	place		sem	rev. IA: conferido em Josh.15.19; sem forma própria segura em Lutero 1912; sem nome pt
+Gutium	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Hakkephirim	place		sem	rev. IA: conferido em Neh.6.2; sem forma própria segura em Lutero 1912; sem nome pt
+Halahha	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Ham	place	Ham	revisado	rev. IA: conferido em Gen.5.32; Lutero 1912: Ham
+Ham 1	place	Ham 1	revisado	rev. IA: conferido em texto; Lutero 1912: Ham 1
+Hammelech	person		sem	rev. IA: conferido em Jer.36.26; sem forma própria segura em Lutero 1912; sem nome pt
+Hamon-gog_Valley	place	Gogs Haufental	revisado	rev. IA: conferido em Ezek.39.11; Lutero 1912: Gogs Haufental
+Harhar	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Hatti	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Hazerim	place	Hazerim	revisado	rev. IA: conferido em Deut.2.23; Lutero 1912: Hazerim
+Helech	place		sem	rev. IA: conferido em Ezek.27.11; sem forma própria segura em Lutero 1912; sem nome pt
+Heracleopolis Magna	place	Herakleopolis Magna	revisado	rev. IA: conferido em texto; Lutero 1912: Herakleopolis Magna
+Heracleopolis Parva	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Heres	place	Heres	revisado	rev. IA: conferido em Judg.8.13; Lutero 1912: Heres
+Herod Agrippa I	person	Herodes Agrippa I	revisado	rev. IA: conferido em Acts.12.1; Lutero 1912: Herodes Agrippa I
+Herod Antipas	person	Herodes Antipas	revisado	rev. IA: conferido em Matt.14.1; Lutero 1912: Herodes Antipas
+Herodian	group	Herodianer	revisado	rev. IA: conferido em Matt.22.16; Lutero 1912: Herodianer
+Herod’s palace	place	Richthaus des Herodes	revisado	rev. IA: conferido em texto; Lutero 1912: Richthaus des Herodes; Lutero: Richthaus des Herodes (At 23,35)
+Highway	place	Landstraße	revisado	rev. IA: conferido em Num.20.17; Lutero 1912: Landstraße
+Hilakku	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Holy Place	place	Das Heilige	revisado	rev. IA: conferido em Exod.26.33; Lutero 1912: Das Heilige
+Holy Place 1	place	Das Heilige 1	revisado	rev. IA: conferido em Exod.26.33; Lutero 1912: Das Heilige 1
+Holy Place 2	place	Das Heilige 2	revisado	rev. IA: conferido em 1Kgs.6.5; Lutero 1912: Das Heilige 2
+Holy Spirit	person	Heiliger Geist	revisado	rev. IA: conferido em Gen.1.2; Lutero 1912: Heiliger Geist
+Holy_Place	place	Das Heilige	revisado	rev. IA: conferido em Exod.26.33; Lutero 1912: Das Heilige
+Hophra	person	Hophra	revisado	rev. IA: conferido em Jer.37.5; Lutero 1912: Hophra
+Horesh	place	Hores	revisado	rev. IA: conferido em 1Sam.23.15; Lutero 1912: Hores
+House of the Forest of Lebanon	place	Haus vom Walde Libanon	revisado	rev. IA: conferido em 1Kgs.7.2; Lutero 1912: Haus vom Walde Libanon
+Jaar	place	Jaar	revisado	rev. IA: conferido em Ps.132.6; Lutero 1912: Jaar
+Janen	place		sem	rev. IA: conferido em Num.21.19; sem forma própria segura em Lutero 1912; sem nome pt
+Janua	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Jemnath	place		sem	rev. IA: conferido em Josh.15.46; sem forma própria segura em Lutero 1912; sem nome pt
+Jerusalem's	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Jerusalem_wives	person	Töchter von Jerusalem	revisado	rev. IA: conferido em 2Sam.5.13; Lutero 1912: Töchter von Jerusalem
+Jesus Christ	person	Jesus Christus	revisado	rev. IA: conferido em Gen.49.10; Lutero 1912: Jesus Christus
+John Mark	person	Johannes Markus	revisado	rev. IA: conferido em Acts.12.12; Lutero 1912: Johannes Markus
+John the Apostle	person	Johannes der Apostel	revisado	rev. IA: conferido em Matt.4.21; Lutero 1912: Johannes der Apostel
+John the Baptist	person	Johannes der Täufer	revisado	rev. IA: conferido em Matt.3.1; Lutero 1912: Johannes der Täufer
+Jonath-elem-rechokim	other		sem	rev. IA: conferido em Ps.56.1; sem forma própria segura em Lutero 1912; sem nome pt
+Judas Barsabas	person	Judas Barsabas	revisado	rev. IA: conferido em Acts.15.22; Lutero 1912: Judas Barsabas
+Judas Iscariot	person	Judas Ischariot	revisado	rev. IA: conferido em Matt.10.4; Lutero 1912: Judas Ischariot
+Judgment	place	Halle zum Richtstuhl	revisado	rev. IA: conferido em 1Kgs.7.7; Lutero 1912: Halle zum Richtstuhl
+King's_Highway	place	Landstraße	revisado	rev. IA: conferido em Num.20.17; Lutero 1912: Landstraße; Lutero: die Landstraße (Nm 20,17)
+King’s Highway	place	Landstraße	revisado	rev. IA: conferido em Num.20.17; Lutero 1912: Landstraße; Lutero: die Landstraße (Nm 20,17)
+Kumidi	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+LORD	other	HERR	revisado	rev. IA: conferido em Gen.1.1; Lutero 1912: HERR
+Laash	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Lebanon_Valley	place	Ebene beim Berge Libanon	revisado	rev. IA: conferido em Josh.11.17; Lutero 1912: Ebene beim Berge Libanon
+Lebbaeus Thaddaeus	person	Lebbäus Thaddäus	revisado	rev. IA: conferido em Matt.10.3; Lutero 1912: Lebbäus Thaddäus
+Line of Cain	group	Geschlecht Kains	revisado	rev. IA: conferido em texto; Lutero 1912: Geschlecht Kains
+Lower Beth-horon	place	Nieder-Beth-Horon	revisado	rev. IA: conferido em Josh.16.3; Lutero 1912: Nieder-Beth-Horon
+Lower Gulloth	place	Untere Quellen	revisado	rev. IA: conferido em Josh.15.19; Lutero 1912: Untere Quellen
+Lucifer	other	Luzifer	revisado	rev. IA: conferido em Isa.14.12; Lutero 1912: Luzifer
+Lucifer	person	Luzifer	revisado	rev. IA: conferido em Isa.14.12; Lutero 1912: Luzifer
+Lydia	place	Lydien	revisado	rev. IA: conferido em Gen.36.22; Lutero 1912: Lydien
+Maareh-geba	place		sem	rev. IA: conferido em Judg.20.33; sem forma própria segura em Lutero 1912; sem nome pt
+Madiama	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Magdala	place	Magdala	revisado	rev. IA: conferido em texto; Lutero 1912: Magdala
+Magdalsenna	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Magdolum	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Mahalab	place		sem	rev. IA: conferido em Josh.19.29; sem forma própria segura em Lutero 1912; sem nome pt
+Maranatha	other	Maran atha	revisado	rev. IA: conferido em 1Cor.16.22; Lutero 1912: Maran atha
+Mary Magdalene	person	Maria Magdalena	revisado	rev. IA: conferido em Matt.27.56; Lutero 1912: Maria Magdalena
+Mary_Magdalene	person	Maria Magdalena	revisado	rev. IA: conferido em Matt.27.56; Lutero 1912: Maria Magdalena
+Maskil	other	Unterweisung	revisado	rev. IA: conferido em Ps.32.1; Lutero 1912: Unterweisung
+Mazzaroth	other	Mazzaroth	revisado	rev. IA: conferido em Job.38.32; Lutero 1912: Mazzaroth
+Merom	place	Merom	revisado	rev. IA: conferido em Josh.11.5; Lutero 1912: Merom
+Meronoth	place		sem	rev. IA: conferido em 1Chr.27.30; sem forma própria segura em Lutero 1912; sem nome pt
+Meunites	group	Meuniter	revisado	rev. IA: conferido em 1Chr.4.41; Lutero 1912: Meuniter
+Micah	person		sem	rev. IA: conferido em Judg.17.1; sem forma própria segura em Lutero 1912; sem nome pt
+Miktam	other	Gülden Kleinod	revisado	rev. IA: conferido em Ps.16.1; Lutero 1912: Gülden Kleinod
+Misrephoth-maim	place	Misrephoth-Majim	revisado	rev. IA: conferido em Josh.11.8; Lutero 1912: Misrephoth-Majim
+Mizpeh_Valley	place	Ebene Mizpa	revisado	rev. IA: conferido em Josh.11.3; Lutero 1912: Ebene Mizpa
+Moab_Plains	place	Gefilde der Moabiter	revisado	rev. IA: conferido em Num.22.1; Lutero 1912: Gefilde der Moabiter
+Mortar	place		sem	rev. IA: conferido em Zeph.1.11; sem forma própria segura em Lutero 1912; sem nome pt
+Most Holy	place	Das Allerheiligste	revisado	rev. IA: conferido em Exod.26.33; Lutero 1912: Das Allerheiligste
+Most Holy Place	place	Das Allerheiligste	revisado	rev. IA: conferido em Exod.26.34; Lutero 1912: Das Allerheiligste
+Most Holy Place 1	place	Das Allerheiligste 1	revisado	rev. IA: conferido em Exod.26.33; Lutero 1912: Das Allerheiligste 1
+Most Holy Place 2	place	Das Allerheiligste 2	revisado	rev. IA: conferido em 1Kgs.6.16; Lutero 1912: Das Allerheiligste 2
+Most_Holy_Place	place	Das Allerheiligste	revisado	rev. IA: conferido em 1Kgs.6.16; Lutero 1912: Das Allerheiligste
+Mother of Aholah and Aholibah	person		sem	rev. IA: conferido em Ezek.23.2; sem forma própria segura em Lutero 1912; sem nome pt
+Mother of Lemuel	person	Mutter Lemuels	revisado	rev. IA: conferido em Prov.31.1; Lutero 1912: Mutter Lemuels
+Mother of Zebedees children	person	Mutter der Kinder des Zebedäus	revisado	rev. IA: conferido em Matt.20.20; Lutero 1912: Mutter der Kinder des Zebedäus
+Mother of the Wife of Simon	person	Schwiegermutter Simons	revisado	rev. IA: conferido em Matt.8.14; Lutero 1912: Schwiegermutter Simons
+Muth-labben	other		sem	rev. IA: conferido em Ps.9.1; sem forma própria segura em Lutero 1912; sem nome pt
+Nahuru	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Naphath	place		sem	rev. IA: conferido em Josh.17.11; sem forma própria segura em Lutero 1912; sem nome pt
+Naphath-dor	place	Naphoth-Dor	revisado	rev. IA: conferido em 1Kgs.4.11; Lutero 1912: Naphoth-Dor
+Nation of Israel	group	Volk Israel	revisado	rev. IA: conferido em Ps.14.7; Lutero 1912: Volk Israel
+Nehelam	place	Nehelam	revisado	rev. IA: conferido em Jer.29.24; Lutero 1912: Nehelam
+Nephilim	group	Riesen	revisado	rev. IA: conferido em Gen.6.4; Lutero 1912: Riesen
+New_Moon	other	Neumond	revisado	rev. IA: conferido em Col.2.16; Lutero 1912: Neumond
+North	place	Mitternacht	revisado	rev. IA: conferido em Dan.11.6; Lutero 1912: Mitternacht
+North Gate	place	Tor gegen Mitternacht	revisado	rev. IA: conferido em 1Chr.26.14; Lutero 1912: Tor gegen Mitternacht
+Nuhashe	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Parbar	place	Parbar	revisado	rev. IA: conferido em 1Chr.26.18; Lutero 1912: Parbar
+People's_Gate	place	Tor des Volks	revisado	rev. IA: conferido em Jer.17.19; Lutero 1912: Tor des Volks
+People’s Gate	place	Tor des Volks	revisado	rev. IA: conferido em Jer.17.19; Lutero 1912: Tor des Volks
+Pharisees	group	Pharisäer	revisado	rev. IA: conferido em texto; Lutero 1912: Pharisäer
+Phillip the Apostle	person	Philippus der Apostel	revisado	rev. IA: conferido em Matt.10.3; Lutero 1912: Philippus der Apostel
+Phillip the Evangelist	person	Philippus der Evangelist	revisado	rev. IA: conferido em Acts.6.5; Lutero 1912: Philippus der Evangelist
+Pillars	place	Säulenhalle	revisado	rev. IA: conferido em 1Kgs.7.6; Lutero 1912: Säulenhalle
+Pitru	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Plain	place	Gefilde	revisado	rev. IA: conferido em Deut.34.3; Lutero 1912: Gefilde
+Pontius Pilate	person	Pontius Pilatus	revisado	rev. IA: conferido em Matt.27.2; Lutero 1912: Pontius Pilatus
+Pool	place		sem	rev. IA: conferido em Neh.2.14; sem forma própria segura em Lutero 1912; sem nome pt
+Portius Festus	person	Porcius Festus	revisado	rev. IA: conferido em Acts.24.27; Lutero 1912: Porcius Festus
+Potsherd Gate	place	Ziegeltor	revisado	rev. IA: conferido em Jer.19.2; Lutero 1912: Ziegeltor
+Potsherd_Gate	place	Ziegeltor	revisado	rev. IA: conferido em Jer.19.2; Lutero 1912: Ziegeltor
+Preparation_Festival	other	Rüsttag	revisado	rev. IA: conferido em Matt.27.62; Lutero 1912: Rüsttag
+Punt	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Pyrrhus	person	Pyrrhus	revisado	rev. IA: conferido em Acts.20.4; Lutero 1912: Pyrrhus
+Queen of Sheba	person	Königin von Saba	revisado	rev. IA: conferido em 1Kgs.10.1; Lutero 1912: Königin von Saba; Lutero: Königin von Reicharabien
+Queen_of_Sheba	person	Königin von Saba	revisado	rev. IA: conferido em 1Kgs.10.1; Lutero 1912: Königin von Saba; Lutero: Königin von Reicharabien
+Raca	other	Racha	revisado	rev. IA: conferido em Matt.5.22; Lutero 1912: Racha
+Ragmat	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+River	place		sem	rev. IA: conferido em Gen.36.37; sem forma própria segura em Lutero 1912; sem nome pt
+River 2	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+River 3	place	Rehoboth am Strom	revisado	rev. IA: conferido em texto; Lutero 1912: Rehoboth am Strom
+Rock	place		sem	rev. IA: conferido em Josh.15.55; sem forma própria segura em Lutero 1912; sem nome pt
+Rocks	place	Gemsenfelsen	revisado	rev. IA: conferido em 1Sam.24.2; Lutero 1912: Gemsenfelsen
+Sadducees	group	Sadduzäer	revisado	rev. IA: conferido em texto; Lutero 1912: Sadduzäer
+Sahar	place		sem	rev. IA: conferido em Ezek.27.18; sem forma própria segura em Lutero 1912; sem nome pt
+Salome	person	Salome	revisado	rev. IA: conferido em Matt.14.6; Lutero 1912: Salome
+Salona	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Salt_Valley	place	Salztal	revisado	rev. IA: conferido em 2Sam.8.13; Lutero 1912: Salztal
+Samaria's	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Saparda	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Saparre	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Scribes	group	Schriftgelehrte	revisado	rev. IA: conferido em texto; Lutero 1912: Schriftgelehrte
+Scythia	place	Skythien	revisado	rev. IA: conferido em texto; Lutero 1912: Skythien
+Second Quarter	place	Anderer Teil der Stadt	revisado	rev. IA: conferido em 2Kgs.22.14; Lutero 1912: Anderer Teil der Stadt; Lutero: im andern Teil (2Rs 22,14)
+Second_Quarter	place	Anderer Teil der Stadt	revisado	rev. IA: conferido em 2Kgs.22.14; Lutero 1912: Anderer Teil der Stadt; Lutero: im andern Teil (2Rs 22,14)
+Sergius Paulus	person	Sergius Paulus	revisado	rev. IA: conferido em Acts.13.7; Lutero 1912: Sergius Paulus
+Sergius_Paulus	person	Sergius Paulus	revisado	rev. IA: conferido em Acts.13.7; Lutero 1912: Sergius Paulus
+Shephelah	place	Sephela	revisado	rev. IA: conferido em Deut.1.7; Lutero 1912: Sephela
+Shiggaion	other		sem	rev. IA: conferido em Ps.7.1; sem forma própria segura em Lutero 1912; sem nome pt
+Shushan_Eduth	other		sem	rev. IA: conferido em Ps.60.1; sem forma própria segura em Lutero 1912; sem nome pt
+Simon Peter	person	Simon Petrus	revisado	rev. IA: conferido em Matt.4.18; Lutero 1912: Simon Petrus
+Simon Zelotes	person	Simon Zelotes	revisado	rev. IA: conferido em Matt.10.4; Lutero 1912: Simon Zelotes
+Simon the Sorcerer	person	Simon der Zauberer	revisado	rev. IA: conferido em Acts.8.9; Lutero 1912: Simon der Zauberer
+Simon the Tanner	person	Simon der Gerber	revisado	rev. IA: conferido em Acts.9.43; Lutero 1912: Simon der Gerber
+Sister of Tahpenes	person	Schwester der Thachpenes	revisado	rev. IA: conferido em 1Kgs.11.19; Lutero 1912: Schwester der Thachpenes
+Solomon's Portico	place	Halle Salomos	revisado	rev. IA: conferido em Acts.3.11; Lutero 1912: Halle Salomos
+Solomon's_Portico	place	Halle Salomos	revisado	rev. IA: conferido em Acts.3.11; Lutero 1912: Halle Salomos
+Solomon’s Portico	place	Halle Salomos	revisado	rev. IA: conferido em John.10.23; Lutero 1912: Halle Salomos
+South	place	Mittag	revisado	rev. IA: conferido em Dan.11.5; Lutero 1912: Mittag
+South 1	place	Mittag 1	revisado	rev. IA: conferido em texto; Lutero 1912: Mittag 1
+South 2	place	Mittag 2	revisado	rev. IA: conferido em texto; Lutero 1912: Mittag 2
+South 3	place	Mittag 3	revisado	rev. IA: conferido em texto; Lutero 1912: Mittag 3
+South Gate	place	Tor gegen Mittag	revisado	rev. IA: conferido em 1Chr.26.15; Lutero 1912: Tor gegen Mittag
+Sparta	place	Sparta	revisado	rev. IA: conferido em texto; Lutero 1912: Sparta
+Straight Gate	place		sem	rev. IA: conferido em Acts.9.11; sem forma própria segura em Lutero 1912; sem nome pt
+Straight Street	place	Die gerade Gasse	revisado	rev. IA: conferido em Acts.9.11; Lutero 1912: Die gerade Gasse
+Suph	place	Schilfmeer	revisado	rev. IA: conferido em Deut.1.1; Lutero 1912: Schilfmeer
+Sutu	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Syrtis	place	Syrte	revisado	rev. IA: conferido em Acts.27.17; Lutero 1912: Syrte
+Tabbur-erez	place		sem	rev. IA: conferido em Judg.9.37; sem forma própria segura em Lutero 1912; sem nome pt
+Tartessos	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Tegarama	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Thapsacus	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+The Lord Is There	place	Hier ist der HERR	revisado	rev. IA: conferido em Ezek.48.35; Lutero 1912: Hier ist der HERR
+The Lord Will Provide	place	Der HERR sieht	revisado	rev. IA: conferido em Gen.22.14; Lutero 1912: Der HERR sieht
+Thelme	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Thisbe	place	Thisbe	revisado	rev. IA: conferido em texto; Lutero 1912: Thisbe
+Three Taverns	place	Tretabern	revisado	rev. IA: conferido em Acts.28.15; Lutero 1912: Tretabern
+Three_Taverns	place	Tretabern	revisado	rev. IA: conferido em Acts.28.15; Lutero 1912: Tretabern
+Throne	place	Thronhalle	revisado	rev. IA: conferido em 1Kgs.7.7; Lutero 1912: Thronhalle
+Tjaru	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Tower	place		sem	rev. IA: conferido em Neh.3.1; sem forma própria segura em Lutero 1912; sem nome pt
+Tower_of_Eder	place	Turm Eder	revisado	rev. IA: conferido em Gen.35.21; Lutero 1912: Turm Eder
+Travelers_Valley	place	Tal der Wanderer	revisado	rev. IA: conferido em Ezek.39.11; Lutero 1912: Tal der Wanderer
+Tribe of Asher	group	Stamm Asser	revisado	rev. IA: conferido em texto; Lutero 1912: Stamm Asser
+Tribe of Benjamin	group	Stamm Benjamin	revisado	rev. IA: conferido em texto; Lutero 1912: Stamm Benjamin
+Tribe of Dan	group	Stamm Dan	revisado	rev. IA: conferido em texto; Lutero 1912: Stamm Dan
+Tribe of Gad	group	Stamm Gad	revisado	rev. IA: conferido em texto; Lutero 1912: Stamm Gad
+Tribe of Issachar	group	Stamm Isaschar	revisado	rev. IA: conferido em texto; Lutero 1912: Stamm Isaschar
+Tribe of Joseph	group	Stamm Joseph	revisado	rev. IA: conferido em texto; Lutero 1912: Stamm Joseph
+Tribe of Judah	group	Stamm Juda	revisado	rev. IA: conferido em Prov.25.1; Lutero 1912: Stamm Juda
+Tribe of Levi	group	Stamm Levi	revisado	rev. IA: conferido em texto; Lutero 1912: Stamm Levi
+Tribe of Naphtali	group	Stamm Naphthali	revisado	rev. IA: conferido em texto; Lutero 1912: Stamm Naphthali
+Tribe of Reuben	group	Stamm Ruben	revisado	rev. IA: conferido em texto; Lutero 1912: Stamm Ruben
+Tribe of Simeon	group	Stamm Simeon	revisado	rev. IA: conferido em texto; Lutero 1912: Stamm Simeon
+Tribe of Zebulun	group	Stamm Sebulon	revisado	rev. IA: conferido em texto; Lutero 1912: Stamm Sebulon
+Umman Manda	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Unnamed#1	person		sem	rev. IA: conferido em 1Kgs.2.27; sem forma própria segura em Lutero 1912; sem nome pt
+Unnamed#2	person		sem	rev. IA: conferido em 1Kgs.2.27; sem forma própria segura em Lutero 1912; sem nome pt
+Unnamed#3	person		sem	rev. IA: conferido em 1Kgs.2.27; sem forma própria segura em Lutero 1912; sem nome pt
+Unnamed#4	person		sem	rev. IA: conferido em 1Kgs.2.27; sem forma própria segura em Lutero 1912; sem nome pt
+Unnamed#5	person		sem	rev. IA: conferido em Matt.1.15; sem forma própria segura em Lutero 1912; sem nome pt
+Unnamed#6	person		sem	rev. IA: conferido em Matt.1.15; sem forma própria segura em Lutero 1912; sem nome pt
+Unnamed#7	person		sem	rev. IA: conferido em Matt.1.15; sem forma própria segura em Lutero 1912; sem nome pt
+Unnamed#8	person		sem	rev. IA: conferido em Matt.1.15; sem forma própria segura em Lutero 1912; sem nome pt
+Unnamed#9	person		sem	rev. IA: conferido em Matt.1.15; sem forma própria segura em Lutero 1912; sem nome pt
+Upper Beth-horon	place	Ober-Beth-Horon	revisado	rev. IA: conferido em Josh.16.5; Lutero 1912: Ober-Beth-Horon
+Upper Gulloth	place	Obere Quellen	revisado	rev. IA: conferido em Josh.15.19; Lutero 1912: Obere Quellen
+Upu	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Uqnu	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Ur 2	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Ur of the Chaldees	place	Ur in Chaldäa	revisado	rev. IA: conferido em Gen.11.28; Lutero 1912: Ur in Chaldäa
+Ura	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+Valley of Mizpeh	place	Ebene Mizpa	revisado	rev. IA: conferido em Josh.11.8; Lutero 1912: Ebene Mizpa
+Valley of Salt	place	Salztal	revisado	rev. IA: conferido em 2Sam.8.13; Lutero 1912: Salztal
+Valley of the Son of Hinnom	place	Tal Ben-Hinnom	revisado	rev. IA: conferido em 2Kgs.23.10; Lutero 1912: Tal Ben-Hinnom
+Washer's_Field	place	Acker des Walkmüllers	revisado	rev. IA: conferido em 2Kgs.18.17; Lutero 1912: Acker des Walkmüllers
+Washer’s Field	place	Acker des Walkmüllers	revisado	rev. IA: conferido em 2Kgs.18.17; Lutero 1912: Acker des Walkmüllers
+Way of the Red Sea	place	Weg zum Schilfmeer	revisado	rev. IA: conferido em Num.14.25; Lutero 1912: Weg zum Schilfmeer
+Wife of Ezekiel	person	Weib Hesekiels	revisado	rev. IA: conferido em Ezek.24.18; Lutero 1912: Weib Hesekiels
+Wife of Simon	person		sem	rev. IA: conferido em Matt.8.14; sem forma própria segura em Lutero 1912; sem nome pt
+Wildgoats_Rocks	place	Gemsenfelsen	revisado	rev. IA: conferido em 1Sam.24.2; Lutero 1912: Gemsenfelsen
+Wildgoats’ Rocks	place	Gemsenfelsen	revisado	rev. IA: conferido em 1Sam.24.2; Lutero 1912: Gemsenfelsen
+Willows	place	Weidenbach	revisado	rev. IA: conferido em Isa.15.7; Lutero 1912: Weidenbach
+Zion's	place		sem	rev. IA: conferido em texto; sem forma própria segura em Lutero 1912; sem nome pt
+a_wife_of_Eliphaz	person	Weib des Eliphas	revisado	rev. IA: conferido em Gen.36.11; Lutero 1912: Weib des Eliphas
+a_wife_of_Ezekiel	person	Weib Hesekiels	revisado	rev. IA: conferido em Ezek.24.18; Lutero 1912: Weib Hesekiels
+a_wife_of_Hezron	person	Weib Hezrons	revisado	rev. IA: conferido em 1Chr.2.9; Lutero 1912: Weib Hezrons
+a_wife_of_Jerahmeel	person	Weib Jerahmeels	revisado	rev. IA: conferido em 1Chr.2.26; Lutero 1912: Weib Jerahmeels
+a_wife_of_Josiah	person	Weib Josias	revisado	rev. IA: conferido em 1Chr.3.15; Lutero 1912: Weib Josias
+a_wife_of_Lot	person	Lots Weib	revisado	rev. IA: conferido em Gen.19.15; Lutero 1912: Lots Weib
+a_wife_of_Peter	person	Weib des Petrus	revisado	rev. IA: conferido em Matt.8.14; Lutero 1912: Weib des Petrus
+a_wife_of_Simeon	person	Weib Simeons	revisado	rev. IA: conferido em Gen.46.10; Lutero 1912: Weib Simeons
+a_wife_of_Solomon	person		sem	rev. IA: conferido em 1Kgs.4.11; sem forma própria segura em Lutero 1912; sem nome pt
+daughter1_of_Lot	person	Ältere Tochter Lots	revisado	rev. IA: conferido em Gen.19.37; Lutero 1912: Ältere Tochter Lots
+daughter2_of_Lot	person	Jüngere Tochter Lots	revisado	rev. IA: conferido em Gen.19.38; Lutero 1912: Jüngere Tochter Lots
+daughter_of_Annas	person	Tochter des Hannas	revisado	rev. IA: conferido em John.18.13; Lutero 1912: Tochter des Hannas
+daughter_of_Machir	person	Tochter Machirs	revisado	rev. IA: conferido em 1Chr.2.21; Lutero 1912: Tochter Machirs
+daughter_of_Meshullam	person	Tochter Mesullams	revisado	rev. IA: conferido em Neh.6.18; Lutero 1912: Tochter Mesullams
+daughter_of_Pharaoh	person	Tochter Pharaos	revisado	rev. IA: conferido em Exod.2.5; Lutero 1912: Tochter Pharaos
+daughter_of_Putiel	person	Tochter Putiels	revisado	rev. IA: conferido em Exod.6.25; Lutero 1912: Tochter Putiels
+daughter_of_Sanballat	person	Tochter Saneballats	revisado	rev. IA: conferido em Neh.13.28; Lutero 1912: Tochter Saneballats
+daughter_of_Shecaniah	person	Tochter Sechanjas	revisado	rev. IA: conferido em Neh.6.18; Lutero 1912: Tochter Sechanjas
+father_of_Barnabas	person	Vater des Barnabas	revisado	rev. IA: conferido em Col.4.10; Lutero 1912: Vater des Barnabas
+father_of_Conaniah	person	Vater Chananjas	revisado	rev. IA: conferido em 2Chr.31.12; Lutero 1912: Vater Chananjas
+father_of_Elizabeth	person	Vater der Elisabeth	revisado	rev. IA: conferido em Luke.1.5; Lutero 1912: Vater der Elisabeth
+father_of_Eunice	person	Vater der Eunike	revisado	rev. IA: conferido em 2Tim.1.5; Lutero 1912: Vater der Eunike
+father_of_Hilkiah	person	Vater Hilkias	revisado	rev. IA: conferido em Jer.32.7; Lutero 1912: Vater Hilkias
+father_of_Hodiah	person	Vater Hodijas	revisado	rev. IA: conferido em 1Chr.4.19; Lutero 1912: Vater Hodijas
+father_of_Lazarus	person	Vater des Lazarus	revisado	rev. IA: conferido em Luke.10.39; Lutero 1912: Vater des Lazarus
+father_of_Mamre	person	Vater Mamres	revisado	rev. IA: conferido em Gen.14.13; Lutero 1912: Vater Mamres
+father_of_Nathan	person	Vater Nathans	revisado	rev. IA: conferido em 1Chr.11.38; Lutero 1912: Vater Nathans
+father_of_Tahpenes	person	Vater der Thachpenes	revisado	rev. IA: conferido em 1Kgs.11.19; Lutero 1912: Vater der Thachpenes
+father_of_Timothy	person	Vater des Timotheus	revisado	rev. IA: conferido em Acts.16.1; Lutero 1912: Vater des Timotheus
+huge_man	person	Riese	revisado	rev. IA: conferido em 2Sam.21.20; Lutero 1912: Riese; Lutero: ein langer Mann
+husband_of_Hammolecheth	person	Mann der Molecheth	revisado	rev. IA: conferido em 1Chr.7.18; Lutero 1912: Mann der Molecheth
+husband_of_Mary	person	Mann der Maria	revisado	rev. IA: conferido em Acts.12.12; Lutero 1912: Mann der Maria
+husband_of_Matred	person	Mann der Matred	revisado	rev. IA: conferido em Gen.36.39; Lutero 1912: Mann der Matred
+husband_of_Shimeath	person	Mann der Simeath	revisado	rev. IA: conferido em 2Kgs.12.21; Lutero 1912: Mann der Simeath
+husband_of_Zeruiah	person	Mann der Zeruja	revisado	rev. IA: conferido em 1Sam.26.6; Lutero 1912: Mann der Zeruja
+man of great stature	person	Großer Mann	revisado	rev. IA: conferido em 2Sam.21.20; Lutero 1912: Großer Mann; Lutero: ein großer Mann
+man of understanding	person	Verständiger Mann	revisado	rev. IA: conferido em Ezra.8.18; Lutero 1912: Verständiger Mann
+motherInLaw_of_Peter	person	Schwiegermutter des Petrus	revisado	rev. IA: conferido em Matt.8.14; Lutero 1912: Schwiegermutter des Petrus
+sister_of_Tahpenes	person	Schwester der Thachpenes	revisado	rev. IA: conferido em 1Kgs.11.19; Lutero 1912: Schwester der Thachpenes
+son of Abinadab	person	Ben-Abinadab	revisado	rev. IA: conferido em 1Kgs.4.11; Lutero 1912: Ben-Abinadab
+son of Dekar	person	Ben-Deker	revisado	rev. IA: conferido em 1Kgs.4.9; Lutero 1912: Ben-Deker
+son of Geber	person	Ben-Geber	revisado	rev. IA: conferido em 1Kgs.4.13; Lutero 1912: Ben-Geber
+son of Hesed	person	Ben-Hesed	revisado	rev. IA: conferido em 1Kgs.4.10; Lutero 1912: Ben-Hesed
+son of Hur	person	Ben-Hur	revisado	rev. IA: conferido em 1Kgs.4.8; Lutero 1912: Ben-Hur
+son of Joiada	person	Sohn Jojadas	revisado	rev. IA: conferido em Neh.13.28; Lutero 1912: Sohn Jojadas
+son_of_Jashen	person	Sohn Jasens	revisado	rev. IA: conferido em 2Sam.23.32; Lutero 1912: Sohn Jasens
+son_of_Joiada	person	Sohn Jojadas	revisado	rev. IA: conferido em Neh.13.28; Lutero 1912: Sohn Jojadas
+sons of Jashen	person	Söhne Jasens	revisado	rev. IA: conferido em 2Sam.23.32; Lutero 1912: Söhne Jasens
+the giant in Gath	person	Riese zu Gath	revisado	rev. IA: conferido em 2Sam.21.16; Lutero 1912: Riese zu Gath
+wife_of_Heli	person		sem	rev. IA: conferido em Luke.1.5; sem forma própria segura em Lutero 1912; sem nome pt
+Forum of Appius	place	Appifor	revisado	rev. IA: conferido em Acts.28.15; Lutero 1912: Appifor; Lutero: Appifor (At 28,15)
+East Square	place	Breite Gasse gegen Morgen	revisado	rev. IA: conferido em 2Chr.29.4; Lutero 1912: Breite Gasse gegen Morgen; Lutero: auf die breite Gasse gegen Morgen (2Cr 29,4)
+Forum_of_Appius	place	Appifor	revisado	rev. IA: conferido em Acts.28.15; Lutero 1912: Appifor; Lutero: Appifor (At 28,15)
+Nero	person	Nero	revisado	rev. IA: conferido em Phil.4.22; Lutero 1912: Nero; só nas subscrições; forma alemã
+Pacatiana	place	Pacatiana	revisado	rev. IA: conferido em 1Tim.6.21; Lutero 1912: Pacatiana; só na subscrição; forma alemã
+Sheminith	other	Scheminith	revisado	rev. IA: conferido em 1Chr.15.21; Lutero 1912: Scheminith; termo musical; Lutero traduz (acht Saiten)
+Shigionoth	other	Schigjonoth	revisado	rev. IA: conferido em Hab.3.1; Lutero 1912: Schigjonoth; termo musical; Lutero traduz
+Appii Forum	place	Appifor	revisado	rev. IA: conferido em Acts.28.15; Lutero 1912: Appifor; Lutero: Appifor (At 28,15)
