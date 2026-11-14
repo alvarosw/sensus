@@ -35,7 +35,7 @@ export const frTl = {
   noEvents: 'Aucun événement ne correspond à cette recherche et à ces filtres.',
   noLines: 'Aucune frise ne correspond à ces filtres.',
   footer:
-    'Source : Theographic (CC BY-SA 4.0). Les dates suivent la chronologie de la source.',
+    'Source : Theographic (CC BY-SA 4.0). Les dates suivent la chronologie de la source ; les titres, les noms et les descriptions en français sont une adaptation du projet Sensus, avec l’aide de l’IA.',
 
   lineTitleOf: (count: number) => `${count} ${count === 1 ? 'événement' : 'événements'}`,
   inSource: (name: string) => `dans la source : ${name}`,
