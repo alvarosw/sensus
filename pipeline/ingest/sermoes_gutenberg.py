@@ -1,11 +1,16 @@
-"""Ingere os sermões expositivos de Alexander Maclaren (Expositions of Holy Scripture) como comentário por texto.
+"""Ingere comentários por texto do Project Gutenberg: os sermões de Alexander Maclaren (Expositions of Holy Scripture)
+e os capítulos de The Expositor's Bible (ed. W. Robertson Nicoll, 1887-1905).
 
-Cada sermão vira UMA linha de comentário, no intervalo da passagem do seu cabeçalho. O texto começa com
-"Maclaren — <título do volume>: <título do sermão>" e segue com o corpo do sermão inteiro (sem truncar). A epígrafe
-(a citação da Escritura, com "--LIVRO cap. v.") não entra: é o texto bíblico que o app já mostra.
+Sermões (Maclaren, OBRAS["maclaren"]): cada sermão vira UMA linha de comentário, no intervalo da passagem do seu
+cabeçalho. O texto começa com "Maclaren — <título do volume>: <título do sermão>" e segue com o corpo do sermão
+inteiro (sem truncar). A epígrafe (a citação da Escritura, com "--LIVRO cap. v.") não entra: é o texto bíblico que o
+app já mostra.
 
-Fonte: Project Gutenberg, 15 volumes (eBooks #7069 a #24674; ver VOLUMES). Alexander Maclaren (1826-1910) e as
-obras (1904-1910) estão em domínio público (ver DATA_LICENSES.md).
+Capítulos (The Expositor's Bible, OBRAS["expositors"]): cada capítulo do volume (ver linhas_de_capitulos) vira uma
+linha, com "The Expositor's Bible — <livro> (<autor>): <título do capítulo>" e o corpo inteiro.
+
+Fonte: Project Gutenberg. Maclaren: 15 volumes (eBooks #7069 a #24674). Expositor's Bible: 48 volumes (ver
+EXPOSITORS). As obras estão em domínio público (ver DATA_LICENSES.md).
 
 Estrutura do texto (Gutenberg, texto simples):
 - Título do sermão em maiúsculas, opcionalmente com a passagem entre parênteses: "GOD'S COVENANT WITH ABRAM
@@ -21,8 +26,8 @@ Regras (funções puras, testadas em pipeline/tests/test_sermoes_gutenberg.py):
 - Descartados, com contagem por motivo no fim: sem_cabecalho (nenhuma passagem), cabecalho_ilegivel (há
   cabeçalho, mas não é uma referência da versificação KJV), sem_texto (sermão sem corpo).
 
-Uso:
-    cd pipeline && python3 -I ingest/sermoes_gutenberg.py
+Uso (padrão: maclaren; ou expositors):
+    cd pipeline && python3 -I ingest/sermoes_gutenberg.py [maclaren|expositors]
 """
 
 import hashlib
@@ -31,6 +36,7 @@ import sys
 import time
 import urllib.request
 from collections import Counter
+from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -81,7 +87,7 @@ EPIGRAFE_CAIXA = re.compile(
 # Título seguido de "--LIVRO cap" dentro do próprio texto da epígrafe: não é título.
 EPIGRAFE_NO_TITULO = re.compile(r"--\s*[A-Z][A-Z.]*\s+(?:[ivxlcIVXLC]+|\d)")
 # "(R.V.)" e "(A.V.)" saem da epígrafe antes de procurar o cabeçalho.
-VERSAO = re.compile(r",?\s*\(?\s*[RA]\.\s?V\.?\s*\)?")
+VERSAO = re.compile(r",?\s*\(?\s*(?:[RA]\.\s?V\.?|Rev\.\s?Ver\.?)\s*\)?")
 
 
 @dataclass
@@ -167,9 +173,10 @@ def separa_sermoes(paras: list[str]) -> list[Sermao]:
 # ---- passagem -------------------------------------------------------------
 
 def _trecho(texto: str) -> str:
-    """Primeira referência de um cabeçalho: sem "R.V."/"A.V.", com " and " como vírgula, "ill" (OCR) como "iii" e
-    "l" (OCR) como "1" antes de número."""
-    t = re.sub(r",?\s*[RA]\.\s?V\.?", "", texto).split(";")[0].strip()
+    """Primeira referência de um cabeçalho: sem "R.V."/"A.V.", sem "St." antes do livro, com " and " como vírgula,
+    "ill" (OCR) como "iii" e "l" (OCR) como "1" antes de número."""
+    t = re.sub(r",?\s*[RA]\.\s?V\.?", "", texto.replace("\xa0", " ")).split(";")[0].strip()
+    t = re.sub(r"^St\.?\s+", "", t, flags=re.IGNORECASE)
     t = re.sub(r"\s+and\s+", ", ", t)
     t = re.sub(r"\bill\b", "iii", t)
     return re.sub(r"\bl(?=\d)", "1", t)
@@ -212,6 +219,248 @@ def linhas_do_volume(texto_bruto: str, rotulo: str) -> tuple[list[tuple[int, int
     return linhas, stats
 
 
+# ---- capítulos (The Expositor's Bible) ------------------------------------
+# Cada capítulo do volume (uma aula ou seção, às vezes com número de capítulo bíblico no título) vira UMA linha. O
+# cabeçalho é: uma linha com o número ("CHAPTER III." ou "III.", na coluna 0; o sumário vem indentado e não conta),
+# o título em maiúsculas e a passagem, que é uma linha só ("JOSHUA i. 2.") ou a citação que fecha a epígrafe
+# ("...--1 COR. i. 2-9."). Texto antes do primeiro capítulo (prefácio, introdução do editor) não entra.
+
+_CAPITULO = re.compile(r"^\s*(?:(?:CHAPTER|PSALM)S?\s+)?[IVXLC]+\.?\s*$")
+# Linha só com a passagem: "JOSHUA i. 2.", "JOSHUA ii.", "1 COR. ix. 1-22.". Título como "PART V." também casa, e
+# falha depois na versificação (vira cabecalho_ilegivel).
+_PASSAGEM_SOLTA = re.compile(
+    r"^(?:[1-3]\s?)?[A-Za-z][A-Za-z.]*(?:\s+[A-Za-z][A-Za-z.]*)?\s+[ivxlcIVXLC\d]+\.?[\d.,:;\s\-–—ivxlcIVXLC]*"
+    r"(?:\s*\([^()]*\))?(?:\s*(?:--|—).*)?$")
+_REF_FINAL = re.compile(r"([ivxlcIVXLC]+\.\s*\d{1,3}(?:\s*[-–,]\s*\d{1,3})*\.?)$")
+
+
+def _passagem_solta(p: str) -> bool:
+    """Linha que é só a passagem: "JOSHUA i. 2.", "ISAIAH i.--HIS GENERAL PREFACE.", "ISAIAH ii. (740 B.C.)."."""
+    return len(p) <= 120 and bool(_PASSAGEM_SOLTA.match(p.strip()))
+
+
+def _passagem_da_linha(p: str) -> str:
+    """Só a referência de uma linha de passagem: sem o parêntese e sem o subtítulo depois de "--"."""
+    ref = re.split(r"\s*(?:--|—)", re.sub(r"\s*\([^()]*\)", "", p.strip()))[0].strip()
+    return re.sub(r"\.\.$", ".", ref)  # "ISAIAH ii. (740 B.C.)." sem o parêntese fica "ISAIAH ii.."
+
+
+def _e_titulo_capitulo(p: str) -> bool:
+    """Título de capítulo: até 120 caracteres, sem aspas de epígrafe nem ser passagem, e com a maioria das palavras
+    em maiúscula inicial ("THE SPIES IN JERICHO", "The Beginning Of The Gospel")."""
+    palavras = re.findall(r"[A-Za-z][A-Za-z'’]*", p)
+    return (0 < len(p) <= 120 and bool(palavras) and p[:1] not in QUOTES and not _passagem_solta(p)
+            and sum(w[0].isupper() for w in palavras) >= 0.7 * len(palavras))
+
+
+def _e_citacao(p: str) -> bool:
+    """Epígrafe que fecha com a citação ("...--1 COR. i. 2-9."), ou seja, começa com aspas e tem cabeçalho."""
+    if p[:1] not in QUOTES:
+        return False
+    q = VERSAO.sub("", p)
+    return bool(EPIGRAFE_FIM.search(q) or EPIGRAFE_CAIXA.search(q))
+
+
+def _tem_cabecalho(ps: list[str]) -> bool:
+    """A seção abre com a passagem (linha solta ou epígrafe) logo no começo, depois de um título opcional."""
+    return any(_passagem_solta(p) or _e_citacao(p) for p in ps[:2])
+
+
+def _capitulo(ps: list[str]) -> Sermao:
+    """Um capítulo: título (se houver), depois a passagem (linha solta ou epígrafe) e o corpo."""
+    titulo, resto = "", ps
+    if resto and _e_titulo_capitulo(resto[0]):
+        titulo, resto = resto[0].rstrip(". "), resto[1:]
+    if resto and _passagem_solta(resto[0]):
+        return Sermao(titulo=titulo, parentese=None, epigrafe=None, cabecalho=_passagem_da_linha(resto[0]),
+                      paragrafos=resto[1:])
+    epigrafe, cabecalho, corpo = _separa_epigrafe(resto)
+    if cabecalho and corpo and _e_titulo_capitulo(corpo[0]):
+        # O título vem logo depois da epígrafe (1 Coríntios): é o título do capítulo, não texto. Se já havia título
+        # antes da epígrafe, é o mesmo título repetido.
+        titulo = titulo or corpo[0].rstrip(". ")
+        corpo = corpo[1:]
+    return Sermao(titulo=titulo, parentese=None, epigrafe=epigrafe, cabecalho=cabecalho, paragrafos=corpo)
+
+
+def _segmentos_capitulos(corpo: str) -> list[list[str]]:
+    """Parágrafos de cada seção: [antes do 1º cabeçalho, depois do 1º, depois do 2º...]. Um cabeçalho é uma linha
+    só com o número ("CHAPTER III.", "III.", "PSALM  I."), com qualquer recuo. A epígrafe pode vir ANTES do número
+    (1 Coríntios: título, epígrafe, "II.", título, corpo): quando a seção não abre com passagem, sobe dela a epígrafe
+    (e o título logo antes) da seção anterior."""
+    linhas = corpo.split("\n")
+    bordas = [i for i, ln in enumerate(linhas) if _CAPITULO.match(ln)]
+    segs = [paragrafos("\n".join(linhas[:bordas[0]] if bordas else linhas))]
+    for k, b in enumerate(bordas):
+        fim = bordas[k + 1] if k + 1 < len(bordas) else len(linhas)
+        ps = paragrafos("\n".join(linhas[b + 1:fim]))
+        if linhas[b].strip().upper().startswith("PSALM"):  # salmos: o número do salmo é a passagem (o salmo inteiro)
+            # O texto do salmo, em versos numerados ("1 Happy the man... 2 ..."), sai: é a Escritura que o app já mostra.
+            while ps and re.match(r"^\d{1,3} [A-Za-z]", ps[0]):  # blocos que começam com número de verso
+                ps = ps[1:]
+            ps = [f"PSALM {linhas[b].split()[-1].rstrip('.')}."] + ps
+        segs.append(ps)
+    # Ordem decrescente: a epígrafe sobe um passo de cada vez, até a seção que a usa.
+    for j in range(len(segs) - 1, 0, -1):
+        if _tem_cabecalho(segs[j]) or not segs[j - 1] or not _e_citacao(segs[j - 1][-1]):
+            continue
+        n = 2 if len(segs[j - 1]) >= 2 and _e_titulo_capitulo(segs[j - 1][-2]) else 1
+        segs[j] = segs[j - 1][-n:] + segs[j]
+        segs[j - 1] = segs[j - 1][:-n]
+    return segs
+
+
+def texto_do_capitulo(livro: str, autor: str, c: Sermao) -> str:
+    cabecalho = f"The Expositor's Bible — {livro} ({autor})" + (f": {c.titulo}" if c.titulo else "")
+    return "\n\n".join([cabecalho] + c.paragrafos)
+
+
+def linhas_de_capitulos(texto_bruto: str, livro: str, autor: str) -> tuple[list[tuple[int, int, str]], Counter]:
+    """(start_vid, end_vid, texto) de cada capítulo mantido, e contagens: capitulos e descartados por motivo."""
+    segs = _segmentos_capitulos(corpo_do_gutenberg(texto_bruto))
+    stats: Counter = Counter({"capitulos": len(segs) - 1})
+    linhas = []
+    for ps in segs[1:]:  # segs[0] é o que vem antes do primeiro cabeçalho (capa, sumário, prefácio)
+        c = _capitulo(ps)
+        intervalo, motivo = passagem(c)
+        if intervalo is None:
+            if motivo == "sem_cabecalho" and len(c.paragrafos) <= 1:
+                motivo = "secao"  # cabeçalho de seção sem passagem e sem texto (ex.: "THE BOOK OF JOSHUA")
+            stats[motivo] += 1
+            continue
+        if not c.paragrafos:
+            stats["sem_texto"] += 1
+            continue
+        linhas.append((intervalo[0], intervalo[1], texto_do_capitulo(livro, autor, c)))
+    stats["mantidos"] = len(linhas)
+    return linhas, stats
+
+
+# ---- obras -------------------------------------------------------------------
+
+# Regra do Brasil: domínio público para autor falecido há mais de 70 anos. Em 2026, morte até 1955.
+LIMITE_MORTE = 1955
+
+
+@dataclass(frozen=True)
+class Volume:
+    ebook: int       # eBook do Project Gutenberg
+    rotulo: str      # livro (ou volume) em inglês, como sai no título
+    autor: str       # autor do volume (The Expositor's Bible tem um autor por volume)
+    morte: int       # ano da morte do autor
+
+
+@dataclass(frozen=True)
+class Obra:
+    source_id: str
+    titulo: str                  # source.title
+    autor: str                   # source.author
+    url: str                     # source.url
+    volumes: tuple[Volume, ...]
+    linhas: Callable[[str, Volume], tuple[list, Counter]]  # (texto bruto, volume) -> linhas, contagens
+    tradicao: str
+    atribuicao: str              # "{ebooks}" vira a lista de eBooks mantidos
+    notas: str
+
+
+MACLAREN = Obra(
+    source_id=SOURCE_ID,
+    titulo="Expositions of Holy Scripture",
+    autor=AUTHOR,
+    url="https://www.gutenberg.org/ebooks/7069",
+    volumes=tuple(Volume(n, rotulo, AUTHOR, 1910) for n, rotulo in VOLUMES),
+    linhas=lambda texto, v: linhas_do_volume(texto, v.rotulo),
+    tradicao="baptist",
+    atribuicao=(
+        "Expositions of Holy Scripture, Alexander Maclaren. Project Gutenberg eBooks {ebooks}, sem o cabeçalho e o "
+        "rodapé da licença do Project Gutenberg. Domínio público: autor falecido em 1910 e obras publicadas de 1904 a "
+        "1910 (domínio público nos EUA); no Brasil, autor falecido há mais de 70 anos."
+    ),
+    notas=(
+        "Sermão por texto: um comentário por sermão, no intervalo da passagem do cabeçalho (parêntese do "
+        "título ou fim da epígrafe). O texto começa com 'Maclaren — <volume>: <sermão>' e traz o corpo "
+        "inteiro; a epígrafe não entra. Descartados: sem cabeçalho, cabeçalho ilegível e sem texto. Texto em "
+        "inglês."
+    ),
+)
+
+# The Expositor's Bible (W. Robertson Nicoll, ed.; 1887-1905). Autor e ano da morte de cada volume: catálogo do
+# Project Gutenberg (sobrenome, nome, datas). O volume "Expositor's Bible: Index" (eBook #39819) não é comentário.
+EXPOSITORS = Obra(
+    source_id="expositors-bible",
+    titulo="The Expositor's Bible",
+    autor="Vários autores (ed. W. Robertson Nicoll)",
+    url="https://www.gutenberg.org/ebooks/32968",
+    volumes=(
+        Volume(32968, "Hebrews", "Thomas Charles Edwards", 1900),
+        Volume(33151, "John, vol. 1", "Marcus Dods", 1909),
+        Volume(33288, "John, vol. 2", "Marcus Dods", 1909),
+        Volume(33420, "Exodus", "George Alexander Chadwick", 1923),
+        Volume(37120, "Mark", "George Alexander Chadwick", 1923),
+        Volume(37345, "Colossians and Philemon", "Alexander Maclaren", 1910),
+        Volume(39196, "Ephesians", "George G. Findlay", 1919),
+        Volume(39394, "1 Samuel", "William Garden Blaikie", 1899),
+        Volume(39395, "Genesis", "Marcus Dods", 1909),
+        Volume(39628, "Pastoral Epistles", "Alfred Plummer", 1926),
+        Volume(39727, "Judges and Ruth", "Robert A. Watson", 1921),
+        Volume(39767, "Isaiah, vol. 1", "George Adam Smith", 1942),
+        Volume(39788, "Philippians", "Robert Rainy", 1906),
+        Volume(39856, "Luke", "Henry Burton", 1930),
+        Volume(39913, "Ecclesiastes", "Samuel Cox", 1893),
+        Volume(39941, "Song of Solomon and Lamentations", "Walter F. Adeney", 1920),
+        Volume(39956, "Ezra, Nehemiah and Esther", "Walter F. Adeney", 1920),
+        Volume(40235, "Chronicles", "William Henry Bennett", 1920),
+        Volume(40470, "Job", "Robert A. Watson", 1921),
+        Volume(40775, "Epistles of John", "William Alexander", 1911),
+        Volume(40811, "Matthew", "John Monro Gibson", 1921),
+        Volume(41850, "2 Corinthians", "James Denney", 1917),
+        Volume(41893, "Jeremiah, chaps. XXI-LII", "William Henry Bennett", 1920),
+        Volume(42027, "2 Kings", "Frederic William Farrar", 1903),
+        Volume(42189, "Proverbs", "Robert F. Horton", 1934),
+        Volume(42251, "Revelation", "William Milligan", 1893),
+        Volume(42258, "Acts, vol. 1", "George Thomas Stokes", 1898),
+        Volume(42273, "Epistles of St. Peter", "J. Rawson Lumby", 1895),
+        Volume(42303, "Acts, vol. 2", "George Thomas Stokes", 1898),
+        Volume(42319, "Joshua", "William Garden Blaikie", 1899),
+        Volume(42334, "Leviticus", "Samuel H. Kellogg", 1899),
+        Volume(42354, "1 Corinthians", "Marcus Dods", 1909),
+        Volume(42445, "Psalms, vol. 1", "Alexander Maclaren", 1910),
+        Volume(42488, "Psalms, vol. 2", "Alexander Maclaren", 1910),
+        Volume(42601, "Jeremiah", "Charles James Ball", 1924),
+        Volume(42639, "Numbers", "Robert A. Watson", 1921),
+        Volume(42645, "Galatians", "George G. Findlay", 1919),
+        Volume(42753, "Thessalonians", "James Denney", 1917),
+        Volume(42891, "1 Kings", "Frederic William Farrar", 1903),
+        Volume(43672, "Isaiah, vol. 2", "George Adam Smith", 1942),
+        Volume(43847, "The Twelve Prophets, vol. 1", "George Adam Smith", 1942),
+        Volume(44027, "Psalms, vol. 3", "Alexander Maclaren", 1910),
+        Volume(44103, "Daniel", "Frederic William Farrar", 1903),
+        Volume(44619, "2 Samuel", "William Garden Blaikie", 1899),
+        Volume(46975, "Ezekiel", "John Skinner", 1925),
+        Volume(47337, "James and Jude", "Alfred Plummer", 1926),
+        Volume(48858, "Romans", "Handley Carr Glyn Moule", 1920),
+        Volume(49045, "Deuteronomy", "Andrew Harper", 1936),
+        Volume(50747, "The Twelve Prophets, vol. 2", "George Adam Smith", 1942),
+    ),
+    linhas=lambda texto, v: linhas_de_capitulos(texto, v.rotulo, v.autor),
+    tradicao="presbyterian",
+    atribuicao=(
+        "The Expositor's Bible, ed. W. Robertson Nicoll (1887-1905). Project Gutenberg eBooks {ebooks}, sem o "
+        "cabeçalho e o rodapé da licença do Project Gutenberg. Domínio público: autores falecidos entre 1893 e 1942 "
+        "(domínio público nos EUA); no Brasil, autor falecido há mais de 70 anos."
+    ),
+    notas=(
+        "Capítulo por texto: uma linha por capítulo do volume, no intervalo da passagem do cabeçalho (linha depois do "
+        "título ou citação que fecha a epígrafe). O texto começa com \"The Expositor's Bible — <livro> (<autor>): "
+        "<título>\" e traz o corpo inteiro; a epígrafe não entra. Descartados: sem passagem, passagem ilegível e sem "
+        "texto. Autores variam por volume (maioria presbiteriana escocesa; Maclaren, batista; Farrar, Moule e Plummer, "
+        "anglicanos); a tradição do registro é a presbiteriana. Texto em inglês."
+    ),
+)
+
+OBRAS: dict[str, Obra] = {"maclaren": MACLAREN, "expositors": EXPOSITORS}
+
+
 # ---- download e gravação --------------------------------------------------
 
 def sha256_of(path: Path) -> str:
@@ -233,53 +482,49 @@ def baixa(n: int, dest: Path) -> Path:
     return dest
 
 
-def main() -> None:
+def main(obra: Obra) -> None:
     rows: list[tuple[int, int, str]] = []
     hashes = []
     total: Counter = Counter()
-    for n, rotulo in VOLUMES:
-        path = baixa(n, RAW / SOURCE_ID / f"pg{n}.txt")
+    mantidos: list[Volume] = []
+    for v in obra.volumes:
+        if v.morte > LIMITE_MORTE:
+            total["autor_recente"] += 1
+            print(f"[{obra.source_id}] pg{v.ebook} {v.rotulo}: descartado (autor falecido em {v.morte})")
+            continue
+        path = baixa(v.ebook, RAW / obra.source_id / f"pg{v.ebook}.txt")
         texto = path.read_text(encoding="utf-8-sig")
-        linhas, stats = linhas_do_volume(texto, rotulo)
+        linhas, stats = obra.linhas(texto, v)
         rows.extend(linhas)
         total.update(stats)
-        hashes.append(f"pg{n} {sha256_of(path)[:12]}")
-        print(f"[{SOURCE_ID}] pg{n} {rotulo}: {dict(stats)}")
-    print(f"[{SOURCE_ID}] total: {dict(total)}")
+        mantidos.append(v)
+        hashes.append(f"pg{v.ebook} {sha256_of(path)[:12]}")
+        print(f"[{obra.source_id}] pg{v.ebook} {v.rotulo}: {dict(stats)}")
+    print(f"[{obra.source_id}] total: {dict(total)}")
 
-    with StagingWriter(SOURCE_ID) as w:
+    ebooks = ", ".join(f"#{v.ebook}" for v in mantidos)
+    with StagingWriter(obra.source_id) as w:
         w.source(
             kind="commentary",
-            title="Expositions of Holy Scripture",
-            author=AUTHOR,
+            title=obra.titulo,
+            author=obra.autor,
             lang="en",
             license="Public Domain",
             license_url=GUT_LICENSE_URL,
-            url="https://www.gutenberg.org/ebooks/7069",
-            version="Project Gutenberg, eBooks " + ", ".join(f"#{n}" for n, _ in VOLUMES)
-                    + "; arquivos " + "; ".join(hashes),
-            attribution=(
-                "Expositions of Holy Scripture, Alexander Maclaren. Project Gutenberg eBooks "
-                + ", ".join(f"#{n}" for n, _ in VOLUMES)
-                + ", sem o cabeçalho e o rodapé da licença do Project Gutenberg. Domínio público: autor falecido em "
-                "1910 e obras publicadas de 1904 a 1910 (domínio público nos EUA); no Brasil, autor falecido há mais "
-                "de 70 anos."
-            ),
-            tradition="baptist",
-            notes=(
-                "Sermão por texto: um comentário por sermão, no intervalo da passagem do cabeçalho (parêntese do "
-                "título ou fim da epígrafe). O texto começa com 'Maclaren — <volume>: <sermão>' e traz o corpo "
-                "inteiro; a epígrafe não entra. Descartados: sem cabeçalho, cabeçalho ilegível e sem texto. Texto em "
-                "inglês."
-            ),
+            url=obra.url,
+            version="Project Gutenberg, eBooks " + ebooks + "; arquivos " + "; ".join(hashes),
+            attribution=obra.atribuicao.format(ebooks=ebooks),
+            tradition=obra.tradicao,
+            notes=obra.notas,
         )
         seen: Counter = Counter()
         for start, end, text in sorted(rows, key=lambda r: (r[0], r[1])):
-            base = cite_com(SOURCE_ID, start, end)
+            base = cite_com(obra.source_id, start, end)
             seen[base] += 1
             cite = base if seen[base] == 1 else f"{base}.{seen[base]}"
             w.row("commentary", cite_id=cite, start_vid=start, end_vid=end, text=text)
 
 
 if __name__ == "__main__":
-    main()
+    nome = sys.argv[1] if len(sys.argv) > 1 else "maclaren"
+    main(OBRAS[nome])
