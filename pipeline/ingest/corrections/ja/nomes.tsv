@@ -13,156 +13,156 @@
 # Bíblia da língua. Não achada: candidato = forma do glossário + núcleo, confianca baixa.
 # Revisão: comece pelas linhas de confianca baixa e media. Linhas revisado e sem não são recalculadas.
 nome_en	candidato	nome_ja	origem	confianca	entidades	versos	cobertura	alternativa
-Abel	ベテ・シェメシュ	ベテ・シェメシュ	auto	baixa	1	1	1.00	ヨシュア
-Ahlab	アフラブ	アフラブ	auto	baixa	3	2	0.50	アクジブ
-Aholah	オホラ	オホラ	auto	baixa	1	4	1.00	アッシリア
-Allon	ヤブネエル	ヤブネエル	auto	baixa	2	1	1.00	アダミ・ネケブ
-Alphaeus	アルパヨ	アルパヨ	auto	baixa	1	1	1.00	イエス
-Alphaeus	マタイ	マタイ	auto	baixa	2	7	0.57	タダイ
-Amaw	バラム	バラム	auto	baixa	3	1	1.00	エジプト
-Amorite	アモリ	アモリ	auto	baixa	1	4	1.00	ギルガシ
-Amorites	アモリ	アモリ	auto	baixa	1	86	1.00	マムレ
-Ampliatus	アンプリアス	アンプリアス	auto	baixa	1	1	1.00	
-Angle	ウジヤ	ウジヤ	auto	baixa	2	1	1.00	エルサレム
-Angle	ヘナダデ	ヘナダデ	auto	baixa	1	5	0.20	ウザイ
-Apharasthchite	アファルサク	アファルサク	auto	baixa	1	3	0.67	アファルサテク
-Aphses	ハピツェツ	ハピツェツ	auto	baixa	1	1	1.00	ヘジル
-Aramitess	アスリエル	アスリエル	auto	baixa	1	1	1.00	アラム
-Archites	アルキ	アルキ	auto	baixa	1	6	1.00	アヒトフェル
-Arkite	アルキ	アルキ	auto	baixa	1	2	1.00	シニ
-Arkites	アルキ	アルキ	auto	baixa	1	2	1.00	シニ
-Arvadite	アルワド	アルワド	auto	baixa	1	2	1.00	ハマテ
-Arvadites	アルワド	アルワド	auto	baixa	1	2	1.00	ハマテ
-Asen	ハリフ	ハリフ	auto	baixa	1	1	1.00	
-Azal	アツェル	アツェル	auto	baixa	3	1	1.00	ウジヤ
-Azazel	アロン	アロン	auto	baixa	3	3	0.33	
-Azel	アツェル	アツェル	auto	baixa	2	4	1.00	エルアサ
-Baale-judah	バアレ	バアレ	auto	baixa	2	1	1.00	ユダ
-Bear	プレアデス	プレアデス	auto	baixa	1	2	0.50	オリオン
-Bel	ベル	ベル	auto	baixa	1	3	1.00	ネボ
-Beth-Ashtoreth	ベテ・シャン	ベテ・シャン	auto	baixa	1	1	1.00	アシュタロテ
-Beth-eked	サマリア	サマリア	auto	baixa	3	2	0.50	
-Beth-haggan	イブレアム	イブレアム	auto	baixa	3	1	1.00	アハズヤ
-Beth-millo	ミロ	ミロ	auto	baixa	3	3	1.00	シェケム
-Blastus	ブラスト	ブラスト	auto	baixa	2	1	1.00	ティルス
-Bul	ブル	ブル	auto	baixa	1	1	1.00	
-Buzites	ブズ	ブズ	auto	baixa	1	2	1.00	バラケル
-Calcol	カルコル	カルコル	auto	baixa	3	2	1.00	ダラ
-Chalcol	カルコル	カルコル	auto	baixa	1	1	1.00	マホル
-Chelal	ケラル	ケラル	auto	baixa	2	1	1.00	マアセヤ
-Cherethites	ケレテ	ケレテ	auto	baixa	2	12	0.83	ペリシテ
-Chronicles	ホザイ	ホザイ	auto	baixa	1	38	0.03	エリアシブ
-Claudius	クラウディオ	クラウディオ	auto	baixa	2	11	0.18	ユダヤ
-Cleophas	クレオパ	クレオパ	auto	baixa	1	2	0.50	クロパ
-Dehavites	デハ	デハ	auto	baixa	1	1	1.00	ディナ
-Dekar	ベン・デケル	ベン・デケル	auto	baixa	1	1	1.00	マカツ
-Destruction	エジプト	エジプト	auto	baixa	1	1	1.00	カナン
-Diana	アジア	アジア	auto	baixa	1	5	0.20	ユダヤ
-Diblathaim	アルモン・ディブラタイム	アルモン・ディブラタイム	auto	baixa	1	3	0.67	ベテ・ディブラタイム
-Dinaites	ディナ	ディナ	auto	baixa	1	1	1.00	デハ
-East	ゼバ	ゼバ	auto	baixa	3	18	0.06	ミディアン
-Ecbatana	アクメタ	アクメタ	auto	baixa	3	1	1.00	メディア
-Egypt	プト	プト	auto	baixa	1	4	0.25	ルディム
-Eliphal	エリファル	エリファル	auto	baixa	2	1	1.00	アヒアム
-Eliphalet	エリフェレテ	エリフェレテ	auto	baixa	1	3	1.00	エルヤダ
-Elipheleh	エリフェレフ	エリフェレフ	auto	baixa	1	2	1.00	エイエル
-Elpaal	エルパアル	エルパアル	auto	baixa	2	3	1.00	イシュメライ
-Elpalet	エルペレテ	エルペレテ	auto	baixa	1	2	0.50	エリフェレテ
-Elul	エルル	エルル	auto	baixa	1	1	1.00	
-Elymas	エルマ	エルマ	auto	baixa	1	2	0.50	パフォス
-Ephlal	エフラル	エフラル	auto	baixa	2	1	1.00	オベデ
-Ephron	ネフトア	ネフトア	auto	baixa	2	1	1.00	キルヤテ・ヤアリム
-Eutychus	ユティコ	ユティコ	auto	baixa	2	1	1.00	パウロ
-Eve	エバ	エバ	auto	baixa	2	4	1.00	アダム
-Eznites	エツェン	エツェン	auto	baixa	1	1	1.00	ヨシェブ・バシェベテ
-Field	ヒゼキヤ	ヒゼキヤ	auto	baixa	1	3	0.67	ラブシャケ
-Forest	ユダ	ユダ	auto	baixa	1	1	1.00	
-Freedmen	キレネ	キレネ	auto	baixa	1	1	1.00	アレクサンドリア
-Gadara	ゲルゲサ	ゲルゲサ	auto	baixa	1	1	1.00	イエス
-Galal	ガラル	ガラル	auto	baixa	4	3	1.00	アサフ
-Galilee	ゴイム	ゴイム	auto	baixa	1	1	1.00	ギルガル
-Gamad	アルワデ	アルワデ	auto	baixa	3	1	1.00	
-Garmite	ガルミ	ガルミ	auto	baixa	1	1	1.00	ナハム
-Garmites	ガルミ	ガルミ	auto	baixa	1	1	1.00	ナハム
-Gerasa	ガダラ	ガダラ	auto	baixa	1	3	1.00	ガリラヤ
-Gibeah	ピネハス	ピネハス	auto	baixa	1	1	1.00	エルアザル
-Gibeath-elohim	ペリシテ	ペリシテ	auto	baixa	3	1	1.00	タンバリン
-Gilead	ヤフド	ヤフド	auto	baixa	2	1	1.00	ギルアド
-Girgashites	ギルガシ	ギルガシ	auto	baixa	1	16	0.44	ヒビ
-Girgasite	ギルガシ	ギルガシ	auto	baixa	1	2	1.00	エブス
-Girzites	ギルズ	ギルズ	auto	baixa	1	1	1.00	ゲシュル
-Gittith	ヤコブ	ヤコブ	auto	baixa	1	3	0.33	
-Gizonites	ギゾン	ギゾン	auto	baixa	1	1	1.00	ヨナタン
-Greece	キレネ	キレネ	auto	baixa	1	11	0.09	ギリシア
-Greece	ギリシア	ギリシア	auto	baixa	2	7	0.57	ギリシャ
-Gulloth-mayim	ネゲブ	ネゲブ	auto	baixa	1	2	0.50	カレブ
-Hachmonites	ハクモニ	ハクモニ	auto	baixa	1	2	0.50	タフケモン
-Hakkephirim	ゲシェム	ゲシェム	auto	baixa	2	1	1.00	サンバラテ
-Halhul	ハルフル	ハルフル	auto	baixa	3	1	1.00	ゲドル
-Hamathite	ハマテ	ハマテ	auto	baixa	1	2	1.00	ツェマリ
-Hamathites	ハマテ	ハマテ	auto	baixa	1	2	1.00	ツェマリ
-Hammelech	エラフメエル	エラフメエル	auto	baixa	2	2	0.50	アブデル
-Hararites	ハラル	ハラル	auto	baixa	1	4	1.00	アラル
-Haruphites	ハルフ	ハルフ	auto	baixa	1	1	1.00	ベアルヤ
-Hazar-shual	ハツァル・シュアル	ハツァル・シュアル	auto	baixa	3	4	1.00	バラ
-Hazerim	アビム	アビム	auto	baixa	1	1	1.00	ガザ
-Hebrews	ヘブル	ヘブル	auto	baixa	1	37	0.81	ヘブライ
-Helech	アルワデ	アルワデ	auto	baixa	3	1	1.00	
-Heliopolis	エジプト	エジプト	auto	baixa	1	1	1.00	ベテ・シェメシュ
-Heliopolis	ポティ・フェラ	ポティ・フェラ	auto	baixa	1	5	0.60	ヨセフ
-Hiel	ヒエル	ヒエル	auto	baixa	2	1	1.00	セグブ
-Higgaion	セラ	セラ	auto	baixa	1	1	1.00	
-Hillel	ヒレル	ヒレル	auto	baixa	2	2	1.00	イスラエル
-Hivite	ヒビ	ヒビ	auto	baixa	1	9	1.00	シニ
-Hivites	ヒビ	ヒビ	auto	baixa	1	25	1.00	エブス
-Horesh	ハキラ	ハキラ	auto	baixa	3	4	0.25	サウル
-Horonaim	アブサロム	アブサロム	auto	baixa	1	1	1.00	
-Horonites	ホロニ	ホロニ	auto	baixa	1	3	1.00	サンバラテ
-Hul	ウツ	ウツ	auto	baixa	2	2	1.00	フル
-Hur	ベン・フル	ベン・フル	auto	baixa	2	1	1.00	エフライム
-Hushathites	フシャ	フシャ	auto	baixa	1	5	1.00	シパイ
-Ithrites	イテル	イテル	auto	baixa	1	3	0.67	シュマテ
-Jadau	イド	イド	auto	baixa	1	1	1.00	ゼビナ
-Jaddai	イド	イド	auto	baixa	1	1	1.00	ゼビナ
-Jahleel	ヤフレエル	ヤフレエル	auto	baixa	2	2	1.00	エロン
-Jahzeel	ヤフツェエル	ヤフツェエル	auto	baixa	2	3	0.67	ヤフジエル
-James	サロメ	サロメ	auto	baixa	2	19	0.11	ヨセ
-Janen	バモテ	バモテ	auto	baixa	1	1	1.00	マタナ
-Jaziz	ダビデ	ダビデ	auto	baixa	2	1	1.00	
-Jebusite	エブス	エブス	auto	baixa	2	3	1.00	ギルガシ
-Jebusites	エブス	エブス	auto	baixa	1	37	1.00	ヒビ
-Jehaleleel	エハレレル	エハレレル	auto	baixa	1	1	1.00	ジファ
-Jehalelel	エハレルエル	エハレルエル	auto	baixa	1	1	1.00	ケハテ
-Jehallelel	エハレルエル	エハレルエル	auto	baixa	1	1	1.00	ケハテ
-Jehallelel	エハレレル	エハレレル	auto	baixa	1	1	1.00	ジファ
-Jehezekel	エヘズケル	エヘズケル	auto	baixa	1	1	1.00	ペタフヤ
-Jeiel	エウエル	エウエル	auto	baixa	1	1	1.00	シムリ
-Jeiel	シェマヤ	シェマヤ	auto	baixa	1	1	1.00	エウエル
-Jemnath	エクロン	エクロン	auto	baixa	1	1	1.00	アシュドデ
-Jeshebeab	エシェブアブ	エシェブアブ	auto	baixa	2	1	1.00	フパ
-Jesher	エシェル	エシェル	auto	baixa	2	1	1.00	ヘツロン
-Jeshimon	マオン	マオン	auto	baixa	3	6	0.17	ギベア
-Jeziel	シェマア	シェマア	auto	baixa	2	1	1.00	アヒエゼル
-Jezoar	エトナン	エトナン	auto	baixa	1	1	1.00	イツハル
-Julius	ユリオ	ユリオ	auto	baixa	2	2	1.00	イタリア
-Kadesh	タフティム・ホデシ	タフティム・ホデシ	auto	baixa	1	1	1.00	ギレアデ
-Kadmonites	カデモニ	カデモニ	auto	baixa	1	1	1.00	ケニ
-Karnaim	アシュテロテ・カルナイム	アシュテロテ・カルナイム	auto	baixa	1	1	1.00	シャベ・キルヤタイム
-Kenites	ケニ	ケニ	auto	baixa	1	10	1.00	カデモニ
-Kenizzites	ケニ	ケニ	auto	baixa	1	1	1.00	カデモニ
-LORD	ヨルダン	ヨルダン	auto	baixa	1	843	0.00	オレブ
-Lael	ラエル	ラエル	auto	baixa	2	1	1.00	エルヤサフ
-Lahad	ラハド	ラハド	auto	baixa	2	1	1.00	ヤハテ
-Lasea	ラサヤ	ラサヤ	auto	baixa	3	1	1.00	
-Lehem	ヤシュビ・レヘム	ヤシュビ・レヘム	auto	baixa	2	1	1.00	コゼバ
-Linus	リノス	リノス	auto	baixa	2	1	1.00	プデス
-Lod	ロド	ロド	auto	baixa	3	7	0.57	オノ
-Lucius	ルキオ	ルキオ	auto	baixa	2	2	1.00	ヤソン
-Lud	ルデ	ルデ	auto	baixa	5	6	0.67	ルド
-Luke	ルカ	ルカ	auto	baixa	2	4	0.75	マルコ
-Mahalab	ラマ	ラマ	auto	baixa	2	1	1.00	アクジブ
-Mahavites	マハビ	マハビ	auto	baixa	1	1	1.00	イトマ
-Malchus	マルコス	マルコス	auto	baixa	2	1	1.00	シモン・ペテロ
+Abel	ベテ・シェメシュ	アベル	revisado	baixa	1	1	1.00	ヨシュア
+Ahlab	アフラブ	アフラブ	revisado	baixa	3	2	0.50	アクジブ
+Aholah	オホラ	オホラ	revisado	baixa	1	4	1.00	アッシリア
+Allon	ヤブネエル	アロン	revisado	baixa	2	1	1.00	アダミ・ネケブ
+Alphaeus	アルパヨ	アルパヨ	revisado	baixa	1	1	1.00	イエス
+Alphaeus	マタイ	アルパヨ	revisado	baixa	2	7	0.57	タダイ
+Amaw	バラム	バラム	sem	baixa	3	1	1.00	エジプト
+Amorite	アモリ	アモリ	revisado	baixa	1	4	1.00	ギルガシ
+Amorites	アモリ	アモリ	revisado	baixa	1	86	1.00	マムレ
+Ampliatus	アンプリアス	アンプリアス	revisado	baixa	1	1	1.00	
+Angle	ウジヤ	ウジヤ	sem	baixa	2	1	1.00	エルサレム
+Angle	ヘナダデ	ヘナダデ	sem	baixa	1	5	0.20	ウザイ
+Apharasthchite	アファルサク	アファルサク	revisado	baixa	1	3	0.67	アファルサテク
+Aphses	ハピツェツ	ハピツェツ	revisado	baixa	1	1	1.00	ヘジル
+Aramitess	アスリエル	アスリエル	sem	baixa	1	1	1.00	アラム
+Archites	アルキ	アルキ	revisado	baixa	1	6	1.00	アヒトフェル
+Arkite	アルキ	アルキ	revisado	baixa	1	2	1.00	シニ
+Arkites	アルキ	アルキ	revisado	baixa	1	2	1.00	シニ
+Arvadite	アルワド	アルワド	revisado	baixa	1	2	1.00	ハマテ
+Arvadites	アルワド	アルワド	revisado	baixa	1	2	1.00	ハマテ
+Asen	ハリフ	ハリフ	sem	baixa	1	1	1.00	
+Azal	アツェル	アツェル	revisado	baixa	3	1	1.00	ウジヤ
+Azazel	アロン	アザゼル	revisado	baixa	3	3	0.33	
+Azel	アツェル	アツェル	revisado	baixa	2	4	1.00	エルアサ
+Baale-judah	バアレ	バアレ・ユダ	revisado	baixa	2	1	1.00	ユダ
+Bear	プレアデス	プレアデス	sem	baixa	1	2	0.50	オリオン
+Bel	ベル	ベル	revisado	baixa	1	3	1.00	ネボ
+Beth-Ashtoreth	ベテ・シャン	ベテ・アシュタロテ	revisado	baixa	1	1	1.00	アシュタロテ
+Beth-eked	サマリア	サマリア	sem	baixa	3	2	0.50	
+Beth-haggan	イブレアム	ベテ・ハガン	revisado	baixa	3	1	1.00	アハズヤ
+Beth-millo	ミロ	ベテ・ミロ	revisado	baixa	3	3	1.00	シェケム
+Blastus	ブラスト	ブラスト	revisado	baixa	2	1	1.00	ティルス
+Bul	ブル	ブル	revisado	baixa	1	1	1.00	
+Buzites	ブズ	ブズ	revisado	baixa	1	2	1.00	バラケル
+Calcol	カルコル	カルコル	revisado	baixa	3	2	1.00	ダラ
+Chalcol	カルコル	カルコル	revisado	baixa	1	1	1.00	マホル
+Chelal	ケラル	ケラル	revisado	baixa	2	1	1.00	マアセヤ
+Cherethites	ケレテ	ケレテ	revisado	baixa	2	12	0.83	ペリシテ
+Chronicles	ホザイ	ホザイ	sem	baixa	1	38	0.03	エリアシブ
+Claudius	クラウディオ	クラウデオ	revisado	baixa	2	11	0.18	ユダヤ
+Cleophas	クレオパ	クレオパ	revisado	baixa	1	2	0.50	クロパ
+Dehavites	デハ	デハ	revisado	baixa	1	1	1.00	ディナ
+Dekar	ベン・デケル	ベン・デケル	revisado	baixa	1	1	1.00	マカツ
+Destruction	エジプト	エジプト	sem	baixa	1	1	1.00	カナン
+Diana	アジア	アルテミス	revisado	baixa	1	5	0.20	ユダヤ
+Diblathaim	アルモン・ディブラタイム	アルモン・ディブラタイム	revisado	baixa	1	3	0.67	ベテ・ディブラタイム
+Dinaites	ディナ	ディナ	sem	baixa	1	1	1.00	デハ
+East	ゼバ	ゼバ	sem	baixa	3	18	0.06	ミディアン
+Ecbatana	アクメタ	エクバタナ	revisado	baixa	3	1	1.00	メディア
+Egypt	プト	エジプト	revisado	baixa	1	4	0.25	ルディム
+Eliphal	エリファル	エリファル	revisado	baixa	2	1	1.00	アヒアム
+Eliphalet	エリフェレテ	エリフェレテ	revisado	baixa	1	3	1.00	エルヤダ
+Elipheleh	エリフェレフ	エリフェレフ	revisado	baixa	1	2	1.00	エイエル
+Elpaal	エルパアル	エルパアル	revisado	baixa	2	3	1.00	イシュメライ
+Elpalet	エルペレテ	エルペレテ	revisado	baixa	1	2	0.50	エリフェレテ
+Elul	エルル	エルル	revisado	baixa	1	1	1.00	
+Elymas	エルマ	エルマ	revisado	baixa	1	2	0.50	パフォス
+Ephlal	エフラル	エフラル	revisado	baixa	2	1	1.00	オベデ
+Ephron	ネフトア	エフロン	revisado	baixa	2	1	1.00	キルヤテ・ヤアリム
+Eutychus	ユティコ	ユティコ	revisado	baixa	2	1	1.00	パウロ
+Eve	エバ	エバ	revisado	baixa	2	4	1.00	アダム
+Eznites	エツェン	エツェン	revisado	baixa	1	1	1.00	ヨシェブ・バシェベテ
+Field	ヒゼキヤ	ヒゼキヤ	sem	baixa	1	3	0.67	ラブシャケ
+Forest	ユダ	ユダ	sem	baixa	1	1	1.00	
+Freedmen	キレネ	キレネ	sem	baixa	1	1	1.00	アレクサンドリア
+Gadara	ゲルゲサ	ガダラ	revisado	baixa	1	1	1.00	イエス
+Galal	ガラル	ガラル	revisado	baixa	4	3	1.00	アサフ
+Galilee	ゴイム	ガリラヤ	revisado	baixa	1	1	1.00	ギルガル
+Gamad	アルワデ	アルワデ	sem	baixa	3	1	1.00	
+Garmite	ガルミ	ガルミ	revisado	baixa	1	1	1.00	ナハム
+Garmites	ガルミ	ガルミ	revisado	baixa	1	1	1.00	ナハム
+Gerasa	ガダラ	ゲラサ	revisado	baixa	1	3	1.00	ガリラヤ
+Gibeah	ピネハス	ギベア	revisado	baixa	1	1	1.00	エルアザル
+Gibeath-elohim	ペリシテ	神のギベア	revisado	baixa	3	1	1.00	タンバリン
+Gilead	ヤフド	ギルアデ	revisado	baixa	2	1	1.00	ギルアド
+Girgashites	ギルガシ	ギルガシ	revisado	baixa	1	16	0.44	ヒビ
+Girgasite	ギルガシ	ギルガシ	revisado	baixa	1	2	1.00	エブス
+Girzites	ギルズ	ギルズ	revisado	baixa	1	1	1.00	ゲシュル
+Gittith	ヤコブ	ヤコブ	sem	baixa	1	3	0.33	
+Gizonites	ギゾン	ギゾン	revisado	baixa	1	1	1.00	ヨナタン
+Greece	キレネ	ギリシヤ	revisado	baixa	1	11	0.09	ギリシア
+Greece	ギリシア	ギリシヤ	revisado	baixa	2	7	0.57	ギリシャ
+Gulloth-mayim	ネゲブ	ネゲブ	sem	baixa	1	2	0.50	カレブ
+Hachmonites	ハクモニ	ハクモニ	revisado	baixa	1	2	0.50	タフケモン
+Hakkephirim	ゲシェム	ゲシェム	sem	baixa	2	1	1.00	サンバラテ
+Halhul	ハルフル	ハルフル	revisado	baixa	3	1	1.00	ゲドル
+Hamathite	ハマテ	ハマテ	revisado	baixa	1	2	1.00	ツェマリ
+Hamathites	ハマテ	ハマテ	revisado	baixa	1	2	1.00	ツェマリ
+Hammelech	エラフメエル	ハメレク	revisado	baixa	2	2	0.50	アブデル
+Hararites	ハラル	ハラル	revisado	baixa	1	4	1.00	アラル
+Haruphites	ハルフ	ハルフ	revisado	baixa	1	1	1.00	ベアルヤ
+Hazar-shual	ハツァル・シュアル	ハツァル・シュアル	revisado	baixa	3	4	1.00	バラ
+Hazerim	アビム	ハゼリム	revisado	baixa	1	1	1.00	ガザ
+Hebrews	ヘブル	ヘブル	revisado	baixa	1	37	0.81	ヘブライ
+Helech	アルワデ	ヘレク	revisado	baixa	3	1	1.00	
+Heliopolis	エジプト	オン	revisado	baixa	1	1	1.00	ベテ・シェメシュ
+Heliopolis	ポティ・フェラ	オン	revisado	baixa	1	5	0.60	ヨセフ
+Hiel	ヒエル	ヒエル	revisado	baixa	2	1	1.00	セグブ
+Higgaion	セラ	セラ	sem	baixa	1	1	1.00	
+Hillel	ヒレル	ヒレル	revisado	baixa	2	2	1.00	イスラエル
+Hivite	ヒビ	ヒビ	revisado	baixa	1	9	1.00	シニ
+Hivites	ヒビ	ヒビ	revisado	baixa	1	25	1.00	エブス
+Horesh	ハキラ	ホレシュ	revisado	baixa	3	4	0.25	サウル
+Horonaim	アブサロム	ホロナイム	revisado	baixa	1	1	1.00	
+Horonites	ホロニ	ホロニ	revisado	baixa	1	3	1.00	サンバラテ
+Hul	ウツ	フル	revisado	baixa	2	2	1.00	フル
+Hur	ベン・フル	ベン・フル	revisado	baixa	2	1	1.00	エフライム
+Hushathites	フシャ	フシャ	revisado	baixa	1	5	1.00	シパイ
+Ithrites	イテル	イテル	revisado	baixa	1	3	0.67	シュマテ
+Jadau	イド	ヤダイ	revisado	baixa	1	1	1.00	ゼビナ
+Jaddai	イド	ヤダイ	revisado	baixa	1	1	1.00	ゼビナ
+Jahleel	ヤフレエル	ヤフレエル	revisado	baixa	2	2	1.00	エロン
+Jahzeel	ヤフツェエル	ヤフツェエル	revisado	baixa	2	3	0.67	ヤフジエル
+James	サロメ	ヤコブ	revisado	baixa	2	19	0.11	ヨセ
+Janen	バモテ	バモテ	sem	baixa	1	1	1.00	マタナ
+Jaziz	ダビデ	ヤジズ	revisado	baixa	2	1	1.00	
+Jebusite	エブス	エブス	revisado	baixa	2	3	1.00	ギルガシ
+Jebusites	エブス	エブス	revisado	baixa	1	37	1.00	ヒビ
+Jehaleleel	エハレレル	エハレレル	revisado	baixa	1	1	1.00	ジファ
+Jehalelel	エハレルエル	エハレルエル	revisado	baixa	1	1	1.00	ケハテ
+Jehallelel	エハレルエル	エハレルエル	revisado	baixa	1	1	1.00	ケハテ
+Jehallelel	エハレレル	エハレレル	revisado	baixa	1	1	1.00	ジファ
+Jehezekel	エヘズケル	エヘズケル	revisado	baixa	1	1	1.00	ペタフヤ
+Jeiel	エウエル	エウエル	revisado	baixa	1	1	1.00	シムリ
+Jeiel	シェマヤ	エウエル	revisado	baixa	1	1	1.00	エウエル
+Jemnath	エクロン	エクロン	sem	baixa	1	1	1.00	アシュドデ
+Jeshebeab	エシェブアブ	エシェブアブ	revisado	baixa	2	1	1.00	フパ
+Jesher	エシェル	エシェル	revisado	baixa	2	1	1.00	ヘツロン
+Jeshimon	マオン	エシモン	revisado	baixa	3	6	0.17	ギベア
+Jeziel	シェマア	エジエル	revisado	baixa	2	1	1.00	アヒエゼル
+Jezoar	エトナン	ゾハル	revisado	baixa	1	1	1.00	イツハル
+Julius	ユリオ	ユリアス	revisado	baixa	2	2	1.00	イタリア
+Kadesh	タフティム・ホデシ	カデシ	revisado	baixa	1	1	1.00	ギレアデ
+Kadmonites	カデモニ	カデモニ	revisado	baixa	1	1	1.00	ケニ
+Karnaim	アシュテロテ・カルナイム	カルナイム	revisado	baixa	1	1	1.00	シャベ・キルヤタイム
+Kenites	ケニ	ケニ	revisado	baixa	1	10	1.00	カデモニ
+Kenizzites	ケニ	ケナズ	revisado	baixa	1	1	1.00	カデモニ
+LORD	ヨルダン	ヨルダン	sem	baixa	1	843	0.00	オレブ
+Lael	ラエル	ラエル	revisado	baixa	2	1	1.00	エルヤサフ
+Lahad	ラハド	ラハド	revisado	baixa	2	1	1.00	ヤハテ
+Lasea	ラサヤ	ラサヤ	revisado	baixa	3	1	1.00	
+Lehem	ヤシュビ・レヘム	ヤシュビ・レヘム	revisado	baixa	2	1	1.00	コゼバ
+Linus	リノス	リノス	revisado	baixa	2	1	1.00	プデス
+Lod	ロド	ロド	revisado	baixa	3	7	0.57	オノ
+Lucius	ルキオ	ルキオ	revisado	baixa	2	2	1.00	ヤソン
+Lud	ルデ	ルデ	revisado	baixa	5	6	0.67	ルド
+Luke	ルカ	ルカ	revisado	baixa	2	4	0.75	マルコ
+Mahalab	ラマ	マハラブ	revisado	baixa	2	1	1.00	アクジブ
+Mahavites	マハビ	マハビ	revisado	baixa	1	1	1.00	イトマ
+Malchus	マルコス	マルコス	revisado	baixa	2	1	1.00	シモン・ペテロ
 Maranatha	イエス・キリスト	イエス・キリスト	auto	baixa	1	1	1.00	
 Mecherathites	メケラ	メケラ	auto	baixa	1	1	1.00	ヘフェル
 Meholathites	メホラ	メホラ	auto	baixa	1	2	1.00	メフィボシェテ
