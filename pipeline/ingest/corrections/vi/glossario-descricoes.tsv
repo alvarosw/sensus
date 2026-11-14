@@ -1,0 +1,114 @@
+# Glossário das descrições em vietnamita (TIPNR, pipeline/sensus/descricoes_pt.py, por regra). Colunas:
+#   secao      cargo | tempo | tribo | lugar | relacao | nome
+#   ingles     termo como aparece na descrição da fonte (exato, com maiúsculas)
+#   vietnamita tradução usada na frase (nomes próprios iguais a nomes.tsv vi)
+#   nota       observação para o revisor (opcional)
+#   genero     vazio: o vietnamita não tem concordância de gênero (coluna só para o gramática de hi/ur/ar)
+# Os modelos de relação e de lugar já trazem a partícula ('của', 'thuộc'), para a frase sair na ordem natural:
+# 'con trai của Môi-se', 'thuộc dân Ca-na-an'. Os modelos de tempo ficam como complemento ('thuộc thời …').
+secao	ingles	vietnamita	nota	genero
+cargo	man	người đàn ông
+cargo	woman	người phụ nữ
+cargo	location	địa điểm
+cargo	high priest	thầy tế lễ thượng phẩm
+cargo	priest	thầy tế lễ
+cargo	warrior	chiến binh
+cargo	warriors	các chiến binh
+cargo	musician	nhạc sĩ
+cargo	prophet	tiên tri
+cargo	prophetess	nữ tiên tri
+cargo	king	vua
+cargo	queen	hoàng hậu
+cargo	group	nhóm
+cargo	male deity	thần nam
+cargo	female deity	thần nữ
+cargo	deity	thần
+cargo	people	dân tộc
+cargo	woman or town	người phụ nữ hoặc thành
+cargo	town	thành
+cargo	emperor	hoàng đế
+cargo	prince	hoàng tử
+cargo	apostle	sứ đồ
+cargo	angel	thiên sứ
+cargo	concubine	vợ lẽ
+cargo	chief	thủ lĩnh
+cargo	steward	quản gia
+cargo	servant	đầy tớ
+cargo	ruler	người cai trị
+cargo	musical piece	bản nhạc
+tempo	at the time of the Patriarchs	thuộc thời các tổ phụ
+tempo	at the time of Egypt and Wilderness	thuộc thời Ê-díp-tô và đồng vắng
+tempo	at the time of Exile and Return	thuộc thời lưu đày và hồi hương
+tempo	at the time of Divided Monarchy	thuộc thời vương quốc chia đôi
+tempo	at the time of United Monarchy	thuộc thời vương quốc thống nhất
+tempo	at the time of the New Testament	thuộc thời Tân Ước
+tempo	at the time of the Exodus	thuộc thời Xuất Ê-díp-tô
+tempo	before Israel's Monarchy	trước thời vương quốc Y-sơ-ra-ên
+tempo	at the time before the Flood	thuộc thời trước Nước Lụt
+tempo	before the Flood	trước Nước Lụt
+tempo	at the time of Judges	thuộc thời các quan xét
+tribo	Levi	Lê-vi
+tribo	Judah	Giu-đa
+tribo	Asher	A-se
+tribo	Benjamin	Bên-gia-min
+tribo	Ephraim	Ép-ra-im
+tribo	Manasseh	Ma-na-se
+tribo	Simeon	Si-mê-ôn
+tribo	Issachar	Y-sa-ca
+tribo	Zebulun	Sa-bu-lôn
+tribo	Naphtali	Nép-ta-li
+tribo	Reuben	Ru-bên
+tribo	Gad	Gát
+tribo	Dan	Đan
+relacao	son of	con trai của
+relacao	daughter of	con gái của
+relacao	brother of	anh em của
+relacao	sister of	chị em của
+relacao	half-brother of	anh em cùng cha khác mẹ của
+relacao	half-sister of	chị em cùng cha khác mẹ của
+relacao	wife of	vợ của
+relacao	husband of	chồng của
+relacao	mother of	mẹ của
+relacao	father of	cha của
+relacao	founder of	người sáng lập của
+relacao	concubine of	vợ lẽ của
+relacao	descendant of	con cháu của
+nome	Pharaoh	Pha-ra-ôn
+nome	Asia	A-si
+lugar	in Asia	ở A-si
+cargo	judge	quan xét
+cargo	city	thành
+cargo	gigantic man	người khổng lồ
+cargo	Pharaoh	vua Pha-ra-ôn
+cargo	festival	lễ
+cargo	governor	thống đốc
+lugar	of Egypt	thuộc Ê-díp-tô
+nome	Christ	Đấng Christ
+lugar	of the Cushites	thuộc dân Cút
+lugar	of the Arabs	thuộc dân A-ra-bi
+lugar	of the Edomites	thuộc dân Ê-đôm
+lugar	of the Midianites	thuộc dân Ma-đi-an
+lugar	of the Syrians	thuộc dân Sy-ri
+lugar	of the Gomerians	thuộc dân Gô-me
+lugar	of the Ammonites	thuộc dân Am-môn
+lugar	of the Greeks	thuộc dân Gờ-réc
+lugar	of the Ishmaelites	thuộc dân Ích-ma-ên
+lugar	of the Moabites	thuộc dân Mô-áp
+lugar	of the Egyptians	thuộc dân Ê-díp-tô
+lugar	of the Philistines	thuộc dân Phi-li-tin
+lugar	of the Hittites	thuộc dân Hê-tít
+lugar	of the Canaanites	thuộc dân Ca-na-an
+lugar	of the Amalekites	thuộc dân A-ma-léc
+lugar	of the Jebusites	thuộc dân Giê-bu-sít
+lugar	of the Assyrians	thuộc dân A-si-ri
+lugar	of the Babylonians	thuộc dân Ba-by-lôn
+lugar	of the Chaldeans	thuộc dân Canh-đê
+lugar	of the Persians	thuộc dân Phe-rơ-sơ
+lugar	of the Hebrews	thuộc dân Hê-bơ-rơ
+lugar	of the Israelites	thuộc dân Y-sơ-ra-ên
+cargo	Judge	quan xét
+cargo	huge man	người khổng lồ
+cargo	Canaanite woman	người đàn bà Ca-na-an
+cargo	the Kingdom of Israel	vương quốc Y-sơ-ra-ên
+nome	Persia	Phe-rơ-sơ
+lugar	the Amorites	thuộc dân A-mô-rít
