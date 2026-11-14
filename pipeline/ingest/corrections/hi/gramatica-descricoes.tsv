@@ -8,7 +8,7 @@ mencao_primeira	पहला उल्लेख {ref} में
 mencao_unica	केवल {ref} में आता है
 frase_cargo_comp	{comp} {cargo}
 frase_tempo_com_comp	{frase}{pont.,} {tempo}
-frase_tempo_sem_comp	{frase} {tempo}
+frase_tempo_sem_comp	{frase}{pont.,} {tempo}
 cabecalho	{frase}{pont.;} {mencao}{pont..}
 comp_territorio_tribo	{perto}{tribo} गोत्र के क्षेत्र का
 comp_territorio_tribo.f	{perto}{tribo} गोत्र के क्षेत्र की

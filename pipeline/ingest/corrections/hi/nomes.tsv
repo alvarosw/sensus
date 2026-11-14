@@ -14,7 +14,9 @@
 # Revisão: comece pelas linhas de confianca baixa e media. Linhas revisado e sem não são recalculadas.
 nome_en	candidato	nome_hi	origem	confianca	entidades	versos	cobertura	alternativa
 Abel	वाले	आबेल	revisado	baixa	1	1	1.00	गए
+Achor Valley			auto	baixa	1	5	0.00	
 Achor Valley	{n} की तराई Achor	आकोर की तराई	revisado	baixa	1	5	0.00	
+Adriatic Sea			auto	baixa	2	1	0.00	
 Adriatic Sea	{n} समुद्र Adriatic	अद्रिया समुद्र	revisado	baixa	2	1	0.00	
 Ahasuerus	तेरेश	क्षयर्ष	revisado	baixa	2	30	0.07	और
 Ahaz	आहाज	आहाज	revisado	baixa	2	4	1.00	तह्रे
@@ -28,6 +30,7 @@ Amorite	एमोरी	एमोरी	revisado	baixa	1	4	0.50	एमोरि�
 Amorites	एमोरी	एमोरी	revisado	baixa	1	86	0.29	एमोरियों
 Angle	ने	ने	sem	baixa	2	1	1.00	कोने
 Apharasthchite	अफ़ारसी	अपर्सतकी	revisado	baixa	1	3	0.33	अपर्सतकी
+Appii Forum			auto	baixa	1	1	0.00	
 Appii Forum	{n} का चौक Appii	अप्पियुस का चौक	revisado	baixa	1	1	0.00	
 Archites	एरेकी	एरेकी	revisado	baixa	1	6	0.83	अहीतोपेल
 Arkite	अर्की	अर्की	revisado	baixa	1	2	1.00	सीनी
@@ -43,6 +46,7 @@ Baal-zebub	जबूब	बाल-जबूब	revisado	baixa	2	4	1.00	बाल
 Baal-zephon	सपोन	बाल-सपोन	revisado	baixa	3	3	1.00	डालें
 Bar-jesus	पाफुस	बार-यीशु	revisado	baixa	1	2	0.50	यीशु
 Bear	सप्तर्षि	सप्तर्षि	revisado	baixa	1	2	1.00	बनानेवाला
+Beautiful Gate			auto	baixa	3	2	0.00	
 Beautiful Gate	{n} फाटक Beautiful	सुन्दर फाटक	revisado	baixa	3	2	0.00	
 Beer	बैर	बैर	revisado	baixa	3	1	1.00	वे
 Behemoth	को	जलगज	revisado	baixa	1	1	1.00	के
@@ -51,7 +55,9 @@ Beth-eked	पकड़ो	पकड़ो	sem	baixa	3	2	0.50	के
 Bethlehem	बैतलहम	बैतलहम	revisado	baixa	7	58	0.78	समेत
 Birzaith	बिर्जोत	बिर्जोत	revisado	baixa	1	1	1.00	बरीआ
 Birzavith	बिर्जोत	बिर्जोत	revisado	baixa	1	1	1.00	बरीआ
+Booths Festival			auto	baixa	1	1	0.00	
 Booths Festival	{n} का पर्व Booths	झोपड़ियों का पर्व	revisado	baixa	1	1	0.00	
+Broad Wall			auto	baixa	3	2	0.00	
 Broad Wall	{n} शहरपनाह Broad	चौड़ी शहरपनाह	revisado	baixa	3	2	0.00	
 Brook of the Arabah	अराबा का नाला	अराबा का नाला	revisado	baixa	2	1	0.00	
 Brook of the Willows	मजनूवृक्षों का नाला का नाला	मजनूवृक्षों का नाला	revisado	baixa	2	1	0.00	
@@ -65,23 +71,30 @@ Cherethites	करेतियों	करेती	revisado	baixa	1	9	0.56	क
 Cherethites	करेती	करेती	revisado	baixa	1	3	0.33	करेतियों
 Chronicles	लिखे	इतिहास	revisado	baixa	1	38	0.47	किए
 City of Destruction	नाशनगरपुर	नाशनगर	revisado	baixa	1	1	0.00	
+City of Palms			auto	baixa	2	4	0.00	
 City of Palms	{n}पुर Palms	खजूरवाला नगर	revisado	baixa	2	4	0.00	
 City of Salt	नमक का नगरपुर	नमक का नगर	revisado	baixa	2	1	0.00	
+City of the Lord			auto	baixa	1	2	0.00	
 City of the Lord	{n}पुर Lord	यहोवा का नगर	revisado	baixa	1	2	0.00	
+Corner Gate			auto	baixa	3	5	0.00	
 Corner Gate	{n} फाटक Corner	कोनेवाला फाटक	revisado	baixa	3	5	0.00	
 Cush	छुटकारा	कूश	revisado	baixa	1	1	1.00	हूँ
 Cyprus	साइप्रस	साइप्रस	revisado	baixa	3	15	0.53	किसी
+Dedication Festival			auto	baixa	1	1	0.00	
 Dedication Festival	{n} का पर्व Dedication	स्थापन पर्व	revisado	baixa	1	1	0.00	
 Dehavites	देहवी	देहवी	revisado	baixa	1	1	1.00	एलामी
 Dekar	बेन्देकेर	देकेर	revisado	baixa	1	1	1.00	माकस
 Destiny	देवी	भावी देवी	revisado	baixa	1	1	1.00	देते
 Destruction	देश	नाशनगर	revisado	baixa	1	1	1.00	नाशनगर
 Dinaites	दीनी	दीनी	revisado	baixa	1	1	1.00	शिमशै
+Dragon Spring			auto	baixa	3	1	0.00	
 Dragon Spring	{n} का सोता Dragon	अजगर का सोता	revisado	baixa	3	1	0.00	
+Dung Gate			auto	baixa	3	4	0.00	
 Dung Gate	{n} फाटक Dung	कूड़ाफाटक	revisado	baixa	3	4	0.00	
 East	जेबह	पूर्वी	revisado	baixa	3	18	0.06	तट
 East Square	पूर्वी का चौक	पूर्वी चौक	revisado	baixa	1	1	0.00	
 Egypt	पूत	मिस्र	revisado	baixa	1	4	0.50	नप्तूही
+Egyptian Sea			auto	baixa	1	1	0.00	
 Egyptian Sea	{n} समुद्र Egyptian	मिस्र का समुद्र	revisado	baixa	1	1	0.00	
 Ephron	नेप्तोह	एप्रोन	revisado	baixa	2	1	1.00	फिर
 Ethiopia	खोजा	कूश	revisado	baixa	1	7	0.14	सत्ताईस
@@ -91,27 +104,38 @@ Eve	हव्वा	हव्वा	revisado	baixa	2	4	1.00	ने
 Ezekiel	यहेजकेल	यहेजकेल	revisado	baixa	2	2	1.00	शक्ति
 Eznites	एस्	एस्नी	revisado	baixa	1	1	1.00	नी
 Field	जलकुण्ड	धोबियों का खेत	revisado	baixa	1	3	1.00	सिरे
+Fish Gate			auto	baixa	3	4	0.00	
 Fish Gate	{n} फाटक Fish	मछली फाटक	revisado	baixa	3	4	0.00	
 Forest	अस्त्र	अस्त्र	sem	baixa	1	1	1.00	शस्त्र
 Forest Ephraim	एप्रैम का वन	एप्रैम का वन	revisado	baixa	1	1	0.00	
 Fortune	वस्तुएँ	भाग्य देवता	revisado	baixa	1	1	1.00	सजाते
+Forum of Appius			auto	baixa	2	1	0.00	
 Forum of Appius	{n} का चौक Appius	अप्पियुस का चौक	revisado	baixa	2	1	0.00	
+Foundation Gate			auto	baixa	1	1	0.00	
 Foundation Gate	{n} फाटक Foundation	नींव का फाटक	revisado	baixa	1	1	0.00	
+Fountain Gate			auto	baixa	2	3	0.00	
 Fountain Gate	{n} फाटक Fountain	सोता फाटक	revisado	baixa	2	3	0.00	
 Freedmen	कुरेनी	दासत्व-मुक्त	revisado	baixa	1	1	1.00	में
 Galeed	गिलियाद	गिलियाद	revisado	baixa	1	2	1.00	सहादुथा
 Galilee	गोयीम	गलील	revisado	baixa	1	1	1.00	गिलगाल
 Garmite	गेरेमी	गेरेमी	revisado	baixa	1	1	1.00	नहम
 Garmites	गेरेमी	गेरेमी	revisado	baixa	1	1	1.00	नहम
+Gate Miphkad			auto	baixa	1	1	0.00	
 Gate Miphkad	{n} फाटक Miphkad	मिपकाद फाटक	revisado	baixa	1	1	0.00	
+Gate of Yeshanah			auto	baixa	1	2	0.00	
 Gate of Yeshanah	{n} फाटक Yeshanah	पुराना फाटक	revisado	baixa	1	2	0.00	
+Gate of the Foundation			auto	baixa	2	1	0.00	
 Gate of the Foundation	{n} फाटक Foundation	नींव का फाटक	revisado	baixa	2	1	0.00	
+Gate of the Fountain			auto	baixa	1	3	0.00	
 Gate of the Fountain	{n} फाटक Fountain	सोता फाटक	revisado	baixa	1	3	0.00	
+Gate of the Guard			auto	baixa	1	1	0.00	
 Gate of the Guard	{n} फाटक Guard	पहरुओं का फाटक	revisado	baixa	1	1	0.00	
+Gate of the Valley			auto	baixa	1	2	0.00	
 Gate of the Valley	{n} फाटक Valley	तराई का फाटक	revisado	baixa	1	2	0.00	
 Gazez	गाजेज	गाजेज	revisado	baixa	4	1	1.00	उससे
 Gedor	गदोरवासी	गदोर	revisado	baixa	1	1	1.00	योएला
 Gerasa	गिरासेनियों	गिरासेनियों का देश	revisado	baixa	2	4	0.75	आस
+Gerizim Mount			auto	baixa	1	4	0.00	
 Gerizim Mount	{n} पर्वत Gerizim	गिरिज्जीम पर्वत	revisado	baixa	1	4	0.00	
 Gibeah	गिबत्पीनहास	गिबा	revisado	baixa	1	1	1.00	गया
 Gibeath-elohim	जब	परमेश्वर का पहाड़	revisado	baixa	3	1	1.00	नबूवत
@@ -120,19 +144,24 @@ Girgashites	गिर्गाशी	गिर्गाशी	revisado	baixa	1	1
 Girgasite	गिर्गाशी	गिर्गाशी	revisado	baixa	1	2	1.00	यबूसी
 Girzites	गिर्जियों	गिर्जी	revisado	baixa	1	1	1.00	ये
 Gizonites	गीजोई	गीजोई	revisado	baixa	1	1	1.00	योनातान
+Great Sea			auto	baixa	3	36	0.00	
 Great Sea	{n} समुद्र Great	महासमुद्र	revisado	baixa	3	36	0.00	
 Greece	के	यूनान	revisado	baixa	3	13	0.69	उभारेगा
+Guard Gate			auto	baixa	1	1	0.00	
 Guard Gate	{n} फाटक Guard	पहरुओं का फाटक	revisado	baixa	1	1	0.00	
 Gulloth-mayim	बोली	जल के सोते	revisado	baixa	1	2	1.00	सोते
 Hachmonites	हक्मोनी	हक्मोनी	revisado	baixa	1	2	0.50	तहकमोनी
 Hakkephirim	किसी	किसी	sem	baixa	2	1	1.00	मेरी
+Halak Mount			auto	baixa	1	2	0.00	
 Halak Mount	{n} पर्वत Halak	हालाक पहाड़	revisado	baixa	1	2	0.00	
+Hall of Judgment			auto	baixa	2	1	0.00	
 Hall of Judgment	{n} का ओसारा Judgment	न्याय का ओसारा	revisado	baixa	2	1	0.00	
 Hall of Pillars	खम्भों का ओसारा का ओसारा	खम्भों का ओसारा	revisado	baixa	2	1	0.00	
 Hall of the Throne	सिंहासन का ओसारा	सिंहासन का ओसारा	revisado	baixa	2	1	0.00	
 Hamathite	हमाती	हमाती	revisado	baixa	1	2	1.00	समारी
 Hamathites	हमाती	हमाती	revisado	baixa	1	2	1.00	समारी
 Hammelech	अब्देल	अब्देल	sem	baixa	2	2	0.50	यरहमेल
+Hamon-gog Valley			auto	baixa	1	2	0.00	
 Hamon-gog Valley	{n} की तराई Hamon-gog	हमोन-गोग की तराई	revisado	baixa	1	2	0.00	
 Hararites	हरारी	हरारी	revisado	baixa	1	4	1.00	शारार
 Haruphites	हारूपी	हारूपी	revisado	baixa	1	1	1.00	यरीमोत
@@ -145,18 +174,23 @@ Heth	ज्येष्ठ	हित्त	revisado	baixa	2	58	0.02	जेठा
 Hezeki	हिजकी	हिजकी	revisado	baixa	1	1	1.00	हेबेर
 Hierapolis	हियरापुलिसवालों	हियरापुलिस	revisado	baixa	3	1	1.00	लिये
 Highway	या	राजमार्ग	revisado	baixa	1	2	1.00	पीएँगे
+Hill Mizar			auto	baixa	1	1	0.00	
 Hill Mizar	{n} पहाड़ी Mizar	मिसार पहाड़ी	revisado	baixa	1	1	0.00	
 Hivite	हिब्बी	हिब्बी	revisado	baixa	1	9	0.89	हित्ती
 Hivites	हिब्बी	हिब्बी	revisado	baixa	1	25	0.64	हित्ती
+Hor Mount			auto	baixa	2	12	0.00	
 Hor Mount	{n} पर्वत Hor	होर पर्वत	revisado	baixa	2	12	0.00	
 Horonites	होरोनी	होरोनी	revisado	baixa	1	3	1.00	अम्मोनी
+Horse Gate			auto	baixa	3	3	0.00	
 Horse Gate	{n} फाटक Horse	घोड़ाफाटक	revisado	baixa	3	3	0.00	
+House of the Forest			auto	baixa	1	6	0.00	
 House of the Forest	{n} का भवन Forest	लबानोनी वन नामक भवन	revisado	baixa	1	6	0.00	
 Hur	बेन्हूर	हूर	revisado	baixa	2	1	1.00	अर्थात्
 Hushathites	हूशाई	हूशाई	revisado	baixa	1	5	1.00	सिब्बकै
 Hymenaeus	हुमिनयुस	हुमिनयुस	revisado	baixa	2	2	1.00	फिलेतुस
 India	सीवान	हिन्दुस्तान	revisado	baixa	3	2	0.50	आज्ञा
 Iphedeiah	यिपदयाह	यिपदयाह	revisado	baixa	1	1	1.00	पनूएल
+Iphtahel Valley			auto	baixa	1	2	0.00	
 Iphtahel Valley	{n} की तराई Iphtahel	यिप्तहेल की तराई	revisado	baixa	1	2	0.00	
 Ithmah	महवीमी	यित्मा	revisado	baixa	2	1	1.00	एलनाम
 Ithrites	येतेरी	येतेरी	revisado	baixa	1	3	1.00	मिश्राई
@@ -183,10 +217,12 @@ Kadmonites	कदमोनियों	कदमोनी	revisado	baixa	1	1	1.0
 Karnaim	अश्तारोत्कनम	अश्तारोत्कनम	sem	baixa	1	1	1.00	किर्यातैम
 Kenites	केनी	केनी	revisado	baixa	1	10	0.60	केनियों
 Kenizzites	केनियों	कनिज्जी	revisado	baixa	1	1	1.00	कनिज्जियों
+King's Valley			auto	baixa	2	2	0.00	
 King's Valley	{n} की तराई King	राजा की तराई	revisado	baixa	2	2	0.00	
 LORD	इलोई	यहोवा	revisado	baixa	1	843	0.00	एलोहे
 Lebanon Valley	लबानोन की तराई	लबानोन की तराई	revisado	baixa	1	2	0.00	
 Legion	क्योंकि	सेना	revisado	baixa	1	2	1.00	सेना
+Lower Pool			auto	baixa	1	1	0.00	
 Lower Pool	{n} जलकुण्ड Lower	निचला जलकुण्ड	revisado	baixa	1	1	0.00	
 Lucifer	लूका	भोर का तारा	revisado	baixa	2	1	1.00	कैसे
 Mahalab	अकजीब	अकजीब	sem	baixa	2	1	1.00	नामक
@@ -203,31 +239,45 @@ Meronothites	मेरोनोती	मेरोनोती	revisado	baixa	1	
 Metheg-ammah	जीतकर	जीतकर	sem	baixa	2	1	1.00	हाथ
 Meunites	मूनी	मूनी	revisado	baixa	1	3	0.33	मूनियों
 Mezobaites	मसोबाई	मसोबाई	revisado	baixa	1	1	1.00	मोआबी
+Middle Gate			auto	baixa	1	1	0.00	
 Middle Gate	{n} फाटक Middle	बीचवाला फाटक	revisado	baixa	1	1	0.00	
 Misgab	निराश	निराश	sem	baixa	2	1	1.00	मोआब
 Mishraites	मिश्राई	मिश्राई	revisado	baixa	1	1	1.00	सोराई
 Mithnites	मेतेनी	मेतेनी	revisado	baixa	1	1	1.00	योशापात
+Mizar Mount			auto	baixa	1	1	0.00	
 Mizar Mount	{n} पर्वत Mizar	मिसार पहाड़ी	revisado	baixa	1	1	0.00	
 Mizpeh Valley	मिस्पे की तराई	मिस्पे की तराई	revisado	baixa	1	2	0.00	
 Moriah Mount	मोरिय्याह पर्वत	मोरिय्याह पर्वत	revisado	baixa	1	2	0.00	
 Mortar	मक्तेश	मक्तेश	revisado	baixa	3	1	1.00	मिट
 Mount Baal-hermon	बालहेर्मोन पर्वत	बालहेर्मोन पर्वत	revisado	baixa	1	1	0.00	
+Mount Baalhermon			auto	baixa	1	1	0.00	
 Mount Baalhermon	{n} पर्वत Baalhermon	बालहेर्मोन पर्वत	revisado	baixa	1	1	0.00	
 Mount Carmel	{n} पर्वत Carmel	कर्मेल पर्वत	revisado	baixa	2	18	0.00	
+Mount Gerizim			auto	baixa	2	5	0.00	
 Mount Gerizim	{n} पर्वत Gerizim	गिरिज्जीम पर्वत	revisado	baixa	2	5	0.00	
+Mount Halak			auto	baixa	2	2	0.00	
 Mount Halak	{n} पर्वत Halak	हालाक पहाड़	revisado	baixa	2	2	0.00	
 Mount Heres	हेरेस पर्वत	हेरेस पर्वत	revisado	baixa	2	1	0.00	
+Mount Hor			auto	baixa	4	12	0.00	
 Mount Hor	{n} पर्वत Hor	होर पर्वत	revisado	baixa	4	12	0.00	
+Mount Jearim			auto	baixa	2	1	0.00	
 Mount Jearim	{n} पर्वत Jearim	यारीम पहाड़	revisado	baixa	2	1	0.00	
+Mount Mizar			auto	baixa	1	1	0.00	
 Mount Mizar	{n} पर्वत Mizar	मिसार पहाड़ी	revisado	baixa	1	1	0.00	
 Mount Moriah	मोरिय्याह पर्वत	मोरिय्याह पर्वत	revisado	baixa	2	1	0.00	
+Mount Perazim			auto	baixa	2	1	0.00	
 Mount Perazim	{n} पर्वत Perazim	परासीम पहाड़	revisado	baixa	2	1	0.00	
+Mount Shapher			auto	baixa	1	2	0.00	
 Mount Shapher	{n} पर्वत Shapher	शेपेर पर्वत	revisado	baixa	1	2	0.00	
+Mount Shepher			auto	baixa	1	2	0.00	
 Mount Shepher	{n} पर्वत Shepher	शेपेर पर्वत	revisado	baixa	1	2	0.00	
+Mount Sion			auto	baixa	1	1	0.00	
 Mount Sion	{n} पर्वत Sion	सिय्योन पर्वत	revisado	baixa	1	1	0.00	
 Mount Zalmon	सल्मोन पर्वत	सल्मोन पर्वत	revisado	baixa	2	1	0.00	
 Mount Zemaraim	समारैम पर्वत	समारैम पर्वत	revisado	baixa	2	1	0.00	
+Mount of Olives			auto	baixa	3	18	0.00	
 Mount of Olives	{n} का पहाड़ Olives	जैतून का पहाड़	revisado	baixa	3	18	0.00	
+Muster Gate			auto	baixa	2	1	0.00	
 Muster Gate	{n} फाटक Muster	मिपकाद फाटक	revisado	baixa	2	1	0.00	
 Muth-labben	मन	मूतलब्बेन	revisado	baixa	1	1	1.00	मैं
 Naamathites	नामाती	नामाती	revisado	baixa	1	4	1.00	तेमानी
@@ -239,13 +289,17 @@ Nehelamites	नेहेलामी	नेहेलामी	revisado	baixa	1	3
 Nephushesim	नपीसीम	नपूशस	revisado	baixa	1	2	0.50	नपूशस
 Nephusim	नपीसीम	नपीसीम	revisado	baixa	1	2	0.50	मूनीम
 Nero	तेरी	नीरो	revisado	baixa	1	2	0.50	अनुग्रह
+New Gate			auto	baixa	3	2	0.00	
 New Gate	{n} फाटक New	नया फाटक	revisado	baixa	3	2	0.00	
 Nohah	मनुहा	मनुहा	revisado	baixa	1	1	1.00	ओर
 Nohah	मानहत	नोहा	revisado	baixa	1	1	1.00	घरानों
 North	रथ	उत्तर	revisado	baixa	1	10	0.10	अन्त
 North Gate	उत्तर फाटक	उत्तरी फाटक	revisado	baixa	1	1	0.00	
+Old Gate			auto	baixa	1	1	0.00	
 Old Gate	{n} फाटक Old	पुराना फाटक	revisado	baixa	1	1	0.00	
+Old Pool			auto	baixa	1	1	0.00	
 Old Pool	{n} जलकुण्ड Old	पुराना जलकुण्ड	revisado	baixa	1	1	0.00	
+Olives Mount			auto	baixa	1	14	0.00	
 Olives Mount	{n} पर्वत Olives	जैतून का पहाड़	revisado	baixa	1	14	0.00	
 Olivet	वे	जैतून पहाड़	revisado	baixa	1	3	0.33	जैतून
 Orion	नक्षत्रों	मृगशिरा	revisado	baixa	1	3	0.33	जो
@@ -254,7 +308,9 @@ Pavement	में	चबूतरा	revisado	baixa	1	1	1.00	बातें
 Pelethites	पलेतियों	पलेती	revisado	baixa	1	7	0.71	पलेती
 Pelonites	पलोनी	पलोनी	revisado	baixa	1	4	0.75	हेलेस
 Pelusium	सीन	सीन	revisado	baixa	3	2	1.00	उस
+People's Gate			auto	baixa	2	1	0.00	
 People's Gate	{n} फाटक People	सदर फाटक	revisado	baixa	2	1	0.00	
+Perazim Mount			auto	baixa	1	1	0.00	
 Perazim Mount	{n} पर्वत Perazim	परासीम पहाड़	revisado	baixa	1	1	0.00	
 Perizzites	परिज्जी	परिज्जी	revisado	baixa	1	23	0.48	परिज्जियों
 Peter	पतरस	पतरस	revisado	baixa	1	179	0.84	तापते
@@ -268,14 +324,18 @@ Plain of Jordan	यरदन का मैदान	यरदन की तर�
 Pleiades	कचपचिया	कचपचिया	revisado	baixa	1	3	1.00	मृगशिरा
 Pool	को	राजा का कुण्ड	revisado	baixa	1	1	1.00	सोते
 Pool	पल्ले	शेलह का कुण्ड	revisado	baixa	1	1	1.00	कोल्होजे
+Potsherd Gate			auto	baixa	2	1	0.00	
 Potsherd Gate	{n} फाटक Potsherd	ठीकरों का फाटक	revisado	baixa	2	1	0.00	
+Preparation Festival			auto	baixa	1	6	0.00	
 Preparation Festival	{n} का पर्व Preparation	तैयारी का दिन	revisado	baixa	1	6	0.00	
+Prison Gate			auto	baixa	1	1	0.00	
 Prison Gate	{n} फाटक Prison	पहरुओं का फाटक	revisado	baixa	1	1	0.00	
 Puthites	पूती	पूती	revisado	baixa	1	1	1.00	शूमाती
 Rab-mag	मगों	मगों का प्रधान	revisado	baixa	2	2	1.00	सर्सकीम
 Rab-saris	नेर्गलसरेसेर	खोजों का प्रधान	revisado	baixa	2	2	1.00	नबूसजबान
 Ramah	आस	रामा	revisado	baixa	1	1	1.00	भाला
 Ramathites	रामाई	रामाई	revisado	baixa	1	1	1.00	शापामी
+Red Sea			auto	baixa	5	33	0.00	
 Red Sea	{n} समुद्र Red	लाल समुद्र	revisado	baixa	5	33	0.00	
 Rephaim	रपाइयों	रपाई	revisado	baixa	1	1	1.00	राज्य
 Rephaim	रपाई	रपाई	revisado	baixa	1	9	0.33	रपाइयों
@@ -288,6 +348,7 @@ River	पारवाले	महानद	revisado	baixa	1	10	0.10	रूप�
 River	राजा	महानद	revisado	baixa	2	18	0.72	जाए
 River	वे	महानद	revisado	baixa	1	1	1.00	भेजे
 Rock	माओन	चट्टान	revisado	baixa	1	4	1.00	का
+Rock of Escape			auto	baixa	2	1	0.00	
 Rock of Escape	{n} की चट्टान Escape	सेलाहम्म-हलकोत	revisado	baixa	2	1	0.00	
 Rocks	बकरों	जंगली बकरों की चट्टानें	revisado	baixa	1	1	1.00	की
 Sahar	पास	पास	sem	baixa	3	1	1.00	सब
@@ -299,15 +360,19 @@ Sansannah	सनसन्ना	सनसन्ना	revisado	baixa	3	1	1.00	�
 Saph	हूशाई	सप	revisado	baixa	1	2	1.00	सिप्पै
 Sea of Chinnereth	किन्नेरेत समुद्र	किन्नेरेत ताल	revisado	baixa	1	2	0.00	
 Sea of Chinneroth	किन्नेरेत समुद्र	किन्नेरेत ताल	revisado	baixa	1	1	0.00	
+Sea of the Philistines			auto	baixa	1	1	0.00	
 Sea of the Philistines	{n} समुद्र Philistines	पलिश्तियों का समुद्र	revisado	baixa	1	1	0.00	
 Sea of the Plain	तराई समुद्र	अराबा का ताल	revisado	baixa	1	2	0.00	
 Sephar	सपारा	सपारा	revisado	baixa	3	1	1.00	मेशा
+Serpent's Stone			auto	baixa	2	1	0.00	
 Serpent's Stone	{n} नामक पत्थर Serpent	जोहेलेत पत्थर	revisado	baixa	2	1	0.00	
 Shaaph	शाप	शाप	revisado	baixa	4	2	1.00	गेशान
+Sheep Gate			auto	baixa	3	4	0.00	
 Sheep Gate	{n} फाटक Sheep	भेड़फाटक	revisado	baixa	3	4	0.00	
 Sheminith	मिकनेयाह	शमीनीत	revisado	baixa	1	3	0.33	मत्तित्याह
 Shepham	शपाम	शपाम	revisado	baixa	3	3	0.67	से
 Shephelah	क्षेत्र	नीचे का देश	revisado	baixa	2	19	0.16	तेल
+Shepher Mount			auto	baixa	1	2	0.00	
 Shepher Mount	{n} पर्वत Shepher	शेपेर पर्वत	revisado	baixa	1	2	0.00	
 Shepho	शपो	शपो	revisado	baixa	2	2	0.50	शोबाल
 Shiggaion	शरण	शिग्गायोन	revisado	baixa	1	1	1.00	मैं
@@ -318,6 +383,7 @@ Shuhites	शूही	शूही	revisado	baixa	1	5	1.00	तेमानी
 Shulammites	शूलेम्मिन	शूलेम्मिन	revisado	baixa	1	1	1.00	लौट
 Shumathites	शूमाती	शूमाती	revisado	baixa	1	1	1.00	पूती
 Shunammites	शूनेमिन	शूनेमिन	revisado	baixa	1	8	1.00	ढूँढ़ते
+Siddim Valley			auto	baixa	1	3	0.00	
 Siddim Valley	{n} की तराई Siddim	सिद्दीम की तराई	revisado	baixa	1	3	0.00	
 Sikkuth	चरणपीठ	चरणपीठ	sem	baixa	1	1	1.00	फिरते
 Simeon	योनान	शिमोन	revisado	baixa	2	1	1.00	शमौन
@@ -325,6 +391,7 @@ Simon	शमौन	शमौन	revisado	baixa	11	29	0.97	जो
 Sinite	सीनी	सीनी	revisado	baixa	1	2	1.00	हिब्बी
 Sinites	सीनी	सीनी	revisado	baixa	1	2	1.00	हिब्बी
 Skull	कुकर्मियों	खोपड़ी	revisado	baixa	1	1	1.00	को
+Sorek Valley			auto	baixa	1	1	0.00	
 Sorek Valley	{n} की तराई Sorek	सोरेक घाटी	revisado	baixa	1	1	0.00	
 South	उठ	दक्षिण	revisado	baixa	1	12	0.08	उत्तर
 South	समेत	दक्षिण	revisado	baixa	1	1	1.00	हुआ
@@ -343,9 +410,13 @@ Tizites	तीसी	तीसी	revisado	baixa	1	1	1.00	यदीएल
 Tower	कोनेवाले	हननेल का गुम्मट	revisado	baixa	1	4	0.25	कोने
 Tower	भट्ठों	भट्ठों का गुम्मट	revisado	baixa	1	2	0.50	पहत्मोआब
 Tower	हम्मेआ	हम्मेआ का गुम्मट	revisado	baixa	1	2	1.00	वरन्
+Tower of Hananel			auto	baixa	2	4	0.00	
 Tower of Hananel	{n} का गुम्मट Hananel	हननेल का गुम्मट	revisado	baixa	2	4	0.00	
+Tower of the Hundred			auto	baixa	2	2	0.00	
 Tower of the Hundred	{n} का गुम्मट Hundred	हम्मेआ का गुम्मट	revisado	baixa	2	2	0.00	
+Tower of the Ovens			auto	baixa	2	2	0.00	
 Tower of the Ovens	{n} का गुम्मट Ovens	भट्ठों का गुम्मट	revisado	baixa	2	2	0.00	
+Travelers Valley			auto	baixa	1	1	0.00	
 Travelers Valley	{n} की तराई Travelers	यात्रियों की तराई	revisado	baixa	1	1	0.00	
 Tribe of Judah	यहूदा का गोत्र	यहूदा का गोत्र	revisado	baixa	1	1	0.00	
 Trogyllium	मीलेतुस	त्रोगुल्लियुम	revisado	baixa	3	1	1.00	खियुस
@@ -362,36 +433,57 @@ Unnamed#6	उत्पन्न	उत्पन्न	sem	baixa	1	1	1.00	एल�
 Unnamed#7	उत्पन्न	उत्पन्न	sem	baixa	1	1	1.00	एलीहूद
 Unnamed#8	उत्पन्न	उत्पन्न	sem	baixa	1	1	1.00	एलीहूद
 Unnamed#9	उत्पन्न	उत्पन्न	sem	baixa	1	1	1.00	एलीहूद
+Upper Pool			auto	baixa	1	3	0.00	
 Upper Pool	{n} जलकुण्ड Upper	ऊपर का जलकुण्ड	revisado	baixa	1	3	0.00	
+Vale of Siddim			auto	baixa	1	3	0.00	
 Vale of Siddim	{n} की तराई Siddim	सिद्दीम की तराई	revisado	baixa	1	3	0.00	
+Valley Gate			auto	baixa	2	4	0.00	
 Valley Gate	{n} फाटक Valley	तराई का फाटक	revisado	baixa	2	4	0.00	
+Valley of Achor			auto	baixa	2	5	0.00	
 Valley of Achor	{n} की तराई Achor	आकोर की तराई	revisado	baixa	2	5	0.00	
+Valley of Baca			auto	baixa	2	1	0.00	
 Valley of Baca	{n} की तराई Baca	बाका की तराई	revisado	baixa	2	1	0.00	
+Valley of Decision			auto	baixa	1	1	0.00	
 Valley of Decision	{n} की तराई Decision	निर्णय की तराई	revisado	baixa	1	1	0.00	
+Valley of Hamon-gog			auto	baixa	1	2	0.00	
 Valley of Hamon-gog	{n} की तराई Hamon-gog	हमोन-गोग की तराई	revisado	baixa	1	2	0.00	
+Valley of Hamongog			auto	baixa	1	2	0.00	
 Valley of Hamongog	{n} की तराई Hamongog	हमोन-गोग की तराई	revisado	baixa	1	2	0.00	
+Valley of Hinnom			auto	baixa	2	12	0.00	
 Valley of Hinnom	{n} की तराई Hinnom	हिन्नोम की तराई	revisado	baixa	2	12	0.00	
+Valley of Iphtahel			auto	baixa	1	2	0.00	
 Valley of Iphtahel	{n} की तराई Iphtahel	यिप्तहेल की तराई	revisado	baixa	1	2	0.00	
+Valley of Jehoshaphat			auto	baixa	2	2	0.00	
 Valley of Jehoshaphat	{n} की तराई Jehoshaphat	यहोशापात की तराई	revisado	baixa	2	2	0.00	
 Valley of Jericho	यरीहो की तराई	यरीहो की तराई	revisado	baixa	2	1	0.00	
 Valley of Jezreel	{n} की तराई Jezreel	यिज्रेल की तराई	revisado	baixa	2	5	0.00	
+Valley of Jiphthahel			auto	baixa	1	2	0.00	
 Valley of Jiphthahel	{n} की तराई Jiphthahel	यिप्तहेल की तराई	revisado	baixa	1	2	0.00	
 Valley of Lebanon	लबानोन की तराई	लबानोन की तराई	revisado	baixa	2	2	0.00	
 Valley of Mizpeh	मिस्पे की तराई	मिस्पे की तराई	revisado	baixa	2	1	0.00	
 Valley of Rephaim	रपाई की तराई	रपाईम की तराई	revisado	baixa	2	8	0.00	
 Valley of Salt	नमक का नगर की तराई	नमक की तराई	revisado	baixa	2	5	0.00	
+Valley of Siddim			auto	baixa	1	3	0.00	
 Valley of Siddim	{n} की तराई Siddim	सिद्दीम की तराई	revisado	baixa	1	3	0.00	
+Valley of Slaughter			auto	baixa	1	2	0.00	
 Valley of Slaughter	{n} की तराई Slaughter	घात की तराई	revisado	baixa	1	2	0.00	
+Valley of Sorek			auto	baixa	2	1	0.00	
 Valley of Sorek	{n} की तराई Sorek	सोरेक घाटी	revisado	baixa	2	1	0.00	
+Valley of Zephathah			auto	baixa	2	1	0.00	
 Valley of Zephathah	{n} की तराई Zephathah	सापता की तराई	revisado	baixa	2	1	0.00	
 Valley of Zered	जेरेद की तराई	जेरेद की तराई	revisado	baixa	2	1	0.00	
+Valley of the Passengers			auto	baixa	1	1	0.00	
 Valley of the Passengers	{n} की तराई Passengers	यात्रियों की तराई	revisado	baixa	1	1	0.00	
 Vedan	यावान	दान	revisado	baixa	1	1	1.00	दान
+Water Gate			auto	baixa	3	5	0.00	
 Water Gate	{n} फाटक Water	जलफाटक	revisado	baixa	3	5	0.00	
+Way of Holiness			auto	baixa	3	1	0.00	
 Way of Holiness	{n} का मार्ग Holiness	पवित्र मार्ग	revisado	baixa	3	1	0.00	
 Weeks	लवे	सप्ताहों का पर्व	revisado	baixa	1	8	0.12	पिन्तेकुस्त
+West Gate			auto	baixa	1	1	0.00	
 West Gate	{n} फाटक West	शल्लेकेत फाटक	revisado	baixa	1	1	0.00	
 Willows	जो	मजनूवृक्षों का नाला	revisado	baixa	1	1	1.00	वृक्ष
+Yeshanah Gate			auto	baixa	1	2	0.00	
 Yeshanah Gate	{n} फाटक Yeshanah	पुराना फाटक	revisado	baixa	1	2	0.00	
 Zabbud	जक्कूर	जक्कूर	revisado	baixa	1	1	1.00	वंश
 Zacchaeus	जक्कई	जक्कई	revisado	baixa	2	3	1.00	चौगुना
@@ -404,6 +496,7 @@ Zeeb	जेब	जेब	revisado	baixa	2	3	1.00	ओरेब
 Zemarite	समारी	समारी	revisado	baixa	1	2	1.00	हमाती
 Zemarites	समारी	समारी	revisado	baixa	1	2	1.00	हमाती
 Zephath	सपत	सपत	revisado	baixa	3	9	0.11	उस
+Zephathah Valley			auto	baixa	1	1	0.00	
 Zephathah Valley	{n} की तराई Zephathah	सापता की तराई	revisado	baixa	1	1	0.00	
 Zepho	सपो	सपो	revisado	baixa	2	3	0.67	से
 Zephon	सपोन	सपोन	revisado	baixa	1	2	1.00	शूनियों
@@ -701,7 +794,7 @@ Hizki	हिजकी	हिजकी	revisado	media	1	1	1.00	जबद्या
 Hizkiah	हिजकिय्याह	हिजकिय्याह	revisado	media	2	2	1.00	योशिय्याह
 Hizkijah	हिजकिय्याह	हिजकिय्याह	revisado	media	1	1	1.00	अज्जूर
 Hodaiah	होदव्याह	होदव्याह	revisado	media	1	1	1.00	दलायाह
-Hodaviah	होदवा	होदवा	revisado	media	1	3	0.33	होदव्याह
+Hodaviah	होदवा	होदव्याह	revisado	media	1	3	0.33	होदव्याह
 Hodevah	होदवा	होदवा	revisado	media	1	3	0.33	होदव्याह
 Hophra	होप्रा	होप्रा	revisado	media	1	18	0.06	फ़िरौन
 Horonaim	ओर	होरोनैम	revisado	media	1	1	1.00	पहरा
@@ -780,7 +873,7 @@ Jeziel	यजीएल	यजीएल	revisado	media	2	1	1.00	अहीएज�
 Jezliah	यिजलीआ	यिजलीआ	revisado	media	1	1	1.00	एल्पाल
 Jezoar	यिसहर	यिसहर	revisado	media	1	1	1.00	हेला
 Jezreel	यिज्रेल	यिज्रेल	revisado	media	12	43	0.72	यिज्रेली
-Jezreel	यिज्रेली	यिज्रेली	revisado	media	1	6	0.83	यिज्रेल
+Jezreel	यिज्रेली	यिज्रेल	revisado	media	1	6	0.83	यिज्रेल
 Jidlaph	यिद्लाप	यिद्लाप	revisado	media	2	1	1.00	पिल्दाश
 Joahaz	योआह	योआहाज	revisado	media	2	1	1.00	योआहाज
 Joanan	यूहन्ना	यूहन्ना	revisado	media	1	1	1.00	नहे
@@ -896,6 +989,7 @@ Moadiah	मोअद्याह	मोअद्याह	revisado	media	1	3	0.3
 Moresheth	मोरेशेत	मोरेशेत	revisado	media	1	3	0.33	मोरेशेतवासी
 Moresheth	मोरेशेतवासी	मोरेशेत	revisado	media	1	2	1.00	में
 Moresheth-gath	मोरेशेत	मोरेशेत-गत	revisado	media	2	3	0.33	गत
+Mount Carmel	कर्मेल पर्वत	कर्मेल पर्वत	auto	media	2	18	0.17	
 Mount Hermon	हेर्मोन पर्वत	हेर्मोन पर्वत	revisado	media	2	16	0.44	हेर्मोन के पहाड़
 Mount Horeb	होरेब पहाड़	होरेब पर्वत	revisado	media	2	17	0.18	होरेब पर्वत
 Mount Seir	सेईर पहाड़	सेईर पहाड़	revisado	media	4	35	0.20	सेईर के पहाड़
@@ -1681,7 +1775,8 @@ Carcas	कर्कस	कर्कस	auto	alta	1	1	1.00	हर्बोना
 Carchemish	कर्कमीश	कर्कमीश	auto	alta	4	3	1.00	दमिश्क
 Carkas	कर्कस	कर्कस	auto	alta	1	1	1.00	हर्बोना
 Carmel	कर्मेल	कर्मेल	auto	alta	2	24	0.62	कर्मेली
-Carmel	कर्मेली	कर्मेली	auto	alta	1	14	0.50	कर्मेल
+Carmel	कर्मेली	कर्मेल	revisado	alta	1	14	0.50	कर्मेल
+Carmel Mount	कर्मेल पर्वत	कर्मेल पर्वत	auto	alta	1	5	0.60	
 Carmi	कर्मी	कर्मी	auto	alta	4	7	1.00	कर्मियों
 Carpus	करपुस	करपुस	auto	alta	1	1	1.00	चर्मपत्रों
 Carshena	कर्शना	कर्शना	auto	alta	2	1	1.00	मर्सना
@@ -2424,6 +2519,7 @@ Jeush	यूश	यूश	auto	alta	9	9	1.00	ये
 Jezebel	ईजेबेल	ईजेबेल	auto	alta	2	20	1.00	यिज्रेल
 Jezer	येसेर	येसेर	auto	alta	2	3	1.00	येसेरियों
 Jezrahiah	यिज्रह्याह	यिज्रह्याह	auto	alta	2	1	1.00	एजेर
+Jezreel Valley	यिज्रेल की तराई	यिज्रेल की तराई	auto	alta	1	3	1.00	
 Jibsam	यिबसाम	यिबसाम	auto	alta	1	1	1.00	यहमै
 Joab	योआब	योआब	auto	alta	8	124	0.99	जोड़
 Joah	योआह	योआह	auto	alta	11	11	0.91	जिम्मा
@@ -2965,7 +3061,7 @@ Pilha	पिल्हा	पिल्हा	auto	alta	1	1	1.00	हल्लो�
 Piltai	पिलतै	पिलतै	auto	alta	2	1	1.00	मिन्यामीन
 Pinon	पीनोन	पीनोन	auto	alta	2	2	1.00	अधिपति
 Piram	पिराम	पिराम	revisado	alta	2	1	1.00	होहाम
-Pirathon	पिरातोनी	पिरातोनी	auto	alta	3	5	0.80	पिरातोन
+Pirathon	पिरातोनी	पिरातोन	revisado	alta	3	5	0.80	पिरातोन
 Pisgah	पिसगा	पिसगा	auto	alta	3	8	1.00	सोपीम
 Pishon	पीशोन	पीशोन	auto	alta	2	1	1.00	सोना
 Pisidia	पिसिदिया	पिसिदिया	auto	alta	3	2	1.00	पिरगा
@@ -3392,6 +3488,7 @@ Valley of Elah	एला नामक तराई	एला की तराई
 Valley of Gerar	गरार की घाटी	गरार की घाटी	revisado	alta	2	2	0.50	
 Valley of Gibeon	गिबोन की तराई	गिबोन की तराई	revisado	alta	2	1	1.00	
 Valley of Hebron	हेब्रोन की तराई	हेब्रोन की तराई	revisado	alta	1	1	1.00	
+Valley of Jezreel	यिज्रेल की तराई	यिज्रेल की तराई	auto	alta	2	5	0.60	
 Valley of Shaveh	शावे नामक तराई	शावे की तराई	revisado	alta	3	2	0.50	
 Valley of Shittim	शित्तीम की घाटी	शित्तीम की घाटी	revisado	alta	2	1	1.00	
 Valley of Succoth	सुक्कोत की तराई	सुक्कोत की तराई	revisado	alta	2	2	1.00	
