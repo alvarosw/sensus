@@ -1,0 +1,60 @@
+# Glossário geo em francês (openbible-geo, pipeline/sensus/geo_descricao.py, por regra). Colunas:
+#   secao      tipo | geometria | voto | fonte
+#   ingles     termo como aparece na descrição da fonte (exato)
+#   frances    tradução usada na frase
+#   nota       observação para o revisor (opcional)
+# tipo: tipo de lugar (Best modern identification: NOME (TIPO, GEOMETRIA geometry)).
+# geometria: point, polygon, path.  voto: rótulos de Votes (nomes de confiança e de autoridade da fonte).
+# fonte: modern (identificação moderna) ou ancient (identificação antiga, do texto da fonte).
+secao	ingles	frances	nota
+tipo	settlement	localité
+tipo	region	région
+tipo	mountain	montagne
+tipo	wadi	oued
+tipo	river	rivière
+tipo	spring	source
+tipo	hill	colline
+tipo	island	île
+tipo	valley	vallée
+tipo	body of water	plan d'eau
+tipo	well	puits
+tipo	probability center radial	centre de probabilité radial	termo técnico da fonte; confirmar
+tipo	road	route
+tipo	mountain range	chaîne de montagnes
+tipo	structure	construction
+tipo	mouth of river	embouchure
+tipo	pool	bassin
+tipo	cliff	falaise
+tipo	cave	grotte
+tipo	field	champ
+tipo	mountain pass	col
+tipo	mountain ridge	crête
+tipo	wall	rempart
+tipo	forest	forêt
+tipo	harbor	port
+tipo	garden	jardin
+tipo	promontory	promontoire
+geometria	point	ponctuelle
+geometria	polygon	surfacique
+geometria	path	linéaire
+voto	confidence_yes	confiance totale
+voto	confidence_likely	confiance probable
+voto	confidence_mostlikely	confiance très probable
+voto	confidence_possible	confiance possible
+voto	confidence_unlikely	confiance peu probable
+voto	confidence_no	confiance nulle
+voto	confidence_map	confiance cartographique
+voto	authority_usually	autorité habituelle
+voto	authority_scholar	autorité des spécialistes
+voto	authority_traditional	autorité traditionnelle
+voto	authority_parallel	autorité parallèle
+voto	authority_preserved	autorité conservée
+voto	authority_variant	autorité variante
+voto	authority_old	autorité ancienne
+voto	identified_been	identifié comme ayant été
+voto	identified_is	identifié comme étant
+voto	identified_adjective	identifié
+voto	uncertain	incertain
+voto	unknown	inconnu
+fonte	modern	moderne
+fonte	ancient	antique
