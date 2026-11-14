@@ -135,7 +135,6 @@ demais são tradução nossa do título inglês, sem conferir edição brasileir
 | `waggoner-christ` | E. J. Waggoner (1855-1916) | Christ and His Righteousness (1893, Echo Publishing) | archive.org `christ-and-his-righteousness-1893-echo-publishing` | Cabeçalhos de página removidos. Parágrafos com `©` ou `|` (OCR) descartados. |
 | `andrews-sabbath` | John Nevins Andrews (1829-1883) | History of the Sabbath and First Day of the Week (1873) | Project Gutenberg #68714 | Notas de rodapé ligadas pelo marcador, como em `egw-patriarchs`. Sumário e índice do Gutenberg fora do texto. |
 | `smith-us-prophecy` | Uriah Smith (1832-1903) | The United States in the Light of Prophecy (1874) | Project Gutenberg #12364 | Comentário de Apocalipse 13 e Daniel 7. Sem capítulos numerados no texto. |
-| `haskell-cross` | Stephen N. Haskell (1833-1922) | The Cross and Its Shadow (1914, Bible Training School, South Lancaster) | archive.org `StephenN.HaskellTheCrossAndItsShadow1914` (Center for Adventist Research, Andrews University) | Sem outra digitalização de domínio público: a regra de alinhamento (a) não se aplica. Cabeçalhos de página e a linha "Digitized by…" saem. Notas de rodapé de referência ligadas ao parágrafo da página (`page_notes`). Parágrafos com OCR ruim (`©`, letra e dígito colados, sinais) descartados, com a lista no `corrections/haskell-cross.tsv`. Limitação conhecida: a tabela TYPE/ANTITYPE e alguns trechos de página misturados ainda passam com fragmentos. |
 | `smith-looking` | Uriah Smith (1832-1903) | Looking unto Jesus: Christ in Type and Antitype (Review and Herald, 1897; copyright 1897; prefácio de julho de 1898) | archive.org `looking-unto-jesus_202511` (única digitalização encontrada) | Conferido na página de rosto: "entered … in the year 1897", sem aviso de edição posterior. Sem outra digitalização para o alinhamento de OCR (regra a não se aplica). Cabeçalhos "LOOKING UNTO JESUS", prefácio e sumário saem. Parágrafos com OCR ruim descartados, com a lista no `corrections/smith-looking.tsv`; OCR muito ruim em boa parte do livro, então a cobertura é menor que a do livro inteiro. |
 | `smith-sanctuary` | Uriah Smith (1832-1903) | The Sanctuary and the Twenty-three Hundred Days of Daniel VIII, 14 (1877) | archive.org `sanctuarytwentyt0000smit` | Dn 8:14 e o santuário. Cabeçalhos "THE SANCTUARY." removidos. O índice remissivo e o catálogo do editor (com anúncios) saem do texto, a partir do cabeçalho "INDEX. 349" (`skip`). Parágrafos com `©` descartados. |
 
@@ -143,6 +142,12 @@ Fora do banco por enquanto: `haskell-daniel` e `haskell-seer` (Stephen N. Haskel
 Prophet*, 1901, e *The Story of the Seer of Patmos*, 1905, Review and Herald, archive.org). Domínio público, mas o
 scan mistura citações bíblicas de margem, perguntas de estudo e fragmentos de OCR no comentário; entram quando a
 limpeza passar na amostragem.
+
+Fora do banco por enquanto: `haskell-cross` (Stephen N. Haskell, *The Cross and Its Shadow*, 1914, Bible Training School,
+archive.org `StephenN.HaskellTheCrossAndItsShadow1914`; autor falecido em 1922). Domínio público e sem outra digitalização
+para o alinhamento de OCR. O motivo é o layout: as caixas de texto (TYPE/ANTITYPE, quadros) e as margens de referência
+se misturam com o parágrafo, e o resultado traz fragmentos de citação no comentário (ex.: Ap 20:15). Código, correções
+(`corrections/haskell-cross.tsv`) e scan ficam; a fonte entra quando essa limpeza passar na amostragem.
 
 **Examinadas e não incluídas (adventistas e outras):** *Ministry of Healing* (1905/1909): o scan de 1909 não tem
 referência explícita em parágrafo, e o de 1905 traz aviso de 1942 (edição revisada); não está no Gutenberg. *Education*
