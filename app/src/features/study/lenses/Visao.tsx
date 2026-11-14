@@ -1,5 +1,6 @@
 // Lente Visão geral: o fio da passagem (passos montados pelo modelo do fio).
 import { useMemo } from 'react';
+import { useLang } from '@/i18n/lang-store';
 import { buildThread } from '../thread';
 import { Thread } from '../Thread';
 import { LensShell } from '../LensShell';
@@ -10,9 +11,10 @@ import type { LensProps } from './shared';
 export function VisaoLens({ onLayout }: LensProps) {
   const data = useStudyData();
   const ai = useStudyAi();
+  const appLang = useLang();
   const steps = useMemo(
-    () => buildThread({ panel: data.panel, range: data.range, books: data.books, ai: { status: ai.status, summary: ai.summary } }),
-    [data.panel, data.range, data.books, ai.status, ai.summary],
+    () => buildThread({ panel: data.panel, range: data.range, books: data.books, ai: { status: ai.status, summary: ai.summary }, appLang }),
+    [data.panel, data.range, data.books, ai.status, ai.summary, appLang],
   );
   return (
     <LensShell

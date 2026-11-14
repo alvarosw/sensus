@@ -30,8 +30,8 @@ function panelOf(p: {
   lexicon?: unknown[];
   concordance?: Record<string, { count: number; samples: VerseText[] }>;
   xrefs?: Array<XRef & { texts: VerseText[] }>;
-  entities?: Array<{ name: string }>;
-  dictionary?: Array<{ headword: string }>;
+  entities?: Array<{ name: string; namePt?: string }>;
+  dictionary?: Array<{ headword: string; source_id?: string }>;
   commentaries?: Commentary[];
   sources?: Record<string, Source>;
 } = {}): PanelData {
@@ -198,7 +198,19 @@ describe('buildThread', () => {
   it('Histórico: até três nomes, entidades antes de verbetes, sem repetir', () => {
     const steps = buildThread({ panel: FULL(), range: RANGE, books: [], ai: DONE });
     const hist = steps.find((s) => s.lens === 'historico')!;
-    expect(hist.evidence).toEqual({ kind: 'names', names: ['Filipos', 'Timóteo', 'Epafrodito'] });
+    expect(hist.evidence?.kind === 'names' && hist.evidence.names.map((n) => n.original)).toEqual(['Filipos', 'Timóteo', 'Epafrodito']);
+  });
+
+  it('Histórico NT: verbete com o nome de uma entidade do trecho mostra o nome em pt, uma vez só', () => {
+    const panel = panelOf({ entities: [{ name: 'Philippi', namePt: 'Filipos' }], dictionary: [{ headword: 'PHILIPPI' }] });
+    const hist = buildThread({ panel, range: RANGE, books: [], ai: DONE }).find((s) => s.lens === 'historico')!;
+    expect(hist.evidence).toEqual({ kind: 'names', names: [{ original: 'Filipos', lang: null, forMachine: null, packValue: null }] });
+  });
+
+  it('Histórico AT: verbete sem entidade vai ao modelo como título em inglês', () => {
+    const panel = panelOf({ dictionary: [{ headword: 'ASA' }] });
+    const hist = buildThread({ panel, range: RANGE, books: [], ai: DONE }).find((s) => s.lens === 'historico')!;
+    expect(hist.evidence).toEqual({ kind: 'names', names: [{ original: 'Asa', lang: 'en', forMachine: 'Asa', packValue: null }] });
   });
 
   it('Interpretação: comentaristas distintos sem introduções, com "e mais N" depois de cinco', () => {
@@ -327,7 +339,7 @@ describe('Língua: a palavra que move o trecho (keyword.ts)', () => {
       kind: 'word',
       tokenCiteId: 'tok:h',
       lemma: 'ἁρπαγμός',
-      gloss: 'robbery',
+      gloss: { original: 'robbery', forMachine: null },
       note: 'hápax',
       by: 'hapax',
     });

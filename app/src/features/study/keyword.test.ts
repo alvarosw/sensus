@@ -102,7 +102,7 @@ describe('Língua no AT hebraico: 1Rs 15:15 (TAHOT e TBESH)', () => {
       kind: 'word',
       tokenCiteId: VAYA.cite_id,
       lemma: 'לְהָבִיא',
-      gloss: 'to bring',
+      gloss: { original: 'to bring', forMachine: 'to bring', lang: 'en' },
       note: '2308 vv. no AT',
       by: 'ai',
     });

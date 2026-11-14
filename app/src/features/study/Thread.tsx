@@ -4,6 +4,8 @@ import { View } from 'react-native';
 import { router } from 'expo-router';
 import { ActButton, Card, Empty, Greek, LinkButton, Tag, Txt, space, radius, useTheme } from '@/design';
 import { RichBlocks } from '@/features/rich';
+import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
+import { useShortTexts } from '@/translate/useShortTexts';
 import { LENS_LABELS, useStudy } from '@/state/study';
 import { SkeletonLines, ThinkingLine } from './LensShell';
 import { STUDY } from './strings';
@@ -159,6 +161,9 @@ function Step({ step, index, last }: { step: ThreadStep; index: number; last: bo
 /** Evidência determinística do passo: a mesma linha de dados que a lente mostra, em miniatura. */
 function Evidence({ evidence }: { evidence: ThreadEvidence }) {
   const { c } = useTheme();
+  // Glosa e nomes são textos curtos: um lote de tradução e uma nota por caixa (não por item).
+  const st = useShortTexts(evidence.kind === 'word' ? [evidence.gloss] : evidence.kind === 'names' ? evidence.names : []);
+  const gloss = evidence.kind === 'word' ? st.view(evidence.gloss) : null;
   return (
     <View style={{ backgroundColor: c.surfaceAlt, borderRadius: radius.lg, paddingHorizontal: 10, paddingVertical: 8, gap: space[3] }} testID="thread-ev">
       {evidence.kind === 'verse' && (
@@ -173,7 +178,7 @@ function Evidence({ evidence }: { evidence: ThreadEvidence }) {
           <Greek base="lemma" onPress={() => useStudy.getState().pushPanel({ kind: 'word', tokenCiteId: evidence.tokenCiteId })}>
             {evidence.lemma}
           </Greek>
-          {evidence.gloss && <Txt v="meta" color="muted">{`“${evidence.gloss}”`}</Txt>}
+          {gloss && <Txt v="meta" color="muted">{`“${gloss.text}”${gloss.mark ? ` (${gloss.mark})` : ''}`}</Txt>}
           {evidence.note === STUDY.hapax ? <Tag label={STUDY.hapax} tone="tint" /> : evidence.note && <Txt v="meta" color="muted">{evidence.note}</Txt>}
           {evidence.mentions ? <Txt v="meta" color="muted">{STUDY.commentMentions(evidence.mentions)}</Txt> : null}
         </View>
@@ -200,13 +205,15 @@ function Evidence({ evidence }: { evidence: ThreadEvidence }) {
         </View>
       )}
 
-      {evidence.kind === 'names' && <Txt v="bodySm">{evidence.names.join(' · ')}</Txt>}
+      {evidence.kind === 'names' && <Txt v="bodySm">{evidence.names.map((n) => st.view(n)!.text).join(' · ')}</Txt>}
 
       {evidence.kind === 'commentators' && (
         <Txt v="bodySm">
           {evidence.names.join(' · ') + (evidence.more > 0 ? ` · ${STUDY.andMore(evidence.more)}` : '')}
         </Txt>
       )}
+
+      {(evidence.kind === 'word' || evidence.kind === 'names') && <AutoTranslateNote tr={st.note} testID="thread-ev-tr" />}
     </View>
   );
 }
