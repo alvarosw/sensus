@@ -299,6 +299,71 @@ def find_refs(text: str) -> list[tuple[int, int]]:
     return out
 
 
+# ---- cabeçalhos com capítulo romano (sermões: "Genesis xv. 5-18", "Joshua i. 7, 8", "Ezra vi.") ----------
+
+_ROMANO_VAL = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100}
+_CABECALHO = re.compile(
+    r"^(?P<book>(?:[1-3]\s?|I{1,3}\s)?[A-Za-z]+\.?(?:\s+of\s+[A-Za-z]+)?)\.?\s*"
+    r"(?P<c1>[ivxlcIVXLC]+|\d{1,3})\s*[.:,]?\s*"
+    r"(?:(?P<v1>\d{1,3})"
+    r"(?:\s*(?:--|[-–—])\s*(?:(?P<c2>[ivxlcIVXLC]+|\d{1,3})\s*\.\s*)?(?P<v2>\d{1,3}))?"
+    r"(?:\s*,\s*(?P<v3>\d{1,3}))*"
+    r")?\s*\.?\s*$"
+)
+
+
+def roman_to_int(tok: str) -> int | None:
+    """Valor de um número romano minúsculo ou maiúsculo ("xv" -> 15); None se não for romano."""
+    t = tok.lower()
+    if not t or any(ch not in _ROMANO_VAL for ch in t):
+        return None
+    total = 0
+    for i, ch in enumerate(t):
+        v = _ROMANO_VAL[ch]
+        total += -v if i + 1 < len(t) and v < _ROMANO_VAL[t[i + 1]] else v
+    return total
+
+
+def _numero(tok: str) -> int | None:
+    """Capítulo ou versículo: arábico, ou romano só se o token não tem dígito."""
+    return int(tok) if tok.isdigit() else roman_to_int(tok)
+
+
+def passagem_cabecalho(texto: str) -> tuple[int, int] | None:
+    """Intervalo (start_vid, end_vid) de um cabeçalho de passagem, com capítulo romano ou arábico.
+
+    Aceita só a referência, sem prosa: "Genesis xv. 5-18", "Genesis i. 26--ii. 3", "John vii. 37,38",
+    "Joshua i. 7, 8", "Esther iii." (capítulo inteiro). Lista de versículos separados por vírgula vira o
+    intervalo do menor ao maior. Retorna None se o livro não existe, o capítulo ou o versículo não existe na
+    versificação KJV, ou se o texto não é só uma referência. Não lê referências dentro de prosa (use find_refs).
+    """
+    m = _CABECALHO.match(texto.strip())
+    if not m:
+        return None
+    b = _book_any(m.group("book"), None)
+    c1 = _numero(m.group("c1"))
+    if b is None or c1 is None or _last_verse(b, c1) is None:
+        return None
+    if m.group("v1") is None:
+        return _chapter_range(b, c1, c1)
+    v1 = int(m.group("v1"))
+    if not _valid_cv(b, c1, v1):
+        return None
+    if m.group("c2") is None and m.group("v2") is None and m.group("v3") is None:
+        return vid(b, c1, v1), vid(b, c1, v1)
+    if m.group("v2") is not None:
+        c2 = _numero(m.group("c2")) if m.group("c2") else c1
+        v2 = int(m.group("v2"))
+        if c2 is None or not _valid_cv(b, c2, v2) or c2 < c1:
+            return None
+        return vid(b, c1, v1), vid(b, c2, v2)
+    # "v1, v3, ..." na mesma capítulo: o último número da lista é o fim
+    v_fim = int(m.group("v3"))
+    if not _valid_cv(b, c1, v_fim):
+        return None
+    return vid(b, c1, min(v1, v_fim)), vid(b, c1, max(v1, v_fim))
+
+
 if __name__ == "__main__":
     refs = find_refs
 
