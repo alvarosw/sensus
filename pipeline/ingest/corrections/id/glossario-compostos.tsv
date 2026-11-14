@@ -1,0 +1,43 @@
+# Glossário de cabeças de nomes compostos em inglês -> formas em indonésio (LAI Terjemahan Baru, na linha da indtsi)
+# Usado por pipeline/ingest/nomes.py --lang id (ver pipeline/sensus/names_pt.py, decompoe e escolhe_frase). Colunas:
+#   cabeca   palavra ou expressão inglesa que encabeça o nome ('Mount', 'Gate of'), como no glossário pt
+#   formas   formas em indonésio antes do núcleo, separadas por '|' ('Gunung' + 'Sinai' = 'Gunung Sinai')
+# Indonésio põe o termo genérico antes do nome próprio. Formas conferidas no texto da indtsi (gunung, lembah, laut,
+# pintu gerbang, suku, menara, kota, sungai, padang gurun, kolam, pesta, dataran, mata air, bukit, hutan, pasar, batu,
+# air, jalan, tembok, rumah). Uma forma que não aparece no texto só gera frases não achadas (confiança baixa, não usadas).
+# Revisado com auxílio de IA (T1-id).
+cabeca	formas
+Mount	gunung|bukit
+Mount of	gunung|bukit
+Valley	lembah
+Valley of	lembah
+Vale of	lembah
+Sea	laut
+Sea of	laut
+Gate	pintu gerbang|gerbang
+Gate of	pintu gerbang|gerbang
+Tribe of	suku
+Tower of	menara
+City of	kota
+Hall of	balai|ruang
+Brook	sungai|lembah
+Brook of	sungai|lembah
+River of	sungai
+Wilderness	padang gurun
+Wilderness of	padang gurun
+Pool	kolam
+Festival	pesta|perayaan
+Stone	batu
+Rock of	batu|bukit batu
+Plain of	dataran|padang
+Plains	dataran|padang
+Spring	mata air|sumber
+Hill	bukit
+Forest	hutan
+House of	rumah
+Forum	pasar
+Forum of	pasar
+Square	lapangan|alun-alun
+Wall	tembok
+Waters of	air
+Way of	jalan
