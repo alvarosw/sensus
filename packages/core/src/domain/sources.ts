@@ -118,6 +118,10 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'bible-readings': { short: 'Leituras Bíblicas', commentator: 'Review and Herald · Leituras Bíblicas', role: 'commentary', lang: 'en' },
   // Sermões por texto (pipeline/ingest/sermoes_gutenberg.py): um comentário por sermão, no intervalo da passagem.
   'maclaren-expositions': { short: 'Maclaren', commentator: 'Alexander Maclaren', role: 'commentary', lang: 'en' },
+  // Capítulos por passagem (pipeline/ingest/sermoes_gutenberg.py, EXPOSITORS): The Expositor's Bible (ed. W. Robertson
+  // Nicoll, 1887-1905), 48 volumes do Gutenberg. Os autores variam por volume (a maioria é presbiteriana escocesa;
+  // Maclaren é batista; Farrar, Moule e Plummer são anglicanos); a tradição do registro é a presbiteriana.
+  'expositors-bible': { short: "Expositor's Bible", commentator: 'The Expositor\'s Bible', role: 'commentary', lang: 'en' },
 };
 
 /** Ordem de preferência das fontes de lugares (menor = melhor) para escolher a identificação moderna. */

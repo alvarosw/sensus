@@ -140,6 +140,7 @@ demais são tradução nossa do título inglês, sem conferir edição brasileir
 | `maclaren-expositions` | Alexander Maclaren (1826-1910) | Expositions of Holy Scripture (Project Gutenberg eBooks #7069, 7351, 7883, 7925, 8068, 8069, 8070, 8071, 8200, 8381, 8397, 13601, 15836, 21190, 24674; obras de 1904 a 1910) | Expositions of Holy Scripture, Alexander Maclaren. Project Gutenberg, sem o cabeçalho e o rodapé da licença do Project Gutenberg. Domínio público: autor falecido em 1910 e obras publicadas de 1904 a 1910 (domínio público nos EUA); no Brasil, autor falecido há mais de 70 anos. Texto da licença: https://www.gutenberg.org/policy/license.html | Sermão por texto (`pipeline/ingest/sermoes_gutenberg.py`): um comentário por sermão, no intervalo da passagem do cabeçalho (parêntese do título ou epígrafe). O corpo do sermão vai inteiro; a epígrafe (texto bíblico) não entra. Descartados: sem cabeçalho, cabeçalho ilegível (ex.: "GAL. vi. 25", versículo inexistente) e seções sem texto. Texto em inglês. |
 | `smith-looking` | Uriah Smith (1832-1903) | Looking unto Jesus: Christ in Type and Antitype (Review and Herald, 1897; copyright 1897; prefácio de julho de 1898) | archive.org `looking-unto-jesus_202511` (única digitalização encontrada) | Conferido na página de rosto: "entered … in the year 1897", sem aviso de edição posterior. Sem outra digitalização para o alinhamento de OCR (regra a não se aplica). Cabeçalhos "LOOKING UNTO JESUS", prefácio e sumário saem. Parágrafos com OCR ruim descartados, com a lista no `corrections/smith-looking.tsv`; OCR muito ruim em boa parte do livro, então a cobertura é menor que a do livro inteiro. |
 | `smith-sanctuary` | Uriah Smith (1832-1903) | The Sanctuary and the Twenty-three Hundred Days of Daniel VIII, 14 (1877) | archive.org `sanctuarytwentyt0000smit` | Dn 8:14 e o santuário. Cabeçalhos "THE SANCTUARY." removidos. O índice remissivo e o catálogo do editor (com anúncios) saem do texto, a partir do cabeçalho "INDEX. 349" (`skip`). Parágrafos com `©` descartados. |
+| `expositors-bible` | Autores por volume (48 volumes; lista abaixo). Editor: W. Robertson Nicoll (1851-1923) | The Expositor's Bible (ed. W. Robertson Nicoll, 1887-1905) | Project Gutenberg, eBooks #32968 a #50747 (ver lista) | Public Domain pelo Gutenberg (dos EUA). No Brasil: todos os autores morreram antes de 1943 (regra de 70 anos; descartados: morte depois de 1955, nenhum). Texto da licença: https://www.gutenberg.org/policy/license.html | Capítulo por passagem (`pipeline/ingest/sermoes_gutenberg.py`, `expositors`): uma linha por capítulo, no intervalo da passagem do cabeçalho (linha depois do título ou citação que fecha a epígrafe; salmos: o número do salmo). Texto começa com "The Expositor's Bible — <livro> (<autor>): <título>" e traz o corpo inteiro; a epígrafe não entra. Descartados por motivo: sem_cabecalho, cabecalho_ilegivel, secao (cabeçalho de seção sem texto), sem_texto. Índice (eBook #39819) e obras de outros autores fora. Autores variam (maioria presbiteriana escocesa; Maclaren, batista; Farrar, Moule e Plummer, anglicanos); tradição do registro: presbiteriana. Texto em inglês. |
 | `bible-readings` | Review & Herald Publishing Association (obra coletiva; "New, Revised, and Enlarged Edition", 1920) | Bible Readings for the Home Circle (1920) | Project Gutenberg #34520 (lançado em 2010; copyright do Gutenberg: "Public domain in the USA") | Perguntas e respostas (201 estudos, 3.426 perguntas): cada pergunta com a resposta é uma unidade; referências da resposta geram linhas. Cabeçalho e rodapé do Gutenberg removidos; ilustrações e legendas saem; índice de assuntos fora. Notas editoriais ("NOTE.—") ficam com a resposta anterior. "Verse N" não é ligado (645 respostas). Sem referência em algarismos romanos no texto. |
 
 Fora do banco por enquanto: `haskell-daniel` e `haskell-seer` (Stephen N. Haskell, 1855-1922; *The Story of Daniel the
@@ -183,6 +184,61 @@ Ver item 12 para as demais.
 | `sword-nave` | Orville J. Nave | Nave's Topical Bible | v3.0 |
 | `sword-torrey` | R. A. Torrey | Torrey's New Topical Textbook | v1.3 |
 | `sword-tsk` | Canne, Browne, Blayney, Scott et al. (c. 1880) | Treasury of Scripture Knowledge | v1.4 |
+
+**The Expositor's Bible (`expositors-bible`): volumes e autores.** Morte do autor conforme o catálogo do Project
+Gutenberg (datas de nascimento e morte). Nenhum volume foi descartado pela regra de 70 anos.
+
+| eBook | Volume | Autor | Morte |
+|---|---|---|---|
+| #32968 | Hebrews | Thomas Charles Edwards | 1900 |
+| #33151 | John, vol. 1 | Marcus Dods | 1909 |
+| #33288 | John, vol. 2 | Marcus Dods | 1909 |
+| #33420 | Exodus | George Alexander Chadwick | 1923 |
+| #37120 | Mark | George Alexander Chadwick | 1923 |
+| #37345 | Colossians and Philemon | Alexander Maclaren | 1910 |
+| #39196 | Ephesians | George G. Findlay | 1919 |
+| #39394 | 1 Samuel | William Garden Blaikie | 1899 |
+| #39395 | Genesis | Marcus Dods | 1909 |
+| #39628 | Pastoral Epistles | Alfred Plummer | 1926 |
+| #39727 | Judges and Ruth | Robert A. Watson | 1921 |
+| #39767 | Isaiah, vol. 1 | George Adam Smith | 1942 |
+| #39788 | Philippians | Robert Rainy | 1906 |
+| #39856 | Luke | Henry Burton | 1930 |
+| #39913 | Ecclesiastes | Samuel Cox | 1893 |
+| #39941 | Song of Solomon and Lamentations | Walter F. Adeney | 1920 |
+| #39956 | Ezra, Nehemiah and Esther | Walter F. Adeney | 1920 |
+| #40235 | Chronicles | William Henry Bennett | 1920 |
+| #40470 | Job | Robert A. Watson | 1921 |
+| #40775 | Epistles of John | William Alexander | 1911 |
+| #40811 | Matthew | John Monro Gibson | 1921 |
+| #41850 | 2 Corinthians | James Denney | 1917 |
+| #41893 | Jeremiah, chaps. XXI-LII | William Henry Bennett | 1920 |
+| #42027 | 2 Kings | Frederic William Farrar | 1903 |
+| #42189 | Proverbs | Robert F. Horton | 1934 |
+| #42251 | Revelation | William Milligan | 1893 |
+| #42258 | Acts, vol. 1 | George Thomas Stokes | 1898 |
+| #42273 | Epistles of St. Peter | J. Rawson Lumby | 1895 |
+| #42303 | Acts, vol. 2 | George Thomas Stokes | 1898 |
+| #42319 | Joshua | William Garden Blaikie | 1899 |
+| #42334 | Leviticus | Samuel H. Kellogg | 1899 |
+| #42354 | 1 Corinthians | Marcus Dods | 1909 |
+| #42445 | Psalms, vol. 1 | Alexander Maclaren | 1910 |
+| #42488 | Psalms, vol. 2 | Alexander Maclaren | 1910 |
+| #42601 | Jeremiah | Charles James Ball | 1924 |
+| #42639 | Numbers | Robert A. Watson | 1921 |
+| #42645 | Galatians | George G. Findlay | 1919 |
+| #42753 | Thessalonians | James Denney | 1917 |
+| #42891 | 1 Kings | Frederic William Farrar | 1903 |
+| #43672 | Isaiah, vol. 2 | George Adam Smith | 1942 |
+| #43847 | The Twelve Prophets, vol. 1 | George Adam Smith | 1942 |
+| #44027 | Psalms, vol. 3 | Alexander Maclaren | 1910 |
+| #44103 | Daniel | Frederic William Farrar | 1903 |
+| #44619 | 2 Samuel | William Garden Blaikie | 1899 |
+| #46975 | Ezekiel | John Skinner | 1925 |
+| #47337 | James and Jude | Alfred Plummer | 1926 |
+| #48858 | Romans | Handley Carr Glyn Moule | 1920 |
+| #49045 | Deuteronomy | Andrew Harper | 1936 |
+| #50747 | The Twelve Prophets, vol. 2 | George Adam Smith | 1942 |
 
 ### 2.8 Mapas (serviços de tiles e estilo; não são dados do banco)
 
