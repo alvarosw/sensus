@@ -1,3 +1,364 @@
 # Notas da revisão de nomes por agentes de IA (uma linha por nome_en + candidato, ou nome_en + tipo).
 # Conferidas no texto da Bíblia da língua e na tradução inglesa. Só registro: o ingestor não lê este arquivo.
 nome_en	tipo	nome_ur	origem	nota
+Abila	place		sem	rev. IA: sem forma tradicional segura em ur
+Abila Lysaniou	place		sem	rev. IA: sem forma tradicional segura em ur
+Adasa	place		sem	rev. IA: sem forma tradicional segura em ur
+Adramyttium	place	ادرامیطیم	revisado	rev. IA: Acts.27.2 ادرامیطیم
+Adulis	place		sem	rev. IA: sem forma tradicional segura em ur
+Al-taschith	other		sem	rev. IA: sem forma tradicional segura em ur
+Alamoth	other		sem	rev. IA: sem forma tradicional segura em ur
+Ama	place		sem	rev. IA: sem forma tradicional segura em ur
+Amate	place		sem	rev. IA: sem forma tradicional segura em ur
+Amaw	place		sem	rev. IA: sem forma tradicional segura em ur
+Amminadib	person	عمیناداب	revisado	rev. IA: Song.6.12 عمیناداب
+Angle	place		sem	rev. IA: sem forma tradicional segura em ur
+Apostles	group	رسول	revisado	rev. IA: sem ref رسول
+Apostles (Post-Ascension)	group	رسول	revisado	rev. IA: sem ref رسول
+Apostles (The Eleven)	group	گیارہ رسول	revisado	rev. IA: sem ref گیارہ رسول
+Arabah	place	عربہ	revisado	rev. IA: Deut.1.1 عربہ
+Aram-naharaim	place	ارام نہرائیم	revisado	rev. IA: Ps.60.1 ارام نہرائیم
+Aram-zobah	place	ارام صوبہ	revisado	rev. IA: Ps.60.1 ارام صوبہ
+Aramitess	person	ارامی	revisado	rev. IA: 1Chr.7.14 ارامی
+Arbela	place		sem	rev. IA: sem forma tradicional segura em ur
+Arsinoe	place		sem	rev. IA: sem forma tradicional segura em ur
+Asen	person		sem	rev. IA: sem forma tradicional segura em ur
+Ashdod's	place	اشدود	revisado	rev. IA: sem ref اشدود
+Atroth-beth-joab	place	عطروت بیت یوآب	revisado	rev. IA: 1Chr.2.54 عطروت بیت یوآب
+Bajith	place		sem	rev. IA: sem forma tradicional segura em ur
+Barsabas Justus	person	یوستس برسابا	revisado	rev. IA: Acts.1.23 یوستس برسابا
+Batanea	place		sem	rev. IA: sem forma tradicional segura em ur
+Beeroth Bene-jaakan	place	بیروت بنی یعقان	revisado	rev. IA: Deut.10.6 بیروت بنی یعقان
+Belamon	place		sem	rev. IA: sem forma tradicional segura em ur
+Benjamin's Gate	place	بنیامین کا دروازہ	revisado	rev. IA: sem ref بنیامین کا دروازہ
+Beth-Ashtoreth	place	بیت عستاروت	revisado	rev. IA: 1Sam.31.10 بیت عستاروت
+Beth-eked	place	بیت عقد	revisado	rev. IA: 2Kgs.10.12 بیت عقد
+Beth-haggan	place	بیت جان	revisado	rev. IA: 2Kgs.9.27 بیت جان
+Beth-horon_Lower	place	بیت حورون زیریں	revisado	rev. IA: Josh.10.10 بیت حورون زیریں
+Beth-horon_Upper	place	بیت حورون بالائی	revisado	rev. IA: Josh.16.5 بیت حورون بالائی
+Beth-merhak	place	بیت مرحق	revisado	rev. IA: 2Sam.15.17 بیت مرحق
+Bether 2	place	بیتر	revisado	rev. IA: sem ref بیتر
+Bether_Mountain	place	پہاڑ بیتر	revisado	rev. IA: Song.2.17 پہاڑ بیتر
+Bethlehem Ephrathah	place	بیت لحم افراتہ	revisado	rev. IA: Mic.5.2 بیت لحم افراتہ
+Beyond the River	place	دریا کے پار	revisado	rev. IA: Ezra.4.10 دریا کے پار
+Booths_Festival	other	عید خیمہ	revisado	rev. IA: John.7.2 عید خیمہ
+Caesarea Philippi	place	قیصریہ فلپی	revisado	rev. IA: Matt.16.13 قیصریہ فلپی
+Caesarea_Philippi	place	قیصریہ فلپی	revisado	rev. IA: Matt.16.13 قیصریہ فلپی
+Caleb Ephrathah	place	کالب افراتہ	revisado	rev. IA: 1Chr.2.24 کالب افراتہ
+Caleb_Ephrathah	place	کالب افراتہ	revisado	rev. IA: 1Chr.2.24 کالب افراتہ
+Canaanite_woman	person	کنعانی عورت	revisado	rev. IA: Gen.46.10 کنعانی عورت
+Canaanitish woman	person	کنعانی عورت	revisado	rev. IA: Gen.46.10 کنعانی عورت
+Carthage	place		sem	rev. IA: sem forma tradicional segura em ur
+Chalcis	place		sem	rev. IA: sem forma tradicional segura em ur
+Charmande	place		sem	rev. IA: sem forma tradicional segura em ur
+Chief Priests	group	سردار کاہن	revisado	rev. IA: sem ref سردار کاہن
+Chronicles	other		sem	rev. IA: sem forma tradicional segura em ur
+City of Salt	place	نمک کا شہر	revisado	rev. IA: Josh.15.62 نمک کا شہر
+City_of_Salt	place	نمک کا شہر	revisado	rev. IA: Josh.15.62 نمک کا شہر
+Claudius Lysias	person	کلودیس لیسیاس	revisado	rev. IA: Acts.23.26 کلودیس لیسیاس
+Concubine the Aramitess	person	ارامی لونڈی	revisado	rev. IA: 1Chr.7.14 ارامی لونڈی
+Daughter of Herodias	person	ہیرودیاس کی بیٹی	revisado	rev. IA: Matt.14.6 ہیرودیاس کی بیٹی
+Daughter of Lot - Older	person	لوط کی بڑی بیٹی	revisado	rev. IA: Gen.19.31 لوط کی بڑی بیٹی
+Daughter of Lot - Younger	person	لوط کی چھوٹی بیٹی	revisado	rev. IA: Gen.19.8 لوط کی چھوٹی بیٹی
+Daughter of Machir	person	ماکیر کی بیٹی	revisado	rev. IA: 1Chr.2.21 ماکیر کی بیٹی
+Daughter of Meshullam	person	مشلام کی بیٹی	revisado	rev. IA: Neh.6.18 مشلام کی بیٹی
+Daughter of Pharaoh	person	فرعون کی بیٹی	revisado	rev. IA: Exod.2.5 فرعون کی بیٹی
+Daughter of Putiel	person	فوتیئیل کی بیٹی	revisado	rev. IA: Exod.6.25 فوتیئیل کی بیٹی
+Daughter of Shuah	person	شوع کی بیٹی	revisado	rev. IA: Gen.38.2 شوع کی بیٹی
+Dedication_Festival	other	عید تجدید	revisado	rev. IA: John.10.22 عید تجدید
+Dehavites	group		sem	rev. IA: sem forma tradicional segura em ur
+Destiny	other		sem	rev. IA: sem forma tradicional segura em ur
+Disciples of John	group	یوحنا کے شاگرد	revisado	rev. IA: sem ref یوحنا کے شاگرد
+Diviners' Oak	place		sem	rev. IA: sem forma tradicional segura em ur
+Diviners'_Oak	place		sem	rev. IA: sem forma tradicional segura em ur
+Diviners’ Oak	place		sem	rev. IA: sem forma tradicional segura em ur
+East	place		sem	rev. IA: sem forma tradicional segura em ur
+Egypt's	place	مصر	revisado	rev. IA: sem ref مصر
+Elkosh	place	القوش	revisado	rev. IA: Nah.1.1 القوش
+Enaim	place	عینیم	revisado	rev. IA: Gen.38.14 عینیم
+Eridu	place		sem	rev. IA: sem forma tradicional segura em ur
+Etruria	place		sem	rev. IA: sem forma tradicional segura em ur
+Eznites	group	ازنی	revisado	rev. IA: 2Sam.23.8 ازنی
+Fair Havens	place		sem	rev. IA: sem forma tradicional segura em ur
+Fair_Havens	place		sem	rev. IA: sem forma tradicional segura em ur
+Forest	place		sem	rev. IA: sem forma tradicional segura em ur
+Fortune	other		sem	rev. IA: sem forma tradicional segura em ur
+Foundation_Gate	place	بنیاد کا دروازہ	revisado	rev. IA: 2Chr.23.5 بنیاد کا دروازہ
+Gadara	place	جدارا	revisado	rev. IA: Matt.8.28 جدارا
+Gate of the Children of the People	place	لوگوں کے بیٹوں کا دروازہ	revisado	rev. IA: Jer.17.19 لوگوں کے بیٹوں کا دروازہ
+Gath-padalla	place		sem	rev. IA: sem forma tradicional segura em ur
+Genealogy of Jesus	group		sem	rev. IA: sem forma tradicional segura em ur
+Gerasa	place	جرسہ	revisado	rev. IA: Matt.8.28 جرسہ
+Gergesa	place		sem	rev. IA: sem forma tradicional segura em ur
+Geruth Chimham	place	جروت کمہام	revisado	rev. IA: Jer.41.17 جروت کمہام
+Geruth_Chimham	place	جروت کمہام	revisado	rev. IA: Jer.41.17 جروت کمہام
+Gittith	other		sem	rev. IA: sem forma tradicional segura em ur
+God	person	خدا	revisado	rev. IA: Gen.1.1 خدا
+Goiim	group	اقوام	revisado	rev. IA: Gen.14.1 اقوام
+Goiim	place	جوئیم	revisado	rev. IA: Gen.14.1 جوئیم
+Goiim 1	place	جوئیم	revisado	rev. IA: sem ref جوئیم
+Goiim 2	place	جوئیم	revisado	rev. IA: sem ref جوئیم
+Gulloth-mayim	place	گلوت مایم	revisado	rev. IA: Josh.15.19 گلوت مایم
+Gutium	place		sem	rev. IA: sem forma tradicional segura em ur
+Hakkephirim	place	حقفیرم	revisado	rev. IA: Neh.6.2 حقفیرم
+Halahha	place		sem	rev. IA: sem forma tradicional segura em ur
+Ham	place	حام	revisado	rev. IA: Gen.5.32 حام
+Ham 1	place	حام	revisado	rev. IA: sem ref حام
+Hammelech	person	حملک	revisado	rev. IA: Jer.36.26 حملک
+Hamon-gog_Valley	place	وادی حمون جوج	revisado	rev. IA: Ezek.39.11 وادی حمون جوج
+Harhar	place		sem	rev. IA: sem forma tradicional segura em ur
+Hatti	place	حتی	revisado	rev. IA: sem ref حتی
+Hazerim	place	حصریم	revisado	rev. IA: Deut.2.23 حصریم
+Helech	place	حلق	revisado	rev. IA: Ezek.27.11 حلق
+Heracleopolis Magna	place		sem	rev. IA: sem forma tradicional segura em ur
+Heracleopolis Parva	place		sem	rev. IA: sem forma tradicional segura em ur
+Heres	place	حارس	revisado	rev. IA: Judg.8.13 حارس
+Herod Agrippa I	person	ہیرودیس اگرپا اول	revisado	rev. IA: Acts.12.1 ہیرودیس اگرپا اول
+Herod Antipas	person	ہیرودیس انتپاس	revisado	rev. IA: Matt.14.1 ہیرودیس انتپاس
+Herodian	group		sem	rev. IA: sem forma tradicional segura em ur
+Herod’s palace	place	ہیرودیس کا محل	revisado	rev. IA: sem ref ہیرودیس کا محل
+Highway	place	شاہراہ	revisado	rev. IA: Num.20.17 شاہراہ
+Hilakku	place		sem	rev. IA: sem forma tradicional segura em ur
+Holy Place	place	مقدس	revisado	rev. IA: Exod.26.33 مقدس
+Holy Place 1	place	مقدس	revisado	rev. IA: Exod.26.33 مقدس
+Holy Place 2	place	مقدس	revisado	rev. IA: 1Kgs.6.5 مقدس
+Holy Spirit	person	روح القدس	revisado	rev. IA: Gen.1.2 روح القدس
+Holy_Place	place	مقدس	revisado	rev. IA: Exod.26.33 مقدس
+Hophra	person	حفرع	revisado	rev. IA: Jer.37.5 حفرع
+Horesh	place	حورس	revisado	rev. IA: 1Sam.23.15 حورس
+House of the Forest of Lebanon	place	لبنان کے جنگل کا گھر	revisado	rev. IA: 1Kgs.7.2 لبنان کے جنگل کا گھر
+Jaar	place	یعر	revisado	rev. IA: Ps.132.6 یعر
+Janen	place		sem	rev. IA: sem forma tradicional segura em ur
+Janua	place		sem	rev. IA: sem forma tradicional segura em ur
+Jemnath	place	یمنعت	revisado	rev. IA: Josh.15.46 یمنعت
+Jerusalem's	place	یروشلیم	revisado	rev. IA: sem ref یروشلیم
+Jerusalem_wives	person	یروشلیم کی بیویاں	revisado	rev. IA: 2Sam.5.13 یروشلیم کی بیویاں
+Jesus Christ	person	یسوع مسیح	revisado	rev. IA: Gen.49.10 یسوع مسیح
+John Mark	person	یوحنا مرقس	revisado	rev. IA: Acts.12.12 یوحنا مرقس
+John the Apostle	person	یوحنا رسول	revisado	rev. IA: Matt.4.21 یوحنا رسول
+John the Baptist	person	یوحنا بپتسمہ دینے والا	revisado	rev. IA: Matt.3.1 یوحنا بپتسمہ دینے والا
+Jonath-elem-rechokim	other		sem	rev. IA: sem forma tradicional segura em ur
+Judas Barsabas	person	یہوداہ برسابا	revisado	rev. IA: Acts.15.22 یہوداہ برسابا
+Judas Iscariot	person	یہوداہ اسکریوطی	revisado	rev. IA: Matt.10.4 یہوداہ اسکریوطی
+Judgment	place		sem	rev. IA: sem forma tradicional segura em ur
+King's_Highway	place	شاہراہ شاہی	revisado	rev. IA: Num.20.17 شاہراہ شاہی
+King’s Highway	place	شاہراہ شاہی	revisado	rev. IA: Num.20.17 شاہراہ شاہی
+Kumidi	place		sem	rev. IA: sem forma tradicional segura em ur
+LORD	other	خداوند	revisado	rev. IA: Gen.1.1 خداوند
+Laash	place	لعاش	revisado	rev. IA: sem ref لعاش
+Lebanon_Valley	place	وادی لبنان	revisado	rev. IA: Josh.11.17 وادی لبنان
+Lebbaeus Thaddaeus	person	لبیس تھدیوس	revisado	rev. IA: Matt.10.3 لبیس تھدیوس
+Line of Cain	group		sem	rev. IA: sem forma tradicional segura em ur
+Lower Beth-horon	place	بیت حورون زیریں	revisado	rev. IA: Josh.16.3 بیت حورون زیریں
+Lower Gulloth	place	گلوت زیریں	revisado	rev. IA: Josh.15.19 گلوت زیریں
+Lucifer	other	صبح کا ستارہ	revisado	rev. IA: Isa.14.12 صبح کا ستارہ
+Lucifer	person	صبح کا ستارہ	revisado	rev. IA: Isa.14.12 صبح کا ستارہ
+Lydia	place	لیدیہ	revisado	rev. IA: Gen.36.22 لیدیہ
+Maareh-geba	place	معرہ جبع	revisado	rev. IA: Judg.20.33 معرہ جبع
+Madiama	place		sem	rev. IA: sem forma tradicional segura em ur
+Magdala	place	مجدل	revisado	rev. IA: sem ref مجدل
+Magdalsenna	place		sem	rev. IA: sem forma tradicional segura em ur
+Magdolum	place		sem	rev. IA: sem forma tradicional segura em ur
+Mahalab	place	محلب	revisado	rev. IA: Josh.19.29 محلب
+Maranatha	other		sem	rev. IA: sem forma tradicional segura em ur
+Mary Magdalene	person	مریم مجدلینی	revisado	rev. IA: Matt.27.56 مریم مجدلینی
+Mary_Magdalene	person	مریم مجدلینی	revisado	rev. IA: Matt.27.56 مریم مجدلینی
+Maskil	other		sem	rev. IA: sem forma tradicional segura em ur
+Mazzaroth	other		sem	rev. IA: sem forma tradicional segura em ur
+Merom	place	میروم	revisado	rev. IA: Josh.11.5 میروم
+Meronoth	place	مرونوت	revisado	rev. IA: 1Chr.27.30 مرونوت
+Meunites	group	معونی	revisado	rev. IA: 1Chr.4.41 معونی
+Micah	person	میکاہ	revisado	rev. IA: Judg.17.1 میکاہ
+Miktam	other		sem	rev. IA: sem forma tradicional segura em ur
+Misrephoth-maim	place	مسرفوت مایم	revisado	rev. IA: Josh.11.8 مسرفوت مایم
+Mizpeh_Valley	place	وادی مصفاہ	revisado	rev. IA: Josh.11.3 وادی مصفاہ
+Moab_Plains	place	موآب کے میدان	revisado	rev. IA: Num.22.1 موآب کے میدان
+Mortar	place		sem	rev. IA: sem forma tradicional segura em ur
+Most Holy	place	قدس الاقداس	revisado	rev. IA: Exod.26.33 قدس الاقداس
+Most Holy Place	place	قدس الاقداس	revisado	rev. IA: Exod.26.34 قدس الاقداس
+Most Holy Place 1	place	قدس الاقداس	revisado	rev. IA: Exod.26.33 قدس الاقداس
+Most Holy Place 2	place	قدس الاقداس	revisado	rev. IA: 1Kgs.6.16 قدس الاقداس
+Most_Holy_Place	place	قدس الاقداس	revisado	rev. IA: 1Kgs.6.16 قدس الاقداس
+Mother of Aholah and Aholibah	person		sem	rev. IA: sem forma tradicional segura em ur
+Mother of Lemuel	person		sem	rev. IA: sem forma tradicional segura em ur
+Mother of Zebedees children	person		sem	rev. IA: sem forma tradicional segura em ur
+Mother of the Wife of Simon	person		sem	rev. IA: sem forma tradicional segura em ur
+Muth-labben	other		sem	rev. IA: sem forma tradicional segura em ur
+Nahuru	place		sem	rev. IA: sem forma tradicional segura em ur
+Naphath	place	نفت	revisado	rev. IA: Josh.17.11 نفت
+Naphath-dor	place	نفت دور	revisado	rev. IA: 1Kgs.4.11 نفت دور
+Nation of Israel	group	بنی اسرائیل	revisado	rev. IA: Ps.14.7 بنی اسرائیل
+Nehelam	place	نحلام	revisado	rev. IA: Jer.29.24 نحلام
+Nephilim	group	نفیلیم	revisado	rev. IA: Gen.6.4 نفیلیم
+New_Moon	other	نیا چاند	revisado	rev. IA: Col.2.16 نیا چاند
+North	place		sem	rev. IA: sem forma tradicional segura em ur
+North Gate	place	شمالی دروازہ	revisado	rev. IA: 1Chr.26.14 شمالی دروازہ
+Nuhashe	place		sem	rev. IA: sem forma tradicional segura em ur
+Parbar	place	فربار	revisado	rev. IA: 1Chr.26.18 فربار
+People's_Gate	place	لوگوں کا دروازہ	revisado	rev. IA: Jer.17.19 لوگوں کا دروازہ
+People’s Gate	place	لوگوں کا دروازہ	revisado	rev. IA: Jer.17.19 لوگوں کا دروازہ
+Pharisees	group	فریسی	revisado	rev. IA: sem ref فریسی
+Phillip the Apostle	person	فلپس رسول	revisado	rev. IA: Matt.10.3 فلپس رسول
+Phillip the Evangelist	person	فلپس مبشر	revisado	rev. IA: Acts.6.5 فلپس مبشر
+Pillars	place		sem	rev. IA: sem forma tradicional segura em ur
+Pitru	place		sem	rev. IA: sem forma tradicional segura em ur
+Plain	place	میدان	revisado	rev. IA: Deut.34.3 میدان
+Pontius Pilate	person	پنطیس پیلاطس	revisado	rev. IA: Matt.27.2 پنطیس پیلاطس
+Pool	place	تالاب	revisado	rev. IA: Neh.2.14 تالاب
+Portius Festus	person	پورکیس فیسطس	revisado	rev. IA: Acts.24.27 پورکیس فیسطس
+Potsherd Gate	place	ٹھیکری کا دروازہ	revisado	rev. IA: Jer.19.2 ٹھیکری کا دروازہ
+Potsherd_Gate	place	ٹھیکری کا دروازہ	revisado	rev. IA: Jer.19.2 ٹھیکری کا دروازہ
+Preparation_Festival	other	تیاری کا دن	revisado	rev. IA: Matt.27.62 تیاری کا دن
+Punt	place		sem	rev. IA: sem forma tradicional segura em ur
+Pyrrhus	person	پرس	revisado	rev. IA: Acts.20.4 پرس
+Queen of Sheba	person	ملکہ سبا	revisado	rev. IA: 1Kgs.10.1 ملکہ سبا
+Queen_of_Sheba	person	ملکہ سبا	revisado	rev. IA: 1Kgs.10.1 ملکہ سبا
+Raca	other		sem	rev. IA: sem forma tradicional segura em ur
+Ragmat	place		sem	rev. IA: sem forma tradicional segura em ur
+River	place	دریا	revisado	rev. IA: Gen.36.37 دریا
+River 2	place	دریا	revisado	rev. IA: sem ref دریا
+River 3	place	دریا	revisado	rev. IA: sem ref دریا
+Rock	place	چٹان	revisado	rev. IA: Josh.15.55 چٹان
+Rocks	place	چٹانیں	revisado	rev. IA: 1Sam.24.2 چٹانیں
+Sadducees	group	صدوقی	revisado	rev. IA: sem ref صدوقی
+Sahar	place	سحر	revisado	rev. IA: Ezek.27.18 سحر
+Salome	person	سالومی	revisado	rev. IA: Matt.14.6 سالومی
+Salona	place		sem	rev. IA: sem forma tradicional segura em ur
+Salt_Valley	place	نمک کی وادی	revisado	rev. IA: 2Sam.8.13 نمک کی وادی
+Samaria's	place	سامریہ	revisado	rev. IA: sem ref سامریہ
+Saparda	place		sem	rev. IA: sem forma tradicional segura em ur
+Saparre	place		sem	rev. IA: sem forma tradicional segura em ur
+Scribes	group	فقیہ	revisado	rev. IA: sem ref فقیہ
+Scythia	place	سکیتھیا	revisado	rev. IA: sem ref سکیتھیا
+Second Quarter	place	دوسرا محلہ	revisado	rev. IA: 2Kgs.22.14 دوسرا محلہ
+Second_Quarter	place	دوسرا محلہ	revisado	rev. IA: 2Kgs.22.14 دوسرا محلہ
+Sergius Paulus	person	سرجیس پولس	revisado	rev. IA: Acts.13.7 سرجیس پولس
+Sergius_Paulus	person	سرجیس پولس	revisado	rev. IA: Acts.13.7 سرجیس پولس
+Shephelah	place	شفیلہ	revisado	rev. IA: Deut.1.7 شفیلہ
+Shiggaion	other		sem	rev. IA: sem forma tradicional segura em ur
+Shushan_Eduth	other		sem	rev. IA: sem forma tradicional segura em ur
+Simon Peter	person	شمعون پطرس	revisado	rev. IA: Matt.4.18 شمعون پطرس
+Simon Zelotes	person	شمعون غیور	revisado	rev. IA: Matt.10.4 شمعون غیور
+Simon the Sorcerer	person	شمعون جادوگر	revisado	rev. IA: Acts.8.9 شمعون جادوگر
+Simon the Tanner	person	شمعون چمڑا رنگنے والا	revisado	rev. IA: Acts.9.43 شمعون چمڑا رنگنے والا
+Sister of Tahpenes	person	تحفنیس کی بہن	revisado	rev. IA: 1Kgs.11.19 تحفنیس کی بہن
+Solomon's Portico	place	سلیمان کا برآمدہ	revisado	rev. IA: Acts.3.11 سلیمان کا برآمدہ
+Solomon's_Portico	place	سلیمان کا برآمدہ	revisado	rev. IA: Acts.3.11 سلیمان کا برآمدہ
+Solomon’s Portico	place	سلیمان کا برآمدہ	revisado	rev. IA: John.10.23 سلیمان کا برآمدہ
+South	place	جنوب	revisado	rev. IA: Dan.11.5 جنوب
+South 1	place	جنوب	revisado	rev. IA: sem ref جنوب
+South 2	place	جنوب	revisado	rev. IA: sem ref جنوب
+South 3	place	جنوب	revisado	rev. IA: sem ref جنوب
+South Gate	place	جنوبی دروازہ	revisado	rev. IA: 1Chr.26.15 جنوبی دروازہ
+Sparta	place		sem	rev. IA: sem forma tradicional segura em ur
+Straight Gate	place	سیدھا دروازہ	revisado	rev. IA: Acts.9.11 سیدھا دروازہ
+Straight Street	place	سیدھی گلی	revisado	rev. IA: Acts.9.11 سیدھی گلی
+Suph	place	سوف	revisado	rev. IA: Deut.1.1 سوف
+Sutu	place		sem	rev. IA: sem forma tradicional segura em ur
+Syrtis	place	سورتس	revisado	rev. IA: Acts.27.17 سورتس
+Tabbur-erez	place		sem	rev. IA: sem forma tradicional segura em ur
+Tartessos	place		sem	rev. IA: sem forma tradicional segura em ur
+Tegarama	place		sem	rev. IA: sem forma tradicional segura em ur
+Thapsacus	place		sem	rev. IA: sem forma tradicional segura em ur
+The Lord Is There	place	خداوند وہاں ہے	revisado	rev. IA: Ezek.48.35 خداوند وہاں ہے
+The Lord Will Provide	place	خداوند مہیا کرے گا	revisado	rev. IA: Gen.22.14 خداوند مہیا کرے گا
+Thelme	place		sem	rev. IA: sem forma tradicional segura em ur
+Thisbe	place		sem	rev. IA: sem forma tradicional segura em ur
+Three Taverns	place	تین سرائیں	revisado	rev. IA: Acts.28.15 تین سرائیں
+Three_Taverns	place	تین سرائیں	revisado	rev. IA: Acts.28.15 تین سرائیں
+Throne	place		sem	rev. IA: sem forma tradicional segura em ur
+Tjaru	place		sem	rev. IA: sem forma tradicional segura em ur
+Tower	place	برج	revisado	rev. IA: Neh.3.1 برج
+Tower_of_Eder	place	برج عیدر	revisado	rev. IA: Gen.35.21 برج عیدر
+Travelers_Valley	place	مسافروں کی وادی	revisado	rev. IA: Ezek.39.11 مسافروں کی وادی
+Tribe of Asher	group	آشیر کا قبیلہ	revisado	rev. IA: sem ref آشیر کا قبیلہ
+Tribe of Benjamin	group	بنیامین کا قبیلہ	revisado	rev. IA: sem ref بنیامین کا قبیلہ
+Tribe of Dan	group	دان کا قبیلہ	revisado	rev. IA: sem ref دان کا قبیلہ
+Tribe of Gad	group	جاد کا قبیلہ	revisado	rev. IA: sem ref جاد کا قبیلہ
+Tribe of Issachar	group	اشکار کا قبیلہ	revisado	rev. IA: sem ref اشکار کا قبیلہ
+Tribe of Joseph	group	یوسف کا قبیلہ	revisado	rev. IA: sem ref یوسف کا قبیلہ
+Tribe of Judah	group	یہوداہ کا قبیلہ	revisado	rev. IA: Prov.25.1 یہوداہ کا قبیلہ
+Tribe of Levi	group	لاوی کا قبیلہ	revisado	rev. IA: sem ref لاوی کا قبیلہ
+Tribe of Naphtali	group	نفتالی کا قبیلہ	revisado	rev. IA: sem ref نفتالی کا قبیلہ
+Tribe of Reuben	group	روبن کا قبیلہ	revisado	rev. IA: sem ref روبن کا قبیلہ
+Tribe of Simeon	group	شمعون کا قبیلہ	revisado	rev. IA: sem ref شمعون کا قبیلہ
+Tribe of Zebulun	group	زبولون کا قبیلہ	revisado	rev. IA: sem ref زبولون کا قبیلہ
+Umman Manda	place		sem	rev. IA: sem forma tradicional segura em ur
+Unnamed#1	person		sem	rev. IA: sem forma tradicional segura em ur
+Unnamed#2	person		sem	rev. IA: sem forma tradicional segura em ur
+Unnamed#3	person		sem	rev. IA: sem forma tradicional segura em ur
+Unnamed#4	person		sem	rev. IA: sem forma tradicional segura em ur
+Unnamed#5	person		sem	rev. IA: sem forma tradicional segura em ur
+Unnamed#6	person		sem	rev. IA: sem forma tradicional segura em ur
+Unnamed#7	person		sem	rev. IA: sem forma tradicional segura em ur
+Unnamed#8	person		sem	rev. IA: sem forma tradicional segura em ur
+Unnamed#9	person		sem	rev. IA: sem forma tradicional segura em ur
+Upper Beth-horon	place	بیت حورون بالائی	revisado	rev. IA: Josh.16.5 بیت حورون بالائی
+Upper Gulloth	place	گلوت بالائی	revisado	rev. IA: Josh.15.19 گلوت بالائی
+Upu	place		sem	rev. IA: sem forma tradicional segura em ur
+Uqnu	place		sem	rev. IA: sem forma tradicional segura em ur
+Ur 2	place	اور	revisado	rev. IA: sem ref اور
+Ur of the Chaldees	place	کسدیوں کا اور	revisado	rev. IA: Gen.11.28 کسدیوں کا اور
+Ura	place		sem	rev. IA: sem forma tradicional segura em ur
+Valley of Mizpeh	place	وادی مصفاہ	revisado	rev. IA: Josh.11.8 وادی مصفاہ
+Valley of Salt	place	نمک کی وادی	revisado	rev. IA: 2Sam.8.13 نمک کی وادی
+Valley of the Son of Hinnom	place	وادی ہنوم کے بیٹے	revisado	rev. IA: 2Kgs.23.10 وادی ہنوم کے بیٹے
+Washer's_Field	place	دھوبی کا کھیت	revisado	rev. IA: 2Kgs.18.17 دھوبی کا کھیت
+Washer’s Field	place	دھوبی کا کھیت	revisado	rev. IA: 2Kgs.18.17 دھوبی کا کھیت
+Way of the Red Sea	place	بحیرہ قلزم کا راستہ	revisado	rev. IA: Num.14.25 بحیرہ قلزم کا راستہ
+Wife of Ezekiel	person	حزقی ایل کی بیوی	revisado	rev. IA: Ezek.24.18 حزقی ایل کی بیوی
+Wife of Simon	person	شمعون کی بیوی	revisado	rev. IA: Matt.8.14 شمعون کی بیوی
+Wildgoats_Rocks	place	بکریوں کی چٹانیں	revisado	rev. IA: 1Sam.24.2 بکریوں کی چٹانیں
+Wildgoats’ Rocks	place	بکریوں کی چٹانیں	revisado	rev. IA: 1Sam.24.2 بکریوں کی چٹانیں
+Willows	place	بید کے درخت	revisado	rev. IA: Isa.15.7 بید کے درخت
+Zion's	place	صیون	revisado	rev. IA: sem ref صیون
+a_wife_of_Eliphaz	person	الیفز کی بیوی	revisado	rev. IA: Gen.36.11 الیفز کی بیوی
+a_wife_of_Ezekiel	person	حزقی ایل کی بیوی	revisado	rev. IA: Ezek.24.18 حزقی ایل کی بیوی
+a_wife_of_Hezron	person	حصرون کی بیوی	revisado	rev. IA: 1Chr.2.9 حصرون کی بیوی
+a_wife_of_Jerahmeel	person	یرحمئیل کی بیوی	revisado	rev. IA: 1Chr.2.26 یرحمئیل کی بیوی
+a_wife_of_Josiah	person	یوشیاہ کی بیوی	revisado	rev. IA: 1Chr.3.15 یوشیاہ کی بیوی
+a_wife_of_Lot	person	لوط کی بیوی	revisado	rev. IA: Gen.19.15 لوط کی بیوی
+a_wife_of_Peter	person	پطرس کی بیوی	revisado	rev. IA: Matt.8.14 پطرس کی بیوی
+a_wife_of_Simeon	person	شمعون کی بیوی	revisado	rev. IA: Gen.46.10 شمعون کی بیوی
+a_wife_of_Solomon	person	سلیمان کی بیوی	revisado	rev. IA: 1Kgs.4.11 سلیمان کی بیوی
+daughter1_of_Lot	person	لوط کی بیٹی	revisado	rev. IA: Gen.19.37 لوط کی بیٹی
+daughter2_of_Lot	person	لوط کی بیٹی	revisado	rev. IA: Gen.19.38 لوط کی بیٹی
+daughter_of_Annas	person	حنا کی بیٹی	revisado	rev. IA: John.18.13 حنا کی بیٹی
+daughter_of_Machir	person	ماکیر کی بیٹی	revisado	rev. IA: 1Chr.2.21 ماکیر کی بیٹی
+daughter_of_Meshullam	person	مشلام کی بیٹی	revisado	rev. IA: Neh.6.18 مشلام کی بیٹی
+daughter_of_Pharaoh	person	فرعون کی بیٹی	revisado	rev. IA: Exod.2.5 فرعون کی بیٹی
+daughter_of_Putiel	person	فوتیئیل کی بیٹی	revisado	rev. IA: Exod.6.25 فوتیئیل کی بیٹی
+daughter_of_Sanballat	person	سنبلط کی بیٹی	revisado	rev. IA: Neh.13.28 سنبلط کی بیٹی
+daughter_of_Shecaniah	person	شکنیاہ کی بیٹی	revisado	rev. IA: Neh.6.18 شکنیاہ کی بیٹی
+father_of_Barnabas	person	برنباس کا باپ	revisado	rev. IA: Col.4.10 برنباس کا باپ
+father_of_Conaniah	person	کونعنیاہ کا باپ	revisado	rev. IA: 2Chr.31.12 کونعنیاہ کا باپ
+father_of_Elizabeth	person	الیشبع کا باپ	revisado	rev. IA: Luke.1.5 الیشبع کا باپ
+father_of_Eunice	person	یونیکے کا باپ	revisado	rev. IA: 2Tim.1.5 یونیکے کا باپ
+father_of_Hilkiah	person	حلقیاہ کا باپ	revisado	rev. IA: Jer.32.7 حلقیاہ کا باپ
+father_of_Hodiah	person	ہودیاہ کا باپ	revisado	rev. IA: 1Chr.4.19 ہودیاہ کا باپ
+father_of_Lazarus	person	لعازر کا باپ	revisado	rev. IA: Luke.10.39 لعازر کا باپ
+father_of_Mamre	person	ممری کا باپ	revisado	rev. IA: Gen.14.13 ممری کا باپ
+father_of_Nathan	person	ناتن کا باپ	revisado	rev. IA: 1Chr.11.38 ناتن کا باپ
+father_of_Tahpenes	person	تحفنیس کا باپ	revisado	rev. IA: 1Kgs.11.19 تحفنیس کا باپ
+father_of_Timothy	person	تیمتھیس کا باپ	revisado	rev. IA: Acts.16.1 تیمتھیس کا باپ
+huge_man	person		sem	rev. IA: sem forma tradicional segura em ur
+husband_of_Hammolecheth	person	حملکت کا شوہر	revisado	rev. IA: 1Chr.7.18 حملکت کا شوہر
+husband_of_Mary	person	مریم کا شوہر	revisado	rev. IA: Acts.12.12 مریم کا شوہر
+husband_of_Matred	person	مترد کا شوہر	revisado	rev. IA: Gen.36.39 مترد کا شوہر
+husband_of_Shimeath	person	شمعت کا شوہر	revisado	rev. IA: 2Kgs.12.21 شمعت کا شوہر
+husband_of_Zeruiah	person	صرویاہ کا شوہر	revisado	rev. IA: 1Sam.26.6 صرویاہ کا شوہر
+man of great stature	person		sem	rev. IA: sem forma tradicional segura em ur
+man of understanding	person		sem	rev. IA: sem forma tradicional segura em ur
+motherInLaw_of_Peter	person	پطرس کی ساس	revisado	rev. IA: Matt.8.14 پطرس کی ساس
+sister_of_Tahpenes	person	تحفنیس کی بہن	revisado	rev. IA: 1Kgs.11.19 تحفنیس کی بہن
+son of Abinadab	person	ابیناداب کا بیٹا	revisado	rev. IA: 1Kgs.4.11 ابیناداب کا بیٹا
+son of Dekar	person	دقر کا بیٹا	revisado	rev. IA: 1Kgs.4.9 دقر کا بیٹا
+son of Geber	person	جابر کا بیٹا	revisado	rev. IA: 1Kgs.4.13 جابر کا بیٹا
+son of Hesed	person	حسد کا بیٹا	revisado	rev. IA: 1Kgs.4.10 حسد کا بیٹا
+son of Hur	person	حور کا بیٹا	revisado	rev. IA: 1Kgs.4.8 حور کا بیٹا
+son of Joiada	person	یہویداع کا بیٹا	revisado	rev. IA: Neh.13.28 یہویداع کا بیٹا
+son_of_Jashen	person	یاشن کا بیٹا	revisado	rev. IA: 2Sam.23.32 یاشن کا بیٹا
+son_of_Joiada	person	یہویداع کا بیٹا	revisado	rev. IA: Neh.13.28 یہویداع کا بیٹا
+sons of Jashen	person	یاشن کے بیٹے	revisado	rev. IA: 2Sam.23.32 یاشن کے بیٹے
+the giant in Gath	person		sem	rev. IA: sem forma tradicional segura em ur
+wife_of_Heli	person	عیلی کی بیوی	revisado	rev. IA: Luke.1.5 عیلی کی بیوی
