@@ -37,8 +37,8 @@ event_id	cite_id	titulo_en	titulo_ar	origem	nota
 23	ent:theographic:rec4kRWTXS86nus0I	Death of Adam	موت آدم	revisado	rev. IA
 24	ent:theographic:recg9ZkB8FoyQTH8v	Enoch taken up	اختطاف أخنوخ	revisado	rev. IA
 25	ent:theographic:recN7DBKYBEZRDgO7	Death of Seth	موت شيث	revisado	rev. IA
-26	ent:theographic:recLhxi3tDTOD3wzR	Birth of Noah	ولادة نوحا	revisado	rev. IA
-27	ent:theographic:recTdAS4YoPxLBszy	Lifetime of Noah	حياة نوحا	revisado	rev. IA
+26	ent:theographic:recLhxi3tDTOD3wzR	Birth of Noah	ولادة نوح	revisado	rev. T5
+27	ent:theographic:recTdAS4YoPxLBszy	Lifetime of Noah	حياة نوح	revisado	rev. T5
 28	ent:theographic:reciFgNLimxSBMqKH	Death of Enos	موت أنوش	revisado	rev. IA
 29	ent:theographic:recC3DfLQVkOYAv8e	Death of Cainan	موت قينان	revisado	rev. IA
 30	ent:theographic:recicDx68rL317hoE	Death of Mahlaleel	موت مهللئيل	revisado	rev. IA
@@ -46,7 +46,7 @@ event_id	cite_id	titulo_en	titulo_ar	origem	nota
 32	ent:theographic:rec1n3lFKpydGhoQL	God decides to destroy every living thing	قرار الله بإهلاك كل ذي جسد	revisado	rev. IA
 33	ent:theographic:recpUCaR0HNgYjco5	Birth of Shem	ولادة سام	revisado	rev. IA
 34	ent:theographic:recxg4gEuXG5R6PUZ	Lifetime of Shem	حياة سام	revisado	rev. IA
-35	ent:theographic:recZcXNIkXx2zXaW3	God instructs Noah to build the ark	أمر الله نوحا ببناء الفلك	revisado	rev. IA
+35	ent:theographic:recZcXNIkXx2zXaW3	God instructs Noah to build the ark	أمر الله لنوح ببناء الفلك	revisado	rev. T5
 36	ent:theographic:recc0kcj2zjtrfU8n	Death of Lamech	موت لامك	revisado	rev. IA
 37	ent:theographic:recvF4VYGrRno2tu5	Death of Methuselah	موت متوشالح	revisado	rev. IA
 38	ent:theographic:recmLyx1yqtuANkqd	The Great Flood begins	بداية الطوفان العظيم	revisado	rev. IA
@@ -54,8 +54,8 @@ event_id	cite_id	titulo_en	titulo_ar	origem	nota
 40	ent:theographic:recMNRtVxdTnlGYoJ	Water covers the earth	تغطية المياه للأرض	revisado	rev. IA
 41	ent:theographic:rec1P4d8N4XdXzH2l	The flood subsides	انحسار الطوفان	revisado	rev. IA
 42	ent:theographic:recnAzV0utz4k20eC	Leaving the Ark	الخروج من الفلك	revisado	rev. IA
-43	ent:theographic:recUsWq7FcQB7vaMa	God makes a covenant with Noah	عهد الله مع نوحا	revisado	rev. IA
-44	ent:theographic:recgz06wNQlsq6kOc	Noah gets drunk and Canaan is cursed	سكر نوحا ولعن كنعان	revisado	rev. IA
+43	ent:theographic:recUsWq7FcQB7vaMa	God makes a covenant with Noah	عهد الله مع نوح	revisado	rev. T5
+44	ent:theographic:recgz06wNQlsq6kOc	Noah gets drunk and Canaan is cursed	سكر نوح ولعن كنعان	revisado	rev. T5
 45	ent:theographic:rec7uQ8Nhf6h5zdfj	Birth of Arphaxad	ولادة أرفكشاد	revisado	rev. IA
 46	ent:theographic:recQDMfXnyQKhXj01	Lifetime of Arphaxad	حياة أرفكشاد	revisado	rev. IA
 47	ent:theographic:recN97j5QCkdCwVOC	Birth of Salah	ولادة شالح	revisado	rev. IA
@@ -75,7 +75,7 @@ event_id	cite_id	titulo_en	titulo_ar	origem	nota
 61	ent:theographic:recB5Rg7JlgsMcPyq	Lifetime of Terah	حياة تارح	revisado	rev. IA
 62	ent:theographic:recyn98EnxpfPAaEq	Death of Peleg	موت فالج	revisado	rev. IA
 63	ent:theographic:rec118tvZQItG2hEI	Death of Nahor	موت ناحور	revisado	rev. IA
-64	ent:theographic:recjX86XiYE9up0Ux	Death of Noah	موت نوحا	revisado	rev. IA
+64	ent:theographic:recjX86XiYE9up0Ux	Death of Noah	موت نوح	revisado	rev. T5
 65	ent:theographic:recXveJRjCtPNMLqs	Birth of Abraham	ولادة إبراهيم	revisado	rev. IA
 66	ent:theographic:recfnatCOLEHFYeLB	Lifetime of Abraham	حياة إبراهيم	revisado	rev. IA
 67	ent:theographic:rectQ4Vg6XbpTyR92	Judgeship of Jair	قضاء يائير	revisado	rev. IA
@@ -111,7 +111,7 @@ event_id	cite_id	titulo_en	titulo_ar	origem	nota
 97	ent:theographic:recjP69Rr334GwfCD	Birth of Gad	ولادة جاد	revisado	rev. IA
 98	ent:theographic:recyHq1K0jXfzoxSG	Birth of Asher	ولادة أشير	revisado	rev. IA
 99	ent:theographic:rec7UNUOWD8T8j0H7	Birth of Issachar	ولادة يساكر	revisado	rev. IA
-100	ent:theographic:rec79Sud9E887BhRT	Birth of Zebulon		rascunho	
+100	ent:theographic:rec79Sud9E887BhRT	Birth of Zebulon	ولادة زبولون	revisado	rev. T5
 101	ent:theographic:rec8lxfZ0sKEUfPfi	Birth of Dinah	ولادة دينة	revisado	rev. IA
 102	ent:theographic:recZDLkLCBpaZjV7D	Birth of Joseph	ولادة يوسف	revisado	rev. IA
 103	ent:theographic:recj8qDYwzBEfwBAa	Lifetime of Joseph	حياة يوسف	revisado	rev. IA
@@ -142,10 +142,10 @@ event_id	cite_id	titulo_en	titulo_ar	origem	nota
 128	ent:theographic:recvA947nCyo8kadV	Tabernacle Built	بناء المسكن	revisado	rev. IA
 129	ent:theographic:recxj71m6XPSaqIg2	Death of Moses	موت موسى	revisado	rev. IA
 130	ent:theographic:recSF4lyBebGjJEXI	Crossing the Jordan into Canaan	عبور الأردن إلى كنعان	revisado	rev. IA
-131	ent:theographic:rec0t3McGWoyd6kTB	War with Canaanites		rascunho	
+131	ent:theographic:rec0t3McGWoyd6kTB	War with Canaanites	الحرب مع الكنعانيين	revisado	rev. T5
 132	ent:theographic:rec91XeIAmvH5rhav	Dividing the land	تقسيم الأرض	revisado	rev. IA
 133	ent:theographic:recnPiyyKviVUPHO6	Death of Joshua	موت يشوع	revisado	rev. IA
-134	ent:theographic:recEpl6nDyA0TWVdW	Subjugation by Cushan-rishathaim	استعباد على يد كوشان	revisado	rev. IA; Cushan-rishathaim: 'rishathaim' sem nome em nomes.tsv (omitido)
+134	ent:theographic:recEpl6nDyA0TWVdW	Subjugation by Cushan-rishathaim	استعباد على يد كوشان رشعتايم	revisado	rev. T5
 135	ent:theographic:recUvk5tT0xGxR71o	Deliverance by Othniel	خلاص على يد عثنيئيل	revisado	rev. IA
 136	ent:theographic:recG0Smwr0v3S7ShM	Subjugation by Eglon	استعباد على يد عجلون	revisado	rev. IA
 137	ent:theographic:recxl5FkotW1u50nA	Deliverance by Ehud	خلاص على يد أهود	revisado	rev. IA
@@ -155,7 +155,7 @@ event_id	cite_id	titulo_en	titulo_ar	origem	nota
 141	ent:theographic:recD6xiJWvESO0Wea	Deliverance by Gideon	خلاص على يد جدعون	revisado	rev. IA
 142	ent:theographic:recNLSBgKYUyByJwa	Usurpation by Abimelech	تسلط أبيمالك	revisado	rev. IA
 143	ent:theographic:recWw6t8usixUbFOU	Judgeship of Tola	قضاء تولع	revisado	rev. IA
-144	ent:theographic:rec7nesNMNffYRe3F	Oppression by Ammon and Philistia	اضطهاد من عمون وفلسطين	revisado	rev. IA
+144	ent:theographic:rec7nesNMNffYRe3F	Oppression by Ammon and Philistia	اضطهاد بني عمون والفلسطينيين	revisado	rev. T5
 145	ent:theographic:rec3z1OqSDMH0rR7y	Judgeship of Eli	قضاء عالي	revisado	rev. IA
 146	ent:theographic:recAfJj3Pv6wRG2nj	Deliverance by Jephthah	خلاص على يد يفتاح	revisado	rev. IA
 147	ent:theographic:reczOHadpTVOuiidp	Judgeship of Ibzan	قضاء إبصان	revisado	rev. IA
@@ -179,8 +179,8 @@ event_id	cite_id	titulo_en	titulo_ar	origem	nota
 165	ent:theographic:recX0KzMJywvbeM6D	Reign of Rehoboam	ملك رحبعام	revisado	rev. IA
 166	ent:theographic:rec3R4qyFlVjCRORt	Northern Kingdom (Israel)	المملكة الشمالية (إسرائيل)	revisado	rev. IA
 167	ent:theographic:rec824qPcsyF7GtTh	Reign of Jeroboam I	ملك يربعام الأول	revisado	rev. IA
-168	ent:theographic:recDK5FF0d1qrz8sn	Reign of Abijam		rascunho	
-169	ent:theographic:recfIqDLtdCqz7N3V	Death of Abijam		rascunho	
+168	ent:theographic:recDK5FF0d1qrz8sn	Reign of Abijam	ملك أبيام	revisado	rev. T5
+169	ent:theographic:recfIqDLtdCqz7N3V	Death of Abijam	موت أبيام	revisado	rev. T5
 170	ent:theographic:recmEKC9vgAJDYa2z	Reign of Asa	ملك آسا	revisado	rev. IA
 171	ent:theographic:recoThUM3VEzmvB2Y	Reign of Nadab	ملك ناداب	revisado	rev. IA
 172	ent:theographic:recDnpywTo9ng7E08	Reign of Baasha	ملك بعشا	revisado	rev. IA
@@ -248,15 +248,15 @@ event_id	cite_id	titulo_en	titulo_ar	origem	nota
 234	ent:theographic:rec5pDuWtEaOK7ehk	Prophecies of Jeremiah	نبوءات إرميا	revisado	rev. IA
 235	ent:theographic:recUkdsuAuRono8LY	Prophecies of Zephaniah	نبوءات صفنيا	revisado	rev. IA
 236	ent:theographic:recsdAcHVpiiWFtm0	Death of Josiah	موت يوشيا	revisado	rev. IA
-237	ent:theographic:recmY05Xj0sxEcdCh	Reign of Johoahaz (Shallum)	ملك شلوم	revisado	rev. IA
+237	ent:theographic:recmY05Xj0sxEcdCh	Reign of Johoahaz (Shallum)	ملك يهوآحاز (شلوم)	revisado	rev. T5
 238	ent:theographic:reciunQ6bRGaY2gib	Reign of Jehoiakim	ملك يهوياقيم	revisado	rev. IA
 239	ent:theographic:rece1avzrB0YDK1Ln	Prophecies of Habakkuk	نبوءات حبقوق	revisado	rev. IA
 240	ent:theographic:rec3iJVpZspQM64qQ	Prophecies of Daniel	نبوءات دانيآل	revisado	rev. IA
-241	ent:theographic:reczmi6XtMXALtcNn	Reign of Jeconiah		rascunho	
+241	ent:theographic:reczmi6XtMXALtcNn	Reign of Jeconiah	ملك يكنيا	revisado	rev. T5
 242	ent:theographic:recW2cNLqUyMIV6O7	Reign of Zedekiah	ملك صدقيا	revisado	rev. IA
 243	ent:theographic:recGUuZfUbylFAytG	Prophecies of Ezekiel	نبوءات حزقيال	revisado	rev. IA
 244	ent:theographic:recdiXqPQiDIBRI0Q	Prophecies of Obadiah	نبوءات عوبديا	revisado	rev. IA
-245	ent:theographic:recQPoA7fH3wJi7v2	Prophecies of Haggai		rascunho	
+245	ent:theographic:recQPoA7fH3wJi7v2	Prophecies of Haggai	نبوءات حجي	revisado	rev. T5
 246	ent:theographic:recebNaZjPvbOqk4r	Prophecies of Zechariah	نبوءات زكريا	revisado	rev. IA
 247	ent:theographic:recpSNqfLiST1KQqq	Prophecies of Malachi	نبوءات ملاخي	revisado	rev. IA
 249	ent:theographic:recRd6H7B5gBuTYT9	Espousal of Mary	خطوبة مريم	revisado	rev. IA
@@ -299,7 +299,7 @@ event_id	cite_id	titulo_en	titulo_ar	origem	nota
 296	ent:theographic:rec5EydSXHdbLbzk1	Sermon on the Mount	الموعظة على الجبل	revisado	rev. IA
 286	ent:theographic:recrx5gqQTez5Oz5h	Healing the Leper	شفاء الأبرص	revisado	rev. IA
 297	ent:theographic:rec6mNLyG5AVN4X1b	Healing Centurion's Servant	شفاء غلام قائد المئة	revisado	rev. IA
-387	ent:theographic:recY3vd5gVnwqoRV1	Gadarene Demoniacs		rascunho	
+387	ent:theographic:recY3vd5gVnwqoRV1	Gadarene Demoniacs	شفاء مجنون الجدريين	revisado	rev. T5
 287	ent:theographic:rec9Ni8NXcob4ou2m	Healing the Man with Palsy	شفاء المفلوج	revisado	rev. IA
 288	ent:theographic:recbiDrbxO70fDsta	Jesus Calls Matthew	يسوع يدعو متى	revisado	rev. IA
 289	ent:theographic:recbt0ME8XMDoNbVc	Fasting Question	سؤال عن الصوم	revisado	rev. IA
@@ -307,7 +307,7 @@ event_id	cite_id	titulo_en	titulo_ar	origem	nota
 388	ent:theographic:recMTSIklCghjlACt	Capernaum Miracles	معجزات كفرناحوم	revisado	rev. IA
 295	ent:theographic:recSpTfIckUAeEOLd	Apostles Chosen	اختيار الرسل	revisado	rev. IA
 299	ent:theographic:recdgE4vWpwc2fVpK	Jesus' Message on John the Baptist	رسالة يسوع عن يوحنا المعمدان	revisado	rev. IA
-300	ent:theographic:recYaZ1gwefzzNB1V	Woe to Chorazin and Bethsaida		rascunho	
+300	ent:theographic:recYaZ1gwefzzNB1V	Woe to Chorazin and Bethsaida	الويل لكورزين وبيت صيدا	revisado	rev. T5
 292	ent:theographic:recDFt0ANS33dAxri	Corn on the Sabbath	السنابل في السبت	revisado	rev. IA
 293	ent:theographic:reciGxBNHjPZwHKvO	Healing a Withered Hand	شفاء اليد اليابسة	revisado	rev. IA
 294	ent:theographic:recpYSwD914PD9tHU	Healing Multitudes	شفاء الجموع	revisado	rev. IA
@@ -325,7 +325,7 @@ event_id	cite_id	titulo_en	titulo_ar	origem	nota
 394	ent:theographic:recQ8WbFKwtwzK9Xm	Jesus Walks on Water	يسوع يمشي على الماء	revisado	rev. IA
 396	ent:theographic:recXbkZXIXcuKVF6d	Healing in Gennesaret	شفاء في جنيسارت	revisado	rev. IA
 398	ent:theographic:recah9fwlW8Xyk4gn	Commandments and Tradition Discourse	تعليم عن الوصايا والتقليد	revisado	rev. IA
-399	ent:theographic:rec7Xd0T6QiyeeChg	Healing Canaanite Daughter		rascunho	
+399	ent:theographic:rec7Xd0T6QiyeeChg	Healing Canaanite Daughter	شفاء ابنة المرأة الكنعانية	revisado	rev. T5
 401	ent:theographic:reccrRGqDRLWjCHog	Feeding of Four Thousand	إطعام الأربعة آلاف	revisado	rev. IA
 404	ent:theographic:recBuPmgXN9v9X6WI	Peter's Confession "Upon this Rock"	اعتراف بطرس «على هذه الصخرة»	revisado	rev. IA
 405	ent:theographic:rec4eZvHbmI1QToIw	Foretelling the Death and Resurrection	الإنباء بالموت والقيامة	revisado	rev. IA
@@ -335,14 +335,14 @@ event_id	cite_id	titulo_en	titulo_ar	origem	nota
 409	ent:theographic:recvkY2icLy3QDClR	Tax Coin in a Fish's Mouth	الدرهم في فم السمكة	revisado	rev. IA
 410	ent:theographic:recIZ6XquF0X7jaNE	Teachings on Humility/Temptation/Reconciliation	تعاليم عن التواضع والتجربة والمصالحة	revisado	rev. IA
 400	ent:theographic:rechQpDJIE2FCEYTU	Healing a Crowd near Sea of Galilee	شفاء جمع قرب بحر الجليل	revisado	rev. IA
-402	ent:theographic:recqtoV4JQiYCmkZN	Discourse with Pharisees and Saducees		rascunho	
-403	ent:theographic:rec1QOmEc6elW8boO	Healing a Blind Man at Bethsaida		rascunho	
-421	ent:theographic:recO855E9csJLnyFO	Samaritans Reject Jesus		rascunho	
+402	ent:theographic:recqtoV4JQiYCmkZN	Discourse with Pharisees and Saducees	حوار مع الفريسيين والصدوقيين	revisado	rev. T5
+403	ent:theographic:rec1QOmEc6elW8boO	Healing a Blind Man at Bethsaida	شفاء أعمى في بيت صيدا	revisado	rev. T5
+421	ent:theographic:recO855E9csJLnyFO	Samaritans Reject Jesus	السامريون يرفضون يسوع	revisado	rev. T5
 422	ent:theographic:rec5EAcIz2rHZRN8q	70 Sent Out	إرسال السبعين	revisado	rev. IA
 423	ent:theographic:recm9poq0bKg2RuU5	Good Samaritan Parable Taught	تعليم مثل السامري الصالح	revisado	rev. IA
 424	ent:theographic:recycS0pNycJe2Xet	Jesus meets Martha and Mary	يسوع يزور مرثا ومريم	revisado	rev. IA
 425	ent:theographic:reco0PVfMeFcQrURu	Lord's Prayer Taught	تعليم الصلاة الربانية	revisado	rev. IA
-428	ent:theographic:recrSSo7ihKbdos1g	Woes and Parables with Pharisees		rascunho	
+428	ent:theographic:recrSSo7ihKbdos1g	Woes and Parables with Pharisees	الويلات والأمثال مع الفريسيين	revisado	rev. T5
 429	ent:theographic:receThtYDpzQmFpc1	Healing Woman With 18-year Infirmity	شفاء المرأة المصابة منذ 18 سنة	revisado	rev. IA
 430	ent:theographic:recoUkvcVV6nR1G2D	Mustard Seed and Leaven Teaching	تعليم حبة الخردل والخميرة	revisado	rev. IA
 397	ent:theographic:recMCgwIq1sw9Q779	Bread of Life Sermon	موعظة خبز الحياة	revisado	rev. IA
@@ -352,7 +352,7 @@ event_id	cite_id	titulo_en	titulo_ar	origem	nota
 426	ent:theographic:recxURN2uAbTe7CGr	Blind Man Healed	شفاء الأعمى	revisado	rev. IA
 427	ent:theographic:recs2ESnv8JHoLJNs	The Good Shepherd Teaching	تعليم الراعي الصالح	revisado	rev. IA
 431	ent:theographic:recs1VxMp6PJ11GLW	Feast of Dedication	عيد التجديد	revisado	rev. IA
-438	ent:theographic:recR3zid90odgmB6g	Jesus Teaches in Perea		rascunho	
+438	ent:theographic:recR3zid90odgmB6g	Jesus Teaches in Perea	يسوع يعلم في عبر الأردن	revisado	rev. T5
 439	ent:theographic:recN2veKNMtB7HzFi	Healing Blind Bartimaeus	شفاء بارتيماوس الأعمى	revisado	rev. IA
 443	ent:theographic:recmXmhZt51doQu7o	Holy Week	أسبوع الآلام	revisado	rev. IA
 444	ent:theographic:recBsshyiGaHc6bgC	Triumphal Entry	الدخول الظافر	revisado	rev. IA
@@ -373,7 +373,7 @@ event_id	cite_id	titulo_en	titulo_ar	origem	nota
 436	ent:theographic:recTplXPehmPfFUiG	Lepers Healed	شفاء البرص	revisado	rev. IA
 437	ent:theographic:recrwlbTDWOETPpei	Discourse on the Kingdom and Other Parables	تعليم عن الملكوت وأمثال أخرى	revisado	rev. IA
 440	ent:theographic:reccSs8loWRLm8LAb	Zaccheus Converted and Parable of the Pounds	توبة زكا ومثل المنا	revisado	rev. IA
-432	ent:theographic:rec70ZLu9pdrEWXR9	Teaching and Healing in Perea to Jerusalem		rascunho	
+432	ent:theographic:rec70ZLu9pdrEWXR9	Teaching and Healing in Perea to Jerusalem	التعليم والشفاء من عبر الأردن إلى أورشليم	revisado	rev. T5
 433	ent:theographic:reclZp6jMKWzYmop9	Lazarus Raised form the Dead	إقامة لعازر من الموت	revisado	rev. IA
 434	ent:theographic:recZhxqZJmXuGMdvd	Chief Priests Conspire Against Jesus	رؤساء الكهنة يتآمرون على يسوع	revisado	rev. IA
 435	ent:theographic:recMIEeRCAf7IGRwc	Jesus Withdraws to Ephraim	يسوع ينسحب إلى أفرايم	revisado	rev. IA
@@ -401,10 +401,10 @@ event_id	cite_id	titulo_en	titulo_ar	origem	nota
 322	ent:theographic:recgcZKRVZDvMUMOa	Stephen is stoned	رجم استفانوس	revisado	rev. IA
 323	ent:theographic:recVjdJplfI1wSxYk	Saul persecutes the church	شاول يضطهد الكنيسة	revisado	rev. IA
 324	ent:theographic:recP6mZs3oSlZdrT0	Philip preaches in Samaria	فيلبس يبشر في السامرة	revisado	rev. IA
-325	ent:theographic:recvI0SgATGCasGsV	Conversion of Ethiopian Eunuch		rascunho	
+325	ent:theographic:recvI0SgATGCasGsV	Conversion of Ethiopian Eunuch	إيمان الخصي الحبشي	revisado	rev. T5
 326	ent:theographic:recCz7opcoITkiZiq	Saul is converted	توبة شاول	revisado	rev. IA
-327	ent:theographic:reczeOH6wbjkZHP1w	Saul proclaims Jesus	شاول يعلن يسوع	revisado	rev. IA
-328	ent:theographic:recxH9n2Xk1PM6DvB	Peter heals Aeneas and Dorcas	بطرس يشفي إينياس	revisado	rev. IA; Dorcas sem nome em nomes.tsv (omitido)
+327	ent:theographic:reczeOH6wbjkZHP1w	Saul proclaims Jesus	شاول يكرز بيسوع	revisado	rev. T5
+328	ent:theographic:recxH9n2Xk1PM6DvB	Peter heals Aeneas and Dorcas	بطرس يشفي إينياس ويقيم طابيثا	revisado	rev. T5
 329	ent:theographic:rec4fFrtrUuDVkTNK	Peter meets Cornelius	بطرس يلتقي كرنيليوس	revisado	rev. IA
 330	ent:theographic:recCef9mlyuV3XWd3	Peter preaches to gentiles in Caesarea	بطرس يعظ الأمم في قيصرية	revisado	rev. IA
 331	ent:theographic:recNnOBWct1TV6CUZ	Peter defends Gentile salvation	بطرس يدافع عن خلاص الأمم	revisado	rev. IA
