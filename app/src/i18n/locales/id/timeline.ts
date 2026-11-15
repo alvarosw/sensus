@@ -35,7 +35,7 @@ export const idTl = {
   noEvents: 'Tidak ada peristiwa dengan pencarian dan filter ini.',
   noLines: 'Tidak ada lini masa dengan filter ini.',
   footer:
-    'Sumber: Theographic (CC BY-SA 4.0). Tanggal mengikuti kronologi sumber.',
+    'Sumber: Theographic (CC BY-SA 4.0). Tanggal mengikuti kronologi sumber; judul, nama, dan deskripsi dalam bahasa Indonesia adalah adaptasi dari proyek Sensus.',
 
   lineTitleOf: (count: number) => `${count} peristiwa`,
   inSource: (name: string) => `dalam sumber: ${name}`,
