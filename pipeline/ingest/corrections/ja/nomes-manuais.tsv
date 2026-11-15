@@ -4,7 +4,7 @@ nome_en	tipo	nome_ja	origem	nota
 Abila	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
 Abila Lysaniou	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
 Adasa	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
-Adramyttium	place	アドラミテオン	revisado	rev. IA: forma da 口語訳 アドラミテオン; pt: Adramítio
+Adramyttium	place	アドラミティオン	revisado	rev. T5: forma do texto jpnm アドラミティオン
 Adulis	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
 Al-taschith	other	アル・タシュヘト	revisado	rev. IA: forma da 口語訳 アル・タシュヘト; pt: Al-Tasquite
 Alamoth	other	アラモテ	revisado	rev. IA: forma da 口語訳 アラモテ; pt: Alamote
@@ -24,11 +24,11 @@ Arbela	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem no
 Arsinoe	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
 Asen	person		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
 Ashdod's	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
-Atroth-beth-joab	place	アタロテ・ベテ・ヨアブ	revisado	rev. IA: forma da 口語訳 アタロテ・ベテ・ヨアブ; pt: Atarote-Bete-Joabe
+Atroth-beth-joab	place	アトロテ・ベテ・ヨアブ	revisado	rev. T5: forma do texto jpnm アトロテ・ベテ・ヨアブ
 Bajith	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
 Barsabas Justus	person	バルサバ・ユスト	revisado	rev. IA: forma da 口語訳 バルサバ・ユスト; pt: José Barsabás, chamado Justo
 Batanea	place	バタネア	revisado	rev. IA: forma da 口語訳 バタネア; pt: sem nome
-Beeroth Bene-jaakan	place	ベエロテ・ベネ・ヤアカン	revisado	rev. IA: forma da 口語訳 ベエロテ・ベネ・ヤアカン; pt: Beerote-Bene-Jaacã
+Beeroth Bene-jaakan	place	ベエロト・ベネ・ヤアカン	revisado	rev. T5: forma do texto jpnm ベエロト・ベネ・ヤアカン
 Belamon	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
 Benjamin's Gate	place	ベニヤミンの門	revisado	rev. IA: forma da 口語訳 ベニヤミンの門; pt: Porta de Benjamim
 Beth-Ashtoreth	place	ベテ・アシタロテ	revisado	rev. IA: forma da 口語訳 ベテ・アシタロテ; pt: Bete-Astarote
@@ -42,8 +42,8 @@ Bether_Mountain	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (p
 Bethlehem Ephrathah	place	ベツレヘム・エフラタ	revisado	rev. IA: forma da 口語訳 ベツレヘム・エフラタ; pt: Belém Efrata
 Beyond the River	place	川向こう	revisado	rev. IA: forma da 口語訳 川向こう; pt: Além do Rio
 Booths_Festival	other	仮庵の祭	revisado	rev. IA: forma da 口語訳 仮庵の祭; pt: Festa dos Tabernáculos
-Caesarea Philippi	place	カイサリヤ・ピリポ	revisado	rev. IA: forma da 口語訳 カイサリヤ・ピリポ; pt: Cesareia de Filipe
-Caesarea_Philippi	place	カイサリヤ・ピリポ	revisado	rev. IA: forma da 口語訳 カイサリヤ・ピリポ; pt: Cesareia de Filipe
+Caesarea Philippi	place	カイサリア・ピリポ	revisado	rev. T5: forma do texto jpnm カイサリア・ピリポ
+Caesarea_Philippi	place	カイサリア・ピリポ	revisado	rev. T5: forma do texto jpnm カイサリア・ピリポ
 Caleb Ephrathah	place	カレブ・エフラタ	revisado	rev. IA: forma da 口語訳 カレブ・エフラタ; pt: Calebe de Efrata
 Caleb_Ephrathah	place	カレブ・エフラタ	revisado	rev. IA: forma da 口語訳 カレブ・エフラタ; pt: Calebe de Efrata
 Canaanite_woman	person	カナンの女	revisado	rev. IA: forma da 口語訳 カナンの女; pt: Mulher cananeia
@@ -114,7 +114,7 @@ Heracleopolis Magna	place		sem	rev. IA: sem forma tradicional segura na 口語�
 Heracleopolis Parva	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
 Heres	place	ヘレス	revisado	rev. IA: forma da 口語訳 ヘレス; pt: Heres
 Herod Agrippa I	person	ヘロデ・アグリッパ	revisado	rev. IA: forma da 口語訳 ヘロデ・アグリッパ; pt: Herodes Agripa I
-Herod Antipas	person	ヘロデ・アンテパス	revisado	rev. IA: forma da 口語訳 ヘロデ・アンテパス; pt: Herodes Antipas
+Herod Antipas	person	ヘロデ・アンティパス	revisado	rev. T5: forma do texto jpnm ヘロデ・アンティパス
 Herodian	group	ヘロデ党	revisado	rev. IA: forma da 口語訳 ヘロデ党; pt: Herodianos
 Herod’s palace	place	ヘロデの宮殿	revisado	rev. IA: forma da 口語訳 ヘロデの宮殿; pt: Palácio de Herodes
 Highway	place	王の大路	revisado	rev. IA: forma da 口語訳 王の大路; pt: Caminho Real
@@ -170,8 +170,8 @@ Meronoth	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem 
 Meunites	group	マウン人	revisado	rev. IA: forma da 口語訳 マウン人; pt: Meunins
 Micah	person	ミカ	revisado	rev. IA: forma da 口語訳 ミカ; pt: sem nome
 Miktam	other	ミクタム	revisado	rev. IA: forma da 口語訳 ミクタム; pt: Mictão
-Misrephoth-maim	place	ミスレポテ・マイム	revisado	rev. IA: forma da 口語訳 ミスレポテ・マイム; pt: Misrefote-Maim
-Mizpeh_Valley	place	ミヅパの谷	revisado	rev. IA: forma da 口語訳 ミヅパの谷; pt: Planície de Mispá
+Misrephoth-maim	place	ミスレフォト・マイム	revisado	rev. T5: forma do texto jpnm ミスレフォト・マイム
+Mizpeh_Valley	place	ミツパの谷	revisado	rev. T5: forma do texto jpnm ミツパの谷
 Moab_Plains	place	モアブの平原	revisado	rev. IA: forma da 口語訳 モアブの平原; pt: Campos de Moabe
 Mortar	place	マクテシュ	revisado	rev. IA: forma da 口語訳 マクテシュ; pt: sem nome
 Most Holy	place	至聖所	revisado	rev. IA: forma da 口語訳 至聖所; pt: Lugar Santíssimo
@@ -205,7 +205,7 @@ Pitru	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nom
 Plain	place	平野	revisado	rev. IA: forma da 口語訳 平野; pt: Planície
 Pontius Pilate	person	ポンテオ・ピラト	revisado	rev. IA: forma da 口語訳 ポンテオ・ピラト; pt: Pôncio Pilatos
 Pool	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
-Portius Festus	person	ポルキオ・フェストス	revisado	rev. IA: forma da 口語訳 ポルキオ・フェストス; pt: Pórcio Festo
+Portius Festus	person	ポルキオ・フェスト	revisado	rev. T5: forma do texto jpnm ポルキオ・フェスト
 Potsherd Gate	place	陶器の破片の門	revisado	rev. IA: forma da 口語訳 陶器の破片の門; pt: sem nome
 Potsherd_Gate	place	陶器の破片の門	revisado	rev. IA: forma da 口語訳 陶器の破片の門; pt: sem nome
 Preparation_Festival	other	備え日	revisado	rev. IA: forma da 口語訳 備え日; pt: Dia da Preparação
@@ -300,4 +300,4 @@ Uqnu	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome
 Ur 2	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
 Ur of the Chaldees	place	カルデヤのウル	revisado	rev. IA: forma da 口語訳 カルデヤのウル; pt: Ur dos Caldeus
 Ura	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
-Valley of Mizpeh	place	ミヅパの谷	revisado	rev. IA: forma da 口語訳 ミヅパの谷; pt: Vale de Mispá
+Valley of Mizpeh	place	ミツパの谷	revisado	rev. T5: forma do texto jpnm ミツパの谷

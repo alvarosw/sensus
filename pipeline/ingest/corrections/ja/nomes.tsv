@@ -40,7 +40,7 @@ Azel	アツェル	アツェル	revisado	baixa	2	4	1.00	エルアサ
 Baale-judah	バアレ	バアレ・ユダ	revisado	baixa	2	1	1.00	ユダ
 Bear	プレアデス	プレアデス	sem	baixa	1	2	0.50	オリオン
 Bel	ベル	ベル	revisado	baixa	1	3	1.00	ネボ
-Beth-Ashtoreth	ベテ・シャン	ベテ・アシュタロテ	revisado	baixa	1	1	1.00	アシュタロテ
+Beth-Ashtoreth	ベテ・シャン	ベテ・アシタロテ	revisado	baixa	1	1	1.00	アシュタロテ
 Beth-eked	サマリア	サマリア	sem	baixa	3	2	0.50	
 Beth-haggan	イブレアム	ベテ・ハガン	revisado	baixa	3	1	1.00	アハズヤ
 Beth-millo	ミロ	ベテ・ミロ	revisado	baixa	3	3	1.00	シェケム
@@ -61,7 +61,7 @@ Diana	アジア	アルテミス	revisado	baixa	1	5	0.20	ユダヤ
 Diblathaim	アルモン・ディブラタイム	アルモン・ディブラタイム	revisado	baixa	1	3	0.67	ベテ・ディブラタイム
 Dinaites	ディナ	ディナ	sem	baixa	1	1	1.00	デハ
 East	ゼバ	ゼバ	sem	baixa	3	18	0.06	ミディアン
-Ecbatana	アクメタ	エクバタナ	revisado	baixa	3	1	1.00	メディア
+Ecbatana	アクメタ	アクメタ	revisado	baixa	3	1	1.00	メディア
 Egypt	プト	エジプト	revisado	baixa	1	4	0.25	ルディム
 Eliphal	エリファル	エリファル	revisado	baixa	2	1	1.00	アヒアム
 Eliphalet	エリフェレテ	エリフェレテ	revisado	baixa	1	3	1.00	エルヤダ
@@ -656,7 +656,7 @@ Hophra	ファラオ	ファラオ・ホフラ	revisado	media	1	18	0.94	ファラ�
 Hosea	ホセア	ホセア	revisado	media	2	3	1.00	ヒゼキヤ
 Hotham	ホタン	ホタン	revisado	media	1	1	1.00	シャマ
 Huldah	フルダ	フルダ	revisado	media	2	2	1.00	ハスラ
-Huppim	ムピム	ムピム	revisado	media	1	3	0.33	フピム
+Huppim	ムピム	フピム	revisado	media	1	3	0.33	フピム
 Huram	フラム	フラム	revisado	media	1	3	0.33	フファム
 Huram	フラム・アビ	フラム・アビ	revisado	media	1	1	1.00	
 Husham	フシャム	フシャム	revisado	media	2	4	1.00	アビテ
@@ -731,7 +731,7 @@ Jehonathan	ヨナタン	ヨナタン	revisado	media	1	1	1.00	ウジヤ
 Jehucal	ユカル	ユカル	revisado	media	1	2	0.50	エフカル
 Jehud	エフド	エフド	revisado	media	3	1	1.00	ベネ・ベラク
 Jehudi	エフディ	エフディ	revisado	media	2	3	1.00	シェレムヤ
-Jehudijah	ビテヤ	ビテヤ	revisado	media	2	1	1.00	ユダ
+Jehudijah	ビテヤ	ビテヤ	sem	media	2	1	1.00	ユダ
 Jehuel	エヒエル	エヒエル	revisado	media	1	1	1.00	ウジエル
 Jehush	エシェク	エウシュ	revisado	media	1	1	1.00	エウシュ
 Jeiel	エヒエル	エヒエル	revisado	media	2	1	1.00	ヤハジエル
@@ -783,7 +783,7 @@ Justus	ユスト	ユスト	revisado	media	3	2	1.00	イエス
 Kabzeel	カブツェエル	カブツェエル	revisado	media	3	4	0.75	アリエル
 Kadesh-barnea	カデシュ・バルネア	カデシュ・バルネア	revisado	media	2	24	0.42	アダル
 Kain	カイン	カイン	revisado	media	3	2	1.00	アッシュル
-Kedesh-naphtali	ケデシュ	ケデシュ・ナフタリ	revisado	media	2	1	1.00	ナフタリ
+Kedesh-naphtali	ケデシュ	ナフタリのケデシュ	revisado	media	2	1	1.00	ナフタリ
 Kemuel	ケムエル	ケムエル	revisado	media	6	3	1.00	アラム
 Kibzaim	キブツァイム	キブツァイム	revisado	media	3	2	0.50	ベテ・ホロン
 Kir	キル	キル	revisado	media	5	11	0.45	シリア
@@ -1033,7 +1033,7 @@ Shimea	シメア	シメア	revisado	media	4	2	1.00	アサヤ
 Shimeah	シメア	シメア	revisado	media	3	9	0.44	ミクロテ
 Shimei	シムラテ	シムイ	revisado	media	1	1	1.00	シムイ
 Shimeon	シメオン	シメオン	revisado	media	2	1	1.00	シェマヤ
-Shimhi	シムイ	シムヒ	revisado	media	1	1	1.00	シムラテ
+Shimhi	シムイ	シムイ	revisado	media	1	1	1.00	シムラテ
 Shimon	シモン	シモン	revisado	media	2	1	1.00	ティロン
 Shion	シオン	シオン	revisado	media	3	1	1.00	アナハラト
 Shual	シュアル	シュアル	revisado	media	3	1	1.00	オフラ
@@ -2371,7 +2371,7 @@ Kohath	ケハテ	ケハテ	revisado	alta	2	42	0.95	ケハト
 Kolaiah	コラヤ	コラヤ	revisado	alta	4	2	1.00	エシャヤ
 Korah	コラ	コラ	revisado	alta	8	44	0.75	オホリバマ
 Kore	コレ	コレ	revisado	alta	4	4	0.50	コラ
-Koz	ハコツ	コズ	revisado	alta	3	5	1.00	ホバヤ
+Koz	ハコツ	ハコツ	revisado	alta	3	5	1.00	ホバヤ
 Kue	クエ	クエ	revisado	alta	3	2	0.50	エジプト
 Laadan	ラダン	ラダン	revisado	alta	2	10	0.50	アミフド
 Laban	ラバン	ラバン	revisado	alta	5	47	1.00	パラン
@@ -2481,7 +2481,7 @@ Meconah	メコナ	メコナ	revisado	alta	3	1	1.00	ツィクラグ
 Medad	メダド	メダド	revisado	alta	2	2	1.00	エルダド
 Medan	メダン	メダン	revisado	alta	2	2	1.00	デダン
 Medeba	メデバ	メデバ	revisado	alta	3	5	1.00	ディボン
-Media	メディア	メディヤ	revisado	alta	3	22	1.00	ペルシア
+Media	メディア	メデア	revisado	alta	3	22	1.00	ペルシア
 Megiddo	メギド	メギド	revisado	alta	3	13	0.92	ミロ
 Mehetabeel	メヘタベル	メヘタベル	revisado	alta	1	1	1.00	デラヤ
 Mehetabel	メヘタベル	メヘタベル	revisado	alta	3	3	1.00	メザハブ
