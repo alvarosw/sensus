@@ -1,0 +1,59 @@
+# Glossário geo em chinês simplificado (openbible-geo, por regra; pipeline/sensus/geo_descricao.py). Colunas:
+#   secao      tipo | geometria | voto | fonte
+#   ingles     termo como aparece na descrição da fonte (exato)
+#   portugues  tradução usada na frase (aqui: chinês)
+#   nota       observação para o revisor (opcional)
+#   genero     vazio (o chinês não concorda em gênero)
+# geometria: o modelo geo_melhor já diz '几何为{geometria}', por isso os valores são só a forma.
+secao	ingles	portugues	nota	genero
+tipo	settlement	聚落
+tipo	region	地区
+tipo	mountain	山
+tipo	wadi	干河谷
+tipo	river	河
+tipo	spring	泉
+tipo	hill	山丘
+tipo	island	岛
+tipo	valley	谷
+tipo	body of water	水域
+tipo	well	水井
+tipo	probability center radial	径向概率中心
+tipo	road	道路
+tipo	mountain range	山脉
+tipo	structure	建筑
+tipo	mouth of river	河口
+tipo	pool	水池
+tipo	cliff	悬崖
+tipo	cave	洞穴
+tipo	field	田野
+tipo	mountain pass	山口
+tipo	mountain ridge	山脊
+tipo	wall	城墙
+tipo	forest	森林
+tipo	harbor	港口
+tipo	garden	花园
+tipo	promontory	海角
+geometria	point	点
+geometria	polygon	多边形
+geometria	path	路径
+fonte	modern	现代
+fonte	ancient	古代
+voto	confidence_possible	可信度：可能
+voto	confidence_likely	可信度：大概
+voto	confidence_yes	可信度：是
+voto	confidence_mostlikely	可信度：很可能
+voto	confidence_unlikely	可信度：不太可能
+voto	confidence_no	可信度：否
+voto	confidence_map	可信度：地图
+voto	authority_usually	权威：通常
+voto	authority_scholar	权威：学者
+voto	authority_traditional	权威：传统
+voto	authority_parallel	权威：平行
+voto	authority_preserved	权威：保留名称
+voto	authority_variant	权威：变体
+voto	authority_old	权威：古代
+voto	unknown	未知
+voto	uncertain	不确定
+voto	identified_been	认定：曾被认定
+voto	identified_is	认定：是
+voto	identified_adjective	认定：形容词

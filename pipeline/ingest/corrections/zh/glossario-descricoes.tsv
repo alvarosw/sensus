@@ -1,0 +1,121 @@
+# Glossário das descrições em chinês simplificado (TIPNR, pipeline/sensus/descricoes_pt.py). Colunas:
+#   secao      cargo | tempo | tribo | lugar | relacao | nome
+#   ingles     termo como aparece na descrição da fonte (exato, com maiúsculas)
+#   portugues  tradução usada na frase (aqui: chinês)
+#   nota       observação para o revisor (opcional)
+# Seções:
+#   cargo    o que é a entidade, sem complemento ('man' -> 人; 'high priest' -> 大祭司)
+#   tempo    frase depois de 'living'; vira o trecho depois da vírgula, então começa por 属 ('属族长时代')
+#   tribo    nome da tribo; a gramática põe 支派 depois
+#   lugar    complemento inteiro, já com 的 ('of Egypt' -> 埃及的; 'in Asia' -> 在亚细亚的)
+#   relacao  relação de parentesco, com {x} no lugar da lista de nomes ('son of' -> {x}的儿子)
+#   nome     palavra que aparece no lugar de nome próprio; o nome da entidade vem de entity_name, não daqui
+# Termo que a descrição usa e não está aqui: a descrição fica sem tradução por regra (cai na tradução automática
+# do app). Acrescente termos conforme o relatório de cobertura do ingestor.
+secao	ingles	portugues	nota
+cargo	man	人
+cargo	woman	女人
+cargo	location	地点
+cargo	high priest	大祭司
+cargo	priest	祭司
+cargo	warrior	勇士
+cargo	warriors	勇士
+cargo	musician	乐师
+cargo	prophet	先知
+cargo	prophetess	女先知
+cargo	king	王
+cargo	queen	王后
+cargo	group	群体
+cargo	male deity	男神
+cargo	female deity	女神
+cargo	deity	神明
+cargo	people	民族
+cargo	woman or town	女人或城镇
+cargo	town	城镇
+cargo	emperor	皇帝
+cargo	prince	王子
+cargo	apostle	使徒
+cargo	angel	天使
+cargo	concubine	妾
+cargo	chief	首领
+cargo	steward	管家
+cargo	servant	仆人
+cargo	ruler	统治者
+cargo	musical piece	乐曲
+cargo	judge	士师
+cargo	Judge	士师
+cargo	city	城市
+cargo	gigantic man	巨人
+cargo	Pharaoh	法老
+cargo	festival	节期
+cargo	governor	总督
+cargo	man or town	人或城镇
+tempo	at the time of the Patriarchs	属族长时代
+tempo	at the time of Egypt and Wilderness	属埃及与旷野时代
+tempo	at the time of Exile and Return	属流亡与归回时代
+tempo	at the time of Divided Monarchy	属分裂王国时代
+tempo	at the time of United Monarchy	属统一王国时代
+tempo	at the time of the New Testament	属新约时代
+tempo	at the time of the Exodus	属出埃及时代
+tempo	before Israel's Monarchy	属以色列君王制之前
+tempo	at the time before the Flood	属洪水之前的时代
+tempo	before the Flood	属洪水之前
+tempo	at the time of Judges	属士师时代
+tribo	Levi	利未
+tribo	Judah	犹大
+tribo	Asher	亚设
+tribo	Benjamin	便雅悯
+tribo	Ephraim	以法莲
+tribo	Manasseh	玛拿西
+tribo	Simeon	西缅
+tribo	Issachar	以萨迦
+tribo	Zebulun	西布伦
+tribo	Naphtali	拿弗他利
+tribo	Reuben	吕便
+tribo	Gad	迦得
+tribo	Dan	但
+relacao	son of	{x}的儿子
+relacao	daughter of	{x}的女儿
+relacao	brother of	{x}的兄弟
+relacao	sister of	{x}的姐妹
+relacao	half-brother of	{x}的异母兄弟
+relacao	half-sister of	{x}的异母姐妹
+relacao	wife of	{x}的妻子
+relacao	husband of	{x}的丈夫
+relacao	mother of	{x}的母亲
+relacao	father of	{x}的父亲
+relacao	founder of	{x}的创立者
+relacao	concubine of	{x}的妾
+relacao	descendant of	{x}的后裔
+nome	Pharaoh	法老
+nome	Asia	亚细亚
+nome	Christ	基督
+lugar	in Asia	在亚细亚的
+lugar	of Egypt	埃及的
+lugar	of the Cushites	古实的
+lugar	of the Arabs	阿拉伯的
+lugar	of the Edomites	以东的
+lugar	of the Midianites	米甸的
+lugar	of the Syrians	亚兰的
+lugar	of the Gomerians	歌篾的
+lugar	of the Ammonites	亚扪的
+lugar	of the Greeks	希腊的
+lugar	of the Ishmaelites	以实玛利的
+lugar	of the Moabites	摩押的
+lugar	of the Egyptians	埃及的
+lugar	of the Philistines	非利士的
+lugar	of the Hittites	赫人的
+lugar	of the Canaanites	迦南的
+lugar	of the Amalekites	亚玛力的
+lugar	of the Jebusites	耶布斯的
+lugar	of the Assyrians	亚述的
+lugar	of the Babylonians	巴比伦的
+lugar	of the Chaldeans	迦勒底的
+lugar	of the Persians	波斯的
+lugar	of the Hebrews	希伯来的
+lugar	of the Israelites	以色列的
+lugar	of the Kingdom of Israel	以色列国的
+lugar	of Northern Israel	北以色列的
+lugar	of Syria	亚兰的
+lugar	in Judea	在犹太的
+lugar	of warriors	勇士的
