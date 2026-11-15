@@ -1,0 +1,41 @@
+# Gramática das descrições em indonésio (TIPNR e openbible-geo por regra; pipeline/sensus/descricoes_pt.py).
+# Colunas: chave, modelo. Campos {nome} são trocados pelo valor; {pont.;}, {pont..}, {pont.,} são os sinais da língua.
+# Sem variante .f: o indonésio não tem gênero gramatical, então nenhum modelo concorda com o gênero do cargo.
+# Conectores e 'original' têm espaço nas pontas, de propósito. Sem flexão (flexao_relacao nenhuma) e sem eufonia
+# (pos nenhum): os nomes ficam como estão, e as preposições fixas já vêm nos modelos.
+# A citação é impessoal ('Disebut'), como no espanhol, para não depender de concordância.
+chave	modelo
+mencao_primeira	pertama kali disebut di {ref}
+mencao_unica	hanya disebut di {ref}
+frase_cargo_comp	{cargo} {comp}
+frase_tempo_com_comp	{frase}{pont.,} {tempo}
+frase_tempo_sem_comp	{frase} {tempo}
+cabecalho	{frase}{pont.;} {mencao}{pont..}
+comp_territorio_tribo	di wilayah suku {tribo}{perto}
+comp_perto_sufixo	, dekat {nome}
+comp_tribo	dari suku {tribo}
+comp_cidade	dari kota {nome}
+comp_perto	dekat {nome}
+comp_de	dari {nome}
+comp_em	di {nome}
+citacao	Disebut {lista}
+citacao_apenas	Hanya disebut {lista}
+original	 ({original})
+conector_e	 dan 
+conector_ou	 atau 
+lista_sep	, 
+pont.;	;
+pont..	.
+pont.,	,
+maiuscula_inicial	sim
+nome_ingles_permitido	sim
+flexao_relacao	nenhuma
+pos	nenhum
+geo_melhor	Identifikasi modern terbaik: {nome} ({tipo}, geometri {geometria}); skor asosiasi {score}/1000.
+geo_identificacao	Identifikasi: "{texto}" ({fonte}).
+geo_votos	Suara: {votos}.
+geo_voto	{voto} {n}
+geo_tempo	Skor berbobot waktu {tempo}/1000.
+geo_outros	{n} lokasi modern kandidat lain dalam kumpulan data.
+geo_melhor_sem_nome	Identifikasi modern terbaik ({tipo}, geometri {geometria}); skor asosiasi {score}/1000.
+geo_omitir_ingles	sim
