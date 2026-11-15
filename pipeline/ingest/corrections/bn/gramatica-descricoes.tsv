@@ -1,0 +1,41 @@
+# Gramática das descrições em bengali (TIPNR e openbible-geo por regra; pipeline/sensus/descricoes_pt.py).
+# Colunas: chave, modelo. Campos {nome} são trocados pelo valor; {pont.;}, {pont..}, {pont.,} são os sinais da língua.
+# Ordem: o complemento vem antes do cargo ('{comp} {cargo}': 'লেবি গোষ্ঠীর একজন মানুষ'), e o sinal final é ৷ (danda U+09F7).
+# Genitivo: a flexão só entra nos nomes de relação (flexao_relacao genitivo_bn, -র depois de vogal, -ের depois de consoante);
+# nos complementos o nome fica sem flexão e a expressão é composta ('{nome} শহরের', 'মিশর অঞ্চলে'), como em bengali.
+# Nome inglês sem forma em bengali faz a descrição falhar (nome_ingles_permitido nao): escrita não latina.
+chave	modelo
+mencao_primeira	প্রথম উল্লেখ {ref}
+mencao_unica	শুধু {ref}-এ উল্লেখিত
+frase_cargo_comp	{comp} {cargo}
+frase_tempo_com_comp	{frase}{pont.,} {tempo}
+frase_tempo_sem_comp	{frase} {tempo}
+cabecalho	{frase}{pont.;} {mencao}{pont..}
+comp_territorio_tribo	{tribo} গোষ্ঠীর এলাকায়{perto}
+comp_perto_sufixo	, {nome} কাছাকাছি
+comp_tribo	{tribo} গোষ্ঠীর
+comp_cidade	{nome} শহরের
+comp_perto	{nome} কাছাকাছি
+comp_de	{nome} থেকে
+comp_em	{nome} অঞ্চলে
+citacao	{lista} নামে ডাকা হয়
+citacao_apenas	শুধু {lista} নামে ডাকা হয়
+original	 ({original})
+conector_e	 ও 
+conector_ou	 বা 
+lista_sep	, 
+pont.;	;
+pont..	৷
+pont.,	,
+maiuscula_inicial	sim
+nome_ingles_permitido	nao
+flexao_relacao	genitivo_bn
+pos	nenhum
+geo_melhor	সর্বোত্তম আধুনিক শনাক্তকরণ: {nome} ({tipo}, {geometria} জ্যামিতি); সংশ্লিষ্টতা স্কোর {score}/1000৷
+geo_melhor_sem_nome	সর্বোত্তম আধুনিক শনাক্তকরণ ({tipo}, {geometria} জ্যামিতি); সংশ্লিষ্টতা স্কোর {score}/1000৷
+geo_identificacao	শনাক্তকরণ: "{texto}" ({fonte})৷
+geo_votos	ভোট: {votos}৷
+geo_voto	{voto} {n}
+geo_tempo	সময়-ভারিত স্কোর {tempo}/1000৷
+geo_outros	{n}টি অন্য আধুনিক প্রার্থী অবস্থান এই ডেটাসেটে৷
+geo_omitir_ingles	sim
