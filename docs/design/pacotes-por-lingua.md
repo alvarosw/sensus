@@ -19,7 +19,7 @@ gerais em [ARCHITECTURE.md](../ARCHITECTURE.md).
 | Troca de língua | Pergunta "Baixar o conteúdo em <língua>?" com a lista e o tamanho do que falta. Até baixar, mostra o que já está no aparelho, com tradução automática quando houver modelo. Pacotes da língua anterior ficam até a pessoa remover. | Nada some nem fica vazio ao trocar. |
 | Google Tradutor | Sai. No lugar, "Baixar tradução (~30 MB)" (liga a tradução e baixa o modelo). | O link levava o texto para fora do app; o modelo já existe e funciona offline. |
 | Três vias de tradução | **Modelo** (prosa longa, todas as línguas), **derivado** no pipeline (nomes e glosas por alinhamento com a Bíblia de cada língua) e **revisado** (camada extra onde houver quem revise; hoje pt). | Só o modelo e o derivado escalam para 14 línguas e para as próximas. Nenhuma língua depende de revisão humana. |
-| Origem do texto derivado | Sem IA: sai de dados (Strong do TAGNT/TAHOT × Bíblia livre da língua). Confiança baixa não entra; cai para o modelo. | Mantém "nada gerado por IA é gravado no aparelho" e escala sem revisão. |
+| Origem do texto derivado | Nomes saem da Bíblia de cada língua (Strong do TAGNT/TAHOT × Bíblia livre da língua) e são revisados com auxílio de IA, com checagem automática contra o texto. Títulos são traduzidos com auxílio de IA e revisados por amostragem. Confiança baixa não entra; cai para o modelo. | O que vai para o aparelho é texto revisado ou derivado gravado no pacote; nada gerado por IA chega ao aparelho sem passar pela revisão e pela checagem. |
 
 ## 1. Vocabulário
 
@@ -38,10 +38,10 @@ gerais em [ARCHITECTURE.md](../ARCHITECTURE.md).
 | Corpo dos verbetes de dicionário | 6 fontes, 35 MB | Edição + modelo | |
 | Definições dos léxicos (TBESG, TBESH, LSJ) | 8 MB | Edição + modelo | |
 | Glosas do léxico | ~14 mil Strong (5.497 NT, 8.525 AT) | **Derivado** (todas as línguas com Bíblia) + revisado (pt) + modelo no que faltar | Texto curto sem contexto é onde o modelo mais erra. |
-| Nomes de pessoas e lugares | 9.950 entidades | **Derivado** (já é assim em pt: `nomes_pt.py`) | Generalizar o `nomes_pt` para qualquer Bíblia do catálogo. |
-| Títulos de tópicos e verbetes | 5.750 tópicos (Nave, Torrey); 13 mil títulos no total | Nomes próprios pelos nomes derivados; resto revisado (pt) ou **modelo com o título reescrito** | `"AFFLICTED, DUTY TOWARD THE"` → `"Duty toward the afflicted"` antes do modelo (§6). |
+| Nomes de pessoas e lugares | 9.950 entidades | **Derivado** da Bíblia de cada língua, revisado com auxílio de IA e checagem automática contra o texto (`nomes.py`, 12 línguas) | Revisão por amostragem por língua; o pt é o caso original (`nomes_pt.py`). |
+| Títulos de tópicos e verbetes | 5.750 tópicos (Nave, Torrey); 13 mil títulos no total | Nomes próprios pelos nomes derivados; resto **traduzido com auxílio de IA e revisado por amostragem** (`titulos.py`, 12 línguas) | `"AFFLICTED, DUTY TOWARD THE"` → `"Duty toward the afflicted"` antes da tradução (§6). |
 | Títulos de eventos | 450 | Revisado (pt) ou modelo, com os nomes já trocados | |
-| Descrições de entidades | 8.370 | Revisado por regra (pt, `descricoes_pt`) ou modelo | A gramática por língua não compensa fora do pt. |
+| Descrições de entidades | 8.370 | **Por regra** com gramática por língua, nas 12 línguas (`descricoes.py`; pt em `descricoes_pt`) | A prosa longa (Easton) ficou adiada: segue pelo modelo quando entrar. |
 | Glosa contextual do token (`gloss_en`) | 67.817 valores | Não traduzir; na língua do app, mostrar a glosa do léxico | Muda com o contexto; não há como revisar. |
 | Textos da interface | — | Tabelas `locales/` (já existe) | Fora deste contrato. |
 
