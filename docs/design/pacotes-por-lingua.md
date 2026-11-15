@@ -39,9 +39,9 @@ gerais em [ARCHITECTURE.md](../ARCHITECTURE.md).
 | Definições dos léxicos (TBESG, TBESH, LSJ) | 8 MB | Edição + modelo | |
 | Glosas do léxico | ~14 mil Strong (5.497 NT, 8.525 AT) | **Derivado** (todas as línguas com Bíblia) + revisado (pt) + modelo no que faltar | Texto curto sem contexto é onde o modelo mais erra. |
 | Nomes de pessoas e lugares | 9.950 entidades | **Derivado** da Bíblia de cada língua, revisado com auxílio de IA e checagem automática contra o texto (`nomes.py`, 12 línguas) | Revisão por amostragem por língua; o pt é o caso original (`nomes_pt.py`). |
-| Títulos de tópicos e verbetes | 5.750 tópicos (Nave, Torrey); 13 mil títulos no total | Nomes próprios pelos nomes derivados; resto **traduzido com auxílio de IA e revisado por amostragem** (`titulos.py`, 12 línguas) | `"AFFLICTED, DUTY TOWARD THE"` → `"Duty toward the afflicted"` antes da tradução (§6). |
+| Títulos de tópicos e verbetes | 5.750 tópicos (Nave, Torrey); 13 mil títulos no total | Nomes próprios pelos nomes derivados; resto **traduzido com auxílio de IA e revisado por amostragem** (`titulos.py`; dados 2026.11.14: 9 línguas, ja/ar/bn na próxima versão) | `"AFFLICTED, DUTY TOWARD THE"` → `"Duty toward the afflicted"` antes da tradução (§6). |
 | Títulos de eventos | 450 | Revisado (pt) ou modelo, com os nomes já trocados | |
-| Descrições de entidades | 8.370 | **Por regra** com gramática por língua, nas 12 línguas (`descricoes.py`; pt em `descricoes_pt`) | A prosa longa (Easton) ficou adiada: segue pelo modelo quando entrar. |
+| Descrições de entidades | 8.370 | **Por regra** com gramática por língua, (`descricoes.py`; pt em `descricoes_pt`; dados 2026.11.14: 9 línguas, ja/ar/bn na próxima versão) | A prosa longa (Easton) ficou adiada: segue pelo modelo quando entrar. |
 | Glosa contextual do token (`gloss_en`) | 67.817 valores | Não traduzir; na língua do app, mostrar a glosa do léxico | Muda com o contexto; não há como revisar. |
 | Textos da interface | — | Tabelas `locales/` (já existe) | Fora deste contrato. |
 

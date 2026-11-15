@@ -4,6 +4,9 @@ Pendências registradas durante o desenvolvimento. Prioridade: **P1** (próximo)
 
 ## Dados
 
+- **P2 — Títulos de eventos e descrições em ja, ar e bn.** Nomes já entraram (dados 2026.11.14); faltam T2/T3
+  e a revisão por amostragem. Os blocos de nomes restantes de bn, zh, ja e ar também.
+- **P3 — Citação da descrição repete nomes da fonte em inglês** ("Se le llama Paul, Paul (Παῦλος), Saúl").
 - **P3 — Hodge, Commentary on Romans (archive.org): pendente.** O grego do scan vira símbolos; 86% dos parágrafos
   saem por lixo de OCR. Precisa de outro scan ou de limpeza do grego. Configuração em `comentario_escaneado.py`.
 - **P3 — Prosa das descrições (Easton) nas línguas novas.** Adiada: ~425 mil caracteres por língua; cai na
