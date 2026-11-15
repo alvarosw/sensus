@@ -1,0 +1,43 @@
+# Gramática das descrições em japonês (TIPNR e openbible-geo por regra; pipeline/sensus/descricoes_pt.py).
+# Colunas: chave, modelo. Campos {nome} são trocados pelo valor; {pont.;}, {pont..}, {pont.,} são os sinais da língua.
+# Ordem natural do japonês: o complemento vem ANTES do cargo ('アダムの息子': comp_de termina em の, e frase_cargo_comp
+# é '{comp}{cargo}'). Os complementos terminam em の para se ligar ao cargo; o cargo fica no fim da frase.
+# Sem variante .f: a língua não concorda em gênero. Sem flexão de caso (flexao_relacao nenhuma) nem eufonia (pos nenhum).
+# Pontuação: 。 fecha frase e parágrafo; 、 separa a frase do tempo e os itens de uma lista.
+# Os nomes citados são sempre na forma japonesa do nomes.tsv (nome_ingles_permitido nao: nome sem forma japonesa
+# faz a descrição falhar e ela cai na tradução automática). Sem maiúscula inicial (maiuscula_inicial nao).
+chave	modelo
+mencao_primeira	初出は{ref}
+mencao_unica	{ref}にのみ登場
+frase_cargo_comp	{comp}{cargo}
+frase_tempo_com_comp	{frase}{pont.,}{tempo}
+frase_tempo_sem_comp	{frase}{pont.,}{tempo}
+cabecalho	{frase}{pont.;}{mencao}{pont..}
+comp_territorio_tribo	{tribo}族の領地{perto}の
+comp_perto_sufixo	（{nome}付近）
+comp_tribo	{tribo}族の
+comp_cidade	{nome}の町の
+comp_perto	{nome}付近の
+comp_de	{nome}の
+comp_em	{nome}の
+citacao	{lista}とも呼ばれる
+citacao_apenas	{lista}とだけ呼ばれる
+original	（{original}）
+conector_e	と
+conector_ou	または
+lista_sep	、
+pont.;	。
+pont..	。
+pont.,	、
+maiuscula_inicial	nao
+nome_ingles_permitido	nao
+flexao_relacao	nenhuma
+pos	nenhum
+geo_melhor	現代の最有力比定：{nome}（{tipo}、{geometria}型）。関連スコア {score}/1000。
+geo_identificacao	同定：「{texto}」（{fonte}）。
+geo_votos	投票：{votos}。
+geo_voto	{voto} {n}票
+geo_tempo	時間加重スコア {tempo}/1000。
+geo_outros	データセット内の他の候補となる現代の所在地：{n}件。
+geo_melhor_sem_nome	現代の最有力比定（{tipo}、{geometria}型）。関連スコア {score}/1000。
+geo_omitir_ingles	sim
