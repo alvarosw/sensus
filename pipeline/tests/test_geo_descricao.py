@@ -196,5 +196,87 @@ class SemInglesTest(unittest.TestCase):
         self.assertFalse(e_ingles("Wadi el Melek"))
 
 
+# Escrita não latina (russo como língua de teste): o nome e a identificação em letras latinas trocam pelo nome da
+# língua quando a entidade tem nome (nomes), e saem quando não tem. Caso AT (Moab, Números/Juízes) e NT (Antioquia).
+MOAB = ("Best modern identification: Moab 2 (region, polygon geometry); association score 900/1000. "
+        'Identification: "Moab 2" (modern). Time-weighted score 900/1000.')
+ANTIOQUIA = ("Best modern identification: Antioch (settlement, point geometry); association score 760/1000. "
+             'Identification: "Antioch" (modern). Votes: confidence_likely 5. Time-weighted score 760/1000. '
+             "1 other candidate modern location(s) in the dataset.")
+EGITO = ('Best modern identification: Egypt (country, polygon geometry); association score 500/1000. '
+         'Identification: "Egypt" (modern). Time-weighted score 500/1000.')
+GLOS_RU = ler_glossario(
+    "secao\tingles\tportugues\tnota\tgenero\n"
+    "tipo\tregion\tрегион\t\t\n"
+    "tipo\tsettlement\tпоселение\t\t\n"
+    "tipo\tcountry\tстрана\t\t\n"
+    "geometria\tpolygon\tполигон\t\t\n"
+    "geometria\tpoint\tточка\t\t\n"
+    "fonte\tmodern\tсовременная\t\t\n"
+    "fonte\tancient\tдревняя\t\t\n"
+    "voto\tconfidence_likely\tуверенность: вероятно\t\t\n",
+    ("tipo", "geometria", "voto", "fonte"),
+)
+GRAM_RU = {
+    "lista_sep": ", ",
+    "geo_melhor": "Лучшее современное отождествление: {nome} ({tipo}, геометрия: {geometria}); "
+                  "балл ассоциации: {score}/1000.",
+    "geo_melhor_sem_nome": "Лучшее современное отождествление ({tipo}, геометрия: {geometria}); "
+                           "балл ассоциации: {score}/1000.",
+    "geo_identificacao": 'Идентификация: "{texto}" ({fonte}).',
+    "geo_votos": "Голоса: {votos}.",
+    "geo_voto": "{voto} {n}",
+    "geo_tempo": "Балл с учётом времени {tempo}/1000.",
+    "geo_outros": "{n} другая(ых) современная(ых) локация(й) в наборе данных.",
+    "geo_omitir_ingles": "sim",
+}
+
+
+class EscritaNaoLatinaTest(unittest.TestCase):
+    def test_at_moab_com_nome_na_lingua_troca_cabeca_e_identificacao(self):
+        self.assertEqual(
+            renderiza(analisa(MOAB), GLOS_RU, GRAM_RU, lingua="ru", nomes={"Moab": "Моав"}),
+            "Лучшее современное отождествление: Моав (регион, геометрия: полигон); балл ассоциации: 900/1000. "
+            'Идентификация: "Моав" (современная). Балл с учётом времени 900/1000.',
+        )
+
+    def test_at_moab_sem_nome_na_lingua_omite_so_o_trecho_latino(self):
+        self.assertEqual(
+            renderiza(analisa(MOAB), GLOS_RU, GRAM_RU, lingua="ru", nomes={}),
+            "Лучшее современное отождествление (регион, геометрия: полигон); балл ассоциации: 900/1000. "
+            "Балл с учётом времени 900/1000.",
+        )
+
+    def test_nt_antioquia_com_votos_e_outra_candidata(self):
+        self.assertEqual(
+            renderiza(analisa(ANTIOQUIA), GLOS_RU, GRAM_RU, lingua="ru", nomes={"Antioch": "Антиохия"}),
+            "Лучшее современное отождествление: Антиохия (поселение, геометрия: точка); балл ассоциации: 760/1000. "
+            'Идентификация: "Антиохия" (современная). Голоса: уверенность: вероятно 5. '
+            "Балл с учётом времени 760/1000. 1 другая(ых) современная(ых) локация(й) в наборе данных.",
+        )
+
+    def test_nt_antioquia_sem_nome_mantem_numeros_e_votos(self):
+        t = renderiza(analisa(ANTIOQUIA), GLOS_RU, GRAM_RU, lingua="ru", nomes={})
+        self.assertNotIn("Antioch", t)
+        self.assertIn("Голоса: уверенность: вероятно 5.", t)
+        self.assertTrue(t.startswith(
+            "Лучшее современное отождествление (поселение, геометрия: точка); балл ассоциации: 760/1000."))
+
+    def test_nome_latino_sem_traducao_sai_com_o_tipo(self):
+        self.assertEqual(
+            renderiza(analisa(EGITO), GLOS_RU, GRAM_RU, lingua="ru", nomes={}),
+            "Лучшее современное отождествление (страна, геометрия: полигон); балл ассоциации: 500/1000. "
+            "Балл с учётом времени 500/1000.",
+        )
+
+    def test_lingua_latina_ou_sem_lingua_nao_muda(self):
+        for lingua in (None, "pt", "es"):
+            with self.subTest(lingua=lingua):
+                self.assertEqual(
+                    renderiza(analisa(MOAB), GLOS_RU, GRAM_RU, lingua=lingua, nomes={"Moab": "Моав"}),
+                    renderiza(analisa(MOAB), GLOS_RU, GRAM_RU),
+                )
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -403,6 +403,10 @@ _FAIXAS_ESCRITA = {
 }
 
 
+# Línguas de escrita latina: a checagem é a letra LATIN; as outras têm faixas Unicode em _FAIXAS_ESCRITA.
+LATINAS = ("pt", "es", "fr", "de", "id", "vi")
+
+
 def escrita_ok(lang: str, texto: str) -> bool:
     """O texto está na escrita da língua? Letras de outra escrita (ou nenhuma letra) = False.
 
@@ -411,7 +415,7 @@ def escrita_ok(lang: str, texto: str) -> bool:
     letras = [c for c in texto if c.isalpha()]
     if not letras:
         return False
-    if lang in ("pt", "es", "fr", "de", "id", "vi"):
+    if lang in LATINAS:
         return all("LATIN" in unicodedata.name(c, "") for c in letras)
     faixas = _FAIXAS_ESCRITA[lang]
     return all(any(a <= ord(c) <= b for a, b in faixas) for c in letras)
