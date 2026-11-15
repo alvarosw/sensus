@@ -13,7 +13,7 @@
 # Bíblia da língua. Não achada: candidato = forma do glossário + núcleo, confianca baixa.
 # Revisão: comece pelas linhas de confianca baixa e media. Linhas revisado e sem não são recalculadas.
 nome_en	candidato	nome_ar	origem	confianca	entidades	versos	cobertura	alternativa
-Abel	الحجر	هابيل	revisado	baixa	1	1	1.00	الصحراء
+Abel	الحجر	هابيل	sem	baixa	1	1	1.00	الصحراء
 Abel-keramim	الكروم	آبل الكروم	revisado	baixa	3	1	1.00	آبل
 Abel-maim	وآبل	آبل المياه	revisado	baixa	1	1	1.00	آبل
 Abel-meholah	محولة	آبل محولة	revisado	baixa	3	3	1.00	آبل
@@ -1243,7 +1243,7 @@ Dor	دور	دور	auto	media	3	6	1.00	ودور
 Drusilla	دروسلا	دروسلا	auto	media	2	1	1.00	يهودية
 Dumah	دومة	دومة	auto	media	8	4	1.00	ودومة
 Dura	دورا	دورا	auto	media	3	1	1.00	ذراعا
-East	اشتم	اشتم	auto	media	1	18	0.06	المشرق
+East	اشتم	اشتم	sem	media	1	18	0.06	المشرق
 Ebal	عيبال	عيبال	auto	media	3	4	0.75	وعيبال
 Ebron	عبرون	عبرون	auto	media	2	1	1.00	وعبرون
 Eder	عدر	عدر	auto	media	2	1	1.00	رحل
@@ -1273,7 +1273,7 @@ Elioenai	عيناي	عيناي	auto	media	1	1	1.00	ويهوحانان
 Eliphalet	أليفلط	أليفلط	auto	media	1	3	1.00	وأليفلط
 Elishama	وأليشمع	أليشمع	revisado	media	2	3	1.00	أليشمع
 Elisheba	أليشابع	أليشابع	auto	media	2	1	1.00	وألعازار
-Elishua	أليشامع	أليشامع	auto	media	2	3	0.33	وأليشامع
+Elishua	أليشامع	أليشوع	revisado	media	2	3	0.33	وأليشامع
 Eliud	أليود	أليود	auto	media	2	2	1.00	وأليود
 Elmadam	ألمودام	ألمودام	auto	media	1	1	1.00	أدي
 Elmodam	ألمودام	ألمودام	auto	media	1	1	1.00	أدي
@@ -1316,7 +1316,7 @@ Evi	أوي	أوي	auto	media	2	2	0.50	وحور
 Evil-merodach	أويل مرودخ	أويل مرودخ	auto	media	2	2	1.00	رفع أويل مرودخ
 Ezbon	أصبون	أصبون	auto	media	3	3	0.67	بنو
 Fortunatus	فرتوناتوس	فرتوناتوس	auto	media	2	2	0.50	وفرتوناتوس
-Gaal	أهل	أهل	auto	media	2	9	0.22	أعالي
+Gaal	أهل	جعل	revisado	media	2	9	0.22	أعالي
 Gaash	جاعش	جاعش	auto	media	3	4	1.00	حارس
 Gabbai	جباي	جباي	auto	media	2	1	1.00	سلاي
 Gabbatha	جباثا	جباثا	auto	media	3	1	1.00	البلاط
@@ -1326,7 +1326,7 @@ Gadi	جادي	جادي	auto	media	2	2	1.00	يابيش
 Gaham	جاحم	جاحم	auto	media	2	1	1.00	وجاحم
 Gahar	جاحر	جاحر	auto	media	2	2	0.50	حجر
 Galal	جلال	جلال	auto	media	4	3	1.00	وجلال
-Galilee	الجلجال	الجلجال	auto	media	1	1	1.00	جوييم
+Galilee	الجلجال	الجليل	revisado	media	1	1	1.00	جوييم
 Galilee	الجليل	الجليل	auto	media	3	82	0.74	والجليل
 Gallim	جليم	جليم	auto	media	3	2	1.00	اصهلي
 Gallio	غاليون	غاليون	auto	media	2	3	1.00	اليهود
@@ -1339,7 +1339,7 @@ Gazzam	جزام	جزام	auto	media	2	2	1.00	عزا
 Gebal	جبال	جبال	auto	media	3	4	0.25	بناؤو
 Gebim	جيبيم	جيبيم	auto	media	3	1	1.00	احتمى
 Gederothaim	جديروتايم	جديروتايم	auto	media	3	1	1.00	عديتايم
-Gehazi	عكازي	عكازي	auto	media	2	12	0.08	جيحزي
+Gehazi	عكازي	جيحزي	revisado	media	2	12	0.08	جيحزي
 Geliloth	جليلوت	جليلوت	auto	media	2	3	0.33	إلى
 Gemalli	جملي	جملي	auto	media	2	1	1.00	عميئيل
 Gennesaret	جنيسارت	جنيسارت	auto	media	3	3	1.00	أرسوا
@@ -1366,12 +1366,12 @@ Hadoram	هدورام	هدورام	auto	media	2	2	1.00	وهدورام
 Haeleph	آلف	آلف	auto	media	3	1	1.00	وآلف
 Hagab	حاجاب	حاجاب	auto	media	2	1	1.00	حانان
 Hagabah	حجابة	حجابة	auto	media	2	2	0.50	حجابا
-Haggai	الحادي	الحادي	auto	media	2	11	0.09	حجي
+Haggai	الحادي	حجي	revisado	media	2	11	0.09	حجي
 Haggiah	حجيا	حجيا	auto	media	2	1	1.00	عسايا
 Hagri	الهاجري	الهاجري	auto	media	1	6	0.17	الهاجريين
 Hahiroth	الحيروث	الحيروث	auto	media	1	1	1.00	مارة
 Hakkatan	هقاطان	هقاطان	auto	media	2	1	1.00	الذكور
-Halah	هارا	هارا	auto	media	3	4	0.25	حلح
+Halah	هارا	حلح	revisado	media	3	4	0.25	حلح
 Hali	حلي	حلي	auto	media	3	1	1.00	وحلي
 Hamath-zobah	حماة صوبة	حماة صوبة	auto	media	2	2	0.50	حماة صوبة قوي
 Hammath	حمة	حمة	auto	media	4	2	1.00	شمعاتيم
@@ -1406,7 +1406,7 @@ Hazar-gaddah	حصر جدة	حصر جدة	auto	media	3	1	1.00	جدة
 Hazar-shual	حصر شوعال	حصر شوعال	auto	media	3	4	1.00	حصر شوعال بئر
 Hazar-susim	حصر سوسيم	حصر سوسيم	auto	media	2	1	1.00	حصر سوسيم بيت
 Hazazon-tamar	حصون تامار	حصون تامار	auto	media	3	2	1.00	حصون تامار هي
-Hazeroth	ارتحل	ارتحل	auto	media	3	6	0.33	حضيروت
+Hazeroth	ارتحل	حضيروت	revisado	media	3	6	0.33	حضيروت
 Haziel	حزيئيل	حزيئيل	auto	media	2	1	1.00	وحزيئيل
 Hazor-hadattah	حاصور حدتة	حاصور حدتة	auto	media	3	1	1.00	حاصور حدتة قريوت
 Helam	حيلام	حيلام	auto	media	3	2	1.00	للقاء
@@ -1499,7 +1499,7 @@ Janim	ينوم	ينوم	auto	media	3	1	1.00	وينوم
 Janna	ينا	ينا	auto	media	1	1	1.00	متثات
 Jannai	ينا	ينا	auto	media	1	1	1.00	متثات
 Jannes	ينيس	ينيس	auto	media	2	1	1.00	أناس
-Janoah	تآنة	تآنة	auto	media	3	2	0.50	ينوحة
+Janoah	تآنة	يانوح	revisado	media	3	2	0.50	ينوحة
 Janoah	يانوح	يانوح	auto	media	3	1	1.00	ويانوح
 Japhlet	يفليط	يفليط	auto	media	2	3	0.67	بمهال
 Jarha	يرحع	يرحع	auto	media	2	2	1.00	ليرحع
@@ -1592,7 +1592,7 @@ Joshah	يوشا	يوشا	auto	media	2	1	1.00	ويوشا
 Joshaviah	يوشويا	يوشويا	auto	media	2	1	1.00	ويوشويا
 Joshbekashah	يشبقاشة	يشبقاشة	auto	media	2	2	0.50	ليشبقاشة
 Joshibiah	يوشبيا	يوشبيا	auto	media	1	1	1.00	عسيئيل
-Josiah	جناحيها	جناحيها	auto	media	1	4	0.50	يدعيا
+Josiah	جناحيها	يوشيا	revisado	media	1	4	0.50	يدعيا
 Josibiah	يوشبيا	يوشبيا	auto	media	1	1	1.00	عسيئيل
 Josiphiah	يوشفيا	يوشفيا	auto	media	2	1	1.00	مئة
 Jozadak	يوصاداق	يوصاداق	auto	media	2	1	1.00	معشيا
@@ -1610,7 +1610,7 @@ Kadesh-barnea	قادش برنيع	قادش برنيع	auto	media	2	24	0.42	قا�
 Kain	قاين	قاين	auto	media	3	2	0.50	القاين
 Kallai	قلاي	قلاي	auto	media	2	1	1.00	سلاي
 Kamon	قامون	قامون	auto	media	3	1	1.00	دفن
-Kanah	قانا	قانا	auto	media	1	5	0.80	قانة
+Kanah	قانا	قانة	revisado	media	1	5	0.80	قانة
 Kanah	قانة	قانة	auto	media	5	3	1.00	كانت
 Karnaim	قرنايم	قرنايم	auto	media	1	1	1.00	قريتايم
 Kartah	قرتة	قرتة	auto	media	2	2	0.50	وقرتة
@@ -1663,7 +1663,7 @@ Libya	ليبية	ليبية	auto	media	3	10	0.10	القيروان
 Lo-ammi	لوعمي	لوعمي	auto	media	2	1	1.00	اسمه لوعمي
 Lo-debar	لودبار	لودبار	auto	media	3	5	0.60	عميئيل من لودبار
 Lo-ruhamah	لورحامة	لورحامة	auto	media	2	2	1.00	لورحامة حبلت
-Lod	لدة	لدة	auto	media	2	7	0.43	لود
+Lod	لدة	لود	revisado	media	2	7	0.43	لود
 Lod	لود	لود	auto	media	1	4	1.00	ولود
 Lois	لوئيس	لوئيس	auto	media	2	1	1.00	العديم
 Lot	لوط	لوط	auto	media	2	34	0.74	للوط
@@ -1743,7 +1743,7 @@ Mikneiah	مقنيا	مقنيا	auto	media	2	2	1.00	ومقنيا
 Milalai	جللاي	جللاي	auto	media	2	1	1.00	مللاي
 Milcom	لملكوم	ملكوم	revisado	media	1	3	0.67	ملكوم
 Miletus	ميليتس	ميليتس	auto	media	3	3	1.00	خيوس
-Millo	جعله	جعله	auto	media	3	7	0.14	عمل
+Millo	جعله	جعله	sem	media	3	7	0.14	عمل
 Minni	ومني	مني	revisado	media	3	1	1.00	مني
 Miriam	مريم	مريم	auto	media	4	13	1.00	ومريم
 Misgab	مسجاب	مسجاب	auto	media	2	1	1.00	موآب
@@ -1762,8 +1762,8 @@ Mushi	موشي	موشي	auto	media	2	10	0.80	وموشي
 Naamah	نعمة	نعمة	auto	media	7	5	1.00	ونعمة
 Naarah	نعرات	نعرات	auto	media	2	1	1.00	ونعرات
 Naggai	نجاي	نجاي	auto	media	1	1	1.00	ناحوم
-Nahalal	نحلال	نحلال	auto	media	2	3	0.33	نهلال
-Nahalol	نحلال	نحلال	auto	media	1	3	0.33	نهلال
+Nahalal	نحلال	نهلال	revisado	media	2	3	0.33	نهلال
+Nahalol	نحلال	نهلول	revisado	media	1	3	0.33	نهلال
 Nahalol	نهلول	نهلول	auto	media	1	1	1.00	الجزية
 Nahum	ناحوم	ناحوم	auto	media	3	2	1.00	نينوى
 Naphath	المرتفعات	المرتفعات	auto	media	2	1	1.00	الثلاث
@@ -1802,10 +1802,10 @@ Nineveh	نينوى	نينوى	auto	media	3	30	0.63	ونينوى
 Nisroch	نسروخ	نسروخ	auto	media	1	2	1.00	شرآصر
 Noadiah	نوعديا	نوعديا	auto	media	2	1	1.00	ونوعديا
 Noadiah	نوعدية	نوعدية	auto	media	2	1	1.00	ونوعدية
-Noah	نوحا	نوحا	auto	media	2	47	0.19	لعنها
+Noah	نوحا	نوح	revisado	media	2	47	0.19	لعنها
 Noah	نوعة	نوعة	auto	media	2	4	1.00	ونوعة
 Nod	نود	نود	auto	media	3	1	1.00	دن
-Nohah	مناحة	مناحة	auto	media	1	1	1.00	آحود
+Nohah	مناحة	نوحة	revisado	media	1	1	1.00	آحود
 Nohah	نوحة	نوحة	auto	media	1	2	0.50	ونوحة
 Obal	عوبال	عوبال	auto	media	1	2	0.50	وعوبال
 Obil	أوبيل	أوبيل	auto	media	2	1	1.00	الجمال
@@ -1869,7 +1869,7 @@ Phut	فوط	فوط	auto	media	1	3	1.00	وفوط
 Phygellus	فيجلس	فيجلس	auto	media	1	1	1.00	يجلس
 Phygelus	فيجلس	فيجلس	auto	media	1	1	1.00	يجلس
 Pi-beseth	فيبستة	فيبستة	auto	media	3	1	1.00	وفيبستة
-Pi-hahiroth	الحيروث	الحيروث	auto	media	3	4	1.00	فم الحيروث
+Pi-hahiroth	الحيروث	فم الحيروث	revisado	media	3	4	1.00	فم الحيروث
 Pildash	فلداش	فلداش	auto	media	2	1	1.00	وفلداش
 Piltai	فلطاي	فلطاي	auto	media	2	1	1.00	لمنيامين
 Pinon	فينون	فينون	auto	media	2	2	1.00	إيلة
@@ -1888,7 +1888,7 @@ Raamses	ورعمسيس	رعمسيس	revisado	media	2	1	1.00	رعمسيس
 Rab-saris	شراصر رئيس	شراصر رئيس	auto	media	2	2	1.00	نرجل شراصر رئيس
 Rabbah	الربة	الربة	auto	media	1	1	1.00	والربة
 Rachab	راحاب	راحاب	auto	media	1	1	1.00	راعوث
-Raham	يرقعام	يرقعام	auto	media	2	1	1.00	راقم
+Raham	يرقعام	راقم	revisado	media	2	1	1.00	راقم
 Rakem	راقم	راقم	auto	media	2	1	1.00	وراقم
 Rakkath	أكلوا	أكلوا	auto	media	1	2	0.50	رقة
 Ramah	الرامي	الرامي	auto	media	1	1	1.00	ما
@@ -2008,9 +2008,9 @@ Shoa	شهراء	شهراء	auto	media	3	1	1.00	وشهراء
 Shobach	شوبك	شوبك	auto	media	2	4	1.00	سبعة
 Shobi	شوبي	شوبي	auto	media	2	1	1.00	وبرزلاي
 Shomer	شومير	شومير	auto	media	2	4	0.50	شامر
-Shua	تعزى	تعزى	auto	media	1	3	0.33	جزاز
+Shua	تعزى	تعزى	sem	media	1	3	0.33	جزاز
 Shua	شوعا	شوعا	auto	media	2	1	1.00	وشوعا
-Shuah	تعزى	تعزى	auto	media	1	3	0.33	جزاز
+Shuah	تعزى	تعزى	sem	media	1	3	0.33	جزاز
 Shuah	شوحا	شوحا	auto	media	2	2	1.00	وشوحا
 Shuah	شوحة	شوحة	auto	media	1	1	1.00	أخو
 Shual	شوعال	شوعال	auto	media	4	3	0.67	الفرقة
@@ -2041,7 +2041,7 @@ Suphah	سوفة	سوفة	auto	media	3	1	1.00	اهب
 Sur	سور	سور	auto	media	3	1	1.00	للصد
 Susanna	سوسنة	سوسنة	auto	media	2	1	1.00	وسوسنة
 Susi	سوسي	سوسي	auto	media	2	1	1.00	جدي
-Syene	سينيم	سينيم	auto	media	3	3	0.33	أسوان
+Syene	سينيم	أسوان	revisado	media	3	3	0.33	أسوان
 Syntyche	سنتيخي	سنتيخي	auto	media	2	1	1.00	تفتكرا
 Syracuse	سراكوسا	سراكوسا	auto	media	3	1	1.00	فنزلنا
 Syria	سورية	سورية	auto	media	3	116	0.08	صغيرين
@@ -2099,7 +2099,7 @@ Tola	تولاع	تولاع	auto	media	2	4	1.00	لتولاع
 Tophel	توفل	توفل	auto	media	3	1	1.00	وتوفل
 Topheth	تفتة	تفتة	auto	media	2	17	0.06	توفة
 Tubal-cain	توبال قايين	توبال قايين	auto	media	2	1	1.00	أخت توبال قايين
-Tyre	تاجرة	تاجرة	auto	media	3	64	0.02	تجارها
+Tyre	تاجرة	صور	revisado	media	3	64	0.02	تجارها
 Ucal	أكال	أكال	auto	media	2	1	1.00	وأكال
 Ulai	أولاي	أولاي	auto	media	3	2	1.00	لاية
 Ulam	أولام	أولام	auto	media	4	4	1.00	راقم
@@ -2133,7 +2133,7 @@ Zarephath	صرفة	صرفة	auto	media	3	4	1.00	صفارد
 Zeboim	صبوعيم	صبوعيم	auto	media	3	1	1.00	وصبوعيم
 Zebudah	زبيدة	زبيدة	auto	media	1	1	1.00	فداية
 Zecher	زاكر	زاكر	auto	media	1	2	0.50	وزاكر
-Zeeb	زبح	زبح	auto	media	2	3	0.33	ذئب
+Zeeb	زبح	ذئب	revisado	media	2	3	0.33	ذئب
 Zelzah	صلصح	صلصح	auto	media	3	1	1.00	تصادف
 Zephath	صفاة	صفاة	auto	media	3	9	0.11	سكان
 Zephon	صفيون	صفيون	auto	media	1	2	0.50	لصفون
