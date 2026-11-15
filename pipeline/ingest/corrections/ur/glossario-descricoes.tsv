@@ -56,7 +56,7 @@ tempo	before Israel's Monarchy	اسرائیل کی بادشاہت سے پہلے
 tempo	at the time before the Flood	طوفانِ نوح سے پہلے کے زمانے میں		
 tempo	before the Flood	طوفانِ نوح سے پہلے		
 tempo	at the time of Judges	قاضیوں کے زمانے میں		
-tribo	Levi	لاوی		
+tribo	Levi	لیوی		
 tribo	Judah	یہوداہ		
 tribo	Asher	آشر		
 tribo	Benjamin	بنیامین		
@@ -98,7 +98,7 @@ lugar	of the Greeks	یونانیوں سے منسوب
 lugar	of the Ishmaelites	اسماعیلیوں سے منسوب		
 lugar	of the Moabites	موآبیوں سے منسوب		
 lugar	of the Egyptians	مصریوں سے منسوب		
-lugar	of the Philistines	فلستیوں سے منسوب		
+lugar	of the Philistines	فلسطینیوں سے منسوب		
 lugar	of the Hittites	حتیوں سے منسوب		
 lugar	of the Canaanites	کنعانیوں سے منسوب		
 lugar	of the Amalekites	عمالیقیوں سے منسوب		
@@ -124,21 +124,21 @@ nome	Rephaim Valley	رفائیم کی وادی
 nome	Benjamin Gate	بنیامین کا دروازہ		
 nome	Ephraim Gate	افرائیم کا دروازہ		
 nome	Syria	سیریا		
-nome	Gederah	جدرہ		
+nome	Gederah	گدیرہ		
 nome	Machir	مکیر		
 nome	Caesar	قیصر		
-nome	Joseph	یوسف		
-nome	Nohah	نوحہ		
+nome	Joseph	یوسیف		
+nome	Nohah	نوحاہ		
 nome	Shelomith	شلوموتھ		
 nome	Tahpenes	تحفنیس		
-nome	Putiel	فوتیئیل		
+nome	Putiel	پطی ایل		
 nome	Joiada	یویدع		
 nome	Jonathan	یوناتان		
-nome	Abiel	ابیایل		
+nome	Abiel	ابی ایل		
 nome	Salome	سلومی		
 nome	Barsabbas	برسابا		
 nome	Amalakites	عمالیقی		
-nome	Philistine	فلستی		
+nome	Philistine	فلسطینی		
 nome	Abijam	ابیاہ		
 nome	Cleopas	کلوپاس		
 nome	Hanochite	حنوکی	gentílico: base do nome + ی (nomes.tsv)	

@@ -19,12 +19,12 @@ comp_tribo	{tribo} قبیلے کا
 comp_tribo.f	{tribo} قبیلے کی
 comp_cidade	{nome} شہر کا
 comp_cidade.f	{nome} شہر کی
-comp_perto	{nome} کے قریب رہنے والا
-comp_perto.f	{nome} کے قریب رہنے والی
+comp_perto	{nome} کے قریب کا
+comp_perto.f	{nome} کے قریب کی
 comp_de	{nome} کا
 comp_de.f	{nome} کی
-comp_em	{nome} میں رہنے والا
-comp_em.f	{nome} میں رہنے والی
+comp_em	{nome} کا
+comp_em.f	{nome} کی
 citacao	جسے {lista} کہا جاتا ہے
 citacao_apenas	صرف {lista} کہا جاتا ہے
 original	 ({original})
@@ -44,3 +44,5 @@ geo_votos	ووٹ: {votos}۔
 geo_voto	{voto} {n}
 geo_tempo	وقت کے ساتھ وزنی اسکور {tempo}/1000۔
 geo_outros	ڈیٹاسیٹ میں {n} دیگر ممکنہ جدید مقامات۔
+geo_melhor_sem_nome	سب سے بہتر جدید شناخت ({tipo}، ہندسہ: {geometria})؛ تعلق کا اسکور {score}/1000۔
+geo_omitir_ingles	sim

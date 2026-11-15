@@ -24,8 +24,8 @@ event_id	cite_id	titulo_en	titulo_ur	origem	nota
 10	ent:theographic:recAeYv2iAFNW3dOZ	Lifetime of Enos	انوش کی زندگی	revisado	rev. IA
 11	ent:theographic:recM0WSoo4n0iYARu	Birth of Cainan	قینان کی پیدائش	revisado	rev. IA
 12	ent:theographic:recJEeDtyPx5U35PG	Lifetime of Cainan	قینان کی زندگی	revisado	rev. IA
-13	ent:theographic:recbhJTgfqzA2wi9g	Birth of Mahlaleel	مہللیل کی پیدائش	revisado	rev. IA
-14	ent:theographic:recP4eETeAB1w2UDk	Lifetime of Mahlaleel	مہللیل کی زندگی	revisado	rev. IA
+13	ent:theographic:recbhJTgfqzA2wi9g	Birth of Mahlaleel	مہلل ایل کی پیدائش	revisado	rev. IA
+14	ent:theographic:recP4eETeAB1w2UDk	Lifetime of Mahlaleel	مہلل ایل کی زندگی	revisado	rev. IA
 15	ent:theographic:rec1gA68LB2NDsnCR	Birth of Jared	یارد کی پیدائش	revisado	rev. IA
 16	ent:theographic:reckfJ2MFfKg7AD3h	Lifetime of Jared	یارد کی زندگی	revisado	rev. IA
 17	ent:theographic:rec0pSsVe8fi0jw9A	Birth of Enoch	حنوخ کی پیدائش	revisado	rev. IA
@@ -41,7 +41,7 @@ event_id	cite_id	titulo_en	titulo_ur	origem	nota
 27	ent:theographic:recTdAS4YoPxLBszy	Lifetime of Noah	نوحا کی زندگی	revisado	rev. IA
 28	ent:theographic:reciFgNLimxSBMqKH	Death of Enos	انوش کی وفات	revisado	rev. IA
 29	ent:theographic:recC3DfLQVkOYAv8e	Death of Cainan	قینان کی وفات	revisado	rev. IA
-30	ent:theographic:recicDx68rL317hoE	Death of Mahlaleel	مہللیل کی وفات	revisado	rev. IA
+30	ent:theographic:recicDx68rL317hoE	Death of Mahlaleel	مہلل ایل کی وفات	revisado	rev. IA
 31	ent:theographic:recQUPYt83xclFDlk	Death of Jared	یارد کی وفات	revisado	rev. IA
 32	ent:theographic:rec1n3lFKpydGhoQL	God decides to destroy every living thing	خدا نے ہر جاندار کو تباہ کرنے کا فیصلہ کیا	revisado	rev. IA
 33	ent:theographic:recpUCaR0HNgYjco5	Birth of Shem	شم کی پیدائش	revisado	rev. IA
@@ -62,33 +62,33 @@ event_id	cite_id	titulo_en	titulo_ur	origem	nota
 48	ent:theographic:rectmsC3P5l7oRNpD	Lifetime of Salah	شلح کی زندگی	revisado	rev. IA
 49	ent:theographic:rec1JFgGFGfK07blt	Birth of Eber	عبر کی پیدائش	revisado	rev. IA
 50	ent:theographic:rec3cw1D7e1QItoGc	Lifetime of Eber	عبر کی زندگی	revisado	rev. IA
-51	ent:theographic:recsQpAQgJcwaSk9l	Birth of Peleg	فالج کی پیدائش	revisado	rev. IA
-52	ent:theographic:recFXC4GpemMuhURF	Lifetime of Peleg	فالج کی زندگی	revisado	rev. IA
-53	ent:theographic:recy4o2BxavybTuX6	Tower of Babel	بابل کا برج	revisado	rev. IA
+51	ent:theographic:recsQpAQgJcwaSk9l	Birth of Peleg	پلگ کی پیدائش	revisado	rev. IA
+52	ent:theographic:recFXC4GpemMuhURF	Lifetime of Peleg	پلگ کی زندگی	revisado	rev. IA
+53	ent:theographic:recy4o2BxavybTuX6	Tower of Babel	بابیل کا برج	revisado	rev. IA
 54	ent:theographic:recO9NRftpoIMlYmr	Birth of Reu	رعو کی پیدائش	revisado	rev. IA
 55	ent:theographic:recZegzr6mX3DH8vc	Lifetime of Reu	رعو کی زندگی	revisado	rev. IA
-56	ent:theographic:recfX4yWDQUMG8Oqh	Birth of Serug	سروج کی پیدائش	revisado	rev. IA
-57	ent:theographic:recLx9SIvsFEIJgVo	Lifetime of Serug	سروج کی زندگی	revisado	rev. IA
+56	ent:theographic:recfX4yWDQUMG8Oqh	Birth of Serug	سروگ کی پیدائش	revisado	rev. IA
+57	ent:theographic:recLx9SIvsFEIJgVo	Lifetime of Serug	سروگ کی زندگی	revisado	rev. IA
 58	ent:theographic:rec1LWfxUiRxxCrbn	Birth of Nahor	ناحور کی پیدائش	revisado	rev. IA
 59	ent:theographic:recIfpeMJFEOdSQhh	Lifetime of Nahor	ناحور کی زندگی	revisado	rev. IA
 60	ent:theographic:recePREjv2zZ8Esoo	Birth of Terah	تیراح کی پیدائش	revisado	rev. IA
 61	ent:theographic:recB5Rg7JlgsMcPyq	Lifetime of Terah	تیراح کی زندگی	revisado	rev. IA
-62	ent:theographic:recyn98EnxpfPAaEq	Death of Peleg	فالج کی وفات	revisado	rev. IA
+62	ent:theographic:recyn98EnxpfPAaEq	Death of Peleg	پلگ کی وفات	revisado	rev. IA
 63	ent:theographic:rec118tvZQItG2hEI	Death of Nahor	ناحور کی وفات	revisado	rev. IA
 64	ent:theographic:recjX86XiYE9up0Ux	Death of Noah	نوحا کی وفات	revisado	rev. IA
 65	ent:theographic:recXveJRjCtPNMLqs	Birth of Abraham	ابراہام کی پیدائش	revisado	rev. IA
 66	ent:theographic:recfnatCOLEHFYeLB	Lifetime of Abraham	ابراہام کی زندگی	revisado	rev. IA
 67	ent:theographic:rectQ4Vg6XbpTyR92	Judgeship of Jair	یائیر کا دورِ قضاوت	revisado	rev. IA
 68	ent:theographic:rec8LzDmLtoQ5PD6q	Death of Reu	رعو کی وفات	revisado	rev. IA
-69	ent:theographic:rechmkETHJXlw66eb	Death of Serug	سروج کی وفات	revisado	rev. IA
+69	ent:theographic:rechmkETHJXlw66eb	Death of Serug	سروگ کی وفات	revisado	rev. IA
 70	ent:theographic:recYgh6yAIxRItDC9	Death of Terah	تیراح کی وفات	revisado	rev. IA
 71	ent:theographic:rechJv1ksZ00ye38i	Abraham enters Canaan	ابراہام کنعان میں داخل ہوتا ہے	revisado	rev. IA
 72	ent:theographic:rec2pnFsObyEoOfGQ	Abrahamic Covenant	ابراہامی عہد	revisado	rev. IA
 73	ent:theographic:recbqTND1uSdqNjOx	Abraham goes to Egypt	ابراہام مصر جاتا ہے	revisado	rev. IA
 74	ent:theographic:recc78JIsfuTy7cNu	Sojourn in Canaan and Egypt	کنعان اور مصر میں قیام	revisado	rev. IA
 75	ent:theographic:recG5DZ6bn0BDuYH9	Abraham and Lot Separate	ابراہام اور لوط جدا ہو گئے	revisado	rev. IA
-76	ent:theographic:rechXJhZerr2X4BnE	Birth of Ishmael	اسماعیل کی پیدائش	revisado	rev. IA
-77	ent:theographic:rec1CnwQbgxnwGiRS	Lifetime of Ishmael	اسماعیل کی زندگی	revisado	rev. IA
+76	ent:theographic:rechXJhZerr2X4BnE	Birth of Ishmael	اشمعیل کی پیدائش	revisado	rev. IA
+77	ent:theographic:rec1CnwQbgxnwGiRS	Lifetime of Ishmael	اشمعیل کی زندگی	revisado	rev. IA
 78	ent:theographic:reciSatPkxfnd664i	Death of Arphaxad	ارفاکسد کی وفات	revisado	rev. IA
 79	ent:theographic:recITDSS0o4dApwQg	Sodom Destroyed	سدوم تباہ کیا گیا	revisado	rev. IA
 80	ent:theographic:recsPU7EMhmA9z27x	Birth of Isaac	اصحاق کی پیدائش	revisado	rev. IA
@@ -101,10 +101,10 @@ event_id	cite_id	titulo_en	titulo_ur	origem	nota
 87	ent:theographic:recmnGiHVM3Hylr7r	Nimrod's kingdom begins	نمرود کی سلطنت کا آغاز	revisado	rev. IA
 88	ent:theographic:recJYhotncnfEqGcN	Death of Abraham	ابراہام کی وفات	revisado	rev. IA
 89	ent:theographic:rec6BqgiWIs1ADP6z	Death of Eber	عبر کی وفات	revisado	rev. IA
-90	ent:theographic:recOWUvuVc8kC9Q1C	Death of Ishmael	اسماعیل کی وفات	revisado	rev. IA
+90	ent:theographic:recOWUvuVc8kC9Q1C	Death of Ishmael	اشمعیل کی وفات	revisado	rev. IA
 91	ent:theographic:recpdpPhaNNytXNYL	Birth of Reuben	روبن کی پیدائش	revisado	rev. IA
 92	ent:theographic:rec8BApZ81SUEiaE6	Birth of Simeon	شمعون کی پیدائش	revisado	rev. IA
-93	ent:theographic:recbEWfeMbneEhmCW	Birth of Levi	لاوی کی پیدائش	revisado	rev. IA
+93	ent:theographic:recbEWfeMbneEhmCW	Birth of Levi	لیوی کی پیدائش	revisado	rev. IA
 94	ent:theographic:recAyNphNXcFdeBdv	Birth of Judah	یہوداہ کی پیدائش	revisado	rev. IA
 95	ent:theographic:recebg3uMMRi5kehC	Birth of Dan	دان کی پیدائش	revisado	rev. IA
 96	ent:theographic:reciXEy2Dh8v1ZMgx	Birth of Naphtali	نفتالی کی پیدائش	revisado	rev. IA
@@ -145,7 +145,7 @@ event_id	cite_id	titulo_en	titulo_ur	origem	nota
 131	ent:theographic:rec0t3McGWoyd6kTB	War with Canaanites	یہوشع اور کنعانیوں کی جنگ	revisado	rev. IA
 132	ent:theographic:rec91XeIAmvH5rhav	Dividing the land	یہوشع کے ہاتھوں زمین کی تقسیم	revisado	rev. IA
 133	ent:theographic:recnPiyyKviVUPHO6	Death of Joshua	یہوشع کی وفات	revisado	rev. IA
-134	ent:theographic:recEpl6nDyA0TWVdW	Subjugation by Cushan-rishathaim	کوشن رسعتایم کی غلامی	revisado	rev. IA
+134	ent:theographic:recEpl6nDyA0TWVdW	Subjugation by Cushan-rishathaim	کوشن رسعتیم کی غلامی	revisado	rev. IA
 135	ent:theographic:recUvk5tT0xGxR71o	Deliverance by Othniel	عتنی ایل کے ذریعے نجات	revisado	rev. IA
 136	ent:theographic:recG0Smwr0v3S7ShM	Subjugation by Eglon	عگلون کی غلامی	revisado	rev. IA
 137	ent:theographic:recxl5FkotW1u50nA	Deliverance by Ehud	اہود کے ذریعے موآب سے نجات	revisado	rev. IA
@@ -153,23 +153,23 @@ event_id	cite_id	titulo_en	titulo_ur	origem	nota
 139	ent:theographic:recoroJg305CLphtu	Deliverance by Barak And Deborah	براق اور دبورہ کے ذریعے نجات	revisado	rev. IA
 140	ent:theographic:recNAaoS2dLaYGVgh	Subjugation by Midian	مدیان کی غلامی	revisado	rev. IA
 141	ent:theographic:recD6xiJWvESO0Wea	Deliverance by Gideon	گدعون کے ذریعے نجات	revisado	rev. IA
-142	ent:theographic:recNLSBgKYUyByJwa	Usurpation by Abimelech	ابی ملک کا اقتدار پر قبضہ	revisado	rev. IA
+142	ent:theographic:recNLSBgKYUyByJwa	Usurpation by Abimelech	ابی ملیخ کا اقتدار پر قبضہ	revisado	rev. IA
 143	ent:theographic:recWw6t8usixUbFOU	Judgeship of Tola	تولع کا دورِ قضاوت	revisado	rev. IA
-144	ent:theographic:rec7nesNMNffYRe3F	Oppression by Ammon and Philistia	عمون اور فلستیا کی غلامی	revisado	rev. IA
+144	ent:theographic:rec7nesNMNffYRe3F	Oppression by Ammon and Philistia	عمون اور فلسطین کی غلامی	revisado	rev. IA
 145	ent:theographic:rec3z1OqSDMH0rR7y	Judgeship of Eli	عیلی کا دورِ قضاوت	revisado	rev. IA
 146	ent:theographic:recAfJj3Pv6wRG2nj	Deliverance by Jephthah	یفتاح کے ذریعے نجات	revisado	rev. IA
 147	ent:theographic:reczOHadpTVOuiidp	Judgeship of Ibzan	ابصان کا دورِ قضاوت	revisado	rev. IA
-148	ent:theographic:recSRPo1LlWZ7tNaO	Philistine Dominion	شمشون کے زمانے میں فلستیوں کا غلبہ	revisado	rev. IA
+148	ent:theographic:recSRPo1LlWZ7tNaO	Philistine Dominion	شمشون کے زمانے میں فلسطینیوں کا غلبہ	revisado	rev. IA
 149	ent:theographic:recGFZbQIjuGwXtTy	Judgeship of Elon	ایلون کا دورِ قضاوت	revisado	rev. IA
-150	ent:theographic:rec4qaEmaRCFty5tl	Birth of Saul	شاول کی پیدائش	revisado	rev. IA
+150	ent:theographic:rec4qaEmaRCFty5tl	Birth of Saul	شاؤل کی پیدائش	revisado	rev. IA
 151	ent:theographic:recoKV71uxsJeHTWW	Judgeship of Abdon	عبدون کا دورِ قضاوت	revisado	rev. IA
 152	ent:theographic:recS77B5S6Jfdq5a3	Death of Eli, Ark Captured	عیلی کی وفات، صندوق پر قبضہ	revisado	rev. IA
 153	ent:theographic:rec24EmrBZzGvOD2U	Judgeship of Samson	شمشون کا دورِ قضاوت	revisado	rev. IA
 154	ent:theographic:reccUeZb53JJ02Lv9	Sampson destroys Temple of Dagon	شمشون نے داجون کا ہیکل گرا دیا	revisado	rev. IA
-155	ent:theographic:recKRsEFLaEueJvei	Reign of Saul	شاول کا دورِ حکومت	revisado	rev. IA
+155	ent:theographic:recKRsEFLaEueJvei	Reign of Saul	شاؤل کا دورِ حکومت	revisado	rev. IA
 156	ent:theographic:rec3uYdP5Fca5BJfX	United Kingdom	متحدہ بادشاہت	revisado	rev. IA
 157	ent:theographic:rec9JB5FY6jMOyEY3	David Kills Goliath	داوید نے گولیت کو قتل کیا	revisado	rev. IA
-158	ent:theographic:recXDTsDBCG9DaiGN	Death of Saul	شاول کی وفات	revisado	rev. IA
+158	ent:theographic:recXDTsDBCG9DaiGN	Death of Saul	شاؤل کی وفات	revisado	rev. IA
 159	ent:theographic:reczzYTmzPPDcP3qv	Reign of David	داوید کا دورِ حکومت	revisado	rev. IA
 160	ent:theographic:rec3TOdsAxCr5ADHA	Death of David	داوید کی وفات	revisado	rev. IA
 161	ent:theographic:recKTbnO8VY7lXLeX	Reign of Solomon	شلومون کا دورِ حکومت	revisado	rev. IA
@@ -289,7 +289,7 @@ event_id	cite_id	titulo_en	titulo_ur	origem	nota
 283	ent:theographic:recVzgELtu6c6u0JJ	The Demoniac	یسوع مسیح کے ہاتھوں بدروح زدہ شخص کی شفا	revisado	rev. IA
 280	ent:theographic:recDZ5yPUfsW2mQCB	Jesus Rejected at Nazareth	ناصرہ میں یسوع مسیح کو رد کیا گیا	revisado	rev. IA
 269	ent:theographic:rec51NMfUoy8EBm5D	John's Witness	یوحنا کی گواہی	revisado	rev. IA
-270	ent:theographic:rec2rWYKV739WLO4b	First Disciples Gathered	نتنی ایل اور پہلے شاگردوں کی بلاہٹ	revisado	rev. IA
+270	ent:theographic:rec2rWYKV739WLO4b	First Disciples Gathered	نتن ایل اور پہلے شاگردوں کی بلاہٹ	revisado	rev. IA
 271	ent:theographic:recamPG0iyTXyCMRx	Water to Wine	یسوع مسیح کا پانی کو شراب بنانا	revisado	rev. IA
 272	ent:theographic:recBwb7o0eXRqj1Oa	Visiting Capernaum	یسوع مسیح کا کفرناحوم کا سفر	revisado	rev. IA
 273	ent:theographic:recajWYSuk71jMpgi	First Passover and Temple Cleansing	یسوع مسیح کا پہلا فسح اور ہیکل کی صفائی	revisado	rev. IA
@@ -362,17 +362,17 @@ event_id	cite_id	titulo_en	titulo_ur	origem	nota
 450	ent:theographic:recym9Dfibw7KdshX	Sanhedrin Conspiracy	کائفا اور سنہدرین کی سازش	revisado	rev. IA
 451	ent:theographic:rec3IGuoFfX4wwc0u	Judas Plans Betrayal	یہوداہ اسکریوطی کی غداری کی سازش	revisado	rev. IA
 452	ent:theographic:recehyRQPiIuEscz4	The Last Supper	یسوع مسیح کا آخری عشائیہ	revisado	rev. IA
-454	ent:theographic:recNQ0XuoN4rfJR3o	Prayer and Betrayal in Gethsemane	جتسمنی میں یسوع مسیح کی دعا اور یہوداہ اسکریوطی کی غداری	revisado	rev. IA
+454	ent:theographic:recNQ0XuoN4rfJR3o	Prayer and Betrayal in Gethsemane	گتسمنی میں یسوع مسیح کی دعا اور یہوداہ اسکریوطی کی غداری	revisado	rev. IA
 455	ent:theographic:recP6WhPl8eV4tavO	Jewish Trials	یہودی عدالت میں کائفا کے سامنے یسوع مسیح کا مقدمہ	revisado	rev. IA
 457	ent:theographic:recvsq3X87BSBcInj	Judas' Suicide	یہوداہ اسکریوطی کی خودکشی	revisado	rev. IA
 456	ent:theographic:recUlD55WynUKdHAo	Roman Trials	پنطیس پیلاطس کے سامنے یسوع مسیح کا مقدمہ	revisado	rev. IA
-458	ent:theographic:rec7pLeyxV0yEdrcl	Bearing Cross to Golgotha	شمعون کا صلیب اٹھا کر جلجتا جانا	revisado	rev. IA
+458	ent:theographic:rec7pLeyxV0yEdrcl	Bearing Cross to Golgotha	شمعون کا صلیب اٹھا کر گلگتا جانا	revisado	rev. IA
 460	ent:theographic:recwQXXtK8ZbnYuIJ	Resurrection and Ascension	یسوع مسیح کا جی اٹھنا اور آسمان پر اٹھایا جانا	revisado	rev. IA
 446	ent:theographic:recotN6XCwPBF0OzT	Fig Tree Cursed	انجیر کے درخت پر یسوع مسیح کی لعنت	revisado	rev. IA
 447	ent:theographic:recYOqX5Qe2a0FHvw	Teaching by the Fig Tree	انجیر کے درخت کی تمثیل	revisado	rev. IA
 436	ent:theographic:recTplXPehmPfFUiG	Lepers Healed	یسوع مسیح کے ہاتھوں کوڑھیوں کی شفا	revisado	rev. IA
 437	ent:theographic:recrwlbTDWOETPpei	Discourse on the Kingdom and Other Parables	بادشاہی اور دیگر تمثیلوں پر یسوع مسیح کا خطاب	revisado	rev. IA
-440	ent:theographic:reccSs8loWRLm8LAb	Zaccheus Converted and Parable of the Pounds	یسوع مسیح کے ساتھ زکی کی توبہ اور اشرفیوں کی تمثیل	revisado	rev. IA
+440	ent:theographic:reccSs8loWRLm8LAb	Zaccheus Converted and Parable of the Pounds	یسوع مسیح کے ساتھ زکائی کی توبہ اور اشرفیوں کی تمثیل	revisado	rev. IA
 432	ent:theographic:rec70ZLu9pdrEWXR9	Teaching and Healing in Perea to Jerusalem	پیریا سے یروشلم تک یسوع مسیح کی تعلیم اور شفا	revisado	rev. IA
 433	ent:theographic:reclZp6jMKWzYmop9	Lazarus Raised form the Dead	یسوع مسیح کے ہاتھوں لعزر کا جی اٹھنا	revisado	rev. IA
 434	ent:theographic:recZhxqZJmXuGMdvd	Chief Priests Conspire Against Jesus	کائفا اور سردار کاہنوں کی یسوع مسیح کے خلاف سازش	revisado	rev. IA
@@ -394,7 +394,7 @@ event_id	cite_id	titulo_en	titulo_ur	origem	nota
 315	ent:theographic:recnjhZVhcbtc7WL0	Ananias and Sapphira lie to God	حننیاہ اور سفیرہ کا خدا سے جھوٹ بولنا	revisado	rev. IA
 316	ent:theographic:rectkWZqlKG1cfOQT	Apostles work signs and wonders in Solomon's Portico	رسولوں کے نشان اور معجزے سلیمانی برآمدے میں	revisado	rev. IA
 317	ent:theographic:recCcRDJtUxaIqXnD	Apostles arrested, put on trial	شمعون پطرس اور رسولوں کی گرفتاری	revisado	rev. IA
-318	ent:theographic:rec1qE6wAe0XINRoV	Gamaliel advises the counsel and Apostles freed	جملی ایل کا مشورہ اور رسولوں کی رہائی	revisado	rev. IA
+318	ent:theographic:rec1qE6wAe0XINRoV	Gamaliel advises the counsel and Apostles freed	گملی ایل کا مشورہ اور رسولوں کی رہائی	revisado	rev. IA
 319	ent:theographic:recXUpfeHouc4qLEl	Seven chosen to serve	سات خادموں کا چناؤ	revisado	rev. IA
 320	ent:theographic:reclAFi4IpJvlWCDp	Stephen is seized	استفنس کی گرفتاری	revisado	rev. IA
 321	ent:theographic:recNZVX1qwBc7F9AU	Stephen addresses the council	استفنس کی تقریر	revisado	rev. IA
@@ -443,7 +443,7 @@ event_id	cite_id	titulo_en	titulo_ur	origem	nota
 364	ent:theographic:rec2buqN0Q38Yuqme	Mission to Ephesus/1 Cor Written	افسس میں پولس کا مشن اور پہلا کرنتھی خط	revisado	rev. IA
 365	ent:theographic:recl2rPfuRl5ZYiYP	Riot in Ephesus	دیمتریس کی قیادت میں افسس میں ہنگامہ	revisado	rev. IA
 366	ent:theographic:recGXoNtdiKu28Wff	Mission to Macedonia and Greece	مقدونیہ اور یونان کا مشن	revisado	rev. IA
-367	ent:theographic:recCiHwYp3CSqFWrK	Eutychus revived	یوتیکس کا زندہ ہونا	revisado	rev. IA
+367	ent:theographic:recCiHwYp3CSqFWrK	Eutychus revived	یوتخس کا زندہ ہونا	revisado	rev. IA
 368	ent:theographic:recbGb0Cb2yIRqmle	Voyage to Miletus	پولس اور لوقا کا میلیتس تک سفر	revisado	rev. IA
 369	ent:theographic:recwlxgjUu5AwPX9D	Paul speaks to Ephesian Elders	افسس کے بزرگوں سے پولس کا خطاب	revisado	rev. IA
 370	ent:theographic:recxOoLkd6wFyKysC	Voyage from Miletus to Jerusalem	میلیتس سے یروشلم کا سفر	revisado	rev. IA
