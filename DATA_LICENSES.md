@@ -105,6 +105,9 @@ domínio público (DistributionLicense=Public Domain).* A atribuição completa 
 | `sword-luther` | Martinho Lutero (1483-1546) e outros | Luther's Commentary on Selected Bible Passages | v1.1 | PD pelo `.conf`. O About cita edições de 1892 a 1932 (Lenker, Hay, Holman); conferir cada parte. Ver item 12. |
 | `sword-pnt` | B. W. Johnson (séc. XIX) | The People's New Testament, com notas explicativas | v1.1 | PD. |
 | `sword-tfg` | J. W. McGarvey (1829-1915) e Philip Y. Pendleton | The Fourfold Gospel e Commentary on Acts | v1.5 | PD. Módulo RawCom (texto sem compressão). Sem marcas de referência cruzada GBF. |
+| `sword-tdavid` | Charles Haddon Spurgeon (1834-1892) | The Treasury of David (Salmos; sete volumes, o último em 1885) | v2.1 | PD (`DistributionLicense=Public Domain`). Só Salmos. Comentário dividido por versículo (`pipeline/ingest/tdavid.py`): as seções do módulo (EXPOSITION, notas, dicas) são cortadas nos marcadores "Verse N.", "Verses N-M." e "Ver. N", e cada parágrafo vai para o versículo ou intervalo indicado. A visão geral e o texto antes do primeiro marcador ficam no versículo 1. As listas bibliográficas "WORKS UPON THE … PSALM" (de outros autores) saem. |
+| `sword-westminster` | Assembleia de Westminster (1643-1649) | The Westminster Confession of Faith, with the Shorter and Larger Catechisms (módulo `westminster`, v1.0.1) | v1.0.1 | PD (`DistributionLicense=Public Domain`; texto de reformed.org). Confissão (33 capítulos) e catecismos Breve e Maior, por referência: cada seção ou pergunta gera uma linha por versículo citado nas provas (`pipeline/ingest/sword_confissoes.py`). Sem as listas de provas no texto. Referências OSIS sem vid (3) descartadas. |
+| `sword-lbcf1689` | Igrejas batistas da Inglaterra e do País de Gales (1689) | Baptist Confession of Faith of 1689 (módulo `BaptistConfession1689`, v1.0.2) | v1.0.2 | PD (`DistributionLicense=Public Domain`; texto de reformed.org e apuritansmind.com). 32 capítulos, por referência das provas, como `sword-westminster` (`pipeline/ingest/sword_confissoes.py`). Prefácio, fim e assinaturas não entram. Referência OSIS sem vid (1) descartada. |
 
 **Adventistas (domínio público)**
 
@@ -134,12 +137,43 @@ demais são tradução nossa do título inglês, sem conferir edição brasileir
 | `waggoner-christ` | E. J. Waggoner (1855-1916) | Christ and His Righteousness (1893, Echo Publishing) | archive.org `christ-and-his-righteousness-1893-echo-publishing` | Cabeçalhos de página removidos. Parágrafos com `©` ou `|` (OCR) descartados. |
 | `andrews-sabbath` | John Nevins Andrews (1829-1883) | History of the Sabbath and First Day of the Week (1873) | Project Gutenberg #68714 | Notas de rodapé ligadas pelo marcador, como em `egw-patriarchs`. Sumário e índice do Gutenberg fora do texto. |
 | `smith-us-prophecy` | Uriah Smith (1832-1903) | The United States in the Light of Prophecy (1874) | Project Gutenberg #12364 | Comentário de Apocalipse 13 e Daniel 7. Sem capítulos numerados no texto. |
+| `maclaren-expositions` | Alexander Maclaren (1826-1910) | Expositions of Holy Scripture (Project Gutenberg eBooks #7069, 7351, 7883, 7925, 8068, 8069, 8070, 8071, 8200, 8381, 8397, 13601, 15836, 21190, 24674; obras de 1904 a 1910) | Expositions of Holy Scripture, Alexander Maclaren. Project Gutenberg, sem o cabeçalho e o rodapé da licença do Project Gutenberg. Domínio público: autor falecido em 1910 e obras publicadas de 1904 a 1910 (domínio público nos EUA); no Brasil, autor falecido há mais de 70 anos. Texto da licença: https://www.gutenberg.org/policy/license.html | Sermão por texto (`pipeline/ingest/sermoes_gutenberg.py`): um comentário por sermão, no intervalo da passagem do cabeçalho (parêntese do título ou epígrafe). O corpo do sermão vai inteiro; a epígrafe (texto bíblico) não entra. Descartados: sem cabeçalho, cabeçalho ilegível (ex.: "GAL. vi. 25", versículo inexistente) e seções sem texto. Texto em inglês. |
+| `smith-looking` | Uriah Smith (1832-1903) | Looking unto Jesus: Christ in Type and Antitype (Review and Herald, 1897; copyright 1897; prefácio de julho de 1898) | archive.org `looking-unto-jesus_202511` (única digitalização encontrada) | Conferido na página de rosto: "entered … in the year 1897", sem aviso de edição posterior. Sem outra digitalização para o alinhamento de OCR (regra a não se aplica). Cabeçalhos "LOOKING UNTO JESUS", prefácio e sumário saem. Parágrafos com OCR ruim descartados, com a lista no `corrections/smith-looking.tsv`; OCR muito ruim em boa parte do livro, então a cobertura é menor que a do livro inteiro. |
 | `smith-sanctuary` | Uriah Smith (1832-1903) | The Sanctuary and the Twenty-three Hundred Days of Daniel VIII, 14 (1877) | archive.org `sanctuarytwentyt0000smit` | Dn 8:14 e o santuário. Cabeçalhos "THE SANCTUARY." removidos. O índice remissivo e o catálogo do editor (com anúncios) saem do texto, a partir do cabeçalho "INDEX. 349" (`skip`). Parágrafos com `©` descartados. |
+| `expositors-bible` | Autores por volume (48 volumes; lista abaixo). Editor: W. Robertson Nicoll (1851-1923) | The Expositor's Bible (ed. W. Robertson Nicoll, 1887-1905) | Project Gutenberg, eBooks #32968 a #50747 (ver lista) | Public Domain pelo Gutenberg (dos EUA). No Brasil: todos os autores morreram antes de 1943 (regra de 70 anos; descartados: morte depois de 1955, nenhum). Texto da licença: https://www.gutenberg.org/policy/license.html | Capítulo por passagem (`pipeline/ingest/sermoes_gutenberg.py`, `expositors`): uma linha por capítulo, no intervalo da passagem do cabeçalho (linha depois do título ou citação que fecha a epígrafe; salmos: o número do salmo). Texto começa com "The Expositor's Bible — <livro> (<autor>): <título>" e traz o corpo inteiro; a epígrafe não entra. Descartados por motivo: sem_cabecalho, cabecalho_ilegivel, secao (cabeçalho de seção sem texto), sem_texto. Índice (eBook #39819) e obras de outros autores fora. Autores variam (maioria presbiteriana escocesa; Maclaren, batista; Farrar, Moule e Plummer, anglicanos); tradição do registro: presbiteriana. Texto em inglês. |
+| `bible-readings` | Review & Herald Publishing Association (obra coletiva; "New, Revised, and Enlarged Edition", 1920) | Bible Readings for the Home Circle (1920) | Project Gutenberg #34520 (lançado em 2010; copyright do Gutenberg: "Public domain in the USA") | Perguntas e respostas (201 estudos, 3.426 perguntas): cada pergunta com a resposta é uma unidade; referências da resposta geram linhas. Cabeçalho e rodapé do Gutenberg removidos; ilustrações e legendas saem; índice de assuntos fora. Notas editoriais ("NOTE.—") ficam com a resposta anterior. "Verse N" não é ligado (645 respostas). Sem referência em algarismos romanos no texto. |
 
 Fora do banco por enquanto: `haskell-daniel` e `haskell-seer` (Stephen N. Haskell, 1855-1922; *The Story of Daniel the
 Prophet*, 1901, e *The Story of the Seer of Patmos*, 1905, Review and Herald, archive.org). Domínio público, mas o
 scan mistura citações bíblicas de margem, perguntas de estudo e fragmentos de OCR no comentário; entram quando a
 limpeza passar na amostragem.
+
+Fora do banco por enquanto: `haskell-cross` (Stephen N. Haskell, *The Cross and Its Shadow*, 1914, Bible Training School,
+archive.org `StephenN.HaskellTheCrossAndItsShadow1914`; autor falecido em 1922). Domínio público e sem outra digitalização
+para o alinhamento de OCR. O motivo é o layout: as caixas de texto (TYPE/ANTITYPE, quadros) e as margens de referência
+se misturam com o parágrafo, e o resultado traz fragmentos de citação no comentário (ex.: Ap 20:15). Código, correções
+(`corrections/haskell-cross.tsv`) e scan ficam; a fonte entra quando essa limpeza passar na amostragem.
+
+**Doutrina (domínio público; teologia sistemática, por referência explícita).** Mesma regra de parágrafo com referência
+(`pipeline/ingest/doutrina_pd.py`): cada parágrafo do corpo com referência bíblica gera uma linha por referência. Prefácio,
+sumário e índices (a partir de "Index Of") ficam fora. O cabeçalho do verbete traz autor, obra, parte e capítulo.
+
+| Fonte (id) | Autor | Título e edição | Origem do texto | Condições |
+|---|---|---|---|---|
+| `strong-systematic` | Augustus Hopkins Strong (1836-1921), batista | Systematic Theology (The Judson Press, 1907; revisada e ampliada; três volumes) | Project Gutenberg #44035 (vol. 1, *The Doctrine of God*), #44555 (vol. 2, *The Doctrine of Man*) e #45283 (vol. 3, *The Doctrine of Salvation*) | Domínio público: autor falecido em 1921 e obra publicada em 1907 (domínio público nos EUA); no Brasil, autor falecido há mais de 70 anos. Cabeçalho e rodapé do Gutenberg removidos. Notas em bloco recuado entram como parágrafos. Texto em inglês. |
+| `calvin-institutes` | João Calvino (1509-1564) | Institutes of the Christian Religion, tradução de John Allen (sexta edição americana revisada e corrigida, Presbyterian Board of Publication, Filadélfia; 1813 no volume 1) | Project Gutenberg #45001 (livros I a III) e #64392 (livros IV e V) | Domínio público: autor falecido em 1564; tradução publicada em 1813 (domínio público nos EUA); no Brasil, autor falecido há mais de 70 anos. Cabeçalho e rodapé do Gutenberg removidos. Notas de rodapé com referência (`(n)` no volume 1, `[n]` no volume 2) valem para o parágrafo que tem a marca; notas só com texto (latim, nomes de autores) não geram linha. Referências em capítulo romano minúsculo (`Prov. xxix. 18`, `Rom. viii. 30`; `refparse.find_refs(romano=True)`). Prefácio do tradutor e dedicatória antes do Livro I ficam fora (contagem). Texto em inglês. |
+
+**Comentários escaneados (domínio público; versículo a versículo).** Digitalizações do archive.org marcadas como
+NOT_IN_COPYRIGHT, conferidas na página do item (data e autor). Ingestor: `pipeline/ingest/comentario_escaneado.py`, uma
+obra por vez. Cada comentário de versículo (ou intervalo) vira uma linha; o texto começa com "Autor — Obra:". Parágrafo
+com lixo de OCR (sinal de linha, barra de coluna, sílaba sem vogal) sai inteiro, com a contagem por motivo no build.
+
+| Fonte (id) | Autor | Título e edição | Origem do texto | Condições |
+|---|---|---|---|---|
+| `broadus-matthew` | John A. Broadus (1827-1895), batista | Commentary on the Gospel of Matthew (An American Commentary on the New Testament; American Baptist Publication Society, c1886) | archive.org `commentonmatthew00broauoft` (Robarts, University of Toronto) | Domínio público: autor falecido em 1895 e obra de 1886 (domínio público nos EUA e no Brasil: autor falecido há mais de 70 anos). Marcador "N." com dois espaços no início do parágrafo. Notas numeradas com outro espaçamento não viram versículo. Parágrafos em duas colunas (barra "\|") e com símbolos de OCR saem. A cobertura é parcial (ver contagem no build). Texto em inglês. |
+| `haldane-romans` | Robert Haldane (1764-1842), batista escocês reformado | Exposition of the Epistle to the Romans (London: W. Oliphant, 1874) | archive.org `expositionofthee00halduoft` (Robarts, University of Toronto) | Domínio público: autor falecido em 1842 e obra de 1874 (domínio público nos EUA e no Brasil: autor falecido há mais de 70 anos). Marcador "Ver. N.—" (o OCR lê o 1 como "i"). O primeiro parágrafo do bloco, a citação do versículo, sai quando vem separado; o comentário segue. Parágrafos com lixo de OCR saem (contagem no build). Cobre os 16 capítulos. Texto em inglês. |
+
+**Pendente (fora do banco por OCR):** `hodge-romans` (Charles Hodge, *Commentary on the Epistle to the Romans*, 1882; archive.org `commentaryonthee00hodguoft`; autor falecido em 1878). Domínio público, mas o scan troca o grego por símbolos ("TO~J", "t<>"): cerca de 86% dos parágrafos com comentário saem por lixo de OCR. A fonte só entra com outra digitalização ou correção do texto grego.
 
 **Examinadas e não incluídas (adventistas e outras):** *Ministry of Healing* (1905/1909): o scan de 1909 não tem
 referência explícita em parágrafo, e o de 1905 traz aviso de 1942 (edição revisada); não está no Gutenberg. *Education*
@@ -171,6 +205,61 @@ Ver item 12 para as demais.
 | `sword-nave` | Orville J. Nave | Nave's Topical Bible | v3.0 |
 | `sword-torrey` | R. A. Torrey | Torrey's New Topical Textbook | v1.3 |
 | `sword-tsk` | Canne, Browne, Blayney, Scott et al. (c. 1880) | Treasury of Scripture Knowledge | v1.4 |
+
+**The Expositor's Bible (`expositors-bible`): volumes e autores.** Morte do autor conforme o catálogo do Project
+Gutenberg (datas de nascimento e morte). Nenhum volume foi descartado pela regra de 70 anos.
+
+| eBook | Volume | Autor | Morte |
+|---|---|---|---|
+| #32968 | Hebrews | Thomas Charles Edwards | 1900 |
+| #33151 | John, vol. 1 | Marcus Dods | 1909 |
+| #33288 | John, vol. 2 | Marcus Dods | 1909 |
+| #33420 | Exodus | George Alexander Chadwick | 1923 |
+| #37120 | Mark | George Alexander Chadwick | 1923 |
+| #37345 | Colossians and Philemon | Alexander Maclaren | 1910 |
+| #39196 | Ephesians | George G. Findlay | 1919 |
+| #39394 | 1 Samuel | William Garden Blaikie | 1899 |
+| #39395 | Genesis | Marcus Dods | 1909 |
+| #39628 | Pastoral Epistles | Alfred Plummer | 1926 |
+| #39727 | Judges and Ruth | Robert A. Watson | 1921 |
+| #39767 | Isaiah, vol. 1 | George Adam Smith | 1942 |
+| #39788 | Philippians | Robert Rainy | 1906 |
+| #39856 | Luke | Henry Burton | 1930 |
+| #39913 | Ecclesiastes | Samuel Cox | 1893 |
+| #39941 | Song of Solomon and Lamentations | Walter F. Adeney | 1920 |
+| #39956 | Ezra, Nehemiah and Esther | Walter F. Adeney | 1920 |
+| #40235 | Chronicles | William Henry Bennett | 1920 |
+| #40470 | Job | Robert A. Watson | 1921 |
+| #40775 | Epistles of John | William Alexander | 1911 |
+| #40811 | Matthew | John Monro Gibson | 1921 |
+| #41850 | 2 Corinthians | James Denney | 1917 |
+| #41893 | Jeremiah, chaps. XXI-LII | William Henry Bennett | 1920 |
+| #42027 | 2 Kings | Frederic William Farrar | 1903 |
+| #42189 | Proverbs | Robert F. Horton | 1934 |
+| #42251 | Revelation | William Milligan | 1893 |
+| #42258 | Acts, vol. 1 | George Thomas Stokes | 1898 |
+| #42273 | Epistles of St. Peter | J. Rawson Lumby | 1895 |
+| #42303 | Acts, vol. 2 | George Thomas Stokes | 1898 |
+| #42319 | Joshua | William Garden Blaikie | 1899 |
+| #42334 | Leviticus | Samuel H. Kellogg | 1899 |
+| #42354 | 1 Corinthians | Marcus Dods | 1909 |
+| #42445 | Psalms, vol. 1 | Alexander Maclaren | 1910 |
+| #42488 | Psalms, vol. 2 | Alexander Maclaren | 1910 |
+| #42601 | Jeremiah | Charles James Ball | 1924 |
+| #42639 | Numbers | Robert A. Watson | 1921 |
+| #42645 | Galatians | George G. Findlay | 1919 |
+| #42753 | Thessalonians | James Denney | 1917 |
+| #42891 | 1 Kings | Frederic William Farrar | 1903 |
+| #43672 | Isaiah, vol. 2 | George Adam Smith | 1942 |
+| #43847 | The Twelve Prophets, vol. 1 | George Adam Smith | 1942 |
+| #44027 | Psalms, vol. 3 | Alexander Maclaren | 1910 |
+| #44103 | Daniel | Frederic William Farrar | 1903 |
+| #44619 | 2 Samuel | William Garden Blaikie | 1899 |
+| #46975 | Ezekiel | John Skinner | 1925 |
+| #47337 | James and Jude | Alfred Plummer | 1926 |
+| #48858 | Romans | Handley Carr Glyn Moule | 1920 |
+| #49045 | Deuteronomy | Andrew Harper | 1936 |
+| #50747 | The Twelve Prophets, vol. 2 | George Adam Smith | 1942 |
 
 ### 2.8 Mapas (serviços de tiles e estilo; não são dados do banco)
 

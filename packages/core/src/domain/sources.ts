@@ -89,6 +89,10 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'sword-luther': { short: 'Lutero', commentator: 'Lutero', role: 'commentary', lang: 'en' },
   'sword-pnt': { short: 'B. W. Johnson', commentator: 'B. W. Johnson', role: 'commentary', lang: 'en' },
   'sword-tfg': { short: 'McGarvey', commentator: 'McGarvey e Pendleton', role: 'commentary', lang: 'en' },
+  'sword-tdavid': { short: 'Spurgeon', commentator: 'Spurgeon', role: 'commentary', lang: 'en' },
+  // Confissões de fé (pipeline/ingest/sword_confissoes.py; domínio público, por referência das provas).
+  'sword-westminster': { short: 'Westminster', commentator: 'Confissão de Westminster', role: 'commentary', lang: 'en' },
+  'sword-lbcf1689': { short: 'Confissão de 1689', commentator: 'Confissão Batista de 1689', role: 'commentary', lang: 'en' },
   // Adventistas (Ellen G. White, domínio público; só parágrafos com referência explícita). O comentarista leva a
   // obra: duas obras dela no mesmo versículo precisam de rótulos distintos.
   'egw-great-controversy': { short: 'Grande Conflito', commentator: 'Ellen G. White · Grande Conflito', role: 'commentary', lang: 'en' },
@@ -109,6 +113,22 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'andrews-sabbath': { short: 'História do Sábado', commentator: 'J. N. Andrews · História do Sábado', role: 'commentary', lang: 'en' },
   'smith-us-prophecy': { short: 'Estados Unidos na Profecia', commentator: 'Uriah Smith · Estados Unidos na Profecia', role: 'commentary', lang: 'en' },
   'smith-sanctuary': { short: 'O Santuário e os 2.300 Dias', commentator: 'Uriah Smith · O Santuário e os 2.300 Dias', role: 'commentary', lang: 'en' },
+  'smith-looking': { short: 'Olhando para Jesus', commentator: 'Uriah Smith · Olhando para Jesus', role: 'commentary', lang: 'en' },
+  // Perguntas e respostas (pipeline/ingest/bible_readings.py): uma unidade por pergunta; obra coletiva, sem autor único.
+  'bible-readings': { short: 'Leituras Bíblicas', commentator: 'Review and Herald · Leituras Bíblicas', role: 'commentary', lang: 'en' },
+  // Sermões por texto (pipeline/ingest/sermoes_gutenberg.py): um comentário por sermão, no intervalo da passagem.
+  'maclaren-expositions': { short: 'Maclaren', commentator: 'Alexander Maclaren', role: 'commentary', lang: 'en' },
+  // Capítulos por passagem (pipeline/ingest/sermoes_gutenberg.py, EXPOSITORS): The Expositor's Bible (ed. W. Robertson
+  // Nicoll, 1887-1905), 48 volumes do Gutenberg. Os autores variam por volume (a maioria é presbiteriana escocesa;
+  // Maclaren é batista; Farrar, Moule e Plummer são anglicanos); a tradição do registro é a presbiteriana.
+  'expositors-bible': { short: "Expositor's Bible", commentator: 'The Expositor\'s Bible', role: 'commentary', lang: 'en' },
+  // Doutrina (pipeline/ingest/doutrina_pd.py): teologia sistemática em domínio público, por referência explícita.
+  'strong-systematic': { short: 'Strong', commentator: 'A. H. Strong', role: 'commentary', lang: 'en' },
+  // Institutas (pipeline/ingest/doutrina_pd.py), tradução de John Allen; o comentarista leva a obra, como as EGW.
+  'calvin-institutes': { short: 'Institutas', commentator: 'João Calvino · Institutas', role: 'commentary', lang: 'en' },
+  // Comentários escaneados, versículo a versículo (pipeline/ingest/comentario_escaneado.py; archive.org, NOT_IN_COPYRIGHT).
+  'broadus-matthew': { short: 'Broadus', commentator: 'John A. Broadus', role: 'commentary', lang: 'en' },
+  'haldane-romans': { short: 'Haldane', commentator: 'Robert Haldane', role: 'commentary', lang: 'en' },
 };
 
 /** Ordem de preferência das fontes de lugares (menor = melhor) para escolher a identificação moderna. */

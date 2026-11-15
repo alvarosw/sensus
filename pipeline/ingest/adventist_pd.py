@@ -42,6 +42,9 @@ Segunda leva (autores falecidos entre 1872 e 1922; publicações de 1873 a 1905)
 - smith-us-prophecy: Uriah Smith, The United States in the Light of Prophecy (Gutenberg #12364; 1874).
 - smith-sanctuary: Uriah Smith, The Sanctuary and the Twenty-three Hundred Days of Daniel VIII, 14 (archive.org
   sanctuarytwentyt0000smit; 1877).
+- haskell-cross: Stephen N. Haskell, The Cross and Its Shadow (archive.org StephenN.HaskellTheCrossAndItsShadow1914;
+  Bible Training School, 1914). Publicado em 1914, fora da faixa de datas desta leva (ver DATA_LICENSES.md).
+- smith-looking: Uriah Smith, Looking unto Jesus (archive.org looking-unto-jesus_202511; Review and Herald, 1897).
 Nos scans com notas de rodapé de referência (`page_notes`), a nota vai para o parágrafo da página e a
 continuação da página volta ao parágrafo de prosa, sem colar na nota.
 
@@ -250,6 +253,20 @@ WORKS = [
              "no Brasil, autor falecido há mais de 70 anos."),
          furniture=r"\d*\s*(?:STORY\s+OF\s+THE\s+)?SEER OF PATMOS\.?\s*\d*|\d*\s*STORY\s*\d*",
          chapter_seq=True, ocr_junk=r"©", page_notes=True),
+    # Stephen N. Haskell (1833-1922): The Cross and Its Shadow (1914), scan do Center for Adventist Research (Andrews).
+    # Sem outra digitalização de domínio público para o alinhamento de OCR (a de 1990 é reimpressão posterior).
+    Work("haskell-cross", "The Cross and Its Shadow", "The Cross and Its Shadow",
+         "Bible Training School, South Lancaster, 1914 (copyright 1914)",
+         "https://archive.org/details/StephenN.HaskellTheCrossAndItsShadow1914",
+         "https://archive.org/download/StephenN.HaskellTheCrossAndItsShadow1914/"
+         "1914_haskell_theCrossAndItsShadow_djvu.txt",
+         "1914_haskell_theCrossAndItsShadow_djvu.txt", "archive", r"THE CROSS AND ITS SHADOW", CHAPTER_HEAD,
+         "Internet Archive StephenN.HaskellTheCrossAndItsShadow1914 (Center for Adventist Research, Andrews University)",
+         author="Stephen N. Haskell (1833-1922)",
+         pd=("Domínio público: autor falecido em 1922 e obra publicada em 1914 (domínio público nos EUA); "
+             "no Brasil, autor falecido há mais de 70 anos."),
+         furniture=r"\d*\s*THE CROSS AND ITS SHADOW\.?\s*\d*|\d*\s*Digitized by the Center for Adventist Research\s*\d*",
+         chapter_seq=True, ocr_junk=r"©", page_notes=True),
     # E. J. Waggoner (1855-1916): Gálatas (comentário em capítulos, com o texto citado em bloco).
     Work("waggoner-galatians", "The Glad Tidings", "The Glad Tidings",
          "Pacific Press, 1900 (copyright 1900)",
@@ -304,18 +321,34 @@ WORKS = [
          furniture=r"\d*\s*THE SANCTUARY\.?\s*\d*", ocr_junk=r"©", page_notes=True,
          # Índice remissivo e catálogo do editor (com anúncios) ficam no fim, depois de "INDEX. 349": saem.
          skip=(r"^\s*INDEX[.,]?\s*\d+\s*$", r"\Z")),
+    # Uriah Smith (1832-1903): Looking unto Jesus, Christ in Type and Antitype (Review and Herald; copyright 1897, prefácio
+    # de julho de 1898). Única digitalização encontrada no archive.org.
+    Work("smith-looking", "Looking unto Jesus: Christ in Type and Antitype", "Looking unto Jesus",
+         "Review and Herald, 1897 (copyright 1897; prefácio de julho de 1898)",
+         "https://archive.org/details/looking-unto-jesus_202511",
+         "https://archive.org/download/looking-unto-jesus_202511/Looking%20unto%20Jesus_djvu.txt",
+         "Looking unto Jesus_djvu.txt", "archive", r"(?!)", CHAPTER_HEAD,
+         "Internet Archive looking-unto-jesus_202511 (Review and Herald, 1897/1898)",
+         author="Uriah Smith (1832-1903)",
+         pd=("Domínio público: autor falecido em 1903 e obra publicada em 1897 (domínio público nos EUA); "
+             "no Brasil, autor falecido há mais de 70 anos."),
+         furniture=(r"(?i).{0,10}LOOKING UNTO[\s\-.]*JESUS.{0,6}|\d{0,3}\s*PREFACE\.?\s*\d{0,3}|"
+                    r"\d{0,3}\s*TABLE OF CONTENTS\.?\s*\d{0,3}"),
+         chapter_seq=True, ocr_junk=r"©|\|", page_notes=True),
 ]
 
 
 # Obras da segunda leva: citação de margem e de nota sai do comentário (campo `citacoes`).
-SEGUNDA_LEVA = ("egw-desire-of-ages", "haskell-daniel", "haskell-seer", "waggoner-galatians",
-                "waggoner-christ", "andrews-sabbath", "smith-us-prophecy", "smith-sanctuary")
+SEGUNDA_LEVA = ("egw-desire-of-ages", "haskell-daniel", "haskell-seer", "haskell-cross", "waggoner-galatians",
+                "waggoner-christ", "andrews-sabbath", "smith-us-prophecy", "smith-sanctuary", "smith-looking")
 WORKS = [replace(w, citacoes=w.source_id in SEGUNDA_LEVA) for w in WORKS]
 
 # Fora da execução padrão e do banco: nas obras de Haskell, citações bíblicas de margem curtas, perguntas de estudo e
 # fragmentos de OCR ainda passam como comentário (amostra de novembro de 2026: ~1 em 3 trechos). Rodar à mão
 # (`adventist_pd.py haskell-daniel`) só para trabalhar na limpeza; a fonte volta ao registro do núcleo quando passar.
-PENDENTES = ("haskell-daniel", "haskell-seer")
+# haskell-cross: no scan de 1914 as caixas de texto (TYPE/ANTITYPE, quadros) e as margens se misturam com o parágrafo;
+# o resultado traz fragmentos de citação no comentário (ex.: Ap 20:15). Volta quando a limpeza de caixas e margens passar.
+PENDENTES = ("haskell-daniel", "haskell-seer", "haskell-cross")
 
 
 RUNNING_CHAPTER = re.compile(r"^\s*\d*\s*CHAPTER\.?\s+(\d{1,2}),\s+VERSES?\b.*$")

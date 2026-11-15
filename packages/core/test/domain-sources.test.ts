@@ -56,6 +56,10 @@ const NOVAS: Array<{ id: string; kind: string; tradition: string }> = [
   { id: 'sword-luther', kind: 'commentary', tradition: 'lutheran' },
   { id: 'sword-pnt', kind: 'commentary', tradition: 'restoration' },
   { id: 'sword-tfg', kind: 'commentary', tradition: 'restoration' },
+  { id: 'sword-tdavid', kind: 'commentary', tradition: 'reformed-baptist' },
+  { id: 'sword-westminster', kind: 'commentary', tradition: 'presbyterian' },
+  { id: 'sword-lbcf1689', kind: 'commentary', tradition: 'reformed-baptist' },
+  { id: 'smith-looking', kind: 'commentary', tradition: 'adventist' },
   { id: 'egw-great-controversy', kind: 'commentary', tradition: 'adventist' },
   { id: 'egw-patriarchs', kind: 'commentary', tradition: 'adventist' },
   { id: 'egw-prophets', kind: 'commentary', tradition: 'adventist' },
@@ -70,6 +74,13 @@ const NOVAS: Array<{ id: string; kind: string; tradition: string }> = [
   { id: 'andrews-sabbath', kind: 'commentary', tradition: 'adventist' },
   { id: 'smith-us-prophecy', kind: 'commentary', tradition: 'adventist' },
   { id: 'smith-sanctuary', kind: 'commentary', tradition: 'adventist' },
+  { id: 'bible-readings', kind: 'commentary', tradition: 'adventist' },
+  { id: 'maclaren-expositions', kind: 'commentary', tradition: 'baptist' },
+  { id: 'expositors-bible', kind: 'commentary', tradition: 'presbyterian' },
+  { id: 'strong-systematic', kind: 'commentary', tradition: 'baptist' },
+  { id: 'calvin-institutes', kind: 'commentary', tradition: 'reformed' },
+  { id: 'broadus-matthew', kind: 'commentary', tradition: 'baptist' },
+  { id: 'haldane-romans', kind: 'commentary', tradition: 'reformed-baptist' },
 ];
 
 const ROLE_OF_KIND: Record<string, string[]> = {

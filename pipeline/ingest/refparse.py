@@ -52,9 +52,17 @@ _LOOSE = re.compile(
     r"(?<![A-Za-z0-9])(?P<book>(?:" + _NUMPFX + r")?[A-Za-z]+\.?(?:\s+of\s+[A-Za-z]+)?)"
     r"\.?\s*(?P<ch>\d{1,3})(?:(?::|\.(?=\d))(?P<v>\d{1,3}))?(?!\d)"
 )
+# Capítulo romano minúsculo em linha ("Prov. xxix. 18", "Rom. viii. 30"; Calvino, Institutas). Sempre com versículo:
+# "Rom. viii." sozinho não vale, porque o ponto pode ser fim de frase. Maiúsculas ficam de fora ("I." é seção).
+_ROMANO = re.compile(
+    r"(?<![A-Za-z0-9])(?P<book>(?:" + _NUMPFX + r")?[A-Z][A-Za-z]*\.?(?:\s+of\s+[A-Z][a-z]+)?)"
+    r"\.?\s*(?:(?P<ch>\d{1,3})(?:(?::|\.(?=\d))(?P<v>\d{1,3}))?|(?P<rch>[ivxlc]+)(?![A-Za-z])\.\s*(?P<rv>\d{1,3}))(?!\d)"
+)
 _RANGE = re.compile(r"\s*[-–]\s*(?P<a>\d{1,3})(?:\s*:\s*(?P<b>\d{1,3}))?(?!\d)")
 _TAIL_CV = re.compile(r"\s*(?P<sep>[,;])\s*(?P<c>\d{1,3})\s*:\s*(?P<v>\d{1,3})(?!\d)")
 _TAIL_N = re.compile(r"\s*(?P<sep>[,;])\s*(?P<n>\d{1,3})(?!\d)(?![:.]\d)")
+# Continuação com capítulo romano (modo romano): "John vii. 18. viii. 50", "Rom. viii. 30, ix. 2". Capítulo arábico só com ":".
+_TAIL_CV_R = re.compile(r"\s*(?P<sep>[,;.])\s*(?P<c>\d{1,3}|[ivxlc]+)(?![A-Za-z])(?:\s*:\s*|\.\s*)(?P<v>\d{1,3})(?!\d)")
 _BOOK_START = re.compile(r"(?:[1-3]\s?|I{1,3}\s|First\s|Second\s|Third\s)?[A-Z][A-Za-z]*\.?(?:\s+of\s+[A-Z][a-z]+)?")
 _OSIS = re.compile(
     r"^(?:Bible:)?(?P<b1>[A-Za-z0-9]+)\.(?P<c1>\d+)(?:\.(?P<v1>\d+))?"
@@ -71,6 +79,7 @@ PHILEMON = 57
 ABBR = {
     "lu": 42, "mr": 41, "joe": 29, "so": 22, "ze": 36, "habb": 35,
     "philem": PHILEMON, "philm": PHILEMON, "phm": PHILEMON,
+    "1 k": 11, "2 k": 12,  # Strong: "1 K. 8:27" (1 Reis)
 }
 _NAME_NORM = [(b[0], re.sub(r"[^a-z0-9]", "", b[3].lower())) for b in BOOK_BY_NUM.values()]
 
@@ -136,9 +145,15 @@ def _starts_book(s: str, i: int) -> bool:
     return bool(m) and _book_any(m.group(0), None) is not None
 
 
-def _scan(s: str, loose: bool) -> list[tuple[int, int]]:
-    """Varre um trecho com referências (prosa ou atributo passage=)."""
-    rx = _LOOSE if loose else _STRICT
+def _scan(s: str, loose: bool, romano: bool = False) -> list[tuple[int, int]]:
+    """Varre um trecho com referências (prosa ou atributo passage=).
+
+    Com romano=True, também lê capítulo romano minúsculo com versículo (_ROMANO e _TAIL_CV_R). Uma referência que não
+    vale não consome o trecho seguinte: a varredura recomeça logo depois do início dela ("In 1 Pet. 4:6" tem de dar
+    1 Pedro 4:6, e não perder a referência por causa de "In 1").
+    """
+    rx = _LOOSE if loose else (_ROMANO if romano else _STRICT)
+    tail_cv = _TAIL_CV_R if romano else _TAIL_CV
     extra = SWORD_CODES if loose else None
     out: list[tuple[int, int]] = []
     pos = 0
@@ -148,12 +163,15 @@ def _scan(s: str, loose: bool) -> list[tuple[int, int]]:
             break
         pos = m.end()
         b = _book_any(m.group("book"), extra)
-        c = int(m.group("ch"))
-        v_txt = m.group("v")
+        if m.groupdict().get("rch") is not None:  # capítulo romano: sempre com versículo
+            c, v_txt = roman_to_int(m.group("rch")), m.group("rv")
+        else:
+            c, v_txt = int(m.group("ch")), m.group("v")
         if v_txt is None and b == PHILIPPIANS and _is_bare_phil(m.group("book")):
             # "Phil. 2" sem ":" é Filemom, versículo 2 (Filemom tem um único capítulo).
-            b, c, v_txt = PHILEMON, 1, m.group("ch")
-        if b is None or _last_verse(b, c) is None:
+            b, c, v_txt = PHILEMON, 1, str(c)
+        if b is None or _last_verse(b, c) is None or (v_txt is not None and not _valid_cv(b, c, int(v_txt))):
+            pos = m.start() + 1
             continue
         if v_txt is None:
             kind = "c"  # capítulo inteiro
@@ -161,8 +179,6 @@ def _scan(s: str, loose: bool) -> list[tuple[int, int]]:
         else:
             kind = "v"
             v = int(v_txt)
-            if not _valid_cv(b, c, v):
-                continue
             items = [(vid(b, c, v), vid(b, c, v))]
 
         # Intervalo logo após o primeiro item: "5:3-12", "2:5-3:1", "23-24"
@@ -185,9 +201,12 @@ def _scan(s: str, loose: bool) -> list[tuple[int, int]]:
         # Continuações na mesma frase, sem nome de livro: "; 14:6", ", 9", "; 3"
         cur_c, cur_kind = c, kind
         while True:
-            t = _TAIL_CV.match(s, pos)
+            t = tail_cv.match(s, pos)
             if t:
-                nc, nv = int(t.group("c")), int(t.group("v"))
+                nc, nv = _numero(t.group("c")), int(t.group("v"))
+                # Romano "v" não é capítulo aqui ("Rom. viii. 30; v. 5" é versículo); "." só com romano.
+                if nc is None or t.group("c") == "v" or (t.group("sep") == "." and t.group("c").isdigit()):
+                    break
                 if not _valid_cv(b, nc, nv):
                     break
                 pos = t.end()
@@ -278,17 +297,18 @@ def _attr_refs(markup: str) -> tuple[list[tuple[int, int]], str]:
     return found, _ELEM.sub(repl, markup)
 
 
-def find_refs(text: str) -> list[tuple[int, int]]:
+def find_refs(text: str, romano: bool = False) -> list[tuple[int, int]]:
     """Referências encontradas em texto puro ou em marcação TEI/OSIS/ThML.
 
     Retorna pares (start_vid, end_vid) sem duplicatas, na ordem em que aparecem
-    (marcação primeiro, depois prosa).
+    (marcação primeiro, depois prosa). Com romano=True, a prosa também lê capítulo romano minúsculo com versículo
+    ("Prov. xxix. 18"): é o modo das obras que citam assim (Calvino). Sem ele, nada muda.
     """
     if not text:
         return []
     attr_found, rest = _attr_refs(text)
     plain = re.sub(r"<[^>]+>", " ", rest)
-    prose = _scan(plain, loose=False)
+    prose = _scan(plain, loose=False, romano=romano)
     seen: set[tuple[int, int]] = set()
     out = []
     for start, end in attr_found + prose:
@@ -297,6 +317,71 @@ def find_refs(text: str) -> list[tuple[int, int]]:
             seen.add(pair)
             out.append(pair)
     return out
+
+
+# ---- cabeçalhos com capítulo romano (sermões: "Genesis xv. 5-18", "Joshua i. 7, 8", "Ezra vi.") ----------
+
+_ROMANO_VAL = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100}
+_CABECALHO = re.compile(
+    r"^(?P<book>(?:[1-3]\s?|I{1,3}\s)?[A-Za-z]+\.?(?:\s+of\s+[A-Za-z]+)?)\.?\s*"
+    r"(?P<c1>[ivxlcIVXLC]+|\d{1,3})\s*[.:,]?\s*"
+    r"(?:(?P<v1>\d{1,3})"
+    r"(?:\s*(?:--|[-–—])\s*(?:(?P<c2>[ivxlcIVXLC]+|\d{1,3})\s*\.\s*)?(?P<v2>\d{1,3}))?"
+    r"(?:\s*,\s*(?P<v3>\d{1,3}))*"
+    r")?\s*\.?\s*$"
+)
+
+
+def roman_to_int(tok: str) -> int | None:
+    """Valor de um número romano minúsculo ou maiúsculo ("xv" -> 15); None se não for romano."""
+    t = tok.lower()
+    if not t or any(ch not in _ROMANO_VAL for ch in t):
+        return None
+    total = 0
+    for i, ch in enumerate(t):
+        v = _ROMANO_VAL[ch]
+        total += -v if i + 1 < len(t) and v < _ROMANO_VAL[t[i + 1]] else v
+    return total
+
+
+def _numero(tok: str) -> int | None:
+    """Capítulo ou versículo: arábico, ou romano só se o token não tem dígito."""
+    return int(tok) if tok.isdigit() else roman_to_int(tok)
+
+
+def passagem_cabecalho(texto: str) -> tuple[int, int] | None:
+    """Intervalo (start_vid, end_vid) de um cabeçalho de passagem, com capítulo romano ou arábico.
+
+    Aceita só a referência, sem prosa: "Genesis xv. 5-18", "Genesis i. 26--ii. 3", "John vii. 37,38",
+    "Joshua i. 7, 8", "Esther iii." (capítulo inteiro). Lista de versículos separados por vírgula vira o
+    intervalo do menor ao maior. Retorna None se o livro não existe, o capítulo ou o versículo não existe na
+    versificação KJV, ou se o texto não é só uma referência. Não lê referências dentro de prosa (use find_refs).
+    """
+    m = _CABECALHO.match(texto.strip())
+    if not m:
+        return None
+    b = _book_any(m.group("book"), None)
+    c1 = _numero(m.group("c1"))
+    if b is None or c1 is None or _last_verse(b, c1) is None:
+        return None
+    if m.group("v1") is None:
+        return _chapter_range(b, c1, c1)
+    v1 = int(m.group("v1"))
+    if not _valid_cv(b, c1, v1):
+        return None
+    if m.group("c2") is None and m.group("v2") is None and m.group("v3") is None:
+        return vid(b, c1, v1), vid(b, c1, v1)
+    if m.group("v2") is not None:
+        c2 = _numero(m.group("c2")) if m.group("c2") else c1
+        v2 = int(m.group("v2"))
+        if c2 is None or not _valid_cv(b, c2, v2) or c2 < c1:
+            return None
+        return vid(b, c1, v1), vid(b, c2, v2)
+    # "v1, v3, ..." na mesma capítulo: o último número da lista é o fim
+    v_fim = int(m.group("v3"))
+    if not _valid_cv(b, c1, v_fim):
+        return None
+    return vid(b, c1, min(v1, v_fim)), vid(b, c1, max(v1, v_fim))
 
 
 if __name__ == "__main__":
