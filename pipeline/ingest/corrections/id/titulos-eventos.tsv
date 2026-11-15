@@ -12,453 +12,453 @@
 # como rascunho com titulo_id vazio; evento que sumiu da fonte fica no fim do arquivo, fora do banco, e o
 # resumo do ingestor avisa (apague a linha à mão quando confirmar que ela não serve).
 event_id	cite_id	titulo_en	titulo_id	origem	nota
-1	ent:theographic:recOIPcFaPCjMpQ6w	Creation of all things		rascunho	
-2	ent:theographic:recTU3ZxG7zQ61N9d	Creation of Adam and Eve		rascunho	
-3	ent:theographic:recj3SioaPwrDtpGT	The Fall		rascunho	
-4	ent:theographic:recSFDBpbT8HGEtyd	Lifetime of Adam		rascunho	
-5	ent:theographic:recrEQsBlZOgXbLiB	Cain kills Abel		rascunho	
-6	ent:theographic:recl4Bcpg9yzJsEqI	God curses Cain		rascunho	
-7	ent:theographic:recp7P8QOAzrtw9Ly	Birth of Seth		rascunho	
-8	ent:theographic:rec96xYWb8KLaUZpF	Lifetime of Seth		rascunho	
-9	ent:theographic:rec0irQ4RDrOjQKWD	Birth of Enos		rascunho	
-10	ent:theographic:recAeYv2iAFNW3dOZ	Lifetime of Enos		rascunho	
-11	ent:theographic:recM0WSoo4n0iYARu	Birth of Cainan		rascunho	
-12	ent:theographic:recJEeDtyPx5U35PG	Lifetime of Cainan		rascunho	
-13	ent:theographic:recbhJTgfqzA2wi9g	Birth of Mahlaleel		rascunho	
-14	ent:theographic:recP4eETeAB1w2UDk	Lifetime of Mahlaleel		rascunho	
-15	ent:theographic:rec1gA68LB2NDsnCR	Birth of Jared		rascunho	
-16	ent:theographic:reckfJ2MFfKg7AD3h	Lifetime of Jared		rascunho	
-17	ent:theographic:rec0pSsVe8fi0jw9A	Birth of Enoch		rascunho	
-18	ent:theographic:recZy5b1c8nMODrQo	Lifetime of Enoch		rascunho	
-19	ent:theographic:recECi7gnsZNbykIS	Birth of Methuselah		rascunho	
-20	ent:theographic:rec7F43tR0YS2M8xS	Lifetime of Methuselah		rascunho	
-21	ent:theographic:recYz6KtAthSLpDsE	Birth of Lamech		rascunho	
-22	ent:theographic:rec3QYioaVB7t2ghK	Lifetime of Lamech		rascunho	
-23	ent:theographic:rec4kRWTXS86nus0I	Death of Adam		rascunho	
-24	ent:theographic:recg9ZkB8FoyQTH8v	Enoch taken up		rascunho	
-25	ent:theographic:recN7DBKYBEZRDgO7	Death of Seth		rascunho	
-26	ent:theographic:recLhxi3tDTOD3wzR	Birth of Noah		rascunho	
-27	ent:theographic:recTdAS4YoPxLBszy	Lifetime of Noah		rascunho	
-28	ent:theographic:reciFgNLimxSBMqKH	Death of Enos		rascunho	
-29	ent:theographic:recC3DfLQVkOYAv8e	Death of Cainan		rascunho	
-30	ent:theographic:recicDx68rL317hoE	Death of Mahlaleel		rascunho	
-31	ent:theographic:recQUPYt83xclFDlk	Death of Jared		rascunho	
-32	ent:theographic:rec1n3lFKpydGhoQL	God decides to destroy every living thing		rascunho	
-33	ent:theographic:recpUCaR0HNgYjco5	Birth of Shem		rascunho	
-34	ent:theographic:recxg4gEuXG5R6PUZ	Lifetime of Shem		rascunho	
-35	ent:theographic:recZcXNIkXx2zXaW3	God instructs Noah to build the ark		rascunho	
-36	ent:theographic:recc0kcj2zjtrfU8n	Death of Lamech		rascunho	
-37	ent:theographic:recvF4VYGrRno2tu5	Death of Methuselah		rascunho	
-38	ent:theographic:recmLyx1yqtuANkqd	The Great Flood begins		rascunho	
-39	ent:theographic:recwQJTWTmTkUMHHp	The Great Flood		rascunho	
-40	ent:theographic:recMNRtVxdTnlGYoJ	Water covers the earth		rascunho	
-41	ent:theographic:rec1P4d8N4XdXzH2l	The flood subsides		rascunho	
-42	ent:theographic:recnAzV0utz4k20eC	Leaving the Ark		rascunho	
-43	ent:theographic:recUsWq7FcQB7vaMa	God makes a covenant with Noah		rascunho	
-44	ent:theographic:recgz06wNQlsq6kOc	Noah gets drunk and Canaan is cursed		rascunho	
-45	ent:theographic:rec7uQ8Nhf6h5zdfj	Birth of Arphaxad		rascunho	
-46	ent:theographic:recQDMfXnyQKhXj01	Lifetime of Arphaxad		rascunho	
-47	ent:theographic:recN97j5QCkdCwVOC	Birth of Salah		rascunho	
-48	ent:theographic:rectmsC3P5l7oRNpD	Lifetime of Salah		rascunho	
-49	ent:theographic:rec1JFgGFGfK07blt	Birth of Eber		rascunho	
-50	ent:theographic:rec3cw1D7e1QItoGc	Lifetime of Eber		rascunho	
-51	ent:theographic:recsQpAQgJcwaSk9l	Birth of Peleg		rascunho	
-52	ent:theographic:recFXC4GpemMuhURF	Lifetime of Peleg		rascunho	
-53	ent:theographic:recy4o2BxavybTuX6	Tower of Babel		rascunho	
-54	ent:theographic:recO9NRftpoIMlYmr	Birth of Reu		rascunho	
-55	ent:theographic:recZegzr6mX3DH8vc	Lifetime of Reu		rascunho	
-56	ent:theographic:recfX4yWDQUMG8Oqh	Birth of Serug		rascunho	
-57	ent:theographic:recLx9SIvsFEIJgVo	Lifetime of Serug		rascunho	
-58	ent:theographic:rec1LWfxUiRxxCrbn	Birth of Nahor		rascunho	
-59	ent:theographic:recIfpeMJFEOdSQhh	Lifetime of Nahor		rascunho	
-60	ent:theographic:recePREjv2zZ8Esoo	Birth of Terah		rascunho	
-61	ent:theographic:recB5Rg7JlgsMcPyq	Lifetime of Terah		rascunho	
-62	ent:theographic:recyn98EnxpfPAaEq	Death of Peleg		rascunho	
-63	ent:theographic:rec118tvZQItG2hEI	Death of Nahor		rascunho	
-64	ent:theographic:recjX86XiYE9up0Ux	Death of Noah		rascunho	
-65	ent:theographic:recXveJRjCtPNMLqs	Birth of Abraham		rascunho	
-66	ent:theographic:recfnatCOLEHFYeLB	Lifetime of Abraham		rascunho	
-67	ent:theographic:rectQ4Vg6XbpTyR92	Judgeship of Jair		rascunho	
-68	ent:theographic:rec8LzDmLtoQ5PD6q	Death of Reu		rascunho	
-69	ent:theographic:rechmkETHJXlw66eb	Death of Serug		rascunho	
-70	ent:theographic:recYgh6yAIxRItDC9	Death of Terah		rascunho	
-71	ent:theographic:rechJv1ksZ00ye38i	Abraham enters Canaan		rascunho	
-72	ent:theographic:rec2pnFsObyEoOfGQ	Abrahamic Covenant		rascunho	
-73	ent:theographic:recbqTND1uSdqNjOx	Abraham goes to Egypt		rascunho	
-74	ent:theographic:recc78JIsfuTy7cNu	Sojourn in Canaan and Egypt		rascunho	
-75	ent:theographic:recG5DZ6bn0BDuYH9	Abraham and Lot Separate		rascunho	
-76	ent:theographic:rechXJhZerr2X4BnE	Birth of Ishmael		rascunho	
-77	ent:theographic:rec1CnwQbgxnwGiRS	Lifetime of Ishmael		rascunho	
-78	ent:theographic:reciSatPkxfnd664i	Death of Arphaxad		rascunho	
-79	ent:theographic:recITDSS0o4dApwQg	Sodom Destroyed		rascunho	
-80	ent:theographic:recsPU7EMhmA9z27x	Birth of Isaac		rascunho	
-81	ent:theographic:recMAoYK2dHmjhRh9	Lifetime of Isaac		rascunho	
-82	ent:theographic:recefHHfdDlITHHsH	Death of Salah		rascunho	
-83	ent:theographic:recSDGDMwUBAMUgur	Isaac Marries Rebekah		rascunho	
-84	ent:theographic:recTZ4anILXT9AMbx	Death of Shem		rascunho	
-85	ent:theographic:recd4mOzI2nL66vR5	Birth of Jacob and Esau		rascunho	
-86	ent:theographic:recTkocSMI0NxpIrw	Lifetime of Jacob		rascunho	
-87	ent:theographic:recmnGiHVM3Hylr7r	Nimrod's kingdom begins		rascunho	
-88	ent:theographic:recJYhotncnfEqGcN	Death of Abraham		rascunho	
-89	ent:theographic:rec6BqgiWIs1ADP6z	Death of Eber		rascunho	
-90	ent:theographic:recOWUvuVc8kC9Q1C	Death of Ishmael		rascunho	
-91	ent:theographic:recpdpPhaNNytXNYL	Birth of Reuben		rascunho	
-92	ent:theographic:rec8BApZ81SUEiaE6	Birth of Simeon		rascunho	
-93	ent:theographic:recbEWfeMbneEhmCW	Birth of Levi		rascunho	
-94	ent:theographic:recAyNphNXcFdeBdv	Birth of Judah		rascunho	
-95	ent:theographic:recebg3uMMRi5kehC	Birth of Dan		rascunho	
-96	ent:theographic:reciXEy2Dh8v1ZMgx	Birth of Naphtali		rascunho	
-97	ent:theographic:recjP69Rr334GwfCD	Birth of Gad		rascunho	
-98	ent:theographic:recyHq1K0jXfzoxSG	Birth of Asher		rascunho	
-99	ent:theographic:rec7UNUOWD8T8j0H7	Birth of Issachar		rascunho	
-100	ent:theographic:rec79Sud9E887BhRT	Birth of Zebulon		rascunho	
-101	ent:theographic:rec8lxfZ0sKEUfPfi	Birth of Dinah		rascunho	
-102	ent:theographic:recZDLkLCBpaZjV7D	Birth of Joseph		rascunho	
-103	ent:theographic:recj8qDYwzBEfwBAa	Lifetime of Joseph		rascunho	
-104	ent:theographic:recueVlIF65sLlqSO	Rachel dies giving birth to Benjamin		rascunho	
-105	ent:theographic:recNE3SvBrPoTRiMS	Joseph sold to Egypt		rascunho	
-106	ent:theographic:recJRhLZWXyofMii6	Birth of Perez		rascunho	
-107	ent:theographic:rechIcTdBsoSsooEI	Birth of Job		rascunho	
-108	ent:theographic:recq4rk0MUq6acKxS	Lifetime of Job		rascunho	
-109	ent:theographic:recqKt1B6fiiSKrK6	Joseph imprisoned		rascunho	
-110	ent:theographic:recnTimjDqmxMYqRZ	Death of Isaac		rascunho	
-111	ent:theographic:recD7RqjeIpsJAoBc	Joseph Promoted in Egypt		rascunho	
-112	ent:theographic:recZlsev4ThVh4o6I	7 years of plenty		rascunho	
-113	ent:theographic:rec85BvWuap3CDiMT	7 years of famine		rascunho	
-114	ent:theographic:rec1ryOcznIUObhW7	Joseph's brothers go to Egypt		rascunho	
-115	ent:theographic:rec2Vbu9LcbJesuS0	Joseph's brothers return to Egypt		rascunho	
-116	ent:theographic:recwCFb0NhrYMkl8t	Death of Jacob		rascunho	
-117	ent:theographic:recMNT9RB1RJiLlYW	Job's Trial		rascunho	
-118	ent:theographic:recPAzttalK45wnXd	Death of Joseph		rascunho	
-119	ent:theographic:rect0K24pgi8HBlvL	Death of Job		rascunho	
-120	ent:theographic:rec6atQ3as7Qj2n5d	Birth of Moses		rascunho	
-121	ent:theographic:recJOhn4C4yKIJmvH	Lifetime of Moses		rascunho	
-122	ent:theographic:recwofVaBASTvL8lL	Moses Flees Pharaoh		rascunho	
-123	ent:theographic:recynRwNAbtX5ShQ7	Birth of Caleb		rascunho	
-124	ent:theographic:rechguBS4b9kXx3z3	Lifetime of Joshua		rascunho	
-125	ent:theographic:recjkmUO88wihv8Ci	Exodus from Egypt		rascunho	
-126	ent:theographic:recr71Fz4NHTnGLJ2	Wilderness Wanderings		rascunho	
-127	ent:theographic:reca8LvAmFPl1tmnN	Ten Commandments Given		rascunho	
-128	ent:theographic:recvA947nCyo8kadV	Tabernacle Built		rascunho	
-129	ent:theographic:recxj71m6XPSaqIg2	Death of Moses		rascunho	
-130	ent:theographic:recSF4lyBebGjJEXI	Crossing the Jordan into Canaan		rascunho	
-131	ent:theographic:rec0t3McGWoyd6kTB	War with Canaanites		rascunho	
-132	ent:theographic:rec91XeIAmvH5rhav	Dividing the land		rascunho	
-133	ent:theographic:recnPiyyKviVUPHO6	Death of Joshua		rascunho	
-134	ent:theographic:recEpl6nDyA0TWVdW	Subjugation by Cushan-rishathaim		rascunho	
-135	ent:theographic:recUvk5tT0xGxR71o	Deliverance by Othniel		rascunho	
-136	ent:theographic:recG0Smwr0v3S7ShM	Subjugation by Eglon		rascunho	
-137	ent:theographic:recxl5FkotW1u50nA	Deliverance by Ehud		rascunho	
-138	ent:theographic:rec07gtJgfa7skhaQ	Subjugation by Jabin		rascunho	
-139	ent:theographic:recoroJg305CLphtu	Deliverance by Barak And Deborah		rascunho	
-140	ent:theographic:recNAaoS2dLaYGVgh	Subjugation by Midian		rascunho	
-141	ent:theographic:recD6xiJWvESO0Wea	Deliverance by Gideon		rascunho	
-142	ent:theographic:recNLSBgKYUyByJwa	Usurpation by Abimelech		rascunho	
-143	ent:theographic:recWw6t8usixUbFOU	Judgeship of Tola		rascunho	
-144	ent:theographic:rec7nesNMNffYRe3F	Oppression by Ammon and Philistia		rascunho	
-145	ent:theographic:rec3z1OqSDMH0rR7y	Judgeship of Eli		rascunho	
-146	ent:theographic:recAfJj3Pv6wRG2nj	Deliverance by Jephthah		rascunho	
-147	ent:theographic:reczOHadpTVOuiidp	Judgeship of Ibzan		rascunho	
-148	ent:theographic:recSRPo1LlWZ7tNaO	Philistine Dominion		rascunho	
-149	ent:theographic:recGFZbQIjuGwXtTy	Judgeship of Elon		rascunho	
-150	ent:theographic:rec4qaEmaRCFty5tl	Birth of Saul		rascunho	
-151	ent:theographic:recoKV71uxsJeHTWW	Judgeship of Abdon		rascunho	
-152	ent:theographic:recS77B5S6Jfdq5a3	Death of Eli, Ark Captured		rascunho	
-153	ent:theographic:rec24EmrBZzGvOD2U	Judgeship of Samson		rascunho	
-154	ent:theographic:reccUeZb53JJ02Lv9	Sampson destroys Temple of Dagon		rascunho	
-155	ent:theographic:recKRsEFLaEueJvei	Reign of Saul		rascunho	
-156	ent:theographic:rec3uYdP5Fca5BJfX	United Kingdom		rascunho	
-157	ent:theographic:rec9JB5FY6jMOyEY3	David Kills Goliath		rascunho	
-158	ent:theographic:recXDTsDBCG9DaiGN	Death of Saul		rascunho	
-159	ent:theographic:reczzYTmzPPDcP3qv	Reign of David		rascunho	
-160	ent:theographic:rec3TOdsAxCr5ADHA	Death of David		rascunho	
-161	ent:theographic:recKTbnO8VY7lXLeX	Reign of Solomon		rascunho	
-162	ent:theographic:recYlpu8OdsUJoG8g	Construction of Solomon's Temple		rascunho	
-163	ent:theographic:rec5W0YtPdi4yrvaY	Southern Kingdom (Judah)		rascunho	
-164	ent:theographic:rec3u4dUBOoBi5pUx	Death of Solomon		rascunho	
-165	ent:theographic:recX0KzMJywvbeM6D	Reign of Rehoboam		rascunho	
-166	ent:theographic:rec3R4qyFlVjCRORt	Northern Kingdom (Israel)		rascunho	
-167	ent:theographic:rec824qPcsyF7GtTh	Reign of Jeroboam I		rascunho	
-168	ent:theographic:recDK5FF0d1qrz8sn	Reign of Abijam		rascunho	
-169	ent:theographic:recfIqDLtdCqz7N3V	Death of Abijam		rascunho	
-170	ent:theographic:recmEKC9vgAJDYa2z	Reign of Asa		rascunho	
-171	ent:theographic:recoThUM3VEzmvB2Y	Reign of Nadab		rascunho	
-172	ent:theographic:recDnpywTo9ng7E08	Reign of Baasha		rascunho	
-173	ent:theographic:reczLjmDT8D3PwoN1	Reign of Elah		rascunho	
-174	ent:theographic:rechi0erUTQ1OpSfg	Reign of Zimri		rascunho	
-175	ent:theographic:recAPL3crxsLpriXj	Reign of Tibni		rascunho	
-176	ent:theographic:recbKVjuSUpIxKCDm	Reign of Omri		rascunho	
-177	ent:theographic:recT4xyx6gO1r4MMQ	Death of Tibni		rascunho	
-178	ent:theographic:rec44ed0m1pZUujzb	Reign of Ahab		rascunho	
-179	ent:theographic:recPUkfMfzeKFMWT7	Death of Omri		rascunho	
-180	ent:theographic:reczE7xS17Z9mHerq	Death of Asa		rascunho	
-181	ent:theographic:recHolFWoWqNqtmup	Reign of Jehoshaphat		rascunho	
-182	ent:theographic:recRiyMlpGQNCIZvm	Prophecies of Elijah		rascunho	
-183	ent:theographic:recswFKDMGbMahY8n	Death of Jehoshaphat		rascunho	
-184	ent:theographic:rec6ssNxDhVqVIQb5	Reign of Ahaziah		rascunho	
-185	ent:theographic:recD1Gv4SKNFG3zPa	Elijah Translated		rascunho	
-186	ent:theographic:recCh323mcqdG01EW	Prophecies of Elisha		rascunho	
-187	ent:theographic:receNV351SLbofU0a	Reign of Joram		rascunho	
-188	ent:theographic:recb9vQAySe8NXtZn	Reign of Jehoram		rascunho	
-189	ent:theographic:rec8neSzth86PNqvR	Reign of Ahaziah (Jehoahaz)		rascunho	
-190	ent:theographic:reck6rXD9hZiDk0Kz	Reign of Jehu		rascunho	
-191	ent:theographic:recrLA9xtcQ35mLv1	Reign of Athaliah		rascunho	
-192	ent:theographic:recqa3Rn2VGAUlDtq	Death of Jehoram		rascunho	
-193	ent:theographic:recwy2j4O3x7NcWz5	Reign of Joash		rascunho	
-194	ent:theographic:rectK1BIzsiRL5n6U	Death of Jehu		rascunho	
-195	ent:theographic:rec8OzyADaljQSqmd	Reign of Jehoahaz		rascunho	
-196	ent:theographic:recz99BZY6sWTR2SI	Death of Jehoahaz		rascunho	
-197	ent:theographic:rec70XpPIr8MiLTVb	Reign of Jehoash		rascunho	
-198	ent:theographic:rec75MawjODD5ju3b	Reign of Amaziah		rascunho	
-199	ent:theographic:recGe7VTJOGbn63NQ	Reign of Jeroboam II		rascunho	
-200	ent:theographic:recKICyY8GrWaYCq3	Prophecies of Jonah		rascunho	
-201	ent:theographic:recsgU87rUrPKR9uA	Death of Jehoahash		rascunho	
-202	ent:theographic:rec6VtctTK9zZ5UxZ	Prophecies of Joel		rascunho	
-203	ent:theographic:recdPHV2xNXFj2JT0	Death of Amaziah		rascunho	
-204	ent:theographic:recOJfWD0IUcT4yJD	Reign of Uzziah		rascunho	
-205	ent:theographic:rec0MJooZFfHsxW1N	Prophecies of Amos		rascunho	
-206	ent:theographic:recekTocE5mIkvDEk	Prophecies of Hosea		rascunho	
-207	ent:theographic:recFQnWRST9SS0RRp	Death of Jeroboam II		rascunho	
-208	ent:theographic:recUQaOuprbt82K3O	Reign of Zachariah		rascunho	
-209	ent:theographic:recmYpqEy1fUpISEt	Reign of Shallum		rascunho	
-210	ent:theographic:recWsgJ5fuSjjOZsT	Death of Zachariah		rascunho	
-211	ent:theographic:recZM1zHaLFcWOORu	Death of Shallum		rascunho	
-212	ent:theographic:recKk6oSdN570sACg	Reign of Menahem		rascunho	
-213	ent:theographic:recJTYIqu2oNs58Lc	Death of Menahem		rascunho	
-214	ent:theographic:recQRI9PzXBoW4QVD	Reign of Pekahiah		rascunho	
-215	ent:theographic:recfHf480bxdzn4Io	Death of Pekahiah		rascunho	
-216	ent:theographic:recuwnodcdBQpgk6J	Reign of Pekah		rascunho	
-217	ent:theographic:recQ1bj3p4Lj5MYY6	Prophecies of Isaiah		rascunho	
-218	ent:theographic:rechq7jRwzAypqM7H	Death of Uzziah		rascunho	
-219	ent:theographic:recEOMPybxT6g8y8E	Reign of Jotham		rascunho	
-220	ent:theographic:recOQgYeMRMqQbIMe	Prophecies of Micah		rascunho	
-221	ent:theographic:recglW6zUkkgDVPt9	Reign of Ahaz		rascunho	
-222	ent:theographic:recbJqPiE3mvFuUvn	Death of Jotham		rascunho	
-223	ent:theographic:recOeT5LUf2J1nFXw	Death of Pekah		rascunho	
-224	ent:theographic:recj8DXN0Leolmr8O	Reign of Hoshea		rascunho	
-225	ent:theographic:recCU4JFzMUcVRqAd	Death of Ahaz		rascunho	
-226	ent:theographic:recRusMYR5At9TlEV	Reign of Hezekiah		rascunho	
-227	ent:theographic:recxfNLfmrK6uzfSb	Death of Hezekiah		rascunho	
-228	ent:theographic:rece9FgMugc1bp3tG	Reign of Manasseh		rascunho	
-229	ent:theographic:recylsxpZLWlxVtrU	Prophecies of Nahum		rascunho	
-230	ent:theographic:recqjnBXaOQYKadrc	Death of Manasseh		rascunho	
-231	ent:theographic:rec1X3krfmWLAKJXU	Reign of Amon		rascunho	
-232	ent:theographic:recHieewSQcszdain	Death of Amon		rascunho	
-233	ent:theographic:recVf3eQjAq3nk94o	Reign of Josiah		rascunho	
-234	ent:theographic:rec5pDuWtEaOK7ehk	Prophecies of Jeremiah		rascunho	
-235	ent:theographic:recUkdsuAuRono8LY	Prophecies of Zephaniah		rascunho	
-236	ent:theographic:recsdAcHVpiiWFtm0	Death of Josiah		rascunho	
-237	ent:theographic:recmY05Xj0sxEcdCh	Reign of Johoahaz (Shallum)		rascunho	
-238	ent:theographic:reciunQ6bRGaY2gib	Reign of Jehoiakim		rascunho	
-239	ent:theographic:rece1avzrB0YDK1Ln	Prophecies of Habakkuk		rascunho	
-240	ent:theographic:rec3iJVpZspQM64qQ	Prophecies of Daniel		rascunho	
-241	ent:theographic:reczmi6XtMXALtcNn	Reign of Jeconiah		rascunho	
-242	ent:theographic:recW2cNLqUyMIV6O7	Reign of Zedekiah		rascunho	
-243	ent:theographic:recGUuZfUbylFAytG	Prophecies of Ezekiel		rascunho	
-244	ent:theographic:recdiXqPQiDIBRI0Q	Prophecies of Obadiah		rascunho	
-245	ent:theographic:recQPoA7fH3wJi7v2	Prophecies of Haggai		rascunho	
-246	ent:theographic:recebNaZjPvbOqk4r	Prophecies of Zechariah		rascunho	
-247	ent:theographic:recpSNqfLiST1KQqq	Prophecies of Malachi		rascunho	
-249	ent:theographic:recRd6H7B5gBuTYT9	Espousal of Mary		rascunho	
-248	ent:theographic:recOtonfrqZVuz2iF	John's birth predicted		rascunho	
-253	ent:theographic:recchK9PHoqttFTdX	An Angel Speaks to Joseph in a Dream		rascunho	
-250	ent:theographic:rec2xII53pVseJCB6	The Annuciation		rascunho	
-251	ent:theographic:recsMmYHDdduT021e	Mary Visits Elizabeth		rascunho	
-252	ent:theographic:recp7RblvtGupJInu	Birth of John the Baptist		rascunho	
-255	ent:theographic:rec2fX249sj1mmGFr	Wise Men Visit Herod		rascunho	
-256	ent:theographic:recVRh2awW5WGpXK4	Wise Men Visit Jesus		rascunho	
-257	ent:theographic:recHWkX7SvgnBZiuD	Joseph and Mary Flee to Egypt		rascunho	
-258	ent:theographic:rec78vW2GDruKkctf	Herod slays male children		rascunho	
-260	ent:theographic:recQdRNODeVwWG5Qx	Joseph and Mary return from Egypt		rascunho	
-262	ent:theographic:rec40p7ak4u60WdPB	Joseph and Mary return to Nazareth		rascunho	
-254	ent:theographic:recg5KKSE8un6XLe6	Birth of Jesus		rascunho	
-259	ent:theographic:recVUI3XqN3CdNF1k	Jesus Circumsized		rascunho	
-261	ent:theographic:recISCjAW413V6T1j	Temple Presentation of Jesus		rascunho	
-263	ent:theographic:recHiT0IbNNmDry0s	Childhood of Jesus		rascunho	
-264	ent:theographic:rec8FDMhG6menTpse	Jesus as a child in the Temple		rascunho	
-265	ent:theographic:rec8aq3QrGCer9RqY	Jesus Growing Up		rascunho	
-266	ent:theographic:recW9F8RuUqf5HZkd	John the Baptist Begins Ministry		rascunho	
-267	ent:theographic:rec8LSQHQdcYfC9La	John Baptizes Jesus		rascunho	
-268	ent:theographic:rec7GKv3V8PLB1Wk1	Temptations of Jesus		rascunho	
-277	ent:theographic:recThval8jPdpjMQd	Jesus Leaves Judea toward Galilee		rascunho	
-279	ent:theographic:recokV9koCd9sHkZo	Jesus visits Galilee		rascunho	
-281	ent:theographic:recfKYBkGyK1iVyQ7	Jesus in Capernaum		rascunho	
-282	ent:theographic:recYIGeTJrnJFAHyB	Fishers of Men		rascunho	
-284	ent:theographic:reczf8H4EoM3gfimU	Peter's Mother-in-law and Others Healed		rascunho	
-276	ent:theographic:recbsEPvWlO2Ajcfo	John the Baptist Imprisoned		rascunho	
-283	ent:theographic:recVzgELtu6c6u0JJ	The Demoniac		rascunho	
-280	ent:theographic:recDZ5yPUfsW2mQCB	Jesus Rejected at Nazareth		rascunho	
-269	ent:theographic:rec51NMfUoy8EBm5D	John's Witness		rascunho	
-270	ent:theographic:rec2rWYKV739WLO4b	First Disciples Gathered		rascunho	
-271	ent:theographic:recamPG0iyTXyCMRx	Water to Wine		rascunho	
-272	ent:theographic:recBwb7o0eXRqj1Oa	Visiting Capernaum		rascunho	
-273	ent:theographic:recajWYSuk71jMpgi	First Passover and Temple Cleansing		rascunho	
-274	ent:theographic:recqe4jV2tmZC9XuG	Jesus and Nicodemus		rascunho	
-275	ent:theographic:recj0lpW2pEiRfASU	John the Baptist Witnesses		rascunho	
-278	ent:theographic:recZVzEsSsBBuv6XX	The Samaritan Woman		rascunho	
-296	ent:theographic:rec5EydSXHdbLbzk1	Sermon on the Mount		rascunho	
-286	ent:theographic:recrx5gqQTez5Oz5h	Healing the Leper		rascunho	
-297	ent:theographic:rec6mNLyG5AVN4X1b	Healing Centurion's Servant		rascunho	
-387	ent:theographic:recY3vd5gVnwqoRV1	Gadarene Demoniacs		rascunho	
-287	ent:theographic:rec9Ni8NXcob4ou2m	Healing the Man with Palsy		rascunho	
-288	ent:theographic:recbiDrbxO70fDsta	Jesus Calls Matthew		rascunho	
-289	ent:theographic:recbt0ME8XMDoNbVc	Fasting Question		rascunho	
-290	ent:theographic:rec4P9y8WdotpjMm9	Parable of the Winseskins		rascunho	
-388	ent:theographic:recMTSIklCghjlACt	Capernaum Miracles		rascunho	
-295	ent:theographic:recSpTfIckUAeEOLd	Apostles Chosen		rascunho	
-299	ent:theographic:recdgE4vWpwc2fVpK	Jesus' Message on John the Baptist		rascunho	
-300	ent:theographic:recYaZ1gwefzzNB1V	Woe to Chorazin and Bethsaida		rascunho	
-292	ent:theographic:recDFt0ANS33dAxri	Corn on the Sabbath		rascunho	
-293	ent:theographic:reciGxBNHjPZwHKvO	Healing a Withered Hand		rascunho	
-294	ent:theographic:recpYSwD914PD9tHU	Healing Multitudes		rascunho	
-303	ent:theographic:recqkOAX88FDIN0ee	Blind and Dumb Demoniac and Following Discourse		rascunho	
-386	ent:theographic:rec7WzLFXKdweuzOD	Seaside Parables and Miracle		rascunho	
-285	ent:theographic:rechbRJbRUie1YGOk	Jesus' 1st Tour of Galilee		rascunho	
-298	ent:theographic:recsTeovHSah64TzF	Widow's Son Resurrected		rascunho	
-301	ent:theographic:recXZv0xfad7smkqB	Anointed by a Sinner Woman		rascunho	
-302	ent:theographic:recgL37NW080FcKh8	Jesus' 2nd Tour of Galilee		rascunho	
-291	ent:theographic:recGpBzggp7LyILNR	Bethesda pool healing		rascunho	
-390	ent:theographic:rec6tRRdOlOUY9UNN	3rd Tour of Galilee		rascunho	
-389	ent:theographic:recnCLTHvWRdrFwVY	2nd Rejection at Nazareth		rascunho	
-391	ent:theographic:rec5E1T7Mq1psBubn	John Beheaded		rascunho	
-393	ent:theographic:rec8AUk5qsGus2shA	Feeding of Five Thousand		rascunho	
-394	ent:theographic:recQ8WbFKwtwzK9Xm	Jesus Walks on Water		rascunho	
-396	ent:theographic:recXbkZXIXcuKVF6d	Healing in Gennesaret		rascunho	
-398	ent:theographic:recah9fwlW8Xyk4gn	Commandments and Tradition Discourse		rascunho	
-399	ent:theographic:rec7Xd0T6QiyeeChg	Healing Canaanite Daughter		rascunho	
-401	ent:theographic:reccrRGqDRLWjCHog	Feeding of Four Thousand		rascunho	
-404	ent:theographic:recBuPmgXN9v9X6WI	Peter's Confession "Upon this Rock"		rascunho	
-405	ent:theographic:rec4eZvHbmI1QToIw	Foretelling the Death and Resurrection		rascunho	
-406	ent:theographic:recbbehq3RkfnSmCE	The Transfiguation		rascunho	
-407	ent:theographic:recXhKGCw4B1CjXQB	Healing a Boy with a Demon		rascunho	
-408	ent:theographic:recyFfX2l12rwEkqk	Second Foretelling of Death and Resurrection		rascunho	
-409	ent:theographic:recvkY2icLy3QDClR	Tax Coin in a Fish's Mouth		rascunho	
-410	ent:theographic:recIZ6XquF0X7jaNE	Teachings on Humility/Temptation/Reconciliation		rascunho	
-400	ent:theographic:rechQpDJIE2FCEYTU	Healing a Crowd near Sea of Galilee		rascunho	
-402	ent:theographic:recqtoV4JQiYCmkZN	Discourse with Pharisees and Saducees		rascunho	
-403	ent:theographic:rec1QOmEc6elW8boO	Healing a Blind Man at Bethsaida		rascunho	
-421	ent:theographic:recO855E9csJLnyFO	Samaritans Reject Jesus		rascunho	
-422	ent:theographic:rec5EAcIz2rHZRN8q	70 Sent Out		rascunho	
-423	ent:theographic:recm9poq0bKg2RuU5	Good Samaritan Parable Taught		rascunho	
-424	ent:theographic:recycS0pNycJe2Xet	Jesus meets Martha and Mary		rascunho	
-425	ent:theographic:reco0PVfMeFcQrURu	Lord's Prayer Taught		rascunho	
-428	ent:theographic:recrSSo7ihKbdos1g	Woes and Parables with Pharisees		rascunho	
-429	ent:theographic:receThtYDpzQmFpc1	Healing Woman With 18-year Infirmity		rascunho	
-430	ent:theographic:recoUkvcVV6nR1G2D	Mustard Seed and Leaven Teaching		rascunho	
-397	ent:theographic:recMCgwIq1sw9Q779	Bread of Life Sermon		rascunho	
-412	ent:theographic:recZcjp3TlQQqapTX	Feast of Tabernacles		rascunho	
-419	ent:theographic:recWT2eiDCOXEAbGB	Woman Caught in Adultery		rascunho	
-420	ent:theographic:recD6VSiTfaITZLz4	Light of the World/I am discourse		rascunho	
-426	ent:theographic:recxURN2uAbTe7CGr	Blind Man Healed		rascunho	
-427	ent:theographic:recs2ESnv8JHoLJNs	The Good Shepherd Teaching		rascunho	
-431	ent:theographic:recs1VxMp6PJ11GLW	Feast of Dedication		rascunho	
-438	ent:theographic:recR3zid90odgmB6g	Jesus Teaches in Perea		rascunho	
-439	ent:theographic:recN2veKNMtB7HzFi	Healing Blind Bartimaeus		rascunho	
-443	ent:theographic:recmXmhZt51doQu7o	Holy Week		rascunho	
-444	ent:theographic:recBsshyiGaHc6bgC	Triumphal Entry		rascunho	
-445	ent:theographic:rece7YQZcZkN73mF8	Temple Cleansed		rascunho	
-448	ent:theographic:recOZxrWd00qyF4Ej	Debates in the Temple		rascunho	
-449	ent:theographic:recN1gyMPKbPPQIMa	Olivet Discourse		rascunho	
-450	ent:theographic:recym9Dfibw7KdshX	Sanhedrin Conspiracy		rascunho	
-451	ent:theographic:rec3IGuoFfX4wwc0u	Judas Plans Betrayal		rascunho	
-452	ent:theographic:recehyRQPiIuEscz4	The Last Supper		rascunho	
-454	ent:theographic:recNQ0XuoN4rfJR3o	Prayer and Betrayal in Gethsemane		rascunho	
-455	ent:theographic:recP6WhPl8eV4tavO	Jewish Trials		rascunho	
-457	ent:theographic:recvsq3X87BSBcInj	Judas' Suicide		rascunho	
-456	ent:theographic:recUlD55WynUKdHAo	Roman Trials		rascunho	
-458	ent:theographic:rec7pLeyxV0yEdrcl	Bearing Cross to Golgotha		rascunho	
-460	ent:theographic:recwQXXtK8ZbnYuIJ	Resurrection and Ascension		rascunho	
-446	ent:theographic:recotN6XCwPBF0OzT	Fig Tree Cursed		rascunho	
-447	ent:theographic:recYOqX5Qe2a0FHvw	Teaching by the Fig Tree		rascunho	
-436	ent:theographic:recTplXPehmPfFUiG	Lepers Healed		rascunho	
-437	ent:theographic:recrwlbTDWOETPpei	Discourse on the Kingdom and Other Parables		rascunho	
-440	ent:theographic:reccSs8loWRLm8LAb	Zaccheus Converted and Parable of the Pounds		rascunho	
-432	ent:theographic:rec70ZLu9pdrEWXR9	Teaching and Healing in Perea to Jerusalem		rascunho	
-433	ent:theographic:reclZp6jMKWzYmop9	Lazarus Raised form the Dead		rascunho	
-434	ent:theographic:recZhxqZJmXuGMdvd	Chief Priests Conspire Against Jesus		rascunho	
-435	ent:theographic:recMIEeRCAf7IGRwc	Jesus Withdraws to Ephraim		rascunho	
-441	ent:theographic:recrB2eWea9OCFtOz	Mary Anoints Jesus		rascunho	
-453	ent:theographic:recu6M6co9Iaw0Ow5	Upper Room Discourse		rascunho	
-459	ent:theographic:rechX4p94qqiHLqLx	Crucifixion and Burial		rascunho	
-304	ent:theographic:recvfB75N6vrQwhWW	The Holy Spirit is promised		rascunho	
-305	ent:theographic:rec06pcAZBChUBKxF	Jesus ascends to Heaven		rascunho	
-306	ent:theographic:reczDqE366xgbgv2C	Matthias replaces Judas		rascunho	
-307	ent:theographic:recIu7xhASS4Ufyfd	The Holy Spirit comes		rascunho	
-308	ent:theographic:recQoK9KFveLh556S	Peter preaches at Pentecost		rascunho	
-309	ent:theographic:recVrh6Nbm3PruADf	The church grows		rascunho	
-310	ent:theographic:recLnDbrahKzEue0K	Lame man healed		rascunho	
-311	ent:theographic:reciu7dT92C4dTrfl	Peter preaches in Solomon's Portico		rascunho	
-312	ent:theographic:rech8qvzNnkDTqCi3	Peter and John's Trial		rascunho	
-313	ent:theographic:recNQxwdQFjZidQTP	Believers pray for boldness		rascunho	
-314	ent:theographic:rec5Y0EXegwQ5m9mX	Believers share all things		rascunho	
-315	ent:theographic:recnjhZVhcbtc7WL0	Ananias and Sapphira lie to God		rascunho	
-316	ent:theographic:rectkWZqlKG1cfOQT	Apostles work signs and wonders in Solomon's Portico		rascunho	
-317	ent:theographic:recCcRDJtUxaIqXnD	Apostles arrested, put on trial		rascunho	
-318	ent:theographic:rec1qE6wAe0XINRoV	Gamaliel advises the counsel and Apostles freed		rascunho	
-319	ent:theographic:recXUpfeHouc4qLEl	Seven chosen to serve		rascunho	
-320	ent:theographic:reclAFi4IpJvlWCDp	Stephen is seized		rascunho	
-321	ent:theographic:recNZVX1qwBc7F9AU	Stephen addresses the council		rascunho	
-322	ent:theographic:recgcZKRVZDvMUMOa	Stephen is stoned		rascunho	
-323	ent:theographic:recVjdJplfI1wSxYk	Saul persecutes the church		rascunho	
-324	ent:theographic:recP6mZs3oSlZdrT0	Philip preaches in Samaria		rascunho	
-325	ent:theographic:recvI0SgATGCasGsV	Conversion of Ethiopian Eunuch		rascunho	
-326	ent:theographic:recCz7opcoITkiZiq	Saul is converted		rascunho	
-327	ent:theographic:reczeOH6wbjkZHP1w	Saul proclaims Jesus		rascunho	
-328	ent:theographic:recxH9n2Xk1PM6DvB	Peter heals Aeneas and Dorcas		rascunho	
-329	ent:theographic:rec4fFrtrUuDVkTNK	Peter meets Cornelius		rascunho	
-330	ent:theographic:recCef9mlyuV3XWd3	Peter preaches to gentiles in Caesarea		rascunho	
-331	ent:theographic:recNnOBWct1TV6CUZ	Peter defends Gentile salvation		rascunho	
-332	ent:theographic:recn2U67FPmywxqcb	Disciples first called Christians		rascunho	
-333	ent:theographic:recCCk6aW2ZbOCRTd	Herod kills James		rascunho	
-334	ent:theographic:recDiHn0k1yUMCdjc	Herod imprisons Peter		rascunho	
-335	ent:theographic:recMhkv38hrlSmT3K	An angel rescues Peter from prison		rascunho	
-336	ent:theographic:recTAdkQX4sglPtLl	Herod dies		rascunho	
-337	ent:theographic:recJl6YAS1kSQ6t8W	First missionary journey begins		rascunho	
-338	ent:theographic:recUWXmZlrKxIx99u	First Missionary Journey		rascunho	
-339	ent:theographic:recJeAtSLg0KP2loe	Barnabas and Saul go to Cyprus		rascunho	
-340	ent:theographic:recGlchVqaW39mkY0	Mission to Antioch in Pisidia		rascunho	
-341	ent:theographic:receeGDZ90DJxYxnX	Mission to Iconium		rascunho	
-342	ent:theographic:recrre0r2IHdN3Y7Z	Mission to Lystra and Derbe		rascunho	
-343	ent:theographic:reckt5soySSqCZnoa	Return to Antioch in Syria		rascunho	
-344	ent:theographic:recwmsQ1HEDGztu9O	Jerusalem Council		rascunho	
-345	ent:theographic:reciR4wcxOAcLxak0	Second Missionary Journey		rascunho	
-346	ent:theographic:recW2x0namY3sL2iX	Paul and Barnabas part ways		rascunho	
-348	ent:theographic:recsnRcoxqD4pQGHp	Second Missionary Journey begins		rascunho	
-349	ent:theographic:recinOtqH81aspLoO	Timothy Joins Paul and Silas		rascunho	
-350	ent:theographic:recayBHkzCbMe6dnD	Mission to Phrygia, Galatia and Asia		rascunho	
-351	ent:theographic:recmIpAsHFs5pOzZ6	Call to Macedonia		rascunho	
-352	ent:theographic:reczE4p2AzSrs4ppP	Lydia's Conversion		rascunho	
-353	ent:theographic:rec1Olk9cxeWoT5Jl	Paul casts demon out of soothsayer		rascunho	
-354	ent:theographic:recVY5whVRxmh37rH	Paul and Silas imprisoned		rascunho	
-355	ent:theographic:recX4DzqXgIe0R2T4	Philippian jailer converted		rascunho	
-356	ent:theographic:rec611BDzVM1WOUa5	Paul and Silas released		rascunho	
-357	ent:theographic:recrnXnFkh9CGTgkn	Uproar in Thessalonica		rascunho	
-358	ent:theographic:recF289Cj0XMYVOmr	Mission to Berea		rascunho	
-359	ent:theographic:reclKAhjHwMnSyOB2	Paul preaches in Athens		rascunho	
-360	ent:theographic:recZLqdKx9mrT0bCv	Mission to Corinth, 1&2 Thess Written		rascunho	
-347	ent:theographic:reco0fEiYQ6hKFYc5	Paul Writes Galatians		rascunho	
-361	ent:theographic:recxAgEs5O3piUpAG	Return from Second Missionary Journey		rascunho	
-362	ent:theographic:receG7A0Y0VjWPff1	Third Missionary Journey Begins		rascunho	
-363	ent:theographic:rec4bAiAcAOo9mPwO	Third Missionary Journey		rascunho	
-364	ent:theographic:rec2buqN0Q38Yuqme	Mission to Ephesus/1 Cor Written		rascunho	
-365	ent:theographic:recl2rPfuRl5ZYiYP	Riot in Ephesus		rascunho	
-366	ent:theographic:recGXoNtdiKu28Wff	Mission to Macedonia and Greece		rascunho	
-367	ent:theographic:recCiHwYp3CSqFWrK	Eutychus revived		rascunho	
-368	ent:theographic:recbGb0Cb2yIRqmle	Voyage to Miletus		rascunho	
-369	ent:theographic:recwlxgjUu5AwPX9D	Paul speaks to Ephesian Elders		rascunho	
-370	ent:theographic:recxOoLkd6wFyKysC	Voyage from Miletus to Jerusalem		rascunho	
-371	ent:theographic:recYE6hOLCtnqejur	Paul visits elders in Jerusalem		rascunho	
-372	ent:theographic:recuV2kc7FiAUIuBQ	Paul arrested in the Temple		rascunho	
-373	ent:theographic:recR2Yyty10Qn41wQ	Paul gives his testimony		rascunho	
-374	ent:theographic:rec9DRZs8DbQy0fv5	Paul goes before the Council		rascunho	
-375	ent:theographic:rectG8MR4Z2zb8mwZ	The conspiracy to kill Paul		rascunho	
-376	ent:theographic:recODnfv69EyvRMvA	Paul sent to Felix		rascunho	
-377	ent:theographic:recjSyWPVWxolQ2r4	Paul appeals to Caesar		rascunho	
-378	ent:theographic:recZZnST3yj4b1akY	Agrippa and Bernice meet Festus		rascunho	
-379	ent:theographic:recltAvLmGRfERhYp	Paul goes before Agrippa		rascunho	
-380	ent:theographic:recJWNH2OCuUoOz6e	Journey to Rome begins		rascunho	
-381	ent:theographic:recAIElabptRPkpxz	Paul's Journey to Rome		rascunho	
-382	ent:theographic:recXiU82RVp1vo67a	Paul is shipwrecked by a storm		rascunho	
-383	ent:theographic:recXUXZhzA47ZRt5F	Paul stays at Malta		rascunho	
-384	ent:theographic:recuZhS7z4CatBOO0	Paul arrives at Rome		rascunho	
-385	ent:theographic:recGrIgOxWnxVl8h0	Paul's First Roman imprisonment		rascunho	
+1	ent:theographic:recOIPcFaPCjMpQ6w	Creation of all things	Penciptaan segala sesuatu	revisado	rev. IA
+2	ent:theographic:recTU3ZxG7zQ61N9d	Creation of Adam and Eve	Penciptaan Adam dan Hawa	revisado	rev. IA
+3	ent:theographic:recj3SioaPwrDtpGT	The Fall	Kejatuhan	revisado	rev. IA
+4	ent:theographic:recSFDBpbT8HGEtyd	Lifetime of Adam	Kehidupan Adam	revisado	rev. IA
+5	ent:theographic:recrEQsBlZOgXbLiB	Cain kills Abel	Kain membunuh Habel	revisado	rev. IA
+6	ent:theographic:recl4Bcpg9yzJsEqI	God curses Cain	Tuhan mengutuk Kain	revisado	rev. IA
+7	ent:theographic:recp7P8QOAzrtw9Ly	Birth of Seth	Kelahiran Set	revisado	rev. IA
+8	ent:theographic:rec96xYWb8KLaUZpF	Lifetime of Seth	Kehidupan Set	revisado	rev. IA
+9	ent:theographic:rec0irQ4RDrOjQKWD	Birth of Enos	Kelahiran Enos	revisado	rev. IA
+10	ent:theographic:recAeYv2iAFNW3dOZ	Lifetime of Enos	Kehidupan Enos	revisado	rev. IA
+11	ent:theographic:recM0WSoo4n0iYARu	Birth of Cainan	Kelahiran Kenan	revisado	rev. IA
+12	ent:theographic:recJEeDtyPx5U35PG	Lifetime of Cainan	Kehidupan Kenan	revisado	rev. IA
+13	ent:theographic:recbhJTgfqzA2wi9g	Birth of Mahlaleel	Kelahiran Mahalalel	revisado	rev. IA
+14	ent:theographic:recP4eETeAB1w2UDk	Lifetime of Mahlaleel	Kehidupan Mahalalel	revisado	rev. IA
+15	ent:theographic:rec1gA68LB2NDsnCR	Birth of Jared	Kelahiran Yared	revisado	rev. IA
+16	ent:theographic:reckfJ2MFfKg7AD3h	Lifetime of Jared	Kehidupan Yared	revisado	rev. IA
+17	ent:theographic:rec0pSsVe8fi0jw9A	Birth of Enoch	Kelahiran Henok	revisado	rev. IA
+18	ent:theographic:recZy5b1c8nMODrQo	Lifetime of Enoch	Kehidupan Henok	revisado	rev. IA
+19	ent:theographic:recECi7gnsZNbykIS	Birth of Methuselah	Kelahiran Metusalah	revisado	rev. IA
+20	ent:theographic:rec7F43tR0YS2M8xS	Lifetime of Methuselah	Kehidupan Metusalah	revisado	rev. IA
+21	ent:theographic:recYz6KtAthSLpDsE	Birth of Lamech	Kelahiran Lamek	revisado	rev. IA
+22	ent:theographic:rec3QYioaVB7t2ghK	Lifetime of Lamech	Kehidupan Lamek	revisado	rev. IA
+23	ent:theographic:rec4kRWTXS86nus0I	Death of Adam	Kematian Adam	revisado	rev. IA
+24	ent:theographic:recg9ZkB8FoyQTH8v	Enoch taken up	Henok diangkat	revisado	rev. IA
+25	ent:theographic:recN7DBKYBEZRDgO7	Death of Seth	Kematian Set	revisado	rev. IA
+26	ent:theographic:recLhxi3tDTOD3wzR	Birth of Noah	Kelahiran Nuh	revisado	rev. IA
+27	ent:theographic:recTdAS4YoPxLBszy	Lifetime of Noah	Kehidupan Nuh	revisado	rev. IA
+28	ent:theographic:reciFgNLimxSBMqKH	Death of Enos	Kematian Enos	revisado	rev. IA
+29	ent:theographic:recC3DfLQVkOYAv8e	Death of Cainan	Kematian Kenan	revisado	rev. IA
+30	ent:theographic:recicDx68rL317hoE	Death of Mahlaleel	Kematian Mahalalel	revisado	rev. IA
+31	ent:theographic:recQUPYt83xclFDlk	Death of Jared	Kematian Yared	revisado	rev. IA
+32	ent:theographic:rec1n3lFKpydGhoQL	God decides to destroy every living thing	Tuhan memutuskan memusnahkan segala makhluk hidup	revisado	rev. IA
+33	ent:theographic:recpUCaR0HNgYjco5	Birth of Shem	Kelahiran Sem	revisado	rev. IA
+34	ent:theographic:recxg4gEuXG5R6PUZ	Lifetime of Shem	Kehidupan Sem	revisado	rev. IA
+35	ent:theographic:recZcXNIkXx2zXaW3	God instructs Noah to build the ark	Tuhan memerintahkan Nuh membuat bahtera	revisado	rev. IA
+36	ent:theographic:recc0kcj2zjtrfU8n	Death of Lamech	Kematian Lamek	revisado	rev. IA
+37	ent:theographic:recvF4VYGrRno2tu5	Death of Methuselah	Kematian Metusalah	revisado	rev. IA
+38	ent:theographic:recmLyx1yqtuANkqd	The Great Flood begins	Air bah besar dimulai	revisado	rev. IA
+39	ent:theographic:recwQJTWTmTkUMHHp	The Great Flood	Air bah besar	revisado	rev. IA
+40	ent:theographic:recMNRtVxdTnlGYoJ	Water covers the earth	Air menutupi bumi	revisado	rev. IA
+41	ent:theographic:rec1P4d8N4XdXzH2l	The flood subsides	Air bah surut	revisado	rev. IA
+42	ent:theographic:recnAzV0utz4k20eC	Leaving the Ark	Keluar dari bahtera	revisado	rev. IA
+43	ent:theographic:recUsWq7FcQB7vaMa	God makes a covenant with Noah	Tuhan mengadakan perjanjian dengan Nuh	revisado	rev. IA
+44	ent:theographic:recgz06wNQlsq6kOc	Noah gets drunk and Canaan is cursed	Nuh mabuk dan Kanaan dikutuk	revisado	rev. IA
+45	ent:theographic:rec7uQ8Nhf6h5zdfj	Birth of Arphaxad	Kelahiran Arpaksad	revisado	rev. IA
+46	ent:theographic:recQDMfXnyQKhXj01	Lifetime of Arphaxad	Kehidupan Arpaksad	revisado	rev. IA
+47	ent:theographic:recN97j5QCkdCwVOC	Birth of Salah	Kelahiran Selah	revisado	rev. IA
+48	ent:theographic:rectmsC3P5l7oRNpD	Lifetime of Salah	Kehidupan Selah	revisado	rev. IA
+49	ent:theographic:rec1JFgGFGfK07blt	Birth of Eber	Kelahiran Eber	revisado	rev. IA
+50	ent:theographic:rec3cw1D7e1QItoGc	Lifetime of Eber	Kehidupan Eber	revisado	rev. IA
+51	ent:theographic:recsQpAQgJcwaSk9l	Birth of Peleg	Kelahiran Peleg	revisado	rev. IA
+52	ent:theographic:recFXC4GpemMuhURF	Lifetime of Peleg	Kehidupan Peleg	revisado	rev. IA
+53	ent:theographic:recy4o2BxavybTuX6	Tower of Babel	Menara Babel	revisado	rev. IA
+54	ent:theographic:recO9NRftpoIMlYmr	Birth of Reu	Kelahiran Rehu	revisado	rev. IA
+55	ent:theographic:recZegzr6mX3DH8vc	Lifetime of Reu	Kehidupan Rehu	revisado	rev. IA
+56	ent:theographic:recfX4yWDQUMG8Oqh	Birth of Serug	Kelahiran Serug	revisado	rev. IA
+57	ent:theographic:recLx9SIvsFEIJgVo	Lifetime of Serug	Kehidupan Serug	revisado	rev. IA
+58	ent:theographic:rec1LWfxUiRxxCrbn	Birth of Nahor	Kelahiran Nahor	revisado	rev. IA
+59	ent:theographic:recIfpeMJFEOdSQhh	Lifetime of Nahor	Kehidupan Nahor	revisado	rev. IA
+60	ent:theographic:recePREjv2zZ8Esoo	Birth of Terah	Kelahiran Terah	revisado	rev. IA
+61	ent:theographic:recB5Rg7JlgsMcPyq	Lifetime of Terah	Kehidupan Terah	revisado	rev. IA
+62	ent:theographic:recyn98EnxpfPAaEq	Death of Peleg	Kematian Peleg	revisado	rev. IA
+63	ent:theographic:rec118tvZQItG2hEI	Death of Nahor	Kematian Nahor	revisado	rev. IA
+64	ent:theographic:recjX86XiYE9up0Ux	Death of Noah	Kematian Nuh	revisado	rev. IA
+65	ent:theographic:recXveJRjCtPNMLqs	Birth of Abraham	Kelahiran Abraham	revisado	rev. IA
+66	ent:theographic:recfnatCOLEHFYeLB	Lifetime of Abraham	Kehidupan Abraham	revisado	rev. IA
+67	ent:theographic:rectQ4Vg6XbpTyR92	Judgeship of Jair	Kepemimpinan hakim Yair	revisado	rev. IA
+68	ent:theographic:rec8LzDmLtoQ5PD6q	Death of Reu	Kematian Rehu	revisado	rev. IA
+69	ent:theographic:rechmkETHJXlw66eb	Death of Serug	Kematian Serug	revisado	rev. IA
+70	ent:theographic:recYgh6yAIxRItDC9	Death of Terah	Kematian Terah	revisado	rev. IA
+71	ent:theographic:rechJv1ksZ00ye38i	Abraham enters Canaan	Abraham memasuki Kanaan	revisado	rev. IA
+72	ent:theographic:rec2pnFsObyEoOfGQ	Abrahamic Covenant	Perjanjian dengan Abraham	revisado	rev. IA
+73	ent:theographic:recbqTND1uSdqNjOx	Abraham goes to Egypt	Abraham pergi ke Mesir	revisado	rev. IA
+74	ent:theographic:recc78JIsfuTy7cNu	Sojourn in Canaan and Egypt	Perantauan di Kanaan dan Mesir	revisado	rev. IA
+75	ent:theographic:recG5DZ6bn0BDuYH9	Abraham and Lot Separate	Abraham dan Lot berpisah	revisado	rev. IA
+76	ent:theographic:rechXJhZerr2X4BnE	Birth of Ishmael	Kelahiran Ismael	revisado	rev. IA
+77	ent:theographic:rec1CnwQbgxnwGiRS	Lifetime of Ishmael	Kehidupan Ismael	revisado	rev. IA
+78	ent:theographic:reciSatPkxfnd664i	Death of Arphaxad	Kematian Arpaksad	revisado	rev. IA
+79	ent:theographic:recITDSS0o4dApwQg	Sodom Destroyed	Sodom dihancurkan	revisado	rev. IA
+80	ent:theographic:recsPU7EMhmA9z27x	Birth of Isaac	Kelahiran Isak	revisado	rev. IA
+81	ent:theographic:recMAoYK2dHmjhRh9	Lifetime of Isaac	Kehidupan Isak	revisado	rev. IA
+82	ent:theographic:recefHHfdDlITHHsH	Death of Salah	Kematian Selah	revisado	rev. IA
+83	ent:theographic:recSDGDMwUBAMUgur	Isaac Marries Rebekah	Isak menikahi Ribka	revisado	rev. IA
+84	ent:theographic:recTZ4anILXT9AMbx	Death of Shem	Kematian Sem	revisado	rev. IA
+85	ent:theographic:recd4mOzI2nL66vR5	Birth of Jacob and Esau	Kelahiran Yakub dan Esau	revisado	rev. IA
+86	ent:theographic:recTkocSMI0NxpIrw	Lifetime of Jacob	Kehidupan Yakub	revisado	rev. IA
+87	ent:theographic:recmnGiHVM3Hylr7r	Nimrod's kingdom begins	Kerajaan Nimrod dimulai	revisado	rev. IA
+88	ent:theographic:recJYhotncnfEqGcN	Death of Abraham	Kematian Abraham	revisado	rev. IA
+89	ent:theographic:rec6BqgiWIs1ADP6z	Death of Eber	Kematian Eber	revisado	rev. IA
+90	ent:theographic:recOWUvuVc8kC9Q1C	Death of Ishmael	Kematian Ismael	revisado	rev. IA
+91	ent:theographic:recpdpPhaNNytXNYL	Birth of Reuben	Kelahiran Ruben	revisado	rev. IA
+92	ent:theographic:rec8BApZ81SUEiaE6	Birth of Simeon	Kelahiran Simeon	revisado	rev. IA
+93	ent:theographic:recbEWfeMbneEhmCW	Birth of Levi	Kelahiran Lewi	revisado	rev. IA
+94	ent:theographic:recAyNphNXcFdeBdv	Birth of Judah	Kelahiran Yehuda	revisado	rev. IA
+95	ent:theographic:recebg3uMMRi5kehC	Birth of Dan	Kelahiran Dan	revisado	rev. IA
+96	ent:theographic:reciXEy2Dh8v1ZMgx	Birth of Naphtali	Kelahiran Naftali	revisado	rev. IA
+97	ent:theographic:recjP69Rr334GwfCD	Birth of Gad	Kelahiran Gad	revisado	rev. IA
+98	ent:theographic:recyHq1K0jXfzoxSG	Birth of Asher	Kelahiran Asyer	revisado	rev. IA
+99	ent:theographic:rec7UNUOWD8T8j0H7	Birth of Issachar	Kelahiran Isakar	revisado	rev. IA
+100	ent:theographic:rec79Sud9E887BhRT	Birth of Zebulon	Kelahiran Zebulon	revisado	rev. IA
+101	ent:theographic:rec8lxfZ0sKEUfPfi	Birth of Dinah	Kelahiran Dina	revisado	rev. IA
+102	ent:theographic:recZDLkLCBpaZjV7D	Birth of Joseph	Kelahiran Yusuf	revisado	rev. IA
+103	ent:theographic:recj8qDYwzBEfwBAa	Lifetime of Joseph	Kehidupan Yusuf	revisado	rev. IA
+104	ent:theographic:recueVlIF65sLlqSO	Rachel dies giving birth to Benjamin	Rahel meninggal saat melahirkan Benyamin	revisado	rev. IA
+105	ent:theographic:recNE3SvBrPoTRiMS	Joseph sold to Egypt	Yusuf dijual ke Mesir	revisado	rev. IA
+106	ent:theographic:recJRhLZWXyofMii6	Birth of Perez	Kelahiran Peres	revisado	rev. IA
+107	ent:theographic:rechIcTdBsoSsooEI	Birth of Job	Kelahiran Ayub	revisado	rev. IA
+108	ent:theographic:recq4rk0MUq6acKxS	Lifetime of Job	Kehidupan Ayub	revisado	rev. IA
+109	ent:theographic:recqKt1B6fiiSKrK6	Joseph imprisoned	Yusuf dipenjara	revisado	rev. IA
+110	ent:theographic:recnTimjDqmxMYqRZ	Death of Isaac	Kematian Isak	revisado	rev. IA
+111	ent:theographic:recD7RqjeIpsJAoBc	Joseph Promoted in Egypt	Yusuf diangkat tinggi di Mesir	revisado	rev. IA
+112	ent:theographic:recZlsev4ThVh4o6I	7 years of plenty	Tujuh tahun kelimpahan	revisado	rev. IA
+113	ent:theographic:rec85BvWuap3CDiMT	7 years of famine	Tujuh tahun kelaparan	revisado	rev. IA
+114	ent:theographic:rec1ryOcznIUObhW7	Joseph's brothers go to Egypt	Saudara-saudara Yusuf pergi ke Mesir	revisado	rev. IA
+115	ent:theographic:rec2Vbu9LcbJesuS0	Joseph's brothers return to Egypt	Saudara-saudara Yusuf kembali ke Mesir	revisado	rev. IA
+116	ent:theographic:recwCFb0NhrYMkl8t	Death of Jacob	Kematian Yakub	revisado	rev. IA
+117	ent:theographic:recMNT9RB1RJiLlYW	Job's Trial	Ujian Ayub	revisado	rev. IA
+118	ent:theographic:recPAzttalK45wnXd	Death of Joseph	Kematian Yusuf	revisado	rev. IA
+119	ent:theographic:rect0K24pgi8HBlvL	Death of Job	Kematian Ayub	revisado	rev. IA
+120	ent:theographic:rec6atQ3as7Qj2n5d	Birth of Moses	Kelahiran Musa	revisado	rev. IA
+121	ent:theographic:recJOhn4C4yKIJmvH	Lifetime of Moses	Kehidupan Musa	revisado	rev. IA
+122	ent:theographic:recwofVaBASTvL8lL	Moses Flees Pharaoh	Musa melarikan diri dari Firaun	revisado	rev. IA
+123	ent:theographic:recynRwNAbtX5ShQ7	Birth of Caleb	Kelahiran Kaleb	revisado	rev. IA
+124	ent:theographic:rechguBS4b9kXx3z3	Lifetime of Joshua	Kehidupan Yosua	revisado	rev. IA
+125	ent:theographic:recjkmUO88wihv8Ci	Exodus from Egypt	Keluaran dari Mesir	revisado	rev. IA
+126	ent:theographic:recr71Fz4NHTnGLJ2	Wilderness Wanderings	Pengembaraan di padang gurun	revisado	rev. IA
+127	ent:theographic:reca8LvAmFPl1tmnN	Ten Commandments Given	Sepuluh Perintah Allah diberikan	revisado	rev. IA
+128	ent:theographic:recvA947nCyo8kadV	Tabernacle Built	Kemah Suci dibangun	revisado	rev. IA
+129	ent:theographic:recxj71m6XPSaqIg2	Death of Moses	Kematian Musa	revisado	rev. IA
+130	ent:theographic:recSF4lyBebGjJEXI	Crossing the Jordan into Canaan	Menyeberangi Yordan ke Kanaan	revisado	rev. IA
+131	ent:theographic:rec0t3McGWoyd6kTB	War with Canaanites	Perang melawan orang Kanaan	revisado	rev. IA
+132	ent:theographic:rec91XeIAmvH5rhav	Dividing the land	Pembagian tanah	revisado	rev. IA
+133	ent:theographic:recnPiyyKviVUPHO6	Death of Joshua	Kematian Yosua	revisado	rev. IA
+134	ent:theographic:recEpl6nDyA0TWVdW	Subjugation by Cushan-rishathaim	Penindasan oleh Kusan-Risyataim	revisado	rev. IA
+135	ent:theographic:recUvk5tT0xGxR71o	Deliverance by Othniel	Pembebasan oleh Otniel	revisado	rev. IA
+136	ent:theographic:recG0Smwr0v3S7ShM	Subjugation by Eglon	Penindasan oleh Eglon	revisado	rev. IA
+137	ent:theographic:recxl5FkotW1u50nA	Deliverance by Ehud	Pembebasan oleh Ehud	revisado	rev. IA
+138	ent:theographic:rec07gtJgfa7skhaQ	Subjugation by Jabin	Penindasan oleh Yabin	revisado	rev. IA
+139	ent:theographic:recoroJg305CLphtu	Deliverance by Barak And Deborah	Pembebasan oleh Barak dan Debora	revisado	rev. IA
+140	ent:theographic:recNAaoS2dLaYGVgh	Subjugation by Midian	Penindasan oleh Midian	revisado	rev. IA
+141	ent:theographic:recD6xiJWvESO0Wea	Deliverance by Gideon	Pembebasan oleh Gideon	revisado	rev. IA
+142	ent:theographic:recNLSBgKYUyByJwa	Usurpation by Abimelech	Perebutan kekuasaan oleh Abimelek	revisado	rev. IA
+143	ent:theographic:recWw6t8usixUbFOU	Judgeship of Tola	Kepemimpinan hakim Tola	revisado	rev. IA
+144	ent:theographic:rec7nesNMNffYRe3F	Oppression by Ammon and Philistia	Penindasan oleh Amon dan Filistin	revisado	rev. IA
+145	ent:theographic:rec3z1OqSDMH0rR7y	Judgeship of Eli	Kepemimpinan hakim Eli	revisado	rev. IA
+146	ent:theographic:recAfJj3Pv6wRG2nj	Deliverance by Jephthah	Pembebasan oleh Yefta	revisado	rev. IA
+147	ent:theographic:reczOHadpTVOuiidp	Judgeship of Ibzan	Kepemimpinan hakim Ibsan	revisado	rev. IA
+148	ent:theographic:recSRPo1LlWZ7tNaO	Philistine Dominion	Penguasaan Filistin	revisado	rev. IA
+149	ent:theographic:recGFZbQIjuGwXtTy	Judgeship of Elon	Kepemimpinan hakim Elon	revisado	rev. IA
+150	ent:theographic:rec4qaEmaRCFty5tl	Birth of Saul	Kelahiran Saul	revisado	rev. IA
+151	ent:theographic:recoKV71uxsJeHTWW	Judgeship of Abdon	Kepemimpinan hakim Abdon	revisado	rev. IA
+152	ent:theographic:recS77B5S6Jfdq5a3	Death of Eli, Ark Captured	Kematian Eli, tabut dirampas	revisado	rev. IA
+153	ent:theographic:rec24EmrBZzGvOD2U	Judgeship of Samson	Kepemimpinan hakim Simson	revisado	rev. IA
+154	ent:theographic:reccUeZb53JJ02Lv9	Sampson destroys Temple of Dagon	Simson menghancurkan kuil Dagon	revisado	rev. IA
+155	ent:theographic:recKRsEFLaEueJvei	Reign of Saul	Masa pemerintahan Saul	revisado	rev. IA
+156	ent:theographic:rec3uYdP5Fca5BJfX	United Kingdom	Kerajaan Bersatu	revisado	rev. IA
+157	ent:theographic:rec9JB5FY6jMOyEY3	David Kills Goliath	Daud membunuh Goliat	revisado	rev. IA
+158	ent:theographic:recXDTsDBCG9DaiGN	Death of Saul	Kematian Saul	revisado	rev. IA
+159	ent:theographic:reczzYTmzPPDcP3qv	Reign of David	Masa pemerintahan Daud	revisado	rev. IA
+160	ent:theographic:rec3TOdsAxCr5ADHA	Death of David	Kematian Daud	revisado	rev. IA
+161	ent:theographic:recKTbnO8VY7lXLeX	Reign of Solomon	Masa pemerintahan Salomo	revisado	rev. IA
+162	ent:theographic:recYlpu8OdsUJoG8g	Construction of Solomon's Temple	Pembangunan Bait Salomo	revisado	rev. IA
+163	ent:theographic:rec5W0YtPdi4yrvaY	Southern Kingdom (Judah)	Kerajaan Selatan (Yehuda)	revisado	rev. IA
+164	ent:theographic:rec3u4dUBOoBi5pUx	Death of Solomon	Kematian Salomo	revisado	rev. IA
+165	ent:theographic:recX0KzMJywvbeM6D	Reign of Rehoboam	Masa pemerintahan Rehabeam	revisado	rev. IA
+166	ent:theographic:rec3R4qyFlVjCRORt	Northern Kingdom (Israel)	Kerajaan Utara (Israel)	revisado	rev. IA
+167	ent:theographic:rec824qPcsyF7GtTh	Reign of Jeroboam I	Masa pemerintahan Yerobeam I	revisado	rev. IA
+168	ent:theographic:recDK5FF0d1qrz8sn	Reign of Abijam	Masa pemerintahan Abiam	revisado	rev. IA
+169	ent:theographic:recfIqDLtdCqz7N3V	Death of Abijam	Kematian Abiam	revisado	rev. IA
+170	ent:theographic:recmEKC9vgAJDYa2z	Reign of Asa	Masa pemerintahan Asa	revisado	rev. IA
+171	ent:theographic:recoThUM3VEzmvB2Y	Reign of Nadab	Masa pemerintahan Nadab	revisado	rev. IA
+172	ent:theographic:recDnpywTo9ng7E08	Reign of Baasha	Masa pemerintahan Baesa	revisado	rev. IA
+173	ent:theographic:reczLjmDT8D3PwoN1	Reign of Elah	Masa pemerintahan Ela	revisado	rev. IA
+174	ent:theographic:rechi0erUTQ1OpSfg	Reign of Zimri	Masa pemerintahan Zimri	revisado	rev. IA
+175	ent:theographic:recAPL3crxsLpriXj	Reign of Tibni	Masa pemerintahan Tibni	revisado	rev. IA
+176	ent:theographic:recbKVjuSUpIxKCDm	Reign of Omri	Masa pemerintahan Omri	revisado	rev. IA
+177	ent:theographic:recT4xyx6gO1r4MMQ	Death of Tibni	Kematian Tibni	revisado	rev. IA
+178	ent:theographic:rec44ed0m1pZUujzb	Reign of Ahab	Masa pemerintahan Ahab	revisado	rev. IA
+179	ent:theographic:recPUkfMfzeKFMWT7	Death of Omri	Kematian Omri	revisado	rev. IA
+180	ent:theographic:reczE7xS17Z9mHerq	Death of Asa	Kematian Asa	revisado	rev. IA
+181	ent:theographic:recHolFWoWqNqtmup	Reign of Jehoshaphat	Masa pemerintahan Yosafat	revisado	rev. IA
+182	ent:theographic:recRiyMlpGQNCIZvm	Prophecies of Elijah	Nubuat Elia	revisado	rev. IA
+183	ent:theographic:recswFKDMGbMahY8n	Death of Jehoshaphat	Kematian Yosafat	revisado	rev. IA
+184	ent:theographic:rec6ssNxDhVqVIQb5	Reign of Ahaziah	Masa pemerintahan Ahazia	revisado	rev. IA
+185	ent:theographic:recD1Gv4SKNFG3zPa	Elijah Translated	Elia diangkat ke surga	revisado	rev. IA
+186	ent:theographic:recCh323mcqdG01EW	Prophecies of Elisha	Nubuat Elisa	revisado	rev. IA
+187	ent:theographic:receNV351SLbofU0a	Reign of Joram	Masa pemerintahan Yoram	revisado	rev. IA
+188	ent:theographic:recb9vQAySe8NXtZn	Reign of Jehoram	Masa pemerintahan Yehoram	revisado	rev. IA
+189	ent:theographic:rec8neSzth86PNqvR	Reign of Ahaziah (Jehoahaz)	Masa pemerintahan Ahazia (Yoahas)	revisado	rev. IA
+190	ent:theographic:reck6rXD9hZiDk0Kz	Reign of Jehu	Masa pemerintahan Yehu	revisado	rev. IA
+191	ent:theographic:recrLA9xtcQ35mLv1	Reign of Athaliah	Masa pemerintahan Atalya	revisado	rev. IA
+192	ent:theographic:recqa3Rn2VGAUlDtq	Death of Jehoram	Kematian Yehoram	revisado	rev. IA
+193	ent:theographic:recwy2j4O3x7NcWz5	Reign of Joash	Masa pemerintahan Yoas	revisado	rev. IA
+194	ent:theographic:rectK1BIzsiRL5n6U	Death of Jehu	Kematian Yehu	revisado	rev. IA
+195	ent:theographic:rec8OzyADaljQSqmd	Reign of Jehoahaz	Masa pemerintahan Yoahas	revisado	rev. IA
+196	ent:theographic:recz99BZY6sWTR2SI	Death of Jehoahaz	Kematian Yoahas	revisado	rev. IA
+197	ent:theographic:rec70XpPIr8MiLTVb	Reign of Jehoash	Masa pemerintahan Yoas	revisado	rev. IA
+198	ent:theographic:rec75MawjODD5ju3b	Reign of Amaziah	Masa pemerintahan Amazia	revisado	rev. IA
+199	ent:theographic:recGe7VTJOGbn63NQ	Reign of Jeroboam II	Masa pemerintahan Yerobeam II	revisado	rev. IA
+200	ent:theographic:recKICyY8GrWaYCq3	Prophecies of Jonah	Nubuat Yunus	revisado	rev. IA
+201	ent:theographic:recsgU87rUrPKR9uA	Death of Jehoahash	Kematian Yoahas	revisado	rev. IA
+202	ent:theographic:rec6VtctTK9zZ5UxZ	Prophecies of Joel	Nubuat Yoel	revisado	rev. IA
+203	ent:theographic:recdPHV2xNXFj2JT0	Death of Amaziah	Kematian Amazia	revisado	rev. IA
+204	ent:theographic:recOJfWD0IUcT4yJD	Reign of Uzziah	Masa pemerintahan Uzia	revisado	rev. IA
+205	ent:theographic:rec0MJooZFfHsxW1N	Prophecies of Amos	Nubuat Amos	revisado	rev. IA
+206	ent:theographic:recekTocE5mIkvDEk	Prophecies of Hosea	Nubuat Hosea	revisado	rev. IA
+207	ent:theographic:recFQnWRST9SS0RRp	Death of Jeroboam II	Kematian Yerobeam II	revisado	rev. IA
+208	ent:theographic:recUQaOuprbt82K3O	Reign of Zachariah	Masa pemerintahan Zakharia	revisado	rev. IA
+209	ent:theographic:recmYpqEy1fUpISEt	Reign of Shallum	Masa pemerintahan Salum	revisado	rev. IA
+210	ent:theographic:recWsgJ5fuSjjOZsT	Death of Zachariah	Kematian Zakharia	revisado	rev. IA
+211	ent:theographic:recZM1zHaLFcWOORu	Death of Shallum	Kematian Salum	revisado	rev. IA
+212	ent:theographic:recKk6oSdN570sACg	Reign of Menahem	Masa pemerintahan Menahem	revisado	rev. IA
+213	ent:theographic:recJTYIqu2oNs58Lc	Death of Menahem	Kematian Menahem	revisado	rev. IA
+214	ent:theographic:recQRI9PzXBoW4QVD	Reign of Pekahiah	Masa pemerintahan Pekahya	revisado	rev. IA
+215	ent:theographic:recfHf480bxdzn4Io	Death of Pekahiah	Kematian Pekahya	revisado	rev. IA
+216	ent:theographic:recuwnodcdBQpgk6J	Reign of Pekah	Masa pemerintahan Pekah	revisado	rev. IA
+217	ent:theographic:recQ1bj3p4Lj5MYY6	Prophecies of Isaiah	Nubuat Yesaya	revisado	rev. IA
+218	ent:theographic:rechq7jRwzAypqM7H	Death of Uzziah	Kematian Uzia	revisado	rev. IA
+219	ent:theographic:recEOMPybxT6g8y8E	Reign of Jotham	Masa pemerintahan Yotam	revisado	rev. IA
+220	ent:theographic:recOQgYeMRMqQbIMe	Prophecies of Micah	Nubuat Mikha	revisado	rev. IA
+221	ent:theographic:recglW6zUkkgDVPt9	Reign of Ahaz	Masa pemerintahan Ahas	revisado	rev. IA
+222	ent:theographic:recbJqPiE3mvFuUvn	Death of Jotham	Kematian Yotam	revisado	rev. IA
+223	ent:theographic:recOeT5LUf2J1nFXw	Death of Pekah	Kematian Pekah	revisado	rev. IA
+224	ent:theographic:recj8DXN0Leolmr8O	Reign of Hoshea	Masa pemerintahan Hosea	revisado	rev. IA
+225	ent:theographic:recCU4JFzMUcVRqAd	Death of Ahaz	Kematian Ahas	revisado	rev. IA
+226	ent:theographic:recRusMYR5At9TlEV	Reign of Hezekiah	Masa pemerintahan Hiskia	revisado	rev. IA
+227	ent:theographic:recxfNLfmrK6uzfSb	Death of Hezekiah	Kematian Hiskia	revisado	rev. IA
+228	ent:theographic:rece9FgMugc1bp3tG	Reign of Manasseh	Masa pemerintahan Manasye	revisado	rev. IA
+229	ent:theographic:recylsxpZLWlxVtrU	Prophecies of Nahum	Nubuat Nahum	revisado	rev. IA
+230	ent:theographic:recqjnBXaOQYKadrc	Death of Manasseh	Kematian Manasye	revisado	rev. IA
+231	ent:theographic:rec1X3krfmWLAKJXU	Reign of Amon	Masa pemerintahan Amon	revisado	rev. IA
+232	ent:theographic:recHieewSQcszdain	Death of Amon	Kematian Amon	revisado	rev. IA
+233	ent:theographic:recVf3eQjAq3nk94o	Reign of Josiah	Masa pemerintahan Yosia	revisado	rev. IA
+234	ent:theographic:rec5pDuWtEaOK7ehk	Prophecies of Jeremiah	Nubuat Yeremia	revisado	rev. IA
+235	ent:theographic:recUkdsuAuRono8LY	Prophecies of Zephaniah	Nubuat Zefanya	revisado	rev. IA
+236	ent:theographic:recsdAcHVpiiWFtm0	Death of Josiah	Kematian Yosia	revisado	rev. IA
+237	ent:theographic:recmY05Xj0sxEcdCh	Reign of Johoahaz (Shallum)	Masa pemerintahan Yoahas	revisado	rev. IA
+238	ent:theographic:reciunQ6bRGaY2gib	Reign of Jehoiakim	Masa pemerintahan Yoyakim	revisado	rev. IA
+239	ent:theographic:rece1avzrB0YDK1Ln	Prophecies of Habakkuk	Nubuat Habakuk	revisado	rev. IA
+240	ent:theographic:rec3iJVpZspQM64qQ	Prophecies of Daniel	Nubuat Daniel	revisado	rev. IA
+241	ent:theographic:reczmi6XtMXALtcNn	Reign of Jeconiah	Masa pemerintahan Yoyakin	revisado	rev. IA
+242	ent:theographic:recW2cNLqUyMIV6O7	Reign of Zedekiah	Masa pemerintahan Zedekia	revisado	rev. IA
+243	ent:theographic:recGUuZfUbylFAytG	Prophecies of Ezekiel	Nubuat Yehezkiel	revisado	rev. IA
+244	ent:theographic:recdiXqPQiDIBRI0Q	Prophecies of Obadiah	Nubuat Obaja	revisado	rev. IA
+245	ent:theographic:recQPoA7fH3wJi7v2	Prophecies of Haggai	Nubuat Hagai	revisado	rev. IA
+246	ent:theographic:recebNaZjPvbOqk4r	Prophecies of Zechariah	Nubuat Zakharia	revisado	rev. IA
+247	ent:theographic:recpSNqfLiST1KQqq	Prophecies of Malachi	Nubuat Maleakhi	revisado	rev. IA
+249	ent:theographic:recRd6H7B5gBuTYT9	Espousal of Mary	Pertunangan Maria dan Yusuf	revisado	rev. IA
+248	ent:theographic:recOtonfrqZVuz2iF	John's birth predicted	Nubuat kelahiran Yohanes	revisado	rev. IA
+253	ent:theographic:recchK9PHoqttFTdX	An Angel Speaks to Joseph in a Dream	Malaikat berbicara kepada Yusuf dalam mimpi	revisado	rev. IA
+250	ent:theographic:rec2xII53pVseJCB6	The Annuciation	Kabar sukacita kepada Maria	revisado	rev. IA
+251	ent:theographic:recsMmYHDdduT021e	Mary Visits Elizabeth	Maria mengunjungi Elisabet	revisado	rev. IA
+252	ent:theographic:recp7RblvtGupJInu	Birth of John the Baptist	Kelahiran Yohanes Pembaptis	revisado	rev. IA
+255	ent:theographic:rec2fX249sj1mmGFr	Wise Men Visit Herod	Orang majus mengunjungi Herodes	revisado	rev. IA
+256	ent:theographic:recVRh2awW5WGpXK4	Wise Men Visit Jesus	Orang majus menyembah Yesus Kristus	revisado	rev. IA
+257	ent:theographic:recHWkX7SvgnBZiuD	Joseph and Mary Flee to Egypt	Yusuf dan Maria lari ke Mesir	revisado	rev. IA
+258	ent:theographic:rec78vW2GDruKkctf	Herod slays male children	Herodes membunuh anak-anak laki-laki	revisado	rev. IA
+260	ent:theographic:recQdRNODeVwWG5Qx	Joseph and Mary return from Egypt	Yusuf dan Maria kembali dari Mesir	revisado	rev. IA
+262	ent:theographic:rec40p7ak4u60WdPB	Joseph and Mary return to Nazareth	Yusuf dan Maria kembali ke Nazaret	revisado	rev. IA
+254	ent:theographic:recg5KKSE8un6XLe6	Birth of Jesus	Kelahiran Yesus Kristus	revisado	rev. IA
+259	ent:theographic:recVUI3XqN3CdNF1k	Jesus Circumsized	Yesus disunat	revisado	rev. IA
+261	ent:theographic:recISCjAW413V6T1j	Temple Presentation of Jesus	Yesus dipersembahkan di Bait Allah	revisado	rev. IA
+263	ent:theographic:recHiT0IbNNmDry0s	Childhood of Jesus	Masa kanak-kanak Yesus Kristus	revisado	rev. IA
+264	ent:theographic:rec8FDMhG6menTpse	Jesus as a child in the Temple	Yesus kecil di Bait Allah	revisado	rev. IA
+265	ent:theographic:rec8aq3QrGCer9RqY	Jesus Growing Up	Yesus bertumbuh	revisado	rev. IA
+266	ent:theographic:recW9F8RuUqf5HZkd	John the Baptist Begins Ministry	Yohanes Pembaptis memulai pelayanan	revisado	rev. IA
+267	ent:theographic:rec8LSQHQdcYfC9La	John Baptizes Jesus	Yohanes Pembaptis membaptis Yesus Kristus	revisado	rev. IA
+268	ent:theographic:rec7GKv3V8PLB1Wk1	Temptations of Jesus	Pencobaan Yesus Kristus oleh Setan	revisado	rev. IA
+277	ent:theographic:recThval8jPdpjMQd	Jesus Leaves Judea toward Galilee	Yesus meninggalkan Yudea menuju Galilea	revisado	rev. IA
+279	ent:theographic:recokV9koCd9sHkZo	Jesus visits Galilee	Yesus mengunjungi Galilea	revisado	rev. IA
+281	ent:theographic:recfKYBkGyK1iVyQ7	Jesus in Capernaum	Yesus di Kapernaum	revisado	rev. IA
+282	ent:theographic:recYIGeTJrnJFAHyB	Fishers of Men	Penjala manusia	revisado	rev. IA
+284	ent:theographic:reczf8H4EoM3gfimU	Peter's Mother-in-law and Others Healed	Ibu mertua Simon dan orang lain disembuhkan	revisado	rev. IA
+276	ent:theographic:recbsEPvWlO2Ajcfo	John the Baptist Imprisoned	Herodes Antipas memenjarakan Yohanes Pembaptis	revisado	rev. IA
+283	ent:theographic:recVzgELtu6c6u0JJ	The Demoniac	Orang yang kerasukan	revisado	rev. IA
+280	ent:theographic:recDZ5yPUfsW2mQCB	Jesus Rejected at Nazareth	Yesus ditolak di Nazaret	revisado	rev. IA
+269	ent:theographic:rec51NMfUoy8EBm5D	John's Witness	Kesaksian Yohanes	revisado	rev. IA
+270	ent:theographic:rec2rWYKV739WLO4b	First Disciples Gathered	Murid-murid pertama dipanggil: Natanael, Andreas, Simon Petrus, Filipus	revisado	rev. IA
+271	ent:theographic:recamPG0iyTXyCMRx	Water to Wine	Air menjadi anggur	revisado	rev. IA
+272	ent:theographic:recBwb7o0eXRqj1Oa	Visiting Capernaum	Yesus mengunjungi Kapernaum	revisado	rev. IA
+273	ent:theographic:recajWYSuk71jMpgi	First Passover and Temple Cleansing	Paskah pertama dan pembersihan Bait Allah	revisado	rev. IA
+274	ent:theographic:recqe4jV2tmZC9XuG	Jesus and Nicodemus	Yesus dan Nikodemus	revisado	rev. IA
+275	ent:theographic:recj0lpW2pEiRfASU	John the Baptist Witnesses	Yohanes Pembaptis memberi kesaksian	revisado	rev. IA
+278	ent:theographic:recZVzEsSsBBuv6XX	The Samaritan Woman	Perempuan Samaria	revisado	rev. IA
+296	ent:theographic:rec5EydSXHdbLbzk1	Sermon on the Mount	Khotbah di bukit	revisado	rev. IA
+286	ent:theographic:recrx5gqQTez5Oz5h	Healing the Leper	Penyembuhan orang kusta	revisado	rev. IA
+297	ent:theographic:rec6mNLyG5AVN4X1b	Healing Centurion's Servant	Penyembuhan hamba perwira	revisado	rev. IA
+387	ent:theographic:recY3vd5gVnwqoRV1	Gadarene Demoniacs	Orang Gadara yang kerasukan	revisado	rev. IA
+287	ent:theographic:rec9Ni8NXcob4ou2m	Healing the Man with Palsy	Penyembuhan orang lumpuh	revisado	rev. IA
+288	ent:theographic:recbiDrbxO70fDsta	Jesus Calls Matthew	Yesus memanggil Matius	revisado	rev. IA
+289	ent:theographic:recbt0ME8XMDoNbVc	Fasting Question	Pertanyaan tentang puasa	revisado	rev. IA
+290	ent:theographic:rec4P9y8WdotpjMm9	Parable of the Winseskins	Perumpamaan tentang kain dan anggur baru	revisado	rev. IA
+388	ent:theographic:recMTSIklCghjlACt	Capernaum Miracles	Mukjizat di Kapernaum	revisado	rev. IA
+295	ent:theographic:recSpTfIckUAeEOLd	Apostles Chosen	Kedua belas rasul dipilih	revisado	rev. IA
+299	ent:theographic:recdgE4vWpwc2fVpK	Jesus' Message on John the Baptist	Pesan Yesus tentang Yohanes Pembaptis	revisado	rev. IA
+300	ent:theographic:recYaZ1gwefzzNB1V	Woe to Chorazin and Bethsaida	Celaka bagi Korazin dan Betsaida	revisado	rev. IA
+292	ent:theographic:recDFt0ANS33dAxri	Corn on the Sabbath	Gandum pada hari Sabat	revisado	rev. IA
+293	ent:theographic:reciGxBNHjPZwHKvO	Healing a Withered Hand	Penyembuhan tangan yang layu	revisado	rev. IA
+294	ent:theographic:recpYSwD914PD9tHU	Healing Multitudes	Penyembuhan banyak orang	revisado	rev. IA
+303	ent:theographic:recqkOAX88FDIN0ee	Blind and Dumb Demoniac and Following Discourse	Orang buta dan bisu yang kerasukan dan pengajaran berikutnya	revisado	rev. IA
+386	ent:theographic:rec7WzLFXKdweuzOD	Seaside Parables and Miracle	Perumpamaan di tepi pantai dan mukjizat	revisado	rev. IA
+285	ent:theographic:rechbRJbRUie1YGOk	Jesus' 1st Tour of Galilee	Perjalanan pertama Yesus keliling Galilea	revisado	rev. IA
+298	ent:theographic:recsTeovHSah64TzF	Widow's Son Resurrected	Anak janda di Nain dibangkitkan	revisado	rev. IA
+301	ent:theographic:recXZv0xfad7smkqB	Anointed by a Sinner Woman	Yesus diurapi oleh perempuan berdosa	revisado	rev. IA
+302	ent:theographic:recgL37NW080FcKh8	Jesus' 2nd Tour of Galilee	Perjalanan kedua Yesus keliling Galilea	revisado	rev. IA
+291	ent:theographic:recGpBzggp7LyILNR	Bethesda pool healing	Penyembuhan di kolam Betesda	revisado	rev. IA
+390	ent:theographic:rec6tRRdOlOUY9UNN	3rd Tour of Galilee	Perjalanan ketiga keliling Galilea	revisado	rev. IA
+389	ent:theographic:recnCLTHvWRdrFwVY	2nd Rejection at Nazareth	Penolakan kedua di Nazaret	revisado	rev. IA
+391	ent:theographic:rec5E1T7Mq1psBubn	John Beheaded	Yohanes Pembaptis dipenggal oleh Herodes Antipas	revisado	rev. IA
+393	ent:theographic:rec8AUk5qsGus2shA	Feeding of Five Thousand	Pemberian makan lima ribu orang	revisado	rev. IA
+394	ent:theographic:recQ8WbFKwtwzK9Xm	Jesus Walks on Water	Yesus berjalan di atas air	revisado	rev. IA
+396	ent:theographic:recXbkZXIXcuKVF6d	Healing in Gennesaret	Penyembuhan di Genesaret	revisado	rev. IA
+398	ent:theographic:recah9fwlW8Xyk4gn	Commandments and Tradition Discourse	Ajaran tentang perintah dan adat istiadat	revisado	rev. IA
+399	ent:theographic:rec7Xd0T6QiyeeChg	Healing Canaanite Daughter	Penyembuhan anak perempuan orang Kanaan	revisado	rev. IA
+401	ent:theographic:reccrRGqDRLWjCHog	Feeding of Four Thousand	Pemberian makan empat ribu orang	revisado	rev. IA
+404	ent:theographic:recBuPmgXN9v9X6WI	Peter's Confession "Upon this Rock"	Pengakuan Simon Petrus	revisado	rev. IA
+405	ent:theographic:rec4eZvHbmI1QToIw	Foretelling the Death and Resurrection	Yesus memberitahukan kematian dan kebangkitan-Nya	revisado	rev. IA
+406	ent:theographic:recbbehq3RkfnSmCE	The Transfiguation	Transfigurasi bersama Simon Petrus, Musa dan Elia	revisado	rev. IA
+407	ent:theographic:recXhKGCw4B1CjXQB	Healing a Boy with a Demon	Penyembuhan anak yang kerasukan	revisado	rev. IA
+408	ent:theographic:recyFfX2l12rwEkqk	Second Foretelling of Death and Resurrection	Pemberitahuan kedua tentang kematian dan kebangkitan	revisado	rev. IA
+409	ent:theographic:recvkY2icLy3QDClR	Tax Coin in a Fish's Mouth	Koin pajak dalam mulut ikan	revisado	rev. IA
+410	ent:theographic:recIZ6XquF0X7jaNE	Teachings on Humility/Temptation/Reconciliation	Ajaran tentang kerendahan hati, pencobaan, dan pendamaian	revisado	rev. IA
+400	ent:theographic:rechQpDJIE2FCEYTU	Healing a Crowd near Sea of Galilee	Penyembuhan banyak orang di tepi Danau Galilea	revisado	rev. IA
+402	ent:theographic:recqtoV4JQiYCmkZN	Discourse with Pharisees and Saducees	Percakapan dengan orang Farisi dan Saduki	revisado	rev. IA
+403	ent:theographic:rec1QOmEc6elW8boO	Healing a Blind Man at Bethsaida	Penyembuhan orang buta di Betsaida	revisado	rev. IA
+421	ent:theographic:recO855E9csJLnyFO	Samaritans Reject Jesus	Orang Samaria menolak Yesus	revisado	rev. IA
+422	ent:theographic:rec5EAcIz2rHZRN8q	70 Sent Out	Tujuh puluh murid diutus	revisado	rev. IA
+423	ent:theographic:recm9poq0bKg2RuU5	Good Samaritan Parable Taught	Perumpamaan orang Samaria yang murah hati diajarkan	revisado	rev. IA
+424	ent:theographic:recycS0pNycJe2Xet	Jesus meets Martha and Mary	Yesus bertemu Marta dan Maria	revisado	rev. IA
+425	ent:theographic:reco0PVfMeFcQrURu	Lord's Prayer Taught	Doa Bapa Kami diajarkan	revisado	rev. IA
+428	ent:theographic:recrSSo7ihKbdos1g	Woes and Parables with Pharisees	Celaan dan perumpamaan kepada orang Farisi	revisado	rev. IA
+429	ent:theographic:receThtYDpzQmFpc1	Healing Woman With 18-year Infirmity	Penyembuhan perempuan yang sakit delapan belas tahun	revisado	rev. IA
+430	ent:theographic:recoUkvcVV6nR1G2D	Mustard Seed and Leaven Teaching	Ajaran tentang biji sesawi dan ragi	revisado	rev. IA
+397	ent:theographic:recMCgwIq1sw9Q779	Bread of Life Sermon	Khotbah tentang roti kehidupan	revisado	rev. IA
+412	ent:theographic:recZcjp3TlQQqapTX	Feast of Tabernacles	Hari Raya Pondok Daun	revisado	rev. IA
+419	ent:theographic:recWT2eiDCOXEAbGB	Woman Caught in Adultery	Perempuan yang kedapatan berzina	revisado	rev. IA
+420	ent:theographic:recD6VSiTfaITZLz4	Light of the World/I am discourse	Terang dunia: ajaran "Akulah"	revisado	rev. IA
+426	ent:theographic:recxURN2uAbTe7CGr	Blind Man Healed	Orang buta disembuhkan	revisado	rev. IA
+427	ent:theographic:recs2ESnv8JHoLJNs	The Good Shepherd Teaching	Ajaran tentang gembala yang baik	revisado	rev. IA
+431	ent:theographic:recs1VxMp6PJ11GLW	Feast of Dedication	Hari Raya Pentahbisan	revisado	rev. IA
+438	ent:theographic:recR3zid90odgmB6g	Jesus Teaches in Perea	Yesus mengajar di Perea	revisado	rev. IA
+439	ent:theographic:recN2veKNMtB7HzFi	Healing Blind Bartimaeus	Penyembuhan Bartimeus yang buta	revisado	rev. IA
+443	ent:theographic:recmXmhZt51doQu7o	Holy Week	Pekan Suci	revisado	rev. IA
+444	ent:theographic:recBsshyiGaHc6bgC	Triumphal Entry	Masuknya Yesus ke Yerusalem	revisado	rev. IA
+445	ent:theographic:rece7YQZcZkN73mF8	Temple Cleansed	Bait Allah dibersihkan	revisado	rev. IA
+448	ent:theographic:recOZxrWd00qyF4Ej	Debates in the Temple	Perdebatan di Bait Allah	revisado	rev. IA
+449	ent:theographic:recN1gyMPKbPPQIMa	Olivet Discourse	Khotbah di Bukit Zaitun bersama Simon Petrus dan Yakobus	revisado	rev. IA
+450	ent:theographic:recym9Dfibw7KdshX	Sanhedrin Conspiracy	Persekongkolan Sanhedrin bersama Kayafas	revisado	rev. IA
+451	ent:theographic:rec3IGuoFfX4wwc0u	Judas Plans Betrayal	Yudas Iskariot merencanakan pengkhianatan	revisado	rev. IA
+452	ent:theographic:recehyRQPiIuEscz4	The Last Supper	Perjamuan Terakhir	revisado	rev. IA
+454	ent:theographic:recNQ0XuoN4rfJR3o	Prayer and Betrayal in Gethsemane	Doa dan pengkhianatan di Getsemani	revisado	rev. IA
+455	ent:theographic:recP6WhPl8eV4tavO	Jewish Trials	Pengadilan Yahudi di hadapan Kayafas	revisado	rev. IA
+457	ent:theographic:recvsq3X87BSBcInj	Judas' Suicide	Bunuh diri Yudas Iskariot	revisado	rev. IA
+456	ent:theographic:recUlD55WynUKdHAo	Roman Trials	Pengadilan Romawi di hadapan Pontius Pilatus	revisado	rev. IA
+458	ent:theographic:rec7pLeyxV0yEdrcl	Bearing Cross to Golgotha	Simon memikul salib ke Golgota	revisado	rev. IA
+460	ent:theographic:recwQXXtK8ZbnYuIJ	Resurrection and Ascension	Kebangkitan dan kenaikan Yesus Kristus	revisado	rev. IA
+446	ent:theographic:recotN6XCwPBF0OzT	Fig Tree Cursed	Pohon ara dikutuk	revisado	rev. IA
+447	ent:theographic:recYOqX5Qe2a0FHvw	Teaching by the Fig Tree	Ajaran dari pohon ara kepada Simon Petrus	revisado	rev. IA
+436	ent:theographic:recTplXPehmPfFUiG	Lepers Healed	Sepuluh orang kusta disembuhkan	revisado	rev. IA
+437	ent:theographic:recrwlbTDWOETPpei	Discourse on the Kingdom and Other Parables	Ajaran tentang Kerajaan dan perumpamaan lain	revisado	rev. IA
+440	ent:theographic:reccSs8loWRLm8LAb	Zaccheus Converted and Parable of the Pounds	Zakeus bertobat dan perumpamaan tentang mina	revisado	rev. IA
+432	ent:theographic:rec70ZLu9pdrEWXR9	Teaching and Healing in Perea to Jerusalem	Ajaran dan penyembuhan di Perea menuju Yerusalem	revisado	rev. IA
+433	ent:theographic:reclZp6jMKWzYmop9	Lazarus Raised form the Dead	Lazarus dibangkitkan dari kematian	revisado	rev. IA
+434	ent:theographic:recZhxqZJmXuGMdvd	Chief Priests Conspire Against Jesus	Imam-imam kepala, termasuk Kayafas, bersekongkol melawan Yesus Kristus	revisado	rev. IA
+435	ent:theographic:recMIEeRCAf7IGRwc	Jesus Withdraws to Ephraim	Yesus menyingkir ke Efraim	revisado	rev. IA
+441	ent:theographic:recrB2eWea9OCFtOz	Mary Anoints Jesus	Maria mengurapi Yesus	revisado	rev. IA
+453	ent:theographic:recu6M6co9Iaw0Ow5	Upper Room Discourse	Ajaran di ruang atas	revisado	rev. IA
+459	ent:theographic:rechX4p94qqiHLqLx	Crucifixion and Burial	Penyaliban dan penguburan Yesus Kristus	revisado	rev. IA
+304	ent:theographic:recvfB75N6vrQwhWW	The Holy Spirit is promised	Roh Kudus dijanjikan oleh Yesus Kristus	revisado	rev. IA
+305	ent:theographic:rec06pcAZBChUBKxF	Jesus ascends to Heaven	Yesus naik ke surga	revisado	rev. IA
+306	ent:theographic:reczDqE366xgbgv2C	Matthias replaces Judas	Matias menggantikan Yudas	revisado	rev. IA
+307	ent:theographic:recIu7xhASS4Ufyfd	The Holy Spirit comes	Roh Kudus turun	revisado	rev. IA
+308	ent:theographic:recQoK9KFveLh556S	Peter preaches at Pentecost	Simon Petrus berkhotbah pada hari Pentakosta	revisado	rev. IA
+309	ent:theographic:recVrh6Nbm3PruADf	The church grows	Jemaat bertumbuh	revisado	rev. IA
+310	ent:theographic:recLnDbrahKzEue0K	Lame man healed	Yohanes dan Simon Petrus menyembuhkan orang lumpuh	revisado	rev. IA
+311	ent:theographic:reciu7dT92C4dTrfl	Peter preaches in Solomon's Portico	Petrus berkhotbah di Serambi Salomo	revisado	rev. IA
+312	ent:theographic:rech8qvzNnkDTqCi3	Peter and John's Trial	Simon Petrus dan Yohanes diadili di hadapan Hanas, Kayafas dan Aleksander	revisado	rev. IA
+313	ent:theographic:recNQxwdQFjZidQTP	Believers pray for boldness	Orang percaya berdoa memohon keberanian	revisado	rev. IA
+314	ent:theographic:rec5Y0EXegwQ5m9mX	Believers share all things	Barnabas berbagi segala sesuatu dengan jemaat	revisado	rev. IA
+315	ent:theographic:recnjhZVhcbtc7WL0	Ananias and Sapphira lie to God	Ananias dan Safira berdusta kepada Allah	revisado	rev. IA
+316	ent:theographic:rectkWZqlKG1cfOQT	Apostles work signs and wonders in Solomon's Portico	Para rasul mengadakan tanda dan mukjizat di Serambi Salomo	revisado	rev. IA
+317	ent:theographic:recCcRDJtUxaIqXnD	Apostles arrested, put on trial	Para rasul ditangkap dan diadili	revisado	rev. IA
+318	ent:theographic:rec1qE6wAe0XINRoV	Gamaliel advises the counsel and Apostles freed	Gamaliel menasihati Mahkamah Agama, para rasul dibebaskan	revisado	rev. IA
+319	ent:theographic:recXUpfeHouc4qLEl	Seven chosen to serve	Tujuh orang dipilih untuk melayani: Nikolaus, Parmenas, Timon, Nikanor, Prokorus, Filipus, Stefanus	revisado	rev. IA
+320	ent:theographic:reclAFi4IpJvlWCDp	Stephen is seized	Stefanus ditangkap	revisado	rev. IA
+321	ent:theographic:recNZVX1qwBc7F9AU	Stephen addresses the council	Stefanus berbicara di hadapan Sanhedrin	revisado	rev. IA
+322	ent:theographic:recgcZKRVZDvMUMOa	Stephen is stoned	Stefanus dilempari batu	revisado	rev. IA
+323	ent:theographic:recVjdJplfI1wSxYk	Saul persecutes the church	Paulus menganiaya jemaat	revisado	rev. IA
+324	ent:theographic:recP6mZs3oSlZdrT0	Philip preaches in Samaria	Filipus memberitakan Injil di Samaria	revisado	rev. IA
+325	ent:theographic:recvI0SgATGCasGsV	Conversion of Ethiopian Eunuch	Sida-sida Kandake dari Etiopia bertobat	revisado	rev. IA
+326	ent:theographic:recCz7opcoITkiZiq	Saul is converted	Paulus bertobat	revisado	rev. IA
+327	ent:theographic:reczeOH6wbjkZHP1w	Saul proclaims Jesus	Paulus memberitakan Yesus bersama Barnabas	revisado	rev. IA
+328	ent:theographic:recxH9n2Xk1PM6DvB	Peter heals Aeneas and Dorcas	Petrus menyembuhkan Eneas dan Dorkas	revisado	rev. IA
+329	ent:theographic:rec4fFrtrUuDVkTNK	Peter meets Cornelius	Petrus bertemu Kornelius	revisado	rev. IA
+330	ent:theographic:recCef9mlyuV3XWd3	Peter preaches to gentiles in Caesarea	Simon Petrus memberitakan kepada bangsa-bangsa lain di Kaisarea	revisado	rev. IA
+331	ent:theographic:recNnOBWct1TV6CUZ	Peter defends Gentile salvation	Simon Petrus membela keselamatan bagi bangsa-bangsa lain	revisado	rev. IA
+332	ent:theographic:recn2U67FPmywxqcb	Disciples first called Christians	Agabus bernubuat; murid-murid pertama disebut Kristen	revisado	rev. IA
+333	ent:theographic:recCCk6aW2ZbOCRTd	Herod kills James	Herodes Agripa I membunuh Yakobus	revisado	rev. IA
+334	ent:theographic:recDiHn0k1yUMCdjc	Herod imprisons Peter	Herodes Agripa I memenjarakan Simon Petrus	revisado	rev. IA
+335	ent:theographic:recMhkv38hrlSmT3K	An angel rescues Peter from prison	Malaikat membebaskan Simon Petrus dari penjara	revisado	rev. IA
+336	ent:theographic:recTAdkQX4sglPtLl	Herod dies	Herodes Agripa I meninggal	revisado	rev. IA
+337	ent:theographic:recJl6YAS1kSQ6t8W	First missionary journey begins	Roh Kudus mengutus Paulus dan Barnabas dalam perjalanan misi pertama	revisado	rev. IA
+338	ent:theographic:recUWXmZlrKxIx99u	First Missionary Journey	Perjalanan misi pertama: Paulus, Barnabas dan Yohanes Markus	revisado	rev. IA
+339	ent:theographic:recJeAtSLg0KP2loe	Barnabas and Saul go to Cyprus	Barnabas dan Paulus pergi ke Siprus dan bertemu Sergius Paulus	revisado	rev. IA
+340	ent:theographic:recGlchVqaW39mkY0	Mission to Antioch in Pisidia	Misi ke Antiokhia di Pisidia	revisado	rev. IA
+341	ent:theographic:receeGDZ90DJxYxnX	Mission to Iconium	Misi ke Ikonium	revisado	rev. IA
+342	ent:theographic:recrre0r2IHdN3Y7Z	Mission to Lystra and Derbe	Misi ke Listra dan Derbe	revisado	rev. IA
+343	ent:theographic:reckt5soySSqCZnoa	Return to Antioch in Syria	Kembali ke Antiokhia di Siria	revisado	rev. IA
+344	ent:theographic:recwmsQ1HEDGztu9O	Jerusalem Council	Konsili di Yerusalem bersama Yakobus, Simon Petrus dan Paulus	revisado	rev. IA
+345	ent:theographic:reciR4wcxOAcLxak0	Second Missionary Journey	Perjalanan misi kedua bersama Silas, Timotius dan Lukas	revisado	rev. IA
+346	ent:theographic:recW2x0namY3sL2iX	Paul and Barnabas part ways	Paulus dan Barnabas berpisah	revisado	rev. IA
+348	ent:theographic:recsnRcoxqD4pQGHp	Second Missionary Journey begins	Perjalanan misi kedua dimulai bersama Silas dan Paulus	revisado	rev. IA
+349	ent:theographic:recinOtqH81aspLoO	Timothy Joins Paul and Silas	Timotius bergabung dengan Paulus dan Silas	revisado	rev. IA
+350	ent:theographic:recayBHkzCbMe6dnD	Mission to Phrygia, Galatia and Asia	Misi ke Frigia, Galatia, dan Asia	revisado	rev. IA
+351	ent:theographic:recmIpAsHFs5pOzZ6	Call to Macedonia	Panggilan ke Makedonia	revisado	rev. IA
+352	ent:theographic:reczE4p2AzSrs4ppP	Lydia's Conversion	Pertobatan Lidia	revisado	rev. IA
+353	ent:theographic:rec1Olk9cxeWoT5Jl	Paul casts demon out of soothsayer	Paulus mengusir roh dari peramal	revisado	rev. IA
+354	ent:theographic:recVY5whVRxmh37rH	Paul and Silas imprisoned	Paulus dan Silas dipenjarakan	revisado	rev. IA
+355	ent:theographic:recX4DzqXgIe0R2T4	Philippian jailer converted	Kepala penjara di Filipi bertobat	revisado	rev. IA
+356	ent:theographic:rec611BDzVM1WOUa5	Paul and Silas released	Paulus dan Silas dibebaskan	revisado	rev. IA
+357	ent:theographic:recrnXnFkh9CGTgkn	Uproar in Thessalonica	Kerusuhan di Tesalonika: Yason, Silas dan Paulus	revisado	rev. IA
+358	ent:theographic:recF289Cj0XMYVOmr	Mission to Berea	Misi ke Berea	revisado	rev. IA
+359	ent:theographic:reclKAhjHwMnSyOB2	Paul preaches in Athens	Paulus berkhotbah di Atena: Damaris dan Dionisius	revisado	rev. IA
+360	ent:theographic:recZLqdKx9mrT0bCv	Mission to Corinth, 1&2 Thess Written	Misi ke Korintus; Paulus menulis 1 dan 2 Tesalonika	revisado	rev. IA
+347	ent:theographic:reco0fEiYQ6hKFYc5	Paul Writes Galatians	Paulus menulis Galatia	revisado	rev. IA
+361	ent:theographic:recxAgEs5O3piUpAG	Return from Second Missionary Journey	Paulus kembali bersama Akwila dan Priskila	revisado	rev. IA
+362	ent:theographic:receG7A0Y0VjWPff1	Third Missionary Journey Begins	Perjalanan misi ketiga dimulai; Apolos bersama Priskila dan Akwila	revisado	rev. IA
+363	ent:theographic:rec4bAiAcAOo9mPwO	Third Missionary Journey	Perjalanan misi ketiga	revisado	rev. IA
+364	ent:theographic:rec2buqN0Q38Yuqme	Mission to Ephesus/1 Cor Written	Misi ke Efesus; Paulus dan Timotius menulis 1 Korintus	revisado	rev. IA
+365	ent:theographic:recl2rPfuRl5ZYiYP	Riot in Ephesus	Kerusuhan di Efesus: Aleksander, Aristarkus, Gayus, Paulus dan Demetrius	revisado	rev. IA
+366	ent:theographic:recGXoNtdiKu28Wff	Mission to Macedonia and Greece	Misi ke Makedonia dan Yunani	revisado	rev. IA
+367	ent:theographic:recCiHwYp3CSqFWrK	Eutychus revived	Eutikus dihidupkan kembali	revisado	rev. IA
+368	ent:theographic:recbGb0Cb2yIRqmle	Voyage to Miletus	Perjalanan ke Miletus	revisado	rev. IA
+369	ent:theographic:recwlxgjUu5AwPX9D	Paul speaks to Ephesian Elders	Paulus berbicara kepada para penatua Efesus	revisado	rev. IA
+370	ent:theographic:recxOoLkd6wFyKysC	Voyage from Miletus to Jerusalem	Perjalanan dari Miletus ke Yerusalem	revisado	rev. IA
+371	ent:theographic:recYE6hOLCtnqejur	Paul visits elders in Jerusalem	Paulus mengunjungi para penatua di Yerusalem bersama Yakobus	revisado	rev. IA
+372	ent:theographic:recuV2kc7FiAUIuBQ	Paul arrested in the Temple	Paulus ditangkap di Bait Allah	revisado	rev. IA
+373	ent:theographic:recR2Yyty10Qn41wQ	Paul gives his testimony	Paulus memberikan kesaksiannya	revisado	rev. IA
+374	ent:theographic:rec9DRZs8DbQy0fv5	Paul goes before the Council	Paulus menghadap Mahkamah Agama bersama Ananias	revisado	rev. IA
+375	ent:theographic:rectG8MR4Z2zb8mwZ	The conspiracy to kill Paul	Persekongkolan untuk membunuh Paulus	revisado	rev. IA
+376	ent:theographic:recODnfv69EyvRMvA	Paul sent to Felix	Paulus dikirim kepada Feliks	revisado	rev. IA
+377	ent:theographic:recjSyWPVWxolQ2r4	Paul appeals to Caesar	Paulus naik banding kepada Kaisar di hadapan Porsius Festus	revisado	rev. IA
+378	ent:theographic:recZZnST3yj4b1akY	Agrippa and Bernice meet Festus	Agripa dan Bernike menemui Porsius Festus	revisado	rev. IA
+379	ent:theographic:recltAvLmGRfERhYp	Paul goes before Agrippa	Paulus menghadap Agripa dan Bernike	revisado	rev. IA
+380	ent:theographic:recJWNH2OCuUoOz6e	Journey to Rome begins	Perjalanan ke Roma dimulai bersama Aristarkus dan Yulius	revisado	rev. IA
+381	ent:theographic:recAIElabptRPkpxz	Paul's Journey to Rome	Perjalanan Paulus ke Roma	revisado	rev. IA
+382	ent:theographic:recXiU82RVp1vo67a	Paul is shipwrecked by a storm	Paulus terdampar oleh badai	revisado	rev. IA
+383	ent:theographic:recXUXZhzA47ZRt5F	Paul stays at Malta	Paulus tinggal di Malta bersama Publius	revisado	rev. IA
+384	ent:theographic:recuZhS7z4CatBOO0	Paul arrives at Rome	Paulus tiba di Roma	revisado	rev. IA
+385	ent:theographic:recGrIgOxWnxVl8h0	Paul's First Roman imprisonment	Penahanan pertama Paulus di Roma bersama Demas dan Epafras	revisado	rev. IA
