@@ -1,0 +1,944 @@
+# Notas da revisão de nomes por agentes de IA (uma linha por nome_en + candidato, ou nome_en + tipo).
+# Conferidas no texto da Bíblia da língua e na tradução inglesa. Só registro: o ingestor não lê este arquivo.
+nome_en	candidato	nome_fr	origem	nota
+Jehoshaphat	Josaphat	Josaphat	revisado	rev. IA: 2Sam.8.16 Josaphat
+Argob	Argob	Argob	revisado	rev. IA: Deut.3.4 Argob
+Bamoth	Bamoth	Bamoth	revisado	rev. IA: Num.21.19 Bamoth
+Hatach	Hathac	Hathac	revisado	rev. IA: Esth.4.5 Hathac
+Kareah	Karéach	Karéach	revisado	rev. IA: 2Kgs.25.23 Karéach
+Shemaiah	Schemaeja	Schemaeja	revisado	rev. IA: 1Kgs.12.22 Schemaeja
+Helkath	Helkath	Helkath	revisado	rev. IA: Josh.19.25 Helkath
+Uzai	Uzaï	Uzaï	revisado	rev. IA: Neh.3.25 Uzaï
+Tamar	Thamar	Thamar	revisado	rev. IA: Ezek.47.19 Thamar
+Azaliah	Atsalia	Atsalia	revisado	rev. IA: 2Kgs.22.3 Atsalia
+Heman	Héman	Héman	revisado	rev. IA: 1Kgs.4.31 Héman
+Hazeroth	Hatséroth	Hatséroth	revisado	rev. IA: Num.11.35 Hatséroth
+Pethor	Pethor	Pethor	revisado	rev. IA: Num.22.5 Pethor
+Elishah	Élischa	Élischa	revisado	rev. IA: Gen.10.4 Élischa
+Oren	Oren	Oren	revisado	rev. IA: 1Chr.2.25 Oren
+Dibon	Dibon	Dibon	revisado	rev. IA: Num.21.30 Dibon
+Nebuzaradan	Nebuzaradan	Nebuzaradan	revisado	rev. IA: 2Kgs.25.8 Nebuzaradan
+Hanniel	Hanniel	Hanniel	revisado	rev. IA: Num.34.23 Hanniel
+Nemuel	Nemuel	Nemuel	revisado	rev. IA: Num.26.9 Nemuel
+Joram	Joram	Joram	revisado	rev. IA: 2Sam.8.10 Joram
+Ulam	Ulam	Ulam	revisado	rev. IA: 1Chr.7.16 Ulam
+Zeeb	Zeeb	Zeeb	revisado	rev. IA: Judg.7.25 Zeeb
+Pithom	Pithom	Pithom	revisado	rev. IA: Exod.1.11 Pithom
+Bukki	Bukki	Bukki	revisado	rev. IA: 1Chr.6.5 Bukki
+Hauran	Havran	Havran	revisado	rev. IA: Ezek.47.16 Havran
+Cuthah	Cutha	Cutha	revisado	rev. IA: 2Kgs.17.24 Cutha
+Kanah	Kana	Kana	revisado	rev. IA: Josh.16.8 Kana
+Serah	Sérach	Sérach	revisado	rev. IA: Gen.46.17 Sérach
+Pinon	Pinon	Pinon	revisado	rev. IA: Gen.36.41 Pinon
+Goliath	Goliath	Goliath	revisado	rev. IA: 1Sam.17.4 Goliath
+Melea	Méléa	Méléa	revisado	rev. IA: Luke.3.31 Méléa
+Solomon	Salomon	Salomon	revisado	rev. IA: 2Sam.5.14 Salomon
+Rephaim	Rephaïm	Rephaïm	revisado	rev. IA: Gen.14.5 Rephaïm
+Hashum	Haschum	Haschum	revisado	rev. IA: Ezra.2.19 Haschum
+Mahaneh-dan	Machané-Dan	Machané-Dan	revisado	rev. IA: Judg.13.25 Machané-Dan
+Iddo	Jiddo	Jiddo	revisado	rev. IA: 1Chr.27.21 Jiddo
+Jerah	Jérach	Jérach	revisado	rev. IA: Gen.10.26 Jérach
+Sherebiah	Schérébia	Schérébia	revisado	rev. IA: Ezra.8.18 Schérébia
+Eliah	Élija	Élija	revisado	rev. IA: 1Chr.8.27 Élija
+Tobiah	Tobija	Tobija	revisado	rev. IA: Ezra.2.60 Tobija
+Claudia	Claudia	Claudia	revisado	rev. IA: 2Tim.4.21 Claudia
+Isaiah	Ésaïe	Ésaïe	revisado	rev. IA: 2Kgs.19.2 Ésaïe
+Abital	Abithal	Abithal	revisado	rev. IA: 2Sam.3.4 Abithal
+Malcham	Malcam	Malcam	revisado	rev. IA: 1Chr.8.9 Malcam
+Judah	Juda	Juda	revisado	rev. IA: Gen.29.35 Juda
+Gabriel	Gabriel	Gabriel	revisado	rev. IA: Dan.8.16 Gabriel
+Kiriath-sannah	Kirjath-Sanna	Kirjath-Sanna	revisado	rev. IA: Josh.15.49 Kirjath-Sanna
+Beth-shittah	Beth-Schitta	Beth-Schitta	revisado	rev. IA: Judg.7.22 Beth-Schitta
+Sheba	Séba	Séba	revisado	rev. IA: Gen.10.7 Séba
+Pekahiah	Pekachia	Pekachia	revisado	rev. IA: 2Kgs.15.22 Pekachia
+Dalphon	Dalphon	Dalphon	revisado	rev. IA: Esth.9.7 Dalphon
+Amplias	Amplias	Amplias	revisado	rev. IA: Rom.16.8 Amplias
+Habakkuk	Habacuc	Habacuc	revisado	rev. IA: Hab.1.1 Habacuc
+Beth-gamul	Beth-Gamul	Beth-Gamul	revisado	rev. IA: Jer.48.23 Beth-Gamul
+Maon	Maon	Maon	revisado	rev. IA: Josh.15.55 Maon
+Asher	Aser	Aser	revisado	rev. IA: Gen.30.13 Aser
+Harbona	Harbona	Harbona	revisado	rev. IA: Esth.1.10 Harbona
+Cyrene	Cyrène	Cyrène	revisado	rev. IA: Matt.27.32 Cyrène
+Eliud	Éliud	Éliud	revisado	rev. IA: Matt.1.14 Éliud
+Helem	Hélem	Hélem	revisado	rev. IA: Zech.6.14 Hélem
+Mishmannah	Mischmanna	Mischmanna	revisado	rev. IA: 1Chr.12.10 Mischmanna
+Kittim	Kittim	Kittim	revisado	rev. IA: Gen.10.4 Kittim
+Senuah	Senua	Senua	revisado	rev. IA: Neh.11.9 Senua
+Nahaliel	Nahaliel	Nahaliel	revisado	rev. IA: Num.21.19 Nahaliel
+Phlegon	Phlégon	Phlégon	revisado	rev. IA: Rom.16.14 Phlégon
+Julius	Julius	Julius	revisado	rev. IA: Acts.27.1 Julius
+Asiel	Asiel	Asiel	revisado	rev. IA: 1Chr.4.35 Asiel
+Jesharelah	Jesareéla	Jesareéla	revisado	rev. IA: 1Chr.25.14 Jesareéla
+Jozabad	Jozabad	Jozabad	revisado	rev. IA: 1Chr.12.4 Jozabad
+Taanach	Thaanac	Thaanac	revisado	rev. IA: Josh.17.11 Thaanac
+Kelaiah	Kélaja	Kélaja	revisado	rev. IA: Ezra.10.23 Kélaja
+Halhul	Halhul	Halhul	revisado	rev. IA: Josh.15.58 Halhul
+Chesalon	Kesalon	Kesalon	revisado	rev. IA: Josh.15.10 Kesalon
+Atad	Athad	Athad	revisado	rev. IA: Gen.50.10 Athad
+Nain	Naïn	Naïn	revisado	rev. IA: Luke.7.11 Naïn
+Ziza	Ziza	Ziza	revisado	rev. IA: 1Chr.4.37 Ziza
+Magpiash	Magpiasch	Magpiasch	revisado	rev. IA: Neh.10.20 Magpiasch
+Samlah	Samla	Samla	revisado	rev. IA: Gen.36.36 Samla
+Peruda	Peruda	Peruda	revisado	rev. IA: Ezra.2.55 Peruda
+Lael	Laël	Laël	revisado	rev. IA: Num.3.24 Laël
+Zadok	Tsadok	Tsadok	revisado	rev. IA: 2Sam.8.17 Tsadok
+Jahzeiah	Jachzia	Jachzia	revisado	rev. IA: Ezra.10.15 Jachzia
+Ishbah	Jischbach	Jischbach	revisado	rev. IA: 1Chr.4.17 Jischbach
+Eshtemoh	Eschthemo	Eschthemo	revisado	rev. IA: Josh.15.50 Eschthemo
+Gabbatha	Gabbatha	Gabbatha	revisado	rev. IA: John.19.13 Gabbatha
+Ulai	Ulaï	Ulaï	revisado	rev. IA: Dan.8.2 Ulaï
+Jecoliah	Jecolia	Jecolia	revisado	rev. IA: 2Kgs.15.2 Jecolia
+Hamonah	Hamona	Hamona	revisado	rev. IA: Ezek.39.16 Hamona
+Janna	Jannaï	Jannaï	revisado	rev. IA: Luke.3.24 Jannaï
+Bezai	Betsaï	Betsaï	revisado	rev. IA: Ezra.2.17 Betsaï
+Zereth	Tséreth	Tséreth	revisado	rev. IA: 1Chr.4.7 Tséreth
+Baasha	Baescha	Baescha	revisado	rev. IA: 1Kgs.15.16 Baescha
+Zalmonah	Tsalmona	Tsalmona	revisado	rev. IA: Num.33.41 Tsalmona
+Oholibamah	Oholibama	Oholibama	revisado	rev. IA: Gen.36.2 Oholibama
+Kenaz	Kenaz	Kenaz	revisado	rev. IA: Gen.36.11 Kenaz
+Eber	Héber	Héber	revisado	rev. IA: Gen.10.21 Héber
+Zacher	Zéker	Zéker	revisado	rev. IA: 1Chr.8.31 Zéker
+Huppim	Huppim	Huppim	revisado	rev. IA: Gen.46.21 Huppim
+Yiron	Jireon	Jireon	revisado	rev. IA: Josh.19.38 Jireon
+Milcah	Milca	Milca	revisado	rev. IA: Gen.11.29 Milca
+Abel	Beth-Schémesch	Abel	revisado	rev. IA: 1Sam.6.18 Abel; pierre d'Abel, 1 S 6.18
+Abib	Jamais	Abib	revisado	rev. IA: Neh.2.1 Abib; mois d'Abib, forma tradicional
+Adino	Tachkemonite	Adino	revisado	rev. IA: 2Sam.23.8 Adino; forma tradicional; Segond omite
+Ahlab	Aczib	Achlal	revisado	rev. IA: Josh.19.29 Achlal; Jg 1.31
+Al-taschith	Aie	Al-Taschith	revisado	rev. IA: Ps.57.1 Al-Taschith; título de salmo, forma tradicional
+Alamoth	Schemiramoth	Alamoth	revisado	rev. IA: 1Chr.15.20 Alamoth; título musical, forma tradicional
+Allon-bacuth	Débora	Allon-Bacuth	revisado	rev. IA: Gen.35.8 Allon-Bacuth; Gn 35.8
+Alpha	Philadelphie	Alpha	revisado	rev. IA: Rev.1.11 Alpha; Ap 1.8
+Amaw	Balaam		sem	rev. IA: Num.22.5 sem forma tradicional segura em fr; pt também sem
+Amminadib	Aux	Amminadib	revisado	rev. IA: Song.6.12 Amminadib; forma tradicional
+Amorite	Amoréens	Amoréen	revisado	rev. IA: Gen.10.16 Amoréen
+Amorites	Amoréens	Amoréens	revisado	rev. IA: Gen.10.16 Amoréens
+Angle	Jérusalem		sem	rev. IA: 2Chr.26.9 sem forma tradicional segura em fr; pt sem; ver manuais
+Angle	Palal		sem	rev. IA: Neh.3.25 sem forma tradicional segura em fr; pt sem; ver manuais
+Annas	Anne	Anne	revisado	rev. IA: Luke.3.2 Anne
+Apharasthchite	Apharsac	Apharsac	revisado	rev. IA: Ezra.5.6 Apharsac; Esd 5.6
+Arabah	Hamath		sem	rev. IA: Amos.6.14 sem forma tradicional segura em fr; pt sem; ver manuais
+Aram-naharaim	Dieu		sem	rev. IA: Ps.60.1 sem forma tradicional segura em fr; pt sem; ver manuais
+Aram-zobah	O		sem	rev. IA: Ps.60.1 sem forma tradicional segura em fr; pt sem; ver manuais
+Aramitess	Asriel		sem	rev. IA: 1Chr.7.14 sem forma tradicional segura em fr; pt sem; ver manuais
+Archites	Arkien	Arkiens	revisado	rev. IA: Josh.16.2 Arkiens; Jos 16.2
+Ariel	Kabtseel	Ariel	revisado	rev. IA: 2Sam.23.20 Ariel
+Arkite	Arkiens	Arkien	revisado	rev. IA: Gen.10.17 Arkien
+Arkites	Arkiens	Arkiens	revisado	rev. IA: Gen.10.17 Arkiens
+Artemis	Éphésiens	Diane	revisado	rev. IA: Acts.19.28 Diane; Ac 19.28
+Arvadite	Arvadiens	Arvadien	revisado	rev. IA: Gen.10.18 Arvadien
+Arvadites	Arvadiens	Arvadiens	revisado	rev. IA: Gen.10.18 Arvadiens
+Asen	Hariph		sem	rev. IA: Neh.7.24 sem forma tradicional segura em fr; pt também sem
+Asherah	Astarté	Astarté	revisado	rev. IA: 1Kgs.15.13 Astarté; 1 R 15.13
+Asshur	Assyrien	Assur	revisado	rev. IA: Num.24.22 Assur
+Ayyah	Naaran	Ajja	revisado	rev. IA: 1Chr.7.28 Ajja; Né 11.31
+Bajith	Médeba		sem	rev. IA: Isa.15.2 sem forma tradicional segura em fr; pt também sem
+Bamah	Et	Bama	revisado	rev. IA: Ezek.20.29 Bama; Ez 20.29
+Bear	Pléiades	Ourse	revisado	rev. IA: Job.9.9 Ourse; Jb 9.9 Grande Ourse
+Behemoth	Voici	Béhémoth	revisado	rev. IA: Job.40.15 Béhémoth; forma tradicional; Segond hippopotame
+Ben-hur	Hur	Ben-Hur	revisado	rev. IA: 1Kgs.4.8 Ben-Hur; 1 R 4.8 fils de Hur
+Beno	Ibri	Beno	revisado	rev. IA: 1Chr.24.27 Beno
+Beth-Ashtoreth	Astartés		sem	rev. IA: 1Sam.31.10 sem forma tradicional segura em fr; pt sem; ver manuais
+Beth-eked	Et		sem	rev. IA: 2Kgs.10.14 sem forma tradicional segura em fr; pt sem; ver manuais
+Beth-haggan	Jibleam		sem	rev. IA: 2Kgs.9.27 sem forma tradicional segura em fr; pt sem; ver manuais
+Beth-merhak	Le		sem	rev. IA: 2Sam.15.17 sem forma tradicional segura em fr; pt também sem
+Bether	Et	Béther	revisado	rev. IA: Song.2.17 Béther; Ct 2.17 forma tradicional
+Buzites	Buz	Buzites	revisado	rev. IA: Job.32.2 Buzites
+Cherethites	Kéréthiens	Kéréthiens	revisado	rev. IA: 1Sam.30.14 Kéréthiens
+Corban	Ce	Corban	revisado	rev. IA: Mark.7.11 Corban; Mc 7.11
+Cush	Dieu	Cusch	revisado	rev. IA: Ps.7.1 Cusch; Ps 7 título
+Cushan	Madian	Cuschan	revisado	rev. IA: Hab.3.7 Cuschan; Ha 3.7
+Dehavites	Déha		sem	rev. IA: Ezra.4.9 sem forma tradicional segura em fr; pt sem; ver manuais
+Destiny	Meni		sem	rev. IA: Isa.65.11 sem forma tradicional segura em fr; pt sem; ver manuais
+Destruction	Éternel	Ville de la destruction	revisado	rev. IA: Isa.19.18 Ville de la destruction; Es 19.18
+Dinaites	Din	Dinaïtes	revisado	rev. IA: Ezra.4.9 Dinaïtes; Esd 4.9 ceux de Din
+Dionysius	Denys	Denys	revisado	rev. IA: Acts.17.34 Denys
+Ecbatana	Achmetha	Achmetha	revisado	rev. IA: Ezra.6.2 Achmetha
+Eder	Migdal-Éder	Éder	revisado	rev. IA: Gen.35.21 Éder; tour d'Éder
+Egypt	Puth	Égypte	revisado	rev. IA: Gen.10.6 Égypte; Mitsraïm, Gn 10.6
+Ephron	Nephthoach	Éphron	revisado	rev. IA: Josh.18.15 Éphron; montagne d'Éphron
+Epicurean	Quelques	Épicuriens	revisado	rev. IA: Acts.17.18 Épicuriens; Ac 17.18
+Eznites	Tachkemonite		sem	rev. IA: 2Sam.23.8 sem forma tradicional segura em fr; pt sem; ver manuais
+Field	Jérusalem	Champ du foulon	revisado	rev. IA: 2Kgs.18.17 Champ du foulon; 2 R 18.17
+Forest	Et		sem	rev. IA: Isa.22.8 sem forma tradicional segura em fr; pt sem; ver manuais
+Fortune	Éternel		sem	rev. IA: Isa.65.11 sem forma tradicional segura em fr; pt sem; ver manuais
+Freedmen	Cyrénéens	Affranchis	revisado	rev. IA: Acts.6.9 Affranchis; Ac 6.9
+Gadara	Gadaréniens		sem	rev. IA: Matt.8.28 sem forma tradicional segura em fr; pt sem; ver manuais
+Galilee	Guilgal	Galilée	revisado	rev. IA: Josh.12.23 Galilée
+Garmite	Garmien	Garmien	revisado	rev. IA: 1Chr.4.19 Garmien
+Garmites	Garmien	Garmiens	revisado	rev. IA: 1Chr.4.19 Garmiens
+Ge-harashim	Seraja	Vallée des ouvriers	revisado	rev. IA: 1Chr.4.14 Vallée des ouvriers; 1 Ch 4.14
+Gederah	C	Guedéra	revisado	rev. IA: 1Chr.4.23 Guedéra; 1 Ch 4.23; Jos 15.36
+Gerasa	Géraséniens		sem	rev. IA: Luke.8.26 sem forma tradicional segura em fr; pt sem; ver manuais
+Girgashites	Guirgasiens	Guirgasiens	revisado	rev. IA: Gen.10.16 Guirgasiens
+Girgasite	Guirgasiens	Guirgasien	revisado	rev. IA: Gen.10.16 Guirgasien
+Girzites	Guirziens	Guirziens	revisado	rev. IA: 1Sam.27.8 Guirziens
+Gittith	Ta		sem	rev. IA: Ps.8.1 sem forma tradicional segura em fr; pt sem; ver manuais
+Gizonites	Guizon	Guizonites	revisado	rev. IA: 1Chr.11.34 Guizonites; 1 Ch 11.34 de Guizon
+Greece	Perse	Grèce	revisado	rev. IA: Dan.10.20 Grèce; Dn 10.20 Javan
+Gulloth-mayim	Fais-moi		sem	rev. IA: Josh.15.19 sem forma tradicional segura em fr; pt também sem
+Hachmonites	Tachkemonite	Hacmonites	revisado	rev. IA: 2Sam.23.8 Hacmonites; 1 Ch 11.11 fils de Hacmoni
+Hakkephirim	Guéschem		sem	rev. IA: Neh.6.2 sem forma tradicional segura em fr; pt também sem
+Hamathite	Hamathiens	Hamathien	revisado	rev. IA: Gen.10.18 Hamathien
+Hamathites	Hamathiens	Hamathiens	revisado	rev. IA: Gen.10.18 Hamathiens
+Hammelech	Abdeel		sem	rev. IA: Jer.36.26 sem forma tradicional segura em fr; pt também sem
+Hararites	Harar	Hararites	revisado	rev. IA: 2Sam.23.11 Hararites; 2 S 23.11 d'Harar
+Harmon	Éternel	Harmon	revisado	rev. IA: Amos.4.3 Harmon; Am 4.3
+Haruphites	Haroph	Haruphites	revisado	rev. IA: 1Chr.12.5 Haruphites; 1 Ch 12.5 de Haroph
+Hazerim	Caphtorim		sem	rev. IA: Deut.2.23 sem forma tradicional segura em fr; pt sem; ver manuais
+Helech	Les		sem	rev. IA: Ezek.27.11 sem forma tradicional segura em fr; pt também sem
+Heliopolis	Poti-Phéra	On	revisado	rev. IA: Gen.41.45 On; Gn 41.45 prêtre d'On
+Heliopolis	Égypte	On	revisado	rev. IA: Gen.41.45 On; Gn 41.45 prêtre d'On
+Hermes	Mercure	Mercure	revisado	rev. IA: Acts.14.12 Mercure; Ac 14.12
+Herodian	Dieu		sem	rev. IA: Matt.22.16 sem forma tradicional segura em fr; pt sem; ver manuais
+Higgaion	Jeu	Higgaïon	revisado	rev. IA: Ps.9.16 Higgaïon; Ps 9.16 forma tradicional
+Highway	Laisse-nous		sem	rev. IA: Num.20.17 sem forma tradicional segura em fr; pt sem; ver manuais
+Hivite	Héviens	Hévien	revisado	rev. IA: Gen.10.17 Hévien
+Hivites	Héviens	Héviens	revisado	rev. IA: Gen.10.17 Héviens
+Horesh	Les		sem	rev. IA: 1Sam.23.19 sem forma tradicional segura em fr; pt sem; ver manuais
+Horonaim	Or	Horonaïm	revisado	rev. IA: 2Sam.13.34 Horonaïm
+Horonites	Horonite	Horonites	revisado	rev. IA: Neh.2.10 Horonites; Né 2.10 le Horonite
+Hoshaiah	Hosée	Hosée	revisado	rev. IA: Neh.12.32 Hosée
+Huram	Je	Huram	revisado	rev. IA: 2Chr.2.13 Huram; 2 Ch 2.13
+Hushathites	Huschatite	Huschatites	revisado	rev. IA: 2Sam.21.18 Huschatites; 2 S 21.18 le Huschatite
+Ir-nahash	Thechinna	Ir-Nachasch	revisado	rev. IA: 1Chr.4.12 Ir-Nachasch; 1 Ch 4.12
+Ithrites	Jéthriens	Jéthriens	revisado	rev. IA: 1Chr.2.53 Jéthriens
+Iyim	Ijjé-Abarim	Ijjé-Abarim	revisado	rev. IA: Num.33.45 Ijjé-Abarim
+Jaasiel	Jaasiel-Metsobaja	Jaasiel	revisado	rev. IA: 1Chr.11.47 Jaasiel; 1 Ch 11.47
+Janen	Matthana		sem	rev. IA: Num.21.19 sem forma tradicional segura em fr; pt também sem
+Jashar	Juste	Juste	revisado	rev. IA: Josh.10.13 Juste; Jos 10.13 livre du Juste
+Jasiel	Jaasiel-Metsobaja	Jaasiel	revisado	rev. IA: 1Chr.11.47 Jaasiel; 1 Ch 11.47
+Jebusite	Jebus	Jébusien	revisado	rev. IA: Josh.15.8 Jébusien
+Jebusite	Jébusiens	Jébusien	revisado	rev. IA: Gen.10.16 Jébusien
+Jebusites	Jébusiens	Jébusiens	revisado	rev. IA: Gen.10.16 Jébusiens
+Jehezkel	Ézéchiel	Ézéchiel	revisado	rev. IA: 1Chr.24.16 Ézéchiel
+Jehudijah	Jekuthiel	Jehudija	revisado	rev. IA: 1Chr.4.18 Jehudija; 1 Ch 4.18
+Jemnath	Ékron		sem	rev. IA: Josh.15.46 sem forma tradicional segura em fr; pt também sem
+Jeshimon	Maon	Jeschimon	revisado	rev. IA: 1Sam.23.24 Jeschimon; forma tradicional
+Jeshimon	Ziphiens	Jeschimon	revisado	rev. IA: 1Sam.23.19 Jeschimon; forma tradicional
+Jeshua	Mitspa	Josué	revisado	rev. IA: Neh.3.19 Josué; Né 3.19
+Jonath-elem-rechokim	Aie		sem	rev. IA: Ps.56.1 sem forma tradicional segura em fr; pt também sem
+Jose	Jorim	José	revisado	rev. IA: Luke.3.29 José; Lc 3.29
+Joshua	Jorim	Josué	revisado	rev. IA: Luke.3.29 Josué; Lc 3.29
+Judaism	Vous	Judaïsme	revisado	rev. IA: Gal.1.13 Judaïsme; Ga 1.13
+Judgment	Il		sem	rev. IA: 1Kgs.7.7 sem forma tradicional segura em fr; pt sem; ver manuais
+Kadesh	Thachthim-Hodschi	Kadès	revisado	rev. IA: 2Sam.24.6 Kadès
+Kadmonites	Kadmoniens	Kadmoniens	revisado	rev. IA: Gen.15.19 Kadmoniens
+Karnaim	N	Karnaïm	revisado	rev. IA: Amos.6.13 Karnaïm
+Kenites	Kéniens	Kéniens	revisado	rev. IA: Gen.15.19 Kéniens
+Kenizzites	Keniziens	Keniziens	revisado	rev. IA: Gen.15.19 Keniziens
+Kiyyun	Dieu	Kijjun	revisado	rev. IA: Amos.5.26 Kijjun; Am 5.26 forma tradicional
+Koa	Chaldéens	Koa	revisado	rev. IA: Ezek.23.23 Koa; Ez 23.23
+Kue	C	Kué	revisado	rev. IA: 1Kgs.10.28 Kué; 1 R 10.28 forma tradicional
+Leb-kamai	Chaldée	Leb-Kamaï	revisado	rev. IA: Jer.51.1 Leb-Kamaï; Jr 51.1 forma tradicional
+Lehem	Jaschubi-Léchem	Jaschubi-Léchem	revisado	rev. IA: 1Chr.4.22 Jaschubi-Léchem
+Leviathan	Prendras-tu	Léviathan	revisado	rev. IA: Job.41.1 Léviathan
+Lucifer	Te		sem	rev. IA: Isa.14.12 sem forma tradicional segura em fr; pt sem; ver manuais
+Mahalab	Aczib		sem	rev. IA: Josh.19.29 sem forma tradicional segura em fr; pt também sem
+Mahalath	L	Mahalath	revisado	rev. IA: Ps.53.1 Mahalath
+Mahavites	Moabite	Machavites	revisado	rev. IA: 1Chr.11.46 Machavites; 1 Ch 11.46 de Machavim
+Maskil	Ma		sem	rev. IA: Ps.89.1 sem forma tradicional segura em fr; pt sem; ver manuais
+Mazzaroth	Fais-tu		sem	rev. IA: Job.38.32 sem forma tradicional segura em fr; pt sem; ver manuais
+Mecherathites	Mekéra	Mekérathites	revisado	rev. IA: 1Chr.11.36 Mekérathites; 1 Ch 11.36 de Mekéra
+Meholathites	Mehola	Meholathites	revisado	rev. IA: 1Sam.18.19 Meholathites; 1 S 18.19 de Mehola
+Melita	Malte	Malte	revisado	rev. IA: Acts.28.1 Malte
+Melzar	Mischaël	Meltsar	revisado	rev. IA: Dan.1.11 Meltsar; Dn 1.11 forma tradicional
+Memphis	Moph	Moph	revisado	rev. IA: Hos.9.6 Moph; Os 9.6
+Merathaim	Exécute	Merathaïm	revisado	rev. IA: Jer.50.21 Merathaïm; Jr 50.21
+Meronothites	Méronothite	Méronothites	revisado	rev. IA: Neh.3.7 Méronothites
+Metheg-ammah	Après	Méthég-Amma	revisado	rev. IA: 2Sam.8.1 Méthég-Amma; 2 S 8.1 forma tradicional
+Meunites	Maonites		sem	rev. IA: 1Chr.4.41 sem forma tradicional segura em fr; pt sem; ver manuais
+Mezobaites	Jaasiel-Metsobaja	Metsobaïtes	revisado	rev. IA: 1Chr.11.47 Metsobaïtes; 1 Ch 11.47
+Miktam	Car		sem	rev. IA: Ps.16.1 sem forma tradicional segura em fr; pt sem; ver manuais
+Miriam	Marie	Marie	revisado	rev. IA: Exod.15.20 Marie
+Mishraites	Mischraïens	Mischraïens	revisado	rev. IA: 1Chr.2.53 Mischraïens
+Mithnites	Mithni	Mithnites	revisado	rev. IA: 1Chr.11.43 Mithnites; 1 Ch 11.43 de Mithni
+Mortar	Macthesch		sem	rev. IA: Zeph.1.11 sem forma tradicional segura em fr; pt também sem
+Muth-labben	Éternel		sem	rev. IA: Ps.9.1 sem forma tradicional segura em fr; pt também sem
+Naamathites	Naama	Naamathites	revisado	rev. IA: Job.2.11 Naamathites; Jb 2.11 de Naama
+Naphath	Thaanac		sem	rev. IA: Josh.17.11 sem forma tradicional segura em fr; pt também sem
+Naphoth-dor	Dor	Dor	revisado	rev. IA: Josh.11.2 Dor; Jos 11.2 hauteurs de Dor
+Nazirites	Ensuite	Naziréens	revisado	rev. IA: Num.6.20 Naziréens
+Negeb	Sentence	Négueb	revisado	rev. IA: Isa.30.6 Négueb; forma tradicional; Segond midi
+Nehelamites	Néchélamite	Néchélamite	revisado	rev. IA: Jer.29.24 Néchélamite
+Nephilim	Anak		sem	rev. IA: Num.13.33 sem forma tradicional segura em fr; pt sem; ver manuais
+Nero	César	Néron	revisado	rev. IA: Phil.4.22 Néron; Ph 4.22 maison de César
+Netaim	C	Nethaïm	revisado	rev. IA: 1Chr.4.23 Nethaïm; 1 Ch 4.23
+Nohah	Benjamin	Nocha	revisado	rev. IA: Gen.46.21 Nocha; 1 Ch 8.2
+Nohah	Manachath	Nocha	revisado	rev. IA: 1Chr.8.6 Nocha; 1 Ch 8.2
+North	Un		sem	rev. IA: Dan.11.7 sem forma tradicional segura em fr; pt sem; ver manuais
+Olivet	Bethphagé	Montagne des oliviers	revisado	rev. IA: Luke.19.29 Montagne des oliviers; Lc 19.29
+Omega	Smyrne	Oméga	revisado	rev. IA: Rev.1.11 Oméga; Ap 1.8
+Ophel	Tekoïtes	Ophel	revisado	rev. IA: Neh.3.27 Ophel; Né 3.27
+Pacatiana	Que	Pacatienne	revisado	rev. IA: 1Tim.6.21 Pacatienne; 1 Tm subscrição
+Pekod	Exécute	Pekod	revisado	rev. IA: Jer.50.21 Pekod; Jr 50.21; Ez 23.23
+Pelethites	Péléthiens	Péléthiens	revisado	rev. IA: 2Sam.8.18 Péléthiens
+Pelonites	Pelonite	Pelonites	revisado	rev. IA: 1Chr.27.10 Pelonites; 1 Ch 27.10 le Pelonite
+Pelusium	Sin	Sin	revisado	rev. IA: Ezek.30.15 Sin
+Perizzites	Phéréziens	Phéréziens	revisado	rev. IA: Gen.15.20 Phéréziens
+Pillars	Il		sem	rev. IA: 1Kgs.7.6 sem forma tradicional segura em fr; pt sem; ver manuais
+Place	Golgotha	Golgotha	revisado	rev. IA: Matt.27.33 Golgotha; Mt 27.33
+Plain	Jourdain		sem	rev. IA: Deut.34.3 sem forma tradicional segura em fr; pt sem; ver manuais
+Pool	Col-Hozé		sem	rev. IA: Neh.3.15 sem forma tradicional segura em fr; pt também sem
+Pool	Je		sem	rev. IA: Neh.2.14 sem forma tradicional segura em fr; pt também sem
+Puteoli	Pouzzoles	Pouzzoles	revisado	rev. IA: Acts.28.13 Pouzzoles
+Puthites	Puthiens	Puthiens	revisado	rev. IA: 1Chr.2.53 Puthiens
+Rab-mag	Nebuschazban	Rab-Mag	revisado	rev. IA: Jer.39.13 Rab-Mag; Jr 39.3
+Rab-saris	Nergal-Scharetser	Rab-Saris	revisado	rev. IA: Jer.39.3 Rab-Saris; Jr 39.3
+Rahab	Par	Rahab	revisado	rev. IA: Job.26.12 Rahab; Jb 26.12
+Rahab	Tyr	Rahab	revisado	rev. IA: Ps.87.4 Rahab; Ps 87.4
+Ramah	Saül	Rama	revisado	rev. IA: 1Sam.15.34 Rama; 1 S 15.34
+Ramathites	Rama	Ramathites	revisado	rev. IA: 1Chr.27.27 Ramathites; 1 Ch 27.27 de Rama
+Rhodes	Dedan	Rhodes	revisado	rev. IA: Ezek.27.15 Rhodes; Ez 27.15
+River	Assyrie		sem	rev. IA: Isa.7.20 sem forma tradicional segura em fr; pt sem
+River	Copie		sem	rev. IA: Ezra.5.6 sem forma tradicional segura em fr; pt sem
+River	Rehoboth		sem	rev. IA: Gen.36.37 sem forma tradicional segura em fr; pt sem
+River	Égypte		sem	rev. IA: Num.22.5 sem forma tradicional segura em fr; pt sem
+Rock	Maon		sem	rev. IA: Josh.15.55 sem forma tradicional segura em fr; pt também sem
+Rocks	Saül		sem	rev. IA: 1Sam.24.2 sem forma tradicional segura em fr; pt sem; ver manuais
+Sabbath	Gardant	Sabbat	revisado	rev. IA: Isa.56.2 Sabbat
+Sadducee	Races	Sadducéens	revisado	rev. IA: Matt.3.7 Sadducéens; Mt 3.7
+Sahar	A		sem	rev. IA: Ezek.27.18 sem forma tradicional segura em fr; pt também sem
+Salome	Hérode		sem	rev. IA: Matt.14.6 sem forma tradicional segura em fr; pt sem; ver manuais
+Salt	Nibschan	Ir-Hammélach	revisado	rev. IA: Josh.15.62 Ir-Hammélach; Jos 15.62
+Shamed	Mischeam	Schémer	revisado	rev. IA: 1Chr.8.12 Schémer; 1 Ch 8.12
+Shecaniah	Zacharie	Schecania	revisado	rev. IA: Ezra.8.3 Schecania; Esd 8.3
+Shechaniah	Zacharie	Schecania	revisado	rev. IA: Ezra.8.3 Schecania; Esd 8.3
+Shelah	Siloé	Siloé	revisado	rev. IA: Neh.3.15 Siloé
+Sheminith	Miknéja	Scheminith	revisado	rev. IA: 1Chr.15.21 Scheminith; 1 Ch 15.21 título musical
+Shephelah	Guéder		sem	rev. IA: 1Chr.27.28 sem forma tradicional segura em fr; pt sem; ver manuais
+Shephelah	Tsorea		sem	rev. IA: Josh.15.33 sem forma tradicional segura em fr; pt sem; ver manuais
+Sherezer	Réguem-Mélec	Scharetser	revisado	rev. IA: Zech.7.2 Scharetser; Za 7.2
+Shiggaion	Sauve-moi		sem	rev. IA: Ps.7.1 sem forma tradicional segura em fr; pt também sem
+Shigionoth	Prière	Schigjonoth	revisado	rev. IA: Hab.3.1 Schigjonoth; Ha 3.1 título musical
+Shihor	Nil	Schichor	revisado	rev. IA: Isa.23.3 Schichor; Es 23.3
+Shilonites	Schiloni	Schilonites	revisado	rev. IA: Neh.11.5 Schilonites; Né 11.5 Schiloni
+Shimeathite	Schimeathiens	Schimeathiens	revisado	rev. IA: 1Chr.2.55 Schimeathiens
+Shiphmites	Schimeï	Schiphmites	revisado	rev. IA: 1Chr.27.27 Schiphmites; 1 Ch 27.27 de Schepham
+Shoa	Chefs	Schoa	revisado	rev. IA: Ezek.23.23 Schoa; Ez 23.23
+Shuhites	Schuach	Schuachites	revisado	rev. IA: Job.2.11 Schuachites; Jb 2.11 de Schuach
+Shulammites	Sulamithe	Sulamithe	revisado	rev. IA: Song.6.13 Sulamithe
+Shumathites	Schumathiens	Schumathiens	revisado	rev. IA: 1Chr.2.53 Schumathiens
+Shunammites	Sunamite	Sunamite	revisado	rev. IA: 1Kgs.1.3 Sunamite
+Sikkuth	Dieu	Sikkuth	revisado	rev. IA: Amos.5.26 Sikkuth; Am 5.26
+Sinite	Siniens	Sinien	revisado	rev. IA: Gen.10.17 Sinien
+Sinites	Siniens	Siniens	revisado	rev. IA: Gen.10.17 Siniens
+Skull	Lorsqu	Crâne	revisado	rev. IA: Luke.23.33 Crâne; Lc 23.33
+South	Au		sem	rev. IA: Dan.11.6 sem forma tradicional segura em fr; pt sem; ver manuais
+South	Salomon		sem	rev. IA: Matt.12.42 sem forma tradicional segura em fr; pt sem; ver manuais
+South	Éternel		sem	rev. IA: Zech.7.7 sem forma tradicional segura em fr; pt sem; ver manuais
+Stoic	Que	Stoïciens	revisado	rev. IA: Acts.17.18 Stoïciens; Ac 17.18
+Straight	Saul	Droite	revisado	rev. IA: Acts.9.11 Droite; Ac 9.11 rue droite
+Sucathite	Sucathiens	Sucathiens	revisado	rev. IA: 1Chr.2.55 Sucathiens
+Tabbur-erez	Gaal		sem	rev. IA: Judg.9.37 sem forma tradicional segura em fr; pt também sem
+Tarpelite	Tharpel	Tharpel	revisado	rev. IA: Ezra.4.9 Tharpel
+Thebes	Entourée	No	revisado	rev. IA: Nah.3.8 No; Na 3.8 No-Amon
+Thebes	Ses	No	revisado	rev. IA: Nah.3.10 No; Na 3.8 No-Amon
+Throne	Il		sem	rev. IA: 1Kgs.7.7 sem forma tradicional segura em fr; pt sem; ver manuais
+Thummim	Tu	Thummim	revisado	rev. IA: Exod.28.30 Thummim; Ex 28.30
+Tigris	Assyrie	Hiddékel	revisado	rev. IA: Gen.2.14 Hiddékel; Gn 2.14
+Tirathite	Thireathiens	Thireathiens	revisado	rev. IA: 1Chr.2.55 Thireathiens
+Tizites	Thitsite	Thitsites	revisado	rev. IA: 1Chr.11.45 Thitsites; 1 Ch 11.45 le Thitsite
+Tower	Méa		sem	rev. IA: Neh.3.1 sem forma tradicional segura em fr; pt sem
+Tower	Pachath-Moab		sem	rev. IA: Neh.3.11 sem forma tradicional segura em fr; pt sem
+Tower	Tout		sem	rev. IA: Zech.14.10 sem forma tradicional segura em fr; pt sem
+Trogyllium	Milet	Trogylle	revisado	rev. IA: Acts.20.15 Trogylle; Ac 20.15
+Unnamed#1	Éliud		sem	rev. IA: Matt.1.15 sem forma tradicional segura em fr; pt também sem
+Unnamed#1	Éternel		sem	rev. IA: 1Kgs.2.27 sem forma tradicional segura em fr; pt também sem
+Unnamed#2	Éliud		sem	rev. IA: Matt.1.15 sem forma tradicional segura em fr; pt também sem
+Unnamed#2	Éternel		sem	rev. IA: 1Kgs.2.27 sem forma tradicional segura em fr; pt também sem
+Unnamed#3	Éliud		sem	rev. IA: Matt.1.15 sem forma tradicional segura em fr; pt também sem
+Unnamed#3	Éternel		sem	rev. IA: 1Kgs.2.27 sem forma tradicional segura em fr; pt também sem
+Unnamed#4	Éliud		sem	rev. IA: Matt.1.15 sem forma tradicional segura em fr; pt também sem
+Unnamed#4	Éternel		sem	rev. IA: 1Kgs.2.27 sem forma tradicional segura em fr; pt também sem
+Unnamed#5	Éliud		sem	rev. IA: Matt.1.15 sem forma tradicional segura em fr; pt também sem
+Unnamed#6	Éliud		sem	rev. IA: Matt.1.15 sem forma tradicional segura em fr; pt também sem
+Unnamed#7	Éliud		sem	rev. IA: Matt.1.15 sem forma tradicional segura em fr; pt também sem
+Unnamed#8	Éliud		sem	rev. IA: Matt.1.15 sem forma tradicional segura em fr; pt também sem
+Unnamed#9	Éliud		sem	rev. IA: Matt.1.15 sem forma tradicional segura em fr; pt também sem
+Urim	Sur	Urim	revisado	rev. IA: Deut.33.8 Urim; Dt 33.8
+Weeks	Éphèse	Fête des semaines	revisado	rev. IA: Acts.20.16 Fête des semaines; Dt 16.10
+Willows	C		sem	rev. IA: Isa.15.7 sem forma tradicional segura em fr; pt sem; ver manuais
+Zealot	Iscariot	Zélote	revisado	rev. IA: Matt.10.4 Zélote; Lc 6.15
+Zedekiah	Hacalia	Sédécias	revisado	rev. IA: Neh.10.1 Sédécias; Né 10.1
+Zemarite	Tsemariens	Tsemarien	revisado	rev. IA: Gen.10.18 Tsemarien
+Zemarites	Tsemariens	Tsemariens	revisado	rev. IA: Gen.10.18 Tsemariens
+Zeus	Mercure	Jupiter	revisado	rev. IA: Acts.14.12 Jupiter; Ac 14.12
+Zidkijah	Hacalia	Sédécias	revisado	rev. IA: Neh.10.1 Sédécias; Né 10.1
+Zorathites	Tsoreathiens	Tsoreathiens	revisado	rev. IA: 1Chr.2.53 Tsoreathiens
+Abaddon	Abaddon	Abaddon	revisado	rev. IA: Rev.9.11 Abaddon
+Abiah	Abija	Abija	revisado	rev. IA: 1Sam.8.2 Abija
+Abiel	Abiel	Abiel	revisado	rev. IA: 1Sam.9.1 Abiel
+Achsa	Acsa	Acsa	revisado	rev. IA: 1Chr.2.49 Acsa
+Addan	Kerub-Addan	Addan	revisado	rev. IA: Ezra.2.59 Addan; Esd 2.59 Kerub-Addan
+Addon	Kerub-Addon	Addon	revisado	rev. IA: Neh.7.61 Addon; Né 7.61 Kerub-Addon
+Ader	Éder	Éder	revisado	rev. IA: 1Chr.8.15 Éder
+Adoniram	Adoniram	Adoniram	revisado	rev. IA: 1Kgs.4.6 Adoniram
+Adoram	Adoram	Adoram	revisado	rev. IA: 2Sam.20.24 Adoram
+Adramyttium	Adramytte		sem	rev. IA: Acts.27.2 sem forma tradicional segura em fr; pt sem; ver manuais
+Adria	Adriatique	Adriatique	revisado	rev. IA: Acts.27.27 Adriatique
+Aeneas	Énée	Énée	revisado	rev. IA: Acts.9.33 Énée
+Agag	Agag	Agag	revisado	rev. IA: Num.24.7 Agag
+Aharhel	Acharchel	Acharchel	revisado	rev. IA: 1Chr.4.8 Acharchel
+Ahiah	Achija	Achija	revisado	rev. IA: 1Kgs.4.3 Achija
+Ahiram	Achiram	Achiram	revisado	rev. IA: Num.26.38 Achiram
+Ahishahar	Achischachar	Achischachar	revisado	rev. IA: 1Chr.7.10 Achischachar
+Ahoah	Achoach	Achoach	revisado	rev. IA: 2Sam.23.28 Achoach
+Aija	Ajja	Ajja	revisado	rev. IA: Neh.11.31 Ajja
+Ajah	Ajja	Ajja	revisado	rev. IA: Gen.36.24 Ajja
+Akeldama	Hakeldama	Hakeldama	revisado	rev. IA: Acts.1.19 Hakeldama
+Alphaeus	Alphée	Alphée	revisado	rev. IA: Matt.10.3 Alphée
+Ammizabad	Ammizadab	Ammizadab	revisado	rev. IA: 1Chr.27.6 Ammizadab
+Ananiah	Hanania	Hanania	revisado	rev. IA: Neh.11.32 Hanania
+Anna	Anne	Anne	revisado	rev. IA: Luke.2.36 Anne
+Aphses	Happitsets	Happitsets	revisado	rev. IA: 1Chr.24.15 Happitsets
+Arabah	Araba		sem	rev. IA: Josh.18.18 sem forma tradicional segura em fr; pt sem; ver manuais
+Arabia	Arabie	Arabie	revisado	rev. IA: 1Kgs.10.15 Arabie
+Aram	Aram	Aram	revisado	rev. IA: Gen.10.22 Aram
+Aram-maacah	Maaca	Syrie de Maaca	revisado	rev. IA: 1Chr.19.6 Syrie de Maaca; 1 Ch 19.6
+Archippus	Archippe	Archippe	revisado	rev. IA: Col.4.17 Archippe
+Arphaxad	Arphaxad	Arphaxad	revisado	rev. IA: Luke.3.36 Arphaxad
+Arumah	Aruma	Aruma	revisado	rev. IA: Judg.9.41 Aruma
+Ashtoreth	Astarté	Astarté	revisado	rev. IA: 1Kgs.11.5 Astarté
+Augustus	Auguste	Auguste	revisado	rev. IA: Luke.2.1 Auguste
+Aven	Beth-Aven	Aven	revisado	rev. IA: Hos.10.8 Aven; Os 10.8 Beth-Aven
+Avvim	Avviens	Avviens	revisado	rev. IA: Deut.2.23 Avviens
+Azal	Atzel	Atzel	revisado	rev. IA: Zech.14.5 Atzel
+Azarael	Azareel	Azareel	revisado	rev. IA: Neh.12.36 Azareel
+Azariahu	Azaria	Azaria	revisado	rev. IA: 2Chr.21.2 Azaria
+Baalath-beer	Baalath-Beer	Baalath-Beer	revisado	rev. IA: Josh.19.8 Baalath-Beer
+Baana	Baana	Baana	revisado	rev. IA: 1Kgs.4.12 Baana
+Babylonia	Babylone	Babylone	revisado	rev. IA: Ezra.1.11 Babylone
+Bartholomew	Barthélemy	Barthélemy	revisado	rev. IA: Matt.10.3 Barthélemy
+Basemath	Basmath	Basmath	revisado	rev. IA: 1Kgs.4.15 Basmath
+Basmath	Basmath	Basmath	revisado	rev. IA: 1Kgs.4.15 Basmath
+Bath-shua	Schua	Bath-Schua	revisado	rev. IA: Gen.38.2 Bath-Schua; 1 Ch 3.5
+Beer-lahai-roi	Lachaï-roï	Beer-Lachaï-roï	revisado	rev. IA: Gen.16.14 Beer-Lachaï-roï; Gn 16.14
+Ben-Geber	Guéber	Ben-Guéber	revisado	rev. IA: 1Kgs.4.13 Ben-Guéber; 1 R 4.13 fils de Guéber
+Ben-abinadab	Abinadab	Ben-Abinadab	revisado	rev. IA: 1Kgs.4.11 Ben-Abinadab; 1 R 4.11 fils d'Abinadab
+Ben-deker	Déker	Ben-Déker	revisado	rev. IA: 1Kgs.4.9 Ben-Déker; 1 R 4.9 fils de Déker
+Ben-hesed	Hésed	Ben-Hésed	revisado	rev. IA: 1Kgs.4.10 Ben-Hésed; 1 R 4.10 fils de Hésed
+Berothah	Bérotha	Bérotha	revisado	rev. IA: 2Sam.8.8 Bérotha
+Beth-ashbea	Aschbéa	Beth-Aschbéa	revisado	rev. IA: 1Chr.4.21 Beth-Aschbéa; 1 Ch 4.21
+Beth-azmaveth	Beth-Azmaveth	Beth-Azmaveth	revisado	rev. IA: Neh.7.28 Beth-Azmaveth
+Beth-maacah	Abel-Beth-Maaca	Beth-Maaca	revisado	rev. IA: 2Sam.20.14 Beth-Maaca; 2 S 20.14 Abel-Beth-Maaca
+Beth-millo	Millo	Beth-Millo	revisado	rev. IA: Judg.9.6 Beth-Millo; Jg 9.6 maison de Millo
+Beth-rapha	Rapha	Beth-Rapha	revisado	rev. IA: 1Chr.4.12 Beth-Rapha; 1 Ch 4.12
+Bethel	Bethul	Béthel	revisado	rev. IA: Josh.19.4 Béthel; Jos 19.4 Bethul
+Blastus	Blaste	Blaste	revisado	rev. IA: Acts.12.20 Blaste
+Cainan	Kaïnan	Kaïnan	revisado	rev. IA: Luke.3.37 Kaïnan
+Caphtor	Caphtor	Caphtor	revisado	rev. IA: Gen.10.14 Caphtor
+Cherub	Kerub-Addan	Kerub	revisado	rev. IA: Ezra.2.59 Kerub; Esd 2.59 Kerub-Addan
+Chesulloth	Kesulloth	Kesulloth	revisado	rev. IA: Josh.19.18 Kesulloth
+Chinnereth	Kinnéreth	Kinnéreth	revisado	rev. IA: Num.34.11 Kinnéreth
+Chinneroth	Kinneroth	Kinneroth	revisado	rev. IA: 1Kgs.15.20 Kinneroth
+Claudius	Claude	Claude	revisado	rev. IA: Acts.11.28 Claude
+Cnidus	Cnide	Cnide	revisado	rev. IA: Acts.27.7 Cnide
+Corinth	Corinthe	Corinthe	revisado	rev. IA: Acts.18.1 Corinthe
+Cush	Cub	Cusch	revisado	rev. IA: Ezek.30.5 Cusch
+Cush	Cuschi	Cusch	revisado	rev. IA: 2Sam.18.21 Cusch
+Cyprus	Chypre	Chypre	revisado	rev. IA: Acts.4.36 Chypre
+Dalaiah	Delaja	Delaja	revisado	rev. IA: 1Chr.3.24 Delaja
+Diblathaim	Almon-Diblathaïm	Diblathaïm	revisado	rev. IA: Num.33.46 Diblathaïm; Nb 33.46
+Dimnah	Dimna	Dimna	revisado	rev. IA: Josh.21.35 Dimna
+Ebez	Abets	Abets	revisado	rev. IA: Josh.19.20 Abets
+Ebiasaph	Ebjasaph	Ébiasaph	revisado	rev. IA: 1Chr.6.23 Ébiasaph; 1 Ch 9.19
+El-paran	Paran	El-Paran	revisado	rev. IA: Gen.14.6 El-Paran; Gn 14.6
+Ela	Éla	Éla	revisado	rev. IA: 1Kgs.4.18 Éla
+Eliadah	Éliada	Éliada	revisado	rev. IA: 1Kgs.11.23 Éliada
+Eliah	Élam	Élie	revisado	rev. IA: Ezra.10.26 Élie; Esd 10.26
+Eliehoenai	Éljoénaï	Éljoénaï	revisado	rev. IA: 1Chr.26.3 Éljoénaï
+Elihoenai	Éljoénaï	Éljoénaï	revisado	rev. IA: Ezra.8.4 Éljoénaï
+Elonbeth-hanan	Beth-Hanan	Élon-Beth-Hanan	revisado	rev. IA: 1Kgs.4.9 Élon-Beth-Hanan; 1 R 4.9
+Elpalet	Elphéleth	Elphéleth	revisado	rev. IA: 1Chr.14.5 Elphéleth
+Emmaus	Émmaüs	Emmaüs	revisado	rev. IA: Luke.24.13 Emmaüs; Lc 24.13
+Epaenetus	Épaïnète	Épaïnète	revisado	rev. IA: Rom.16.5 Épaïnète
+Ephes-dammim	Éphès-Dammim	Éphès-Dammim	revisado	rev. IA: 1Sam.17.1 Éphès-Dammim
+Ephesus	Éphèse	Éphèse	revisado	rev. IA: Acts.18.19 Éphèse
+Erastus	Éraste	Éraste	revisado	rev. IA: Acts.19.22 Éraste
+Eth-kazin	Ittha-Katsin	Ittha-Katsin	revisado	rev. IA: Josh.19.13 Ittha-Katsin
+Ethiopia	Éthiopie	Éthiopie	revisado	rev. IA: Esth.1.1 Éthiopie
+Euodia	Évodie	Évodie	revisado	rev. IA: Phil.4.2 Évodie
+Euodias	Évodie	Évodie	revisado	rev. IA: Phil.4.2 Évodie
+Euphrates	Euphrate	Euphrate	revisado	rev. IA: Gen.2.14 Euphrate
+Ezem	Étsem	Étsem	revisado	rev. IA: 1Chr.4.29 Étsem
+Ezrah	Esdras	Esdras	revisado	rev. IA: 1Chr.4.17 Esdras
+Gahar	Gachar	Gachar	revisado	rev. IA: Ezra.2.47 Gachar
+Gamad	Arvad	Gammadiens	revisado	rev. IA: Ezek.27.11 Gammadiens; Ez 27.11 forma tradicional
+Geliloth	Gueliloth	Gueliloth	revisado	rev. IA: Josh.18.17 Gueliloth
+Gershon	Guerschon	Guerschon	revisado	rev. IA: Gen.46.11 Guerschon
+Gesham	Guéschan	Guéschan	revisado	rev. IA: 1Chr.2.47 Guéschan
+Gibea	Guibea	Guibea	revisado	rev. IA: 1Chr.2.49 Guibea
+Gibeah	Guibeath-Phinées	Guibea	revisado	rev. IA: Josh.24.33 Guibea; Jos 24.33
+Gibeath-haaraloth	Araloth	Colline d’Araloth	revisado	rev. IA: Josh.5.3 Colline d’Araloth
+Gibeon	Gabaon	Gabaon	revisado	rev. IA: Josh.9.3 Gabaon
+God	Nod		sem	rev. IA: Gen.4.16 sem forma tradicional segura em fr; pt sem; ver manuais
+Greece	Grecs	Grèce	revisado	rev. IA: Acts.11.20 Grèce
+Hadadezer	Hadadézer	Hadadézer	revisado	rev. IA: 2Sam.8.3 Hadadézer
+Hadar	Hadad	Hadad	revisado	rev. IA: Gen.25.15 Hadad
+Hagri	Hagri	Hagri	revisado	rev. IA: 1Chr.11.38 Hagri
+Hahiroth	Pi-Hahiroth	Pi-Hahiroth	revisado	rev. IA: Num.33.8 Pi-Hahiroth
+Halah	Chalach	Chalach	revisado	rev. IA: 2Kgs.17.6 Chalach
+Hamath-zobah	Tsoba	Hamath-Tsoba	revisado	rev. IA: 1Chr.18.3 Hamath-Tsoba; 2 Ch 8.3
+Hammath	Hamath	Hamath	revisado	rev. IA: 1Chr.2.55 Hamath
+Hammath	Hammath	Hammath	revisado	rev. IA: Josh.19.35 Hammath
+Hanoch	Hénoc	Hénoc	revisado	rev. IA: Gen.25.4 Hénoc
+Heleb	Héleb	Héleb	revisado	rev. IA: 2Sam.23.29 Héleb
+Helez	Halets	Halets	revisado	rev. IA: 1Chr.2.39 Halets
+Hemath	Hamath	Hamath	revisado	rev. IA: 1Chr.2.55 Hamath
+Henoch	Hénoc	Hénoc	revisado	rev. IA: Gen.25.4 Hénoc
+Heth	Heth	Heth	revisado	rev. IA: Gen.10.15 Heth
+Hezeki	Hizki	Hizki	revisado	rev. IA: 1Chr.8.17 Hizki
+Hizkiah	Ézéchias	Ézéchias	revisado	rev. IA: 1Chr.3.23 Ézéchias
+Hizkijah	Ézéchias	Ézéchias	revisado	rev. IA: Neh.10.17 Ézéchias
+Hodaiah	Hodavia	Hodavia	revisado	rev. IA: 1Chr.3.24 Hodavia
+Hodevah	Hodva	Hodva	revisado	rev. IA: Neh.7.43 Hodva
+Hophra	Hophra		sem	rev. IA: Jer.44.30 sem forma tradicional segura em fr; pt sem; ver manuais
+Hori	Hori	Hori	revisado	rev. IA: Gen.14.6 Hori
+Hosea	Osée	Osée	revisado	rev. IA: Hos.1.1 Osée
+Hoshaiah	Jezania	Hosée	revisado	rev. IA: Jer.42.1 Hosée; Jr 42.1
+Hoshea	Hosée	Hosée	revisado	rev. IA: 1Chr.27.20 Hosée
+Hothan	Hotham	Hotham	revisado	rev. IA: 1Chr.11.44 Hotham
+Huram	Huram	Huram	revisado	rev. IA: 1Chr.8.5 Huram
+Hushah	Huscha	Huscha	revisado	rev. IA: 2Sam.21.18 Huscha
+Huz	Buz	Uts	revisado	rev. IA: Gen.22.21 Uts; Gn 22.21
+Hymenaeus	Hyménée	Hyménée	revisado	rev. IA: 1Tim.1.20 Hyménée
+Illyricum	Illyrie	Illyrie	revisado	rev. IA: Rom.15.19 Illyrie
+Imna	Jimna	Jimna	revisado	rev. IA: 1Chr.7.35 Jimna
+India	Inde	Inde	revisado	rev. IA: Esth.1.1 Inde
+Ir-moab	Moab	Ir-Moab	revisado	rev. IA: Num.22.36 Ir-Moab; Nb 22.36
+Ishi	Jischeï	Jischeï	revisado	rev. IA: 1Chr.2.31 Jischeï
+Ishiah	Jischija	Jischija	revisado	rev. IA: 1Chr.7.3 Jischija
+Ishijah	Jischija	Jischija	revisado	rev. IA: Ezra.10.31 Jischija
+Ishpah	Jischpha	Jischpha	revisado	rev. IA: 1Chr.8.16 Jischpha
+Ispah	Jischpha	Jischpha	revisado	rev. IA: 1Chr.8.16 Jischpha
+Isshijah	Jischija	Jischija	revisado	rev. IA: Ezra.10.31 Jischija
+Isuah	Jischva	Jischva	revisado	rev. IA: Gen.46.17 Jischva
+Isui	Jischvi	Jischvi	revisado	rev. IA: Gen.46.17 Jischvi
+Izhar	Tsochar	Tsochar	revisado	rev. IA: 1Chr.4.7 Tsochar
+Jaasu	Jaasaï	Jaasaï	revisado	rev. IA: Ezra.10.37 Jaasaï
+Jaaziel	Jaaziel	Jaaziel	revisado	rev. IA: 1Chr.15.18 Jaaziel
+Jacob	Jacob	Jacob	revisado	rev. IA: Gen.25.26 Jacob
+Jahzeel	Jahtseel	Jahtseel	revisado	rev. IA: Num.26.48 Jahtseel
+Jashen	Bené-Jaschen	Jaschen	revisado	rev. IA: 2Sam.23.32 Jaschen; 2 S 23.32 Bené-Jaschen
+Jasher	Juste	Juste	revisado	rev. IA: Josh.10.13 Juste; Jos 10.13 livre du Juste
+Javan	Javan	Javan	revisado	rev. IA: Gen.10.2 Javan
+Jeberechiah	Bérékia	Jébérékia	revisado	rev. IA: Isa.8.2 Jébérékia; Es 8.2
+Jehiel	Jehiéli	Jehiel	revisado	rev. IA: 1Chr.26.21 Jehiel; 1 Ch 26.21
+Jehizkiah	Ézéchias	Ézéchias	revisado	rev. IA: 2Chr.28.12 Ézéchias
+Jehohanan	Jochanan	Jochanan	revisado	rev. IA: 1Chr.26.3 Jochanan
+Jehoiachin	Jojakin	Jojakin	revisado	rev. IA: 2Kgs.24.6 Jojakin
+Jehoiada	Jojada	Jojada	revisado	rev. IA: Neh.3.6 Jojada
+Jehonathan	Jonathan	Jonathan	revisado	rev. IA: 1Chr.27.25 Jonathan
+Jehozabad	Jozabad	Jozabad	revisado	rev. IA: 2Kgs.12.21 Jozabad
+Jehubbah	Hubba	Hubba	revisado	rev. IA: 1Chr.7.34 Hubba
+Jehuel	Jehiel	Jehiel	revisado	rev. IA: 2Chr.29.14 Jehiel
+Jehush	Jeusch	Jeusch	revisado	rev. IA: 1Chr.8.39 Jeusch
+Jeiel	Jehiel	Jehiel	revisado	rev. IA: 1Chr.11.44 Jehiel
+Jered	Jéred	Jéred	revisado	rev. IA: 1Chr.4.18 Jéred
+Jeremoth	Ramoth	Jerémoth	revisado	rev. IA: Ezra.10.29 Jerémoth; Esd 10.29
+Jerijah	Jerija	Jerija	revisado	rev. IA: 1Chr.26.31 Jerija
+Jerimoth	Jerémoth	Jerémoth	revisado	rev. IA: 1Chr.7.8 Jerémoth
+Jesaiah	Ésaïe	Ésaïe	revisado	rev. IA: 1Chr.3.21 Ésaïe
+Jeshaiah	Ésaïe	Ésaïe	revisado	rev. IA: 1Chr.3.21 Ésaïe
+Jeshua	Dieu	Josué	revisado	rev. IA: Ezra.3.9 Josué; Esd 3.9
+Jeshua	Josué	Josué	revisado	rev. IA: 1Chr.24.11 Josué
+Jeshua	Phinées	Josué	revisado	rev. IA: Ezra.8.33 Josué; Esd 8.33
+Jesiah	Jischija	Jischija	revisado	rev. IA: 1Chr.12.6 Jischija
+Jethro	Jéthro	Jéthro	revisado	rev. IA: Exod.3.1 Jéthro
+Jeuel	Jeïel	Jeïel	revisado	rev. IA: 2Chr.29.13 Jeïel
+Jezoar	Tsochar	Tsochar	revisado	rev. IA: 1Chr.4.7 Tsochar
+Joahaz	Joachaz	Joachaz	revisado	rev. IA: 2Chr.34.8 Joachaz
+Joanna	Jeanne	Jeanne	revisado	rev. IA: Luke.8.3 Jeanne
+John	Jonas	Jonas	revisado	rev. IA: Matt.16.17 Jonas
+Joiakim	Jojakim	Jojakim	revisado	rev. IA: Neh.12.10 Jojakim
+Jonas	Jonas	Jonas	revisado	rev. IA: John.1.42 Jonas
+Joppa	Joppé	Joppé	revisado	rev. IA: Acts.9.36 Joppé
+Josabad	Jozabad	Jozabad	revisado	rev. IA: 1Chr.12.4 Jozabad
+Josedech	Jotsadak	Jotsadak	revisado	rev. IA: Ezra.3.2 Jotsadak
+Joshaphat	Josaphat	Josaphat	revisado	rev. IA: 1Chr.11.43 Josaphat
+Jozadak	Jotsadak	Jotsadak	revisado	rev. IA: Ezra.10.18 Jotsadak
+Juda	Joda	Joda	revisado	rev. IA: Luke.3.26 Joda
+Juda	Juda	Juda	revisado	rev. IA: Luke.3.30 Juda
+Judas	Jude	Jude	revisado	rev. IA: Luke.6.16 Jude
+Judea	Juda	Juda	revisado	rev. IA: Ezra.5.1 Juda
+Juttah	Juta	Juta	revisado	rev. IA: Josh.15.55 Juta
+Kadesh-barnea	Kadès-Barnéa	Kadès-Barnéa	revisado	rev. IA: Num.32.8 Kadès-Barnéa
+Karnaim	Aschteroth-Karnaïm	Karnaïm	revisado	rev. IA: Gen.14.5 Karnaïm; Gn 14.5
+Kir	Kir-Hérès	Kir	revisado	rev. IA: Jer.48.31 Kir; Jr 48.31
+Kir	Kir-Moab	Kir	revisado	rev. IA: Isa.15.1 Kir; Es 15.1
+Kir-hareseth	Kir-Haréseth	Kir-Haréseth	revisado	rev. IA: 2Kgs.3.25 Kir-Haréseth
+Kitron	Kitron	Kitron	revisado	rev. IA: Judg.1.30 Kitron
+Kohath	Kehath	Kehath	revisado	rev. IA: Gen.46.11 Kehath
+Korah	Koré	Koré	revisado	rev. IA: Gen.36.5 Koré
+Kore	Koré	Koré	revisado	rev. IA: 1Chr.9.19 Koré
+Koz	Hakkots	Kots	revisado	rev. IA: Ezra.2.61 Kots; Esd 2.61 Hakkots
+LORD	Lors		sem	rev. IA: Gen.2.4 sem forma tradicional segura em fr; pt sem; ver manuais
+Ladan	Laedan	Laedan	revisado	rev. IA: 1Chr.7.26 Laedan
+Lahmam	Lachmas	Lachmas	revisado	rev. IA: Josh.15.40 Lachmas
+Laishah	Laïs	Laïs	revisado	rev. IA: Isa.10.30 Laïs
+Lasha	Gaza	Léscha	revisado	rev. IA: Gen.10.19 Léscha; Gn 10.19
+Lebo-hamath	Hamath	Lebo-Hamath	revisado	rev. IA: Num.13.21 Lebo-Hamath; Nb 13.21 entrée de Hamath
+Levi	Lévi	Lévi	revisado	rev. IA: Gen.29.34 Lévi
+Libya	Libye	Libye	revisado	rev. IA: 2Chr.12.3 Libye
+Lydda	Lydde	Lydde	revisado	rev. IA: Acts.9.32 Lydde
+Maacath	Maacathiens	Maacathiens	revisado	rev. IA: Josh.13.13 Maacathiens
+Macedonia	Macédoine	Macédoine	revisado	rev. IA: Acts.16.9 Macédoine
+Magadan	Magadan	Magadan	revisado	rev. IA: Matt.15.39 Magadan
+Mahalah	Machla	Machla	revisado	rev. IA: 1Chr.7.18 Machla
+Mahalath	Mahalath	Mahalath	revisado	rev. IA: Gen.28.9 Mahalath
+Mahath	Machath	Machath	revisado	rev. IA: 1Chr.6.35 Machath
+Massa	Massa	Massa	revisado	rev. IA: Gen.25.14 Massa
+Matthan	Matthan	Matthan	revisado	rev. IA: Matt.1.15 Matthan
+Matthew	Matthieu	Matthieu	revisado	rev. IA: Matt.9.9 Matthieu
+Media	Médie	Médie	revisado	rev. IA: Ezra.6.2 Médie
+Melchiah	Malkija	Malkija	revisado	rev. IA: Jer.21.1 Malkija
+Menuhoth	Hatsi-Hammenuhoth	Menuhoth	revisado	rev. IA: 1Chr.2.52 Menuhoth; 1 Ch 2.52 Hatsi-Hammenuhoth
+Meribah-kadesh	Meriba	Meriba-Kadès	revisado	rev. IA: Deut.32.51 Meriba-Kadès; Dt 32.51
+Meshech-Tubal	Tubal	Méschec et Tubal	revisado	rev. IA: Ezek.32.26 Méschec et Tubal; Ez 32.26
+Miamin	Mijamin	Mijamin	revisado	rev. IA: Ezra.10.25 Mijamin
+Mica	Michée	Michée	revisado	rev. IA: 1Chr.9.15 Michée
+Micah	Michée	Michée	revisado	rev. IA: 1Chr.5.5 Michée
+Micha	Michée	Michée	revisado	rev. IA: 1Chr.9.15 Michée
+Michah	Michée	Michée	revisado	rev. IA: 1Chr.23.20 Michée
+Michaiah	Michée	Michée	revisado	rev. IA: 2Kgs.22.12 Michée
+Mishael	Mischaël	Mischaël	revisado	rev. IA: Exod.6.22 Mischaël
+Moadiah	Moadia	Moadia	revisado	rev. IA: Neh.12.17 Moadia
+Moresheth-gath	Moréschet-Gath	Moréschet-Gath	revisado	rev. IA: Mic.1.14 Moréschet-Gath
+Mozah	Motsa	Motsa	revisado	rev. IA: Josh.18.26 Motsa
+Muppim	Muppim	Muppim	revisado	rev. IA: Gen.46.21 Muppim
+Nagge	Naggaï	Naggaï	revisado	rev. IA: Luke.3.25 Naggaï
+Nahalol	Nahalol	Nahalol	revisado	rev. IA: Judg.1.30 Nahalol
+Naham	Nacham	Nacham	revisado	rev. IA: 1Chr.4.19 Nacham
+Nahath	Nachath	Nachath	revisado	rev. IA: 1Chr.6.26 Nachath
+Naphath-dor	Thaphath		sem	rev. IA: 1Kgs.4.11 sem forma tradicional segura em fr; pt sem; ver manuais
+Neah	Néa	Néa	revisado	rev. IA: Josh.19.13 Néa
+Nehelam	Néchélamite		sem	rev. IA: Jer.29.24 sem forma tradicional segura em fr; pt sem; ver manuais
+Nile	Nil	Nil	revisado	rev. IA: Isa.23.3 Nil
+Oded	Obed	Obed	revisado	rev. IA: 2Chr.15.1 Obed
+Olympas	Olympe	Olympe	revisado	rev. IA: Rom.16.15 Olympe
+On	On	On	revisado	rev. IA: Gen.41.45 On
+Paddan	Paddan	Paddan-Aram	revisado	rev. IA: Gen.25.20 Paddan-Aram; Gn 25.20
+Parthians	Parthes	Parthes	revisado	rev. IA: Acts.2.9 Parthes
+Pavement	Pavé	Pavé	revisado	rev. IA: John.19.13 Pavé
+Peniel	Peniel	Peniel	revisado	rev. IA: Gen.32.30 Peniel
+Persia	Perse	Perse	revisado	rev. IA: 2Chr.36.20 Perse
+Persis	Perside	Perside	revisado	rev. IA: Rom.16.12 Perside
+Peter	Pierre	Pierre	revisado	rev. IA: Matt.4.18 Pierre
+Pharez	Pharès	Pharès	revisado	rev. IA: Matt.1.3 Pharès
+Pharisee	Pharisien	Pharisien	revisado	rev. IA: Matt.23.26 Pharisien
+Pharosh	Pareosch	Pareosch	revisado	rev. IA: Ezra.8.3 Pareosch
+Phaseah	Paséach	Paséach	revisado	rev. IA: Ezra.2.49 Paséach
+Phenice	Phénix	Phénix	revisado	rev. IA: Acts.27.12 Phénix
+Philetus	Philète	Philète	revisado	rev. IA: 2Tim.2.17 Philète
+Philippi	Philippes	Philippes	revisado	rev. IA: Acts.16.12 Philippes
+Philistine	Philistins	Philistin	revisado	rev. IA: Gen.10.14 Philistin
+Phoebe	Phœbé	Phœbé	revisado	rev. IA: Rom.16.1 Phœbé
+Phurah	Pura	Pura	revisado	rev. IA: Judg.7.10 Pura
+Phut	Puth	Puth	revisado	rev. IA: Gen.10.6 Puth
+Phygellus	Phygelle	Phygelle	revisado	rev. IA: 2Tim.1.15 Phygelle
+Phygelus	Phygelle	Phygelle	revisado	rev. IA: 2Tim.1.15 Phygelle
+Pochereth	Pokéreth-Hatsebaïm	Pokéreth-Hatsebaïm	revisado	rev. IA: Ezra.2.57 Pokéreth-Hatsebaïm
+Raamses	Ramsès	Ramsès	revisado	rev. IA: Exod.1.11 Ramsès
+Rachab	Rahab	Rahab	revisado	rev. IA: Matt.1.5 Rahab
+Raham	Racham	Racham	revisado	rev. IA: 1Chr.2.44 Racham
+Rakem	Rékem	Rékem	revisado	rev. IA: 1Chr.7.16 Rékem
+Raphah	Rapha	Rapha	revisado	rev. IA: 1Chr.8.37 Rapha
+Reaia	Reaja	Reaja	revisado	rev. IA: 1Chr.5.5 Reaja
+Rehoboth-Ir	Rehoboth	Rehoboth-Hir	revisado	rev. IA: Gen.10.11 Rehoboth-Hir; Gn 10.11
+Rezia	Ritsja	Ritsja	revisado	rev. IA: 1Chr.7.39 Ritsja
+Rhegium	Reggio	Reggio	revisado	rev. IA: Acts.28.13 Reggio
+Rhoda	Rhode	Rhode	revisado	rev. IA: Acts.12.13 Rhode
+Rimmon	Dimna	Rimmon	revisado	rev. IA: Josh.21.35 Rimmon; Jos 21.35 Dimna
+Rome	Rome	Rome	revisado	rev. IA: Acts.2.10 Rome
+Rosh	Rosch	Rosch	revisado	rev. IA: Gen.46.21 Rosch
+Sachia	Schocja	Schocja	revisado	rev. IA: 1Chr.8.10 Schocja
+Salah	Sala	Sala	revisado	rev. IA: Luke.3.35 Sala
+Samgar	Samgar-Nebu	Samgar-Nebu	revisado	rev. IA: Jer.39.3 Samgar-Nebu
+Satan	Satan	Satan	revisado	rev. IA: 1Chr.21.1 Satan
+Scythians	Scythe	Scythes	revisado	rev. IA: Col.3.11 Scythes; Col 3.11
+Seba	Séba	Séba	revisado	rev. IA: Gen.10.7 Séba
+Secundus	Second	Second	revisado	rev. IA: Acts.20.4 Second
+Sepharad	Sepharad	Sepharad	revisado	rev. IA: Obad.1.20 Sepharad
+Shaalbim	Saalbim	Saalbim	revisado	rev. IA: 1Kgs.4.9 Saalbim
+Shachia	Schocja	Schocja	revisado	rev. IA: 1Chr.8.10 Schocja
+Shahazumah	Schachatsima	Schachatsima	revisado	rev. IA: Josh.19.22 Schachatsima
+Shallun	Schallum	Schallum	revisado	rev. IA: Neh.3.15 Schallum
+Shamariah	Schemaria	Schemaria	revisado	rev. IA: 2Chr.11.19 Schemaria
+Shamer	Schémer	Schémer	revisado	rev. IA: 1Chr.6.46 Schémer
+Shamma	Schamma	Schamma	revisado	rev. IA: 1Chr.7.37 Schamma
+Sharuhen	Scharuchen	Scharuchen	revisado	rev. IA: Josh.19.6 Scharuchen
+Shaul	Saül	Saül	revisado	rev. IA: Gen.36.37 Saül
+Shavsha	Schavscha	Schavscha	revisado	rev. IA: 1Chr.18.16 Schavscha
+Shemed	Schémer	Schémer	revisado	rev. IA: 1Chr.8.12 Schémer
+Shemuel	Samuel	Samuel	revisado	rev. IA: Num.34.20 Samuel
+Shephathiah	Schephathia	Schephathia	revisado	rev. IA: 1Chr.9.8 Schephathia
+Shiloah	Siloé	Siloé	revisado	rev. IA: Isa.8.6 Siloé
+Shimea	Schimea	Schimea	revisado	rev. IA: 1Chr.6.30 Schimea
+Shimeon	Siméon	Siméon	revisado	rev. IA: Ezra.10.31 Siméon
+Shimhi	Schimeï	Schimeï	revisado	rev. IA: 1Chr.8.21 Schimeï
+Shimon	Simon	Simon	revisado	rev. IA: 1Chr.4.20 Simon
+Shuah	Schuach	Schuach	revisado	rev. IA: Gen.25.2 Schuach
+Shuah	Schucha	Schucha	revisado	rev. IA: 1Chr.4.11 Schucha
+Shubael	Schubaël	Schubaël	revisado	rev. IA: 1Chr.24.20 Schubaël
+Shuhah	Schucha	Schucha	revisado	rev. IA: 1Chr.4.11 Schucha
+Shunem	Sunem	Sunem	revisado	rev. IA: Josh.19.18 Sunem
+Shupham	Schupham	Schupham	revisado	rev. IA: Num.26.39 Schupham
+Siloam	Siloé	Siloé	revisado	rev. IA: Neh.3.15 Siloé
+Simri	Schimri	Schimri	revisado	rev. IA: 1Chr.26.10 Schimri
+Soco	Soco	Soco	revisado	rev. IA: 1Chr.4.18 Soco
+Spain	Espagne	Espagne	revisado	rev. IA: Rom.15.24 Espagne
+Sukkiim	Sukkiens	Sukkiens	revisado	rev. IA: 2Chr.12.3 Sukkiens
+Sur	Sur	Porte de Sur	revisado	rev. IA: 2Kgs.11.6 Porte de Sur; 2 R 11.6
+Syrtis	Syrte		sem	rev. IA: Acts.27.17 sem forma tradicional segura em fr; pt sem; ver manuais
+Tahan	Thachan	Thachan	revisado	rev. IA: Num.26.35 Thachan
+Tahath	Thachath	Thachath	revisado	rev. IA: 1Chr.6.24 Thachath
+Tamar	Thadmor	Thadmor	revisado	rev. IA: 1Kgs.9.18 Thadmor
+Tehaphnehes	Tachpanès	Tachpanès	revisado	rev. IA: Ezek.30.18 Tachpanès
+Temah	Thamach	Thamach	revisado	rev. IA: Ezra.2.53 Thamach
+Terah	Tarach	Tarach	revisado	rev. IA: Num.33.27 Tarach
+Tharshish	Tarsis	Tarsis	revisado	rev. IA: 1Chr.7.10 Tarsis
+There	Éternel	L’Éternel est ici	revisado	rev. IA: Ezek.48.35 L’Éternel est ici
+Tiberius	Tibère	Tibère	revisado	rev. IA: Luke.3.1 Tibère
+Tiglath-pileser	Tiglath-Piléser	Tiglath-Piléser	revisado	rev. IA: 2Kgs.15.29 Tiglath-Piléser
+Timaeus	Timée	Timée	revisado	rev. IA: Mark.10.46 Timée
+Timnath-heres	Thimnath-Hérès	Thimnath-Hérès	revisado	rev. IA: Judg.2.9 Thimnath-Hérès
+Titus	Tite	Tite	revisado	rev. IA: 2Cor.7.6 Tite
+Tobijah	Tobija	Tobija	revisado	rev. IA: 2Chr.17.8 Tobija
+Tohu	Thohu	Thohu	revisado	rev. IA: 1Sam.1.1 Thohu
+Topheth	Topheth	Topheth	revisado	rev. IA: 2Kgs.23.10 Topheth
+Tychicus	Tychique	Tychique	revisado	rev. IA: Acts.20.4 Tychique
+Urbanus	Urbain	Urbain	revisado	rev. IA: Rom.16.9 Urbain
+Urijah	Urie	Urie	revisado	rev. IA: 2Kgs.16.10 Urie
+Uzzia	Ozias	Ozias	revisado	rev. IA: 1Chr.11.44 Ozias
+Uzziah	Ozias	Ozias	revisado	rev. IA: 2Kgs.15.13 Ozias
+Zacchaeus	Zachée	Zachée	revisado	rev. IA: Luke.19.2 Zachée
+Zacchur	Zaccur	Zaccur	revisado	rev. IA: 1Chr.4.26 Zaccur
+Zaccur	Zabbud	Zabbud	revisado	rev. IA: Ezra.8.14 Zabbud
+Zachariah	Zacharie	Zacharie	revisado	rev. IA: 2Kgs.14.29 Zacharie
+Zacharias	Zacharie	Zacharie	revisado	rev. IA: 2Chr.24.20 Zacharie
+Zaphon	Sion	Tsaphon	revisado	rev. IA: Ps.48.2 Tsaphon; Ps 48.2
+Zaphon	Tsaphon	Tsaphon	revisado	rev. IA: Josh.13.27 Tsaphon
+Zarephath	Sarepta	Sarepta	revisado	rev. IA: 1Kgs.17.9 Sarepta
+Zatthu	Zatthu	Zatthu	revisado	rev. IA: Neh.10.14 Zatthu
+Zaza	Zara	Zara	revisado	rev. IA: 1Chr.2.33 Zara
+Zeboim	Tseboïm	Tseboïm	revisado	rev. IA: Neh.11.34 Tseboïm
+Zelzah	Tseltsach	Tseltsach	revisado	rev. IA: 1Sam.10.2 Tseltsach
+Zephath	Tsephath	Tsephath	revisado	rev. IA: Judg.1.17 Tsephath
+Zereth-shahar	Tséreth-Haschachar	Tséreth-Haschachar	revisado	rev. IA: Josh.13.19 Tséreth-Haschachar
+Zidon	Sidon	Sidon	revisado	rev. IA: Gen.10.15 Sidon
+Ziha	Tsicha	Tsicha	revisado	rev. IA: Ezra.2.43 Tsicha
+Zipporah	Séphora	Séphora	revisado	rev. IA: Exod.2.21 Séphora
+Ziz	Tsits	Tsits	revisado	rev. IA: 2Chr.20.16 Tsits
+Zizah	Zina	Zina	revisado	rev. IA: 1Chr.23.10 Zina
+Zobah-Hamath	Hamath	Hamath-Tsoba	revisado	rev. IA: 1Chr.18.3 Hamath-Tsoba; 1 Ch 18.3
+Zorobabel	Zorobabel	Zorobabel	revisado	rev. IA: Luke.3.27 Zorobabel
+Adriatic Sea	mer {n} Adriatic	Mer Adriatique	revisado	rev. IA: Acts.27.27 Mer Adriatique; Ac 27.27
+Aven Valley	vallée de Aven	Vallée d’Aven	revisado	rev. IA:  Vallée d’Aven; Am 1.5
+Beautiful Gate	porte de {n} Beautiful	Porte la Belle	revisado	rev. IA: Acts.3.2 Porte la Belle; Ac 3.2 porte appelée la Belle
+Broad Wall	muraille de {n} Broad	Muraille large	revisado	rev. IA: Neh.3.8 Muraille large; Né 3.8
+Brook Eshcol	torrent de Eschcol	Torrent d’Eschcol	revisado	rev. IA: Num.13.23 Torrent d’Eschcol; Nb 13.23
+Brook of the Arabah	torrent de {n} Arabah	Torrent du désert	revisado	rev. IA: Amos.6.14 Torrent du désert; Am 6.14
+Brook of the Willows	torrent de {n} Willows	Torrent des saules	revisado	rev. IA: Isa.15.7 Torrent des saules; Es 15.7
+City of Destruction	ville de Ville de la destruction	Ville de la destruction	revisado	rev. IA: Isa.19.18 Ville de la destruction; Es 19.18
+City of Palms	ville de {n} Palms	Ville des palmiers	revisado	rev. IA:  Ville des palmiers; Dt 34.3
+City of Salt	ville de Ir-Hammélach	Ir-Hammélach	revisado	rev. IA: Josh.15.62 Ir-Hammélach; Jos 15.62
+City of the Lord	ville de {n} Lord	Ville de l’Éternel	revisado	rev. IA: Isa.60.14 Ville de l’Éternel; Es 60.14
+Dragon Spring	source de {n} Dragon	Source du dragon	revisado	rev. IA: Neh.2.13 Source du dragon; Né 2.13
+Dung Gate	porte de {n} Dung	Porte du fumier	revisado	rev. IA: Neh.2.13 Porte du fumier; Né 2.13
+East Square	place de Orient	Place orientale	revisado	rev. IA: 2Chr.29.4 Place orientale; 2 Ch 29.4
+Elah Valley	vallée de Éla	Vallée d’Éla	revisado	rev. IA:  Vallée d’Éla; 1 S 17.2
+Fountain Gate	porte de {n} Fountain	Porte de la source	revisado	rev. IA: Neh.2.14 Porte de la source; Né 2.14
+Gate of the Fountain	porte de {n} Fountain	Porte de la source	revisado	rev. IA: Neh.2.14 Porte de la source; Né 2.14
+Gate of the Valley	porte de {n} Valley	Porte de la vallée	revisado	rev. IA: Neh.2.13 Porte de la vallée; Né 2.13
+Hall of Judgment	portique de {n} Judgment	Portique du jugement	revisado	rev. IA: 1Kgs.7.7 Portique du jugement; 1 R 7.7
+Hall of Pillars	portique de {n} Pillars	Portique des colonnes	revisado	rev. IA: 1Kgs.7.6 Portique des colonnes; 1 R 7.6
+Hall of the Throne	portique de {n} Throne	Portique du trône	revisado	rev. IA: 1Kgs.7.7 Portique du trône; 1 R 7.7
+Hamon-gog Valley	vallée de {n} Hamon-gog	Vallée de Hamon-Gog	revisado	rev. IA:  Vallée de Hamon-Gog; Ez 39.11
+Hill Mizar	colline de {n} Mizar	Montagne de Mitsear	revisado	rev. IA: Ps.42.6 Montagne de Mitsear; Ps 42.7
+Horse Gate	porte de {n} Horse	Porte des chevaux	revisado	rev. IA: 2Chr.23.15 Porte des chevaux; 2 Ch 23.15
+House of the Forest	maison de {n} Forest	Maison de la forêt du Liban	revisado	rev. IA:  Maison de la forêt du Liban; 1 R 7.2
+Jordan Valley	vallée de Jourdain	Plaine du Jourdain	revisado	rev. IA: Gen.13.10 Plaine du Jourdain; Gn 13.10
+Lower Pool	étang de {n} Lower	Étang inférieur	revisado	rev. IA: Isa.22.9 Étang inférieur; Es 22.9
+Middle Gate	porte de {n} Middle	Porte du milieu	revisado	rev. IA: Jer.39.3 Porte du milieu; Jr 39.3
+Mount Bashan	mont Basan	Montagne de Basan	revisado	rev. IA: Ps.68.15 Montagne de Basan; Ps 68.16
+Mount Heres	mont Hérès	Har-Hérès	revisado	rev. IA: Judg.1.35 Har-Hérès; Jg 1.35
+Mount of Olives	montagne de {n} Olives	Montagne des oliviers	revisado	rev. IA: 2Sam.15.30 Montagne des oliviers; 2 S 15.30
+New Gate	porte de {n} New	Porte neuve	revisado	rev. IA: Jer.26.10 Porte neuve; Jr 26.10
+North Gate	porte de {n} North	Porte du nord	revisado	rev. IA: 1Chr.26.14 Porte du nord; 1 Ch 26.14
+Old Gate	porte de {n} Old	Vieille porte	revisado	rev. IA: Neh.3.6 Vieille porte; Né 3.6
+Old Pool	étang de {n} Old	Ancien étang	revisado	rev. IA: Isa.22.11 Ancien étang; Es 22.11
+Olives Mount	mont {n} Olives	Montagne des oliviers	revisado	rev. IA:  Montagne des oliviers; Mt 21.1
+People's Gate	porte de {n} People	Porte des enfants du peuple	revisado	rev. IA:  Porte des enfants du peuple; Jr 17.19
+Plain of Aven	plaine de Aven	Vallée d’Aven	revisado	rev. IA: Amos.1.5 Vallée d’Aven; Am 1.5
+Potsherd Gate	porte de {n} Potsherd	Porte de la poterie	revisado	rev. IA: Jer.19.2 Porte de la poterie; Jr 19.2
+Preparation Festival	fête de {n} Preparation	Préparation	revisado	rev. IA:  Préparation; Mt 27.62
+Rock of Escape	rocher de {n} Escape	Séla-Hammachlekoth	revisado	rev. IA: 1Sam.23.28 Séla-Hammachlekoth; 1 S 23.28
+Salt Valley	vallée de Ir-Hammélach	Vallée du sel	revisado	rev. IA:  Vallée du sel; 2 S 8.13
+Sea of the Plain	mer de {n} Plain	Mer de la plaine	revisado	rev. IA: Josh.3.16 Mer de la plaine; Jos 3.16
+South Gate	porte de {n} South	Porte du midi	revisado	rev. IA: 1Chr.26.15 Porte du midi; 1 Ch 26.15
+Straight Gate	porte de Droite	Rue droite	revisado	rev. IA: Acts.9.11 Rue droite; Ac 9.11
+Tower of Eder	tour de Éder	Tour du troupeau	revisado	rev. IA:  Tour du troupeau; Gn 35.21; Mi 4.8
+Tower of the Ovens	tour de {n} Ovens	Tour des fours	revisado	rev. IA: Neh.3.11 Tour des fours; Né 3.11
+Travelers Valley	vallée de {n} Travelers	Vallée des voyageurs	revisado	rev. IA:  Vallée des voyageurs; Ez 39.11
+Tribe of Judah	tribu de Juda	Tribu de Juda	revisado	rev. IA: Prov.25.1 Tribu de Juda; Pr 25.1
+Upper Pool	étang de {n} Upper	Étang supérieur	revisado	rev. IA: 2Kgs.18.17 Étang supérieur; 2 R 18.17
+Valley Gate	porte de {n} Valley	Porte de la vallée	revisado	rev. IA: 2Chr.26.9 Porte de la vallée; 2 Ch 26.9
+Valley of Aven	vallée de Aven	Vallée d’Aven	revisado	rev. IA: Amos.1.5 Vallée d’Aven; Am 1.5
+Valley of Decision	vallée de {n} Decision	Vallée du jugement	revisado	rev. IA: Joel.3.14 Vallée du jugement; Jl 3.14
+Valley of Elah	vallée de Éla	Vallée d’Éla	revisado	rev. IA: 1Sam.17.2 Vallée d’Éla; 1 S 17.2
+Valley of Hamon-gog	vallée de {n} Hamon-gog	Vallée de Hamon-Gog	revisado	rev. IA: Ezek.39.11 Vallée de Hamon-Gog; Ez 39.11
+Valley of Hamongog	vallée de {n} Hamongog	Vallée de Hamon-Gog	revisado	rev. IA: Ezek.39.11 Vallée de Hamon-Gog; Ez 39.11
+Valley of Salt	vallée de Ir-Hammélach	Vallée du sel	revisado	rev. IA: 2Sam.8.13 Vallée du sel; 2 S 8.13
+Valley of the Arnon	vallée de Arnon	Torrent de l’Arnon	revisado	rev. IA: Deut.2.24 Torrent de l’Arnon; Dt 2.24
+Valley of the Passengers	vallée de {n} Passengers	Vallée des voyageurs	revisado	rev. IA: Ezek.39.11 Vallée des voyageurs; Ez 39.11
+Way of Holiness	chemin de {n} Holiness	Voie sainte	revisado	rev. IA: Isa.35.8 Voie sainte; Es 35.8
+West Gate	porte de {n} West	Porte de Schalléketh	revisado	rev. IA: 1Chr.26.16 Porte de Schalléketh; 1 Ch 26.16
+Booths Festival	fête des Tabernacles	Fête des tabernacles	revisado	rev. IA:  Fête des tabernacles; Jn 7.2
+Corner Gate	porte d’Éphraïm	Porte de l’angle	revisado	rev. IA: 2Kgs.14.13 Porte de l’angle; 2 R 14.13
+East Gate	porte de l’orient	Porte de l’orient	revisado	rev. IA: Neh.3.29 Porte de l’orient; Né 3.29
+Fish Gate	porte d’Éphraïm	Porte des poissons	revisado	rev. IA: Neh.12.39 Porte des poissons; Né 3.3
+Foundation Gate	porte de Jesod	Porte de Jesod	revisado	rev. IA:  Porte de Jesod; 2 Ch 23.5
+Gate of Yeshanah	porte d’Éphraïm	Vieille porte	revisado	rev. IA: Neh.12.39 Vieille porte; Né 3.6
+Gate of the Foundation	porte de Jesod	Porte de Jesod	revisado	rev. IA: 2Chr.23.5 Porte de Jesod; 2 Ch 23.5
+Gate of the Guard	porte d’Éphraïm	Porte de la prison	revisado	rev. IA: Neh.12.39 Porte de la prison; Né 12.39
+Great Sea	mer Rouge	Grande mer	revisado	rev. IA: Exod.23.31 Grande mer; Nb 34.6
+Guard Gate	porte d’Éphraïm	Porte de la prison	revisado	rev. IA:  Porte de la prison; Né 12.39
+Halak Mount	montagne d’Hermon	Montagne nue	revisado	rev. IA:  Montagne nue; Jos 11.17
+Hermon Mount	montagne d’Hermon	Montagne d’Hermon	revisado	rev. IA:  Montagne d’Hermon; Dt 3.8
+King's Valley	vallée de Schavé	Vallée du roi	revisado	rev. IA:  Vallée du roi; Gn 14.17
+Mount Carmel	montagne du Carmel	Mont Carmel	revisado	rev. IA: 1Kgs.18.19 Mont Carmel; 1 R 18.19
+Mount Gerizim	mont Garizim	Mont Garizim	revisado	rev. IA: Deut.27.12 Mont Garizim; Dt 27.12
+Mount Halak	montagne d’Hermon	Montagne nue	revisado	rev. IA: Josh.11.17 Montagne nue; Jos 11.17
+Mount Hermon	montagne d’Hermon	Montagne d’Hermon	revisado	rev. IA: Josh.11.17 Montagne d’Hermon; Jos 11.17
+Mount Horeb	mont Horeb	Mont Horeb	revisado	rev. IA: Exod.33.6 Mont Horeb; Ex 33.6
+Mount Seir	montagne de Séir	Montagne de Séir	revisado	rev. IA: Deut.1.2 Montagne de Séir; Dt 1.2
+Mount Tabor	mont Thabor	Mont Thabor	revisado	rev. IA: Judg.4.6 Mont Thabor; Jg 4.6
+Muster Gate	porte de Miphkad	Porte de Miphkad	revisado	rev. IA: Neh.3.31 Porte de Miphkad; Né 3.31
+Nebo Mount	mont Nebo	Mont Nebo	revisado	rev. IA:  Mont Nebo; Dt 32.49
+Prison Gate	porte d’Éphraïm	Porte de la prison	revisado	rev. IA: Neh.12.39 Porte de la prison; Né 12.39
+Salt Sea	mer Salée	Mer Salée	revisado	rev. IA: Gen.14.3 Mer Salée; Gn 14.3
+Sheep Gate	porte d’Éphraïm	Porte des brebis	revisado	rev. IA: Neh.12.39 Porte des brebis; Né 3.1
+Tabor Mount	mont Thabor	Mont Thabor	revisado	rev. IA:  Mont Thabor; Jg 4.6
+Tower of the Hundred	tour de Hananeel	Tour de Méa	revisado	rev. IA: Neh.3.1 Tour de Méa; Né 3.1
+Valley of Jezreel	vallée de Jizreel	Vallée de Jizreel	revisado	rev. IA: Josh.17.16 Vallée de Jizreel; Jos 17.16
+Valley of Slaughter	vallée de Ben-Hinnom	Vallée du carnage	revisado	rev. IA: Jer.7.32 Vallée du carnage; Jr 7.32
+Water Gate	porte d’Éphraïm	Porte des eaux	revisado	rev. IA: Neh.8.16 Porte des eaux; Né 8.1
+Yeshanah Gate	porte d’Éphraïm	Vieille porte	revisado	rev. IA:  Vieille porte; Né 3.6
+Achor Valley	vallée d’Acor	Vallée d’Acor	revisado	rev. IA: composto conferido no texto fralsg (vallée d’Acor); maiúscula inicial como nome
+Baalah Mount	montagne de Baala	Montagne de Baala	revisado	rev. IA: composto conferido no texto fralsg (montagne de Baala); maiúscula inicial como nome
+Benjamin Gate	porte de Benjamin	Porte de Benjamin	revisado	rev. IA: composto conferido no texto fralsg (porte de Benjamin); maiúscula inicial como nome
+Beracah Valley	vallée de Beraca	Vallée de Beraca	revisado	rev. IA: composto conferido no texto fralsg (vallée de Beraca); maiúscula inicial como nome
+Brook Kidron	torrent de Cédron	Torrent de Cédron	revisado	rev. IA: composto conferido no texto fralsg (torrent de Cédron); maiúscula inicial como nome
+Brook of Egypt	torrent d’Égypte	Torrent d’Égypte	revisado	rev. IA: composto conferido no texto fralsg (torrent d’Égypte); maiúscula inicial como nome
+Carmel Mount	montagne du Carmel	Montagne du Carmel	revisado	rev. IA: composto conferido no texto fralsg (montagne du Carmel); maiúscula inicial como nome
+City of David	ville de David	Ville de David	revisado	rev. IA: composto conferido no texto fralsg (ville de David); maiúscula inicial como nome
+Dedication Festival	fête de la Dédicace	Fête de la Dédicace	revisado	rev. IA: composto conferido no texto fralsg (fête de la Dédicace); maiúscula inicial como nome
+Ebal Mount	mont Ébal	Mont Ébal	revisado	rev. IA: composto conferido no texto fralsg (mont Ébal); maiúscula inicial como nome
+Egypt Sea	mer d’Égypte	Mer d’Égypte	revisado	rev. IA: composto conferido no texto fralsg (mer d’Égypte); maiúscula inicial como nome
+Egyptian Sea	mer d’Égypte	Mer d’Égypte	revisado	rev. IA: composto conferido no texto fralsg (mer d’Égypte); maiúscula inicial como nome
+Ephraim Gate	porte d’Éphraïm	Porte d’Éphraïm	revisado	rev. IA: composto conferido no texto fralsg (porte d’Éphraïm); maiúscula inicial como nome
+Ephron Mount	montagne d’Éphron	Montagne d’Éphron	revisado	rev. IA: composto conferido no texto fralsg (montagne d’Éphron); maiúscula inicial como nome
+Esau Mount	montagne d’Ésaü	Montagne d’Ésaü	revisado	rev. IA: composto conferido no texto fralsg (montagne d’Ésaü); maiúscula inicial como nome
+Eshcol Valley	vallée d’Eschcol	Vallée d’Eschcol	revisado	rev. IA: composto conferido no texto fralsg (vallée d’Eschcol); maiúscula inicial como nome
+Ezel Stone	pierre d’Ézel	Pierre d’Ézel	revisado	rev. IA: composto conferido no texto fralsg (pierre d’Ézel); maiúscula inicial como nome
+Forest Ephraim	forêt d’Éphraïm	Forêt d’Éphraïm	revisado	rev. IA: composto conferido no texto fralsg (forêt d’Éphraïm); maiúscula inicial como nome
+Forum of Appius	Forum d’Appius	Forum d’Appius	revisado	rev. IA: composto conferido no texto fralsg (Forum d’Appius); maiúscula inicial como nome
+Gate Miphkad	porte de Miphkad	Porte de Miphkad	revisado	rev. IA: composto conferido no texto fralsg (porte de Miphkad); maiúscula inicial como nome
+Gate of Benjamin	porte de Benjamin	Porte de Benjamin	revisado	rev. IA: composto conferido no texto fralsg (porte de Benjamin); maiúscula inicial como nome
+Gate of Ephraim	porte d’Éphraïm	Porte d’Éphraïm	revisado	rev. IA: composto conferido no texto fralsg (porte d’Éphraïm); maiúscula inicial como nome
+Gerizim Mount	mont Garizim	Mont Garizim	revisado	rev. IA: composto conferido no texto fralsg (mont Garizim); maiúscula inicial como nome
+Gilboa Mount	montagne de Guilboa	Montagne de Guilboa	revisado	rev. IA: composto conferido no texto fralsg (montagne de Guilboa); maiúscula inicial como nome
+Hebron Valley	vallée d’Hébron	Vallée d’Hébron	revisado	rev. IA: composto conferido no texto fralsg (vallée d’Hébron); maiúscula inicial como nome
+Hor Mount	montagne de Hor	Montagne de Hor	revisado	rev. IA: composto conferido no texto fralsg (montagne de Hor); maiúscula inicial como nome
+Iphtahel Valley	vallée de Jiphthach-El	Vallée de Jiphthach-El	revisado	rev. IA: composto conferido no texto fralsg (vallée de Jiphthach-El); maiúscula inicial como nome
+Jazer Sea	mer de Jaezer	Mer de Jaezer	revisado	rev. IA: composto conferido no texto fralsg (mer de Jaezer); maiúscula inicial como nome
+Jericho Valley	vallée de Jéricho	Vallée de Jéricho	revisado	rev. IA: composto conferido no texto fralsg (vallée de Jéricho); maiúscula inicial como nome
+Jezreel Valley	vallée de Jizreel	Vallée de Jizreel	revisado	rev. IA: composto conferido no texto fralsg (vallée de Jizreel); maiúscula inicial como nome
+Lebanon Mount	montagne du Liban	Montagne du Liban	revisado	rev. IA: composto conferido no texto fralsg (montagne du Liban); maiúscula inicial como nome
+Lebanon Valley	vallée du Liban	Vallée du Liban	revisado	rev. IA: composto conferido no texto fralsg (vallée du Liban); maiúscula inicial como nome
+Mizar Mount	montagne de Mitsear	Montagne de Mitsear	revisado	rev. IA: composto conferido no texto fralsg (montagne de Mitsear); maiúscula inicial como nome
+Mizpeh Valley	vallée de Mitspa	Vallée de Mitspa	revisado	rev. IA: composto conferido no texto fralsg (vallée de Mitspa); maiúscula inicial como nome
+Moab Plains	plaines de Moab	Plaines de Moab	revisado	rev. IA: composto conferido no texto fralsg (plaines de Moab); maiúscula inicial como nome
+Moriah Mount	montagne de Morija	Montagne de Morija	revisado	rev. IA: composto conferido no texto fralsg (montagne de Morija); maiúscula inicial como nome
+Mount Baal-hermon	montagne de Baal-Hermon	Montagne de Baal-Hermon	revisado	rev. IA: composto conferido no texto fralsg (montagne de Baal-Hermon); maiúscula inicial como nome
+Mount Baalah	montagne de Baala	Montagne de Baala	revisado	rev. IA: composto conferido no texto fralsg (montagne de Baala); maiúscula inicial como nome
+Mount Baalhermon	montagne de Baal-Hermon	Montagne de Baal-Hermon	revisado	rev. IA: composto conferido no texto fralsg (montagne de Baal-Hermon); maiúscula inicial como nome
+Mount Ebal	mont Ébal	Mont Ébal	revisado	rev. IA: composto conferido no texto fralsg (mont Ébal); maiúscula inicial como nome
+Mount Ephraim	montagne d’Éphraïm	Montagne d’Éphraïm	revisado	rev. IA: composto conferido no texto fralsg (montagne d’Éphraïm); maiúscula inicial como nome
+Mount Ephron	montagne d’Éphron	Montagne d’Éphron	revisado	rev. IA: composto conferido no texto fralsg (montagne d’Éphron); maiúscula inicial como nome
+Mount Esau	montagne d’Ésaü	Montagne d’Ésaü	revisado	rev. IA: composto conferido no texto fralsg (montagne d’Ésaü); maiúscula inicial como nome
+Mount Gilboa	montagne de Guilboa	Montagne de Guilboa	revisado	rev. IA: composto conferido no texto fralsg (montagne de Guilboa); maiúscula inicial como nome
+Mount Gilead	montagne de Galaad	Montagne de Galaad	revisado	rev. IA: composto conferido no texto fralsg (montagne de Galaad); maiúscula inicial como nome
+Mount Hor	montagne de Hor	Montagne de Hor	revisado	rev. IA: composto conferido no texto fralsg (montagne de Hor); maiúscula inicial como nome
+Mount Jearim	montagne de Jearim	Montagne de Jearim	revisado	rev. IA: composto conferido no texto fralsg (montagne de Jearim); maiúscula inicial como nome
+Mount Lebanon	montagne du Liban	Montagne du Liban	revisado	rev. IA: composto conferido no texto fralsg (montagne du Liban); maiúscula inicial como nome
+Mount Mizar	montagne de Mitsear	Montagne de Mitsear	revisado	rev. IA: composto conferido no texto fralsg (montagne de Mitsear); maiúscula inicial como nome
+Mount Moriah	montagne de Morija	Montagne de Morija	revisado	rev. IA: composto conferido no texto fralsg (montagne de Morija); maiúscula inicial como nome
+Mount Nebo	mont Nebo	Mont Nebo	revisado	rev. IA: composto conferido no texto fralsg (mont Nebo); maiúscula inicial como nome
+Mount Paran	montagne de Paran	Montagne de Paran	revisado	rev. IA: composto conferido no texto fralsg (montagne de Paran); maiúscula inicial como nome
+Mount Perazim	montagne de Peratsim	Montagne de Peratsim	revisado	rev. IA: composto conferido no texto fralsg (montagne de Peratsim); maiúscula inicial como nome
+Mount Shapher	montagne de Schapher	Montagne de Schapher	revisado	rev. IA: composto conferido no texto fralsg (montagne de Schapher); maiúscula inicial como nome
+Mount Shepher	montagne de Schapher	Montagne de Schapher	revisado	rev. IA: composto conferido no texto fralsg (montagne de Schapher); maiúscula inicial como nome
+Mount Sinai	montagne de Sinaï	Montagne de Sinaï	revisado	rev. IA: composto conferido no texto fralsg (montagne de Sinaï); maiúscula inicial como nome
+Mount Sion	montagne de Sion	Montagne de Sion	revisado	rev. IA: composto conferido no texto fralsg (montagne de Sion); maiúscula inicial como nome
+Mount Zalmon	montagne de Tsalmon	Montagne de Tsalmon	revisado	rev. IA: composto conferido no texto fralsg (montagne de Tsalmon); maiúscula inicial como nome
+Mount Zemaraim	mont Tsemaraïm	Mont Tsemaraïm	revisado	rev. IA: composto conferido no texto fralsg (mont Tsemaraïm); maiúscula inicial como nome
+Mount Zion	montagne de Sion	Montagne de Sion	revisado	rev. IA: composto conferido no texto fralsg (montagne de Sion); maiúscula inicial como nome
+Mount of Esau	montagne d’Ésaü	Montagne d’Ésaü	revisado	rev. IA: composto conferido no texto fralsg (montagne d’Ésaü); maiúscula inicial como nome
+Paran Mount	montagne de Paran	Montagne de Paran	revisado	rev. IA: composto conferido no texto fralsg (montagne de Paran); maiúscula inicial como nome
+Perazim Mount	montagne de Peratsim	Montagne de Peratsim	revisado	rev. IA: composto conferido no texto fralsg (montagne de Peratsim); maiúscula inicial como nome
+Plain of Jordan	plaine du Jourdain	Plaine du Jourdain	revisado	rev. IA: composto conferido no texto fralsg (plaine du Jourdain); maiúscula inicial como nome
+Red Sea	mer Rouge	Mer Rouge	revisado	rev. IA: composto conferido no texto fralsg (mer Rouge); maiúscula inicial como nome
+Rephaim Valley	vallée des Rephaïm	Vallée des Rephaïm	revisado	rev. IA: composto conferido no texto fralsg (vallée des Rephaïm); maiúscula inicial como nome
+River of Arnon	torrent de l’Arnon	Torrent de l’Arnon	revisado	rev. IA: composto conferido no texto fralsg (torrent de l’Arnon); maiúscula inicial como nome
+Sea of Chinnereth	mer de Kinnéreth	Mer de Kinnéreth	revisado	rev. IA: composto conferido no texto fralsg (mer de Kinnéreth); maiúscula inicial como nome
+Sea of Chinneroth	mer de Kinnéreth	Mer de Kinnéreth	revisado	rev. IA: composto conferido no texto fralsg (mer de Kinnéreth); maiúscula inicial como nome
+Sea of Egypt	mer d’Égypte	Mer d’Égypte	revisado	rev. IA: composto conferido no texto fralsg (mer d’Égypte); maiúscula inicial como nome
+Sea of Galilee	mer de Galilée	Mer de Galilée	revisado	rev. IA: composto conferido no texto fralsg (mer de Galilée); maiúscula inicial como nome
+Sea of Jazer	mer de Jaezer	Mer de Jaezer	revisado	rev. IA: composto conferido no texto fralsg (mer de Jaezer); maiúscula inicial como nome
+Sea of Tiberias	mer de Tibériade	Mer de Tibériade	revisado	rev. IA: composto conferido no texto fralsg (mer de Tibériade); maiúscula inicial como nome
+Sea of the Philistines	mer des Philistins	Mer des Philistins	revisado	rev. IA: composto conferido no texto fralsg (mer des Philistins); maiúscula inicial como nome
+Seir Mount	montagne de Séir	Montagne de Séir	revisado	rev. IA: composto conferido no texto fralsg (montagne de Séir); maiúscula inicial como nome
+Serpent's Stone	pierre de Zohéleth	Pierre de Zohéleth	revisado	rev. IA: composto conferido no texto fralsg (pierre de Zohéleth); maiúscula inicial como nome
+Shepher Mount	montagne de Schapher	Montagne de Schapher	revisado	rev. IA: composto conferido no texto fralsg (montagne de Schapher); maiúscula inicial como nome
+Shittim Valley	vallée de Sittim	Vallée de Sittim	revisado	rev. IA: composto conferido no texto fralsg (vallée de Sittim); maiúscula inicial como nome
+Siddim Valley	vallée de Siddim	Vallée de Siddim	revisado	rev. IA: composto conferido no texto fralsg (vallée de Siddim); maiúscula inicial como nome
+Sinai Wilderness	désert de Sinaï	Désert de Sinaï	revisado	rev. IA: composto conferido no texto fralsg (désert de Sinaï); maiúscula inicial como nome
+Sorek Valley	vallée de Sorek	Vallée de Sorek	revisado	rev. IA: composto conferido no texto fralsg (vallée de Sorek); maiúscula inicial como nome
+Tower of Hananel	tour de Hananeel	Tour de Hananeel	revisado	rev. IA: composto conferido no texto fralsg (tour de Hananeel); maiúscula inicial como nome
+Tower of Shechem	tour de Sichem	Tour de Sichem	revisado	rev. IA: composto conferido no texto fralsg (tour de Sichem); maiúscula inicial como nome
+Vale of Hebron	vallée d’Hébron	Vallée d’Hébron	revisado	rev. IA: composto conferido no texto fralsg (vallée d’Hébron); maiúscula inicial como nome
+Vale of Siddim	vallée de Siddim	Vallée de Siddim	revisado	rev. IA: composto conferido no texto fralsg (vallée de Siddim); maiúscula inicial como nome
+Valley of Achor	vallée d’Acor	Vallée d’Acor	revisado	rev. IA: composto conferido no texto fralsg (vallée d’Acor); maiúscula inicial como nome
+Valley of Aijalon	vallée d’Ajalon	Vallée d’Ajalon	revisado	rev. IA: composto conferido no texto fralsg (vallée d’Ajalon); maiúscula inicial como nome
+Valley of Baca	vallée de Baca	Vallée de Baca	revisado	rev. IA: composto conferido no texto fralsg (vallée de Baca); maiúscula inicial como nome
+Valley of Beracah	vallée de Beraca	Vallée de Beraca	revisado	rev. IA: composto conferido no texto fralsg (vallée de Beraca); maiúscula inicial como nome
+Valley of Eshcol	vallée d’Eschcol	Vallée d’Eschcol	revisado	rev. IA: composto conferido no texto fralsg (vallée d’Eschcol); maiúscula inicial como nome
+Valley of Gerar	vallée de Guérar	Vallée de Guérar	revisado	rev. IA: composto conferido no texto fralsg (vallée de Guérar); maiúscula inicial como nome
+Valley of Gibeon	vallée de Gabaon	Vallée de Gabaon	revisado	rev. IA: composto conferido no texto fralsg (vallée de Gabaon); maiúscula inicial como nome
+Valley of Hebron	vallée d’Hébron	Vallée d’Hébron	revisado	rev. IA: composto conferido no texto fralsg (vallée d’Hébron); maiúscula inicial como nome
+Valley of Hinnom	vallée de Ben-Hinnom	Vallée de Ben-Hinnom	revisado	rev. IA: composto conferido no texto fralsg (vallée de Ben-Hinnom); maiúscula inicial como nome
+Valley of Iphtahel	vallée de Jiphthach-El	Vallée de Jiphthach-El	revisado	rev. IA: composto conferido no texto fralsg (vallée de Jiphthach-El); maiúscula inicial como nome
+Valley of Jehoshaphat	vallée de Josaphat	Vallée de Josaphat	revisado	rev. IA: composto conferido no texto fralsg (vallée de Josaphat); maiúscula inicial como nome
+Valley of Jericho	vallée de Jéricho	Vallée de Jéricho	revisado	rev. IA: composto conferido no texto fralsg (vallée de Jéricho); maiúscula inicial como nome
+Valley of Jiphthahel	vallée de Jiphthach-El	Vallée de Jiphthach-El	revisado	rev. IA: composto conferido no texto fralsg (vallée de Jiphthach-El); maiúscula inicial como nome
+Valley of Lebanon	vallée du Liban	Vallée du Liban	revisado	rev. IA: composto conferido no texto fralsg (vallée du Liban); maiúscula inicial como nome
+Valley of Mizpeh	vallée de Mitspa	Vallée de Mitspa	revisado	rev. IA: composto conferido no texto fralsg (vallée de Mitspa); maiúscula inicial como nome
+Valley of Rephaim	vallée des Rephaïm	Vallée des Rephaïm	revisado	rev. IA: composto conferido no texto fralsg (vallée des Rephaïm); maiúscula inicial como nome
+Valley of Shaveh	vallée de Schavé	Vallée de Schavé	revisado	rev. IA: composto conferido no texto fralsg (vallée de Schavé); maiúscula inicial como nome
+Valley of Shittim	vallée de Sittim	Vallée de Sittim	revisado	rev. IA: composto conferido no texto fralsg (vallée de Sittim); maiúscula inicial como nome
+Valley of Siddim	vallée de Siddim	Vallée de Siddim	revisado	rev. IA: composto conferido no texto fralsg (vallée de Siddim); maiúscula inicial como nome
+Valley of Sorek	vallée de Sorek	Vallée de Sorek	revisado	rev. IA: composto conferido no texto fralsg (vallée de Sorek); maiúscula inicial como nome
+Valley of Succoth	vallée de Succoth	Vallée de Succoth	revisado	rev. IA: composto conferido no texto fralsg (vallée de Succoth); maiúscula inicial como nome
+Valley of Zeboim	vallée de Tseboïm	Vallée de Tseboïm	revisado	rev. IA: composto conferido no texto fralsg (vallée de Tseboïm); maiúscula inicial como nome
+Valley of Zephathah	vallée de Tsephata	Vallée de Tsephata	revisado	rev. IA: composto conferido no texto fralsg (vallée de Tsephata); maiúscula inicial como nome
+Valley of Zered	vallée de Zéred	Vallée de Zéred	revisado	rev. IA: composto conferido no texto fralsg (vallée de Zéred); maiúscula inicial como nome
+Waters of Jericho	eaux de Jéricho	Eaux de Jéricho	revisado	rev. IA: composto conferido no texto fralsg (eaux de Jéricho); maiúscula inicial como nome
+Waters of Merom	eaux de Mérom	Eaux de Mérom	revisado	rev. IA: composto conferido no texto fralsg (eaux de Mérom); maiúscula inicial como nome
+Wilderness of Maon	désert de Maon	Désert de Maon	revisado	rev. IA: composto conferido no texto fralsg (désert de Maon); maiúscula inicial como nome
+Wilderness of Sinai	désert de Sinaï	Désert de Sinaï	revisado	rev. IA: composto conferido no texto fralsg (désert de Sinaï); maiúscula inicial como nome
+Wilderness of Ziph	désert de Ziph	Désert de Ziph	revisado	rev. IA: composto conferido no texto fralsg (désert de Ziph); maiúscula inicial como nome
+Zeboim Valley	vallée de Tseboïm	Vallée de Tseboïm	revisado	rev. IA: composto conferido no texto fralsg (vallée de Tseboïm); maiúscula inicial como nome
+Zephathah Valley	vallée de Tsephata	Vallée de Tsephata	revisado	rev. IA: composto conferido no texto fralsg (vallée de Tsephata); maiúscula inicial como nome
+Eve	Eve	Ève	revisado	rev. IA: Gen.3.20 Ève (2 Co 11.3 sem acento na maiúscula)

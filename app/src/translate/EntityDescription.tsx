@@ -1,9 +1,10 @@
-// Descrição de uma entidade (pessoa, lugar, evento, grupo). Com descrição pt da fonte (entity_text), mostra o pt, sem
-// tradução automática e sem aviso de tradução; "Ver original" discreto mostra o inglês. Sem pt, a tradução automática
-// de antes (AutoTranslateNote). A escolha do texto é shownDescription (domínio).
+// Descrição de uma entidade (pessoa, lugar, evento, grupo). Com descrição na língua do app (entity_text, ver Repo.nameLang),
+// mostra essa descrição, sem tradução automática e sem aviso de tradução; "Ver original" discreto mostra o inglês. Sem ela,
+// a tradução automática de antes (AutoTranslateNote). A escolha do texto é shownDescription (domínio).
 import { useState } from 'react';
 import { View } from 'react-native';
-import { ENTITY_TEXT_LANG, appLangInfo, shownDescription, type DescriptionFields } from '@sensus/core';
+import { appLangInfo, shownDescription, type DescriptionFields } from '@sensus/core';
+import { currentLang } from '@/i18n/lang-store';
 import { LinkButton, Txt } from '@/design';
 import { AutoTranslateNote } from './AutoTranslateNote';
 import { useAutoTranslate } from './useAutoTranslate';
@@ -68,7 +69,7 @@ export function EntityDescription({
           ) : null}
           <LinkButton
             testID={noteTestID ? `${noteTestID}-toggle` : undefined}
-            label={english ? TR.descriptionShowPt(appLangInfo(ENTITY_TEXT_LANG).endonym) : TR.descriptionShowOriginal}
+            label={english ? TR.descriptionShowPt(appLangInfo(currentLang()).endonym) : TR.descriptionShowOriginal}
             onPress={() => setEnglish((v) => !v)}
           />
         </View>

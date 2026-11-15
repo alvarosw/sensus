@@ -1,0 +1,35 @@
+chave	modelo
+mencao_primeira	première mention en {ref}
+mencao_unica	n'apparaît qu'en {ref}
+frase_cargo_comp	{cargo} {comp}
+frase_tempo_com_comp	{frase}{pont.,} {tempo}
+frase_tempo_sem_comp	{frase} {tempo}
+cabecalho	{frase}{pont.;} {mencao}{pont..}
+comp_territorio_tribo	dans le territoire de la tribu de {tribo}{perto}
+comp_perto_sufixo	, près de {nome}
+comp_tribo	de la tribu de {tribo}
+comp_cidade	de la ville de {nome}
+comp_perto	près de {nome}
+comp_de	de {nome}
+comp_em	en {nome}
+citacao	Noms : {lista}
+citacao_apenas	Nom unique : {lista}
+original	 ({original})
+conector_e	 et 
+conector_ou	 ou 
+lista_sep	, 
+pont.;	 ;
+pont..	.
+pont.,	,
+maiuscula_inicial	sim
+nome_ingles_permitido	sim
+flexao_relacao	nenhuma
+pos	elisao_fr
+geo_melhor	Meilleure identification moderne : {nome} ({tipo}, géométrie {geometria}) ; score d'association {score}/1000.
+geo_identificacao	Identification : « {texto} » ({fonte}).
+geo_votos	Votes : {votos}.
+geo_voto	{voto} {n}
+geo_tempo	Score pondéré dans le temps : {tempo}/1000.
+geo_outros	{n} autre(s) localisation(s) moderne(s) candidate(s) dans le jeu de données.
+geo_melhor_sem_nome	Meilleure identification moderne ({tipo}, géométrie {geometria}) ; score d'association {score}/1000.
+geo_omitir_ingles	sim

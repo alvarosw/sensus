@@ -80,7 +80,8 @@ export const BOOK_NAMES: Readonly<Partial<Record<AppLang, readonly { name: strin
 - `isTranslatableLang(lang)` vira `needsTranslation(sourceLang, appLang)`: verdadeiro quando as bases diferem e os
   dois idiomas têm modelo no motor (`mlkit`/`apple` não nulos).
 - Módulo nativo `sensus-translate`: `status(from, to)`, `download(from, to)`, `translate(texts, from, to)`.
-- Nomes e títulos pt (`ENTITY_NAME_LANG`, `ENTITY_TEXT_LANG`) só valem quando o app está em pt; em outro idioma a
+- Nomes, títulos e descrições têm fonte em cada uma das 12 línguas (`sensus-{nomes,titulos,descricoes}-<xx>`, em
+  `domain/sources.ts`). A troca no app pelo idioma é o pacote C6; até lá o app só mostra o pt, e em outro idioma a
   linha do tempo usa o original e a tradução automática.
 
 ## 2. Repositório de Bíblias

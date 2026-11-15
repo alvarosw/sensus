@@ -1,0 +1,41 @@
+# Gramática das descrições em espanhol (TIPNR e openbible-geo por regra; pipeline/sensus/descricoes_pt.py).
+# Colunas: chave, modelo. Campos {nome} são trocados pelo valor; {pont.;}, {pont..}, {pont.,} são os sinais da língua.
+# Sem variante .f: no espanhol nenhum modelo concorda com o gênero do cargo (o cargo é um substantivo, e as
+# preposições e artigos fixos já vêm no modelo). Conectores e 'original' têm espaço nas pontas, de propósito.
+# A citação é impessoal ('Se le llama'), porque 'Llamado' não concordava com mulheres (Abigail). pos eufonia_es:
+# 'y' vira 'e' antes de i/hi (Eleazar e Itamar) e 'o' vira 'u' antes de o/ho (Ozni u Oznite).
+chave	modelo
+mencao_primeira	primera mención en {ref}
+mencao_unica	aparece solo en {ref}
+frase_cargo_comp	{cargo} {comp}
+frase_tempo_com_comp	{frase}{pont.,} {tempo}
+frase_tempo_sem_comp	{frase} {tempo}
+cabecalho	{frase}{pont.;} {mencao}{pont..}
+comp_territorio_tribo	en el territorio de la tribu de {tribo}{perto}
+comp_perto_sufixo	, cerca de {nome}
+comp_tribo	de la tribu de {tribo}
+comp_cidade	de la ciudad de {nome}
+comp_perto	cerca de {nome}
+comp_de	de {nome}
+comp_em	en {nome}
+citacao	Se le llama {lista}
+citacao_apenas	Solo se le llama {lista}
+original	 ({original})
+conector_e	 y 
+conector_ou	 o 
+lista_sep	, 
+pont.;	;
+pont..	.
+pont.,	,
+maiuscula_inicial	sim
+nome_ingles_permitido	sim
+flexao_relacao	nenhuma
+pos	eufonia_es
+geo_melhor	Mejor identificación moderna: {nome} ({tipo}, geometría {geometria}); puntuación de asociación {score}/1000.
+geo_identificacao	Identificación: "{texto}" ({fonte}).
+geo_votos	Votos: {votos}.
+geo_voto	{voto} {n}
+geo_tempo	Puntuación ponderada por tiempo {tempo}/1000.
+geo_outros	{n} otra(s) ubicación(es) moderna(s) candidata(s) en el conjunto de datos.
+geo_melhor_sem_nome	Mejor identificación moderna ({tipo}, geometría {geometria}); puntuación de asociación {score}/1000.
+geo_omitir_ingles	sim

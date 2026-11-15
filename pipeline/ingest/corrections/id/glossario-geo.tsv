@@ -1,0 +1,59 @@
+# Glossário geo em indonésio (openbible-geo, por regra; pipeline/sensus/geo_descricao.py). Colunas:
+#   secao      tipo | geometria | voto | fonte
+#   ingles     termo como aparece na descrição da fonte (exato)
+#   portugues  tradução usada na frase (aqui: indonésio)
+#   nota       observação para o revisor (opcional)
+#   genero     vazio (ver gramatica-descricoes)
+# geometria: o modelo geo_melhor já diz 'geometri {geometria}', então os valores são os substantivos puros.
+secao	ingles	portugues	nota	genero
+tipo	settlement	permukiman
+tipo	region	wilayah
+tipo	mountain	gunung
+tipo	wadi	wadi
+tipo	river	sungai
+tipo	spring	mata air
+tipo	hill	bukit
+tipo	island	pulau
+tipo	valley	lembah
+tipo	body of water	badan air
+tipo	well	sumur
+tipo	probability center radial	pusat probabilitas radial
+tipo	road	jalan
+tipo	mountain range	pegunungan
+tipo	structure	bangunan
+tipo	mouth of river	muara sungai
+tipo	pool	kolam
+tipo	cliff	tebing
+tipo	cave	gua
+tipo	field	ladang
+tipo	mountain pass	celah gunung
+tipo	mountain ridge	punggung gunung
+tipo	wall	tembok
+tipo	forest	hutan
+tipo	harbor	pelabuhan
+tipo	garden	taman
+tipo	promontory	tanjung
+geometria	point	titik
+geometria	polygon	poligon
+geometria	path	jalur
+fonte	modern	modern
+fonte	ancient	kuno
+voto	confidence_possible	keyakinan: mungkin
+voto	confidence_likely	keyakinan: besar kemungkinan
+voto	confidence_yes	keyakinan: ya
+voto	confidence_mostlikely	keyakinan: paling mungkin
+voto	confidence_unlikely	keyakinan: tidak mungkin
+voto	confidence_no	keyakinan: tidak
+voto	confidence_map	keyakinan: peta
+voto	authority_usually	otoritas: biasanya
+voto	authority_scholar	otoritas: para cendekiawan
+voto	authority_traditional	otoritas: tradisional
+voto	authority_parallel	otoritas: paralel
+voto	authority_preserved	otoritas: nama terpelihara
+voto	authority_variant	otoritas: varian
+voto	authority_old	otoritas: kuno
+voto	unknown	tidak diketahui
+voto	uncertain	tidak pasti
+voto	identified_been	teridentifikasi: pernah
+voto	identified_is	teridentifikasi: adalah
+voto	identified_adjective	teridentifikasi: kata sifat

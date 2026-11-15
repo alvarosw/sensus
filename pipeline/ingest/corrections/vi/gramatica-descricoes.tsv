@@ -1,0 +1,35 @@
+chave	modelo
+mencao_primeira	lần nhắc đầu tiên ở {ref}
+mencao_unica	chỉ xuất hiện ở {ref}
+frase_cargo_comp	{cargo} {comp}
+frase_tempo_com_comp	{frase}{pont.,} {tempo}
+frase_tempo_sem_comp	{frase} {tempo}
+cabecalho	{frase}{pont.;} {mencao}{pont..}
+comp_territorio_tribo	trong lãnh thổ chi phái {tribo}{perto}
+comp_perto_sufixo	, gần {nome}
+comp_tribo	thuộc chi phái {tribo}
+comp_cidade	ở thành {nome}
+comp_perto	gần {nome}
+comp_de	của {nome}
+comp_em	ở {nome}
+citacao	Được gọi là {lista}
+citacao_apenas	Chỉ được gọi là {lista}
+original	 ({original})
+conector_e	 và 
+conector_ou	 hoặc 
+lista_sep	, 
+pont.;	;
+pont..	.
+pont.,	,
+maiuscula_inicial	sim
+nome_ingles_permitido	sim
+flexao_relacao	nenhuma
+pos	nenhum
+geo_melhor	Định danh hiện đại tốt nhất: {nome} ({tipo}, hình học {geometria}); điểm liên kết {score}/1000.
+geo_identificacao	Định danh: "{texto}" ({fonte}).
+geo_votos	Phiếu: {votos}.
+geo_voto	{voto} {n}
+geo_tempo	Điểm có trọng số theo thời gian: {tempo}/1000.
+geo_outros	{n} địa điểm hiện đại ứng viên khác trong tập dữ liệu.
+geo_melhor_sem_nome	Định danh hiện đại tốt nhất ({tipo}, hình học {geometria}); điểm liên kết {score}/1000.
+geo_omitir_ingles	sim

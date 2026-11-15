@@ -1,0 +1,109 @@
+# Glossário das descrições em indonésio (TIPNR, pipeline/sensus/descricoes_pt.py). Mesmo formato do pt
+# (corrections/glossario-descricoes.tsv). Colunas:
+#   secao      cargo | tempo | tribo | lugar | relacao | nome
+#   ingles     termo como aparece na descrição da fonte (exato, com maiúsculas)
+#   portugues  tradução usada na frase (aqui: indonésio; o nome da coluna é o do código)
+#   nota       observação para o revisor (opcional)
+#   genero     vazio em todo o indonésio: a língua não tem gênero gramatical (ver gramatica-descricoes)
+secao	ingles	portugues	nota	genero
+cargo	man	pria
+cargo	woman	wanita
+cargo	location	tempat
+cargo	high priest	imam besar
+cargo	priest	imam
+cargo	warrior	prajurit
+cargo	warriors	prajurit
+cargo	musician	pemusik
+cargo	prophet	nabi
+cargo	prophetess	nabiah
+cargo	king	raja
+cargo	queen	ratu
+cargo	group	kelompok
+cargo	male deity	dewa laki-laki
+cargo	female deity	dewi
+cargo	deity	dewa
+cargo	people	bangsa
+cargo	woman or town	wanita atau kota
+cargo	town	kota
+cargo	emperor	kaisar
+cargo	prince	pangeran
+cargo	apostle	rasul
+cargo	angel	malaikat
+cargo	concubine	gundik
+cargo	chief	kepala
+cargo	steward	pengurus rumah tangga
+cargo	servant	hamba
+cargo	ruler	penguasa
+cargo	musical piece	karya musik
+cargo	judge	hakim
+cargo	Judge	hakim
+cargo	city	kota
+cargo	gigantic man	manusia raksasa
+cargo	Pharaoh	Firaun
+cargo	festival	perayaan
+cargo	governor	gubernur
+tempo	at the time of the Patriarchs	pada zaman para bapa leluhur
+tempo	at the time of Egypt and Wilderness	pada zaman Mesir dan padang gurun
+tempo	at the time of Exile and Return	pada zaman pembuangan dan kepulangan
+tempo	at the time of Divided Monarchy	pada zaman kerajaan terbagi
+tempo	at the time of United Monarchy	pada zaman kerajaan bersatu
+tempo	at the time of the New Testament	pada zaman Perjanjian Baru
+tempo	at the time of the Exodus	pada zaman Keluaran
+tempo	before Israel's Monarchy	sebelum kerajaan Israel
+tempo	at the time before the Flood	pada zaman sebelum air bah
+tempo	before the Flood	sebelum air bah
+tempo	at the time of Judges	pada zaman hakim-hakim
+tribo	Levi	Lewi
+tribo	Judah	Yehuda
+tribo	Asher	Asyer
+tribo	Benjamin	Benyamin
+tribo	Ephraim	Efraim
+tribo	Manasseh	Manasye
+tribo	Simeon	Simeon
+tribo	Issachar	Isakhar
+tribo	Zebulun	Zebulon
+tribo	Naphtali	Naftali
+tribo	Reuben	Ruben
+tribo	Gad	Gad
+tribo	Dan	Dan
+relacao	son of	anak dari
+relacao	daughter of	anak perempuan dari
+relacao	brother of	saudara laki-laki dari
+relacao	sister of	saudara perempuan dari
+relacao	half-brother of	saudara tiri laki-laki dari
+relacao	half-sister of	saudara tiri perempuan dari
+relacao	wife of	istri dari
+relacao	husband of	suami dari
+relacao	mother of	ibu dari
+relacao	father of	ayah dari
+relacao	founder of	pendiri
+relacao	concubine of	gundik dari
+relacao	descendant of	keturunan dari
+nome	Pharaoh	Firaun
+nome	Asia	Asia
+nome	Christ	Kristus
+nome	Judah	Yehuda
+lugar	in Asia	di Asia
+lugar	of Egypt	dari Mesir
+lugar	of the Cushites	dari orang Kush
+lugar	of the Arabs	dari orang Arab
+lugar	of the Edomites	dari orang Edom
+lugar	of the Midianites	dari orang Midian
+lugar	of the Syrians	dari orang Aram
+lugar	of the Gomerians	dari orang Gomer
+lugar	of the Ammonites	dari orang Amon
+lugar	of the Greeks	dari orang Yunani
+lugar	of the Ishmaelites	dari orang Ismael
+lugar	of the Moabites	dari orang Moab
+lugar	of the Egyptians	dari orang Mesir
+lugar	of the Philistines	dari orang Filistin
+lugar	of the Hittites	dari orang Het
+lugar	of the Canaanites	dari orang Kanaan
+lugar	of the Amalekites	dari orang Amalek
+lugar	of the Jebusites	dari orang Yebus
+lugar	of the Assyrians	dari orang Asyur
+lugar	of the Babylonians	dari orang Babel
+lugar	of the Chaldeans	dari orang Kasdim
+lugar	of the Persians	dari orang Persia
+lugar	of the Hebrews	dari orang Ibrani
+lugar	of the Israelites	dari orang Israel

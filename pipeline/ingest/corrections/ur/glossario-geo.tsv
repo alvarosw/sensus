@@ -1,0 +1,58 @@
+# Glossário geo em urdu (openbible-geo, por regra; pipeline/sensus/geo_descricao.py). Colunas:
+#   secao      tipo | geometria | voto | fonte
+#   ingles     termo como aparece na descrição da fonte (exato)
+#   portugues  tradução usada na frase (aqui: urdu)
+#   nota       observação para o revisor (opcional)
+#   genero     não usado (os termos geo não concordam em gênero)
+secao	ingles	portugues	nota	genero
+tipo	settlement	بستی		
+tipo	region	علاقہ		
+tipo	mountain	پہاڑ		
+tipo	wadi	وادی	leito de rio seco	
+tipo	river	دریا		
+tipo	spring	چشمہ		
+tipo	hill	ٹیلہ		
+tipo	island	جزیرہ		
+tipo	valley	وادی		
+tipo	body of water	آبی ذخیرہ		
+tipo	well	کنواں		
+tipo	probability center radial	امکانی مرکز شعاع		
+tipo	road	راستہ		
+tipo	mountain range	پہاڑی سلسلہ		
+tipo	structure	عمارت		
+tipo	mouth of river	دریا کا دہانہ		
+tipo	pool	تالاب		
+tipo	cliff	چٹان		
+tipo	cave	غار		
+tipo	field	کھیت		
+tipo	mountain pass	پہاڑی درہ		
+tipo	mountain ridge	پہاڑی پشتہ		
+tipo	wall	دیوار		
+tipo	forest	جنگل		
+tipo	harbor	بندرگاہ		
+tipo	garden	باغ		
+tipo	promontory	ساحلی ابھار		
+geometria	point	نقطہ		
+geometria	polygon	کثیر الاضلاع		
+geometria	path	راستہ		
+fonte	modern	جدید		
+fonte	ancient	قدیم		
+voto	confidence_possible	اعتماد: ممکن		
+voto	confidence_likely	اعتماد: قرین قیاس		
+voto	confidence_yes	اعتماد: ہاں		
+voto	confidence_mostlikely	اعتماد: بہت ممکن		
+voto	confidence_unlikely	اعتماد: بعید		
+voto	confidence_no	اعتماد: نہیں		
+voto	confidence_map	اعتماد: نقشہ		
+voto	authority_usually	اختیار: عموماً		
+voto	authority_scholar	اختیار: عالم		
+voto	authority_traditional	اختیار: روایتی		
+voto	authority_parallel	اختیار: متوازی		
+voto	authority_preserved	اختیار: نام محفوظ		
+voto	authority_variant	اختیار: متبادل شکل		
+voto	authority_old	اختیار: قدیم		
+voto	unknown	نامعلوم		
+voto	uncertain	غیر یقینی		
+voto	identified_been	شناخت: ہو چکی ہے		
+voto	identified_is	شناخت: ہے		
+voto	identified_adjective	شناخت: صفت		

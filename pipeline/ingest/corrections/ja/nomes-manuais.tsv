@@ -1,0 +1,303 @@
+# Notas da revisão de nomes por agentes de IA (uma linha por nome_en + candidato, ou nome_en + tipo).
+# Conferidas no texto da Bíblia da língua e na tradução inglesa. Só registro: o ingestor não lê este arquivo.
+nome_en	tipo	nome_ja	origem	nota
+Abila	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Abila Lysaniou	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Adasa	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Adramyttium	place	アドラミティオン	revisado	rev. T5: forma do texto jpnm アドラミティオン
+Adulis	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Al-taschith	other	アル・タシュヘト	revisado	rev. IA: forma da 口語訳 アル・タシュヘト; pt: Al-Tasquite
+Alamoth	other	アラモテ	revisado	rev. IA: forma da 口語訳 アラモテ; pt: Alamote
+Ama	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Amate	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Amaw	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Amminadib	person	アミナダブ	revisado	rev. IA: forma da 口語訳 アミナダブ; pt: Aminadabe
+Angle	place	隅の門	revisado	rev. IA: forma da 口語訳 隅の門; pt: Porta do Ângulo
+Apostles	group	使徒	revisado	rev. IA: forma da 口語訳 使徒; pt: Apóstolos
+Apostles (Post-Ascension)	group	使徒	revisado	rev. IA: forma da 口語訳 使徒; pt: Apóstolos (depois da ascensão)
+Apostles (The Eleven)	group	十一弟子	revisado	rev. IA: forma da 口語訳 十一弟子; pt: Apóstolos (os onze)
+Arabah	place	アラバ	revisado	rev. IA: forma da 口語訳 アラバ; pt: Arabá
+Aram-naharaim	place	アラム・ナハライム	revisado	rev. IA: forma da 口語訳 アラム・ナハライム; pt: Arã-Naraim
+Aram-zobah	place	アラム・ツォバ	revisado	rev. IA: forma da 口語訳 アラム・ツォバ; pt: Arã-Zobá
+Aramitess	person	アラム人	revisado	rev. IA: forma da 口語訳 アラム人; pt: Aramita
+Arbela	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Arsinoe	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Asen	person		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Ashdod's	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Atroth-beth-joab	place	アトロテ・ベテ・ヨアブ	revisado	rev. T5: forma do texto jpnm アトロテ・ベテ・ヨアブ
+Bajith	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Barsabas Justus	person	バルサバ・ユスト	revisado	rev. IA: forma da 口語訳 バルサバ・ユスト; pt: José Barsabás, chamado Justo
+Batanea	place	バタネア	revisado	rev. IA: forma da 口語訳 バタネア; pt: sem nome
+Beeroth Bene-jaakan	place	ベエロト・ベネ・ヤアカン	revisado	rev. T5: forma do texto jpnm ベエロト・ベネ・ヤアカン
+Belamon	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Benjamin's Gate	place	ベニヤミンの門	revisado	rev. IA: forma da 口語訳 ベニヤミンの門; pt: Porta de Benjamim
+Beth-Ashtoreth	place	ベテ・アシタロテ	revisado	rev. IA: forma da 口語訳 ベテ・アシタロテ; pt: Bete-Astarote
+Beth-eked	place	ベテ・エケデ	revisado	rev. IA: forma da 口語訳 ベテ・エケデ; pt: Bete-Eked
+Beth-haggan	place	ベテ・ハガン	revisado	rev. IA: forma da 口語訳 ベテ・ハガン; pt: Bete-Hagã
+Beth-horon_Lower	place	下ベテ・ホロン	revisado	rev. IA: forma da 口語訳 下ベテ・ホロン; pt: Bete-Horom de Baixo
+Beth-horon_Upper	place	上ベテ・ホロン	revisado	rev. IA: forma da 口語訳 上ベテ・ホロン; pt: Bete-Horom de Cima
+Beth-merhak	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Bether 2	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Bether_Mountain	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: Monte Beter)
+Bethlehem Ephrathah	place	ベツレヘム・エフラタ	revisado	rev. IA: forma da 口語訳 ベツレヘム・エフラタ; pt: Belém Efrata
+Beyond the River	place	川向こう	revisado	rev. IA: forma da 口語訳 川向こう; pt: Além do Rio
+Booths_Festival	other	仮庵の祭	revisado	rev. IA: forma da 口語訳 仮庵の祭; pt: Festa dos Tabernáculos
+Caesarea Philippi	place	カイサリア・ピリポ	revisado	rev. T5: forma do texto jpnm カイサリア・ピリポ
+Caesarea_Philippi	place	カイサリア・ピリポ	revisado	rev. T5: forma do texto jpnm カイサリア・ピリポ
+Caleb Ephrathah	place	カレブ・エフラタ	revisado	rev. IA: forma da 口語訳 カレブ・エフラタ; pt: Calebe de Efrata
+Caleb_Ephrathah	place	カレブ・エフラタ	revisado	rev. IA: forma da 口語訳 カレブ・エフラタ; pt: Calebe de Efrata
+Canaanite_woman	person	カナンの女	revisado	rev. IA: forma da 口語訳 カナンの女; pt: Mulher cananeia
+Canaanitish woman	person	カナンの女	revisado	rev. IA: forma da 口語訳 カナンの女; pt: Mulher cananeia
+Carthage	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: Cartago)
+Chalcis	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Charmande	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Chief Priests	group	祭司長たち	revisado	rev. IA: forma da 口語訳 祭司長たち; pt: Principais sacerdotes
+Chronicles	other	歴代志	revisado	rev. IA: forma da 口語訳 歴代志; pt: Crônicas
+City of Salt	place	塩の町	revisado	rev. IA: forma da 口語訳 塩の町; pt: Cidade do Sal
+City_of_Salt	place	塩の町	revisado	rev. IA: forma da 口語訳 塩の町; pt: Cidade do Sal
+Claudius Lysias	person	クラウデオ・リシア	revisado	rev. IA: forma da 口語訳 クラウデオ・リシア; pt: Cláudio Lísias
+Concubine the Aramitess	person	アラム人の側女	revisado	rev. IA: forma da 口語訳 アラム人の側女; pt: Concubina aramita
+Daughter of Herodias	person	ヘロデヤの娘	revisado	rev. IA: forma da 口語訳 ヘロデヤの娘; pt: Filha de Herodias
+Daughter of Lot - Older	person	ロトの長女	revisado	rev. IA: forma da 口語訳 ロトの長女; pt: Filha mais velha de Ló
+Daughter of Lot - Younger	person	ロトの次女	revisado	rev. IA: forma da 口語訳 ロトの次女; pt: Filha mais nova de Ló
+Daughter of Machir	person	マキルの娘	revisado	rev. IA: forma da 口語訳 マキルの娘; pt: Filha de Maquir
+Daughter of Meshullam	person	メシュラムの娘	revisado	rev. IA: forma da 口語訳 メシュラムの娘; pt: Filha de Mesulão
+Daughter of Pharaoh	person	パロの娘	revisado	rev. IA: forma da 口語訳 パロの娘; pt: Filha de Faraó
+Daughter of Putiel	person	プティエルの娘	revisado	rev. IA: forma da 口語訳 プティエルの娘; pt: Filha de Putiel
+Daughter of Shuah	person	シュアの娘	revisado	rev. IA: forma da 口語訳 シュアの娘; pt: Filha de Suá
+Dedication_Festival	other	宮きよめの祭	revisado	rev. IA: forma da 口語訳 宮きよめの祭; pt: Festa da Dedicação
+Dehavites	group	デハワ人	revisado	rev. IA: forma da 口語訳 デハワ人; pt: Dinaítas
+Destiny	other		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: Destino)
+Disciples of John	group	ヨハネの弟子たち	revisado	rev. IA: forma da 口語訳 ヨハネの弟子たち; pt: Discípulos de João
+Diviners' Oak	place	占い師の樫の木	revisado	rev. IA: forma da 口語訳 占い師の樫の木; pt: Carvalho dos Adivinhos
+Diviners'_Oak	place	占い師の樫の木	revisado	rev. IA: forma da 口語訳 占い師の樫の木; pt: Carvalho dos Adivinhos
+Diviners’ Oak	place	占い師の樫の木	revisado	rev. IA: forma da 口語訳 占い師の樫の木; pt: Carvalho dos Adivinhos
+East	place	東の地	revisado	rev. IA: forma da 口語訳 東の地; pt: Terra do Oriente
+Egypt's	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Elkosh	place	エルコシュ	revisado	rev. IA: forma da 口語訳 エルコシュ; pt: sem nome
+Enaim	place	エナイム	revisado	rev. IA: forma da 口語訳 エナイム; pt: Enaim
+Eridu	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: Eridu)
+Etruria	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: Etrúria)
+Eznites	group	エズニ人	revisado	rev. IA: forma da 口語訳 エズニ人; pt: Eznitas
+Fair Havens	place	良い港	revisado	rev. IA: forma da 口語訳 良い港; pt: Bons Portos
+Fair_Havens	place	良い港	revisado	rev. IA: forma da 口語訳 良い港; pt: Bons Portos
+Forest	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: Bosque)
+Fortune	other		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: Sorte)
+Foundation_Gate	place	土台の門	revisado	rev. IA: forma da 口語訳 土台の門; pt: Porta do Fundamento
+Gadara	place	ガダラ	revisado	rev. IA: forma da 口語訳 ガダラ; pt: Gadara
+Gate of the Children of the People	place	民の子の門	revisado	rev. IA: forma da 口語訳 民の子の門; pt: Porta dos Filhos do Povo
+Gath-padalla	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Genealogy of Jesus	group	イエスの系図	revisado	rev. IA: forma da 口語訳 イエスの系図; pt: Genealogia de Jesus
+Gerasa	place	ゲラサ	revisado	rev. IA: forma da 口語訳 ゲラサ; pt: Gerasa
+Gergesa	place	ゲルゲサ	revisado	rev. IA: forma da 口語訳 ゲルゲサ; pt: Gergesa
+Geruth Chimham	place	ゲルテ・キムハム	revisado	rev. IA: forma da 口語訳 ゲルテ・キムハム; pt: Gerute-Quimã
+Geruth_Chimham	place	ゲルテ・キムハム	revisado	rev. IA: forma da 口語訳 ゲルテ・キムハム; pt: Gerute-Quimã
+Gittith	other	ギテテ	revisado	rev. IA: forma da 口語訳 ギテテ; pt: Gitite
+God	person	神	revisado	rev. IA: forma da 口語訳 神; pt: Deus
+Goiim	group	ゴイム	revisado	rev. IA: forma da 口語訳 ゴイム; pt: Goim
+Goiim	place	ゴイム	revisado	rev. IA: forma da 口語訳 ゴイム; pt: Goim
+Goiim 1	place	ゴイム 1	revisado	rev. IA: forma da 口語訳 ゴイム 1; pt: Goim 1
+Goiim 2	place	ゴイム 2	revisado	rev. IA: forma da 口語訳 ゴイム 2; pt: Goim 2
+Gulloth-mayim	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Gutium	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Hakkephirim	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Halahha	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Ham	place	ハム	revisado	rev. IA: forma da 口語訳 ハム; pt: Hã
+Ham 1	place	ハム 1	revisado	rev. IA: forma da 口語訳 ハム 1; pt: Hã 1
+Hammelech	person		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Hamon-gog_Valley	place	ハモン・ゴグの谷	revisado	rev. IA: forma da 口語訳 ハモン・ゴグの谷; pt: Vale da multidão de Gogue
+Harhar	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Hatti	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Hazerim	place	ハゼリム	revisado	rev. IA: forma da 口語訳 ハゼリム; pt: Hazerim
+Helech	place	ヘレク	revisado	rev. IA: forma da 口語訳 ヘレク; pt: sem nome
+Heracleopolis Magna	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: Heracleópolis Magna)
+Heracleopolis Parva	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Heres	place	ヘレス	revisado	rev. IA: forma da 口語訳 ヘレス; pt: Heres
+Herod Agrippa I	person	ヘロデ・アグリッパ	revisado	rev. IA: forma da 口語訳 ヘロデ・アグリッパ; pt: Herodes Agripa I
+Herod Antipas	person	ヘロデ・アンティパス	revisado	rev. T5: forma do texto jpnm ヘロデ・アンティパス
+Herodian	group	ヘロデ党	revisado	rev. IA: forma da 口語訳 ヘロデ党; pt: Herodianos
+Herod’s palace	place	ヘロデの宮殿	revisado	rev. IA: forma da 口語訳 ヘロデの宮殿; pt: Palácio de Herodes
+Highway	place	王の大路	revisado	rev. IA: forma da 口語訳 王の大路; pt: Caminho Real
+Hilakku	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Holy Place	place	聖所	revisado	rev. IA: forma da 口語訳 聖所; pt: Lugar Santo
+Holy Place 1	place	聖所 1	revisado	rev. IA: forma da 口語訳 聖所 1; pt: Lugar Santo 1
+Holy Place 2	place	聖所 2	revisado	rev. IA: forma da 口語訳 聖所 2; pt: Lugar Santo 2
+Holy Spirit	person	聖霊	revisado	rev. IA: forma da 口語訳 聖霊; pt: Espírito Santo
+Holy_Place	place	聖所	revisado	rev. IA: forma da 口語訳 聖所; pt: Lugar Santo
+Hophra	person	ホフラ	revisado	rev. IA: forma da 口語訳 ホフラ; pt: Hofra
+Horesh	place	ホレシャ	revisado	rev. IA: forma da 口語訳 ホレシャ; pt: Horesa
+House of the Forest of Lebanon	place	レバノンの森の家	revisado	rev. IA: forma da 口語訳 レバノンの森の家; pt: Casa do Bosque do Líbano
+Jaar	place	ヤアル	revisado	rev. IA: forma da 口語訳 ヤアル; pt: Jaar
+Janen	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Janua	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Jemnath	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Jerusalem's	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Jerusalem_wives	person	エルサレムの娘たち	revisado	rev. IA: forma da 口語訳 エルサレムの娘たち; pt: Mulheres de Jerusalém
+Jesus Christ	person	イエス・キリスト	revisado	rev. IA: forma da 口語訳 イエス・キリスト; pt: Jesus Cristo
+John Mark	person	ヨハネ・マルコ	revisado	rev. IA: forma da 口語訳 ヨハネ・マルコ; pt: João Marcos
+John the Apostle	person	使徒ヨハネ	revisado	rev. IA: forma da 口語訳 使徒ヨハネ; pt: João, o apóstolo
+John the Baptist	person	バプテスマのヨハネ	revisado	rev. IA: forma da 口語訳 バプテスマのヨハネ; pt: João Batista
+Jonath-elem-rechokim	other		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Judas Barsabas	person	ユダ・バルサバ	revisado	rev. IA: forma da 口語訳 ユダ・バルサバ; pt: Judas Barsabás
+Judas Iscariot	person	イスカリオテのユダ	revisado	rev. IA: forma da 口語訳 イスカリオテのユダ; pt: Judas Iscariotes
+Judgment	place	裁きの廊	revisado	rev. IA: forma da 口語訳 裁きの廊; pt: Pórtico do Juízo
+King's_Highway	place	王の大路	revisado	rev. IA: forma da 口語訳 王の大路; pt: Caminho Real
+King’s Highway	place	王の大路	revisado	rev. IA: forma da 口語訳 王の大路; pt: Caminho Real
+Kumidi	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+LORD	other	主	revisado	rev. IA: forma da 口語訳 主; pt: SENHOR
+Laash	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Lebanon_Valley	place	レバノンの平野	revisado	rev. IA: forma da 口語訳 レバノンの平野; pt: Planície do Líbano
+Lebbaeus Thaddaeus	person	レバイ・タダイ	revisado	rev. IA: forma da 口語訳 レバイ・タダイ; pt: Lebeu, chamado Tadeu
+Line of Cain	group	カインの系統	revisado	rev. IA: forma da 口語訳 カインの系統; pt: Linhagem de Caim
+Lower Beth-horon	place	下ベテ・ホロン	revisado	rev. IA: forma da 口語訳 下ベテ・ホロン; pt: Bete-Horom de Baixo
+Lower Gulloth	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: Fontes de Baixo)
+Lucifer	other	明けの明星	revisado	rev. IA: forma da 口語訳 明けの明星; pt: Lúcifer
+Lucifer	person	明けの明星	revisado	rev. IA: forma da 口語訳 明けの明星; pt: Lúcifer
+Lydia	place	リディア	revisado	rev. IA: forma da 口語訳 リディア; pt: Lídia
+Maareh-geba	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Madiama	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Magdala	place	マグダラ	revisado	rev. IA: forma da 口語訳 マグダラ; pt: Magdala
+Magdalsenna	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Magdolum	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Mahalab	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Maranatha	other	マラナ・タ	revisado	rev. IA: forma da 口語訳 マラナ・タ; pt: Maranata
+Mary Magdalene	person	マグダラのマリヤ	revisado	rev. IA: forma da 口語訳 マグダラのマリヤ; pt: Maria Madalena
+Mary_Magdalene	person	マグダラのマリヤ	revisado	rev. IA: forma da 口語訳 マグダラのマリヤ; pt: Maria Madalena
+Maskil	other	マスキール	revisado	rev. IA: forma da 口語訳 マスキール; pt: Masquil
+Mazzaroth	other	マザロテ	revisado	rev. IA: forma da 口語訳 マザロテ; pt: Mazarote
+Merom	place	メロム	revisado	rev. IA: forma da 口語訳 メロム; pt: Merom
+Meronoth	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Meunites	group	マウン人	revisado	rev. IA: forma da 口語訳 マウン人; pt: Meunins
+Micah	person	ミカ	revisado	rev. IA: forma da 口語訳 ミカ; pt: sem nome
+Miktam	other	ミクタム	revisado	rev. IA: forma da 口語訳 ミクタム; pt: Mictão
+Misrephoth-maim	place	ミスレフォト・マイム	revisado	rev. T5: forma do texto jpnm ミスレフォト・マイム
+Mizpeh_Valley	place	ミツパの谷	revisado	rev. T5: forma do texto jpnm ミツパの谷
+Moab_Plains	place	モアブの平原	revisado	rev. IA: forma da 口語訳 モアブの平原; pt: Campos de Moabe
+Mortar	place	マクテシュ	revisado	rev. IA: forma da 口語訳 マクテシュ; pt: sem nome
+Most Holy	place	至聖所	revisado	rev. IA: forma da 口語訳 至聖所; pt: Lugar Santíssimo
+Most Holy Place	place	至聖所	revisado	rev. IA: forma da 口語訳 至聖所; pt: Lugar Santíssimo
+Most Holy Place 1	place	至聖所 1	revisado	rev. IA: forma da 口語訳 至聖所 1; pt: Lugar Santíssimo 1
+Most Holy Place 2	place	至聖所 2	revisado	rev. IA: forma da 口語訳 至聖所 2; pt: Lugar Santíssimo 2
+Most_Holy_Place	place	至聖所	revisado	rev. IA: forma da 口語訳 至聖所; pt: Lugar Santíssimo
+Mother of Aholah and Aholibah	person		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Mother of Lemuel	person	レムエルの母	revisado	rev. IA: forma da 口語訳 レムエルの母; pt: Mãe de Lemuel
+Mother of Zebedees children	person	ゼベダイの子らの母	revisado	rev. IA: forma da 口語訳 ゼベダイの子らの母; pt: Mãe dos filhos de Zebedeu
+Mother of the Wife of Simon	person	シモンのしゅうとめ	revisado	rev. IA: forma da 口語訳 シモンのしゅうとめ; pt: Sogra de Simão
+Muth-labben	other		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Nahuru	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Naphath	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Naphath-dor	place	ナフォテ・ドル	revisado	rev. IA: forma da 口語訳 ナフォテ・ドル; pt: Nafote-Dor
+Nation of Israel	group	イスラエルの民	revisado	rev. IA: forma da 口語訳 イスラエルの民; pt: Nação de Israel
+Nehelam	place	ネヘラム人	revisado	rev. IA: forma da 口語訳 ネヘラム人; pt: Neelamita
+Nephilim	group	ネフィリム	revisado	rev. IA: forma da 口語訳 ネフィリム; pt: Nefilins
+New_Moon	other	新月	revisado	rev. IA: forma da 口語訳 新月; pt: Lua nova
+North	place	北	revisado	rev. IA: forma da 口語訳 北; pt: Norte
+North Gate	place	北の門	revisado	rev. IA: forma da 口語訳 北の門; pt: Porta do Norte
+Nuhashe	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Parbar	place	パルバル	revisado	rev. IA: forma da 口語訳 パルバル; pt: Parbar
+People's_Gate	place	民の子の門	revisado	rev. IA: forma da 口語訳 民の子の門; pt: Porta dos Filhos do Povo
+People’s Gate	place	民の子の門	revisado	rev. IA: forma da 口語訳 民の子の門; pt: Porta dos Filhos do Povo
+Pharisees	group	パリサイ人	revisado	rev. IA: forma da 口語訳 パリサイ人; pt: Fariseus
+Phillip the Apostle	person	使徒ピリポ	revisado	rev. IA: forma da 口語訳 使徒ピリポ; pt: Filipe, o apóstolo
+Phillip the Evangelist	person	伝道者ピリポ	revisado	rev. IA: forma da 口語訳 伝道者ピリポ; pt: Filipe, o evangelista
+Pillars	place	柱廊	revisado	rev. IA: forma da 口語訳 柱廊; pt: Colunas
+Pitru	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Plain	place	平野	revisado	rev. IA: forma da 口語訳 平野; pt: Planície
+Pontius Pilate	person	ポンテオ・ピラト	revisado	rev. IA: forma da 口語訳 ポンテオ・ピラト; pt: Pôncio Pilatos
+Pool	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Portius Festus	person	ポルキオ・フェスト	revisado	rev. T5: forma do texto jpnm ポルキオ・フェスト
+Potsherd Gate	place	陶器の破片の門	revisado	rev. IA: forma da 口語訳 陶器の破片の門; pt: sem nome
+Potsherd_Gate	place	陶器の破片の門	revisado	rev. IA: forma da 口語訳 陶器の破片の門; pt: sem nome
+Preparation_Festival	other	備え日	revisado	rev. IA: forma da 口語訳 備え日; pt: Dia da Preparação
+Punt	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Pyrrhus	person	ピロ	revisado	rev. IA: forma da 口語訳 ピロ; pt: Pirro
+Queen of Sheba	person	シバの女王	revisado	rev. IA: forma da 口語訳 シバの女王; pt: Rainha de Sabá
+Queen_of_Sheba	person	シバの女王	revisado	rev. IA: forma da 口語訳 シバの女王; pt: Rainha de Sabá
+Raca	other	ラカ	revisado	rev. IA: forma da 口語訳 ラカ; pt: Raca
+Ragmat	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+River	place	川	revisado	rev. IA: forma da 口語訳 川; pt: sem nome
+River 2	place	川 2	revisado	rev. IA: forma da 口語訳 川 2; pt: sem nome
+River 3	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: Reobote do Rio)
+Rock	place	岩	revisado	rev. IA: forma da 口語訳 岩; pt: sem nome
+Rocks	place	岩山	revisado	rev. IA: forma da 口語訳 岩山; pt: Rochedos
+Sadducees	group	サドカイ人	revisado	rev. IA: forma da 口語訳 サドカイ人; pt: Saduceus
+Sahar	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Salome	person	サロメ	revisado	rev. IA: forma da 口語訳 サロメ; pt: Salomé
+Salona	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Salt_Valley	place	塩の谷	revisado	rev. IA: forma da 口語訳 塩の谷; pt: Vale do Sal
+Samaria's	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Saparda	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Saparre	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Scribes	group	律法学者	revisado	rev. IA: forma da 口語訳 律法学者; pt: Escribas
+Scythia	place	スキタイ	revisado	rev. IA: forma da 口語訳 スキタイ; pt: Cítia
+Second Quarter	place	第二区	revisado	rev. IA: forma da 口語訳 第二区; pt: Segundo Bairro
+Second_Quarter	place	第二区	revisado	rev. IA: forma da 口語訳 第二区; pt: Segundo Bairro
+Sergius Paulus	person	セルギオ・パウロ	revisado	rev. IA: forma da 口語訳 セルギオ・パウロ; pt: Sérgio Paulo
+Sergius_Paulus	person	セルギオ・パウロ	revisado	rev. IA: forma da 口語訳 セルギオ・パウロ; pt: Sérgio Paulo
+Shephelah	place	シェフェラ	revisado	rev. IA: forma da 口語訳 シェフェラ; pt: Sefelá
+Shiggaion	other	シッガヨン	revisado	rev. IA: forma da 口語訳 シッガヨン; pt: sem nome
+Shushan_Eduth	other	シュシャン・エドテ	revisado	rev. IA: forma da 口語訳 シュシャン・エドテ; pt: sem nome
+Simon Peter	person	シモン・ペテロ	revisado	rev. IA: forma da 口語訳 シモン・ペテロ; pt: Simão Pedro
+Simon Zelotes	person	熱心党のシモン	revisado	rev. IA: forma da 口語訳 熱心党のシモン; pt: Simão, o zelote
+Simon the Sorcerer	person	魔術師シモン	revisado	rev. IA: forma da 口語訳 魔術師シモン; pt: Simão, o mágico
+Simon the Tanner	person	皮なめしシモン	revisado	rev. IA: forma da 口語訳 皮なめしシモン; pt: Simão, o curtidor
+Sister of Tahpenes	person		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: Irmã de Tafnes)
+Solomon's Portico	place	ソロモンの廊	revisado	rev. IA: forma da 口語訳 ソロモンの廊; pt: Pórtico de Salomão
+Solomon's_Portico	place	ソロモンの廊	revisado	rev. IA: forma da 口語訳 ソロモンの廊; pt: Pórtico de Salomão
+Solomon’s Portico	place	ソロモンの廊	revisado	rev. IA: forma da 口語訳 ソロモンの廊; pt: Pórtico de Salomão
+South	place	南	revisado	rev. IA: forma da 口語訳 南; pt: Sul
+South 1	place	南 1	revisado	rev. IA: forma da 口語訳 南 1; pt: Sul 1
+South 2	place	南 2	revisado	rev. IA: forma da 口語訳 南 2; pt: Sul 2
+South 3	place	南 3	revisado	rev. IA: forma da 口語訳 南 3; pt: Sul 3
+South Gate	place	南の門	revisado	rev. IA: forma da 口語訳 南の門; pt: Porta do Sul
+Sparta	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: Esparta)
+Straight Gate	place	まっすぐという通り	revisado	rev. IA: forma da 口語訳 まっすぐという通り; pt: sem nome
+Straight Street	place	まっすぐという通り	revisado	rev. IA: forma da 口語訳 まっすぐという通り; pt: Rua Direita
+Suph	place	スフ	revisado	rev. IA: forma da 口語訳 スフ; pt: Sufe
+Sutu	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Syrtis	place	スルティス	revisado	rev. IA: forma da 口語訳 スルティス; pt: Sirte
+Tabbur-erez	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Tartessos	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Tegarama	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Thapsacus	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+The Lord Is There	place	主はそこにおられる	revisado	rev. IA: forma da 口語訳 主はそこにおられる; pt: O SENHOR Está Ali
+The Lord Will Provide	place	主の山には備えがある	revisado	rev. IA: forma da 口語訳 主の山には備えがある; pt: O SENHOR Proverá
+Thelme	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Thisbe	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: Tisbe)
+Three Taverns	place	三つの宿	revisado	rev. IA: forma da 口語訳 三つの宿; pt: Três Vendas
+Three_Taverns	place	三つの宿	revisado	rev. IA: forma da 口語訳 三つの宿; pt: Três Vendas
+Throne	place	玉座の廊	revisado	rev. IA: forma da 口語訳 玉座の廊; pt: Pórtico do Trono
+Tjaru	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Tower	place	塔	revisado	rev. IA: forma da 口語訳 塔; pt: sem nome
+Tower_of_Eder	place	エデルのやぐら	revisado	rev. IA: forma da 口語訳 エデルのやぐら; pt: Torre do Rebanho
+Travelers_Valley	place	旅人の谷	revisado	rev. IA: forma da 口語訳 旅人の谷; pt: Vale dos que passam
+Tribe of Asher	group	アシェル族	revisado	rev. IA: forma da 口語訳 アシェル族; pt: Tribo de Aser
+Tribe of Benjamin	group	ベニヤミン族	revisado	rev. IA: forma da 口語訳 ベニヤミン族; pt: Tribo de Benjamim
+Tribe of Dan	group	ダン族	revisado	rev. IA: forma da 口語訳 ダン族; pt: Tribo de Dã
+Tribe of Gad	group	ガド族	revisado	rev. IA: forma da 口語訳 ガド族; pt: Tribo de Gade
+Tribe of Issachar	group	イッサカル族	revisado	rev. IA: forma da 口語訳 イッサカル族; pt: Tribo de Issacar
+Tribe of Joseph	group	ヨセフ族	revisado	rev. IA: forma da 口語訳 ヨセフ族; pt: Tribo de José
+Tribe of Judah	group	ユダ族	revisado	rev. IA: forma da 口語訳 ユダ族; pt: Tribo de Judá
+Tribe of Levi	group	レビ族	revisado	rev. IA: forma da 口語訳 レビ族; pt: Tribo de Levi
+Tribe of Naphtali	group	ナフタリ族	revisado	rev. IA: forma da 口語訳 ナフタリ族; pt: Tribo de Naftali
+Tribe of Reuben	group	ルベン族	revisado	rev. IA: forma da 口語訳 ルベン族; pt: Tribo de Rúben
+Tribe of Simeon	group	シメオン族	revisado	rev. IA: forma da 口語訳 シメオン族; pt: Tribo de Simeão
+Tribe of Zebulun	group	ゼブルン族	revisado	rev. IA: forma da 口語訳 ゼブルン族; pt: Tribo de Zebulom
+Umman Manda	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Unnamed#1	person		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Unnamed#2	person		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Unnamed#3	person		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Unnamed#4	person		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Unnamed#5	person		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Unnamed#6	person		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Unnamed#7	person		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Unnamed#8	person		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Unnamed#9	person		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Upper Beth-horon	place	上ベテ・ホロン	revisado	rev. IA: forma da 口語訳 上ベテ・ホロン; pt: Bete-Horom de Cima
+Upper Gulloth	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: Fontes de Cima)
+Upu	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Uqnu	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Ur 2	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Ur of the Chaldees	place	カルデヤのウル	revisado	rev. IA: forma da 口語訳 カルデヤのウル; pt: Ur dos Caldeus
+Ura	place		sem	rev. IA: sem forma tradicional segura na 口語訳 (pt: sem nome)
+Valley of Mizpeh	place	ミツパの谷	revisado	rev. T5: forma do texto jpnm ミツパの谷

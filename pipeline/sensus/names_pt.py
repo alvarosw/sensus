@@ -25,6 +25,10 @@ import unicodedata
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 
+from sensus.escritas import LIMIARES_PT, PERFIS, Limiares, Perfil
+
+PT = PERFIS["pt"]
+
 LIMIAR_ALTA_SEMELHANCA = 0.8
 LIMIAR_ALTA_COBERTURA = 0.5
 LIMIAR_ALTA_ESPECIFICIDADE = 0.3
@@ -35,7 +39,6 @@ LIMIAR_VIA2_COBERTURA = 0.85
 LIMIAR_VIA2_ESPECIFICIDADE = 0.5
 LIMIAR_VIA2_SEMELHANCA = 0.2
 
-_PALAVRA = re.compile(r"[A-ZÁÉÍÓÚÂÊÔÃÕÀÇ][\wÀ-ÿ]*(?:-[\wÀ-ÿ]+)*")
 _PARENTESES = re.compile(r"\([^)]*\)")
 _SUFIXO = re.compile(r"\s+(\d+)$")
 _GENTILICO = re.compile(r"ites?$", re.IGNORECASE)
@@ -95,21 +98,21 @@ def similarity(a: str, b: str) -> float:
 
 
 def candidates(verse_text: str) -> set[str]:
-    """Palavras capitalizadas de um versículo (candidatos a nome próprio em português)."""
-    return set(_PALAVRA.findall(verse_text))
+    """Palavras capitalizadas de um versículo (candidatos a nome próprio em português). Perfil pt de escritas.py."""
+    return PT.candidatos(verse_text)
 
 
-def confianca(nome: str, semelhanca: float, cobertura: float, especificidade: float, versos: int) -> str:
-    """'alta', 'media' ou 'baixa' pelos limiares do módulo (ver a docstring do módulo)."""
+def confianca(nome: str, semelhanca: float, cobertura: float, especificidade: float, versos: int,
+              lim: Limiares = LIMIARES_PT) -> str:
+    """'alta', 'media' ou 'baixa' pelos limiares do perfil (padrão: os do pt; ver a docstring do módulo)."""
     if gentilico(nome):
         return "baixa"
-    if (semelhanca >= LIMIAR_ALTA_SEMELHANCA and cobertura >= LIMIAR_ALTA_COBERTURA
-            and especificidade >= LIMIAR_ALTA_ESPECIFICIDADE):
+    if (semelhanca >= lim.alta_sem and cobertura >= lim.alta_cob and especificidade >= lim.alta_esp):
         return "alta"
-    if (versos >= LIMIAR_VIA2_VERSOS and cobertura >= LIMIAR_VIA2_COBERTURA
-            and especificidade >= LIMIAR_VIA2_ESPECIFICIDADE and semelhanca >= LIMIAR_VIA2_SEMELHANCA):
+    if (versos >= lim.via2_versos and cobertura >= lim.via2_cob and especificidade >= lim.via2_esp
+            and semelhanca >= lim.via2_sem):
         return "alta"
-    if semelhanca >= LIMIAR_MEDIA_SEMELHANCA:
+    if semelhanca >= lim.media_sem:
         return "media"
     return "baixa"
 
@@ -126,54 +129,63 @@ class Escolha:
     versos: int               # versículos do nome que existem na Bíblia Livre
 
 
-def pontua(name: str, c: str, versos, verse_candidates: dict[int, set[str]], df: Counter) -> tuple[float, float, float, int]:
+def pontua(name: str, c: str, versos, verse_candidates: dict[int, set[str]], df: Counter,
+           perfil: Perfil = PT) -> tuple[float, float, float, int]:
     """(semelhança, cobertura, especificidade, versos) de um candidato fixo nos versículos do nome."""
     V = [v for v in versos if v in verse_candidates]
     if not V:
         return 0.0, 0.0, 0.0, 0
     k = sum(1 for v in V if c in verse_candidates[v])
     spec = k / df[c] if k else 0.0
-    return similarity(name, c), k / len(V), spec, len(V)
+    return similarity(name, perfil.romaniza(c)), k / len(V), spec, len(V)
 
 
 def avalia(name: str, c: str, versos, verse_candidates: dict[int, set[str]], df: Counter,
-           alternativa: str | None = None) -> Escolha:
+           alternativa: str | None = None, perfil: Perfil = PT) -> Escolha:
     """Números e confiança de um candidato já escolhido (usado por entidade agrupada pelo candidato)."""
-    s, cov, spec, n = pontua(name, c, versos, verse_candidates, df)
+    s, cov, spec, n = pontua(name, c, versos, verse_candidates, df, perfil)
     # Arredondado antes da confiança: o que aparece na revisão é o que decidiu o nível.
     s, cov, spec = round(s, 2), round(cov, 2), round(spec, 2)
-    return Escolha(c, alternativa, s, cov, spec, confianca(name, s, cov, spec, n), n)
+    return Escolha(c, alternativa, s, cov, spec, confianca(name, s, cov, spec, n, perfil.limiares), n)
 
 
-def choose(name: str, verse_ids, verse_candidates: dict[int, set[str]], df: Counter) -> Escolha:
+def choose(name: str, verse_ids, verse_candidates: dict[int, set[str]], df: Counter,
+            perfil: Perfil = PT) -> Escolha:
     """Escolhe o nome pt de `name` entre os candidatos dos seus versículos.
 
     verse_ids: versículos (vid) em que o nome aparece; verse_candidates: vid -> candidatos do texto;
-    df: em quantos versículos do corpus cada candidato aparece. Pontuação:
+    df: em quantos versículos do corpus cada candidato aparece. Pontuação do perfil (padrão pt):
     semelhança^2 * (0.5 + 0.5*cobertura) * (0.3 + 0.7*especificidade^0.3). Empate: ordem alfabética.
+
+    Poda: a pontuação com semelhança 1 é um limite superior; candidatos abaixo do segundo colocado já achado
+    não são comparados por grafia. O resultado é o mesmo do ranking completo.
     """
     V = [v for v in verse_ids if v in verse_candidates]
     if not V:
         return Escolha(None, None, 0.0, 0.0, 0.0, "baixa", 0)
     k = Counter(c for v in V for c in verse_candidates[v])
-    ranking = []
-    for c, kc in k.items():
-        s = similarity(name, c)
-        cov = kc / len(V)
-        spec = kc / df[c]
-        score = s * s * (0.5 + 0.5 * cov) * (0.3 + 0.7 * spec ** 0.3)
-        ranking.append((-score, c))
-    ranking.sort()
-    melhor = ranking[0][1]
-    alternativa = ranking[1][1] if len(ranking) > 1 else None
-    return avalia(name, melhor, V, verse_candidates, df, alternativa)
+    if not k:  # versículos sem nenhum candidato (ex.: texto sem palavra capitalizada)
+        return Escolha(None, None, 0.0, 0.0, 0.0, "baixa", len(V))
+    cobertura = {c: kc / len(V) for c, kc in k.items()}
+    especificidade = {c: kc / df[c] for c, kc in k.items()}
+    limite = {c: perfil.pontuacao(1.0, cobertura[c], especificidade[c]) for c in k}
+    melhores: list[tuple[float, str]] = []  # (-pontuação, candidato): no máximo os dois primeiros
+    for c in sorted(k, key=lambda c: (-limite[c], c)):
+        if len(melhores) == 2 and limite[c] < -melhores[1][0]:
+            break
+        s = similarity(name, perfil.romaniza(c))
+        melhores.append((-perfil.pontuacao(s, cobertura[c], especificidade[c]), c))
+        melhores.sort()
+        del melhores[2:]
+    melhor = melhores[0][1]
+    alternativa = melhores[1][1] if len(melhores) > 1 else None
+    return avalia(name, melhor, V, verse_candidates, df, alternativa, perfil)
 
 
 # Compostos (ver decompoe e escolhe_frase). Nome composto próprio = cabeça do glossário + núcleo de uma palavra.
 _ARTIGO_INICIAL = re.compile(r"^the\s+", re.IGNORECASE)
 _POSSESSIVO = re.compile(r"'s$")
 # Palavras que, mesmo capitalizadas no texto, não são o núcleo de um nome ('porta do SENHOR' não é nome).
-_NAO_NUCLEO_NO_TEXTO = {"Deus", "Senhor", "Jesus", "Cristo", "Espírito"}
 _LIMITE_PALAVRA = r"(?<!\w)"
 # Núcleo que veio só da captura (sem nome pt próprio) só vira 'alta' com grafia parecida ao inglês. Frase específica
 # de grafia diferente (Red Sea -> mar Vermelho) fica 'media' para revisão: 'Guard Gate' pegou 'porta Velha' de uma
@@ -232,55 +244,75 @@ def decompoe(name: str, glossario: dict[str, tuple[str, ...]]) -> Composto | Non
 
 
 def frases(formas: tuple[str, ...], nucleo_pt: str) -> list[str]:
-    """Frases candidatas: cada forma do glossário seguida do núcleo em português ('monte das' + 'Oliveiras')."""
-    return [f"{f} {nucleo_pt}" for f in formas]
+    """Frases candidatas: cada forma do glossário seguida do núcleo em português ('monte das' + 'Oliveiras').
+
+    Forma com {n} (escritas sem espaço, 'monte {n}', '{n}山') põe o núcleo no lugar do marcador.
+    """
+    return [f.replace("{n}", nucleo_pt) if "{n}" in f else f"{f} {nucleo_pt}" for f in formas]
 
 
-def _rx_frase(frase: str) -> re.Pattern:
+def _fim(limites: bool) -> str:
+    return r"(?!\w)" if limites else ""
+
+
+def _rx_frase(frase: str, limites: bool = True) -> re.Pattern:
     # Sem diferença de maiúsculas; acentos têm de ser iguais; a frase não pode estar dentro de uma palavra maior.
-    return re.compile(_LIMITE_PALAVRA + re.escape(frase) + r"(?!\w)", re.IGNORECASE)
+    inicio = _LIMITE_PALAVRA if limites else ""
+    return re.compile(inicio + re.escape(frase) + _fim(limites), re.IGNORECASE)
 
 
-def _rx_captura(forma: str) -> re.Pattern:
+def _rx_captura(forma: str, perfil: Perfil = PT) -> re.Pattern:
     # A forma do glossário (sem diferença de maiúsculas) seguida de uma palavra capitalizada do próprio texto.
-    return re.compile(_LIMITE_PALAVRA + "((?i:" + re.escape(forma) + ")) ([A-ZÀ-Ý][\\wÀ-ÿ'-]*)(?!\\w)")
+    # Grupo 'palavra' = a palavra capturada. Forma com {n}: a palavra vem no lugar do marcador.
+    inicio = _LIMITE_PALAVRA if perfil.limites_de_palavra else ""
+    cap = perfil.maiuscula + r"[\wÀ-ÿ'-]*"
+    if "{n}" in forma:
+        antes, depois = forma.split("{n}", 1)
+        return re.compile(inicio + "(?i:" + re.escape(antes) + ")(?P<palavra>" + cap + ")(?i:"
+                          + re.escape(depois) + ")" + _fim(perfil.limites_de_palavra))
+    return re.compile(inicio + "((?i:" + re.escape(forma) + ")) (?P<palavra>" + cap + ")"
+                      + _fim(perfil.limites_de_palavra))
 
 
-def _captura_valida(palavra: str) -> bool:
-    return len(palavra) >= 3 and not palavra.isupper() and palavra not in _NAO_NUCLEO_NO_TEXTO
+def _captura_valida(palavra: str, perfil: Perfil = PT) -> bool:
+    return (len(palavra) >= perfil.min_captura and palavra[:1].isupper() and not palavra.isupper()
+            and palavra not in perfil.nao_nucleo)
 
 
-
-def ocorrencias(texto: str, formas: tuple[str, ...], nucleo_pt: str | None) -> list[tuple[str, str | None]]:
+def ocorrencias(texto: str, formas: tuple[str, ...], nucleo_pt: str | None,
+                perfil: Perfil = PT) -> list[tuple[str, str | None]]:
     """Trechos do texto que são frases candidatas: (trecho como escrito, palavra capturada ou None).
 
     Duas vias: as frases com o núcleo pt (palavra None, o núcleo já tem nome pt) e as capturas (forma + palavra
-    capitalizada do texto), que cobrem núcleos sem nome pt próprio ('Fish' -> 'dos Peixes').
+    capitalizada do texto), que cobrem núcleos sem nome pt próprio ('Fish' -> 'dos Peixes'). Sem captura no perfil
+    (zh, hi, bn, ar, ur, ja), só valem as frases com núcleo pt.
     """
     achadas: list[tuple[str, str | None]] = []
     if nucleo_pt:
         for fr in frases(formas, nucleo_pt):
-            m = _rx_frase(fr).search(texto)
+            m = _rx_frase(fr, perfil.limites_de_palavra).search(texto)
             if m:
                 achadas.append((m.group(0), None))
-    for forma in formas:
-        for m in _rx_captura(forma).finditer(texto):
-            if _captura_valida(m.group(2)):
-                achadas.append((m.group(0), m.group(2)))
+    if perfil.captura:
+        for forma in formas:
+            for m in _rx_captura(forma, perfil).finditer(texto):
+                if _captura_valida(m.group("palavra"), perfil):
+                    achadas.append((m.group(0), m.group("palavra")))
     return achadas
 
 
 @dataclass(frozen=True)
 class Frase:
     """Resultado de escolhe_frase: a frase achada (como está no texto) e a confiança pela cobertura."""
-    candidato: str            # frase do texto (a mais comum); se não achada, forma do glossário + núcleo
+    candidato: str            # frase do texto (a mais comum); se não achada, forma + núcleo pt ('' se {n} e sem núcleo)
     alternativa: str | None   # segunda frase achada, para revisão humana
     achados: int              # versículos do nome em que a frase aparece
     versos: int               # versículos do nome que existem na Bíblia Livre
     confianca: str            # 'alta' (>= 50% dos versículos), 'media' (achada em menos), 'baixa' (não achada)
 
 
-def escolhe_frase(formas: tuple[str, ...], nucleo_en: str, nucleo_pt: str | None, versos, textos: dict[int, str]) -> Frase:
+def escolhe_frase(formas: tuple[str, ...], nucleo_en: str, nucleo_pt: str | None, versos, textos: dict[int, str],
+                  perfil: Perfil = PT) -> Frase:
     """Escolhe a frase pt de um composto pelos versículos dele. Só aceita frase literal no texto da Bíblia Livre.
 
     Ranking: mais versículos; empate, frase com núcleo pt (peso 1), depois a palavra capturada mais parecida com o
@@ -299,21 +331,28 @@ def escolhe_frase(formas: tuple[str, ...], nucleo_en: str, nucleo_pt: str | None
         for i, fr in enumerate(frases(formas, nucleo_pt)):
             ordem.setdefault(fr.lower(), i)
     for v in V:
-        for trecho, palavra in ocorrencias(textos[v], formas, nucleo_pt):
+        for trecho, palavra in ocorrencias(textos[v], formas, nucleo_pt, perfil):
             chave = trecho.lower()
             por_frase[chave].add(v)
             trechos[chave][trecho] += 1
             if palavra is None:
                 mapeada.add(chave)
             else:
-                semelhanca[chave] = max(semelhanca[chave], similarity(nucleo_en, palavra))
+                semelhanca[chave] = max(semelhanca[chave], similarity(nucleo_en, perfil.romaniza(palavra)))
 
     def peso(c: str) -> float:
         return 1.0 if c in mapeada else semelhanca[c]
 
     ranking = sorted(por_frase, key=lambda c: (-len(por_frase[c]), -peso(c), ordem.get(c, len(ordem)), c))
     if not ranking:
-        nao_achada = frases(formas, nucleo_pt)[0] if nucleo_pt else f"{formas[0]} {nucleo_en}"
+        # Sem frase no texto: com núcleo pt, a forma do glossário + núcleo pt. Sem núcleo pt, forma com {n} não
+        # gera candidato (o marcador sairia cru); forma sem {n} mantém o núcleo inglês, como sempre.
+        if nucleo_pt:
+            nao_achada = frases(formas, nucleo_pt)[0]
+        elif "{n}" in formas[0]:
+            nao_achada = ""
+        else:
+            nao_achada = f"{formas[0]} {nucleo_en}"
         return Frase(nao_achada, None, 0, n, "baixa")
     melhor = ranking[0]
     k = len(por_frase[melhor])
@@ -325,12 +364,19 @@ def escolhe_frase(formas: tuple[str, ...], nucleo_en: str, nucleo_pt: str | None
 
 # ---- nomes manuais (compostos e descritivos que o alinhamento não cobre) ----------------------------------------
 
-MANUAIS_COLUNAS = ["nome_en", "tipo", "nome_pt", "origem", "nota"]
 MANUAIS_ORIGENS = ("revisado", "sem")
 MANUAIS_TIPOS = ("person", "place", "group", "other")  # event fica de fora: título próprio (titulos_pt)
 
 
-def ler_nomes_manuais(texto: str) -> dict[tuple[str, str], dict]:
+def manuais_colunas(lang: str = "pt") -> list[str]:
+    """Colunas do TSV de nomes manuais: nome_en, tipo, nome_<xx> (pt: nome_pt), origem, nota."""
+    return ["nome_en", "tipo", f"nome_{lang}", "origem", "nota"]
+
+
+MANUAIS_COLUNAS = manuais_colunas("pt")
+
+
+def ler_nomes_manuais(texto: str, lang: str = "pt") -> dict[tuple[str, str], dict]:
     """Linhas do TSV de nomes manuais, pela chave (nome_en, tipo). Comentários (#) e linhas vazias são ignorados.
 
     Erro (ValueError com o número da linha) para cabeçalho diferente, origem fora de revisado/sem, tipo fora de
@@ -340,12 +386,13 @@ def ler_nomes_manuais(texto: str) -> dict[tuple[str, str], dict]:
     if not linhas:
         return {}
     (_, cabecalho), *corpo = linhas
-    if cabecalho.split("\t") != MANUAIS_COLUNAS:
-        raise ValueError(f"cabeçalho difere do esperado {MANUAIS_COLUNAS}: {cabecalho!r}")
+    colunas = manuais_colunas(lang)
+    if cabecalho.split("\t") != colunas:
+        raise ValueError(f"cabeçalho difere do esperado {colunas}: {cabecalho!r}")
     out: dict[tuple[str, str], dict] = {}
     for n, l in corpo:
-        campos = (l.split("\t") + [""] * len(MANUAIS_COLUNAS))[: len(MANUAIS_COLUNAS)]
-        r = dict(zip(MANUAIS_COLUNAS, campos))
+        campos = (l.split("\t") + [""] * len(colunas))[: len(colunas)]
+        r = dict(zip(colunas, campos))
         r["origem"] = r["origem"].strip().lower()
         if r["origem"] not in MANUAIS_ORIGENS:
             raise ValueError(f"linha {n}: origem inválida {r['origem']!r} (use revisado ou sem)")

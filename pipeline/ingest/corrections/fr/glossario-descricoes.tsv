@@ -1,0 +1,134 @@
+# Glossário das descrições em francês (TIPNR, pipeline/sensus/descricoes_pt.py, por regra). Colunas:
+#   secao      cargo | tempo | tribo | lugar | relacao | nome
+#   ingles     termo como aparece na descrição da fonte (exato, com maiúsculas)
+#   frances    tradução usada na frase (forma em francês, com a elisão já escrita quando ela é fixa: d'Égypte)
+#   nota       observação para o revisor (opcional)
+#   genero     m | f | vazio: gênero do termo, para a forma '.f' da gramática (só cargo; vazio = sem concordância)
+# Seções: ver o cabeçalho de corrections/glossario-descricoes.tsv (pt).
+# Tradução de nome próprio da tribo e de lugar: a mesma forma de nomes.tsv (fr), para não divergir do resto do app.
+# Os modelos de tempo ficam como complemento ('de l'époque …'), para não concordar adjetivo com o cargo.
+secao	ingles	frances	nota	genero
+cargo	man	homme		m
+cargo	woman	femme		f
+cargo	location	lieu		m
+cargo	high priest	grand prêtre		m
+cargo	priest	prêtre		m
+cargo	warrior	guerrier		m
+cargo	warriors	guerriers		m
+cargo	musician	musicien		m
+cargo	prophet	prophète		m
+cargo	prophetess	prophétesse		f
+cargo	king	roi		m
+cargo	queen	reine		f
+cargo	group	groupe		m
+cargo	male deity	divinité masculine		f
+cargo	female deity	divinité féminine		f
+cargo	deity	divinité		f
+cargo	people	peuple		m
+cargo	woman or town	femme ou ville		f
+cargo	town	ville		f
+cargo	emperor	empereur		m
+cargo	prince	prince		m
+cargo	apostle	apôtre		m
+cargo	angel	ange		m
+cargo	concubine	concubine		f
+cargo	chief	chef		m
+cargo	steward	intendant		m
+cargo	servant	serviteur		m
+cargo	ruler	dirigeant		m
+cargo	musical piece	pièce musicale		f
+cargo	judge	juge
+cargo	Judge	juge
+cargo	city	ville		f
+cargo	gigantic man	homme géant		m
+cargo	Pharaoh	pharaon		m
+cargo	festival	fête		f
+cargo	governor	gouverneur		m
+tempo	at the time of the Patriarchs	de l'époque des patriarches
+tempo	at the time of Egypt and Wilderness	de l'époque de l'Égypte et du désert
+tempo	at the time of Exile and Return	de l'époque de l'exil et du retour
+tempo	at the time of Divided Monarchy	de l'époque de la monarchie divisée
+tempo	at the time of United Monarchy	de l'époque de la monarchie unifiée
+tempo	at the time of the New Testament	de l'époque du Nouveau Testament
+tempo	at the time of the Exodus	de l'époque de l'Exode
+tempo	before Israel's Monarchy	d'avant la monarchie d'Israël
+tempo	at the time before the Flood	de l'époque d'avant le Déluge
+tempo	before the Flood	d'avant le Déluge
+tempo	at the time of Judges	de l'époque des juges
+tribo	Levi	Lévi
+tribo	Judah	Juda
+tribo	Asher	Aser
+tribo	Benjamin	Benjamin
+tribo	Ephraim	Éphraïm
+tribo	Manasseh	Manassé
+tribo	Simeon	Siméon
+tribo	Issachar	Issacar
+tribo	Zebulun	Zabulon
+tribo	Naphtali	Nephthali
+tribo	Reuben	Ruben
+tribo	Gad	Gad
+tribo	Dan	Dan
+relacao	son of	fils de
+relacao	daughter of	fille de
+relacao	brother of	frère de
+relacao	sister of	sœur de
+relacao	half-brother of	demi-frère de
+relacao	half-sister of	demi-sœur de
+relacao	wife of	épouse de
+relacao	husband of	époux de
+relacao	mother of	mère de
+relacao	father of	père de
+relacao	founder of	fondateur de
+relacao	concubine of	concubine de
+relacao	descendant of	descendant de
+nome	Pharaoh	Pharaon
+nome	Asia	Asie
+nome	Christ	Christ
+lugar	in Asia	en Asie
+lugar	of Egypt	d'Égypte
+lugar	of the Cushites	des Couschites
+lugar	of the Arabs	des Arabes
+lugar	of the Edomites	des Édomites
+lugar	of the Midianites	des Madianites
+lugar	of the Syrians	des Syriens
+lugar	of the Gomerians	des Gomériens
+lugar	of the Ammonites	des Ammonites
+lugar	of the Greeks	des Grecs
+lugar	of the Ishmaelites	des Ismaélites
+lugar	of the Moabites	des Moabites
+lugar	of the Egyptians	des Égyptiens
+lugar	of the Philistines	des Philistins
+lugar	of the Hittites	des Héthiens
+lugar	of the Canaanites	des Cananéens
+lugar	of the Amalekites	des Amalécites
+lugar	of the Jebusites	des Jébusiens
+lugar	of the Assyrians	des Assyriens
+lugar	of the Babylonians	des Babyloniens
+lugar	of the Chaldeans	des Chaldéens
+lugar	of the Persians	des Perses
+lugar	of the Hebrews	des Hébreux
+lugar	of the Israelites	des Israélites
+lugar	in Jerusalem	à Jérusalem
+lugar	in Athens	à Athènes
+lugar	in Rome	à Rome
+lugar	in Babylon	à Babylone
+lugar	in Shechem	à Sichem
+lugar	in Heshbon	à Heshbon
+lugar	in Bethlehem	à Bethléem
+lugar	in Cyprus	à Chypre
+lugar	in Canaan	en Canaan
+lugar	in Philistia	en Philistie
+lugar	in Edom	en Édom
+lugar	in Moab	en Moab
+lugar	in Mesopotamia	en Mésopotamie
+lugar	in Assyria	en Assyrie
+lugar	in Judea	en Judée
+lugar	in Syria	en Syrie
+lugar	in Parthia	en Parthie
+lugar	in Scythia	en Scythie
+lugar	in Persia	en Perse
+lugar	in Greece	en Grèce
+lugar	in Arabia	en Arabie
+lugar	in Gilead	en Galaad
+lugar	of the Kingdom of Israel	du royaume d'Israël
+cargo	huge man	homme géant		m

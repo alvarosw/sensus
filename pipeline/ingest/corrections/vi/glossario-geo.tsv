@@ -1,0 +1,60 @@
+# Glossário geo em vietnamita (openbible-geo, pipeline/sensus/geo_descricao.py, por regra). Colunas:
+#   secao      tipo | geometria | voto | fonte
+#   ingles     termo como aparece na descrição da fonte (exato)
+#   vietnamita tradução usada na frase
+#   nota       observação para o revisor (opcional)
+# tipo: tipo de lugar (Best modern identification: NOME (TIPO, GEOMETRIA geometry)).
+# geometria: point, polygon, path.  voto: rótulos de Votes (nomes de confiança e de autoridade da fonte).
+# fonte: modern (identificação moderna) ou ancient (identificação antiga, do texto da fonte).
+secao	ingles	vietnamita	nota
+tipo	settlement	địa điểm dân cư
+tipo	region	vùng
+tipo	mountain	núi
+tipo	wadi	suối khô
+tipo	river	sông
+tipo	spring	suối
+tipo	hill	đồi
+tipo	island	hải đảo
+tipo	valley	thung lũng
+tipo	body of water	vùng nước
+tipo	well	giếng
+tipo	probability center radial	tâm xác suất hướng tâm	termo técnico da fonte; confirmar
+tipo	road	đường
+tipo	mountain range	dãy núi
+tipo	structure	công trình
+tipo	mouth of river	cửa sông
+tipo	pool	hồ nước
+tipo	cliff	vách đá
+tipo	cave	hang
+tipo	field	cánh đồng
+tipo	mountain pass	đèo
+tipo	mountain ridge	sườn núi
+tipo	wall	tường thành
+tipo	forest	rừng
+tipo	harbor	bến cảng
+tipo	garden	vườn
+tipo	promontory	mũi đất
+geometria	point	điểm
+geometria	polygon	đa giác
+geometria	path	tuyến
+voto	confidence_yes	tin cậy: có	rev. amostragem
+voto	confidence_likely	tin cậy: nhiều khả năng	rev. amostragem
+voto	confidence_mostlikely	tin cậy: rất nhiều khả năng	rev. amostragem
+voto	confidence_possible	tin cậy: có thể	rev. amostragem
+voto	confidence_unlikely	tin cậy: ít khả năng	rev. amostragem
+voto	confidence_no	tin cậy: không	rev. amostragem
+voto	confidence_map	tin cậy: theo bản đồ	rev. amostragem
+voto	authority_usually	căn cứ: thường dùng	rev. amostragem
+voto	authority_scholar	căn cứ: học giả	rev. amostragem
+voto	authority_traditional	căn cứ: truyền thống	rev. amostragem
+voto	authority_parallel	căn cứ: đoạn song song	rev. amostragem
+voto	authority_preserved	căn cứ: tên được giữ lại	rev. amostragem
+voto	authority_variant	căn cứ: dị bản	rev. amostragem
+voto	authority_old	căn cứ: tên cổ	rev. amostragem
+voto	identified_been	được nhận diện là đã từng
+voto	identified_is	được nhận diện là
+voto	identified_adjective	được nhận diện
+voto	uncertain	không chắc chắn
+voto	unknown	không rõ
+fonte	modern	hiện đại
+fonte	ancient	cổ đại

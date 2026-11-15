@@ -1,0 +1,108 @@
+# Glossário das descrições em espanhol (TIPNR, pipeline/sensus/descricoes_pt.py). Mesmo formato do pt
+# (corrections/glossario-descricoes.tsv). Colunas:
+#   secao      cargo | tempo | tribo | lugar | relacao | nome
+#   ingles     termo como aparece na descrição da fonte (exato, com maiúsculas)
+#   portugues  tradução usada na frase (aqui: espanhol; o nome da coluna é o do código)
+#   nota       observação para o revisor (opcional)
+#   genero     m, f, n ou vazio. Vazio em todo o espanhol: nenhum modelo concorda com o cargo (ver gramatica-descricoes)
+secao	ingles	portugues	nota	genero
+cargo	man	hombre
+cargo	woman	mujer
+cargo	location	lugar
+cargo	high priest	sumo sacerdote
+cargo	priest	sacerdote
+cargo	warrior	guerrero
+cargo	warriors	guerreros
+cargo	musician	músico
+cargo	prophet	profeta
+cargo	prophetess	profetisa
+cargo	king	rey
+cargo	queen	reina
+cargo	group	grupo
+cargo	male deity	divinidad masculina
+cargo	female deity	divinidad femenina
+cargo	deity	divinidad
+cargo	people	pueblo
+cargo	woman or town	mujer o ciudad
+cargo	town	ciudad
+cargo	emperor	emperador
+cargo	prince	príncipe
+cargo	apostle	apóstol
+cargo	angel	ángel
+cargo	concubine	concubina
+cargo	chief	jefe
+cargo	steward	administrador
+cargo	servant	siervo
+cargo	ruler	gobernante
+cargo	musical piece	pieza musical
+cargo	judge	juez
+cargo	city	ciudad
+cargo	gigantic man	hombre gigante
+cargo	Pharaoh	faraón
+cargo	festival	fiesta
+cargo	governor	gobernador
+cargo	Judge	juez
+tempo	at the time of the Patriarchs	de la época de los patriarcas
+tempo	at the time of Egypt and Wilderness	de la época de Egipto y del desierto
+tempo	at the time of Exile and Return	de la época del exilio y del regreso
+tempo	at the time of Divided Monarchy	de la época de la monarquía dividida
+tempo	at the time of United Monarchy	de la época de la monarquía unida
+tempo	at the time of the New Testament	de la época del Nuevo Testamento
+tempo	at the time of the Exodus	de la época del Éxodo
+tempo	before Israel's Monarchy	anterior a la monarquía de Israel
+tempo	at the time before the Flood	de la época anterior al Diluvio
+tempo	before the Flood	anterior al Diluvio
+tempo	at the time of Judges	de la época de los jueces
+tribo	Levi	Leví
+tribo	Judah	Judá
+tribo	Asher	Aser
+tribo	Benjamin	Benjamín
+tribo	Ephraim	Efraín
+tribo	Manasseh	Manasés
+tribo	Simeon	Simeón
+tribo	Issachar	Isacar
+tribo	Zebulun	Zabulón
+tribo	Naphtali	Neftalí
+tribo	Reuben	Rubén
+tribo	Gad	Gad
+tribo	Dan	Dan
+relacao	son of	hijo de
+relacao	daughter of	hija de
+relacao	brother of	hermano de
+relacao	sister of	hermana de
+relacao	half-brother of	medio hermano de
+relacao	half-sister of	media hermana de
+relacao	wife of	esposa de
+relacao	husband of	esposo de
+relacao	mother of	madre de
+relacao	father of	padre de
+relacao	founder of	fundador de
+relacao	concubine of	concubina de
+relacao	descendant of	descendiente de
+lugar	in Asia	en Asia
+lugar	of Egypt	de Egipto
+lugar	of the Cushites	de los cusitas
+lugar	of the Arabs	de los árabes
+lugar	of the Edomites	de los edomitas
+lugar	of the Midianites	de los madianitas
+lugar	of the Syrians	de los sirios
+lugar	of the Gomerians	de los gomeritas
+lugar	of the Ammonites	de los amonitas
+lugar	of the Greeks	de los griegos
+lugar	of the Ishmaelites	de los ismaelitas
+lugar	of the Moabites	de los moabitas
+lugar	of the Egyptians	de los egipcios
+lugar	of the Philistines	de los filisteos
+lugar	of the Hittites	de los heteos
+lugar	of the Canaanites	de los cananeos
+lugar	of the Amalekites	de los amalecitas
+lugar	of the Jebusites	de los jebuseos
+lugar	of the Assyrians	de los asirios
+lugar	of the Babylonians	de los babilonios
+lugar	of the Chaldeans	de los caldeos
+lugar	of the Persians	de los persas
+lugar	of the Hebrews	de los hebreos
+lugar	of the Israelites	de los israelitas
+nome	Pharaoh	Faraón
+nome	Asia	Asia
+nome	Christ	Cristo

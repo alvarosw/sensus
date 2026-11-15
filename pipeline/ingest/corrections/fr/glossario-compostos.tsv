@@ -1,0 +1,52 @@
+# Glossário de cabeças de nomes compostos em inglês -> formas em francês (Louis Segond, fralsg). Usado por
+# pipeline/ingest/nomes.py --lang fr. Colunas:
+#   cabeca   palavra ou expressão inglesa que encabeça o nome (como no glossário pt)
+#   formas   formas francesas com o marcador {n} no lugar do núcleo, separadas por '|'; o apóstrofo é o do texto
+#            da Segond (’), para casar 'porte d’Éphraïm'. Só valem as frases achadas no texto da Bíblia.
+cabeca	formas
+Mount	mont {n}|montagne de {n}|montagne d’{n}|montagne du {n}|montagne des {n}|montagne de la {n}|montagne de l’{n}|mont de {n}|mont d’{n}|mont du {n}|mont des {n}|mont de la {n}|mont de l’{n}
+Mount of	montagne de {n}|montagne d’{n}|montagne du {n}|montagne des {n}|montagne de la {n}|montagne de l’{n}|mont de {n}|mont d’{n}|mont du {n}|mont des {n}|mont de la {n}|mont de l’{n}
+Valley	vallée de {n}|vallée d’{n}|vallée du {n}|vallée des {n}|vallée de la {n}|vallée de l’{n}
+Valley of	vallée de {n}|vallée d’{n}|vallée du {n}|vallée des {n}|vallée de la {n}|vallée de l’{n}
+Vale	vallée de {n}|vallée d’{n}|vallée du {n}|vallée des {n}|vallée de la {n}|vallée de l’{n}
+Vale of	vallée de {n}|vallée d’{n}|vallée du {n}|vallée des {n}|vallée de la {n}|vallée de l’{n}
+Tribe of	tribu de {n}|tribu d’{n}|tribu du {n}|tribu des {n}|tribu de la {n}|tribu de l’{n}|tribu des fils de {n}|tribu des fils d’{n}
+Gate	porte de {n}|porte d’{n}|porte du {n}|porte des {n}|porte de la {n}|porte de l’{n}
+Gate of	porte de {n}|porte d’{n}|porte du {n}|porte des {n}|porte de la {n}|porte de l’{n}
+Sea	mer {n}|mer de {n}|mer d’{n}|mer du {n}|mer des {n}|mer de la {n}|mer de l’{n}
+Sea of	mer de {n}|mer d’{n}|mer du {n}|mer des {n}|mer de la {n}|mer de l’{n}
+Tower	tour de {n}|tour d’{n}|tour du {n}|tour des {n}|tour de la {n}|tour de l’{n}
+Tower of	tour de {n}|tour d’{n}|tour du {n}|tour des {n}|tour de la {n}|tour de l’{n}
+City	ville de {n}|ville d’{n}|ville du {n}|ville des {n}|ville de la {n}|ville de l’{n}
+City of	ville de {n}|ville d’{n}|ville du {n}|ville des {n}|ville de la {n}|ville de l’{n}
+Brook	torrent de {n}|torrent d’{n}|torrent du {n}|torrent des {n}|torrent de la {n}|torrent de l’{n}
+Brook of	torrent de {n}|torrent d’{n}|torrent du {n}|torrent des {n}|torrent de la {n}|torrent de l’{n}
+Wilderness	désert de {n}|désert d’{n}|désert du {n}|désert des {n}|désert de la {n}|désert de l’{n}
+Wilderness of	désert de {n}|désert d’{n}|désert du {n}|désert des {n}|désert de la {n}|désert de l’{n}
+Plain	plaine de {n}|plaine d’{n}|plaine du {n}|plaine des {n}|plaine de la {n}|plaine de l’{n}
+Plain of	plaine de {n}|plaine d’{n}|plaine du {n}|plaine des {n}|plaine de la {n}|plaine de l’{n}|plaines de {n}|plaines d’{n}|plaines du {n}|plaines des {n}|plaines de la {n}|plaines de l’{n}
+Plains	plaines de {n}|plaines d’{n}|plaines du {n}|plaines des {n}|plaines de la {n}|plaines de l’{n}|plaine de {n}|plaine d’{n}|plaine du {n}|plaine des {n}|plaine de la {n}|plaine de l’{n}
+Pool	étang de {n}|étang d’{n}|étang du {n}|étang des {n}|étang de la {n}|étang de l’{n}|réservoir de {n}|réservoir d’{n}|réservoir du {n}|réservoir des {n}|réservoir de la {n}|réservoir de l’{n}|piscine de {n}|piscine d’{n}|piscine du {n}|piscine des {n}|piscine de la {n}|piscine de l’{n}
+Pool of	étang de {n}|étang d’{n}|étang du {n}|étang des {n}|étang de la {n}|étang de l’{n}|réservoir de {n}|réservoir d’{n}|réservoir du {n}|réservoir des {n}|réservoir de la {n}|réservoir de l’{n}|piscine de {n}|piscine d’{n}|piscine du {n}|piscine des {n}|piscine de la {n}|piscine de l’{n}
+Hall	portique de {n}|portique d’{n}|portique du {n}|portique des {n}|portique de la {n}|portique de l’{n}|salle de {n}|salle d’{n}|salle du {n}|salle des {n}|salle de la {n}|salle de l’{n}
+Hall of	portique de {n}|portique d’{n}|portique du {n}|portique des {n}|portique de la {n}|portique de l’{n}|salle de {n}|salle d’{n}|salle du {n}|salle des {n}|salle de la {n}|salle de l’{n}
+Spring	source de {n}|source d’{n}|source du {n}|source des {n}|source de la {n}|source de l’{n}|fontaine de {n}|fontaine d’{n}|fontaine du {n}|fontaine des {n}|fontaine de la {n}|fontaine de l’{n}
+Rock	rocher de {n}|rocher d’{n}|rocher du {n}|rocher des {n}|rocher de la {n}|rocher de l’{n}
+Rock of	rocher de {n}|rocher d’{n}|rocher du {n}|rocher des {n}|rocher de la {n}|rocher de l’{n}
+Stone	pierre de {n}|pierre d’{n}|pierre du {n}|pierre des {n}|pierre de la {n}|pierre de l’{n}
+Way of	chemin de {n}|chemin d’{n}|chemin du {n}|chemin des {n}|chemin de la {n}|chemin de l’{n}
+Waters	eaux de {n}|eaux d’{n}|eaux du {n}|eaux des {n}|eaux de la {n}|eaux de l’{n}
+Waters of	eaux de {n}|eaux d’{n}|eaux du {n}|eaux des {n}|eaux de la {n}|eaux de l’{n}
+Forest	forêt de {n}|forêt d’{n}|forêt du {n}|forêt des {n}|forêt de la {n}|forêt de l’{n}
+Forest of	forêt de {n}|forêt d’{n}|forêt du {n}|forêt des {n}|forêt de la {n}|forêt de l’{n}
+Festival	fête de {n}|fête d’{n}|fête du {n}|fête des {n}|fête de la {n}|fête de l’{n}
+Square	place de {n}|place d’{n}|place du {n}|place des {n}|place de la {n}|place de l’{n}
+Wall	muraille de {n}|muraille d’{n}|muraille du {n}|muraille des {n}|muraille de la {n}|muraille de l’{n}|mur de {n}|mur d’{n}|mur du {n}|mur des {n}|mur de la {n}|mur de l’{n}
+Forum	Forum {n}|Forum de {n}|Forum d’{n}|Forum du {n}|Forum des {n}|Forum de la {n}|Forum de l’{n}|marché de {n}|marché d’{n}|marché du {n}|marché des {n}|marché de la {n}|marché de l’{n}
+Forum of	Forum de {n}|Forum d’{n}|Forum du {n}|Forum des {n}|Forum de la {n}|Forum de l’{n}|marché de {n}|marché d’{n}|marché du {n}|marché des {n}|marché de la {n}|marché de l’{n}
+Hill	colline de {n}|colline d’{n}|colline du {n}|colline des {n}|colline de la {n}|colline de l’{n}|coteau de {n}|coteau d’{n}|coteau du {n}|coteau des {n}|coteau de la {n}|coteau de l’{n}
+Hill of	colline de {n}|colline d’{n}|colline du {n}|colline des {n}|colline de la {n}|colline de l’{n}|coteau de {n}|coteau d’{n}|coteau du {n}|coteau des {n}|coteau de la {n}|coteau de l’{n}
+River	fleuve de {n}|fleuve d’{n}|fleuve du {n}|fleuve des {n}|fleuve de la {n}|fleuve de l’{n}|torrent de {n}|torrent d’{n}|torrent du {n}|torrent des {n}|torrent de la {n}|torrent de l’{n}
+River of	fleuve de {n}|fleuve d’{n}|fleuve du {n}|fleuve des {n}|fleuve de la {n}|fleuve de l’{n}|torrent de {n}|torrent d’{n}|torrent du {n}|torrent des {n}|torrent de la {n}|torrent de l’{n}
+House	maison de {n}|maison d’{n}|maison du {n}|maison des {n}|maison de la {n}|maison de l’{n}
+House of	maison de {n}|maison d’{n}|maison du {n}|maison des {n}|maison de la {n}|maison de l’{n}

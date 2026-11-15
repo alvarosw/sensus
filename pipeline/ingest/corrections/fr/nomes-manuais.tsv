@@ -1,0 +1,364 @@
+# Notas da revisão de nomes por agentes de IA (uma linha por nome_en + candidato, ou nome_en + tipo).
+# Conferidas no texto da Bíblia da língua e na tradução inglesa. Só registro: o ingestor não lê este arquivo.
+nome_en	tipo	nome_fr	origem	nota
+Abila	place		sem	rev. IA:  sem forma tradicional segura em fr
+Abila Lysaniou	place		sem	rev. IA:  sem forma tradicional segura em fr
+Adasa	place		sem	rev. IA:  sem forma tradicional segura em fr
+Adramyttium	place	Adramytte	revisado	rev. IA: Acts.27.2 Adramytte; Ac 27.2
+Adulis	place		sem	rev. IA:  sem forma tradicional segura em fr
+Al-taschith	other	Al-Taschith	revisado	rev. IA: Ps.57.1 Al-Taschith; título de salmo, forma tradicional
+Alamoth	other	Alamoth	revisado	rev. IA: 1Chr.15.20 Alamoth; título musical, forma tradicional
+Ama	place		sem	rev. IA:  sem forma tradicional segura em fr
+Amate	place		sem	rev. IA:  sem forma tradicional segura em fr
+Amaw	place		sem	rev. IA: Num.22.5 sem forma tradicional segura em fr
+Amminadib	person	Amminadib	revisado	rev. IA: Song.6.12 Amminadib; forma tradicional
+Angle	place	Porte de l’angle	revisado	rev. IA: 2Chr.26.9 Porte de l’angle; 2 Ch 26.9
+Apostles	group	Apôtres	revisado	rev. IA:  Apôtres
+Apostles (Post-Ascension)	group	Apôtres après l’ascension	revisado	rev. IA:  Apôtres après l’ascension
+Apostles (The Eleven)	group	Les onze apôtres	revisado	rev. IA:  Les onze apôtres
+Arabah	place	Araba	revisado	rev. IA: Deut.1.1 Araba; Dt 1.1
+Aram-naharaim	place	Aram-Naharaïm	revisado	rev. IA: Ps.60.1 Aram-Naharaïm; Ps 60 título
+Aram-zobah	place	Aram-Tsoba	revisado	rev. IA: Ps.60.1 Aram-Tsoba; Ps 60 título
+Aramitess	person	Syrienne	revisado	rev. IA: 1Chr.7.14 Syrienne; 1 Ch 7.14 concubine syrienne
+Arbela	place		sem	rev. IA:  sem forma tradicional segura em fr
+Arsinoe	place		sem	rev. IA:  sem forma tradicional segura em fr
+Asen	person		sem	rev. IA: Neh.7.24 sem forma tradicional segura em fr
+Ashdod's	place		sem	rev. IA:  sem forma tradicional segura em fr
+Atroth-beth-joab	place	Athroth-Beth-Joab	revisado	rev. IA: 1Chr.2.54 Athroth-Beth-Joab; 1 Ch 2.54
+Bajith	place		sem	rev. IA: Isa.15.2 sem forma tradicional segura em fr
+Barsabas Justus	person	Joseph Barsabas, surnommé Justus	revisado	rev. IA: Acts.1.23 Joseph Barsabas, surnommé Justus; Ac 1.23
+Batanea	place		sem	rev. IA:  sem forma tradicional segura em fr
+Beeroth Bene-jaakan	place	Beéroth-Bené-Jaakan	revisado	rev. IA: Deut.10.6 Beéroth-Bené-Jaakan; Dt 10.6
+Belamon	place		sem	rev. IA:  sem forma tradicional segura em fr
+Benjamin's Gate	place	Porte de Benjamin	revisado	rev. IA:  Porte de Benjamin; Jr 20.2
+Beth-Ashtoreth	place	Beth-Astarté	revisado	rev. IA: 1Sam.31.10 Beth-Astarté; 1 S 31.10 maison des Astartés
+Beth-eked	place	Beth-Éked	revisado	rev. IA: 2Kgs.10.12 Beth-Éked; 2 R 10.12
+Beth-haggan	place	Beth-Gan	revisado	rev. IA: 2Kgs.9.27 Beth-Gan; 2 R 9.27 maison du jardin
+Beth-horon_Lower	place	Beth-Horon la basse	revisado	rev. IA: Josh.10.10 Beth-Horon la basse; Jos 16.3
+Beth-horon_Upper	place	Beth-Horon la haute	revisado	rev. IA: Josh.16.5 Beth-Horon la haute; Jos 16.5
+Beth-merhak	place		sem	rev. IA: 2Sam.15.17 sem forma tradicional segura em fr
+Bether 2	place		sem	rev. IA:  sem forma tradicional segura em fr
+Bether_Mountain	place	Montagnes de Béther	revisado	rev. IA: Song.2.17 Montagnes de Béther; Ct 2.17
+Bethlehem Ephrathah	place	Bethléhem Éphrata	revisado	rev. IA: Mic.5.2 Bethléhem Éphrata; Mi 5.1
+Beyond the River	place	De l’autre côté du fleuve	revisado	rev. IA: Ezra.4.10 De l’autre côté du fleuve; Esd 4.10
+Booths_Festival	other	Fête des tabernacles	revisado	rev. IA: John.7.2 Fête des tabernacles; Jn 7.2
+Caesarea Philippi	place	Césarée de Philippe	revisado	rev. IA: Matt.16.13 Césarée de Philippe; Mt 16.13
+Caesarea_Philippi	place	Césarée de Philippe	revisado	rev. IA: Matt.16.13 Césarée de Philippe; Mt 16.13
+Caleb Ephrathah	place	Caleb-Éphrata	revisado	rev. IA: 1Chr.2.24 Caleb-Éphrata; 1 Ch 2.24
+Caleb_Ephrathah	place	Caleb-Éphrata	revisado	rev. IA: 1Chr.2.24 Caleb-Éphrata; 1 Ch 2.24
+Canaanite_woman	person	Femme cananéenne	revisado	rev. IA: Gen.46.10 Femme cananéenne; Gn 46.10
+Canaanitish woman	person	Femme cananéenne	revisado	rev. IA: Gen.46.10 Femme cananéenne; Gn 46.10
+Carthage	place	Carthage	revisado	rev. IA:  Carthage
+Chalcis	place		sem	rev. IA:  sem forma tradicional segura em fr
+Charmande	place		sem	rev. IA:  sem forma tradicional segura em fr
+Chief Priests	group	Principaux sacrificateurs	revisado	rev. IA:  Principaux sacrificateurs
+Chronicles	other	Chroniques	revisado	rev. IA: 1Kgs.14.19 Chroniques; 1 R 14.19 livre des Chroniques
+City of Salt	place	Ir-Hammélach	revisado	rev. IA: Josh.15.62 Ir-Hammélach; Jos 15.62
+City_of_Salt	place	Ir-Hammélach	revisado	rev. IA: Josh.15.62 Ir-Hammélach; Jos 15.62
+Claudius Lysias	person	Claude Lysias	revisado	rev. IA: Acts.23.26 Claude Lysias; Ac 23.26
+Concubine the Aramitess	person	Concubine syrienne	revisado	rev. IA: 1Chr.7.14 Concubine syrienne; 1 Ch 7.14
+Daughter of Herodias	person	Fille d’Hérodias	revisado	rev. IA: Matt.14.6 Fille d’Hérodias; Mt 14.6
+Daughter of Lot - Older	person	Fille aînée de Lot	revisado	rev. IA: Gen.19.31 Fille aînée de Lot; Gn 19.31
+Daughter of Lot - Younger	person	Fille cadette de Lot	revisado	rev. IA: Gen.19.8 Fille cadette de Lot; Gn 19.38
+Daughter of Machir	person	Fille de Makir	revisado	rev. IA: 1Chr.2.21 Fille de Makir; 1 Ch 2.21
+Daughter of Meshullam	person	Fille de Meschullam	revisado	rev. IA: Neh.6.18 Fille de Meschullam; Né 6.18
+Daughter of Pharaoh	person	Fille de Pharaon	revisado	rev. IA: Exod.2.5 Fille de Pharaon; Ex 2.5
+Daughter of Putiel	person	Fille de Puthiel	revisado	rev. IA: Exod.6.25 Fille de Puthiel; Ex 6.25
+Daughter of Shuah	person	Fille de Schua	revisado	rev. IA: Gen.38.2 Fille de Schua; Gn 38.2
+Dedication_Festival	other	Fête de la dédicace	revisado	rev. IA: John.10.22 Fête de la dédicace; Jn 10.22
+Dehavites	group	Dinaïtes	revisado	rev. IA: Ezra.4.9 Dinaïtes; Esd 4.9 ceux de Din
+Destiny	other	Destin	revisado	rev. IA: Isa.65.11 Destin; Es 65.11
+Disciples of John	group	Disciples de Jean	revisado	rev. IA:  Disciples de Jean
+Diviners' Oak	place	Chêne des devins	revisado	rev. IA: Judg.9.37 Chêne des devins; Jg 9.37
+Diviners'_Oak	place	Chêne des devins	revisado	rev. IA: Judg.9.37 Chêne des devins; Jg 9.37
+Diviners’ Oak	place	Chêne des devins	revisado	rev. IA: Judg.9.37 Chêne des devins; Jg 9.37
+East	place	Pays d’Orient	revisado	rev. IA: Gen.25.6 Pays d’Orient; Gn 25.6
+Egypt's	place		sem	rev. IA:  sem forma tradicional segura em fr
+Elkosh	place		sem	rev. IA: Nah.1.1 sem forma tradicional segura em fr
+Enaim	place	Énaïm	revisado	rev. IA: Gen.38.14 Énaïm; Gn 38.14
+Eridu	place	Éridu	revisado	rev. IA:  Éridu
+Etruria	place	Étrurie	revisado	rev. IA:  Étrurie
+Eznites	group	Eznites	revisado	rev. IA: 2Sam.23.8 Eznites; 2 S 23.8
+Fair Havens	place	Beaux-Ports	revisado	rev. IA: Acts.27.8 Beaux-Ports; Ac 27.8
+Fair_Havens	place	Beaux-Ports	revisado	rev. IA: Acts.27.8 Beaux-Ports; Ac 27.8
+Forest	place	Forêt	revisado	rev. IA: Isa.22.8 Forêt; Es 22.8
+Fortune	other	Fortune	revisado	rev. IA: Isa.65.11 Fortune; Es 65.11
+Foundation_Gate	place	Porte de Jesod	revisado	rev. IA: 2Chr.23.5 Porte de Jesod; 2 Ch 23.5 porte de Jesod
+Gadara	place	Gadara	revisado	rev. IA: Matt.8.28 Gadara; Mt 8.28
+Gate of the Children of the People	place	Porte des enfants du peuple	revisado	rev. IA: Jer.17.19 Porte des enfants du peuple; Jr 17.19
+Gath-padalla	place		sem	rev. IA:  sem forma tradicional segura em fr
+Genealogy of Jesus	group	Généalogie de Jésus	revisado	rev. IA:  Généalogie de Jésus
+Gerasa	place	Gérasa	revisado	rev. IA: Matt.8.28 Gérasa; Lc 8.26
+Gergesa	place	Gergesa	revisado	rev. IA:  Gergesa
+Geruth Chimham	place	Guéruth-Kimham	revisado	rev. IA: Jer.41.17 Guéruth-Kimham; Jr 41.17
+Geruth_Chimham	place	Guéruth-Kimham	revisado	rev. IA: Jer.41.17 Guéruth-Kimham; Jr 41.17
+Gittith	other	Guitthith	revisado	rev. IA: Ps.8.1 Guitthith; Ps 8 título
+God	person	Dieu	revisado	rev. IA: Gen.1.1 Dieu; Gn 1.1
+Goiim	group	Gojim	revisado	rev. IA: Gen.14.1 Gojim; Gn 14.1
+Goiim	place	Gojim	revisado	rev. IA: Gen.14.1 Gojim; Gn 14.1
+Goiim 1	place	Gojim 1	revisado	rev. IA:  Gojim 1
+Goiim 2	place	Gojim 2	revisado	rev. IA:  Gojim 2
+Gulloth-mayim	place		sem	rev. IA: Josh.15.19 sem forma tradicional segura em fr
+Gutium	place		sem	rev. IA:  sem forma tradicional segura em fr
+Hakkephirim	place		sem	rev. IA: Neh.6.2 sem forma tradicional segura em fr
+Halahha	place		sem	rev. IA:  sem forma tradicional segura em fr
+Ham	place	Cham	revisado	rev. IA: Gen.5.32 Cham; Ps 105.23
+Ham 1	place	Cham 1	revisado	rev. IA:  Cham 1
+Hammelech	person		sem	rev. IA: Jer.36.26 sem forma tradicional segura em fr
+Hamon-gog_Valley	place	Vallée de Hamon-Gog	revisado	rev. IA: Ezek.39.11 Vallée de Hamon-Gog; Ez 39.11
+Harhar	place		sem	rev. IA:  sem forma tradicional segura em fr
+Hatti	place		sem	rev. IA:  sem forma tradicional segura em fr
+Hazerim	place	Hatserim	revisado	rev. IA: Deut.2.23 Hatserim; Dt 2.23
+Helech	place		sem	rev. IA: Ezek.27.11 sem forma tradicional segura em fr
+Heracleopolis Magna	place	Héracléopolis Magna	revisado	rev. IA:  Héracléopolis Magna
+Heracleopolis Parva	place		sem	rev. IA:  sem forma tradicional segura em fr
+Heres	place	Hérès	revisado	rev. IA: Judg.8.13 Hérès; Jg 8.13
+Herod Agrippa I	person	Hérode Agrippa Ier	revisado	rev. IA: Acts.12.1 Hérode Agrippa Ier; Ac 12.1
+Herod Antipas	person	Hérode Antipas	revisado	rev. IA: Matt.14.1 Hérode Antipas; Mt 14.1
+Herodian	group	Hérodiens	revisado	rev. IA: Matt.22.16 Hérodiens; Mt 22.16
+Herod’s palace	place	Palais d’Hérode	revisado	rev. IA:  Palais d’Hérode
+Highway	place	Route royale	revisado	rev. IA: Num.20.17 Route royale; Nb 20.17 chemin royal
+Hilakku	place		sem	rev. IA:  sem forma tradicional segura em fr
+Holy Place	place	Lieu saint	revisado	rev. IA: Exod.26.33 Lieu saint; Ex 26.33
+Holy Place 1	place	Lieu saint 1	revisado	rev. IA: Exod.26.33 Lieu saint 1; Ex 26.33
+Holy Place 2	place	Lieu saint 2	revisado	rev. IA: 1Kgs.6.5 Lieu saint 2; 1 R 8.8
+Holy Spirit	person	Saint-Esprit	revisado	rev. IA: Gen.1.2 Saint-Esprit; Mt 28.19
+Holy_Place	place	Lieu saint	revisado	rev. IA: Exod.26.33 Lieu saint; Ex 26.33
+Hophra	person	Hophra	revisado	rev. IA: Jer.37.5 Hophra; Jr 44.30
+Horesh	place	Horesch	revisado	rev. IA: 1Sam.23.15 Horesch; 1 S 23.15 forma tradicional
+House of the Forest of Lebanon	place	Maison de la forêt du Liban	revisado	rev. IA: 1Kgs.7.2 Maison de la forêt du Liban; 1 R 7.2
+Jaar	place	Jaar	revisado	rev. IA: Ps.132.6 Jaar; Ps 132.6 forma tradicional
+Janen	place		sem	rev. IA: Num.21.19 sem forma tradicional segura em fr
+Janua	place		sem	rev. IA:  sem forma tradicional segura em fr
+Jemnath	place		sem	rev. IA: Josh.15.46 sem forma tradicional segura em fr
+Jerusalem's	place		sem	rev. IA:  sem forma tradicional segura em fr
+Jerusalem_wives	person	Femmes de Jérusalem	revisado	rev. IA: 2Sam.5.13 Femmes de Jérusalem; 2 S 5.13
+Jesus Christ	person	Jésus-Christ	revisado	rev. IA: Gen.49.10 Jésus-Christ; Mt 1.1
+John Mark	person	Jean Marc	revisado	rev. IA: Acts.12.12 Jean Marc; Ac 12.12
+John the Apostle	person	Jean l’apôtre	revisado	rev. IA: Matt.4.21 Jean l’apôtre; Mt 4.21
+John the Baptist	person	Jean-Baptiste	revisado	rev. IA: Matt.3.1 Jean-Baptiste; Mt 3.1
+Jonath-elem-rechokim	other		sem	rev. IA: Ps.56.1 sem forma tradicional segura em fr
+Judas Barsabas	person	Jude Barsabas	revisado	rev. IA: Acts.15.22 Jude Barsabas; Ac 15.22
+Judas Iscariot	person	Judas Iscariot	revisado	rev. IA: Matt.10.4 Judas Iscariot; Mt 10.4
+Judgment	place	Portique du jugement	revisado	rev. IA: 1Kgs.7.7 Portique du jugement; 1 R 7.7
+King's_Highway	place	Route royale	revisado	rev. IA: Num.20.17 Route royale; Nb 20.17 chemin royal
+King’s Highway	place	Route royale	revisado	rev. IA: Num.20.17 Route royale; Nb 20.17 chemin royal
+Kumidi	place		sem	rev. IA:  sem forma tradicional segura em fr
+LORD	other	Éternel	revisado	rev. IA: Gen.1.1 Éternel; Gn 2.4
+Laash	place		sem	rev. IA:  sem forma tradicional segura em fr
+Lebanon_Valley	place	Vallée du Liban	revisado	rev. IA: Josh.11.17 Vallée du Liban; Jos 11.17
+Lebbaeus Thaddaeus	person	Lebbée, surnommé Thaddée	revisado	rev. IA: Matt.10.3 Lebbée, surnommé Thaddée; Mt 10.3
+Line of Cain	group	Lignée de Caïn	revisado	rev. IA:  Lignée de Caïn
+Lower Beth-horon	place	Beth-Horon la basse	revisado	rev. IA: Josh.16.3 Beth-Horon la basse; Jos 16.3
+Lower Gulloth	place	Sources inférieures	revisado	rev. IA: Josh.15.19 Sources inférieures; Jos 15.19
+Lucifer	other	Lucifer	revisado	rev. IA: Isa.14.12 Lucifer; Es 14.12 forma tradicional
+Lucifer	person	Lucifer	revisado	rev. IA: Isa.14.12 Lucifer; Es 14.12 forma tradicional
+Lydia	place	Lydie	revisado	rev. IA: Gen.36.22 Lydie; Ac 16.14
+Maareh-geba	place		sem	rev. IA: Judg.20.33 sem forma tradicional segura em fr
+Madiama	place		sem	rev. IA:  sem forma tradicional segura em fr
+Magdala	place	Magdala	revisado	rev. IA:  Magdala
+Magdalsenna	place		sem	rev. IA:  sem forma tradicional segura em fr
+Magdolum	place		sem	rev. IA:  sem forma tradicional segura em fr
+Mahalab	place		sem	rev. IA: Josh.19.29 sem forma tradicional segura em fr
+Maranatha	other	Maranatha	revisado	rev. IA: 1Cor.16.22 Maranatha; 1 Co 16.22
+Mary Magdalene	person	Marie de Magdala	revisado	rev. IA: Matt.27.56 Marie de Magdala; Mt 27.56
+Mary_Magdalene	person	Marie de Magdala	revisado	rev. IA: Matt.27.56 Marie de Magdala; Mt 27.56
+Maskil	other	Maskil	revisado	rev. IA: Ps.32.1 Maskil; título de salmo, forma tradicional
+Mazzaroth	other	Mazzaroth	revisado	rev. IA: Job.38.32 Mazzaroth; Jb 38.32 forma tradicional
+Merom	place	Mérom	revisado	rev. IA: Josh.11.5 Mérom; Jos 11.5
+Meronoth	place		sem	rev. IA: 1Chr.27.30 sem forma tradicional segura em fr
+Meunites	group	Maonites	revisado	rev. IA: 1Chr.4.41 Maonites; 1 Ch 4.41
+Micah	person		sem	rev. IA: Judg.17.1 sem forma tradicional segura em fr
+Miktam	other	Mictam	revisado	rev. IA: Ps.16.1 Mictam; título de salmo, forma tradicional
+Misrephoth-maim	place	Misrephoth-Maïm	revisado	rev. IA: Josh.11.8 Misrephoth-Maïm; Jos 11.8
+Mizpeh_Valley	place	Vallée de Mitspé	revisado	rev. IA: Josh.11.3 Vallée de Mitspé; Jos 11.8
+Moab_Plains	place	Plaines de Moab	revisado	rev. IA: Num.22.1 Plaines de Moab; Nb 22.1
+Mortar	place		sem	rev. IA: Zeph.1.11 sem forma tradicional segura em fr
+Most Holy	place	Lieu très saint	revisado	rev. IA: Exod.26.33 Lieu très saint; Ex 26.33
+Most Holy Place	place	Lieu très saint	revisado	rev. IA: Exod.26.34 Lieu très saint; Ex 26.34
+Most Holy Place 1	place	Lieu très saint 1	revisado	rev. IA: Exod.26.33 Lieu très saint 1; Ex 26.33
+Most Holy Place 2	place	Lieu très saint 2	revisado	rev. IA: 1Kgs.6.16 Lieu très saint 2; 1 R 6.16
+Most_Holy_Place	place	Lieu très saint	revisado	rev. IA: 1Kgs.6.16 Lieu très saint; 1 R 6.16
+Mother of Aholah and Aholibah	person		sem	rev. IA: Ezek.23.2 sem forma tradicional segura em fr
+Mother of Lemuel	person	Mère de Lemuel	revisado	rev. IA: Prov.31.1 Mère de Lemuel; Pr 31.1
+Mother of Zebedees children	person	Mère des fils de Zébédée	revisado	rev. IA: Matt.20.20 Mère des fils de Zébédée; Mt 20.20
+Mother of the Wife of Simon	person	Belle-mère de Simon	revisado	rev. IA: Matt.8.14 Belle-mère de Simon; Mt 8.14
+Muth-labben	other		sem	rev. IA: Ps.9.1 sem forma tradicional segura em fr
+Nahuru	place		sem	rev. IA:  sem forma tradicional segura em fr
+Naphath	place		sem	rev. IA: Josh.17.11 sem forma tradicional segura em fr
+Naphath-dor	place	Nephoth-Dor	revisado	rev. IA: 1Kgs.4.11 Nephoth-Dor; 1 R 4.11
+Nation of Israel	group	Nation d’Israël	revisado	rev. IA: Ps.14.7 Nation d’Israël; Ps 14.7
+Nehelam	place	Néchélamite	revisado	rev. IA: Jer.29.24 Néchélamite; Jr 29.24
+Nephilim	group	Néphilim	revisado	rev. IA: Gen.6.4 Néphilim; Gn 6.4 forma tradicional
+New_Moon	other	Nouvelle lune	revisado	rev. IA: Col.2.16 Nouvelle lune; Col 2.16
+North	place	Nord	revisado	rev. IA: Dan.11.6 Nord; Dn 11.6 roi du septentrion
+North Gate	place	Porte du nord	revisado	rev. IA: 1Chr.26.14 Porte du nord; 1 Ch 26.14
+Nuhashe	place		sem	rev. IA:  sem forma tradicional segura em fr
+Parbar	place	Parbar	revisado	rev. IA: 1Chr.26.18 Parbar; 1 Ch 26.18
+People's_Gate	place	Porte des enfants du peuple	revisado	rev. IA: Jer.17.19 Porte des enfants du peuple; Jr 17.19
+People’s Gate	place	Porte des enfants du peuple	revisado	rev. IA: Jer.17.19 Porte des enfants du peuple; Jr 17.19
+Pharisees	group	Pharisiens	revisado	rev. IA:  Pharisiens
+Phillip the Apostle	person	Philippe l’apôtre	revisado	rev. IA: Matt.10.3 Philippe l’apôtre; Mt 10.3
+Phillip the Evangelist	person	Philippe l’évangéliste	revisado	rev. IA: Acts.6.5 Philippe l’évangéliste; Ac 21.8
+Pillars	place	Portique des colonnes	revisado	rev. IA: 1Kgs.7.6 Portique des colonnes; 1 R 7.6
+Pitru	place		sem	rev. IA:  sem forma tradicional segura em fr
+Plain	place	Plaine	revisado	rev. IA: Deut.34.3 Plaine; Dt 34.3
+Pontius Pilate	person	Ponce Pilate	revisado	rev. IA: Matt.27.2 Ponce Pilate; Lc 3.1
+Pool	place		sem	rev. IA: Neh.2.14 sem forma tradicional segura em fr
+Portius Festus	person	Porcius Festus	revisado	rev. IA: Acts.24.27 Porcius Festus; Ac 24.27
+Potsherd Gate	place		sem	rev. IA: Jer.19.2 sem forma tradicional segura em fr
+Potsherd_Gate	place		sem	rev. IA: Jer.19.2 sem forma tradicional segura em fr
+Preparation_Festival	other	Préparation	revisado	rev. IA: Matt.27.62 Préparation; Mt 27.62
+Punt	place		sem	rev. IA:  sem forma tradicional segura em fr
+Pyrrhus	person	Pyrrhus	revisado	rev. IA: Acts.20.4 Pyrrhus; Ac 20.4
+Queen of Sheba	person	Reine de Séba	revisado	rev. IA: 1Kgs.10.1 Reine de Séba; 1 R 10.1
+Queen_of_Sheba	person	Reine de Séba	revisado	rev. IA: 1Kgs.10.1 Reine de Séba; 1 R 10.1
+Raca	other	Raca	revisado	rev. IA: Matt.5.22 Raca; Mt 5.22
+Ragmat	place		sem	rev. IA:  sem forma tradicional segura em fr
+River	place		sem	rev. IA: Gen.36.37 sem forma tradicional segura em fr
+River 2	place		sem	rev. IA:  sem forma tradicional segura em fr
+River 3	place	Rehoboth sur le fleuve	revisado	rev. IA:  Rehoboth sur le fleuve; Gn 36.37
+Rock	place		sem	rev. IA: Josh.15.55 sem forma tradicional segura em fr
+Rocks	place	Rochers	revisado	rev. IA: 1Sam.24.2 Rochers; 1 S 24.2
+Sadducees	group	Sadducéens	revisado	rev. IA:  Sadducéens
+Sahar	place		sem	rev. IA: Ezek.27.18 sem forma tradicional segura em fr
+Salome	person	Salomé	revisado	rev. IA: Matt.14.6 Salomé; Mc 15.40
+Salona	place		sem	rev. IA:  sem forma tradicional segura em fr
+Salt_Valley	place	Vallée du sel	revisado	rev. IA: 2Sam.8.13 Vallée du sel; 2 S 8.13
+Samaria's	place		sem	rev. IA:  sem forma tradicional segura em fr
+Saparda	place		sem	rev. IA:  sem forma tradicional segura em fr
+Saparre	place		sem	rev. IA:  sem forma tradicional segura em fr
+Scribes	group	Scribes	revisado	rev. IA:  Scribes
+Scythia	place	Scythie	revisado	rev. IA:  Scythie
+Second Quarter	place	Seconde enceinte	revisado	rev. IA: 2Kgs.22.14 Seconde enceinte; 2 R 22.14 autre quartier
+Second_Quarter	place	Seconde enceinte	revisado	rev. IA: 2Kgs.22.14 Seconde enceinte; 2 R 22.14 autre quartier
+Sergius Paulus	person	Sergius Paulus	revisado	rev. IA: Acts.13.7 Sergius Paulus; Ac 13.7
+Sergius_Paulus	person	Sergius Paulus	revisado	rev. IA: Acts.13.7 Sergius Paulus; Ac 13.7
+Shephelah	place	Schephéla	revisado	rev. IA: Deut.1.7 Schephéla; Dt 1.7 plaine; forma tradicional
+Shiggaion	other		sem	rev. IA: Ps.7.1 sem forma tradicional segura em fr
+Shushan_Eduth	other		sem	rev. IA: Ps.60.1 sem forma tradicional segura em fr
+Simon Peter	person	Simon Pierre	revisado	rev. IA: Matt.4.18 Simon Pierre; Mt 4.18
+Simon Zelotes	person	Simon le zélote	revisado	rev. IA: Matt.10.4 Simon le zélote; Lc 6.15
+Simon the Sorcerer	person	Simon le magicien	revisado	rev. IA: Acts.8.9 Simon le magicien; Ac 8.9
+Simon the Tanner	person	Simon le corroyeur	revisado	rev. IA: Acts.9.43 Simon le corroyeur; Ac 9.43
+Sister of Tahpenes	person	Sœur de Thachpenès	revisado	rev. IA: 1Kgs.11.19 Sœur de Thachpenès; 1 R 11.19
+Solomon's Portico	place	Portique de Salomon	revisado	rev. IA: Acts.3.11 Portique de Salomon; Jn 10.23
+Solomon's_Portico	place	Portique de Salomon	revisado	rev. IA: Acts.3.11 Portique de Salomon; Jn 10.23
+Solomon’s Portico	place	Portique de Salomon	revisado	rev. IA: John.10.23 Portique de Salomon; Jn 10.23
+South	place	Midi	revisado	rev. IA: Dan.11.5 Midi; Dn 11.5 roi du midi
+South 1	place	Midi 1	revisado	rev. IA:  Midi 1
+South 2	place	Midi 2	revisado	rev. IA:  Midi 2
+South 3	place	Midi 3	revisado	rev. IA:  Midi 3
+South Gate	place	Porte du midi	revisado	rev. IA: 1Chr.26.15 Porte du midi; 1 Ch 26.15
+Sparta	place	Sparte	revisado	rev. IA:  Sparte
+Straight Gate	place		sem	rev. IA: Acts.9.11 sem forma tradicional segura em fr
+Straight Street	place	Rue droite	revisado	rev. IA: Acts.9.11 Rue droite; Ac 9.11
+Suph	place	Suph	revisado	rev. IA: Deut.1.1 Suph; Dt 1.1
+Sutu	place		sem	rev. IA:  sem forma tradicional segura em fr
+Syrtis	place	Syrte	revisado	rev. IA: Acts.27.17 Syrte; Ac 27.17
+Tabbur-erez	place		sem	rev. IA: Judg.9.37 sem forma tradicional segura em fr
+Tartessos	place		sem	rev. IA:  sem forma tradicional segura em fr
+Tegarama	place		sem	rev. IA:  sem forma tradicional segura em fr
+Thapsacus	place		sem	rev. IA:  sem forma tradicional segura em fr
+The Lord Is There	place	L’Éternel est ici	revisado	rev. IA: Ezek.48.35 L’Éternel est ici; Ez 48.35
+The Lord Will Provide	place	L’Éternel pourvoira	revisado	rev. IA: Gen.22.14 L’Éternel pourvoira; Gn 22.14
+Thelme	place		sem	rev. IA:  sem forma tradicional segura em fr
+Thisbe	place	Thisbé	revisado	rev. IA:  Thisbé
+Three Taverns	place	Trois-Tavernes	revisado	rev. IA: Acts.28.15 Trois-Tavernes; Ac 28.15
+Three_Taverns	place	Trois-Tavernes	revisado	rev. IA: Acts.28.15 Trois-Tavernes; Ac 28.15
+Throne	place	Portique du trône	revisado	rev. IA: 1Kgs.7.7 Portique du trône; 1 R 7.7
+Tjaru	place		sem	rev. IA:  sem forma tradicional segura em fr
+Tower	place		sem	rev. IA: Neh.3.1 sem forma tradicional segura em fr
+Tower_of_Eder	place	Tour du troupeau	revisado	rev. IA: Gen.35.21 Tour du troupeau; Gn 35.21 Migdal-Éder
+Travelers_Valley	place	Vallée des voyageurs	revisado	rev. IA: Ezek.39.11 Vallée des voyageurs; Ez 39.11
+Tribe of Asher	group	Tribu d’Aser	revisado	rev. IA:  Tribu d’Aser
+Tribe of Benjamin	group	Tribu de Benjamin	revisado	rev. IA:  Tribu de Benjamin
+Tribe of Dan	group	Tribu de Dan	revisado	rev. IA:  Tribu de Dan
+Tribe of Gad	group	Tribu de Gad	revisado	rev. IA:  Tribu de Gad
+Tribe of Issachar	group	Tribu d’Issacar	revisado	rev. IA:  Tribu d’Issacar
+Tribe of Joseph	group	Tribu de Joseph	revisado	rev. IA:  Tribu de Joseph
+Tribe of Judah	group	Tribu de Juda	revisado	rev. IA: Prov.25.1 Tribu de Juda; Pr 25.1
+Tribe of Levi	group	Tribu de Lévi	revisado	rev. IA:  Tribu de Lévi
+Tribe of Naphtali	group	Tribu de Nephthali	revisado	rev. IA:  Tribu de Nephthali
+Tribe of Reuben	group	Tribu de Ruben	revisado	rev. IA:  Tribu de Ruben
+Tribe of Simeon	group	Tribu de Siméon	revisado	rev. IA:  Tribu de Siméon
+Tribe of Zebulun	group	Tribu de Zabulon	revisado	rev. IA:  Tribu de Zabulon
+Umman Manda	place		sem	rev. IA:  sem forma tradicional segura em fr
+Unnamed#1	person		sem	rev. IA: 1Kgs.2.27 sem forma tradicional segura em fr
+Unnamed#2	person		sem	rev. IA: 1Kgs.2.27 sem forma tradicional segura em fr
+Unnamed#3	person		sem	rev. IA: 1Kgs.2.27 sem forma tradicional segura em fr
+Unnamed#4	person		sem	rev. IA: 1Kgs.2.27 sem forma tradicional segura em fr
+Unnamed#5	person		sem	rev. IA: Matt.1.15 sem forma tradicional segura em fr
+Unnamed#6	person		sem	rev. IA: Matt.1.15 sem forma tradicional segura em fr
+Unnamed#7	person		sem	rev. IA: Matt.1.15 sem forma tradicional segura em fr
+Unnamed#8	person		sem	rev. IA: Matt.1.15 sem forma tradicional segura em fr
+Unnamed#9	person		sem	rev. IA: Matt.1.15 sem forma tradicional segura em fr
+Upper Beth-horon	place	Beth-Horon la haute	revisado	rev. IA: Josh.16.5 Beth-Horon la haute; Jos 16.5
+Upper Gulloth	place	Sources supérieures	revisado	rev. IA: Josh.15.19 Sources supérieures; Jos 15.19
+Upu	place		sem	rev. IA:  sem forma tradicional segura em fr
+Uqnu	place		sem	rev. IA:  sem forma tradicional segura em fr
+Ur 2	place		sem	rev. IA:  sem forma tradicional segura em fr
+Ur of the Chaldees	place	Ur en Chaldée	revisado	rev. IA: Gen.11.28 Ur en Chaldée; Gn 11.28
+Ura	place		sem	rev. IA:  sem forma tradicional segura em fr
+Valley of Mizpeh	place	Vallée de Mitspé	revisado	rev. IA: Josh.11.8 Vallée de Mitspé; Jos 11.8
+Valley of Salt	place	Vallée du sel	revisado	rev. IA: 2Sam.8.13 Vallée du sel; 2 S 8.13
+Valley of the Son of Hinnom	place	Vallée du fils de Hinnom	revisado	rev. IA: 2Kgs.23.10 Vallée du fils de Hinnom; 2 R 23.10
+Washer's_Field	place	Champ du foulon	revisado	rev. IA: 2Kgs.18.17 Champ du foulon; 2 R 18.17
+Washer’s Field	place	Champ du foulon	revisado	rev. IA: 2Kgs.18.17 Champ du foulon; 2 R 18.17
+Way of the Red Sea	place	Chemin de la mer Rouge	revisado	rev. IA: Num.14.25 Chemin de la mer Rouge; Nb 14.25
+Wife of Ezekiel	person	Femme d’Ézéchiel	revisado	rev. IA: Ezek.24.18 Femme d’Ézéchiel; Ez 24.18
+Wife of Simon	person		sem	rev. IA: Matt.8.14 sem forma tradicional segura em fr
+Wildgoats_Rocks	place	Rochers des boucs sauvages	revisado	rev. IA: 1Sam.24.2 Rochers des boucs sauvages; 1 S 24.2
+Wildgoats’ Rocks	place	Rochers des boucs sauvages	revisado	rev. IA: 1Sam.24.2 Rochers des boucs sauvages; 1 S 24.2
+Willows	place	Torrent des saules	revisado	rev. IA: Isa.15.7 Torrent des saules; Es 15.7
+Zion's	place		sem	rev. IA:  sem forma tradicional segura em fr
+a_wife_of_Eliphaz	person	Femme d’Éliphaz	revisado	rev. IA: Gen.36.11 Femme d’Éliphaz; Gn 36.12
+a_wife_of_Ezekiel	person	Femme d’Ézéchiel	revisado	rev. IA: Ezek.24.18 Femme d’Ézéchiel; Ez 24.18
+a_wife_of_Hezron	person	Femme de Hetsron	revisado	rev. IA: 1Chr.2.9 Femme de Hetsron; 1 Ch 2.9
+a_wife_of_Jerahmeel	person	Femme de Jerachmeel	revisado	rev. IA: 1Chr.2.26 Femme de Jerachmeel; 1 Ch 2.26
+a_wife_of_Josiah	person	Femme de Josias	revisado	rev. IA: 1Chr.3.15 Femme de Josias; 1 Ch 3.15
+a_wife_of_Lot	person	Femme de Lot	revisado	rev. IA: Gen.19.15 Femme de Lot; Gn 19.26
+a_wife_of_Peter	person	Femme de Pierre	revisado	rev. IA: Matt.8.14 Femme de Pierre; 1 Co 9.5
+a_wife_of_Simeon	person	Femme de Siméon	revisado	rev. IA: Gen.46.10 Femme de Siméon; Gn 46.10
+a_wife_of_Solomon	person		sem	rev. IA: 1Kgs.4.11 sem forma tradicional segura em fr
+daughter1_of_Lot	person	Fille aînée de Lot	revisado	rev. IA: Gen.19.37 Fille aînée de Lot; Gn 19.37
+daughter2_of_Lot	person	Fille cadette de Lot	revisado	rev. IA: Gen.19.38 Fille cadette de Lot; Gn 19.38
+daughter_of_Annas	person	Fille d’Anne	revisado	rev. IA: John.18.13 Fille d’Anne; Jn 18.13
+daughter_of_Machir	person	Fille de Makir	revisado	rev. IA: 1Chr.2.21 Fille de Makir; 1 Ch 2.21
+daughter_of_Meshullam	person	Fille de Meschullam	revisado	rev. IA: Neh.6.18 Fille de Meschullam; Né 6.18
+daughter_of_Pharaoh	person	Fille de Pharaon	revisado	rev. IA: Exod.2.5 Fille de Pharaon; Ex 2.5
+daughter_of_Putiel	person	Fille de Puthiel	revisado	rev. IA: Exod.6.25 Fille de Puthiel; Ex 6.25
+daughter_of_Sanballat	person	Fille de Sanballat	revisado	rev. IA: Neh.13.28 Fille de Sanballat; Né 13.28
+daughter_of_Shecaniah	person	Fille de Schecania	revisado	rev. IA: Neh.6.18 Fille de Schecania; Né 6.18
+father_of_Barnabas	person	Père de Barnabas	revisado	rev. IA: Col.4.10 Père de Barnabas; Col 4.10
+father_of_Conaniah	person	Père de Conania	revisado	rev. IA: 2Chr.31.12 Père de Conania; 2 Ch 31.12
+father_of_Elizabeth	person	Père d’Élisabeth	revisado	rev. IA: Luke.1.5 Père d’Élisabeth; Lc 1.5
+father_of_Eunice	person	Père d’Eunice	revisado	rev. IA: 2Tim.1.5 Père d’Eunice; 2 Tm 1.5
+father_of_Hilkiah	person	Père de Hilkija	revisado	rev. IA: Jer.32.7 Père de Hilkija; Jr 32.7
+father_of_Hodiah	person	Père d’Hodija	revisado	rev. IA: 1Chr.4.19 Père d’Hodija; 1 Ch 4.19
+father_of_Lazarus	person	Père de Lazare	revisado	rev. IA: Luke.10.39 Père de Lazare; Lc 10.39
+father_of_Mamre	person	Père de Mamré	revisado	rev. IA: Gen.14.13 Père de Mamré; Gn 14.13
+father_of_Nathan	person	Père de Nathan	revisado	rev. IA: 1Chr.11.38 Père de Nathan; 1 Ch 11.38
+father_of_Tahpenes	person	Père de Thachpenès	revisado	rev. IA: 1Kgs.11.19 Père de Thachpenès; 1 R 11.19
+father_of_Timothy	person	Père de Timothée	revisado	rev. IA: Acts.16.1 Père de Timothée; Ac 16.1
+huge_man	person	Homme de haute taille	revisado	rev. IA: 2Sam.21.20 Homme de haute taille; 2 S 21.20
+husband_of_Hammolecheth	person	Mari de Hammoléketh	revisado	rev. IA: 1Chr.7.18 Mari de Hammoléketh; 1 Ch 7.18
+husband_of_Mary	person	Mari de Marie	revisado	rev. IA: Acts.12.12 Mari de Marie; Ac 12.12
+husband_of_Matred	person	Mari de Mathred	revisado	rev. IA: Gen.36.39 Mari de Mathred; Gn 36.39
+husband_of_Shimeath	person	Mari de Schimeath	revisado	rev. IA: 2Kgs.12.21 Mari de Schimeath; 2 R 12.21
+husband_of_Zeruiah	person	Mari de Tseruja	revisado	rev. IA: 1Sam.26.6 Mari de Tseruja; 1 S 26.6
+man of great stature	person	Homme de haute taille	revisado	rev. IA: 2Sam.21.20 Homme de haute taille; 2 S 21.20
+man of understanding	person	Homme de sens	revisado	rev. IA: Ezra.8.18 Homme de sens; Esd 8.18
+motherInLaw_of_Peter	person	Belle-mère de Pierre	revisado	rev. IA: Matt.8.14 Belle-mère de Pierre; Mt 8.14
+sister_of_Tahpenes	person	Sœur de Thachpenès	revisado	rev. IA: 1Kgs.11.19 Sœur de Thachpenès; 1 R 11.19
+son of Abinadab	person	Ben-Abinadab	revisado	rev. IA: 1Kgs.4.11 Ben-Abinadab; 1 R 4.11 fils d’Abinadab
+son of Dekar	person	Ben-Déker	revisado	rev. IA: 1Kgs.4.9 Ben-Déker; 1 R 4.9 fils de Déker
+son of Geber	person	Ben-Guéber	revisado	rev. IA: 1Kgs.4.13 Ben-Guéber; 1 R 4.13 fils de Guéber
+son of Hesed	person	Ben-Hésed	revisado	rev. IA: 1Kgs.4.10 Ben-Hésed; 1 R 4.10 fils de Hésed
+son of Hur	person	Ben-Hur	revisado	rev. IA: 1Kgs.4.8 Ben-Hur; 1 R 4.8 fils de Hur
+son of Joiada	person	Fils de Jojada	revisado	rev. IA: Neh.13.28 Fils de Jojada; Né 13.28
+son_of_Jashen	person	Fils de Jaschen	revisado	rev. IA: 2Sam.23.32 Fils de Jaschen; 2 S 23.32
+son_of_Joiada	person	Fils de Jojada	revisado	rev. IA: Neh.13.28 Fils de Jojada; Né 13.28
+sons of Jashen	person	Fils de Jaschen	revisado	rev. IA: 2Sam.23.32 Fils de Jaschen; 2 S 23.32
+the giant in Gath	person	Géant de Gath	revisado	rev. IA: 2Sam.21.16 Géant de Gath; 2 S 21.20
+wife_of_Heli	person		sem	rev. IA: Luke.1.5 sem forma tradicional segura em fr

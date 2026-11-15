@@ -1,0 +1,40 @@
+# Gramática das descrições em alemão (TIPNR por regra e openbible-geo por regra). Colunas: chave, modelo.
+# Modelos: {campo} é trocado pelo valor; {pont.;}, {pont..}, {pont.,} são a pontuação da língua. Chave ausente = falha
+# (a descrição cai na tradução automática). O alemão não tem chaves .f: nenhuma frase concorda em gênero com o cargo
+# (o cargo sai sem artigo e as preposições regem dativo, que não flexiona nome próprio).
+# Os modelos geo_* são usados só pela descrição openbible-geo (pipeline/sensus/geo_descricao.py).
+chave	modelo
+mencao_primeira	erste Erwähnung in {ref}
+mencao_unica	nur erwähnt in {ref}
+frase_cargo_comp	{cargo} {comp}
+frase_tempo_com_comp	{frase}{pont.,} {tempo}
+frase_tempo_sem_comp	{frase} {tempo}
+cabecalho	{frase}{pont.;} {mencao}{pont..}
+comp_territorio_tribo	im Gebiet des Stammes {tribo}{perto}
+comp_perto_sufixo	, nahe bei {nome}
+comp_tribo	aus dem Stamm {tribo}
+comp_cidade	aus der Stadt {nome}
+comp_perto	nahe bei {nome}
+comp_de	von {nome}
+comp_em	in {nome}
+citacao	Bezeichnet als {lista}
+citacao_apenas	Nur bezeichnet als {lista}
+original	 ({original})
+conector_e	 und 
+conector_ou	 oder 
+lista_sep	, 
+pont.;	;
+pont..	.
+pont.,	,
+maiuscula_inicial	sim
+nome_ingles_permitido	sim
+flexao_relacao	nenhuma
+pos	nenhum
+geo_melhor	Beste moderne Identifizierung: {nome} ({tipo}, Geometrie: {geometria}); Zuordnungswert {score}/1000.
+geo_identificacao	Identifizierung: "{texto}" ({fonte}).
+geo_votos	Stimmen: {votos}.
+geo_voto	{voto}: {n}
+geo_tempo	Zeitgewichteter Wert: {tempo}/1000.
+geo_outros	Weitere mögliche moderne Orte: {n}.
+geo_melhor_sem_nome	Beste moderne Identifizierung ({tipo}, Geometrie: {geometria}); Zuordnungswert {score}/1000.
+geo_omitir_ingles	sim

@@ -1,0 +1,265 @@
+# Glossário das descrições em alemão (TIPNR, pipeline/sensus/descricoes_pt.py). Colunas:
+#   secao      cargo | tempo | tribo | lugar | relacao | nome
+#   ingles     termo como aparece na descrição da fonte (exato, com maiúsculas)
+#   portugues  tradução usada na frase (aqui: alemão)
+#   nota       observação para o revisor (opcional)
+#   genero     m, f ou n: gênero do substantivo (vazio se não se aplica)
+secao	ingles	portugues	nota	genero
+cargo	man	Mann		m
+cargo	woman	Frau		f
+cargo	location	Ort		m
+cargo	high priest	Hohepriester		m
+cargo	HIgh Priest	Hohepriester		m
+cargo	priest	Priester		m
+cargo	warrior	Krieger		m
+cargo	warriors	Krieger		m
+cargo	musician	Musiker		m
+cargo	prophet	Prophet		m
+cargo	prophetess	Prophetin		f
+cargo	king	König		m
+cargo	King	König		m
+cargo	queen	Königin		f
+cargo	group	Gruppe		f
+cargo	male deity	männliche Gottheit		f
+cargo	female deity	weibliche Gottheit		f
+cargo	deity	Gottheit		f
+cargo	people	Volk		n
+cargo	woman or town	Frau oder Stadt		f
+cargo	man or town	Mann oder Stadt		m
+cargo	town	Stadt		f
+cargo	city	Stadt		f
+cargo	emperor	Kaiser		m
+cargo	prince	Fürst		m
+cargo	apostle	Apostel		m
+cargo	angel	Engel		m
+cargo	concubine	Nebenfrau		f
+cargo	chief	Anführer		m
+cargo	steward	Verwalter		m
+cargo	servant	Diener		m
+cargo	ruler	Herrscher		m
+cargo	musical piece	Musikstück		n
+cargo	musical term	musikalischer Begriff		m
+cargo	judge	Richter		m
+cargo	Judge	Richter		m
+cargo	gigantic man	Riese		m
+cargo	Pharaoh	Pharao		m
+cargo	festival	Fest		n
+cargo	governor	Statthalter		m
+cargo	Governor	Statthalter		m
+cargo	man who founded the tribe	Stammesgründer		m
+tempo	at the time of the Patriarchs	aus der Zeit der Patriarchen		
+tempo	at the time of Egypt and Wilderness	aus der Zeit Ägyptens und der Wüste		
+tempo	at the time of Egypt and Wilderness and Conquest	aus der Zeit Ägyptens, der Wüste und der Landnahme		
+tempo	at the time of Exile and Return	aus der Zeit des Exils und der Rückkehr		
+tempo	at the time of Divided Monarchy	aus der Zeit des geteilten Königreichs		
+tempo	at the time of United Monarchy	aus der Zeit des vereinten Königreichs		
+tempo	at the time of United Monarchyand Divided Monarchy	aus der Zeit des vereinten und des geteilten Königreichs		
+tempo	at the time of the New Testament	aus der Zeit des Neuen Testaments		
+tempo	at the time of New Testament	aus der Zeit des Neuen Testaments		
+tempo	at the time of the Exodus	aus der Zeit des Exodus		
+tempo	before Israel's Monarchy	vor dem Königtum Israels		
+tempo	at the time before the Flood	aus der Zeit vor der Sintflut		
+tempo	before the Flood	vor der Sintflut		
+tempo	at the time of Judges	aus der Zeit der Richter		
+tribo	Levi	Levi		
+tribo	Judah	Juda		
+tribo	Asher	Asser		
+tribo	Benjamin	Benjamin		
+tribo	Ephraim	Ephraim		
+tribo	Manasseh	Manasse		
+tribo	Simeon	Simeon		
+tribo	Issachar	Isaschar		
+tribo	Zebulun	Sebulon		
+tribo	Naphtali	Naphthali		
+tribo	Reuben	Ruben		
+tribo	Gad	Gad		
+tribo	Dan	Dan		
+lugar	in Asia	in Asien		
+lugar	of Egypt	aus Ägypten		
+lugar	of the Kingdom of Israel	aus dem Königreich Israel		
+lugar	of Northern Israel	aus dem Nordreich Israel		
+lugar	in the Old Testament	im Alten Testament		
+lugar	of the Cushites	von den Kuschitern		
+lugar	of the Arabs	von den Arabern		
+lugar	of the Edomites	von den Edomitern		
+lugar	of the Midianites	von den Midianitern		
+lugar	of the Syrians	von den Syrern		
+lugar	of the Gomerians	von den Gomeritern		
+lugar	of the Ammonites	von den Ammonitern		
+lugar	of the Greeks	von den Griechen		
+lugar	of the Ishmaelites	von den Ismaelitern		
+lugar	of the Moabites	von den Moabitern		
+lugar	of the Egyptians	von den Ägyptern		
+lugar	of the Philistines	von den Philistern		
+lugar	of the Hittites	von den Hethitern		
+lugar	of the Canaanites	von den Kanaanitern		
+lugar	of the Amalekites	von den Amalekitern		
+lugar	of the Jebusites	von den Jebusitern		
+lugar	of the Assyrians	von den Assyrern		
+lugar	of the Babylonians	von den Babyloniern		
+lugar	of the Chaldeans	von den Chaldäern		
+lugar	of the Persians	von den Persern		
+lugar	of the Hebrews	von den Hebräern		
+lugar	of the Israelites	von den Israeliten		
+relacao	son of	Sohn von		
+relacao	daughter of	Tochter von		
+relacao	brother of	Bruder von		
+relacao	sister of	Schwester von		
+relacao	half-brother of	Halbbruder von		
+relacao	half-sister of	Halbschwester von		
+relacao	wife of	Ehefrau von		
+relacao	husband of	Ehemann von		
+relacao	mother of	Mutter von		
+relacao	father of	Vater von		
+relacao	founder of	Gründer von		
+relacao	concubine of	Nebenfrau von		
+relacao	descendant of	Nachkomme von		
+relacao	ancestor of	Vorfahre von		
+relacao	father or founder of	Vater oder Gründer von		
+relacao	unnamed father of	ungenannter Vater von		
+relacao	only referred to as father of	nur als Vater von		
+relacao	unnamed daughter of	ungenannte Tochter von		
+relacao	only referred to as a wife of	nur als Ehefrau von		
+relacao	only referred to as daughter of	nur als Tochter von		
+relacao	only referred to as husband of	nur als Ehemann von		
+relacao	unnamed wife of	ungenannte Ehefrau von		
+relacao	unnamed husband of	ungenannter Ehemann von		
+relacao	progenitors of	Stammväter von		
+relacao	only referred to as son of	nur als Sohn von		
+relacao	unnamed son of	ungenannter Sohn von		
+relacao	father in law of	Schwiegervater von		
+relacao	servant of	Diener von		
+relacao	founded nation of	Gründer des Volkes von		
+relacao	father and re-founder of	Vater und Neugründer von		
+relacao	possibly brother of	vielleicht Bruder von		
+relacao	uncle of	Onkel von		
+relacao	progenitor of	Stammvater von		
+relacao	founders of	Gründer von		
+relacao	adoptive mother of	Adoptivmutter von		
+relacao	unnamed older daughter of	ungenannte ältere Tochter von		
+relacao	unnamed younger daughter of	ungenannte jüngere Tochter von		
+relacao	only referred to as sister of	nur als Schwester von		
+relacao	unnamed sister of	ungenannte Schwester von		
+relacao	unnamed mother of	ungenannte Mutter von		
+relacao	presumed mother of	vermutliche Mutter von		
+relacao	unnamed mother-in-law of	ungenannte Schwiegermutter von		
+nome	Pharaoh	Pharao		
+nome	Asia	Asien		
+nome	Christ	Christus		
+nome	Abiezrite	Abiesriter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Adullamite	Adullamiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Agagite	Agagiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Ahiramite	Ahiramiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Ahohite	Ahohiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Ammonite	Ammoniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Amramite	Amramiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Arbathite	Arbathiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Ardite	Arditer	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Arelite	Arieliter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Areopagite	Areopagit	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Arodite	Aroditer	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Aroerite	Aroeriter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Ashbelite	Asbeliter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Ashdodite	Asdoditer	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Ashterathite	Asthrathiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Asrielite	Asrieliter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Avvite	Avviter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Becherite	Becheriter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Beerothite	Beerothiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Belaite	Belaiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Beriite	Beriiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Bethlehemite	Bethlehemiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Bichrite	Bichriter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Calebite	Kalebiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Carmelite	Karmeliter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Carmite	Charmiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Danite	Daniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Dedanite	Dedaniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Edomite	Edomiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Elamite	Elamiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Elonite	Eloniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Ephraimite	Ephraimiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Ephrathite	Ephrathiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Eranite	Eraniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Erite	Eriter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Eshtaolite	Esthaoliter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Gadite	Gaditer	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Gazite	Gaziter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Gederite	Gaderiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Gershomite	Gersomiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Gershonite	Gersoniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Geshurite	Gessuriter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Gileadite	Gileaditer	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Gittite	Gathiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Gunite	Guniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Haggite	Haggiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Hagrite	Hagariter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Hamulite	Hamuliter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Hanochite	Henochiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Heberite	Hebriter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Hebronite	Hebroniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Helekite	Helekiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Hepherite	Hepheriter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Hittite	Hethiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Horite	Horiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Huphamite	Huphamiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Iezerite	Hieseriter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Imnite	Jimniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Ishmaelite	Ismaeliter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Ishvite	Jiswiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Izharite	Jizhariter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Izrahite	Jisrahiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Jachinite	Jachiniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Jahleelite	Jahleeliter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Jahzeelite	Jahzeeliter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Jairite	Jairiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Jaminite	Jaminiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Japhletite	Japhletiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Jashubite	Jasubiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Jerahmeelite	Jerahmeeliter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Jezerite	Jezeriter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Jezreelite	Jesreeliter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Kenizzite	Kenisiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Kohathite	Kahathiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Korahite	Korahiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Levite	Levit	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Libnite	Libniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Mahlite	Maheliter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Malchielite	Melchieliter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Maonite	Maoniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Merarite	Merariter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Moabite	Moabiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Mushite	Musiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Naamite	Naemaniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Nemuelite	Nemueliter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Oznite	Osniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Palluite	Palluiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Perezite	Pereziter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Pirathonite	Pirathoniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Punite	Phuvaniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Rechabite	Rechabiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Reubenite	Rubeniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Seredite	Serediter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Shaalbonite	Saalboniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Sharonite	Saroniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Shechemite	Sichemiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Shelanite	Selaniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Shemidaite	Semiditer	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Shillemite	Sillemiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Shilonite	Siloniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Shimeite	Simeiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Shimronite	Simroniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Shuhamite	Suhamiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Shunite	Suniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Shuphamite	Suphamiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Shuthelahite	Suthelahiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Tahanite	Thahaniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Temanite	Themaniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Timnite	Thimniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Tishbite	Thisbiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Tolaite	Tholaiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Uzzielite	Usieliter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Zebulunite	Sebuloniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Zephonite	Ziphoniter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Zerahite	Serahiter	gentílico; Lutero 1912 (rev. amostragem)	
+nome	Ziphite	Siphiter	gentílico; Lutero 1912 (rev. amostragem)	

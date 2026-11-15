@@ -1,0 +1,38 @@
+# Notas da revisão de nomes por agentes de IA (uma linha por nome_en + candidato, ou nome_en + tipo).
+# Conferidas no texto da Bíblia da língua e na tradução inglesa. Só registro: o ingestor não lê este arquivo.
+nome_en	tipo	nome_zh	origem	nota
+Abila	place	亚比拉	revisado	rev. IA: 和合本 亚比拉 (Luke.3.1 e lugar homonimo)
+Abila Lysaniou	place	路撒尼的亚比拉	revisado	rev. IA: Luke.3.1; 和合本 亚比拉 de Lisanias
+Adasa	place	亚大撒	sem	rev. IA: so apocrifo (1Macc.7.40); sem forma tradicional segura na tradicao 和合本
+Adramyttium	place	亚大米田	revisado	rev. IA: Acts.27.2; 和合本 亚大米提; rev. T5: 亚大米田 (conferido no texto CCB)
+Adulis	place	阿杜利	sem	rev. IA: sem versiculo na Biblia; sem forma tradicional segura na tradicao 和合本
+Al-taschith	other	亚拉他则	sem	rev. IA: cabecalho dos Salmos 57-59; termo musical, sem forma tradicional segura na tradicao 和合本
+Alamoth	other	阿拉摩得	revisado	rev. IA: 1Chr.15.20; Ps.46.1; 和合本 阿拉摩得
+Ama	place	亚玛	revisado	rev. IA: 2Sam.2.24; 和合本 亚玛
+Amate	place	阿马特	sem	rev. IA: sem versiculo na Biblia; sem forma tradicional segura na tradicao 和合本
+Amaw	place	亚们	sem	rev. IA: Num.22.5; sem forma tradicional segura na tradicao 和合本
+Amminadib	person	亚米拿达	sem	rev. IA: Song.6.12; 和合本 亚米拿达; rev. T5: sem forma segura no texto
+Angle	place	角门	revisado	rev. IA: 2Chr.26.9; Neh.3.19; 和合本 角门
+Apostles	group	使徒	revisado	rev. IA: 和合本 使徒
+Apostles (Post-Ascension)	group	使徒	revisado	rev. IA: Acts.1.2; 和合本 使徒
+Apostles (The Eleven)	group	十一位使徒	revisado	rev. IA: Matt.28.16; 和合本 十一位使徒
+Arabah	place	亚拉巴	revisado	rev. IA: Deut.1.1; 和合本 亚拉巴
+Aram-naharaim	place	亚兰拿哈连	revisado	rev. IA: Ps.60.1; 和合本 亚兰拿哈连
+Aram-zobah	place	亚兰琐巴	revisado	rev. IA: Ps.60.1; 和合本 亚兰琐巴
+Aramitess	person	亚兰人	revisado	rev. IA: 1Chr.7.14; 和合本 亚兰人
+Arbela	place	亚比拉	sem	rev. IA: so apocrifo; sem forma tradicional segura na tradicao 和合本
+Arsinoe	place	亚尔西诺	sem	rev. IA: sem versiculo na Biblia; sem forma tradicional segura na tradicao 和合本
+Asen	person	亚珊	revisado	rev. IA: Neh.7.24; 和合本 亚珊
+Ashdod's	place	亚实突	sem	rev. IA: sem versiculo na Biblia; sem forma tradicional segura na tradicao 和合本
+Atroth-beth-joab	place	亚他绿·伯·约押	revisado	rev. IA: 1Chr.2.54; 和合本 亚他绿·伯·约押; rev. T5: 亚他绿·伯·约押 (conferido no texto CCB)
+Bajith	place	巴伊特	revisado	rev. IA: Isa.15.2; 和合本 巴伊特
+Barsabas Justus	person	约瑟·巴撒巴	revisado	rev. IA: Acts.1.23; 和合本 巴撒巴 (约瑟，又名犹士都)
+Batanea	place	巴坦尼	revisado	rev. IA: Luke.3.1 (regiao); 和合本 巴坦尼
+Beeroth Bene-jaakan	place	比录·比尼雅干	revisado	rev. IA: Deut.10.6; 和合本 比录·比尼雅干
+Belamon	place	伯拉门	sem	rev. IA: sem versiculo na Biblia; sem forma tradicional segura na tradicao 和合本
+Benjamin's Gate	place	便雅悯门	revisado	rev. IA: Jer.37.13; 和合本 便雅悯门
+Beth-Ashtoreth	place	伯·亚斯他录	revisado	rev. IA: 1Sam.31.10; 和合本 亚斯他录庙
+Beth-eked	place	伯·艾克特	revisado	rev. IA: 2Kgs.10.12; 和合本 伯·以基; rev. T5: 伯·艾克特 (conferido no texto CCB)
+Beth-haggan	place	伯·哈干	revisado	rev. IA: 2Kgs.9.27; 和合本 伯·哈干
+Beth-horon_Lower	place	下伯和仑	revisado	rev. IA: Josh.10.10; 和合本 下伯和仑
+Beth-horon_Upper	place	上伯和仑	revisado	rev. IA: Josh.16.5; 和合本 上伯和仑

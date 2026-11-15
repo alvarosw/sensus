@@ -1,0 +1,46 @@
+# Gramática das descrições em hindi (TIPNR e openbible-geo por regra; pipeline/sensus/descricoes_pt.py).
+# Colunas: chave, modelo. {campo} é trocado pelo valor; {pont.;}, {pont..}, {pont.,} são os sinais da língua.
+# Ordem: o complemento vem ANTES do cargo (frase_cargo_comp = "{comp} {cargo}"). O का/की (genitivo) concorda com o
+# cargo, que é o núcleo: por isso as chaves comp_* têm variante .f (cargo feminino, coluna genero do glossário).
+# Pontuação: "।" fecha o parágrafo (danda). Conectores e 'original' têm espaço nas pontas, de propósito.
+chave	modelo
+mencao_primeira	पहला उल्लेख {ref} में
+mencao_unica	केवल {ref} में आता है
+frase_cargo_comp	{comp} {cargo}
+frase_tempo_com_comp	{frase}{pont.,} {tempo}
+frase_tempo_sem_comp	{frase}{pont.,} {tempo}
+cabecalho	{frase}{pont.;} {mencao}{pont..}
+comp_territorio_tribo	{perto}{tribo} गोत्र के क्षेत्र का
+comp_territorio_tribo.f	{perto}{tribo} गोत्र के क्षेत्र की
+comp_perto_sufixo	{nome} के पास स्थित 
+comp_tribo	{tribo} गोत्र का
+comp_tribo.f	{tribo} गोत्र की
+comp_cidade	{nome} नगर का
+comp_cidade.f	{nome} नगर की
+comp_perto	{nome} के पास रहनेवाला
+comp_perto.f	{nome} के पास रहनेवाली
+comp_de	{nome} का
+comp_de.f	{nome} की
+comp_em	{nome} में रहनेवाला
+comp_em.f	{nome} में रहनेवाली
+citacao	जिसे {lista} कहा जाता है
+citacao_apenas	केवल {lista} कहा जाता है
+original	 ({original})
+conector_e	 और 
+conector_ou	 या 
+lista_sep	, 
+pont.;	;
+pont..	।
+pont.,	,
+maiuscula_inicial	não
+nome_ingles_permitido	não
+flexao_relacao	nenhuma
+pos	nenhum
+geo_melhor	सबसे अच्छी आधुनिक पहचान: {nome} ({tipo}, ज्यामिति: {geometria}); संबंध स्कोर {score}/1000।
+geo_identificacao	पहचान: "{texto}" ({fonte})।
+geo_votos	मत: {votos}।
+geo_voto	{voto} {n}
+geo_tempo	समय-भारित स्कोर {tempo}/1000।
+geo_outros	{n} अन्य संभावित आधुनिक स्थान डेटासेट में।
+geo_melhor_sem_nome	सबसे अच्छी आधुनिक पहचान ({tipo}, ज्यामिति: {geometria}); संबंध स्कोर {score}/1000।
+geo_omitir_ingles	sim

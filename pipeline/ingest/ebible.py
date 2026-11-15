@@ -11,9 +11,15 @@ referências cruzadas e paralelas (\\r), figuras e marcação de Strong (\\w pal
 A versificação NÃO é corrigida aqui: o staging guarda o que a tradução numera. A comparação com a KJV e os
 mapeamentos aprovados ficam em pipeline/bibles/versification.py, aplicados por pipeline/package_bibles.py.
 
+Nomes próprios marcados (\\pn ... \\pn*, como nas Bíblias zh e ur) não entram em verse_text.jsonl: vão para
+proper_names.jsonl ({"vid", "names"}), na numeração da própria Bíblia. A alinhada à KJV é pipeline/sensus/alinhada.py.
+
+Bíblias auxiliares (pipeline/bibles/catalog-aux.tsv, como indtsi) não são empacotadas: só alimentam os nomes.
+
 Uso (a partir da raiz do repositório):
     python3 pipeline/ingest/ebible.py engbsb
     python3 pipeline/ingest/ebible.py --all          (todas as linhas do catálogo com `ebible` preenchido)
+    python3 pipeline/ingest/ebible.py --aux indtsi   (id do catalog-aux.tsv)
 """
 
 import argparse
@@ -31,6 +37,7 @@ from sensus.refs import BOOK_BY_NUM, book_num, vid  # noqa: E402
 from sensus.staging import RAW, StagingWriter  # noqa: E402
 
 CATALOG = Path(__file__).resolve().parents[1] / "bibles" / "catalog.tsv"
+CATALOG_AUX = Path(__file__).resolve().parents[1] / "bibles" / "catalog-aux.tsv"
 FOLDER = "bibles"
 URL_BASE = "https://eBible.org/Scriptures/{code}_usfm.zip"
 PAGE_BASE = "https://ebible.org/find/details.php?id={code}"
@@ -72,6 +79,19 @@ def clean(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
+RE_PN = re.compile(r"\\pn\s+(.*?)\\pn\*", re.S)
+
+
+def nomes_marcados(linha: str) -> list[str]:
+    """Nomes próprios marcados com \\pn ... \\pn* num trecho de USFM, já limpos, na ordem em que aparecem.
+
+    Notas de rodapé (\\f, \\x) saem antes, para que um \\pn dentro de nota não conte como nome do texto.
+    Ex. (Êx 1:1, zh): '\\v 1 \\pn 以色列\\pn*的众子…\\pn 雅各\\pn*' -> ['以色列', '雅各'].
+    """
+    sem_notas = re.sub(r"\\(f|fe|x)\s.*?\\\1\*", " ", linha, flags=re.S)
+    return [n for n in (clean(m.group(1)) for m in RE_PN.finditer(sem_notas)) if n]
+
+
 def split_verse_markers(raw: str) -> list[str]:
     """Separa linhas em que \\v aparece no meio (ex.: '\\q1 \\v 5 texto'). Devolve linhas já limpas de espaço."""
     raw = re.sub(r"\s*(\\v\s)", r"\n\1", raw)
@@ -83,18 +103,21 @@ def parse_usfm(text: str) -> dict:
 
     Títulos e parágrafos vão para o primeiro versículo que vem depois deles.
     Retorna {code, names: {toc1,toc2,toc3}, verses: [(cap, vers, texto)], heads: [(cap, vers, título)],
-             paras: [(cap, vers)], ranges: [(cap, vers, fim)]}.
+             paras: [(cap, vers)], ranges: [(cap, vers, fim)], nomes: [(cap, vers, [nome marcado, ...])]}.
     """
-    out = {"code": None, "names": {}, "verses": [], "heads": [], "paras": [], "ranges": []}
+    out = {"code": None, "names": {}, "verses": [], "heads": [], "paras": [], "ranges": [], "nomes": []}
     chap = None
     cur = None          # (cap, vers) do versículo em andamento
-    buf: list[str] = []
+    buf: list[str] = []  # linhas USFM cruas do versículo (a limpeza é feita ao fechar)
     pend_heads: list[str] = []
     pend_para = False
 
     def close_verse():
         if cur is not None:
-            out["verses"].append((cur[0], cur[1], clean(" ".join(buf))))
+            bruto = " ".join(buf)
+            out["verses"].append((cur[0], cur[1], clean(bruto)))
+            if marcados := nomes_marcados(bruto):
+                out["nomes"].append((cur[0], cur[1], marcados))
 
     lines = []
     for raw in text.splitlines():
@@ -184,8 +207,8 @@ def fetch(url: str, dest: Path) -> None:
     tmp.rename(dest)
 
 
-def load_catalog() -> list[dict]:
-    with open(CATALOG, encoding="utf-8") as f:
+def load_catalog(path: Path = CATALOG) -> list[dict]:
+    with open(path, encoding="utf-8") as f:
         return [row for row in csv.DictReader(f, delimiter="\t") if row["id"] and not row["id"].startswith("#")]
 
 
@@ -209,7 +232,7 @@ def ingest(entry: dict) -> dict:
                 continue
             books.append(parsed)
 
-    verse_rows, div_rows, book_rows = [], [], []
+    verse_rows, div_rows, book_rows, pn_rows = [], [], [], []
     seen = set()
     problems = []
     seen_div = set()
@@ -231,6 +254,8 @@ def ingest(entry: dict) -> dict:
             if not t:
                 problems.append(f"{b['code']} {c}:{v} vazio")
             verse_rows.append({"vid": vi, "text": t})
+        for c, v, marcados in b["nomes"]:
+            pn_rows.append({"vid": vid(bnum, c, v), "names": marcados})
         have = {r["vid"] for r in verse_rows if r["vid"] // 1_000_000 == bnum}
         extra_verses, bridge_divs = bridges(bnum, b["ranges"], have)
         verse_rows.extend(extra_verses)
@@ -277,15 +302,22 @@ def ingest(entry: dict) -> dict:
         for r in div_rows:
             w.row("text_division", **r)
     (w.dir / "books.json").write_text(json.dumps(book_rows, ensure_ascii=False, indent=1), encoding="utf-8")
-    return {"id": bid, "books": len(books), "verses": len(verse_rows), "skipped": skipped, "problems": problems}
+    # Fora do StagingWriter (ele só limpa *.jsonl ao abrir). Sem \pn na Bíblia, o arquivo não é criado.
+    if pn_rows:
+        with open(w.dir / "proper_names.jsonl", "w", encoding="utf-8") as f:
+            for r in pn_rows:
+                f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    return {"id": bid, "books": len(books), "verses": len(verse_rows), "skipped": skipped, "problems": problems,
+            "nomes": len(pn_rows)}
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("ids", nargs="*", help="ids do catálogo (ex.: engbsb)")
     ap.add_argument("--all", action="store_true", help="todas as linhas do catálogo com ebible preenchido")
+    ap.add_argument("--aux", action="store_true", help="os ids vêm de catalog-aux.tsv (Bíblias só para nomes)")
     args = ap.parse_args()
-    catalog = [e for e in load_catalog() if e["ebible"]]
+    catalog = [e for e in load_catalog(CATALOG_AUX if args.aux else CATALOG) if e["ebible"]]
     if args.all:
         chosen = catalog
     else:
@@ -297,6 +329,7 @@ def main():
     for entry in chosen:
         res = ingest(entry)
         print(f"{res['id']}: {res['books']} livros, {res['verses']} versículos"
+              + (f", {res['nomes']} versículos com nomes marcados" if res["nomes"] else "")
               + (f", ignorados {res['skipped']}" if res["skipped"] else ""))
         for p in res["problems"][:20]:
             print(f"  aviso: {p}")

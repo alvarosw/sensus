@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  APP_LANGS,
   SOURCES,
   TRADITIONS,
   commentatorOf,
@@ -94,11 +95,19 @@ const ROLE_OF_KIND: Record<string, string[]> = {
   entity: ['entity'],
 };
 
-// Nomes pt derivados da Bíblia Livre, títulos pt dos eventos (entity_name) e descrições pt (entity_text).
+// Idiomas do app além de pt e en: as 12 línguas com nomes, títulos e descrições próprios.
+const LINGUAS = APP_LANGS.map((l) => l.code).filter((c) => c !== 'pt' && c !== 'en');
+
+// Nomes, títulos dos eventos (entity_name) e descrições (entity_text): pt, e as 12 línguas do app.
 const NOMES_PT: Array<{ id: string; kind: string; tradition: null }> = [
   { id: 'sensus-nomes-pt', kind: 'entity', tradition: null },
   { id: 'sensus-titulos-pt', kind: 'entity', tradition: null },
   { id: 'sensus-descricoes-pt', kind: 'entity', tradition: null },
+  ...LINGUAS.flatMap((l) => [
+    { id: `sensus-nomes-${l}`, kind: 'entity', tradition: null },
+    { id: `sensus-titulos-${l}`, kind: 'entity', tradition: null },
+    { id: `sensus-descricoes-${l}`, kind: 'entity', tradition: null },
+  ]),
 ];
 
 const TODAS = [...BANCO, ...NOVAS, ...NOMES_PT];
@@ -112,6 +121,13 @@ describe('registro de fontes e tradições (domain/sources)', () => {
   it('o papel registrado combina com o tipo da fonte no banco', () => {
     for (const r of TODAS) {
       expect(ROLE_OF_KIND[r.kind], r.id).toContain(SOURCES[r.id]!.role);
+    }
+  });
+
+  it('a língua da fonte de nomes, títulos e descrições é a do sufixo do id', () => {
+    for (const r of NOMES_PT) {
+      const lang = r.id.split('-').pop()!;
+      expect(SOURCES[r.id]!.lang, r.id).toBe(lang);
     }
   });
 

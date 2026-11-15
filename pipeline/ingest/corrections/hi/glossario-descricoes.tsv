@@ -1,0 +1,136 @@
+# Glossário das descrições em hindi (TIPNR, pipeline/sensus/descricoes_pt.py). Colunas:
+#   secao      cargo | tempo | tribo | lugar | relacao | nome
+#   ingles     termo como aparece na descrição da fonte (exato, com maiúsculas)
+#   portugues  tradução usada na frase (aqui: hindi; o nome da coluna é o do código)
+#   nota       observação para o revisor (opcional)
+#   genero     m | f | n | vazio: gênero do termo (cargo). O genitivo का/की concorda com ele: f usa a forma '.f' da gramática.
+#              Hindi não tem plural neutro aqui: termo coletivo vai no singular (ex.: 'warriors' = योद्धा दल).
+#              Relações e tempos têm modelo fixo (com {x} ou invariável), por isso não usam gênero.
+#              Lugares ('of ...') são invariáveis: "से संबंधित" ou "में स्थित" não mudam com o gênero do cargo.
+secao	ingles	portugues	nota	genero
+cargo	man	पुरुष		m
+cargo	woman	स्त्री		f
+cargo	location	स्थान		m
+cargo	high priest	प्रधान याजक		m
+cargo	priest	याजक		m
+cargo	warrior	योद्धा		m
+cargo	warriors	योद्धा दल	coletivo no singular	m
+cargo	musician	संगीतकार		m
+cargo	prophet	नबी		m
+cargo	prophetess	नबिया		f
+cargo	king	राजा		m
+cargo	queen	रानी		f
+cargo	group	समूह		m
+cargo	male deity	पुरुष देवता		m
+cargo	female deity	स्त्री देवी		f
+cargo	deity	देवता		m
+cargo	people	जाति	nação (singular)	f
+cargo	woman or town	स्त्री या नगर	mistura dois gêneros; sem forma .f
+cargo	town	नगर		m
+cargo	emperor	सम्राट		m
+cargo	prince	राजकुमार		m
+cargo	apostle	प्रेरित		m
+cargo	angel	स्वर्गदूत		m
+cargo	concubine	उपपत्नी		f
+cargo	chief	सरदार		m
+cargo	steward	प्रबंधक		m
+cargo	servant	सेवक		m
+cargo	ruler	शासक		m
+cargo	musical piece	संगीत रचना		f
+tempo	at the time of the Patriarchs	पितरों के समय
+tempo	at the time of Egypt and Wilderness	मिस्र और जंगल के समय
+tempo	at the time of Exile and Return	निर्वासन और वापसी के समय
+tempo	at the time of Divided Monarchy	विभाजित राजतंत्र के समय
+tempo	at the time of United Monarchy	संयुक्त राजतंत्र के समय
+tempo	at the time of the New Testament	नए नियम के समय
+tempo	at the time of the Exodus	निर्गमन के समय
+tempo	before Israel's Monarchy	इस्राएल के राजतंत्र से पहले
+tempo	at the time before the Flood	जलप्रलय से पहले के समय
+tempo	before the Flood	जलप्रलय से पहले
+tempo	at the time of Judges	न्यायियों के समय
+tribo	Levi	लेवी
+tribo	Judah	यहूदा
+tribo	Asher	आशेर
+tribo	Benjamin	बिन्यामीन
+tribo	Ephraim	एप्रैम
+tribo	Manasseh	मनश्शे
+tribo	Simeon	शिमोन
+tribo	Issachar	इस्साकार
+tribo	Zebulun	जबूलून
+tribo	Naphtali	नप्ताली
+tribo	Reuben	रूबेन
+tribo	Gad	गाद
+tribo	Dan	दान
+relacao	son of	{x} के पुत्र
+relacao	daughter of	{x} की पुत्री
+relacao	brother of	{x} के भाई
+relacao	sister of	{x} की बहन
+relacao	half-brother of	{x} के सौतेले भाई
+relacao	half-sister of	{x} की सौतेली बहन
+relacao	wife of	{x} की पत्नी
+relacao	husband of	{x} के पति
+relacao	mother of	{x} की माता
+relacao	father of	{x} के पिता
+relacao	founder of	{x} के संस्थापक
+relacao	concubine of	{x} की उपपत्नी
+relacao	descendant of	{x} का वंशज
+nome	Pharaoh	फ़िरौन
+nome	Asia	एशिया
+nome	Christ	मसीह
+lugar	in Asia	एशिया में स्थित	invariável
+lugar	of Egypt	मिस्र से संबंधित	invariável
+lugar	of the Cushites	कूशियों से संबंधित	invariável
+lugar	of the Arabs	अरबों से संबंधित	invariável
+lugar	of the Edomites	एदोमियों से संबंधित	invariável
+lugar	of the Midianites	मिद्यानियों से संबंधित	invariável
+lugar	of the Syrians	अरामियों से संबंधित	invariável
+lugar	of the Gomerians	गोमेरियों से संबंधित	invariável
+lugar	of the Ammonites	अम्मोनियों से संबंधित	invariável
+lugar	of the Greeks	यूनानियों से संबंधित	invariável
+lugar	of the Ishmaelites	इश्माएलियों से संबंधित	invariável
+lugar	of the Moabites	मोआबियों से संबंधित	invariável
+lugar	of the Egyptians	मिस्रियों से संबंधित	invariável
+lugar	of the Philistines	पलिश्तियों से संबंधित	invariável
+lugar	of the Hittites	हित्तियों से संबंधित	invariável
+lugar	of the Canaanites	कनानियों से संबंधित	invariável
+lugar	of the Amalekites	अमालेकियों से संबंधित	invariável
+lugar	of the Jebusites	यबूसियों से संबंधित	invariável
+lugar	of the Assyrians	अश्शूरियों से संबंधित	invariável
+lugar	of the Babylonians	बाबुलियों से संबंधित	invariável
+lugar	of the Chaldeans	कसदियों से संबंधित	invariável
+lugar	of the Persians	फारसियों से संबंधित	invariável
+lugar	of the Hebrews	इब्रानियों से संबंधित	invariável
+lugar	of the Israelites	इस्राएलियों से संबंधित	invariável
+cargo	judge	न्यायाधीश		m
+cargo	city	नगर		m
+cargo	gigantic man	दैत्याकार पुरुष		m
+cargo	Pharaoh	फ़िरौन		m
+cargo	festival	पर्व		m
+cargo	governor	राज्यपाल		m
+cargo	Judge	न्यायाधीश		m
+cargo	huge man	दैत्याकार पुरुष		m
+nome	Hor Mount	होर पर्वत	forma de nomes.tsv (revisado)
+nome	Syria	अराम	forma de nomes.tsv (revisado)
+nome	Tabor Mount	ताबोर पहाड़	forma de nomes.tsv (revisado)
+nome	Jezreel	यिज्रेल	forma de nomes.tsv (revisado)
+nome	Judea	यहूदिया	forma de nomes.tsv (revisado)
+nome	Rephaim Valley	रपाईम की तराई	forma de nomes.tsv (revisado)
+nome	Hermon Mount	हेर्मोन पर्वत	forma de nomes.tsv (revisado)
+nome	Olives Mount	जैतून का पहाड़	forma de nomes.tsv (revisado)
+nome	Red Sea	लाल समुद्र	forma de nomes.tsv (revisado)
+nome	Ebal Mount	एबाल पर्वत	forma de nomes.tsv (revisado)
+nome	Seir Mount	सेईर पहाड़	forma de nomes.tsv (revisado)
+nome	Benjamin Gate	बिन्यामीन का फाटक	forma de nomes.tsv (revisado)
+nome	Ephraim Gate	एप्रैम का फाटक	forma de nomes.tsv (revisado)
+nome	Jonathan	यहोनातान	forma de nomes.tsv
+nome	Machir	माकीर	forma de nomes.tsv
+nome	Putiel	पूतीएल	forma de nomes.tsv
+nome	Tahpenes	तहपनेस	forma de nomes.tsv (revisado)
+nome	Shelomith	शलोमोत	forma de nomes.tsv (revisado)
+nome	Northern Israel	उत्तरी इस्राएल
+nome	Caesar	कैसर
+nome	Edom Bozrah	एदोम का बोसरा
+nome	Beth-horon Upper	ऊपरी बेत-होरोन
+nome	Amalakites	अमालेकी
+nome	Jesus Barabbas	यीशु बरअब्बा
+nome	Barsabbas	बरसब्बा

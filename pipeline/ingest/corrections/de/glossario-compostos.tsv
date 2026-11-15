@@ -1,0 +1,49 @@
+# Glossário de cabeças de nomes compostos em inglês -> formas alemãs (Lutero 1912) que vêm antes do núcleo.
+# Usado por pipeline/ingest/nomes.py --lang de (ver pipeline/sensus/names_pt.py, decompoe e escolhe_frase).
+# Colunas: cabeca (como no glossário pt) e formas separadas por '|'; a frase candidata é forma + ' ' + núcleo
+# ('Berg' + 'Sinai'). Só formas achadas no texto de deu1912 (Berg Zion, Gebirge Ephraim, Tal Achor, Grunde
+# Rephaim, Stamm Juda, Tor Ephraim, Bach Kidron, Wüste Sinai, Turm Hananeel, Stadt Davids). Compostos que Lutero
+# escreve numa palavra só (Ölberg, Fischtor, Salzmeer, Schilfmeer) não são capturados: vão para os manuais.
+cabeca	formas
+Mount	Berg|Berge|Berges|Gebirge|Gebirges
+Mount of	Berg|Berge|Gebirge|Gebirges
+Valley	Tal|Tals|Grunde
+Valley of	Tal|Tals|Grunde
+Vale	Tal|Grunde
+Vale of	Tal|Grunde
+Tribe of	Stamm|Stamme|Stammes
+Gate	Tor|Tore
+Gate of	Tor|Tore
+Sea	Meer|Meeres
+Sea of	Meer|Meeres|See
+Tower	Turm|Turms
+Tower of	Turm|Turms
+City	Stadt
+City of	Stadt
+Brook	Bach|Baches
+Brook of	Bach|Baches
+Wilderness	Wüste
+Wilderness of	Wüste
+Plain	Gefilde|Ebene
+Plain of	Gefilde|Ebene
+Plains	Gefilde
+Pool	Teich
+Pool of	Teich
+Hall	Halle
+Hall of	Halle
+Spring	Brunnen
+Rock	Fels
+Rock of	Fels
+Stone	Stein
+Way of	Weg
+Waters	Wasser
+Waters of	Wasser
+Forest	Wald|Walde
+Forest of	Wald|Walde
+Wall	Mauer
+Hill	Hügel
+Hill of	Hügel
+River	Bach|Wasser|Fluß
+River of	Bach|Wasser|Fluß
+House	Haus|Hause|Hauses
+House of	Haus|Hause|Hauses

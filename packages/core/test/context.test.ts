@@ -8,6 +8,7 @@ import {
   serializePanel,
   shortTitle,
   type Commentary,
+  type Entity,
   type PanelData,
 } from '../src/index';
 import { createFixtureDb, driverFor } from './fixtures';
@@ -249,5 +250,44 @@ describe('léxico, unidade literária e títulos', () => {
     expect(shortTitle('Textus Receptus (derived from TAGNT)')).toBe('Textus Receptus (derived from TAGNT)');
     expect(shortTitle('Textus Receptus (derived from the TAGNT text of the Greek NT)')).toBe('Textus Receptus');
     expect(shortTitle('Strong (grego)')).toBe('Strong (grego)');
+  });
+});
+
+describe('serializePanel: nome na língua do app entre colchetes (AT e NT)', () => {
+  const ARAO_ENT = 'ent:isbe-ent:arao'; // Êx 4:14 (AT hebraico)
+  const PAULO_ENT = 'ent:isbe-ent:paulo'; // Fp 2:5 (NT grego)
+
+  /** Entidade do painel com os campos de Entity; só o que o teste não usa fica nulo. */
+  function entidade(cite_id: string, name: string, namePt: string | null): Entity {
+    return { cite_id, source_id: 'isbe-ent', type: 'person', name, description: null, lat: null, lon: null, data: null, namePt };
+  }
+
+  /** Texto do contexto com só estas entidades na camada 3 (demais itens continuam, o teste lê só a linha). */
+  function textoComEntidades(entities: Entity[]): { text: string; citeIds: Set<string> } {
+    const clone = structuredClone(panel);
+    clone.layers.historical.entities = entities;
+    const ctx = serializePanel(clone, 60_000);
+    return { text: ctx.text, citeIds: ctx.citeIds };
+  }
+
+  it('AT: "Aaron [Arão]" com o nome da fonte à frente; o cite_id segue citável', () => {
+    const { text, citeIds } = textoComEntidades([entidade(ARAO_ENT, 'Aaron', 'Arão')]);
+    expect(text).toContain(`[${ARAO_ENT}] `);
+    expect(text).toContain('Aaron [Arão] (pessoa)');
+    expect(citeIds.has(ARAO_ENT)).toBe(true);
+  });
+
+  it('NT: "Paulo" em espanhol como "Paulo [Pablo]" (o nome da língua do app vai entre colchetes)', () => {
+    const { text } = textoComEntidades([entidade(PAULO_ENT, 'Paulo', 'Pablo')]);
+    expect(text).toContain('Paulo [Pablo] (pessoa)');
+  });
+
+  it('sem nome na língua do app, ou igual ao da fonte: a linha fica como antes, sem colchetes', () => {
+    const semLinha = textoComEntidades([entidade(ARAO_ENT, 'Aaron', null)]).text;
+    expect(semLinha).toContain('Aaron (pessoa)');
+    expect(semLinha).not.toContain('[Aaron]');
+    const igual = textoComEntidades([entidade(PAULO_ENT, 'Paulo', 'Paulo')]).text;
+    expect(igual).toContain('Paulo (pessoa)');
+    expect(igual).not.toContain('[Paulo]');
   });
 });

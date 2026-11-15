@@ -64,11 +64,51 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   theographic: { short: 'Theographic', role: 'entity', lang: 'en' },
   // Nomes em português derivados da Bíblia Livre (pipeline/ingest/nomes_pt.py); entity_name, não entity.
   'sensus-nomes-pt': { short: 'Nomes (BLivre)', role: 'entity', lang: 'pt' },
-  // Títulos pt dos eventos (pipeline/ingest/titulos_pt.py), revisados por pessoa; entity_name com cite_id de evento.
+  // Títulos pt dos eventos (pipeline/ingest/titulos_pt.py), escritos e revisados por agentes de IA (nota "rev. IA"),
+  // não por pessoa; entity_name com cite_id de evento.
   'sensus-titulos-pt': { short: 'Títulos (Theographic)', role: 'entity', lang: 'pt' },
   // Descrições em pt (pipeline/ingest/descricoes_pt.py): TIPNR por regra; Theographic e OpenBible revisadas por IA.
   // entity_text (não entity_name).
   'sensus-descricoes-pt': { short: 'Descrições (pt)', role: 'entity', lang: 'pt' },
+  // Nomes, títulos e descrições nas 12 línguas do app (pipeline/ingest/nomes.py, titulos.py e descricoes.py --lang <xx>).
+  // Nomes: derivados da Bíblia de referência da língua (sensus/linguas.py). Títulos: traduzidos com IA a partir do
+  // inglês. Descrições: TIPNR por regra, o resto revisado. Mesmos papéis do pt: entity_name e entity_text.
+  'sensus-nomes-es': { short: 'Nomes (es)', role: 'entity', lang: 'es' },
+  'sensus-nomes-fr': { short: 'Nomes (fr)', role: 'entity', lang: 'fr' },
+  'sensus-nomes-de': { short: 'Nomes (de)', role: 'entity', lang: 'de' },
+  'sensus-nomes-ru': { short: 'Nomes (ru)', role: 'entity', lang: 'ru' },
+  'sensus-nomes-zh': { short: 'Nomes (zh)', role: 'entity', lang: 'zh' },
+  'sensus-nomes-ja': { short: 'Nomes (ja)', role: 'entity', lang: 'ja' },
+  'sensus-nomes-hi': { short: 'Nomes (hi)', role: 'entity', lang: 'hi' },
+  'sensus-nomes-bn': { short: 'Nomes (bn)', role: 'entity', lang: 'bn' },
+  'sensus-nomes-ur': { short: 'Nomes (ur)', role: 'entity', lang: 'ur' },
+  'sensus-nomes-ar': { short: 'Nomes (ar)', role: 'entity', lang: 'ar' },
+  'sensus-nomes-id': { short: 'Nomes (id)', role: 'entity', lang: 'id' },
+  'sensus-nomes-vi': { short: 'Nomes (vi)', role: 'entity', lang: 'vi' },
+  'sensus-titulos-es': { short: 'Títulos (es)', role: 'entity', lang: 'es' },
+  'sensus-titulos-fr': { short: 'Títulos (fr)', role: 'entity', lang: 'fr' },
+  'sensus-titulos-de': { short: 'Títulos (de)', role: 'entity', lang: 'de' },
+  'sensus-titulos-ru': { short: 'Títulos (ru)', role: 'entity', lang: 'ru' },
+  'sensus-titulos-zh': { short: 'Títulos (zh)', role: 'entity', lang: 'zh' },
+  'sensus-titulos-ja': { short: 'Títulos (ja)', role: 'entity', lang: 'ja' },
+  'sensus-titulos-hi': { short: 'Títulos (hi)', role: 'entity', lang: 'hi' },
+  'sensus-titulos-bn': { short: 'Títulos (bn)', role: 'entity', lang: 'bn' },
+  'sensus-titulos-ur': { short: 'Títulos (ur)', role: 'entity', lang: 'ur' },
+  'sensus-titulos-ar': { short: 'Títulos (ar)', role: 'entity', lang: 'ar' },
+  'sensus-titulos-id': { short: 'Títulos (id)', role: 'entity', lang: 'id' },
+  'sensus-titulos-vi': { short: 'Títulos (vi)', role: 'entity', lang: 'vi' },
+  'sensus-descricoes-es': { short: 'Descrições (es)', role: 'entity', lang: 'es' },
+  'sensus-descricoes-fr': { short: 'Descrições (fr)', role: 'entity', lang: 'fr' },
+  'sensus-descricoes-de': { short: 'Descrições (de)', role: 'entity', lang: 'de' },
+  'sensus-descricoes-ru': { short: 'Descrições (ru)', role: 'entity', lang: 'ru' },
+  'sensus-descricoes-zh': { short: 'Descrições (zh)', role: 'entity', lang: 'zh' },
+  'sensus-descricoes-ja': { short: 'Descrições (ja)', role: 'entity', lang: 'ja' },
+  'sensus-descricoes-hi': { short: 'Descrições (hi)', role: 'entity', lang: 'hi' },
+  'sensus-descricoes-bn': { short: 'Descrições (bn)', role: 'entity', lang: 'bn' },
+  'sensus-descricoes-ur': { short: 'Descrições (ur)', role: 'entity', lang: 'ur' },
+  'sensus-descricoes-ar': { short: 'Descrições (ar)', role: 'entity', lang: 'ar' },
+  'sensus-descricoes-id': { short: 'Descrições (id)', role: 'entity', lang: 'id' },
+  'sensus-descricoes-vi': { short: 'Descrições (vi)', role: 'entity', lang: 'vi' },
   // ---- comentários
   patristic: { short: 'Patrística', commentator: 'Padres da Igreja', role: 'commentary', lang: 'en' },
   gill: { short: 'Gill', commentator: 'Gill', role: 'commentary', lang: 'en' },

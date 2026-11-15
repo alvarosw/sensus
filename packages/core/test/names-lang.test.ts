@@ -81,4 +81,19 @@ describe('Repo.nameLang (idioma dos nomes e descrições)', () => {
     const pt = new Repo(driverFor(db));
     expect((await pt.entities({ start: VID_AT, end: VID_AT }))[0]?.namePt).toBe('Arão');
   });
+
+  it('idioma espanhol (es) com linhas: Arão vira Aarón (AT) e Paulo vira Pablo (NT); fr sem linhas volta ao nome da fonte', async () => {
+    insert(db, 'source', [source('sensus-nomes-es', 'entity', 'Nombres en español', { lang: 'es' })]);
+    insert(db, 'entity_name', [
+      { cite_id: ARAO, lang: 'es', name: 'Aarón', source_id: 'sensus-nomes-es' },
+      { cite_id: PAULO, lang: 'es', name: 'Pablo', source_id: 'sensus-nomes-es' },
+    ]);
+    const es = new Repo(driverFor(db), { nameLang: 'es' });
+    const [aaron] = await es.entities({ start: VID_AT, end: VID_AT });
+    expect([aaron?.name, aaron?.namePt]).toEqual(['Aaron', 'Aarón']);
+    const nt = await es.entities({ start: VID_NT, end: VID_NT });
+    expect(nt.find((h) => h.name === 'Paulo')?.namePt).toBe('Pablo');
+    const fr = new Repo(driverFor(db), { nameLang: 'fr' });
+    expect((await fr.entities({ start: VID_AT, end: VID_AT }))[0]?.namePt).toBeNull();
+  });
 });
