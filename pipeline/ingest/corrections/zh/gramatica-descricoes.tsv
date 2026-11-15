@@ -18,7 +18,7 @@ comp_cidade	{nome}城的
 comp_perto	靠近{nome}的
 comp_de	{nome}的
 comp_em	在{nome}的
-citacao	又称{lista}
+citacao	称为{lista}
 citacao_apenas	仅称{lista}
 original	（{original}）
 conector_e	和
