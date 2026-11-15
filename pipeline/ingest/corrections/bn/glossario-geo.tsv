@@ -1,0 +1,59 @@
+# Glossário geo em bengali (openbible-geo, por regra; pipeline/sensus/geo_descricao.py). Colunas:
+#   secao      tipo 	 geometria 	 voto 	 fonte
+#   ingles     termo como aparece na descrição da fonte (exato)
+#   portugues  tradução usada na frase (aqui: bengali)
+#   nota       observação para o revisor (opcional)
+#   genero     vazio (o bengali não concorda em gênero)
+# geometria: o modelo geo_melhor já diz 'জ্যামিতি' depois do termo, por isso os valores são substantivos (বিন্দু জ্যামিতি).
+secao	ingles	portugues	nota	genero
+tipo	settlement	বসতি		
+tipo	region	অঞ্চল		
+tipo	mountain	পর্বত		
+tipo	wadi	ওয়াদি		
+tipo	river	নদী		
+tipo	spring	ঝরনা		
+tipo	hill	পাহাড়		
+tipo	island	দ্বীপ		
+tipo	valley	উপত্যকা		
+tipo	body of water	জলাশয়		
+tipo	well	কূপ		
+tipo	probability center radial	রেডিয়াল সম্ভাবনা কেন্দ্র		
+tipo	road	পথ		
+tipo	mountain range	পর্বতশ্রেণি		
+tipo	structure	কাঠামো		
+tipo	mouth of river	নদীর মোহনা		
+tipo	pool	পুকুর		
+tipo	cliff	খাড়া পাহাড়		
+tipo	cave	গুহা		
+tipo	field	মাঠ		
+tipo	mountain pass	পর্বতের গিরিপথ		
+tipo	mountain ridge	পর্বতের শৈলশিরা		
+tipo	wall	প্রাচীর		
+tipo	forest	বন		
+tipo	harbor	বন্দর		
+tipo	garden	বাগান		
+tipo	promontory	অন্তরীপ		
+geometria	point	বিন্দু		
+geometria	polygon	বহুভুজ		
+geometria	path	পথ		
+fonte	modern	আধুনিক		
+fonte	ancient	প্রাচীন		
+voto	confidence_possible	আস্থা: সম্ভব		
+voto	confidence_likely	আস্থা: সম্ভাব্য		
+voto	confidence_yes	আস্থা: হ্যাঁ		
+voto	confidence_mostlikely	আস্থা: খুবই সম্ভাব্য		
+voto	confidence_unlikely	আস্থা: অসম্ভব-প্রায়		
+voto	confidence_no	আস্থা: না		
+voto	confidence_map	আস্থা: মানচিত্র		
+voto	authority_usually	কর্তৃত্ব: সাধারণত		
+voto	authority_scholar	কর্তৃত্ব: পণ্ডিতগণ		
+voto	authority_traditional	কর্তৃত্ব: ঐতিহ্যগত		
+voto	authority_parallel	কর্তৃত্ব: সমান্তরাল		
+voto	authority_preserved	কর্তৃত্ব: সংরক্ষিত নাম		
+voto	authority_variant	কর্তৃত্ব: বিকল্প		
+voto	authority_old	কর্তৃত্ব: প্রাচীন		
+voto	unknown	অজানা		
+voto	uncertain	অনিশ্চিত		
+voto	identified_been	শনাক্ত: হয়েছে		
+voto	identified_is	শনাক্ত: হয়		
+voto	identified_adjective	শনাক্ত: বিশেষণ		
