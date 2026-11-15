@@ -20,7 +20,7 @@ comp_cidade	{nome}の町の
 comp_perto	{nome}付近の
 comp_de	{nome}の
 comp_em	{nome}の
-citacao	{lista}とも呼ばれる
+citacao	{lista}と呼ばれる
 citacao_apenas	{lista}とだけ呼ばれる
 original	（{original}）
 conector_e	と

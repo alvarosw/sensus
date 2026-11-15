@@ -27,7 +27,7 @@ Angle	Palal	Sudut	revisado	baixa	1	4	0.25	Bagian
 Apharasthchite	Barat	Afarsakhi	revisado	baixa	1	3	0.33	Efrat
 Archites	Arki	Arki	revisado	baixa	1	5	0.60	Ahitofel
 Ard	Asyer	Ard	revisado	baixa	2	1	1.00	Yimna
-Ariel	Kabsel	Kabzeel	revisado	baixa	1	1	1.00	Benaya
+Ariel	Kabsel	Ariel	revisado	baixa	1	1	1.00	Benaya
 Ariel	Yerusalem	Ariel	revisado	baixa	2	3	0.33	Malapetaka
 Arkite	Arki	Arki	revisado	baixa	1	1	1.00	Sini
 Arkites	Arki	Arki	revisado	baixa	1	1	1.00	Sini
@@ -98,7 +98,7 @@ Girgasite	Girgasi	Girgasi	revisado	baixa	1	1	1.00	Yebus
 Girzites	Girzi	Girzi	revisado	baixa	1	1	1.00	Gesur
 Greece	Israel	Yunani	revisado	baixa	1	2	0.50	Kemudian
 Greece	Kirene	Yunani	revisado	baixa	1	6	0.17	Merekalah
-Greece	Makedonia	Makedonia	revisado	baixa	1	4	0.50	Israel
+Greece	Makedonia	Yunani	revisado	baixa	1	4	0.50	Israel
 Gulloth-mayim	Ayah	Gulot-Mayim	revisado	baixa	1	2	1.00	Maka
 Hachmonites	Takmoni	Hakmoni	revisado	baixa	1	1	1.00	Yoseb
 Hamathite	Hamat	Hamati	revisado	baixa	1	1	1.00	Arwadi
@@ -150,7 +150,7 @@ Kiriath-huzoth	Huzot	Kiryat-Huzot	revisado	baixa	3	1	1.00	Kemudian
 Kittim	Siprus	Kitim	revisado	baixa	2	1	1.00	Asyur
 Kue	Kuda-kuda	Kewe	revisado	baixa	3	1	1.00	Kilikia
 LORD	Eloi	TUHAN	revisado	baixa	1	281	0.00	Roh-roh
-Laadan	Libni	Libni	revisado	baixa	1	2	1.00	Nama
+Laadan	Libni	Ladan	revisado	baixa	1	2	1.00	Nama
 Lahmi	Yair	Lahmi	revisado	baixa	1	1	1.00	Kali
 Lebanon Mount	gunung Libanon	Gunung Libanon	revisado	baixa	1	1	0.00	
 Legion	Batalion	Legion	revisado	baixa	1	2	1.00	Jawabnya
@@ -208,7 +208,7 @@ Raca	Aku	Raka	revisado	baixa	1	1	1.00	Allah
 Ramah	Berita	Rama	revisado	baixa	1	1	1.00	Saul
 Ramath-lehi	Lehi	Ramat-Lehi	revisado	baixa	3	1	1.00	Rahang
 Ramathaim-zophim	Rama	Ramataim-Zofim	revisado	baixa	2	1	1.00	Yeroham
-Rapha	Saf	Saf	revisado	baixa	1	4	0.25	Perlengkapan
+Rapha	Saf	Rafa	revisado	baixa	1	4	0.25	Perlengkapan
 River	Bileam	Sungai	revisado	baixa	1	1	1.00	Orang-orangnya
 River	Provinsi	Seberang Sungai	revisado	baixa	1	16	0.56	Rehum
 River	Raja	Seberang Sungai	revisado	baixa	1	9	0.11	Amori
@@ -632,7 +632,7 @@ Seba	Seba	Seba	revisado	media	4	2	1.00	Syeba
 Seir Mount	gunung Seir	Gunung Seir	revisado	media	2	4	0.25	gunung Sinai
 Senaah	Sena	Senaah	revisado	media	2	4	0.25	Senaa
 Sennacherib	Sanherib	Sanherib	revisado	media	2	9	0.89	Dengar
-Sepharad	Sardis	Sardis	revisado	media	1	3	1.00	Suara
+Sepharad	Sardis	Sefarad	revisado	media	1	3	1.00	Suara
 Serah	Iezer	Serah	revisado	media	2	2	0.50	Semida
 Shaalbim	Saalbim	Saalbim	revisado	media	3	4	0.25	Saalabin
 Shallun	Salum	Salum	revisado	media	1	1	1.00	Mancur
