@@ -1,0 +1,846 @@
+# Glossário das descrições em árabe (TIPNR, pipeline/sensus/descricoes_pt.py). Colunas:
+#   secao      cargo | tempo | tribo | lugar | relacao | nome
+#   ingles     termo como aparece na descrição da fonte (exato, com maiúsculas)
+#   portugues  tradução usada na frase (aqui: árabe, sem tashkil; o nome da coluna é o do código)
+#   nota       observação para o revisor (opcional)
+#   genero     m | f | vazio: gênero do cargo (feminino = امرأة، نبية، ملكة...). Nenhum modelo usa .f ainda (ver gramática).
+# Nomes próprios (tribo, lugar, nome) vêm só de corrections/ar/nomes.tsv (origem revisado ou auto; 'sem' não entra).
+# A seção nome tem os nomes do nomes.tsv que o entity_name da fonte não liga a uma entidade (fallback do ingestor).
+# Ficaram de fora, de propósito: (a) gentílicos ('of the Edomites', 'of the Moabites') que o nomes.tsv não tem;
+# (b) termos que o nomes.tsv não tem (Zebulun, Christ, Abijam, Hebrews, Northern Israel, Hor Mount, Tabor Mount...);
+# (c) frases de parentesco e de lugar fora da gramática (ex.: 'who founded the tribe of Asher'). Sem eles, a
+# descrição cai na tradução automática do app, sem nome inventado.
+secao	ingles	portugues	nota	genero
+cargo	man	رجل		m
+cargo	woman	امرأة		f
+cargo	location	مكان		m
+cargo	high priest	رئيس الكهنة		m
+cargo	priest	كاهن		m
+cargo	warrior	محارب		m
+cargo	warriors	محاربون		m
+cargo	musician	موسيقي		m
+cargo	prophet	نبي		m
+cargo	prophetess	نبية		f
+cargo	king	ملك		m
+cargo	queen	ملكة		f
+cargo	group	مجموعة		f
+cargo	male deity	إله ذكر		m
+cargo	female deity	إلهة		f
+cargo	deity	إله		m
+cargo	people	شعب		m
+cargo	woman or town	امرأة أو مدينة		f
+cargo	town	مدينة		f
+cargo	emperor	إمبراطور		m
+cargo	prince	أمير		m
+cargo	apostle	رسول		m
+cargo	angel	ملاك		m
+cargo	concubine	سرية		f
+cargo	chief	رئيس		m
+cargo	steward	وكيل		m
+cargo	servant	خادم		m
+cargo	ruler	حاكم		m
+cargo	musical piece	مقطوعة موسيقية		f
+cargo	judge	قاض		m
+cargo	Judge	قاض		m
+cargo	city	مدينة		f
+cargo	gigantic man	رجل عملاق		m
+cargo	Pharaoh	فرعون		m
+cargo	festival	عيد		m
+cargo	governor	والٍ		m
+tempo	at the time of the Patriarchs	من زمن الآباء
+tempo	at the time of Egypt and Wilderness	من زمن مصر والبرية
+tempo	at the time of Exile and Return	من زمن السبي والعودة
+tempo	at the time of Divided Monarchy	من زمن المملكة المنقسمة
+tempo	at the time of United Monarchy	من زمن المملكة الموحدة
+tempo	at the time of the New Testament	من زمن العهد الجديد
+tempo	at the time of the Exodus	من زمن الخروج
+tempo	before Israel's Monarchy	قبل ملكية إسرائيل
+tempo	at the time before the Flood	من زمن ما قبل الطوفان
+tempo	before the Flood	قبل الطوفان
+tempo	at the time of Judges	من زمن القضاة
+tribo	Levi	لاوي
+tribo	Judah	يهوذا
+tribo	Asher	أشير
+tribo	Benjamin	بنيامين
+tribo	Ephraim	أفرايم
+tribo	Manasseh	منسى
+tribo	Simeon	شمعون
+tribo	Issachar	يساكر
+tribo	Naphtali	نفتالي
+tribo	Reuben	رأوبين
+tribo	Gad	جاد
+tribo	Dan	دان
+relacao	son of	ابن
+relacao	daughter of	ابنة
+relacao	brother of	أخو
+relacao	sister of	أخت
+relacao	half-brother of	أخو غير شقيق
+relacao	half-sister of	أخت غير شقيقة
+relacao	wife of	زوجة
+relacao	husband of	زوج
+relacao	mother of	أم
+relacao	father of	أب
+relacao	founder of	مؤسس
+relacao	concubine of	سرية
+relacao	descendant of	من نسل
+nome	Pharaoh	فرعون
+nome	Asia	أسيا
+lugar	in Asia	في أسيا
+lugar	of Egypt	من مصر
+lugar	of the Chaldeans	من الكلدانيين
+nome	Judah	يهوذا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hananiah	حننيا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shashak	شاشق	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shema	شمع	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Zabdi	زبدي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Becher	باكر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Uzziel	عزيئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Elishua	أليشامع	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shimeah	شماة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Sheleph	شالف	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hodaviah	هوداياهو	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ner	نير	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Philistia	فلسطين	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jerahmeel	يرحمئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Babylon	بابل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ezbon	أصبون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Joash	يوآش	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jokshan	يقشان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Sheba	شبا	auto no nomes.tsv (alta); sem ligação na entity_name da fonte	
+nome	Jekamiah	يقميا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jeduthun	يدوثون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hareph	حاريف	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Lamech	لامك	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Peullethai	فعلتاي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Milalai	جللاي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Moab	موآب	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Javan	ياوان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Elisheba	أليشابع	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hushim	حوشيم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Parshandatha	فرشنداثا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hotham	حوثام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jehoram	يهورام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Chesed	كاسد	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bukkiah	بقيا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Levi	لاوي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Geshan	جيشان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jether	يثر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Merab	ميرب	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Simon	سمعان	revisado no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Syria	سورية	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Azel	آصيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bathsheba	بثشبع	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Eleasah	ألعاسة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Rephael	رفائيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gazez	جازيز	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shelomoth	شلوميث	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hosah	حوسة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Mahlah	محلة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Judas	يهوذا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Mica	ميخا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zur	صور	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hadoram	هدورام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ezer	عازر	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Jesher	ياشر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Elienai	أليعيناي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ishpah	يشفة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gilalai	جللاي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Romamti-ezer	روممتي عزر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Noah	نوحا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hashubah	حشوبة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Dalphon	دلفون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Pelaiah	فلايا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ethan	أيثان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Pildash	فلداش	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Mered	مرد	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shuah	تعزى	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Mephibosheth	مفيبوشث	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Azubah	عزوبة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bocheru	بكرو	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Lot	لوط	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Mishael	ميشائيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Uriel	أوريئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beth-shemesh	بيت شمس	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Seth	شيث	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gideon	جدعون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kolaiah	قولايا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bunah	بونة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Manahath	مناحة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shem	سام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Rosh	روش	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Onam	أونام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ulam	أولام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Meshezabel	مشيزبئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Mehetabel	مهيطبئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Mushi	موشي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jokim	يوقيم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zereth	صرث	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tubal-cain	توبال قايين	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kenaz	قناز	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Sheber	شبر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Reumah	رؤومة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kadesh-barnea	قادش برنيع	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Iru	عيرو	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jehoahaz	يهوآحاز	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Diklah	دقلة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gaham	جاحم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zecher	زاكر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Joshbekashah	يشبقاشة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jushab-hesed	يوشب حسد	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Poratha	فوراثا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Epher	عفر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Lud	لود	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Muppim	مفيم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Calcol	كلكول	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ebal	عيبال	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Meonothai	معونوثاي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shomer	شومير	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Rizpah	رصفة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jehoaddah	يهوعدة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Rufus	روفس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shelesh	شالش	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shual	شوعال	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Japhlet	يفليط	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Azaziah	عززيا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Binea	بنعة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shemer	شامر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beeri	بئيري	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Chelub	كلوب	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jehozadak	يوصاداق	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Galal	جلال	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hamutal	حميطل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Haziel	حزيئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hori	حوري	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ir	عير	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Miriam	مريم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tikvah	تقوة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Keziah	قصيعة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jerusha	يروشا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Palti	فلطي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Eneglaim	عجلايم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Calneh	كلنة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Nineveh	نينوى	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gibeon	جبعون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jochebed	يوكابد	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kishi	قيشي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Obal	عوبال	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Mallothi	ملوثي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Parmashta	فرمشتا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hanniel	حنيئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shua	تعزى	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jehubbah	يحبة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Eshton	أشتون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Mahol	ماحول	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Lo-ruhamah	لورحامة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jehudijah	اليهودية	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jered	يارد	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Sachia	شبيا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Eliud	أليود	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Pithon	فيثون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jehosheba	يهوشبعة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jarha	يرحع	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Uthai	عوتاي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Nahum	ناحوم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zobebah	هصوبيبة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Haggiah	حجيا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Pasach	فاسك	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Johanan	يهوحانان	revisado no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jeziel	يزوئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Azor	عازور	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Paltiel	فلطيئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ben-zoheth	بنزوحيت	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Elead	ألعاد	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Noadiah	نوعديا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Salmon	سلمون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Sidon	صيدون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Seba	سبا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Eleadah	ألعادا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Joiakim	يوياقيم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zuph	صوف	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Nehushta	نحوشتا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zebulun	زبولون	auto no nomes.tsv (alta); sem ligação na entity_name da fonte	
+nome	Naggai	نجاي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Lahmi	لحمي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zobah	صوبة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hothir	هوثير	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Darda	دردع	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jehoiachin	يهوياكين	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Melech	مالك	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tehinnah	تحنة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Nimrod	نمرود	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hammelech	الملك	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hashabneiah	حشبنيا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Heli	هالي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hoshaiah	هوشعيا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Maher-shalal-hash-baz	شلال حاش بز	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jashobeam	يشبعام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jozadak	يوصاداق	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Joshibiah	يوشبيا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Joelah	يوعيلة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Melchi	ملكي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Sheresh	شارش	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jabneel	يبنئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Berothah	بيروثة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	En-gannim	عين جنيم	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Hazar-shual	حصر شوعال	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Haeleph	آلف	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hazeroth	ارتحل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kir	قير	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kiriathaim	قريتايم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Huri	حوري	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zuriel	صوريئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jahzerah	يحزيرة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shelomi	شلومي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Elihoreph	أليحورف	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Joshah	يوشا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jehoaddan	يهوعدان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gemalli	جملي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shamgar	شمجر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Becorath	بكورة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beerah	بئيرة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Barachel	برخئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Timaeus	تيماوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Nebuchadnezzar	نبوخذنصر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ben-hur	ابن حور	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Meshillemoth	مشليموت	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Sheerah	شيرة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Besodeiah	بسوديا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bezer	باصر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jogli	يجلي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Buzi	بوزي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Heth	حث	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shuhah	شوحة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Chislon	كسلون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Claudius	كلوديوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Conaniah	كوننيا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Lappidoth	لفيدوت	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Dodavahu	دوداواهو	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Drusilla	دروسلا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gaal	أهل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Rezon	رزون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Melea	مليا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Lael	لايل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Mahlon	محلون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Parnach	فرناخ	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Elmadam	ألمودام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Elnaam	ألنعم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Eshcol	أشكول	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Susi	سوسي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gareb	جارب	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Giddel	جديل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jaroah	ياروح	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hachmoni	حكموني	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hagri	الهاجري	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hakkatan	هقاطان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zeresh	زرش	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hanamel	حنمئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beth-gader	بيت جادير	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Harumaph	حروماف	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hemam	هومام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hermes	هرماس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hezion	حزيون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Huldah	خلدة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Meshillemith	مشليميت	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Mehujael	محويائيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jabez	يعبيص	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jannai	ينا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jehiel	يعوئيل	revisado no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jehizkiah	يحزقيا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jehonathan	يهوناثان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Joram	يورام	revisado no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jehucal	يهوخل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jehudi	يهودي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jerioth	يريعوث	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jethro	يثرون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Joahaz	يوآحاز	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Joda	يهوذا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jonam	يونان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Josiphiah	يوشفيا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Methushael	متوشائيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Micaiah	ميخا	auto no nomes.tsv (alta); sem ligação na entity_name da fonte	
+nome	Beth-zur	بيت صور	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Menna	مينان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Semein	شمعي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Sethur	ستور	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Nohah	مناحة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Seled	سلد	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Neri	نيري	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zuar	يساكر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Uzai	أوزاي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Raphu	رافو	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Philistine	فلشتيم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Raham	يرقعام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Rhesa	ريسا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Salu	سالو	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tanhumeth	تنحومث	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shubael	شوبائيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shiloh	شيلون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Telah	تلح	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Telem	طالم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tobijah	طوبيا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Dophkah	دفقة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zephath	صفاة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Azmon	عصمون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Baalath	بعلة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beth-anath	بيت عناة	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Beth-dagon	بيت داجون	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Beth-hoglah	بيت حجلة	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Carmel	الكرمل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Dumah	دومة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Enam	عينام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Timnath-heres	تمنة حارس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gebim	جيبيم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hazar-enan	حصر عينان	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Helbon	حلبون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Irpeel	يرفئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Janoah	تآنة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kanah	قانا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Laodicea	لاودكية	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shaalbim	شعلبيم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Pithom	فيثوم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Pontus	بنتس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tiphsah	تفسح	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Abijah	أبيا	auto no nomes.tsv (alta); sem ligação na entity_name da fonte	
+nome	Amon	أمون	revisado no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Baal-zebub	بعل زبوب	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Bar-jesus	باريشوع	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bartholomew	برثولماوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bazluth	بصلوت	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bedeiah	بيديا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beera	بئيرا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ben	بين	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ben-hesed	ابن حسد	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Beninu	بنينو	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bera	برشاع	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beri	بيري	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bernice	برنيكي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Carpus	كاربس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Cheluhi	كلوهي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Chenaniah	كننيا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Daniel	دانيآل	auto no nomes.tsv (alta); sem ligação na entity_name da fonte	
+nome	Chilion	كليون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Crescens	كريسكيس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Crispus	كريسبس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Persia	فارس	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Letushim	لطوشيم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Demetrius	ديمتريوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Dionysius	ديونيسيوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Diotrephes	ديوتريفس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Naphtuhim	نفتوحيم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Eliahba	أليحبا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Elika	أليقا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Eluzai	إلعوزاي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Epaphras	أبفراس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Epaphroditus	أبفرودتس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ephai	عيفاي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ephrath	أفراتة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Erastus	أراستس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Eri	عيري	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ethbaal	أثبعل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Evi	أوي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Evil-merodach	أويل مرودخ	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Ozni	شوني	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Fortunatus	فرتوناتوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gabbai	جباي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gaddiel	جديئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gahar	جاحر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gallio	غاليون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gamul	جامول	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gazzam	جزام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gehazi	عكازي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hadad	هدد	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Ginath	جينة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ginnethon	جنثون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gishpa	جشفا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Togarmah	توجرمة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hagab	حاجاب	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hagabah	حجابة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Haggai	الحادي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hamul	حامول	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Harbona	حربونا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Harhas	حارس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Harnepher	حرنفر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Haruz	حاروص	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hasupha	حسوفا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Helkai	حلقاي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Heresh	حرش	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hesed	حسد	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hurai	حوراي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hirah	حيرة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hobab	حوباب	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hodaiah	هوداياهو	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hodevah	هودويا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hoham	هوهام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hophra	حفرع	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Horam	هورام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hushah	حوشة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Husham	حوشام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hymenaeus	هيمينايس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Adaiah	عدايا	auto no nomes.tsv (alta); sem ligação na entity_name da fonte	
+nome	Ishhod	إيشهود	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Isshijah	يشيا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jaaziel	يعزئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jambres	يمبريس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jamlech	يمليك	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jannes	ينيس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jeremai	يريماي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jerijah	يريا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jerushah	يروشا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jeshohaiah	يشوحايا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jetheth	يتيت	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jezer	يصر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Joanan	يوحنا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Joezer	يوعزر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jorah	يورة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Joshaviah	يوشويا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Julius	يوليوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Junia	يونياس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kallai	قلاي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kelaiah	قلايا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kelita	قليطا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Lo-ammi	لوعمي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Lois	لوئيس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Lucius	لوكيوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Magdiel	مجديئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Magpiash	مجفيعاش	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Mahazioth	محزيوث	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Manaen	مناين	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	John	يوحنا	auto no nomes.tsv (alta); sem ligação na entity_name da fonte	
+nome	Memucan	مموكان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Meres	مرس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Meshobab	مشوباب	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Eldaah	ألدعة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Miniamin	منيامين	auto no nomes.tsv (alta); sem ligação na entity_name da fonte	
+nome	Mikneiah	مقنيا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Meshach	ميشخ	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Mispar	مسفار	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Nathan-melech	نثنملك	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Nebu-sar-sekim	نبو سرسخيم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Nebushazban	نبوشزبان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Neziah	نصيح	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Nicolaus	نيقولاوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Obil	أوبيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ohad	أوهد	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Onesimus	أنسيمس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Onesiphorus	أنيسيفورس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Paarai	حصراي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Padon	فادون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Parmenas	برميناس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Patrobas	بتروباس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Persis	برسيس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Peruda	رودا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Philemon	فليمون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Philetus	فيليتس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Philologus	فيلولوغس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Phlegon	فليغون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Phygelus	فيجلس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Piltai	فلطاي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Pinon	فينون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Piram	فرآم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Rakem	راقم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Regem-melech	رجم ملك	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Harim	حاريم	auto no nomes.tsv (alta); sem ligação na entity_name da fonte	
+nome	Rephah	رفح	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Resheph	رشف	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Rhoda	رودا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Samgar	سمجر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Sippai	سفاي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Secundus	سكوندس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shavsha	شوشا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shalmaneser	شلمنأسر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shamhuth	شمحوث	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shemeber	شمئيبر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shethar-bozenai	شتربوزناي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shillem	شليم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shammah	شمة	auto no nomes.tsv (alta); sem ligação na entity_name da fonte	
+nome	Shobach	شوبك	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ulla	علا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shuni	شوني	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Sodi	سودي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Sophereth	سوفرث	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Sosthenes	سوستانيس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Susanna	سوسنة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Syntyche	سنتيخي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tabbaoth	طباعوت	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tabeal	طبئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tabeel	طبئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tarea	تاريع	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tattenai	تتناي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Teresh	ترش	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tertius	ترتيوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tertullus	ترتلس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Theophilus	ثاوفيلس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Theudas	ثوداس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tiberius	طيباريوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tibni	تبني	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tirhakah	ترهاقة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Toi	توعي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ucal	أكال	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Urbanus	أوربانوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Uzzia	عزيا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zacchaeus	زكا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zalmon	صلمون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shiloni	الشيلوني	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zeeb	زبح	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zeror	صرور	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ziphion	صفيون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zophar	صوفر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ebron	عبرون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Abel-maim	آبل المياه	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Abel-keramim	آبل الكروم	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Ptolemais	بتولمايس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Cozeba	كزيبا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	En-rimmon	عين رمون	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Rumah	رومة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Baalath-beer	بعلة	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Baal-hazor	بعل حاصور	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Baal-meon	بعل معون	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Baal-zephon	بعل صفون	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Babylonia	بابل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bahurim	بحوريم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bamoth-baal	باموت بعل	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Beer	بئر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beer-elim	بئر إيليم	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Beer-lahai-roi	بئر لحي رئي	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Beeroth	بئيروت	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Berea	بيرية	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beth-anoth	بيت عنوت	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Beth-arabah	بيت العربة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beth-arbel	بيت أربئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beth-ashbea	بيت أشبيع	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beth-azmaveth	بيت عزموت	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Beth-biri	بيت برئي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beth-eden	بيت عدن	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Bethul	بتول	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bethesda	حسدا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beth-gamul	بيت جامول	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Beth-jeshimoth	بيت يشيموت	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beth-lebaoth	بيت لباوت	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Beth-rehob	بيت رحوب	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Beth-shittah	بيت شطة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beth-togarmah	بيت توجرمة	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Betonim	بطونيم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bor-ashan	كور عاشان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bozez	بوصيص	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bozkath	بصقة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Cabbon	كبون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Calno	كلنو	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Capernaum	كفرناحوم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Caphtor	كفتور	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Cappadocia	كبدوكية	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Cenchreae	كنخريا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Chephar-ammoni	كفر العموني	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Cherub	كروب	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Chesalon	كسالون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Chisloth-tabor	كسلوت تابور	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Chinneroth	كنروت	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Chios	خيوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Chorazin	كورزين	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Corban	قربان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Corinth	كورنثوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Cos	كوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Cuth	كوث	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Daberath	دبرة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kiriath-sannah	قرية سنة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Derbe	دربة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Dor	دور	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Dura	دورا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	East	اشتم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Eglaim	أجلايم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Elim	إيليم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Elonbeth-hanan	أيلون بيت حانان	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Emmaus	عمواس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Timnah	تمناع	revisado no nomes.tsv (alta); sem ligação na entity_name da fonte	
+nome	En-dor	عين دور	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Hazazon-tamar	حصون تامار	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	En-haddah	عين حدة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	En-hazor	عين حاصور	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	En-shemesh	عين شمس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Pas-dammim	فس دميم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Eshan	أشعان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Etham	إيثام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Eth-kazin	عت قاصين	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gabbatha	جباثا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Galilee	الجلجال	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gallim	جليم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gath-hepher	حافر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gederothaim	جديروتايم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gennesaret	جنيسارت	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Giah	تجاه	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gidom	جدعوم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gilboa	جلبوع	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Geliloth	جليلوت	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Golan	جولان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Halah	هارا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hali	حلي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hammoth-dor	حمّوت دور	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Hamonah	همونة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hanes	حانيس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hannathon	حناتون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hauran	حوران	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hazar-gaddah	حصر جدة	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Hazar-susim	حصر سوسيم	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Hazor-hadattah	حاصور حدتة	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Helam	حيلام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Helkath-hazzurim	حلقث هصوريم	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Hethlon	حثلون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hierapolis	هيرابوليس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hobah	حوبة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hilen	حيلين	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hor-haggidgad	حور الجدجاد	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Idumea	صيداء	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ijon	عيون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Illyricum	إلليريكون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ir-nahash	مدينة ناحاش	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jagur	ياجور	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Janim	ينوم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jetur	يطور	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jogbehah	يجبهة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jokdeam	يقدعام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jokneam	يقنعام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Juttah	يطة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	En-mishpat	عين مشفاط	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kain	قاين	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kamon	قامون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kartan	قرتان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kerioth-hezron	قريوت حصرون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kibzaim	قبصايم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kinah	قينة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kiriath-jearim	قرية يعاريم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kartah	قرتة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Lasea	لسائية	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Lasharon	لشارون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Lebaoth	لباوت	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Lebonah	لبونة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Lehi	لحي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Lod	لدة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Lo-debar	لودبار	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Luhith	لوحيت	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Macedonia	مكدونية	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beth-marcaboth	بيت مركبوت	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Madmen	مدمين	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Mahaneh-dan	محلة دان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Meconah	مكونة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Media	مادي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Mephaath	ميفعة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Merom	ميروم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Meshech-Tubal	ماشك توبال كل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Michmas	مخماس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Michmethath	المكمتة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Migdal-el	مجدل إيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Migdal-gad	مجدل جاد	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Miletus	ميليتس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Millo	جعله	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Mitylene	ميتيليني	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ramah	رامة	revisado no nomes.tsv (alta); sem ligação na entity_name da fonte	
+nome	Mozah	الموصة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Nahalol	نحلال	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Naphath	المرتفعات	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Neah	نيعة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Neapolis	نيابوليس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Nephtoah	نفتوح	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Netophah	نطوفة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Nibshan	النبشان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Nicopolis	نيكوبوليس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Nod	نود	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ophni	العفني	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beth-le-aphrah	بيت عفرة	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Paddan	فدان	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Paphos	بافوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Parah	الفارة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Parbar	أربعة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Parvaim	فروايم	revisado no nomes.tsv (alta); sem ligação na entity_name da fonte	
+nome	Patara	باترا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Patmos	بطمس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Pharpar	فرفر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Philippi	فيلبي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Phoenicia	فينيقية	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Pi-beseth	فيبستة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Pi-hahiroth	الحيروث	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Pishon	فيشون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tiberias	طبرية	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ramath-lehi	رمت لحي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Recah	ريكة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ramoth	راموت	auto no nomes.tsv (alta); sem ligação na entity_name da fonte	
+nome	Resen	رسن	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Rezeph	رصف	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Rogelim	روجليم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Salim	ساليم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Salmone	سلموني	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Samothrace	ساموثراكي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Seleucia	سلوكية	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Seneh	سنه	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Sepharad	صفارد	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shahazumah	شحصيمة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Sharuhen	شاروحين	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shelah	شالح	auto no nomes.tsv (alta); sem ligação na entity_name da fonte	
+nome	Shihor-libnath	شيحور لبنة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shikkeron	شكرون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shimron-meron	شمرون مرأون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shion	شيئون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shoa	شهراء	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shunem	شونم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Siphmoth	سفموث	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Suph	سوف	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Suphah	سوفة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Sur	سور	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Syene	سينيم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Syracuse	سراكوسا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Syrtis	السيرتس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tabbath	طباة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tamar	تدمر	revisado no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tehaphnehes	تحفنحيس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	En-tappuah	عين تفوح	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Tarsus	طرسوس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tel-melah	تل ملح	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tema	تيماء	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Thebez	تاباص	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Thessalonica	تسالونيكي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tob	طوب	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tochen	توكن	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tophel	توفل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tyre	تاجرة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ulai	أولاي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Uphaz	أوفاز	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Uzzen-sheerah	أزين شيرة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Yiron	يرأون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zalmonah	صلمونة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zarephath	صرفة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zererah	صردة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zeboim	صبوعيم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zelzah	صلصح	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zer	صير	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zered	زارد	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ziddim	الصديم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zior	صيعور	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jokmeam	يقمعام	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Elymas	عليم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Leummim	لأميم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Pathrusim	فتروسيم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jucal	يهوخل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Perida	فريدا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Casluhim	كسلوحيم	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Tahrea	تاريع	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Zephon	صفيون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Bealoth	بعلوت	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Babel	بابل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Berothai	بيروثاي	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Crete	كريت	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kiriath-sepher	قرية سفر	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Gaash	جاعش	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Beth-gilgal	بيت الجلجال	revisado no nomes.tsv (baixa); sem ligação na entity_name da fonte	
+nome	Heshmon	حشمون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Jabneh	يبنة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ituraea	إيطورية	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Cana	قانا	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kir-hareseth	قير حارس	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Kiriath-baal	قرية بعل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Madmenah	مدمينة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Makaz	ماقص	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Nahalal	نحلال	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Neiel	نعيئيل	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Hahiroth	الحيروث	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Shiloah	شيلوه	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Taberah	تبعيرة	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Timnath-serah	تمنة سارح	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
+nome	Ziphron	زفرون	auto no nomes.tsv (media); sem ligação na entity_name da fonte	
