@@ -1,0 +1,2503 @@
+# Notas da revisão de nomes por agentes de IA (uma linha por nome_en + candidato, ou nome_en + tipo).
+# Conferidas no texto da Bíblia da língua e na tradução inglesa. Só registro: o ingestor não lê este arquivo.
+nome_en	candidato	nome_bn	origem	nota
+Naphtali	নপ্তালি	নপ্তালি	revisado	rev. IA: Gen.30.8 conferido
+Gidom	গিদোম		sem	rev. IA: Judg.20.45 sem forma segura no texto da língua
+Shibboleth	শিব্বোলেৎ	শিব্বোলেৎ	revisado	rev. IA: Judg.12.6 conferido
+Lo-ruhamah	রুহামা	রুহামা	revisado	rev. IA: Hos.1.6 conferido
+Methuselah	মথূশেলহ	মথূশেলহ	revisado	rev. IA: Gen.5.21 conferido
+Binnui	বিন্নূয়ি	বিন্নূয়ি	revisado	rev. IA: Ezra.8.33 conferido
+Abiram	অবীরাম	অবীরাম	revisado	rev. IA: Num.16.1 conferido
+Obadiah	ওবদিয়	ওবদিয়	revisado	rev. IA: 1Kgs.18.3 conferido
+Tigris	টাইগ্রীস	টাইগ্রীস	revisado	rev. IA: Dan.10.4 conferido
+Zurishaddai	সূরীশদ্দয়	সূরীশদ্দয়	revisado	rev. IA: Num.1.6 conferido
+Zebul	সবূল	সবূল	revisado	rev. IA: Judg.9.28 conferido
+Nahamani	নহমানি	নহমানি	revisado	rev. IA: Neh.7.7 conferido
+Adin	আদীন	আদীন	revisado	rev. IA: Ezra.2.15 conferido
+Ahikam	অহীকাম	অহীকাম	revisado	rev. IA: 2Kgs.22.12 conferido
+Adino	আদীনো	আদীনো	revisado	rev. IA: 2Sam.23.8 conferido
+Karka	কর্ক্কা		sem	rev. IA: Josh.15.3 sem forma segura no texto da língua
+Birsha	বির্সা	বির্সা	revisado	rev. IA: Gen.14.2 conferido
+Harim	হারীম	হারীম	revisado	rev. IA: 1Chr.24.8 conferido
+Conaniah	কনানিয়	কনানিয়	revisado	rev. IA: 2Chr.31.12 conferido
+Ocran	অক্রণ	অক্রণ	revisado	rev. IA: Num.1.13 conferido
+Sitnah	সিটনা	সিটনা	revisado	rev. IA: Gen.26.21 conferido
+Hagar	হাগার	হাগার	revisado	rev. IA: Gen.16.1 conferido
+Jehoahaz	যিহোয়াহস	যিহোয়াহস	revisado	rev. IA: 2Kgs.10.35 conferido
+Benjamin	বিন্যামীন	বিন্যামীন	revisado	rev. IA: Gen.35.24 conferido
+Ira	ঈরাও	ঈরা	revisado	rev. IA: 2Sam.20.26 conferido; candidato corrigido
+Tabeal	টাবেল	টাবেল	revisado	rev. IA: Isa.7.6 conferido
+Biztha	বিস্থা	বিস্থা	revisado	rev. IA: Esth.1.10 conferido
+Joshua	যিহোশূয়	যিহোশূয়	revisado	rev. IA: Exod.17.10 conferido
+Naboth	নাবোত	নাবোত	revisado	rev. IA: 1Kgs.21.1 conferido
+Shuppim	শুপ্পীম	শুপ্পীম	revisado	rev. IA: 1Chr.7.12 conferido
+Ezion-geber	ইৎসিয়োন		sem	rev. IA: Num.33.35 sem forma segura no texto da língua
+Nehemiah	নহিমিয়	নহিমিয়	revisado	rev. IA: Ezra.2.2 conferido
+Jesse	যিশয়	যিশয়	revisado	rev. IA: Ruth.4.17 conferido
+Maaziah	মাসিয়	মাসিয়	revisado	rev. IA: 1Chr.24.18 conferido
+Zimri	সিম্রি	সিম্রি	revisado	rev. IA: Num.25.14 conferido
+Behemoth	বহেমো		sem	rev. IA: Job.40.15 sem forma segura no texto da língua
+Zaanannim	সানন্নীম	সানন্নীম	revisado	rev. IA: Josh.19.33 conferido
+Cabul	কাবূ	কাবূল	revisado	rev. IA: Josh.19.27 conferido; candidato corrigido
+Ithlah	যিৎলা	যিৎলা	revisado	rev. IA: Josh.19.42 conferido
+Nephilim	নেফিলিম	নফীলীম	revisado	rev. IA: Num.13.33 conferido; candidato corrigido
+Jezebel	ঈষেবল	ঈষেবল	revisado	rev. IA: 1Kgs.16.31 conferido
+Manoah	মানোহ	মানোহ	revisado	rev. IA: Judg.13.2 conferido
+Elisabeth	ইলীশাবেৎ	ইলীশাবেৎ	revisado	rev. IA: Luke.1.5 conferido
+Bamah	বামা		sem	rev. IA: Ezek.20.29 sem forma segura no texto da língua
+Hormah	হর্মা	হর্মা	revisado	rev. IA: Num.14.45 conferido
+Hanan	হানান	হানান	revisado	rev. IA: 1Chr.8.38 conferido
+Paruah	পারূহ	পারূহ	revisado	rev. IA: 1Kgs.4.17 conferido
+Abronah	অব্রোণা	অব্রোণা	revisado	rev. IA: Num.33.34 conferido
+Jozabad	যোষাবাদ	যোষাবাদ	revisado	rev. IA: Neh.11.16 conferido
+Maoch	মায়োক	মায়োক	revisado	rev. IA: 1Sam.27.2 conferido
+Casiphia	কাসিফিয়া	কাসিফিয়া	revisado	rev. IA: Ezra.8.17 conferido
+Jahzah	যাহসা	যাহসা	revisado	rev. IA: 1Chr.6.78 conferido
+Zidon	সীদন	সীদোন	revisado	rev. IA: Gen.10.15 conferido; candidato corrigido
+Joiada	যোয়াদা	যোয়াদা	revisado	rev. IA: Neh.12.10 conferido
+Azel	আৎসেল	আৎসেল	revisado	rev. IA: 1Chr.8.37 conferido
+Uri	ঊরি	ঊরি	revisado	rev. IA: Exod.31.2 conferido
+Chemosh	কমোশ	কমোশ	revisado	rev. IA: Num.21.29 conferido
+Berothah	বরোথা		sem	rev. IA: Ezek.47.16 sem forma segura no texto da língua
+Shihor	সীহোর	সীহোর	revisado	rev. IA: Josh.13.3 conferido
+Ezra	ইষ্রা	ইষ্রা	revisado	rev. IA: 1Chr.4.17 conferido
+Jehoiada	যিহোয়াদা	যিহোয়াদা	revisado	rev. IA: 2Sam.8.18 conferido
+Amphipolis	আম্ফিপলি	আম্ফিপলি	revisado	rev. IA: Acts.17.1 conferido
+Mesha	মেষা	মেষা	revisado	rev. IA: Gen.10.30 conferido
+Chorazin	কোরাসীন	কোরাসীন	revisado	rev. IA: Matt.11.21 conferido
+Jonadab	যোনাদব	যোনাদব	revisado	rev. IA: 2Sam.13.3 conferido
+Omar	ওমার	ওমার	revisado	rev. IA: Gen.36.11 conferido
+Saron	শারোণ	শারোণ	revisado	rev. IA: 1Chr.27.29 conferido
+Nob	নোবে	নোব	revisado	rev. IA: 1Sam.21.1 conferido
+Binnui	বিন্নূয়ী	বিন্নূয়ি	revisado	rev. IA: Ezra.10.30 conferido; candidato corrigido
+Sopater	সোপাত্র	সোপাত্র	revisado	rev. IA: Acts.20.4 conferido
+Abijah	অবিয়	অবিয়	revisado	rev. IA: 1Sam.8.2 conferido
+Zibia	সিবিয়	সিবিয়	revisado	rev. IA: 1Chr.8.9 conferido
+Phicol	ফীখোল	ফীখোল	revisado	rev. IA: Gen.21.22 conferido
+Hilkiah	হিল্কিয়	হিল্কিয়	revisado	rev. IA: 2Kgs.18.18 conferido
+Zair	সায়ীরে	সায়ীর	revisado	rev. IA: 2Kgs.8.21 conferido; candidato corrigido
+Jedaiah	যিদয়িয়	যিদয়িয়	revisado	rev. IA: 1Chr.4.37 conferido
+Ebed-melech	মেলক		sem	rev. IA: Jer.38.7 sem forma segura no texto da língua
+Rachel	রাহেল	রাহেল	revisado	rev. IA: Gen.29.6 conferido
+Shelemiah	শেলিমিয়	শেলিমিয়	revisado	rev. IA: Ezra.10.39 conferido
+Josiah	যোশিয়	যোশিয়	revisado	rev. IA: 1Kgs.13.2 conferido
+Lazarus	লাসার	লাসার	revisado	rev. IA: Luke.16.20 conferido
+Humtah	হুমটা		sem	rev. IA: Josh.15.54 sem forma segura no texto da língua
+Barnabas	বার্ণবা	বার্ণবা	revisado	rev. IA: Acts.4.36 conferido
+Naioth	নায়োতে	নায়োত	revisado	rev. IA: 1Sam.19.18 conferido
+Phurah	ফুরা	ফুরা	revisado	rev. IA: Judg.7.10 conferido
+Bariah	বারীহ	বারীহ	revisado	rev. IA: 1Chr.3.22 conferido
+Guni	গূনি	গূনি	revisado	rev. IA: Gen.46.24 conferido
+Gareb	গারেব	গারেব	revisado	rev. IA: 2Sam.23.38 conferido
+Berachah	বরাখা	বরাখা	revisado	rev. IA: 1Chr.12.3 conferido
+Tamar	তামর	তামর	revisado	rev. IA: Gen.38.6 conferido
+Anub	আনূব	আনূব	revisado	rev. IA: 1Chr.4.8 conferido
+Mizpeh	মিস্পীতে		sem	rev. IA: 1Sam.22.3 sem forma segura no texto da língua
+Decapolis	দিকাপলি	দিকাপলি	revisado	rev. IA: Matt.4.25 conferido
+Hashmonah	হশ্মোনা	হশ্মোনা	revisado	rev. IA: Num.33.29 conferido
+Hena	হেনা	হেনা	revisado	rev. IA: 2Kgs.18.34 conferido
+Ahitub	অহীটূব	অহীটূব	revisado	rev. IA: 1Sam.14.3 conferido
+Zadok	সাদোক	সাদোক	revisado	rev. IA: 2Sam.8.17 conferido
+Philistia	পলেষ্টীয়	পলেষ্টীয়	revisado	rev. IA: Gen.21.32 conferido
+Chilion	কিলিয়োন	কিলিয়োন	revisado	rev. IA: Ruth.1.2 conferido
+Sukkiim	সুক্কীয়	সুক্কীয়	revisado	rev. IA: 2Chr.12.3 conferido
+Abagtha	বিস্থা		sem	rev. IA: Esth.1.10 sem forma tradicional segura no texto
+Abda	অব্দের	অব্দা	revisado	rev. IA: 1Kgs.4.6 conferido; forma da tradição da língua
+Abdeel	অব্দিয়েল	অব্দিয়েল	revisado	rev. IA: Jer.36.26 conferido; forma da tradição da língua
+Abel	আছে		sem	rev. IA: 1Sam.6.18 sem forma tradicional segura no texto
+Abel-mizraim	স্রয়ীম		sem	rev. IA: Gen.50.11 sem forma tradicional segura no texto
+Abiah	অবিয়	অবিয়	revisado	rev. IA: 1Sam.8.2 conferido; forma da tradição da língua
+Abiel	অবীয়েল	অবীয়েল	revisado	rev. IA: 1Sam.9.1 conferido; forma da tradição da língua
+Abiezer	অবীয়েষরের	অবীয়েষ্রীয়	revisado	rev. IA: Josh.17.2 conferido; forma da tradição da língua
+Abijah	অবী	অবিয়	revisado	rev. IA: 2Kgs.18.2 conferido; forma da tradição da língua
+Abilene	অবিলীনি		sem	rev. IA: Luke.3.1 sem forma tradicional segura no texto
+Accad	অক্কদ	আক্কদ	revisado	rev. IA: Gen.10.10 conferido; forma da tradição da língua
+Achshaph	ষফ		sem	rev. IA: Josh.11.1 sem forma tradicional segura no texto
+Adalia	অদলিয়ঃ		sem	rev. IA: Esth.9.8 sem forma tradicional segura no texto
+Adami-nekeb	অদামী		sem	rev. IA: Josh.19.33 sem forma tradicional segura no texto
+Addan	অদ্দন		sem	rev. IA: Ezra.2.59 sem forma tradicional segura no texto
+Addar	অদ্দর		sem	rev. IA: Josh.15.3 sem forma tradicional segura no texto
+Ader	অরাদ	এদর	revisado	rev. IA: 1Chr.8.15 conferido; forma da tradição da língua
+Adiel	অদীয়েল	অদীয়েল	revisado	rev. IA: 1Chr.4.36 conferido; forma da tradição da língua
+Adlai	লয়		sem	rev. IA: 1Chr.27.29 sem forma tradicional segura no texto
+Adna	অদন	অদনা	revisado	rev. IA: Ezra.10.30 conferido; forma da tradição da língua
+Adnah	অদন	অদ্না	revisado	rev. IA: 1Chr.12.20 conferido; forma da tradição da língua
+Adoni-bezek	অদোনী		sem	rev. IA: Judg.1.5 sem forma tradicional segura no texto
+Adoni-zedek	ষেদক		sem	rev. IA: Josh.10.1 sem forma tradicional segura no texto
+Aeneas	অবসাঙ্গতা		sem	rev. IA: Acts.9.33 sem forma tradicional segura no texto
+Aenon	ঐনোন		sem	rev. IA: John.3.23 sem forma tradicional segura no texto
+Aharhel	হারুমের		sem	rev. IA: 1Chr.4.8 sem forma tradicional segura no texto
+Ahasbai	অহসবয়		sem	rev. IA: 2Sam.23.34 sem forma tradicional segura no texto
+Aher	অহের	আহের	revisado	rev. IA: 1Chr.7.12 conferido; forma da tradição da língua
+Ahi	অহি	অহি	revisado	rev. IA: 1Chr.5.15 conferido; forma da tradição da língua
+Ahiah	অহিয়	অহিয়	revisado	rev. IA: 1Kgs.4.3 conferido; forma da tradição da língua
+Ahiah	বাবা	অহিয়	revisado	rev. IA: 1Chr.8.7 conferido; forma da tradição da língua
+Ahiam	অহীয়াম	অহীয়াম	revisado	rev. IA: 2Sam.23.33 conferido; forma da tradição da língua
+Ahian	অহিয়ন		sem	rev. IA: 1Chr.7.19 sem forma tradicional segura no texto
+Ahihud	অহীহূ	অহীহূদ	revisado	rev. IA: Num.34.27 conferido; forma da tradição da língua
+Ahijah	অহিয়	অহিয়	revisado	rev. IA: 1Kgs.4.3 conferido; forma da tradição da língua
+Ahijah	বাকি	অহিয়	revisado	rev. IA: 1Chr.26.20 conferido; forma da tradição da língua
+Ahijah	বাবা	অহিয়	revisado	rev. IA: 1Chr.8.7 conferido; forma da tradição da língua
+Ahijah	বাশা	অহিয়	revisado	rev. IA: 1Kgs.15.27 conferido; forma da tradição da língua
+Ahijah	বূনা	অহিয়	revisado	rev. IA: 1Chr.2.25 conferido; forma da tradição da língua
+Ahijah	মখেরাতীয়	অহিয়	revisado	rev. IA: 1Chr.11.36 conferido; forma da tradição da língua
+Ahira	অহীরঃ	অহীরা	revisado	rev. IA: Num.1.15 conferido; forma da tradição da língua
+Ahishahar	অহীশহর		sem	rev. IA: 1Chr.7.10 sem forma tradicional segura no texto
+Ahlab	অহলব		sem	rev. IA: Judg.1.31 sem forma tradicional segura no texto
+Ahlai	অহলয়		sem	rev. IA: 1Chr.2.31 sem forma tradicional segura no texto
+Ahumai	অহূময়		sem	rev. IA: 1Chr.4.2 sem forma tradicional segura no texto
+Ahuzam	অহুষম		sem	rev. IA: 1Chr.4.6 sem forma tradicional segura no texto
+Ahuzzam	অহুষম		sem	rev. IA: 1Chr.4.6 sem forma tradicional segura no texto
+Ahuzzath	অহূষৎ		sem	rev. IA: Gen.26.26 sem forma tradicional segura no texto
+Ai	অয়	অয়	revisado	rev. IA: Gen.12.8 conferido; forma da tradição da língua
+Aiah	গাধা		sem	rev. IA: Gen.36.24 sem forma tradicional segura no texto
+Aiath	অয়াতে		sem	rev. IA: Isa.10.28 sem forma tradicional segura no texto
+Aija	আশেপাশ		sem	rev. IA: Neh.11.31 sem forma tradicional segura no texto
+Ain	ঐন	ঐন	revisado	rev. IA: Num.34.11 conferido; forma da tradição da língua
+Ajah	গাধা		sem	rev. IA: Gen.36.24 sem forma tradicional segura no texto
+Al-taschith	আশ্চর্য্য		sem	rev. IA: Ps.75.1 sem forma tradicional segura no texto
+Alameth	আলেমৎ		sem	rev. IA: 1Chr.7.8 sem forma tradicional segura no texto
+Alamoth	শমীরামোৎ		sem	rev. IA: 1Chr.15.20 sem forma tradicional segura no texto
+Alexander	সিকন্দরের	আলেকসান্দার	revisado	rev. IA: Mark.15.21 conferido; forma da tradição da língua
+Allammelech	অলম্মেলক		sem	rev. IA: Josh.19.26 sem forma tradicional segura no texto
+Alphaeus	আলফেয়	আলফেয়	revisado	rev. IA: Matt.10.3 conferido; forma da tradição da língua
+Alvah	অলবা		sem	rev. IA: Gen.36.40 sem forma tradicional segura no texto
+Alvan	মানহৎ	অলবন	revisado	rev. IA: Gen.36.23 conferido; forma da tradição da língua
+Amasiah	অমসিয়	অমসিয়	revisado	rev. IA: 2Chr.17.16 conferido; forma da tradição da língua
+Ammihud	অম্মীহূর	অম্মীহূদ	revisado	rev. IA: 2Sam.13.37 conferido; forma da tradição da língua
+Amminadib	আনন্দিত		sem	rev. IA: Song.6.12 sem forma tradicional segura no texto
+Amorite	ইমোরীয়	ইমোরীয়	revisado	rev. IA: Gen.10.16 conferido; forma da tradição da língua
+Amorites	ইমোরীয়	ইমোরীয়	revisado	rev. IA: Gen.10.16 conferido; forma da tradição da língua
+Anaharath	অনহরৎ		sem	rev. IA: Josh.19.19 sem forma tradicional segura no texto
+Anammelech	অনম্মেলক		sem	rev. IA: 2Kgs.17.31 sem forma tradicional segura no texto
+Ananiah	অননিয়াতে		sem	rev. IA: Neh.11.32 sem forma tradicional segura no texto
+Ananiah	অননিয়ের		sem	rev. IA: Neh.3.23 sem forma tradicional segura no texto
+Angle	কোণে		sem	rev. IA: 2Chr.26.9 sem forma tradicional segura no texto
+Angle	বাঁকে		sem	rev. IA: Neh.3.19 sem forma tradicional segura no texto
+Aniam	অনীয়াম		sem	rev. IA: 1Chr.7.19 sem forma tradicional segura no texto
+Anthothijah	হানন		sem	rev. IA: 1Chr.8.24 sem forma tradicional segura no texto
+Antothijah	হানন		sem	rev. IA: 1Chr.8.24 sem forma tradicional segura no texto
+Apelles	আপিল্লি		sem	rev. IA: Rom.16.10 sem forma tradicional segura no texto
+Apharasthchite	অফর্সত্খীয়		sem	rev. IA: Ezra.4.9 sem forma tradicional segura no texto
+Aphiah	অফীহ		sem	rev. IA: 1Sam.9.1 sem forma tradicional segura no texto
+Aphses	হপ্পিসেস		sem	rev. IA: 1Chr.24.15 sem forma tradicional segura no texto
+Appaim	অপ্পয়িম		sem	rev. IA: 1Chr.2.30 sem forma tradicional segura no texto
+Arabia	আরব	আরব	revisado	rev. IA: 1Kgs.10.15 conferido; forma da tradição da língua
+Arad	অরা	অরাদ	revisado	rev. IA: Num.21.1 conferido; forma da tradição da língua
+Aram-naharaim	আমাদের		sem	rev. IA: Ps.60.1 sem forma tradicional segura no texto
+Aram-zobah	আবা		sem	rev. IA: Ps.60.1 sem forma tradicional segura no texto
+Aramitess	অরামীয়		sem	rev. IA: 1Chr.7.14 sem forma tradicional segura no texto
+Arba	অর্ব		sem	rev. IA: Josh.14.15 sem forma tradicional segura no texto
+Archites	অর্কীয়		sem	rev. IA: Josh.16.2 sem forma tradicional segura no texto
+Ard	অর্দ		sem	rev. IA: Gen.46.21 sem forma tradicional segura no texto
+Arkite	অর্কীয়		sem	rev. IA: Gen.10.17 sem forma tradicional segura no texto
+Arkites	অর্কীয়		sem	rev. IA: Gen.10.17 sem forma tradicional segura no texto
+Arnan	অর্ণন		sem	rev. IA: 1Chr.3.21 sem forma tradicional segura no texto
+Aroer	অরোয়ের	অরোয়ের	revisado	rev. IA: Num.32.34 conferido; forma da tradição da língua
+Aroer	অরোয়েরীয়		sem	rev. IA: 1Chr.11.44 sem forma tradicional segura no texto
+Aroer	অরোয়েরের	অরোয়ের	revisado	rev. IA: Isa.17.2 conferido; forma da tradição da língua
+Aroer	রাখলের	অরোয়ের	revisado	rev. IA: 1Sam.30.28 conferido; forma da tradição da língua
+Arpachshad	অর্ফকষদ	অর্ফকষদ	revisado	rev. IA: Gen.10.22 conferido; forma da tradição da língua
+Arpad	অর্পদের	অর্পদ	revisado	rev. IA: 2Kgs.18.34 conferido; forma da tradição da língua
+Arphaxad	অর্ফকষদ	অর্ফকষদ	revisado	rev. IA: Gen.10.22 conferido; forma da tradição da língua
+Artemis	মহাদেবী	আর্তেমিস	revisado	rev. IA: Acts.19.27 conferido; forma da tradição da língua
+Arumah	অরূ		sem	rev. IA: Judg.9.41 sem forma tradicional segura no texto
+Arvad	দাঁড়ী	অর্বদ	revisado	rev. IA: Ezek.27.8 conferido; forma da tradição da língua
+Arvadite	অর্বদীয়	অর্বদীয়	revisado	rev. IA: Gen.10.18 conferido; forma da tradição da língua
+Arvadites	অর্বদীয়	অর্বদীয়েরা	revisado	rev. IA: Gen.10.18 conferido; forma da tradição da língua
+Asen	হারীফের		sem	rev. IA: Neh.7.24 sem forma tradicional segura no texto
+Asenath	আসনৎ	আসনৎ	revisado	rev. IA: Gen.41.45 conferido; forma da tradição da língua
+Ashkenaz	অস্কিনস		sem	rev. IA: Gen.10.3 sem forma tradicional segura no texto
+Ashpenaz	অস্পনস		sem	rev. IA: Dan.1.3 sem forma tradicional segura no texto
+Ashteroth-karnaim	কর্ণয়িমে		sem	rev. IA: Gen.14.5 sem forma tradicional segura no texto
+Ashteroth-karnaim	কারনাইন		sem	rev. IA: Amos.6.13 sem forma tradicional segura no texto
+Ashvath	পাসক		sem	rev. IA: 1Chr.7.33 sem forma tradicional segura no texto
+Asiel	অসায়েল	অসায়েল	revisado	rev. IA: 1Chr.4.35 conferido; forma da tradição da língua
+Asnappar	অস্নপ্পর	অস্নপ্পর	revisado	rev. IA: Ezra.4.10 conferido; forma da tradição da língua
+Asyncritus	ভাইদের		sem	rev. IA: Rom.16.14 sem forma tradicional segura no texto
+Atad	আটদের	আটদ	revisado	rev. IA: Gen.50.10 conferido; forma da tradição da língua
+Ataroth-addar	অটারোৎ		sem	rev. IA: Josh.16.5 sem forma tradicional segura no texto
+Athlai	অৎলয়৷		sem	rev. IA: Ezra.10.28 sem forma tradicional segura no texto
+Atroth-beth-joab	নটোফাতীয়েরা		sem	rev. IA: 1Chr.2.54 sem forma tradicional segura no texto
+Atroth-shophan	অটরোত		sem	rev. IA: Num.32.35 sem forma tradicional segura no texto
+Attai	অত্তয়	অত্তয়	revisado	rev. IA: 1Chr.2.35 conferido; forma da tradição da língua
+Attalia	অত্তালিয়াতে	আত্তালিয়া	revisado	rev. IA: Acts.14.25 conferido; forma da tradição da língua
+Aven	পাহাড়কে		sem	rev. IA: Hos.10.8 sem forma tradicional segura no texto
+Avith	হারিয়ে		sem	rev. IA: 1Chr.1.46 sem forma tradicional segura no texto
+Avva	রাজা		sem	rev. IA: 2Kgs.17.24 sem forma tradicional segura no texto
+Avvim	অব্বীম	অব্বীয়	revisado	rev. IA: Josh.18.23 conferido; forma da tradição da língua
+Avvim	গাতীয়		sem	rev. IA: Josh.13.3 sem forma tradicional segura no texto
+Ayyah	এলাকা		sem	rev. IA: 1Chr.7.28 sem forma tradicional segura no texto
+Azaliah	অৎসলিয়	অসলিয়	revisado	rev. IA: 2Kgs.22.3 conferido; forma da tradição da língua
+Azaniah	অসনিয়	অসনিয়	revisado	rev. IA: Neh.10.9 conferido; forma da tradição da língua
+Azarael	অসরেল	অসরেল	revisado	rev. IA: Neh.12.36 conferido; forma da tradição da língua
+Azariah	অসরীয়	অসরিয়	revisado	rev. IA: Neh.8.7 conferido; forma da tradição da língua
+Azariah	বিস্তারিতভাবে	অসরিয়	revisado	rev. IA: Dan.2.17 conferido; forma da tradição da língua
+Azariahu	অসরিয়		sem	rev. IA: 2Chr.21.2 sem forma tradicional segura no texto
+Azazel	ত্যাগের		sem	rev. IA: Lev.16.8 sem forma tradicional segura no texto
+Azaziah	অসসিয়	অসসিয়	revisado	rev. IA: 1Chr.15.21 conferido; forma da tradição da língua
+Azgad	আস্		sem	rev. IA: Neh.7.17 sem forma tradicional segura no texto
+Azgad	গদ		sem	rev. IA: Ezra.2.12 sem forma tradicional segura no texto
+Azmaveth	অসমাবৎ	অস্মাবৎ	revisado	rev. IA: 2Sam.23.31 conferido; forma da tradição da língua
+Azmaveth	অস্মাবত	অস্মাবৎ	revisado	rev. IA: Neh.7.28 conferido; forma da tradição da língua
+Azmaveth	শমায়	অস্মাবৎ	revisado	rev. IA: 1Chr.12.3 conferido; forma da tradição da língua
+Azotus	অসদোদ		sem	rev. IA: Acts.8.40 sem forma tradicional segura no texto
+Azzan	অসসন		sem	rev. IA: Num.34.26 sem forma tradicional segura no texto
+Baal	বাস	বাল	revisado	rev. IA: 1Chr.4.33 conferido; forma da tradição da língua
+Baal-berith	বরীত		sem	rev. IA: Judg.9.4 sem forma tradicional segura no texto
+Baal-hanan	হানন		sem	rev. IA: Gen.36.38 sem forma tradicional segura no texto
+Baal-tamar	তামরে		sem	rev. IA: Judg.20.33 sem forma tradicional segura no texto
+Baal-zebub	সবূব		sem	rev. IA: 2Kgs.1.2 sem forma tradicional segura no texto
+Baal-zephon	সফোন		sem	rev. IA: Exod.14.2 sem forma tradicional segura no texto
+Baalath-beer	বালৎ		sem	rev. IA: Josh.19.8 sem forma tradicional segura no texto
+Baalhanan	হানন		sem	rev. IA: Gen.36.38 sem forma tradicional segura no texto
+Bajith	কাঁদবা		sem	rev. IA: Isa.15.2 sem forma tradicional segura no texto
+Bakbakkar	বকবকর	বকবক্কর	revisado	rev. IA: 1Chr.9.15 conferido; forma da tradição da língua
+Baladan	বলদন	বালাদন	revisado	rev. IA: 2Kgs.20.12 conferido; forma da tradição da língua
+Bar-jesus	ভাববাদীকে		sem	rev. IA: Acts.13.6 sem forma tradicional segura no texto
+Bartimaeus	বরতীময়	বর্তিময়	revisado	rev. IA: Mark.10.46 conferido; forma da tradição da língua
+Bath-rabbim	রব্বীম		sem	rev. IA: Song.7.4 sem forma tradicional segura no texto
+Bath-shua	শূয়া		sem	rev. IA: 1Chr.2.3 sem forma tradicional segura no texto
+Bear	বাচ্চাদের		sem	rev. IA: Job.38.32 sem forma tradicional segura no texto
+Bedad	বদ		sem	rev. IA: Gen.36.35 sem forma tradicional segura no texto
+Beer-lahai-roi	রয়ী		sem	rev. IA: Gen.16.14 sem forma tradicional segura no texto
+Ben-Geber	গেবর		sem	rev. IA: 1Kgs.4.13 sem forma tradicional segura no texto
+Ben-ammi	অম্মি		sem	rev. IA: Gen.19.38 sem forma tradicional segura no texto
+Ben-deker	দেকর		sem	rev. IA: 1Kgs.4.9 sem forma tradicional segura no texto
+Ben-hadad	বিনহদদ	বিন্হদদ	revisado	rev. IA: 1Kgs.15.18 conferido; forma da tradição da língua
+Ben-hail	হয়িল		sem	rev. IA: 2Chr.17.7 sem forma tradicional segura no texto
+Ben-hanan	হানন		sem	rev. IA: 1Chr.4.20 sem forma tradicional segura no texto
+Ben-hesed	হেষদ		sem	rev. IA: 1Kgs.4.10 sem forma tradicional segura no texto
+Ben-hur	বিন্		sem	rev. IA: 1Kgs.4.8 sem forma tradicional segura no texto
+Bene-berak	বরক		sem	rev. IA: Josh.19.45 sem forma tradicional segura no texto
+Bene-jaakan	বনে		sem	rev. IA: Num.33.31 sem forma tradicional segura no texto
+Benhail	হয়িল		sem	rev. IA: 2Chr.17.7 sem forma tradicional segura no texto
+Berea	ভাইয়েরা	বিরয়া	revisado	rev. IA: Acts.17.10 conferido; forma da tradição da língua
+Beth-Ashtoreth	অষ্টারোৎ		sem	rev. IA: 1Sam.31.10 sem forma tradicional segura no texto
+Beth-anath	অনাত		sem	rev. IA: Judg.1.33 sem forma tradicional segura no texto
+Beth-anoth	তকোন		sem	rev. IA: Josh.15.59 sem forma tradicional segura no texto
+Beth-arbel	অর্বেল		sem	rev. IA: Hos.10.14 sem forma tradicional segura no texto
+Beth-aven	আবন		sem	rev. IA: Josh.7.2 sem forma tradicional segura no texto
+Beth-aven	আবনে		sem	rev. IA: Josh.7.2 sem forma tradicional segura no texto
+Beth-azmaveth	অস্মাবত		sem	rev. IA: Neh.7.28 sem forma tradicional segura no texto
+Beth-baal-meon	বামোৎ		sem	rev. IA: Josh.13.17 sem forma tradicional segura no texto
+Beth-eden	এদনে		sem	rev. IA: Amos.1.5 sem forma tradicional segura no texto
+Beth-eked	একদের	বৈৎ-এদেক	revisado	rev. IA: 2Kgs.10.14 conferido; forma da tradição da língua
+Beth-emek	এমক		sem	rev. IA: Josh.19.27 sem forma tradicional segura no texto
+Beth-ezel	এৎসল		sem	rev. IA: Mic.1.11 sem forma tradicional segura no texto
+Beth-gilgal	গিল্		sem	rev. IA: Neh.12.29 sem forma tradicional segura no texto
+Beth-haccherem	হক্কেরম		sem	rev. IA: Neh.3.14 sem forma tradicional segura no texto
+Beth-haggan	বাগানবাড়ি	বৈৎ-হগ্গন	revisado	rev. IA: 2Kgs.9.27 conferido; forma da tradição da língua
+Beth-haram	হারম		sem	rev. IA: Josh.13.27 sem forma tradicional segura no texto
+Beth-haran	মেষবাথান		sem	rev. IA: Num.32.36 sem forma tradicional segura no texto
+Beth-le-aphrah	অফ্রায়		sem	rev. IA: Mic.1.10 sem forma tradicional segura no texto
+Beth-lebaoth	লবায়োৎ		sem	rev. IA: Josh.19.6 sem forma tradicional segura no texto
+Beth-meon	মিয়োন		sem	rev. IA: Jer.48.23 sem forma tradicional segura no texto
+Beth-merhak	বৈৎমির্হ		sem	rev. IA: 2Sam.15.17 sem forma tradicional segura no texto
+Beth-pazzez	পৎসেস		sem	rev. IA: Josh.19.21 sem forma tradicional segura no texto
+Beth-pelet	পেলটে		sem	rev. IA: Neh.11.26 sem forma tradicional segura no texto
+Beth-peor	পিয়োর		sem	rev. IA: Deut.3.29 sem forma tradicional segura no texto
+Beth-shemesh	শেমশ	বৈৎশেমশ	revisado	rev. IA: Josh.15.10 conferido; forma da tradição da língua
+Beth-tappuah	তপূহ		sem	rev. IA: Josh.15.53 sem forma tradicional segura no texto
+Beth-togarmah	তোগর্ম		sem	rev. IA: Ezek.27.14 sem forma tradicional segura no texto
+Bethany	বৈথনিয়া	বৈথনিয়া	revisado	rev. IA: Matt.21.17 conferido; forma da tradição da língua
+Bethel	বথুল	বৈথেল	revisado	rev. IA: Josh.19.4 conferido; forma da tradição da língua
+Bether	ভোর		sem	rev. IA: Song.2.17 sem forma tradicional segura no texto
+Bethlehem	বৈৎলেহম	বৈৎলেহম	revisado	rev. IA: Gen.35.19 conferido; forma da tradição da língua
+Bethlehem	বৈৎলেহমীয়	বৈৎলেহম	revisado	rev. IA: Judg.12.8 conferido; forma da tradição da língua
+Bethlehem	বৈৎলেহমে	বৈৎলেহম	revisado	rev. IA: Gen.35.19 conferido; forma da tradição da língua
+Bethphage	বৈৎফগী	বৈৎফগী	revisado	rev. IA: Matt.21.1 conferido; forma da tradição da língua
+Bethuel	বথূয়েল	বথূয়েল	revisado	rev. IA: Gen.22.22 conferido; forma da tradição da língua
+Bethuel	বথূয়েলে	বথূয়েল	revisado	rev. IA: Gen.22.23 conferido; forma da tradição da língua
+Bezai	হোদিয়		sem	rev. IA: Neh.10.18 sem forma tradicional segura no texto
+Buzites	বূষীয়		sem	rev. IA: Job.32.2 sem forma tradicional segura no texto
+Caesarea	কৈসরিয়া	কৈসরিয়া	revisado	rev. IA: Acts.8.40 conferido; forma da tradição da língua
+Calah	কেলহ	কলহ	revisado	rev. IA: Gen.10.12 conferido; forma da tradição da língua
+Calneh	কলনী		sem	rev. IA: Gen.10.10 sem forma tradicional segura no texto
+Calno	দামেস্ক		sem	rev. IA: Isa.10.9 sem forma tradicional segura no texto
+Canneh	কন্নী		sem	rev. IA: Ezek.27.23 sem forma tradicional segura no texto
+Cenchreae	কংক্রিয়া	কংক্রিয়া	revisado	rev. IA: Acts.18.18 conferido; forma da tradição da língua
+Chaldea	কলদীয়	কলদীয়	revisado	rev. IA: Gen.11.28 conferido; forma da tradição da língua
+Chenaniah	কননিয়	কনানিয়	revisado	rev. IA: 1Chr.15.22 conferido; forma da tradição da língua
+Chephar-ammoni	অম্নোনী		sem	rev. IA: Josh.18.24 sem forma tradicional segura no texto
+Chephar-haammoni	অম্নোনী		sem	rev. IA: Josh.18.24 sem forma tradicional segura no texto
+Cherethites	করেথীয়	করেথীয়	revisado	rev. IA: 1Sam.30.14 conferido; forma da tradição da língua
+Chisloth-tabor	তাবোরের		sem	rev. IA: Josh.19.12 sem forma tradicional segura no texto
+Chronicles	বইটিতে	বংশাবলি	revisado	rev. IA: 1Kgs.14.19 conferido; forma da tradição da língua
+Chushan-rishathaim	রিশিয়াথয়িম		sem	rev. IA: Judg.3.8 sem forma tradicional segura no texto
+Cnidus	ক্লীদ		sem	rev. IA: Acts.27.7 sem forma tradicional segura no texto
+Cush	দেশ	কূশ	revisado	rev. IA: Gen.2.13 conferido; forma da tradição da língua
+Cush	পিছু	কূশ	revisado	rev. IA: Ps.7.1 conferido; forma da tradição da língua
+Cushan-rishathaim	রিশিয়াথয়িম		sem	rev. IA: Judg.3.8 sem forma tradicional segura no texto
+Cyprus	কুপ্র	কুপ্র	revisado	rev. IA: Acts.4.36 conferido; forma da tradição da língua
+Cyrene	কুরীনীয়	কুরীনী	revisado	rev. IA: Matt.27.32 conferido; forma da tradição da língua
+Cyrenius	কুরীনিয়	কুরীনিয়	revisado	rev. IA: Luke.2.2 conferido; forma da tradição da língua
+Debir	বটোনীম	দবীর	revisado	rev. IA: Josh.13.26 conferido; forma da tradição da língua
+Dehavites	দেহ্বীয়		sem	rev. IA: Ezra.4.9 sem forma tradicional segura no texto
+Demetrius	দীমীত্রিয়	দীমীত্রিয়	revisado	rev. IA: Acts.19.38 conferido; forma da tradição da língua
+Destruction	আনুগত্য		sem	rev. IA: Isa.19.18 sem forma tradicional segura no texto
+Deuel	দ্যূয়েল	দূয়েল	revisado	rev. IA: Num.1.14 conferido; forma da tradição da língua
+Dinaites	দীনীয়		sem	rev. IA: Ezra.4.9 sem forma tradicional segura no texto
+East	মাত্		sem	rev. IA: Judg.8.10 sem forma tradicional segura no texto
+East	হাৎসো		sem	rev. IA: Jer.49.28 sem forma tradicional segura no texto
+Ebenezer	এবন্		sem	rev. IA: 1Sam.4.1 sem forma tradicional segura no texto
+Ebiasaph	ইবীয়াসফ		sem	rev. IA: 1Chr.6.23 sem forma tradicional segura no texto
+Ecbatana	গুটানো		sem	rev. IA: Ezra.6.2 sem forma tradicional segura no texto
+Eglath-shelishiyah	শলিশীয়া		sem	rev. IA: Isa.15.5 sem forma tradicional segura no texto
+Egypt	টিপত	মিসর	revisado	rev. IA: Ezek.23.3 conferido; forma da tradição da língua
+Egypt	পুট		sem	rev. IA: Gen.10.6 sem forma tradicional segura no texto
+El-bethel	থেল		sem	rev. IA: Gen.35.7 sem forma tradicional segura no texto
+Eladah	ইলিয়াদা		sem	rev. IA: 1Chr.7.20 sem forma tradicional segura no texto
+Elam	হানন	এলম	revisado	rev. IA: 1Chr.8.24 conferido; forma da tradição da língua
+Elasah	ইলীয়াসা		sem	rev. IA: Ezra.10.22 sem forma tradicional segura no texto
+Elasah	ইলীয়াসা৷		sem	rev. IA: Ezra.10.22 sem forma tradicional segura no texto
+Elath	এলৎ	এলৎ	revisado	rev. IA: Deut.2.8 conferido; forma da tradição da língua
+Eldaah	ইলদায়া		sem	rev. IA: Gen.25.4 sem forma tradicional segura no texto
+Eldad	মেদদ	ইলদদ	revisado	rev. IA: Num.11.26 conferido; forma da tradição da língua
+Eleadah	ইলিয়াদা		sem	rev. IA: 1Chr.7.20 sem forma tradicional segura no texto
+Eleasah	ইলীয়াসা		sem	rev. IA: 1Chr.2.39 sem forma tradicional segura no texto
+Elhanan	ইলহানন	ইল্হানন	revisado	rev. IA: 2Sam.21.19 conferido; forma da tradição da língua
+Eliakim	যোনম		sem	rev. IA: Luke.3.30 sem forma tradicional segura no texto
+Eliam	ইলীয়াম		sem	rev. IA: 2Sam.11.3 sem forma tradicional segura no texto
+Eliehoenai	ইলিয়ৈনয়		sem	rev. IA: 1Chr.26.3 sem forma tradicional segura no texto
+Eliel	ছেলেরা		sem	rev. IA: 1Chr.8.22 sem forma tradicional segura no texto
+Eliel	সিল্লথয়		sem	rev. IA: 1Chr.8.20 sem forma tradicional segura no texto
+Elienai	ইলিয়ৈনয়		sem	rev. IA: 1Chr.8.20 sem forma tradicional segura no texto
+Eliezer	ইলীয়েষর৷	ইলীয়েষর	revisado	rev. IA: Ezra.10.23 conferido; forma da tradição da língua
+Eliphalet	ইলীফেলট৷	ইলীফেলট	revisado	rev. IA: 2Sam.5.16 conferido; forma da tradição da língua
+Elmodam	অদ্দী		sem	rev. IA: Luke.3.28 sem forma tradicional segura no texto
+Elonbeth-hanan	শালবীমে		sem	rev. IA: 1Kgs.4.9 sem forma tradicional segura no texto
+Elpalet	ইল্পেলট		sem	rev. IA: 1Chr.14.5 sem forma tradicional segura no texto
+Eltekeh	তকী		sem	rev. IA: Josh.19.44 sem forma tradicional segura no texto
+Eluzai	ইলিয়ূষয়		sem	rev. IA: 1Chr.12.5 sem forma tradicional segura no texto
+Elymas	ইলুমা		sem	rev. IA: Acts.13.8 sem forma tradicional segura no texto
+Emek-keziz	কশিশ		sem	rev. IA: Josh.18.21 sem forma tradicional segura no texto
+Emmaus	ইম্মায়ূ	ইম্মায়ূ	revisado	rev. IA: Luke.24.13 conferido; forma da tradição da língua
+En-haddah	হদ্দা		sem	rev. IA: Josh.19.21 sem forma tradicional segura no texto
+En-tappuah	তপূহে		sem	rev. IA: Josh.17.7 sem forma tradicional segura no texto
+Enaim	ঐনয়িম		sem	rev. IA: Gen.38.14 sem forma tradicional segura no texto
+Enam	ঐনম		sem	rev. IA: Josh.15.34 sem forma tradicional segura no texto
+Eneglaim	ইগ্লয়িম		sem	rev. IA: Ezek.47.10 sem forma tradicional segura no texto
+Epaenetus	ইপেনিত		sem	rev. IA: Rom.16.5 sem forma tradicional segura no texto
+Ephah	উটেরা	ঐফা	revisado	rev. IA: Isa.60.6 conferido; forma da tradição da língua
+Ephah	ঐফা	ঐফা	revisado	rev. IA: Gen.25.4 conferido; forma da tradição da língua
+Ephesus	ইফিষ	ইফিষ	revisado	rev. IA: Acts.18.19 conferido; forma da tradição da língua
+Ephesus	একসুরে		sem	rev. IA: Acts.19.34 sem forma tradicional segura no texto
+Ephesus	এফিমকে	ইফিষ	revisado	rev. IA: Acts.21.29 conferido; forma da tradição da língua
+Ephlal	লল		sem	rev. IA: 1Chr.2.37 sem forma tradicional segura no texto
+Ephron	নিপ্তোহের		sem	rev. IA: Josh.18.15 sem forma tradicional segura no texto
+Eshan	ইশিয়ন		sem	rev. IA: Josh.15.52 sem forma tradicional segura no texto
+Eshban	ইশবন		sem	rev. IA: Gen.36.26 sem forma tradicional segura no texto
+Eshtemoh	ইষ্টিমোয়		sem	rev. IA: Josh.15.50 sem forma tradicional segura no texto
+Ethiopia	ওপিয়া	কূশ	revisado	rev. IA: Gen.2.13 conferido; forma da tradição da língua
+Ethnan	ইৎনন		sem	rev. IA: 1Chr.4.7 sem forma tradicional segura no texto
+Euodia	ইবদিয়া		sem	rev. IA: Phil.4.2 sem forma tradicional segura no texto
+Euodias	ইবদিয়া		sem	rev. IA: Phil.4.2 sem forma tradicional segura no texto
+Euphrates	ইউফ্রেটিস	ইউফ্রেটিস	revisado	rev. IA: Exod.23.31 conferido; forma da tradição da língua
+Eutychus	উতুখ		sem	rev. IA: Acts.20.9 sem forma tradicional segura no texto
+Eve	পেরেছি	হবা	revisado	rev. IA: Gen.4.1 conferido; forma da tradição da língua
+Evil-merodach	মরোদক		sem	rev. IA: 2Kgs.25.27 sem forma tradicional segura no texto
+Ezbai	বয়		sem	rev. IA: 1Chr.11.37 sem forma tradicional segura no texto
+Eznites	ইসনীয়	ইসনীয়	revisado	rev. IA: 2Sam.23.8 conferido; forma da tradição da língua
+Field	শাকিকে		sem	rev. IA: 2Kgs.18.17 sem forma tradicional segura no texto
+Forest	করেছিলে		sem	rev. IA: Isa.22.8 sem forma tradicional segura no texto
+Fortune	ভরেছ		sem	rev. IA: Isa.65.11 sem forma tradicional segura no texto
+Freedmen	কুরিনীয়		sem	rev. IA: Acts.6.9 sem forma tradicional segura no texto
+Gabbai	গব্বয়		sem	rev. IA: Neh.11.8 sem forma tradicional segura no texto
+Gaham	গহম		sem	rev. IA: Gen.22.24 sem forma tradicional segura no texto
+Gahar	গহর		sem	rev. IA: Ezra.2.47 sem forma tradicional segura no texto
+Galeed	গল	গালেদ	revisado	rev. IA: Gen.31.47 conferido; forma da tradição da língua
+Gamad	তারাই		sem	rev. IA: Ezek.27.11 sem forma tradicional segura no texto
+Garmite	গর্মীয়		sem	rev. IA: 1Chr.4.19 sem forma tradicional segura no texto
+Garmites	গর্মীয়		sem	rev. IA: 1Chr.4.19 sem forma tradicional segura no texto
+Gatam	গয়িতম	গয়িতম	revisado	rev. IA: Gen.36.11 conferido; forma da tradição da língua
+Gath-hepher	হেফর		sem	rev. IA: Josh.19.13 sem forma tradicional segura no texto
+Gazzam	গসম	গসম	revisado	rev. IA: Ezra.2.48 conferido; forma da tradição da língua
+Ge-harashim	সরায়		sem	rev. IA: 1Chr.4.14 sem forma tradicional segura no texto
+Gedaliah	গদলিয়৷	গদলিয়	revisado	rev. IA: Ezra.10.18 conferido; forma da tradição da língua
+Gennesaret	গিনেষরৎ	গিনেষরৎ	revisado	rev. IA: Matt.14.34 conferido; forma da tradição da língua
+Gesham	গেসন		sem	rev. IA: 1Chr.2.47 sem forma tradicional segura no texto
+Geuel	গ্যূয়েল		sem	rev. IA: Num.13.15 sem forma tradicional segura no texto
+Gibeah	যা	গিবিয়া	revisado	rev. IA: Josh.18.28 conferido; forma da tradição da língua
+Gibeath-elohim	যেখানে		sem	rev. IA: 1Sam.10.5 sem forma tradicional segura no texto
+Gibeath-haaraloth	র্বত		sem	rev. IA: Josh.5.3 sem forma tradicional segura no texto
+Gilead	গিলিয়	গিলিয়দ	revisado	rev. IA: Gen.31.21 conferido; forma da tradição da língua
+Girgashites	গির্গাশীয়	গির্গাশীয়	revisado	rev. IA: Gen.10.16 conferido; forma da tradição da língua
+Girgasite	গির্গাশীয়	গির্গাশীয়	revisado	rev. IA: Gen.10.16 conferido; forma da tradição da língua
+Girzites	গির্ষীয়		sem	rev. IA: 1Sam.27.8 sem forma tradicional segura no texto
+Gittith	বাহিনী		sem	rev. IA: Ps.84.1 sem forma tradicional segura no texto
+Gizonites	গিষোণীয়		sem	rev. IA: 1Chr.11.34 sem forma tradicional segura no texto
+Goah	গোয়াতে		sem	rev. IA: Jer.31.39 sem forma tradicional segura no texto
+Greece	গ্রীসের	গ্রীস	revisado	rev. IA: Isa.66.19 conferido; forma da tradição da língua
+Gulloth-mayim	উনুইগুলি		sem	rev. IA: Josh.15.19 sem forma tradicional segura no texto
+Hacaliah	হখলিয়	হখলিয়	revisado	rev. IA: Neh.1.1 conferido; forma da tradição da língua
+Hachaliah	হখলিয়	হখলিয়	revisado	rev. IA: Neh.1.1 conferido; forma da tradição da língua
+Hachmonites	মোনীয়		sem	rev. IA: 2Sam.23.8 sem forma tradicional segura no texto
+Hadad	রাজধানী	হদদ	revisado	rev. IA: Gen.36.35 conferido; forma da tradição da língua
+Hadad	হদদ	হদদ	revisado	rev. IA: Gen.25.15 conferido; forma da tradição da língua
+Hadar	তেমা		sem	rev. IA: Gen.25.15 sem forma tradicional segura no texto
+Hadlai	লয়		sem	rev. IA: 2Chr.28.12 sem forma tradicional segura no texto
+Hadrach	হদ্রক		sem	rev. IA: Zech.9.1 sem forma tradicional segura no texto
+Haggiah	হগিয়		sem	rev. IA: 1Chr.6.30 sem forma tradicional segura no texto
+Hakkephirim	আমাকে		sem	rev. IA: Neh.6.2 sem forma tradicional segura no texto
+Halhul	হূল		sem	rev. IA: Josh.15.58 sem forma tradicional segura no texto
+Ham	হমে	হাম	revisado	rev. IA: Gen.14.5 conferido; forma da tradição da língua
+Hamath	হমাৎ	হমাৎ	revisado	rev. IA: 2Kgs.14.25 conferido; forma da tradição da língua
+Hamath-zobah	সোবাতে		sem	rev. IA: 2Chr.8.3 sem forma tradicional segura no texto
+Hamathite	হমাতীয়		sem	rev. IA: Gen.10.18 sem forma tradicional segura no texto
+Hamathites	হমাতীয়		sem	rev. IA: Gen.10.18 sem forma tradicional segura no texto
+Hammath	হম্মত		sem	rev. IA: 1Chr.2.55 sem forma tradicional segura no texto
+Hammath	হম্মৎ		sem	rev. IA: Josh.19.35 sem forma tradicional segura no texto
+Hammoth-dor	গালীলস্থ		sem	rev. IA: Josh.21.32 sem forma tradicional segura no texto
+Hammuel	হম্মুয়েল		sem	rev. IA: 1Chr.4.26 sem forma tradicional segura no texto
+Hamuel	হম্মুয়েল		sem	rev. IA: 1Chr.4.26 sem forma tradicional segura no texto
+Hanan	অব্দোন	হানন	revisado	rev. IA: 1Chr.8.23 conferido; forma da tradição da língua
+Hanan	হাননকে	হানন	revisado	rev. IA: Neh.13.13 conferido; forma da tradição da língua
+Haniel	হন্নীয়েল		sem	rev. IA: 1Chr.7.39 sem forma tradicional segura no texto
+Hanniel	হন্নীয়েল		sem	rev. IA: Num.34.23 sem forma tradicional segura no texto
+Hararites	হরারীয়		sem	rev. IA: 2Sam.23.11 sem forma tradicional segura no texto
+Harosheth-hagoyim	হরোশৎ		sem	rev. IA: Judg.4.2 sem forma tradicional segura no texto
+Haruphites	হরূফীয়		sem	rev. IA: 1Chr.12.5 sem forma tradicional segura no texto
+Hasadiah	হসদিয়		sem	rev. IA: 1Chr.3.20 sem forma tradicional segura no texto
+Hasenuah	নূয়		sem	rev. IA: 1Chr.9.7 sem forma tradicional segura no texto
+Hashabnah	হশব্		sem	rev. IA: Neh.10.25 sem forma tradicional segura no texto
+Hashabneiah	শবনিয়		sem	rev. IA: Neh.9.5 sem forma tradicional segura no texto
+Hashabneiah	সামনে		sem	rev. IA: Neh.3.10 sem forma tradicional segura no texto
+Hashabniah	শবনিয়		sem	rev. IA: Neh.9.5 sem forma tradicional segura no texto
+Hashabniah	সারাই		sem	rev. IA: Neh.3.10 sem forma tradicional segura no texto
+Hashub	হোশেয়	হশূব	revisado	rev. IA: Neh.10.23 conferido; forma da tradição da língua
+Hasrah	হস্রহ		sem	rev. IA: 2Chr.34.22 sem forma tradicional segura no texto
+Hassenaah	সনায়া		sem	rev. IA: Neh.3.3 sem forma tradicional segura no texto
+Hasshub	হোশেয়	হশূব	revisado	rev. IA: Neh.10.23 conferido; forma da tradição da língua
+Hatach	হথক		sem	rev. IA: Esth.4.5 sem forma tradicional segura no texto
+Hathach	হথক		sem	rev. IA: Esth.4.5 sem forma tradicional segura no texto
+Hathath	হথৎ		sem	rev. IA: 1Chr.4.13 sem forma tradicional segura no texto
+Hauran	হৌরণ	হৌরণ	revisado	rev. IA: Ezek.47.16 conferido; forma da tradição da língua
+Havvoth-jair	যায়ীর		sem	rev. IA: Num.32.41 sem forma tradicional segura no texto
+Hazar-addar	বার্নিয়ার		sem	rev. IA: Num.34.4 sem forma tradicional segura no texto
+Hazar-enan	সিফ্রোণ		sem	rev. IA: Num.34.9 sem forma tradicional segura no texto
+Hazar-gaddah	গদ্দা		sem	rev. IA: Josh.15.27 sem forma tradicional segura no texto
+Hazar-shual	শূয়াল		sem	rev. IA: Josh.15.28 sem forma tradicional segura no texto
+Hazarmaveth	হৎসর্মাবৎ		sem	rev. IA: Gen.10.26 sem forma tradicional segura no texto
+Hazazon-tamar	হৎসসোন		sem	rev. IA: Gen.14.7 sem forma tradicional segura no texto
+Hazelelponi	পোনী		sem	rev. IA: 1Chr.4.3 sem forma tradicional segura no texto
+Hazer-hatticon	হত্তৌকোন		sem	rev. IA: Ezek.47.16 sem forma tradicional segura no texto
+Hazerim	তাদের		sem	rev. IA: Deut.2.23 sem forma tradicional segura no texto
+Haziel	হসীয়েল		sem	rev. IA: 1Chr.23.9 sem forma tradicional segura no texto
+Hazor-hadattah	হদত্তা		sem	rev. IA: Josh.15.25 sem forma tradicional segura no texto
+Hazzelelponi	পোনী		sem	rev. IA: 1Chr.4.3 sem forma tradicional segura no texto
+Helbon	বনিক		sem	rev. IA: Ezek.27.18 sem forma tradicional segura no texto
+Heliopolis	সূর্যপুরী		sem	rev. IA: Jer.43.13 sem forma tradicional segura no texto
+Helkai	হিল্কয়		sem	rev. IA: Neh.12.15 sem forma tradicional segura no texto
+Helkath	চারিটি		sem	rev. IA: Josh.21.31 sem forma tradicional segura no texto
+Hemath	হম্মত		sem	rev. IA: 1Chr.2.55 sem forma tradicional segura no texto
+Hemdan	হিমদন		sem	rev. IA: Gen.36.26 sem forma tradicional segura no texto
+Hermes	হর্ম্মা		sem	rev. IA: Rom.16.14 sem forma tradicional segura no texto
+Hermogenes	হর্ম্মগিনিও		sem	rev. IA: 2Tim.1.15 sem forma tradicional segura no texto
+Hezeki	সবদিয়		sem	rev. IA: 1Chr.8.17 sem forma tradicional segura no texto
+Hezekiah	যিহিষ্কিয়	হিষ্কিয়	revisado	rev. IA: Ezra.2.16 conferido; forma da tradição da língua
+Hezir	পীয়শ		sem	rev. IA: Neh.10.20 sem forma tradicional segura no texto
+Hezrai	হিষ্রয়		sem	rev. IA: 2Sam.23.35 sem forma tradicional segura no texto
+Hiel	হীয়েল		sem	rev. IA: 1Kgs.16.34 sem forma tradicional segura no texto
+Higgaion	নিষ্পন্ন		sem	rev. IA: Ps.9.16 sem forma tradicional segura no texto
+Highway	যাব	রাজপথ	revisado	rev. IA: Num.20.17 conferido; forma da tradição da língua
+Hilkiah	শিম্রি	হিল্কিয়	revisado	rev. IA: 1Chr.26.11 conferido; forma da tradição da língua
+Hivite	হিত্তীয়কে	হিব্বীয়	revisado	rev. IA: Exod.23.28 conferido; forma da tradição da língua
+Hivites	যিরীহোতে	হিব্বীয়	revisado	rev. IA: Josh.24.11 conferido; forma da tradição da língua
+Hizki	ইল্পাল		sem	rev. IA: 1Chr.8.17 sem forma tradicional segura no texto
+Hodaviah	হোদবিয়		sem	rev. IA: 1Chr.3.24 sem forma tradicional segura no texto
+Hodevah	দা		sem	rev. IA: Ezra.3.9 sem forma tradicional segura no texto
+Horesh	বনে		sem	rev. IA: 1Sam.23.15 sem forma tradicional segura no texto
+Horonaim	অবশালোম		sem	rev. IA: 2Sam.13.34 sem forma tradicional segura no texto
+Horonites	হোরোণীয়		sem	rev. IA: Neh.2.10 sem forma tradicional segura no texto
+Hoshaiah	হোশয়িয়		sem	rev. IA: Neh.12.32 sem forma tradicional segura no texto
+Hothan	হোথম		sem	rev. IA: 1Chr.11.44 sem forma tradicional segura no texto
+Hushathites	হূশাতীয়		sem	rev. IA: 2Sam.21.18 sem forma tradicional segura no texto
+Hymenaeus	হুমিনায়		sem	rev. IA: 1Tim.1.20 sem forma tradicional segura no texto
+Ibneiah	যিব্		sem	rev. IA: 1Chr.9.8 sem forma tradicional segura no texto
+Ibnijah	যিব্		sem	rev. IA: 1Chr.9.8 sem forma tradicional segura no texto
+Ibsam	যিব্		sem	rev. IA: 1Chr.7.2 sem forma tradicional segura no texto
+Ibzan	ইব্		sem	rev. IA: Judg.12.8 sem forma tradicional segura no texto
+Idbash	যিদ্		sem	rev. IA: 1Chr.4.3 sem forma tradicional segura no texto
+Idumea	ইদোম	ইদোম	revisado	rev. IA: Mark.3.8 conferido; forma da tradição da língua
+Iphtah	যিপ্তহ		sem	rev. IA: Josh.15.43 sem forma tradicional segura no texto
+Ir-moab	সীমানা		sem	rev. IA: Num.22.36 sem forma tradicional segura no texto
+Ishbak	যিশ্		sem	rev. IA: Gen.25.2 sem forma tradicional segura no texto
+Ishbi-benob	যিশবী		sem	rev. IA: 2Sam.21.16 sem forma tradicional segura no texto
+Ishmaiah	যিশ্ময়িয়		sem	rev. IA: 1Chr.12.4 sem forma tradicional segura no texto
+Ishpan	যিশ্		sem	rev. IA: 1Chr.8.22 sem forma tradicional segura no texto
+Ismaiah	যিশ্ময়িয়		sem	rev. IA: 1Chr.12.4 sem forma tradicional segura no texto
+Ithrites	যিত্রীয়		sem	rev. IA: 2Sam.23.38 sem forma tradicional segura no texto
+Jaasau	যাসয়		sem	rev. IA: Ezra.10.37 sem forma tradicional segura no texto
+Jabesh-gilead	যাবেশ		sem	rev. IA: Judg.21.8 sem forma tradicional segura no texto
+Jabneel	যব্		sem	rev. IA: Josh.15.11 sem forma tradicional segura no texto
+Jabneh	যব্		sem	rev. IA: 2Chr.26.6 sem forma tradicional segura no texto
+Jadau	যাদয়		sem	rev. IA: Ezra.10.43 sem forma tradicional segura no texto
+Jaddua	যদ্দূয়		sem	rev. IA: Neh.12.11 sem forma tradicional segura no texto
+Jaddua	হেষী		sem	rev. IA: Neh.10.21 sem forma tradicional segura no texto
+Jahath	যহত		sem	rev. IA: 1Chr.4.2 sem forma tradicional segura no texto
+Jahath	যহৎ		sem	rev. IA: 1Chr.4.2 sem forma tradicional segura no texto
+Jahaz	যহসে	যাহস	revisado	rev. IA: Num.21.23 conferido; forma da tradição da língua
+Jahaziel	মহসীয়েল		sem	rev. IA: Ezra.8.5 sem forma tradicional segura no texto
+Jahdai	যেহদয়		sem	rev. IA: 1Chr.2.47 sem forma tradicional segura no texto
+Jahmai	যহময়		sem	rev. IA: 1Chr.7.2 sem forma tradicional segura no texto
+Jahzeel	যহসিয়েল		sem	rev. IA: Gen.46.24 sem forma tradicional segura no texto
+Jahzeiah	যহসিয়		sem	rev. IA: Ezra.10.15 sem forma tradicional segura no texto
+James	আমাকেও	যাকোব	revisado	rev. IA: Gal.2.9 conferido; forma da tradição da língua
+James	যাকোবের	যাকোব	revisado	rev. IA: Matt.27.56 conferido; forma da tradição da língua
+James	যোষি	যাকোব	revisado	rev. IA: Mark.6.3 conferido; forma da tradição da língua
+Janen	বামোতে		sem	rev. IA: Num.21.19 sem forma tradicional segura no texto
+Japheth	যেফত	যেফৎ	revisado	rev. IA: Gen.5.32 conferido; forma da tradição da língua
+Jared	যেরদ	যেরদ	revisado	rev. IA: Gen.5.15 conferido; forma da tradição da língua
+Jathniel	যৎনীয়েল		sem	rev. IA: 1Chr.26.2 sem forma tradicional segura no texto
+Jeaterai	যিয়ত্রয়		sem	rev. IA: 1Chr.6.21 sem forma tradicional segura no texto
+Jeatherai	যিয়ত্রয়		sem	rev. IA: 1Chr.6.21 sem forma tradicional segura no texto
+Jebusite	যিবূষীয়	যিবূষীয়	revisado	rev. IA: Gen.10.16 conferido; forma da tradição da língua
+Jebusite	যিবূষের		sem	rev. IA: Josh.15.8 sem forma tradicional segura no texto
+Jebusites	যিবূষীয়	যিবূষীয়	revisado	rev. IA: Gen.10.16 conferido; forma da tradição da língua
+Jedaiah	শিফি	যিদয়িয়	revisado	rev. IA: 1Chr.4.37 conferido; forma da tradição da língua
+Jegar-sahadutha	সাহদূখা		sem	rev. IA: Gen.31.47 sem forma tradicional segura no texto
+Jehaleleel	যিহলিলেলের	যিহলিলেল	revisado	rev. IA: 1Chr.4.16 conferido; forma da tradição da língua
+Jehalelel	যিহলিলেলের	যিহলিলেল	revisado	rev. IA: 2Chr.29.12 conferido; forma da tradição da língua
+Jehallelel	যিহলিলেলের	যিহলিলেল	revisado	rev. IA: 1Chr.4.16 conferido; forma da tradição da língua
+Jehiel	যিয়ীয়েল	যিয়ীয়েল	revisado	rev. IA: 1Chr.11.44 conferido; forma da tradição da língua
+Jehiel	যিহিয়েল	যিহিয়েল	revisado	rev. IA: Ezra.8.9 conferido; forma da tradição da língua
+Jehiel	যিহূয়েল	যিহীয়েল	revisado	rev. IA: 2Chr.29.14 conferido; forma da tradição da língua
+Jehiel	যোয়েল	যিহীয়েল	revisado	rev. IA: 1Chr.23.8 conferido; forma da tradição da língua
+Jehoaddah	যারের		sem	rev. IA: 1Chr.9.42 sem forma tradicional segura no texto
+Jehoaddan	যিহোয়দ্দন	যিহোয়দ্দন	revisado	rev. IA: 2Chr.25.1 conferido; forma da tradição da língua
+Jehuel	যিহূয়েল		sem	rev. IA: 2Chr.29.14 sem forma tradicional segura no texto
+Jehush	এশক	যিয়ূশ	revisado	rev. IA: 1Chr.8.39 conferido; forma da tradição da língua
+Jeiel	যিয়ুয়েল		sem	rev. IA: Ezra.8.13 sem forma tradicional segura no texto
+Jeiel	যিয়ূয়েল		sem	rev. IA: 2Chr.26.11 sem forma tradicional segura no texto
+Jeiel	যিয়েল		sem	rev. IA: 2Chr.20.14 sem forma tradicional segura no texto
+Jeiel	যীয়ীয়েল		sem	rev. IA: 2Chr.35.9 sem forma tradicional segura no texto
+Jekabzeel	যিকব্		sem	rev. IA: Neh.11.25 sem forma tradicional segura no texto
+Jekameam	যিকমিয়াম		sem	rev. IA: 1Chr.23.19 sem forma tradicional segura no texto
+Jemnath	পর্যন্ত		sem	rev. IA: Josh.15.46 sem forma tradicional segura no texto
+Jeroham	যারিশিয়		sem	rev. IA: 1Chr.8.27 sem forma tradicional segura no texto
+Jeshimon	সীফীয়		sem	rev. IA: 1Sam.23.19 sem forma tradicional segura no texto
+Jeuel	যিয়ুয়েল		sem	rev. IA: Ezra.8.13 sem forma tradicional segura no texto
+Jeuel	যিয়ূয়েল		sem	rev. IA: 2Chr.29.13 sem forma tradicional segura no texto
+Jeuel	যুয়েল		sem	rev. IA: 1Chr.9.6 sem forma tradicional segura no texto
+Jeuz	যিয়ূশ		sem	rev. IA: 1Chr.8.10 sem forma tradicional segura no texto
+Jezaniah	যাসনিয়		sem	rev. IA: 2Kgs.25.23 sem forma tradicional segura no texto
+Jezreel	যিষ্রিয়েলীয়া	যিষ্রীয়েল	revisado	rev. IA: 1Sam.25.43 conferido; forma da tradição da língua
+Jibsam	যিব্		sem	rev. IA: 1Chr.7.2 sem forma tradicional segura no texto
+Jidlaph	যিদ্		sem	rev. IA: Gen.22.22 sem forma tradicional segura no texto
+Joda	নগির		sem	rev. IA: Luke.3.26 sem forma tradicional segura no texto
+Joel	অসায়েল	যোয়েল	revisado	rev. IA: 1Chr.4.35 conferido; forma da tradição da língua
+Joezer	যোয়েষর	যোয়েষর	revisado	rev. IA: 1Chr.12.6 conferido; forma da tradição da língua
+Jonan	যোনম		sem	rev. IA: Luke.3.30 sem forma tradicional segura no texto
+Jonath-elem-rechokim	ঈশ্বর		sem	rev. IA: Ps.56.1 sem forma tradicional segura no texto
+Jose	যোরীমের		sem	rev. IA: Luke.3.29 sem forma tradicional segura no texto
+Joshaviah	যোশবিয়		sem	rev. IA: 1Chr.11.46 sem forma tradicional segura no texto
+Jubal	বীণা	যুবল	revisado	rev. IA: Gen.4.21 conferido; forma da tradição da língua
+Juda	নগি		sem	rev. IA: Luke.3.26 sem forma tradicional segura no texto
+Judgment	ঢে		sem	rev. IA: 1Kgs.7.7 sem forma tradicional segura no texto
+Kadesh	যানে		sem	rev. IA: 2Sam.24.6 sem forma tradicional segura no texto
+Kadesh-barnea	কাদেশ		sem	rev. IA: Gen.14.7 sem forma tradicional segura no texto
+Kadmonites	কদমোনীয়		sem	rev. IA: Gen.15.19 sem forma tradicional segura no texto
+Kallai	কল্লয়		sem	rev. IA: Neh.12.20 sem forma tradicional segura no texto
+Kattath	কটৎ		sem	rev. IA: Josh.19.15 sem forma tradicional segura no texto
+Kedesh-naphtali	নপ্তালি		sem	rev. IA: Judg.4.6 sem forma tradicional segura no texto
+Kemuel	কমূয়েল	কমূয়েল	revisado	rev. IA: Gen.22.21 conferido; forma da tradição da língua
+Kenaz	কনস	কনস	revisado	rev. IA: Gen.36.11 conferido; forma da tradição da língua
+Kenites	কেনীয়	কেনীয়	revisado	rev. IA: Num.24.21 conferido; forma da tradição da língua
+Kenizzites	কনিষীয়	কনিষীয়	revisado	rev. IA: Gen.15.19 conferido; forma da tradição da língua
+Kerioth-hezron	করিয়োৎ		sem	rev. IA: Josh.15.25 sem forma tradicional segura no texto
+Kir-hareseth	কীর্		sem	rev. IA: 2Kgs.3.25 sem forma tradicional segura no texto
+Kiriath-arim	আরীম		sem	rev. IA: Ezra.2.25 sem forma tradicional segura no texto
+Kiriath-baal	কিরিয়ৎ		sem	rev. IA: Josh.15.60 sem forma tradicional segura no texto
+Kiriath-huzoth	হুষোতে		sem	rev. IA: Num.22.39 sem forma tradicional segura no texto
+Kiriath-sannah	সন্না		sem	rev. IA: Josh.15.49 sem forma tradicional segura no texto
+Kiriath-sepher	সেফর		sem	rev. IA: Josh.15.15 sem forma tradicional segura no texto
+Koa	কোয়া		sem	rev. IA: Ezek.23.23 sem forma tradicional segura no texto
+Kue	কিনে		sem	rev. IA: 1Kgs.10.28 sem forma tradicional segura no texto
+Lahad	লহদ		sem	rev. IA: 1Chr.4.2 sem forma tradicional segura no texto
+Lahmam	লহমম		sem	rev. IA: Josh.15.40 sem forma tradicional segura no texto
+Legion	অনে		sem	rev. IA: Mark.5.9 sem forma tradicional segura no texto
+Lehem	যাশূবিলেহম		sem	rev. IA: 1Chr.4.22 sem forma tradicional segura no texto
+Lehi	লিহীতে		sem	rev. IA: Judg.15.9 sem forma tradicional segura no texto
+Lemuel	লমূয়েল	লমূয়েল	revisado	rev. IA: Prov.31.1 conferido; forma da tradição da língua
+Leummim	লিয়ূম্মীয়		sem	rev. IA: Gen.25.3 sem forma tradicional segura no texto
+Levi	ইলীয়েষর	লেবি	revisado	rev. IA: Ezra.10.23 conferido; forma da tradição da língua
+Lucifer	শুকতারা		sem	rev. IA: Isa.14.12 sem forma tradicional segura no texto
+Machbanai	বন্নয়		sem	rev. IA: 1Chr.12.13 sem forma tradicional segura no texto
+Machbannai	বন্নয়		sem	rev. IA: 1Chr.12.13 sem forma tradicional segura no texto
+Machnadebai	মক্নদবয়		sem	rev. IA: Ezra.10.40 sem forma tradicional segura no texto
+Madmannah	মন্না		sem	rev. IA: Josh.15.31 sem forma tradicional segura no texto
+Magadan	মগদন		sem	rev. IA: Matt.15.39 sem forma tradicional segura no texto
+Magadan	মগ্দলীনী		sem	rev. IA: Matt.27.56 sem forma tradicional segura no texto
+Magpiash	পীয়শ		sem	rev. IA: Neh.10.20 sem forma tradicional segura no texto
+Mahalab	সীমা		sem	rev. IA: Josh.19.29 sem forma tradicional segura no texto
+Mahalath	আদা		sem	rev. IA: Gen.36.4 sem forma tradicional segura no texto
+Mahalath	মহলৎ		sem	rev. IA: Gen.28.9 sem forma tradicional segura no texto
+Mahalath	রাত		sem	rev. IA: Ps.88.1 sem forma tradicional segura no texto
+Mahanaim	মহনয়িমে	মহনয়িম	revisado	rev. IA: 2Sam.2.8 conferido; forma da tradição da língua
+Mahaneh-dan	মহনে		sem	rev. IA: Judg.13.25 sem forma tradicional segura no texto
+Maharai	মহরয়		sem	rev. IA: 2Sam.23.28 sem forma tradicional segura no texto
+Mahavites	যিৎমা		sem	rev. IA: 1Chr.11.46 sem forma tradicional segura no texto
+Maher-shalal-hash-baz	শালল		sem	rev. IA: Isa.8.1 sem forma tradicional segura no texto
+Malchus	মল্ক	মল্ক	revisado	rev. IA: John.18.10 conferido; forma da tradição da língua
+Manasseh	দানীয়	মনঃশি	revisado	rev. IA: Judg.18.30 conferido; forma da tradição da língua
+Mash	মশ	মশ	revisado	rev. IA: Gen.10.23 conferido; forma da tradição da língua
+Maskil	শুনেছি		sem	rev. IA: Ps.44.1 sem forma tradicional segura no texto
+Mattan	মত্তন	মত্তন	revisado	rev. IA: 2Kgs.11.18 conferido; forma da tradição da língua
+Mattatha	মত্তথ	মত্তথ	revisado	rev. IA: Luke.3.31 conferido; forma da tradição da língua
+Mattathah	মত্তত্ত		sem	rev. IA: Ezra.10.33 sem forma tradicional segura no texto
+Mattathias	মত্তথিয়	মত্তথিয়	revisado	rev. IA: Luke.3.25 conferido; forma da tradição da língua
+Mattattah	মত্তত্ত		sem	rev. IA: Ezra.10.33 sem forma tradicional segura no texto
+Mattenai	মত্তনয়		sem	rev. IA: Ezra.10.33 sem forma tradicional segura no texto
+Matthan	মত্তন	মত্তন	revisado	rev. IA: Matt.1.15 conferido; forma da tradição da língua
+Matthat	মত্তত	মত্তত	revisado	rev. IA: Luke.3.24 conferido; forma da tradição da língua
+Matthew	মথি	মথি	revisado	rev. IA: Matt.9.9 conferido; forma da tradição da língua
+Matthias	মত্তথিয়	মত্তথিয়	revisado	rev. IA: Acts.1.26 conferido; forma da tradição da língua
+Mattithiah	মত্তথিয়	মত্তথিয়	revisado	rev. IA: 1Chr.9.31 conferido; forma da tradição da língua
+Mazzaroth	বাচ্চাদের		sem	rev. IA: Job.38.32 sem forma tradicional segura no texto
+Mecherathites	মখেরাতীয়		sem	rev. IA: 1Chr.11.36 sem forma tradicional segura no texto
+Meholathites	মহোলাতীয়		sem	rev. IA: 2Sam.21.8 sem forma tradicional segura no texto
+Mehujael	মহুয়ায়েল	মহুয়ায়েল	revisado	rev. IA: Gen.4.18 conferido; forma da tradição da língua
+Melea	মিলেয়া	মিলেয়া	revisado	rev. IA: Luke.3.31 conferido; forma da tradição da língua
+Melzar	দেখাশোনা		sem	rev. IA: Dan.1.11 sem forma tradicional segura no texto
+Meribah-kadesh	কাদেশে		sem	rev. IA: Deut.32.51 sem forma tradicional segura no texto
+Merodach-baladan	মরোদক		sem	rev. IA: Isa.39.1 sem forma tradicional segura no texto
+Meronothites	মেরোণোথীয়		sem	rev. IA: 1Chr.27.30 sem forma tradicional segura no texto
+Meshach	মৈশক	মৈশক	revisado	rev. IA: Dan.1.7 conferido; forma da tradição da língua
+Meshech-Tubal	তুবল		sem	rev. IA: Ezek.32.26 sem forma tradicional segura no texto
+Meshullam	মশল্লুম	মশুল্লম	revisado	rev. IA: 1Chr.3.19 conferido; forma da tradição da língua
+Metheg-ammah	থে		sem	rev. IA: 2Sam.8.1 sem forma tradicional segura no texto
+Meunites	মিয়ূনীয়দের		sem	rev. IA: 1Chr.4.41 sem forma tradicional segura no texto
+Mezobaites	মসোবায়ীয়		sem	rev. IA: 1Chr.11.47 sem forma tradicional segura no texto
+Michmethath	মিক্		sem	rev. IA: Josh.16.6 sem forma tradicional segura no texto
+Mishraites	মিশ্রায়ীয়		sem	rev. IA: 1Chr.2.53 sem forma tradicional segura no texto
+Mithnites	মিত্নীয়		sem	rev. IA: 1Chr.11.43 sem forma tradicional segura no texto
+Mortar	মক্তেশ		sem	rev. IA: Zeph.1.11 sem forma tradicional segura no texto
+Muth-labben	আমা		sem	rev. IA: Ps.9.1 sem forma tradicional segura no texto
+Naamathites	নামাথীয়		sem	rev. IA: Job.2.11 sem forma tradicional segura no texto
+Naggai	ইনি		sem	rev. IA: Luke.3.25 sem forma tradicional segura no texto
+Nagge	নহুমের		sem	rev. IA: Luke.3.25 sem forma tradicional segura no texto
+Naham	নহম		sem	rev. IA: 1Chr.4.19 sem forma tradicional segura no texto
+Naharai	নহরয়		sem	rev. IA: 2Sam.23.37 sem forma tradicional segura no texto
+Nahath	তোহ		sem	rev. IA: 1Sam.1.1 sem forma tradicional segura no texto
+Nahath	নহৎ		sem	rev. IA: Gen.36.13 sem forma tradicional segura no texto
+Naphath	নিবাসীরা		sem	rev. IA: Josh.17.11 sem forma tradicional segura no texto
+Naphoth-dor	কিন্নেরত		sem	rev. IA: Josh.11.2 sem forma tradicional segura no texto
+Naphtuhim	অনামীয়		sem	rev. IA: Gen.10.13 sem forma tradicional segura no texto
+Nathan-melech	মেলক		sem	rev. IA: 2Kgs.23.11 sem forma tradicional segura no texto
+Nazirites	নাসরীয়		sem	rev. IA: Num.6.13 sem forma tradicional segura no texto
+Neah	এৎ		sem	rev. IA: Josh.19.13 sem forma tradicional segura no texto
+Neariah	নিয়রিয়	নিয়রিয়	revisado	rev. IA: 1Chr.3.22 conferido; forma da tradição da língua
+Nebai	নবয়		sem	rev. IA: Neh.10.19 sem forma tradicional segura no texto
+Neballat	হাদীদে		sem	rev. IA: Neh.11.34 sem forma tradicional segura no texto
+Nebu-sar-sekim	শর্সখীম		sem	rev. IA: Jer.39.3 sem forma tradicional segura no texto
+Nedabiah	নদবিয়		sem	rev. IA: 1Chr.3.18 sem forma tradicional segura no texto
+Nehelamites	নিহিলামীয়		sem	rev. IA: Jer.29.24 sem forma tradicional segura no texto
+Nemuel	নমূয়েল	নমূয়েল	revisado	rev. IA: Num.26.9 conferido; forma da tradição da língua
+Nephtoah	নিপ্তোহ		sem	rev. IA: Josh.15.9 sem forma tradicional segura no texto
+Nereus	নীরিয়		sem	rev. IA: Rom.16.15 sem forma tradicional segura no texto
+Nergal-sar-ezer	নের্গল		sem	rev. IA: Jer.39.3 sem forma tradicional segura no texto
+Nergal-sharezer	নের্গল		sem	rev. IA: Jer.39.3 sem forma tradicional segura no texto
+Neri	রীষা		sem	rev. IA: Luke.3.27 sem forma tradicional segura no texto
+Nero	হোন		sem	rev. IA: 2Tim.4.22 sem forma tradicional segura no texto
+Nicolaus	নীকান	নীকলায়	revisado	rev. IA: Acts.6.5 conferido; forma da tradição da língua
+Achor Valley			sem	rev. IA: sem versículo e sem forma tradicional segura
+Adriatic Sea		আদ্রিয়া সমুদ্র	revisado	rev. IA: Acts.27.27 forma da tradição da língua
+Appii Forum		অপ্পিয়ের হাট	revisado	rev. IA: Acts.28.15 forma da tradição da língua
+Aven Valley			sem	rev. IA: sem versículo e sem forma tradicional segura
+Baalah Mount			sem	rev. IA: sem versículo e sem forma tradicional segura
+Beautiful Gate		সুন্দর দরজা	revisado	rev. IA: Acts.3.2 forma da tradição da língua
+Benjamin Gate	বিন্যামীন দ্বার	বিন্যামীন দ্বার	revisado	rev. IA: Jer.20.2 forma da tradição da língua
+Booths Festival			sem	rev. IA: sem versículo e sem forma tradicional segura
+Broad Wall		চওড়া দেওয়াল	revisado	rev. IA: Neh.3.8 forma da tradição da língua
+Brook Eshcol			sem	rev. IA: Num.13.23 sem forma tradicional segura no texto
+Brook Kidron	কিদ্রোণ নদী	কিদ্রোণ নদী	revisado	rev. IA: 2Chr.30.14 forma da tradição da língua
+Brook of Egypt	মিসর নদী	মিসর নদী	revisado	rev. IA: Num.34.5 forma da tradição da língua
+Brook of the Arabah	অরাবা নদী	অরাবা নদী	revisado	rev. IA: Amos.6.14 forma da tradição da língua
+Brook of the Willows			sem	rev. IA: Isa.15.7 sem forma tradicional segura no texto
+Carmel Mount		কর্মিল পর্বত	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+City of David		দায়ূদের নগর	revisado	rev. IA: 2Sam.5.7 forma da tradição da língua
+City of Destruction			sem	rev. IA: Isa.19.18 sem forma tradicional segura no texto
+City of Palms			sem	rev. IA: sem versículo e sem forma tradicional segura
+City of Salt			sem	rev. IA: Josh.15.62 sem forma tradicional segura no texto
+City of the Lord			sem	rev. IA: Isa.60.14 sem forma tradicional segura no texto
+Corner Gate			sem	rev. IA: 2Kgs.14.13 sem forma tradicional segura no texto
+Dedication Festival			sem	rev. IA: sem versículo e sem forma tradicional segura
+Dragon Spring			sem	rev. IA: Neh.2.13 sem forma tradicional segura no texto
+Dung Gate			sem	rev. IA: Neh.2.13 sem forma tradicional segura no texto
+East Gate		পূর্ব দ্বার	revisado	rev. IA: 1Chr.26.14 forma da tradição da língua
+East Square			sem	rev. IA: 2Chr.29.4 sem forma tradicional segura no texto
+Ebal Mount		ঈবল পর্বত	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Egypt Sea	মিসর সাগর	মিসর সাগর	sem	rev. IA: sem versículo e sem forma tradicional segura
+Egyptian Sea			sem	rev. IA: Isa.11.15 sem forma tradicional segura no texto
+Elah Valley	এলা উপত্যকা	এলা উপত্যকা	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Ephraim Gate	ইফ্রয়িম দ্বার	ইফ্রয়িম দ্বার	revisado	rev. IA: 2Kgs.14.13 forma da tradição da língua
+Ephron Mount			sem	rev. IA: sem versículo e sem forma tradicional segura
+Esau Mount			sem	rev. IA: sem versículo e sem forma tradicional segura
+Eshcol Valley		ইষ্কোল উপত্যকা	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Ezel Stone			sem	rev. IA: sem versículo e sem forma tradicional segura
+Fish Gate			sem	rev. IA: 2Chr.33.14 sem forma tradicional segura no texto
+Forum of Appius		অপ্পিয়ের হাট	revisado	rev. IA: Acts.28.15 forma da tradição da língua
+Foundation Gate			sem	rev. IA: sem versículo e sem forma tradicional segura
+Fountain Gate			sem	rev. IA: Neh.2.14 sem forma tradicional segura no texto
+Gate Miphkad			sem	rev. IA: Neh.3.31 sem forma tradicional segura no texto
+Gate of Benjamin	বিন্যামীন দ্বার	বিন্যামীন দ্বার	revisado	rev. IA: Jer.20.2 forma da tradição da língua
+Gate of Ephraim	ইফ্রয়িম দ্বার	ইফ্রয়িম দ্বার	revisado	rev. IA: 2Kgs.14.13 forma da tradição da língua
+Gate of Yeshanah			sem	rev. IA: Neh.3.6 sem forma tradicional segura no texto
+Gate of the Foundation			sem	rev. IA: 2Chr.23.5 sem forma tradicional segura no texto
+Gate of the Fountain			sem	rev. IA: Neh.2.14 sem forma tradicional segura no texto
+Gate of the Guard			sem	rev. IA: Neh.12.39 sem forma tradicional segura no texto
+Gate of the Valley			sem	rev. IA: Neh.2.13 sem forma tradicional segura no texto
+Gerizim Mount		গরিষীম পর্বত	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Gilboa Mount		গিলবোয় পর্বত	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Great Sea		মহাসমুদ্র	revisado	rev. IA: Exod.23.31 forma da tradição da língua
+Guard Gate			sem	rev. IA: sem versículo e sem forma tradicional segura
+Halak Mount		হালক পর্বত	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Hall of Judgment			sem	rev. IA: 1Kgs.7.7 sem forma tradicional segura no texto
+Hall of Pillars			sem	rev. IA: 1Kgs.7.6 sem forma tradicional segura no texto
+Hall of the Throne			sem	rev. IA: 1Kgs.7.7 sem forma tradicional segura no texto
+Hamon-gog Valley			sem	rev. IA: sem versículo e sem forma tradicional segura
+Hebron Valley		হিব্রোণ উপত্যকা	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Hermon Mount		হর্মোণ পর্বত	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Hill Mizar			sem	rev. IA: Ps.42.6 sem forma tradicional segura no texto
+Hor Mount		হোর পর্বত	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Horse Gate		ঘোড়া দরজা	revisado	rev. IA: 2Chr.23.15 forma da tradição da língua
+House of the Forest			sem	rev. IA: sem versículo e sem forma tradicional segura
+Iphtahel Valley		যিপ্তহেল উপত্যকা	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Jazer Sea	যাসের সাগর	যাসের সাগর	sem	rev. IA: sem versículo e sem forma tradicional segura
+Jericho Valley	যিরীহো উপত্যকা	যিরীহো উপত্যকা	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Jezreel Valley	যিষ্রীয়েল উপত্যকা	যিষ্রীয়েল উপত্যকা	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Jordan Valley		যর্দন উপত্যকা	revisado	rev. IA: Gen.13.10 forma da tradição da língua
+King's Valley		রাজার উপত্যকা	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Lebanon Mount		লেবানন পর্বত	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Lebanon Valley			sem	rev. IA: sem versículo e sem forma tradicional segura
+Lower Pool			sem	rev. IA: Isa.22.9 sem forma tradicional segura no texto
+Middle Gate			sem	rev. IA: Jer.39.3 sem forma tradicional segura no texto
+Mizar Mount			sem	rev. IA: sem versículo e sem forma tradicional segura
+Mizpeh Valley			sem	rev. IA: sem versículo e sem forma tradicional segura
+Moab Plains		মোয়াবের সমভূমি	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Mount Baal-hermon			sem	rev. IA: Judg.3.3 sem forma tradicional segura no texto
+Mount Baalah			sem	rev. IA: Josh.15.11 sem forma tradicional segura no texto
+Mount Baalhermon			sem	rev. IA: Judg.3.3 sem forma tradicional segura no texto
+Mount Bashan		বাশন পর্বত	revisado	rev. IA: Ps.68.15 forma da tradição da língua
+Mount Carmel		কর্মিল পর্বত	revisado	rev. IA: Josh.12.22 forma da tradição da língua
+Mount Ebal		ঈবল পর্বত	revisado	rev. IA: Deut.11.29 forma da tradição da língua
+Mount Ephraim	ইফ্রয়িম পর্বত	ইফ্রয়িম পর্বত	revisado	rev. IA: Jer.4.15 forma da tradição da língua
+Mount Ephron			sem	rev. IA: Josh.15.9 sem forma tradicional segura no texto
+Mount Esau			sem	rev. IA: Obad.1.8 sem forma tradicional segura no texto
+Mount Gerizim		গরিষীম পর্বত	revisado	rev. IA: Deut.11.29 forma da tradição da língua
+Mount Gilboa		গিলবোয় পর্বত	revisado	rev. IA: 1Sam.28.4 forma da tradição da língua
+Mount Halak		হালক পর্বত	revisado	rev. IA: Josh.11.17 forma da tradição da língua
+Mount Heres			sem	rev. IA: Judg.1.35 sem forma tradicional segura no texto
+Mount Hermon		হর্মোণ পর্বত	revisado	rev. IA: Deut.3.8 forma da tradição da língua
+Mount Hor		হোর পর্বত	revisado	rev. IA: Num.20.22 forma da tradição da língua
+Mount Horeb	হোরেবে পর্বত	হোরেব পর্বত	revisado	rev. IA: Exod.3.1 forma da tradição da língua
+Mount Jearim			sem	rev. IA: Josh.15.10 sem forma tradicional segura no texto
+Mount Lebanon		লেবানন পর্বত	revisado	rev. IA: Judg.3.3 forma da tradição da língua
+Mount Mizar			sem	rev. IA: Ps.42.6 sem forma tradicional segura no texto
+Mount Paran		পারণ পর্বত	revisado	rev. IA: Deut.33.2 forma da tradição da língua
+Mount Perazim			sem	rev. IA: Isa.28.21 sem forma tradicional segura no texto
+Mount Shapher			sem	rev. IA: Num.33.23 sem forma tradicional segura no texto
+Mount Shepher			sem	rev. IA: Num.33.23 sem forma tradicional segura no texto
+Mount Sinai		সীনয় পর্বত	revisado	rev. IA: Exod.16.1 forma da tradição da língua
+Mount Sion		সিয়োন পর্বত	revisado	rev. IA: Deut.4.48 forma da tradição da língua
+Mount Zalmon			sem	rev. IA: Judg.9.48 sem forma tradicional segura no texto
+Mount Zemaraim			sem	rev. IA: 2Chr.13.4 sem forma tradicional segura no texto
+Mount of Esau			sem	rev. IA: Obad.1.8 sem forma tradicional segura no texto
+Mount of Olives		জৈতুন পর্বত	revisado	rev. IA: 2Sam.15.30 forma da tradição da língua
+Muster Gate			sem	rev. IA: Neh.3.31 sem forma tradicional segura no texto
+New Gate			sem	rev. IA: Jer.26.10 sem forma tradicional segura no texto
+Nineveh	নীনবীতে	নীনবী	revisado	rev. IA: 2Kgs.19.36 forma da tradição da língua
+Noah	নোয়া	নোয়া	revisado	rev. IA: Num.26.33 forma da tradição da língua
+Nohah	মানহতে	মানহতে	sem	rev. IA: 1Chr.8.6 sem forma tradicional segura no texto
+Nohah	সামন	সামন	sem	rev. IA: Judg.20.43 sem forma tradicional segura no texto
+North	বাসনপত্	বাসনপত্	sem	rev. IA: Dan.11.8 sem forma tradicional segura no texto
+North Gate			sem	rev. IA: 1Chr.26.14 sem forma tradicional segura no texto
+Obadiah	হারীম	হারীম	sem	rev. IA: Neh.10.5 sem forma tradicional segura no texto
+Old Gate			sem	rev. IA: Neh.3.6 sem forma tradicional segura no texto
+Old Pool			sem	rev. IA: Isa.22.11 sem forma tradicional segura no texto
+Olives Mount		জৈতুন পর্বত	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Olivet	জৈতুন	জৈতুন	revisado	rev. IA: Luke.19.29 forma da tradição da língua
+Orion	সপ্তর্ষিমণ্ডল	কালপুরুষ	revisado	rev. IA: Job.9.9 forma da tradição da língua
+Pacatiana	বিদ্যা	বিদ্যা	sem	rev. IA: 1Tim.6.21 sem forma tradicional segura no texto
+Paddan	পদ্দন	পদ্দন	revisado	rev. IA: Gen.25.20 forma da tradição da língua
+Paran Mount			sem	rev. IA: sem versículo e sem forma tradicional segura
+Parbar	পশ্চিমের	পশ্চিমের	sem	rev. IA: 1Chr.26.18 sem forma tradicional segura no texto
+Parvaim	পর্বয়িম	পর্বয়িম	revisado	rev. IA: 2Chr.3.6 forma da tradição da língua
+Pas-dammim	দম্মীমে	দম্মীমে	sem	rev. IA: 1Chr.11.13 sem forma tradicional segura no texto
+Pau	পায়ু	পায়ু	sem	rev. IA: Gen.36.39 sem forma tradicional segura no texto
+Pavement	পাথ	পাথ	sem	rev. IA: John.19.13 sem forma tradicional segura no texto
+Pekahiah	পকহিয়	পকহিয়	revisado	rev. IA: 2Kgs.15.22 forma da tradição da língua
+Pelaliah	পললিয়	পললিয়	revisado	rev. IA: Neh.11.12 forma da tradição da língua
+Pelatiah	পলটিয়	পলটিয়	revisado	rev. IA: 1Chr.3.21 forma da tradição da língua
+Pelethites	পলেথীয়	পলেথীয়	revisado	rev. IA: 2Sam.15.18 forma da tradição da língua
+Pelonites	পলোনীয়	পলোনীয়	revisado	rev. IA: 1Chr.11.27 forma da tradição da língua
+Pelusium	সীন	সীন	sem	rev. IA: Ezek.30.15 sem forma tradicional segura no texto
+Peniel	পনূ	পনূ	sem	rev. IA: Gen.32.30 sem forma tradicional segura no texto
+Peniel	পনূয়েল	পনূয়েল	revisado	rev. IA: Gen.32.31 forma da tradição da língua
+Penuel	পনূয়েল	পনূয়েল	revisado	rev. IA: Gen.32.31 forma da tradição da língua
+People's Gate			sem	rev. IA: sem versículo e sem forma tradicional segura
+Perazim Mount			sem	rev. IA: sem versículo e sem forma tradicional segura
+Perez-uzza	পেরষ	পেরষ	sem	rev. IA: 1Chr.13.11 sem forma tradicional segura no texto
+Perez-uzzah	পেরষ	পেরষ	sem	rev. IA: 1Chr.13.11 sem forma tradicional segura no texto
+Perez-uzzah	পেরস	পেরস	sem	rev. IA: 2Sam.6.8 sem forma tradicional segura no texto
+Perizzites	পরিষীয়	পরিষীয়	revisado	rev. IA: Gen.13.7 forma da tradição da língua
+Peter	পিতর	পিতর	revisado	rev. IA: Matt.4.18 forma da tradição da língua
+Pethuel	পথূয়েল	পথূয়েল	revisado	rev. IA: Joel.1.1 forma da tradição da língua
+Peullethai	পিয়ূল্লতয়	পিয়ূল্লতয়	sem	rev. IA: 1Chr.26.5 sem forma tradicional segura no texto
+Peulthai	পিয়ূল্লতয়	পিয়ূল্লতয়	sem	rev. IA: 1Chr.26.5 sem forma tradicional segura no texto
+Phaltiel	পলটিকে	পলটিকে	sem	rev. IA: 1Sam.25.44 sem forma tradicional segura no texto
+Phanuel	পনুয়েল	পনূয়েল	revisado	rev. IA: Luke.2.36 forma da tradição da língua
+Pharosh	পরোশ	পরোশ	revisado	rev. IA: Ezra.8.3 forma da tradição da língua
+Pharpar	পর্পর	পর্পর	revisado	rev. IA: 2Kgs.5.12 forma da tradição da língua
+Phebe	ফৈবী	ফৈবী	revisado	rev. IA: Rom.16.1 forma da tradição da língua
+Philistia	পলেষ্টিয়া	পলেষ্টিয়া	revisado	rev. IA: Ps.83.7 forma da tradição da língua
+Philistine	পলেষ্টীয়দের	পলেষ্টীয়	revisado	rev. IA: Gen.10.14 forma da tradição da língua
+Phut	পুট	পুট	revisado	rev. IA: Gen.10.6 forma da tradição da língua
+Phygellus	ফুগিল্ল	ফুগিল্ল	revisado	rev. IA: 2Tim.1.15 forma da tradição da língua
+Phygelus	ফুগিল্ল	ফুগিল্ল	revisado	rev. IA: 2Tim.1.15 forma da tradição da língua
+Pillars	পঞ্চাশ	পঞ্চাশ	sem	rev. IA: 1Kgs.7.6 sem forma tradicional segura no texto
+Place	জায়গাটাকে	জায়গাটাকে	sem	rev. IA: John.19.17 sem forma tradicional segura no texto
+Plain	পর্যন্ত	পর্যন্ত	sem	rev. IA: Deut.34.3 sem forma tradicional segura no texto
+Plain of Aven			sem	rev. IA: Amos.1.5 sem forma tradicional segura no texto
+Plain of Jordan		যর্দনের সমভূমি	revisado	rev. IA: Gen.13.10 forma da tradição da língua
+Pleiades	কৃত্তিকা	কৃত্তিকা	revisado	rev. IA: Job.9.9 forma da tradição da língua
+Pochereth-hazzebaim	হৎসবায়ীম	হৎসবায়ীম	revisado	rev. IA: Ezra.2.57 forma da tradição da língua
+Pool	পশু	পশু	sem	rev. IA: Neh.2.14 sem forma tradicional segura no texto
+Potsherd Gate			sem	rev. IA: Jer.19.2 sem forma tradicional segura no texto
+Preparation Festival			sem	rev. IA: sem versículo e sem forma tradicional segura
+Prison Gate			sem	rev. IA: Neh.12.39 sem forma tradicional segura no texto
+Puah	পূয়	পূয়	revisado	rev. IA: Gen.46.13 forma da tradição da língua
+Puah	পূয়া	পূয়া	revisado	rev. IA: Exod.1.15 forma da tradição da língua
+Puthites	পূথীয়	পূথীয়	revisado	rev. IA: 1Chr.2.53 forma da tradição da língua
+Pyrrhus	পুর্হ	পুর্হ	revisado	rev. IA: Acts.20.4 forma da tradição da língua
+Rab-saris	রাজার	রাজার	sem	rev. IA: Jer.39.3 sem forma tradicional segura no texto
+Raca	বোকা	বোকা	sem	rev. IA: Matt.5.22 sem forma tradicional segura no texto
+Racal	যিরহমেলীয়	যিরহমেলীয়	sem	rev. IA: 1Sam.30.29 sem forma tradicional segura no texto
+Raddai	রদ্দয়	রদ্দয়	revisado	rev. IA: 1Chr.2.14 forma da tradição da língua
+Raham	রহম	রহম	revisado	rev. IA: 1Chr.2.44 forma da tradição da língua
+Rakem	রেকম	রেকম	revisado	rev. IA: 1Chr.7.16 forma da tradição da língua
+Rakkath	রক্কৎ	রক্কৎ	revisado	rev. IA: Josh.19.35 forma da tradição da língua
+Ramath-lehi	রামৎ	রামৎ	sem	rev. IA: Judg.15.17 sem forma tradicional segura no texto
+Ramath-mizpeh	রামৎ	রামৎ	sem	rev. IA: Josh.13.26 sem forma tradicional segura no texto
+Ramathites	রামাথীয়	রামাথীয়	revisado	rev. IA: 1Chr.27.27 forma da tradição da língua
+Red Sea		লোহিত সাগর	revisado	rev. IA: Exod.10.19 forma da tradição da língua
+Reelaiah	রিয়েলা	রিয়েলা	revisado	rev. IA: Ezra.2.2 forma da tradição da língua
+Rehabiah	রহবিয়	রহবিয়	revisado	rev. IA: 1Chr.23.17 forma da tradição da língua
+Rehoboth	অশূরে	অশূরে	sem	rev. IA: Gen.10.11 sem forma tradicional segura no texto
+Rehoboth-Ir	নীনবী	নীনবী	sem	rev. IA: Gen.10.11 sem forma tradicional segura no texto
+Rephael	রফায়েল	রফায়েল	revisado	rev. IA: 1Chr.26.7 forma da tradição da língua
+Rephaiah	রফায়িয়	রফায়িয়	revisado	rev. IA: 1Chr.4.42 forma da tradição da língua
+Rephaim	রফায়ীয়	রফায়ীয়	revisado	rev. IA: Gen.14.5 forma da tradição da língua
+Rephaim Valley		রফায়ীম উপত্যকা	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Rephan	রিফন	রিফন	revisado	rev. IA: Acts.7.43 forma da tradição da língua
+Reu	সরুগ	সরুগ	sem	rev. IA: Luke.3.35 sem forma tradicional segura no texto
+Reuel	রুয়েল	রুয়েল	revisado	rev. IA: Gen.36.4 forma da tradição da língua
+Reuel	রূয়েল	রূয়েল	revisado	rev. IA: 1Chr.1.35 forma da tradição da língua
+Rhodes	আবলুস	আবলুস	sem	rev. IA: Ezek.27.15 sem forma tradicional segura no texto
+River	পারের	পারের	sem	rev. IA: Ezra.4.10 sem forma tradicional segura no texto
+River	প্রণালীতে	প্রণালীতে	sem	rev. IA: Isa.11.15 sem forma tradicional segura no texto
+River	বিয়োরের	বিয়োরের	sem	rev. IA: Num.22.5 sem forma tradicional segura no texto
+River	শহরের	শহরের	sem	rev. IA: 1Chr.1.48 sem forma tradicional segura no texto
+River of Arnon	অর্ণোন নদী	অর্ণোন নদী	revisado	rev. IA: Deut.2.24 forma da tradição da língua
+Rock	লোক	লোক	sem	rev. IA: 1Sam.23.24 sem forma tradicional segura no texto
+Rock of Escape			sem	rev. IA: 1Sam.23.28 sem forma tradicional segura no texto
+Rocks	শৈলের	শৈলের	sem	rev. IA: 1Sam.24.2 sem forma tradicional segura no texto
+Sabbath	বিশ্রামবা	বিশ্রামবা	sem	rev. IA: Exod.16.23 sem forma tradicional segura no texto
+Sabteca	সপ্তকা	সপ্তকা	revisado	rev. IA: Gen.10.7 forma da tradição da língua
+Sabtecha	সপ্তকা	সপ্তকা	revisado	rev. IA: Gen.10.7 forma da tradição da língua
+Sahar	শুভ্র	শুভ্র	sem	rev. IA: Ezek.27.18 sem forma tradicional segura no texto
+Sallai	সল্লয়	সল্লয়	revisado	rev. IA: Neh.11.8 forma da tradição da língua
+Salma	শল্	শল্মা	revisado	rev. IA: 1Chr.2.51 forma da tradição da língua
+Salome	সভার	শালোমী	revisado	rev. IA: Matt.14.6 forma da tradição da língua
+Salt	শন	শন	sem	rev. IA: Josh.15.62 sem forma tradicional segura no texto
+Salt Sea		লবণ সাগর	revisado	rev. IA: Gen.14.3 forma da tradição da língua
+Salt Valley		লবণ উপত্যকা	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Samaria	শমরিয়া	শমরিয়া	revisado	rev. IA: 1Kgs.13.32 forma da tradição da língua
+Samgar	সমগরনবো	সমগরনবো	sem	rev. IA: Jer.39.3 sem forma tradicional segura no texto
+Sansannah	সন্না	সন্না	revisado	rev. IA: Josh.15.31 forma da tradição da língua
+Saph	সফ	সফ	revisado	rev. IA: 2Sam.21.18 forma da tradição da língua
+Scythians	স্কুথীয়	স্কুথীয়	revisado	rev. IA: Col.3.11 forma da tradição da língua
+Sea of Chinnereth		কিন্নেরৎ সাগর	revisado	rev. IA: Num.34.11 forma da tradição da língua
+Sea of Chinneroth		কিন্নেরৎ সাগর	revisado	rev. IA: Josh.12.3 forma da tradição da língua
+Sea of Egypt	মিসর সাগর	মিসর সাগর	revisado	rev. IA: Isa.11.15 forma da tradição da língua
+Sea of Galilee		গালীল সাগর	revisado	rev. IA: Num.34.11 forma da tradição da língua
+Sea of Jazer	যাসের সাগর	যাসের সাগর	revisado	rev. IA: Jer.48.32 forma da tradição da língua
+Sea of Tiberias		তিবিরিয়া সাগর	revisado	rev. IA: John.6.1 forma da tradição da língua
+Sea of the Philistines			sem	rev. IA: Exod.23.31 sem forma tradicional segura no texto
+Sea of the Plain			sem	rev. IA: Josh.3.16 sem forma tradicional segura no texto
+Seleucia	সিলূকিয়াতে	সিলূকিয়া	revisado	rev. IA: Acts.13.4 forma da tradição da língua
+Semachiah	সমথিয়ও	সমথিয়	revisado	rev. IA: 1Chr.26.7 forma da tradição da língua
+Semei	যোষেখের	যোষেখের	sem	rev. IA: Luke.3.26 sem forma tradicional segura no texto
+Semein	যোষেখের	যোষেখের	sem	rev. IA: Luke.3.26 sem forma tradicional segura no texto
+Senuah	সনূয়া	সনূয়া	revisado	rev. IA: Neh.11.9 forma da tradição da língua
+Sepharvaim	সফর্বয়িম	সফর্বয়িম	revisado	rev. IA: 2Kgs.17.24 forma da tradição da língua
+Serpent's Stone			sem	rev. IA: 1Kgs.1.9 sem forma tradicional segura no texto
+Shabbethai	শব্বথয়	শব্বথয়	revisado	rev. IA: Ezra.10.15 forma da tradição da língua
+Shaharaim	শহরয়িম	শহরয়িম	revisado	rev. IA: 1Chr.8.8 forma da tradição da língua
+Shallun	শল্লুম	শল্লুম	revisado	rev. IA: Neh.3.15 forma da tradição da língua
+Shalmai	শল্	শল্	sem	rev. IA: Neh.7.48 sem forma tradicional segura no texto
+Shalmaneser	মনেষর	শল্মনেষর	revisado	rev. IA: 2Kgs.17.3 forma da tradição da língua
+Shamariah	শমরিয়	শমরিয়	revisado	rev. IA: 2Chr.11.19 forma da tradição da língua
+Shamed	শেমদ	শেমদ	revisado	rev. IA: 1Chr.8.12 forma da tradição da língua
+Shamgar	শম্	শমগর	revisado	rev. IA: Judg.3.31 forma da tradição da língua
+Shamma	শম্ম	শম্ম	revisado	rev. IA: 1Chr.7.37 forma da tradição da língua
+Shammah	শম্ম	শম্ম	revisado	rev. IA: Gen.36.13 forma da tradição da língua
+Shammua	শম্মূয়	শম্মূয়	revisado	rev. IA: Num.13.4 forma da tradição da língua
+Shammua	সম্মুয়	সম্মুয়	revisado	rev. IA: Neh.12.18 forma da tradição da língua
+Shammua	সম্মূয়	সম্মূয়	revisado	rev. IA: 2Sam.5.14 forma da tradição da língua
+Shamsherai	শহরিয়	শহরিয়	sem	rev. IA: 1Chr.8.26 sem forma tradicional segura no texto
+Shaveh	শাবি	শাবি	revisado	rev. IA: Gen.14.5 forma da tradição da língua
+Shaveh-kiriathaim	কদরলায়ম	কদরলায়ম	sem	rev. IA: Gen.14.5 sem forma tradicional segura no texto
+Shavsha	শীশা	শীশা	sem	rev. IA: 1Kgs.4.3 sem forma tradicional segura no texto
+Sheariah	অস্রীকাম	অস্রীকাম	sem	rev. IA: 1Chr.8.38 sem forma tradicional segura no texto
+Shebarim	রীম	রীম	sem	rev. IA: Josh.7.5 sem forma tradicional segura no texto
+Shebna	শিবন	শিবন	revisado	rev. IA: Isa.22.15 forma da tradição da língua
+Shechem	শিখিম	শিখিম	revisado	rev. IA: Gen.12.6 forma da tradição da língua
+Shedeur	শদেয়ূর	শদেয়ূর	revisado	rev. IA: Num.1.5 forma da tradição da língua
+Sheep Gate		মেষ দরজা	revisado	rev. IA: Neh.3.1 forma da tradição da língua
+Shehariah	শহরিয়	শহরিয়	revisado	rev. IA: 1Chr.8.26 forma da tradição da língua
+Shelah	শীলোহ	শীলোহ	revisado	rev. IA: Neh.3.15 forma da tradição da língua
+Shemaiah	শমরিয়	শময়িয়	revisado	rev. IA: Ezra.8.13 forma da tradição da língua
+Shemaiah	শিময়িয়	শিময়িয়	revisado	rev. IA: 1Chr.5.4 forma da tradição da língua
+Shemariah	শময়ি	শময়িয়	revisado	rev. IA: Ezra.10.41 forma da tradição da língua
+Shemariah	শমরিয়	শমরিয়	revisado	rev. IA: 1Chr.12.5 forma da tradição da língua
+Shemariah	শমরিয়৷	শমরিয়	revisado	rev. IA: Ezra.10.32 forma da tradição da língua
+Sheminith	মত্তিথিয়	মত্তিথিয়	sem	rev. IA: 1Chr.15.21 sem forma tradicional segura no texto
+Shemuel	শমূয়েল	শমূয়েল	revisado	rev. IA: Num.34.20 forma da tradição da língua
+Shenazar	শিনৎসর	শিনৎসর	revisado	rev. IA: 1Chr.3.18 forma da tradição da língua
+Shenazzar	শিনৎসর	শিনৎসর	revisado	rev. IA: 1Chr.3.18 forma da tradição da língua
+Shephathiah	শফটিয়	শফটিয়	revisado	rev. IA: 1Chr.9.8 forma da tradição da língua
+Shephelah	এলাকা	এলাকা	sem	rev. IA: 1Kgs.10.27 sem forma tradicional segura no texto
+Shepher Mount			sem	rev. IA: sem versículo e sem forma tradicional segura
+Sherezer	শরেৎসরকে	শরেৎসর	revisado	rev. IA: Zech.7.2 forma da tradição da língua
+Sheshach	নির্বিশেষে	নির্বিশেষে	sem	rev. IA: Jer.25.26 sem forma tradicional segura no texto
+Shiggaion	আশ্রয়	আশ্রয়	sem	rev. IA: Ps.7.1 sem forma tradicional segura no texto
+Shihor-libnath	শীহোর	শীহোর	revisado	rev. IA: Josh.19.26 forma da tradição da língua
+Shilonites	শীলোনীয়ের	শীলোনীয়	revisado	rev. IA: Neh.11.5 forma da tradição da língua
+Shimeathite	শিমিয়থীয়	শিমিয়থীয়	revisado	rev. IA: 1Chr.2.55 forma da tradição da língua
+Shiphmites	শিফমীয়	শিফমীয়	revisado	rev. IA: 1Chr.27.27 forma da tradição da língua
+Shittim Valley		শিটীম উপত্যকা	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Shobek	হশূব	হশূব	sem	rev. IA: Neh.10.24 sem forma tradicional segura no texto
+Shua	শূয়	শূয়	revisado	rev. IA: Gen.38.2 forma da tradição da língua
+Shua	শূয়া	শূয়া	revisado	rev. IA: 1Chr.2.3 forma da tradição da língua
+Shuah	শূয়	শূয়	revisado	rev. IA: Gen.38.2 forma da tradição da língua
+Shuhites	শূহীয়	শূহীয়	revisado	rev. IA: Job.2.11 forma da tradição da língua
+Shulammites	শূলম্মীয়াকে	শূলম্মীয়া	revisado	rev. IA: Song.6.13 forma da tradição da língua
+Shumathites	শূমাথীয়	শূমাথীয়	revisado	rev. IA: 1Chr.2.53 forma da tradição da língua
+Shunammites	শূনেমীয়া	শূনেমীয়া	revisado	rev. IA: 1Kgs.1.3 forma da tradição da língua
+Siddim Valley		সিদ্দীম উপত্যকা	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Sinai Wilderness		সীনয় মরুভূমি	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Sinite	সীনীয়	সীনীয়	revisado	rev. IA: Gen.10.17 forma da tradição da língua
+Sinites	সীনীয়	সীনীয়	revisado	rev. IA: Gen.10.17 forma da tradição da língua
+Sivan	সীবন	সীবন	revisado	rev. IA: Esth.8.9 forma da tradição da língua
+Sorek Valley		সোরেক উপত্যকা	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+South	শোনা	শোনা	sem	rev. IA: Matt.12.42 sem forma tradicional segura no texto
+South Gate			sem	rev. IA: 1Chr.26.15 sem forma tradicional segura no texto
+Straight	রাস্তায়	রাস্তায়	sem	rev. IA: Acts.9.11 sem forma tradicional segura no texto
+Straight Gate			sem	rev. IA: Acts.9.11 sem forma tradicional segura no texto
+Sucathite	সূখাথীয়	সূখাথীয়	revisado	rev. IA: 1Chr.2.55 forma da tradição da língua
+Succoth-benoth	সুক্কোৎ	সুক্কোৎ	sem	rev. IA: 2Kgs.17.30 sem forma tradicional segura no texto
+Sychar	শুখর	শুখর	revisado	rev. IA: John.4.5 forma da tradição da língua
+Tabbath	টব্বত	টব্বত	revisado	rev. IA: Judg.7.22 forma da tradição da língua
+Tabbur-erez	বৃক্ষের	বৃক্ষের	sem	rev. IA: Judg.9.37 sem forma tradicional segura no texto
+Rephaim Valley	রফায়ীয় উপত্যকা	রফায়ীম উপত্যকা	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Taberah	তবিয়েরাতে	তবেরা	revisado	rev. IA: Deut.9.22 forma da tradição da língua
+Tahan	তহন	তহন	revisado	rev. IA: 1Chr.7.25 forma da tradição da língua
+Tahan	সন্তানরা	তহন	revisado	rev. IA: Num.26.35 forma da tradição da língua
+Tahash	তহশ	তহশ	revisado	rev. IA: Gen.22.24 forma da tradição da língua
+Tahath	তহত	তহত	revisado	rev. IA: Num.33.26 forma da tradição da língua
+Tahath	তহতে	তহত	revisado	rev. IA: Num.33.26 forma da tradição da língua
+Tahpanhes	তফনহেষে	তফনহেষ	revisado	rev. IA: Jer.2.16 forma da tradição da língua
+Tahrea	তরেয়	তরেয়	revisado	rev. IA: 1Chr.8.35 forma da tradição da língua
+Talmai	তলময়	তলময়	revisado	rev. IA: Judg.1.10 forma da tradição da língua
+Tamah	তেমহ	তেমহ	revisado	rev. IA: Ezra.2.53 forma da tradição da língua
+Tarea	তরেয়	তরেয়	revisado	rev. IA: 1Chr.8.35 forma da tradição da língua
+Tarpelite	টর্পলীয়	টর্পলীয়	revisado	rev. IA: Ezra.4.9 forma da tradição da língua
+Tatnai	তত্তনয়	তত্তনয়	revisado	rev. IA: Ezra.5.3 forma da tradição da língua
+Tattenai	তত্তনয়	তত্তনয়	revisado	rev. IA: Ezra.5.3 forma da tradição da língua
+Tebaliah	তেরোজন	তেরোজন	sem	rev. IA: 1Chr.26.11 sem forma tradicional segura no texto
+Tel-melah	মেলহ	মেলহ	sem	rev. IA: Ezra.2.59 sem forma tradicional segura no texto
+Telassar	বাসকারী	বাসকারী	sem	rev. IA: 2Kgs.19.12 sem forma tradicional segura no texto
+Teman	তৈমন	তৈমন	revisado	rev. IA: Gen.36.11 forma da tradição da língua
+Thahash	তহশ	তহশ	revisado	rev. IA: Gen.22.24 forma da tradição da língua
+Thebes	ক্লেশে	ক্লেশে	sem	rev. IA: Ezek.30.16 sem forma tradicional segura no texto
+Throne	থে	থে	sem	rev. IA: 1Kgs.7.7 sem forma tradicional segura no texto
+Tikvah	তিকব	তিকব	revisado	rev. IA: Ezra.10.15 forma da tradição da língua
+Tilgath-pilneser	পিলনেষর	পিলনেষর	sem	rev. IA: 1Chr.5.6 sem forma tradicional segura no texto
+Timaeus	তীময়	তীময়	revisado	rev. IA: Mark.10.46 forma da tradição da língua
+Timnath-serah	তিম্নৎ	তিম্নৎ	sem	rev. IA: Josh.19.50 sem forma tradicional segura no texto
+Tiphsah	তিপ্	তিপ্	sem	rev. IA: 1Kgs.4.24 sem forma tradicional segura no texto
+Tirathite	তিরিয়াথীয়	তিরিয়াথীয়	revisado	rev. IA: 1Chr.2.55 forma da tradição da língua
+Tizites	তীষীয়	তীষীয়	revisado	rev. IA: 1Chr.11.45 forma da tradição da língua
+Tower	তুন্দুরের	তুন্দুরের	sem	rev. IA: Neh.3.11 sem forma tradicional segura no texto
+Tower	হননেলের	হননেলের	sem	rev. IA: Neh.3.1 sem forma tradicional segura no texto
+Tower	হম্মেয়ার	হম্মেয়ার	sem	rev. IA: Neh.12.39 sem forma tradicional segura no texto
+Tower of Eder	এদর দুর্গ	এদর দুর্গ	revisado	rev. IA: sem versículo na Bíblia da língua; forma da tradição
+Tower of Hananel		হননেল দুর্গ	revisado	rev. IA: Neh.3.1 forma da tradição da língua
+Tower of Shechem	শিখিম দুর্গ	শিখিম দুর্গ	revisado	rev. IA: Judg.9.46 forma da tradição da língua
+Tower of the Hundred			sem	rev. IA: Neh.3.1 sem forma tradicional segura no texto
+Tower of the Ovens			sem	rev. IA: Neh.3.11 sem forma tradicional segura no texto
+Travelers Valley			sem	rev. IA: sem versículo e sem forma tradicional segura
+Tribe of Judah	যিহূদা গোষ্ঠী	যিহূদা গোষ্ঠী	sem	rev. IA: Prov.25.1 sem forma tradicional segura no texto
+Trogyllium	হলাম	হলাম	sem	rev. IA: Acts.20.15 sem forma tradicional segura no texto
+Tubal-cain	তুবল	তুবল	sem	rev. IA: Gen.4.22 sem forma tradicional segura no texto
+Tyre	সোরে	সোর	revisado	rev. IA: 2Sam.5.11 forma da tradição da língua
+Uel	ঊয়েল	ঊয়েল	revisado	rev. IA: Ezra.10.34 forma da tradição da língua
+Unnamed#1	ইলীহূদের	ইলীহূদের	sem	rev. IA: Matt.1.15 sem forma tradicional segura no texto
+Unnamed#1	ভাবে	ভাবে	sem	rev. IA: 1Kgs.2.27 sem forma tradicional segura no texto
+Unnamed#2	ইলীহূদের	ইলীহূদের	sem	rev. IA: Matt.1.15 sem forma tradicional segura no texto
+Unnamed#2	ভাবে	ভাবে	sem	rev. IA: 1Kgs.2.27 sem forma tradicional segura no texto
+Unnamed#3	ইলীহূদের	ইলীহূদের	sem	rev. IA: Matt.1.15 sem forma tradicional segura no texto
+Unnamed#3	ভাবে	ভাবে	sem	rev. IA: 1Kgs.2.27 sem forma tradicional segura no texto
+Unnamed#4	ইলীহূদের	ইলীহূদের	sem	rev. IA: Matt.1.15 sem forma tradicional segura no texto
+Unnamed#4	ভাবে	ভাবে	sem	rev. IA: 1Kgs.2.27 sem forma tradicional segura no texto
+Unnamed#5	ইলীহূদের	ইলীহূদের	sem	rev. IA: Matt.1.15 sem forma tradicional segura no texto
+Unnamed#6	ইলীহূদের	ইলীহূদের	sem	rev. IA: Matt.1.15 sem forma tradicional segura no texto
+Unnamed#7	ইলীহূদের	ইলীহূদের	sem	rev. IA: Matt.1.15 sem forma tradicional segura no texto
+Unnamed#8	ইলীহূদের	ইলীহূদের	sem	rev. IA: Matt.1.15 sem forma tradicional segura no texto
+Unnamed#9	ইলীহূদের	ইলীহূদের	sem	rev. IA: Matt.1.15 sem forma tradicional segura no texto
+Upper Pool			sem	rev. IA: 2Kgs.18.17 sem forma tradicional segura no texto
+Vaizatha	বয়িষাথঃ	বয়িষাথ	revisado	rev. IA: Esth.9.9 forma da tradição da língua
+Vajezatha	বয়িষাথঃ	বয়িষাথঃ	sem	rev. IA: Esth.9.9 sem forma tradicional segura no texto
+Vale of Hebron		হিব্রোণ উপত্যকা	revisado	rev. IA: Gen.37.14 forma da tradição da língua
+Vale of Siddim		সিদ্দীম উপত্যকা	revisado	rev. IA: Gen.14.3 forma da tradição da língua
+Valley Gate			sem	rev. IA: 2Chr.26.9 sem forma tradicional segura no texto
+Valley of Achor		আখোর উপত্যকা	revisado	rev. IA: Josh.7.24 forma da tradição da língua
+Valley of Aijalon			sem	rev. IA: Josh.10.12 sem forma tradicional segura no texto
+Valley of Aven			sem	rev. IA: Amos.1.5 sem forma tradicional segura no texto
+Valley of Baca			sem	rev. IA: Ps.84.6 sem forma tradicional segura no texto
+Valley of Decision			sem	rev. IA: Joel.3.14 sem forma tradicional segura no texto
+Valley of Elah	এলা উপত্যকা	এলা উপত্যকা	revisado	rev. IA: 1Sam.17.19 forma da tradição da língua
+Valley of Eshcol		ইষ্কোল উপত্যকা	revisado	rev. IA: Num.13.23 forma da tradição da língua
+Valley of Gerar			sem	rev. IA: Gen.26.17 sem forma tradicional segura no texto
+Valley of Gibeon			sem	rev. IA: Isa.28.21 sem forma tradicional segura no texto
+Valley of Hamon-gog			sem	rev. IA: Ezek.39.11 sem forma tradicional segura no texto
+Valley of Hamongog			sem	rev. IA: Ezek.39.11 sem forma tradicional segura no texto
+Valley of Hebron		হিব্রোণ উপত্যকা	revisado	rev. IA: Gen.37.14 forma da tradição da língua
+Valley of Hinnom		হিন্নোম উপত্যকা	revisado	rev. IA: Josh.15.8 forma da tradição da língua
+Valley of Iphtahel		যিপ্তহেল উপত্যকা	revisado	rev. IA: Josh.19.14 forma da tradição da língua
+Valley of Jehoshaphat	যিহোশাফট উপত্যকা	যিহোশাফট উপত্যকা	revisado	rev. IA: Joel.3.12 forma da tradição da língua
+Valley of Jericho	যিরীহো উপত্যকা	যিরীহো উপত্যকা	revisado	rev. IA: Deut.34.3 forma da tradição da língua
+Valley of Jezreel	যিষ্রীয়েল উপত্যকা	যিষ্রীয়েল উপত্যকা	revisado	rev. IA: Josh.17.16 forma da tradição da língua
+Valley of Jiphthahel		যিপ্তহেল উপত্যকা	revisado	rev. IA: Josh.19.14 forma da tradição da língua
+Valley of Lebanon		লেবানন উপত্যকা	revisado	rev. IA: Josh.11.17 forma da tradição da língua
+Valley of Mizpeh			sem	rev. IA: Josh.11.8 sem forma tradicional segura no texto
+Valley of Rephaim	রফায়ীয় উপত্যকা	রফায়ীম উপত্যকা	revisado	rev. IA: Josh.15.8 forma da tradição da língua
+Valley of Salt		লবণ উপত্যকা	revisado	rev. IA: 2Sam.8.13 forma da tradição da língua
+Valley of Shaveh	শাবি উপত্যকা	শাবি উপত্যকা	revisado	rev. IA: Gen.14.17 forma da tradição da língua
+Valley of Shittim		শিটীম উপত্যকা	revisado	rev. IA: Joel.3.18 forma da tradição da língua
+Valley of Siddim		সিদ্দীম উপত্যকা	revisado	rev. IA: Gen.14.3 forma da tradição da língua
+Valley of Slaughter			sem	rev. IA: Jer.7.32 sem forma tradicional segura no texto
+Valley of Sorek		সোরেক উপত্যকা	revisado	rev. IA: Judg.16.4 forma da tradição da língua
+Valley of Succoth			sem	rev. IA: Ps.60.6 sem forma tradicional segura no texto
+Valley of Zeboim			sem	rev. IA: 1Sam.13.18 sem forma tradicional segura no texto
+Valley of Zephathah			sem	rev. IA: 2Chr.14.10 sem forma tradicional segura no texto
+Valley of Zered			sem	rev. IA: Num.21.12 sem forma tradicional segura no texto
+Valley of the Passengers			sem	rev. IA: Ezek.39.11 sem forma tradicional segura no texto
+Vaniah	বনিয়	বনিয়	revisado	rev. IA: Ezra.10.36 forma da tradição da língua
+Vedan	বদান	বদান	revisado	rev. IA: Ezek.27.19 forma da tradição da língua
+Water Gate			sem	rev. IA: Neh.3.26 sem forma tradicional segura no texto
+Waters of Jericho	যিরীহো জল	যিরীহো জল	sem	rev. IA: Josh.16.1 sem forma tradicional segura no texto
+Way of Holiness			sem	rev. IA: Isa.35.8 sem forma tradicional segura no texto
+Weeks	এশিয়াতে	এশিয়াতে	sem	rev. IA: Acts.20.16 sem forma tradicional segura no texto
+West Gate			sem	rev. IA: 1Chr.26.16 sem forma tradicional segura no texto
+Wilderness of Maon	মায়োন মরুভূমি	মায়োন মরুভূমি	revisado	rev. IA: 1Sam.23.24 forma da tradição da língua
+Wilderness of Sinai		সীনয় মরুভূমি	revisado	rev. IA: Exod.19.1 forma da tradição da língua
+Wilderness of Ziph	সীফ মরুভূমি	সীফ মরুভূমি	revisado	rev. IA: 1Sam.23.14 forma da tradição da língua
+Yeshanah Gate			sem	rev. IA: sem versículo e sem forma tradicional segura
+Zaavan	সাবন	সাবন	revisado	rev. IA: Gen.36.27 forma da tradição da língua
+Zabbai	সববয়	সববয়	revisado	rev. IA: Ezra.10.28 forma da tradição da língua
+Zabdi	যাকীম	সব্দি	revisado	rev. IA: 1Chr.8.19 forma da tradição da língua
+Zaccai	সক্কয়	সক্কয়	revisado	rev. IA: Neh.7.14 forma da tradição da língua
+Zacchaeus	সক্কেয়	সক্কেয়	revisado	rev. IA: Luke.19.2 forma da tradição da língua
+Zaccur	সব্বূদ	সক্কূর	revisado	rev. IA: Ezra.8.14 forma da tradição da língua
+Zachariah	সখরিয়	সখরিয়	revisado	rev. IA: 2Kgs.14.29 forma da tradição da língua
+Zacharias	সখরিয়	সখরিয়	revisado	rev. IA: 2Chr.24.20 forma da tradição da língua
+Zacher	সখর	সখর	revisado	rev. IA: 1Chr.8.31 forma da tradição da língua
+Zadok	হেষীর	সাদোক	revisado	rev. IA: Neh.10.21 forma da tradição da língua
+Zaham	সহম	সহম	revisado	rev. IA: 2Chr.11.19 forma da tradição da língua
+Zarethan	সর্ত্তন	সর্ত্তন	sem	rev. IA: Josh.3.16 sem forma tradicional segura no texto
+Zavan	সাবন	সাবন	revisado	rev. IA: Gen.36.27 forma da tradição da língua
+Zealot	আলফেয়	আলফেয়	sem	rev. IA: Mark.3.18 sem forma tradicional segura no texto
+Zebadiah	সবদিয়৷	সবদিয়৷	revisado	rev. IA: Ezra.10.20 forma da tradição da língua
+Zeboim Valley			sem	rev. IA: sem versículo e sem forma tradicional segura
+Zechariah	সখরিয়ে	সখরিয়	revisado	rev. IA: 2Kgs.15.11 forma da tradição da língua
+Zechariah	হোষার	হোষার	sem	rev. IA: 1Chr.26.11 sem forma tradicional segura no texto
+Zecher	সখর	সখর	revisado	rev. IA: 1Chr.8.31 forma da tradição da língua
+Zemarite	সমারীয়	সমারীয়	revisado	rev. IA: Gen.10.18 forma da tradição da língua
+Zemarites	সমারীয়	সমারীয়	revisado	rev. IA: Gen.10.18 forma da tradição da língua
+Zephath	সফাৎবাসী	সফাৎ	revisado	rev. IA: Judg.1.17 forma da tradição da língua
+Zephathah Valley			sem	rev. IA: sem versículo e sem forma tradicional segura
+Zerahiah	মরায়োৎ	সরহিয়	revisado	rev. IA: 1Chr.6.6 forma da tradição da língua
+Zerahiah	সরহিয়	সরহিয়	revisado	rev. IA: 1Chr.6.6 forma da tradição da língua
+Zereth-shahar	সেরৎ	সেরৎ	sem	rev. IA: Josh.13.19 sem forma tradicional segura no texto
+Zeruah	সরেদা	সরূয়া	revisado	rev. IA: 1Kgs.11.26 forma da tradição da língua
+Zeus	জিউস	জিউস	revisado	rev. IA: Acts.14.12 forma da tradição da língua
+Ziv	সিব	সিব	revisado	rev. IA: 1Kgs.6.1 forma da tradição da língua
+Zizah	সীন	সীন	sem	rev. IA: 1Chr.23.10 sem forma tradicional segura no texto
+Zorathites	সরাথীয়	সরাথীয়	revisado	rev. IA: 1Chr.2.53 forma da tradição da língua
+Zuzim	সুষীয়দের	সুষীয়	revisado	rev. IA: Gen.14.5 forma da tradição da língua
+Abaddon	আবদ্দোন	আবদ্দোন	revisado	rev. IA: Rev.9.11 forma da tradição da língua
+Abdi	অব্দি	অব্দি	revisado	rev. IA: 1Chr.6.44 forma da tradição da língua
+Abdiel	অব্দিয়েল	অব্দিয়েল	revisado	rev. IA: 1Chr.5.15 forma da tradição da língua
+Abel	আবেলে	আবেল	revisado	rev. IA: 2Sam.20.18 forma da tradição da língua
+Abel-beth-maacah	আবেলবৈৎমাখা	আবেলবৈৎমাখা	revisado	rev. IA: 2Kgs.15.29 forma da tradição da língua
+Abel-keramim	করামীম	করামীম	sem	rev. IA: Judg.11.33 sem forma tradicional segura no texto
+Abel-maim	আবেল	আবেল	sem	rev. IA: 2Chr.16.4 sem forma tradicional segura no texto
+Abel-meholah	আবেলমহোলা	আবেলমহোলা	revisado	rev. IA: 1Kgs.19.16 forma da tradição da língua
+Abel-shittim	শিটীম	শিটীম	sem	rev. IA: Num.33.49 sem forma tradicional segura no texto
+Abi	অবী	অবী	revisado	rev. IA: 2Kgs.18.2 forma da tradição da língua
+Abi-albon	অবিয়লবোন	অবিয়লবোন	revisado	rev. IA: 2Sam.23.31 forma da tradição da língua
+Abiah	বাবা	অবিয়া	revisado	rev. IA: 1Chr.2.24 forma da tradição da língua
+Abiah	বিচা	অবিয়া	revisado	rev. IA: 1Sam.8.2 forma da tradição da língua
+Abida	অবীদ	অবীদ	revisado	rev. IA: Gen.25.4 forma da tradição da língua
+Abihud	অবীহূদ	অবীহূদ	revisado	rev. IA: 1Chr.8.3 forma da tradição da língua
+Abimael	অবীমায়েল	অবীমায়েল	revisado	rev. IA: Gen.10.28 forma da tradição da língua
+Abinoam	অবীনোয়ম	অবীনোয়ম	revisado	rev. IA: Judg.4.6 forma da tradição da língua
+Abishur	অবীশূর	অবীশূর	revisado	rev. IA: 1Chr.2.28 forma da tradição da língua
+Abital	অবীটল	অবীটল	revisado	rev. IA: 2Sam.3.4 forma da tradição da língua
+Abitub	অহীটূব	অহীটূব	revisado	rev. IA: 1Chr.8.11 forma da tradição da língua
+Abiud	অবীহূদ	অবীহূদ	revisado	rev. IA: Matt.1.13 forma da tradição da língua
+Abner	অবনের	অবনের	revisado	rev. IA: 1Sam.17.55 forma da tradição da língua
+Abraham	অব্রাহাম	অব্রাহাম	revisado	rev. IA: Gen.11.29 forma da tradição da língua
+Acco	অক্কো	অক্কো	revisado	rev. IA: Judg.1.31 forma da tradição da língua
+Achaicus	আখায়িক	আখায়িক	revisado	rev. IA: 1Cor.16.17 forma da tradição da língua
+Achsa	ষা	অক্সা	revisado	rev. IA: 1Chr.2.49 forma da tradição da língua
+Achzib	অকষীব	অকষীব	revisado	rev. IA: Josh.15.44 forma da tradição da língua
+Adbeel	অদবেল	অদবেল	revisado	rev. IA: Gen.25.13 forma da tradição da língua
+Addi	অদ্দী	অদ্দী	revisado	rev. IA: Luke.3.28 forma da tradição da língua
+Addon	অদ্দন	অদ্দন	revisado	rev. IA: Ezra.2.59 forma da tradição da língua
+Adithaim	অদীথয়িম	অদীথয়িম	revisado	rev. IA: Josh.15.36 forma da tradição da língua
+Admatha	মাথা	মাথা	sem	rev. IA: Esth.1.14 sem forma tradicional segura no texto
+Adoniram	অদোনীরাম	অদোনীরাম	revisado	rev. IA: 1Kgs.4.6 forma da tradição da língua
+Adoraim	অদোরয়িম	অদোরয়িম	revisado	rev. IA: 2Chr.11.9 forma da tradição da língua
+Adoram	অদোরাম	অদোরাম	revisado	rev. IA: 2Sam.20.24 forma da tradição da língua
+Adrammelech	অদ্রম্মেলক	অদ্রম্মেলক	revisado	rev. IA: 2Kgs.17.31 forma da tradição da língua
+Adramyttium	আদ্রামুত্তীয়	আদ্রামুত্তীয়	revisado	rev. IA: Acts.27.2 forma da tradição da língua
+Adriel	অদ্রীয়েল	অদ্রীয়েল	revisado	rev. IA: 1Sam.18.19 forma da tradição da língua
+Adullam	অদুল্লম	অদুল্লম	revisado	rev. IA: Gen.38.1 forma da tradição da língua
+Adummim	অদুম্মীম	অদুম্মীম	revisado	rev. IA: Josh.15.7 forma da tradição da língua
+Agabus	আগাব	আগাব	revisado	rev. IA: Acts.11.28 forma da tradição da língua
+Agag	অগাগ	অগাগ	revisado	rev. IA: Num.24.7 forma da tradição da língua
+Agee	আগি	আগি	revisado	rev. IA: 2Sam.23.11 forma da tradição da língua
+Ahava	আমা	অহবা	revisado	rev. IA: Ezra.8.21 forma da tradição da língua
+Ahban	অহবান	অহবান	revisado	rev. IA: 1Chr.2.29 forma da tradição da língua
+Ahiah	রাজা	অহিয়	revisado	rev. IA: 1Kgs.4.3 forma da tradição da língua
+Ahihud	অহীহূদ	অহীহূদ	revisado	rev. IA: Num.34.27 forma da tradição da língua
+Ahijah	রাজা	অহিয়	revisado	rev. IA: 1Kgs.4.3 forma da tradição da língua
+Ahiman	অহীমান	অহীমান	revisado	rev. IA: Num.13.22 forma da tradição da língua
+Ahimelech	অহীমেলক	অহীমেলক	revisado	rev. IA: 1Sam.21.1 forma da tradição da língua
+Ahimoth	অহীমোৎ	অহীমোৎ	revisado	rev. IA: 1Chr.6.25 forma da tradição da língua
+Ahinadab	অহীনাদব	অহীনাদব	revisado	rev. IA: 1Kgs.4.14 forma da tradição da língua
+Ahiram	অহীরাম	অহীরাম	revisado	rev. IA: Num.26.38 forma da tradição da língua
+Ahisamach	অহীষামক	অহীষামক	revisado	rev. IA: Exod.31.6 forma da tradição da língua
+Ahishar	অহীশার	অহীশার	revisado	rev. IA: 1Kgs.4.6 forma da tradição da língua
+Ahoah	আহোহ	আহোহ	sem	rev. IA: 1Chr.8.4 sem forma tradicional segura no texto
+Ai	আজও	ঐ	revisado	rev. IA: Josh.8.28 forma da tradição da língua
+Aiah	রাজা	আয়া	revisado	rev. IA: 2Sam.21.8 forma da tradição da língua
+Aijalon	অয়ালোন	অয়ালোন	revisado	rev. IA: Josh.10.12 forma da tradição da língua
+Aijalon	অয়ালোনে	অয়ালোন	revisado	rev. IA: Judg.1.35 forma da tradição da língua
+Akan	আকন	আকন	revisado	rev. IA: Gen.36.27 forma da tradição da língua
+Akeldama	হকলদামা	আকেলদামা	revisado	rev. IA: Acts.1.19 forma da tradição da língua
+Akrabbim	অক্রব্বীম	অক্রব্বীম	revisado	rev. IA: Num.34.4 forma da tradição da língua
+Alemeth	আলেমৎ	আলেমৎ	revisado	rev. IA: 1Chr.6.60 forma da tradição da língua
+Alexander	আলেকসান্দর	আলেকসান্দর	revisado	rev. IA: Acts.4.6 forma da tradição da língua
+Allon	অলোন	অলোন	revisado	rev. IA: Josh.19.33 forma da tradição da língua
+Allon-bacuth	বাখুৎ	বাখুৎ	sem	rev. IA: Gen.35.8 sem forma tradicional segura no texto
+Almodad	অলমোদদ	অলমোদদ	revisado	rev. IA: Gen.10.26 forma da tradição da língua
+Almon	মোন	অল্মোন	revisado	rev. IA: Josh.21.18 forma da tradição da língua
+Almon-diblathaim	দিব্লাথয়িমে	দিব্লাথয়িমে	sem	rev. IA: Num.33.46 sem forma tradicional segura no texto
+Amad	অমাদ	অমাদ	revisado	rev. IA: Josh.19.26 forma da tradição da língua
+Amal	আমল	আমল	revisado	rev. IA: 1Chr.7.35 forma da tradição da língua
+Amalek	অমালেক	অমালেক	revisado	rev. IA: Gen.14.7 forma da tradição da língua
+Amam	অমাম	অমাম	revisado	rev. IA: Josh.15.26 forma da tradição da língua
+Amaw	আমা	আমা	sem	rev. IA: Num.22.5 sem forma tradicional segura no texto
+Amittai	অমিত্তয়	অমিত্তয়	revisado	rev. IA: 2Kgs.14.25 forma da tradição da língua
+Ammah	অম্মা	অম্মা	revisado	rev. IA: 2Sam.2.24 forma da tradição da língua
+Ammon	অম্মোন	অম্মোন	revisado	rev. IA: Gen.19.38 forma da tradição da língua
+Ammon	অম্মোনীয়	অম্মোনীয়	revisado	rev. IA: Deut.2.20 forma da tradição da língua
+Amnon	অম্মোন	অম্মোন	revisado	rev. IA: 2Sam.3.2 forma da tradição da língua
+Amos	আমোস	আমোস	revisado	rev. IA: Luke.3.25 forma da tradição da língua
+Amplias	আমপ্লিয়াত	আমপ্লিয়াত	revisado	rev. IA: Rom.16.8 forma da tradição da língua
+Ampliatus	আমপ্লিয়াত	আমপ্লিয়াত	revisado	rev. IA: Rom.16.8 forma da tradição da língua
+Amram	অম্রাম	অম্রাম	revisado	rev. IA: Num.3.19 forma da tradição da língua
+Amraphel	অম্রাফল	অম্রাফল	revisado	rev. IA: Gen.14.1 forma da tradição da língua
+Amzi	অমসি	অমসি	revisado	rev. IA: 1Chr.6.46 forma da tradição da língua
+Anab	অনাব	অনাব	revisado	rev. IA: Josh.11.21 forma da tradição da língua
+Anaiah	অনায়	অনায়	revisado	rev. IA: Neh.8.4 forma da tradição da língua
+Anak	অনাক	অনাক	revisado	rev. IA: Num.13.22 forma da tradição da língua
+Anamim	অনামীয়	অনামীয়	revisado	rev. IA: Gen.10.13 forma da tradição da língua
+Anan	অনান	অনান	revisado	rev. IA: Neh.10.26 forma da tradição da língua
+Anath	অনাত	অনাত	revisado	rev. IA: Judg.3.31 forma da tradição da língua
+Anathoth	অনাথোত	অনাথোৎ	revisado	rev. IA: 2Sam.23.27 forma da tradição da língua
+Anathoth	অনাথোতে	অনাথোৎ	revisado	rev. IA: 1Kgs.2.26 forma da tradição da língua
+Anathoth	অনাথোৎ	অনাথোৎ	revisado	rev. IA: 1Chr.6.60 forma da tradição da língua
+Anna	হান্না	হান্না	revisado	rev. IA: Luke.2.36 forma da tradição da língua
+Annas	আন্না	আন্না	revisado	rev. IA: John.18.24 forma da tradição da língua
+Antioch	আন্তিয়খিয়া	আন্তিয়খিয়া	revisado	rev. IA: Acts.6.5 forma da tradição da língua
+Aphek	অফেক	অফেক	revisado	rev. IA: Josh.12.18 forma da tradição da língua
+Aphek	অফেকে	অফেক	revisado	rev. IA: Josh.12.18 forma da tradição da língua
+Aphik	অফীক	অফীক	revisado	rev. IA: Judg.1.31 forma da tradição da língua
+Apphia	আপ্পিয়া	আপ্পিয়া	revisado	rev. IA: Phlm.1.2 forma da tradição da língua
+Ara	অরা	অরা	revisado	rev. IA: 1Chr.7.38 forma da tradição da língua
+Arab	অরাব	অরাব	revisado	rev. IA: Josh.15.52 forma da tradição da língua
+Arabia	আরবীয়	আরব	revisado	rev. IA: 1Kgs.10.15 forma da tradição da língua
+Arad	অরাদ	অরাদ	revisado	rev. IA: Num.21.1 forma da tradição da língua
+Arah	আরহ	আরহ	revisado	rev. IA: 1Chr.7.39 forma da tradição da língua
+Aram	অরাম	অরাম	revisado	rev. IA: Gen.10.22 forma da tradição da língua
+Aram	আরাম	আরাম	sem	rev. IA: Judg.18.7 sem forma tradicional segura no texto
+Aram-maacah	মাখা	মাখা	sem	rev. IA: 1Chr.19.6 sem forma tradicional segura no texto
+Aran	অরান	অরান	revisado	rev. IA: Gen.36.28 forma da tradição da língua
+Ararat	অরারট	অরারট	revisado	rev. IA: Gen.8.4 forma da tradição da língua
+Archelaus	আর্খিলায়	আর্খিলায়	revisado	rev. IA: Matt.2.22 forma da tradição da língua
+Archippus	আর্খিপ্প	আর্খিপ্প	revisado	rev. IA: Col.4.17 forma da tradição da língua
+Ardon	অর্দোন	অর্দোন	revisado	rev. IA: 1Chr.2.18 forma da tradição da língua
+Areopagus	আরেয়পাগ	আরেয়পাগ	revisado	rev. IA: Acts.17.19 forma da tradição da língua
+Aretas	আরিতা	আরিতা	revisado	rev. IA: 2Cor.11.32 forma da tradição da língua
+Aridai	অরীদয়	অরীদয়	revisado	rev. IA: Esth.9.9 forma da tradição da língua
+Aridatha	অরীদাথঃ	অরীদাথ	revisado	rev. IA: Esth.9.8 forma da tradição da língua
+Arieh	অরিয়িকে	অরিয়িকে	sem	rev. IA: 2Kgs.15.25 sem forma tradicional segura no texto
+Arimathea	অরিমাথিয়া	অরিমাথিয়া	revisado	rev. IA: Matt.27.57 forma da tradição da língua
+Arisai	অরীষয়	অরীষয়	revisado	rev. IA: Esth.9.9 forma da tradição da língua
+Aristobulus	আরিষ্টাবুল	আরিষ্টাবুল	revisado	rev. IA: Rom.16.10 forma da tradição da língua
+Armageddon	হরমাগিদোন	হরমাগিদোন	revisado	rev. IA: Rev.16.16 forma da tradição da língua
+Armoni	অম্মোনি	অর্মোনী	revisado	rev. IA: 2Sam.21.8 forma da tradição da língua
+Arod	অরোদ	অরোদ	revisado	rev. IA: Gen.46.16 forma da tradição da língua
+Aroer	আরোয়ের	অরোয়ের	revisado	rev. IA: Josh.13.9 forma da tradição da língua
+Artemas	আর্ত্তিমা	আর্ত্তিমা	revisado	rev. IA: Titus.3.12 forma da tradição da língua
+Arubboth	অরুব্বোতে	অরুব্বোৎ	revisado	rev. IA: 1Kgs.4.10 forma da tradição da língua
+Arumah	রূমায়	রূমা	revisado	rev. IA: 2Kgs.23.36 forma da tradição da língua
+Arza	অর্সা	অর্সা	revisado	rev. IA: 1Kgs.16.9 forma da tradição da língua
+Asa	আসা	আসা	revisado	rev. IA: 1Kgs.15.8 forma da tradição da língua
+Asahiah	অসায়	অসায়	revisado	rev. IA: 2Kgs.22.12 forma da tradição da língua
+Asaph	আসফ	আসফ	revisado	rev. IA: 2Kgs.18.18 forma da tradição da língua
+Asareel	অসারেল	অসারেল	revisado	rev. IA: 1Chr.4.16 forma da tradição da língua
+Asarel	অসারেল	অসারেল	revisado	rev. IA: 1Chr.4.16 forma da tradição da língua
+Ashan	আশন	আশন	revisado	rev. IA: Josh.15.42 forma da tradição da língua
+Ashbel	অসবেল	অসবেল	revisado	rev. IA: Gen.46.21 forma da tradição da língua
+Ashdod	অসদোদে	অস্দোদ	revisado	rev. IA: Isa.20.1 forma da tradição da língua
+Ashhur	অসহূর	অসহূর	revisado	rev. IA: 1Chr.2.24 forma da tradição da língua
+Ashkelon	অস্কিলোন	অস্কিলোন	revisado	rev. IA: Josh.13.3 forma da tradição da língua
+Ashnah	না	অশ্না	revisado	rev. IA: Josh.15.33 forma da tradição da língua
+Ashriel	অস্রীয়েল	অস্রীয়েল	revisado	rev. IA: 1Chr.7.14 forma da tradição da língua
+Ashtaroth	অষ্টারোতে	অষ্টারোৎ	revisado	rev. IA: Deut.1.4 forma da tradição da língua
+Ashtaroth	অষ্টারোৎ	অষ্টারোৎ	revisado	rev. IA: Josh.9.10 forma da tradição da língua
+Ashtoreth	অষ্টোরত	অষ্টোরত	revisado	rev. IA: 1Kgs.11.5 forma da tradição da língua
+Ashur	অসহূর	অসহূর	sem	rev. IA: 1Chr.2.24 sem forma tradicional segura no texto
+Asia	আশিয়া	এশিয়া	revisado	rev. IA: 2Tim.1.15 forma da tradição da língua
+Asnah	অস্না	অস্না	revisado	rev. IA: Ezra.2.50 forma da tradição da língua
+Aspatha	অসপাথঃ	অসপাথ	revisado	rev. IA: Esth.9.7 forma da tradição da língua
+Asriel	অস্রীয়েল	অস্রীয়েল	revisado	rev. IA: Num.26.31 forma da tradição da língua
+Asshur	অশূর	অশূর	revisado	rev. IA: Gen.10.11 forma da tradição da língua
+Asshurim	অশুরীয়	অশুরীয়	revisado	rev. IA: Gen.25.3 forma da tradição da língua
+Assir	অসীর	অসীর	revisado	rev. IA: Exod.6.24 forma da tradição da língua
+Assyria	হারা	অশূর	revisado	rev. IA: 1Chr.5.26 forma da tradição da língua
+Ataroth	অটারোতে	অটারোৎ	revisado	rev. IA: Josh.16.2 forma da tradição da língua
+Ataroth	অটারোৎ	অটারোৎ	revisado	rev. IA: Num.32.3 forma da tradição da língua
+Athach	অথাক	অথাক	revisado	rev. IA: 1Sam.30.30 forma da tradição da língua
+Athaiah	অথায়	অথায়	revisado	rev. IA: Neh.11.4 forma da tradição da língua
+Atharim	অথারীম	অথারীম	revisado	rev. IA: Num.21.1 forma da tradição da língua
+Athens	আথীনী	আথেন্স	revisado	rev. IA: Acts.17.15 forma da tradição da língua
+Augustus	আগস্ত	আগস্ত	sem	rev. IA: Luke.2.1 sem forma tradicional segura no texto
+Azal	আৎসল	আৎসল	revisado	rev. IA: Zech.14.5 forma da tradição da língua
+Valley of Aijalon	অয়ালোন উপত্যকা	অয়ালোন উপত্যকা	revisado	rev. IA: Josh.10.12 forma da tradição da língua
+Azareel	অসরেল	অসরেল	revisado	rev. IA: 1Chr.12.6 forma da tradição da língua
+Azarel	অসরেল	অসরেল	revisado	rev. IA: 1Chr.12.6 forma da tradição da língua
+Azaz	আসস	আসস	revisado	rev. IA: 1Chr.5.8 forma da tradição da língua
+Azbuk	বূক	অস্বূক	revisado	rev. IA: Neh.3.16 forma da tradição da língua
+Azmaveth	খামারে	অস্মাবৎ	revisado	rev. IA: 1Chr.27.25 forma da tradição da língua
+Azmon	অস্মোন	অস্মোন	revisado	rev. IA: Num.34.4 forma da tradição da língua
+Aznoth-tabor	তাবোর	অস্নোৎ-তাবোর	revisado	rev. IA: Josh.19.34 forma da tradição da língua
+Azriel	অস্রীয়েল	অস্রীয়েল	revisado	rev. IA: 1Chr.5.24 forma da tradição da língua
+Azur	অসুর	অসুর	revisado	rev. IA: Ezek.11.1 forma da tradição da língua
+Azur	অসূর	অসূর	revisado	rev. IA: Jer.28.1 forma da tradição da língua
+Azzur	অসুর	অসুর	revisado	rev. IA: Ezek.11.1 forma da tradição da língua
+Azzur	অসূর	অসূর	revisado	rev. IA: Neh.10.17 forma da tradição da língua
+Baal-gad	বাল্	বাল-গাদ	revisado	rev. IA: Josh.11.17 forma da tradição da língua
+Baal-hamon	হামোনে	বাল-হামোন	revisado	rev. IA: Song.8.11 forma da tradição da língua
+Baal-hanan	বাল্	বাল-হানন	revisado	rev. IA: Gen.36.38 forma da tradição da língua
+Baal-hazor	হাৎসোরে	বাল-হাৎসোর	revisado	rev. IA: 2Sam.13.23 forma da tradição da língua
+Baal-hermon	বাল	বাল-হর্মোণ	revisado	rev. IA: 1Chr.5.23 forma da tradição da língua
+Baal-meon	বালমিয়নে	বাল-মিয়োন	revisado	rev. IA: Ezek.25.9 forma da tradição da língua
+Baal-peor	বালপিয়োর	বালপিয়োর	revisado	rev. IA: Hos.9.10 forma da tradição da língua
+Baal-perazim	পরাসীমে	বাল-পরাসীম	revisado	rev. IA: 2Sam.5.20 forma da tradição da língua
+Baalah	বালা	বালা	revisado	rev. IA: Josh.15.9 forma da tradição da língua
+Baalath	বালৎ	বালৎ	revisado	rev. IA: Josh.19.44 forma da tradição da língua
+Baalath-beer	বালোতে	বালৎ-বের	revisado	rev. IA: 1Kgs.4.16 forma da tradição da língua
+Baale-judah	বালি	বালে-যিহূদা	revisado	rev. IA: 2Sam.6.2 forma da tradição da língua
+Baalhanan	বাল্	বাল-হানন	revisado	rev. IA: Gen.36.38 forma da tradição da língua
+Baana	বানা	বানা	revisado	rev. IA: 1Kgs.4.12 forma da tradição da língua
+Babel	বাবি	বাবিল	revisado	rev. IA: Gen.10.10 forma da tradição da língua
+Babylon	ব্যাবিলন	ব্যাবিলন	revisado	rev. IA: Ps.87.4 forma da tradição da língua
+Babylonia	বাবিল	বাবিল	revisado	rev. IA: Ezra.1.11 forma da tradição da língua
+Baharum	বাহরূমীয়	বাহরূমীয়	revisado	rev. IA: 1Chr.11.33 forma da tradição da língua
+Bahurim	বহুরীম	বহুরীম	revisado	rev. IA: 2Sam.3.16 forma da tradição da língua
+Bakbuk	বকবূক	বকবূক	revisado	rev. IA: Ezra.2.51 forma da tradição da língua
+Bakbukiah	বুকিয়	বকবূকিয়	revisado	rev. IA: Neh.11.17 forma da tradição da língua
+Balaam	বালাক	বিলিয়ম	revisado	rev. IA: Num.22.7 forma da tradição da língua
+Balah	বালা	বালা	revisado	rev. IA: Josh.19.3 forma da tradição da língua
+Bamoth-baal	বামোৎ	বামোৎ-বাল	revisado	rev. IA: Josh.13.17 forma da tradição da língua
+Barkos	বর্কোস	বর্কোস	revisado	rev. IA: Ezra.2.53 forma da tradição da língua
+Bartholomew	বর্থলময়	বর্থলময়	revisado	rev. IA: Matt.10.3 forma da tradição da língua
+Basemath	বাসমৎ	বাসমৎ	revisado	rev. IA: 1Kgs.4.15 forma da tradição da língua
+Bashan	বাশন	বাশন	revisado	rev. IA: Num.21.33 forma da tradição da língua
+Bashemath	বাসমত	বাসমত	revisado	rev. IA: Gen.36.10 forma da tradição da língua
+Basmath	বাসমৎ	বাসমৎ	revisado	rev. IA: 1Kgs.4.15 forma da tradição da língua
+Bavai	সারাই	ভাইয়	revisado	rev. IA: Neh.3.18 forma da tradição da língua
+Bavvai	সারাই	ভাইয়	revisado	rev. IA: Neh.3.18 forma da tradição da língua
+Bazluth	বসলূত	বসলূত	revisado	rev. IA: Ezra.2.52 forma da tradição da língua
+Bealiah	বালিয়	বেয়ালিয়	revisado	rev. IA: 1Chr.12.5 forma da tradição da língua
+Becher	বেখর	বেখর	revisado	rev. IA: Gen.46.21 forma da tradição da língua
+Bechorath	বখোরত	বখোরত	revisado	rev. IA: 1Sam.9.1 forma da tradição da língua
+Becorath	বখোরত	বখোরত	revisado	rev. IA: 1Sam.9.1 forma da tradição da língua
+Bedan	বদা	বদান	revisado	rev. IA: 1Sam.12.11 forma da tradição da língua
+Bedan	বদান	বদান	revisado	rev. IA: 1Chr.7.17 forma da tradição da língua
+Bedeiah	বেদিয়া	বেদিয়া	revisado	rev. IA: Ezra.10.35 forma da tradição da língua
+Beer	বের	বের	revisado	rev. IA: Num.21.16 forma da tradição da língua
+Beer-elim	এলীম	বের-এলীম	revisado	rev. IA: Isa.15.8 forma da tradição da língua
+Beeroth	বেরোত	বেরোত	revisado	rev. IA: 2Sam.4.2 forma da tradição da língua
+Beersheba	শেবা	বের-শেবা	revisado	rev. IA: Gen.21.14 forma da tradição da língua
+Beeshterah	বীষ্টরা	বীষ্টরা	revisado	rev. IA: Josh.21.27 forma da tradição da língua
+Bela	বেলা	বেলা	revisado	rev. IA: Gen.14.2 forma da tradição da língua
+Ben-abinadab	অবীনাদব	বেন-অবীনাদব	revisado	rev. IA: 1Kgs.4.11 forma da tradição da língua
+Ben-zoheth	সোহেৎ	বেন-সোহেৎ	revisado	rev. IA: 1Chr.4.20 forma da tradição da língua
+Benaiah	বনায়৷	বনায়	revisado	rev. IA: Ezra.10.25 forma da tradição da língua
+Bene-jaakan	বেনেয়াকন	বেনেয়াকন	revisado	rev. IA: Deut.10.6 forma da tradição da língua
+Beno	বিনো	বিনো	revisado	rev. IA: 1Chr.24.26 forma da tradição da língua
+Beon	বিয়োন	বিয়োন	revisado	rev. IA: Num.32.3 forma da tradição da língua
+Bera	বিরা	বিরা	revisado	rev. IA: Gen.14.2 forma da tradição da língua
+Beraiah	বরায়া	বরায়া	revisado	rev. IA: 1Chr.8.21 forma da tradição da língua
+Berea	এঁরা	বিরয়া	revisado	rev. IA: Acts.20.4 forma da tradição da língua
+Bered	বেরদ	বেরদ	revisado	rev. IA: Gen.16.14 forma da tradição da língua
+Bered	বেরদের	বেরদ	revisado	rev. IA: Gen.16.14 forma da tradição da língua
+Beriah	বরিয়	বরিয়	revisado	rev. IA: Gen.46.17 forma da tradição da língua
+Beriah	বরীয়	বরীয়	revisado	rev. IA: Num.26.45 forma da tradição da língua
+Bernice	বর্নিকী	বর্নিকী	revisado	rev. IA: Acts.25.13 forma da tradição da língua
+Berothah	বেরোথা	বেরোথা	revisado	rev. IA: 2Sam.8.8 forma da tradição da língua
+Besai	বেষয়	বেষয়	revisado	rev. IA: Ezra.2.49 forma da tradição da língua
+Besodeiah	বসোদিয়া	বসোদিয়া	revisado	rev. IA: Neh.3.6 forma da tradição da língua
+Besor	বিষোর	বিষোর	revisado	rev. IA: 1Sam.30.9 forma da tradição da língua
+Beten	বেটন	বেটন	revisado	rev. IA: Josh.19.25 forma da tradição da língua
+Beth-arabah	অরাবা	বৈৎ-অরাবা	revisado	rev. IA: Josh.15.6 forma da tradição da língua
+Beth-ashbea	বাবা	বৈৎ-অস্বেয়া	revisado	rev. IA: 1Chr.4.21 forma da tradição da língua
+Beth-barah	বারা	বৈৎ-বারা	revisado	rev. IA: Judg.7.24 forma da tradição da língua
+Beth-biri	বিরীতে	বৈৎ-বিরী	revisado	rev. IA: 1Chr.4.31 forma da tradição da língua
+Beth-car	বের	বৈৎ-কর	revisado	rev. IA: 1Sam.7.11 forma da tradição da língua
+Beth-dagon	দাগোন	বৈৎ-দাগোন	revisado	rev. IA: Josh.15.41 forma da tradição da língua
+Beth-diblathaim	দিব্লাথয়িম	বৈৎ-দিব্লাথয়িম	revisado	rev. IA: Jer.48.22 forma da tradição da língua
+Beth-gader	গাদের	বৈৎ-গাদের	revisado	rev. IA: 1Chr.2.51 forma da tradição da língua
+Beth-gamul	গামূল	বৈৎ-গামূল	revisado	rev. IA: Jer.48.23 forma da tradição da língua
+Beth-hoglah	হগ্লা	বৈৎ-হগ্লা	revisado	rev. IA: Josh.15.6 forma da tradição da língua
+Beth-jeshimoth	যিশীমোৎ	বৈৎ-যিশীমোৎ	revisado	rev. IA: Num.33.49 forma da tradição da língua
+Beth-maacah	বৈৎমাখাতে	বৈৎ-মাখা	revisado	rev. IA: 2Sam.20.15 forma da tradição da língua
+Beth-marcaboth	মর্কাবোতে	বৈৎ-মর্কাবোৎ	revisado	rev. IA: 1Chr.4.31 forma da tradição da língua
+Beth-millo	মিল্লো	বৈৎ-মিল্লো	revisado	rev. IA: Judg.9.6 forma da tradição da língua
+Beth-nimrah	নিম্রা	বৈৎ-নিম্রা	revisado	rev. IA: Num.32.3 forma da tradição da língua
+Beth-rapha	রাফা	বৈৎ-রাফা	revisado	rev. IA: 1Chr.4.12 forma da tradição da língua
+Beth-rehob	টোবের	বৈৎ-রহোব	revisado	rev. IA: 2Sam.10.6 forma da tradição da língua
+Beth-shittah	শিট্টা	বৈৎ-শিট্টা	revisado	rev. IA: Judg.7.22 forma da tradição da língua
+Beth-zur	সূর	বৈৎ-সূর	revisado	rev. IA: Josh.15.58 forma da tradição da língua
+Bethel	বৈথেল	বৈথেল	revisado	rev. IA: Gen.12.8 forma da tradição da língua
+Bethesda	বৈথেসদা	বৈথেসদা	revisado	rev. IA: John.5.2 forma da tradição da língua
+Bethsaida	বৈৎসৈদা	বৈৎসৈদা	revisado	rev. IA: Mark.6.45 forma da tradição da língua
+Bethul	বথুল	বথুল	revisado	rev. IA: Josh.19.4 forma da tradição da língua
+Bezai	বেৎসয়	বেৎসয়	revisado	rev. IA: Ezra.2.17 forma da tradição da língua
+Bezek	বেষকে	বেষক	revisado	rev. IA: Judg.1.4 forma da tradição da língua
+Bezer	বেৎসর	বেৎসর	revisado	rev. IA: Deut.4.43 forma da tradição da língua
+Bidkar	বিদ্	বিদ্কর	revisado	rev. IA: 2Kgs.9.25 forma da tradição da língua
+Bigthan	বিগ্	বিগ্থন	revisado	rev. IA: Esth.2.21 forma da tradição da língua
+Bigthana	বিগ্	বিগ্থনা	revisado	rev. IA: Esth.2.21 forma da tradição da língua
+Bileam	বিল্	বিলিয়াম	revisado	rev. IA: 1Chr.6.70 forma da tradição da língua
+Bilgah	বিল্	বিল্গা	revisado	rev. IA: 1Chr.24.14 forma da tradição da língua
+Bilhah	বিলহাতে	বিলহা	revisado	rev. IA: 1Chr.4.29 forma da tradição da língua
+Bilhan	বিলহন	বিলহন	revisado	rev. IA: Gen.36.27 forma da tradição da língua
+Bilshan	বিলশন	বিলশন	revisado	rev. IA: Ezra.2.2 forma da tradição da língua
+Bimhal	বিম্	বিম্হল	revisado	rev. IA: 1Chr.7.33 forma da tradição da língua
+Binea	বিনিয়া	বিনিয়া	revisado	rev. IA: 1Chr.8.37 forma da tradição da língua
+Birzaith	বির্ষোত	বির্ষোত	revisado	rev. IA: 1Chr.7.31 forma da tradição da língua
+Birzavith	বির্ষোত	বির্ষোত	revisado	rev. IA: 1Chr.7.31 forma da tradição da língua
+Bishlam	বিশ্লম	বিশ্লম	revisado	rev. IA: Ezra.4.7 forma da tradição da língua
+Bithynia	বিথুনিয়া	বিথুনিয়া	revisado	rev. IA: 1Pet.1.1 forma da tradição da língua
+Blastus	ব্লাস্ত	ব্লাস্ত	revisado	rev. IA: Acts.12.20 forma da tradição da língua
+Bohan	বোহন	বোহন	revisado	rev. IA: Josh.15.6 forma da tradição da língua
+Bor-ashan	বোরআশন	বোর-আশন	revisado	rev. IA: 1Sam.30.30 forma da tradição da língua
+Bozkath	বস্কৎ	বস্কৎ	revisado	rev. IA: Josh.15.39 forma da tradição da língua
+Cabbon	কব্বোন	কব্বোন	revisado	rev. IA: Josh.15.40 forma da tradição da língua
+Caesarea	আসার	কৈসরিয়া	revisado	rev. IA: Acts.25.1 forma da tradição da língua
+Calcol	কল্	কলকোল	revisado	rev. IA: 1Kgs.4.31 forma da tradição da língua
+Calneh	কলনীতে	কল্নী	revisado	rev. IA: Amos.6.2 forma da tradição da língua
+Cana	কান্না	কান্না	revisado	rev. IA: John.2.1 forma da tradição da língua
+Canaan	কনান	কনান	revisado	rev. IA: Gen.9.18 forma da tradição da língua
+Capernaum	কফরনাহূমে	কফরনাহূম	revisado	rev. IA: Matt.4.13 forma da tradição da língua
+Caphthorim	কপ্তরীয়	কপ্তরীয়	revisado	rev. IA: Gen.10.14 forma da tradição da língua
+Caphtor	কপ্তোর	কপ্তোর	revisado	rev. IA: Deut.2.23 forma da tradição da língua
+Caphtorim	কপ্তোরীয়	কপ্তোরীয়	revisado	rev. IA: Deut.2.23 forma da tradição da língua
+Carcas	কর্ক্কস	কর্ক্কস	revisado	rev. IA: Esth.1.10 forma da tradição da língua
+Carchemish	কর্কমীশে	কর্কমীশ	revisado	rev. IA: 2Chr.35.20 forma da tradição da língua
+Carkas	কর্ক্কস	কর্ক্কস	revisado	rev. IA: Esth.1.10 forma da tradição da língua
+Carmel	কর্মিল	কর্মিল	revisado	rev. IA: Josh.12.22 forma da tradição da língua
+Carmel	কর্মিলে	কর্মিলীয়	revisado	rev. IA: 1Sam.25.2 forma da tradição da língua
+Carpus	কার্প	কার্প	revisado	rev. IA: 2Tim.4.13 forma da tradição da língua
+Carshena	কর্শনা	কর্শনা	revisado	rev. IA: Esth.1.14 forma da tradição da língua
+Casluhim	কসলূহীয়	কসলূহীয়	revisado	rev. IA: Gen.10.14 forma da tradição da língua
+Chalcol	কল্	কল্কোল	revisado	rev. IA: 1Kgs.4.31 forma da tradição da língua
+Chaldea	ছাদে	কলদীয়	revisado	rev. IA: Jer.32.29 forma da tradição da língua
+Chedorlaomer	কদরলায়মের	কদরলায়মের	revisado	rev. IA: Gen.14.4 forma da tradição da língua
+Chelal	কলাল	কলাল	revisado	rev. IA: Ezra.10.30 forma da tradição da língua
+Chelluh	কলূহূ	কলূহূ	revisado	rev. IA: Ezra.10.35 forma da tradição da língua
+Chelub	কলূব	কলূব	revisado	rev. IA: 1Chr.4.11 forma da tradição da língua
+Cheluhi	কলূহূ	কলূহূ	revisado	rev. IA: Ezra.10.35 forma da tradição da língua
+Cheran	করাণ	করাণ	revisado	rev. IA: 1Chr.1.41 forma da tradição da língua
+Cherith	করীৎ	করীৎ	revisado	rev. IA: 1Kgs.17.3 forma da tradição da língua
+Cherub	করূব	করূব	revisado	rev. IA: Ezra.2.59 forma da tradição da língua
+Chesed	কেষদ	কেষদ	revisado	rev. IA: Gen.22.22 forma da tradição da língua
+Chesil	কসীল	কসীল	revisado	rev. IA: Josh.15.30 forma da tradição da língua
+Chesulloth	কসুল্লোৎ	কসুল্লোৎ	revisado	rev. IA: Josh.19.18 forma da tradição da língua
+Chezib	কষীবে	কষীব	revisado	rev. IA: Gen.38.5 forma da tradição da língua
+Chilmad	কিল্	কিল্মাদ	revisado	rev. IA: Ezek.27.23 forma da tradição da língua
+Chimham	কিমহম	কিমহম	revisado	rev. IA: 2Sam.19.37 forma da tradição da língua
+Chinnereth	কিন্নেরৎ	কিন্নেরৎ	revisado	rev. IA: Num.34.11 forma da tradição da língua
+Chinneroth	কিন্নেরত	কিন্নেরত	revisado	rev. IA: Josh.11.2 forma da tradição da língua
+Chislev	কিষলেব	কিষলেব	revisado	rev. IA: Zech.7.1 forma da tradição da língua
+Chloe	ক্লোয়ী	ক্লোয়ী	revisado	rev. IA: 1Cor.1.11 forma da tradição da língua
+Chuza	কুষ	কুষ	revisado	rev. IA: Luke.8.3 forma da tradição da língua
+Clauda	কৌদা	কৌদা	revisado	rev. IA: Acts.27.16 forma da tradição da língua
+Claudia	ক্লৌদিয়া	ক্লৌদিয়া	revisado	rev. IA: 2Tim.4.21 forma da tradição da língua
+Claudius	ক্লৌদিয়	ক্লৌদিয়	revisado	rev. IA: Acts.11.28 forma da tradição da língua
+Cleophas	ক্লোপা	ক্লোপা	revisado	rev. IA: John.19.25 forma da tradição da língua
+Col-hozeh	কল্	কল্-হোজে	revisado	rev. IA: Neh.3.15 forma da tradição da língua
+Colossae	কলসিতে	কলসী	revisado	rev. IA: Col.1.2 forma da tradição da língua
+Cononiah	কনানিয়	কনানিয়	revisado	rev. IA: 2Chr.31.12 forma da tradição da língua
+Coos	কো	কস	revisado	rev. IA: Acts.21.1 forma da tradição da língua
+Corban	করা	কর্বান	revisado	rev. IA: Mark.7.11 forma da tradição da língua
+Corinth	করিন্থ	করিন্থ	revisado	rev. IA: Acts.18.1 forma da tradição da língua
+Cos	কো	কস	revisado	rev. IA: Acts.21.1 forma da tradição da língua
+Cosam	কোষম	কোষম	revisado	rev. IA: Luke.3.28 forma da tradição da língua
+Coz	কোষ	কোষ	revisado	rev. IA: 1Chr.4.8 forma da tradição da língua
+Cozbi	কস্	কস্বী	revisado	rev. IA: Num.25.15 forma da tradição da língua
+Crescens	ক্রীষ্কেন্ত	ক্রীষ্কেন্ত	revisado	rev. IA: 2Tim.4.10 forma da tradição da língua
+Crete	ক্রীতী	ক্রীতী	revisado	rev. IA: Acts.27.7 forma da tradição da língua
+Crispus	ক্রিস্প	ক্রিস্প	revisado	rev. IA: Acts.18.8 forma da tradição da língua
+Cushan	কূশন	কূশন	revisado	rev. IA: Hab.3.7 forma da tradição da língua
+Cushi	কূশীয়	কূশীয়	revisado	rev. IA: 2Sam.18.21 forma da tradição da língua
+Dabbesheth	দব্বেশৎ	দব্বেশৎ	revisado	rev. IA: Josh.19.11 forma da tradição da língua
+Daberath	দাবরৎ	দাবরৎ	revisado	rev. IA: Josh.19.12 forma da tradição da língua
+Dalaiah	দলায়	দলায়	revisado	rev. IA: 1Chr.3.24 forma da tradição da língua
+Dalmanutha	দলমনুথা	দলমনুথা	revisado	rev. IA: Mark.8.10 forma da tradição da língua
+Dalphon	ফোন	দল্ফোন	revisado	rev. IA: Esth.9.7 forma da tradição da língua
+Damascus	দামেস্ক	দামেস্ক	revisado	rev. IA: Isa.10.9 forma da tradição da língua
+Dan	দান	দান	revisado	rev. IA: Gen.14.14 forma da tradição da língua
+Dannah	দন্না	দন্না	revisado	rev. IA: Josh.15.49 forma da tradição da língua
+Darkon	দর্কোন	দর্কোন	revisado	rev. IA: Ezra.2.56 forma da tradição da língua
+David	দায়ূদ	দায়ূদ	revisado	rev. IA: Ruth.4.17 forma da tradição da língua
+Debir	দবীর	দবীর	revisado	rev. IA: Josh.10.3 forma da tradição da língua
+Dekar	দেকর	দেকর	revisado	rev. IA: 1Kgs.4.9 forma da tradição da língua
+Deker	দেকর	দেকর	revisado	rev. IA: 1Kgs.4.9 forma da tradição da língua
+Demas	দীমা	দীমা	revisado	rev. IA: Col.4.14 forma da tradição da língua
+Derbe	দর্বী	দর্বী	revisado	rev. IA: Acts.14.6 forma da tradição da língua
+Destiny	উদ্দেশ্যে	উদ্দেশ্যে	sem	rev. IA: Isa.65.11 sem forma tradicional segura no texto
+Diana	দীয়ানা	দীয়ানা	revisado	rev. IA: Acts.19.24 forma da tradição da língua
+Dibon	দীমোন	দীমোন	revisado	rev. IA: Isa.15.9 forma da tradição da língua
+Dibon-gad	দীবোন	দীবোন-গাদ	revisado	rev. IA: Num.33.45 forma da tradição da língua
+Dilean	দিলিয়ন	দিলিয়ন	revisado	rev. IA: Josh.15.38 forma da tradição da língua
+Dimnah	দিম্না	দিম্না	revisado	rev. IA: Josh.21.35 forma da tradição da língua
+Dionysius	দিয়নুষিয়	দিয়নুষিয়	revisado	rev. IA: Acts.17.34 forma da tradição da língua
+Diotrephes	দিয়ত্রিফি	দিয়ত্রিফি	revisado	rev. IA: 3John.1.9 forma da tradição da língua
+Dishan	দীশন	দীশন	revisado	rev. IA: Gen.36.21 forma da tradição da língua
+Dodavah	দোদাবাহূ	দোদাবাহূ	revisado	rev. IA: 2Chr.20.37 forma da tradição da língua
+Dodo	দোদাইয়	দোদাইয়	revisado	rev. IA: 1Chr.27.4 forma da tradição da língua
+Doeg	দোয়েগ	দোয়েগ	revisado	rev. IA: 1Sam.21.7 forma da tradição da língua
+Dophkah	দপকা	দপকা	revisado	rev. IA: Num.33.13 forma da tradição da língua
+Dothan	দোথনে	দোথন	revisado	rev. IA: Gen.37.17 forma da tradição da língua
+Ebal	এবল	এবল	revisado	rev. IA: Gen.36.23 forma da tradição da língua
+Ebed	এবদ	এবদ	revisado	rev. IA: Judg.9.26 forma da tradição da língua
+Eber	এবর	এবর	revisado	rev. IA: Gen.11.16 forma da tradição da língua
+Eber	এবারের	এবর	revisado	rev. IA: Gen.10.21 forma da tradição da língua
+Eber	ছেলেরা	এবর	revisado	rev. IA: 1Chr.8.12 forma da tradição da língua
+Ebez	এবস	এবস	revisado	rev. IA: Josh.19.20 forma da tradição da língua
+Eden	এদন	এদন	revisado	rev. IA: Gen.2.8 forma da tradição da língua
+Edom	ইদোম	ইদোম	revisado	rev. IA: Gen.32.3 forma da tradição da língua
+Edrei	ইদ্রিয়ী	ইদ্রিয়ী	revisado	rev. IA: Num.21.33 forma da tradição da língua
+Eglah	ইগ্লা	ইগ্লা	revisado	rev. IA: 2Sam.3.5 forma da tradição da língua
+Eglaim	এলীম	ইগ্লয়িম	revisado	rev. IA: Isa.15.8 forma da tradição da língua
+Eker	একর	একর	revisado	rev. IA: 1Chr.2.27 forma da tradição da língua
+El-paran	পারন	এল-পারন	revisado	rev. IA: Gen.14.6 forma da tradição da língua
+Ela	এলা	এলা	revisado	rev. IA: 1Kgs.4.18 forma da tradição da língua
+Elead	ছেলে	ইলেয়াদ	revisado	rev. IA: 1Chr.7.21 forma da tradição da língua
+Eliada	ইলিয়াদা	ইলিয়াদা	revisado	rev. IA: 2Sam.5.16 forma da tradição da língua
+Eliadah	ইলিয়াদা	ইলিয়াদা	revisado	rev. IA: 1Kgs.11.23 forma da tradição da língua
+Eliah	এলিয়	এলিয়	revisado	rev. IA: 1Chr.8.27 forma da tradição da língua
+Eliah	এলিয়৷	এলিয়	revisado	rev. IA: Ezra.10.26 forma da tradição da língua
+Eliahba	ইলিয়হবা	ইলিয়হবা	revisado	rev. IA: 2Sam.23.32 forma da tradição da língua
+Eliathah	ইলীয়াথা	ইলীয়াথা	revisado	rev. IA: 1Chr.25.4 forma da tradição da língua
+Elidad	ইলীদদ	ইলীদদ	revisado	rev. IA: Num.34.21 forma da tradição da língua
+Elihoenai	ইলিয়ৈনয়	ইলিয়ৈনয়	revisado	rev. IA: Ezra.8.4 forma da tradição da língua
+Elihoreph	ইলীহোরফ	ইলীহোরফ	revisado	rev. IA: 1Kgs.4.3 forma da tradição da língua
+Elijah	এলিয়৷	এলিয়	revisado	rev. IA: Ezra.10.26 forma da tradição da língua
+Eliphal	ইলীফাল	ইলীফাল	revisado	rev. IA: 1Chr.11.35 forma da tradição da língua
+Elipheleh	ইলীফলেহূ	ইলীফলেহূ	revisado	rev. IA: 1Chr.15.18 forma da tradição da língua
+Eliphelehu	ইলীফলেহূ	ইলীফলেহূ	revisado	rev. IA: 1Chr.15.18 forma da tradição da língua
+Elishaphat	ইলীশাফট	ইলীশাফট	revisado	rev. IA: 2Chr.23.1 forma da tradição da língua
+Elishua	ইলীশূয়	ইলীশূয়	revisado	rev. IA: 2Sam.5.15 forma da tradição da língua
+Eliud	ইলীহূদ	ইলীহূদ	revisado	rev. IA: Matt.1.14 forma da tradição da língua
+Elkosh	ইলকোশীয়	ইলকোশীয়	revisado	rev. IA: Nah.1.1 forma da tradição da língua
+Ellasar	ইল্লাসর	ইল্লাসর	revisado	rev. IA: Gen.14.1 forma da tradição da língua
+Elmadam	ইলমাদম	ইলমাদম	revisado	rev. IA: Luke.3.28 forma da tradição da língua
+Elnaam	নাম	ইল্নাম	revisado	rev. IA: 1Chr.11.46 forma da tradição da língua
+Elon	এলোন	এলোন	revisado	rev. IA: Gen.26.34 forma da tradição da língua
+Elpaal	ইল্পাল	ইল্পাল	revisado	rev. IA: 1Chr.8.11 forma da tradição da língua
+Elpelet	ইল্পেলট	ইল্পেলট	revisado	rev. IA: 1Chr.14.5 forma da tradição da língua
+Elteke	থেকে	ইল্তকী	revisado	rev. IA: Josh.21.23 forma da tradição da língua
+Eltekeh	থেকে	ইল্তকী	revisado	rev. IA: Josh.21.23 forma da tradição da língua
+Eltekon	তকোন	ইল্তকোন	revisado	rev. IA: Josh.15.59 forma da tradição da língua
+Eltolad	তোলদ	ইল্তোলদ	revisado	rev. IA: Josh.15.30 forma da tradição da língua
+Elul	ইলূল	ইলূল	revisado	rev. IA: Neh.6.15 forma da tradição da língua
+Elzabad	সাবদ	ইল্সাবদ	revisado	rev. IA: 1Chr.12.12 forma da tradição da língua
+Emim	এমীয়	এমীয়	revisado	rev. IA: Deut.2.10 forma da tradição da língua
+En-dor	ঐনদোরে	ঐনদোর	revisado	rev. IA: 1Sam.28.7 forma da tradição da língua
+En-gannim	গন্নীম	ঐন-গন্নীম	revisado	rev. IA: Josh.15.34 forma da tradição da língua
+En-hakkore	করলে	ঐন-হক্কোরে	revisado	rev. IA: Judg.15.19 forma da tradição da língua
+En-hazor	হাৎসোর	ঐন-হাৎসোর	revisado	rev. IA: Josh.19.37 forma da tradição da língua
+En-mishpat	ঐনমিষ্পটে	ঐন-মিষ্পট	revisado	rev. IA: Gen.14.7 forma da tradição da língua
+En-rimmon	রিম্মোনে	ঐন-রিম্মোন	revisado	rev. IA: Neh.11.29 forma da tradição da língua
+En-rogel	রোগেলে	ঐন-রোগেল	revisado	rev. IA: Josh.15.7 forma da tradição da língua
+En-shemesh	শেমশে	ঐন-শেমশ	revisado	rev. IA: Josh.18.17 forma da tradição da língua
+Engedi	গদী	ঐন-গদী	revisado	rev. IA: Josh.15.62 forma da tradição da língua
+Epaphras	ইপাফ্রা	ইপাফ্রা	revisado	rev. IA: Col.1.7 forma da tradição da língua
+Epaphroditus	ইপাফ্রদীত	ইপাফ্রদীত	revisado	rev. IA: Phil.4.18 forma da tradição da língua
+Ephah	এফ	ঐফা	revisado	rev. IA: Gen.25.4 forma da tradição da língua
+Ephai	এফয়	এফয়	revisado	rev. IA: Jer.40.8 forma da tradição da língua
+Epher	এফর	ঐফর	revisado	rev. IA: Gen.25.4 forma da tradição da língua
+Ephes-dammim	এফসদম্মীমে	ইফস-দম্মীম	revisado	rev. IA: 1Sam.17.1 forma da tradição da língua
+Ephod	এফো	এফোদ	revisado	rev. IA: Num.34.23 forma da tradição da língua
+Ephrath	ইফ্রাথ	ইফ্রাথ	revisado	rev. IA: Gen.35.16 forma da tradição da língua
+Ephrathah	ইফ্রাথায়	ইফ্রাথায়	revisado	rev. IA: Ruth.4.11 forma da tradição da língua
+Ephron	ইফ্রোণ	ইফ্রোণ	revisado	rev. IA: Gen.23.8 forma da tradição da língua
+Epicurean	ইপিকুরের	ইপিকুরীয়	revisado	rev. IA: Acts.17.18 forma da tradição da língua
+Er	এর	এর	revisado	rev. IA: Gen.38.3 forma da tradição da língua
+Er	নেরি	এর	revisado	rev. IA: Luke.3.28 forma da tradição da língua
+Eran	এরণ	এরণ	revisado	rev. IA: Num.26.36 forma da tradição da língua
+Erastus	ইরাস্ত	ইরাস্ত	revisado	rev. IA: Acts.19.22 forma da tradição da língua
+Erech	এরক	এরক	revisado	rev. IA: Gen.10.10 forma da tradição da língua
+Esar-haddon	এসর	এসর-হদ্দোন	revisado	rev. IA: 2Kgs.19.37 forma da tradição da língua
+Esarhaddon	এসর	এসর-হদ্দোন	revisado	rev. IA: 2Kgs.19.37 forma da tradição da língua
+Esau	এষৌ	এষৌ	revisado	rev. IA: Gen.25.25 forma da tradição da língua
+Esek	এষক	এষক	revisado	rev. IA: Gen.26.20 forma da tradição da língua
+Eshcol	ইষ্কোল	ইষ্কোল	revisado	rev. IA: Gen.14.13 forma da tradição da língua
+Eshtaol	ইষ্টায়োল	ইষ্টায়োল	revisado	rev. IA: Josh.15.33 forma da tradição da língua
+Eshton	ইষ্টোন	ইষ্টোন	revisado	rev. IA: 1Chr.4.11 forma da tradição da língua
+Esli	ইষলি	ইষলি	revisado	rev. IA: Luke.3.25 forma da tradição da língua
+Eth-kazin	কাৎসীন	এৎ-কাৎসীন	revisado	rev. IA: Josh.19.13 forma da tradição da língua
+Etham	এথম	এথম	revisado	rev. IA: Exod.13.20 forma da tradição da língua
+Ethan	এথন	এথন	revisado	rev. IA: 1Kgs.4.31 forma da tradição da língua
+Ethbaal	সেবা	ইত্বাল	revisado	rev. IA: 1Kgs.16.31 forma da tradição da língua
+Ether	এথর	এথর	revisado	rev. IA: Josh.15.42 forma da tradição da língua
+Ethiopia	ইথিয়পীয়	ইথিয়পীয়	revisado	rev. IA: Acts.8.27 forma da tradição da língua
+Eubulus	উবূল	উবূল	revisado	rev. IA: 2Tim.4.21 forma da tradição da língua
+Eunice	উনীকী	উনীকী	revisado	rev. IA: 2Tim.1.5 forma da tradição da língua
+Evi	এই	এবি	revisado	rev. IA: Num.31.8 forma da tradição da língua
+Ezbon	ইষবোন	ইষবোন	revisado	rev. IA: Gen.46.16 forma da tradição da língua
+Ezbon	বোণ	ইষবোন	revisado	rev. IA: 1Chr.7.7 forma da tradição da língua
+Ezekiel	যিহিস্কেল	যিহিস্কেল	revisado	rev. IA: Ezek.1.3 forma da tradição da língua
+Ezel	এষল	এষল	revisado	rev. IA: 1Sam.20.19 forma da tradição da língua
+Ezem	এৎসম	এৎসম	revisado	rev. IA: Josh.15.29 forma da tradição da língua
+Ezer	এষর	এষর	revisado	rev. IA: 1Chr.12.9 forma da tradição da língua
+Ezer	এসর	এসর	revisado	rev. IA: 1Chr.4.4 forma da tradição da língua
+Ezer	হূশের	এসর	revisado	rev. IA: 1Chr.4.4 forma da tradição da língua
+Ezrah	ইষ্রা	ইষ্রা	revisado	rev. IA: 1Chr.4.17 forma da tradição da língua
+Ezri	ইষ্রি	ইষ্রি	revisado	rev. IA: 1Chr.27.26 forma da tradição da língua
+Felix	ফেলিক্স	ফেলিক্স	revisado	rev. IA: Acts.23.24 forma da tradição da língua
+Gabbatha	গব্বথা	গব্বথা	revisado	rev. IA: John.19.13 forma da tradição da língua
+Gadara	গাদারীয়	গাদারা	revisado	rev. IA: Matt.8.28 forma da tradição da língua
+Gaddi	গদ্দি	গদ্দি	revisado	rev. IA: Num.13.11 forma da tradição da língua
+Gaddiel	গদ্দীয়েল	গদ্দীয়েল	revisado	rev. IA: Num.13.10 forma da tradição da língua
+Gaius	গায়	গায়	revisado	rev. IA: Acts.19.29 forma da tradição da língua
+Gaius	গায়ুশ	গায়ুশ	revisado	rev. IA: 1Cor.1.14 forma da tradição da língua
+Galal	গালল	গালল	revisado	rev. IA: 1Chr.9.15 forma da tradição da língua
+Galilee	গালীলে	গালীল	revisado	rev. IA: Josh.20.7 forma da tradição da língua
+Galilee	গিল্	গালীল	revisado	rev. IA: Josh.12.23 forma da tradição da língua
+Gallim	গল্লীম	গল্লীম	revisado	rev. IA: 1Sam.25.44 forma da tradição da língua
+Gallio	গাল্লিয়ো	গাল্লিয়ো	revisado	rev. IA: Acts.18.14 forma da tradição da língua
+Gath	গাতীয়	গাত	revisado	rev. IA: Josh.13.3 forma da tradição da língua
+Gath	গাতে	গাতে	revisado	rev. IA: Josh.11.22 forma da tradição da língua
+Gath-rimmon	রিম্মোণ	গাৎ-রিম্মোন	revisado	rev. IA: Josh.19.45 forma da tradição da língua
+Gaza	ঘসা	গাজা	revisado	rev. IA: Gen.10.19 forma da tradição da língua
+Gebal	গবাল	গবাল	revisado	rev. IA: Ps.83.7 forma da tradição da língua
+Geber	গেবর	গেবর	revisado	rev. IA: 1Kgs.4.13 forma da tradição da língua
+Geder	গেদরের	গেদর	revisado	rev. IA: Josh.12.13 forma da tradição da língua
+Gederah	গদেরা	গদেরা	revisado	rev. IA: Josh.15.36 forma da tradição da língua
+Gederah	গদেরাতে	গদেরা	revisado	rev. IA: 1Chr.4.23 forma da tradição da língua
+Gederah	গদেরাথীয়	গদেরাথীয়	revisado	rev. IA: 1Chr.12.4 forma da tradição da língua
+Gederoth	গদেরোৎ	গদেরোৎ	revisado	rev. IA: Josh.15.41 forma da tradição da língua
+Gederothaim	গদেরোথয়িম	গদেরোথয়িম	revisado	rev. IA: Josh.15.36 forma da tradição da língua
+Gedor	গদর	গদর	revisado	rev. IA: 1Chr.4.18 forma da tradição da língua
+Gedor	গদোর	গদোর	revisado	rev. IA: Josh.15.58 forma da tradição da língua
+Gedor	গদোরীয়	গদোরীয়	revisado	rev. IA: 1Chr.12.7 forma da tradição da língua
+Gedor	গাদোর	গদোর	revisado	rev. IA: 1Chr.4.4 forma da tradição da língua
+Gedor	গেদর	গেদর	revisado	rev. IA: Josh.12.13 forma da tradição da língua
+Geliloth	গলীলোত	গলীলোত	revisado	rev. IA: Josh.18.17 forma da tradição da língua
+Gemalli	গমল্লি	গমল্লি	revisado	rev. IA: Num.13.12 forma da tradição da língua
+Genubath	গনুবৎ	গনুবৎ	revisado	rev. IA: 1Kgs.11.20 forma da tradição da língua
+Gerar	গরার	গরার	revisado	rev. IA: Gen.10.19 forma da tradição da língua
+Gerasa	গেরাসেনী	গেরাসেনী	revisado	rev. IA: Mark.5.1 forma da tradição da língua
+Geshan	গেসন	গেসন	revisado	rev. IA: 1Chr.2.47 forma da tradição da língua
+Geshem	গেশম্	গেশম	revisado	rev. IA: Neh.2.19 forma da tradição da língua
+Geshur	গশূর	গশূর	revisado	rev. IA: Deut.3.14 forma da tradição da língua
+Gether	গেথর	গেথর	revisado	rev. IA: Gen.10.23 forma da tradição da língua
+Gethsemane	গেৎশিমানী	গেৎশিমানী	revisado	rev. IA: Matt.26.36 forma da tradição da língua
+Gezer	গেষর	গেষর	revisado	rev. IA: Josh.10.33 forma da tradição da língua
+Giah	গীহ	গীহ	revisado	rev. IA: 2Sam.2.24 forma da tradição da língua
+Gibbar	গিব্বর	গিব্বর	revisado	rev. IA: Ezra.2.20 forma da tradição da língua
+Gibea	বেনা	গিবিয়া	revisado	rev. IA: 1Chr.2.49 forma da tradição da língua
+Gibeah	গিবিয়া	গিবিয়া	revisado	rev. IA: Josh.15.57 forma da tradição da língua
+Gibeah	গিবিয়াতে	গিবিয়া	revisado	rev. IA: Judg.19.12 forma da tradição da língua
+Gibeah	গিবিয়াৎ	গিবিয়া	revisado	rev. IA: Josh.18.28 forma da tradição da língua
+Gibeon	গিবিয়োন	গিবিয়োন	revisado	rev. IA: Josh.9.3 forma da tradição da língua
+Giddalti	গিদ্দল্	গিদ্দল্তি	revisado	rev. IA: 1Chr.25.4 forma da tradição da língua
+Gideon	গিদিয়োন	গিদিয়োন	revisado	rev. IA: Judg.6.11 forma da tradição da língua
+Gilalai	গিললয়	গিললয়	revisado	rev. IA: Neh.12.36 forma da tradição da língua
+Gilboa	গিলবোয়ে	গিলবোয়	revisado	rev. IA: 1Sam.28.4 forma da tradição da língua
+Gilead	গিলিয়দ	গিলিয়দ	revisado	rev. IA: Gen.31.21 forma da tradição da língua
+Gilgal	গিলগলে	গিলগল	revisado	rev. IA: 1Sam.11.14 forma da tradição da língua
+Gilgal	গিল্	গিলগল	revisado	rev. IA: Deut.11.30 forma da tradição da língua
+Gilo	গীলোনীয়	গীলোনীয়	revisado	rev. IA: 2Sam.23.34 forma da tradição da língua
+Gimzo	গিম্	গিম্সো	revisado	rev. IA: 2Chr.28.18 forma da tradição da língua
+Ginath	গীনত	গীনত	revisado	rev. IA: 1Kgs.16.21 forma da tradição da língua
+Gittaim	গিত্তয়িমে	গিত্তয়িম	revisado	rev. IA: 2Sam.4.3 forma da tradição da língua
+God	গড়ে	ঈশ্বর	revisado	rev. IA: 1Chr.12.22 forma da tradição da língua
+Golan	গোলন	গোলন	revisado	rev. IA: Deut.4.43 forma da tradição da língua
+Goliath	গলিয়াত	গলিয়াত	revisado	rev. IA: 1Sam.21.9 forma da tradição da língua
+Haahashtari	অহষ্টরি	অহষ্টরি	revisado	rev. IA: 1Chr.4.6 forma da tradição da língua
+Habaiah	হবায়	হবায়	revisado	rev. IA: Ezra.2.61 forma da tradição da língua
+Habakkuk	কূক	হবক্কূক	revisado	rev. IA: Hab.1.1 forma da tradição da língua
+Habaziniah	যাসিনিয়	হবৎসিনিয়	revisado	rev. IA: Jer.35.3 forma da tradição da língua
+Habazziniah	যাসিনিয়	হবৎসিনিয়	revisado	rev. IA: Jer.35.3 forma da tradição da língua
+Hadad	দাঁড়	হদদ	revisado	rev. IA: 1Kgs.11.14 forma da tradição da língua
+Hadad-rimmon	রিম্মোণ	হদদ-রিম্মোন	revisado	rev. IA: Zech.12.11 forma da tradição da língua
+Hadadezer	হদদেষের	হদদেষর	revisado	rev. IA: 2Sam.8.5 forma da tradição da língua
+Hadarezer	হদরেষরের	হদরেষরের	revisado	rev. IA: 2Sam.10.16 forma da tradição da língua
+Hadoram	হদোরাম	হদোরাম	revisado	rev. IA: Gen.10.27 forma da tradição da língua
+Haeleph	এলফ	হা-এলফ	revisado	rev. IA: Josh.18.28 forma da tradição da língua
+Hagab	হাগব	হাগব	revisado	rev. IA: Ezra.2.46 forma da tradição da língua
+Hagabah	হগাব	হগাব	revisado	rev. IA: Ezra.2.45 forma da tradição da língua
+Haggedolim	গদোলীম	গদোলীম	revisado	rev. IA: Neh.11.14 forma da tradição da língua
+Haggeri	হগ্রি	হগ্রি	revisado	rev. IA: 1Chr.11.38 forma da tradição da língua
+Haggi	হগি	হগি	revisado	rev. IA: Gen.46.16 forma da tradição da língua
+Hahiroth	হহীরোত	হহীরোত	revisado	rev. IA: Num.33.8 forma da tradição da língua
+Hakkatan	হকাটন	হকাটন	revisado	rev. IA: Ezra.8.12 forma da tradição da língua
+Hakkoz	হক্কোষ	হক্কোষ	revisado	rev. IA: 1Chr.24.10 forma da tradição da língua
+Hakkoz	হক্কোস	হক্কোষ	revisado	rev. IA: Ezra.2.61 forma da tradição da língua
+Halah	হারা	হালহ	revisado	rev. IA: 1Chr.5.26 forma da tradição da língua
+Hali	হলী	হলী	revisado	rev. IA: Josh.19.25 forma da tradição da língua
+Hallohesh	হলোহেশ	হলোহেশ	revisado	rev. IA: Neh.3.12 forma da tradição da língua
+Halohesh	হলোহেশ	হলোহেশ	revisado	rev. IA: Neh.3.12 forma da tradição da língua
+Hamath	হমাত	হমাত	revisado	rev. IA: Num.13.21 forma da tradição da língua
+Hammath	কান্নাতে	হম্মৎ	revisado	rev. IA: Josh.19.28 forma da tradição da língua
+Hammedatha	হম্মদাথা	হম্মদাথা	revisado	rev. IA: Esth.3.1 forma da tradição da língua
+Hammelech	ছেলে	হম্মেলক	revisado	rev. IA: Jer.36.26 forma da tradição da língua
+Hammolecheth	হম্মোলেকত	হম্মোলেকত	revisado	rev. IA: 1Chr.7.18 forma da tradição da língua
+Hammoleketh	হম্মোলেকত	হম্মোলেকত	revisado	rev. IA: 1Chr.7.18 forma da tradição da língua
+Hammon	হম্মোন	হম্মোন	revisado	rev. IA: Josh.19.28 forma da tradição da língua
+Hammon	হম্মোনে	হম্মোন	revisado	rev. IA: Josh.19.28 forma da tradição da língua
+Hamutal	হমূটল	হমূটল	revisado	rev. IA: 2Kgs.23.31 forma da tradição da língua
+Hanameel	হনমেল	হনমেল	revisado	rev. IA: Jer.32.7 forma da tradição da língua
+Hanamel	হনমেল	হনমেল	revisado	rev. IA: Jer.32.7 forma da tradição da língua
+Hanan	অনান	হানান	revisado	rev. IA: Neh.10.26 forma da tradição da língua
+Hanan	হানন	হানন	revisado	rev. IA: Ezra.2.46 forma da tradição da língua
+Hananiah	হনানিয়	হনানিয়	revisado	rev. IA: 1Chr.3.19 forma da tradição da língua
+Hananiah	হনানীয়	হনানিয়	revisado	rev. IA: 2Chr.26.11 forma da tradição da língua
+Hannathon	হন্নাথোন	হন্নাথোন	revisado	rev. IA: Josh.19.14 forma da tradição da língua
+Hanoch	হনোক	হনোক	revisado	rev. IA: Gen.25.4 forma da tradição da língua
+Hapharaim	হফারয়িম	হফারয়িম	revisado	rev. IA: Josh.19.19 forma da tradição da língua
+Happizzez	হপ্পিসেস	হপ্পিসেস	revisado	rev. IA: 1Chr.24.15 forma da tradição da língua
+Haran	হারণে	হারণ	revisado	rev. IA: Gen.11.26 forma da tradição da língua
+Haran	হারন	হারন	revisado	rev. IA: Gen.12.4 forma da tradição da língua
+Harhaiah	সারাই	হর্হয়	revisado	rev. IA: Neh.3.8 forma da tradição da língua
+Harhas	তাঁরা	হর্হস	revisado	rev. IA: 2Chr.34.22 forma da tradição da língua
+Harhur	হর্হূর	হর্হূর	revisado	rev. IA: Ezra.2.51 forma da tradição da língua
+Harmon	হর্ম্মোন	হর্ম্মোন	revisado	rev. IA: Amos.4.3 forma da tradição da língua
+Harnepher	হর্ণেফর	হর্ণেফর	revisado	rev. IA: 1Chr.7.36 forma da tradição da língua
+Harod	হরোদীয়	হরোদীয়	revisado	rev. IA: 2Sam.23.25 forma da tradição da língua
+Harod	হারোদ	হারোদ	revisado	rev. IA: Judg.7.1 forma da tradição da língua
+Haroeh	রায়ার	হরোয়	revisado	rev. IA: 1Chr.4.2 forma da tradição da língua
+Harsha	হর্শা	হর্শা	revisado	rev. IA: Ezra.2.52 forma da tradição da língua
+Harumaph	হরূমফ	হরূমফ	revisado	rev. IA: Neh.3.10 forma da tradição da língua
+Hashbadana	হশবদ্দানা	হশবদ্দানা	revisado	rev. IA: Neh.8.4 forma da tradição da língua
+Hashbaddanah	হশবদ্দানা	হশবদ্দানা	revisado	rev. IA: Neh.8.4 forma da tradição da língua
+Hashub	হশূব	হশূব	revisado	rev. IA: Neh.3.11 forma da tradição da língua
+Hashum	হশুম	হশুম	revisado	rev. IA: Ezra.2.19 forma da tradição da língua
+Hasshub	হশূব	হশূব	revisado	rev. IA: 1Chr.9.14 forma da tradição da língua
+Hattil	হটীল	হটীল	revisado	rev. IA: Ezra.2.57 forma da tradição da língua
+Hattush	হটুশ	হটুশ	revisado	rev. IA: 1Chr.3.22 forma da tradição da língua
+Hattush	হটূশ৷	হটূশ	revisado	rev. IA: Ezra.8.2 forma da tradição da língua
+Hazaiah	হসায়	হসায়	revisado	rev. IA: Neh.11.5 forma da tradição da língua
+Hazar-susah	সুষা	হৎসর-সুষা	revisado	rev. IA: Josh.19.5 forma da tradição da língua
+Hazar-susim	সূষীমে	হৎসর-সূষীম	revisado	rev. IA: 1Chr.4.31 forma da tradição da língua
+Hazeroth	হৎসেরোৎ	হৎসেরোৎ	revisado	rev. IA: Num.12.16 forma da tradição da língua
+Hazo	হসো	হসো	revisado	rev. IA: Gen.22.22 forma da tradição da língua
+Hazor	হাৎসারে	হাৎসার	revisado	rev. IA: Neh.11.33 forma da tradição da língua
+Heber	এবর	এবর	revisado	rev. IA: 1Chr.5.13 forma da tradição da língua
+Heber	ছেলেরা	হেবর	revisado	rev. IA: 1Chr.7.31 forma da tradição da língua
+Heber	হেবর	হেবর	revisado	rev. IA: Gen.46.17 forma da tradição da língua
+Hebron	হিব্রোণ	হিব্রোণ	revisado	rev. IA: Gen.13.18 forma da tradição da língua
+Hebron	হিব্রোণে	হিব্রোণ	revisado	rev. IA: Gen.13.18 forma da tradição da língua
+Hegai	হেগয়	হেগয়	revisado	rev. IA: Esth.2.3 forma da tradição da língua
+Helah	হিলা	হিলা	revisado	rev. IA: 1Chr.4.5 forma da tradição da língua
+Helam	হেলমে	হেলম	revisado	rev. IA: 2Sam.10.16 forma da tradição da língua
+Helbah	হেল্	হেল্বা	revisado	rev. IA: Judg.1.31 forma da tradição da língua
+Heldai	যিদায়	হিলদয়	revisado	rev. IA: Zech.6.10 forma da tradição da língua
+Heleb	হেলব	হেলব	revisado	rev. IA: 2Sam.23.29 forma da tradição da língua
+Helech	দেয়ালে	হেলক	revisado	rev. IA: Ezek.27.11 forma da tradição da língua
+Helek	হেলক	হেলক	revisado	rev. IA: Num.26.30 forma da tradição da língua
+Helem	ছেলে	হেলম	revisado	rev. IA: Zech.6.10 forma da tradição da língua
+Heleph	হেলফ	হেলফ	revisado	rev. IA: Josh.19.33 forma da tradição da língua
+Helez	হেলস	হেলস	revisado	rev. IA: 2Sam.23.26 forma da tradição da língua
+Heli	এলি	এলি	revisado	rev. IA: Luke.3.23 forma da tradição da língua
+Helkath-hazzurim	হিলকত্হত্সূরীম	হিলকত্হত্সূরীম	revisado	rev. IA: 2Sam.2.16 forma da tradição da língua
+Hemam	হেমম	হেমম	revisado	rev. IA: Gen.36.22 forma da tradição da língua
+Henadad	হেনাদ	হেনাদদ	revisado	rev. IA: Ezra.3.9 forma da tradição da língua
+Henoch	হনোক	হনোক	revisado	rev. IA: Gen.25.4 forma da tradição da língua
+Hepher	হেফর	হেফর	revisado	rev. IA: Num.26.32 forma da tradição da língua
+Heres	হেরস	হেরস	revisado	rev. IA: Judg.8.13 forma da tradição da língua
+Heresh	হেরশ	হেরশ	revisado	rev. IA: 1Chr.9.15 forma da tradição da língua
+Hereth	হেরত	হেরত	revisado	rev. IA: 1Sam.22.5 forma da tradição da língua
+Hermas	হর্ম্মা	হর্ম্মা	revisado	rev. IA: Rom.16.14 forma da tradição da língua
+Hermes	হারমেশ	হারমেশ	revisado	rev. IA: Acts.14.12 forma da tradição da língua
+Hermon	হর্মোণ	হর্মোণ	revisado	rev. IA: Deut.3.9 forma da tradição da língua
+Herodian	হেরোদীয়	হেরোদীয়	revisado	rev. IA: Matt.22.16 forma da tradição da língua
+Hesed	হেষদ	হেষদ	revisado	rev. IA: 1Kgs.4.10 forma da tradição da língua
+Heshbon	হিষ্বোন	হিষ্বোন	revisado	rev. IA: Num.32.3 forma da tradição da língua
+Heshmon	মোন	হেশ্মোন	revisado	rev. IA: Josh.15.27 forma da tradição da língua
+Heth	হেত	হেত	revisado	rev. IA: Gen.23.3 forma da tradição da língua
+Hethlon	হিৎলোন	হিৎলোন	revisado	rev. IA: Ezek.47.15 forma da tradição da língua
+Hezion	হিষিয়োণ	হিষিয়োণ	revisado	rev. IA: 1Kgs.15.18 forma da tradição da língua
+Hezro	হিষ্রো	হিষ্রো	revisado	rev. IA: 1Chr.11.37 forma da tradição da língua
+Hezron	হিষ্রোণ	হিষ্রোণ	revisado	rev. IA: Gen.46.9 forma da tradição da língua
+Hezron	হিষ্রোণে	হিষ্রোণ	revisado	rev. IA: Josh.15.3 forma da tradição da língua
+Hiddai	হিদ্দয়	হিদ্দয়	revisado	rev. IA: 2Sam.23.30 forma da tradição da língua
+Hiddekel	হিদ্দেকল	হিদ্দেকল	revisado	rev. IA: Gen.2.14 forma da tradição da língua
+Hierapolis	হিয়রাপলিতে	হিয়রাপলি	revisado	rev. IA: Col.4.13 forma da tradição da língua
+Hiram	হীরম	হীরম	revisado	rev. IA: 2Sam.5.11 forma da tradição da língua
+Hizkiah	হিষ্কিয়	হিষ্কিয়	revisado	rev. IA: 1Chr.3.23 forma da tradição da língua
+Hizkijah	হিষ্কিয়	হিষ্কিয়	revisado	rev. IA: Neh.10.17 forma da tradição da língua
+Hobab	হোবব	হোবব	revisado	rev. IA: Num.10.29 forma da tradição da língua
+Hodaiah	অনানি	হোদায়া	revisado	rev. IA: 1Chr.3.24 forma da tradição da língua
+Hodesh	হোদশ	হোদশ	revisado	rev. IA: 1Chr.8.9 forma da tradição da língua
+Hodiah	হোদিয়	হোদিয়	revisado	rev. IA: 1Chr.4.19 forma da tradição da língua
+Hodiah	হোদীয়	হোদীয়	revisado	rev. IA: Neh.10.13 forma da tradição da língua
+Hodijah	হোদিয়	হোদিয়	revisado	rev. IA: Neh.8.7 forma da tradição da língua
+Hodijah	হোদীয়	হোদীয়	revisado	rev. IA: Neh.10.13 forma da tradição da língua
+Hoglah	মহলা	হগ্লা	revisado	rev. IA: Num.26.33 forma da tradição da língua
+Hoham	হোহম	হোহম	revisado	rev. IA: Josh.10.3 forma da tradição da língua
+Homam	হোমম	হোমম	revisado	rev. IA: 1Chr.1.39 forma da tradição da língua
+Hophra	হফ্রাকেও	হফ্রা	revisado	rev. IA: Jer.44.30 forma da tradição da língua
+Hor-haggidgad	হগিদ্গদ	হোর-হগিদ্গদ	revisado	rev. IA: Num.33.32 forma da tradição da língua
+Horam	হোরম	হোরম	revisado	rev. IA: Josh.10.33 forma da tradição da língua
+Hori	হোরি	হোরি	revisado	rev. IA: Gen.36.22 forma da tradição da língua
+Horonaim	হোরোণয়িম	হোরোণয়িম	revisado	rev. IA: Jer.48.3 forma da tradição da língua
+Hosah	হোষাতে	হোষা	revisado	rev. IA: Josh.19.29 forma da tradição da língua
+Hosea	হোশেয়	হোশেয়	revisado	rev. IA: Hos.1.1 forma da tradição da língua
+Hotham	হোথম	হোথম	revisado	rev. IA: 1Chr.7.32 forma da tradição da língua
+Huldah	হুল্	হুল্দা	revisado	rev. IA: 2Kgs.22.14 forma da tradição da língua
+Huppah	হুপ্প	হুপ্প	revisado	rev. IA: 1Chr.24.13 forma da tradição da língua
+Huppim	হুপপীম	হুপপীম	revisado	rev. IA: Gen.46.21 forma da tradição da língua
+Hurai	হূরয়	হূরয়	revisado	rev. IA: 1Chr.11.32 forma da tradição da língua
+Huram	হূরম	হূরম	revisado	rev. IA: 1Chr.8.5 forma da tradição da língua
+Hushah	হূশ	হূশ	revisado	rev. IA: 2Sam.21.18 forma da tradição da língua
+Hushah	হূশাতীয়	হূশাতীয়	revisado	rev. IA: 2Sam.21.18 forma da tradição da língua
+Husham	হূশম	হূশম	revisado	rev. IA: Gen.36.34 forma da tradição da língua
+Hushim	হুশীম	হুশীম	revisado	rev. IA: Gen.46.23 forma da tradição da língua
+Huz	ঊষ	ঊষ	revisado	rev. IA: Gen.22.21 forma da tradição da língua
+Ibhar	যিভর	যিভর	revisado	rev. IA: 2Sam.5.15 forma da tradição da língua
+Ibleam	যিব্লিয়ম	যিব্লিয়ম	revisado	rev. IA: Judg.1.27 forma da tradição da língua
+Iconium	ইকনিয়	ইকনিয়	revisado	rev. IA: Acts.13.51 forma da tradição da língua
+Iddo	ইদ্দোর	ইদ্দোর	revisado	rev. IA: 1Kgs.4.14 forma da tradição da língua
+Igdaliah	যিগ্দলিয়	যিগ্দলিয়	revisado	rev. IA: Jer.35.4 forma da tradição da língua
+Iim	ইয়ীম	ইয়ীম	revisado	rev. IA: Josh.15.29 forma da tradição da língua
+Ilai	ঈলয়	ঈলয়	revisado	rev. IA: 1Chr.11.29 forma da tradição da língua
+Illyricum	ইল্লুরিকা	ইল্লুরিকা	revisado	rev. IA: Rom.15.19 forma da tradição da língua
+Imla	যিম্ল	যিম্ল	revisado	rev. IA: 1Kgs.22.8 forma da tradição da língua
+Imlah	যিম্ল	যিম্ল	revisado	rev. IA: 1Kgs.22.8 forma da tradição da língua
+Imna	যিম্ন	যিম্ন	revisado	rev. IA: 1Chr.7.35 forma da tradição da língua
+Imnah	যিম্ন	যিম্ন	revisado	rev. IA: Gen.46.17 forma da tradição da língua
+Imrah	যিম্র	যিম্রা	revisado	rev. IA: 1Chr.7.36 forma da tradição da língua
+Iphdeiah	যিফদিয়	যিফদিয়	revisado	rev. IA: 1Chr.8.25 forma da tradição da língua
+Iphedeiah	যিফদিয়	যিফদিয়	revisado	rev. IA: 1Chr.8.25 forma da tradição da língua
+Ir-nahash	ঈরনাহস	ঈরনাহস	revisado	rev. IA: 1Chr.4.12 forma da tradição da língua
+Ir-shemesh	শেমশ	ঈর-শেমশ	revisado	rev. IA: Josh.19.41 forma da tradição da língua
+Irad	ঈরদ	ঈরদ	revisado	rev. IA: Gen.4.18 forma da tradição da língua
+Iram	ঈরম	ঈরম	revisado	rev. IA: Gen.36.43 forma da tradição da língua
+Irijah	যিরিয়	যিরিয়	revisado	rev. IA: Jer.37.13 forma da tradição da língua
+Ish-bosheth	ঈশবোশত	ঈশবোশত	revisado	rev. IA: 2Sam.2.12 forma da tradição da língua
+Ishbah	যিশবহ	যিশবহ	revisado	rev. IA: 1Chr.4.17 forma da tradição da língua
+Ishhod	ঈশ্	ঈশহোদ	revisado	rev. IA: 1Chr.7.18 forma da tradição da língua
+Ishiah	যিশিয়	যিশিয়	revisado	rev. IA: 1Chr.7.3 forma da tradição da língua
+Ishijah	যিশিয়	যিশিয়	revisado	rev. IA: Ezra.10.31 forma da tradição da língua
+Ishmael	ইশ্মায়েল	ইশ্মায়েল	revisado	rev. IA: Gen.16.11 forma da tradição da língua
+Ishmaiah	যিশ্মায়য়	যিশ্মায়য়	revisado	rev. IA: 1Chr.27.19 forma da tradição da língua
+Ishmerai	যিশ্মরয়	যিশ্মরয়	revisado	rev. IA: 1Chr.8.18 forma da tradição da língua
+Ishod	ঈশ্	ঈশহোদ	revisado	rev. IA: 1Chr.7.18 forma da tradição da língua
+Ishpah	যিশ্	যিশ্পা	revisado	rev. IA: 1Chr.8.16 forma da tradição da língua
+Ishvah	যিশবা	যিশবা	revisado	rev. IA: Gen.46.17 forma da tradição da língua
+Ishvi	যিশবি	যিশবি	revisado	rev. IA: Gen.46.17 forma da tradição da língua
+Ismachiah	যিস্মখিয়	যিস্মখিয়	revisado	rev. IA: 2Chr.31.13 forma da tradição da língua
+Ispah	যিশ্	যিশ্পা	revisado	rev. IA: 1Chr.8.16 forma da tradição da língua
+Israel	ইস্রায়েল	ইস্রায়েল	revisado	rev. IA: Gen.32.32 forma da tradição da língua
+Isshiah	যিশিয়	যিশিয়	revisado	rev. IA: 1Chr.7.3 forma da tradição da língua
+Isshijah	যিশিয়	যিশিয়	revisado	rev. IA: Ezra.10.31 forma da tradição da língua
+Isuah	যিশবা	যিশবা	revisado	rev. IA: Gen.46.17 forma da tradição da língua
+Isui	যিশবি	যিশবি	revisado	rev. IA: Gen.46.17 forma da tradição da língua
+Italy	ইতালি	ইতালি	revisado	rev. IA: Acts.10.1 forma da tradição da língua
+Ithiel	ঈথীয়েল	ঈথীয়েল	revisado	rev. IA: Neh.11.7 forma da tradição da língua
+Ithnan	যিৎনন	যিৎনন	revisado	rev. IA: Josh.15.23 forma da tradição da língua
+Ithran	যিত্রণ	যিত্রণ	revisado	rev. IA: 1Chr.1.41 forma da tradição da língua
+Ithream	যিত্রিয়ম	যিত্রিয়ম	revisado	rev. IA: 2Sam.3.5 forma da tradição da língua
+Ituraea	যিতূরিয়া	যিতূরিয়া	revisado	rev. IA: Luke.3.1 forma da tradição da língua
+Ivvah	ইব্বা	ইব্বা	revisado	rev. IA: 2Kgs.18.34 forma da tradição da língua
+Iye-abarim	অবারীমে	ঈয়ে-অবারীম	revisado	rev. IA: Num.21.11 forma da tradição da língua
+Iyim	ইয়ীম	ইয়ীম	revisado	rev. IA: Num.33.45 forma da tradição da língua
+Izhar	যিষ্	যিষহর	revisado	rev. IA: Exod.6.21 forma da tradição da língua
+Izhar	যিৎসোহর	যিৎসোহর	revisado	rev. IA: 1Chr.4.7 forma da tradição da língua
+Izliah	হিষ্কি	যিষ্লিয়	revisado	rev. IA: 1Chr.8.18 forma da tradição da língua
+Izziah	যিষিয়	যিষিয়	revisado	rev. IA: Ezra.10.25 forma da tradição da língua
+Jaakobah	যাকোব	যাকোবা	revisado	rev. IA: 1Chr.4.36 forma da tradição da língua
+Jaalam	যালম	যালম	revisado	rev. IA: Gen.36.5 forma da tradição da língua
+Jaanai	যানয়	যানয়	revisado	rev. IA: 1Chr.5.12 forma da tradição da língua
+Jaar	জার	জার	revisado	rev. IA: Ps.132.6 forma da tradição da língua
+Jaareshiah	যারিশিয়	যারিশিয়	revisado	rev. IA: 1Chr.8.27 forma da tradição da língua
+Jaasiel	যাসীয়েল	যাসীয়েল	revisado	rev. IA: 1Chr.11.47 forma da tradição da língua
+Jaasu	যাসয়	যাসয়	revisado	rev. IA: Ezra.10.37 forma da tradição da língua
+Jaazaniah	যাসনিয়	যাসনিয়	revisado	rev. IA: Ezek.8.11 forma da tradição da língua
+Jaazaniah	যাসিনিয়	যাসিনিয়	revisado	rev. IA: Jer.35.3 forma da tradição da língua
+Jaaziel	যাসীয়েল	যাসীয়েল	revisado	rev. IA: 1Chr.15.18 forma da tradição da língua
+Jabal	যাবল	যাবল	revisado	rev. IA: Gen.4.20 forma da tradição da língua
+Jacan	যাকন	যাকন	revisado	rev. IA: 1Chr.5.13 forma da tradição da língua
+Jachan	যাকন	যাকন	revisado	rev. IA: 1Chr.5.13 forma da tradição da língua
+Jacob	যাকোব	যাকোব	revisado	rev. IA: Gen.25.26 forma da tradição da língua
+Jaddai	যাদয়	যাদয়	revisado	rev. IA: Ezra.10.43 forma da tradição da língua
+Jahath	বাজাতে	যহৎ	revisado	rev. IA: 2Chr.34.12 forma da tradição da língua
+Jahaz	যাহসা	যাহসা	revisado	rev. IA: 1Chr.6.78 forma da tradição da língua
+Jahaziah	যহসিয়	যহসিয়	revisado	rev. IA: Ezra.10.15 forma da tradição da língua
+Jahdiel	যহদীয়েল	যহদীয়েল	revisado	rev. IA: 1Chr.5.24 forma da tradição da língua
+Jahdo	যহদো	যহদো	revisado	rev. IA: 1Chr.5.14 forma da tradição da língua
+Jahleel	যহলেল	যহলেল	revisado	rev. IA: Gen.46.14 forma da tradição da língua
+Jairus	যায়ীর	যায়ীর	revisado	rev. IA: Mark.5.22 forma da tradição da língua
+Jakeh	যাকিরের	যাকি	revisado	rev. IA: Prov.30.1 forma da tradição da língua
+Jalam	যালম	যালম	revisado	rev. IA: Gen.36.5 forma da tradição da língua
+Jambres	যাম্ব্রি	যাম্ব্রি	revisado	rev. IA: 2Tim.3.8 forma da tradição da língua
+James	যাকে	যাকোব	revisado	rev. IA: Matt.10.2 forma da tradição da língua
+Jamlech	যম্লেক	যম্লেক	revisado	rev. IA: 1Chr.4.34 forma da tradição da língua
+Janai	যানয়	যানয়	revisado	rev. IA: 1Chr.5.12 forma da tradição da língua
+Jannes	যান্নি	যান্নি	revisado	rev. IA: 2Tim.3.8 forma da tradição da língua
+Japhlet	লেট	যফলট	revisado	rev. IA: Josh.16.3 forma da tradição da língua
+Jarah	যারঃ	যারহ	revisado	rev. IA: 1Chr.9.42 forma da tradição da língua
+Jaresiah	যারিশিয়	যারিশিয়	revisado	rev. IA: 1Chr.8.27 forma da tradição da língua
+Jarmuth	যর্মূত	যর্মূত	revisado	rev. IA: Josh.10.3 forma da tradição da língua
+Jarmuth	যর্মূৎ	যর্মূৎ	revisado	rev. IA: Josh.15.35 forma da tradição da língua
+Jashar	যাশের	যাশের	revisado	rev. IA: Josh.10.13 forma da tradição da língua
+Jashobeam	যাশবিয়াম	যাশবিয়াম	revisado	rev. IA: 1Chr.11.11 forma da tradição da língua
+Jasiel	যাসীয়েল	যাসীয়েল	revisado	rev. IA: 1Chr.11.47 forma da tradição da língua
+Jattir	যত্তীর	যত্তীর	revisado	rev. IA: Josh.15.48 forma da tradição da língua
+Javan	যান	যান	sem	rev. IA: Acts.16.3 sem forma tradicional segura no texto
+Javan	যারা	যবন	revisado	rev. IA: Isa.66.19 forma da tradição da língua
+Brook Eshcol	ইষ্কোল নদী	ইষ্কোল উপত্যকা	revisado	rev. IA: Num.13.23
+Esau Mount	এষৌ পর্বত	এষৌ পর্বত	revisado	rev. IA: sem versículo
+Eshcol Valley	ইষ্কোল উপত্যকা	ইষ্কোল উপত্যকা	revisado	rev. IA: sem versículo
+Ezel Stone	এষল পাথর	এষল পাথর	revisado	rev. IA: sem versículo
+Hebron Valley	হিব্রোণ উপত্যকা	হিব্রোণ উপত্যকা	revisado	rev. IA: sem versículo
+Mount Baal-hermon	বাল-হর্মোণ পর্বত	বাল-হর্মোণ পর্বত	revisado	rev. IA: Judg.3.3
+Mount Esau	এষৌ পর্বত	এষৌ পর্বত	revisado	rev. IA: Obad.1.8
+Mount of Esau	এষৌ পর্বত	এষৌ পর্বত	revisado	rev. IA: Obad.1.8
+Sea of Chinnereth	কিন্নেরৎ সাগর	কিন্নেরৎ সাগর	revisado	rev. IA: Num.34.11
+Sea of Chinneroth	কিন্নেরত সাগর	কিন্নেরৎ সাগর	revisado	rev. IA: Josh.12.3
+Vale of Hebron	হিব্রোণ উপত্যকা	হিব্রোণ উপত্যকা	revisado	rev. IA: Gen.37.14
+Valley of Eshcol	ইষ্কোল উপত্যকা	ইষ্কোল উপত্যকা	revisado	rev. IA: Num.13.23
+Valley of Gerar	গরার উপত্যকা	গরার উপত্যকা	revisado	rev. IA: Gen.26.17
+Valley of Gibeon	গিবিয়োন উপত্যকা	গিবিয়োন উপত্যকা	revisado	rev. IA: Isa.28.21
+Valley of Hebron	হিব্রোণ উপত্যকা	হিব্রোণ উপত্যকা	revisado	rev. IA: Gen.37.14
+City of David	দায়ূদ নগর	দায়ূদ নগর	revisado	rev. IA: 2Kgs.8.24
+Hermon Mount	হর্মোণ পর্বত	হর্মোণ পর্বত	revisado	rev. IA: sem versículo
+Jeberechiah	যিবেরিখিয়	যিবেরিখিয়	revisado	rev. IA: Isa.8.2
+Jecamiah	যিকমিয়	যিকমিয়	revisado	rev. IA: 1Chr.3.18
+Jecoliah	যিখলিয়া	যিখলিয়া	revisado	rev. IA: 2Chr.26.3
+Jedaiah	যিদায়	যিদায়	revisado	rev. IA: Neh.3.10
+Jediael	যিদিয়েল	যিদিয়েল	revisado	rev. IA: 1Chr.11.45
+Jehdeiah	যেহদিয়	যেহদিয়	revisado	rev. IA: 1Chr.24.20
+Jehezekel	যিহিষ্কেল	যিহিষ্কেল	revisado	rev. IA: 1Chr.24.16
+Jehizkiah	যিহিষ্কিয়	যিহিষ্কিয়	revisado	rev. IA: 2Chr.28.12
+Jehoiachin	যিহোয়াখীন	যিহোয়াখীন	revisado	rev. IA: 2Kgs.24.6
+Jehoiada	যিহোয়াদায়	যিহোয়াদা	revisado	rev. IA: Jer.29.26
+Jehoiarib	যিহোয়ারীব	যিহোয়ারীব	revisado	rev. IA: 1Chr.24.7
+Jehonathan	যিহোনাথন	যিহোনাথন	revisado	rev. IA: 2Chr.17.8
+Jehonathan	যোনাথন	যোনাথন	revisado	rev. IA: 1Chr.27.25
+Jehoshabeath	যিহোশাবৎ	যিহোশাবৎ	revisado	rev. IA: 2Chr.22.11
+Jehozabad	যিহোষাবদ	যিহোষাবদ	revisado	rev. IA: 2Kgs.12.21
+Jehozadak	যিহোষাদক	যিহোষাদক	revisado	rev. IA: 1Chr.6.14
+Jehubbah	যিহুব্ব	যিহুব্ব	revisado	rev. IA: 1Chr.7.34
+Jehucal	যিহূখল	যিহূখল	revisado	rev. IA: Jer.37.3
+Jehud	যিহূদ	যিহূদ	revisado	rev. IA: Josh.19.45
+Jehudi	যিহূদী	যিহূদী	revisado	rev. IA: Jer.36.14
+Jehudijah	যিহূদীয়া	যিহূদীয়া	revisado	rev. IA: 1Chr.4.18
+Jekamiah	যিকমিয়	যিকমিয়	revisado	rev. IA: 1Chr.2.41
+Jekuthiel	যিকুথীয়েল	যিকুথীয়েল	revisado	rev. IA: 1Chr.4.18
+Jemuel	যিমূয়েল	যিমূয়েল	revisado	rev. IA: Gen.46.10
+Jephunneh	যিফুন্নি	যিফুন্নি	revisado	rev. IA: Num.13.6
+Jerah	যেরহ	যেরহ	revisado	rev. IA: Gen.10.26
+Jerahmeel	যিরহমেল	যিরহমেল	revisado	rev. IA: 1Sam.27.10
+Jered	যেরদ	যেরদ	revisado	rev. IA: 1Chr.4.18
+Jeremai	যিরেময়	যিরেময়	revisado	rev. IA: Ezra.10.33
+Jeremoth	যিরমোৎ৷	যিরমোৎ	revisado	rev. IA: Ezra.10.29
+Jeriah	যিরিয়	যিরিয়	revisado	rev. IA: 1Chr.23.19
+Jeribai	যিরীবয়	যিরীবয়	revisado	rev. IA: 1Chr.11.46
+Jeriel	যিরীয়েল	যিরীয়েল	revisado	rev. IA: 1Chr.7.2
+Jerijah	যিরিয়	যিরিয়	revisado	rev. IA: 1Chr.26.31
+Jerimoth	ঈরী	ঈরী	sem	rev. IA: 1Chr.7.7
+Jerimoth	যিরেমোৎ	যিরেমোৎ	revisado	rev. IA: 1Chr.7.7
+Jeroham	যিহোরাম	যিহোরাম	revisado	rev. IA: 2Chr.23.1
+Jerubbesheth	যিরূব্বেশত	যিরূব্বেশত	revisado	rev. IA: 2Sam.11.21
+Jeruel	যিরূয়েল	যিরূয়েল	revisado	rev. IA: 2Chr.20.16
+Jerusalem	যিরূশালেম	যিরূশালেম	revisado	rev. IA: Josh.15.63
+Jesaiah	যিশায়াহ	যিশায়াহ	revisado	rev. IA: 1Chr.3.21
+Jeshaiah	যিশায়াহ	যিশায়াহ	revisado	rev. IA: 1Chr.3.21
+Jeshebeab	যেশবাব	যেশবাব	revisado	rev. IA: 1Chr.24.13
+Jesher	যেশর	যেশর	revisado	rev. IA: 1Chr.2.18
+Jeshishai	যিশীশয়	যিশীশয়	revisado	rev. IA: 1Chr.5.14
+Jeshohaiah	যিশোহায়	যিশোহায়	revisado	rev. IA: 1Chr.4.36
+Jeshua	যেশূয়তে	যেশূয়তে	sem	rev. IA: Neh.11.26
+Jesiah	যিশিয়	যিশিয়	revisado	rev. IA: 1Chr.12.6
+Jesimiel	যিশীমীয়েল	যিশীমীয়েল	revisado	rev. IA: 1Chr.4.36
+Jesus	যীশু	যীশু	revisado	rev. IA: Matt.1.1
+Jether	যেথর	যেথর	revisado	rev. IA: Judg.8.20
+Jetheth	যিথেৎ	যিথেৎ	revisado	rev. IA: Gen.36.40
+Jethro	যিথ্রো	যিথ্রো	revisado	rev. IA: Exod.3.1
+Jezer	যেৎসর	যেৎসর	revisado	rev. IA: Gen.46.24
+Jeziah	যিষিয়	যিষিয়	revisado	rev. IA: Ezra.10.25
+Jeziel	যিষীয়েল	যিষীয়েল	revisado	rev. IA: 1Chr.12.3
+Jezliah	হিষ্কি	যিষ্‌লিয়	revisado	rev. IA: 1Chr.8.18
+Jezoar	যিৎসোহর	যিৎসোহর	revisado	rev. IA: 1Chr.4.7
+Jezrahiah	যিষ্রহিয়	যিষ্রহিয়	revisado	rev. IA: Neh.12.42
+Jezreel	যিষ্রিয়েল	যিষ্রিয়েল	revisado	rev. IA: Josh.15.56
+Jezreel	যিষ্রিয়েলে	যিষ্রিয়েল	revisado	rev. IA: 1Sam.29.1
+Joahaz	যোয়াহস	যোয়াহস	revisado	rev. IA: 2Chr.34.8
+Joash	যোয়াশ	যোয়াশ	revisado	rev. IA: Judg.6.11
+Joed	যোয়েদ	যোয়েদ	revisado	rev. IA: Neh.11.7
+Joelah	যোয়েলা	যোয়েলা	revisado	rev. IA: 1Chr.12.7
+Jogbehah	যগ্	যগবিহ	revisado	rev. IA: Judg.8.11
+Johanan	যিহোহানন	যিহোহানন	revisado	rev. IA: 2Chr.28.12
+Joiada	যিহোয়াদা	যিহোয়াদা	revisado	rev. IA: Neh.3.6
+Jokdeam	যক্	যক্‌দিয়াম	revisado	rev. IA: Josh.15.56
+Jokmeam	যক্	যক্মিয়াম	revisado	rev. IA: 1Kgs.4.12
+Jokneam	যক্নিয়াম	যক্নিয়াম	revisado	rev. IA: Josh.19.11
+Jokshan	যক্	যক্‌শন	revisado	rev. IA: Gen.25.2
+Jonam	যোনম	যোনম	revisado	rev. IA: Luke.3.30
+Jonas	যোহন	যোহন	revisado	rev. IA: John.1.42
+Joppa	যোফা	যোফা	revisado	rev. IA: Acts.9.36
+Jordan	যর্দ্দন	যর্দ্দন	revisado	rev. IA: Gen.13.10
+Jorkeam	যর্কিয়ম	যর্কিয়ম	revisado	rev. IA: 1Chr.2.44
+Josabad	যোষাবদ	যোষাবদ	revisado	rev. IA: 1Chr.12.4
+Josedech	যিহোষাদক	যিহোষাদক	revisado	rev. IA: 1Chr.6.14
+Joseph	যোষেখ	যোষেফ	revisado	rev. IA: Luke.3.26
+Joses	যোশি	যোশি	revisado	rev. IA: Mark.15.47
+Joses	যোষি	যোষি	revisado	rev. IA: Mark.6.3
+Joshah	যোশঃ	যোশহ	revisado	rev. IA: 1Chr.4.34
+Joshaphat	যিহোশাফট	যিহোশাফট	revisado	rev. IA: 1Chr.15.24
+Joshbekashah	বকাশা	যোশবকাশা	revisado	rev. IA: 1Chr.25.4
+Josiah	যোশিয়া	যোশিয়া	revisado	rev. IA: Zech.6.14
+Jotbah	যট্	যট্বা	revisado	rev. IA: 2Kgs.21.19
+Jotbathah	বাথা	যট্বাথা	revisado	rev. IA: Num.33.33
+Jozadak	যিহোষাদক	যিহোষাদক	revisado	rev. IA: Ezra.10.18
+Jucal	যিহূখল	যিহূখল	revisado	rev. IA: Jer.37.3
+Juda	যিহূদা	যিহূদা	revisado	rev. IA: Luke.3.30
+Judaism	যিহুদী	যিহূদী ধর্ম	revisado	rev. IA: Gal.1.13
+Judas	যিহূদা	যিহূদা	revisado	rev. IA: Matt.10.4
+Jude	যিহূদা	যিহূদা	revisado	rev. IA: Matt.13.55
+Judea	যিহূদায়	যিহূদা	revisado	rev. IA: Ezra.9.9
+Judea	যিহূদিয়া	যিহূদিয়া	revisado	rev. IA: Matt.2.1
+Judea	যিহূদিয়াতে	যিহূদিয়া	revisado	rev. IA: Matt.2.22
+Julius	যুলিয়	যুলিয়	revisado	rev. IA: Acts.27.1
+Jushab-hesed	যুশবহেষদ	যুশবহেষদ	revisado	rev. IA: 1Chr.3.20
+Justus	যুষ্ঠ	যুষ্ঠ	revisado	rev. IA: Acts.18.7
+Kabzeel	কবসেলীয়	কবসেল	revisado	rev. IA: 2Sam.23.20
+Kadmiel	কদমীয়েল	কদমীয়েল	revisado	rev. IA: Ezra.2.40
+Kain	কয়িন	কয়িন	revisado	rev. IA: Josh.15.57
+Kanah	কান্না	কান্না	revisado	rev. IA: Josh.16.8
+Kanah	কান্নাতে	কান্না	revisado	rev. IA: Josh.19.28
+Karkor	কর্কোরে	কর্কোর	revisado	rev. IA: Judg.8.10
+Karnaim	কর্ণয়িমে	কর্ণয়িম	revisado	rev. IA: Gen.14.5
+Karnaim	কারনাইন	কর্ণয়িম	revisado	rev. IA: Amos.6.13
+Kartan	কর্ত্তন	কর্ত্তন	revisado	rev. IA: Josh.21.32
+Kedar	কেদর	কেদর	revisado	rev. IA: Gen.25.13
+Kedemoth	কদেমোৎ	কদেমোৎ	revisado	rev. IA: Deut.2.26
+Kedesh	কেদশ	কেদশ	revisado	rev. IA: Josh.12.22
+Kedesh	কেদশে	কেদশ	revisado	rev. IA: Josh.12.22
+Kelaiah	কলায়	কলায়	revisado	rev. IA: Ezra.10.23
+Kelita	কলীট	কলীট	revisado	rev. IA: Neh.8.7
+Kenath	কনাৎ	কনাৎ	revisado	rev. IA: Num.32.42
+Keren-happuch	কেরনহপ্পূক	কেরনহপ্পূক	revisado	rev. IA: Job.42.14
+Kerioth	করিয়োত	করিয়োত	revisado	rev. IA: Jer.48.41
+Kezia	কৎসীয়া	কৎসীয়া	revisado	rev. IA: Job.42.14
+Keziah	কৎসীয়া	কৎসীয়া	revisado	rev. IA: Job.42.14
+Kibroth-hattaavah	কিব্রোৎহত্তাবাতে	কিব্রোৎহত্তাবা	revisado	rev. IA: Deut.9.22
+Kibzaim	কিব্	কিব্সয়িম	revisado	rev. IA: Josh.21.22
+Kir	কীর	কীর	revisado	rev. IA: 2Kgs.3.25
+Kir	কীরে	কীর	revisado	rev. IA: 2Kgs.16.9
+Kir	কীর্	কীর	revisado	rev. IA: 2Kgs.3.25
+Kiriath-arba	কিরিয়থর্ব্ব	কিরিয়ৎ-অর্ব্ব	revisado	rev. IA: Gen.23.2
+Kiriath-jearim	যিরারীম	কিরিয়ৎ-যিয়ারীম	revisado	rev. IA: Josh.18.15
+Kiriathaim	কিরিয়াথয়িম	কিরিয়াথয়িম	revisado	rev. IA: Num.32.37
+Kitron	কিটরোণ	কিটরোণ	revisado	rev. IA: Judg.1.30
+Kiyyun	কীয়ুন	কীয়ুন	revisado	rev. IA: Amos.5.26
+Kohath	কহাত	কহাত	revisado	rev. IA: Exod.6.18
+Korah	কোরহ	কোরহ	revisado	rev. IA: Gen.36.5
+Kore	কোরহ	কোরহ	revisado	rev. IA: 1Chr.9.19
+Kore	কোরি	কোরি	revisado	rev. IA: 1Chr.26.1
+Koz	কোষ	কোষ	revisado	rev. IA: 1Chr.4.8
+Koz	হক্কোস	হক্কোস	revisado	rev. IA: Ezra.2.61
+LORD	জলধি	জলধি	sem	rev. IA: Gen.49.25
+Laadan	লাদন	লাদন	revisado	rev. IA: 1Chr.7.26
+Ladan	লাদন	লাদন	revisado	rev. IA: 1Chr.7.26
+Lael	লায়েল	লায়েল	revisado	rev. IA: Num.3.24
+Lahmi	লহমি	লহমি	revisado	rev. IA: 1Chr.20.5
+Laish	লয়িশ	লয়িশ	revisado	rev. IA: Judg.18.7
+Laishah	লয়িশা	লয়িশা	revisado	rev. IA: Isa.10.30
+Lakkum	লক্কুম	লক্কুম	revisado	rev. IA: Josh.19.33
+Laodicea	লায়দিকেয়া	লায়দিকেয়া	revisado	rev. IA: Col.2.1
+Lasea	লাসেয়া	লাসেয়া	revisado	rev. IA: Acts.27.8
+Leb-kamai	কামাই	লেব-কামাই	revisado	rev. IA: Jer.51.1
+Lebaoth	লবায়োৎ	লবায়োৎ	revisado	rev. IA: Josh.15.32
+Lebo-hamath	হমাত	লেব-হমাত	revisado	rev. IA: Num.13.21
+Lehabim	লহাবীয়	লহাবীয়	revisado	rev. IA: 1Chr.1.11
+Leshem	লেশম	লেশম	revisado	rev. IA: Josh.19.47
+Letushim	লটুশীয়	লটুশীয়	revisado	rev. IA: Gen.25.3
+Levi	লেবীয়	লেবি	revisado	rev. IA: Exod.2.1
+Libnah	লিবনা	লিবনা	revisado	rev. IA: Josh.15.42
+Libnah	লিব্	লিবনা	revisado	rev. IA: Num.33.20
+Libni	লিবনি	লিবনি	revisado	rev. IA: Exod.6.17
+Libni	লিব্	লিবনি	revisado	rev. IA: Num.3.18
+Libya	লিবিয়া	লিবিয়া	revisado	rev. IA: Ezek.27.10
+Libya	লুবিয়া	লিবিয়া	revisado	rev. IA: Acts.2.10
+Linus	লীন	লীনুস	revisado	rev. IA: 2Tim.4.21
+Lo-ammi	অম্মি	লো-অম্মি	revisado	rev. IA: Hos.1.9
+Lo-debar	লোদবার	লোদবার	revisado	rev. IA: 2Sam.17.27
+Lod	লোদ	লোদ	revisado	rev. IA: 1Chr.8.12
+Lois	লোয়ী	লোয়ী	revisado	rev. IA: 2Tim.1.5
+Lucius	লুকিয়	লুকিয়	revisado	rev. IA: Acts.13.1
+Luke	লূক	লূক	revisado	rev. IA: 2Tim.4.11
+Lycaonia	লুকায়নিয়া	লুকায়নিয়া	revisado	rev. IA: Acts.14.6
+Lycia	লুকিয়া	লুকিয়া	revisado	rev. IA: Acts.27.5
+Lydda	লুদ্দা	লুদ্দা	revisado	rev. IA: Acts.9.32
+Lydia	লুদিয়া	লুদিয়া	revisado	rev. IA: Acts.16.14
+Lysanias	লূষানিয়	লূষানিয়	revisado	rev. IA: Luke.3.1
+Lysias	লিসিয়াস	লিসিয়াস	revisado	rev. IA: Acts.24.7
+Maadai	মাদয়	মাদয়	revisado	rev. IA: Ezra.10.34
+Maai	মায়য়	মায়য়	revisado	rev. IA: Neh.12.36
+Maarath	মারৎ	মারৎ	revisado	rev. IA: Josh.15.59
+Maareh-geba	মারে	মারে-গেবা	revisado	rev. IA: Judg.20.33
+Maasai	মাসয়	মাসয়	revisado	rev. IA: 1Chr.9.12
+Maaseiah	মহসেয়	মহসেয়	revisado	rev. IA: Jer.32.12
+Maasiai	মাসয়	মাসয়	revisado	rev. IA: 1Chr.9.12
+Macedonia	মাকিদনিয়া	মাকিদনিয়া	revisado	rev. IA: Acts.16.9
+Machbenah	বেনা	মকবেনা	revisado	rev. IA: 1Chr.2.49
+Madai	মাদয়	মাদয়	revisado	rev. IA: Gen.10.2
+Madmen	মদমেনা	মদমেনা	revisado	rev. IA: Jer.48.2
+Magbish	মগবীশ	মগবীশ	revisado	rev. IA: Ezra.2.30
+Magdiel	মগদীয়েল	মগদীয়েল	revisado	rev. IA: Gen.36.43
+Mahalah	মহলা	মহলা	revisado	rev. IA: 1Chr.7.18
+Mahath	মাহৎ	মাহৎ	revisado	rev. IA: 1Chr.6.35
+Mahazioth	মহসীয়োত	মহসীয়োত	revisado	rev. IA: 1Chr.25.30
+Mahlon	মহলোন	মহলোন	revisado	rev. IA: Ruth.1.2
+Mahseiah	মহসেয়	মহসেয়	revisado	rev. IA: Jer.32.12
+Makaz	মাকসে	মাকস	revisado	rev. IA: 1Kgs.4.9
+Malcam	মল্কম	মল্কম	revisado	rev. IA: 1Chr.8.9
+Malchi-shua	মল্কীশূয়	মল্কীশূয়	revisado	rev. IA: 1Sam.14.49
+Malchiel	মল্কীয়েল	মল্কীয়েল	revisado	rev. IA: Gen.46.17
+Malchiram	কীরাম	মল্কীরাম	revisado	rev. IA: 1Chr.3.18
+Malluch	মল্লুক	মল্লুক	revisado	rev. IA: 1Chr.6.44
+Malluch	মল্লূক	মল্লুক	revisado	rev. IA: Ezra.10.29
+Malluch	মল্লূকী	মল্লুক	revisado	rev. IA: Neh.12.14
+Malta	মিলিতা	মিলিতা	revisado	rev. IA: Acts.28.1
+Manaen	নামে	মনায়েন	revisado	rev. IA: Acts.13.1
+Manahath	মানহতে	মানহৎ	revisado	rev. IA: 1Chr.8.6
+Manahath	মানহৎ	মানহৎ	revisado	rev. IA: Gen.36.23
+Manasseh	মাসেয়	মনঃশি	revisado	rev. IA: Ezra.10.30
+Maon	মায়োনে	মায়োন	revisado	rev. IA: 1Sam.25.2
+Marah	মারাতে	মারা	revisado	rev. IA: Num.33.8
+Maranatha	মারাণ	মারানাথা	revisado	rev. IA: 1Cor.16.22
+Mareal	মারালায়	মারালা	revisado	rev. IA: Josh.19.11
+Marsena	মর্সনা	মর্সনা	revisado	rev. IA: Esth.1.14
+Mashal	মশাল	মশাল	revisado	rev. IA: 1Chr.6.74
+Massa	মসা	মসা	revisado	rev. IA: Gen.25.14
+Massah	মঃসা	মঃসা	revisado	rev. IA: Deut.6.16
+Massah	মঃসাতে	মঃসা	revisado	rev. IA: Deut.6.16
+Matred	মট্রে	মট্রে	revisado	rev. IA: Gen.36.39
+Matri	মট্রীয়	মট্রী	revisado	rev. IA: 1Sam.10.21
+Mearah	মিয়ারা	মিয়ারা	revisado	rev. IA: Josh.13.4
+Meconah	মকোনাতে	মকোনা	revisado	rev. IA: Neh.11.28
+Medad	মেদদ	মেদদ	revisado	rev. IA: Num.11.26
+Medan	মদান	মদান	revisado	rev. IA: Gen.25.2
+Media	মাদিয়া	মাদিয়া	revisado	rev. IA: Esth.1.3
+Media	মাদীয়	মাদিয়া	revisado	rev. IA: 2Kgs.17.6
+Mehetabeel	মহেটবেল	মহেটবেল	revisado	rev. IA: Neh.6.10
+Mehetabel	মহেটবেল	মহেটবেল	revisado	rev. IA: Gen.36.39
+Mehir	মহীর	মহীর	revisado	rev. IA: 1Chr.4.11
+Mehuman	মহূমন	মহূমন	revisado	rev. IA: Esth.1.10
+Mehunim	মিয়ূনীম	মিয়ূনীম	revisado	rev. IA: Ezra.2.50
+Melatiah	মলাটিয়	মলাটিয়	revisado	rev. IA: Neh.3.7
+Melchiah	মল্কিয়	মল্কিয়	revisado	rev. IA: Jer.21.1
+Melech	মেলক	মেলক	revisado	rev. IA: 1Chr.8.35
+Memphis	মিশ	নোফ	revisado	rev. IA: Isa.19.13
+Memucan	মমূখন	মমূখন	revisado	rev. IA: Esth.1.14
+Menan	মিন্না	মিন্না	revisado	rev. IA: Luke.3.31
+Menna	মিন্না	মিন্না	revisado	rev. IA: Luke.3.31
+Menuhoth	মনূহোতীয়	মনূহোতীয়	revisado	rev. IA: 1Chr.2.52
+Meonothai	মিয়োনোথয়	মিয়োনোথয়	revisado	rev. IA: 1Chr.4.14
+Mephibosheth	মফীবোশত	মফীবোশত	revisado	rev. IA: 2Sam.9.12
+Mephibosheth	মফীবোশৎ	মফীবোশত	revisado	rev. IA: 2Sam.4.4
+Merab	মেরব	মেরব	revisado	rev. IA: 1Sam.14.49
+Meraiah	মরায়	মরায়	revisado	rev. IA: Neh.12.12
+Merathaim	মরাথয়িম	মরাথয়িম	revisado	rev. IA: Jer.50.21
+Mered	মেরদ	মেরদ	revisado	rev. IA: 1Chr.4.17
+Meres	মেরস	মেরস	revisado	rev. IA: Esth.1.14
+Merodach	মরোদক	মরোদক	revisado	rev. IA: Jer.50.2
+Meshech	মেশক	মেশক	revisado	rev. IA: Gen.10.2
+Meshelemiah	মশেলেমিয়	মশেলেমিয়	revisado	rev. IA: 1Chr.9.21
+Meshezabeel	মশেষবেল	মশেষবেল	revisado	rev. IA: Neh.3.4
+Meshezabel	মশেষবেল	মশেষবেল	revisado	rev. IA: Neh.3.4
+Meshillemith	মশিল্লমীত	মশিল্লমীত	revisado	rev. IA: 1Chr.9.12
+Meshobab	মশোবব	মশোবব	revisado	rev. IA: 1Chr.4.34
+Meshullam	মশূল্লম	মশূল্লম	revisado	rev. IA: Neh.12.25
+Meshullemeth	মশুল্লেমৎ	মশুল্লেমৎ	revisado	rev. IA: 2Kgs.21.19
+Mesopotamia	মেসোপটেমিয়া	মেসোপটেমিয়া	revisado	rev. IA: Acts.2.9
+Messiah	মশীহ	মশীহ	revisado	rev. IA: John.1.41
+Methusael	মথূশায়েল	মথূশায়েল	revisado	rev. IA: Gen.4.18
+Methushael	মথূশায়েল	মথূশায়েল	revisado	rev. IA: Gen.4.18
+Meunim	মিয়ূনীম	মিয়ূনীম	revisado	rev. IA: Ezra.2.50
+Miamin	মিয়ামীন	মিয়ামীন	revisado	rev. IA: Ezra.10.25
+Mibhar	মিভর	মিভর	revisado	rev. IA: 1Chr.11.38
+Mibsam	মিব্	মিবসম	revisado	rev. IA: 1Chr.1.29
+Mibzar	মিবসর	মিবসর	revisado	rev. IA: Gen.36.42
+Mica	মীখা	মীখা	revisado	rev. IA: 1Chr.9.15
+Micha	মীখা	মীখা	revisado	rev. IA: 1Chr.9.15
+Michah	মীখা	মীখা	revisado	rev. IA: 1Chr.23.20
+Michaiah	মীখায়	মীখায়	revisado	rev. IA: 2Kgs.22.12
+Michmas	মিকমস	মিকমস	revisado	rev. IA: Ezra.2.27
+Michmash	মিকমসে	মিক্মস	revisado	rev. IA: 1Sam.13.2
+Midian	মিদিয়ন	মিদিয়ন	revisado	rev. IA: Gen.25.2
+Migdal-el	মিগদল	মিগদল-এল	revisado	rev. IA: Josh.19.38
+Migdal-gad	মিগদল্	মিগদল-গাদ	revisado	rev. IA: Josh.15.37
+Mijamin	মিয়ামীন	মিয়ামীন	revisado	rev. IA: 1Chr.24.9
+Mikneiah	মিক্	মিক্নেয়	revisado	rev. IA: 1Chr.15.18
+Miktam	বিচা	বিচা	sem	rev. IA: Ps.58.1
+Milalai	মিললয়	মিললয়	revisado	rev. IA: Neh.12.36
+Miletus	মিলিত	মিলিত	revisado	rev. IA: Acts.20.15
+Miniamin	বিন্যামীন	মিনিয়ামীন	revisado	rev. IA: 2Chr.31.15
+Miriam	মরিয়ম	মরিয়ম	revisado	rev. IA: Exod.15.20
+Misgab	ঈশ্ব	মিশ্গাব	revisado	rev. IA: Jer.48.1
+Mishael	মীশায়েল	মীশায়েল	revisado	rev. IA: Exod.6.22
+Misham	মিশিয়ম	মিশিয়ম	revisado	rev. IA: 1Chr.8.12
+Mishma	মিশ্	মিশ্মা	revisado	rev. IA: 1Chr.1.30
+Mispar	মিস্পর	মিস্পর	revisado	rev. IA: Ezra.2.2
+Mispereth	মিস্পর	মিস্পরৎ	revisado	rev. IA: Ezra.2.2
+Misrephoth-maim	মিষ্রফোৎময়িম	মিষ্রফোৎময়িম	revisado	rev. IA: Josh.11.8
+Mitylene	মিতুলীনী	মিতুলীনী	revisado	rev. IA: Acts.20.14
+Mizpah	মিসপা	মিস্পা	revisado	rev. IA: 1Sam.7.5
+Mizpah	মিস্	মিস্পা	revisado	rev. IA: Gen.31.49
+Mizpah	মিস্পা	মিস্পা	revisado	rev. IA: Gen.31.49
+Mizpah	মিস্পাদেশীয়	মিস্পা	revisado	rev. IA: Josh.11.3
+Mizpeh	মিস্	মিস্পা	revisado	rev. IA: Josh.15.38
+Mizraim	মিশর	মিস্রয়িম	revisado	rev. IA: Gen.10.6
+Moab	মোয়াব	মোয়াব	revisado	rev. IA: Gen.19.37
+Moadiah	মোয়দিয়	মোয়দিয়	revisado	rev. IA: Neh.12.17
+Moladah	মোলাদা	মোলাদা	revisado	rev. IA: Josh.19.2
+Molech	মোলক	মোলক	revisado	rev. IA: Lev.18.21
+Moreh	মোরি	মোরি	revisado	rev. IA: Gen.12.6
+Moresheth	মোরেষ্টিয়	মোরেষৎ	revisado	rev. IA: Mic.1.1
+Moresheth-gath	মোরেষ্টিয়	মোরেষৎ-গাৎ	revisado	rev. IA: Mic.1.1
+Moresheth-gath	মোরেষৎ	মোরেষৎ-গাৎ	revisado	rev. IA: Mic.1.14
+Moserah	মোষেরোতে	মোষেরা	revisado	rev. IA: Deut.10.6
+Mount Hermon	হর্মোণ পর্বত	হর্মোণ পর্বত	revisado	rev. IA: Deut.3.8
+Mount Seir	সেয়ীর পর্বত	সেয়ীর পর্বত	revisado	rev. IA: Deut.1.2
+Mount Tabor	তাবোর পর্বত	তাবোর পর্বত	revisado	rev. IA: Judg.4.6
+Mozah	মোৎসা	মোৎসা	revisado	rev. IA: Josh.18.26
+Muppim	মুপপীম	মুপপীম	revisado	rev. IA: Gen.46.21
+Myra	মুরা	মুরা	revisado	rev. IA: Acts.27.5
+Mysia	মুশিয়া	মুশিয়া	revisado	rev. IA: Acts.16.7
+Naam	নাম	নয়ম	revisado	rev. IA: 1Chr.4.15
+Naamah	নয়মা	নয়মা	revisado	rev. IA: Gen.4.22
+Naamah	নানা	নয়মা	revisado	rev. IA: Gen.4.22
+Naamah	নামাথীয়	নামাথীয়	sem	rev. IA: Job.2.11
+Naaman	নামন	নামন	revisado	rev. IA: Gen.46.21
+Naarah	নারঃ	নারা	revisado	rev. IA: Josh.16.7
+Naarai	নারয়	নারয়	revisado	rev. IA: 1Chr.11.37
+Naaran	নারণ	নারণ	revisado	rev. IA: 1Chr.7.28
+Nahalal	নহলাল	নহলাল	revisado	rev. IA: Josh.19.15
+Nahaliel	নহলীয়েল	নহলীয়েল	revisado	rev. IA: Num.21.19
+Nahalol	নহলোল	নহলোল	revisado	rev. IA: Josh.21.35
+Nahbi	নহ্বি	নহ্বি	revisado	rev. IA: Num.13.14
+Nahshon	নহশোন	নহশোন	revisado	rev. IA: Num.1.7
+Nahum	নহুম	নহুম	revisado	rev. IA: Luke.3.25
+Nahum	নহূম	নহুম	revisado	rev. IA: Nah.1.1
+Naphath-dor	নাফৎ	নাফৎ-দোর	revisado	rev. IA: 1Kgs.4.11
+Naphoth-dor	নাফৎ	নাফৎ-দোর	revisado	rev. IA: 1Kgs.4.11
+Nathanael	নথনেল	নথনেল	revisado	rev. IA: John.1.45
+Naum	নহুম	নহুম	revisado	rev. IA: Luke.3.25
+Nazareth	নাসরতীয়	নাসরত	revisado	rev. IA: Matt.2.23
+Neapolis	নিয়াপলি	নিয়াপলি	revisado	rev. IA: Acts.16.11
+Nebaioth	নবায়োত	নবায়োত	revisado	rev. IA: Gen.36.3
+Nebajoth	নবায়োত	নবায়োত	revisado	rev. IA: Gen.36.3
+Nebo Mount	নবো পর্বত	নবো পর্বত	revisado	rev. IA: sem versículo
+Nebuchadnezzar	নবূখদনিৎসর	নবূখদনিৎসর	revisado	rev. IA: Jer.21.2
+Nebushasban	নবূশস্বন	নবূশস্বন	revisado	rev. IA: Jer.39.13
+Nebushazban	নবূশস্বন	নবূশস্বন	revisado	rev. IA: Jer.39.13
+Neco	নখো	নখো	revisado	rev. IA: 2Kgs.23.29
+Negeb	নেগেভ	নেগেভ	revisado	rev. IA: Num.13.17
+Nehelam	নিহিলামীয়	নিহিলামীয়	sem	rev. IA: Jer.29.24
+Nehushtan	নহুষ্টন	নহুষ্টন	revisado	rev. IA: 2Kgs.18.4
+Neiel	ন্যীয়েল	নীয়েল	revisado	rev. IA: Josh.19.27
+Nekoda	নকো	নকোদা	revisado	rev. IA: Ezra.2.48
+Nepheg	নেফগ	নেফগ	revisado	rev. IA: Exod.6.21
+Nephushesim	নফূষীম	নফূষীম	revisado	rev. IA: Ezra.2.50
+Nergal	নের্গল	নের্গল	revisado	rev. IA: 2Kgs.17.30
+Netaim	নতায়ীম	নতায়ীম	revisado	rev. IA: 1Chr.4.23
+Netophah	নটোফাতীয়	নটোফা	revisado	rev. IA: 2Sam.23.28
+Neziah	নৎসীহ	নৎসীহ	revisado	rev. IA: Ezra.2.54
+Nezib	নৎসীব	নৎসীব	revisado	rev. IA: Josh.15.43
+Nibhaz	নিভস	নিভস	revisado	rev. IA: 2Kgs.17.31
+Nibshan	নিব্	নিব্‌শন	revisado	rev. IA: Josh.15.62
+Nicodemus	নীকদীম	নীকদীম	revisado	rev. IA: John.3.1
+Nicolaitans	নীকলায়তীয়রা	নীকলায়তীয়	revisado	rev. IA: Rev.2.6
+Nicolas	নীকান	নীকলায়	revisado	rev. IA: Acts.6.5
+Nile	নীল	নীল	revisado	rev. IA: Exod.1.22
+Nimshi	নিম্	নিমশি	revisado	rev. IA: 1Kgs.19.16
+Noadiah	নোয়দিয়	নোয়দিয়	revisado	rev. IA: Ezra.8.33
+Noadiah	নোয়দিয়া	নোয়দিয়া	revisado	rev. IA: Neh.6.14
+Nobah	নোবহ	নোবহ	revisado	rev. IA: Num.32.42
+Nod	নো	নোদ	revisado	rev. IA: Gen.4.16
+Nodab	নোদব	নোদব	revisado	rev. IA: 1Chr.5.19
+Nogah	নোগহ	নোগহ	revisado	rev. IA: 1Chr.3.7
+Nophah	নোফঃ	নোফহ	revisado	rev. IA: Num.21.30
+Obal	অবীমায়েল	ওবল	revisado	rev. IA: Gen.10.28
+Obed	ওবেদ	ওবেদ	revisado	rev. IA: Ruth.4.17
+Ohad	ওহদ	ওহদ	revisado	rev. IA: Gen.46.10
+Olympas	ওলুম্প	ওলুম্প	revisado	rev. IA: Rom.16.15
+On	ওন	ওন	revisado	rev. IA: Gen.41.45
+Onam	ওনম	ওনম	revisado	rev. IA: Gen.36.23
+Onesimus	ওনীষিম	ওনীষিম	revisado	rev. IA: Col.4.9
+Onesiphorus	অনীষিফর	অনীষিফর	revisado	rev. IA: 2Tim.1.16
+Ophel	ওফল	ওফল	revisado	rev. IA: 2Chr.27.3
+Ophni	অফ্	অফ্নী	revisado	rev. IA: Josh.18.24
+Oren	ওরণ	ওরণ	revisado	rev. IA: 1Chr.2.25
+Osnappar	অস্নপ্পর	অস্নপ্পর	revisado	rev. IA: Ezra.4.10
+Ozem	ওৎসম	ওৎসম	revisado	rev. IA: 1Chr.2.15
+Paarai	পারয়	পারয়	revisado	rev. IA: 2Sam.23.35
+Pai	পায়	পায়	revisado	rev. IA: 1Chr.1.50
+Palal	পালল	পালল	revisado	rev. IA: Neh.3.25
+Pallu	পল্লু	পল্লু	revisado	rev. IA: Exod.6.14
+Palti	পলটি	পলটি	revisado	rev. IA: 1Sam.25.44
+Paltiel	পল্টিয়েল	পল্টিয়েল	revisado	rev. IA: Num.34.26
+Pamphylia	পাম্ফুলিয়া	পাম্ফুলিয়া	revisado	rev. IA: Acts.2.10
+Parah	পারা	পারা	revisado	rev. IA: Josh.18.23
+Paran	পারণ	পারণ	revisado	rev. IA: Num.10.12
+Parmashta	পর্মস্ত	পর্মস্ত	revisado	rev. IA: Esth.9.9
+Parnach	পর্ণক	পর্ণক	revisado	rev. IA: Num.34.25
+Parosh	পরোশ	পরোশ	revisado	rev. IA: Ezra.2.3
+Parshandatha	পর্শন্দাথঃ	পর্শন্দাথা	revisado	rev. IA: Esth.9.7
+Parthians	পার্থীয়	পার্থীয়	revisado	rev. IA: Acts.2.9
+Pasach	পাসক	পাসক	revisado	rev. IA: 1Chr.7.33
+Pashhur	পশহূর	পশহূর	revisado	rev. IA: Ezra.2.38
+Pashur	পশহূর	পশহূর	revisado	rev. IA: Ezra.2.38
+Passover	পালনের	পালনের	sem	rev. IA: 2Chr.35.16
+Pathros	পথ্রোষ	পথ্রোষ	revisado	rev. IA: Isa.11.11
+Pathrusim	পথ্রোষীয়	পথ্রোষীয়	revisado	rev. IA: Gen.10.14
+Patrobas	হর্ম্মিপাত্রোবা	পাত্রোবা	revisado	rev. IA: Rom.16.14
+Paul	পৌল	পৌল	revisado	rev. IA: Acts.13.7
+Pedahel	পদহেল	পদহেল	revisado	rev. IA: Num.34.28
+Pekod	পকোদ	পকোদ	revisado	rev. IA: Jer.50.21
+Pelaiah	পলায়	পলায়	revisado	rev. IA: 1Chr.3.24
+Pelaiah	পলায়ঃ	পলায়	revisado	rev. IA: 1Chr.3.24
+Pelatiah	প্লটিয়	পলটিয়	revisado	rev. IA: Ezek.11.1
+Pelet	পেলট	পেলট	revisado	rev. IA: 1Chr.2.47
+Peleth	পেলত	পেলত	revisado	rev. IA: Num.16.1
+Peleth	পেলৎ	পেলত	revisado	rev. IA: 1Chr.2.33
+Peresh	পেরশ	পেরশ	revisado	rev. IA: 1Chr.7.16
+Pergamum	পর্গাম	পর্গাম	revisado	rev. IA: Rev.1.11
+Persia	পারস্য	পারস্য	revisado	rev. IA: 2Chr.36.20
+Persis	পর্ষী	পর্ষী	revisado	rev. IA: Rom.16.12
+Pethahiah	পথাহিয়	পথাহিয়	revisado	rev. IA: 1Chr.24.16
+Pethor	পথোর	পথোর	revisado	rev. IA: Num.22.5
+Pharisee	ফরীশী	ফরীশী	revisado	rev. IA: Matt.3.7
+Phaseah	পাসেহ	পাসেহ	revisado	rev. IA: Ezra.2.49
+Phenice	ফৈনীকা	ফৈনীকা	revisado	rev. IA: Acts.27.12
+Phenicia	ফৈনিকিয়া	ফৈনিকিয়া	revisado	rev. IA: Acts.15.3
+Philadelphia	ফিলাদিলফিয়া	ফিলাদিলফিয়া	revisado	rev. IA: Rev.1.11
+Philetus	ফিলীতও	ফিলীত	revisado	rev. IA: 2Tim.2.17
+Philippi	ফিলিপী	ফিলিপী	revisado	rev. IA: Acts.16.12
+Phlegon	ফিল্লগ	ফিল্লগ	revisado	rev. IA: Rom.16.14
+Phoebe	ফৈবী	ফৈবী	revisado	rev. IA: Rom.16.1
+Phoenicia	ফৈনিকিয়া	ফৈনিকিয়া	revisado	rev. IA: Acts.15.3
+Phoenicia	ফৈনীকী	ফৈনিকিয়া	revisado	rev. IA: Mark.7.26
+Phoenix	ফৈনীকা	ফৈনীকা	revisado	rev. IA: Acts.27.12
+Phrygia	ফরুগিয়া	ফরুগিয়া	revisado	rev. IA: Acts.16.6
+Pi-beseth	বেশত	পি-বেশৎ	revisado	rev. IA: Ezek.30.17
+Pi-hahiroth	হহীরোত	পি-হহীরোৎ	revisado	rev. IA: Exod.14.2
+Pildash	পিল্	পিল্দশ	revisado	rev. IA: Gen.22.22
+Pileha	পিল্	পিলহা	revisado	rev. IA: Neh.10.24
+Piltai	পিল্টয়	পিল্টয়	revisado	rev. IA: Neh.12.17
+Pispa	পিসপ	পিস্পা	revisado	rev. IA: 1Chr.7.38
+Pispah	পিসপ	পিস্পা	revisado	rev. IA: 1Chr.7.38
+Place	যাকে	যাকে	sem	rev. IA: Matt.27.33
+Pochereth	পোখেরৎ	পোখেরৎ	revisado	rev. IA: Ezra.2.57
+Pontus	পন্ত	পন্ত	revisado	rev. IA: Acts.2.9
+Pool	কল্	কল্	sem	rev. IA: Neh.3.15
+Ptolemais	তলিমায়ি	তলিমায়ি	revisado	rev. IA: Acts.21.7
+Publius	পুব্লিয়	পুব্লিয়	revisado	rev. IA: Acts.28.8
+Pudens	পুদেন্ত	পুদেন্ত	revisado	rev. IA: 2Tim.4.21
+Purah	ফুরা	ফুরা	revisado	rev. IA: Judg.7.10
+Put	পূট	পূট	revisado	rev. IA: 1Chr.1.8
+Putiel	পূটীয়েল	পূটীয়েল	revisado	rev. IA: Exod.6.25
+Quartus	কার্ত্ত	কার্ত্তস	revisado	rev. IA: Rom.16.23
+Quirinius	কুরীনিয়	কুরীনিয়	revisado	rev. IA: Luke.2.2
+Raamah	রয়মা	রয়মা	revisado	rev. IA: Gen.10.7
+Raamses	রামিষেষ	রামিষেষ	revisado	rev. IA: Exod.1.11
+Rab-mag	রাজা	রাজা	sem	rev. IA: Jer.39.3
+Rab-saris	সারীস	সারীস	revisado	rev. IA: 2Kgs.18.17
+Rabbah	রব্বা	রব্বা	revisado	rev. IA: Deut.3.11
+Rabbith	রব্বীৎ	রব্বীৎ	revisado	rev. IA: Josh.19.20
+Rabsaris	সারীস	সারীস	revisado	rev. IA: 2Kgs.18.17
+Rabshakeh	রবশাকি	রবশাকি	revisado	rev. IA: Isa.36.4
+Rachab	রাহব	রাহব	revisado	rev. IA: Matt.1.5
+Rahab	রাহ	রাহব	revisado	rev. IA: Josh.2.1
+Rakkon	রক্কোন	রক্কোন	revisado	rev. IA: Josh.19.46
+Ramah	রামাথীয়	রামা	revisado	rev. IA: 1Chr.27.27
+Ramathaim-zophim	রামাথয়িম	রামাথয়িম	revisado	rev. IA: 1Sam.1.1
+Ramiah	রমিয়	রমিয়	revisado	rev. IA: Ezra.10.25
+Ramoth	যিরমোৎ৷	রামোৎ	revisado	rev. IA: Ezra.10.29
+Rapha	রফা	রফা	revisado	rev. IA: 2Sam.21.16
+Raphah	রফায়	রফায়	revisado	rev. IA: 1Chr.8.37
+Reaia	রায়া	রায়া	revisado	rev. IA: 1Chr.5.5
+Reaiah	রায়া	রায়া	revisado	rev. IA: 1Chr.4.2
+Rechab	রেখব	রেখব	revisado	rev. IA: 2Sam.4.2
+Regem	রেগম	রেগম	revisado	rev. IA: 1Chr.2.47
+Regem-melech	রেগম্মেলক	রেগম্মেলক	revisado	rev. IA: Zech.7.2
+Rehob	রহোবে	রহোব	revisado	rev. IA: Josh.19.28
+Rehum	রহূম	রহূম	revisado	rev. IA: Ezra.2.2
+Remeth	রেমৎ	রেমৎ	revisado	rev. IA: Josh.19.21
+Rephah	রেফহ	রেফহ	revisado	rev. IA: 1Chr.7.25
+Resen	রেষন	রেষন	revisado	rev. IA: Gen.10.12
+Resheph	রেশফ	রেশফ	revisado	rev. IA: 1Chr.7.25
+Rezeph	রেৎসফ	রেৎসফ	revisado	rev. IA: 2Kgs.19.12
+Rezia	রিৎসিয়	রিৎসিয়	revisado	rev. IA: 1Chr.7.39
+Rezin	রৎসীন	রৎসীন	revisado	rev. IA: 2Kgs.15.37
+Rezon	রষোণ	রষোণ	revisado	rev. IA: 1Kgs.11.23
+Rhegium	রাগী	রেগিয়াম	revisado	rev. IA: Acts.28.13
+Rhesa	রীষা	রীষা	revisado	rev. IA: Luke.3.27
+Rhodes	রোদঃ	রোদ	revisado	rev. IA: Acts.21.1
+Ribai	রীবয়	রীবয়	revisado	rev. IA: 2Sam.23.29
+Rimmon	দিম্না	রিম্মোণ	revisado	rev. IA: Josh.21.35
+Rimmon-perez	রিম্মোণ	রিম্মোণ-পেরস	revisado	rev. IA: Num.33.19
+Rimmono	রিম্মোণ	রিম্মোণ	revisado	rev. IA: 1Chr.6.77
+Rinnah	রিন্ন	রিন্না	revisado	rev. IA: 1Chr.4.20
+Riphath	রীফৎ	রীফৎ	revisado	rev. IA: Gen.10.3
+Rohgah	রোগহ	রোগহ	revisado	rev. IA: 1Chr.7.34
+Romamti-ezer	রোমাম্	রোমামতী-এজের	revisado	rev. IA: 1Chr.25.4
+Rome	রোমে	রোম	revisado	rev. IA: Acts.23.11
+Rufus	রূফ	রূফ	revisado	rev. IA: Mark.15.21
+Sabtah	সপ্তা	সপ্তা	revisado	rev. IA: Gen.10.7
+Sacar	সাখর	সাখর	revisado	rev. IA: 1Chr.26.4
+Sachar	সাখর	সাখর	revisado	rev. IA: 1Chr.26.4
+Sachia	শখিয়	শখিয়	revisado	rev. IA: 1Chr.8.10
+Sadducee	সদ্দূকী	সদ্দূকী	revisado	rev. IA: Matt.3.7
+Sadoc	সাদোক	সাদোক	revisado	rev. IA: Matt.1.14
+Salamis	সালোমী	সালামী	revisado	rev. IA: Acts.13.5
+Salathiel	শল্টীয়েল	শল্টীয়েল	revisado	rev. IA: Luke.3.27
+Salecah	সলখা	সলখা	revisado	rev. IA: Josh.13.11
+Sallu	সল্লু	সল্লু	revisado	rev. IA: 1Chr.9.7
+Sallu	সল্লূ	সল্লু	revisado	rev. IA: Neh.12.7
+Salmon	সলমোন	সলমোন	revisado	rev. IA: Matt.1.4
+Salmone	সলমোনি	সলমোনি	revisado	rev. IA: Acts.27.7
+Samgar-nebo	সমগরনবো	সমগরনবো	revisado	rev. IA: Jer.39.3
+Samlah	সম্ল	সম্লা	revisado	rev. IA: Gen.36.36
+Samothrace	সামথ্রাকিদ্বীপ	সামথ্রাকী	revisado	rev. IA: Acts.16.11
+Samson	শিমশোন	শিমশোন	revisado	rev. IA: Judg.15.11
+Sapphira	সাফেরা	সাফেরা	revisado	rev. IA: Acts.5.1
+Saraph	সারফ	সারফ	revisado	rev. IA: 1Chr.4.22
+Sardis	সার্দ্দি	সার্দ্দি	revisado	rev. IA: Rev.1.11
+Sarsechim	শর্সখীম	শর্সখীম	revisado	rev. IA: Jer.39.3
+Satan	শয়তান	শয়তান	revisado	rev. IA: 1Chr.21.1
+Sceva	স্কিবা	স্কিবা	revisado	rev. IA: Acts.19.14
+Sea of Galilee	গালীল সাগর	গালীল সাগর	revisado	rev. IA: Mark.7.31
+Seba	শিবা	সবা	revisado	rev. IA: Gen.10.7
+Secundus	সিকুন্দ	সিকুন্দ	revisado	rev. IA: Acts.20.4
+Segub	সগূব	সগূব	revisado	rev. IA: 1Kgs.16.34
+Seirah	সিয়ীরাতে	সিয়ীরা	revisado	rev. IA: Judg.3.26
+Sela	সেলা	সেলা	revisado	rev. IA: Judg.1.36
+Seled	সেলদ	সেলদ	revisado	rev. IA: 1Chr.2.30
+Senaah	সনায়া	সনায়া	revisado	rev. IA: Ezra.2.35
+Seneh	সেনি	সেনি	revisado	rev. IA: 1Sam.14.4
+Senir	সনীর	সনীর	revisado	rev. IA: Deut.3.9
+Sennacherib	সনহেরীব	সনহেরীব	revisado	rev. IA: 2Chr.32.1
+Seorim	সিয়োরীম	সিয়োরীম	revisado	rev. IA: 1Chr.24.8
+Sephar	সফার	সফার	revisado	rev. IA: Gen.10.30
+Sepharad	সফারদে	সফারদ	revisado	rev. IA: Obad.1.20
+Serah	সেরহ	সেরহ	revisado	rev. IA: Gen.46.17
+Seraiah	রাজা	সরায়	revisado	rev. IA: 1Kgs.4.3
+Sered	সেরদ	সেরদ	revisado	rev. IA: Gen.46.14
+Serug	সরূগ	সরূগ	revisado	rev. IA: Gen.11.20
+Sethur	সথুর	সথুর	revisado	rev. IA: Num.13.13
+Shaalbim	শালবীমে	শালবীম	revisado	rev. IA: Judg.1.35
+Shaaraim	শারয়িম	শারয়িম	revisado	rev. IA: Josh.15.36
+Shaaraim	শারয়িমে	শারয়িম	revisado	rev. IA: 1Sam.17.52
+Shaashgaz	শাশ্	শাশগজ	revisado	rev. IA: Esth.2.14
+Shachia	শখিয়	শখিয়	revisado	rev. IA: 1Chr.8.10
+Shadrach	শদ্রক	শদ্রক	revisado	rev. IA: Dan.1.7
+Shage	শাগি	শাগি	revisado	rev. IA: 1Chr.11.34
+Shallecheth	শল্লেখৎ	শল্লেখৎ	revisado	rev. IA: 1Chr.26.16
+Shama	শাম	শাম	revisado	rev. IA: 1Chr.11.44
+Shamer	শেমরের	শেমর	revisado	rev. IA: 1Chr.6.46
+Shamer	শোমের	শেমর	revisado	rev. IA: 1Chr.7.32
+Shamhuth	শমহূৎ	শমহূৎ	revisado	rev. IA: 1Chr.27.8
+Shapham	শাফম	শাফম	revisado	rev. IA: 1Chr.5.12
+Sharai	শারয়	শারয়	revisado	rev. IA: Ezra.10.40
+Sharar	সারর	শারার	revisado	rev. IA: 2Sam.23.33
+Sharezer	শরেৎসর	শরেৎসর	revisado	rev. IA: 2Kgs.19.37
+Sharuhen	শারূহণ	শারূহণ	revisado	rev. IA: Josh.19.6
+Shashai	শাশয়	শাশয়	revisado	rev. IA: Ezra.10.40
+Shashak	শাশক	শাশক	revisado	rev. IA: 1Chr.8.14
+Shaul	শৌল	শৌল	revisado	rev. IA: Gen.36.37
+Sheal	শাল	শাল	revisado	rev. IA: Ezra.10.29
+Shear-jashub	যাশূব	শিয়ার-যাশূব	revisado	rev. IA: Isa.7.3
+Sheba	শিবা	শিবা	revisado	rev. IA: Gen.10.7
+Sheba	শেব	শিবা	revisado	rev. IA: Josh.19.2
+Sheba	শেবা	শিবা	revisado	rev. IA: Josh.19.2
+Shebat	শবাট	শবাট	revisado	rev. IA: Zech.1.7
+Sheber	শেবর	শেবর	revisado	rev. IA: 1Chr.2.48
+Shechem	শেখম	শেখম	revisado	rev. IA: Num.26.31
+Sheerah	শীরা	শীরা	revisado	rev. IA: 1Chr.7.24
+Sheleph	শেলফ	শেলফ	revisado	rev. IA: Gen.10.26
+Shelesh	শেলশ	শেলশ	revisado	rev. IA: 1Chr.7.35
+Shelomith	শলোমীৎ	শলোমীৎ	revisado	rev. IA: Lev.24.11
+Shelomith	শলোমোৎ	শলোমোৎ	revisado	rev. IA: 1Chr.24.22
+Shelomith	শলোমৎ	শলোমৎ	revisado	rev. IA: 1Chr.23.9
+Shelomoth	শলোমোৎ	শলোমোৎ	revisado	rev. IA: 1Chr.24.22
+Shelomoth	শলোমৎ	শলোমৎ	revisado	rev. IA: 1Chr.23.9
+Shema	শমা	শমা	revisado	rev. IA: Josh.15.26
+Shemaah	শমায়	শমায়	revisado	rev. IA: 1Chr.12.3
+Shemeber	শিমেবর	শিমেবর	revisado	rev. IA: Gen.14.2
+Shemed	শেমদ	শেমদ	revisado	rev. IA: 1Chr.8.12
+Shemer	শেমরের	শেমর	revisado	rev. IA: 1Kgs.16.24
+Shen	শে	শেন	revisado	rev. IA: 1Sam.7.12
+Shepham	শফাম	শফাম	revisado	rev. IA: Num.34.10
+Shepho	শফো	শফো	revisado	rev. IA: Gen.36.23
+Sherah	শীরা	শীরা	revisado	rev. IA: 1Chr.7.24
+Sheresh	শেরশ	শেরশ	revisado	rev. IA: 1Chr.7.16
+Sheshai	শেশয়	শেশয়	revisado	rev. IA: Num.13.22
+Sheshan	শেশন	শেশন	revisado	rev. IA: 1Chr.2.31
+Shethar	শেথর	শেথর	revisado	rev. IA: Esth.1.14
+Shethar-bozenai	শথরবোষণয়	শথরবোষণয়	revisado	rev. IA: Ezra.5.3
+Shethar-boznai	শথরবোষণয়	শথরবোষণয়	revisado	rev. IA: Ezra.5.3
+Sheva	ষা	শবা	revisado	rev. IA: 1Chr.2.49
+Shibah	শেবা	শিবা	revisado	rev. IA: Gen.26.33
+Shilhim	শিল্	শিল্হীম	revisado	rev. IA: Josh.15.32
+Shiloah	শীলোহ	শীলোহ	revisado	rev. IA: Isa.8.6
+Shiloh	শীলো	শীলো	revisado	rev. IA: Gen.49.10
