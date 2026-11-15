@@ -66,7 +66,8 @@ _PALAVRA_LATINA = re.compile(r"[^\W\d_]\w*(?:-\w+)*")
 _PALAVRA_RU = re.compile(r"[А-ЯЁ][А-Яа-яЁё-]*")
 _TOKEN_AR = re.compile(r"[ؐ-ؚء-ؿـ-ٰٟ-ۓە-ۭ]+")
 _TOKEN_HI = re.compile(r"[ऀ-ॣ॰-ॿ]+")
-_TOKEN_BN = re.compile(r"[ঀ-ৣৰ-৿]+")
+# sem ৲-৻ (moeda, frações, ৷ usado como danda na benirv, isshar)
+_TOKEN_BN = re.compile(r"[ঀ-ৣৰৱৼ৾]+")
 _KATAKANA = re.compile(r"[ァ-ヺー・]{2,}")
 
 
