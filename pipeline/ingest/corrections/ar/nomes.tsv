@@ -14,17 +14,17 @@
 # Revisão: comece pelas linhas de confianca baixa e media. Linhas revisado e sem não são recalculadas.
 nome_en	candidato	nome_ar	origem	confianca	entidades	versos	cobertura	alternativa
 Abel	الحجر	هابيل	revisado	baixa	1	1	1.00	الصحراء
-Abel-keramim	الكروم	آبل الكرامين	revisado	baixa	3	1	1.00	آبل
-Abel-maim	وآبل	آبل مايم	revisado	baixa	1	1	1.00	آبل
+Abel-keramim	الكروم	آبل الكروم	revisado	baixa	3	1	1.00	آبل
+Abel-maim	وآبل	آبل المياه	revisado	baixa	1	1	1.00	آبل
 Abel-meholah	محولة	آبل محولة	revisado	baixa	3	3	1.00	آبل
-Abilene	الأبلية	أبيلية	revisado	baixa	3	1	1.00	البنطي
+Abilene	الأبلية	الأبلية	revisado	baixa	3	1	1.00	البنطي
 Acco	أكزيب	عكو	revisado	baixa	2	1	1.00	وأكزيب
 Acco	أكملنا	أكملنا	sem	baixa	1	2	0.50	أكزيب
 Adadah	عدعدة	عدعدة	revisado	baixa	3	1	1.00	وعدعدة
 Adoni-bezek	أدوني	أدوني بازق	revisado	baixa	2	3	1.00	جازاني
 Adoni-zedek	أدوني	أدوني صادق	revisado	baixa	2	2	1.00	بعاي
 Aeneas	إينياس	إينياس	revisado	baixa	2	2	1.00	افرش
-Aenon	نون	عينون	revisado	baixa	3	1	1.00	أنه
+Aenon	نون	عين نون	revisado	baixa	3	1	1.00	أنه
 Agag	أجاج	أجاج	revisado	baixa	4	13	0.46	يتسامى
 Agee	أجي	أجي	revisado	baixa	2	1	1.00	عدسا
 Agur	أجور	أجور	revisado	baixa	2	1	1.00	الرجل
@@ -42,7 +42,7 @@ Allon-bacuth	باكوت	ألون باكوت	revisado	baixa	3	1	1.00	اكوت
 Amalek	عماليق	عماليق	revisado	baixa	4	31	0.81	أراحك
 Amaw	بلعام	بلعام	sem	baixa	3	1	1.00	قائلا
 Amaw	لعام	لعام	sem	baixa	3	1	1.00	بلعام
-Amminadib	جعلتني	عميناداب	revisado	baixa	1	1	1.00	ين
+Amminadib	جعلتني	عميناداب	sem	baixa	1	1	1.00	ين
 Ammon	عمون	عمون	revisado	baixa	3	125	0.78	أكمنة
 Amok	عاموق	عاموق	revisado	baixa	2	2	1.00	وعاموق
 Amorite	الأموري	الأموري	revisado	baixa	1	4	1.00	والأموري
@@ -62,15 +62,15 @@ Archites	الأركي	الأركيين	revisado	baixa	1	6	0.83	الأركيين
 Areopagus	أريوس	أريوس باغوس	revisado	baixa	3	4	0.50	باغوس
 Areopagus	اغوس	أريوس باغوس	revisado	baixa	3	4	0.50	أريوس
 Aretas	الحارث	الحارث	revisado	baixa	2	1	1.00	يحرس
-Ariel	أسدي	أرئيل	revisado	baixa	1	2	1.00	الأفعال
+Ariel	أسدي	أريئيل	revisado	baixa	1	2	1.00	الأفعال
 Arimathea	الرامة	الرامة	revisado	baixa	2	4	1.00	يلاطس
 Arkite	العرقي	العرقي	revisado	baixa	1	2	1.00	والعرقي
-Arkites	العرقي	العرقيين	revisado	baixa	1	2	1.00	والعرقي
+Arkites	العرقي	العرقي	revisado	baixa	1	2	1.00	والعرقي
 Armageddon	هرمجدون	هرمجدون	revisado	baixa	2	1	1.00	بالعبرانية
 Aroer	العروعيري	عروعير	revisado	baixa	1	1	1.00	العشتروتي
 Artaxerxes	أرتحششتا	أرتحشستا	revisado	baixa	3	14	0.79	أرتحشستا
 Arvadite	الأروادي	الأروادي	revisado	baixa	1	2	1.00	والأروادي
-Arvadites	الأروادي	الأرواديين	revisado	baixa	1	2	1.00	والأروادي
+Arvadites	الأروادي	الأروادي	revisado	baixa	1	2	1.00	والأروادي
 Asen	اثنا	اثنا	sem	baixa	1	1	1.00	واثنا
 Ashteroth-karnaim	قرنايم	عشتاروث قرنايم	revisado	baixa	3	2	0.50	عشتاروث
 Ataroth-addar	عطاروت	عطاروت أدار	revisado	baixa	3	2	1.00	أدار
@@ -110,7 +110,7 @@ Barkos	برقوس	برقوس	revisado	baixa	2	2	1.00	رقوس
 Bath-shua	أماته	بنت شوع	revisado	baixa	1	2	0.50	الثلاثة
 Bath-shua	بنت شوع	بنت شوع	revisado	baixa	1	2	0.50	بنت شوع الكنعانية
 Bealoth	وبعلوت	بعلوت	revisado	baixa	4	2	1.00	علوت
-Bear	والجبار	الدب	revisado	baixa	1	2	0.50	الجبار
+Bear	والجبار	النعش	revisado	baixa	1	2	0.50	الجبار
 Beer-elim	إيليم	بئر إيليم	revisado	baixa	3	1	1.00	أجلايم
 Beer-lahai-roi	بئر	بئر لحي رئي	revisado	baixa	3	3	1.00	رئي
 Beeroth	وبئيروت	بئيروت	revisado	baixa	3	11	0.36	بئيروت
@@ -118,23 +118,23 @@ Beersheba	تسبى	بئر سبع	revisado	baixa	1	23	0.04	بئر
 Bela	وبالع	بالع	revisado	baixa	2	1	1.00	وبعل
 Ben	وبين	وبين	sem	baixa	2	1	1.00	وبنايا
 Ben-Geber	ابن جابر	ابن جابر	revisado	baixa	1	1	1.00	جابر
-Ben-Geber	جابر	بن جابر	revisado	baixa	1	1	1.00	بأسوار
+Ben-Geber	جابر	ابن جابر	revisado	baixa	1	1	1.00	بأسوار
 Ben-deker	ابن دقر	ابن دقر	revisado	baixa	1	1	1.00	دقر
-Ben-deker	دقر	بن دقر	revisado	baixa	1	1	1.00	ابن
-Ben-hesed	حسد	بن حسد	revisado	baixa	1	1	1.00	ابن
-Ben-hur	ابن	بن حور	revisado	baixa	1	1	1.00	حور
+Ben-deker	دقر	ابن دقر	revisado	baixa	1	1	1.00	ابن
+Ben-hesed	حسد	ابن حسد	revisado	baixa	1	1	1.00	ابن
+Ben-hur	ابن	ابن حور	revisado	baixa	1	1	1.00	حور
 Ben-zoheth	وبنزوحيت	بنزوحيت	revisado	baixa	2	1	1.00	نزوحيت
-Bene-berak	برق	بني براق	revisado	baixa	3	1	1.00	وبني
+Bene-berak	برق	بني برق	revisado	baixa	3	1	1.00	وبني
 Bene-berak	بني برق	بني برق	revisado	baixa	3	1	1.00	بني برق جت
 Bene-jaakan	يعقان	بني يعقان	revisado	baixa	3	3	1.00	بني
 Beno	بنو	بنو	sem	baixa	2	2	1.00	ابن
 Beon	بعون	بعون	revisado	baixa	2	1	1.00	وبعون
 Beon	وبعون	بعون	revisado	baixa	2	1	1.00	وحشبون
-Besor	البسور	بسور	revisado	baixa	3	3	1.00	يعبروا
+Besor	البسور	البسور	revisado	baixa	3	3	1.00	يعبروا
 Betah	باطح	باطح	sem	baixa	2	1	1.00	بيروثاي
 Beth-Ashtoreth	بيت عشتاروث	بيت عشتاروث	revisado	baixa	1	1	1.00	بيت عشتاروث سمروا
 Beth-Ashtoreth	عشتاروث	بيت عشتاروث	revisado	baixa	1	1	1.00	سور
-Beth-anath	عناة	بيت عنة	revisado	baixa	3	2	1.00	يرأون
+Beth-anath	عناة	بيت عناة	revisado	baixa	3	2	1.00	يرأون
 Beth-anoth	ألتقون	بيت عنوت	revisado	baixa	3	1	1.00	وألتقون
 Beth-ashbea	أشبيع	أشبيع	sem	baixa	3	1	1.00	البز
 Beth-azmaveth	عزموت	بيت عزموت	revisado	baixa	2	3	1.00	أربعون
@@ -143,24 +143,24 @@ Beth-dagon	داجون	بيت داجون	revisado	baixa	6	2	1.00	ومقيدة
 Beth-eden	عدن	بيت عدن	revisado	baixa	3	1	1.00	بيت
 Beth-eked	بيت	بيت عقد	revisado	baixa	3	2	1.00	عقد
 Beth-eked	بيت عقد	بيت عقد	revisado	baixa	3	2	1.00	بئر بيت عقد
-Beth-emek	بيت	بيت عمق	revisado	baixa	3	1	1.00	ابول
+Beth-emek	بيت	بيت العامق	revisado	baixa	3	1	1.00	ابول
 Beth-emek	بيت العامق	بيت العامق	revisado	baixa	3	1	1.00	بيت العامق نعيئيل
 Beth-ezel	بيت هأيصل	بيت هأيصل	revisado	baixa	3	1	1.00	نوح بيت هأيصل
 Beth-ezel	هأيصل	هأيصل	sem	baixa	3	1	1.00	بيت
-Beth-gader	جادير	بيت جادر	revisado	baixa	2	1	1.00	حاريف
+Beth-gader	جادير	بيت جادير	revisado	baixa	2	1	1.00	حاريف
 Beth-gamul	جامول	بيت جامول	revisado	baixa	3	1	1.00	قريتايم
-Beth-gilgal	الجلجال	بيت جلجال	revisado	baixa	2	1	1.00	ضياعا
+Beth-gilgal	الجلجال	بيت الجلجال	revisado	baixa	2	1	1.00	ضياعا
 Beth-haccherem	بيت هكاريم	بيت هكاريم	revisado	baixa	3	2	1.00	بيت هكاريم هو
 Beth-haccherem	هكاريم	بيت هكاريم	revisado	baixa	3	2	1.00	رممه
-Beth-haggan	البستان	بيت هجان	revisado	baixa	3	1	1.00	طارده
+Beth-haggan	البستان	بيت البستان	revisado	baixa	3	1	1.00	طارده
 Beth-haggan	بيت البستان	بيت البستان	revisado	baixa	3	1	1.00	طريق بيت البستان
 Beth-hoglah	حجلة	بيت حجلة	revisado	baixa	3	3	1.00	بيت
-Beth-le-aphrah	عفرة	بيت لعفرة	revisado	baixa	2	1	1.00	التراب
+Beth-le-aphrah	عفرة	بيت عفرة	revisado	baixa	2	1	1.00	التراب
 Beth-lebaoth	لباوت	بيت لباوت	revisado	baixa	3	1	1.00	باوت
 Beth-marcaboth	مركبوت	بيت مركبوت	revisado	baixa	2	2	0.50	المركبوت
 Beth-meon	معون	بيت معون	revisado	baixa	2	1	1.00	بيت
 Beth-merhak	أثره	أثره	sem	baixa	1	1	1.00	البيت
-Beth-merhak	أثره وقفوا	بيت مرحق	revisado	baixa	1	1	1.00	الشعب في أثره
+Beth-merhak	أثره وقفوا	بيت مرحق	sem	baixa	1	1	1.00	الشعب في أثره
 Beth-millo	إلأ	إلأ	sem	baixa	3	3	0.33	أبيمالك
 Beth-millo	فاجتمع جميع أهل	بيت ملو	revisado	baixa	3	3	0.33	حيث ينزل
 Beth-pazzez	بيت فصيص	بيت فصيص	revisado	baixa	3	1	1.00	حدة بيت فصيص
@@ -197,7 +197,7 @@ Buzites	البوزي	البوزي	revisado	baixa	1	2	1.00	وخشيت
 Caesarea	أنسباءه	قيصرية	revisado	baixa	3	19	0.05	ارسا
 Canneh	حران	كنة	revisado	baixa	2	1	1.00	وكنة
 Cappadocia	وكبدوكية	كبدوكية	revisado	baixa	3	2	1.00	بدوكية
-Cauda	كلودي	كلودا	revisado	baixa	2	1	1.00	الجهد
+Cauda	كلودي	كلودي	revisado	baixa	2	1	1.00	الجهد
 Chaldea	الكلدانيين	الكلدانيين	revisado	baixa	3	91	0.76	كلداني
 Chelluh	كلوهي	كلوهي	revisado	baixa	1	1	1.00	وكلوهي
 Chelluh	وكلوهي	كلوهي	revisado	baixa	1	1	1.00	لوهي
@@ -212,26 +212,26 @@ Chinnereth	وكنارة	وكنارة	sem	baixa	1	1	1.00	وصير
 Chisloth-tabor	كسلوت	كسلوت تابور	revisado	baixa	2	1	1.00	سلوت
 Chloe	خلوي	خلوي	revisado	baixa	2	1	1.00	أهل
 Chushan-rishathaim	رشعتايم	كوشان رشعتايم	revisado	baixa	1	2	1.00	كوشان
-Chuza	خوزي	خوزى	revisado	baixa	2	1	1.00	سوسنة
-Clauda	كلودي	كلودا	revisado	baixa	1	1	1.00	لودي
+Chuza	خوزي	خوزي	revisado	baixa	2	1	1.00	سوسنة
+Clauda	كلودي	كلودي	revisado	baixa	1	1	1.00	لودي
 Clement	أكليمندس	أكليمندس	revisado	baixa	2	1	1.00	العاملين
-Cleophas	كليوباس	كلوباس	revisado	baixa	1	2	0.50	كلوبا
-Col-hozeh	كلحوزة	كول حوزة	revisado	baixa	4	2	1.00	لحوزة
+Cleophas	كليوباس	كليوباس	revisado	baixa	1	2	0.50	كلوبا
+Col-hozeh	كلحوزة	كلحوزة	revisado	baixa	4	2	1.00	لحوزة
 Colossae	كولسي	كولوسي	revisado	baixa	1	2	0.50	كولوسي
 Colossae	كولوسي	كولوسي	revisado	baixa	2	1	1.00	ولوسي
 Cosam	قصم	قصم	sem	baixa	2	1	1.00	ألمودام
 Coz	قوص	قوص	revisado	baixa	1	1	1.00	وقوص
 Cush	خلصني	كوش	revisado	baixa	1	1	1.00	كل
 Cushan-rishathaim	رشعتايم	كوشان رشعتايم	revisado	baixa	1	2	1.00	كوشان
-Cuthah	كوث	كوثا	revisado	baixa	1	2	0.50	سكوث
+Cuthah	كوث	كوث	revisado	baixa	1	2	0.50	سكوث
 Cuthah	وكوث	وكوث	sem	baixa	1	1	1.00	أتى
 Cyprus	قبرس	قبرس	revisado	baixa	2	12	0.42	كتيم
 Cyprus	ييئس	ييئس	sem	baixa	1	15	0.07	كتيم
-Cyrene	قيروانيا	قيروان	revisado	baixa	1	6	0.33	نيجر
+Cyrene	قيروانيا	القيروان	revisado	baixa	1	6	0.33	نيجر
 Cyrene	يحاورون	يحاورون	sem	baixa	2	7	0.14	قيروانيا
 Dabbesheth	دباشة	دباشة	sem	baixa	3	1	1.00	الغرب
 Darkon	درقون	درقون	revisado	baixa	2	2	1.00	يعلا
-Decapolis	العشر	عشر مدن	revisado	baixa	3	3	1.00	والعشر
+Decapolis	العشر	العشر المدن	revisado	baixa	3	3	1.00	والعشر
 Dehavites	الدهويين	الدهويين	revisado	baixa	1	1	1.00	والدهويين
 Dekar	دقر	دقر	revisado	baixa	1	1	1.00	ماقص
 Deker	دقر	دقر	revisado	baixa	1	1	1.00	أيلون
@@ -264,7 +264,7 @@ Egypt	هابيم	هابيم	sem	baixa	1	4	0.50	وديم
 Ehud	أهود	أهود	revisado	baixa	2	1	1.00	وأهود
 El-bethel	إيل بيت إيل	إيل بيت إيل	revisado	baixa	2	1	1.00	إيل بيت
 El-bethel	بيت	إيل بيت إيل	revisado	baixa	2	1	1.00	إيل
-Ela	أيلا	إيلا	revisado	baixa	1	1	1.00	نيامين
+Ela	أيلا	أيلا	revisado	baixa	1	1	1.00	نيامين
 Elah	أيلا	إيلة	revisado	baixa	1	1	1.00	نيامين
 Elath	أيلة	أيلة	revisado	baixa	3	6	1.00	على
 Eleazar	وأليعازر	أليعازر	revisado	baixa	2	1	1.00	أليعازر
@@ -274,24 +274,24 @@ Elioenai	اليوعيني	أليوعيناي	revisado	baixa	2	2	1.00	عناني
 Elipheleh	أليفليا	أليفليا	revisado	baixa	1	2	1.00	وأليفليا
 Eliphelehu	أليفليا	أليفليا	sem	baixa	1	2	1.00	وأليفليا
 Elkosh	الألقوشي	الألقوشي	revisado	baixa	3	1	1.00	سفر
-Elonbeth-hanan	حانان	إيلون بيت حانان	revisado	baixa	3	1	1.00	وشعلبيم
+Elonbeth-hanan	حانان	أيلون بيت حانان	revisado	baixa	3	1	1.00	وشعلبيم
 Eloth	التي	أيلة	revisado	baixa	1	3	0.33	أيلة
-Elpaal	ألفعل	ألفعال	revisado	baixa	2	3	1.00	وألفعل
+Elpaal	ألفعل	ألفعل	revisado	baixa	2	3	1.00	وألفعل
 Elpalet	ألفالط	أليفالط	revisado	baixa	1	2	0.50	أليفالط
 Elpelet	ألفالط	أليفالط	revisado	baixa	1	2	0.50	أليفالط
-Elteke	إلتقى	ألتقي	revisado	baixa	1	1	1.00	جبثون
+Elteke	إلتقى	إلتقى	revisado	baixa	1	1	1.00	جبثون
 Eltekeh	إلتقى	إلتقى	sem	baixa	2	2	0.50	إلتقيه
-Eltekeh	إلتقيه	ألتقة	revisado	baixa	1	1	1.00	وإلتقيه
+Eltekeh	إلتقيه	إلتقى	revisado	baixa	1	1	1.00	وإلتقيه
 Eltekon	ألتقون	ألتقون	revisado	baixa	3	1	1.00	وألتقون
 Elul	أيلول	أيلول	revisado	baixa	1	1	1.00	مل
-Emek-keziz	قصيص	عمق قصيص	revisado	baixa	3	1	1.00	نيامين
+Emek-keziz	قصيص	وادي قصيص	revisado	baixa	3	1	1.00	نيامين
 Emim	إيميين	الإيميين	revisado	baixa	1	3	0.33	الإيميين
 En-dor	دور	عين دور	revisado	baixa	3	3	1.00	عين
 En-gannim	جنيم	عين جنيم	revisado	baixa	2	2	1.00	ويرموت
 En-gannim	عينام	عين جنيم	revisado	baixa	3	1	1.00	وعينام
 En-haddah	حدة	حدة	sem	baixa	3	1	1.00	ورمة
 En-hakkore	الكفة	الكفة	sem	baixa	3	1	1.00	منها
-En-hakkore	منها ماء فشرب	عين حقوري	revisado	baixa	3	1	1.00	الكفة
+En-hakkore	منها ماء فشرب	عين هقوري	revisado	baixa	3	1	1.00	الكفة
 En-rimmon	يرموث	عين رمون	revisado	baixa	2	1	1.00	ويرموث
 En-rogel	روجل	عين روجل	revisado	baixa	3	6	0.67	نزل
 En-rogel	عين روجل	عين روجل	revisado	baixa	3	6	0.67	روجل
@@ -339,13 +339,13 @@ Eznites	شبث	شبث	sem	baixa	1	1	1.00	بشبث
 Field	في	في	sem	baixa	1	3	0.67	إلى
 Forest	ستر	ستر	sem	baixa	1	1	1.00	فتنظر
 Fortune	ورتبوا	ورتبوا	sem	baixa	1	1	1.00	رتبوا
-Freedmen	فنهض	المعتقين	revisado	baixa	1	1	1.00	يحاورون
+Freedmen	فنهض	الليبرتينيين	revisado	baixa	1	1	1.00	يحاورون
 Gadara	خارجان	خارجان	sem	baixa	1	1	1.00	هائجان
 Gaddi	جدي	جدي	revisado	baixa	2	1	1.00	سوسي
 Galeed	جلعيد	جلعيد	revisado	baixa	1	2	1.00	شاهدة
 Gamad	إرواد	إرواد	sem	baixa	3	1	1.00	أتراسهم
 Garmite	الجرمي	الجرمي	revisado	baixa	1	1	1.00	المعكي
-Garmites	الجرمي	الجرميين	revisado	baixa	1	1	1.00	المعكي
+Garmites	الجرمي	الجرمي	revisado	baixa	1	1	1.00	المعكي
 Gath	الجتي	جت	revisado	baixa	1	2	1.00	تابوت
 Gath	لغزة	لغزة	sem	baixa	3	44	0.02	عادته
 Gath	ماشيتهم	جت	revisado	baixa	1	2	0.50	جت
@@ -376,7 +376,7 @@ Geuel	جأوئيل	جأوئيل	revisado	baixa	2	1	1.00	بن
 Gibeath-elohim	جبعة	جبعة الله	revisado	baixa	3	1	1.00	تأتي
 Gibeath-elohim	جبعة الله	جبعة الله	revisado	baixa	3	1	1.00	جبعة الله حيث
 Gibeath-haaraloth	إسرائيل	إسرائيل	sem	baixa	2	1	1.00	القلف
-Gibeath-haaraloth	إسرائيل في تل	تل الغرلة	revisado	baixa	2	1	1.00	ختن بني إسرائيل
+Gibeath-haaraloth	إسرائيل في تل	تل القلف	revisado	baixa	2	1	1.00	ختن بني إسرائيل
 Gilo	الجيلوني	الجيلوني	revisado	baixa	1	1	1.00	أليفلط
 Giloh	جيلوه	جيلوه	revisado	baixa	3	3	0.67	وجيلوه
 Gimzo	حمزو	جمزو	revisado	baixa	3	1	1.00	وحمزو
@@ -396,7 +396,7 @@ Goshen	جوشن	جوشن	revisado	baixa	3	3	1.00	وجوشن
 Goshen	وجوشن	جوشن	revisado	baixa	1	1	1.00	جوشن
 Greece	أخبرك	اليونان	revisado	baixa	2	7	0.14	أحارب
 Greece	تجارك	اليونان	revisado	baixa	1	11	0.09	أخبرك
-Gudgodah	الجدجود	جدجود	revisado	baixa	1	1	1.00	ماء
+Gudgodah	الجدجود	الجدجود	revisado	baixa	1	1	1.00	ماء
 Gulloth-mayim	الينابيع	الينابيع	sem	baixa	1	2	1.00	والينابيع
 Gulloth-mayim	فقالت أعطني	فقالت أعطني	sem	baixa	1	2	0.50	فقالت له أعطني
 Guni	جوني	جوني	revisado	baixa	4	4	1.00	وجوني
@@ -406,7 +406,7 @@ Habakkuk	الشجوية	حبقوق	revisado	baixa	2	2	0.50	النبي
 Hachmonites	التحكموني	الحكموني	revisado	baixa	1	2	0.50	حكموني
 Hadad	حدار	هدد	revisado	baixa	1	2	0.50	وحدار
 Hadad	هدار	هدد	revisado	baixa	2	3	0.33	حانان
-Hadad-rimmon	هددرمون	هدد رمون	revisado	baixa	3	1	1.00	أورشليم
+Hadad-rimmon	هددرمون	هددرمون	revisado	baixa	3	1	1.00	أورشليم
 Hadarezer	هدر	هدد عزر	revisado	baixa	1	18	0.56	أبرز
 Haggedolim	هجدوليم	هجدوليم	sem	baixa	1	1	1.00	والوكيل
 Haggeri	هجري	هجري	revisado	baixa	1	1	1.00	مبحار
@@ -421,7 +421,7 @@ Hallohesh	هلوحيش	هلوحيش	revisado	baixa	2	2	1.00	وهلوحيش
 Halohesh	هلوحيش	هلوحيش	revisado	baixa	1	1	1.00	أورشليم
 Hamath-zobah	صوبة	حماة صوبة	revisado	baixa	2	2	1.00	حماة
 Hamathite	الحماتي	الحماتي	revisado	baixa	1	2	0.50	الحماثي
-Hamathites	الحماتي	الحماتيين	revisado	baixa	1	2	0.50	الحماثي
+Hamathites	الحماتي	الحماتي	revisado	baixa	1	2	0.50	الحماثي
 Hammath	حموت	حمة	revisado	baixa	1	4	0.25	وحمة
 Hammolecheth	وأخته	وأخته	sem	baixa	1	1	1.00	أخته
 Hammoleketh	وأخته	وأخته	sem	baixa	1	1	1.00	أخته
@@ -436,7 +436,7 @@ Harhur	حرحور	حرحور	revisado	baixa	2	2	1.00	حقوفا
 Harmon	تخرجن	تخرجن	sem	baixa	3	1	1.00	الحصن
 Harod	حرود	حرود	revisado	baixa	1	1	1.00	الذي
 Haroeh	الصرعيين	الصرعيين	sem	baixa	1	2	0.50	عشائر
-Harosheth-hagoyim	الأمم	حروشث الأمم	revisado	baixa	3	3	1.00	اراق
+Harosheth-hagoyim	الأمم	حروشة الأمم	revisado	baixa	3	3	1.00	اراق
 Harosheth-hagoyim	فدعا سيسرا جميع	حروشة الأمم	revisado	baixa	3	3	0.33	السيف لم
 Haruphites	الحروفي	الحروفي	revisado	baixa	1	1	1.00	يريموث
 Hasenuah	بنيامين	هسنوأة	revisado	baixa	1	1	1.00	هسنوأة
@@ -451,16 +451,16 @@ Hazar-susah	حصر سوسيم	حصر سوسيم	sem	baixa	1	2	0.50	حصر سوس
 Hazar-susim	سوسيم	حصر سوسيم	revisado	baixa	2	1	1.00	شعرايم
 Hazarmaveth	حضرموت	حضرموت	revisado	baixa	2	2	1.00	وحضرموت
 Hazelelponi	هصللفوني	هصلَلفوني	revisado	baixa	1	1	1.00	يدباش
-Hazer-hatticon	سبرائم	حصر هتيكون	revisado	baixa	3	1	1.00	وسبرائم
-Hazer-hatticon	سبرائم التي بين	حاصر هتيكون	revisado	baixa	3	1	1.00	الوسطى التي
+Hazer-hatticon	سبرائم	حصر الوسطى	revisado	baixa	3	1	1.00	وسبرائم
+Hazer-hatticon	سبرائم التي بين	حصر الوسطى	revisado	baixa	3	1	1.00	الوسطى التي
 Hazerim	الكفتوريون	الكفتوريون	sem	baixa	1	1	1.00	أبادهم
-Hazo	كاسد	حزو	revisado	baixa	2	1	1.00	فلداش
+Hazo	كاسد	حزوا	revisado	baixa	2	1	1.00	فلداش
 Hazor-hadattah	حدتة	حاصور حدتة	revisado	baixa	3	1	1.00	وحدتة
 Hazzelelponi	هصللفوني	هصلَلفوني	revisado	baixa	1	1	1.00	يدباش
 Heber	حابر	حابر	revisado	baixa	8	12	0.83	وحابر
 Heber	وعابر	عابر	revisado	baixa	2	2	1.00	عابر
 Hebrews	عبرانيون	العبرانيين	revisado	baixa	1	37	0.03	لرؤساء
-Hegai	هيجاي	هجاي	revisado	baixa	2	3	1.00	أستير
+Hegai	هيجاي	هيجاي	revisado	baixa	2	3	1.00	أستير
 Heleb	خالب	خالب	sem	baixa	2	3	0.33	وخالب
 Helech	حولك	حولك	sem	baixa	3	1	1.00	جمالك
 Helek	حالق	حالق	revisado	baixa	2	2	1.00	الذكور
@@ -470,8 +470,8 @@ Helez	حالص	حالص	revisado	baixa	4	4	1.00	وحالص
 Heliopolis	ليوسف	ليوسف	sem	baixa	1	5	0.40	فيبستة
 Heliopolis	ويكسر	ويكسر	sem	baixa	1	1	1.00	يكسر
 Helkath	حلقة	حلقة	revisado	baixa	3	3	0.67	وحلقة
-Helkath-hazzurim	هصوريم	حلقة هصوريم	revisado	baixa	3	1	1.00	حلقث
-Hena	هينع	عنة	revisado	baixa	3	3	1.00	عوا
+Helkath-hazzurim	هصوريم	حلقث هصوريم	revisado	baixa	3	1	1.00	حلقث
+Hena	هينع	هينع	revisado	baixa	3	3	1.00	عوا
 Henoch	وحنوك	حنوك	revisado	baixa	1	2	1.00	حنوك
 Heres	حارس	حارس	revisado	baixa	3	1	1.00	رجع
 Hereth	حارث	حارث	revisado	baixa	3	1	1.00	عر
@@ -502,20 +502,20 @@ Hoshea	سوا	هوشع	revisado	baixa	2	8	0.12	سبى
 Hoshea	عززيا	هوشع	revisado	baixa	2	1	1.00	منسى
 Hoshea	وهوشع	هوشع	revisado	baixa	2	1	1.00	هوشع
 Hothan	حوثام	حوثام	revisado	baixa	1	1	1.00	ابنا
-Hukkok	خرج	حوقوق	revisado	baixa	3	1	1.00	هناك
-Hukok	حقوق	حوقوق	revisado	baixa	2	1	1.00	رحوب
+Hukkok	خرج	حقوق	revisado	baixa	3	1	1.00	هناك
+Hukok	حقوق	حقوق	revisado	baixa	2	1	1.00	رحوب
 Hul	وحول	حول	revisado	baixa	2	2	1.00	حول
 Huppah	حفة	حفة	revisado	baixa	2	1	1.00	لحفة
 Huppah	لحفة	حفة	revisado	baixa	2	1	1.00	ليشبآب
 Huppim	حفيم	حفيم	revisado	baixa	3	5	0.60	شفيم
 Hushathites	الحوشاتي	الحوشاتي	revisado	baixa	1	5	0.60	سبكاي
-Huz	عوصا	عوص	revisado	baixa	1	1	1.00	وزا
+Huz	عوصا	عوصا	revisado	baixa	1	1	1.00	وزا
 Iddo	أخيناداب	عدو	revisado	baixa	2	1	1.00	عدو
 Iddo	حجي	عدو	revisado	baixa	2	4	0.50	لليهود
 Iddo	عدو	عدو	revisado	baixa	3	4	0.75	وعدو
 Ikkesh	عقيش	عقيش	revisado	baixa	2	3	1.00	أبيعزر
 India	الهند	الهند	revisado	baixa	3	2	1.00	دعي
-Ir-moab	مدينة موآب	عير موآب	revisado	baixa	1	1	1.00	جاء خرج لاستقباله
+Ir-moab	مدينة موآب	مدينة موآب	revisado	baixa	1	1	1.00	جاء خرج لاستقباله
 Ithrites	اليثري	اليثري	revisado	baixa	1	3	1.00	عيرا
 Izhar	صرث	يصهار	revisado	baixa	1	1	1.00	صوحر
 Jaakobah	يعقوبا	يعقوبا	sem	baixa	2	1	1.00	ويعقوبا
@@ -555,7 +555,7 @@ Jekuthiel	يقوثيئيل	يقوثيئيل	revisado	baixa	2	1	1.00	ويقوثي
 Jemnath	ضياعها	ضياعها	sem	baixa	1	1	1.00	وضياعها
 Jemuel	يموئيل	يموئيل	revisado	baixa	2	4	0.50	يامين
 Jerah	يارح	يارح	revisado	baixa	2	2	1.00	ويارح
-Jeremoth	راموث	يرموت	revisado	baixa	1	1	1.00	وراموث
+Jeremoth	راموث	يريموث	revisado	baixa	1	1	1.00	وراموث
 Jericho	جرحوه	أريحا	revisado	baixa	1	5	0.20	أريحا
 Jeruel	يروئيل	يروئيل	revisado	baixa	3	1	1.00	صيص
 Jerusalem	ليرسل	ليرسل	sem	baixa	1	888	0.00	شاليم
@@ -587,8 +587,8 @@ Judgment	حيث	حيث	sem	baixa	1	1	1.00	يقضي
 Kabzeel	قبصئيل	قبصئيل	revisado	baixa	3	4	0.50	قبصيئيل
 Kadesh	حدشي	قادش	revisado	baixa	1	1	1.00	أرض
 Kadmonites	القدمونيين	القدمونيين	revisado	baixa	1	1	1.00	والقدمونيين
-Karka	القرقع	قرقع	revisado	baixa	3	1	1.00	أدار
-Karkor	قرقر	قرقور	revisado	baixa	3	1	1.00	مخترطي
+Karka	القرقع	القرقع	revisado	baixa	3	1	1.00	أدار
+Karkor	قرقر	قرقر	revisado	baixa	3	1	1.00	مخترطي
 Karnaim	قرونا	قرنايم	revisado	baixa	1	1	1.00	الفرحون
 Kattath	قطة	قطة	revisado	baixa	2	1	1.00	اثنتا
 Kedemoth	قديموت	قديموت	revisado	baixa	3	4	1.00	وقديموت
@@ -606,7 +606,7 @@ Kidron	قدرون	قدرون	revisado	baixa	3	16	0.69	ذرى
 Kiriath-huzoth	قرية حصوت	قرية حصوت	revisado	baixa	3	1	1.00	أتيا إلى قرية
 Kishion	قشيون	قشيون	revisado	baixa	3	3	0.67	وقشيون
 Kitron	قطرون	قطرون	revisado	baixa	3	3	0.33	يطرد
-Kiyyun	خيمة	كيوان	revisado	baixa	1	1	1.00	نجم
+Kiyyun	خيمة	كيوان	sem	baixa	1	1	1.00	نجم
 Koa	شهراء	شهراء	sem	baixa	3	1	1.00	لاة
 Kohath	قهات	قهات	revisado	baixa	2	42	0.69	كانت
 Korah	أمراء	قورح	revisado	baixa	4	5	0.40	امرأة
@@ -614,14 +614,14 @@ Korah	راقم	راقم	sem	baixa	2	1	1.00	وراقم
 Kore	قوري	قوري	revisado	baixa	4	4	0.75	حراس
 Koz	قوص	قوص	revisado	baixa	1	1	1.00	وقوص
 Koz	هقوص	هقوص	sem	baixa	2	4	1.00	اسمهم
-Kue	مخرج	قوة	revisado	baixa	3	2	1.00	كان
+Kue	مخرج	قوة	sem	baixa	3	2	1.00	كان
 Lakkum	أدامي	لقوم	revisado	baixa	3	1	1.00	تخمهم
 Leb-kamai	مهلكة	مهلكة	sem	baixa	2	1	1.00	الرب هأنذا أوقظ
 Lemuel	لموئيل	لموئيل	revisado	baixa	2	2	1.00	للملوك
 Likhi	لقحي	لقحي	revisado	baixa	2	1	1.00	ولقحي
 Luke	عليكم	لوقا	revisado	baixa	1	4	0.50	للخدمة
 Luke	للخدمة	للخدمة	sem	baixa	1	3	0.33	عليكم
-Maacath	والمعكي	معكة	revisado	baixa	1	1	1.00	المعكي
+Maacath	والمعكي	المعكي	revisado	baixa	1	1	1.00	المعكي
 Maareh-geba	تامار ثار	تامار ثار	sem	baixa	3	1	1.00	مكانه من عراء
 Magadan	مجدل	مجدل	revisado	baixa	2	1	1.00	السفينة
 Magadan	وأمراض	وأمراض	sem	baixa	1	14	0.07	مضى
@@ -643,14 +643,14 @@ Melchisedec	ملكي	ملكي صادق	revisado	baixa	1	11	1.00	وملكي
 Melchizedek	ملكي	ملكي صادق	revisado	baixa	1	11	1.00	وملكي
 Melzar	السقاة	السقاة	sem	baixa	2	2	1.00	لاه
 Memphis	تحفنحيس	نوف	revisado	baixa	3	8	0.25	وتحفنيس
-Meronoth	الميرونوثي	ميرونوث	revisado	baixa	1	2	1.00	ملطيا
+Meronoth	الميرونوثي	الميرونوثي	revisado	baixa	1	2	1.00	ملطيا
 Meronothites	الميرونوثي	الميرونوثي	revisado	baixa	1	2	1.00	ملطيا
 Mesha	ميشع	ميشع	revisado	baixa	2	1	1.00	بصوفها
 Meshullemeth	مشلمة	مشلمة	sem	baixa	2	1	1.00	سنتين
 Mesopotamia	يستأجروا	أرام النهرين	revisado	baixa	3	7	0.14	رشعتايم
 Metheg-ammah	زمام	زمام القصبة	revisado	baixa	2	1	1.00	زمام القصبة
 Meunites	المعونيين	المعونيين	revisado	baixa	1	3	0.67	والمعونيين
-Mezahab	ماء	ميزاهب	revisado	baixa	3	2	1.00	مهيطبئيل
+Mezahab	ماء	ماء ذهب	revisado	baixa	3	2	1.00	مهيطبئيل
 Mezobaites	مصوبايا	مصوبايا	sem	baixa	1	1	1.00	ويعسيئيل
 Mikloth	مقلوث	مقلوث	revisado	baixa	4	4	1.00	ومقلوث
 Miktam	اقتحمتنا	اقتحمتنا	sem	baixa	1	6	0.17	يا
@@ -665,14 +665,14 @@ Mizpeh	والمصفاة	المصفاة	revisado	baixa	3	1	1.00	المصفاة
 Moreh	مورة	مورة	revisado	baixa	6	3	1.00	عبر
 Moresheth	المورشتي	مورشة	revisado	baixa	2	3	0.67	عر
 Moresheth-gath	لمورشة	مورشة جت	revisado	baixa	2	3	0.33	لمورشة جت تصير
-Mortar	مكتيش	المكتيش	revisado	baixa	3	1	1.00	باد
-Moserah	موسير	موسيرة	revisado	baixa	2	1	1.00	إسرائيل
+Mortar	مكتيش	مكتيش	revisado	baixa	3	1	1.00	باد
+Moserah	موسير	موسير	revisado	baixa	2	1	1.00	إسرائيل
 Muth-labben	أحمد الرب	أحمد الرب	sem	baixa	1	1	1.00	بجميع عجائبك
 Naamah	النعماتي	نعمة	revisado	baixa	1	4	1.00	التيماني
 Naamathites	النعماتي	النعماتي	revisado	baixa	1	4	1.00	التيماني
 Nagge	نجاي	نجاي	sem	baixa	1	1	1.00	ناحوم
-Naphath-dor	طافة بنت	نافث دور	revisado	baixa	1	1	1.00	مرتفعات دور
-Naphoth-dor	مرتفعات دور	نفوت دور	revisado	baixa	2	4	0.75	مرتفعات دور غربا
+Naphath-dor	طافة بنت	مرتفعات دور	revisado	baixa	1	1	1.00	مرتفعات دور
+Naphoth-dor	مرتفعات دور	مرتفعات دور	revisado	baixa	2	4	0.75	مرتفعات دور غربا
 Nazareth	الناصري	الناصرة	revisado	baixa	1	30	0.57	ناصرة
 Nazirites	أوصيتم	أوصيتم	sem	baixa	1	15	0.07	نذيرين
 Neco	نخو	نخو	revisado	baixa	1	10	0.80	تنكر
@@ -705,7 +705,7 @@ Omega	ماء	ماء	sem	baixa	1	4	0.25	برغامس
 On	أون	أون	revisado	baixa	3	8	0.50	فعنيح
 On	بن	بن	sem	baixa	1	3	0.67	أون
 Ophel	علاه	العوفل	revisado	baixa	3	5	0.20	وعلاه
-Oreb	غراب	عوريب	revisado	baixa	2	4	0.75	غرابا
+Oreb	غراب	غراب	revisado	baixa	2	4	0.75	غرابا
 Oren	أورن	أورن	revisado	baixa	2	1	1.00	وأورن
 Orion	الثريا	الجبار	revisado	baixa	1	3	1.00	والثريا
 Orpah	عرفة	عرفة	revisado	baixa	2	2	1.00	راعوث
@@ -713,7 +713,7 @@ Osnappar	أسنفر	أسنفر	revisado	baixa	1	1	1.00	وسائر
 Ozem	أوصم	أوصم	revisado	baixa	4	2	1.00	وأوصم
 Pacatiana	الإيمان	الإيمان	sem	baixa	1	1	1.00	آمين
 Pallu	الحنوكيين	فلو	revisado	baixa	2	5	0.20	الفلويين
-Parthians	فرتيون	الفرثيين	revisado	baixa	1	1	1.00	النهرين
+Parthians	فرتيون	فرتيون	revisado	baixa	1	1	1.00	النهرين
 Paruah	فاروح	فاروح	revisado	baixa	2	1	1.00	يساكر
 Paseah	فاسح	فاسح	revisado	baixa	2	1	1.00	وفاسح
 Paseah	فاسيح	فاسيح	sem	baixa	3	3	1.00	أقفاله
@@ -729,12 +729,12 @@ Pelaliah	فلليا	فلليا	revisado	baixa	2	1	1.00	عدايا
 Pelet	فلط	فلط	sem	baixa	2	1	1.00	وفلط
 Pelet	وفالط	فالط	revisado	baixa	2	1	1.00	فالط
 Peleth	فالت	فالت	sem	baixa	4	2	1.00	قهات
-Pelethites	الجتيين	الفلتيين	revisado	baixa	1	7	0.14	ليتبعوا
+Pelethites	الجتيين	السعاة	revisado	baixa	1	7	0.14	ليتبعوا
 Pelonites	الفلوني	الفلوني	revisado	baixa	1	4	0.75	حالص
 Pelusium	للتمزيق	سين	revisado	baixa	3	2	0.50	سين
 Peniel	فنوئيل	فنوئيل	revisado	baixa	1	6	0.83	فنيئيل
 Peninnah	فننة	فننة	revisado	baixa	2	2	1.00	بنيها
-Peresh	شارش	فارش	revisado	baixa	2	1	1.00	رش
+Peresh	شارش	فرش	revisado	baixa	2	1	1.00	رش
 Perez-uzza	فارص عزا	فارص عزا	revisado	baixa	2	1	1.00	الموضع فارص عزا
 Perez-uzzah	فارص عزا	فارص عزا	sem	baixa	1	2	0.50	فارص عزة
 Perez-uzzah	فارص عزة	فارص عزة	revisado	baixa	1	1	1.00	الموضع فارص عزة
@@ -769,7 +769,7 @@ Pochereth-hazzebaim	فوخرة الظباء	فوخرة الظباء	revisado	bai
 Pool	شلون	شلون	sem	baixa	1	1	1.00	كلحوزة
 Pool	لعبور	لعبور	sem	baixa	1	1	1.00	لم
 Poti-pherah	فوطي فارع كاهن	فوطي فارع	revisado	baixa	1	3	1.00	فوطي فارع
-Potiphera	فارع	فوطيفار	revisado	baixa	1	3	1.00	وطي
+Potiphera	فارع	فوطي فارع	revisado	baixa	1	3	1.00	وطي
 Prochorus	بروخورس	بروخورس	revisado	baixa	2	1	1.00	وبروخورس
 Puah	فواة	فواة	sem	baixa	2	1	1.00	شامير
 Puah	فوة	فوة	revisado	baixa	2	3	0.67	تولاع
@@ -783,13 +783,13 @@ Put	فوط	فوط	revisado	baixa	3	9	0.78	وفوط
 Puteoli	بوطيولي	بوطيولي	revisado	baixa	3	1	1.00	الثاني
 Puthites	الفوتي	الفوتي	revisado	baixa	1	1	1.00	الشماتي
 Putiel	فوطيئيل	فوطيئيل	revisado	baixa	2	1	1.00	له
-Pyrrhus	غايوس	بيروس	revisado	baixa	1	1	1.00	البيري
+Pyrrhus	غايوس	بيروس	sem	baixa	1	1	1.00	البيري
 Rab-mag	رؤساء ملك	رؤساء ملك	sem	baixa	2	2	1.00	رئيس المجوس
-Raca	رقا	راقا	revisado	baixa	1	1	1.00	أخيه
+Raca	رقا	رقا	revisado	baixa	1	1	1.00	أخيه
 Rakkath	رقة	رقة	revisado	baixa	2	1	1.00	ورقة
 Rakkon	الرقون	الرقون	revisado	baixa	3	1	1.00	اليرقون
 Ramathites	الرامي	الرامي	revisado	baixa	1	1	1.00	الشفمي
-Reba	رابع	ربع	revisado	baixa	2	2	1.00	ورابع
+Reba	رابع	رابع	revisado	baixa	2	2	1.00	ورابع
 Regem	رجم	رجم	revisado	baixa	2	1	1.00	ويوثام
 Rehoboth	رحوبوت	رحوبوت	revisado	baixa	7	4	1.00	أرحب
 Rehum	رحوم	رحوم	revisado	baixa	8	11	0.73	رعميا
@@ -819,7 +819,7 @@ Secu	سيخو	سيخو	revisado	baixa	3	1	1.00	سأل
 Segub	سجوب	سجوب	revisado	baixa	4	3	1.00	صغيره
 Serah	سارح	سارح	revisado	baixa	2	3	1.00	وسارح
 Shaalbon	الشعلبوني	الشعلبوني	revisado	baixa	1	2	1.00	أليحبا
-Shage	شمة	شاجي	revisado	baixa	1	2	0.50	شاجاي
+Shage	شمة	شاجاي	revisado	baixa	1	2	0.50	شاجاي
 Shallecheth	وحوسة	شلكة	revisado	baixa	3	1	1.00	شلكة
 Shammua	شموع	شموع	revisado	baixa	6	5	0.80	أسماؤهم
 Sharezer	شرآصر	شراصر	revisado	baixa	2	2	1.00	وشرآصر
@@ -827,7 +827,7 @@ Sharezer	شراصر	شراصر	revisado	baixa	1	1	1.00	أرسل
 Shaveh	شوى	شوى	revisado	baixa	1	2	1.00	عشتاروث
 Shebuel	شبوئيل	شبوئيل	revisado	baixa	2	5	0.60	شوبائيل
 Shema	عزاز	شمع	revisado	baixa	2	1	1.00	شامع
-Shemed	مشعام	شامد	revisado	baixa	1	1	1.00	وشامر
+Shemed	مشعام	شامر	revisado	baixa	1	1	1.00	وشامر
 Sheminith	مقنيا	مقنيا	sem	baixa	1	3	0.33	ومقنيا
 Shemuel	شموئيل	شموئيل	revisado	baixa	4	2	1.00	شمعون
 Shen	السن	السن	revisado	baixa	3	1	1.00	والسن
@@ -836,22 +836,22 @@ Shepho	شفو	شفو	revisado	baixa	2	2	0.50	وشفو
 Shiggaion	ونجني	ونجني	sem	baixa	1	1	1.00	نجني
 Shigionoth	الشجوية	الشجوية	sem	baixa	1	1	1.00	صلاة
 Shilonites	الشيلوني	الشيلوني	revisado	baixa	1	1	1.00	حزايا
-Shimea	شمعي	شمعا	revisado	baixa	2	1	1.00	آساف
+Shimea	شمعي	شمعي	revisado	baixa	2	1	1.00	آساف
 Shimeathite	شمعاتيم	شمعاتيم	revisado	baixa	1	1	1.00	وشمعاتيم
 Shimeon	وشمعون	شمعون	revisado	baixa	2	1	1.00	شمعون
 Shiphmites	الشفمي	الشفمي	sem	baixa	1	1	1.00	شمعي
 Shobek	شوبيق	شوبيق	revisado	baixa	2	1	1.00	وشوبيق
 Shoham	شوهم	شوهم	revisado	baixa	2	1	1.00	وشوهم
 Shuhites	الشوحي	الشوحي	revisado	baixa	1	5	1.00	ليرثوا
-Shulammites	شولميث	الشولمية	revisado	baixa	1	1	1.00	ارجعي
+Shulammites	شولميث	شولميث	revisado	baixa	1	1	1.00	ارجعي
 Shumathites	الشماتي	الشماتي	revisado	baixa	1	1	1.00	والشماتي
 Shunammites	الشونمية	الشونمية	revisado	baixa	1	8	1.00	احملي
 Shuthelah	شوتالح	شوتالح	revisado	baixa	4	4	1.00	لشوتالح
-Sikkuth	صنعتم	سكوت	revisado	baixa	1	1	1.00	إلهكم
+Sikkuth	صنعتم	سكوت	sem	baixa	1	1	1.00	إلهكم
 Simeon	وسمعان	شمعون	revisado	baixa	2	1	1.00	سمعان
 Sinite	السيني	السيني	revisado	baixa	1	2	1.00	والسيني
 Sinites	السيني	السيني	revisado	baixa	1	2	1.00	والسيني
-Skull	صلبوه	الجمجمة	revisado	baixa	1	1	1.00	يساره
+Skull	صلبوه	جمجمة	revisado	baixa	1	1	1.00	يساره
 So	سوا	سوا	revisado	baixa	2	1	1.00	هوشع
 Soco	سوكو	سوكو	revisado	baixa	2	2	1.00	وسوكو
 Socoh	سوكوه	سوكوه	revisado	baixa	7	6	0.67	وسوكوه
@@ -859,12 +859,12 @@ Sopater	سوباترس	سوباترس	revisado	baixa	2	2	0.50	سوسيباترس
 South	تسلطه	تسلطه	sem	baixa	1	12	0.08	تسلط
 South	ستقوم	ستقوم	sem	baixa	2	3	0.67	ومستريحة
 South	ومستريحة	ومستريحة	sem	baixa	1	1	1.00	مستريحة
-Spain	اسبانيا	إسبانيا	revisado	baixa	3	2	1.00	فسأمضي
+Spain	اسبانيا	اسبانيا	revisado	baixa	3	2	1.00	فسأمضي
 Stoic	الأبيكوريين	الرواقيين	revisado	baixa	1	1	1.00	يبشرهم
 Straight	طرسوسيا	طرسوسيا	sem	baixa	1	1	1.00	المستقيم
 Suah	وشوعال	وشوعال	sem	baixa	2	1	1.00	شوعال
 Sucathite	سوكاتيم	سوكاتيم	revisado	baixa	1	1	1.00	وسوكاتيم
-Tabbur-erez	الأرض فرقة	سرة الأرض	revisado	baixa	1	1	1.00	آتية عن طريق
+Tabbur-erez	الأرض فرقة	أعالي الأرض	revisado	baixa	1	1	1.00	آتية عن طريق
 Tahath	تحث	تحث	revisado	baixa	6	3	1.00	شوتالح
 Tahpenes	تحفنيس	تحفنيس	revisado	baixa	2	2	1.00	ابنه
 Tahtimhodshi	تحتيم	تحتيم حدشي	revisado	baixa	1	1	1.00	حدشي
@@ -904,7 +904,7 @@ Unnamed#8	أليود	أليود	sem	baixa	1	1	1.00	وأليود
 Unnamed#9	أليود	أليود	sem	baixa	1	1	1.00	وأليود
 Urbane	أوربانوس	أوربانوس	revisado	baixa	1	1	1.00	معنا
 Uz	عوصا	عوص	revisado	baixa	1	1	1.00	بوزا
-Uzal	غزلا	عوزال	revisado	baixa	3	1	1.00	مشغول
+Uzal	غزلا	أوزال	revisado	baixa	3	1	1.00	مشغول
 Weeks	يتجاوز	يتجاوز	sem	baixa	1	8	0.12	ذكورك
 Willows	وذخائرهم	وادي الصفصاف	revisado	baixa	1	1	1.00	وادي
 Zaccur	الذكور	زكور	revisado	baixa	1	1	1.00	زبود
@@ -935,7 +935,7 @@ Abel	آبل	آبل	sem	media	1	3	1.00	سؤالا
 Abel-keramim	آبل الكروم	آبل الكروم	sem	media	3	1	1.00	الكروم ضربة عظيمة
 Abel-maim	المياه جميع	المياه جميع	sem	media	1	1	1.00	آبل المياه جميع
 Abel-meholah	آبل محولة	آبل محولة	revisado	media	3	3	1.00	حافة آبل محولة
-Abi-albon	أبو علبون	أبيعلبون	revisado	media	1	2	0.50	أبيئيل العرباتي
+Abi-albon	أبو علبون	أبو علبون	revisado	media	1	2	0.50	أبيئيل العرباتي
 Abiah	أبيا	أبيا	revisado	media	1	2	1.00	ابنا
 Abiah	وأبيا	وأبيا	sem	media	1	1	1.00	أبيا
 Abiel	أبيئيل	أبيئيل	revisado	media	3	7	0.43	أفيح
@@ -946,10 +946,10 @@ Achsa	عكسة	عكسة	revisado	media	1	1	1.00	شاعف
 Adah	عادة	عادة	revisado	media	2	3	1.00	اسمعا
 Adah	عدا	عدا	sem	media	2	6	0.83	أليفاز
 Adam	آدم	آدم	revisado	media	2	27	0.96	لآدم
-Adami-nekeb	أدامي	أدامي النقب	revisado	media	3	1	1.00	أدامي الناقب
+Adami-nekeb	أدامي	أدامي الناقب	revisado	media	3	1	1.00	أدامي الناقب
 Addon	أدون	أدون	revisado	media	2	2	0.50	وأدون
 Adiel	عديئيل	عديئيل	revisado	media	5	4	0.75	وعديئيل
-Adino	الذين	عدينو	revisado	media	2	1	1.00	ثمان
+Adino	الذين	عدينو	sem	media	2	1	1.00	ثمان
 Adoni-bezek	أدوني بازق	أدوني بازق	revisado	media	2	3	1.00	أدوني
 Adoni-zedek	أدوني صادق ملك	أدوني صادق	revisado	media	2	2	1.00	أدوني صادق
 Adonikam	أدونيقام	أدونيقام	revisado	media	2	3	1.00	أسماؤهم
@@ -1000,7 +1000,7 @@ Ananiah	عننيا	عننيا	revisado	media	2	1	1.00	بنيامين
 Ananiah	عننية	عننية	sem	media	3	1	1.00	وعننية
 Anath	عناة	عناة	revisado	media	2	2	1.00	استراحت
 Anathoth	عناثوث	عناثوث	revisado	media	7	20	0.75	وعناثوث
-Andronicus	أندرونكوس	أندرونيكوس	revisado	media	2	1	1.00	يونياس
+Andronicus	أندرونكوس	أندرونكوس	revisado	media	2	1	1.00	يونياس
 Anem	عانيم	عانيم	revisado	media	2	1	1.00	وعانيم
 Aner	عانير	عانر	revisado	media	2	1	1.00	مسارحها
 Anna	حنة	حنة	revisado	media	2	1	1.00	أيام
@@ -1032,9 +1032,9 @@ Arumah	أرومة	أرومة	revisado	media	3	3	0.33	الإقامة
 Asareel	أسرئيل	أسرئيل	revisado	media	1	1	1.00	وأسرئيل
 Asarel	أسرئيل	أسرئيل	revisado	media	1	1	1.00	وأسرئيل
 Asharelah	أشرئيلة	أشرئيلة	revisado	media	1	2	0.50	وأشرئيلة
-Asherah	السارية	الأشيرة	revisado	media	1	40	0.20	والسارية
+Asherah	السارية	السارية	revisado	media	1	40	0.20	والسارية
 Ashhur	أشحور	أشحور	revisado	media	1	2	1.00	لأشحور
-Ashpenaz	أشفنز	أشفناز	revisado	media	2	1	1.00	الشرفاء
+Ashpenaz	أشفنز	أشفنز	revisado	media	2	1	1.00	الشرفاء
 Ashriel	إشريئيل	إشريئيل	revisado	media	1	1	1.00	سريته
 Ashtaroth	عشتاروث	عشتاروث	revisado	media	3	8	0.62	عشتاروت
 Ashteroth-karnaim	عشتاروث قرنايم	عشتاروث قرنايم	revisado	media	3	2	0.50	عشتاروث قرنايم الزوزيين
@@ -1071,7 +1071,7 @@ Azriel	عزرئيل	عزرئيل	auto	media	4	2	1.00	لزبولون
 Azubah	عزوبة	عزوبة	auto	media	4	4	1.00	اسم
 Baal	ببعل	ببعل	auto	media	2	71	0.10	لبعل
 Baal	بعل	بعل	auto	media	3	2	1.00	رآيا
-Baal	وبعل	وبعل	auto	media	2	2	1.00	بعل
+Baal	وبعل	بعل	revisado	media	2	2	1.00	بعل
 Baal-gad	بعل جاد	بعل جاد	auto	media	2	3	1.00	الصاعد
 Baal-hamon	بعل هامون	بعل هامون	auto	media	2	1	1.00	بعل هامون دفع
 Baal-hazor	بعل حاصور	بعل حاصور	auto	media	3	1	1.00	بعل حاصور التي
@@ -1122,13 +1122,13 @@ Beninu	بنينو	بنينو	auto	media	2	1	1.00	وبنينو
 Bera	برشاع	برشاع	auto	media	2	1	1.00	وبرشاع
 Berea	بيرية	بيرية	auto	media	3	6	0.33	بكلمة
 Bered	بارد	بارد	auto	media	3	1	1.00	وبارد
-Bered	وبرد	وبرد	auto	media	2	1	1.00	برد
+Bered	وبرد	برد	revisado	media	2	1	1.00	برد
 Beri	بيري	بيري	auto	media	2	1	1.00	وبيري
 Bernice	برنيكي	برنيكي	auto	media	2	3	1.00	وبرنيكي
 Berothah	بيروثة	بيروثة	auto	media	3	3	0.33	وبيروثة
 Berothai	بيروثاي	بيروثاي	auto	media	2	1	1.00	باطح
 Besodeiah	بسوديا	بسوديا	auto	media	2	1	1.00	سقفاه
-Beten	وباطن	وباطن	auto	media	3	1	1.00	باطن
+Beten	وباطن	باطن	revisado	media	3	1	1.00	باطن
 Beth-anath	بيت عناة	بيت عناة	auto	media	3	2	1.00	بيت عناة تحت
 Beth-anoth	بيت عنوت	بيت عنوت	auto	media	3	1	1.00	معارة بيت عنوت
 Beth-arabah	بيت العربة	بيت العربة	auto	media	3	6	0.50	بيت العربة صعد
@@ -1160,9 +1160,9 @@ Bethesda	حسدا	حسدا	auto	media	3	1	1.00	باب
 Bethul	بتول	بتول	auto	media	2	1	1.00	وبتول
 Betonim	بطونيم	بطونيم	auto	media	3	1	1.00	وبطونيم
 Bezer	باصر	باصر	auto	media	5	6	0.83	وباصر
-Bileam	وبلعام	وبلعام	auto	media	2	1	1.00	بلعام
+Bileam	وبلعام	بلعام	revisado	media	2	1	1.00	بلعام
 Bilgah	بلجة	بلجة	auto	media	2	3	0.33	بلجاي
-Bilgah	لبلجة	لبلجة	auto	media	2	1	1.00	الخامسة
+Bilgah	لبلجة	بلجة	revisado	media	2	1	1.00	الخامسة
 Binea	بنعة	بنعة	auto	media	2	2	0.50	ينعا
 Birzaith	برزاوث	برزاوث	auto	media	1	1	1.00	بريعة
 Bocheru	بكرو	بكرو	auto	media	2	2	1.00	وبكرو
@@ -1174,7 +1174,7 @@ Bul	بول	بول	auto	media	1	1	1.00	سبع
 Bunah	بونة	بونة	auto	media	2	1	1.00	بنو
 Bunni	باني	باني	auto	media	2	1	1.00	شبنيا
 Bunni	بوني	بوني	auto	media	2	1	1.00	بن
-Bunni	وبني	وبني	auto	media	2	1	1.00	بني
+Bunni	وبني	بني	revisado	media	2	1	1.00	بني
 Buz	بوز	بوز	auto	media	5	2	1.00	وبوز
 Buzi	بوزي	بوزي	auto	media	2	1	1.00	حزقيال
 Cabbon	كبون	كبون	auto	media	3	1	1.00	وكبون
@@ -1182,7 +1182,7 @@ Calcol	كلكول	كلكول	auto	media	3	2	1.00	وكلكول
 Calneh	كلنة	كلنة	auto	media	4	4	0.50	وكلنة
 Calno	كلنو	كلنو	auto	media	1	1	1.00	أليست
 Cana	قانا	قانا	auto	media	2	4	1.00	آخران
-Candace	لكنداكة	لكنداكة	auto	media	1	1	1.00	خزائنها
+Candace	لكنداكة	كنداكة	revisado	media	1	1	1.00	خزائنها
 Capernaum	كفرناحوم	كفرناحوم	auto	media	3	18	0.83	ياكفرناحوم
 Caphtor	كفتور	كفتور	auto	media	3	13	0.23	فتور
 Cappadocia	كبدوكية	كبدوكية	auto	media	3	2	1.00	وكبدوكية
@@ -1233,7 +1233,7 @@ Diana	إهانة	إهانة	auto	media	1	5	0.20	مدينة
 Dibon	ديمون	ديمون	auto	media	1	1	1.00	الناجين
 Dibon-gad	ديبون جاد	ديبون جاد	auto	media	1	2	1.00	ديبون
 Diklah	دقلة	دقلة	auto	media	2	2	1.00	ودقلة
-Dimnah	ودمنة	ودمنة	auto	media	3	3	0.33	دمنة
+Dimnah	ودمنة	دمنة	revisado	media	3	3	0.33	دمنة
 Dionysius	ديونيسيوس	ديونيسيوس	auto	media	2	1	1.00	دامرس
 Diotrephes	ديوتريفس	ديوتريفس	auto	media	2	1	1.00	الذي
 Dodavah	دوداواهو	دوداواهو	auto	media	1	1	1.00	أخزيا
@@ -1249,17 +1249,17 @@ Ebron	عبرون	عبرون	auto	media	2	1	1.00	وعبرون
 Eder	عدر	عدر	auto	media	2	1	1.00	رحل
 Eglaim	أجلايم	أجلايم	auto	media	3	1	1.00	إيليم
 Ehi	إيحي	إيحي	auto	media	1	2	0.50	وإيحي
-Eker	كر	كر	auto	media	2	1	1.00	بكر
-El-paran	فاران	فاران	auto	media	3	1	1.00	بطمة فاران
+Eker	كر	عاقر	revisado	media	2	1	1.00	بكر
+El-paran	فاران	بطمة فاران	revisado	media	3	1	1.00	بطمة فاران
 Eldaah	ألدعة	ألدعة	auto	media	2	2	1.00	وألدعة
 Elead	ألعاد	ألعاد	auto	media	2	1	1.00	وألعاد
 Eleadah	ألعادا	ألعادا	auto	media	1	1	1.00	وألعادا
 Eleasah	ألعاسة	ألعاسة	auto	media	2	3	0.33	وألعاسة
 Eleasah	إلعاسة	إلعاسة	auto	media	2	2	1.00	وإلعاسة
 Eliada	أليداع	أليداع	auto	media	1	1	1.00	سيده
-Eliada	بعلياداع	بعلياداع	auto	media	2	3	0.33	ألياداع
+Eliada	بعلياداع	ألياداع	revisado	media	2	3	0.33	ألياداع
 Eliadah	أليداع	أليداع	auto	media	1	1	1.00	سيده
-Eliah	وإيليا	وإيليا	auto	media	2	2	1.00	إيليا
+Eliah	وإيليا	إيليا	revisado	media	2	2	1.00	إيليا
 Eliahba	أليحبا	أليحبا	auto	media	2	2	0.50	إليحبا
 Eliehoenai	عيناي	عيناي	auto	media	1	1	1.00	ويهوحانان
 Eliel	أليئيل	أليئيل	auto	media	2	1	1.00	وأليئيل
@@ -1271,7 +1271,7 @@ Elika	أليقا	أليقا	auto	media	2	1	1.00	وأليقا
 Elim	إيليم	إيليم	auto	media	3	4	1.00	اليوم
 Elioenai	عيناي	عيناي	auto	media	1	1	1.00	ويهوحانان
 Eliphalet	أليفلط	أليفلط	auto	media	1	3	1.00	وأليفلط
-Elishama	وأليشمع	وأليشمع	auto	media	2	3	1.00	أليشمع
+Elishama	وأليشمع	أليشمع	revisado	media	2	3	1.00	أليشمع
 Elisheba	أليشابع	أليشابع	auto	media	2	1	1.00	وألعازار
 Elishua	أليشامع	أليشامع	auto	media	2	3	0.33	وأليشامع
 Eliud	أليود	أليود	auto	media	2	2	1.00	وأليود
@@ -1297,9 +1297,9 @@ Epaphroditus	أبفرودتس	أبفرودتس	auto	media	2	3	1.00	استفضل�
 Ephai	عيفاي	عيفاي	auto	media	2	1	1.00	قاريح
 Epher	عفر	عفر	auto	media	2	2	1.00	وعفر
 Ephes-dammim	أفس دميم	أفس دميم	auto	media	1	1	1.00	دميم
-Ephes-dammim	فس دميم	فس دميم	auto	media	2	3	0.33	أفس دميم
+Ephes-dammim	فس دميم	أفس دميم	revisado	media	2	3	0.33	أفس دميم
 Ephrath	أفراتة	أفراتة	auto	media	2	3	1.00	فماتت
-Eran	لعيران	لعيران	auto	media	2	2	0.50	العيرانيين
+Eran	لعيران	عيران	revisado	media	2	2	0.50	العيرانيين
 Erastus	أراستس	أراستس	auto	media	2	3	0.67	أرسطوس
 Eri	عيري	عيري	auto	media	2	2	0.50	لعيري
 Eshan	أشعان	أشعان	auto	media	3	1	1.00	وأشعان
@@ -1359,7 +1359,7 @@ Gishpa	جشفا	جشفا	auto	media	1	1	1.00	وجشفا
 Gispa	جشفا	جشفا	auto	media	1	1	1.00	وجشفا
 God	غض	غض	auto	media	1	8587	0.00	غد
 Golan	جولان	جولان	auto	media	3	4	1.00	وجولان
-Habor	وخابور	وخابور	auto	media	3	3	1.00	خابور
+Habor	وخابور	خابور	revisado	media	3	3	1.00	خابور
 Hachmoni	حكموني	حكموني	auto	media	2	1	1.00	بني
 Hadad	داود	داود	auto	media	2	5	0.20	هدد
 Hadoram	هدورام	هدورام	auto	media	2	2	1.00	وهدورام
@@ -1425,13 +1425,13 @@ Heshmon	حشمون	حشمون	auto	media	3	1	1.00	وحشمون
 Heth	حث	حث	auto	media	2	58	0.17	حثا
 Hethlon	حثلون	حثلون	auto	media	3	2	1.00	لدان
 Hezion	حزيون	حزيون	auto	media	2	1	1.00	خزائن
-Hezir	لحيزير	لحيزير	auto	media	2	1	1.00	لهفصيص
+Hezir	لحيزير	حيزير	revisado	media	2	1	1.00	لهفصيص
 Hierapolis	هيرابوليس	هيرابوليس	auto	media	3	1	1.00	غيرة
 Hilen	حيلين	حيلين	auto	media	1	1	1.00	وحيلين
 Hirah	حيرة	حيرة	auto	media	2	2	1.00	وحيرة
-Hizkiah	وحزقيا	وحزقيا	auto	media	1	1	1.00	حزقيا
+Hizkiah	وحزقيا	حزقيا	revisado	media	1	1	1.00	حزقيا
 Hizkiah	يوشيا	يوشيا	auto	media	1	1	1.00	صفنيا
-Hizkijah	وحزقيا	وحزقيا	auto	media	1	1	1.00	حزقيا
+Hizkijah	وحزقيا	حزقيا	revisado	media	1	1	1.00	حزقيا
 Hobab	حوباب	حوباب	auto	media	2	2	1.00	لحوباب
 Hobah	حوبة	حوبة	auto	media	3	1	1.00	تبعهم
 Hodaiah	هوداياهو	هوداياهو	auto	media	1	1	1.00	دلايا
@@ -1454,7 +1454,7 @@ Hothir	هوثير	هوثير	auto	media	2	2	0.50	وهوثير
 Huldah	خلدة	خلدة	auto	media	2	2	1.00	كلموها
 Hurai	حوراي	حوراي	auto	media	1	2	0.50	هداي
 Huram	حورام	حورام	auto	media	1	1	1.00	رجلا
-Huram	وحورام	وحورام	auto	media	1	3	0.33	حورام
+Huram	وحورام	حورام	revisado	media	1	3	0.33	حورام
 Huri	حوري	حوري	auto	media	2	1	1.00	يحدو
 Hushah	حوشة	حوشة	auto	media	2	6	0.17	وعازر
 Husham	حوشام	حوشام	auto	media	2	4	1.00	اسم
@@ -1488,11 +1488,11 @@ Jabez	يعبيص	يعبيص	auto	media	5	3	1.00	ركاب
 Jabneel	يبنئيل	يبنئيل	auto	media	6	3	0.67	ويبنئيل
 Jabneh	يبنة	يبنة	auto	media	1	1	1.00	حارب
 Jacob	أركب	أركب	auto	media	1	1009	0.00	أركبك
-Jaddua	ويوياداع	ويوياداع	auto	media	2	2	1.00	يوياداع
+Jaddua	ويوياداع	يدوع	revisado	media	2	2	1.00	يوياداع
 Jagur	ياجور	ياجور	auto	media	3	1	1.00	وياجور
 Jahzerah	يحزيرة	يحزيرة	auto	media	2	1	1.00	عدايا
 Jair	ياعور	ياعور	auto	media	1	2	0.50	يعري
-Jakim	لياقيم	لياقيم	auto	media	2	1	1.00	لألياشيب
+Jakim	لياقيم	ياقيم	revisado	media	2	1	1.00	لألياشيب
 Jambres	يمبريس	يمبريس	auto	media	2	1	1.00	ويمبريس
 Jamlech	يمليك	يمليك	auto	media	2	1	1.00	ويمليك
 Janim	ينوم	ينوم	auto	media	3	1	1.00	وينوم
@@ -1510,7 +1510,7 @@ Jebus	يبوس	يبوس	auto	media	2	7	0.57	وجبعة
 Jecamiah	يقميا	يقميا	auto	media	1	1	1.00	ويقميا
 Jeduthun	يدوثون	يدوثون	auto	media	4	17	0.59	يحمد
 Jegar-sahadutha	يجر سهدوثا	يجر سهدوثا	auto	media	1	1	1.00	يجر سهدوثا أما
-Jehiel	ويعوئيل	ويعوئيل	auto	media	1	1	1.00	يعوئيل
+Jehiel	ويعوئيل	يعوئيل	revisado	media	1	1	1.00	يعوئيل
 Jehiel	يوئيل	يوئيل	auto	media	1	6	0.33	ويوئيل
 Jehizkiah	يحزقيا	يحزقيا	auto	media	2	1	1.00	ويحزقيا
 Jehoaddah	يهوعدة	يهوعدة	auto	media	1	2	0.50	ويهوعدة
@@ -1519,17 +1519,17 @@ Jehoahaz	يهوآحاز	يهوآحاز	auto	media	2	8	0.50	يوآحاز
 Jehoahaz	يهوأحاز	يهوأحاز	auto	media	2	14	0.79	يوآش
 Jehoiachin	يهوياكين	يهوياكين	auto	media	2	22	0.36	يوياكين
 Jehoiada	يوياداع	يوياداع	auto	media	1	1	1.00	بسوديا
-Jehoiarib	ليهوياريب	ليهوياريب	auto	media	2	1	1.00	ليدعيا
+Jehoiarib	ليهوياريب	يهوياريب	revisado	media	2	1	1.00	ليدعيا
 Jehonathan	يهوناثان	يهوناثان	auto	media	5	3	1.00	ويهوناثان
 Jehoram	يهورام	يهورام	auto	media	4	22	0.73	يورام
-Jehoshaphat	ويوشافاط	ويوشافاط	auto	media	1	1	1.00	يوشافاط
+Jehoshaphat	ويوشافاط	يوشافاط	revisado	media	1	1	1.00	يوشافاط
 Jehosheba	يهوشبعة	يهوشبعة	auto	media	1	2	0.50	يهوشبع
 Jehozadak	يوصاداق	يوصاداق	auto	media	1	12	0.33	يهوصاداق
 Jehubbah	يحبة	يحبة	auto	media	2	1	1.00	ويحبة
 Jehucal	يهوخل	يهوخل	auto	media	1	2	0.50	يوخل
 Jehudi	يهودي	يهودي	auto	media	2	3	1.00	يده
 Jehudijah	اليهودية	اليهودية	auto	media	2	1	1.00	بثية
-Jeiel	ويعوئيل	ويعوئيل	auto	media	1	1	1.00	يعوئيل
+Jeiel	ويعوئيل	يعوئيل	revisado	media	1	1	1.00	يعوئيل
 Jekamiah	يقميا	يقميا	auto	media	1	1	1.00	ويقميا
 Jekamiah	يقمية	يقمية	auto	media	2	1	1.00	ويقمية
 Jerahmeel	يرحمئيل	يرحمئيل	auto	media	6	10	0.80	أما
@@ -1544,8 +1544,8 @@ Jerubbesheth	يربوشث	يربوشث	auto	media	1	1	1.00	بقطعة
 Jerusha	يروشا	يروشا	auto	media	1	2	0.50	يروشة
 Jerushah	يروشا	يروشا	auto	media	1	2	0.50	يروشة
 Jesaiah	يشعيا	يشعيا	auto	media	2	2	1.00	ويشعيا
-Jesharelah	ليشرئيلة	ليشرئيلة	auto	media	1	2	0.50	أشرئيلة
-Jeshebeab	ليشبآب	ليشبآب	auto	media	2	1	1.00	عشرة
+Jesharelah	ليشرئيلة	يشرئيلة	revisado	media	1	2	0.50	أشرئيلة
+Jeshebeab	ليشبآب	يشبآب	revisado	media	2	1	1.00	عشرة
 Jesher	ياشر	ياشر	auto	media	2	1	1.00	يريعوث
 Jeshohaiah	يشوحايا	يشوحايا	auto	media	2	1	1.00	ويشوحايا
 Jesiah	يشيا	يشيا	auto	media	1	1	1.00	ويشيا
@@ -1560,7 +1560,7 @@ Jeziel	يزوئيل	يزوئيل	auto	media	2	1	1.00	ويزوئيل
 Jezreel	يزرعيل	يزرعيل	auto	media	12	43	0.70	ويزرعيل
 Joahaz	يوآحاز	يوآحاز	auto	media	2	1	1.00	يوآخ
 Joanan	يوحنا	يوحنا	auto	media	1	1	1.00	ريسا
-Joanna	ويونا	ويونا	auto	media	2	2	1.00	يونا
+Joanna	ويونا	يونا	revisado	media	2	2	1.00	يونا
 Joanna	يوحنا	يوحنا	auto	media	1	1	1.00	ريسا
 Joash	يوآش	يوآش	auto	media	12	54	0.76	يهوآش
 Joash	يوعاش	يوعاش	auto	media	4	2	1.00	ويوعاش
@@ -1571,7 +1571,7 @@ Joezer	يوعزر	يوعزر	auto	media	2	1	1.00	ويوعزر
 Jogbehah	يجبهة	يجبهة	auto	media	3	2	1.00	ويجبهة
 Jogli	يجلي	يجلي	auto	media	2	1	1.00	بقي
 Joha	يوحا	يوحا	auto	media	2	1	1.00	ويوحا
-Johanan	ويهوحانان	ويهوحانان	auto	media	1	1	1.00	يهوحانان
+Johanan	ويهوحانان	يهوحانان	revisado	media	1	1	1.00	يهوحانان
 Johanan	يهوحانان	يهوحانان	auto	media	3	2	1.00	يحزقيا
 Joiakim	يوياقيم	يوياقيم	auto	media	2	3	1.00	ويوياقيم
 Jokdeam	يقدعام	يقدعام	auto	media	3	1	1.00	ويقدعام
@@ -1584,7 +1584,7 @@ Jonan	يونان	يونان	auto	media	1	1	1.00	يهوذا
 Jonas	يونا	يونا	auto	media	1	4	1.00	يا
 Jonathan	يهوناثان	يهوناثان	auto	media	3	2	1.00	الدانيين
 Jorah	يورة	يورة	auto	media	1	2	0.50	مئة
-Joram	ويورام	ويورام	auto	media	2	1	1.00	يورام
+Joram	ويورام	يورام	revisado	media	2	1	1.00	يورام
 Joram	يورام	يورام	auto	media	2	2	0.50	هدورام
 Jorkeam	يرقعام	يرقعام	auto	media	2	1	1.00	راقم
 Josabad	يوزاباد	يوزاباد	auto	media	1	1	1.00	ويوزاباد
@@ -1637,7 +1637,7 @@ Kiriath-sepher	قرية سفر	قرية سفر	auto	media	1	4	1.00	يضرب قر
 Kiriathaim	قريتايم	قريتايم	auto	media	6	10	0.70	وقريتايم
 Kishi	قيشي	قيشي	auto	media	2	2	0.50	قوشيا
 Kolaiah	قولايا	قولايا	auto	media	4	2	1.00	فدايا
-Korah	بخورا	بخورا	auto	media	2	38	0.03	أخبرونا
+Korah	بخورا	قورح	revisado	media	2	38	0.03	أخبرونا
 LORD	الرداءة	الرداءة	auto	media	1	843	0.00	لأقرض
 Lael	لايل	لايل	auto	media	2	1	1.00	ألياساف
 Lahmi	لحمي	لحمي	auto	media	2	2	0.50	النساجين
@@ -1667,18 +1667,18 @@ Lod	لدة	لدة	auto	media	2	7	0.43	لود
 Lod	لود	لود	auto	media	1	4	1.00	ولود
 Lois	لوئيس	لوئيس	auto	media	2	1	1.00	العديم
 Lot	لوط	لوط	auto	media	2	34	0.74	للوط
-Lucifer	كيف	كيف	auto	media	2	1	1.00	الأرض
+Lucifer	كيف	كيف	sem	media	2	1	1.00	الأرض
 Lucius	لوكيوس	لوكيوس	auto	media	2	2	1.00	ولوكيوس
 Lud	لود	لود	auto	media	5	6	0.83	ولود
 Luhith	لوحيت	لوحيت	auto	media	3	2	0.50	اللوحيث
-Maaziah	ومعزيا	ومعزيا	auto	media	1	3	0.33	معزيا
+Maaziah	ومعزيا	معزيا	revisado	media	1	3	0.33	معزيا
 Macedonia	مكدونية	مكدونية	auto	media	3	27	0.74	بمكدونية
 Machbenah	مكبينا	مكبينا	auto	media	2	1	1.00	وأبا
 Madmen	مدمين	مدمين	auto	media	3	1	1.00	تصمين
 Madmenah	مدمينة	مدمينة	auto	media	3	1	1.00	احتمى
 Magdiel	مجديئيل	مجديئيل	auto	media	2	2	1.00	أمير
 Magpiash	مجفيعاش	مجفيعاش	auto	media	2	1	1.00	ومجفيعاش
-Mahalah	ومحلة	ومحلة	auto	media	1	1	1.00	محلة
+Mahalah	ومحلة	محلة	revisado	media	1	1	1.00	محلة
 Mahalath	محلة	محلة	auto	media	2	1	1.00	أليآب
 Mahaneh-dan	محلة دان	محلة دان	auto	media	4	2	1.00	المكان محلة دان
 Mahazioth	محزيوث	محزيوث	auto	media	2	2	0.50	لمحزيوث
@@ -1693,13 +1693,13 @@ Manahath	مناحة	مناحة	auto	media	5	5	0.60	آباء
 Maranatha	ماران	ماران	auto	media	1	1	1.00	أناثيما
 Maskil	مرعاك	مرعاك	auto	media	1	14	0.07	الإيل
 Masrekah	مسريقة	مسريقة	auto	media	3	2	1.00	مكانه
-Mearah	ومغارة	ومغارة	auto	media	3	1	1.00	مغارة
+Mearah	ومغارة	مغارة	revisado	media	3	1	1.00	مغارة
 Meconah	مكونة	مكونة	auto	media	3	1	1.00	ومكونة
 Media	مادي	مادي	auto	media	3	22	0.77	ومادي
 Mehetabeel	مهيطبئيل	مهيطبئيل	auto	media	1	1	1.00	مغلق
 Mehetabel	مهيطبئيل	مهيطبئيل	auto	media	3	3	1.00	مطرد
 Mehujael	محويائيل	محويائيل	auto	media	2	1	1.00	ومحويائيل
-Mehuman	لمهومان	لمهومان	auto	media	2	1	1.00	ما
+Mehuman	لمهومان	مهومان	revisado	media	2	1	1.00	ما
 Mehunim	معونيم	معونيم	auto	media	1	2	1.00	نفوسيم
 Melchi	ملكي	ملكي	auto	media	4	2	1.00	لاوي
 Melchiah	ملكيا	ملكيا	auto	media	1	2	1.00	وجدليا
@@ -1737,14 +1737,14 @@ Michmas	مخماس	مخماس	auto	media	1	2	1.00	مئة
 Michmethath	المكمتة	المكمتة	auto	media	3	2	1.00	تآنة
 Migdal-el	مجدل إيل	مجدل إيل	auto	media	3	1	1.00	ومجدل
 Migdal-gad	مجدل جاد	مجدل جاد	auto	media	3	1	1.00	حداشة مجدل جاد
-Migron	بمجرون	بمجرون	auto	media	1	1	1.00	عياث
+Migron	بمجرون	مجرون	revisado	media	1	1	1.00	عياث
 Migron	مغرون	مغرون	auto	media	3	2	0.50	بمجرون
 Mikneiah	مقنيا	مقنيا	auto	media	2	2	1.00	ومقنيا
 Milalai	جللاي	جللاي	auto	media	2	1	1.00	مللاي
-Milcom	لملكوم	لملكوم	auto	media	1	3	0.67	ملكوم
+Milcom	لملكوم	ملكوم	revisado	media	1	3	0.67	ملكوم
 Miletus	ميليتس	ميليتس	auto	media	3	3	1.00	خيوس
 Millo	جعله	جعله	auto	media	3	7	0.14	عمل
-Minni	ومني	ومني	auto	media	3	1	1.00	مني
+Minni	ومني	مني	revisado	media	3	1	1.00	مني
 Miriam	مريم	مريم	auto	media	4	13	1.00	ومريم
 Misgab	مسجاب	مسجاب	auto	media	2	1	1.00	موآب
 Mishael	ميشائيل	ميشائيل	auto	media	5	21	0.38	وميشائيل
@@ -1796,7 +1796,7 @@ Nicolas	نيقولاوس	نيقولاوس	auto	media	1	1	1.00	ونيقولاوس
 Nicolaus	نيقولاوس	نيقولاوس	auto	media	1	1	1.00	ونيقولاوس
 Nicopolis	نيكوبوليس	نيكوبوليس	auto	media	3	1	1.00	تيخيكس
 Nile	النيل	النيل	auto	media	1	30	0.17	كالنيل
-Nile	كنيل	كنيل	auto	media	2	48	0.04	النيل
+Nile	كنيل	النيل	revisado	media	2	48	0.04	النيل
 Nimrod	نمرود	نمرود	auto	media	4	4	1.00	كنمرود
 Nineveh	نينوى	نينوى	auto	media	3	30	0.63	ونينوى
 Nisroch	نسروخ	نسروخ	auto	media	1	2	1.00	شرآصر
@@ -1884,7 +1884,7 @@ Poratha	فوراثا	فوراثا	auto	media	2	1	1.00	أريداثا
 Potiphar	فوطيفار	فوطيفار	auto	media	2	2	1.00	لفوطيفار
 Ptolemais	بتولمايس	بتولمايس	auto	media	2	1	1.00	فسلمنا
 Purim	فوريم	فوريم	auto	media	1	7	0.14	الفوريم
-Raamses	ورعمسيس	ورعمسيس	auto	media	2	1	1.00	رعمسيس
+Raamses	ورعمسيس	رعمسيس	revisado	media	2	1	1.00	رعمسيس
 Rab-saris	شراصر رئيس	شراصر رئيس	auto	media	2	2	1.00	نرجل شراصر رئيس
 Rabbah	الربة	الربة	auto	media	1	1	1.00	والربة
 Rachab	راحاب	راحاب	auto	media	1	1	1.00	راعوث
@@ -1933,7 +1933,7 @@ Samaria	سامرية	سامرية	auto	media	2	115	0.01	السامرية
 Samgar	سمجر	سمجر	auto	media	1	1	1.00	وسمجر
 Samothrace	ساموثراكي	ساموثراكي	auto	media	3	1	1.00	ترواس
 Satan	الشيطان	الشيطان	auto	media	2	100	0.38	للشيطان
-Sceva	لسكاوا	لسكاوا	auto	media	2	1	1.00	علوا
+Sceva	لسكاوا	سكاوا	revisado	media	2	1	1.00	علوا
 Scythians	سكيثي	سكيثي	auto	media	1	1	1.00	ختان
 Seba	سبا	سبا	auto	media	4	4	0.75	شبا
 Secundus	سكوندس	سكوندس	auto	media	2	1	1.00	وسكوندس
@@ -1944,7 +1944,7 @@ Semein	شمعي	شمعي	auto	media	1	1	1.00	متاثيا
 Senaah	سناءة	سناءة	auto	media	2	5	0.40	هسناءة
 Seneh	سنه	سنه	auto	media	3	1	1.00	سن
 Senuah	هسنوآة	هسنوآة	auto	media	1	1	1.00	ثانيا
-Seorim	لسعوريم	لسعوريم	auto	media	2	1	1.00	لحاريم
+Seorim	لسعوريم	سعوريم	revisado	media	2	1	1.00	لحاريم
 Sepharad	صفارد	صفارد	auto	media	3	4	0.25	صرفة
 Sered	سارد	سارد	auto	media	2	2	1.00	لسارد
 Seth	شيث	شيث	auto	media	2	10	0.40	شيت
@@ -1959,11 +1959,11 @@ Shamariah	شمريا	شمريا	auto	media	1	1	1.00	وشمريا
 Shamed	مشعام	مشعام	auto	media	1	1	1.00	وشامر
 Shamgar	شمجر	شمجر	auto	media	2	2	1.00	ساروا
 Shamhuth	شمحوث	شمحوث	auto	media	2	1	1.00	اليزراحي
-Shapham	وشافاط	وشافاط	auto	media	2	1	1.00	شافاط
+Shapham	وشافاط	شافاط	revisado	media	2	1	1.00	شافاط
 Sharuhen	شاروحين	شاروحين	auto	media	3	3	0.33	وشاروحين
 Shashak	شاشق	شاشق	auto	media	2	2	1.00	وشاشق
 Shaul	شأول	شأول	auto	media	4	8	0.62	شاول
-Shaul	وشاول	وشاول	auto	media	2	2	0.50	شاول
+Shaul	وشاول	شاول	revisado	media	2	2	0.50	شاول
 Shaveh-kiriathaim	شوى قريتايم	شوى قريتايم	auto	media	2	1	1.00	عشتاروث قرنايم
 Shavsha	شوشا	شوشا	auto	media	1	4	0.25	وشوشا
 Sheba	سبا	سبا	auto	media	4	25	0.48	شبا
@@ -2018,14 +2018,14 @@ Shubael	شوبائيل	شوبائيل	auto	media	2	5	0.40	شبوئيل
 Shuhah	شوحة	شوحة	auto	media	1	1	1.00	أخو
 Shunem	شونم	شونم	auto	media	3	9	0.33	وشونم
 Shuni	شوني	شوني	auto	media	2	2	0.50	لشوني
-Shupham	لشفوفام	لشفوفام	auto	media	1	3	0.33	لحوفام
+Shupham	لشفوفام	شفوفام	revisado	media	1	3	0.33	لحوفام
 Shuppim	شفيم	شفيم	auto	media	2	2	1.00	وشفيم
-Shuppim	لشفيم	لشفيم	auto	media	2	1	1.00	محرس
+Shuppim	لشفيم	شفيم	revisado	media	2	1	1.00	محرس
 Sidon	صيدون	صيدون	auto	media	6	49	0.45	صيداء
 Siloam	سلوام	سلوام	auto	media	2	5	0.80	بصيرا
 Simeon	سمعان	سمعان	auto	media	2	2	1.00	وقيام
 Simon	سمعان	سمعان	auto	media	7	19	1.00	يحمله
-Simon	وسمعان	وسمعان	auto	media	3	6	0.83	سمعان
+Simon	وسمعان	سمعان	revisado	media	3	6	0.83	سمعان
 Simri	شمري	شمري	auto	media	1	1	1.00	مراري
 Siphmoth	سفموث	سفموث	auto	media	3	1	1.00	أشتموع
 Sippai	سفاي	سفاي	auto	media	1	2	0.50	سبكاي
@@ -2054,7 +2054,7 @@ Tabeel	طبئيل	طبئيل	auto	media	2	1	1.00	وطبئيل
 Taberah	تبعيرة	تبعيرة	auto	media	3	2	1.00	هتأوة
 Tahrea	تاريع	تاريع	auto	media	1	2	0.50	وتاريع
 Tahtim-hodshi	تحتيم إلى حدشي	تحتيم إلى حدشي	auto	media	1	1	1.00	أرض تحتيم
-Tamar	وتدمر	وتدمر	auto	media	2	1	1.00	تدمر
+Tamar	وتدمر	تدمر	revisado	media	2	1	1.00	تدمر
 Tammuz	تموز	تموز	auto	media	1	1	1.00	الشمال
 Tanhumeth	تنحومث	تنحومث	auto	media	2	2	1.00	النطوفاتي
 Tarea	تاريع	تاريع	auto	media	1	2	0.50	وتاريع
@@ -2078,7 +2078,7 @@ Theudas	ثوداس	ثوداس	auto	media	2	1	1.00	تبددوا
 Thummim	التميم	التميم	auto	media	1	5	0.80	والتميم
 Tiberias	طبرية	طبرية	auto	media	2	1	1.00	جاءت
 Tiberius	طيباريوس	طيباريوس	auto	media	2	12	0.08	إيطورية
-Tibhath	باطح	باطح	auto	media	1	2	0.50	طبحة
+Tibhath	باطح	طبحة	revisado	media	1	2	0.50	طبحة
 Tibhath	طبحة	طبحة	auto	media	2	1	1.00	كثيرا
 Tibni	تبني	تبني	auto	media	2	2	1.00	جينة
 Tikvah	تقوة	تقوة	auto	media	4	3	0.67	توقهة
@@ -2090,7 +2090,7 @@ Tiphsah	تفسح	تفسح	auto	media	3	1	1.00	متسلطا
 Tiphsah	تفصح	تفصح	auto	media	3	1	1.00	يفتحوا
 Tirhakah	ترهاقة	ترهاقة	auto	media	2	2	1.00	ليحاربك
 Tob	طوب	طوب	auto	media	3	4	1.00	صوبا
-Tobadonijah	وأدونيا	وأدونيا	auto	media	2	1	1.00	أدونيا
+Tobadonijah	وأدونيا	طوب أدونيا	revisado	media	2	1	1.00	أدونيا
 Tobijah	طوبيا	طوبيا	auto	media	4	3	1.00	وطوبيا
 Tochen	توكن	توكن	auto	media	3	1	1.00	وتوكن
 Togarmah	توجرمة	توجرمة	auto	media	2	4	1.00	وتوجرمة
@@ -2104,12 +2104,12 @@ Ucal	أكال	أكال	auto	media	2	1	1.00	وأكال
 Ulai	أولاي	أولاي	auto	media	3	2	1.00	لاية
 Ulam	أولام	أولام	auto	media	4	4	1.00	راقم
 Ulla	علا	علا	auto	media	1	2	0.50	آرح
-Unni	وعني	وعني	auto	media	4	3	1.00	عني
+Unni	وعني	عني	revisado	media	4	3	1.00	عني
 Uphaz	أوفاز	أوفاز	auto	media	3	2	1.00	لابس
 Urbanus	أوربانوس	أوربانوس	auto	media	1	1	1.00	إستاخيس
 Uriel	أوريئيل	أوريئيل	auto	media	6	5	0.80	وأوريئيل
 Urijah	أوريا	أوريا	auto	media	4	12	1.00	برخيا
-Urim	للأوريم	للأوريم	auto	media	1	8	0.25	الأوريم
+Urim	للأوريم	الأوريم	revisado	media	1	8	0.25	الأوريم
 Uthai	عوتاي	عوتاي	auto	media	2	1	1.00	بغواي
 Uthai	عوثاي	عوثاي	auto	media	2	1	1.00	بنباني
 Uzai	أوزاي	أوزاي	auto	media	2	1	1.00	الزاوية
@@ -2144,9 +2144,9 @@ Zeresh	زرش	زرش	auto	media	2	3	1.00	وزرش
 Zereth	صرث	صرث	auto	media	2	1	1.00	صوحر
 Zeror	صرور	صرور	auto	media	2	1	1.00	بكورة
 Zeruah	صروعة	صروعة	auto	media	2	1	1.00	صردة
-Zichri	وذكري	وذكري	auto	media	2	1	1.00	ذكري
+Zichri	وذكري	ذكري	revisado	media	2	1	1.00	ذكري
 Ziddim	الصديم	الصديم	auto	media	3	1	1.00	وصير
-Zidkijah	وصدقيا	وصدقيا	auto	media	1	1	1.00	حكليا
+Zidkijah	وصدقيا	صدقيا	revisado	media	1	1	1.00	حكليا
 Zidon	صيدون	صيدون	auto	media	1	2	1.00	لد
 Zior	صيعور	صيعور	auto	media	3	1	1.00	وصيعور
 Ziphion	صفيون	صفيون	auto	media	1	2	0.50	لصفون
@@ -2381,13 +2381,13 @@ Athlai	عثلاي	عثلاي	auto	alta	2	1	1.00	وعثلاي
 Attai	عتاي	عتاي	auto	alta	6	4	1.00	وعتاي
 Attalia	أتالية	أتالية	auto	alta	3	2	0.50	بالكلمة
 Avith	عويت	عويت	auto	alta	3	2	1.00	مات
-Avvim	العويم	عويم	revisado	alta	3	1	1.00	والعويم
+Avvim	العويم	العويم	revisado	alta	3	1	1.00	والعويم
 Azal	آصل	آصل	auto	alta	3	1	1.00	يصل
 Azaliah	أصليا	أصليا	auto	alta	2	2	1.00	شافان
 Azaniah	أزنيا	أزنيا	auto	alta	2	1	1.00	بنوي
 Azariah	عزريا	عزريا	revisado	alta	38	47	0.66	وعزريا
 Azaz	عزاز	عزاز	auto	alta	2	1	1.00	شامع
-Aziza	وعزيزا	وعزيزا	auto	alta	2	1	1.00	عزيزا
+Aziza	وعزيزا	عزيزا	revisado	alta	2	1	1.00	عزيزا
 Azmaveth	عزموت	عزموت	auto	alta	10	9	1.00	وعزموت
 Aznoth-tabor	أزنوت تابور	أزنوت تابور	auto	alta	3	1	1.00	أزنوت تابور خرج
 Azriel	عزريئيل	عزريئيل	auto	alta	2	1	1.00	وعزريئيل
@@ -2609,7 +2609,7 @@ Elnathan	ألناثان	ألناثان	auto	alta	10	5	1.00	وألناثان
 Elon	إيلون	إيلون	auto	alta	9	7	1.00	وإيلون
 Elzabad	ألزاباد	ألزاباد	auto	alta	4	2	1.00	وألزاباد
 Enaim	عينايم	عينايم	auto	alta	3	2	1.00	عنها
-Enan	عينن	عينان	revisado	alta	2	5	1.00	نفتالي
+Enan	عينن	عينن	revisado	alta	2	5	1.00	نفتالي
 Enoch	أخنوخ	أخنوخ	auto	alta	2	10	1.00	نقله
 Enos	أنوش	أنوش	auto	alta	1	8	1.00	شيث
 Enosh	أنوش	أنوش	auto	alta	1	8	1.00	شيث
@@ -2661,7 +2661,7 @@ Gomer	جومر	جومر	auto	alta	6	6	1.00	وجومر
 Gomorrah	عمورة	عمورة	auto	alta	3	24	1.00	وعمورة
 Goshen	جاسان	جاسان	auto	alta	3	11	1.00	غنمهم
 Gozan	جوزان	جوزان	auto	alta	3	5	1.00	سبى
-Haahashtari	الأخشتاري	أخشتاري	revisado	alta	2	1	1.00	والأخشتاري
+Haahashtari	الأخشتاري	الأخشتاري	revisado	alta	2	1	1.00	والأخشتاري
 Habaiah	حبايا	حبايا	auto	alta	2	2	0.50	حبابا
 Habaziniah	حبصينيا	حبصينيا	auto	alta	1	1	1.00	يازنيا
 Habazziniah	حبصينيا	حبصينيا	auto	alta	1	1	1.00	يازنيا
@@ -2778,7 +2778,7 @@ Imrah	يمرة	يمرة	auto	alta	2	1	1.00	ويمرة
 Imri	إمري	إمري	auto	alta	4	2	1.00	عمري
 Iphdeiah	يفديا	يفديا	revisado	alta	1	1	1.00	ويفديا
 Iphedeiah	يفديا	يفديا	revisado	alta	1	1	1.00	ويفديا
-Iphtah	ويفتاح	ويفتاح	auto	alta	3	1	1.00	يفتاح
+Iphtah	ويفتاح	يفتاح	revisado	alta	3	1	1.00	يفتاح
 Ir-shemesh	عير شمس	عير شمس	auto	alta	2	1	1.00	أشتأول عير شمس
 Ira	عيرا	عيرا	auto	alta	6	6	1.00	وعيرا
 Irad	عيراد	عيراد	auto	alta	2	1	1.00	وعيراد
@@ -2820,7 +2820,7 @@ Iyim	عييم	عييم	auto	alta	2	1	1.00	ثم
 Izhar	يصهار	يصهار	auto	alta	2	14	0.64	ويصهار
 Izliah	يزلياه	يزلياه	auto	alta	1	1	1.00	ويزلياه
 Izrahiah	يزرحيا	يزرحيا	auto	alta	2	1	1.00	يشيا
-Izri	ليصري	ليصري	auto	alta	1	2	0.50	صري
+Izri	ليصري	يصري	revisado	alta	1	2	0.50	صري
 Izziah	يزيا	يزيا	auto	alta	1	1	1.00	ويزيا
 Jaala	يعلا	يعلا	auto	alta	1	2	0.50	يعلة
 Jaalah	يعلا	يعلا	auto	alta	1	2	0.50	يعلة
@@ -2856,8 +2856,8 @@ Jairus	يايرس	يايرس	auto	alta	2	2	1.00	جاء
 Jakim	ياقيم	ياقيم	auto	alta	2	1	1.00	وياقيم
 Jalam	يعلام	يعلام	auto	alta	1	4	1.00	ويعلام
 Jalon	يالون	يالون	auto	alta	2	1	1.00	ويالون
-James	ويوحنا	ويوحنا	auto	alta	2	19	0.95	جالس
-Jamin	ويمين	ويمين	auto	alta	2	1	1.00	يمين
+James	ويوحنا	يعقوب	revisado	alta	2	19	0.95	جالس
+Jamin	ويمين	يمين	revisado	alta	2	1	1.00	يمين
 Jamin	يامين	يامين	auto	alta	4	5	0.80	ويامين
 Janai	يعناي	يعناي	auto	alta	1	1	1.00	ويعناي
 Japheth	يافث	يافث	auto	alta	2	11	1.00	ويافث
@@ -2966,7 +2966,7 @@ Laadah	لعدة	لعدة	auto	alta	2	1	1.00	ولعدة
 Laadan	لعدان	لعدان	auto	alta	2	10	0.50	ولعدان
 Laban	لابان	لابان	auto	alta	5	47	1.00	ولابان
 Lachish	لخيش	لخيش	auto	alta	3	22	0.91	لاخيش
-Ladan	ولعدان	ولعدان	revisado	alta	1	1	1.00	عدان
+Ladan	ولعدان	لعدان	revisado	alta	1	1	1.00	عدان
 Lahad	لاهد	لاهد	auto	alta	2	1	1.00	ولاهد
 Lahmam	لحمام	لحمام	auto	alta	3	1	1.00	ولحمام
 Laish	لايش	لايش	auto	alta	3	6	1.00	جليم
@@ -3034,7 +3034,7 @@ Malchijah	ملكيا	ملكيا	auto	alta	18	12	1.00	وملكيا
 Malchiram	ملكيرام	ملكيرام	auto	alta	2	1	1.00	وملكيرام
 Malchus	ملخس	ملخس	auto	alta	2	1	1.00	فاستله
 Malluch	ملوخ	ملوخ	auto	alta	10	7	0.86	وملوخ
-Malta	مليطة	مالطة	revisado	alta	2	1	1.00	الجزيرة
+Malta	مليطة	مليطة	revisado	alta	2	1	1.00	الجزيرة
 Mamre	ممرا	ممرا	auto	alta	5	10	1.00	مغارة
 Manasseh	منسى	منسى	revisado	alta	9	139	0.99	أفنوها
 Manoah	منوح	منوح	auto	alta	2	14	1.00	أننا
@@ -3100,7 +3100,7 @@ Michri	مكري	مكري	auto	alta	2	1	1.00	يبنيا
 Middin	مدين	مدين	revisado	alta	3	1	1.00	ومدين
 Midian	مديان	مديان	revisado	alta	5	63	0.59	بمديان
 Migdol	مجدل	مجدل	revisado	alta	5	6	1.00	إلى
-Mijamin	لميامين	لميامين	auto	alta	2	1	1.00	لملكيا
+Mijamin	لميامين	ميامين	revisado	alta	2	1	1.00	لملكيا
 Mijamin	ميامين	ميامين	revisado	alta	4	5	0.80	لميامين
 Milcah	ملكة	ملكة	auto	alta	4	10	1.00	يسكة
 Miniamin	منيامين	منيامين	auto	alta	4	2	1.00	ومنيامين
@@ -3167,10 +3167,10 @@ Netaim	نتاعيم	نتاعيم	auto	alta	3	1	1.00	هناك
 Nethaneel	نثنئيل	نثنئيل	auto	alta	9	9	1.00	ونثنئيل
 Nethanel	نثنئيل	نثنئيل	auto	alta	9	9	1.00	ونثنئيل
 Nethaniah	نثنيا	نثنيا	auto	alta	8	20	1.00	بثمانية
-Nezib	ونصيب	ونصيب	auto	alta	3	1	1.00	نصيب
+Nezib	ونصيب	نصيب	revisado	alta	3	1	1.00	نصيب
 Nicanor	نيكانور	نيكانور	auto	alta	2	1	1.00	ونيكانور
 Nicodemus	نيقوديموس	نيقوديموس	auto	alta	2	5	1.00	ويولد
-Nimrah	ونمرة	ونمرة	auto	alta	2	1	1.00	نمرة
+Nimrah	ونمرة	نمرة	revisado	alta	2	1	1.00	نمرة
 Nimrim	نمريم	نمريم	auto	alta	3	2	1.00	حورونايم
 Nimshi	نمشي	نمشي	auto	alta	2	5	1.00	مسحه
 Nob	نوب	نوب	auto	alta	3	7	1.00	ونوب
@@ -3230,7 +3230,7 @@ Quirinius	كيرينيوس	كيرينيوس	auto	alta	1	1	1.00	جرى
 Raamah	رعمة	رعمة	auto	alta	5	3	0.67	ورعمة
 Rab-saris	ربساريس	ربساريس	auto	alta	1	1	1.00	وربساريس
 Rabbah	ربة	ربة	auto	alta	2	18	0.72	الربة
-Rabbith	وربيت	وربيت	auto	alta	3	1	1.00	ربيت
+Rabbith	وربيت	ربيت	revisado	alta	3	1	1.00	ربيت
 Rabsaris	ربساريس	ربساريس	auto	alta	1	1	1.00	وربساريس
 Rabshakeh	ربشاقى	ربشاقى	auto	alta	2	16	1.00	لربشاقى
 Racal	راخال	راخال	auto	alta	2	1	1.00	القينيين
@@ -3240,7 +3240,7 @@ Rahab	راحاب	راحاب	auto	alta	2	8	1.00	أباها
 Rahab	رهب	رهب	auto	alta	2	5	1.00	ذراع
 Ram	رام	رام	revisado	alta	6	9	0.67	ورام
 Ramah	الرامة	الرامة	auto	alta	14	36	0.92	والرامة
-Ramah	ورامة	ورامة	auto	alta	1	1	1.00	رامة
+Ramah	ورامة	رامة	revisado	alta	1	1	1.00	رامة
 Ramathaim-zophim	رامتايم صوفيم	رامتايم صوفيم	auto	alta	2	1	1.00	رامتايم
 Rameses	رعمسيس	رعمسيس	auto	alta	3	5	1.00	ماش
 Ramiah	رميا	رميا	auto	alta	2	1	1.00	ميامين
@@ -3326,7 +3326,7 @@ Shaharaim	شحرايم	شحرايم	revisado	alta	2	1	1.00	وشحرايم
 Shalishah	شليشة	شليشة	auto	alta	3	1	1.00	شعليم
 Shallum	شلوم	شلوم	auto	alta	25	26	0.92	وشلوم
 Shalmai	سلماي	سلماي	revisado	alta	2	2	0.50	شملاي
-Shama	شاماع	شاما	revisado	alta	2	1	1.00	حوثام
+Shama	شاماع	شاماع	revisado	alta	2	1	1.00	حوثام
 Shamer	شامر	شامر	auto	alta	2	3	0.67	أمصي
 Shamir	شامور	شامير	revisado	alta	2	1	1.00	عزيئيل
 Shamir	شامير	شامير	auto	alta	6	3	1.00	يتير
@@ -3416,7 +3416,7 @@ Simeon	شمعون	شمعون	auto	alta	4	44	0.93	لشمعون
 Simon	سيمون	سيمون	auto	alta	1	4	1.00	وسيمون
 Sin	سين	سين	revisado	alta	3	4	1.00	وسيناء
 Sinai	سيناء	سيناء	auto	alta	2	55	0.65	سينا
-Sirah	السيرة	سيرة	revisado	alta	3	1	1.00	ئر
+Sirah	السيرة	السيرة	revisado	alta	3	1	1.00	ئر
 Sisera	سيسرا	سيسرا	revisado	alta	4	19	1.00	بسيسرا
 Sismai	سسماي	سسماي	revisado	alta	1	1	1.00	وسسماي
 Sithri	ستري	ستري	auto	alta	1	1	1.00	وستري
@@ -3440,7 +3440,7 @@ Tabrimmon	طبريمون	طبريمون	auto	alta	1	1	1.00	وأرسلهم
 Tabrimon	طبريمون	طبريمون	auto	alta	1	1	1.00	وأرسلهم
 Tadmor	تدمر	تدمر	revisado	alta	3	2	1.00	المخازن
 Tahan	تاحن	تاحن	auto	alta	2	1	1.00	وتاحن
-Tahan	لتاحن	لتاحن	auto	alta	2	1	1.00	التاحنيين
+Tahan	لتاحن	تاحن	revisado	alta	2	1	1.00	التاحنيين
 Tahash	تاحش	تاحش	auto	alta	1	1	1.00	وتاحش
 Tahath	تاحت	تاحت	auto	alta	3	2	1.00	تارح
 Tahpanhes	تحفنحيس	تحفنحيس	auto	alta	3	7	0.86	وتحفنيس
@@ -3461,7 +3461,7 @@ Telassar	تلاسار	تلاسار	auto	alta	3	2	0.50	تلسار
 Teman	تيمان	تيمان	auto	alta	6	19	0.53	التيمن
 Terah	تارح	تارح	auto	alta	5	12	1.00	تاحت
 Thahash	تاحش	تاحش	auto	alta	1	1	1.00	وتاحش
-Tharshish	وترشيش	وترشيش	auto	alta	1	1	1.00	ترشيش
+Tharshish	وترشيش	ترشيش	revisado	alta	1	1	1.00	ترشيش
 Thomas	توما	توما	auto	alta	2	12	1.00	وتوما
 Thyatira	ثياتيرا	ثياتيرا	auto	alta	3	4	1.00	تراه
 Tidal	تدعال	تدعال	auto	alta	2	2	1.00	وتدعال
@@ -3499,8 +3499,8 @@ Uzza	عزا	عزا	auto	alta	8	5	1.00	بستان
 Uzzah	عزة	عزة	revisado	alta	3	9	0.56	عزا
 Uzzi	عزي	عزي	auto	alta	14	11	1.00	وعزي
 Uzziah	عزيا	عزيا	auto	alta	9	38	0.74	وعزيا
-Vaizatha	ويزاثا	ويزاثا	auto	alta	1	1	1.00	يزاثا
-Vajezatha	ويزاثا	ويزاثا	auto	alta	1	1	1.00	يزاثا
+Vaizatha	ويزاثا	يزاثا	revisado	alta	1	1	1.00	يزاثا
+Vajezatha	ويزاثا	يزاثا	revisado	alta	1	1	1.00	يزاثا
 Vaniah	ونيا	ونيا	auto	alta	2	1	1.00	وونيا
 Vashti	وشتي	وشتي	auto	alta	2	10	1.00	شتي
 Vophsi	وفسي	وفسي	auto	alta	2	1	1.00	فسي
