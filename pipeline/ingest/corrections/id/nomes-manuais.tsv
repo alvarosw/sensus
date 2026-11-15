@@ -135,7 +135,7 @@ Jerusalem's	place	Yerusalem	revisado	rev. IA: LAI
 Jerusalem_wives	person	Perempuan-perempuan Yerusalem	revisado	rev. IA: LAI 2Sam.5.13
 Jesus Christ	person	Yesus Kristus	revisado	rev. IA: LAI Kej.49.10
 John Mark	person	Yohanes Markus	revisado	rev. IA: LAI Kis.12.12
-John the Apostle	person	Yohanes, rasul	revisado	rev. IA: LAI Mat.4.21
+John the Apostle	person	Rasul Yohanes	revisado	rev. T5: LAI TB
 John the Baptist	person	Yohanes Pembaptis	revisado	rev. IA: LAI Mat.3.1
 Jonath-elem-rechokim	other	Yonat-Elem-Rehokim	revisado	rev. IA: LAI, título do Sl.56
 Judas Barsabas	person	Yudas Barsabas	revisado	rev. IA: LAI Kis.15.22
@@ -151,8 +151,8 @@ Lebbaeus Thaddaeus	person	Lebeus Tadeus	revisado	rev. IA: LAI Mat.10.3
 Line of Cain	group	Keturunan Kain	revisado	rev. IA: LAI Kej.4
 Lower Beth-horon	place	Bet-Horon Bawah	revisado	rev. IA: LAI Yos.16.3
 Lower Gulloth	place	Gulot Bawah	revisado	rev. IA: LAI Yos.15.19
-Lucifer	other	Lusifer	revisado	rev. IA: LAI Yes.14.12
-Lucifer	person	Lusifer	revisado	rev. IA: LAI Yes.14.12
+Lucifer	other	Bintang Timur	revisado	rev. T5: LAI TB
+Lucifer	person	Bintang Timur	revisado	rev. T5: LAI TB
 Lydia	place	Lidia	revisado	rev. IA: LAI Kis.16.14
 Maareh-geba	place		sem	rev. IA: sem nome fixo na LAI
 Madiama	place		sem	rev. IA: sem nome fixo na LAI
@@ -198,8 +198,8 @@ Parbar	place	Parbar	revisado	rev. IA: LAI 1Taw.26.18
 People's_Gate	place	Gerbang Bani Rakyat	revisado	rev. IA: LAI Yer.17.19
 People’s Gate	place	Gerbang Bani Rakyat	revisado	rev. IA: LAI Yer.17.19
 Pharisees	group	Orang Farisi	revisado	rev. IA: LAI Mat.3.7
-Phillip the Apostle	person	Filipus, rasul	revisado	rev. IA: LAI Mat.10.3
-Phillip the Evangelist	person	Filipus, penginjil	revisado	rev. IA: LAI Kis.6.5
+Phillip the Apostle	person	Rasul Filipus	revisado	rev. T5: LAI TB
+Phillip the Evangelist	person	Filipus, pemberita Injil	revisado	rev. T5: LAI TB
 Pillars	place	Tiang-tiang	revisado	rev. IA: LAI 1Raj.7.6
 Pitru	place		sem	rev. IA: sem nome fixo na LAI
 Plain	place	Dataran	revisado	rev. IA: LAI Ul.34.3
@@ -234,7 +234,7 @@ Second Quarter	place		sem	rev. IA: sem nome fixo confiável na LAI TB
 Second_Quarter	place		sem	rev. IA: sem nome fixo na LAI
 Sergius Paulus	person	Sergius Paulus	revisado	rev. IA: LAI Kis.13.7
 Sergius_Paulus	person	Sergius Paulus	revisado	rev. IA: LAI Kis.13.7
-Shephelah	place	Sefela	revisado	rev. IA: LAI Yos.9.1
+Shephelah	place	Dataran Rendah	revisado	rev. T5: LAI TB
 Shiggaion	other	Syigayon	revisado	rev. IA: LAI, título do Sl.7
 Shushan_Eduth	other	Susan-Edut	revisado	rev. IA: LAI, título do Sl.60
 Simon Peter	person	Simon Petrus	revisado	rev. IA: LAI Mat.4.18
@@ -302,7 +302,7 @@ Ur of the Chaldees	place	Ur-Kasdim	revisado	rev. IA: LAI Kej.11.28
 Ura	place		sem	rev. IA: sem nome fixo na LAI
 Valley of Mizpeh	place	Lembah Mizpe	revisado	rev. IA: LAI Yos.11.8
 Valley of Salt	place	Lembah Garam	revisado	rev. IA: LAI 2Sam.8.13
-Valley of the Son of Hinnom	place	Lembah bin-Hinom	revisado	rev. IA: LAI 2Raj.23.10
+Valley of the Son of Hinnom	place	Lembah Ben-Hinom	revisado	rev. T5: LAI TB
 Washer's_Field	place	Padang Penatu	revisado	rev. IA: LAI 2Raj.18.17
 Washer’s Field	place	Padang Penatu	revisado	rev. IA: LAI 2Raj.18.17
 Way of the Red Sea	place	Jalan Laut Teberau	revisado	rev. IA: LAI Bil.14.25
@@ -465,7 +465,7 @@ Jokdeam	place	Yokdeam	revisado	rev. IA: LAI Yos.15.56
 Eltolad	place	Eltolad	revisado	rev. IA: LAI Yos.15.30
 Beth-gader	place	Bet-Gader	revisado	rev. IA: LAI 1Taw.2.51
 Ezem	place	Ezem	revisado	rev. IA: LAI Yos.15.29
-Raamah	place	Raama	revisado	rev. IA: LAI Kej.10.7
+Raamah	place	Raema	revisado	rev. T5: LAI TB
 Masrekah	place	Masreka	revisado	rev. IA: LAI Kej.36.36
 Uzzen-sheerah	place	Uzen-Syeera	revisado	rev. IA: LAI 1Taw.7.24
 Tamar 2	place	Tamar 2	revisado	rev. IA: sufixo mantido
@@ -690,7 +690,7 @@ Achim	person	Akim	revisado	rev. IA: LAI TB, fora do indtsi
 Achsah	person	Akhsa	revisado	rev. IA: LAI TB, fora do indtsi
 Adaiah	person	Adaya	revisado	rev. IA: LAI TB, fora do indtsi
 Adalia	person	Adalia	revisado	rev. IA: LAI TB, fora do indtsi
-Addar	person	Addar	revisado	rev. IA: LAI TB, fora do indtsi
+Addar	person	Adar	revisado	rev. T5: LAI TB
 Addi	person	Adi	revisado	rev. IA: LAI TB, fora do indtsi
 Adiel	person	Adiel	revisado	rev. IA: LAI TB, fora do indtsi
 Adina	person	Adina	revisado	rev. IA: LAI TB, fora do indtsi
@@ -746,7 +746,7 @@ Appaim	group	Apaim	revisado	rev. IA: LAI TB, fora do indtsi
 Apphia	person	Apia	revisado	rev. IA: LAI TB, fora do indtsi
 Ara	person	Ara	revisado	rev. IA: LAI TB, fora do indtsi
 Arad	person	Arad	revisado	rev. IA: LAI TB, fora do indtsi
-Arah	person	Ara	revisado	rev. IA: LAI TB, fora do indtsi
+Arah	person	Arah	revisado	rev. T5: LAI TB
 Aram	person	Aram	revisado	rev. IA: LAI TB, fora do indtsi
 Aram-maacah	place	Aram-Maaka	revisado	rev. IA: LAI TB, fora do indtsi
 Ard	person	Ard	revisado	rev. IA: LAI TB, fora do indtsi
@@ -829,7 +829,7 @@ Beraiah	person	Berahya	revisado	rev. IA: LAI TB, fora do indtsi
 Berechiah	person	Berekhya	revisado	rev. IA: LAI TB, fora do indtsi
 Bered	person	Bered	revisado	rev. IA: LAI TB, fora do indtsi
 Beri	person	Beri	revisado	rev. IA: LAI TB, fora do indtsi
-Beriah	person	Berya	revisado	rev. IA: LAI TB, fora do indtsi
+Beriah	person	Beria	revisado	rev. T5: LAI TB
 Beth-dagon	place	Bet-Dagon	revisado	rev. IA: LAI TB, fora do indtsi
 Beth-rapha	person	Bet-Rafa	revisado	rev. IA: LAI TB, fora do indtsi
 Beth-shemesh	place	Bet-Semes	revisado	rev. IA: LAI TB, fora do indtsi
@@ -1244,7 +1244,7 @@ Mareshah	person	Mareša	revisado	rev. IA: LAI TB, fora do indtsi
 Marsena	person	Marsena	revisado	rev. IA: LAI TB, fora do indtsi
 Matred	person	Matred	revisado	rev. IA: LAI TB, fora do indtsi
 Mattan	person	Mataan	revisado	rev. IA: LAI TB, fora do indtsi
-Mattaniah	person	Mataniah	revisado	rev. IA: LAI TB, fora do indtsi
+Mattaniah	person	Matanya	revisado	rev. T5: LAI TB
 Mattatha	person	Matata	revisado	rev. IA: LAI TB, fora do indtsi
 Mattathias	person	Matatias	revisado	rev. IA: LAI TB, fora do indtsi
 Mattenai	person	Matenai	revisado	rev. IA: LAI TB, fora do indtsi
@@ -1541,7 +1541,7 @@ Uzziah	person	Uzia	revisado	rev. IA: LAI TB, fora do indtsi
 Uzziel	person	Uziel	revisado	rev. IA: LAI TB, fora do indtsi
 Vaizatha	person	Waizata	revisado	rev. IA: LAI TB, fora do indtsi
 Vaniah	person	Wanya	revisado	rev. IA: LAI TB, fora do indtsi
-Vedan	place	Dan	revisado	rev. IA: LAI TB, fora do indtsi
+Vedan	place	Wedan	revisado	rev. T5: LAI TB
 Vophsi	person	Wofsi	revisado	rev. IA: LAI TB, fora do indtsi
 Zabad	person	Zabad	revisado	rev. IA: LAI TB, fora do indtsi
 Zabdi	person	Zabdi	revisado	rev. IA: LAI TB, fora do indtsi
@@ -1568,7 +1568,7 @@ Zethan	person	Zetan	revisado	rev. IA: LAI TB, fora do indtsi
 Zia	person	Zia	revisado	rev. IA: LAI TB, fora do indtsi
 Zibia	person	Zibia	revisado	rev. IA: LAI TB, fora do indtsi
 Zichri	person	Zikhri	revisado	rev. IA: LAI TB, fora do indtsi
-Zillethai	person	Zilethai	revisado	rev. IA: LAI TB, fora do indtsi
+Zillethai	person	Ziletai	revisado	rev. T5: LAI TB
 Zimmah	person	Zimah	revisado	rev. IA: LAI TB, fora do indtsi
 Zimri	person	Zimri	revisado	rev. IA: LAI TB, fora do indtsi
 Ziph	person	Zif	revisado	rev. IA: LAI TB, fora do indtsi
