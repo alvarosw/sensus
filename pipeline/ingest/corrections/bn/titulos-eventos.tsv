@@ -178,7 +178,7 @@ event_id	cite_id	titulo_en	titulo_bn	origem	nota
 164	ent:theographic:rec3u4dUBOoBi5pUx	Death of Solomon	শলোমনের মৃত্যু	revisado	rev. IA
 165	ent:theographic:recX0KzMJywvbeM6D	Reign of Rehoboam	রহবিয়ামের রাজত্ব	revisado	rev. IA
 166	ent:theographic:rec3R4qyFlVjCRORt	Northern Kingdom (Israel)	উত্তর রাজ্য (ইস্রায়েল)	revisado	rev. IA
-167	ent:theographic:rec824qPcsyF7GtTh	Reign of Jeroboam I	যারবিয়াম ১-এর রাজত্ব	revisado	rev. IA
+167	ent:theographic:rec824qPcsyF7GtTh	Reign of Jeroboam I	প্রথম যারবিয়ামের রাজত্ব	revisado	rev. T5
 168	ent:theographic:recDK5FF0d1qrz8sn	Reign of Abijam	অবিয়ের রাজত্ব	revisado	rev. IA
 169	ent:theographic:recfIqDLtdCqz7N3V	Death of Abijam	অবিয়ের মৃত্যু	revisado	rev. IA
 170	ent:theographic:recmEKC9vgAJDYa2z	Reign of Asa	আসার রাজত্ব	revisado	rev. IA
@@ -210,7 +210,7 @@ event_id	cite_id	titulo_en	titulo_bn	origem	nota
 196	ent:theographic:recz99BZY6sWTR2SI	Death of Jehoahaz	যিহোয়াহসের মৃত্যু	revisado	rev. IA
 197	ent:theographic:rec70XpPIr8MiLTVb	Reign of Jehoash	ইস্রায়েলে যোয়াশের রাজত্ব	revisado	rev. IA
 198	ent:theographic:rec75MawjODD5ju3b	Reign of Amaziah	অমৎসিয়ের রাজত্ব	revisado	rev. IA
-199	ent:theographic:recGe7VTJOGbn63NQ	Reign of Jeroboam II	যারবিয়াম ২-এর রাজত্ব	revisado	rev. IA
+199	ent:theographic:recGe7VTJOGbn63NQ	Reign of Jeroboam II	দ্বিতীয় যারবিয়ামের রাজত্ব	revisado	rev. T5
 200	ent:theographic:recKICyY8GrWaYCq3	Prophecies of Jonah	যোনার ভাববাণী	revisado	rev. IA
 201	ent:theographic:recsgU87rUrPKR9uA	Death of Jehoahash	ইস্রায়েলে যোয়াশের মৃত্যু	revisado	rev. IA
 202	ent:theographic:rec6VtctTK9zZ5UxZ	Prophecies of Joel	যোয়েলের ভাববাণী	revisado	rev. IA
@@ -218,7 +218,7 @@ event_id	cite_id	titulo_en	titulo_bn	origem	nota
 204	ent:theographic:recOJfWD0IUcT4yJD	Reign of Uzziah		sem	sem: nome bn revisado ainda faltando para Uzziah (nomes.tsv sem linha revisada)
 205	ent:theographic:rec0MJooZFfHsxW1N	Prophecies of Amos	আমোষের ভাববাণী	revisado	rev. IA
 206	ent:theographic:recekTocE5mIkvDEk	Prophecies of Hosea	হোশেয়ের ভাববাণী	revisado	rev. IA
-207	ent:theographic:recFQnWRST9SS0RRp	Death of Jeroboam II	যারবিয়াম ২-এর মৃত্যু	revisado	rev. IA
+207	ent:theographic:recFQnWRST9SS0RRp	Death of Jeroboam II	দ্বিতীয় যারবিয়ামের মৃত্যু	revisado	rev. T5
 208	ent:theographic:recUQaOuprbt82K3O	Reign of Zachariah	সখরিয়ের রাজত্ব	revisado	rev. IA
 209	ent:theographic:recmYpqEy1fUpISEt	Reign of Shallum	শল্লুমের রাজত্ব	revisado	rev. IA
 210	ent:theographic:recWsgJ5fuSjjOZsT	Death of Zachariah	সখরিয়ের মৃত্যু	revisado	rev. IA
@@ -371,18 +371,18 @@ event_id	cite_id	titulo_en	titulo_bn	origem	nota
 446	ent:theographic:recotN6XCwPBF0OzT	Fig Tree Cursed	ডুমুর গাছে অভিশাপ	revisado	rev. IA
 447	ent:theographic:recYOqX5Qe2a0FHvw	Teaching by the Fig Tree	ডুমুর গাছ থেকে শিক্ষা	revisado	rev. IA
 436	ent:theographic:recTplXPehmPfFUiG	Lepers Healed	কুষ্ঠরোগীদের সুস্থতা	revisado	rev. IA
-437	ent:theographic:recrwlbTDWOETPpei	Discourse on the Kingdom and Other Parables	রাজ্য সম্পর্কে ও অন্যান্য দৃষ্টান্ত	revisado	rev. IA
+437	ent:theographic:recrwlbTDWOETPpei	Discourse on the Kingdom and Other Parables	রাজ্য বিষয়ক উপদেশ ও অন্যান্য দৃষ্টান্ত	revisado	rev. T5
 440	ent:theographic:reccSs8loWRLm8LAb	Zaccheus Converted and Parable of the Pounds	সক্কেয়ের মন পরিবর্তন ও মুদ্রার দৃষ্টান্ত	revisado	rev. IA
 432	ent:theographic:rec70ZLu9pdrEWXR9	Teaching and Healing in Perea to Jerusalem	যর্দ্দনের ওপার থেকে যিরূশালেম পর্যন্ত শিক্ষা ও সুস্থতা	revisado	rev. IA
 433	ent:theographic:reclZp6jMKWzYmop9	Lazarus Raised form the Dead	লাসারের পুনরুত্থান	revisado	rev. IA
 434	ent:theographic:recZhxqZJmXuGMdvd	Chief Priests Conspire Against Jesus	প্রধান যাজকদের যীশুর বিরুদ্ধে ষড়যন্ত্র	revisado	rev. IA
 435	ent:theographic:recMIEeRCAf7IGRwc	Jesus Withdraws to Ephraim	যীশু ইফ্রয়িমে সরে যান	revisado	rev. IA
-441	ent:theographic:recrB2eWea9OCFtOz	Mary Anoints Jesus	মরিয়মের যীশুকে অভিষেক	revisado	rev. IA
+441	ent:theographic:recrB2eWea9OCFtOz	Mary Anoints Jesus	মরিয়ম যীশুকে অভিষেক করেন	revisado	rev. T5
 453	ent:theographic:recu6M6co9Iaw0Ow5	Upper Room Discourse	উপরের কক্ষে উপদেশ	revisado	rev. IA
 459	ent:theographic:rechX4p94qqiHLqLx	Crucifixion and Burial	ক্রুশারোপণ ও সমাধি	revisado	rev. IA
 304	ent:theographic:recvfB75N6vrQwhWW	The Holy Spirit is promised	পবিত্র আত্মার প্রতিজ্ঞা	revisado	rev. IA
 305	ent:theographic:rec06pcAZBChUBKxF	Jesus ascends to Heaven	যীশুর স্বর্গারোহণ	revisado	rev. IA
-306	ent:theographic:reczDqE366xgbgv2C	Matthias replaces Judas	মত্তথিয় যিহূদার স্থলাভিষিক্ত	revisado	rev. IA
+306	ent:theographic:reczDqE366xgbgv2C	Matthias replaces Judas	মত্তথিয় যিহূদার স্থলাভিষিক্ত হন	revisado	rev. T5
 307	ent:theographic:recIu7xhASS4Ufyfd	The Holy Spirit comes	পবিত্র আত্মার আগমন	revisado	rev. IA
 308	ent:theographic:recQoK9KFveLh556S	Peter preaches at Pentecost	পঞ্চাশত্তমীতে পিতরের প্রচার	revisado	rev. IA
 309	ent:theographic:recVrh6Nbm3PruADf	The church grows	মণ্ডলীর বৃদ্ধি	revisado	rev. IA

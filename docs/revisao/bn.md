@@ -52,3 +52,33 @@ passagem e não contam como erro.
   (অনাথোৎ para অনাথোত/অনাথোতে) e isso foi mantido.
 - Quando só há gentílico no texto (Elkosh, Gilo, Baharum), o nome do lugar foi tirado dele, sem atestação direta.
 - O texto tem erros próprios (Ethbaal "ঈষেবলের মেয়ে ঈষেবল", হর্ম্মিপাত্রোবা): ficou a forma do revisor.
+
+## Segunda rodada: títulos e descrições por regra
+
+- **Semente:** `random.Random(1417)` para os títulos (`sample` de 45 de `titulos-eventos.tsv`) e
+  `random.Random(1418)` para as descrições (`sample` de 30 de `entity_text.jsonl`, TIPNR e openbible-geo, comparadas
+  com o pt). Nomes não foram reamostrados; os dos títulos da amostra batem com `nomes.tsv`. Não há descrições em
+  prosa (`descricoes.tsv`) para bn.
+- **Glossário `nome` das descrições:** tinha 238 entradas, 154 copiadas de candidatos `auto` de confiança
+  `media`/`baixa` de `nomes.tsv`, não revisados. Ficaram só as 84 que batem com linha `revisado` ou `auto`/`alta`
+  (ou que não vêm de `nomes.tsv`). Cobertura das descrições TIPNR por regra: **2708 (63%) → 2403 (56%)**.
+
+| Tipo | Amostra | Erros | Taxa |
+|---|---|---|---|
+| Títulos | 45 | 4 (Jeroboam I "যারবিয়াম ১-এর"; "Discourse on the Kingdom" sem "উপদেশ"; Matthias e Mary sem verbo) | 9% |
+| Descrições por regra | 30 | 25 com ao menos um erro, quase todos do mesmo modelo (abaixo) | 83% |
+
+Correções:
+
+- **Títulos:** প্রথম/দ্বিতীয় যারবিয়াম (as 3 linhas com numeral), রাজ্য বিষয়ক উপদেশ ও অন্যান্য দৃষ্টান্ত,
+  মত্তথিয় যিহূদার স্থলাভিষিক্ত হন, মরিয়ম যীশুকে অভিষেক করেন.
+- **Gramática (`gramatica-descricoes.tsv`), sistemático:** a época vinha depois do cargo ("একজন মানুষ বিভক্ত রাজত্বের
+  যুগের", 19 da amostra); agora vem antes ("বিভক্ত রাজত্বের যুগের লেবি গোষ্ঠীর একজন মানুষ"). "perto de X" saía
+  sem genitivo ("ঐন কাছাকাছি একটি স্থান") e passou a "ঐন এলাকার কাছের". `geo_outros` não tinha verbo; agora
+  "এই ডেটাসেটে আরও {n}টি সম্ভাব্য আধুনিক অবস্থান আছে৷".
+
+Riscos:
+
+- Identificação antiga do openbible-geo em inglês quando é nome simples ("Moab 2", "Egypt", "Elam", 3 da amostra):
+  `geo_descricao.py` não traduz nomes; vale para todas as línguas de escrita não latina.
+- Referências e números com algarismos latinos (যাত্রা 4:14, 306/1000); a BBS usa algarismos bengalis.

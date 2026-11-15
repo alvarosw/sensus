@@ -1,6 +1,7 @@
 # Gramática das descrições em bengali (TIPNR e openbible-geo por regra; pipeline/sensus/descricoes_pt.py).
 # Colunas: chave, modelo. Campos {nome} são trocados pelo valor; {pont.;}, {pont..}, {pont.,} são os sinais da língua.
-# Ordem: o complemento vem antes do cargo ('{comp} {cargo}': 'লেবি গোষ্ঠীর একজন মানুষ'), e o sinal final é ৷ (danda U+09F7).
+# Ordem: o complemento vem antes do cargo ('{comp} {cargo}': 'লেবি গোষ্ঠীর একজন মানুষ') e a época antes de tudo
+# ('বিভক্ত রাজত্বের যুগের লেবি গোষ্ঠীর একজন মানুষ'); o sinal final é ৷ (danda U+09F7). 'perto de X' = 'X এলাকার কাছের', sem flexão.
 # Genitivo: a flexão só entra nos nomes de relação (flexao_relacao genitivo_bn, -র depois de vogal, -ের depois de consoante);
 # nos complementos o nome fica sem flexão e a expressão é composta ('{nome} শহরের', 'মিশর অঞ্চলে'), como em bengali.
 # Nome inglês sem forma em bengali faz a descrição falhar (nome_ingles_permitido nao): escrita não latina.
@@ -8,14 +9,14 @@ chave	modelo
 mencao_primeira	প্রথম উল্লেখ {ref}
 mencao_unica	শুধু {ref}-এ উল্লেখিত
 frase_cargo_comp	{comp} {cargo}
-frase_tempo_com_comp	{frase}{pont.,} {tempo}
-frase_tempo_sem_comp	{frase} {tempo}
+frase_tempo_com_comp	{tempo} {frase}
+frase_tempo_sem_comp	{tempo} {frase}
 cabecalho	{frase}{pont.;} {mencao}{pont..}
 comp_territorio_tribo	{tribo} গোষ্ঠীর এলাকায়{perto}
-comp_perto_sufixo	, {nome} কাছাকাছি
+comp_perto_sufixo	, {nome} এলাকার কাছে
 comp_tribo	{tribo} গোষ্ঠীর
 comp_cidade	{nome} শহরের
-comp_perto	{nome} কাছাকাছি
+comp_perto	{nome} এলাকার কাছের
 comp_de	{nome} থেকে
 comp_em	{nome} অঞ্চলে
 citacao	{lista} নামে ডাকা হয়
@@ -37,5 +38,5 @@ geo_identificacao	শনাক্তকরণ: "{texto}" ({fonte})৷
 geo_votos	ভোট: {votos}৷
 geo_voto	{voto} {n}
 geo_tempo	সময়-ভারিত স্কোর {tempo}/1000৷
-geo_outros	{n}টি অন্য আধুনিক প্রার্থী অবস্থান এই ডেটাসেটে৷
+geo_outros	এই ডেটাসেটে আরও {n}টি সম্ভাব্য আধুনিক অবস্থান আছে৷
 geo_omitir_ingles	sim
