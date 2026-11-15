@@ -185,7 +185,8 @@ def traduz(e: dict, ctx: Contexto, falhas: list[str]) -> tuple[str | None, str]:
     elif e["_fonte"] == GEO and ctx.geo_por_regra:
         geo = analisa(desc)
         if geo is not None:
-            texto = renderiza(geo, ctx.glos_geo, ctx.gram, falhas)
+            nomes = nomes_da_entidade(e, {}, ctx.nomes, ctx.globais)
+            texto = renderiza(geo, ctx.glos_geo, ctx.gram, falhas, lingua=ctx.lang, nomes=nomes)
             if texto is not None:
                 return texto, "regra"
     r = ctx.revisadas.get(chave_da_descricao(desc))

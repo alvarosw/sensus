@@ -37,7 +37,7 @@ export const arTl = {
   noEvents: 'لا توجد أحداث بهذا البحث وهذه الفلاتر.',
   noLines: 'لا توجد خطوط زمنية بهذه الفلاتر.',
   footer:
-    'المصدر: Theographic (CC BY-SA 4.0). تتبع التواريخ التسلسل الزمني للمصدر.',
+    'المصدر: Theographic (CC BY-SA 4.0). تتبع التواريخ التسلسل الزمني للمصدر. العناوين والأسماء والأوصاف بالعربية تكييف من مشروع Sensus.',
 
   lineTitleOf: (count: number) => arPlural(count, 'حدث واحد', 'حدثان', `${count} أحداث`, `${count} حدث`),
   inSource: (name: string) => `في المصدر: ${name}`,

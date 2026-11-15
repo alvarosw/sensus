@@ -1,0 +1,194 @@
+# Glossário das descrições em bengali (TIPNR, pipeline/sensus/descricoes_pt.py). Mesmo formato do pt
+# (corrections/glossario-descricoes.tsv). Colunas:
+#   secao      cargo 	 tempo 	 tribo 	 lugar 	 relacao 	 nome
+#   ingles     termo como aparece na descrição da fonte (exato, com maiúsculas)
+#   portugues  tradução usada na frase (aqui: bengali; o nome da coluna é o do código)
+#   nota       observação para o revisor (opcional)
+# Cargo com artigo indefinido ('একজন মানুষ'): o bengali põe o artigo no termo, porque a frase não tem artigo. Nomes
+# próprios vêm de nomes.tsv (tribo, nome). Sem coluna genero: o bengali não concorda em gênero.
+secao	ingles	portugues	nota
+cargo	man	একজন মানুষ	
+cargo	woman	একজন নারী	
+cargo	location	একটি স্থান	
+cargo	high priest	মহাযাজক	
+cargo	priest	একজন যাজক	
+cargo	warrior	একজন যোদ্ধা	
+cargo	warriors	যোদ্ধারা	
+cargo	musician	একজন বাদক	
+cargo	prophet	একজন ভাববাদী	
+cargo	prophetess	একজন ভাববাদিনী	
+cargo	king	একজন রাজা	
+cargo	queen	একজন রানী	
+cargo	group	একটি দল	
+cargo	male deity	একজন পুরুষ দেবতা	
+cargo	female deity	একজন স্ত্রী দেবতা	
+cargo	deity	একজন দেবতা	
+cargo	people	একটি জাতি	
+cargo	woman or town	একজন নারী বা একটি শহর	
+cargo	town	একটি শহর	
+cargo	emperor	একজন সম্রাট	
+cargo	prince	একজন রাজপুত্র	
+cargo	apostle	একজন প্রেরিত	
+cargo	angel	একজন দূত	
+cargo	concubine	একজন উপপত্নী	
+cargo	chief	একজন নেতা	
+cargo	steward	একজন কর্মাধ্যক্ষ	
+cargo	servant	একজন দাস	
+cargo	ruler	একজন শাসক	
+cargo	musical piece	একটি সংগীত	
+cargo	judge	একজন বিচারকর্তা	
+cargo	Judge	একজন বিচারকর্তা	
+cargo	city	একটি শহর	
+cargo	gigantic man	একজন দৈত্যাকার মানুষ	
+cargo	Pharaoh	ফরৌণ	
+cargo	festival	একটি উৎসব	
+cargo	governor	একজন শাসনকর্তা	
+tempo	at the time of the Patriarchs	পিতৃপুরুষদের যুগের	
+tempo	at the time of Egypt and Wilderness	মিশরের ও মরুভূমির যুগের	
+tempo	at the time of Exile and Return	নির্বাসন ও প্রত্যাবর্তনের যুগের	
+tempo	at the time of Divided Monarchy	বিভক্ত রাজত্বের যুগের	
+tempo	at the time of United Monarchy	ঐক্যবদ্ধ রাজত্বের যুগের	
+tempo	at the time of the New Testament	নতুন নিয়মের যুগের	
+tempo	at the time of the Exodus	যাত্রার যুগের	
+tempo	before Israel's Monarchy	ইস্রায়েলের রাজত্বের আগের	
+tempo	at the time before the Flood	মহাপ্লাবনের আগের যুগের	
+tempo	before the Flood	মহাপ্লাবনের আগের	
+tempo	at the time of Judges	বিচারকর্তাদের যুগের	
+tribo	Levi	লেবি	
+tribo	Judah	যিহূদা	
+tribo	Asher	আশের	
+tribo	Benjamin	বিন্যামীন	
+tribo	Ephraim	ইফ্রয়িম	
+tribo	Manasseh	মনঃশি	
+tribo	Simeon	শিমিয়োন	candidato de nomes.tsv; o nome do patriarca Simeon ainda não tem linha revisada
+tribo	Issachar	ইষাখর	
+tribo	Zebulun	সবূলূন	
+tribo	Naphtali	নপ্তালি	
+tribo	Reuben	রূবেণ	
+tribo	Gad	গাদ	
+tribo	Dan	দান	
+relacao	son of	{x} ছেলে	
+relacao	daughter of	{x} মেয়ে	
+relacao	brother of	{x} ভাই	
+relacao	sister of	{x} বোন	
+relacao	half-brother of	{x} সৎভাই	
+relacao	half-sister of	{x} সৎবোন	
+relacao	wife of	{x} স্ত্রী	
+relacao	husband of	{x} স্বামী	
+relacao	mother of	{x} মা	
+relacao	father of	{x} বাবা	
+relacao	founder of	{x} প্রতিষ্ঠাতা	
+relacao	concubine of	{x} উপপত্নী	
+relacao	descendant of	{x} বংশধর	
+nome	Pharaoh	ফরৌণ	
+nome	Asia	এশিয়া	
+nome	Christ	খ্রীষ্ট	
+lugar	in Asia	এশিয়ায়	
+lugar	of Egypt	মিশরের	
+lugar	of the Cushites	কূশীয়দের	
+lugar	of the Arabs	আরবীয়দের	
+lugar	of the Edomites	ইদোমীয়দের	
+lugar	of the Midianites	মিদিয়নীয়দের	
+lugar	of the Syrians	সিরীয়দের	
+lugar	of the Gomerians	গোমরীয়দের	
+lugar	of the Ammonites	অম্মোনীয়দের	
+lugar	of the Greeks	গ্রীকদের	
+lugar	of the Ishmaelites	ইশ্মায়েলীয়দের	
+lugar	of the Moabites	মোয়াবীয়দের	
+lugar	of the Egyptians	মিশরীয়দের	
+lugar	of the Philistines	পলেষ্টীয়দের	
+lugar	of the Hittites	হিত্তীয়দের	
+lugar	of the Canaanites	কনানীয়দের	
+lugar	of the Amalekites	অমালেকীয়দের	
+lugar	of the Jebusites	যিবূষীয়দের	
+lugar	of the Assyrians	অশূরীয়দের	
+lugar	of the Babylonians	ব্যাবিলনীয়দের	
+lugar	of the Chaldeans	কলদীয়দের	
+lugar	of the Persians	পারসীকদের	
+lugar	of the Hebrews	ইব্রীয়দের	
+lugar	of the Israelites	ইস্রায়েলীয়দের	
+nome	Philistia	পলেষ্টীয়	nomes.tsv (revisado, alta); sem nome ligado na fonte
+nome	Babylon	ব্যাবিলন	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Jeroham	যিহোরাম	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Hamath	হমাত	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Mizpah	মিস্পা	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Rimmon	রিম্মোণ	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Judea	যিহূদিয়া	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Shechem	শেখম	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Hermon Mount	হর্মোণ পর্বত	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Abdon	অব্দোন	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Binnui	বিন্নূয়ী	nomes.tsv (revisado, alta); sem nome ligado na fonte
+nome	Jeremoth	যিরমোৎ	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Shelomith	শলোমীৎ	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Abel	আবেল	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Ebal Mount	এবল পর্বত	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Timnah	তিম্নায়	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Seir Mount	সেয়ীর পর্বত	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Amos	আমোস	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Joses	যোষি	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Persia	পারস্য	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Gedor	গদোর	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Johanan	যিহোহানন	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Jerimoth	যিরেমোৎ	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Simon	শিমোন	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Rephaiah	রফায়	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Rapha	রফা	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Meshullam	মশূল্লম	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Shelomoth	শলোমোৎ	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Zimri	সিম্রি	nomes.tsv (revisado, alta); sem nome ligado na fonte
+nome	Socoh	সোখো	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Bealoth	বালোতে	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Gilgal	গিল্গল	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Beer	বের	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Sheba	শিবা	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Beracah Valley	বরাখা উপত্যকা	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Carmel Mount	কর্মিল পর্বত	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Dibon	দীমোন	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Ephron Mount	ইফ্রোণ পর্বত	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Forest Ephraim	ইফ্রয়িম বন	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Gilboa Mount	গিলবোয় পর্বত	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Succoth	সুক্কোত	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Jahaz	যাহসা	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Ramah	রামা	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Moriah Mount	মোরিয়া পর্বত	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Nebo Mount	নবো পর্বত	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Paran Mount	পারণ পর্বত	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Ai	ঐ	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Ophrah	অফ্রা	nomes.tsv (auto, alta); sem nome ligado na fonte
+nome	Hazor	হাৎসার	nomes.tsv (revisado, media); sem nome ligado na fonte
+nome	Hor Mount	হোর পর্বত	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Rephaim Valley	রফায়ীম উপত্যকা	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Olives Mount	জৈতুন পর্বত	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Benjamin Gate	বিন্যামীন দ্বার	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Ephraim Gate	ইফ্রয়িম দ্বার	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Red Sea	লোহিত সাগর	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Reuel	রুয়েল	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Shammua	শম্মূয়	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Adriatic Sea	আদ্রিয়া সমুদ্র	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Beautiful Gate	সুন্দর দরজা	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Broad Wall	চওড়া দেওয়াল	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	East Gate	পূর্ব দ্বার	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Elah Valley	এলা উপত্যকা	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Esau Mount	এষৌ পর্বত	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Eshcol Valley	ইষ্কোল উপত্যকা	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Ezel Stone	এষল পাথর	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Gerizim Mount	গরিষীম পর্বত	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Great Sea	মহাসমুদ্র	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Halak Mount	হালক পর্বত	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Hebron Valley	হিব্রোণ উপত্যকা	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Horse Gate	ঘোড়া দরজা	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Iphtahel Valley	যিপ্তহেল উপত্যকা	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Jezreel Valley	যিষ্রিয়েল উপত্যকা	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	King's Valley	রাজার উপত্যকা	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Lebanon Mount	লেবানন পর্বত	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Moab Plains	মোয়াবের সমভূমি	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Salt Sea	লবণ সাগর	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Salt Valley	লবণ উপত্যকা	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Sheep Gate	মেষ দরজা	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Shittim Valley	শিটীম উপত্যকা	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Siddim Valley	সিদ্দীম উপত্যকা	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+nome	Sorek Valley	সোরেক উপত্যকা	nomes.tsv (revisado, baixa); sem nome ligado na fonte
+lugar	the Kingdom of Israel	ইস্রায়েল রাজ্যের	
+lugar	the tribe of Judah	যিহূদা গোষ্ঠীর	
+lugar	the Amorites	আমোরীয়দের	
+cargo	huge man	একজন দৈত্যাকার মানুষ	

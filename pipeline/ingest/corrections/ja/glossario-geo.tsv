@@ -1,0 +1,59 @@
+# Glossário geo em japonês (openbible-geo, por regra; pipeline/sensus/geo_descricao.py). Colunas:
+#   secao      tipo | geometria | voto | fonte
+#   ingles     termo como aparece na descrição da fonte (exato)
+#   portugues  tradução usada na frase (aqui: japonês)
+#   nota       observação para o revisor (opcional)
+#   genero     vazio (o japonês não concorda em gênero)
+# geometria: o modelo geo_melhor já diz '{geometria}型', por isso os valores são só o nome da forma.
+secao	ingles	portugues	nota	genero
+tipo	settlement	集落
+tipo	region	地域
+tipo	mountain	山
+tipo	wadi	ワディ
+tipo	river	川
+tipo	spring	泉
+tipo	hill	丘
+tipo	island	島
+tipo	valley	谷
+tipo	body of water	水域
+tipo	well	井戸
+tipo	probability center radial	放射確率中心
+tipo	road	道
+tipo	mountain range	山脈
+tipo	structure	構造物
+tipo	mouth of river	河口
+tipo	pool	池
+tipo	cliff	断崖
+tipo	cave	洞窟
+tipo	field	野原
+tipo	mountain pass	峠
+tipo	mountain ridge	尾根
+tipo	wall	城壁
+tipo	forest	森
+tipo	harbor	港
+tipo	garden	園
+tipo	promontory	岬
+geometria	point	点
+geometria	polygon	多角形
+geometria	path	経路
+fonte	modern	現代
+fonte	ancient	古代
+voto	confidence_possible	確信度・可能性あり
+voto	confidence_likely	確信度・ありそう
+voto	confidence_yes	確信度・はい
+voto	confidence_mostlikely	確信度・かなり確か
+voto	confidence_unlikely	確信度・ありえない
+voto	confidence_no	確信度・いいえ
+voto	confidence_map	確信度・地図
+voto	authority_usually	権威・通常
+voto	authority_scholar	権威・学者
+voto	authority_traditional	権威・伝統
+voto	authority_parallel	権威・並行
+voto	authority_preserved	権威・名称保存
+voto	authority_variant	権威・変形
+voto	authority_old	権威・古い
+voto	unknown	不明
+voto	uncertain	不確か
+voto	identified_been	同定・済み（過去）
+voto	identified_is	同定・済み（現在）
+voto	identified_adjective	同定（形容詞）

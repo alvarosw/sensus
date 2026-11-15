@@ -17,12 +17,19 @@ simples ('Tel Avdon', 'Abarim') fica. Tipo, geometria, fonte e votos vêm do glo
 (corrections/<xx>/glossario-geo.tsv, seções tipo, geometria, voto, fonte); o texto das frases vem da gramática da língua
 (chaves geo_*, em corrections/<xx>/gramatica-descricoes.tsv). Termo ou chave que falta: Falha, e a descrição cai na
 tradução automática (ou no TSV revisado, se houver).
+
+Línguas de outra escrita (zh ja hi bn ur ar ru) com geo_omitir_ingles = sim: nome moderno ou identificação em letras
+latinas (escrita_ok) é trocado pelo nome da entidade na língua (nomes: nome-base inglês -> nome da língua, como em
+descricoes_pt._nome); sem nome na língua, o trecho sai, e números e votos ficam. O pt e as línguas latinas não mudam.
 """
 
 import re
+from collections.abc import Mapping
 from dataclasses import dataclass
 
 from sensus.descricoes_pt import Falha, Gramatica, modelo_de, preenche
+from sensus.escritas import LATINAS, escrita_ok
+from sensus.names_pt import base_name
 
 SECOES_GEO = ("tipo", "geometria", "voto", "fonte")
 
@@ -103,6 +110,19 @@ def analisa(texto: str) -> Geo | None:
                **campos)
 
 
+def _em_latim(lingua: str | None, texto: str | None) -> bool:
+    """Trecho com letras latinas numa língua de outra escrita. Língua latina ou None, texto sem letra: False."""
+    if lingua is None or lingua in LATINAS or not texto or not any(c.isalpha() for c in texto):
+        return False
+    return not escrita_ok(lingua, texto)
+
+
+def _na_lingua(nomes: Mapping[str, str] | None, texto: str) -> str | None:
+    """Nome da língua do texto inglês, pelo nome-base (como descricoes_pt._nome); None se a língua não tem o nome."""
+    base = base_name(texto) if nomes else None
+    return nomes.get(base) if base else None
+
+
 def _termo(glos: dict, secao: str, chave: str) -> str:
     if chave not in glos.get(secao, {}):
         raise Falha(f"{secao}: {chave}")
@@ -116,7 +136,7 @@ def e_ingles(texto: str) -> bool:
                for p in re.findall(r"[A-Za-z]+", texto))
 
 
-def _renderiza(geo: Geo, glos: dict, gram: Gramatica) -> str:
+def _renderiza(geo: Geo, glos: dict, gram: Gramatica, lingua: str | None, nomes: Mapping[str, str] | None) -> str:
     lista_sep = modelo_de(gram, "lista_sep")
     omitir = gram.get("geo_omitir_ingles", "nao") == "sim"
     campos = {
@@ -124,15 +144,26 @@ def _renderiza(geo: Geo, glos: dict, gram: Gramatica) -> str:
         "geometria": _termo(glos, "geometria", geo.geometria),
         "score": str(geo.score),
     }
-    if omitir and " " in geo.nome and e_ingles(geo.nome):
+    if omitir and _em_latim(lingua, geo.nome):
+        traduzido = _na_lingua(nomes, geo.nome)
+        cabeca = modelo_de(gram, "geo_melhor" if traduzido is not None else "geo_melhor_sem_nome")
+        if traduzido is not None:
+            campos["nome"] = traduzido
+    elif omitir and " " in geo.nome and e_ingles(geo.nome):
         cabeca = modelo_de(gram, "geo_melhor_sem_nome")
     else:
         cabeca = modelo_de(gram, "geo_melhor")
         campos["nome"] = geo.nome
     partes = [preenche(cabeca, campos)]
-    if geo.identificacao is not None and not (omitir and e_ingles(geo.identificacao)):
+    ident = geo.identificacao
+    if ident is not None:
+        if omitir and _em_latim(lingua, ident):
+            ident = _na_lingua(nomes, ident)
+        elif omitir and e_ingles(ident):
+            ident = None
+    if ident is not None:
         partes.append(preenche(modelo_de(gram, "geo_identificacao"), {
-            "texto": geo.identificacao,
+            "texto": ident,
             "fonte": _termo(glos, "fonte", geo.fonte or ""),
         }))
     if geo.votos:
@@ -146,13 +177,16 @@ def _renderiza(geo: Geo, glos: dict, gram: Gramatica) -> str:
     return " ".join(partes)
 
 
-def renderiza(geo: Geo, glossario: dict, gramatica: Gramatica, falhas: list[str] | None = None) -> str | None:
+def renderiza(geo: Geo, glossario: dict, gramatica: Gramatica, falhas: list[str] | None = None,
+              lingua: str | None = None, nomes: Mapping[str, str] | None = None) -> str | None:
     """Descrição na língua a partir da análise; None se falta termo do glossário geo ou chave da gramática.
 
     falhas: se for uma lista, recebe o termo ou a chave que faltou (relatório de cobertura).
+    lingua: a língua (para saber se a escrita é latina); None = sem regra de escrita (como antes).
+    nomes: nome-base inglês -> nome da língua (ver _na_lingua); sem ele, o trecho em letras latinas sai.
     """
     try:
-        return _renderiza(geo, glossario, gramatica)
+        return _renderiza(geo, glossario, gramatica, lingua, nomes)
     except Falha as falha:
         if falhas is not None:
             falhas.append(str(falha))

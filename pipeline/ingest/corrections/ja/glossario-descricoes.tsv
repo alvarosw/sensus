@@ -1,0 +1,176 @@
+# Glossário das descrições em japonês (TIPNR, pipeline/sensus/descricoes_pt.py). Mesmo formato do pt
+# (corrections/glossario-descricoes.tsv). Colunas:
+#   secao      cargo | tempo | tribo | lugar | relacao | nome
+#   ingles     termo como aparece na descrição da fonte (exato, com maiúsculas)
+#   portugues  tradução usada na frase (aqui: japonês; o nome da coluna é o do código)
+#   nota       observação para o revisor (opcional)
+#   genero     vazio em todo o japonês: a língua não concorda em gênero
+# Relação: o modelo traz {x} onde entra a lista de nomes (ex.: '{x}の息子'), porque o japonês põe o nome antes da
+# relação. Tempo: frase que vai depois da vírgula do cabeçalho, com o verbo '生きた' (viveu).
+# Tribo: o nome sem 族; a gramática põe 族の depois.
+secao	ingles	portugues	nota	genero
+cargo	man	男性
+cargo	woman	女性
+cargo	location	場所
+cargo	high priest	大祭司
+cargo	priest	祭司
+cargo	warrior	戦士
+cargo	warriors	戦士たち
+cargo	musician	音楽家
+cargo	prophet	預言者
+cargo	prophetess	女預言者
+cargo	king	王
+cargo	queen	女王
+cargo	group	集団
+cargo	male deity	男神
+cargo	female deity	女神
+cargo	deity	神
+cargo	people	民
+cargo	woman or town	女性または町
+cargo	town	町
+cargo	emperor	皇帝
+cargo	prince	王子
+cargo	apostle	使徒
+cargo	angel	御使い
+cargo	concubine	側女
+cargo	chief	首長
+cargo	steward	執事
+cargo	servant	僕
+cargo	ruler	支配者
+cargo	musical piece	楽曲
+tempo	at the time of the Patriarchs	族長時代に生きた
+tempo	at the time of Egypt and Wilderness	エジプトと荒野の時代に生きた
+tempo	at the time of Exile and Return	捕囚と帰還の時代に生きた
+tempo	at the time of Divided Monarchy	王国分裂時代に生きた
+tempo	at the time of United Monarchy	統一王国時代に生きた
+tempo	at the time of the New Testament	新約時代に生きた
+tempo	at the time of the Exodus	出エジプトの時代に生きた
+tempo	before Israel's Monarchy	イスラエルの王政以前に生きた
+tempo	at the time before the Flood	洪水以前の時代に生きた
+tempo	before the Flood	洪水以前に生きた
+tempo	at the time of Judges	士師の時代に生きた
+tribo	Levi	レビ
+tribo	Judah	ユダ
+tribo	Asher	アシェル
+tribo	Benjamin	ベニヤミン
+tribo	Ephraim	エフライム
+tribo	Manasseh	マナセ
+tribo	Simeon	シメオン
+tribo	Issachar	イッサカル
+tribo	Zebulun	ゼブルン
+tribo	Naphtali	ナフタリ
+tribo	Reuben	ルベン
+tribo	Gad	ガド
+tribo	Dan	ダン
+relacao	son of	{x}の息子
+relacao	daughter of	{x}の娘
+relacao	brother of	{x}の兄弟
+relacao	sister of	{x}の姉妹
+relacao	half-brother of	{x}の異母兄弟
+relacao	half-sister of	{x}の異母姉妹
+relacao	wife of	{x}の妻
+relacao	husband of	{x}の夫
+relacao	mother of	{x}の母
+relacao	father of	{x}の父
+relacao	founder of	{x}の創始者
+relacao	concubine of	{x}の側女
+relacao	descendant of	{x}の子孫
+nome	Pharaoh	ファラオ
+nome	Asia	アジア
+lugar	in Asia	アジアの
+cargo	judge	士師
+cargo	city	都市
+cargo	gigantic man	巨人
+cargo	Pharaoh	ファラオ
+cargo	festival	祭り
+cargo	governor	総督
+lugar	of Egypt	エジプトの
+nome	Christ	キリスト
+lugar	of the Cushites	クシュ人の
+lugar	of the Arabs	アラブ人の
+lugar	of the Edomites	エドム人の
+lugar	of the Midianites	ミディアン人の
+lugar	of the Syrians	アラム人の
+lugar	of the Gomerians	ゴメル人の
+lugar	of the Ammonites	アンモン人の
+lugar	of the Greeks	ギリシヤ人の
+lugar	of the Ishmaelites	イシュマエル人の
+lugar	of the Moabites	モアブ人の
+lugar	of the Egyptians	エジプト人の
+lugar	of the Philistines	ペリシテ人の
+lugar	of the Hittites	ヘト人の
+lugar	of the Canaanites	カナン人の
+lugar	of the Amalekites	アマレク人の
+lugar	of the Jebusites	エブス人の
+lugar	of the Assyrians	アッシリア人の
+lugar	of the Babylonians	バビロン人の
+lugar	of the Chaldeans	カルデア人の
+lugar	of the Persians	ペルシア人の
+lugar	of the Hebrews	ヘブル人の
+lugar	of the Israelites	イスラエル人の
+cargo	Judge	士師
+nome	Northern Israel	北イスラエル		
+nome	Caesar	皇帝		
+nome	Olives Mount	オリブ山		
+nome	Red Sea	紅海		
+nome	Israel	イスラエル		
+nome	Jehudijah	ビテヤ		
+nome	Machir	マキル		
+nome	Tabor Mount	タボル山		
+nome	Judah	ユダ		
+nome	Rephaim Valley	レファイムの谷		
+nome	Hermon Mount	ヘルモン山		
+nome	Putiel	プティエル		
+nome	Tahpenes	タフペネス		
+nome	Joiada	ヨヤダ		
+nome	Benjamin Gate	ベニヤミンの門		
+nome	Ebal Mount	エバル山		
+nome	Ephraim Gate	エフライムの門		
+nome	Seir Mount	セイル山		
+nome	Asher	アシェル		
+nome	Benjamin	ベニヤミン		
+nome	Egypt	エジプト		
+nome	Persia	ペルシヤ		
+nome	Dan	ダン		
+nome	Ephraim	エフライム		
+nome	Gad	ガド		
+nome	Shechem	シケム		
+nome	Senaah	セナア		
+nome	Levi	レビ		
+nome	Issachar	イッサカル		
+nome	Meshullam	メシュラム		
+nome	Lot	ロト		
+nome	Manasseh	マナセ		
+nome	Naphtali	ナフタリ		
+nome	Reuben	ルベン		
+nome	Madmannah	マドマナ		
+nome	Simeon	シメオン		
+nome	Zebulun	ゼブルン		
+nome	Caiaphas	カヤパ		
+nome	Peter	ペテロ		
+nome	Jashen	ヤシェン		
+nome	Ezekiel	エゼキエル		
+nome	Aven Valley	アベンの谷		
+nome	Beracah Valley	ベラカの谷		
+nome	Millo	ミロ		
+nome	Carmel Mount	カルメル山		
+nome	Elah Valley	エラの谷		
+nome	Beersheba	ベエル・シバ		
+nome	Ephron Mount	エフロン山		
+nome	Esau Mount	エサウ山		
+nome	Eshcol Valley	エシュコルの谷		
+nome	Gilboa Mount	ギルボア山		
+nome	Hebron Valley	ヘブロンの谷		
+nome	Lebanon Mount	レバノン山		
+nome	Lebanon Valley	レバノンの谷		
+nome	Mizpeh Valley	ミツペの谷		
+nome	Moriah Mount	モリヤ山		
+nome	Nebo Mount	ネボ山		
+nome	Paran Mount	パラン山		
+nome	Pisgah	ピスガ		
+nome	Shittim Valley	シッテムの谷		
+nome	Tob	トブ		
+nome	Eder	エデル		
+nome	Zeboim Valley	ツェボイムの谷		
+cargo	huge man	巨人		
+lugar	of the Kingdom of Israel	イスラエル王国の		

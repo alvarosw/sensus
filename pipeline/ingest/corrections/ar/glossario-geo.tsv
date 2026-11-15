@@ -1,0 +1,59 @@
+# Glossário geo em árabe (openbible-geo, por regra; pipeline/sensus/geo_descricao.py). Colunas:
+#   secao      tipo | geometria | voto | fonte
+#   ingles     termo como aparece na descrição da fonte (exato)
+#   portugues  tradução usada na frase (aqui: árabe)
+#   nota       observação para o revisor (opcional)
+#   genero     vazio (ver gramatica-descricoes)
+# geometria: o modelo geo_melhor já diz 'هندسة {geometria}', por isso os valores são substantivos sem artigo.
+secao	ingles	portugues	nota	genero
+tipo	settlement	بلدة
+tipo	region	منطقة
+tipo	mountain	جبل
+tipo	wadi	وادي
+tipo	river	نهر
+tipo	spring	نبع
+tipo	hill	تل
+tipo	island	جزيرة
+tipo	valley	غور
+tipo	body of water	مسطح مائي
+tipo	well	بئر
+tipo	probability center radial	مركز احتمال شعاعي
+tipo	road	طريق
+tipo	mountain range	سلسلة جبال
+tipo	structure	بناء
+tipo	mouth of river	مصب نهر
+tipo	pool	بركة
+tipo	cliff	منحدر صخري
+tipo	cave	كهف
+tipo	field	حقل
+tipo	mountain pass	ممر جبلي
+tipo	mountain ridge	حافة جبلية
+tipo	wall	سور
+tipo	forest	غابة
+tipo	harbor	ميناء
+tipo	garden	حديقة
+tipo	promontory	رأس بحري
+geometria	point	نقطة
+geometria	polygon	مضلع
+geometria	path	مسار
+fonte	modern	حديث
+fonte	ancient	قديم
+voto	confidence_possible	ثقة: ممكن
+voto	confidence_likely	ثقة: مرجّح
+voto	confidence_yes	ثقة: نعم
+voto	confidence_mostlikely	ثقة: الأرجح
+voto	confidence_unlikely	ثقة: مستبعد
+voto	confidence_no	ثقة: لا
+voto	confidence_map	ثقة: خريطة
+voto	authority_usually	سلطة: عادةً
+voto	authority_scholar	سلطة: علماء
+voto	authority_traditional	سلطة: تقليدي
+voto	authority_parallel	سلطة: توازٍ
+voto	authority_preserved	سلطة: الاسم محفوظ
+voto	authority_variant	سلطة: صيغة بديلة
+voto	authority_old	سلطة: قديم
+voto	unknown	مجهول
+voto	uncertain	غير مؤكد
+voto	identified_been	تعريف: كان
+voto	identified_is	تعريف: هو
+voto	identified_adjective	تعريف: صفة

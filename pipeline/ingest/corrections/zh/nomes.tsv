@@ -285,7 +285,7 @@ Aridatha	亚利大他	亚利大他	revisado	media	2	1	1.00	亚大利雅
 Arieh	亚利耶	亚利耶	revisado	media	2	1	1.00	比加辖
 Ariel	亚列	亚列	revisado	media	2	1	1.00	雅立
 Ariel	亚利伊勒	亚利伊勒	revisado	media	2	3	0.67	大卫
-Ariel	甲薛	甲薛	revisado	media	1	2	1.00	比拿雅
+Ariel	甲薛		sem	media	1	2	1.00	比拿雅
 Arisai	亚利代	亚利代	revisado	media	2	1	1.00	亚利赛
 Aristobulus	亚利多布	亚利多布	revisado	media	2	1	1.00	亚比利
 Armageddon	哈米吉多顿	哈米吉多顿	revisado	media	2	1	1.00	希伯来
@@ -477,7 +477,7 @@ Beth-gamul	伯·米恩	伯迦末	revisado	media	3	1	1.00	伯·迦末
 Beth-gilgal	伯·吉甲	伯吉甲	revisado	media	2	1	1.00	亚斯玛弗
 Beth-haccherem	伯·哈基琳	伯哈基琳	revisado	media	3	2	1.00	提哥亚
 Beth-haggan	伯哈干	伯哈干	revisado	media	3	1	1.00	姑珥
-Beth-haram	伯·宁拉	伯宁拉	revisado	media	3	2	1.00	伯·哈兰
+Beth-haram	伯·宁拉	伯亚兰	revisado	media	3	2	1.00	伯·哈兰
 Beth-haran	伯·哈兰	伯哈兰	revisado	media	1	1	1.00	伯·宁拉
 Beth-le-aphrah	伯·亚弗拉	伯亚弗拉	revisado	media	2	1	1.00	迦特
 Beth-lebaoth	伯·利巴勿	伯利巴勿	revisado	media	3	1	1.00	沙鲁险
@@ -558,8 +558,8 @@ Chelluh	基禄	基禄	revisado	media	1	1	1.00	比底雅
 Chelub	基绿	基绿	revisado	media	4	2	1.00	书哈
 Cheluhi	基禄	基禄	revisado	media	1	1	1.00	比底雅
 Chenani	基拿尼	基拿尼	revisado	media	2	1	1.00	布尼
-Chephar-ammoni	俄弗尼	俄弗尼	revisado	media	2	1	1.00	基法·阿摩尼
-Chephar-haammoni	俄弗尼	俄弗尼	revisado	media	1	1	1.00	基法·阿摩尼
+Chephar-ammoni	俄弗尼	基法·阿摩尼	revisado	media	2	1	1.00	基法·阿摩尼
+Chephar-haammoni	俄弗尼	基法·阿摩尼	revisado	media	1	1	1.00	基法·阿摩尼
 Cheran	伊是班	伊是班	revisado	media	2	2	1.00	基兰
 Cherith	基立	基立	revisado	media	3	2	1.00	约旦
 Cherub	亚顿	基路伯	revisado	media	3	3	0.67	特·哈萨
@@ -1116,14 +1116,14 @@ Ishmerai	伊斯利亚	伊施米莱	revisado	media	2	1	1.00	伊施米莱
 Ishod	伊施荷	伊施荷	revisado	media	1	1	1.00	哈摩利吉
 Ishpah	约哈	伊施巴	revisado	media	1	1	1.00	伊施巴
 Ishpan	伊施班	伊施班	revisado	media	2	1	1.00	以利业
-Ishvah	亦施瓦	亦施韦	revisado	media	1	2	1.00	亦施韦
+Ishvah	亦施瓦	亦施瓦	revisado	media	1	2	1.00	亦施韦
 Ismachiah	亚撒细雅	亚撒细雅	revisado	media	2	1	1.00	伊斯玛基雅
 Ismaiah	以实买雅	以实买雅	revisado	media	1	1	1.00	基得拉
 Ispah	约哈	伊施巴	revisado	media	1	1	1.00	伊施巴
 Isshiah	伊示雅	伊示雅	revisado	media	4	5	0.60	米迦
 Isshiah	约以谢	伊示雅	revisado	media	1	1	1.00	耶西亚
 Isshijah	伊示雅	伊示雅	revisado	media	1	1	1.00	哈琳
-Isuah	亦施瓦	亦施韦	revisado	media	1	2	1.00	亦施韦
+Isuah	亦施瓦	亦施瓦	revisado	media	1	2	1.00	亦施韦
 Ithiel	亚古珥	以铁	revisado	media	2	1	1.00	雅基
 Ithiel	以铁	以铁	revisado	media	2	1	1.00	歌赖雅
 Ithlah	伊提拉	伊提拉	sem	media	3	1	1.00	沙拉宾
@@ -1449,7 +1449,7 @@ Luke	路加	路加	revisado	media	2	4	0.75	底马
 Lycaonia	吕高尼	吕高尼	revisado	media	3	2	1.00	特庇
 Lycia	吕迦	吕家	revisado	media	3	1	1.00	每拉
 Lydia	吕底亚	吕底亚	revisado	media	2	4	0.50	罗坍
-Lysanias	亚比利尼	亚比利尼	revisado	media	2	1	1.00	以土利亚
+Lysanias	亚比利尼	吕撒聂	revisado	media	2	1	1.00	以土利亚
 Lysias	吕西亚	吕西亚	revisado	media	1	3	0.67	腓利斯
 Maacath	基述	玛迦	revisado	media	1	1	1.00	玛迦
 Maadai	乌益	玛玳	revisado	media	2	1	1.00	玛玳
@@ -1560,7 +1560,7 @@ Meronoth	米仑	米仑	revisado	media	1	2	0.50	米拉提
 Meroz	米罗斯	米罗斯	revisado	media	3	1	1.00	
 Meshach	亚伯尼歌	米煞	revisado	media	1	18	0.78	沙得拉
 Meshech-Tubal	土巴	米设	revisado	media	2	1	1.00	米设
-Meshillemith	音麦	米书兰	revisado	media	2	2	1.00	亚哈赛
+Meshillemith	音麦	米实利密	revisado	media	2	2	1.00	亚哈赛
 Meshillemoth	哈得莱	米实利末	revisado	media	2	1	1.00	耶希西迦
 Meshobab	米所巴	米所巴	revisado	media	2	1	1.00	约沙
 Meshullemeth	哈鲁斯	米舒利密	revisado	media	2	1	1.00	米舒利密
@@ -1733,7 +1733,7 @@ Orpah	俄珥巴	俄珥巴	revisado	media	2	2	1.00	路得
 Osnappar	亚斯那巴	亚斯那巴	revisado	media	1	1	1.00	幼发拉底
 Othni	俄得尼	俄得尼	revisado	media	2	1	1.00	利法益
 Ozem	阿鲜	阿鲜	revisado	media	4	2	1.00	大卫
-Ozni	亚罗底	书尼	revisado	media	1	2	0.50	洗非芸
+Ozni	亚罗底	阿斯尼	revisado	media	1	2	0.50	洗非芸
 Paarai	希斯莱	帕莱	revisado	media	2	1	1.00	帕莱
 Paddan	巴旦	巴旦	revisado	media	1	1	1.00	以法他
 Paddan	巴旦·亚兰	巴旦亚兰	revisado	media	1	16	0.62	雅各
@@ -2430,7 +2430,7 @@ Ahiman	亚希幔	亚希幔	auto	alta	4	4	1.00	挞买
 Ahinoam	亚希暖	亚希暖	auto	alta	4	7	1.00	尼珥
 Ahio	亚希约	亚希约	auto	alta	6	6	1.00	亚比拿达
 Ahira	亚希拉	亚希拉	auto	alta	2	5	1.00	以南
-Ahiram	亚实别	亚实别	auto	alta	2	3	1.00	亚希兰
+Ahiram	亚实别	亚希兰	revisado	alta	2	3	1.00	亚希兰
 Ahisamach	亚希撒抹	亚希撒抹	auto	alta	2	3	1.00	亚何利亚伯
 Ahithophel	亚希多弗	亚希多弗	auto	alta	2	17	1.00	押沙龙
 Ahitub	亚希突	亚希突	auto	alta	6	13	1.00	亚希米勒
