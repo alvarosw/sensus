@@ -1,0 +1,43 @@
+# Gramática das descrições em árabe (TIPNR e openbible-geo por regra; pipeline/sensus/descricoes_pt.py).
+# Colunas: chave, modelo. Campos {nome} são trocados pelo valor; {pont.;}, {pont..}, {pont.,} são os sinais da língua.
+# Sem variante .f: no árabe os complementos são preposições invariáveis (من، قرب، في), e o cargo não concorda com
+# elas. A coluna genero do glossário (m/f) fica preenchida nos cargos, mas nenhum modelo a usa ainda.
+# Sem tashkil (o texto sai sem vogais, como no resto do app). Pontuação: ؛ fecha o cabeçalho, ، separa, e o ponto final
+# continua '.'. Conectores e 'original' têm espaço nas pontas, de propósito.
+# A citação é impessoal ('يُسمّى'), porque a forma verbal de 'chamado' concordaria com o gênero da pessoa.
+# Nome citado sem forma árabe faz a descrição falhar (nome_ingles_permitido = não): a escrita não latina não mistura inglês.
+chave	modelo
+mencao_primeira	أول ذكر في {ref}
+mencao_unica	يظهر فقط في {ref}
+frase_cargo_comp	{cargo} {comp}
+frase_tempo_com_comp	{frase}{pont.,} {tempo}
+frase_tempo_sem_comp	{frase} {tempo}
+cabecalho	{frase}{pont.;} {mencao}{pont..}
+comp_territorio_tribo	في أرض سبط {tribo}{perto}
+comp_perto_sufixo	، قرب {nome}
+comp_tribo	من سبط {tribo}
+comp_cidade	من مدينة {nome}
+comp_perto	قرب {nome}
+comp_de	من {nome}
+comp_em	في {nome}
+citacao	يُسمّى {lista}
+citacao_apenas	لا يُسمّى إلا {lista}
+original	 ({original})
+conector_e	 و 
+conector_ou	 أو 
+lista_sep	، 
+pont.;	؛
+pont..	.
+pont.,	،
+maiuscula_inicial	não
+nome_ingles_permitido	não
+flexao_relacao	nenhuma
+pos	nenhum
+geo_melhor	أفضل تعريف حديث: {nome} ({tipo}، هندسة {geometria})؛ درجة الارتباط {score}/1000.
+geo_melhor_sem_nome	أفضل تعريف حديث ({tipo}، هندسة {geometria})؛ درجة الارتباط {score}/1000.
+geo_identificacao	التعريف: «{texto}» ({fonte}).
+geo_votos	الأصوات: {votos}.
+geo_voto	{voto} {n}
+geo_tempo	درجة مرجحة بالزمن {tempo}/1000.
+geo_outros	عدد {n} من المواقع الحديثة المرشحة الأخرى في مجموعة البيانات.
+geo_omitir_ingles	sim
