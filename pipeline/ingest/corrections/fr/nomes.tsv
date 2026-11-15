@@ -16,6 +16,7 @@ nome_en	candidato	nome_fr	origem	confianca	entidades	versos	cobertura	alternativ
 Abel	Beth-Schémesch	Abel	revisado	baixa	1	1	1.00	Éternel
 Abib	Jamais	Abib	revisado	baixa	1	6	0.17	Au
 Adino	Tachkemonite	Adino	revisado	baixa	2	1	1.00	David
+Adriatic Sea			auto	baixa	2	1	0.00	
 Adriatic Sea	mer {n} Adriatic	Mer Adriatique	revisado	baixa	2	1	0.00	
 Ahlab	Aczib	Achlal	revisado	baixa	3	2	1.00	Achlal
 Al-taschith	Aie	Al-Taschith	revisado	baixa	1	4	0.25	Jusqu
@@ -49,6 +50,7 @@ Ayyah	Naaran	Ajja	revisado	baixa	2	1	1.00	Gaza
 Bajith	Médeba	Médeba	sem	baixa	1	1	1.00	Nebo
 Bamah	Et	Bama	revisado	baixa	2	1	1.00	Je
 Bear	Pléiades	Ourse	revisado	baixa	1	2	0.50	Ourse
+Beautiful Gate			auto	baixa	3	2	0.00	
 Beautiful Gate	porte de {n} Beautiful	Porte la Belle	revisado	baixa	3	2	0.00	
 Behemoth	Voici	Béhémoth	revisado	baixa	1	1	1.00	Il
 Ben-hur	Hur	Ben-Hur	revisado	baixa	1	1	1.00	Éphraïm
@@ -58,15 +60,20 @@ Beth-eked	Et	Et	sem	baixa	3	2	0.50	Saisissez-les
 Beth-haggan	Jibleam	Jibleam	sem	baixa	3	1	1.00	Et
 Beth-merhak	Le	Le	sem	baixa	1	1	1.00	
 Bether	Et	Béther	revisado	baixa	1	1	1.00	Reviens
+Broad Wall			auto	baixa	3	2	0.00	
 Broad Wall	muraille de {n} Broad	Muraille large	revisado	baixa	3	2	0.00	
 Brook Eshcol	torrent de Eschcol	Torrent d’Eschcol	revisado	baixa	1	4	0.00	
+Brook of the Arabah			auto	baixa	2	1	0.00	
 Brook of the Arabah	torrent de {n} Arabah	Torrent du désert	revisado	baixa	2	1	0.00	
+Brook of the Willows			auto	baixa	2	1	0.00	
 Brook of the Willows	torrent de {n} Willows	Torrent des saules	revisado	baixa	2	1	0.00	
 Buzites	Buz	Buzites	revisado	baixa	1	2	1.00	Barakeel
 Cherethites	Kéréthiens	Kéréthiens	revisado	baixa	2	12	1.00	Philistins
 City of Destruction	ville de Ville de la destruction	Ville de la destruction	revisado	baixa	1	1	0.00	
+City of Palms			auto	baixa	2	4	0.00	
 City of Palms	ville de {n} Palms	Ville des palmiers	revisado	baixa	2	4	0.00	
 City of Salt	ville de Ir-Hammélach	Ir-Hammélach	revisado	baixa	2	1	0.00	
+City of the Lord			auto	baixa	1	2	0.00	
 City of the Lord	ville de {n} Lord	Ville de l’Éternel	revisado	baixa	1	2	0.00	
 Corban	Ce	Corban	revisado	baixa	1	2	0.50	Mais
 Cush	Dieu	Cusch	revisado	baixa	1	1	1.00	Sauve-moi
@@ -76,7 +83,9 @@ Destiny	Meni	Meni	sem	baixa	1	1	1.00	Et
 Destruction	Éternel	Ville de la destruction	revisado	baixa	1	1	1.00	En
 Dinaites	Din	Dinaïtes	revisado	baixa	1	1	1.00	Déha
 Dionysius	Denys	Denys	revisado	baixa	2	1	1.00	Damaris
+Dragon Spring			auto	baixa	3	1	0.00	
 Dragon Spring	source de {n} Dragon	Source du dragon	revisado	baixa	3	1	0.00	
+Dung Gate			auto	baixa	3	4	0.00	
 Dung Gate	porte de {n} Dung	Porte du fumier	revisado	baixa	3	4	0.00	
 East Square	place de Orient	Place orientale	revisado	baixa	1	1	0.00	
 Ecbatana	Achmetha	Achmetha	revisado	baixa	3	1	1.00	Et
@@ -89,13 +98,16 @@ Eznites	Tachkemonite	Tachkemonite	sem	baixa	1	1	1.00	Joscheb-Basschébeth
 Field	Jérusalem	Champ du foulon	revisado	baixa	1	3	0.67	Ils
 Forest	Et	Et	sem	baixa	1	1	1.00	Les
 Fortune	Éternel	Éternel	sem	baixa	1	1	1.00	Meni
+Fountain Gate			auto	baixa	2	3	0.00	
 Fountain Gate	porte de {n} Fountain	Porte de la source	revisado	baixa	2	3	0.00	
 Freedmen	Cyrénéens	Affranchis	revisado	baixa	1	1	1.00	Affranchis
 Gadara	Gadaréniens	Gadaréniens	sem	baixa	1	1	1.00	Lorsqu
 Galilee	Guilgal	Galilée	revisado	baixa	1	1	1.00	Gojim
 Garmite	Garmien	Garmien	revisado	baixa	1	1	1.00	Maacathien
 Garmites	Garmien	Garmiens	revisado	baixa	1	1	1.00	Maacathien
+Gate of the Fountain			auto	baixa	1	3	0.00	
 Gate of the Fountain	porte de {n} Fountain	Porte de la source	revisado	baixa	1	3	0.00	
+Gate of the Valley			auto	baixa	1	2	0.00	
 Gate of the Valley	porte de {n} Valley	Porte de la vallée	revisado	baixa	1	2	0.00	
 Ge-harashim	Seraja	Vallée des ouvriers	revisado	baixa	2	2	0.50	Meonothaï
 Gederah	C	Guedéra	revisado	baixa	1	1	1.00	
@@ -109,12 +121,16 @@ Greece	Perse	Grèce	revisado	baixa	2	7	0.29	Contre
 Gulloth-mayim	Fais-moi	Fais-moi	sem	baixa	1	2	1.00	Elle
 Hachmonites	Tachkemonite	Hacmonites	revisado	baixa	1	2	0.50	Hacmoni
 Hakkephirim	Guéschem	Guéschem	sem	baixa	2	1	1.00	Alors
+Hall of Judgment			auto	baixa	2	1	0.00	
 Hall of Judgment	portique de {n} Judgment	Portique du jugement	revisado	baixa	2	1	0.00	
+Hall of Pillars			auto	baixa	2	1	0.00	
 Hall of Pillars	portique de {n} Pillars	Portique des colonnes	revisado	baixa	2	1	0.00	
+Hall of the Throne			auto	baixa	2	1	0.00	
 Hall of the Throne	portique de {n} Throne	Portique du trône	revisado	baixa	2	1	0.00	
 Hamathite	Hamathiens	Hamathien	revisado	baixa	1	2	1.00	Arvadiens
 Hamathites	Hamathiens	Hamathiens	revisado	baixa	1	2	1.00	Arvadiens
 Hammelech	Abdeel	Abdeel	sem	baixa	2	2	0.50	Jerachmeel
+Hamon-gog Valley			auto	baixa	1	2	0.00	
 Hamon-gog Valley	vallée de {n} Hamon-gog	Vallée de Hamon-Gog	revisado	baixa	1	2	0.00	
 Hararites	Harar	Hararites	revisado	baixa	1	4	1.00	Arar
 Harmon	Éternel	Harmon	revisado	baixa	3	1	1.00	Vous
@@ -127,14 +143,17 @@ Hermes	Mercure	Mercure	revisado	baixa	1	1	1.00	Jupiter
 Herodian	Dieu	Dieu	sem	baixa	1	3	0.33	Ils
 Higgaion	Jeu	Higgaïon	revisado	baixa	1	1	1.00	Il
 Highway	Laisse-nous	Laisse-nous	sem	baixa	1	2	0.50	Laisse-moi
+Hill Mizar			auto	baixa	1	1	0.00	
 Hill Mizar	colline de {n} Mizar	Montagne de Mitsear	revisado	baixa	1	1	0.00	
 Hivite	Héviens	Hévien	revisado	baixa	1	9	0.78	Hévien
 Hivites	Héviens	Héviens	revisado	baixa	1	25	0.92	Siniens
 Horesh	Les	Les	sem	baixa	3	4	0.25	Ziphiens
 Horonaim	Or	Horonaïm	revisado	baixa	1	1	1.00	Absalom
 Horonites	Horonite	Horonites	revisado	baixa	1	3	1.00	Tobija
+Horse Gate			auto	baixa	3	3	0.00	
 Horse Gate	porte de {n} Horse	Porte des chevaux	revisado	baixa	3	3	0.00	
 Hoshaiah	Hosée	Hosée	revisado	baixa	2	1	1.00	Derrière
+House of the Forest			auto	baixa	1	6	0.00	
 House of the Forest	maison de {n} Forest	Maison de la forêt du Liban	revisado	baixa	1	6	0.00	
 Huram	Je	Huram	revisado	baixa	1	1	1.00	
 Hushathites	Huschatite	Huschatites	revisado	baixa	1	5	0.80	Zérachites
@@ -171,6 +190,7 @@ Kue	C	Kué	revisado	baixa	3	2	1.00	Égypte
 Leb-kamai	Chaldée	Leb-Kamaï	revisado	baixa	2	1	1.00	Ainsi
 Lehem	Jaschubi-Léchem	Jaschubi-Léchem	revisado	baixa	2	1	1.00	Jokim
 Leviathan	Prendras-tu	Léviathan	revisado	baixa	1	5	0.20	Saisiras-tu
+Lower Pool			auto	baixa	1	1	0.00	
 Lower Pool	étang de {n} Lower	Étang inférieur	revisado	baixa	1	1	0.00	
 Lucifer	Te	Te	sem	baixa	2	1	1.00	Astre
 Mahalab	Aczib	Aczib	sem	baixa	2	1	1.00	Rama
@@ -188,6 +208,7 @@ Meronothites	Méronothite	Méronothites	revisado	baixa	1	2	0.50	Méronoth
 Metheg-ammah	Après	Méthég-Amma	revisado	baixa	2	1	1.00	David
 Meunites	Maonites	Maonites	sem	baixa	1	3	1.00	Ces
 Mezobaites	Jaasiel-Metsobaja	Metsobaïtes	revisado	baixa	1	1	1.00	Obed
+Middle Gate			auto	baixa	1	1	0.00	
 Middle Gate	porte de {n} Middle	Porte du milieu	revisado	baixa	1	1	0.00	
 Miktam	Car	Car	sem	baixa	1	6	0.50	Jusqu
 Miriam	Marie	Marie	revisado	baixa	2	12	1.00	Ithamar
@@ -196,6 +217,7 @@ Mithnites	Mithni	Mithnites	revisado	baixa	1	1	1.00	Josaphat
 Mortar	Macthesch	Macthesch	sem	baixa	3	1	1.00	Car
 Mount Bashan	mont Basan	Montagne de Basan	revisado	baixa	1	1	0.00	
 Mount Heres	mont Hérès	Har-Hérès	revisado	baixa	2	1	0.00	
+Mount of Olives			auto	baixa	3	18	0.00	
 Mount of Olives	montagne de {n} Olives	Montagne des oliviers	revisado	baixa	3	18	0.00	
 Muth-labben	Éternel	Éternel	sem	baixa	1	1	1.00	Je
 Naamathites	Naama	Naamathites	revisado	baixa	1	4	1.00	Trois
@@ -207,13 +229,18 @@ Nehelamites	Néchélamite	Néchélamite	revisado	baixa	1	3	1.00	Schemaeja
 Nephilim	Anak	Anak	sem	baixa	1	2	0.50	Les
 Nero	César	Néron	revisado	baixa	1	2	0.50	Seigneur
 Netaim	C	Nethaïm	revisado	baixa	3	1	1.00	
+New Gate			auto	baixa	3	2	0.00	
 New Gate	porte de {n} New	Porte neuve	revisado	baixa	3	2	0.00	
 Nohah	Benjamin	Nocha	revisado	baixa	1	1	1.00	Guibea
 Nohah	Manachath	Nocha	revisado	baixa	1	1	1.00	Guéba
 North	Un	Un	sem	baixa	1	10	0.10	Et
+North Gate			auto	baixa	1	1	0.00	
 North Gate	porte de {n} North	Porte du nord	revisado	baixa	1	1	0.00	
+Old Gate			auto	baixa	1	1	0.00	
 Old Gate	porte de {n} Old	Vieille porte	revisado	baixa	1	1	0.00	
+Old Pool			auto	baixa	1	1	0.00	
 Old Pool	étang de {n} Old	Ancien étang	revisado	baixa	1	1	0.00	
+Olives Mount			auto	baixa	1	14	0.00	
 Olives Mount	mont {n} Olives	Montagne des oliviers	revisado	baixa	1	14	0.00	
 Olivet	Bethphagé	Montagne des oliviers	revisado	baixa	1	3	0.33	Jésus
 Omega	Smyrne	Oméga	revisado	baixa	1	4	0.25	Pergame
@@ -223,6 +250,7 @@ Pekod	Exécute	Pekod	revisado	baixa	2	2	0.50	Poursuis
 Pelethites	Péléthiens	Péléthiens	revisado	baixa	1	7	1.00	Kéréthiens
 Pelonites	Pelonite	Pelonites	revisado	baixa	1	4	0.25	Hélets
 Pelusium	Sin	Sin	revisado	baixa	3	2	1.00	Égypte
+People's Gate			auto	baixa	2	1	0.00	
 People's Gate	porte de {n} People	Porte des enfants du peuple	revisado	baixa	2	1	0.00	
 Perizzites	Phéréziens	Phéréziens	revisado	baixa	1	23	0.91	Phérésiens
 Pillars	Il	Il	sem	baixa	1	1	1.00	
@@ -231,7 +259,9 @@ Plain	Jourdain	Jourdain	sem	baixa	1	2	0.50	Tsoar
 Plain of Aven	plaine de Aven	Vallée d’Aven	revisado	baixa	1	1	0.00	
 Pool	Col-Hozé	Col-Hozé	sem	baixa	1	1	1.00	Il
 Pool	Je	Je	sem	baixa	1	1	1.00	
+Potsherd Gate			auto	baixa	2	1	0.00	
 Potsherd Gate	porte de {n} Potsherd	Porte de la poterie	revisado	baixa	2	1	0.00	
+Preparation Festival			auto	baixa	1	6	0.00	
 Preparation Festival	fête de {n} Preparation	Préparation	revisado	baixa	1	6	0.00	
 Puteoli	Pouzzoles	Pouzzoles	revisado	baixa	3	1	1.00	Reggio
 Puthites	Puthiens	Puthiens	revisado	baixa	1	1	1.00	Schumathiens
@@ -247,6 +277,7 @@ River	Copie	Copie	sem	baixa	1	16	0.06	Samarie
 River	Rehoboth	Rehoboth	sem	baixa	1	2	1.00	Samla
 River	Égypte	Égypte	sem	baixa	1	1	1.00	Pethor
 Rock	Maon	Maon	sem	baixa	1	4	1.00	Carmel
+Rock of Escape			auto	baixa	2	1	0.00	
 Rock of Escape	rocher de {n} Escape	Séla-Hammachlekoth	revisado	baixa	2	1	0.00	
 Rocks	Saül	Saül	sem	baixa	1	1	1.00	Israël
 Sabbath	Gardant	Sabbat	revisado	baixa	1	151	0.01	Satan
@@ -255,6 +286,7 @@ Sahar	A	A	sem	baixa	3	1	1.00	Damas
 Salome	Hérode	Hérode	sem	baixa	1	1	1.00	Or
 Salt	Nibschan	Ir-Hammélach	revisado	baixa	1	1	1.00	Ir-Hammélach
 Salt Valley	vallée de Ir-Hammélach	Vallée du sel	revisado	baixa	1	5	0.00	
+Sea of the Plain			auto	baixa	1	2	0.00	
 Sea of the Plain	mer de {n} Plain	Mer de la plaine	revisado	baixa	1	2	0.00	
 Shamed	Mischeam	Schémer	revisado	baixa	1	1	1.00	Schémer
 Shecaniah	Zacharie	Schecania	revisado	baixa	1	1	1.00	Pareosch
@@ -282,6 +314,7 @@ Skull	Lorsqu	Crâne	revisado	baixa	1	1	1.00	Crâne
 South	Au	Au	sem	baixa	1	12	0.17	Un
 South	Salomon	Salomon	sem	baixa	2	3	0.67	Éternel
 South	Éternel	Éternel	sem	baixa	1	1	1.00	Jérusalem
+South Gate			auto	baixa	1	1	0.00	
 South Gate	porte de {n} South	Porte du midi	revisado	baixa	1	1	0.00	
 Stoic	Que	Stoïciens	revisado	baixa	1	1	1.00	Il
 Straight	Saul	Droite	revisado	baixa	1	1	1.00	Seigneur
@@ -300,7 +333,9 @@ Tower	Méa	Méa	sem	baixa	1	2	1.00	Éphraïm
 Tower	Pachath-Moab	Pachath-Moab	sem	baixa	1	2	0.50	Passant
 Tower	Tout	Tout	sem	baixa	1	4	0.25	Éternel
 Tower of Eder	tour de Éder	Tour du troupeau	revisado	baixa	1	2	0.00	
+Tower of the Ovens			auto	baixa	2	2	0.00	
 Tower of the Ovens	tour de {n} Ovens	Tour des fours	revisado	baixa	2	2	0.00	
+Travelers Valley			auto	baixa	1	1	0.00	
 Travelers Valley	vallée de {n} Travelers	Vallée des voyageurs	revisado	baixa	1	1	0.00	
 Tribe of Judah	tribu de Juda	Tribu de Juda	revisado	baixa	1	1	0.00	
 Trogyllium	Milet	Trogylle	revisado	baixa	3	1	1.00	Chios
@@ -317,19 +352,27 @@ Unnamed#6	Éliud	Éliud	sem	baixa	1	1	1.00	Matthan
 Unnamed#7	Éliud	Éliud	sem	baixa	1	1	1.00	Matthan
 Unnamed#8	Éliud	Éliud	sem	baixa	1	1	1.00	Matthan
 Unnamed#9	Éliud	Éliud	sem	baixa	1	1	1.00	Matthan
+Upper Pool			auto	baixa	1	3	0.00	
 Upper Pool	étang de {n} Upper	Étang supérieur	revisado	baixa	1	3	0.00	
 Urim	Sur	Urim	revisado	baixa	1	8	0.12	Meriba
+Valley Gate			auto	baixa	2	4	0.00	
 Valley Gate	porte de {n} Valley	Porte de la vallée	revisado	baixa	2	4	0.00	
 Valley of Aven	vallée de Aven	Vallée d’Aven	revisado	baixa	1	1	0.00	
+Valley of Decision			auto	baixa	1	1	0.00	
 Valley of Decision	vallée de {n} Decision	Vallée du jugement	revisado	baixa	1	1	0.00	
 Valley of Elah	vallée de Éla	Vallée d’Éla	revisado	baixa	2	3	0.00	
+Valley of Hamon-gog			auto	baixa	1	2	0.00	
 Valley of Hamon-gog	vallée de {n} Hamon-gog	Vallée de Hamon-Gog	revisado	baixa	1	2	0.00	
+Valley of Hamongog			auto	baixa	1	2	0.00	
 Valley of Hamongog	vallée de {n} Hamongog	Vallée de Hamon-Gog	revisado	baixa	1	2	0.00	
 Valley of Salt	vallée de Ir-Hammélach	Vallée du sel	revisado	baixa	2	5	0.00	
 Valley of the Arnon	vallée de Arnon	Torrent de l’Arnon	revisado	baixa	1	11	0.00	
+Valley of the Passengers			auto	baixa	1	1	0.00	
 Valley of the Passengers	vallée de {n} Passengers	Vallée des voyageurs	revisado	baixa	1	1	0.00	
+Way of Holiness			auto	baixa	3	1	0.00	
 Way of Holiness	chemin de {n} Holiness	Voie sainte	revisado	baixa	3	1	0.00	
 Weeks	Éphèse	Fête des semaines	revisado	baixa	1	8	0.25	Pentecôte
+West Gate			auto	baixa	1	1	0.00	
 West Gate	porte de {n} West	Porte de Schalléketh	revisado	baixa	1	1	0.00	
 Willows	C	C	sem	baixa	1	1	1.00	Et
 Zealot	Iscariot	Zélote	revisado	baixa	1	2	0.50	Alphée
