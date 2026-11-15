@@ -104,6 +104,12 @@ class CandidatosTest(unittest.TestCase):
         # urdoucv: ؔ marca o nome no texto (AT: Adão, Éden). A palavra sem marca fica fora; a saída tira a marca.
         self.assertEqual(PERFIS["ur"].candidatos("آدمؔ اور عدنؔ کی زمین"), {"آدم", "عدن"})
 
+    def test_bengali_danda_fora_do_nome(self):
+        # benirv usa ৷ (U+09F7) como danda: não pode colar no nome. AT: Esdras 10:43 (Uri); NT: Mateus 1:16 (José).
+        self.assertIn("ঊরি", PERFIS["bn"].candidatos("সবিনা ও ঊরি৷"))
+        self.assertNotIn("ঊরি৷", PERFIS["bn"].candidatos("সবিনা ও ঊরি৷"))
+        self.assertEqual({c for c in PERFIS["bn"].candidatos("যাকোবের ছেলে যোষেফ৷") if "৷" in c}, set())
+
     def test_zh_so_nomes_marcados(self):
         # zh: o texto não entra; os candidatos vêm dos \pn (ver ebible.nomes_marcados). Sem marcação, nada.
         self.assertEqual(ZH.candidatos("以色列人"), set())
