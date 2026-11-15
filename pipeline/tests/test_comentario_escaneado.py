@@ -143,5 +143,39 @@ class Sequencia(unittest.TestCase):
         self.assertIn((2, 1), caps)
 
 
+# Rm 1:16 (Haldane): o bloco começa com o próprio versículo (sai), e o comentário vem depois.
+HALDANE_RM1 = """\
+CHAPTER    I.— PART    I.
+ROMANS  i.  1-15.
+
+Ver.  15.—  So,  as  much  as  is  in  me,  I  am  ready  to  preach  the  Gospel  to  you.
+
+Ver.  16.—  For  I  am  not  ashamed  of  the  Gospel  of  Chr'ist ;  for  it  is  the  power  of
+God  unto  salvation  to  every  one  that  believeth  ;  to  the  Jew  first,  and  also  to  the
+Greek.
+
+I  am  not  ashamed. — Paul  here  follows  up  what  he  had  just  said  of  his
+readiness  to  preach  the  Gospel  at  Rome,  by  declaring  that  he  was  not
+ashamed  of  it.  This  would  also  convey  a  caution  to  those  whom  he
+addressed  against  giving  way  to  a  strong  temptation.
+"""
+
+
+@unittest.skipUnless(M is not None and PRONTO, "precisa do pysword e do dicionário de /usr/share/dict")
+class HaldaneRomanos(unittest.TestCase):
+    def test_bloco_do_versiculo_sai_a_escritura_e_fica_o_comentario(self):
+        pares, _ = _comentarios(HALDANE_RM1, "haldane-romans")
+        por_verso = {(c, a): (b, ps) for c, a, b, ps in pares}
+        self.assertIn((1, 16), por_verso)
+        self.assertIn((1, 15), por_verso)
+        ps = M.junta_paragrafos(por_verso[(1, 16)][1])
+        if len(ps) > 1 and M.CONFIGS["haldane-romans"].sai_primeiro:
+            ps = ps[1:]
+        texto = " ".join(ps)
+        self.assertTrue(texto.startswith("I am not ashamed."), texto[:60])
+        self.assertNotIn("For I am not ashamed", texto)
+        self.assertEqual(por_verso[(1, 16)][0], 16)
+
+
 if __name__ == "__main__":
     unittest.main()

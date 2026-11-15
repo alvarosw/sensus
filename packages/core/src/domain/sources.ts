@@ -128,6 +128,7 @@ export const SOURCES: Readonly<Record<string, SourceInfo>> = {
   'calvin-institutes': { short: 'Institutas', commentator: 'João Calvino · Institutas', role: 'commentary', lang: 'en' },
   // Comentários escaneados, versículo a versículo (pipeline/ingest/comentario_escaneado.py; archive.org, NOT_IN_COPYRIGHT).
   'broadus-matthew': { short: 'Broadus', commentator: 'John A. Broadus', role: 'commentary', lang: 'en' },
+  'haldane-romans': { short: 'Haldane', commentator: 'Robert Haldane', role: 'commentary', lang: 'en' },
 };
 
 /** Ordem de preferência das fontes de lugares (menor = melhor) para escolher a identificação moderna. */
