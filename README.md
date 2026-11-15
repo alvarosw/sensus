@@ -13,7 +13,8 @@ estudante possa auditar tudo.
 - **Fontes primeiro.** Texto, léxico, comentários e dicionários vêm de fontes registradas, cada uma
   com licença e atribuição (ver [DATA_LICENSES.md](DATA_LICENSES.md)).
 - **A IA resume e responde, com citação.** Toda afirmação gerada aponta para a fonte que a sustenta.
-- **Nada gerado por IA é armazenado.**
+- **Nada gerado por IA em tempo de uso é armazenado.** O que foi preparado com IA no pipeline (traduções de
+  nomes, títulos e descrições) entra revisado, versionado e declarado na fonte.
 - **Cada pessoa usa a própria conta.** O app não tem servidor próprio: o usuário informa a própria chave
   de API ou entra com a própria conta do ChatGPT.
 - **Transparência de dados.** Licença, origem e atribuição de cada fonte são registradas e exibidas.

@@ -4,6 +4,11 @@ Pendências registradas durante o desenvolvimento. Prioridade: **P1** (próximo)
 
 ## Dados
 
+- **P3 — Hodge, Commentary on Romans (archive.org): pendente.** O grego do scan vira símbolos; 86% dos parágrafos
+  saem por lixo de OCR. Precisa de outro scan ou de limpeza do grego. Configuração em `comentario_escaneado.py`.
+- **P3 — Prosa das descrições (Easton) nas línguas novas.** Adiada: ~425 mil caracteres por língua; cai na
+  tradução automática (só alguns textos em es e fr).
+
 - **Feito — Tamanho do banco.** `token` e `verse_text` ficam em tabelas compactas
   (`pipeline/schema_physical.sql`): `cite_id` derivado (VIEW), `source_id` como inteiro, strings
   repetidas (strong, morfologia, glosas, edições) em `dict_str`. `resolveCite` busca `txt:`/`tok:`
@@ -49,6 +54,13 @@ Pendências registradas durante o desenvolvimento. Prioridade: **P1** (próximo)
 - **P3 — Modelos com raciocínio** gastam tokens antes de responder; limites em `SUMMARY_MAX_TOKENS`.
 
 ## App
+
+- **P2 — Ir para referência em inglês abre o texto errado.** Com o app em English, "Go to…" e `Php 2:6` mostram o
+  título "Philippians 2" com o texto de 1 Reis 14; `Ph 2:6` não é reconhecido. Pela folha de livros abre certo.
+  (Teste no emulador da fase 1 de tradução, 2026-11-14.)
+- **P3 — Remover o modelo de tradução não apaga o modelo.** Depois de "Remover modelo", o download em modo avião
+  "funciona" e o texto sai traduzido offline (o ML Kit mantém o par ou `download` aceita o modelo presente).
+- **P3 — Chip de palavra no chat sem glosa.** O chip anexado mostra só o grego/hebraico.
 
 - **P1 — Rodar em dispositivo/emulador** (ainda não testado fora do `expo export`).
 - **P2 — `importDatabaseFromAssetAsync`** é marcado como API de teste no expo-sqlite.
