@@ -134,9 +134,12 @@ export function useCuriosityFeed(range: Range, unitRange: Range | null, unitPane
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open, provider, key, context, rich, status, range.start, range.end, unitRange]);
 
-  // Fechar a folha cancela a geração em curso (ao reabrir, recomeça).
+  // Fechar a folha cancela a geração em curso (ao reabrir, recomeça). Um erro (rede, provedor) também volta a
+  // idle ao fechar: ao reabrir, a unidade tenta de novo.
   useEffect(() => {
-    if (!open && key) cancelCuriosity(key);
+    if (open || !key) return;
+    cancelCuriosity(key);
+    if (useStudy.getState().curiosities[key]?.status === 'error') dispatch(key, { type: 'retry' });
   }, [open, key]);
 
   // Desmontar a folha cancela tudo.

@@ -58,6 +58,25 @@ describe('curiosityTransition', () => {
     expect(curiosityTransition(shown, { type: 'cancel' })).toBe(shown);
   });
 
+  it('retry volta só de error para idle (erro transitório não trava a unidade)', () => {
+    const failed = curiosityTransition(curiosityTransition(undefined, { type: 'start' }), { type: 'fail', reason: 'rede' });
+    expect(curiosityTransition(failed, { type: 'retry' })).toEqual(EMPTY_CURIOSITY);
+    expect(curiosityTransition(failed, { type: 'start' })).toBe(failed);
+    const running = curiosityTransition(undefined, { type: 'start' });
+    expect(curiosityTransition(running, { type: 'retry' })).toBe(running);
+    const shown = { status: 'shown' as const, candidate: CAND, reason: '' };
+    expect(curiosityTransition(shown, { type: 'retry' })).toBe(shown);
+    const hidden = { status: 'hidden' as const, candidate: null, reason: '@nenhuma' };
+    expect(curiosityTransition(hidden, { type: 'retry' })).toBe(hidden);
+  });
+
+  it('depois do retry a unidade roda de novo até o fim', () => {
+    let e = curiosityTransition(curiosityTransition(undefined, { type: 'start' }), { type: 'fail', reason: 'rede' });
+    e = curiosityTransition(e, { type: 'retry' });
+    e = curiosityTransition(curiosityTransition(e, { type: 'start' }), { type: 'hide', reason: '@nenhuma' });
+    expect(e.status).toBe('hidden');
+  });
+
   it('shown e hidden são finais: start e cancel não mexem', () => {
     const hidden = { status: 'hidden' as const, candidate: null, reason: 'x' };
     expect(curiosityTransition(hidden, { type: 'start' })).toBe(hidden);

@@ -21,13 +21,15 @@ export type CuriosityEvent =
   | { type: 'show'; reason: string }
   | { type: 'hide'; reason: string }
   | { type: 'fail'; reason: string }
-  | { type: 'cancel' };
+  | { type: 'cancel' }
+  | { type: 'retry' };
 
 export const EMPTY_CURIOSITY: CuriosityEntry = { status: 'idle', candidate: null, reason: '' };
 
 /**
  * Transição pura da curiosidade de uma unidade. Só 'running' avança; 'shown' e 'hidden' são finais na sessão (não
- * roda de novo); 'error' também fica quieto. 'cancel' (folha fechada, desmontagem) volta a 'idle' para recomeçar.
+ * roda de novo); 'error' fica quieto até 'retry' (folha fechada), que volta a 'idle' para tentar de novo.
+ * 'cancel' (folha fechada, desmontagem) volta a 'idle' para recomeçar.
  */
 export function curiosityTransition(cur: CuriosityEntry | undefined, ev: CuriosityEvent): CuriosityEntry {
   const e = cur ?? EMPTY_CURIOSITY;
@@ -44,6 +46,8 @@ export function curiosityTransition(cur: CuriosityEntry | undefined, ev: Curiosi
       return e.status === 'running' ? { status: 'error', candidate: null, reason: ev.reason } : e;
     case 'cancel':
       return e.status === 'running' ? { ...EMPTY_CURIOSITY } : e;
+    case 'retry':
+      return e.status === 'error' ? { ...EMPTY_CURIOSITY } : e;
   }
 }
 

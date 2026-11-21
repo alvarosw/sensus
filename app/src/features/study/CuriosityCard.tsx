@@ -1,9 +1,9 @@
 // Cartão "Curiosidade do trecho" na folha: aparece só com uma curiosidade aprovada (ver useCuriosity.ts). Recolhido por
 // padrão: o gancho, "Perguntar sobre isto", "Ver fontes" e "Ver por quê", que mostra as três frases (na época, hoje,
-// o que muda) com as citações tocáveis. É filho direto da rolagem da folha (SheetBody), entre o espaçador do trilho e
-// a Visão geral; a altura vai para a folha, que a usa para a âncora de rolagem.
+// o que muda) com as citações tocáveis. É uma parte da Visão geral (lenses/Visao.tsx), logo depois da abertura: a
+// folha mede a parte, como as dos passos, e a rolagem não sai do lugar quando ele aparece.
 import { useEffect, useState } from 'react';
-import { View, type LayoutChangeEvent } from 'react-native';
+import { View } from 'react-native';
 import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import { ActButton, LinkButton, Txt, motion, radius, space, useTheme } from '@/design';
 import { RichBlocks } from '@/features/rich';
@@ -15,14 +15,14 @@ import { STUDY } from './strings';
 import { useStudyCuriosity } from './study-context';
 import type { CuriosityView } from './study-state';
 
-export function CuriosityCard({ onHeight }: { onHeight: (h: number) => void }) {
+export function CuriosityCard() {
   const view = useStudyCuriosity();
   // Chave por unidade: o "Ver por quê" aberto de uma curiosidade não passa para a outra.
   if (!view) return null;
-  return <CuriosityBody key={view.key} view={view} onHeight={onHeight} />;
+  return <CuriosityBody key={view.key} view={view} />;
 }
 
-function CuriosityBody({ view, onHeight }: { view: CuriosityView; onHeight: (h: number) => void }) {
+function CuriosityBody({ view }: { view: CuriosityView }) {
   const { c } = useTheme();
   const reduce = useReduceMotion();
   const attach = useStudy((s) => s.attach);
@@ -37,9 +37,6 @@ function CuriosityBody({ view, onHeight }: { view: CuriosityView; onHeight: (h: 
   }, [reduce, enter]);
   const entering = useAnimatedStyle(() => ({ opacity: enter.value, transform: [{ translateY: (1 - enter.value) * 6 }] }));
 
-  // Sai da folha: a altura volta a zero para a rolagem não contar um cartão que não existe mais.
-  useEffect(() => () => onHeight(0), [onHeight]);
-
   const { candidate } = view;
   const askText = `${view.hook}. ${plainText(candidate.change)}`;
   const eyebrow = candidate.kind === 'eco' ? STUDY.curiosity.echo : STUDY.curiosity.term;
@@ -48,7 +45,6 @@ function CuriosityBody({ view, onHeight }: { view: CuriosityView; onHeight: (h: 
     <Animated.View
       testID="curiosity-card"
       accessibilityLabel={STUDY.curiosity.label}
-      onLayout={(e: LayoutChangeEvent) => onHeight(e.nativeEvent.layout.height)}
       style={[{ paddingHorizontal: 16, paddingTop: space[6], paddingBottom: space[6] }, entering]}
     >
       <View style={{ backgroundColor: c.surfaceAlt, borderRadius: radius.lg, borderWidth: 1, borderColor: c.border, padding: 12, gap: space[4] }}>

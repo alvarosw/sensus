@@ -8,8 +8,10 @@ import { space } from '@/design';
 import { useLang } from '@/i18n/lang-store';
 import { buildThread } from '../thread';
 import { ThreadOpening, ThreadStep } from '../Thread';
+import { CuriosityCard } from '../CuriosityCard';
 import { LensDetail, LensTitle } from '../LensShell';
 import { STUDY } from '../strings';
+import { useStudyCuriosity } from '../study-context';
 import { useStudyAi, useStudyData } from '../useStudyData';
 import type { LensProps } from './shared';
 
@@ -42,8 +44,10 @@ export function VisaoLens({ onPartLayout, onPartKeys }: LensProps) {
     () => buildThread({ panel: data.panel, range: data.range, books: data.books, ai: { status: ai.status, summary: ai.summary }, appLang }),
     [data.panel, data.range, data.books, ai.status, ai.summary, appLang],
   );
-  // A ordem das partes muda quando o número de passos muda: a folha precisa saber quais partes somar.
-  const keys = ['head', 'open', ...steps.map((s) => `step-${s.lens}`), 'foot'];
+  // O cartão da curiosidade é parte só quando aparece (logo depois da abertura). A ordem das partes muda quando o
+  // número de passos ou o cartão muda: a folha precisa saber quais partes somar.
+  const curiosity = useStudyCuriosity();
+  const keys = ['head', 'open', ...(curiosity ? ['curiosity'] : []), ...steps.map((s) => `step-${s.lens}`), 'foot'];
   const keyList = keys.join('|');
   useEffect(() => {
     onPartKeys?.(keyList.split('|'));
@@ -59,6 +63,13 @@ export function VisaoLens({ onPartLayout, onPartKeys }: LensProps) {
       <Part id="open" testID="thread" style={{ paddingHorizontal: 16, paddingBottom: space[6] }} onPartLayout={onPartLayout}>
         <ThreadOpening />
       </Part>
+
+      {/* Cartão da curiosidade (quando há): a sua própria altura entra na soma, sem empurrar a abertura da rolagem. */}
+      {curiosity ? (
+        <Part id="curiosity" style={{}} onPartLayout={onPartLayout}>
+          <CuriosityCard />
+        </Part>
+      ) : null}
 
       {/* Marcador do início dos passos (sem altura). */}
       {steps.length > 0 && <View testID="thread-steps" />}
