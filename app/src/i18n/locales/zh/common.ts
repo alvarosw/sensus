@@ -30,6 +30,16 @@ export const zhChat = {
   thinking: '思考中…',
   retry: '重试',
   fallbackQuestions: ['这段经文的中心思想是什么？', '各个来源对这段经文怎么说？'],
+  newConversation: '新对话',
+  unitDivider: (ref: string) => `现在在 ${ref}`,
+  unitChanged: '上一段经文的附件已移除。',
+  scopeChipLabel: (unit: string, focus: string | null) => (focus ? `${focus}，在 ${unit} 中` : unit),
+  scopeLabel: '发送给 AI 的经文',
+  scopeUnit: (unit: string) => `AI 收到的经文：${unit}。`,
+  scopeFocus: (unit: string, focus: string) => `AI 收到的经文：${unit}，其中 ${focus} 为重点。`,
+  scopeAttached: (n: number) => `附件：${n}。随每个手动输入的问题发送，直到你移除它们。`,
+  scopeNone: '没有附件。附上一条评注或一个词，即可就它提问。',
+  scopeSuggested: '建议的问题不会携带附件。',
   close: '关闭',
 };
 

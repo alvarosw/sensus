@@ -30,6 +30,16 @@ export const jaChat = {
   thinking: '考え中…',
   retry: '再試行',
   fallbackQuestions: ['この箇所の中心的な考えは何ですか？', 'この箇所について各資料は何と述べていますか？'],
+  newConversation: '新しい会話',
+  unitDivider: (ref: string) => `現在は ${ref}`,
+  unitChanged: '前の箇所の添付を外しました。',
+  scopeChipLabel: (unit: string, focus: string | null) => (focus ? `${focus}（${unit} 内）` : unit),
+  scopeLabel: 'AI に送る箇所',
+  scopeUnit: (unit: string) => `AI に渡される箇所: ${unit}。`,
+  scopeFocus: (unit: string, focus: string) => `AI に渡される箇所: ${unit}。そのうち ${focus} を選択範囲として強調します。`,
+  scopeAttached: (n: number) => `添付: ${n}件。入力した質問ごとに、外すまで一緒に送られます。`,
+  scopeNone: '添付はありません。コメントや語を添付すると、それについて質問できます。',
+  scopeSuggested: '提案された質問には添付は付きません。',
   close: '閉じる',
 };
 

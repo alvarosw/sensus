@@ -4,20 +4,24 @@
 import {
   answerMessages,
   CHAT_MAX_TOKENS,
+  questionWithAttachments,
   type ChatAttachment,
   type ChatMessage,
   type ProviderConfig,
   type RichTextContext,
+  type VerseRange,
 } from '@sensus/core';
 import { streamChat } from '@/ai/client';
 import { currentBcp47 } from '@/i18n';
-import { useStudy, type Attachment, type ChatTurn } from '@/state/study';
+import { historyFor, useStudy, type Attachment, type ChatTurn } from '@/state/study';
 import { CHAT } from '../common/strings';
 
 /** Contexto usado em cada vez (para interpretar a resposta e para tentar de novo). Só em memória. */
 interface TurnMeta {
   contextText: string;
   richCtx: RichTextContext;
+  /** Seleção do leitor dentro da unidade do contexto (null: a vez é da unidade inteira). */
+  focus: VerseRange | null;
 }
 const metas = new Map<string, TurnMeta>();
 const aborts = new Map<string, AbortController>();
@@ -38,12 +42,18 @@ function answerForHistory(raw: string): string {
   return (cut >= 0 ? raw.slice(0, cut) : raw).trim();
 }
 
+/** Vezes anteriores do mesmo trecho, com os anexos de cada uma (o modelo continua vendo o que foi anexado). */
 function historyBefore(turnId: string): ChatMessage[] {
+  const { thread } = useStudy.getState();
+  const turn = thread.find((t) => t.id === turnId);
+  if (!turn) return [];
   const out: ChatMessage[] = [];
-  for (const t of useStudy.getState().thread) {
-    if (t.id === turnId) break;
+  for (const t of historyFor(thread, turn.unitKey, turnId)) {
     if (t.status !== 'done' || !t.answer.trim()) continue;
-    out.push({ role: 'user', content: t.question }, { role: 'assistant', content: answerForHistory(t.answer) });
+    out.push(
+      { role: 'user', content: questionWithAttachments(t.question, toChatAttachments(t.attachments)) },
+      { role: 'assistant', content: answerForHistory(t.answer) },
+    );
   }
   return out;
 }
@@ -62,7 +72,11 @@ async function execute(id: string, provider: ProviderConfig): Promise<void> {
     { text: meta.contextText },
     historyBefore(id),
     turn.question,
-    { attachments: toChatAttachments(turn.attachments), language: currentBcp47() },
+    {
+      attachments: toChatAttachments(turn.attachments),
+      language: currentBcp47(),
+      focus: meta.focus ?? undefined,
+    },
   );
 
   const controller = new AbortController();
@@ -131,15 +145,20 @@ export interface AskArgs {
   provider: ProviderConfig;
   question: string;
   range: ChatTurn['range'];
+  /** Trecho da vez (`unitKeyOf`): o histórico junta só as vezes dele. */
+  unitKey: string;
+  /** Anexos desta vez (o chat escolhe: os do composer, ou nenhum para perguntas sugeridas). */
+  attachments: readonly Attachment[];
   contextText: string;
   richCtx: RichTextContext;
+  focus?: VerseRange | null;
 }
 
-/** Cria a vez (com os anexos atuais) e começa a transmitir. Devolve o id, ou null se já há resposta em curso. */
+/** Cria a vez (com os anexos dados) e começa a transmitir. Devolve o id, ou null se já há resposta em curso. */
 export function ask(args: AskArgs): string | null {
   if (isStreaming()) return null;
-  const id = useStudy.getState().startTurn(args.question.trim(), args.range);
-  metas.set(id, { contextText: args.contextText, richCtx: args.richCtx });
+  const id = useStudy.getState().startTurn(args.question.trim(), args.range, args.attachments, args.unitKey);
+  metas.set(id, { contextText: args.contextText, richCtx: args.richCtx, focus: args.focus ?? null });
   void execute(id, args.provider);
   return id;
 }
@@ -154,4 +173,10 @@ export function retry(id: string, provider: ProviderConfig): void {
 /** Interrompe a resposta em curso (mantém o que já chegou). */
 export function stop(): void {
   for (const c of aborts.values()) c.abort();
+}
+
+/** Nova conversa: para a resposta em curso e esquece o contexto das vezes (a conversa sai da tela). */
+export function forgetAll(): void {
+  stop();
+  metas.clear();
 }
