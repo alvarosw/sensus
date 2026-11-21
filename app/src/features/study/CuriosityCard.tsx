@@ -78,7 +78,11 @@ function CuriosityBody({ view, onHeight }: { view: CuriosityView; onHeight: (h: 
         {more ? (
           <View style={{ gap: space[5] }} testID="curiosity-details">
             <Part label={STUDY.curiosity.then} blocks={view.listener} id="then" />
-            <Part label={STUDY.curiosity.today} blocks={view.today} id="today" />
+            {/* "Hoje" descreve a leitura comum, não é afirmação sobre a fonte: texto simples, sem o grifo de "sem citação". */}
+            <View style={{ gap: space[2] }}>
+              <Txt v="meta" color="muted" bold>{STUDY.curiosity.today}</Txt>
+              <Txt v="body">{plainText(view.candidate.today)}</Txt>
+            </View>
             <Part label={STUDY.curiosity.change} blocks={view.change} id="change" />
           </View>
         ) : null}
