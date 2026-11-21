@@ -30,6 +30,16 @@ export const idChat = {
   thinking: 'sedang berpikir…',
   retry: 'Coba lagi',
   fallbackQuestions: ['Apa gagasan utama perikop ini?', 'Apa kata sumber-sumber tentang perikop ini?'],
+  newConversation: 'Percakapan baru',
+  unitDivider: (ref: string) => `Sekarang di ${ref}`,
+  unitChanged: 'Lampiran dari bagian sebelumnya dihapus.',
+  scopeChipLabel: (unit: string, focus: string | null) => (focus ? `${focus} dalam ${unit}` : unit),
+  scopeLabel: 'Bagian yang dikirim ke AI',
+  scopeUnit: (unit: string) => `AI menerima bagian ${unit}.`,
+  scopeFocus: (unit: string, focus: string) => `AI menerima bagian ${unit}, dengan pilihan ${focus} disorot.`,
+  scopeAttached: (n: number) => `Lampiran: ${n}. Dikirim dengan setiap pertanyaan yang diketik, sampai Anda menghapusnya.`,
+  scopeNone: 'Tidak ada lampiran. Lampirkan komentar atau kata untuk bertanya tentangnya.',
+  scopeSuggested: 'Pertanyaan yang disarankan tidak membawa lampiran.',
   close: 'Tutup',
 };
 

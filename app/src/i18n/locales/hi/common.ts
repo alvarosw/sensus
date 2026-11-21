@@ -30,6 +30,16 @@ export const hiChat = {
   thinking: 'सोच रहा है…',
   retry: 'फिर से कोशिश करें',
   fallbackQuestions: ['इस अंश का केंद्रीय विचार क्या है?', 'स्रोत इस अंश के बारे में क्या कहते हैं?'],
+  newConversation: 'नई बातचीत',
+  unitDivider: (ref: string) => `अब ${ref} में`,
+  unitChanged: 'पिछले अंश के संलग्नक हटा दिए गए।',
+  scopeChipLabel: (unit: string, focus: string | null) => (focus ? `${unit} में ${focus}` : unit),
+  scopeLabel: 'AI को भेजा गया अंश',
+  scopeUnit: (unit: string) => `AI को अंश ${unit} मिलता है।`,
+  scopeFocus: (unit: string, focus: string) => `AI को अंश ${unit} मिलता है, जिसमें चयन ${focus} उजागर है।`,
+  scopeAttached: (n: number) => `संलग्नक: ${n}। जब तक आप इन्हें हटाएँ नहीं, हर लिखे गए प्रश्न के साथ जाएँगे।`,
+  scopeNone: 'कोई संलग्नक नहीं। किसी टिप्पणी या शब्द को संलग्न करें ताकि उसके बारे में पूछ सकें।',
+  scopeSuggested: 'सुझाए गए प्रश्नों के साथ संलग्नक नहीं जाते।',
   close: 'बंद करें',
 };
 

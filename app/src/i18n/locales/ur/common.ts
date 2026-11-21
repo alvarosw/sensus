@@ -30,6 +30,16 @@ export const urChat = {
   thinking: 'سوچ رہا ہے…',
   retry: 'دوبارہ کوشش کریں',
   fallbackQuestions: ['اس حصے کا مرکزی خیال کیا ہے؟', 'ماخذ اس حصے کے بارے میں کیا کہتے ہیں؟'],
+  newConversation: 'نئی گفتگو',
+  unitDivider: (ref: string) => `اب ${ref} میں`,
+  unitChanged: 'پچھلے حصے کے منسلکات ہٹا دیے گئے۔',
+  scopeChipLabel: (unit: string, focus: string | null) => (focus ? `${focus}، ${unit} میں` : unit),
+  scopeLabel: 'AI کو بھیجا گیا حصہ',
+  scopeUnit: (unit: string) => `AI کو حصہ ${unit} ملتا ہے۔`,
+  scopeFocus: (unit: string, focus: string) => `AI کو حصہ ${unit} ملتا ہے، جس میں انتخاب ${focus} نمایاں ہے۔`,
+  scopeAttached: (n: number) => `منسلکات: ${n}۔ آپ انہیں ہٹانے تک ہر لکھے ہوئے سوال کے ساتھ جائیں گے۔`,
+  scopeNone: 'کوئی منسلکات نہیں۔ کسی تبصرے یا لفظ کو منسلک کریں تاکہ اس کے بارے میں پوچھ سکیں۔',
+  scopeSuggested: 'تجویز کردہ سوالات کے ساتھ منسلکات نہیں جاتے۔',
   close: 'بند کریں',
 };
 

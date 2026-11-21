@@ -40,6 +40,7 @@ export { LENS_KEYS, LENS_LABELS, type LensKey, type CompareSource } from './lens
 export type { Selection } from './selection';
 export type { Generation } from './generations';
 export type { MapScope, PanelEntry } from './panels';
-export type { Attachment, BubblePosition, ChatTurn } from './chat';
+export type { Attachment, BubblePosition, ChatDivider, ChatTurn } from './chat';
+export { historyFor, unitKeyOf } from './chat';
 export type { PinnedRef } from './reader';
 export type { StudyToast } from './toast';

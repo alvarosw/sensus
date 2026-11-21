@@ -30,6 +30,16 @@ export const bnChat = {
   thinking: 'ভাবছে…',
   retry: 'আবার চেষ্টা করুন',
   fallbackQuestions: ['এই অংশের মূল ভাবনা কী?', 'এই অংশ সম্পর্কে উৎসগুলো কী বলে?'],
+  newConversation: 'নতুন কথোপকথন',
+  unitDivider: (ref: string) => `এখন ${ref}-এ`,
+  unitChanged: 'আগের অংশের সংযুক্তি সরানো হয়েছে।',
+  scopeChipLabel: (unit: string, focus: string | null) => (focus ? `${unit}-এর মধ্যে ${focus}` : unit),
+  scopeLabel: 'AI-কে পাঠানো অংশ',
+  scopeUnit: (unit: string) => `AI পায় অংশ ${unit}।`,
+  scopeFocus: (unit: string, focus: string) => `AI পায় অংশ ${unit}, এর মধ্যে নির্বাচন ${focus} আলাদা করে দেখানো।`,
+  scopeAttached: (n: number) => `সংযুক্তি: ${n}। আপনি সরিয়ে না দেওয়া পর্যন্ত প্রতিটি লেখা প্রশ্নের সঙ্গে যাবে।`,
+  scopeNone: 'কোনো সংযুক্তি নেই। কোনো মন্তব্য বা শব্দ সংযুক্ত করে সে সম্পর্কে প্রশ্ন করুন।',
+  scopeSuggested: 'প্রস্তাবিত প্রশ্নের সঙ্গে সংযুক্তি যায় না।',
   close: 'বন্ধ করুন',
 };
 

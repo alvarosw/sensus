@@ -25,13 +25,15 @@ export function ChatLayer() {
   const onNoProvider = useCallback((q: string) => setDraft(q), []);
   const api = useChat(onNoProvider);
 
+  // Só a pergunta digitada leva os anexos do composer e limpa o rascunho; sugeridas e de lente vão sem eles.
   const send = useCallback(
-    (q: string) => {
-      if (api.ask(q)) setDraft('');
+    (q: string, fromComposer: boolean) => {
+      if (api.ask(q, fromComposer) && fromComposer) setDraft('');
     },
     [api],
   );
-  usePendingQuestion(api.hasProvider ? !api.streaming && !api.contextBusy : true, send);
+  const sendSuggested = useCallback((q: string) => send(q, false), [send]);
+  usePendingQuestion(api.hasProvider ? !api.streaming && !api.contextBusy : true, sendSuggested);
 
   const onLayout = useCallback((e: LayoutChangeEvent) => {
     const { width, height } = e.nativeEvent.layout;

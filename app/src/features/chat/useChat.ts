@@ -1,23 +1,35 @@
 // Ligação entre o estado, o contexto do trecho (usePassagePanel) e o motor: oferece ask/retry/stop ao chat.
+// O contexto da IA é o da unidade (perícope), igual ao da folha; a seleção vai como foco. Mudar de trecho tira os
+// anexos (com aviso e Desfazer) e marca um divisor na conversa.
 import { useCallback, useEffect, useMemo } from 'react';
-import { parseStructuredSummary, splitVid, summaryCacheKey, type RichTextContext } from '@sensus/core';
+import { formatShortRef, parseStructuredSummary, splitVid, summaryCacheKey, type RichTextContext } from '@sensus/core';
 import { useSettings } from '@/settings/settings-context';
-import { LENS_LABELS, useStudy, type Attachment, type LensKey } from '@/state/study';
+import { LENS_LABELS, unitKeyOf, useStudy, type Attachment, type LensKey } from '@/state/study';
 import { usePassagePanel, type PassagePanel } from '@/features/study';
-import { CHAT } from '../common/strings';
-import { ask as engineAsk, EMPTY_CTX, retry as engineRetry, stop as engineStop } from './engine';
+import { CHAT, TOAST } from '../common/strings';
+import { ask as engineAsk, EMPTY_CTX, forgetAll, retry as engineRetry, stop as engineStop } from './engine';
 
 export interface ChatApi {
   hasProvider: boolean;
+  /** Painel do contexto que a IA recebe: a unidade (perícope), ou a seleção quando não há unidade. */
   passage: PassagePanel;
+  /** Painel da seleção (base das perguntas sugeridas da folha). */
+  selectionPanel: PassagePanel;
   /** Contexto ainda sendo montado para o trecho atual. */
   contextBusy: boolean;
   /** Intervalo da pergunta atual: a seleção, ou o da última vez da conversa. */
   range: { start: number; end: number } | null;
+  /** Unidade que a IA recebe como contexto (null: o contexto é a própria seleção). */
+  unit: { start: number; end: number } | null;
+  /** Seleção dentro da unidade, que a resposta deve focar (null: a unidade é a própria seleção). */
+  focus: { start: number; end: number } | null;
   streaming: boolean;
-  ask: (question: string, extra?: Attachment[]) => boolean;
+  /** `fromComposer`: a pergunta digitada leva os anexos do composer; sugeridas e de lente não levam. */
+  ask: (question: string, fromComposer: boolean) => boolean;
   retry: (turnId: string) => void;
   stop: () => void;
+  /** Nova conversa: para a resposta em curso e esquece a conversa e os anexos. */
+  newConversation: () => void;
   /** Contexto de leitura da resposta no trecho atual (fallback quando a vez não tem o seu). */
   richCtx: RichTextContext;
 }
@@ -31,29 +43,64 @@ export function useChat(onNoProvider: (question: string) => void): ChatApi {
   const start = selection ? selection.start : (lastRange?.start ?? null);
   const end = selection ? selection.end : (lastRange?.end ?? null);
   const range = useMemo(() => (start !== null && end !== null ? { start, end } : null), [start, end]);
-  const passage = usePassagePanel(range);
+  const selectionPanel = usePassagePanel(range);
+  // Mesma unidade que a folha usa (effectiveUnit), com a seleção como foco.
+  const unitRange = useMemo(
+    () => (range && selectionPanel.unit ? effectiveUnit(selectionPanel.unit, range) : null),
+    [selectionPanel.unit, range],
+  );
+  const unitPanel = usePassagePanel(unitRange);
+  const passage = unitRange ? unitPanel : selectionPanel;
   const contextBusy = range !== null && passage.loading && !passage.context;
+  const focus = useMemo(
+    () => (unitRange && range && (unitRange.start !== range.start || unitRange.end !== range.end) ? range : null),
+    [unitRange, range],
+  );
+
+  // Trecho da conversa: só vale depois que o contexto dele chegou (assim o nome do trecho também está pronto).
+  const chatRange = passage.context && range ? (unitRange ?? range) : null;
+  const chatKey = chatRange ? unitKeyOf(chatRange) : null;
+  const chatRef = chatRange ? formatShortRef(chatRange.start, chatRange.end, passage.books, true) : '';
+
+  const announceRemoved = useCallback((removed: Attachment[]) => {
+    if (removed.length === 0) return;
+    useStudy.getState().showToast({
+      text: CHAT.unitChanged,
+      actionLabel: TOAST.action,
+      onAction: () => useStudy.getState().restoreAttachments(removed),
+    });
+  }, []);
+
+  // Mudou de trecho: tira os anexos (com Desfazer) e marca o divisor, mesmo com o chat fechado.
+  useEffect(() => {
+    if (chatKey === null) return;
+    announceRemoved(useStudy.getState().moveToUnit(chatKey, chatRef));
+  }, [chatKey, chatRef, announceRemoved]);
 
   const ask = useCallback(
-    (question: string, extra?: Attachment[]): boolean => {
+    (question: string, fromComposer: boolean): boolean => {
       const q = question.trim();
       if (!q) return false;
       if (!provider) {
         onNoProvider(q);
         return false;
       }
-      const s = useStudy.getState();
-      for (const a of extra ?? []) s.attach(a);
+      // Confere o trecho na hora de perguntar (a pergunta não pode ir com anexos de outro trecho).
+      if (chatKey !== null) announceRemoved(useStudy.getState().moveToUnit(chatKey, chatRef));
+      const attachments = fromComposer ? useStudy.getState().attachments : [];
       const id = engineAsk({
         provider,
         question: q,
         range,
+        unitKey: chatKey ?? '',
+        attachments,
         contextText: passage.context?.text ?? '',
         richCtx: passage.richCtx ?? EMPTY_CTX,
+        focus,
       });
       return id !== null;
     },
-    [provider, range, passage.context, passage.richCtx, onNoProvider],
+    [provider, chatKey, chatRef, announceRemoved, range, passage.context, passage.richCtx, focus, onNoProvider],
   );
 
   const retry = useCallback(
@@ -63,15 +110,24 @@ export function useChat(onNoProvider: (question: string) => void): ChatApi {
     [provider],
   );
 
+  const newConversation = useCallback(() => {
+    forgetAll();
+    useStudy.getState().newConversation();
+  }, []);
+
   return {
     hasProvider: provider !== null,
     passage,
+    selectionPanel,
     contextBusy,
     range,
+    unit: unitRange ?? range,
+    focus,
     streaming,
     ask,
     retry,
     stop: engineStop,
+    newConversation,
     richCtx: passage.richCtx ?? EMPTY_CTX,
   };
 }

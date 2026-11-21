@@ -30,6 +30,16 @@ export const esChat = {
   thinking: 'pensando…',
   retry: 'Intentar de nuevo',
   fallbackQuestions: ['¿Cuál es la idea central de este pasaje?', '¿Qué dicen las fuentes sobre este pasaje?'],
+  newConversation: 'Nueva conversación',
+  unitDivider: (ref: string) => `Ahora en ${ref}`,
+  unitChanged: 'Se quitaron los adjuntos del pasaje anterior.',
+  scopeChipLabel: (unit: string, focus: string | null) => (focus ? `${focus} en ${unit}` : unit),
+  scopeLabel: 'Pasaje enviado a la IA',
+  scopeUnit: (unit: string) => `La IA recibe el pasaje ${unit}.`,
+  scopeFocus: (unit: string, focus: string) => `La IA recibe el pasaje ${unit}, con la selección ${focus} destacada.`,
+  scopeAttached: (n: number) => `Adjuntos: ${n}. Van con cada pregunta escrita, hasta que los quites.`,
+  scopeNone: 'Sin adjuntos. Adjunta un comentario o una palabra para preguntar sobre ello.',
+  scopeSuggested: 'Las preguntas sugeridas no llevan los adjuntos.',
   close: 'Cerrar',
 };
 
