@@ -8,7 +8,7 @@ import { markerKey } from './structured';
 import type { RichTextContext } from './structured-types';
 
 /** Versão do prompt da curiosidade: muda quando o texto muda, para invalidar o cache. */
-export const CURIOSITY_PROMPT_VERSION = 'curiosidade-v1';
+export const CURIOSITY_PROMPT_VERSION = 'curiosidade-v2';
 /** Limites de saída. Modelos com raciocínio gastam parte do limite antes de responder, por isso são folgados. */
 export const CURIOSITY_MAX_TOKENS = 900;
 export const CURIOSITY_REVIEW_MAX_TOKENS = 400;
@@ -29,6 +29,10 @@ const CURIOSITY_INSTRUCTION = [
   '- Muda a compreensão; não é só um dado (contagem de ocorrências, hápax, autoria, data, existência de uma referência cruzada, etimologia sem efeito no sentido).',
   '- Não é leitura disputada apresentada como fato; não é inferência; não é aplicação.',
   '- Não exagera: sem "incrível", "chocante", "segredo", "ninguém sabe", pontos de exclamação ou suspense.',
+  '- Trata do trecho selecionado; não use versículos fora da unidade do contexto.',
+  '- Não toma partido em questão que divide tradições ou estudiosos (ex.: se Maria teve outros filhos, "almah" em Is 7:14, o sentido de harpagmos); se as fontes do contexto discordam, não é curiosidade.',
+  '- O gancho diz a curiosidade em si (o que muda), não resume o versículo.',
+  'Exemplos do que NÃO serve: uma genealogia começa por Sete e não cita Caim; "cabeça" num censo quer dizer cada pessoa contada; "casa do Senhor" era o tabernáculo; uma palavra aparece poucas vezes; o texto tem uma variante de pontuação.',
   'Se nada no contexto cumprir todos os critérios com folga, responda só "@nenhuma" e "@fim". Responder @nenhuma é o resultado esperado na maioria dos trechos.',
   '',
   'Formato (linhas-marcadoras exatas, cada campo em uma linha):',
@@ -43,16 +47,25 @@ const CURIOSITY_INSTRUCTION = [
 ].join('\n');
 
 const CURIOSITY_REVIEW_INSTRUCTION = [
-  'Você é um revisor rígido. Um leitor vai ver a curiosidade abaixo em destaque, como algo que vale a pena saber. Se ela não for de fato interessante, específica e bem fundamentada, ela quebra a confiança dele. Reprove na dúvida.',
-  'Aprove só se TODAS forem verdade:',
-  '1. É do tipo declarado (eco: alusão clara a algo que os primeiros ouvintes conheciam; termo: sentido original diferente do entendimento comum de hoje).',
-  '2. Cada afirmação está sustentada pelas entradas citadas do contexto (leia-as); nada foi acrescentado de memória.',
-  '3. A alusão ou o sentido não são apenas uma leitura possível ou disputada entre as fontes.',
-  '4. Muda de fato a compreensão do trecho; não é um dado solto.',
-  '5. Um leitor atento de hoje provavelmente não sabia disso.',
-  '6. O gancho é sóbrio e fiel ao corpo, sem exagero.',
-  'Responda só com:',
-  '@veredito aprovada|reprovada',
+  'Você é o editor rígido da seção "Curiosidade" de um app de estudo bíblico. Ela aparece em destaque; se não for de fato surpreendente e sólida, o leitor perde a confiança. Na dúvida, dê nota baixa.',
+  'Avalie a curiosidade abaixo contra o contexto (leia as entradas citadas pelos cite_id).',
+  '',
+  'interesse (1 a 5): um leitor atento de hoje se surpreenderia e passaria a ler o trecho de outro jeito?',
+  '  5 = muda a leitura do trecho e quase ninguém sabe. Exemplos: em Jo 8:58, "antes que Abraão existisse, Eu sou" ecoa o nome de Deus em Êx 3:14, e por isso pegam pedras; em Gl 3:13, "maldito todo aquele pendurado no madeiro" cita Dt 21:23, a maldição que a cruz carregava aos olhos de um judeu.',
+  '  3 = correta e útil, mas o leitor já intuía ou muda pouco a leitura.',
+  '  1 = dado solto, óbvio ou técnico. Exemplos: uma genealogia começa por Sete e não cita Caim; "cabeça" num censo quer dizer cada pessoa contada; "casa do Senhor" era o tabernáculo; "xenos" ali quer dizer anfitrião.',
+  'fundamento (1 a 5): cada afirmação está escrita nas entradas citadas do contexto, sem nada de memória?',
+  '  5 = tudo está nas entradas citadas. 3 = a ideia está lá, mas o texto vai além em algum ponto. 1 = a afirmação central não está nas entradas.',
+  'disputa (sim/nao): toma partido numa questão em que tradições ou estudiosos discordam, ou apresenta uma leitura possível como a certa?',
+  'alcance (sim/nao): trata do trecho da unidade do contexto (e não de versículos fora dela)?',
+  'tipo (sim/nao): é mesmo do tipo declarado (eco: alusão clara a algo que os primeiros ouvintes conheciam; termo: sentido original diferente do entendimento comum de hoje)?',
+  '',
+  'Responda só com estas linhas:',
+  'interesse: N',
+  'fundamento: N',
+  'disputa: sim|nao',
+  'alcance: sim|nao',
+  'tipo: sim|nao',
   'motivo: (1 frase)',
   '@fim',
 ].join('\n');
@@ -115,8 +128,8 @@ function uniq(ids: readonly string[]): string[] {
 /**
  * Lê a resposta do modelo à pergunta de curiosidade.
  * - 'none' para "@nenhuma" (sem @curiosidade na resposta);
- * - candidato quando há "@curiosidade eco|termo", os seis campos e "@fim";
- * - null para resposta incompleta (sem @fim) ou malformada.
+ * - candidato quando há "@curiosidade eco|termo" e os seis campos; o "@fim" é desejável, mas não obrigatório;
+ * - null para campo faltando, tipo ou confiança inválidos.
  */
 export function parseCuriosity(text: string): CuriosityCandidate | 'none' | null {
   const kept = stripFences(text);
@@ -129,7 +142,8 @@ export function parseCuriosity(text: string): CuriosityCandidate | 'none' | null
 
   const values = new Map<FieldKey, string>();
   let current: FieldKey | null = null;
-  let end = -1;
+  // Sem @fim, a curiosidade vai até a última linha: o que faltar nos campos é que decide.
+  let end = lines.length - 1;
   for (let i = start + 1; i < lines.length; i++) {
     const line = lines[i]!;
     const name = markerName(line);
@@ -147,7 +161,6 @@ export function parseCuriosity(text: string): CuriosityCandidate | 'none' | null
       values.set(current, [values.get(current), line].filter(Boolean).join(' '));
     }
   }
-  if (end < 0) return null;
   if (!FIELD_KEYS.every((k) => values.has(k))) return null;
 
   const confidence = markerKey(values.get('confianca')!).replace(/[^\p{L}]/gu, '');
@@ -191,7 +204,7 @@ export function acceptCuriosity(c: CuriosityCandidate, ctx: RichTextContext): Cu
   if (c.confidence !== 'alta') return fail(`confiança ${c.confidence}; só entra com confiança alta`);
   const emptyField = (['hook', 'listener', 'today', 'change'] as const).find((k) => !c[k].trim());
   if (emptyField) return fail(`campo vazio: ${emptyField}`);
-  if (c.hook.length > 100) return fail(`gancho com ${c.hook.length} caracteres (máximo 100)`);
+  if (c.hook.length > 120) return fail(`gancho com ${c.hook.length} caracteres (máximo 120)`);
   if (EXCLAMATION_RE.test(c.hook)) return fail('gancho com exclamação ou interrogação');
   const hype = HYPE_RE.exec(c.hook);
   if (hype) return fail(`gancho com palavra de exagero: "${hype[0]}"`);
@@ -246,27 +259,79 @@ export function curiosityReviewMessages(
   ];
 }
 
+/** Resultado do revisor por notas: as cinco respostas lidas e o veredito calculado por reviewApproves. */
+export interface CuriosityReview {
+  /** 1 a 5: quanto um leitor de hoje se surpreenderia e leria o trecho de outro jeito. */
+  interest: number;
+  /** 1 a 5: quanto cada afirmação está escrita nas entradas citadas. */
+  grounding: number;
+  /** true quando toma partido em questão disputada, ou apresenta leitura possível como a certa. */
+  disputed: boolean;
+  /** true quando trata do trecho da unidade (e não de versículos fora dela). */
+  inScope: boolean;
+  /** true quando é mesmo do tipo declarado (eco ou termo). */
+  kindOk: boolean;
+  reason: string;
+  approved: boolean;
+}
+
 /**
- * Lê a resposta do revisor. null se incompleta (sem @fim ou sem @veredito). Qualquer veredito diferente de
- * "aprovada" é reprovação.
+ * Regra de aprovação do revisor (pura). Cada condição reprova sozinha: interesse e fundamento em 4 ou mais,
+ * sem disputa, dentro do alcance e do tipo declarado.
  */
-export function parseCuriosityReview(text: string): { approved: boolean; reason: string } | null {
+export function reviewApproves(r: Pick<CuriosityReview, 'interest' | 'grounding' | 'disputed' | 'inScope' | 'kindOk'>): boolean {
+  return r.interest >= 4 && r.grounding >= 4 && !r.disputed && r.inScope && r.kindOk;
+}
+
+const REVIEW_KEYS = ['interesse', 'fundamento', 'disputa', 'alcance', 'tipo', 'motivo'] as const;
+
+/** Nota de 1 a 5 no começo do valor ("5", "5 (…)"); fora disso é null. */
+function scoreOf(v: string | undefined): number | null {
+  const m = /^(\d+)\b/.exec((v ?? '').trim());
+  if (!m) return null;
+  const n = Number(m[1]);
+  return n >= 1 && n <= 5 ? n : null;
+}
+
+/** "sim" ou "nao" (com ou sem acento) como primeira palavra do valor; outra coisa é null. */
+function yesNoOf(v: string | undefined): boolean | null {
+  const word = markerKey((v ?? '').trim().split(/\s+/)[0] ?? '').replace(/[^\p{L}]/gu, '');
+  if (word === 'sim') return true;
+  if (word === 'nao') return false;
+  return null;
+}
+
+/**
+ * Lê a resposta do revisor por notas. null se faltar campo ou algum valor for inválido (nota fora de 1..5,
+ * disputa/alcance/tipo que não sejam sim ou não). O "@fim" é desejável, mas não obrigatório.
+ */
+export function parseCuriosityReview(text: string): CuriosityReview | null {
   const lines = stripFences(text).map(cleanLine);
-  if (!lines.some((l) => markerName(l) === 'fim')) return null;
-  const idx = lines.findIndex((l) => markerName(l) === 'veredito');
-  if (idx < 0) return null;
-
-  const rest = (MARKER_RE.exec(lines[idx]!)?.[2] ?? '').trim();
-  const verdictText = rest || (lines[idx + 1] ?? '');
-  const verdict = markerKey(verdictText.trim().split(/\s+/)[0] ?? '').replace(/[^\p{L}]/gu, '');
-
-  let reason = '';
+  const values = new Map<string, string>();
+  let current: string | null = null;
   for (const line of lines) {
+    const name = markerName(line);
+    if (name === 'fim') break;
+    if (name || !line) continue;
     const f = FIELD_RE.exec(line);
-    if (f && markerKey(f[1]!.trim()) === 'motivo') {
-      reason = f[2]!.trim();
-      break;
+    const key = f ? markerKey(f[1]!.trim()) : '';
+    if (f && (REVIEW_KEYS as readonly string[]).includes(key)) {
+      current = key;
+      if (!values.has(key)) values.set(key, f[2]!.trim());
+    } else if (current) {
+      values.set(current, [values.get(current), line].filter(Boolean).join(' '));
     }
   }
-  return { approved: verdict === 'aprovada', reason };
+  if (!REVIEW_KEYS.every((k) => values.has(k))) return null;
+
+  const interest = scoreOf(values.get('interesse'));
+  const grounding = scoreOf(values.get('fundamento'));
+  const disputed = yesNoOf(values.get('disputa'));
+  const inScope = yesNoOf(values.get('alcance'));
+  const kindOk = yesNoOf(values.get('tipo'));
+  if (interest === null || grounding === null || disputed === null || inScope === null || kindOk === null) {
+    return null;
+  }
+  const base = { interest, grounding, disputed, inScope, kindOk, reason: values.get('motivo')! };
+  return { ...base, approved: reviewApproves(base) };
 }

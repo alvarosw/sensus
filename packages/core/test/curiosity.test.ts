@@ -8,6 +8,7 @@ import {
   CURIOSITY_REVIEW_MAX_TOKENS,
   parseCuriosity,
   parseCuriosityReview,
+  reviewApproves,
   type CuriosityCandidate,
   type RichTextContext,
 } from '../src/index';
@@ -105,9 +106,21 @@ describe('parseCuriosity', () => {
     expect(parseCuriosity('  **@Nenhuma**  ')).toBe('none');
   });
 
-  it('resposta incompleta (sem @fim) é null', () => {
-    const cut = CANDIDATE_TEXT.slice(0, CANDIDATE_TEXT.indexOf('@FIM'));
-    expect(parseCuriosity(cut)).toBeNull();
+  it('sem @fim, mas com todos os campos, ainda é candidato', () => {
+    const semFim = CANDIDATE_TEXT.slice(0, CANDIDATE_TEXT.indexOf('@FIM'));
+    const c = parseCuriosity(semFim);
+    expect(c).not.toBeNull();
+    expect(c).not.toBe('none');
+    const cand = c as CuriosityCandidate;
+    expect(cand.kind).toBe('eco');
+    expect(cand.evidence.sort()).toEqual([COM_CALVINO, XR_IS].sort());
+    expect(cand.raw).not.toContain('@FIM');
+    expect(cand.raw.endsWith('confianca: alta')).toBe(true);
+  });
+
+  it('sem @fim e com campo faltando (resposta cortada) é null', () => {
+    expect(parseCuriosity(CANDIDATE_TEXT.replace('@FIM', '').replace(/muda:.*\n/, ''))).toBeNull();
+    expect(parseCuriosity(CANDIDATE_TEXT.slice(0, CANDIDATE_TEXT.indexOf('confianca')))).toBeNull();
   });
 
   it('campo faltando, tipo desconhecido ou confiança inválida são null', () => {
@@ -163,8 +176,9 @@ describe('acceptCuriosity', () => {
     expect(acceptCuriosity(candidate({ hook: 'A secret echo of Isaiah 45:23' }), NT_CTX).ok).toBe(false);
   });
 
-  it('reprova gancho com mais de 100 caracteres', () => {
-    const r = acceptCuriosity(candidate({ hook: 'Fp 2:10 ecoa Is 45:23 '.padEnd(101, 'a') }), NT_CTX);
+  it('gancho até 120 caracteres passa no portão; 121 reprova', () => {
+    expect(acceptCuriosity(candidate({ hook: 'Fp 2:10 ecoa Is 45:23 '.padEnd(120, 'a') }), NT_CTX)).toEqual({ ok: true });
+    const r = acceptCuriosity(candidate({ hook: 'Fp 2:10 ecoa Is 45:23 '.padEnd(121, 'a') }), NT_CTX);
     expect(r.ok).toBe(false);
   });
 
@@ -225,25 +239,76 @@ describe('acceptCuriosity', () => {
 });
 
 describe('parseCuriosityReview', () => {
-  it('aprovada e motivo', () => {
-    expect(parseCuriosityReview('@veredito aprovada\nmotivo: Fonte confere com o contexto.\n@fim')).toEqual({
-      approved: true,
+  const COMPLETO = [
+    'interesse: 5',
+    'fundamento: 4',
+    'disputa: nao',
+    'alcance: sim',
+    'tipo: sim',
+    'motivo: Fonte confere com o contexto.',
+  ];
+
+  it('lê as cinco notas e o motivo, e aprova quando a regra manda', () => {
+    expect(parseCuriosityReview([...COMPLETO, '@fim'].join('\n'))).toEqual({
+      interest: 5,
+      grounding: 4,
+      disputed: false,
+      inScope: true,
+      kindOk: true,
       reason: 'Fonte confere com o contexto.',
+      approved: true,
     });
   });
 
-  it('reprovada, e qualquer outra coisa também é reprovação', () => {
-    expect(parseCuriosityReview('@veredito reprovada\nmotivo: Leitura disputada.\n@fim')?.approved).toBe(false);
-    expect(parseCuriosityReview('@veredito talvez\nmotivo: Dúvida.\n@fim')?.approved).toBe(false);
+  it('sem @fim, com todos os campos, ainda é lido', () => {
+    const r = parseCuriosityReview(COMPLETO.join('\n'));
+    expect(r?.approved).toBe(true);
+    expect(r?.reason).toBe('Fonte confere com o contexto.');
   });
 
-  it('incompleto (sem @fim ou sem @veredito) é null', () => {
-    expect(parseCuriosityReview('@veredito aprovada\nmotivo: ok')).toBeNull();
-    expect(parseCuriosityReview('motivo: ok\n@fim')).toBeNull();
+  it('aceita "não" com acento e cercas de código', () => {
+    const r = parseCuriosityReview('```\n' + COMPLETO.map((l) => l.replace('nao', 'não')).join('\n') + '\n@fim\n```');
+    expect(r?.disputed).toBe(false);
+    expect(r?.approved).toBe(true);
   });
 
-  it('aceita o veredito na linha seguinte e em cercas de código', () => {
-    expect(parseCuriosityReview('```\n@veredito\naprovada\nmotivo: ok\n@fim\n```')?.approved).toBe(true);
+  it('reprova quando a regra reprova (interesse 3, por exemplo)', () => {
+    const r = parseCuriosityReview([...COMPLETO.filter((l) => !l.startsWith('interesse')), 'interesse: 3', '@fim'].join('\n'));
+    expect(r?.interest).toBe(3);
+    expect(r?.approved).toBe(false);
+  });
+
+  it('nota fora de 1..5 é null', () => {
+    expect(parseCuriosityReview(COMPLETO.join('\n').replace('interesse: 5', 'interesse: 6'))).toBeNull();
+    expect(parseCuriosityReview(COMPLETO.join('\n').replace('fundamento: 4', 'fundamento: 0'))).toBeNull();
+  });
+
+  it('disputa, alcance ou tipo que não sejam sim/não são null', () => {
+    expect(parseCuriosityReview(COMPLETO.join('\n').replace('disputa: nao', 'disputa: talvez'))).toBeNull();
+    expect(parseCuriosityReview(COMPLETO.join('\n').replace('alcance: sim', 'alcance: '))).toBeNull();
+    expect(parseCuriosityReview(COMPLETO.join('\n').replace('tipo: sim', 'tipo: eco'))).toBeNull();
+  });
+
+  it('campo faltando (inclusive o motivo) é null', () => {
+    expect(parseCuriosityReview(COMPLETO.filter((l) => !l.startsWith('tipo')).join('\n'))).toBeNull();
+    expect(parseCuriosityReview(COMPLETO.filter((l) => !l.startsWith('motivo')).join('\n'))).toBeNull();
+  });
+});
+
+describe('reviewApproves', () => {
+  const BOA = { interest: 5, grounding: 4, disputed: false, inScope: true, kindOk: true };
+
+  it('aprova quando as cinco condições valem (4 é o mínimo de interesse e de fundamento)', () => {
+    expect(reviewApproves(BOA)).toBe(true);
+    expect(reviewApproves({ ...BOA, interest: 4, grounding: 4 })).toBe(true);
+  });
+
+  it('cada condição reprova sozinha', () => {
+    expect(reviewApproves({ ...BOA, interest: 3 })).toBe(false);
+    expect(reviewApproves({ ...BOA, grounding: 3 })).toBe(false);
+    expect(reviewApproves({ ...BOA, disputed: true })).toBe(false);
+    expect(reviewApproves({ ...BOA, inScope: false })).toBe(false);
+    expect(reviewApproves({ ...BOA, kindOk: false })).toBe(false);
   });
 });
 
@@ -261,11 +326,22 @@ describe('curiosityMessages e revisor', () => {
     expect(msgs[1]!.content).toContain('Seleção do leitor dentro desta unidade');
   });
 
-  it('o revisor recebe contexto e candidato', () => {
+  it('o revisor recebe contexto, candidato e as notas', () => {
     const msgs = curiosityReviewMessages({ text: 'CTX' }, candidate());
     expect(msgs[1]!.content).toContain('<contexto>\nCTX\n</contexto>');
-    expect(msgs[1]!.content).toContain('@veredito aprovada|reprovada');
+    expect(msgs[1]!.content).toContain('editor rígido');
+    expect(msgs[1]!.content).toContain('interesse (1 a 5)');
+    expect(msgs[1]!.content).toContain('disputa: sim|nao');
     expect(msgs[1]!.content).toContain(candidate().raw);
+  });
+
+  it('o gerador traz as regras de NT e AT (Sete e Caim, almah, harpagmos) e o gancho diz a curiosidade', () => {
+    const txt = curiosityMessages({ text: 'CTX' })[1]!.content;
+    expect(txt).toContain('não use versículos fora da unidade do contexto');
+    expect(txt).toContain('harpagmos');
+    expect(txt).toContain('"almah" em Is 7:14');
+    expect(txt).toContain('uma genealogia começa por Sete e não cita Caim');
+    expect(txt).toContain('até 90 caracteres');
   });
 
   it('chave de cache usa o prefixo curiosity: e os limites são constantes', () => {

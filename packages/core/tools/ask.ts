@@ -235,7 +235,7 @@ async function runCuriosity(
     return;
   }
   if (parsed === null) {
-    console.log('malformada ou incompleta (sem @fim, campo ausente ou tipo/confiança inválidos)');
+    console.log('malformada ou incompleta (campo ausente ou tipo/confiança inválidos)');
     return;
   }
   printCandidate(parsed);
@@ -252,8 +252,18 @@ async function runCuriosity(
   const review = await streamTo(provider, curiosityReviewMessages(context, parsed), CURIOSITY_REVIEW_MAX_TOKENS);
   const verdict = parseCuriosityReview(review);
   console.log('\n--- Veredito ---');
-  if (verdict === null) console.log('reprovada: resposta do revisor incompleta');
-  else console.log(`${verdict.approved ? 'aprovada' : 'reprovada'}: ${verdict.reason}`);
+  if (verdict === null) {
+    console.log('reprovada: resposta do revisor incompleta ou com valor inválido');
+    console.log(`bruto: ${review.replace(/\n/g, ' | ')}`);
+    return;
+  }
+  console.log(`interesse: ${verdict.interest}`);
+  console.log(`fundamento: ${verdict.grounding}`);
+  console.log(`disputa: ${verdict.disputed ? 'sim' : 'nao'}`);
+  console.log(`alcance: ${verdict.inScope ? 'sim' : 'nao'}`);
+  console.log(`tipo: ${verdict.kindOk ? 'sim' : 'nao'}`);
+  console.log(`motivo: ${verdict.reason}`);
+  console.log(verdict.approved ? 'APARECE: aprovada' : 'reprovada pelo revisor');
 }
 
 async function main(): Promise<void> {
