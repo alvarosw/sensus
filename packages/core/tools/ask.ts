@@ -262,6 +262,7 @@ async function runCuriosity(
   console.log(`disputa: ${verdict.disputed ? 'sim' : 'nao'}`);
   console.log(`alcance: ${verdict.inScope ? 'sim' : 'nao'}`);
   console.log(`tipo: ${verdict.kindOk ? 'sim' : 'nao'}`);
+  console.log(`peso: ${verdict.weighty ? 'sim' : 'nao'}`);
   console.log(`motivo: ${verdict.reason}`);
   console.log(verdict.approved ? 'APARECE: aprovada' : 'reprovada pelo revisor');
 }

@@ -245,6 +245,7 @@ describe('parseCuriosityReview', () => {
     'disputa: nao',
     'alcance: sim',
     'tipo: sim',
+    'peso: sim',
     'motivo: Fonte confere com o contexto.',
   ];
 
@@ -255,6 +256,7 @@ describe('parseCuriosityReview', () => {
       disputed: false,
       inScope: true,
       kindOk: true,
+      weighty: true,
       reason: 'Fonte confere com o contexto.',
       approved: true,
     });
@@ -289,6 +291,17 @@ describe('parseCuriosityReview', () => {
     expect(parseCuriosityReview(COMPLETO.join('\n').replace('tipo: sim', 'tipo: eco'))).toBeNull();
   });
 
+  it('peso que não seja sim/não é null, e peso faltando também', () => {
+    expect(parseCuriosityReview(COMPLETO.join('\n').replace('peso: sim', 'peso: muito'))).toBeNull();
+    expect(parseCuriosityReview(COMPLETO.filter((l) => !l.startsWith('peso')).join('\n'))).toBeNull();
+  });
+
+  it('peso: não reprova mesmo com as outras quatro notas boas', () => {
+    const r = parseCuriosityReview(COMPLETO.join('\n').replace('peso: sim', 'peso: não'));
+    expect(r?.weighty).toBe(false);
+    expect(r?.approved).toBe(false);
+  });
+
   it('campo faltando (inclusive o motivo) é null', () => {
     expect(parseCuriosityReview(COMPLETO.filter((l) => !l.startsWith('tipo')).join('\n'))).toBeNull();
     expect(parseCuriosityReview(COMPLETO.filter((l) => !l.startsWith('motivo')).join('\n'))).toBeNull();
@@ -296,7 +309,7 @@ describe('parseCuriosityReview', () => {
 });
 
 describe('reviewApproves', () => {
-  const BOA = { interest: 5, grounding: 4, disputed: false, inScope: true, kindOk: true };
+  const BOA = { interest: 5, grounding: 4, disputed: false, inScope: true, kindOk: true, weighty: true };
 
   it('aprova quando as cinco condições valem (4 é o mínimo de interesse e de fundamento)', () => {
     expect(reviewApproves(BOA)).toBe(true);
@@ -309,6 +322,7 @@ describe('reviewApproves', () => {
     expect(reviewApproves({ ...BOA, disputed: true })).toBe(false);
     expect(reviewApproves({ ...BOA, inScope: false })).toBe(false);
     expect(reviewApproves({ ...BOA, kindOk: false })).toBe(false);
+    expect(reviewApproves({ ...BOA, weighty: false })).toBe(false);
   });
 });
 
@@ -332,6 +346,8 @@ describe('curiosityMessages e revisor', () => {
     expect(msgs[1]!.content).toContain('editor rígido');
     expect(msgs[1]!.content).toContain('interesse (1 a 5)');
     expect(msgs[1]!.content).toContain('disputa: sim|nao');
+    expect(msgs[1]!.content).toContain('peso (sim/nao)');
+    expect(msgs[1]!.content).toContain('peso: sim|nao');
     expect(msgs[1]!.content).toContain(candidate().raw);
   });
 
@@ -342,6 +358,12 @@ describe('curiosityMessages e revisor', () => {
     expect(txt).toContain('"almah" em Is 7:14');
     expect(txt).toContain('uma genealogia começa por Sete e não cita Caim');
     expect(txt).toContain('até 90 caracteres');
+    expect(txt).toContain('Prefira eco.');
+    expect(txt).toContain('contagem de cidades');
+  });
+
+  it('o gerador usa curiosidade-v3 na chave de cache', () => {
+    expect(curiosityCacheKey({ start: 50002005, end: 50002008 })).toBe('curiosity:curiosidade-v3:50002005-50002008');
   });
 
   it('chave de cache usa o prefixo curiosity: e os limites são constantes', () => {

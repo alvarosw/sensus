@@ -8,7 +8,7 @@ import { markerKey } from './structured';
 import type { RichTextContext } from './structured-types';
 
 /** Versão do prompt da curiosidade: muda quando o texto muda, para invalidar o cache. */
-export const CURIOSITY_PROMPT_VERSION = 'curiosidade-v2';
+export const CURIOSITY_PROMPT_VERSION = 'curiosidade-v3';
 /** Limites de saída. Modelos com raciocínio gastam parte do limite antes de responder, por isso são folgados. */
 export const CURIOSITY_MAX_TOKENS = 900;
 export const CURIOSITY_REVIEW_MAX_TOKENS = 400;
@@ -22,6 +22,7 @@ const CURIOSITY_INSTRUCTION = [
   'Procure no contexto UMA curiosidade do trecho que um leitor de hoje provavelmente não sabe e que muda a forma de entendê-lo. Só valem dois tipos:',
   '- eco: o texto alude claramente a algo que os primeiros ouvintes ou leitores conheciam (um texto bíblico anterior que eles conheciam, ou um costume, fato histórico, geográfico ou cultural da época) e, sabendo disso, entendemos o trecho como eles entendiam.',
   '- termo: uma palavra, termo ou frase do trecho tem no original um sentido diferente do que normalmente se entende hoje, e essa diferença muda a leitura.',
+  'Prefira eco. Use termo só quando a diferença de sentido muda o que o trecho ensina ou narra, e quando o sentido de "hoje" é o das traduções e leituras comuns.',
   '',
   'Critérios (todos obrigatórios):',
   '- A alusão ou o sentido estão atestados por pelo menos duas entradas do contexto (cite os cite_id); nada de memória própria.',
@@ -32,7 +33,7 @@ const CURIOSITY_INSTRUCTION = [
   '- Trata do trecho selecionado; não use versículos fora da unidade do contexto.',
   '- Não toma partido em questão que divide tradições ou estudiosos (ex.: se Maria teve outros filhos, "almah" em Is 7:14, o sentido de harpagmos); se as fontes do contexto discordam, não é curiosidade.',
   '- O gancho diz a curiosidade em si (o que muda), não resume o versículo.',
-  'Exemplos do que NÃO serve: uma genealogia começa por Sete e não cita Caim; "cabeça" num censo quer dizer cada pessoa contada; "casa do Senhor" era o tabernáculo; uma palavra aparece poucas vezes; o texto tem uma variante de pontuação.',
+  'Exemplos do que NÃO serve: uma genealogia começa por Sete e não cita Caim; "cabeça" num censo quer dizer cada pessoa contada; "casa do Senhor" era o tabernáculo; uma palavra aparece poucas vezes; o texto tem uma variante de pontuação; um detalhe técnico que não muda o sentido do trecho (contagem de cidades, se um nome de lugar é composto, gênero gramatical de um título, a forma física de um objeto ou remédio).',
   'Se nada no contexto cumprir todos os critérios com folga, responda só "@nenhuma" e "@fim". Responder @nenhuma é o resultado esperado na maioria dos trechos.',
   '',
   'Formato (linhas-marcadoras exatas, cada campo em uma linha):',
@@ -59,6 +60,7 @@ const CURIOSITY_REVIEW_INSTRUCTION = [
   'disputa (sim/nao): toma partido numa questão em que tradições ou estudiosos discordam, ou apresenta uma leitura possível como a certa?',
   'alcance (sim/nao): trata do trecho da unidade do contexto (e não de versículos fora dela)?',
   'tipo (sim/nao): é mesmo do tipo declarado (eco: alusão clara a algo que os primeiros ouvintes conheciam; termo: sentido original diferente do entendimento comum de hoje)?',
+  'peso (sim/nao): importa para o sentido do trecho — o que ele ensina ou narra —, e não só para um detalhe técnico (contagem, nome de lugar, gramática, forma de um objeto, título)?',
   '',
   'Responda só com estas linhas:',
   'interesse: N',
@@ -66,6 +68,7 @@ const CURIOSITY_REVIEW_INSTRUCTION = [
   'disputa: sim|nao',
   'alcance: sim|nao',
   'tipo: sim|nao',
+  'peso: sim|nao',
   'motivo: (1 frase)',
   '@fim',
 ].join('\n');
@@ -271,19 +274,23 @@ export interface CuriosityReview {
   inScope: boolean;
   /** true quando é mesmo do tipo declarado (eco ou termo). */
   kindOk: boolean;
+  /** true quando importa para o sentido do trecho (o que ensina ou narra), e não só um detalhe técnico. */
+  weighty: boolean;
   reason: string;
   approved: boolean;
 }
 
 /**
  * Regra de aprovação do revisor (pura). Cada condição reprova sozinha: interesse e fundamento em 4 ou mais,
- * sem disputa, dentro do alcance e do tipo declarado.
+ * sem disputa, dentro do alcance, do tipo declarado e com peso no sentido do trecho.
  */
-export function reviewApproves(r: Pick<CuriosityReview, 'interest' | 'grounding' | 'disputed' | 'inScope' | 'kindOk'>): boolean {
-  return r.interest >= 4 && r.grounding >= 4 && !r.disputed && r.inScope && r.kindOk;
+export function reviewApproves(
+  r: Pick<CuriosityReview, 'interest' | 'grounding' | 'disputed' | 'inScope' | 'kindOk' | 'weighty'>,
+): boolean {
+  return r.interest >= 4 && r.grounding >= 4 && !r.disputed && r.inScope && r.kindOk && r.weighty;
 }
 
-const REVIEW_KEYS = ['interesse', 'fundamento', 'disputa', 'alcance', 'tipo', 'motivo'] as const;
+const REVIEW_KEYS = ['interesse', 'fundamento', 'disputa', 'alcance', 'tipo', 'peso', 'motivo'] as const;
 
 /** Nota de 1 a 5 no começo do valor ("5", "5 (…)"); fora disso é null. */
 function scoreOf(v: string | undefined): number | null {
@@ -329,9 +336,13 @@ export function parseCuriosityReview(text: string): CuriosityReview | null {
   const disputed = yesNoOf(values.get('disputa'));
   const inScope = yesNoOf(values.get('alcance'));
   const kindOk = yesNoOf(values.get('tipo'));
-  if (interest === null || grounding === null || disputed === null || inScope === null || kindOk === null) {
+  const weighty = yesNoOf(values.get('peso'));
+  if (
+    interest === null || grounding === null || disputed === null || inScope === null || kindOk === null ||
+    weighty === null
+  ) {
     return null;
   }
-  const base = { interest, grounding, disputed, inScope, kindOk, reason: values.get('motivo')! };
+  const base = { interest, grounding, disputed, inScope, kindOk, weighty, reason: values.get('motivo')! };
   return { ...base, approved: reviewApproves(base) };
 }
