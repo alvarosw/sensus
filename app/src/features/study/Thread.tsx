@@ -1,5 +1,7 @@
 // O fio do trecho (Visão geral): a abertura da IA e, abaixo, um passo por lente na ordem da narrativa.
 // Cada passo mostra a evidência do banco (aparece na hora) e, embaixo, o texto da IA daquela seção.
+// Não há contêiner do fio: a abertura e cada passo são partes irmãs na rolagem, montadas pela VisaoLens
+// (lenses/Visao.tsx), porque a âncora nativa só segura filhos diretos do conteúdo.
 import { View } from 'react-native';
 import { router } from 'expo-router';
 import { ActButton, Card, Empty, Greek, LinkButton, Tag, Txt, space, radius, useTheme } from '@/design';
@@ -13,20 +15,10 @@ import { type ThreadEvidence, type ThreadStep } from './thread';
 import { useStudyAi, useStudyData } from './useStudyData';
 import { refShort } from '@/features/common/format';
 
-export function Thread({ steps }: { steps: ThreadStep[] }) {
+/** Abertura do fio: o aviso de provedor ausente ou o resumo da IA. */
+export function ThreadOpening() {
   const ai = useStudyAi();
-  return (
-    <View style={{ gap: space[6] }} testID="thread">
-      {ai.status === 'noprovider' ? <NoProviderCard /> : <Overview />}
-      {steps.length > 0 && (
-        <View testID="thread-steps">
-          {steps.map((s, i) => (
-            <Step key={s.lens} step={s} index={i} last={i === steps.length - 1} />
-          ))}
-        </View>
-      )}
-    </View>
-  );
+  return ai.status === 'noprovider' ? <NoProviderCard /> : <Overview />;
 }
 
 // ---- abertura da IA ----------------------------------------------------------------------------------
@@ -92,7 +84,11 @@ function Overview() {
 
 // ---- passos ------------------------------------------------------------------------------------------
 
-function Step({ step, index, last }: { step: ThreadStep; index: number; last: boolean }) {
+/**
+ * Um passo do fio: bolinha com o número, linha até o próximo passo e o conteúdo. O espaço embaixo (space[6]) fica
+ * dentro do passo, para a linha vertical chegar até a bolinha seguinte e para o rodapé da Visão geral ficar afastado.
+ */
+export function ThreadStep({ step, index, last }: { step: ThreadStep; index: number; last: boolean }) {
   const { c } = useTheme();
   const ai = useStudyAi();
   const blocks = ai.summary?.sections[step.lens];
@@ -122,7 +118,7 @@ function Step({ step, index, last }: { step: ThreadStep; index: number; last: bo
         </View>
       </View>
 
-      <View style={{ flex: 1, minWidth: 0, gap: space[4], paddingBottom: last ? 0 : space[6] }}>
+      <View style={{ flex: 1, minWidth: 0, gap: space[4], paddingBottom: space[6] }}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline', gap: space[3], flexWrap: 'wrap' }}>
           <Txt v="bodySm" bold>{step.title}</Txt>
           <LinkButton
