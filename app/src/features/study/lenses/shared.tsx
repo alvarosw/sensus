@@ -10,6 +10,10 @@ import { STUDY } from '../strings';
 
 export interface LensProps {
   onLayout?: (e: LayoutChangeEvent) => void;
+  /** Visão geral (partes irmãs): altura medida de cada parte, pela chave da parte. */
+  onPartLayout?: (part: string, h: number) => void;
+  /** Visão geral: chaves das partes na ordem atual (a folha soma as alturas dessas partes). */
+  onPartKeys?: (keys: string[]) => void;
 }
 
 /** Quantos itens cabem na lente antes de "Ver todos". */

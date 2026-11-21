@@ -1,7 +1,9 @@
 // Corpo rolável da folha: prévia ("espiar") e lentes numa só rolagem, com o trilho sobreposto no topo. A lente-alvo
-// e a âncora de rolagem ficam aqui.
+// e a âncora de rolagem ficam aqui. Cada lente é filho direto do conteúdo (a Visão geral, várias partes irmãs), para
+// a âncora nativa (maintainVisibleContentPosition) segurar o que está na tela no Android/iOS. No web o reancoramento
+// é feito à mão: o Chrome já compensa a mudança de altura sozinho, e a nossa rolagem não pode brigar com ele.
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { ScrollView, View, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
+import { Platform, ScrollView, View, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
 import { LENS_KEYS, useStudy, type LensKey } from '@/state/study';
 import { LENS_VIEWS } from './lenses';
@@ -14,6 +16,9 @@ export function SheetBody({ open, atFull, bottomInset, onPeekLayout, onRailLayou
   const scroll = useRef<ScrollView>(null);
   // Altura de cada lente medida pelo onLayout; y de uma lente = soma das alturas das anteriores.
   const lensH = useRef<Partial<Record<LensKey, number>>>({});
+  // A Visão geral é várias partes irmãs: a altura da lente é a soma das partes da lista atual (partKeys).
+  const partH = useRef<Record<string, number>>({});
+  const partKeys = useRef<string[]>([]);
   const yOf = useCallback((k: LensKey): number | undefined => {
     let y = 0;
     for (const key of LENS_KEYS) {
@@ -38,7 +43,7 @@ export function SheetBody({ open, atFull, bottomInset, onPeekLayout, onRailLayou
 
   // Lente-alvo: o pedido fica pendente até a folha estar aberta e as lentes medidas. Depois disso a lente
   // vira "âncora": enquanto o conteúdo acima muda de altura (fontes, resumo da IA), a rolagem é refeita para
-  // ela; o primeiro gesto do usuário solta a âncora.
+  // ela (só no web); o primeiro gesto do usuário solta a âncora.
   const pending = useRef<LensKey | null>(null);
   const anchor = useRef<LensKey | null>(null);
   const progUntil = useRef(0);
@@ -65,10 +70,50 @@ export function SheetBody({ open, atFull, bottomInset, onPeekLayout, onRailLayou
     }
   }, [scrollToLens]);
 
+  // Só no web: no nativo a âncora de maintainVisibleContentPosition já segura a lente-alvo.
   const reanchor = useCallback(() => {
+    if (Platform.OS !== 'web') return;
     const k = anchor.current;
     if (k) scrollToLens(k, false);
   }, [scrollToLens]);
+
+  // Mede a lente depois de uma medição: se há pedido pendente, tenta atender; senão refaz a âncora (web).
+  const afterMeasure = useCallback(() => {
+    if (pending.current) flush();
+    else reanchor();
+  }, [flush, reanchor]);
+
+  // Soma das partes da Visão geral na ordem atual. Enquanto alguma parte da lista não foi medida, vale o último total.
+  const syncVisao = useCallback(() => {
+    const keys = partKeys.current;
+    if (keys.length === 0) return;
+    let sum = 0;
+    for (const k of keys) {
+      const h = partH.current[k];
+      if (h === undefined) return;
+      sum += h;
+    }
+    lensH.current.visao = sum;
+  }, []);
+
+  const onPartLayout = useCallback(
+    (part: string, h: number) => {
+      if (partH.current[part] === h) return;
+      partH.current[part] = h;
+      syncVisao();
+      afterMeasure();
+    },
+    [syncVisao, afterMeasure],
+  );
+
+  const onPartKeys = useCallback(
+    (keys: string[]) => {
+      partKeys.current = keys;
+      syncVisao();
+      afterMeasure();
+    },
+    [syncVisao, afterMeasure],
+  );
 
   useEffect(() => {
     if (!lensTarget) return;
@@ -127,8 +172,7 @@ export function SheetBody({ open, atFull, bottomInset, onPeekLayout, onRailLayou
 
   const registerLens = (k: LensKey) => (e: LayoutChangeEvent) => {
     lensH.current[k] = e.nativeEvent.layout.height;
-    if (pending.current) flush();
-    else reanchor();
+    afterMeasure();
   };
 
   return (
@@ -147,18 +191,21 @@ export function SheetBody({ open, atFull, bottomInset, onPeekLayout, onRailLayou
         onLayout={(e) => setViewH(e.nativeEvent.layout.height)}
         keyboardShouldPersistTaps="handled"
         nestedScrollEnabled
+        // Âncora nativa: quando um filho de cima muda de altura (o resumo da IA chegando), a rolagem não sai do
+        // lugar e o conteúdo visível fica parado. Só fora do web (ver reanchor).
+        maintainVisibleContentPosition={Platform.OS === 'web' ? undefined : { minIndexForVisible: 0 }}
         // Espaço no fim: qualquer lente, inclusive a última, consegue ficar no topo.
         contentContainerStyle={{ paddingBottom: open ? viewH + 40 + bottomInset : 0 }}
       >
         <PeekContent onLayout={onPeek} />
         <View style={{ height: railSpacer }} />
         {open ? (
-          <View>
+          <>
             {LENS_KEYS.map((k) => {
               const View_ = LENS_VIEWS[k];
-              return <View_ key={k} onLayout={registerLens(k)} />;
+              return <View_ key={k} onLayout={registerLens(k)} onPartLayout={onPartLayout} onPartKeys={onPartKeys} />;
             })}
-          </View>
+          </>
         ) : null}
       </ScrollView>
       <Animated.View onLayout={onRail} style={[{ position: 'absolute', left: 0, right: 0, top: 0 }, railStyle]}>
