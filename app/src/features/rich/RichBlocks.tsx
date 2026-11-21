@@ -101,10 +101,7 @@ export function RichBlocks({
       onClaimMore,
       onDeepen:
         onDeepen ??
-        ((info) => {
-          attach(claimAttachment(info));
-          askQuestion('Explique melhor este ponto');
-        }),
+        ((info) => askQuestion('Explique melhor este ponto', [claimAttachment(info)])),
       onAsk: onAsk ?? defaultAsk,
       menu: claimMenu,
     };

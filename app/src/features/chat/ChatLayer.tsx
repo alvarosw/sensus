@@ -4,7 +4,7 @@
 import { useCallback, useState } from 'react';
 import { Keyboard, Pressable, StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useStudy } from '@/state/study';
+import { useStudy, type Attachment } from '@/state/study';
 import { Bubble } from './Bubble';
 import { ChatPanel } from './ChatPanel';
 import { useChat, usePendingQuestion } from './useChat';
@@ -25,15 +25,14 @@ export function ChatLayer() {
   const onNoProvider = useCallback((q: string) => setDraft(q), []);
   const api = useChat(onNoProvider);
 
-  // Só a pergunta digitada leva os anexos do composer e limpa o rascunho; sugeridas e de lente vão sem eles.
+  // Só a pergunta digitada ('composer') leva os anexos do composer e limpa o rascunho; as demais vão com a lista dada.
   const send = useCallback(
-    (q: string, fromComposer: boolean) => {
-      if (api.ask(q, fromComposer) && fromComposer) setDraft('');
+    (q: string, attachments: readonly Attachment[] | 'composer') => {
+      if (api.ask(q, attachments) && attachments === 'composer') setDraft('');
     },
     [api],
   );
-  const sendSuggested = useCallback((q: string) => send(q, false), [send]);
-  usePendingQuestion(api.hasProvider ? !api.streaming && !api.contextBusy : true, sendSuggested);
+  usePendingQuestion(api.hasProvider ? !api.streaming && !api.contextBusy : true, send);
 
   const onLayout = useCallback((e: LayoutChangeEvent) => {
     const { width, height } = e.nativeEvent.layout;

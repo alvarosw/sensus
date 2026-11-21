@@ -16,6 +16,19 @@ export interface Attachment {
   citeIds?: string[];
   /** Texto do anexo quando não é um registro (ex.: parágrafo da IA). */
   text?: string;
+  /** Trecho em que o anexo foi feito (a seleção, na hora de anexar). Mudar de trecho só tira o que saiu dele. */
+  origin?: { start: Vid; end: Vid };
+}
+
+/** Anexo sem os cite_ids: eles são do trecho de onde o anexo saiu. */
+function withoutCites(a: Attachment): Attachment {
+  const { citeIds: _citeIds, ...rest } = a;
+  return rest;
+}
+
+/** O anexo veio de dentro do intervalo `unit` (fica quando o leitor muda para ele). */
+function insideUnit(a: Attachment, unit: { start: Vid; end: Vid }): boolean {
+  return a.origin !== undefined && a.origin.start >= unit.start && a.origin.end <= unit.end;
 }
 
 export interface ChatTurn {
@@ -76,8 +89,8 @@ export interface ChatSlice {
   unitKey: string | null;
   /** Divisores da conversa (um a cada mudança de trecho com vezes já feitas). */
   dividers: ChatDivider[];
-  /** Pergunta pronta (sugerida numa lente, "Detalhar" etc.) para o chat enviar assim que abrir; o chat zera após consumir. */
-  pendingQuestion: string | null;
+  /** Pergunta pronta (sugerida numa lente, "Detalhar" etc.) para o chat enviar assim que abrir, com estes anexos; o chat zera após consumir. */
+  pendingQuestion: { text: string; attachments: Attachment[] } | null;
 
   openChat(): void;
   closeChat(): void;
@@ -85,15 +98,16 @@ export interface ChatSlice {
   attach(a: Attachment): void;
   detach(id: string): void;
   clearAttachments(): void;
-  /** Abre o chat e pede que ele envie `q` (sem os anexos do composer: o chat decide). */
-  askQuestion(q: string): void;
+  /** Abre o chat e pede que ele envie `q` com exatamente `attachments` (sem eles, por padrão; não usa os do composer). */
+  askQuestion(q: string, attachments?: Attachment[]): void;
   consumeQuestion(): void;
   /**
-   * Leva a conversa ao trecho `key` (`ref`: rótulo curto, para o divisor). Se o trecho muda, tira os anexos e
-   * devolve os que saíram (para o Desfazer do aviso); com vezes na conversa, põe um divisor. Sem mudança, não faz nada.
+   * Leva a conversa ao trecho `key` (`ref`: rótulo curto, para o divisor; `unit`: o intervalo do trecho). Se o trecho
+   * muda, tira os anexos que não vieram de dentro de `unit` e devolve os que saíram (para o Desfazer do aviso); com
+   * vezes na conversa, põe um divisor. Sem mudança, não faz nada.
    */
-  moveToUnit(key: string, ref: string): Attachment[];
-  /** Devolve anexos tirados por mudança de trecho (ação "Desfazer"). */
+  moveToUnit(key: string, ref: string, unit: { start: Vid; end: Vid }): Attachment[];
+  /** Devolve anexos tirados por mudança de trecho (ação "Desfazer"), sem os cite_ids. */
   restoreAttachments(list: readonly Attachment[]): void;
   /** Cria a vez (status streaming) com os anexos dados e o trecho dela, e devolve o id. Não mexe nos anexos do composer. */
   startTurn(question: string, range: ChatTurn['range'], attachments: readonly Attachment[], unitKey: string): string;
@@ -119,27 +133,35 @@ export const createChatSlice: StateCreator<StudyState, [], [], ChatSlice> = (set
   openChat: () => set({ chatOpen: true, unread: 0, popoverCite: null }),
   closeChat: () => set({ chatOpen: false }),
   setBubble: (b) => set({ bubble: b }),
-  attach: (a) => set((s) => (s.attachments.some((x) => x.id === a.id) ? {} : { attachments: [...s.attachments, a] })),
+  attach: (a) =>
+    set((s) => {
+      if (s.attachments.some((x) => x.id === a.id)) return {};
+      // Sem origem dada, o anexo fica com a seleção atual como trecho de origem.
+      const sel = s.selection;
+      const origin = a.origin ?? (sel ? { start: sel.start, end: sel.end } : undefined);
+      return { attachments: [...s.attachments, origin ? { ...a, origin } : a] };
+    }),
   detach: (id) => set((s) => ({ attachments: s.attachments.filter((a) => a.id !== id) })),
   clearAttachments: () => set({ attachments: [] }),
-  askQuestion: (q) => set({ pendingQuestion: q, chatOpen: true, unread: 0, popoverCite: null }),
+  askQuestion: (q, attachments = []) => set({ pendingQuestion: { text: q, attachments }, chatOpen: true, unread: 0, popoverCite: null }),
   consumeQuestion: () => set({ pendingQuestion: null }),
-  moveToUnit: (key, ref) => {
+  moveToUnit: (key, ref, unit) => {
     const s = get();
     if (s.unitKey === key) return [];
     // Sem trecho anterior (primeira vez), não há o que tirar: os anexos já são deste trecho.
-    const removed = s.unitKey === null ? [] : s.attachments;
+    const kept = s.unitKey === null ? s.attachments : s.attachments.filter((a) => insideUnit(a, unit));
+    const removed = s.attachments.filter((a) => !kept.includes(a));
     // Sem pergunta nova entre duas mudanças, o divisor da última vez só troca de rótulo (não empilha).
     const at = s.thread.length;
     const last = s.dividers[s.dividers.length - 1];
     let dividers = s.dividers;
     if (at > 0) dividers = last?.at === at ? [...s.dividers.slice(0, -1), { at, ref }] : [...s.dividers, { at, ref }];
-    set({ unitKey: key, attachments: removed.length > 0 ? [] : s.attachments, dividers });
+    set({ unitKey: key, attachments: kept, dividers });
     return removed;
   },
   restoreAttachments: (list) =>
     set((s) => {
-      const back = list.filter((a) => !s.attachments.some((x) => x.id === a.id));
+      const back = list.filter((a) => !s.attachments.some((x) => x.id === a.id)).map(withoutCites);
       return back.length > 0 ? { attachments: [...back, ...s.attachments] } : {};
     }),
   startTurn: (question, range, attachments, unitKey) => {
