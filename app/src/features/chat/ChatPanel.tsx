@@ -7,7 +7,7 @@ import { scheduleOnRN } from 'react-native-worklets';
 import { router } from 'expo-router';
 import { formatShortRef } from '@sensus/core';
 import { fontFamilies, IconButton, LinkButton, motion, QuestionButton, radius, shadow, size, Txt, useTheme } from '@/design';
-import { useStudy, LENS_LABELS } from '@/state/study';
+import { useStudy, LENS_LABELS, type Attachment } from '@/state/study';
 import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { usePresence } from '../common/motion';
 import { useBooks } from '../common/hooks';
@@ -32,8 +32,8 @@ export function ChatPanel({
   api: ChatApi;
   draft: string;
   setDraft: (v: string) => void;
-  /** `fromComposer`: a pergunta digitada (leva os anexos); sugeridas e de vez em vez não levam. */
-  send: (q: string, fromComposer: boolean) => void;
+  /** Anexos da pergunta: 'composer' (a digitada) ou a lista dada (sugeridas e de vez em vez: a sua própria). */
+  send: (q: string, attachments: readonly Attachment[] | 'composer') => void;
 }) {
   const { c } = useTheme();
   const ownBooks = useBooks();
@@ -199,7 +199,7 @@ export function ChatPanel({
             ) : (
               <View style={{ gap: 6 }}>
                 {suggestions.map((q, i) => (
-                  <QuestionButton key={`${i}-${q}`} testID={`suggestion-${i}`} text={q} onPress={() => send(q, false)} />
+                  <QuestionButton key={`${i}-${q}`} testID={`suggestion-${i}`} text={q} onPress={() => send(q, [])} />
                 ))}
               </View>
             )}
@@ -212,7 +212,7 @@ export function ChatPanel({
                 {dividers.map((d, k) =>
                   d.at === i ? <UnitDivider key={`div-${k}`} label={CHAT.unitDivider(d.ref)} /> : null,
                 )}
-                <TurnView turn={t} api={api} onAsk={(q) => send(q, false)} onLayoutY={onTurnLayout} onPick={setPicked} />
+                <TurnView turn={t} api={api} onAsk={(q) => send(q, [])} onLayoutY={onTurnLayout} onPick={setPicked} />
               </Fragment>
             ))}
             {dividers.map((d, k) =>
@@ -254,7 +254,7 @@ export function ChatPanel({
         ref={inputRef}
         value={draft}
         onChange={setDraft}
-        onSend={() => send(draft, true)}
+        onSend={() => send(draft, 'composer')}
         onStop={api.stop}
         streaming={api.streaming}
         disabled={noProvider || api.contextBusy}

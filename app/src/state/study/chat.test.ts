@@ -112,9 +112,16 @@ describe('abrir o chat com uma pergunta', () => {
     expect(s.chatOpen).toBe(true);
     expect(s.unread).toBe(0);
     expect(s.popoverCite).toBeNull();
-    expect(s.pendingQuestion).toBe('Quem foi Calvino?');
+    expect(s.pendingQuestion).toEqual({ text: 'Quem foi Calvino?', attachments: [] });
     useStudy.getState().consumeQuestion();
     expect(useStudy.getState().pendingQuestion).toBeNull();
+  });
+
+  it('askQuestion leva os anexos dados (não os do composer)', () => {
+    useStudy.getState().attach(verse);
+    useStudy.getState().askQuestion('Explique melhor este ponto', [cite]);
+    expect(useStudy.getState().pendingQuestion).toEqual({ text: 'Explique melhor este ponto', attachments: [cite] });
+    expect(useStudy.getState().attachments).toEqual([verse]);
   });
 
   it('openChat zera as não lidas e fecha a prévia; closeChat só fecha', () => {
@@ -131,22 +138,22 @@ describe('trocar de trecho', () => {
 
   it('primeiro trecho conhecido só registra a chave (anexos ficam, sem divisor)', () => {
     useStudy.getState().attach(verse);
-    expect(useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11')).toEqual([]);
+    expect(useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11', FP)).toEqual([]);
     expect(useStudy.getState()).toMatchObject({ unitKey: sel(FP), attachments: [verse], dividers: [] });
   });
 
   it('mesmo trecho não faz nada', () => {
-    useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11');
+    useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11', FP);
     useStudy.getState().attach(verse);
-    expect(useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11')).toEqual([]);
+    expect(useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11', FP)).toEqual([]);
     expect(useStudy.getState().attachments).toEqual([verse]);
   });
 
   it('mudar de trecho tira os anexos, devolve os que saíram e põe divisor se há vezes', () => {
-    useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11');
+    useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11', FP);
     useStudy.getState().attach(verse);
     useStudy.getState().startTurn('um', null, [verse], sel(FP));
-    const removed = useStudy.getState().moveToUnit(sel(GN), 'Gn 1:1–2:3');
+    const removed = useStudy.getState().moveToUnit(sel(GN), 'Gn 1:1–2:3', GN);
     const s = useStudy.getState();
     expect(removed).toEqual([verse]);
     expect(s.attachments).toEqual([]);
@@ -155,26 +162,52 @@ describe('trocar de trecho', () => {
   });
 
   it('duas mudanças sem pergunta entre elas deixam um divisor só, com o último nome', () => {
-    useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11');
+    useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11', FP);
     useStudy.getState().startTurn('um', null, [], sel(FP));
-    useStudy.getState().moveToUnit(sel(GN), 'Gn 1:1–2:3');
-    useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11');
+    useStudy.getState().moveToUnit(sel(GN), 'Gn 1:1–2:3', GN);
+    useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11', FP);
     expect(useStudy.getState().dividers).toEqual([{ at: 1, ref: 'Fp 2:5–11' }]);
   });
 
   it('desfazer devolve os anexos tirados (sem duplicar os que já estão lá)', () => {
-    useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11');
+    useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11', FP);
     useStudy.getState().attach(verse);
-    const removed = useStudy.getState().moveToUnit(sel(GN), 'Gn 1:1–2:3');
+    const removed = useStudy.getState().moveToUnit(sel(GN), 'Gn 1:1–2:3', GN);
     useStudy.getState().attach(cite);
     useStudy.getState().restoreAttachments(removed);
     useStudy.getState().restoreAttachments(removed);
     expect(useStudy.getState().attachments).toEqual([verse, cite]);
   });
 
+  it('anexo com origem dentro do trecho novo fica; de fora ou sem origem sai', () => {
+    useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11', FP);
+    const at = (id: string, sta: number, end: number) => {
+      useStudy.setState({ selection: { start: sta, end, anchor: sta } });
+      useStudy.getState().attach({ id, kind: 'verse', label: id });
+    };
+    // Lido no trecho novo antes da chave mudar: a seleção (dentro de Gn) é a origem.
+    at('dentro', 1001001, 1001003);
+    at('fora', 50002005, 50002005);
+    useStudy.setState({ selection: null });
+    useStudy.getState().attach({ id: 'sem', kind: 'verse', label: 'sem' });
+    const removed = useStudy.getState().moveToUnit(sel(GN), 'Gn 1:1–2:3', GN);
+    expect(removed.map((a) => a.id)).toEqual(['fora', 'sem']);
+    expect(useStudy.getState().attachments.map((a) => a.id)).toEqual(['dentro']);
+  });
+
+  it('desfazer devolve o anexo sem os cite_ids (rótulo e texto ficam)', () => {
+    useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11', FP);
+    useStudy.getState().attach({ ...cite, text: 'parágrafo' });
+    const removed = useStudy.getState().moveToUnit(sel(GN), 'Gn 1:1–2:3', GN);
+    useStudy.getState().restoreAttachments(removed);
+    const [back] = useStudy.getState().attachments;
+    expect(back).toMatchObject({ id: 'cite-1', label: 'Calvino', text: 'parágrafo' });
+    expect(back).not.toHaveProperty('citeIds');
+  });
+
   it('sem anexos, a mudança de trecho não tira nada e não devolve nada', () => {
-    useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11');
-    expect(useStudy.getState().moveToUnit(sel(GN), 'Gn 1:1–2:3')).toEqual([]);
+    useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11', FP);
+    expect(useStudy.getState().moveToUnit(sel(GN), 'Gn 1:1–2:3', GN)).toEqual([]);
   });
 
   it('historyFor manda só as vezes do trecho atual, antes da vez dada', () => {
@@ -192,10 +225,10 @@ describe('trocar de trecho', () => {
   });
 
   it('newConversation zera conversa, divisores, anexos e trecho', () => {
-    useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11');
+    useStudy.getState().moveToUnit(sel(FP), 'Fp 2:5–11', FP);
     useStudy.getState().attach(verse);
     useStudy.getState().startTurn('um', null, [], sel(FP));
-    useStudy.getState().moveToUnit(sel(GN), 'Gn 1:1–2:3');
+    useStudy.getState().moveToUnit(sel(GN), 'Gn 1:1–2:3', GN);
     useStudy.getState().newConversation();
     expect(useStudy.getState()).toMatchObject({ thread: [], attachments: [], dividers: [], unitKey: null });
   });

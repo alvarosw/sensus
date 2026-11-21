@@ -24,8 +24,8 @@ export interface ChatApi {
   /** Seleção dentro da unidade, que a resposta deve focar (null: a unidade é a própria seleção). */
   focus: { start: number; end: number } | null;
   streaming: boolean;
-  /** `fromComposer`: a pergunta digitada leva os anexos do composer; sugeridas e de lente não levam. */
-  ask: (question: string, fromComposer: boolean) => boolean;
+  /** `attachments`: os anexos desta vez; 'composer' = os do composer (a pergunta digitada). */
+  ask: (question: string, attachments: readonly Attachment[] | 'composer') => boolean;
   retry: (turnId: string) => void;
   stop: () => void;
   /** Nova conversa: para a resposta em curso e esquece a conversa e os anexos. */
@@ -71,14 +71,14 @@ export function useChat(onNoProvider: (question: string) => void): ChatApi {
     });
   }, []);
 
-  // Mudou de trecho: tira os anexos (com Desfazer) e marca o divisor, mesmo com o chat fechado.
+  // Mudou de trecho: tira os anexos que não são deste trecho (com Desfazer) e marca o divisor, mesmo com o chat fechado.
   useEffect(() => {
-    if (chatKey === null) return;
-    announceRemoved(useStudy.getState().moveToUnit(chatKey, chatRef));
-  }, [chatKey, chatRef, announceRemoved]);
+    if (chatKey === null || !chatRange) return;
+    announceRemoved(useStudy.getState().moveToUnit(chatKey, chatRef, chatRange));
+  }, [chatKey, chatRef, chatRange, announceRemoved]);
 
   const ask = useCallback(
-    (question: string, fromComposer: boolean): boolean => {
+    (question: string, attachments: readonly Attachment[] | 'composer'): boolean => {
       const q = question.trim();
       if (!q) return false;
       if (!provider) {
@@ -86,21 +86,21 @@ export function useChat(onNoProvider: (question: string) => void): ChatApi {
         return false;
       }
       // Confere o trecho na hora de perguntar (a pergunta não pode ir com anexos de outro trecho).
-      if (chatKey !== null) announceRemoved(useStudy.getState().moveToUnit(chatKey, chatRef));
-      const attachments = fromComposer ? useStudy.getState().attachments : [];
+      if (chatKey !== null && chatRange) announceRemoved(useStudy.getState().moveToUnit(chatKey, chatRef, chatRange));
+      const sent = attachments === 'composer' ? useStudy.getState().attachments : attachments;
       const id = engineAsk({
         provider,
         question: q,
         range,
         unitKey: chatKey ?? '',
-        attachments,
+        attachments: sent,
         contextText: passage.context?.text ?? '',
         richCtx: passage.richCtx ?? EMPTY_CTX,
         focus,
       });
       return id !== null;
     },
-    [provider, chatKey, chatRef, announceRemoved, range, passage.context, passage.richCtx, focus, onNoProvider],
+    [provider, chatKey, chatRef, chatRange, announceRemoved, range, passage.context, passage.richCtx, focus, onNoProvider],
   );
 
   const retry = useCallback(
@@ -165,14 +165,14 @@ export function useSuggestions(passage: PassagePanel, range: { start: number; en
   }, [text, richCtx, lens, hasProvider]);
 }
 
-/** Zera a pergunta pendente depois que o chat a consumir. */
-export function usePendingQuestion(ready: boolean, send: (q: string) => void): void {
+/** Zera a pergunta pendente depois que o chat a consumir, e a envia com os anexos que ela trouxe. */
+export function usePendingQuestion(ready: boolean, send: (q: string, attachments: readonly Attachment[]) => void): void {
   const pending = useStudy((s) => s.pendingQuestion);
   const consume = useStudy((s) => s.consumeQuestion);
   useEffect(() => {
     if (!pending || !ready) return;
     consume();
-    send(pending);
+    send(pending.text, pending.attachments);
   }, [pending, ready, consume, send]);
 }
 
