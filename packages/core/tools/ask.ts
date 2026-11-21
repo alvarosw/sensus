@@ -4,6 +4,8 @@
 //                                                  lingua, intertexto, interpretacao, aplicacao)
 //   npm run ask -- "Phil 2:5-8" "sua pergunta"     resposta com base no contexto
 //   npm run ask -- "Phil 2:5-8" --context          só imprime o contexto serializado
+//   npm run ask -- "John 1:1-5" --curiosity        curiosidade do trecho (eco ou termo): modelo, portão e revisor
+//                                                  (usa a unidade literária inteira, como o resumo do app)
 //   npm run ask -- --list-models                   lista os modelos do provedor (NVIDIA_*)
 import { existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
@@ -11,6 +13,7 @@ import { fileURLToPath } from 'node:url';
 import { DatabaseSync } from 'node:sqlite';
 import { config as loadEnv } from 'dotenv';
 import {
+  acceptCuriosity,
   answerMessages,
   blocksToPlainText,
   buildPanel,
@@ -18,8 +21,15 @@ import {
   buildRichTextContext,
   CHAT_MAX_TOKENS,
   claimsOf,
+  CURIOSITY_MAX_TOKENS,
+  CURIOSITY_REVIEW_MAX_TOKENS,
+  curiosityMessages,
+  curiosityReviewMessages,
+  type CuriosityCandidate,
   DEFAULT_PANEL_LIMITS,
   OpenAICompatibleProvider,
+  parseCuriosity,
+  parseCuriosityReview,
   parseRef,
   parseStructuredAnswer,
   parseStructuredSummary,
@@ -31,13 +41,16 @@ import {
   SUMMARY_MAX_TOKENS,
   summaryMessages,
   type Block,
+  type Book,
   type PanelData,
   type RichTextContext,
   type SectionKey,
+  type SerializedContext,
   type SqlDriver,
   type SqlParam,
   type StructuredAnswer,
   type StructuredSummary,
+  type VerseRange,
 } from '../src/index';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -51,6 +64,7 @@ const DB_PATH = process.env.SENSUS_DB ? resolve(process.env.SENSUS_DB) : resolve
 
 function usage(): void {
   console.error('Uso: npm run ask -- "<referência>" [pergunta] [--section <chave>] [--context]');
+  console.error('     npm run ask -- "<referência>" --curiosity');
   console.error('     npm run ask -- --list-models');
   console.error(`Seções: ${SECTION_KEYS.join(', ')}`);
   console.error('Exemplos: "Phil 2:5-8", "Filipenses 2", "Rom 8:28-30"');
@@ -190,6 +204,58 @@ async function streamTo(
   return full;
 }
 
+/** Imprime os campos de uma curiosidade candidata, como o parser os leu. */
+function printCandidate(c: CuriosityCandidate): void {
+  console.log(`tipo: ${c.kind}`);
+  console.log(`gancho: ${c.hook}`);
+  console.log(`ouvinte: ${c.listener}`);
+  console.log(`hoje: ${c.today}`);
+  console.log(`muda: ${c.change}`);
+  console.log(`evidencias: ${c.evidence.join(', ')}`);
+  console.log(`confianca: ${c.confidence}`);
+}
+
+/** Curiosidade do trecho: modelo, parse, portão em código e, se o portão aprovar, o revisor. */
+async function runCuriosity(
+  provider: OpenAICompatibleProvider,
+  model: string,
+  context: SerializedContext,
+  panel: PanelData,
+  books: Book[],
+  focus: VerseRange | undefined,
+): Promise<void> {
+  const rich = buildRichTextContext(context, panel, books);
+  console.log(`\n--- Curiosidade (${model}) ---\n`);
+  const raw = await streamTo(provider, curiosityMessages(context, { focus }), CURIOSITY_MAX_TOKENS);
+
+  const parsed = parseCuriosity(raw);
+  console.log('\n--- Parse ---');
+  if (parsed === 'none') {
+    console.log('@nenhuma (nenhuma curiosidade no trecho)');
+    return;
+  }
+  if (parsed === null) {
+    console.log('malformada ou incompleta (sem @fim, campo ausente ou tipo/confiança inválidos)');
+    return;
+  }
+  printCandidate(parsed);
+
+  const gate = acceptCuriosity(parsed, rich);
+  console.log('\n--- Portão ---');
+  if (!gate.ok) {
+    console.log(`reprovada: ${gate.reason}`);
+    return;
+  }
+  console.log('aprovada pelo portão');
+
+  console.log(`\n--- Revisor (${model}) ---\n`);
+  const review = await streamTo(provider, curiosityReviewMessages(context, parsed), CURIOSITY_REVIEW_MAX_TOKENS);
+  const verdict = parseCuriosityReview(review);
+  console.log('\n--- Veredito ---');
+  if (verdict === null) console.log('reprovada: resposta do revisor incompleta');
+  else console.log(`${verdict.approved ? 'aprovada' : 'reprovada'}: ${verdict.reason}`);
+}
+
 async function main(): Promise<void> {
   const { flags, section, positional } = parseArgs(process.argv.slice(2));
 
@@ -237,7 +303,10 @@ async function main(): Promise<void> {
       return;
     }
 
-    const panel = await buildPanel(repo, range, { textSource: 'blivre', contextVerses: 5, limits: DEFAULT_PANEL_LIMITS });
+    // Curiosidade: a unidade literária inteira, como o resumo do app; a seleção vai como foco.
+    const curiosity = flags.has('--curiosity');
+    const unit = curiosity ? await repo.literaryUnit('blivre', range) : range;
+    const panel = await buildPanel(repo, unit, { textSource: 'blivre', contextVerses: 5, limits: DEFAULT_PANEL_LIMITS });
     printStats(panel);
 
     const context = serializePanel(panel, CONTEXT_BUDGET);
@@ -267,7 +336,10 @@ async function main(): Promise<void> {
 
     let answer: string;
     try {
-      if (question) {
+      if (curiosity) {
+        const focus = unit.start === range.start && unit.end === range.end ? undefined : range;
+        await runCuriosity(provider, cfg.model, context, panel, books, focus);
+      } else if (question) {
         console.log(`\n--- Resposta (${cfg.model}) ---\n`);
         answer = await streamTo(provider, answerMessages(context, [], question), CHAT_MAX_TOKENS);
         printAnswer('Resposta', parseStructuredAnswer(answer, rich), context.citeIds.size);
