@@ -8,8 +8,10 @@ import {
   CURIOSITY_REVIEW_MAX_TOKENS,
   parseCuriosity,
   parseCuriosityReview,
+  curiosityVerdict,
   reviewApproves,
   type CuriosityCandidate,
+  type CuriosityReview,
   type RichTextContext,
 } from '../src/index';
 import type { CiteIndexEntry } from '../src/index';
@@ -308,6 +310,64 @@ describe('parseCuriosityReview', () => {
   });
 });
 
+/** Revisão válida que a regra aprova (interesse 5, fundamento 5, tudo ok). */
+function revisao(over: Partial<CuriosityReview> = {}): CuriosityReview {
+  const base = { interest: 5, grounding: 5, disputed: false, inScope: true, kindOk: true, weighty: true, reason: 'ok' };
+  const r = { ...base, ...over };
+  return { ...r, approved: reviewApproves(r) };
+}
+
+describe('curiosityVerdict', () => {
+  const ECO = { kind: 'eco' as const };
+  const TERMO = { kind: 'termo' as const };
+
+  it('NT eco: duas revisões aprovadas mostram a curiosidade', () => {
+    expect(curiosityVerdict(ECO, [revisao(), revisao()]).show).toBe(true);
+  });
+
+  it('AT termo: duas revisões com interesse 5 e aprovadas mostram', () => {
+    expect(curiosityVerdict(TERMO, [revisao(), revisao()]).show).toBe(true);
+  });
+
+  it('termo exige interesse 5 nas duas: um 4 derruba mesmo sendo aprovado pela regra', () => {
+    const quatro = revisao({ interest: 4 });
+    expect(reviewApproves(quatro)).toBe(true);
+    expect(curiosityVerdict(TERMO, [revisao(), quatro]).show).toBe(false);
+    expect(curiosityVerdict(TERMO, [quatro, quatro]).show).toBe(false);
+  });
+
+  it('eco aceita interesse 4 nas duas', () => {
+    expect(curiosityVerdict(ECO, [revisao({ interest: 4 }), revisao({ interest: 4 })]).show).toBe(true);
+  });
+
+  it('precisa de exatamente duas revisões: zero, uma ou três não mostram', () => {
+    expect(curiosityVerdict(ECO, []).show).toBe(false);
+    expect(curiosityVerdict(ECO, [revisao()]).show).toBe(false);
+    expect(curiosityVerdict(ECO, [revisao(), revisao(), revisao()]).show).toBe(false);
+  });
+
+  it('revisão null (incompleta ou inválida) não mostra', () => {
+    expect(curiosityVerdict(ECO, [revisao(), null]).show).toBe(false);
+    expect(curiosityVerdict(TERMO, [null, revisao()]).show).toBe(false);
+  });
+
+  it('cada condição reprovando sozinha, numa das duas revisões, derruba a curiosidade', () => {
+    const ruins: Partial<CuriosityReview>[] = [
+      { interest: 3 },
+      { grounding: 3 },
+      { disputed: true },
+      { inScope: false },
+      { kindOk: false },
+      { weighty: false },
+    ];
+    for (const ruim of ruins) {
+      expect(curiosityVerdict(ECO, [revisao(), revisao(ruim)]).show).toBe(false);
+      expect(curiosityVerdict(ECO, [revisao(ruim), revisao()]).show).toBe(false);
+      expect(curiosityVerdict(TERMO, [revisao(), revisao(ruim)]).show).toBe(false);
+    }
+  });
+});
+
 describe('reviewApproves', () => {
   const BOA = { interest: 5, grounding: 4, disputed: false, inScope: true, kindOk: true, weighty: true };
 
@@ -362,8 +422,8 @@ describe('curiosityMessages e revisor', () => {
     expect(txt).toContain('contagem de cidades');
   });
 
-  it('o gerador usa curiosidade-v3 na chave de cache', () => {
-    expect(curiosityCacheKey({ start: 50002005, end: 50002008 })).toBe('curiosity:curiosidade-v3:50002005-50002008');
+  it('o gerador usa curiosidade-v4 na chave de cache', () => {
+    expect(curiosityCacheKey({ start: 50002005, end: 50002008 })).toBe('curiosity:curiosidade-v4:50002005-50002008');
   });
 
   it('chave de cache usa o prefixo curiosity: e os limites são constantes', () => {

@@ -26,11 +26,14 @@ import {
   curiosityMessages,
   curiosityReviewMessages,
   type CuriosityCandidate,
+  type CuriosityReview,
   DEFAULT_PANEL_LIMITS,
   OpenAICompatibleProvider,
   parseCuriosity,
+  curiosityVerdict,
   parseCuriosityReview,
   parseRef,
+  reviewApproves,
   parseStructuredAnswer,
   parseStructuredSummary,
   Repo,
@@ -248,23 +251,38 @@ async function runCuriosity(
   }
   console.log('aprovada pelo portão');
 
-  console.log(`\n--- Revisor (${model}) ---\n`);
-  const review = await streamTo(provider, curiosityReviewMessages(context, parsed), CURIOSITY_REVIEW_MAX_TOKENS);
-  const verdict = parseCuriosityReview(review);
-  console.log('\n--- Veredito ---');
-  if (verdict === null) {
-    console.log('reprovada: resposta do revisor incompleta ou com valor inválido');
-    console.log(`bruto: ${review.replace(/\n/g, ' | ')}`);
-    return;
+  // Duas chamadas independentes ao revisor, com a mesma mensagem; o veredito final exige as duas.
+  const reviews: (CuriosityReview | null)[] = [];
+  for (let n = 1; n <= 2; n++) {
+    console.log(`\n--- Revisor ${n} (${model}) ---\n`);
+    const raw = await streamTo(provider, curiosityReviewMessages(context, parsed), CURIOSITY_REVIEW_MAX_TOKENS);
+    const review = parseCuriosityReview(raw);
+    reviews.push(review);
+    console.log(`\n--- Revisão ${n} ---`);
+    if (review === null) {
+      console.log('incompleta ou com valor inválido');
+      console.log(`bruto: ${raw.replace(/\n/g, ' | ')}`);
+      continue;
+    }
+    printReview(review);
   }
-  console.log(`interesse: ${verdict.interest}`);
-  console.log(`fundamento: ${verdict.grounding}`);
-  console.log(`disputa: ${verdict.disputed ? 'sim' : 'nao'}`);
-  console.log(`alcance: ${verdict.inScope ? 'sim' : 'nao'}`);
-  console.log(`tipo: ${verdict.kindOk ? 'sim' : 'nao'}`);
-  console.log(`peso: ${verdict.weighty ? 'sim' : 'nao'}`);
-  console.log(`motivo: ${verdict.reason}`);
-  console.log(verdict.approved ? 'APARECE: aprovada' : 'reprovada pelo revisor');
+
+  const verdict = curiosityVerdict(parsed, reviews);
+  console.log('\n--- Veredito final ---');
+  console.log(verdict.show ? `APARECE: ${verdict.reason}` : `não aparece: ${verdict.reason}`);
+  if (verdict.show) console.log(`gancho: ${parsed.hook}`);
+}
+
+/** Imprime as notas e o motivo de uma revisão válida, e se a regra de notas a aprova. */
+function printReview(r: CuriosityReview): void {
+  console.log(`interesse: ${r.interest}`);
+  console.log(`fundamento: ${r.grounding}`);
+  console.log(`disputa: ${r.disputed ? 'sim' : 'nao'}`);
+  console.log(`alcance: ${r.inScope ? 'sim' : 'nao'}`);
+  console.log(`tipo: ${r.kindOk ? 'sim' : 'nao'}`);
+  console.log(`peso: ${r.weighty ? 'sim' : 'nao'}`);
+  console.log(`motivo: ${r.reason}`);
+  console.log(`regra de notas: ${reviewApproves(r) ? 'aprova' : 'reprova'}`);
 }
 
 async function main(): Promise<void> {

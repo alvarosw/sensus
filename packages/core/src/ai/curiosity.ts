@@ -8,7 +8,7 @@ import { markerKey } from './structured';
 import type { RichTextContext } from './structured-types';
 
 /** Versão do prompt da curiosidade: muda quando o texto muda, para invalidar o cache. */
-export const CURIOSITY_PROMPT_VERSION = 'curiosidade-v3';
+export const CURIOSITY_PROMPT_VERSION = 'curiosidade-v4';
 /** Limites de saída. Modelos com raciocínio gastam parte do limite antes de responder, por isso são folgados. */
 export const CURIOSITY_MAX_TOKENS = 900;
 export const CURIOSITY_REVIEW_MAX_TOKENS = 400;
@@ -288,6 +288,31 @@ export function reviewApproves(
   r: Pick<CuriosityReview, 'interest' | 'grounding' | 'disputed' | 'inScope' | 'kindOk' | 'weighty'>,
 ): boolean {
   return r.interest >= 4 && r.grounding >= 4 && !r.disputed && r.inScope && r.kindOk && r.weighty;
+}
+
+/** Veredito final da curiosidade: mostra ou não, e por quê (uma frase). */
+export interface CuriosityVerdict {
+  show: boolean;
+  reason: string;
+}
+
+/**
+ * Regra final (pura). Mostra só com EXATAMENTE duas revisões válidas, ambas aprovadas por reviewApproves; e, se o
+ * tipo for termo, ambas com interesse 5. Revisão null (incompleta ou inválida) não conta, e derruba a curiosidade.
+ */
+export function curiosityVerdict(
+  candidate: Pick<CuriosityCandidate, 'kind'>,
+  reviews: ReadonlyArray<CuriosityReview | null>,
+): CuriosityVerdict {
+  const no = (reason: string): CuriosityVerdict => ({ show: false, reason });
+  if (reviews.length !== 2) return no(`${reviews.length} revisão(ões); precisa de exatamente 2`);
+  if (reviews.some((r) => r === null)) return no('revisão incompleta ou com valor inválido');
+  const [a, b] = reviews as CuriosityReview[];
+  if (!reviewApproves(a!) || !reviewApproves(b!)) return no('uma das revisões reprovou pela regra de notas');
+  if (candidate.kind === 'termo' && (a!.interest !== 5 || b!.interest !== 5)) {
+    return no('termo precisa de interesse 5 nas duas revisões');
+  }
+  return { show: true, reason: 'aprovada pelas duas revisões' };
 }
 
 const REVIEW_KEYS = ['interesse', 'fundamento', 'disputa', 'alcance', 'tipo', 'peso', 'motivo'] as const;
