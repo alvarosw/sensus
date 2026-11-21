@@ -1,6 +1,6 @@
-// Casca de uma lente (proto: lensShell): título + contagem, resumo próprio (só a Visão geral, o fio), "DETALHADO",
-// conteúdo das fontes, ações (Detalhar / Ver todos) e perguntas sugeridas. Nas outras lentes o resumo da seção
-// não aparece aqui: ele vive no passo correspondente do fio.
+// Casca de uma lente (proto: lensShell): título + contagem, "DETALHADO", conteúdo das fontes, ações (Detalhar / Ver
+// todos) e perguntas sugeridas. A Visão geral não usa esta casca: as peças (LensTitle e LensDetail) entram direto na
+// rolagem da folha, como irmãs, para a âncora nativa segurar cada uma (ver SheetBody.tsx).
 import { memo, type ReactNode } from 'react';
 import { View, type LayoutChangeEvent } from 'react-native';
 import {
@@ -23,15 +23,26 @@ export interface LensShellProps {
   count?: string;
   /** Total de itens de fonte além dos exibidos (botão "Ver todos N"); 0 = sem botão. */
   sourcesN?: number;
-  /** Resumo próprio da lente, logo abaixo do título (hoje, só o fio da Visão geral). */
-  summary?: ReactNode;
   /** Conteúdo determinístico (cards). */
   children?: ReactNode;
   onLayout?: (e: LayoutChangeEvent) => void;
 }
 
-export const LensShell = memo(function LensShell({ lens, title, count, sourcesN = 0, summary, children, onLayout }: LensShellProps) {
-  const { c } = useTheme();
+/** Título da lente e contagem (a primeira linha da lente). */
+export function LensTitle({ title, count }: { title: string; count?: string }) {
+  return (
+    <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline', gap: space[4] }}>
+      <Txt v="lensTitle" accessibilityRole="header">{title}</Txt>
+      {count ? <Txt v="meta" color="muted" style={{ fontSize: 11.5 }}>{count}</Txt> : null}
+    </View>
+  );
+}
+
+/**
+ * O que vem depois do título: blocos detalhados, conteúdo, "Detalhar" / "Ver todos" e perguntas. Devolve filhos
+ * soltos; quem chama dá o espaçamento (gap) entre eles.
+ */
+export function LensDetail({ lens, sourcesN = 0, children }: { lens: LensKey; sourcesN?: number; children?: ReactNode }) {
   const ai = useStudyAi();
   const expanded = useStudy((s) => !!s.expanded[lens]);
   const toggleExpanded = useStudy((s) => s.toggleExpanded);
@@ -41,24 +52,7 @@ export const LensShell = memo(function LensShell({ lens, title, count, sourcesN 
   const questions = ai.questions(lens);
 
   return (
-    <View
-      testID={`lens-${lens}`}
-      onLayout={onLayout}
-      style={{
-        paddingTop: space[9],
-        paddingHorizontal: 16,
-        paddingBottom: space[3],
-        gap: space[6],
-        borderTopWidth: lens === 'visao' ? 0 : 1,
-        borderTopColor: c.border,
-      }}
-    >
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline', gap: space[4] }}>
-        <Txt v="lensTitle" accessibilityRole="header">{title}</Txt>
-        {count ? <Txt v="meta" color="muted" style={{ fontSize: 11.5 }}>{count}</Txt> : null}
-      </View>
-
-      {summary}
+    <>
       {deep.map((d, i) => (
         <DeepBlock key={d.key} lens={lens} view={d} index={i} />
       ))}
@@ -84,6 +78,29 @@ export const LensShell = memo(function LensShell({ lens, title, count, sourcesN 
           ))}
         </View>
       )}
+    </>
+  );
+}
+
+export const LensShell = memo(function LensShell({ lens, title, count, sourcesN = 0, children, onLayout }: LensShellProps) {
+  const { c } = useTheme();
+  return (
+    <View
+      testID={`lens-${lens}`}
+      onLayout={onLayout}
+      style={{
+        paddingTop: space[9],
+        paddingHorizontal: 16,
+        paddingBottom: space[3],
+        gap: space[6],
+        borderTopWidth: 1,
+        borderTopColor: c.border,
+      }}
+    >
+      <LensTitle title={title} count={count} />
+      <LensDetail lens={lens} sourcesN={sourcesN}>
+        {children}
+      </LensDetail>
     </View>
   );
 });
