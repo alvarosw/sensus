@@ -5,13 +5,14 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } fro
 import { splitVid, wordKey, type Book, type PanelData, type Repo, type Vid } from '@sensus/core';
 import { useRepo } from '@/data/db-context';
 import { useStudy, LENS_KEYS } from '@/state/study';
-import { AiCtx, DataCtx } from './study-context';
-import type { Range, RangeEdges, StudyAi, StudyData } from './study-state';
+import { AiCtx, CuriosityCtx, DataCtx } from './study-context';
+import type { CuriosityView, Range, RangeEdges, StudyAi, StudyData } from './study-state';
 import { useBooks } from './useBooks';
+import { useCuriosityFeed } from './useCuriosity';
 import { useStudyAiFeed } from './useStudyAi';
 import { usePassagePanel } from './usePassagePanel';
 
-export { useStudyData, useStudyAi } from './study-context';
+export { useStudyData, useStudyAi, useStudyCuriosity } from './study-context';
 export type { AiStatus, DeepView, Range, RangeEdges, StudyAi, StudyData } from './study-state';
 
 /** Último versículo do livro (para "+ prev" quando a seleção começa no primeiro versículo de um livro). */
@@ -59,10 +60,12 @@ function useRangeEdges(range: Range, textSource: string, books: readonly Book[])
 }
 
 export function StudyDataProvider({ range, children }: { range: Range; children: ReactNode }) {
-  const { data, ai } = useBuildStudyData(range);
+  const { data, ai, curiosity } = useBuildStudyData(range);
   return (
     <DataCtx.Provider value={data}>
-      <AiCtx.Provider value={ai}>{children}</AiCtx.Provider>
+      <AiCtx.Provider value={ai}>
+        <CuriosityCtx.Provider value={curiosity}>{children}</CuriosityCtx.Provider>
+      </AiCtx.Provider>
     </DataCtx.Provider>
   );
 }
@@ -82,7 +85,7 @@ function effectiveUnit(unit: Range | null, sel: Range): Range | null {
 
 const MAX_UNIT_VERSES = 45;
 
-function useBuildStudyData(range: Range): { data: StudyData; ai: StudyAi } {
+function useBuildStudyData(range: Range): { data: StudyData; ai: StudyAi; curiosity: CuriosityView | null } {
   const books = useBooks();
   const textSource = useStudy((s) => s.textSource);
 
@@ -108,6 +111,7 @@ function useBuildStudyData(range: Range): { data: StudyData; ai: StudyAi } {
 
   const edges = useRangeEdges(range, textSource, books);
   const ai = useStudyAiFeed(range, unitRange, unitPanel);
+  const curiosity = useCuriosityFeed(range, unitRange, unitPanel);
 
   const tokenByKey = useMemo(() => {
     const m = new Map<string, string>();
@@ -126,7 +130,7 @@ function useBuildStudyData(range: Range): { data: StudyData; ai: StudyAi } {
     () => ({ range, books: allBooks, panel, loading, error: sel.error, reload: sel.reload, unit: sel.unit, tokenByKey, textSource, edges, labelOf }),
     [range, allBooks, panel, loading, sel.error, sel.reload, sel.unit, tokenByKey, textSource, edges, labelOf],
   );
-  return { data, ai };
+  return { data, ai, curiosity };
 }
 
 export { LENS_KEYS };

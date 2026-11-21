@@ -6,36 +6,50 @@
 //   cd app && npx tsx scripts/record-fixtures.ts --force    regrava tudo
 //   cd app && npx tsx scripts/record-fixtures.ts --only "Phil 2:5-8"
 //   cd app && npx tsx scripts/record-fixtures.ts --index    só regenera dev/fixtures/index.ts
+//   SENSUS_DB=../data/sensus.db npx tsx scripts/record-fixtures.ts   (use o banco COMPLETO: o do app é o leitor)
 //
-// Para cada intervalo: o resumo, o aprofundamento das seções 'lingua' e 'interpretacao' e as
-// respostas a 2 das perguntas sugeridas pelo próprio resumo. O texto bruto do modelo é guardado
-// (marcadores @secao e [[cite_id]] incluídos). Nunca imprime a chave da API.
+// Para cada intervalo: o resumo, o aprofundamento das seções 'lingua' e 'interpretacao', as
+// respostas a 2 das perguntas sugeridas pelo próprio resumo e a curiosidade do trecho (gerador e, se
+// ela passa no portão, uma resposta do revisor). O texto bruto do modelo é guardado (marcadores @secao,
+// [[cite_id]] e @curiosidade incluídos). Nunca imprime a chave da API.
 //
 // O contexto é montado exatamente como o app faz (buildPanel padrão + serializePanel), para que os
-// cite_ids gravados existam no contexto que o app envia.
+// cite_ids gravados existam no contexto que o app envia. A curiosidade usa a UNIDADE literária (como o
+// app, ver effectiveUnit em features/study/useStudyData.tsx), com a seleção como foco; a fixture leva a
+// referência da unidade, e o demo só a usa para essa mesma unidade.
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DatabaseSync } from 'node:sqlite';
 import { config as loadEnv } from 'dotenv';
 import {
+  acceptCuriosity,
   answerMessages,
   buildPanel,
   buildProviderConfig,
   buildRichTextContext,
   CHAT_MAX_TOKENS,
+  CURIOSITY_MAX_TOKENS,
+  CURIOSITY_REVIEW_MAX_TOKENS,
+  curiosityMessages,
+  curiosityReviewMessages,
   OpenAICompatibleProvider,
+  parseCuriosity,
   parseRef,
   parseStructuredSummary,
   Repo,
   sectionMessages,
   serializePanel,
+  splitVid,
   SUMMARY_MAX_TOKENS,
   summaryMessages,
+  type Book,
   type ChatMessage,
+  type CuriosityCandidate,
   type SectionKey,
   type SqlDriver,
   type SqlParam,
+  type VerseRange,
 } from '@sensus/core';
 import type { Fixture, FixtureKind } from '../dev/fixtures/types';
 
@@ -47,9 +61,13 @@ loadEnv({ path: resolve(ROOT, '.env'), quiet: true });
 
 const DB_PATH = process.env.SENSUS_DB ? resolve(process.env.SENSUS_DB) : resolve(APP, 'assets', 'sensus.db');
 const REFERENCES = ['Phil 2:5-8', 'Phil 1:27-2:4'];
+/** Trechos só com a curiosidade (sem resumo nem perguntas): o de Jo 8:58 tem uma curiosidade aprovada pelo revisor. */
+const CURIOSITY_REFERENCES = ['John 8:52-59'];
 const SECTIONS: SectionKey[] = ['lingua', 'interpretacao'];
 const QUESTIONS_PER_RANGE = 2;
 const LANGUAGE = 'pt-BR'; // APP_LOCALE do app
+/** Mesmo limite de unidade que o app usa (MAX_UNIT_VERSES em useStudyData.tsx). */
+const MAX_UNIT_VERSES = 45;
 
 const args = process.argv.slice(2);
 const force = args.includes('--force');
@@ -95,6 +113,18 @@ async function collect(
   throw lastErr instanceof Error ? lastErr : new Error(`${label}: falha ao gravar`);
 }
 
+/**
+ * Unidade da curiosidade como o app a escolhe: a perícope; a própria seleção quando ela atravessa livros ou
+ * passa do limite de versículos (effectiveUnit no app).
+ */
+async function unitFor(repo: Repo, range: VerseRange): Promise<VerseRange> {
+  const u = await repo.literaryUnit('blivre', range);
+  const a = splitVid(u.start);
+  const b = splitVid(u.end);
+  const approx = (b.chapter - a.chapter) * 30 + (b.verse - a.verse) + 1;
+  return a.book !== b.book || approx > MAX_UNIT_VERSES ? range : u;
+}
+
 function save(path: string, fixture: Fixture): void {
   writeFileSync(path, JSON.stringify(fixture, null, 2) + '\n');
   console.log(`  ok ${path.slice(APP.length + 1)} (${fixture.text.length} caracteres)`);
@@ -117,6 +147,55 @@ function writeIndex(): void {
   ];
   writeFileSync(resolve(OUT, 'index.ts'), lines.join('\n'));
   console.log(`  index.ts atualizado (${files.length} fixtures)`);
+}
+
+/** Grava a curiosidade de um trecho: a unidade é a perícope (como no app), com o trecho como foco. */
+async function recordCuriosity(
+  provider: OpenAICompatibleProvider,
+  repo: Repo,
+  books: Book[],
+  range: VerseRange,
+  model: string,
+): Promise<void> {
+  // Curiosidade do trecho (gerador e, se a candidata passa no portão, uma revisão).
+  const unit = await unitFor(repo, range);
+  const focus = unit.start === range.start && unit.end === range.end ? undefined : range;
+  const unitPanel = await buildPanel(repo, unit);
+  const unitContext = serializePanel(unitPanel);
+  const unitRich = buildRichTextContext(unitContext, unitPanel, books);
+  const unitRef = unitPanel.reference;
+  const curBase = { version: 1 as const, reference: unitRef, range: unit, model, recordedAt: new Date().toISOString() };
+  const genPath = fileFor(unitRef, 'curiosity');
+  const revPath = fileFor(unitRef, 'curiosity-review');
+  console.log(`\n${unitRef}${focus ? ' (curiosidade da unidade, com foco na seleção)' : ' (curiosidade da unidade)'}`);
+
+  let genText: string;
+  if (!force && existsSync(genPath)) {
+    genText = (JSON.parse(readFileSync(genPath, 'utf8')) as Fixture).text;
+    console.log('  = curiosidade já gravada');
+  } else {
+    console.log('  gravando curiosidade...');
+    genText = await collect(provider, curiosityMessages(unitContext, { language: LANGUAGE, focus }), CURIOSITY_MAX_TOKENS, 'curiosidade');
+    save(genPath, { ...curBase, kind: 'curiosity', text: genText });
+  }
+
+  const parsed = parseCuriosity(genText);
+  const candidate: CuriosityCandidate | null =
+    parsed && parsed !== 'none' && acceptCuriosity(parsed, unitRich).ok ? parsed : null;
+  if (!candidate) {
+    console.log(parsed === 'none' ? '  curiosidade: @nenhuma (sem revisão)' : '  curiosidade: não passa no portão (sem revisão)');
+  } else if (!force && existsSync(revPath)) {
+    console.log('  = revisão já gravada');
+  } else {
+    console.log('  gravando revisão da curiosidade...');
+    const revText = await collect(
+      provider,
+      curiosityReviewMessages(unitContext, candidate, { language: LANGUAGE }),
+      CURIOSITY_REVIEW_MAX_TOKENS,
+      'revisão',
+    );
+    save(revPath, { ...curBase, kind: 'curiosity-review', text: revText });
+  }
 }
 
 async function main(): Promise<void> {
@@ -209,6 +288,14 @@ async function main(): Promise<void> {
         );
         save(path, { ...base, kind: 'answer', question, text });
       }
+
+      await recordCuriosity(provider, repo, books, range, cfg.model);
+    }
+    for (const ref of CURIOSITY_REFERENCES) {
+      if (only && only !== ref) continue;
+      const range = parseRef(ref, books);
+      if (!range) throw new Error(`Referência não reconhecida: ${ref}`);
+      await recordCuriosity(provider, repo, books, range, cfg.model);
     }
     writeIndex();
   } finally {

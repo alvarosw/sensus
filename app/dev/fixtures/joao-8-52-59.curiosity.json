@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "reference": "João 8:52-59",
+  "range": {
+    "start": 43008052,
+    "end": 43008059
+  },
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "recordedAt": "2026-11-21T03:45:49.555Z",
+  "kind": "curiosity",
+  "text": "@curiosidade eco\ngancho: Jesus usa \"eu sou\" (ἐγὼ εἰμί) sem predicado, ecoando o nome divino de Êxodo 3:14\nouvinte: Os ouvintes judeus reconheciam \"eu sou\" como a autodesignação de Javé na sarça ardente [[xr:openbible-xref:43008058:2003014-2003014]]\nhoje: Muitos leem \"eu sou\" apenas como afirmação de preexistência temporal, não como reivindicação do nome divino\nmuda: A reação de apedrejamento (Jo 8:59) mostra que entenderam como blasfêmia, não como mera precedência cronológica [[tok:gnt:43008059:10]] [[tok:gnt:43008059:50]]\nevidencias: [[xr:openbible-xref:43008058:2003014-2003014]] [[tok:gnt:43008058:130]]\nconfianca: alta\n@fim"
+}

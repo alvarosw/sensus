@@ -27,6 +27,19 @@ const ptStudy = {
   factVv: (n: number, t: Testament) => `${n} ${n === 1 ? 'versículo' : 'vv.'} no ${testamentLabel(t)}`,
   factNoData: 'Sem dados',
 
+  // Curiosidade do trecho (cartão na folha)
+  curiosity: {
+    echo: 'Para quem ouviu primeiro',
+    term: 'O que a palavra dizia',
+    then: 'Na época',
+    today: 'Hoje',
+    change: 'O que muda',
+    more: 'Ver por quê',
+    less: 'Ocultar',
+    sources: 'Ver fontes',
+    label: 'Curiosidade do trecho',
+  },
+
   deepen: 'Detalhar',
   seeAll: 'Ver todos',
   seeLess: 'Menos',

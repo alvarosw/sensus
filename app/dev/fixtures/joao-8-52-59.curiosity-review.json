@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "reference": "João 8:52-59",
+  "range": {
+    "start": 43008052,
+    "end": 43008059
+  },
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "recordedAt": "2026-11-21T03:45:49.555Z",
+  "kind": "curiosity-review",
+  "text": "interesse: 5\nfundamento: 5\ndisputa: nao\nalcance: sim\ntipo: sim\npeso: sim\nmotivo: A curiosidade conecta o \"eu sou\" absoluto de Jo 8:58 ao nome divino de Êx 3:14 e à reação de apedrejamento, mudando a leitura de mera preexistência para reivindicação de divindade, tudo fundamentado nas entradas citadas."
+}

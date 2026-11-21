@@ -3,6 +3,17 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const zhStudy = {
+  curiosity: {
+    echo: '给最先听到的人',
+    term: '这个词原本的意思',
+    then: '当时',
+    today: '今天',
+    change: '这改变了什么',
+    more: '为什么',
+    less: '收起',
+    sources: '查看来源',
+    label: '本段的一个发现',
+  },
   threadLens: {
     literario: '我们在哪里',
     lingua: '推动这段经文的词',

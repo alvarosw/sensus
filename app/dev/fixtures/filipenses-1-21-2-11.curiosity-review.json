@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "reference": "Filipenses 1:21-2:11",
+  "range": {
+    "start": 50001021,
+    "end": 50002011
+  },
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "recordedAt": "2026-11-21T03:45:35.109Z",
+  "kind": "curiosity-review",
+  "text": "interesse: 5\nfundamento: 5\ndisputa: nao\nalcance: sim\ntipo: sim\npeso: sim\nmotivo: O termo \"politeuomai\" carrega sentido cívico-político de cidadania romana, o que transforma a exortação moral genérica em lealdade pública a Cristo acima do imperador, e isso está fundamentado nas entradas lexicais e no token citados."
+}

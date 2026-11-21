@@ -3,6 +3,17 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const idStudy = {
+  curiosity: {
+    echo: 'Untuk yang mendengarnya lebih dulu',
+    term: 'Apa yang dulu dikatakan kata itu',
+    then: 'Pada waktu itu',
+    today: 'Hari ini',
+    change: 'Yang berubah',
+    more: 'Lihat alasannya',
+    less: 'Sembunyikan',
+    sources: 'Lihat sumber',
+    label: 'Keunikan perikop ini',
+  },
   threadLens: {
     literario: 'Di mana kita berada',
     lingua: 'Kata yang menggerakkan bagian ini',

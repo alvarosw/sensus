@@ -3,6 +3,17 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 import { arPlural } from '../../plural';
 export const arStudy = {
+  curiosity: {
+    echo: 'لمن سمعها أولاً',
+    term: 'ماذا كانت الكلمة تقول',
+    then: 'في ذلك الوقت',
+    today: 'اليوم',
+    change: 'ما الذي يتغير',
+    more: 'لماذا؟',
+    less: 'إخفاء',
+    sources: 'عرض المصادر',
+    label: 'طرفة من المقطع',
+  },
   threadLens: {
     literario: 'أين نحن',
     lingua: 'الكلمة التي تحرك المقطع',

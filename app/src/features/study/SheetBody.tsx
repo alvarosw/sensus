@@ -7,6 +7,7 @@ import { Platform, ScrollView, View, type LayoutChangeEvent, type NativeScrollEv
 import Animated, { useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
 import { LENS_KEYS, useStudy, type LensKey } from '@/state/study';
 import { LENS_VIEWS } from './lenses';
+import { CuriosityCard } from './CuriosityCard';
 import { PeekContent } from './PeekContent';
 import { Rail } from './Rail';
 
@@ -31,6 +32,8 @@ export function SheetBody({ open, atFull, bottomInset, onPeekLayout, onRailLayou
   }, []);
   const peekH = useRef(0);
   const railH = useRef(0);
+  // Altura do cartão da curiosidade (0 sem cartão): entra no deslocamento das lentes, como o espiar.
+  const cardH = useRef(0);
   const [viewH, setViewH] = useState(0);
   const [railSpacer, setRailSpacer] = useState(0);
   const peekSv = useSharedValue(0);
@@ -52,9 +55,9 @@ export function SheetBody({ open, atFull, bottomInset, onPeekLayout, onRailLayou
     (k: LensKey, animated: boolean): boolean => {
       const y = yOf(k);
       if (y === undefined) return false;
-      // A lente começa logo abaixo do trilho colado no topo: offset = espiar + y (espiar + trilho + y - trilho).
+      // A lente começa logo abaixo do trilho colado no topo: offset = espiar + cartão + y (espiar + trilho + cartão + y - trilho).
       progUntil.current = Date.now() + (animated ? 900 : 250);
-      scroll.current?.scrollTo({ y: Math.max(0, peekH.current + y), animated });
+      scroll.current?.scrollTo({ y: Math.max(0, peekH.current + cardH.current + y), animated });
       return true;
     },
     [yOf],
@@ -82,6 +85,16 @@ export function SheetBody({ open, atFull, bottomInset, onPeekLayout, onRailLayou
     if (pending.current) flush();
     else reanchor();
   }, [flush, reanchor]);
+
+  // O cartão da curiosidade mudou de altura (apareceu, saiu ou cresceu): a rolagem das lentes é refeita como a das partes.
+  const onCuriosityHeight = useCallback(
+    (h: number) => {
+      if (cardH.current === h) return;
+      cardH.current = h;
+      reanchor();
+    },
+    [reanchor],
+  );
 
   // Soma das partes da Visão geral na ordem atual. Enquanto alguma parte da lista não foi medida, vale o último total.
   const syncVisao = useCallback(() => {
@@ -139,7 +152,7 @@ export function SheetBody({ open, atFull, bottomInset, onPeekLayout, onRailLayou
       let cur: LensKey = 'visao';
       for (const k of LENS_KEYS) {
         const ly = yOf(k);
-        if (ly !== undefined && peekH.current + ly <= top + 24) cur = k;
+        if (ly !== undefined && peekH.current + cardH.current + ly <= top + 24) cur = k;
       }
       if (cur !== current.current) {
         current.current = cur;
@@ -201,6 +214,7 @@ export function SheetBody({ open, atFull, bottomInset, onPeekLayout, onRailLayou
         <View style={{ height: railSpacer }} />
         {open ? (
           <>
+            <CuriosityCard onHeight={onCuriosityHeight} />
             {LENS_KEYS.map((k) => {
               const View_ = LENS_VIEWS[k];
               return <View_ key={k} onLayout={registerLens(k)} onPartLayout={onPartLayout} onPartKeys={onPartKeys} />;

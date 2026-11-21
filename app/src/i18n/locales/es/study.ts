@@ -3,6 +3,17 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const esStudy = {
+  curiosity: {
+    echo: 'Para quienes lo oyeron primero',
+    term: 'Lo que decía la palabra',
+    then: 'En su tiempo',
+    today: 'Hoy',
+    change: 'Lo que cambia',
+    more: 'Ver por qué',
+    less: 'Ocultar',
+    sources: 'Ver fuentes',
+    label: 'Curiosidad del pasaje',
+  },
   threadLens: {
     literario: 'Dónde estamos',
     lingua: 'La palabra que mueve el pasaje',

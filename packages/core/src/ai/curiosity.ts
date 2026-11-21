@@ -18,8 +18,12 @@ export function curiosityCacheKey(range: VerseRange): string {
   return `curiosity:${CURIOSITY_PROMPT_VERSION}:${range.start}-${range.end}`;
 }
 
+/** Início das instruções: o demo (app/src/ai/demo-provider.ts) reconhece o pedido por estes textos. */
+export const CURIOSITY_REQUEST_MARK = 'Procure no contexto UMA curiosidade do trecho';
+export const CURIOSITY_REVIEW_MARK = 'Você é o editor rígido da seção "Curiosidade"';
+
 const CURIOSITY_INSTRUCTION = [
-  'Procure no contexto UMA curiosidade do trecho que um leitor de hoje provavelmente não sabe e que muda a forma de entendê-lo. Só valem dois tipos:',
+  `${CURIOSITY_REQUEST_MARK} que um leitor de hoje provavelmente não sabe e que muda a forma de entendê-lo. Só valem dois tipos:`,
   '- eco: o texto alude claramente a algo que os primeiros ouvintes ou leitores conheciam (um texto bíblico anterior que eles conheciam, ou um costume, fato histórico, geográfico ou cultural da época) e, sabendo disso, entendemos o trecho como eles entendiam.',
   '- termo: uma palavra, termo ou frase do trecho tem no original um sentido diferente do que normalmente se entende hoje, e essa diferença muda a leitura.',
   'Prefira eco. Use termo só quando a diferença de sentido muda o que o trecho ensina ou narra, e quando o sentido de "hoje" é o das traduções e leituras comuns.',
@@ -48,7 +52,7 @@ const CURIOSITY_INSTRUCTION = [
 ].join('\n');
 
 const CURIOSITY_REVIEW_INSTRUCTION = [
-  'Você é o editor rígido da seção "Curiosidade" de um app de estudo bíblico. Ela aparece em destaque; se não for de fato surpreendente e sólida, o leitor perde a confiança. Na dúvida, dê nota baixa.',
+  `${CURIOSITY_REVIEW_MARK} de um app de estudo bíblico. Ela aparece em destaque; se não for de fato surpreendente e sólida, o leitor perde a confiança. Na dúvida, dê nota baixa.`,
   'Avalie a curiosidade abaixo contra o contexto (leia as entradas citadas pelos cite_id).',
   '',
   'interesse (1 a 5): um leitor atento de hoje se surpreenderia e passaria a ler o trecho de outro jeito?',

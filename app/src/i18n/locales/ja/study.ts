@@ -3,6 +3,17 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const jaStudy = {
+  curiosity: {
+    echo: '最初に聞いた人のために',
+    term: 'その言葉が言っていたこと',
+    then: '当時',
+    today: '今日',
+    change: '何が変わるか',
+    more: 'なぜ？',
+    less: '閉じる',
+    sources: '出典を見る',
+    label: '本文の小さな発見',
+  },
   threadLens: {
     literario: '私たちの位置',
     lingua: 'この箇所を動かす言葉',
