@@ -1,7 +1,8 @@
-// IA da folha de estudo: resumo da perícope em streaming, "Detalhar" por lente e perguntas sugeridas. Roda só
-// com a folha aberta (ou quando o pedido chega); o texto parcial vai para o store de gerações. O estado é lido
-// pela folha por useStudyAi (study-context), que recebe o mesmo objeto de useStudyData.tsx.
-import { useCallback, useEffect, useMemo } from 'react';
+// IA da folha de estudo: resumo da perícope em streaming, "Detalhar" por lente e perguntas sugeridas. O resumo
+// começa com a folha em espiar (depois de PEEK_DWELL_MS parada na seleção) ou já em meia altura e tela cheia; com
+// a folha fechada, nada. O texto parcial vai para o store de gerações. O estado é lido pela folha por useStudyAi
+// (study-context), que recebe o mesmo objeto de useStudyData.tsx.
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   deepenMessages,
   parseStructuredAnswer,
@@ -18,6 +19,7 @@ import { useSettings } from '@/settings/settings-context';
 import { useStudy, type LensKey } from '@/state/study';
 import type { PassagePanel } from './usePassagePanel';
 import type { AiStatus, DeepView, Range, StudyAi } from './study-state';
+import { PEEK_DWELL_MS, shouldStartSummary } from './summary-start';
 
 /** Ordem em que o resumo chega (linhas-marcadoras de SUMMARY_FORMAT, no núcleo). */
 const STREAM_ORDER: readonly LensKey[] = ['visao', 'literario', 'lingua', 'texto', 'intertexto', 'historico', 'interpretacao', 'aplicacao'];
@@ -94,10 +96,19 @@ export function useStudyAiFeed(range: Range, unitRange: Range | null, unitPanel:
   const detent = useStudy((s) => s.detent);
   const generations = useStudy((s) => s.generations);
 
-  const open = detent === 'half' || detent === 'full';
   const key = unitRange ? summaryCacheKey(unitRange) : null;
   const gen = key ? generations[key] : undefined;
   const ctxReady = !!(unitPanel.context && unitPanel.richCtx);
+
+  // Em espiar, a unidade e o detent precisam ficar parados PEEK_DWELL_MS. "armed" guarda qual par (unidade, detent)
+  // já esperou; mudou um dos dois, o par não confere e a conta recomeça (sem zerar estado no efeito).
+  const dwellId = `${key}|${detent}`;
+  const [armed, setArmed] = useState<string | null>(null);
+  useEffect(() => {
+    if (detent !== 'peek') return;
+    const t = setTimeout(() => setArmed(dwellId), PEEK_DWELL_MS);
+    return () => clearTimeout(t);
+  }, [detent, dwellId]);
 
   // ---- resumo automático ao abrir a folha -------------------------------------------------------
   const startSummary = useCallback(() => {
@@ -114,13 +125,13 @@ export function useStudyAiFeed(range: Range, unitRange: Range | null, unitPanel:
     runStream(provider, key, summaryMessages(unitPanel.context, { language: currentBcp47(), focus }));
   }, [provider, key, unitRange, unitPanel.context, range.start, range.end]);
 
+  const dwelled = armed === dwellId;
   useEffect(() => {
-    if (!open || !provider || !key || !ctxReady) return;
-    const g = useStudy.getState().generations[key];
-    if (g?.status === 'done' || g?.status === 'error') return;
-    if (g?.status === 'streaming' && controllers.has(key)) return;
+    if (!key) return;
+    if (!shouldStartSummary({ detent, dwellMs: dwelled ? PEEK_DWELL_MS : 0, hasProvider: !!provider, ctxReady, status: gen?.status })) return;
+    if (gen?.status === 'streaming' && controllers.has(key)) return;
     startSummary();
-  }, [open, provider, key, ctxReady, startSummary]);
+  }, [detent, dwelled, provider, key, ctxReady, gen?.status, startSummary]);
 
   useEffect(
     () => () => {
