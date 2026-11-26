@@ -30,6 +30,16 @@ export const viChat = {
   thinking: 'đang suy nghĩ…',
   retry: 'Thử lại',
   fallbackQuestions: ['Ý chính của phân đoạn này là gì?', 'Các nguồn nói gì về phân đoạn này?'],
+  newConversation: 'Cuộc trò chuyện mới',
+  unitDivider: (ref: string) => `Bây giờ ở ${ref}`,
+  unitChanged: 'Đã bỏ các tệp đính kèm của đoạn trước.',
+  scopeChipLabel: (unit: string, focus: string | null) => (focus ? `${focus} trong ${unit}` : unit),
+  scopeLabel: 'Đoạn gửi cho AI',
+  scopeUnit: (unit: string) => `AI nhận đoạn ${unit}.`,
+  scopeFocus: (unit: string, focus: string) => `AI nhận đoạn ${unit}, với phần chọn ${focus} được làm nổi bật.`,
+  scopeAttached: (n: number) => `Đính kèm: ${n}. Được gửi cùng mỗi câu hỏi đã gõ cho đến khi bạn bỏ đi.`,
+  scopeNone: 'Không có đính kèm. Hãy đính kèm một chú giải hoặc một từ để hỏi về nó.',
+  scopeSuggested: 'Các câu hỏi gợi ý không mang theo đính kèm.',
   close: 'Đóng',
 };
 

@@ -30,6 +30,16 @@ export const arChat = {
   thinking: 'جارٍ التفكير…',
   retry: 'حاول مرة أخرى',
   fallbackQuestions: ['ما الفكرة المحورية في هذا المقطع؟', 'ماذا تقول المصادر عن هذا المقطع؟'],
+  newConversation: 'محادثة جديدة',
+  unitDivider: (ref: string) => `الآن في ${ref}`,
+  unitChanged: 'أُزيلت المرفقات الخاصة بالمقطع السابق.',
+  scopeChipLabel: (unit: string, focus: string | null) => (focus ? `${focus} ضمن ${unit}` : unit),
+  scopeLabel: 'المقطع المرسل إلى الذكاء الاصطناعي',
+  scopeUnit: (unit: string) => `يتلقى الذكاء الاصطناعي المقطع ${unit}.`,
+  scopeFocus: (unit: string, focus: string) => `يتلقى الذكاء الاصطناعي المقطع ${unit}، مع إبراز التحديد ${focus}.`,
+  scopeAttached: (n: number) => `المرفقات: ${n}. تُرسل مع كل سؤال مكتوب حتى تزيلها.`,
+  scopeNone: 'لا توجد مرفقات. أرفق تعليقًا أو كلمة للسؤال عنها.',
+  scopeSuggested: 'الأسئلة المقترحة لا تحمل المرفقات.',
   close: 'إغلاق',
 };
 

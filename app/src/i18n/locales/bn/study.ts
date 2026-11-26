@@ -3,6 +3,17 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const bnStudy = {
+  curiosity: {
+    echo: 'যাঁরা আগে শুনেছিলেন তাঁদের জন্য',
+    term: 'সেই শব্দটি কী বলত',
+    then: 'তখন',
+    today: 'আজ',
+    change: 'কী বদলায়',
+    more: 'কেন?',
+    less: 'লুকান',
+    sources: 'সূত্র দেখুন',
+    label: 'অংশটির একটি কৌতূহল',
+  },
   threadLens: {
     literario: 'আমরা কোথায় আছি',
     lingua: 'যে শব্দ অংশটিকে এগিয়ে নেয়',

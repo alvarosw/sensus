@@ -2,6 +2,7 @@ import type { DatabaseSync } from 'node:sqlite';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import {
   answerMessages,
+  questionWithAttachments,
   attachmentsBlock,
   deepenMessages,
   MAX_LENS_QUESTIONS,
@@ -290,6 +291,31 @@ describe('perguntas por lente, anexos, foco e aprofundamento', () => {
     expect(user).toContain('- Nota');
     expect(attachmentsBlock([])).toBe('');
     expect(answerMessages({ text: contextText }, [], 'Explique').at(-1)!.content).not.toContain('Anexos');
+  });
+
+  it('questionWithAttachments junta a pergunta e o bloco de anexos daquela vez (ou só a pergunta)', () => {
+    const att = [{ label: 'Versículo 2:5', citeIds: ['txt:blivre:50002005'] }];
+    expect(questionWithAttachments('  O que é kenosis?  ', att)).toBe(
+      'O que é kenosis?\n\n' + attachmentsBlock(att),
+    );
+    expect(questionWithAttachments('Quem foi Calvino?', [])).toBe('Quem foi Calvino?');
+    // A pergunta de hoje e o histórico usam a mesma forma: o modelo vê o anexo de uma vez anterior.
+    const hist = [{ role: 'user' as const, content: questionWithAttachments('Antes?', att) }, { role: 'assistant' as const, content: 'Resposta.' }];
+    const msgs = answerMessages({ text: contextText }, hist, 'Agora?');
+    expect(msgs.find((m) => m.content.startsWith('Antes?'))?.content).toContain('- Versículo 2:5 (cite_ids: txt:blivre:50002005)');
+  });
+
+  it('answerMessages com focus diz a seleção dentro da unidade (NT e AT); sem focus não diz', () => {
+    // NT: Fp 2:5-8 dentro da perícope Fp 2:5-11.
+    const nt = answerMessages({ text: contextText }, [], 'Explique', { focus: { start: 50002005, end: 50002008 } });
+    const ntCtx = nt[1]!.content;
+    expect(ntCtx).toContain('Seleção do leitor dentro desta unidade: Filipenses 2:5-8. Responda com foco na seleção, usando a unidade como contexto.');
+    expect(ntCtx).toContain(contextText);
+    // AT hebraico: Gn 1:3 dentro de Gn 1:1-2:3.
+    const at = answerMessages({ text: contextText }, [], 'Explique', { focus: { start: 1001003, end: 1001003 } });
+    expect(at[1]!.content).toContain('Seleção do leitor dentro desta unidade: Gênesis 1:3. Responda com foco na seleção');
+    // Sem focus: nenhuma frase de foco no contexto.
+    expect(answerMessages({ text: contextText }, [], 'Explique')[1]!.content).not.toContain('Seleção do leitor');
   });
 
   it('deepenMessages aceita visão geral e o ponto a detalhar; lente inválida lança erro', () => {

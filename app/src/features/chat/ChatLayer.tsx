@@ -4,7 +4,7 @@
 import { useCallback, useState } from 'react';
 import { Keyboard, Pressable, StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useStudy } from '@/state/study';
+import { useStudy, type Attachment } from '@/state/study';
 import { Bubble } from './Bubble';
 import { ChatPanel } from './ChatPanel';
 import { useChat, usePendingQuestion } from './useChat';
@@ -25,9 +25,10 @@ export function ChatLayer() {
   const onNoProvider = useCallback((q: string) => setDraft(q), []);
   const api = useChat(onNoProvider);
 
+  // Só a pergunta digitada ('composer') leva os anexos do composer e limpa o rascunho; as demais vão com a lista dada.
   const send = useCallback(
-    (q: string) => {
-      if (api.ask(q)) setDraft('');
+    (q: string, attachments: readonly Attachment[] | 'composer') => {
+      if (api.ask(q, attachments) && attachments === 'composer') setDraft('');
     },
     [api],
   );

@@ -8,6 +8,8 @@
 // exata, usa a fixture mais próxima do mesmo tipo.
 import {
   CHAT_CONTEXT_PREFIX,
+  CURIOSITY_REQUEST_MARK,
+  CURIOSITY_REVIEW_MARK,
   SECTION_KEYS,
   type ChatMessage,
   type ChatRequest,
@@ -46,7 +48,23 @@ export const DEFAULT_DEMO_TIMING: DemoTiming = { chunkChars: 40, chunkDelayMs: 3
 export type DemoRequest =
   | { kind: 'summary'; reference: string | null }
   | { kind: 'section'; reference: string | null; section: SectionKey | null }
-  | { kind: 'answer'; reference: string | null; question: string };
+  | { kind: 'answer'; reference: string | null; question: string }
+  | { kind: 'curiosity'; reference: string | null }
+  | { kind: 'curiosity-review'; reference: string | null };
+
+/** Resposta do gerador sem fixture da unidade: "nenhuma curiosidade" (nunca a de outro trecho). */
+export const DEMO_NO_CURIOSITY = '@nenhuma\n@fim';
+/** Resposta do revisor sem fixture da unidade: reprova (a curiosidade não aparece). */
+export const DEMO_REJECT_REVIEW = [
+  'interesse: 2',
+  'fundamento: 3',
+  'disputa: nao',
+  'alcance: sim',
+  'tipo: sim',
+  'peso: nao',
+  'motivo: demonstração sem revisão gravada para esta unidade',
+  '@fim',
+].join('\n');
 
 const ANSWER_SUFFIX = '\n\nResponda com markdown';
 
@@ -67,6 +85,9 @@ export function classifyRequest(messages: readonly ChatMessage[]): DemoRequest {
     const cut = lastUser.indexOf(ANSWER_SUFFIX);
     return { kind: 'answer', reference, question: (cut >= 0 ? lastUser.slice(0, cut) : lastUser).trim() };
   }
+  // Curiosidade: o gerador e o revisor são reconhecidos pelo início das instruções do núcleo (curiosity.ts).
+  if (lastUser.includes(CURIOSITY_REVIEW_MARK)) return { kind: 'curiosity-review', reference };
+  if (lastUser.includes(CURIOSITY_REQUEST_MARK)) return { kind: 'curiosity', reference };
   // "Aprofunde a lente "<rótulo>" (chave: <seção>) ..." (o rótulo pode mudar; a chave é a que casa com a seção).
   if (/^Aprofunde\b/.test(lastUser)) {
     const key = /\(chave: (\w+)\)/.exec(lastUser)?.[1];
@@ -148,7 +169,24 @@ function compareScores(a: readonly number[], b: readonly number[]): number {
 }
 
 /** Fixture que melhor atende ao pedido, ou null se não houver nenhuma do mesmo tipo. */
+/**
+ * Curiosidade e revisão: só a gravada para a MESMA unidade (mesmo livro e mesmo intervalo). Outro trecho não serve:
+ * sem ela, o demo responde "nenhuma curiosidade".
+ */
+export function pickCuriosityFixture(req: { kind: 'curiosity' | 'curiosity-review'; reference: string | null }, fixtures: readonly Fixture[]): Fixture | null {
+  const want = req.reference ? parseLooseRef(req.reference) : null;
+  if (!want) return null;
+  return (
+    fixtures.find((f) => {
+      if (f.kind !== req.kind) return false;
+      const have = fixtureLooseRef(f);
+      return have.book === want.book && have.start === want.start && have.end === want.end;
+    }) ?? null
+  );
+}
+
 export function pickFixture(req: DemoRequest, fixtures: readonly Fixture[]): Fixture | null {
+  if (req.kind === 'curiosity' || req.kind === 'curiosity-review') return pickCuriosityFixture(req, fixtures);
   let pool = fixtures.filter((f) => f.kind === req.kind);
   if (pool.length === 0) return null;
   if (req.kind === 'section' && req.section) {
@@ -206,12 +244,14 @@ export class DemoProvider implements LLMProvider {
   ) {}
 
   async *stream(req: ChatRequest): AsyncGenerator<string> {
-    const fixture = pickFixture(classifyRequest(req.messages), this.fixtures);
-    if (!fixture) {
-      throw new Error('Provedor de demonstração sem fixtures. Rode: cd app && npx tsx scripts/record-fixtures.ts');
-    }
+    const request = classifyRequest(req.messages);
+    const fixture = pickFixture(request, this.fixtures);
+    let text: string;
+    if (fixture) text = fixture.text;
+    else if (request.kind === 'curiosity') text = DEMO_NO_CURIOSITY;
+    else if (request.kind === 'curiosity-review') text = DEMO_REJECT_REVIEW;
+    else throw new Error('Provedor de demonstração sem fixtures. Rode: cd app && npx tsx scripts/record-fixtures.ts');
     const { chunkChars, chunkDelayMs, startDelayMs } = this.timing;
-    const text = fixture.text;
     await sleep(startDelayMs, req.signal);
     for (let i = 0; i < text.length; ) {
       let end = Math.min(i + chunkChars, text.length);

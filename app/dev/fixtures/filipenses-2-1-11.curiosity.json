@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "reference": "Filipenses 2:1-11",
+  "range": {
+    "start": 50002001,
+    "end": 50002011
+  },
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "recordedAt": "2026-11-21T03:45:24.219Z",
+  "kind": "curiosity",
+  "text": "@curiosidade eco\ngancho: O hino de Filipenses 2:6-11 ecoa a linguagem do Servo Sofredor de Isaías 53\nouvinte: Os primeiros ouvintes reconheciam em \"esvaziou a si mesmo\" e \"obediente até a morte\" a linguagem do Servo de Isaías 53 que \"derramou a sua alma até a morte\" [[lex:stepbible-tbesg:G2758]] [[lex:stepbible-tbesg:G5013]]\nhoje: Leitores modernos veem apenas um exemplo moral de humildade, sem perceber a identificação messiânica com o Servo sofredor\nmuda: A passagem deixa de ser só um modelo ético e passa a apresentar Jesus como o cumprimento da figura do Servo de Isaías 53 [[lex:stepbible-tbesg:G2758]] [[lex:stepbible-tbesg:G5013]]\nevidencias: [[lex:stepbible-tbesg:G2758]] [[lex:stepbible-tbesg:G5013]]\nconfianca: media\n@fim"
+}

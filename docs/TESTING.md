@@ -36,9 +36,13 @@ léxico, comentários nem dicionários) ou o completo (`npm run sync-db`, ~456 M
 - Escolha da fixture: tipo do pedido (resumo / seção / pergunta) + intervalo (linha `# Passagem:` do contexto)
   + seção ou similaridade da pergunta; sem correspondência exata usa a mais próxima do mesmo tipo (os
   `cite_id` de outro intervalo aparecerão como citação inválida).
-- Fixtures gravadas: Fp 2:5-8 e Fp 1:27-2:4 (resumo, seções `lingua` e `interpretacao`, 2 perguntas cada).
-  Regravar: `npx tsx scripts/record-fixtures.ts --force` (precisa de `NVIDIA_*` no `.env` da raiz; leva vários
-  minutos). Se o prompt do núcleo mudar muito, regrave.
+- Curiosidade do trecho (gerador `curiosity` e revisor `curiosity-review`): só a fixture da **mesma unidade**
+  (a perícope, com o trecho como foco); outra unidade recebe `@nenhuma`, e um revisor sem fixture reprova.
+- Fixtures gravadas: Fp 2:5-8 e Fp 1:27-2:4 (resumo, seções `lingua` e `interpretacao`, 2 perguntas cada);
+  curiosidade da perícope de cada um, e Jo 8:52-59 só com a curiosidade. Regravar: `npx tsx scripts/record-fixtures.ts
+  --force` (precisa de `NVIDIA_*` no `.env` da raiz; leva vários minutos). Se o prompt do núcleo mudar muito, regrave.
+  **Use o banco completo** (`SENSUS_DB=../data/sensus.db`): o `assets/sensus.db` é o leitor, sem comentários nem
+  léxico, e a curiosidade quase nunca passa no portão com ele.
 
 ## Capturas na web: `scripts/shot.mjs`
 

@@ -1,6 +1,6 @@
 // Conversa: vez da pergunta (balão à direita, anexos como chips) e resposta (byline SENSUS, RichBlocks, seguimentos).
 import { useMemo } from 'react';
-import { Pressable, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { parseStructuredAnswer } from '@sensus/core';
 import { fontFamilies, LinkButton, QuestionButton, radius, Skeleton, Txt, useTheme } from '@/design';
 import { useStudy, type ChatTurn } from '@/state/study';
@@ -98,6 +98,19 @@ export function TurnView({
           </View>
         ) : null}
       </View>
+    </View>
+  );
+}
+
+/** Divisor entre trechos na conversa ("Agora em <ref>"), com uma linha de cada lado. */
+export function UnitDivider({ label }: { label: string }) {
+  const { c } = useTheme();
+  const line = { flex: 1, height: StyleSheet.hairlineWidth, backgroundColor: c.border };
+  return (
+    <View testID="unit-divider" style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+      <View style={line} />
+      <Txt v="meta" color="muted" style={{ fontSize: 12 }}>{label}</Txt>
+      <View style={line} />
     </View>
   );
 }

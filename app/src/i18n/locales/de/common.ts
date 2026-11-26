@@ -31,6 +31,16 @@ export const deChat = {
   thinking: 'denkt nach…',
   retry: 'Erneut versuchen',
   fallbackQuestions: ['Was ist der Kerngedanke dieser Textstelle?', 'Was sagen die Quellen zu dieser Textstelle?'],
+  newConversation: 'Neues Gespräch',
+  unitDivider: (ref: string) => `Jetzt in ${ref}`,
+  unitChanged: 'Die Anhänge des vorherigen Abschnitts wurden entfernt.',
+  scopeChipLabel: (unit: string, focus: string | null) => (focus ? `${focus} in ${unit}` : unit),
+  scopeLabel: 'An die KI gesendeter Abschnitt',
+  scopeUnit: (unit: string) => `Die KI erhält den Abschnitt ${unit}.`,
+  scopeFocus: (unit: string, focus: string) => `Die KI erhält den Abschnitt ${unit}, mit der Auswahl ${focus} hervorgehoben.`,
+  scopeAttached: (n: number) => `Anhänge: ${n}. Sie gehen mit jeder getippten Frage mit, bis du sie entfernst.`,
+  scopeNone: 'Keine Anhänge. Hänge einen Kommentar oder ein Wort an, um danach zu fragen.',
+  scopeSuggested: 'Vorgeschlagene Fragen enthalten keine Anhänge.',
   close: 'Schließen',
 };
 

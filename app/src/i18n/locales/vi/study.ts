@@ -3,6 +3,17 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const viStudy = {
+  curiosity: {
+    echo: 'Cho người nghe đầu tiên',
+    term: 'Từ ấy từng nói gì',
+    then: 'Khi ấy',
+    today: 'Hôm nay',
+    change: 'Điều gì thay đổi',
+    more: 'Xem vì sao',
+    less: 'Ẩn',
+    sources: 'Xem nguồn',
+    label: 'Điều thú vị của đoạn này',
+  },
   threadLens: {
     literario: 'Chúng ta đang ở đâu',
     lingua: 'Từ khóa thúc đẩy đoạn này',

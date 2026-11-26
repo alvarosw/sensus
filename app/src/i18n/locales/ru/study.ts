@@ -4,6 +4,17 @@ import type { Testament } from '@sensus/core';
 import { ruPlural } from '../../plural';
 
 export const ruStudy = {
+  curiosity: {
+    echo: 'Для тех, кто слышал первым',
+    term: 'Что говорило слово',
+    then: 'Тогда',
+    today: 'Сегодня',
+    change: 'Что меняется',
+    more: 'Почему',
+    less: 'Скрыть',
+    sources: 'Смотреть источники',
+    label: 'Любопытство отрывка',
+  },
   threadLens: {
     literario: 'Где мы находимся',
     lingua: 'Слово, которое движет отрывок',

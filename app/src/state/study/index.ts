@@ -15,6 +15,7 @@ import { createGenerationsSlice, type GenerationsSlice } from './generations';
 import { createPanelsSlice, type PanelsSlice } from './panels';
 import { createChatSlice, type ChatSlice } from './chat';
 import { createToastSlice, type ToastSlice } from './toast';
+import { createCuriositySlice, type CuriositySlice } from './curiosity';
 
 export type StudyState = ReaderSlice &
   SelectionSlice &
@@ -23,7 +24,8 @@ export type StudyState = ReaderSlice &
   GenerationsSlice &
   PanelsSlice &
   ChatSlice &
-  ToastSlice;
+  ToastSlice &
+  CuriositySlice;
 
 export const useStudy = create<StudyState>()((...a) => ({
   ...createReaderSlice(...a),
@@ -34,12 +36,15 @@ export const useStudy = create<StudyState>()((...a) => ({
   ...createPanelsSlice(...a),
   ...createChatSlice(...a),
   ...createToastSlice(...a),
+  ...createCuriositySlice(...a),
 }));
 
 export { LENS_KEYS, LENS_LABELS, type LensKey, type CompareSource } from './lenses';
 export type { Selection } from './selection';
 export type { Generation } from './generations';
 export type { MapScope, PanelEntry } from './panels';
-export type { Attachment, BubblePosition, ChatTurn } from './chat';
+export type { Attachment, BubblePosition, ChatDivider, ChatTurn } from './chat';
+export { historyFor, unitKeyOf } from './chat';
 export type { PinnedRef } from './reader';
 export type { StudyToast } from './toast';
+export { canStartCuriosity, curiosityTransition, EMPTY_CURIOSITY, type CuriosityEntry, type CuriosityEvent, type CuriosityStatus } from './curiosity';

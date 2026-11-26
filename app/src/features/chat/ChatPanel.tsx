@@ -1,5 +1,5 @@
 // Painel do chat (proto: .chat): cresce a partir da bolinha; cabeçalho, conversa e composer.
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import { ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { useKeyboardHandler } from 'react-native-keyboard-controller';
 import Animated, { interpolate, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
@@ -7,16 +7,15 @@ import { scheduleOnRN } from 'react-native-worklets';
 import { router } from 'expo-router';
 import { formatShortRef } from '@sensus/core';
 import { fontFamilies, IconButton, LinkButton, motion, QuestionButton, radius, shadow, size, Txt, useTheme } from '@/design';
-import { useStudy, LENS_LABELS } from '@/state/study';
+import { useStudy, LENS_LABELS, type Attachment } from '@/state/study';
 import { BACK_PRIORITY, useBackLayer } from '../common/back';
 import { usePresence } from '../common/motion';
 import { useBooks } from '../common/hooks';
 import { CHAT } from '../common/strings';
-import { Composer } from './Composer';
+import { Composer, type ScopeChip } from './Composer';
 import { bubbleLeft, clampBottom, type Metrics } from './geometry';
-import { TurnView } from './Thread';
+import { TurnView, UnitDivider } from './Thread';
 import { useSuggestions, type ChatApi } from './useChat';
-
 
 const thread0Count = () => useStudy.getState().thread.length;
 const SIDE_INSET = 8;
@@ -33,7 +32,8 @@ export function ChatPanel({
   api: ChatApi;
   draft: string;
   setDraft: (v: string) => void;
-  send: (q: string) => void;
+  /** Anexos da pergunta: 'composer' (a digitada) ou a lista dada (sugeridas e de vez em vez: a sua própria). */
+  send: (q: string, attachments: readonly Attachment[] | 'composer') => void;
 }) {
   const { c } = useTheme();
   const ownBooks = useBooks();
@@ -41,6 +41,7 @@ export function ChatPanel({
   const chatOpen = useStudy((s) => s.chatOpen);
   const closeChat = useStudy((s) => s.closeChat);
   const thread = useStudy((s) => s.thread);
+  const dividers = useStudy((s) => s.dividers);
   const attachCount = useStudy((s) => s.attachments.length);
   const lens = useStudy((s) => s.lens);
   const bubble = useStudy((s) => s.bubble);
@@ -54,7 +55,7 @@ export function ChatPanel({
   // Resposta aberta para seleção de texto (long-press numa resposta).
   const [picked, setPicked] = useState<string | null>(null);
   useBackLayer('answer-text', picked !== null, () => setPicked(null), BACK_PRIORITY.menu);
-  const suggestions = useSuggestions(api.passage, api.range, api.hasProvider);
+  const suggestions = useSuggestions(api.selectionPanel, api.range, api.hasProvider);
   const inputRef = useRef<TextInput>(null);
   const scrollRef = useRef<ScrollView>(null);
   // Ao começar uma pergunta nova, rola até ela (o início da resposta fica à vista, como numa leitura).
@@ -79,7 +80,19 @@ export function ChatPanel({
     [scrollToEnd],
   );
 
-  const rangeText = api.range && books.length > 0 ? formatShortRef(api.range.start, api.range.end, books, true) : null;
+  // O texto da conversa fala do trecho que a IA recebe (a unidade); a seleção aparece no chip, como foco.
+  const rangeText = api.unit && books.length > 0 ? formatShortRef(api.unit.start, api.unit.end, books, true) : null;
+  const focusText = api.focus && books.length > 0 ? formatShortRef(api.focus.start, api.focus.end, books, true) : null;
+  const scope: ScopeChip | null =
+    rangeText === null
+      ? null
+      : {
+          label: CHAT.scopeChipLabel(rangeText, focusText),
+          lines: [
+            focusText ? CHAT.scopeFocus(rangeText, focusText) : CHAT.scopeUnit(rangeText),
+            ...(attachCount > 0 ? [CHAT.scopeAttached(attachCount), CHAT.scopeSuggested] : [CHAT.scopeNone]),
+          ],
+        };
 
   // Foco no campo ao abrir com a conversa vazia ou com anexos (o teclado sobe depois da animação).
   useEffect(() => {
@@ -155,6 +168,7 @@ export function ChatPanel({
             {`${rangeText ? `${rangeText} · ` : ''}${CHAT.subtitle}`}
           </Txt>
         </View>
+        {thread.length > 0 ? <LinkButton testID="chat-new" label={CHAT.newConversation} onPress={api.newConversation} /> : null}
         <IconButton testID="chat-minimize" icon="minus" label={CHAT.minimize} onPress={closeChat} />
       </View>
 
@@ -185,15 +199,26 @@ export function ChatPanel({
             ) : (
               <View style={{ gap: 6 }}>
                 {suggestions.map((q, i) => (
-                  <QuestionButton key={`${i}-${q}`} testID={`suggestion-${i}`} text={q} onPress={() => send(q)} />
+                  <QuestionButton key={`${i}-${q}`} testID={`suggestion-${i}`} text={q} onPress={() => send(q, [])} />
                 ))}
               </View>
             )}
           </View>
         ) : (
-          thread.map((t) => (
-            <TurnView key={t.id} turn={t} api={api} onAsk={send} onLayoutY={onTurnLayout} onPick={setPicked} />
-          ))
+          <>
+            {thread.map((t, i) => (
+              // Fragmento (sem View): o onLayout da vez continua relativo à lista, como antes.
+              <Fragment key={t.id}>
+                {dividers.map((d, k) =>
+                  d.at === i ? <UnitDivider key={`div-${k}`} label={CHAT.unitDivider(d.ref)} /> : null,
+                )}
+                <TurnView turn={t} api={api} onAsk={(q) => send(q, [])} onLayoutY={onTurnLayout} onPick={setPicked} />
+              </Fragment>
+            ))}
+            {dividers.map((d, k) =>
+              d.at >= thread.length ? <UnitDivider key={`div-${k}`} label={CHAT.unitDivider(d.ref)} /> : null,
+            )}
+          </>
         )}
         {api.contextBusy && thread.length > 0 ? <Txt v="meta" color="muted">{CHAT.contextLoading}</Txt> : null}
         {api.passage.error && !api.passage.context ? <Txt v="meta" color="danger">{CHAT.contextError}</Txt> : null}
@@ -229,13 +254,12 @@ export function ChatPanel({
         ref={inputRef}
         value={draft}
         onChange={setDraft}
-        onSend={() => {
-          send(draft);
-        }}
+        onSend={() => send(draft, 'composer')}
         onStop={api.stop}
         streaming={api.streaming}
         disabled={noProvider || api.contextBusy}
         bottomPad={10}
+        scope={scope}
       />
     </Animated.View>
   );

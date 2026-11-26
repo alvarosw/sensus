@@ -30,6 +30,16 @@ export const frChat = {
   thinking: 'réflexion…',
   retry: 'Réessayer',
   fallbackQuestions: ['Quelle est l’idée centrale de ce passage ?', 'Que disent les sources sur ce passage ?'],
+  newConversation: 'Nouvelle conversation',
+  unitDivider: (ref: string) => `Maintenant dans ${ref}`,
+  unitChanged: 'Les pièces jointes du passage précédent ont été retirées.',
+  scopeChipLabel: (unit: string, focus: string | null) => (focus ? `${focus} dans ${unit}` : unit),
+  scopeLabel: 'Passage envoyé à l’IA',
+  scopeUnit: (unit: string) => `L’IA reçoit le passage ${unit}.`,
+  scopeFocus: (unit: string, focus: string) => `L’IA reçoit le passage ${unit}, avec la sélection ${focus} mise en évidence.`,
+  scopeAttached: (n: number) => `Pièces jointes : ${n}. Elles accompagnent chaque question saisie, jusqu’à ce que vous les retiriez.`,
+  scopeNone: 'Aucune pièce jointe. Joignez un commentaire ou un mot pour poser une question dessus.',
+  scopeSuggested: 'Les questions suggérées n’incluent pas les pièces jointes.',
   close: 'Fermer',
 };
 

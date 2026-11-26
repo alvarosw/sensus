@@ -1,6 +1,6 @@
 // Tipos da folha de estudo compartilhados entre os hooks de dados (useStudyData), de IA (useStudyAi) e os
 // contextos (study-context). Só tipos: nada aqui roda.
-import type { Block, Book, PanelData, ProviderConfig, StructuredSummary, Vid } from '@sensus/core';
+import type { Block, Book, CuriosityCandidate, PanelData, ProviderConfig, StructuredSummary, Vid } from '@sensus/core';
 import type { LensKey } from '@/state/study';
 
 export interface Range {
@@ -64,4 +64,17 @@ export interface RangeEdges {
   count: number | null;
   prev: Vid | null;
   next: Vid | null;
+}
+
+/** Curiosidade do trecho pronta para a tela (só quando aprovada). Os blocos já vêm com as citações tocáveis. */
+export interface CuriosityView {
+  /** Chave da unidade (curiosityCacheKey). */
+  key: string;
+  candidate: CuriosityCandidate;
+  /** Gancho em texto puro (sem marcadores). */
+  hook: string;
+  /** As três frases da curiosidade, parseadas com as citações da unidade. */
+  listener: Block[];
+  today: Block[];
+  change: Block[];
 }

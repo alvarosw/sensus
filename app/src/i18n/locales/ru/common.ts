@@ -31,6 +31,16 @@ export const ruChat = {
   thinking: 'думает…',
   retry: 'Повторить',
   fallbackQuestions: ['Какова главная мысль этого фрагмента?', 'Что говорят источники об этом фрагменте?'],
+  newConversation: 'Новый разговор',
+  unitDivider: (ref: string) => `Теперь в ${ref}`,
+  unitChanged: 'Вложения предыдущего отрывка убраны.',
+  scopeChipLabel: (unit: string, focus: string | null) => (focus ? `${focus} в ${unit}` : unit),
+  scopeLabel: 'Отрывок, переданный ИИ',
+  scopeUnit: (unit: string) => `ИИ получает отрывок ${unit}.`,
+  scopeFocus: (unit: string, focus: string) => `ИИ получает отрывок ${unit}, с выделенным фрагментом ${focus}.`,
+  scopeAttached: (n: number) => `Вложений: ${n}. Передаются с каждым набранным вопросом, пока вы их не уберёте.`,
+  scopeNone: 'Вложений нет. Прикрепите комментарий или слово, чтобы спросить о нём.',
+  scopeSuggested: 'Предложенные вопросы не передают вложения.',
   close: 'Закрыть',
 };
 

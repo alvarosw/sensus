@@ -31,7 +31,16 @@ const ptChat = {
   thinking: 'pensando…',
   retry: 'Tentar de novo',
   fallbackQuestions: ['Qual é a ideia central deste trecho?', 'O que as fontes dizem sobre este trecho?'],
-  close: 'Fechar',
+  close: 'Fechar',  newConversation: 'Nova conversa',
+  unitDivider: (ref: string) => `Agora em ${ref}`,
+  unitChanged: 'Os anexos do trecho anterior foram tirados.',
+  scopeChipLabel: (unit: string, focus: string | null) => (focus ? `${focus} em ${unit}` : unit),
+  scopeLabel: 'Trecho enviado à IA',
+  scopeUnit: (unit: string) => `A IA recebe o trecho ${unit}.`,
+  scopeFocus: (unit: string, focus: string) => `A IA recebe o trecho ${unit}, com a seleção ${focus} em destaque.`,
+  scopeAttached: (n: number) => `Anexos: ${n}. Vão com cada pergunta digitada, até você tirá-los.`,
+  scopeNone: 'Sem anexos. Anexe um comentário ou uma palavra para perguntar sobre ele.',
+  scopeSuggested: 'As perguntas sugeridas não levam os anexos.',
 };
 export const CHAT = localized<typeof ptChat>({ pt: ptChat, ...chatTables });
 

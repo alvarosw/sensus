@@ -30,6 +30,16 @@ export const enChat = {
   thinking: 'thinking…',
   retry: 'Try again',
   fallbackQuestions: ['What is the central idea of this passage?', 'What do the sources say about this passage?'],
+  newConversation: 'New conversation',
+  unitDivider: (ref: string) => `Now in ${ref}`,
+  unitChanged: 'Attachments from the previous passage were removed.',
+  scopeChipLabel: (unit: string, focus: string | null) => (focus ? `${focus} in ${unit}` : unit),
+  scopeLabel: 'Passage sent to the AI',
+  scopeUnit: (unit: string) => `The AI receives the passage ${unit}.`,
+  scopeFocus: (unit: string, focus: string) => `The AI receives the passage ${unit}, with the selection ${focus} highlighted.`,
+  scopeAttached: (n: number) => `Attachments: ${n}. They go with each typed question until you remove them.`,
+  scopeNone: 'No attachments. Attach a comment or a word to ask about it.',
+  scopeSuggested: 'Suggested questions do not carry the attachments.',
   close: 'Close',
 };
 

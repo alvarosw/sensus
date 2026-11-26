@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "reference": "Filipenses 1:21-2:11",
+  "range": {
+    "start": 50001021,
+    "end": 50002011
+  },
+  "model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "recordedAt": "2026-11-21T03:45:35.109Z",
+  "kind": "curiosity",
+  "text": "@curiosidade termo\ngancho: \"politeuomai\" em Fp 1:27 evoca cidadania romana, não só \"conduta cristã\" genérica\nouvinte: Os filipenses, vivendo em colônia romana, entendiam \"politeuomai\" como viver como cidadãos de Roma, com direitos e deveres cívicos públicos [[lex:stepbible-tbesg:G4176]]\nhoje: Costuma-se ler \"portai-vos dignamente\" ou \"vivam de modo digno\" como exortação moral genérica, perdendo o peso cívico-político da metáfora\nmuda: A exortação passa a ser: vivam como cidadãos do evangelho, com lealdade pública a Cristo acima do imperador, numa colônia que se orgulhava de ser \"Roma em miniatura\" [[lex:stepbible-tbesg:G4176]] [[tok:gnt:50001027:70]]\nevidencias: [[lex:stepbible-tbesg:G4176]] [[tok:gnt:50001027:70]]\nconfianca: alta\n@fim"
+}

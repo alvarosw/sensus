@@ -1,6 +1,7 @@
 import type { SectionKey, VerseRange } from '@sensus/core';
 
-export type FixtureKind = 'summary' | 'section' | 'answer';
+/** curiosity: resposta do gerador da curiosidade do trecho; curiosity-review: uma resposta do revisor (ver useCuriosity). */
+export type FixtureKind = 'summary' | 'section' | 'answer' | 'curiosity' | 'curiosity-review';
 
 /** Resposta real do modelo, gravada por scripts/record-fixtures.ts e reproduzida pelo provedor 'demo'. */
 export interface Fixture {

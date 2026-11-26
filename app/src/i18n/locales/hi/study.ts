@@ -3,6 +3,17 @@ import { testamentLabel } from '@sensus/core';
 import type { Testament } from '@sensus/core';
 
 export const hiStudy = {
+  curiosity: {
+    echo: 'जिन्होंने पहले सुना उनके लिए',
+    term: 'उस शब्द का मतलब',
+    then: 'तब',
+    today: 'आज',
+    change: 'क्या बदलता है',
+    more: 'क्यों?',
+    less: 'छिपाएँ',
+    sources: 'स्रोत देखें',
+    label: 'इस अंश की एक जिज्ञासा',
+  },
   threadLens: {
     literario: 'हम कहाँ हैं',
     lingua: 'वह शब्द जो अंश को आगे बढ़ाता है',
