@@ -6,7 +6,10 @@ Como gerar e publicar o Sensus. Decisões do responsável:
   O keystore é **gerenciado pelo EAS** (remoto), criado no primeiro build e usado também pelo build local.
 - **iOS:** build **na nuvem** do EAS, **só** quando o responsável roda `npm run release:ios`. Sem conta de
   desenvolvedor da Apple por enquanto, o iOS é **simulador**.
-- Nada disso roda sozinho: nenhum comando de release é chamado por CI ou por scripts de teste.
+- **Release automática (Android):** enviar uma tag `v<versão>` dispara `.github/workflows/release.yml`, que faz o build
+  com o **mesmo keystore** do build local, roda os testes e publica o APK no GitHub Releases. Veja a seção
+  "Release automática" abaixo. O build local continua valendo como plano B.
+- iOS e Bíblias **não** rodam sozinhos. Nenhum comando de iOS ou de Bíblias é chamado por CI.
 
 ## Comandos do dia a dia (na raiz do repositório)
 
@@ -30,6 +33,42 @@ npm run release:github          # confira e rode o comando impresso
 ```
 
 Commite a versão **antes** do build: o build precisa estar no histórico.
+
+## Release automática (GitHub Actions)
+
+Gatilho: `git tag v<versão> && git push origin v<versão>`, depois que a versão está na `main`. O workflow:
+
+1. Falha se a tag não bater com `APP_VERSION` em `app/app.config.ts`.
+2. Roda `npm run check` (testes, typecheck e testes do pipeline).
+3. Baixa o banco de leitura da release `reader-db` e roda `sync-db`.
+4. `npm run release:android`: build `production` com `eas build --local` e `check-apk-secrets.sh`.
+5. `npm run release:github -- --run`: cria a release `v<versão>` com o APK e o SHA-256 nas notas.
+
+**Credenciais.** O keystore continua **só** no EAS (`credentialsSource: remote`). Não há keystore no repositório nem
+nos secrets. O build local e o do GitHub baixam o mesmo keystore do mesmo projeto, então a assinatura é igual. O
+workflow precisa de um único secret: `EXPO_TOKEN`. Ele dá acesso ao keystore, então trate como senha. O `GITHUB_TOKEN`
+do próprio Actions publica a release.
+
+**Setup único (faça uma vez):**
+
+1. Token do Expo: em `expo.dev`, Account settings > Access tokens, crie um token da conta dona do projeto
+   `@alvarosw/sensus`.
+2. No GitHub: Settings > Environments > `release` > Add secret `EXPO_TOKEN`. Recomendado: em "Required reviewers",
+   adicione você, para aprovar cada build antes de o keystore ser usado.
+3. Banco de leitura: o APK leva `sensus-reader.db`, que não está no git (`data/*.db` é ignorado). Gere-o e publique
+   como asset de uma release fixa:
+   ```bash
+   cd pipeline && python3 build_db.py --edition reader      # gera data/sensus-reader.db
+   gh release create reader-db ../data/sensus-reader.db --title "Banco de leitura" --notes "Banco de leitura usado pelo build de release."
+   ```
+   Para atualizar depois: `gh release upload reader-db ../data/sensus-reader.db --clobber`. Não use o nome
+   `data-<data>`: essas releases são o banco completo, que não serve ao APK.
+
+**Status:** o workflow ainda não rodou no GitHub. O primeiro run é o teste real. Sem o secret `EXPO_TOKEN` ou sem a
+release `reader-db`, o job para cedo com a mensagem de erro, antes de gastar tempo com o build.
+
+**Plano B (local):** `npm run release:android` e `npm run release:github -- --run`, como antes. Exige `eas login` na
+máquina.
 
 ## Bíblias (pacotes e catálogo)
 

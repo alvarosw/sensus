@@ -175,7 +175,7 @@ function github(args) {
   writeFileSync(
     notes,
     [
-      `Sensus ${v}: APK para instalação direta no Android (build local com EAS).`,
+      `Sensus ${v}: APK para instalação direta no Android (build com EAS, keystore do projeto).`,
       '',
       `SHA-256 do APK: \`${sha256(apk)}\``,
       '',

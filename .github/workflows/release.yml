@@ -1,0 +1,74 @@
+name: release
+
+# Publica o APK Android quando uma tag v<versão> é enviada (ex.: git tag v1.6.1 && git push origin v1.6.1).
+# Usa o mesmo keystore gerenciado pelo EAS que o build local, via EXPO_TOKEN. Ver docs/RELEASING.md.
+on:
+  push:
+    tags: ['v*']
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    # O secret EXPO_TOKEN fica neste ambiente (Settings > Environments > release), não no repositório.
+    environment: release
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+      # Release que guarda o banco de leitura (sensus-reader.db), empacotado no APK. Ver docs/RELEASING.md.
+      READER_DB_RELEASE: reader-db
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Confere se a tag é a versão do app
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          app="$(grep -oP "^const APP_VERSION = '\K[0-9]+\.[0-9]+\.[0-9]+(?=';)" app/app.config.ts || true)"
+          if [[ -z "$app" || "$tag" != "$app" ]]; then
+            echo "A tag v$tag não bate com APP_VERSION='$app' em app/app.config.ts. Rode npm run release:version antes." >&2
+            exit 1
+          fi
+
+      - name: Confere o secret do EAS
+        run: |
+          if [[ -z "$EXPO_TOKEN" ]]; then
+            echo "Falta o secret EXPO_TOKEN no ambiente 'release' do GitHub." >&2
+            exit 1
+          fi
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - run: npm ci
+      - name: Testes e typecheck
+        run: npm run check
+
+      - name: Instala a CLI do EAS
+        run: npm install -g eas-cli
+
+      - name: Baixa o banco de leitura e sincroniza com o app
+        run: |
+          mkdir -p data
+          gh release download "$READER_DB_RELEASE" --pattern sensus-reader.db --dir data
+          (cd app && npm run sync-db ../data/sensus-reader.db)
+
+      - name: Build Android (perfil production, keystore do EAS)
+        run: npm run release:android
+
+      - name: Publica a release no GitHub com o APK
+        run: npm run release:github -- --run
