@@ -1,7 +1,7 @@
 // Montagem do fio: ordem e títulos fixos, omissão sem dados, escolha da evidência de cada passo.
 import { describe, expect, it } from 'vitest';
 import { isProperNameToken, type Block, type Commentary, type PanelData, type Source, type StructuredSummary, type Token, type VerseText, type XRef } from '@sensus/core';
-import { buildThread, threadTitle, type ThreadAi } from './thread';
+import { buildThread, threadTextParts, threadTitle, type ThreadAi } from './thread';
 import { normalizeForm } from './keyword';
 
 const RANGE = { start: 50002005, end: 50002008 };
@@ -455,3 +455,20 @@ describe('Língua: nomes próprios e formas curtas ficam de fora dos fallbacks',
   });
 });
 
+
+describe('threadTextParts (síntese para compartilhar)', () => {
+  it('abertura primeiro, depois as seções na ordem do fio, com o título do passo; vazias ficam de fora', () => {
+    const summary = summaryOf({
+      overview: [citing('txt:a')],
+      sections: { interpretacao: [citing('com:x')], literario: [citing('txt:b')], texto: [] },
+    });
+    const parts = threadTextParts(summary);
+    expect(parts.map((p) => p.heading)).toEqual([undefined, threadTitle('literario'), threadTitle('interpretacao')]);
+  });
+
+  it('AT: resumo só com seções (sem abertura)', () => {
+    const parts = threadTextParts(summaryOf({ sections: { historico: [citing('ent:asa')] } }));
+    expect(parts).toHaveLength(1);
+    expect(parts[0]!.heading).toBe(threadTitle('historico'));
+  });
+});

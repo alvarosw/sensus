@@ -11,6 +11,7 @@ import {
   testamentOfCorpus,
   variantSites,
   type AppLang,
+  type Block,
   type Book,
   type PanelData,
   type SectionKey,
@@ -217,4 +218,24 @@ function interpretationEvidence(panel: PanelData): ThreadEvidence | null {
   ];
   if (names.length === 0) return null;
   return { kind: 'commentators', names: names.slice(0, MAX_COMMENTATORS), more: Math.max(0, names.length - MAX_COMMENTATORS) };
+}
+
+/** Uma parte da síntese em texto simples: título do passo (a abertura não tem) e os blocos da IA. */
+export interface ThreadTextPart {
+  heading?: string;
+  blocks: Block[];
+}
+
+/**
+ * Partes da Visão geral para compartilhar, na ordem da tela: a abertura e, na ordem do fio, cada seção que a IA
+ * escreveu, com o título do passo. Seção vazia ou ausente fica de fora.
+ */
+export function threadTextParts(summary: StructuredSummary): ThreadTextPart[] {
+  const parts: ThreadTextPart[] = [];
+  if (summary.overview.length > 0) parts.push({ blocks: summary.overview });
+  for (const lens of THREAD_ORDER) {
+    const blocks = summary.sections[lens];
+    if (blocks && blocks.length > 0) parts.push({ heading: threadTitle(lens), blocks });
+  }
+  return parts;
 }

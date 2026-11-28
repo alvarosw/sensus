@@ -20,6 +20,7 @@ import { useStudy, type LensKey } from '@/state/study';
 import type { PassagePanel } from './usePassagePanel';
 import type { AiStatus, DeepView, Range, StudyAi } from './study-state';
 import { PEEK_DWELL_MS, shouldStartSummary } from './summary-start';
+import { describeCiteEntry } from '@/features/share';
 
 /** Ordem em que o resumo chega (linhas-marcadoras de SUMMARY_FORMAT, no núcleo). */
 const STREAM_ORDER: readonly LensKey[] = ['visao', 'literario', 'lingua', 'texto', 'intertexto', 'historico', 'interpretacao', 'aplicacao'];
@@ -224,6 +225,13 @@ export function useStudyAiFeed(range: Range, unitRange: Range | null, unitPanel:
     [summary],
   );
 
+  // As citações do resumo são do contexto da perícope (unitPanel): o índice dela dá a obra de cada fonte.
+  const citeIndex = unitPanel.richCtx?.citeIndex;
+  const describeCite = useCallback(
+    (citeId: string, label: string): string => describeCiteEntry(citeIndex?.get(citeId), label),
+    [citeIndex],
+  );
+
   const ai = useMemo<StudyAi>(
     () => ({
       provider,
@@ -241,8 +249,9 @@ export function useStudyAiFeed(range: Range, unitRange: Range | null, unitPanel:
       deepen,
       deepViews,
       questions,
+      describeCite,
     }),
-    [provider, status, gen?.error, summary, writingLens, thinking, unitRange, range.start, range.end, key, startSummary, canDeepen, deepen, deepViews, questions],
+    [provider, status, gen?.error, summary, writingLens, thinking, unitRange, range.start, range.end, key, startSummary, canDeepen, deepen, deepViews, questions, describeCite],
   );
 
   return ai;
