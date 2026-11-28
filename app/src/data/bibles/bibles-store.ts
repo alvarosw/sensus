@@ -9,6 +9,7 @@ import { installedBibleVersion, installedIds, removeBibleFile } from './bible-db
 import { installBible } from './install';
 import { canRemoveBible } from './bible-model';
 import { republishActive } from '../active-db';
+import { useSearchIndex } from './search-index';
 import { create } from 'zustand';
 
 interface BiblesState {
@@ -39,6 +40,9 @@ function catalogUrl(): string {
   return typeof extra?.bibleCatalogUrl === 'string' && extra.bibleCatalogUrl ? extra.bibleCatalogUrl : DEFAULT_BIBLE_CATALOG_URL;
 }
 
+/** Espera antes de conferir os índices de busca ao abrir o app (a primeira tela desenha antes). */
+const INDEX_START_DELAY_MS = 2500;
+
 export const useBibles = create<BiblesState>()((set, get) => {
   const refreshInstalled = () => {
     set({ installed: installedIds(get().catalog) });
@@ -67,6 +71,10 @@ export const useBibles = create<BiblesState>()((set, get) => {
       if (get().loaded) return;
       set({ loaded: true, catalog: readCachedCatalog() });
       refreshInstalled();
+      // Índices de busca que faltam (Bíblias instaladas antes da busca, ou montagem interrompida), sem atrasar a abertura.
+      setTimeout(() => {
+        for (const id of get().installed) void useSearchIndex.getState().ensure(id);
+      }, INDEX_START_DELAY_MS);
     },
 
     refreshCatalog: async () => {
@@ -103,7 +111,12 @@ export const useBibles = create<BiblesState>()((set, get) => {
         if (phase && isActive(phase)) dispatch(id, { type: 'fail', error: 'install' });
         refreshInstalled();
         // texto novo (instalação ou atualização): consultas em cache do Repo refazem
-        if (get().machines[id]?.phase === 'done') republishActive();
+        if (get().machines[id]?.phase === 'done') {
+          republishActive();
+          // Índice de busca da versão nova, em segundo plano.
+          useSearchIndex.getState().forget(id);
+          void useSearchIndex.getState().ensure(id);
+        }
       });
     },
 
@@ -116,6 +129,7 @@ export const useBibles = create<BiblesState>()((set, get) => {
       if (!canRemoveBible(id, get().installed)) return;
       if (isActive((get().machines[id] ?? IDLE_STATE).phase)) return;
       await removeBibleFile(id);
+      useSearchIndex.getState().forget(id);
       set((s) => ({ machines: { ...s.machines, [id]: { ...IDLE_STATE } } }));
       refreshInstalled();
       republishActive();
