@@ -40,6 +40,8 @@ export interface StudyAi {
   deepViews: (lens: LensKey) => DeepView[];
   /** Perguntas sugeridas da lente. */
   questions: (lens: LensKey) => string[];
+  /** Linha de uma fonte citada no resumo (rótulo e obra), para a síntese em texto simples. */
+  describeCite: (citeId: string, label: string) => string;
 }
 
 export interface StudyData {

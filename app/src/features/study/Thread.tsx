@@ -6,12 +6,14 @@ import { View } from 'react-native';
 import { router } from 'expo-router';
 import { ActButton, Card, Empty, Greek, LinkButton, Tag, Txt, space, radius, useTheme } from '@/design';
 import { RichBlocks } from '@/features/rich';
+import { SHARE, shareRef, synthShareText, useShare } from '@/features/share';
+import { currentLang } from '@/i18n/lang-store';
 import { AutoTranslateNote } from '@/translate/AutoTranslateNote';
 import { useShortTexts } from '@/translate/useShortTexts';
 import { LENS_LABELS, useStudy } from '@/state/study';
 import { SkeletonLines, ThinkingLine } from './LensShell';
 import { STUDY } from './strings';
-import { type ThreadEvidence, type ThreadStep } from './thread';
+import { threadTextParts, type ThreadEvidence, type ThreadStep } from './thread';
 import { useStudyAi, useStudyData } from './useStudyData';
 import { refShort } from '@/features/common/format';
 
@@ -78,6 +80,30 @@ function Overview() {
       ) : (
         <SkeletonLines lines={3} />
       )}
+      {ai.status === 'done' && ai.summary && threadTextParts(ai.summary).length > 0 && <ShareSynthLink />}
+    </View>
+  );
+}
+
+/** "Compartilhar síntese": a Visão geral (abertura e passos) em texto simples, só com o resumo terminado. */
+function ShareSynthLink() {
+  const ai = useStudyAi();
+  const { range } = useStudyData();
+  const share = () => {
+    if (!ai.summary) return;
+    const scope = ai.unitRange ?? range;
+    const ref = shareRef(scope.start, scope.end, currentLang());
+    const text = synthShareText({
+      title: `${ref} · ${LENS_LABELS.visao}`,
+      parts: threadTextParts(ai.summary),
+      labels: { sources: SHARE.sources, inference: SHARE.inference, aiFooter: SHARE.aiFooter, via: SHARE.via },
+      describe: (r) => ai.describeCite(r.citeId, r.label),
+    });
+    useShare.getState().open({ kind: 'synth', text, ref });
+  };
+  return (
+    <View style={{ flexDirection: 'row' }}>
+      <LinkButton label={SHARE.shareSynth} onPress={share} testID="share-synth" />
     </View>
   );
 }
