@@ -13,7 +13,8 @@ import { useRepo } from '@/data/db-context';
 import { useStudy } from '@/state/study';
 import { refShort } from '../common/format';
 import { readLastPosition, writeLastPosition } from './last-position';
-import { ChapterBlock } from './ChapterBlock';
+import { ChapterBlock, type TermMarks } from './ChapterBlock';
+import { useSearch } from '@/features/search';
 import { SelectionHandles } from './Handles';
 import { TOTAL_CHAPTERS, chapterAt, loadChapter, vidChapterIndex, type ChapterData } from './chapters';
 import { LINE, ReaderGeometry } from './geometry';
@@ -517,9 +518,12 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
 
   // Nome pelo catálogo (Bíblias baixadas não estão no registro de fontes do núcleo); sem catálogo, o registro.
   const sourceName = bibleRowInfo(loadedSource, bibleCatalog).name;
+  // Termos da busca marcados no texto enquanto a navegação de resultados está aberta.
+  const searchNav = useSearch((s) => s.nav);
+  const marks = useMemo<TermMarks | null>(() => (searchNav ? { terms: searchNav.terms, prefix: searchNav.prefix } : null), [searchNav]);
   const extra = useMemo(
-    () => ({ shown, greekTokens: greekOn ? greekTokens : null, flashVid, scheme, loadedSource }),
-    [shown, greekOn, greekTokens, flashVid, scheme, loadedSource],
+    () => ({ shown, greekTokens: greekOn ? greekTokens : null, flashVid, scheme, loadedSource, marks }),
+    [shown, greekOn, greekTokens, flashVid, scheme, loadedSource, marks],
   );
 
   const renderItem = useCallback(
@@ -542,6 +546,7 @@ export const Reader = memo(function Reader({ areaHeight }: ReaderProps) {
           selStart={overlaps ? Math.max(s.start, d.first) : 0}
           selEnd={overlaps ? Math.min(s.end, d.last) : 0}
           flashVid={extra.flashVid >= d.first && extra.flashVid <= d.last ? extra.flashVid : 0}
+          termMarks={extra.marks}
           greek={gk}
           onVerse={onVerse}
           onWord={onWord}

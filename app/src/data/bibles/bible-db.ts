@@ -35,6 +35,11 @@ export function bibleDriver(id: string): SqlDriver | null {
   return open.get(id)?.driver ?? null;
 }
 
+/** Conexão de uma Bíblia baixada aberta (índice de busca: escreve no próprio arquivo). Null se não está aberta. */
+export function bibleDatabase(id: string): SQLite.SQLiteDatabase | null {
+  return open.get(id)?.db ?? null;
+}
+
 /** Abre a Bíblia baixada se o arquivo existir. Chamar de novo com a conexão aberta não faz nada. */
 export async function openBible(id: string): Promise<void> {
   if (open.has(id)) return;

@@ -13,6 +13,7 @@
 //    é aplicada ao Repo do banco ativo (active-db.ts) ao carregar, a cada mudança e quando o banco troca.
 //  - onboardingDone: a apresentação de primeira vez já foi concluída (regra de quem vê em onboarding-pref.ts).
 //  - shareVerseNumbers: números dos versículos no texto de copiar e compartilhar (a última escolha da prévia).
+//  - recentSearches: as últimas buscas por palavra (até 5, a mais recente primeiro), só no aparelho.
 // Os valores de aparência são aplicados ao estado do leitor (state/study.ts) ao carregar e a cada mudança.
 import { create } from 'zustand';
 import { useStudy } from '@/state/study';
@@ -38,6 +39,8 @@ const THEMES: readonly SchemePreference[] = ['system', 'light', 'dark'];
 
 /** Limite de favoritos guardados (evita arquivo crescer sem controle). */
 const MAX_FAVORITES = 500;
+/** Buscas recentes guardadas. */
+const MAX_RECENT_SEARCHES = 5;
 
 export const DEFAULT_APP_PREFS = {
   theme: 'system' as SchemePreference,
@@ -49,6 +52,7 @@ export const DEFAULT_APP_PREFS = {
   commentaryPrefs: ALL_COMMENTARIES,
   onboardingDone: false,
   shareVerseNumbers: false,
+  recentSearches: [] as string[],
 };
 
 interface AppPrefsState {
@@ -75,6 +79,9 @@ interface AppPrefsState {
   /** Números dos versículos ao copiar e compartilhar (a última escolha da prévia). */
   shareVerseNumbers: boolean;
   setShareVerseNumbers(on: boolean): void;
+  /** Últimas buscas por palavra (a mais recente primeiro). */
+  recentSearches: string[];
+  setRecentSearches(list: string[]): void;
   /** Grava o texto padrão e aplica ao leitor agora. */
   setTextSource(source: TextSourceId): void;
   /** Depois de remover uma Bíblia: se a padrão saiu, volta para a recomendada instalada do idioma (ou BLivre). */
@@ -104,6 +111,7 @@ interface PersistedPrefs {
   commentaryPrefs: CommentaryPreference;
   onboardingDone: boolean;
   shareVerseNumbers: boolean;
+  recentSearches: string[];
 }
 
 function persist(p: PersistedPrefs): void {
@@ -137,10 +145,10 @@ function toggleId(list: string[], id: string): string[] {
 
 export const useAppPrefs = create<AppPrefsState>()((set, get) => {
   const current = (): PersistedPrefs => {
-    const { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone, shareVerseNumbers } = get();
+    const { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone, shareVerseNumbers, recentSearches } = get();
     return {
       appLang: useLangStore.getState().lang,
-      theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone, shareVerseNumbers,
+      theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone, shareVerseNumbers, recentSearches,
     };
   };
   return {
@@ -173,8 +181,9 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       const storedOnboarding = typeof stored?.onboardingDone === 'boolean' ? stored.onboardingDone : undefined;
       const onboardingDone = !shouldShowOnboarding({ hasStoredPrefs: stored !== null, onboardingDone: storedOnboarding });
       const shareVerseNumbers = typeof stored?.shareVerseNumbers === 'boolean' ? stored.shareVerseNumbers : DEFAULT_APP_PREFS.shareVerseNumbers;
+      const recentSearches = idList(stored?.recentSearches).slice(0, MAX_RECENT_SEARCHES);
       useLangStore.getState().setLang(appLang);
-      set({ loaded: true, theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone, shareVerseNumbers });
+      set({ loaded: true, theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone, shareVerseNumbers, recentSearches });
       useStudy.setState({ textSource, greek: greekDefault });
       setActiveCommentaryPreference(commentaryPrefs);
       // Primeira execução ou arquivo antigo: grava já o idioma e a apresentação decididos, para não mudarem sozinhos depois.
@@ -238,6 +247,11 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
     setShareVerseNumbers: (shareVerseNumbers) => {
       set({ shareVerseNumbers });
       persist({ ...current(), shareVerseNumbers });
+    },
+    setRecentSearches: (list) => {
+      const recentSearches = list.slice(0, MAX_RECENT_SEARCHES);
+      set({ recentSearches });
+      persist({ ...current(), recentSearches });
     },
     setCommentaryPrefs: (raw) => {
       const commentaryPrefs = parseCommentaryPreference(raw);

@@ -110,6 +110,8 @@ export interface StoredAppPrefs {
   onboardingDone?: unknown;
   /** Números dos versículos ao copiar e compartilhar (booleano). */
   shareVerseNumbers?: unknown;
+  /** Últimas buscas por palavra (lista de texto). */
+  recentSearches?: unknown;
 }
 
 const APP_PREFS_FILE_NAME = 'app-prefs.json';
