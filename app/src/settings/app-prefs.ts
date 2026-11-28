@@ -12,6 +12,7 @@
 //  - commentaryPrefs: tradições e fontes de comentário escondidas (domain/source-prefs.ts). Vale no estudo inteiro:
 //    é aplicada ao Repo do banco ativo (active-db.ts) ao carregar, a cada mudança e quando o banco troca.
 //  - onboardingDone: a apresentação de primeira vez já foi concluída (regra de quem vê em onboarding-pref.ts).
+//  - shareVerseNumbers: números dos versículos no texto de copiar e compartilhar (a última escolha da prévia).
 // Os valores de aparência são aplicados ao estado do leitor (state/study.ts) ao carregar e a cada mudança.
 import { create } from 'zustand';
 import { useStudy } from '@/state/study';
@@ -47,6 +48,7 @@ export const DEFAULT_APP_PREFS = {
   timelineCombos: [] as UserCombo[],
   commentaryPrefs: ALL_COMMENTARIES,
   onboardingDone: false,
+  shareVerseNumbers: false,
 };
 
 interface AppPrefsState {
@@ -70,6 +72,9 @@ interface AppPrefsState {
   onboardingDone: boolean;
   /** Grava se a apresentação de primeira vez já foi concluída (ou pulada). */
   setOnboardingDone(done: boolean): void;
+  /** Números dos versículos ao copiar e compartilhar (a última escolha da prévia). */
+  shareVerseNumbers: boolean;
+  setShareVerseNumbers(on: boolean): void;
   /** Grava o texto padrão e aplica ao leitor agora. */
   setTextSource(source: TextSourceId): void;
   /** Depois de remover uma Bíblia: se a padrão saiu, volta para a recomendada instalada do idioma (ou BLivre). */
@@ -98,6 +103,7 @@ interface PersistedPrefs {
   timelineCombos: UserCombo[];
   commentaryPrefs: CommentaryPreference;
   onboardingDone: boolean;
+  shareVerseNumbers: boolean;
 }
 
 function persist(p: PersistedPrefs): void {
@@ -131,10 +137,10 @@ function toggleId(list: string[], id: string): string[] {
 
 export const useAppPrefs = create<AppPrefsState>()((set, get) => {
   const current = (): PersistedPrefs => {
-    const { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone } = get();
+    const { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone, shareVerseNumbers } = get();
     return {
       appLang: useLangStore.getState().lang,
-      theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone,
+      theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone, shareVerseNumbers,
     };
   };
   return {
@@ -166,8 +172,9 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       // Apresentação: instalação nova a mostra; quem já usava o app (chave ausente) não vê, e a chave é gravada.
       const storedOnboarding = typeof stored?.onboardingDone === 'boolean' ? stored.onboardingDone : undefined;
       const onboardingDone = !shouldShowOnboarding({ hasStoredPrefs: stored !== null, onboardingDone: storedOnboarding });
+      const shareVerseNumbers = typeof stored?.shareVerseNumbers === 'boolean' ? stored.shareVerseNumbers : DEFAULT_APP_PREFS.shareVerseNumbers;
       useLangStore.getState().setLang(appLang);
-      set({ loaded: true, theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone });
+      set({ loaded: true, theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone, shareVerseNumbers });
       useStudy.setState({ textSource, greek: greekDefault });
       setActiveCommentaryPreference(commentaryPrefs);
       // Primeira execução ou arquivo antigo: grava já o idioma e a apresentação decididos, para não mudarem sozinhos depois.
@@ -227,6 +234,10 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       set({ greekDefault });
       persist({ ...current(), greekDefault });
       useStudy.setState({ greek: greekDefault });
+    },
+    setShareVerseNumbers: (shareVerseNumbers) => {
+      set({ shareVerseNumbers });
+      persist({ ...current(), shareVerseNumbers });
     },
     setCommentaryPrefs: (raw) => {
       const commentaryPrefs = parseCommentaryPreference(raw);

@@ -108,6 +108,8 @@ export interface StoredAppPrefs {
   commentaryPrefs?: unknown;
   /** Apresentação de primeira vez concluída. Ausente em arquivos antigos: quem já usava o app não a vê. */
   onboardingDone?: unknown;
+  /** Números dos versículos ao copiar e compartilhar (booleano). */
+  shareVerseNumbers?: unknown;
 }
 
 const APP_PREFS_FILE_NAME = 'app-prefs.json';

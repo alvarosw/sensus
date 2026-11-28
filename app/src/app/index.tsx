@@ -11,6 +11,7 @@ import { BACK_PRIORITY, useBackLayer, useRootBackHandler } from '@/features/comm
 import { BookPicker, JumpPopover, PinnedBar, Reader, TopBar } from '@/features/reader';
 import { useReaderNav } from '@/state/reader-nav';
 import { ContextReturnPill } from '@/features/timeline/ContextReturnPill';
+import { SharePreview } from '@/features/share';
 import { SourceLayer } from '@/features/sources/SourceLayer';
 import { StudySheet } from '@/features/study/StudySheet';
 
@@ -73,6 +74,7 @@ export default function MainScreen() {
       <StudySheet />
       <SourceLayer />
       <ChatLayer />
+      <SharePreview />
       <ToastHost />
     </View>
   );

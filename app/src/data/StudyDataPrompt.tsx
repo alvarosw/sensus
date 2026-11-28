@@ -1,5 +1,6 @@
 // Cartão da folha de estudo quando o banco ativo é o de leitura: convida a baixar os dados de estudo.
 // O texto bíblico continua disponível; só os painéis de estudo (comentários, léxico, etc.) esperam o download.
+import type { ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Card, gutter, IconButton, shadow, Txt, useTheme } from '@/design';
@@ -9,7 +10,8 @@ import { DownloadStatus } from './DownloadStatus';
 import { formatMB } from './plan';
 import { DATA_COPY } from './strings';
 
-export function StudyDataPrompt({ onClose }: { onClose: () => void }) {
+/** `footer`: conteúdo abaixo do convite (a barra de ações da seleção, que não depende dos dados de estudo). */
+export function StudyDataPrompt({ onClose, footer }: { onClose: () => void; footer?: ReactNode }) {
   const { c } = useTheme();
   const insets = useSafeAreaInsets();
   const manifest = useDataStore((s) => s.manifest);
@@ -33,6 +35,7 @@ export function StudyDataPrompt({ onClose }: { onClose: () => void }) {
           ) : (
             <DownloadStatus testID="study-data-status" />
           )}
+          {footer ? <View style={{ marginHorizontal: -16, marginBottom: -14 }}>{footer}</View> : null}
         </Card>
       </View>
     </View>
