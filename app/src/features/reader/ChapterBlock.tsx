@@ -3,10 +3,11 @@
 // Posição dos versículos: na web, marcadores inline no DOM; no nativo, as linhas do texto disposto
 // (onTextLayout) dão y exato de cada linha e x aproximado pela contagem de caracteres. Marcadores inline
 // de View no nativo quebrariam o realce de seleção (lacunas) e não são medidos de forma confiável.
-import { memo, useCallback, useEffect, useMemo, type ReactElement } from 'react';
+import { memo, useCallback, useEffect, useMemo, type ReactElement, type ReactNode } from 'react';
 import { Platform, Text, View, type LayoutChangeEvent } from 'react-native';
 import { BOOK_TABLE, dirOf, scriptOf, splitVid, type Token, type VerseText, type Vid } from '@sensus/core';
 import { fontFamilies, gutter, radius, type, useTheme } from '@/design';
+import { matchRanges } from '../../data/bibles/search-model';
 import type { FlowBlock } from './verse-flow';
 import type { ChapterData } from './chapters';
 import { LINE, type ReaderGeometry } from './geometry';
@@ -62,13 +63,15 @@ export interface ChapterBlockProps {
   selStart: Vid;
   selEnd: Vid;
   flashVid: Vid;
+  /** Termos da busca marcados no texto enquanto a navegação de resultados está aberta (null: nenhum). */
+  marks?: TermMarks | null;
   /** Palavras do texto original (grego ou hebraico) por versículo; sem valor, o original fica oculto. */
   greek?: Map<Vid, Token[]>;
   onVerse: (vid: Vid) => void;
   onWord: (citeId: string) => void;
 }
 
-export const ChapterBlock = memo(function ChapterBlock({ data, geo, sourceName, selStart, selEnd, flashVid, greek, onVerse, onWord }: ChapterBlockProps) {
+export const ChapterBlock = memo(function ChapterBlock({ data, geo, sourceName, selStart, selEnd, flashVid, marks, greek, onVerse, onWord }: ChapterBlockProps) {
   const { c } = useTheme();
   const items = useMemo(() => buildItems(data.blocks, greek, selStart, selEnd), [data.blocks, greek, selStart, selEnd]);
   const book = BOOK_TABLE[data.book - 1]!;
@@ -101,7 +104,7 @@ export const ChapterBlock = memo(function ChapterBlock({ data, geo, sourceName, 
             {it.title}
           </Text>
         ) : it.kind === 'run' ? (
-          <Run key={it.key} runKey={`${data.idx}:${it.key}`} verses={it.verses} endsParagraph={it.endsParagraph} geo={geo} selStart={selStart} selEnd={selEnd} flashVid={flashVid} onVerse={onVerse} />
+          <Run key={it.key} runKey={`${data.idx}:${it.key}`} verses={it.verses} endsParagraph={it.endsParagraph} geo={geo} selStart={selStart} selEnd={selEnd} flashVid={flashVid} marks={marks ?? null} onVerse={onVerse} />
         ) : (
           <GreekLine key={it.key} tokens={it.tokens} endsParagraph={it.endsParagraph} onWord={onWord} />
         ),
@@ -212,6 +215,31 @@ function versePoints(lines: LayoutLine[], flow: Flow, count: number): Array<{ sx
   return out;
 }
 
+/** Termos da busca a marcar no texto (ver data/bibles/search-model). */
+export interface TermMarks {
+  terms: string[];
+  prefix: boolean;
+}
+
+/** Texto do versículo com as palavras da busca sublinhadas na cor de destaque. */
+function markedText(text: string, marks: TermMarks, accent: string): ReactNode {
+  const ranges = matchRanges(text, marks.terms, marks.prefix);
+  if (ranges.length === 0) return text;
+  const out: ReactNode[] = [];
+  let pos = 0;
+  ranges.forEach(([a, b], i) => {
+    if (a > pos) out.push(text.slice(pos, a));
+    out.push(
+      <Text key={i} testID="search-term" style={{ fontFamily: fontFamilies.readSemibold, textDecorationLine: 'underline', textDecorationColor: accent }}>
+        {text.slice(a, b)}
+      </Text>,
+    );
+    pos = b;
+  });
+  if (pos < text.length) out.push(text.slice(pos));
+  return out;
+}
+
 /** Trecho de texto de um parágrafo; cada versículo é texto aninhado com realce próprio. */
 const Run = memo(function Run({
   runKey,
@@ -221,6 +249,7 @@ const Run = memo(function Run({
   selStart,
   selEnd,
   flashVid,
+  marks,
   onVerse,
 }: {
   runKey: string;
@@ -230,6 +259,7 @@ const Run = memo(function Run({
   selStart: Vid;
   selEnd: Vid;
   flashVid: Vid;
+  marks: TermMarks | null;
   onVerse: (vid: Vid) => void;
 }) {
   const { c } = useTheme();
@@ -271,7 +301,7 @@ const Run = memo(function Run({
       >
         {WJ}
         <Text style={{ fontFamily: fontFamilies.uiBold, fontSize: SUP_SIZE, lineHeight: SUP_SIZE, color: selected ? c.accent : c.muted }}>{supNumber(n)}{' '}</Text>
-        {v.text}
+        {marks ? markedText(v.text, marks, c.accent) : v.text}
         {WJ}
       </Text>,
     );

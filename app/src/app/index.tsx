@@ -11,6 +11,7 @@ import { BACK_PRIORITY, useBackLayer, useRootBackHandler } from '@/features/comm
 import { BookPicker, JumpPopover, PinnedBar, Reader, TopBar } from '@/features/reader';
 import { useReaderNav } from '@/state/reader-nav';
 import { ContextReturnPill } from '@/features/timeline/ContextReturnPill';
+import { SearchNavPill } from '@/features/search';
 import { SourceLayer } from '@/features/sources/SourceLayer';
 import { StudySheet } from '@/features/study/StudySheet';
 
@@ -53,6 +54,7 @@ export default function MainScreen() {
         <Reader areaHeight={areaHeight} />
       </View>
       <ContextReturnPill top={insets.top + size.topBar + space[3]} />
+      <SearchNavPill top={insets.top + size.topBar + space[3]} />
       {jumpOpen && <JumpPopover onClose={() => setJumpOpen(false)} />}
       <BookPicker
         visible={booksOpen}
