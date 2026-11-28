@@ -255,3 +255,22 @@ export const size = {
   handle: 22,
   minTouch: 44,
 } as const;
+
+/** Cores do grifo (fundo do versículo e ponto da paleta), claro e escuro. As chaves são as cores guardadas no banco. */
+export type HighlightKey = 'amarelo' | 'verde' | 'azul' | 'rosa' | 'lilas';
+export const HIGHLIGHT_TINTS: Record<Scheme, Record<HighlightKey, { tint: string; dot: string }>> = {
+  light: {
+    amarelo: { tint: '#F2E68A', dot: '#C9A227' },
+    verde: { tint: '#D3E8C5', dot: '#5E9150' },
+    azul: { tint: '#CFE0F3', dot: '#4A7DB5' },
+    rosa: { tint: '#F3D3DC', dot: '#C0607A' },
+    lilas: { tint: '#E1D6F0', dot: '#8065B5' },
+  },
+  dark: {
+    amarelo: { tint: '#4D4417', dot: '#E3C75A' },
+    verde: { tint: '#263F27', dot: '#8DC27E' },
+    azul: { tint: '#1F354F', dot: '#86B1E0' },
+    rosa: { tint: '#4A2532', dot: '#E393A8' },
+    lilas: { tint: '#372C4D', dot: '#B9A2E3' },
+  },
+};

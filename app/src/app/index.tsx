@@ -1,5 +1,5 @@
 // Tela principal: leitor contínuo + barra superior + camadas (estudo, fontes, chat, aviso) sobre ele.
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { View, type LayoutChangeEvent } from 'react-native';
 import { router } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -13,6 +13,8 @@ import { useReaderNav } from '@/state/reader-nav';
 import { ContextReturnPill } from '@/features/timeline/ContextReturnPill';
 import { SourceLayer } from '@/features/sources/SourceLayer';
 import { StudySheet } from '@/features/study/StudySheet';
+import { NoteSheet } from '@/features/marks';
+import { useMarksStore } from '@/user-data';
 
 export default function MainScreen() {
   const { c } = useTheme();
@@ -27,6 +29,11 @@ export default function MainScreen() {
   useRootBackHandler();
   useBackLayer('books', booksOpen, () => setBooksOpen(false), BACK_PRIORITY.picker);
   useBackLayer('jump', jumpOpen, () => setJumpOpen(false), BACK_PRIORITY.jump);
+
+  // Marcas do aparelho (user.db): carregadas uma vez, antes do primeiro grifo.
+  useEffect(() => {
+    void useMarksStore.getState().load();
+  }, []);
 
   const onLayout = useCallback((e: LayoutChangeEvent) => setRootH(e.nativeEvent.layout.height), []);
   const pick = (book: Book, chapter: number) => {
@@ -68,11 +75,16 @@ export default function MainScreen() {
           setBooksOpen(false);
           router.push('/timeline');
         }}
+        onMarks={() => {
+          setBooksOpen(false);
+          router.push('/marks');
+        }}
         onClose={() => setBooksOpen(false)}
       />
       <StudySheet />
       <SourceLayer />
       <ChatLayer />
+      <NoteSheet />
       <ToastHost />
     </View>
   );

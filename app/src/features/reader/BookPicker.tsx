@@ -10,6 +10,7 @@ import { READER } from './strings';
 import { abbrOf } from './abbrev';
 import { groupBooks } from './categories';
 import { bookName } from './chapters';
+import { MarksEntry } from '@/features/marks';
 
 export function BookPicker({
   visible,
@@ -19,6 +20,7 @@ export function BookPicker({
   onPick,
   onSettings,
   onTimeline,
+  onMarks,
   onClose,
 }: {
   visible: boolean;
@@ -29,6 +31,8 @@ export function BookPicker({
   onSettings: () => void;
   /** Abre a linha do tempo (seção Explorar). */
   onTimeline: () => void;
+  /** Abre Minhas marcas (seção Explorar). */
+  onMarks: () => void;
   onClose: () => void;
 }) {
   const { c } = useTheme();
@@ -127,6 +131,7 @@ export function BookPicker({
             <>
               <View style={{ gap: 8 }}>
                 <SubHeader label={TL.explore} />
+                <MarksEntry onPress={onMarks} />
                 <Pressable
                   testID="picker-timeline"
                   accessibilityRole="button"
