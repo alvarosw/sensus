@@ -20,6 +20,8 @@ app/src/i18n                    Locale.
 app/src/data                    Banco, download, consultas em cache. Usa core, design/ui.
 app/src/{translate,settings,state,ai,auth}
                                 Serviços do app. Usam core, data, design/ui. Nunca features.
+app/src/user-data              Dados do usuário no aparelho (user.db: marcas; depois estudos e histórico). Banco próprio,
+                                migrações numeradas. Usa core, data. Nunca features.
 app/src/features/common         Peças compartilhadas entre features (sem regra de domínio própria).
 app/src/features/<feature>      Uma feature. Usa tudo acima. Outra feature só pelo index.ts dela.
 app/src/app                     Rotas (Expo Router). Só compõe features.
@@ -107,6 +109,7 @@ strings.ts          textos: o objeto pt (fonte do tipo) + `localized({ pt, ...xT
 | `app/src/ui/` | componentes sem domínio (inclui `Buttons`) |
 | `app/src/data/` | banco, download, fila serial de consultas, fontes carregadas |
 | `app/src/state/study/` | store compartilhado em slices (`reader`, `selection`, `sheet`, `lenses`, `generations`, `panels`, `chat`, `toast`); `state/reader-nav.ts` |
+| `app/src/user-data/` | banco do usuário (`user.db`, migrações em `migrations.ts`), marcas (`marks-model` puro, `marks-repo`, `marks-store`); separado do banco de fontes e das Bíblias |
 | `app/src/translate/` | `useTranslatable` (política `item` ou `global`), `useShortTexts` (textos curtos: um lote e uma nota por bloco, sem oferta), `DownloadTranslation` (botão Baixar tradução), motor e cache em memória |
 | `app/src/features/<f>/index.ts` | API pública de `reader` (inclui a navegação), `study`, `timeline`, `maps`, `rich` |
 | `app/src/features/study/` | folha (`StudySheet`, `PeekContent` + `peek-model`, `Rail`), lentes (`lenses/` + `lens-model`), cards (`cards/`), fio (`thread`, `keyword`), dados e IA (`useStudyData`, `useStudyAi`) |
