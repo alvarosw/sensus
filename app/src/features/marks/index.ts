@@ -4,5 +4,6 @@ export { MarksEntry } from './MarksEntry';
 export { MarksScreen } from './MarksScreen';
 export { NoteSheet } from './NoteSheet';
 export { useMarksUi } from './marks-ui';
+export { useMarkSelectionActions, type MarkSelectionAction } from './useMarkSelectionActions';
 export { changeColor, deleteMarks, highlight, removeHighlight, saveNote, undoLast } from './actions';
 export { MARKS } from './strings';

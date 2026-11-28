@@ -1,12 +1,14 @@
 // Prévia ("espiar") da folha, sem IA: vizinhos e perícope (escopo) e a fila de fatos da seleção. Os fatos e o
 // escopo são calculados em peek-model.ts; aqui só se desenha e se liga aos botões.
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { ScrollView, View, type LayoutChangeEvent } from 'react-native';
 import Svg, { Defs, LinearGradient as SvgGradient, Rect, Stop } from 'react-native-svg';
 import { Fact, LinkButton, Pill, Txt, gutter, radius, useTheme } from '@/design';
 import { chv, refShort } from '@/features/common/format';
 import { splitVid, type Vid } from '@sensus/core';
 import { useStudy } from '@/state/study';
+import { SelectionBar } from '@/features/common/SelectionBar';
+import { HighlightPalette, useMarkSelectionActions } from '@/features/marks';
 import { STUDY } from './strings';
 import { peekFacts, peekScope } from './peek-model';
 import { useStudyData } from './useStudyData';
@@ -42,6 +44,9 @@ export function PeekContent({ onLayout }: { onLayout: (e: LayoutChangeEvent) => 
   const neighborLabel = (v: Vid, own: Vid) => (splitVid(v).book === splitVid(own).book ? chv(v) : refShort(v, v, books, true));
 
   const facts = useMemo(() => (panel ? peekFacts(panel) : null), [panel]);
+  // Grifar troca a barra pela paleta, no mesmo lugar (protótipo, Trilha A).
+  const [palette, setPalette] = useState(false);
+  const marksActions = useMarkSelectionActions(range.start, range.end, () => setPalette(true));
 
   return (
     <View onLayout={onLayout}>
@@ -103,6 +108,13 @@ export function PeekContent({ onLayout }: { onLayout: (e: LayoutChangeEvent) => 
       </View>
       )}
 
+      {palette ? (
+        <View style={{ paddingHorizontal: gutter.sheet, paddingBottom: 10 }}>
+          <HighlightPalette start={range.start} end={range.end} onDone={() => setPalette(false)} />
+        </View>
+      ) : (
+        <SelectionBar actions={[marksActions.grifar, marksActions.nota]} />
+      )}
     </View>
   );
 }
