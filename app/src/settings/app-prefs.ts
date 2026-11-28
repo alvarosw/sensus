@@ -12,6 +12,7 @@
 //  - commentaryPrefs: tradições e fontes de comentário escondidas (domain/source-prefs.ts). Vale no estudo inteiro:
 //    é aplicada ao Repo do banco ativo (active-db.ts) ao carregar, a cada mudança e quando o banco troca.
 //  - onboardingDone: a apresentação de primeira vez já foi concluída (regra de quem vê em onboarding-pref.ts).
+//  - recentSearches: as últimas buscas por palavra (até 5, a mais recente primeiro), só no aparelho.
 // Os valores de aparência são aplicados ao estado do leitor (state/study.ts) ao carregar e a cada mudança.
 import { create } from 'zustand';
 import { useStudy } from '@/state/study';
@@ -37,6 +38,8 @@ const THEMES: readonly SchemePreference[] = ['system', 'light', 'dark'];
 
 /** Limite de favoritos guardados (evita arquivo crescer sem controle). */
 const MAX_FAVORITES = 500;
+/** Buscas recentes guardadas. */
+const MAX_RECENT_SEARCHES = 5;
 
 export const DEFAULT_APP_PREFS = {
   theme: 'system' as SchemePreference,
@@ -47,6 +50,7 @@ export const DEFAULT_APP_PREFS = {
   timelineCombos: [] as UserCombo[],
   commentaryPrefs: ALL_COMMENTARIES,
   onboardingDone: false,
+  recentSearches: [] as string[],
 };
 
 interface AppPrefsState {
@@ -70,6 +74,9 @@ interface AppPrefsState {
   onboardingDone: boolean;
   /** Grava se a apresentação de primeira vez já foi concluída (ou pulada). */
   setOnboardingDone(done: boolean): void;
+  /** Últimas buscas por palavra (a mais recente primeiro). */
+  recentSearches: string[];
+  setRecentSearches(list: string[]): void;
   /** Grava o texto padrão e aplica ao leitor agora. */
   setTextSource(source: TextSourceId): void;
   /** Depois de remover uma Bíblia: se a padrão saiu, volta para a recomendada instalada do idioma (ou BLivre). */
@@ -98,6 +105,7 @@ interface PersistedPrefs {
   timelineCombos: UserCombo[];
   commentaryPrefs: CommentaryPreference;
   onboardingDone: boolean;
+  recentSearches: string[];
 }
 
 function persist(p: PersistedPrefs): void {
@@ -131,10 +139,10 @@ function toggleId(list: string[], id: string): string[] {
 
 export const useAppPrefs = create<AppPrefsState>()((set, get) => {
   const current = (): PersistedPrefs => {
-    const { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone } = get();
+    const { theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone, recentSearches } = get();
     return {
       appLang: useLangStore.getState().lang,
-      theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone,
+      theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone, recentSearches,
     };
   };
   return {
@@ -166,8 +174,9 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       // Apresentação: instalação nova a mostra; quem já usava o app (chave ausente) não vê, e a chave é gravada.
       const storedOnboarding = typeof stored?.onboardingDone === 'boolean' ? stored.onboardingDone : undefined;
       const onboardingDone = !shouldShowOnboarding({ hasStoredPrefs: stored !== null, onboardingDone: storedOnboarding });
+      const recentSearches = idList(stored?.recentSearches).slice(0, MAX_RECENT_SEARCHES);
       useLangStore.getState().setLang(appLang);
-      set({ loaded: true, theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone });
+      set({ loaded: true, theme, textSource, greekDefault, timelineLines, timelineEvents, timelineCombos, commentaryPrefs, onboardingDone, recentSearches });
       useStudy.setState({ textSource, greek: greekDefault });
       setActiveCommentaryPreference(commentaryPrefs);
       // Primeira execução ou arquivo antigo: grava já o idioma e a apresentação decididos, para não mudarem sozinhos depois.
@@ -227,6 +236,11 @@ export const useAppPrefs = create<AppPrefsState>()((set, get) => {
       set({ greekDefault });
       persist({ ...current(), greekDefault });
       useStudy.setState({ greek: greekDefault });
+    },
+    setRecentSearches: (list) => {
+      const recentSearches = list.slice(0, MAX_RECENT_SEARCHES);
+      set({ recentSearches });
+      persist({ ...current(), recentSearches });
     },
     setCommentaryPrefs: (raw) => {
       const commentaryPrefs = parseCommentaryPreference(raw);

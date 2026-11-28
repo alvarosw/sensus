@@ -77,6 +77,8 @@ function AppStack() {
             {/* Pilha própria em timeline/_layout.tsx (tela inicial, lista de linha, Bíblia inteira, paralelo). */}
             <Stack.Screen name="timeline" options={{ headerShown: false }} />
             <Stack.Screen name="data-setup" options={{ headerShown: false }} />
+            {/* Busca por palavra (features/search): cabeçalho próprio com o campo. */}
+            <Stack.Screen name="search" options={{ headerShown: false }} />
             {/* Primeira vez (ver features/onboarding): sem cabeçalho e sem gesto de voltar que saia do fluxo. */}
             <Stack.Screen name="onboarding" options={{ headerShown: false, gestureEnabled: false }} />
           </Stack>
