@@ -6,7 +6,9 @@
 import { memo, useCallback, useEffect, useMemo, type ReactElement } from 'react';
 import { Platform, Text, View, type LayoutChangeEvent } from 'react-native';
 import { BOOK_TABLE, dirOf, scriptOf, splitVid, type Token, type VerseText, type Vid } from '@sensus/core';
-import { fontFamilies, gutter, radius, type, useTheme } from '@/design';
+import { fontFamilies, gutter, HIGHLIGHT_TINTS, radius, type, useTheme } from '@/design';
+import { colorAt, notesEndingAt, useMarksStore, type Mark } from '@/user-data';
+import { useMarksUi } from '@/features/marks';
 import type { FlowBlock } from './verse-flow';
 import type { ChapterData } from './chapters';
 import { LINE, type ReaderGeometry } from './geometry';
@@ -21,6 +23,8 @@ export function supNumber(n: number): string {
 }
 /** Os dígitos sobrescritos de Manrope são ~60% do corpo: escalamos o corpo do token `verseNumber`. */
 const SUP_SIZE = Math.round(type.verseNumber.fontSize * 1.75 * 2) / 2;
+/** Marcador de nota, depois do último versículo da nota (texto, para entrar no fluxo medido pelo nativo). */
+export const NOTE_MARK = '✎';
 
 type Item =
   | { kind: 'heading'; key: string; title: string }
@@ -71,6 +75,9 @@ export interface ChapterBlockProps {
 export const ChapterBlock = memo(function ChapterBlock({ data, geo, sourceName, selStart, selEnd, flashVid, greek, onVerse, onWord }: ChapterBlockProps) {
   const { c } = useTheme();
   const items = useMemo(() => buildItems(data.blocks, greek, selStart, selEnd), [data.blocks, greek, selStart, selEnd]);
+  const marks = useMarksStore((s) => s.marks);
+  const highlights = useMemo(() => marks.filter((m) => m.color !== null), [marks]);
+  const notes = useMemo(() => marks.filter((m) => m.note !== null), [marks]);
   const book = BOOK_TABLE[data.book - 1]!;
   const first = data.chapter === 1;
   const prev = first && data.book > 1 ? BOOK_TABLE[data.book - 2] : undefined;
@@ -101,7 +108,7 @@ export const ChapterBlock = memo(function ChapterBlock({ data, geo, sourceName, 
             {it.title}
           </Text>
         ) : it.kind === 'run' ? (
-          <Run key={it.key} runKey={`${data.idx}:${it.key}`} verses={it.verses} endsParagraph={it.endsParagraph} geo={geo} selStart={selStart} selEnd={selEnd} flashVid={flashVid} onVerse={onVerse} />
+          <Run key={it.key} runKey={`${data.idx}:${it.key}`} verses={it.verses} endsParagraph={it.endsParagraph} geo={geo} selStart={selStart} selEnd={selEnd} flashVid={flashVid} highlights={highlights} notes={notes} onVerse={onVerse} />
         ) : (
           <GreekLine key={it.key} tokens={it.tokens} endsParagraph={it.endsParagraph} onWord={onWord} />
         ),
@@ -140,13 +147,13 @@ interface Flow {
   last: number[];
 }
 
-function flowOf(verses: VerseText[]): Flow {
+function flowOf(verses: VerseText[], notes: readonly Mark[]): Flow {
   let flat = '';
   const first: number[] = [];
   const last: number[] = [];
   verses.forEach((v, i) => {
     first.push(flat.length);
-    flat += WJ + supNumber(splitVid(v.vid).verse) + ' ' + v.text + WJ;
+    flat += WJ + supNumber(splitVid(v.vid).verse) + ' ' + v.text + (notesEndingAt(notes, v.vid).length > 0 ? ' ' + NOTE_MARK : '') + WJ;
     last.push(flat.length - 1);
     if (i < verses.length - 1) flat += ' ';
   });
@@ -221,6 +228,8 @@ const Run = memo(function Run({
   selStart,
   selEnd,
   flashVid,
+  highlights,
+  notes,
   onVerse,
 }: {
   runKey: string;
@@ -230,11 +239,14 @@ const Run = memo(function Run({
   selStart: Vid;
   selEnd: Vid;
   flashVid: Vid;
+  highlights: readonly Mark[];
+  notes: readonly Mark[];
   onVerse: (vid: Vid) => void;
 }) {
-  const { c } = useTheme();
+  const { c, scheme } = useTheme();
   useEffect(() => () => geo.removeRun(runKey), [geo, runKey]);
-  const flow = useMemo(() => flowOf(verses), [verses]);
+  const flow = useMemo(() => flowOf(verses, notes), [verses, notes]);
+  const viewNote = useMarksUi((s) => s.viewNoteEndingAt);
 
   // Nativo: ao dispor o texto, grava a posição de início e fim de cada versículo (relativa ao trecho).
   const onTextLayout = useCallback(
@@ -256,6 +268,10 @@ const Run = memo(function Run({
     const n = splitVid(v.vid).verse;
     const selected = selStart > 0 && v.vid >= selStart && v.vid <= selEnd;
     const flash = v.vid === flashVid;
+    // Grifo: a cor do versículo; selecionado e grifado mantém a cor e ganha sublinhado (protótipo, Trilha A).
+    const mark = colorAt(highlights, v.vid);
+    const tint = mark ? HIGHLIGHT_TINTS[scheme][mark].tint : undefined;
+    const hasNote = notesEndingAt(notes, v.vid).length > 0;
     // Na web, marcadores inline medem a posição pelo DOM; no nativo a posição vem de onTextLayout.
     if (Platform.OS === 'web') nodes.push(<Marker key={`s${v.vid}`} geo={geo} kind="start" vid={v.vid} run={runKey} />);
     nodes.push(
@@ -267,11 +283,21 @@ const Run = memo(function Run({
         accessibilityLabel={`${READER.verse(n)}. ${v.text}`}
         accessibilityState={{ selected }}
         onPress={() => onVerse(v.vid)}
-        style={{ backgroundColor: selected ? c.selected : flash ? c.highlight : undefined, borderRadius: radius.xs }}
+        style={{
+          backgroundColor: flash ? c.highlight : selected ? tint ?? c.selected : tint,
+          textDecorationLine: selected && mark ? 'underline' : undefined,
+          textDecorationColor: c.accent,
+          borderRadius: radius.xs,
+        }}
       >
         {WJ}
         <Text style={{ fontFamily: fontFamilies.uiBold, fontSize: SUP_SIZE, lineHeight: SUP_SIZE, color: selected ? c.accent : c.muted }}>{supNumber(n)}{' '}</Text>
         {v.text}
+        {hasNote && (
+          <Text testID={`note-mark-${v.vid}`} accessibilityRole={Platform.OS === 'web' ? undefined : 'button'} accessibilityLabel={READER.verse(n)} onPress={() => viewNote(v.vid)} style={{ color: c.accent, fontFamily: fontFamilies.ui, fontSize: 14 }}>
+            {' ' + NOTE_MARK}
+          </Text>
+        )}
         {WJ}
       </Text>,
     );

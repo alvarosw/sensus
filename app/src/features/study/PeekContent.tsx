@@ -1,18 +1,17 @@
 // Prévia ("espiar") da folha, sem IA: vizinhos e perícope (escopo), a fila de fatos da seleção e, no fim, a barra de
-// ações da seleção (Estudar, Copiar, Compartilhar). Os fatos e o escopo são calculados em peek-model.ts; aqui só se
+// ações da seleção (Estudar, Grifar, Nota, Copiar, Compartilhar). Os fatos e o escopo são calculados em peek-model.ts; aqui só se
 // desenha e se liga aos botões.
 import { useMemo } from 'react';
 import { ScrollView, View, type LayoutChangeEvent } from 'react-native';
 import Svg, { Defs, LinearGradient as SvgGradient, Rect, Stop } from 'react-native-svg';
 import { Fact, LinkButton, Pill, Txt, gutter, radius, useTheme } from '@/design';
 import { chv, refShort } from '@/features/common/format';
-import { SelectionBar } from '@/features/common/SelectionBar';
 import { splitVid, type Vid } from '@sensus/core';
 import { useStudy } from '@/state/study';
 import { STUDY } from './strings';
 import { peekFacts, peekScope } from './peek-model';
 import { useStudyData } from './useStudyData';
-import { useSelectionActions } from './useSelectionActions';
+import { SelectionActions } from './SelectionActions';
 
 function FadeEdge({ color, width }: { color: string; width: number }) {
   return (
@@ -45,9 +44,6 @@ export function PeekContent({ onLayout }: { onLayout: (e: LayoutChangeEvent) => 
   const neighborLabel = (v: Vid, own: Vid) => (splitVid(v).book === splitVid(own).book ? chv(v) : refShort(v, v, books, true));
 
   const facts = useMemo(() => (panel ? peekFacts(panel) : null), [panel]);
-
-  // Barra comum da seleção (Estudar e as ações das frentes da 1A).
-  const actions = useSelectionActions(range, { study: true });
 
   return (
     <View onLayout={onLayout}>
@@ -109,7 +105,7 @@ export function PeekContent({ onLayout }: { onLayout: (e: LayoutChangeEvent) => 
       </View>
       )}
 
-      <SelectionBar actions={actions} />
+      <SelectionActions range={range} study />
     </View>
   );
 }

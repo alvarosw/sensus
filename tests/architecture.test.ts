@@ -33,6 +33,7 @@ type Layer =
   | 'app-i18n'
   | 'app-data'
   | 'app-service'
+  | 'app-user-data'
   | 'app-common'
   | 'app-feature'
   | 'app-routes'
@@ -46,6 +47,7 @@ const RANK: Record<Layer, number> = {
   'app-i18n': 2,
   'app-data': 3,
   'app-service': 4,
+  'app-user-data': 4,
   'app-common': 5,
   'app-feature': 6,
   'app-routes': 7,
@@ -66,6 +68,8 @@ function layerOf(file: string): { layer: Layer; feature?: string } {
   if (top === 'i18n') return { layer: 'app-i18n' };
   if (top === 'data') return { layer: 'app-data' };
   if (['translate', 'settings', 'state', 'ai', 'auth'].includes(top!)) return { layer: 'app-service' };
+  // dados do usuário no aparelho (user.db: marcas, e depois estudos e histórico): serviço, sem nada de feature
+  if (top === 'user-data') return { layer: 'app-user-data' };
   if (top === 'features') {
     if (sub === 'common') return { layer: 'app-common' };
     return { layer: 'app-feature', feature: sub };

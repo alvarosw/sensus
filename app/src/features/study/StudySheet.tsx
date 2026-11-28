@@ -19,13 +19,12 @@ import { useStudy } from '@/state/study';
 import { useEdition } from '@/data/db-context';
 import { StudyDataPrompt } from '@/data/StudyDataPrompt';
 import { BACK_PRIORITY, useBackLayer } from '../common/back';
-import { SelectionBar } from '../common/SelectionBar';
 import { useReduceMotion } from '../common/hooks';
 import { STUDY } from './strings';
 import { SheetBody } from './SheetBody';
 import { SheetHead } from './SheetHead';
 import { StudyDataProvider, type Range } from './useStudyData';
-import { useSelectionActions } from './useSelectionActions';
+import { SelectionActions } from './SelectionActions';
 
 export interface StudySheetProps {
   /** Altura ocupada acima da área da folha, descontada das alturas. Padrão: área segura + barra superior (a folha é montada em tela cheia sobre o leitor). */
@@ -64,10 +63,9 @@ export function StudySheet({ topInset }: StudySheetProps): ReactElement | null {
   );
 }
 
-/** Banco de leitura: o convite para baixar os dados e, embaixo, a barra da seleção (copiar e compartilhar valem sem eles). */
+/** Banco de leitura: o convite para baixar os dados e, embaixo, a barra da seleção (grifar, anotar, copiar e compartilhar valem sem eles). */
 function ReaderPrompt({ range, onClose }: { range: Range; onClose: () => void }) {
-  const actions = useSelectionActions(range, { study: false });
-  return <StudyDataPrompt onClose={onClose} footer={<SelectionBar actions={actions} />} />;
+  return <StudyDataPrompt onClose={onClose} footer={<SelectionActions range={range} study={false} />} />;
 }
 
 // ---- folha -----------------------------------------------------------------------------------------

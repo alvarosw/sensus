@@ -3,10 +3,12 @@
 // Cada frente da 1A acrescenta as suas ações aqui, na ordem Estudar · Grifar · Nota · Copiar · Compartilhar.
 import type { Vid } from '@sensus/core';
 import type { SelectionAction } from '@/features/common/SelectionBar';
+import { useMarkSelectionActions } from '@/features/marks';
 import { SHARE, useShare } from '@/features/share';
 import { useStudy } from '@/state/study';
 
-export function useSelectionActions(range: { start: Vid; end: Vid }, opts: { study: boolean }): SelectionAction[] {
+export function useSelectionActions(range: { start: Vid; end: Vid }, opts: { study: boolean; onHighlight: () => void }): SelectionAction[] {
+  const marks = useMarkSelectionActions(range.start, range.end, opts.onHighlight);
   const textSource = useStudy((s) => s.textSource);
   const openShare = (intent: 'copy' | 'share') =>
     useShare.getState().open({ kind: 'verses', start: range.start, end: range.end, source: textSource, intent });
@@ -14,6 +16,8 @@ export function useSelectionActions(range: { start: Vid; end: Vid }, opts: { stu
     ...(opts.study
       ? [{ key: 'study', label: SHARE.study, icon: 'study', primary: true, onPress: () => useStudy.getState().setDetent('half') } satisfies SelectionAction]
       : []),
+    marks.grifar,
+    marks.nota,
     { key: 'copy', label: SHARE.copy, icon: 'copy', onPress: () => openShare('copy') },
     { key: 'share', label: SHARE.share, icon: 'share', onPress: () => openShare('share') },
   ];
