@@ -20,7 +20,10 @@ export type IconName =
   | 'check'
   | 'download'
   | 'trash'
-  | 'retry';
+  | 'retry'
+  | 'study'
+  | 'copy'
+  | 'share';
 
 // Engrenagem (contorno com furo central), a mesma da proposta de Configurações.
 const GEAR_PATH =
@@ -78,6 +81,29 @@ export function Icon({ name, size = 16, color }: { name: IconName; size?: number
         <Svg width={size} height={size} viewBox="0 0 24 24">
           <Path d="M4.5 6.5h15M9.5 6.5V4.5h5v2M6.5 6.5l.9 12.6a1.5 1.5 0 001.5 1.4h6.2a1.5 1.5 0 001.5-1.4l.9-12.6" {...common} />
           <Path d="M10 10.5v6M14 10.5v6" {...common} />
+        </Svg>
+      );
+    case 'study':
+      return (
+        <Svg width={size} height={size} viewBox="0 0 24 24">
+          <Path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z" {...common} />
+          <Path d="M12 6.5v13" {...common} />
+        </Svg>
+      );
+    case 'copy':
+      return (
+        <Svg width={size} height={size} viewBox="0 0 24 24">
+          <Path d="M10.5 8.5h7.5a2 2 0 012 2V18a2 2 0 01-2 2h-7.5a2 2 0 01-2-2v-7.5a2 2 0 012-2z" {...common} />
+          <Path d="M15.5 8.5V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7.5a2 2 0 002 2h2.5" {...common} />
+        </Svg>
+      );
+    case 'share':
+      return (
+        <Svg width={size} height={size} viewBox="0 0 24 24">
+          <Circle cx="18" cy="5.5" r="2.5" {...common} />
+          <Circle cx="6" cy="12" r="2.5" {...common} />
+          <Circle cx="18" cy="18.5" r="2.5" {...common} />
+          <Path d="M8.2 10.8l7.6-4.1M8.2 13.2l7.6 4.1" {...common} />
         </Svg>
       );
     case 'retry':
